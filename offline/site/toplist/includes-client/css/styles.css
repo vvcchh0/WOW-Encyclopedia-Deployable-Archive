@@ -1,0 +1,414 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-size: 11px;
+    font-family: arial,helvetica,sans-serif;
+    padding: 0;
+    margin: 0;
+}
+.box {
+    margin-left: 5px;
+    width: 248px;
+}
+body.wide .box {
+    width: 358px;
+}
+#stats {
+    margin-left: 30px;
+    height: 523px;
+}
+.statsTable {
+	background: url("/toplist/images/empty.gif") repeat 0 0;
+}
+.statsTable tbody td {
+    vertical-align: top;
+    color: #cccccc;
+    text-align: center;
+    border-top: 1px solid #000;
+    padding: .25em;
+}
+.statsTable tbody td.count {
+    padding: .25em 0;
+}
+.statsTable tbody tr.navigation td, .statsTable tbody td.pos, .statsTable tbody tr.headers td {
+    padding: 0;
+}
+a.pos, a.item, a.count {
+    background-repeat: no-repeat;
+}
+.sortasc {
+    background: url("/toplist/images/arrow-down.gif");
+    text-align: left;
+}
+.sortdesc {
+    background: url("/toplist/images/arrow-up.gif");
+    text-align: left;
+}
+tr.splitter {
+    background-color: #3f3b2e !important;
+}
+.statsTable tbody tr.headers a {
+    background-color: rgb(46, 45, 43);
+    border-right: 1px solid rgb(93,93,93);
+    border-bottom: 1px solid rgb(30,29,28);
+    border-top: 1px solid rgb(93,93,93);   
+    display: block;
+    padding: .2em .3125em;
+    color: #CBA300;
+}
+.statsTable tbody tr.headers a.sortdesc, .statsTable tbody tr.headers a.sortasc {
+    text-align: left;
+}
+.statsTable tbody tr.headers a.item, body.wide .statsTable tbody tr.headers a.item {
+    text-align: left;
+}
+.statsTable tbody tr.headers a {
+    cursor: pointer;
+}
+
+.statsTable tbody tr.headers a:hover {
+    background-color: #474645;
+    color: #fff;
+}
+.statsTable tbody td.item {
+    cursor: pointer;
+    font-weight: bold;
+    text-align: left;
+}
+.statsTable tbody tr.even {
+    background-color: #252115;
+}
+.statsTable tbody tr.odd {
+    background-color: #111111;
+}
+.statsTable tbody tr.match td {
+    border-top: 1px solid #01bbf9;
+    border-bottom: 1px solid #01bbf9;
+    background-color: #05132c;
+    color: #fff;
+}
+img#progress {
+	position: absolute;
+	right: -12px;
+	top: -13px;
+}
+img.busy {
+    visibility: visible;
+}
+img.idle {
+    visibility: hidden;
+}
+/* links - specificity: "LVHAF"! */
+.statsTable tbody a, div.dateSelector a {
+    padding: 0 .1em;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.statsTable span {
+    color: #a7a7a7;
+}
+.statsTable a:link, div.dateSelector a:link, div.dateSelector a {
+    color: #CBA300;
+}
+.statsTable a:visited {
+    color: #CBA300;
+}
+.statsTable a:hover, div.dateSelector a:hover {
+    color: #fff;
+}
+.statsTable a:active, .statsTable a:focus {
+    color: #fff;
+}
+div.dateSelector a {
+    display: block;
+    padding: .125em 0;
+}
+.statsTable tbody span.currPage {
+    font-weight: bold;
+    font-size: 12px;
+    color: #fff;
+}
+#sbContainer, tbody.emptyTable span {
+/*    position: relative;*/
+    font-size: 11px !important;
+}
+#suggestBox {
+    border: 1px solid #595859;
+    position: absolute;
+    font-size: 11px !important;
+}
+#suggestBox a {
+    cursor: pointer;
+    padding: .2em .5em ;
+    display: block;
+    font-weight: bold;
+    color: #CBA300;
+    width: 100%;
+}
+#suggestBox a:hover {
+    color: #fff !important;
+}
+#frameTop {
+	background: url("/toplist/images/top-bg.jpg") repeat-x 0 0;
+}
+#frameTop div {
+	background: url("/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fincludes-client%2Fcss%2Fstyles.css&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fimages%2Ftop-left.jpg&reason=invalid-overlay-or-uncollected-site-resource") no-repeat top left;
+}
+#frameTop div div {
+	background: url("/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fincludes-client%2Fcss%2Fstyles.css&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fimages%2Ftop-right.jpg&reason=invalid-overlay-or-uncollected-site-resource") no-repeat top right;
+	height: 19px;
+}
+#wrapper {
+    padding-top: 15px;
+	width: 100%;
+    text-align: center;
+    padding-bottom: 20px;
+    min-height: 400px;
+}
+#pageLengthSelector {
+    position: absolute;
+    left: -15px;
+    top: 150px;
+    text-align: left;
+    width: 40px;
+}
+#pageLengthSelector input {
+    padding: 5px;
+}
+#intro {
+    width: 440px;
+    background-color: #121e2c;
+    border-top: 1px solid #2e3946;
+    border-right: 1px solid #2e3946;
+    border-left: 1px solid #192430;
+    border-bottom: 1px solid #192430;
+    padding: 5px 5px 5px 75px ;
+    margin-bottom: 15px;
+}
+#categoryHeader {
+    height: 33px;
+    position: absolute;
+    left: 49px;
+    width: 100%;
+    top: -40px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+#categoryVisual {
+    position: absolute;
+    width: 184px;
+    height: 202px;
+    top: -50px;
+    left: -113px;
+}
+.spellcreateVisual {
+    background: url("/toplist/images/spellcreate-visual.gif") no-repeat 12px 0;
+}
+.killedbyVisual {
+    background: url("/toplist/images/killedby-visual.gif") no-repeat 12px 0;
+}
+.unitlootVisual {
+    background: url("/toplist/images/unitloot-visual.gif") no-repeat 12px 0;
+}
+.gameobjlootVisual {
+    background: url("/toplist/images/gameobjloot-visual.gif") no-repeat 12px 0;
+}
+.auctionsoldVisual {
+    background: url("/toplist/images/auctionsold-visual.gif") no-repeat 12px 0;
+}
+.questcompleteVisual {
+    background: url("/toplist/images/questcomplete-visual.gif") no-repeat 0 0;
+}
+#searchContainer, #categorySelector, #numTablesSelector, #browseAll {
+    float: left;
+}
+#searchContainer {
+    width: 220px;
+}
+#numTablesSelector {
+    width: 130px;
+}
+#queryInfo {
+    float: right;
+    width: 150px;
+    color: #fff;
+}
+#browseAll {
+    width: 120px;
+    display: none;
+}
+input, select {
+    font-size: 11px;
+}
+a.next, a.prev { 
+    height: 22px;
+	width: 23px;
+    display: block;
+    padding: 0 !important;
+    margin: 0;
+}
+a.next {
+	background: url("/toplist/images/next.gif") no-repeat 100% 0; 
+}
+a.prev {
+	background: url("/toplist/images/prev.gif") no-repeat 100% 0; 
+}
+a.next:hover { background: url("/toplist/images/next.gif") no-repeat 100% -22px; } 
+a.prev:hover { background: url("/toplist/images/prev.gif") no-repeat 100% -22px; }
+tr.navigation {
+/*	background: url("/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fincludes-client%2Fcss%2Fstyles.css&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fincludes-client%2Fcss%2FnavBg.jpg&reason=invalid-overlay-or-uncollected-site-resource") no-repeat 0 0;*/
+    background-color: #111111;
+    border: 1px solid red;
+} 
+tr.navigation span {
+    padding: 0 .125em;
+    margin: 0;
+}
+.pagerPrevDiv, .pagerNextDiv {
+	width: 23px;
+    height: 22px;
+}
+.pagerPrevDiv {
+	float: left;
+}
+.pagerNextDiv {
+	float: right;
+}
+.pagerNavigationDiv {
+	float: left;
+	width: 194px;
+    margin-top: 3px;
+}
+div.prevOff, div.nextOff {
+	height: 22px;
+}
+div.prevOff {
+	background: url("/toplist/images/navbuttons-off.gif") no-repeat 100% -22px;
+}
+div.nextOff {
+	background: url("/toplist/images/navbuttons-off.gif") no-repeat 100% 0;
+}
+body.wide .pagerPrevDiv, body.wide .pagerNextDiv {
+    height: 21px;
+	width: 58px;
+}
+body.wide a.next, 
+body.wide a.prev {
+    height: 21px;
+	width: 58px;
+    display: block;
+    padding: 0 !important;
+    margin: 0;
+}
+body.wide div.prevOff, 
+body.wide div.nextOff {
+	height: 21px;
+    width: 58px;
+}
+body.wide .statsTable .pos {
+    width: 50px;
+}
+body.wide .statsTable .item {
+    width: 210px;
+}
+body.wide .statsTable .count {
+    width: 66px;
+}
+body.wide .statsTable tbody tr.headers a {
+    text-align: center;
+}
+body.wide .box {
+    margin-left: 0;
+}
+body.wide .pagerNavigationDiv {
+    width: 230px;
+}
+body.wide #stats {
+    margin-left: 0;
+}
+div.dateSelector {
+    width: 168px;
+    border: 1px solid #595859;
+    border-top: 0;
+    position: absolute;
+    left: 4px;
+    padding: .25em 0;
+    display: none;
+}
+.showTableDatesButton {
+    padding-top: 6px;
+    color: #CBA300;
+    font-weight: bold;
+    cursor: pointer;
+    width: 179px;
+    display: block;
+}
+div.tableDate {
+    background: url("/toplist/images/tabledropdown-bg.gif") no-repeat 0 0;
+    height: 26px;
+    width: 179px;
+}
+div.tableDate-active {
+    background: url("/toplist/images/tabledropdown-bg.gif") no-repeat 0 -26px;
+    height: 26px;
+    width: 179px;
+}
+
+a.tableDropDownArrow, a.tableDropDownArrow-active {
+    background: url("/toplist/images/tabledropdown-arrow.gif") no-repeat 0 -19px;
+    width: 22px;
+    height: 19px;
+    display: block;
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    cursor: pointer;
+}
+a.tableDropDownArrow-active {
+    background: url("/toplist/images/tabledropdown-arrow.gif") no-repeat 0 0;
+}
+input#gievItem:focus {
+    background-color: #c6c6c6;
+}
+#searchInfo {
+    float: right;
+    margin-right: 8px;
+    font-size: 10px;
+    color: #fff;
+}
+.error {
+    color: #ff8181 !important;
+}
+form {
+    margin: 0;
+    padding: 0;
+}
+#singleTable-top, #singleTable-bot {
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+#singleTable-top { background-image: url("/toplist/images/table-top.jpg"); }
+body.wide #singleTable-top { background-image: url("/toplist/images/table-wide-top.jpg"); }
+
+#singleTable-bot { background-image: url("/toplist/images/table-bottom.gif"); }
+body.wide #singleTable-bot { background-image: url("/toplist/images/table-wide-bottom.gif"); }
+
+#navDiv {
+    position: relative;
+    top: -35px;
+}
+tbody.emptyTable tr.navi {
+    height: 44px;
+}
+tbody.emptyTable tr.emptyTableHeaders {
+    height: 24px;
+}
+tbody.emptyTable tr td {
+    border-top: 1px solid #070808;
+}
+body.wide tbody.emptyTable tr td {
+    width: 350px;
+}
+.noData {
+    font-weight: bold;
+}

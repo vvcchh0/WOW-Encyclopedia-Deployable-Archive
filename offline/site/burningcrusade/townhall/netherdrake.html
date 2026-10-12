@@ -1,0 +1,312 @@
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>World of Warcraft: The Burning Crusade - Nether Drakes</title>
+	
+	<link rel="stylesheet" type="text/css" href="/burningcrusade/includes/wowx.css">
+		
+	
+<link rel="stylesheet" href="/__offline/compat.css">
+<script src="/__offline/compat.js"></script>
+</head>
+
+<body onload="jumpChapter(0);" leftmargin="0" rightmargin="0" topmargin="0" bottommargin="0" bgcolor="#000000">
+
+<script language="javascript" type="text/javascript">
+var isIE_PNG = (navigator.appName == "Microsoft Internet Explorer" && navigator.userAgent.indexOf('Opera') == -1);
+function pngImage(imgSource)
+{
+  if(isIE_PNG) document.write('<img src="/shared/wow-com/images/layout/pixel.gif" border="0" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='+imgSource+');">');
+  else document.write("<img src="+imgSource+" border='0'>");
+}
+
+function popUpOmega (screenshot, width, height, caption) 
+{
+	//Browser detection - is the user relying on the one browser where this script does not work?
+	var is_safari = ((navigator.appName.indexOf('safari')!=-1)&&(navigator.appName.indexOf('mac')!=-1))?true:false;
+
+	var name = "Sheenscrot"; 
+	widthHeight = "width=" + width + ",height=" + height;
+	winFeatures = "width=" + width + ",height=" + height + ",left=50,top=50,menubar=no,resizable=no,scrollbars=no,statusbar=no,toolbar=no,locationbar=no"
+	if (is_safari) spawn = window.open(screenshot,name,winFeatures);
+	else
+	{
+		spawn = window.open("/shared/wow-com/images/layout/pixel.gif",name,winFeatures)
+		spawn.document.write("<html> <head> <title>" + caption + "<\/title> <\/head> <body onBlur='self.close()' style='background-image:url(" + screenshot + "); background-repeat:no-repeat;'><\/body><\/html>"); 
+		spawn.document.close();
+	}
+}
+
+var theChuck = (isIE_PNG) ? "<img src='/shared/wow-com/images/layout/pixel.gif' border='0' style='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/netherdrake/trailerbox2.png);' class='oddGroupsToTheLeft' style='top:-45px;'>" : "<img src='images/netherdrake/trailerbox2.png' class='oddGroupsToTheLeft' style='top:-26px;'>";
+
+currentItem = 0;
+var textArray = new Array();
+i = 0;
+textArray[i++] = "\
+<b class='chapterHeader'>Beyond the Untamed Horizon</b><br>\
+<div class='capContainer'><img src='images/history-be/plaincap-l.gif' class='capStyle'></div>\
+<b>ess than twenty years ago,</b> the orcs' former homeworld, Draenor, was ripped apart by the violent energies of several dimensional portals that tore the very fabric of the planet to pieces. This catastrophic event left Draenor a broken, shattered world that the survivors came to call Outland. To this day, some parts of Outland are still unreachable by foot or boat, floating eerily on the horizon as silent reminders of the terrible fate that befell Draenor. Yet the denizens of Outland have adapted and learned to harness some of the indigenous species as flying mounts, allowing adventurers to reach even the most remote and dangerous regions of this wild, untamed world.\
+<p>\
+<div class='moreDOTs' style='height:180px; _height:148px;'><a href='javascript:jumpChapter(3);'>"+theChuck+"</a></div>\
+One of the most exciting new features of World of Warcraft: The Burning Crusade will be the introduction of a new kind of mount that will provide players with unprecedented freedom to explore the world of Outland from an entirely new perspective. After reaching level 70, players will eventually be able to obtain a flying mount for their characters. Outland is home to incredibly varied and exotic fauna, and the sentient inhabitants of this world have trained several unique creatures as flying mounts. Both Horde and Alliance will have their own special type of mount, but there are also mounts that will be extremely rare even among the most powerful characters. The nether drake is one of these.\
+<p>\
+<div class='moreDOTs'><a href=javascript:popUpOmega('images/netherdrake/ss01.jpg',800,600,'');><img src='images/netherdrake/ss01-thumb.jpg' class='oddGroupsToTheLeft'></a></div>\
+With flying mounts, players will be able to take to the skies, to soar among the crimson clouds of Hellfire Peninsula or watch as Nagrand's sea of grass swaying in the breeze far below as they make their way to new lands. Players will have full control over their flying mounts, allowing them to roam the skies and freely explore all regions of Outland. In fact, certain areas of Outland will only be accessible by air, as some parts of the ruined world are floating out in the void, unreachable except by those who command one of Outland's flying creatures.\
+<p>\
+A few of these \"unlockable\" areas are actually located near some of the lower-level regions of Outland; a player's journey will take them through the Dark Portal to the very ends of Outland and finally back to where they started, thus completing the circle &ndash; but now they will be able to access regions that were previously only viewable from a distance. Some dungeons also feature wings that can't be reached without a flying mount, and this should provide players with a profound sense of advancement after having gained considerable experience, new abilities, and powerful weapons and armor. In a way, the flying mount represents the most tangible accomplishment of a character's progress up to level 70, but it also serves as a key to the content that awaits players beyond the maximum level.";
+textArray[i++] = "\
+<b class='chapterHeader'>Origin of the Nether Drakes</b><br>\
+<div class='capContainer'><img src='images/history-be/plaincap-t.gif' class='capStyle'></div>\
+<b>wo years after the end of the Second War,</b> the black dragon Deathwing traveled through the Dark Portal to Draenor. Believing the world to be a relatively safe haven for his offspring, he secreted away a number of black dragon eggs before he returned to Azeroth. When Ner'zhul recklessly opened multiple new portals on Draenor, the magical stress tore the planet apart. The energies released in this catastrophe altered Deathwing's eggs, resulting in the nether drakes: ethereal dragons whose bodies are composed of energies from the Twisting Nether. Without Deathwing's guidance, these otherworldly nether drakes are just now finding their own way among the blasted ruins of Outland.";
+textArray[i++] = "\
+<b class='chapterHeader'>Flying the Nether Drake</b><br>\
+<div class='capContainer'><img src='images/history-be/plaincap-a.gif' class='capStyle'></div>\
+<b>ll flying mounts have the ability</b> to fly one rider wherever he or she may want to go in Outland, but that doesn't mean that flying is the only thing these mounts are capable of. Every flying mount can also run on the ground just like regular mounts can.\
+<p>\
+While walking, the nether drake behaves exactly like a regular mount, but its speed is at least as fast as that of the faster epic land mounts. And when the nether drake lifts off the ground, its rider can freely explore the distant lands of Outland.\
+<p>\
+<div class='moreDOTs'><a href=javascript:popUpOmega('images/netherdrake/ss02.jpg',800,600,'');><img src='images/netherdrake/ss02-thumb.jpg' class='oddGroupsToTheLeft'></a></div>\
+Handling the nether drake and all the other flying mounts is simple. The controls while on the ground work just like the standard controls. To switch from running to flying, just start running and then press the jump key to lift off. At this point the nether drake will start flying at a low altitude, and the controls now change slightly.\
+<p>\
+Flying your nether drake is like swimming in the air &ndash; you have complete freedom over which direction you want to go. An alternative way to start flying is by simply running off a high ledge that would normally send your mount into a fall; the nether drake will reflexively spread its wings to avoid a clumsy plummet and instead start hovering in the air until you tell it where to go.\
+<p>\
+There are several ways to get back on the ground. The easiest way is to simply dismount, but that may not be the best idea when you are flying at a high altitude or crossing the void. A safer (and much more graceful) way is to swoop down and touch the ground to land.";
+textArray[i++] ="\
+<b class='chapterHeader'>Nether Drake Trailer</b>\
+<br>\
+<div class='moreDOTs'><img src='images/netherdrake/ss03-thumb.jpg' class='oddGroupsToTheLeft'></div>\
+<br><br>\
+<div style='margin-left:30px; text-indent:0px;'>\
+<b>Date added:</b> July 19, 2006\
+<br>\
+<b>Format:</b> <a href ='/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Ftownhall%2Fnetherdrake.html&requested=http%3A%2F%2Fwww.divx.com%2Fdivx%2F&reason=external-or-uncollected-resource' target ='_blank'>DivX</a> PC and Mac\
+<br>\
+<b>Requires:</b> <a href ='/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Ftownhall%2Fnetherdrake.html&requested=http%3A%2F%2Fwww.divx.com%2Fdivx%2F&reason=external-or-uncollected-resource' target ='_blank'>DivX for PC</a> or <a href ='/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Ftownhall%2Fnetherdrake.html&requested=http%3A%2F%2Fwww.divx.com%2Fdivx%2Fmac%2F&reason=external-or-uncollected-resource' target ='_blank'>DivX for MAC</a><br>\
+<b>Size:</b> 46 MB PC and Mac<br><br><br><br>\
+</div>\
+<div style='text-indent:0px; vertical-align:textbottom;'>\
+<img src='/burningcrusade/images/downloadarrow.gif' width='18' height='18' align='left'>&nbsp;<a style='font-size:10pt;' href='/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Ftownhall%2Fnetherdrake.html&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fdownloads%2Ffiles%2Fpc%2FFlying_Mount_PC_EG-downloader.exe&reason=invalid-overlay-or-uncollected-site-resource'>Download Now for PC</a><br>\
+<br>\
+<img src='/burningcrusade/images/downloadarrow.gif' width='18' height='18' align='left'>&nbsp;<a style='font-size:10pt;' href='/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Ftownhall%2Fnetherdrake.html&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fdownloads%2Ffiles%2Fmac%2FFlying_Mount_PC_EG-downloader.dmg&reason=invalid-overlay-or-uncollected-site-resource'>Download Now for Mac</a>";
+
+function nextChapter(prevIInext)
+{
+  document.getElementById("link"+currentItem).style.color = "#ffac04";
+  currentItem += prevIInext;
+  switch (currentItem)
+  {
+    case 0:
+	  document.getElementById("prev").style.visibility="hidden";
+	  document.getElementById("next").style.visibility="visible";
+	  break;
+	case 3:
+	  document.getElementById("next").style.visibility="hidden";
+	  document.getElementById("prev").style.visibility="visible";
+	  break;
+	default:
+	  document.getElementById("next").style.visibility="visible";
+	  document.getElementById("prev").style.visibility="visible";
+	  break;
+  }
+  document.getElementById("historyContainer").innerHTML = textArray[currentItem];
+  document.getElementById("link"+currentItem).style.color = "#ffffff";
+}
+
+function jumpChapter(thisChapter)
+{
+  document.getElementById("link"+currentItem).style.color = "#ffac04";
+  currentItem = thisChapter;
+  document.getElementById("historyContainer").innerHTML = textArray[currentItem];
+  document.getElementById("link"+currentItem).style.color = "#ffffff";
+  switch (currentItem)
+  {
+    case 0:
+	  document.getElementById("prev").style.visibility="hidden";
+	  document.getElementById("next").style.visibility="visible";
+	  break;
+	case 3:
+	  document.getElementById("next").style.visibility="hidden";
+	  document.getElementById("prev").style.visibility="visible";
+	  break;
+	default:
+	  document.getElementById("next").style.visibility="visible";
+	  document.getElementById("prev").style.visibility="visible";
+	  break;
+  }
+}
+</script>
+<style type="text/css">
+
+.capContainer { position:relative; width:29px; height:20px; float:left; margin-right:5px; }
+.capStyle { position:absolute; top:-1px; left:0px; border:1px solid black;_left:1px;}
+.chapterHeader { font-size:16px; line-height:32px; color:#c5a428; position:relative; left:-8px; }
+.moreDOTs { height:148px; width:135px; float:right; margin-left:0px; position:relative; z-index:90; }
+.oddGroupsToTheLeft { position:absolute; top:0px; left:0px; border:0px; }
+
+.tooltipText{
+color: #CCCCCC;
+font-family: arial, helvetica, sans-serif;
+font-size:10pt;
+font-weight:normal;
+}
+
+.bandAidForIE
+{
+  position:absolute;
+  left:0px;
+  top:8px;
+}
+
+.goomba
+{
+  position:absolute;
+  left:-40px;
+  bottom:-20px;
+  _top:-52px;
+}
+
+<!-- what follows is a cheap IE h4x; man, I really wish Bill's company would get their act together! Grrrr! -->
+.topLeft{width:14px; height:24px; background-repeat:no-repeat; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/top-left.png',sizingMethod='scale');}
+.topBox{height:24px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/top.png',sizingMethod='scale'); background-repeat:repeat-x;}
+.topRight{width:14px; height:24px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/top-right.png',sizingMethod='scale'); background-repeat:no-repeat;}
+.leftBox{width:14px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/left.png',sizingMethod='scale'); background-repeat:repeat-y;}
+.rightBox{width:14px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/right.png',sizingMethod='scale'); background-repeat:repeat-y;}
+.botLeft{width:14px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/bot-left.png',sizingMethod='scale'); background-repeat:no-repeat;}
+.botBox{height:24px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/bot.png',sizingMethod='scale'); background-repeat:repeat-x;}
+.botRight{width:14px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/bot-right.png',sizingMethod='scale'); background-repeat:no-repeat;}
+.mainBod{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/black-bg.png',sizingMethod='scale');}
+
+.topLeft[class]{width:14px; height:24px; background-image:url("/burningcrusade/townhall/images/bestiary/top-left.png"); background-repeat:no-repeat;}
+.topBox[class]{height:24px; background-image:url("/burningcrusade/townhall/images/bestiary/top.png"); background-repeat:repeat-x;}
+.topRight[class]{width:14px; height:24px; background-image:url("/burningcrusade/townhall/images/bestiary/top-right.png"); background-repeat:no-repeat;}
+.leftBox[class]{width:14px; background-image:url("/burningcrusade/townhall/images/bestiary/left.png"); background-repeat:repeat-y;}
+.rightBox[class]{width:14px; background-image:url("/burningcrusade/townhall/images/bestiary/right.png"); background-repeat:repeat-y;}
+.botLeft[class]{width:14px; height:24px; background-image:url("/burningcrusade/townhall/images/bestiary/bot-left.png"); background-repeat:no-repeat;}
+.botBox[class]{height:24px; background-image:url("/burningcrusade/townhall/images/bestiary/bot.png"); background-repeat:repeat-x;}
+.botRight[class]{width:14px; height:24px; background-image:url("/burningcrusade/townhall/images/bestiary/bot-right.png"); background-repeat:no-repeat;}
+.mainBod[class]{background-image:url("/burningcrusade/townhall/images/bestiary/black-bg.png")}
+
+</style>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000000" style="background-image:url(&quot;/burningcrusade/images/2_bgtile.jpg&quot;); background-position:top; background-repeat:repeat-x;">
+  <tr>
+    <td width="50%" valign="top" style="background-image:url(&quot;/burningcrusade/images/2_leftbg.gif&quot;); background-repeat:repeat-y; background-position:top right;">
+	  <div style="background-image:url(&quot;/burningcrusade/images/2_topleft.jpg&quot;); background-repeat:no-repeat; background-position:top right; width:100%; height:170px;"></div>
+	</td>
+	<td width="955" style="background-image:url(&quot;/burningcrusade/townhall/images/bestiary/bg-fix.gif&quot;); background-repeat:repeat-y; background-position:top right;">
+<!-- TOP BACKGROUND -->
+	  <div style="background-image:url(&quot;/burningcrusade/townhall/images/netherdrake/bg-top.jpg&quot;); background-position:top; background-repeat:no-repeat; height:243px; position:relative;">
+	    <img src="/shared/wow-com/images/layout/pixel.gif" width="955" height="1">
+	    <div style="position:absolute; left:326px; top:175px;"><center><small><a href="/burningcrusade/index.html">Home</a> |
+<a href="/info/burningcrusade/index.xml">Features</a> |  
+<a href="/burningcrusade/townhall/index.html">Townhall</a> | 
+<a href="/burningcrusade/screenshots.html">Screenshots</a> | 
+<a href="/burningcrusade/artwork.html">Artwork</a><br> 
+<a href="/burningcrusade/wallpapers.html">Wallpapers</a> | 
+<a href="/burningcrusade/movies.html">Movies</a> | 
+<a href="/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Ftownhall%2Fnetherdrake.html&amp;requested=http%3A%2F%2Fmedia.worldofwarcraft.com%2Fbc-minisite%2Findex.htm&amp;reason=invalid-overlay-or-uncollected-site-resource">Flash Mini-Site</a> | 
+<a href="/burningcrusade/faq.html">FAQ</a> |
+<a href="/burningcrusade/faq.html#sys">System Req.</a> 
+</small></center></div>
+		<div style="position:absolute; left: 316px; top:15px;"><a href="/burningcrusade/index.html"><img src="/shared/wow-com/images/layout/pixel.gif" width="320" height="140" border="0"></a></div>
+	  </div>
+<!-- MAIN BACKGROUND -->
+	  <div style="background-image:url(&quot;/burningcrusade/townhall/images/netherdrake/bg-center.jpg&quot;); background-repeat:no-repeat; background-position:top; width:955px; height:526px; display:table;">
+
+<!-- LEFT INFO BOX -->
+		<table border="000" cellpadding="0" cellspacing="0" width="460" style="margin-left:30px; margin-top:6px;">
+		  <tr>
+		    <td class="topLeft"></td>
+			<td class="topBox"></td>
+		    <td class="topRight"></td>
+		  </tr>
+		  <tr>
+		    <td class="leftBox" rowspan="2"></td>
+			<td class="mainBod">
+			  <div style="position:relative;">
+			    
+				<span style="position:absolute; top:-70px; left:-50px;"><script language="javascript">pngImage("images/netherdrake/page-title.png");</script></span>
+				
+				<div class="tooltipText" id="sideBox" style="text-align:center; background-color:#000000; width:90px; height:125px; margin:0px; line-height:30px; display:table; border-color:#c5a428; border-style:solid; border-width:1px; position:absolute; top:30px; left:-80px; _left:-86px;">
+				  <a id="link0" href="javascript:jumpChapter(0);">First Look</a><br>
+				  <a id="link1" href="javascript:jumpChapter(1);">Origins</a><br>
+				  <a id="link2" href="javascript:jumpChapter(2);">Lift-Off</a><br>
+				  <a id="link3" href="javascript:jumpChapter(3);">Trailer</a><br>
+				</div>
+
+				<div id="historyContainer" style="padding:7px 20px 40px 20px; color:#CCCCCC; font-family:arial, helvetica, sans-serif; font-size:10pt; text-indent:0px;"></div>
+				
+			  </div>
+			</td>
+			<td class="rightBox" rowspan="2">
+			</td>
+		  </tr>
+		  <tr>
+		    <td class="mainBod">
+			  <div class="toolTipText" style="position:relative;">
+	            <div class="tooltipText" id="prev" style="visibility:hidden; padding:0px; height:20px; width:50px; position:absolute; right:110px; bottom:10px;">
+	              <span style="position:absolute; top:-3px; left:-26px;"><a href="javascript:nextChapter(-1);"><img src="/burningcrusade/townhall/images/bestiary/button-left.gif" border="0"></a></span>
+	              <a href="javascript:nextChapter(-1);">Previous</a>
+	            </div>
+	            <div class="tooltipText" id="next" style="padding:0px; height:20px; width:50px; position:absolute; right:40px; bottom:10px; text-align:right;">
+	              <span style="position:absolute; top:-3px; right:-26px;"><a href="javascript:nextChapter(1);"><img src="/burningcrusade/townhall/images/bestiary/button-right.gif" border="0"></a></span>
+	              <a href="javascript:nextChapter(1);">Next</a>
+	            </div>			  
+			  </div>
+			</td>
+		  </tr>
+		  <tr>
+		    <td class="botLeft"></td>
+			<td class="botBox"></td>
+		    <td class="botRight"></td>
+		  </tr>
+		</table>
+
+<!-- END OF LEFT INFO BOX -->
+	  </div>
+<!-- END OF MAIN BACKGROUND -->
+    </td>
+	<td width="50%" valign="top" style="background-image:url(&quot;/burningcrusade/images/2_rightbg.gif&quot;); background-repeat:repeat-y; background-position:top left;">
+      <div style="background-image:url(&quot;/burningcrusade/images/2_topright.jpg&quot;); background-repeat:no-repeat; background-position:top left; width:100%; height:170px;"></div>
+	</td>
+  </tr>
+</table>
+
+<table width="100%" height="107" cellpadding="0" cellspacing="0" border="0" background="/burningcrusade/images/2_bottom_tile.jpg">
+<tr>
+<td width="50%" height="107" style="background-image:url(&quot;/burningcrusade/images/2_botleft.gif&quot;); background-position:bottom right; background-repeat:no-repeat;"></td>
+<td width="955" height="107" background="/burningcrusade/images/2_bot.gif" valign="top">
+
+<div style="background-image:url(&quot;/burningcrusade/images/index_linkbg.gif&quot;); position:absolute; background-repeat:repeat-x; margin-top:125px; margin-left:65px;"><span style="font-size:11px;"><a href="/index.xml"><img src="/burningcrusade/images/backarrow.gif" width="24" height="24" border="0" style="vertical-align:middle;"></a> <a href="/index.xml">Return to WorldofWarcraft.com</a></span></div>
+
+<div style="position:relative;"><div style="position:absolute; left:437px; top:107px;"><a href="/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Ftownhall%2Fnetherdrake.html&amp;requested=http%3A%2F%2Fwww.blizzard.com&amp;reason=external-or-uncollected-resource"><img src="/burningcrusade/images/blizzlogo_bot.jpg" border="0" width="81" height="15" /></a></div></div>
+
+<img src="/shared/wow-com/images/layout/pixel.gif" width="955" height="1"><div style="position:relative;"><div style="position:absolute; left:438px; top:73px;"><a href="/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Ftownhall%2Fnetherdrake.html&amp;requested=http%3A%2F%2Fwww.blizzard.com&amp;reason=external-or-uncollected-resource"><img src="/shared/wow-com/images/layout/pixel.gif" border="0" width="79" height="33"></a></div></div>
+
+<div style="position:relative; top:35px;"><center><a class="tiny" href="/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Ftownhall%2Fnetherdrake.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Fprivacy.shtml&amp;reason=external-or-uncollected-resource">Online Privacy Policy</a></small><br /><a class="tiny" href="/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Ftownhall%2Fnetherdrake.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Flegalfaq.shtml&amp;reason=external-or-uncollected-resource">&copy;2008 Blizzard Entertainment. All rights reserved.</a></small></center></div>
+
+
+</td>
+<td width="50%" height="107" style="background-image:url(&quot;/burningcrusade/images/2_botright.gif&quot;); background-position:bottom left; background-repeat:no-repeat;"></td>
+</tr>
+</table>
+
+
+<table width="100%" height="104" cellpadding="0" cellspacing="0" border="0" bgcolor="#000000">
+<tr>
+<td width="100%" style="background-image:url(&quot;/burningcrusade/images/bottom_tile.jpg&quot;); background-position:top; background-repeat:repeat-x;"></td>
+</tr>
+</table>
+
+<script type="text/javascript">/* offline analytics tracker removed; no external request is made */
+</script>
+<script type="text/javascript">/* offline analytics tracker removed; no external request is made */
+</script>
+
+</body>
+</html>

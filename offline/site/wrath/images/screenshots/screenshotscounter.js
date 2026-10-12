@@ -1,0 +1,1 @@
+screenshotsCommonTotal = 40;

@@ -1,0 +1,347 @@
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>World of Warcraft: The Burning Crusade - Shamans and Paladins</title>
+	
+	<link rel="stylesheet" type="text/css" href="/burningcrusade/includes/wowx.css">
+		
+	
+<link rel="stylesheet" href="/__offline/compat.css">
+<script src="/__offline/compat.js"></script>
+</head>
+
+<body onload="jumpChapter(0);" leftmargin="0" rightmargin="0" topmargin="0" bottommargin="0" bgcolor="#000000">
+
+<script language="javascript" type="text/javascript">
+var isIE_PNG = (navigator.appName == "Microsoft Internet Explorer" && navigator.userAgent.indexOf('Opera') == -1);
+function pngImage(imgSource)
+{
+  if(isIE_PNG) document.write('<img src="/shared/wow-com/images/layout/pixel.gif" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='+imgSource+');">');
+  else document.write("<img src="+imgSource+">");
+}
+
+function popUpOmega (screenshot, width, height, caption) 
+{
+	//Browser detection - is the user relying on the one browser where this script does not work?
+	var is_safari = ((navigator.appName.indexOf('safari')!=-1)&&(navigator.appName.indexOf('mac')!=-1))?true:false;
+
+	var name = "Sheenscrot"; 
+	widthHeight = "width=" + width + ",height=" + height;
+	winFeatures = "width=" + width + ",height=" + height + ",left=50,top=50,menubar=no,resizable=no,scrollbars=no,statusbar=no,toolbar=no,locationbar=no"
+	if (is_safari) spawn = window.open(screenshot,name,winFeatures);
+	else
+	{
+		spawn = window.open("/shared/wow-com/images/layout/pixel.gif",name,winFeatures)
+		spawn.document.write("<html> <head> <title>" + caption + "<\/title> <\/head> <body onBlur='self.close()' style='background-image:url(" + screenshot + "); background-repeat:no-repeat;'><\/body><\/html>"); 
+		spawn.document.close();
+	}
+}
+
+currentItem = 0;
+var textArray = new Array();
+i = 0;
+textArray[i++] = "\
+<div class='capContainer'><img src='images/history-be/plaincap-a.gif' class='capStyle'></div>\
+<b>s we draw closer to the release of World of Warcraft: The Burning Crusade,</b> more of the secrets shrouding the draenei and blood elves are being revealed. In the upcoming expansion, players will finally be able to play classes that were previously unavailable to their faction. The blood elves have harnessed the power of the Light for their own needs, and the Horde recognizes the value of these renegade blood elf paladins. Meanwhile, the draenei have been granted the wisdom and strength of the elements, and a number of draenei now follow the path of the shaman. Read on to learn more about the new class combinations available to players of World of Warcraft: The Burning Crusade.\
+<p>\
+<b class='chapterHeader'>Stealing the Light</b><br>\
+<div class='moreDOTs'><a href=javascript:popUpOmega('images/newclasses/ss01.jpg',800,600,'');><img src='images/newclasses/ss01-thumb.jpg' class='oddGroupsToTheLeft'></a></div>\
+Not long ago, in Outland...\
+<p>\
+<p>\
+Prince Kael'thas Sunstrider and his blood elves waited until the newly arrived naaru departed Tempest Keep. He had little interest in what the naaru hoped to accomplish on this shattered world: it was Tempest Keep that had brought him here. At the prince's signal the elves stormed the dimensional fortress, quickly defeating its automated defenses and claiming its satellite structures. The only real threat the elves discovered was a lone naaru who had stayed behind to maintain the keep's defenses. With some difficulty, Kael'thas subdued the energy being and sent it to Quel'Thalas so that the magic-addicted blood elves could feed upon it.\
+<p>\
+Back in the capital city of Silvermoon, Magister Astalor Bloodsworn was not content with this idea. After long months of study and experimentation, he and his fellow wizards learned how to manipulate and corrupt the naaru's luminous energies. In the end the wizards devised a process by which the powers of the Light could be transferred to recipients who had not earned such abilities. Instead of feeding upon the naaru's magic, the blood elves would wield the naaru's Light-given powers themselves.\
+<p>\
+<div class='moreDOTs'><a href=javascript:popUpOmega('images/newclasses/ss02.jpg',800,600,'');><img src='images/newclasses/ss02-thumb.jpg' class='oddGroupsToTheLeft'></a></div>\
+Lady Liadrin, formerly a priestess, had recently renounced her vows, for she felt the Light had abandoned her people. She learned of the wizards' achievement and volunteered to be the first to bend the stolen powers to her will. With her decision a new order was born: the Blood Knights. These renegade paladins are able to harness the sacred powers of the Alliance's noblest heroes.\
+<p>\
+Most members of the Blood Knights were once part of the Royal Guard &ndash; proud defenders of high elven society who came to believe that the Light had failed them in their hour of greatest need. They see their appropriation of the captive naaru's powers as well-deserved justice.\
+<p>\
+Although Warchief Thrall and High Chieftain Cairne Bloodhoof openly opposed the blood elves' methods, they recognized the Blood Knights' strategic value. Indeed, it is likely that the group figured heavily in the Horde's ultimate decision to offer membership to the blood elves.\
+<p>\
+Blood elf paladins have swiftly grown confident in their borrowed abilities. Nevertheless, as even the most inexperienced mage will attest, when powerful forces are manipulated against their intended purpose...\
+<p>\
+The consequences can be perilous."
+textArray[i++] = "\
+<b class='chapterHeader'>Velen's Vision</b><br>\
+<div class='capContainer'><img src='images/history-be/plaincap-i.gif' class='capStyle'></div>\
+<div class='moreDOTs'><a href=javascript:popUpOmega('images/newclasses/ss03.jpg',800,600,'');><img src='images/newclasses/ss03-thumb.jpg' class='oddGroupsToTheLeft'></a></div>\
+<b>n recent years,</b> Velen, the noble leader of the draenei, was granted a vision....\
+<p>\
+In it he saw the Broken: formerly healthy draenei who had de-evolved during the orcs' murderous crusade to wipe out the draenei race. According to Velen's vision, the Broken would rise to power once again and aid their displaced brethren.\
+<p>\
+Velen's vision was given substance in the form of Nobundo, a one-time draenei Vindicator who had regressed while the orcs decimated his race and tore the planet apart. Like his fellow Broken, Nobundo had lost contact with the Light, and so he ventured far into the deserts of Outland to meditate and pray for guidance.\
+<p>\
+After decades of silence, an unfamiliar voice finally answered his prayers. It was not the Light that whispered to him, but the wind. The breeze spoke to him of lost truths, of the might of the elements--of the delicate balance of power embraced by the shaman.\
+<p>\
+Nobundo listened eagerly and learned all he could. When he judged the time was right, he departed the desert determined to use this knowledge to help the draenei race. However, most draenei refugees greeted the sight of a Broken with skepticism and outright prejudice. Only one of the healthy draenei did not shun the Broken: the wise and perceptive Velen.\
+<p>\
+<div class='moreDOTs'><a href=javascript:popUpOmega('images/newclasses/ss04.jpg',800,600,'');><img src='images/newclasses/ss04-thumb.jpg' class='oddGroupsToTheLeft'></a></div>\
+Velen had heard the philosophy of the shaman before, but Nobundo revealed new truths. The elements were timeless; they stretched across the cosmos to inhabit every world they touched. With the proper training, the draenei might learn to wield this overlooked, seemingly inexhaustible source of power.\
+<p>\
+Velen rejoiced to realize that his vision was coming to pass. Accordingly he took Nobundo with him when he and his fellow refugees took possession of the naaru satellite structure Exodar from the blood elves. Thus it was that Nobundo journeyed with the draenei to the world of Azeroth.\
+<p>\
+Nobundo found that unlike the desolate wastes of Outland, Azeroth possessed abundant elemental energies. He shared his knowledge of shamanism with the draenei on Azeroth, and all who adopted its path flourished.\
+<p>\
+The time for the draenei shaman to test themselves draws near, for the battle against the Burning Legion is once again at hand. And the fate not only of Azeroth, but of all worlds, hangs in the balance.";
+
+function nextChapter(prevIInext)
+{
+//  document.getElementById("link"+currentItem).style.color = "#ffac04";
+  currentItem += prevIInext;
+  switch (currentItem)
+  {
+    case 0:
+	  document.getElementById("prev").style.visibility="hidden";
+	  document.getElementById("next").style.visibility="visible";
+	  document.getElementById("topBG").className="beStyleTopBG";
+	  document.getElementById("centerBG").className="beStyleCenterBG";
+	  document.getElementById("beImg").style.visibility="visible";
+	  document.getElementById("drImg").style.visibility="hidden";
+	  document.getElementById("infoTable").align="right";
+	  break;
+	case 1:
+	  document.getElementById("next").style.visibility="hidden";
+	  document.getElementById("prev").style.visibility="visible";
+	  document.getElementById("topBG").className="drStyleTopBG";
+	  document.getElementById("centerBG").className="drStyleCenterBG";
+	  document.getElementById("drImg").style.visibility="visible";
+	  document.getElementById("beImg").style.visibility="hidden";
+	  document.getElementById("infoTable").align="left";
+	  break;
+	default:
+	  document.getElementById("next").style.visibility="visible";
+	  document.getElementById("prev").style.visibility="visible";
+	  break;
+  }
+  document.getElementById("historyContainer").innerHTML = textArray[currentItem];
+  //document.getElementById("link"+currentItem).style.color = "#ffffff";
+}
+
+function jumpChapter(thisChapter)
+{
+//  document.getElementById("link"+currentItem).style.color = "#ffac04";
+  currentItem = thisChapter;
+  document.getElementById("historyContainer").innerHTML = textArray[currentItem];
+//  document.getElementById("link"+currentItem).style.color = "#ffffff";
+  switch (currentItem)
+  {
+    case 0:
+	  document.getElementById("prev").style.visibility="hidden";
+	  document.getElementById("next").style.visibility="visible";
+	  document.getElementById("topBG").className="beStyleTopBG";
+	  document.getElementById("centerBG").className="beStyleCenterBG";
+	  document.getElementById("beImg").style.visibility="visible";
+	  document.getElementById("drImg").style.visibility="hidden";
+	  document.getElementById("infoTable").align="right";
+	  break;
+	case 1:
+	  document.getElementById("next").style.visibility="hidden";
+	  document.getElementById("prev").style.visibility="visible";
+	  document.getElementById("topBG").className="drStyleTopBG";
+	  document.getElementById("centerBG").className="drStyleCenterBG";
+	  document.getElementById("drImg").style.visibility="visible";
+	  document.getElementById("beImg").style.visibility="hidden";
+	  document.getElementById("infoTable").align="left";
+	  break;
+	default:
+	  document.getElementById("next").style.visibility="visible";
+	  document.getElementById("prev").style.visibility="visible";
+	  break;
+  }
+}
+
+function flipper(thisElement, sideDistance)
+{ document.getElementById(thisElement).style.right = "0px"; }
+
+function unflipper(thisElement, sideDistance)
+{ document.getElementById(thisElement).style.right = sideDistance+"px"; }
+
+</script>
+<style type="text/css">
+
+.capContainer { position:relative; width:29px; height:20px; float:left; margin-right:5px; }
+.capStyle { position:absolute; top:-1px; left:0px; border:1px solid black;_left:1px;}
+.chapterHeader { font-size:16px; line-height:32px; color:#c5a428; position:relative; left:-8px; }
+.moreDOTs { height:148px; width:115px; float:right; padding-left:8px; position:relative; z-index:90; }
+.oddGroupsToTheLeft { position:absolute; top:0px; left:0px; border:0px; }
+
+.tooltipText{
+color: #CCCCCC;
+font-family: arial, helvetica, sans-serif;
+font-size:10pt;
+font-weight:normal;
+}
+
+.bandAidForIE
+{
+  position:absolute;
+  left:0px;
+  top:8px;
+}
+
+.goomba
+{
+  position:absolute;
+  left:-40px;
+  bottom:-20px;
+  _top:-52px;
+}
+
+/* what follows is a cheap IE h4x; man, I really wish Bill's company would get their act together! Grrrr! */
+.topLeft{width:14px; height:24px; background-repeat:no-repeat; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/top-left.png',sizingMethod='scale');}
+.topBox{height:24px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/top.png',sizingMethod='scale'); background-repeat:repeat-x;}
+.topRight{width:14px; height:24px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/top-right.png',sizingMethod='scale'); background-repeat:no-repeat;}
+.leftBox{width:14px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/left.png',sizingMethod='scale'); background-repeat:repeat-y;}
+.rightBox{width:14px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/right.png',sizingMethod='scale'); background-repeat:repeat-y;}
+.botLeft{width:14px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/bot-left.png',sizingMethod='scale'); background-repeat:no-repeat;}
+.botBox{height:24px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/bot.png',sizingMethod='scale'); background-repeat:repeat-x;}
+.botRight{width:14px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/bot-right.png',sizingMethod='scale'); background-repeat:no-repeat;}
+.mainBod{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/black-bg.png',sizingMethod='scale');}
+
+.topLeft[class]{width:14px; height:24px; background-image:url("/burningcrusade/townhall/images/bestiary/top-left.png"); background-repeat:no-repeat;}
+.topBox[class]{height:24px; background-image:url("/burningcrusade/townhall/images/bestiary/top.png"); background-repeat:repeat-x;}
+.topRight[class]{width:14px; height:24px; background-image:url("/burningcrusade/townhall/images/bestiary/top-right.png"); background-repeat:no-repeat;}
+.leftBox[class]{width:14px; background-image:url("/burningcrusade/townhall/images/bestiary/left.png"); background-repeat:repeat-y;}
+.rightBox[class]{width:14px; background-image:url("/burningcrusade/townhall/images/bestiary/right.png"); background-repeat:repeat-y;}
+.botLeft[class]{width:14px; height:24px; background-image:url("/burningcrusade/townhall/images/bestiary/bot-left.png"); background-repeat:no-repeat;}
+.botBox[class]{height:24px; background-image:url("/burningcrusade/townhall/images/bestiary/bot.png"); background-repeat:repeat-x;}
+.botRight[class]{width:14px; height:24px; background-image:url("/burningcrusade/townhall/images/bestiary/bot-right.png"); background-repeat:no-repeat;}
+.mainBod[class]{background-image:url("/burningcrusade/townhall/images/bestiary/black-bg.png")}
+
+.beStyleCenterBG { position:relative; background-image:url("/burningcrusade/townhall/images/newclasses/center-be.jpg"); background-repeat:no-repeat; background-position:top; width:955px; height:545px; }
+.beStyleTopBG { background-image:url("/burningcrusade/townhall/images/newclasses/top-be.jpg"); background-position:top; background-repeat:no-repeat; height:243px; position:relative; }
+.beStyleRightImage { position:absolute; left:30px; top:-64px; _top:-71px; z-index:3; }
+.drStyleCenterBG { position:relative; background-image:url("/burningcrusade/townhall/images/newclasses/center-dr.jpg"); background-repeat:no-repeat; background-position:top; width:955px; height:545px; }
+.drStyleTopBG { background-image:url("/burningcrusade/townhall/images/newclasses/top-dr.jpg"); background-position:top; background-repeat:no-repeat; height:243px; position:relative; }
+.drStyleRightImage { position:absolute; left:485px; top:-64px; _top:-71px; z-index:3; }
+
+</style>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000000" style="background-image:url(&quot;/burningcrusade/images/2_bgtile.jpg&quot;); background-position:top; background-repeat:repeat-x;">
+  <tr>
+    <td width="50%" valign="top" style="background-image:url(&quot;/burningcrusade/images/2_leftbg.gif&quot;); background-repeat:repeat-y; background-position:top right;">
+	  <div style="background-image:url(&quot;/burningcrusade/images/2_topleft.jpg&quot;); background-repeat:no-repeat; background-position:top right; width:100%; height:170px;"></div>
+	</td>
+	<td width="955" style="background-image:url(&quot;/burningcrusade/townhall/images/bestiary/bg-fix.gif&quot;); background-repeat:repeat-y; background-position:top right;">
+<!-- TOP BACKGROUND -->
+	  <div id="topBG" class="beStyleTopBG">
+	    <img src="/shared/wow-com/images/layout/pixel.gif" width="955" height="1">
+	    <div style="position:absolute; left:326px; top:175px;"><center><small><a href="/burningcrusade/index.html">Home</a> |
+<a href="/info/burningcrusade/index.xml">Features</a> |  
+<a href="/burningcrusade/townhall/index.html">Townhall</a> | 
+<a href="/burningcrusade/screenshots.html">Screenshots</a> | 
+<a href="/burningcrusade/artwork.html">Artwork</a><br> 
+<a href="/burningcrusade/wallpapers.html">Wallpapers</a> | 
+<a href="/burningcrusade/movies.html">Movies</a> | 
+<a href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Ftownhall%2Fclasscombo.html&amp;requested=http%3A%2F%2Fmedia.worldofwarcraft.com%2Fbc-minisite%2Findex.htm&amp;reason=invalid-overlay-or-uncollected-site-resource">Flash Mini-Site</a> | 
+<a href="/burningcrusade/faq.html">FAQ</a> |
+<a href="/burningcrusade/faq.html#sys">System Req.</a> 
+</small></center></div>
+		<div style="position:absolute; left: 316px; top:15px;"><a href="/burningcrusade/index.html"><img src="/shared/wow-com/images/layout/pixel.gif" width="320" height="140" border="0"></a></div>
+	  </div>
+<!-- MAIN BACKGROUND -->
+	  <div id="centerBG" class="beStyleCenterBG">
+
+	  <div id="beImg" style="position:absolute; top:0px; left:20px; width:369px; overflow:hidden; height:671px; background-image:url(&quot;/burningcrusade/townhall/images/newclasses/bloodelf.jpg&quot;);">
+	    <div style="position:relative; width:235; height:372px; margin-top:164px; margin-left:134px; _margin-left:135px;" onmouseover="flipper(&#x27;bloodElf&#x27;,-235);" onmouseout="unflipper(&#x27;bloodElf&#x27;,-237);">
+		  <div id="bloodElf" style="position:absolute; right:-236px;"><a href="javascript:jumpChapter(1);"><img border="0" src="/burningcrusade/townhall/images/newclasses/bloodelf-focus.jpg"></a></div>
+		</div>
+	  </div>
+	  <div id="drImg" style="visibility:hidden; position:absolute; top:0px; overflow:hidden; left:566px; width:449px; height:593px; background-image:url(&quot;/burningcrusade/townhall/images/newclasses/draenei.jpg&quot;);">
+	    <div style="position:relative; width:142; height:350px; margin-top:108px;" onmouseover="flipper(&#x27;draenEi&#x27;,-235);" onmouseout="unflipper(&#x27;draenEi&#x27;,145);">
+		  <div id="draenEi" style="position:absolute; right:145px;"><a href="javascript:jumpChapter(0);"><img border="0" src="/burningcrusade/townhall/images/newclasses/draenei-focus.jpg"></a></div>
+		</div>
+	  </div>
+
+<!-- LEFT INFO BOX -->
+
+		<table id="infoTable" border="0" cellpadding="0" cellspacing="0" width="490" style="margin:6px 15px 0px 15px;" align="right">
+		  <tr>
+		    <td class="topLeft"></td>
+			<td class="topBox"></td>
+		    <td class="topRight"></td>
+		  </tr>
+		  <tr>
+		    <td class="leftBox" rowspan="2"></td>
+			<td class="mainBod">
+			  <div style="position:relative;">
+
+				<div id="historyContainer" class="tooltipText" style="padding:7px 20px 40px 20px; text-indent:0px;"></div>
+				
+			  </div>
+			</td>
+			<td class="rightBox" rowspan="2">
+			</td>
+		  </tr>
+		  <tr>
+		    <td class="mainBod">
+			  <div class="toolTipText" style="position:relative;">
+	            <div class="tooltipText" id="prev" style="visibility:hidden; padding:0px; height:20px; position:absolute; right:110px; bottom:10px;">
+	              <span style="position:absolute; top:-3px; left:-26px;"><a href="javascript:nextChapter(-1);"><img src="/burningcrusade/townhall/images/bestiary/button-left.gif" border="0"></a></span>
+	              <a href="javascript:nextChapter(-1);">Back&nbsp;to&nbsp;"Stealing&nbsp;the&nbsp;Light"...</a>
+	            </div>
+	            <div class="tooltipText" id="next" style="padding:0px; height:20px; position:absolute; right:40px; bottom:10px; text-align:right;">
+	              <span style="position:absolute; top:-3px; right:-26px;"><a href="javascript:nextChapter(1);"><img src="/burningcrusade/townhall/images/bestiary/button-right.gif" border="0"></a></span>
+	              <a href="javascript:nextChapter(1);">Continue&nbsp;to&nbsp;"Velen's&nbsp;Vision"...</a>
+	            </div>			  
+			  </div>
+			</td>
+		  </tr>
+		  <tr>
+		    <td class="botLeft"></td>
+			<td class="botBox"></td>
+		    <td class="botRight"></td>
+		  </tr>
+		</table>
+
+<!-- END OF LEFT INFO BOX -->
+
+	  </div>
+<!-- END OF MAIN BACKGROUND -->
+    </td>
+	<td width="50%" valign="top" style="background-image:url(&quot;/burningcrusade/images/2_rightbg.gif&quot;); background-repeat:repeat-y; background-position:top left;">
+      <div style="background-image:url(&quot;/burningcrusade/images/2_topright.jpg&quot;); background-repeat:no-repeat; background-position:top left; width:100%; height:170px;"></div>
+	</td>
+  </tr>
+</table>
+
+<table width="100%" height="107" cellpadding="0" cellspacing="0" border="0" background="/burningcrusade/images/2_bottom_tile.jpg">
+<tr>
+<td width="50%" height="107" style="background-image:url(&quot;/burningcrusade/images/2_botleft.gif&quot;); background-position:bottom right; background-repeat:no-repeat;"></td>
+<td width="955" height="107" background="/burningcrusade/images/2_bot.gif" valign="top">
+
+<div style="background-image:url(&quot;/burningcrusade/images/index_linkbg.gif&quot;); position:absolute; background-repeat:repeat-x; margin-top:125px; margin-left:65px;"><span style="font-size:11px;"><a href="/index.xml"><img src="/burningcrusade/images/backarrow.gif" width="24" height="24" border="0" style="vertical-align:middle;"></a> <a href="/index.xml">Return to WorldofWarcraft.com</a></span></div>
+
+<div style="position:relative;"><div style="position:absolute; left:437px; top:107px;"><a href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Ftownhall%2Fclasscombo.html&amp;requested=http%3A%2F%2Fwww.blizzard.com&amp;reason=external-or-uncollected-resource"><img src="/burningcrusade/images/blizzlogo_bot.jpg" border="0" width="81" height="15" /></a></div></div>
+
+<img src="/shared/wow-com/images/layout/pixel.gif" width="955" height="1"><div style="position:relative;"><div style="position:absolute; left:438px; top:73px;"><a href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Ftownhall%2Fclasscombo.html&amp;requested=http%3A%2F%2Fwww.blizzard.com&amp;reason=external-or-uncollected-resource"><img src="/shared/wow-com/images/layout/pixel.gif" border="0" width="79" height="33"></a></div></div>
+
+<div style="position:relative; top:35px;"><center><a class="tiny" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Ftownhall%2Fclasscombo.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Fprivacy.shtml&amp;reason=external-or-uncollected-resource">Online Privacy Policy</a></small><br /><a class="tiny" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Ftownhall%2Fclasscombo.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Flegalfaq.shtml&amp;reason=external-or-uncollected-resource">&copy;2008 Blizzard Entertainment. All rights reserved.</a></small></center></div>
+
+
+</td>
+<td width="50%" height="107" style="background-image:url(&quot;/burningcrusade/images/2_botright.gif&quot;); background-position:bottom left; background-repeat:no-repeat;"></td>
+</tr>
+</table>
+
+
+<table width="100%" height="104" cellpadding="0" cellspacing="0" border="0" bgcolor="#000000">
+<tr>
+<td width="100%" style="background-image:url(&quot;/burningcrusade/images/bottom_tile.jpg&quot;); background-position:top; background-repeat:repeat-x;"></td>
+</tr>
+</table>
+
+<script type="text/javascript">/* offline analytics tracker removed; no external request is made */
+</script>
+<script type="text/javascript">/* offline analytics tracker removed; no external request is made */
+</script>
+
+</body>
+</html>

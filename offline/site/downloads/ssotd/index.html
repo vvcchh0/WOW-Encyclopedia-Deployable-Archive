@@ -1,0 +1,107 @@
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>WorldofWarcraft.com -&gt; Screenshot of the Day</title>
+	<link rel="stylesheet" type="text/css" href="/new-hp/css/ssotdstyle.css">
+	<script language="javascript" src="/new-hp/js/tooltip2.js"></script>
+	<script language="javascript" src="/new-hp/js/ssotd-screenie.js"></script>
+<link rel="stylesheet" href="/__offline/compat.css">
+<script src="/__offline/compat.js"></script>
+</head>
+
+<body style="background:url(&quot;/new-hp/images/page-bg-alt3.jpg&quot;) #000000 0 0 repeat-x; color:#000000; margin:0;" id="ssotd">
+
+	<div style="height:92px; background:url(&quot;/downloads/ssotd/images/newtop-top-tile.gif&quot;) repeat-x; position:relative; z-index:10;">
+		<center>
+			<div style="float:left; width:85px; height:92px; background:url(&quot;/downloads/ssotd/images/newtop-gryphon-left.gif&quot;);"></div>
+			<div style="float:right; width:85px; height:92px; background:url(&quot;/downloads/ssotd/images/newtop-gryphon-right.gif&quot;);"></div>
+			<div style="width:732px; height:92px; position:relative; background:url(&quot;/downloads/ssotd/images/newtop-top-bg.gif&quot;)">
+				<a href="/index.xml">
+					<div style="background:url(&quot;/shared/wow-com/includes/images/wowlogo3.gif&quot;); height:106px; width:262px; position:absolute; top:1px; left:235px;"></div>
+				</a>
+			</div>
+		</center>
+	</div>
+	<div style="height:59px; background:url(&quot;/downloads/ssotd/images/newtop-innerbar-bg.gif&quot;) repeat-x; position:relative; z-index:5; color:white;">
+		<a href="/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fdownloads%2Fssotd%2F&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fcommunity%2Fsubmission%2Fscreenshot-form.html&amp;reason=invalid-overlay-or-uncollected-site-resource" style="position:absolute; top:37px; left:154px;">Submit your Shots to the RPSA</a>
+		<div style="width:79px; height:64px; background:url(&quot;/downloads/ssotd/images/newtop-innerbar-left.gif&quot;); position:absolute; top:0; left:0;"></div>
+		<div style="width:79px; height:64px; background:url(&quot;/downloads/ssotd/images/newtop-innerbar-right.gif&quot;); position:absolute; top:0; right:0;"></div>
+		<a href="/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fdownloads%2Fssotd%2F&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fcommunity%2Fsubmission%2Fscreenshot-form.html&amp;reason=invalid-overlay-or-uncollected-site-resource">
+			<div style="width:64px; height:64px; background:url(&quot;/downloads/ssotd/images/newtop-camera.gif&quot;); position:absolute; top:0; left:80px;"></div>
+		</a>
+	</div>
+
+	<center>
+		<br />
+
+<!------------------------------------Wallpaper---------------------------->	
+		<span class="contentBlock" style="">
+			<div style="width:730px; height:20px;">
+			<small>
+				<div style="width:360px; text-align:left; float:left;"><a href="javascript:galleryPrev();">&lt;&lt; Previous</a></div>
+				<div style="width:360px; text-align:right; float:right;"><a href="javascript:galleryNext();">Next &gt;&gt;</a></div>
+			</small>
+			</div>
+			<center><table><div class="pictureGallery twelve" id="galleryPictures"></div></table></center>
+			<div style="width:720px; height:20px; margin-top:20px; text-align:center; color:white; font-family: arial,comic sans ms,technical; font-size: 12px;">
+				Page <span id="pageNum" style="display:inline;"></span>
+			</div>
+		</span>
+
+		<br><br><br><br>
+
+		<script language="javascript">
+			/* Awesome Server Time Script - SAFETY NOT GUARANTEED! */
+			/* Memo to self: Cross-browser compliancy = automatic win */
+			
+			startDate = 12671; 
+			/*
+			startDate is a little tricky; basically, it's the number of days between 
+			Jabuary 1, 1970, and the day the first WoW screenshot was published.
+			...trust me, it does make sense. =)
+			*/
+			
+			function checkRequestHeader()
+			{
+				if(xmlTimeVerification.readyState == 4)
+				{
+					xmlServerDate = new Date(xmlTimeVerification.getResponseHeader("Date"));
+					currentShotNumber = Math.floor(Math.floor(Math.floor(Math.floor(eval(xmlServerDate.getTime())/1000)/60)/60)/24) - startDate;
+					addshots("/downloads/ssotd/images/screens","ss",currentShotNumber);
+				}
+			}
+			
+			var xmlTimeVerification = (typeof XMLHttpRequest != "undefined") ? new XMLHttpRequest() : new ActiveXObject("Msxml2.XMLHTTP");
+			xmlTimeVerification.onreadystatechange = checkRequestHeader;
+			xmlTimeVerification.open("HEAD","anachronos.xml",true);
+			xmlTimeVerification.send(null);
+		
+		//	document.onmousemove = tipPosition;
+			
+			/* Get it? Server *time*? Safety not guaranteed? ...yeah, I got nothing. */
+		</script>
+
+	</center>
+
+	<div style="background:url(&quot;/shared/screenshots/layout/bottom-bg.gif&quot;) repeat-x 0 bottom; height:74px;">
+		<center>
+			<div style="background:url(&quot;/shared/screenshots/layout/bottom-blizzlogo.gif&quot;) no-repeat 0 bottom; width:400px; height:74px; font-size:11px;">
+				<a href="/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fdownloads%2Fssotd%2F&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Fprivacy.shtml&amp;reason=external-or-uncollected-resource">Online Privacy Policy</a><br>
+				<a href="/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fdownloads%2Fssotd%2F&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Flegalfaq.shtml&amp;reason=external-or-uncollected-resource">&reg;2007 Blizzard Entertainment. All rights reserved.</a>
+				<div style="width:75px; height:32px; margin-top:8px;">
+					<a href="/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fdownloads%2Fssotd%2F&amp;requested=http%3A%2F%2Fwww.blizzard.com&amp;reason=external-or-uncollected-resource"><div style="width:100%; height:100%;"></div></a>
+				</div>
+			</div>
+		</center>
+	</div>
+<script type="text/javascript" src="/__offline/empty.js?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fdownloads%2Fssotd%2F&amp;requested=https%3A%2F%2Fssl.google-analytics.com%2Fga.js&amp;reason=external-or-uncollected-resource"></script>
+<script type="text/javascript">/* offline analytics tracker removed; no external request is made */
+</script>
+</body>
+</html>

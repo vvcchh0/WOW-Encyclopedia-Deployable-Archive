@@ -1,0 +1,741 @@
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>World of Warcraft: The Burning Crusade -&gt; Jewelcrafting</title>
+	
+	<link rel="stylesheet" type="text/css" href="/burningcrusade/includes/wowx.css">
+	<link rel="stylesheet" type="text/css" href="/shared/wow-com/includes-client/factionrewards/rewardstable.css">
+		
+	
+<link rel="stylesheet" href="/__offline/compat.css">
+<script src="/__offline/compat.js"></script>
+</head>
+
+<body onload="jumpChapter(0);" leftmargin="0" rightmargin="0" topmargin="0" bottommargin="0" bgcolor="#000000">
+
+<style type="text/css">
+
+#contents{
+visibility: hidden;
+position: absolute;
+Z-INDEX: 99;
+width: 5px;
+filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale src='/shared/wow-com/images/backgrounds/blue-bg.png');
+}
+
+#dynamicTooltip{
+visibility: hidden;
+position: absolute;
+Z-INDEX: 99;
+}
+
+#tooltipText{
+visibility: hidden;
+color: #CCCCCC;
+font-family: arial, helvetica, sans-serif;
+font-size:10pt;
+font-weight:normal;
+padding: 4px;
+white-space:nowrap;
+
+}
+
+.trans_div { }
+
+/* Square bracketed class styles are usable non-IE type browsers */
+/* This is a seperate css entry, not part of the original trans_div class */
+
+.trans_div[class] { background-image:url("/shared/wow-com/images/backgrounds/blue-bg.png"); }
+
+</style>
+
+
+<div id="contents">
+
+
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr>
+	<td><img src="/shared/wow-com/images/layout/pixel.gif" width="1" height="1"></td>
+	<td bgcolor="#000000"></td>
+	<td><img src="/shared/wow-com/images/layout/pixel.gif" width="1" height="1"></td>
+</tr>
+<tr>
+	<td bgcolor="#000000"></td>
+	<td>
+	
+			<table cellspacing="0" cellpadding="0" border="0" width="100%">
+			  <tr>
+				<td width="1" height="1" bgcolor="#000000"></td>
+				<td bgcolor="#D5D5D7" height="1"><img src="/shared/wow-com/images/layout/pixel.gif" width="1" height="1"></td>
+				<td width="1" height="1" bgcolor="#000000"></td>
+			  </tr>
+			  <tr>
+				<td bgcolor="#A5A5A5" width="1"><img src="/shared/wow-com/images/layout/pixel.gif" width="1" height="1"></td>
+				<td valign="top" class="trans_div"><div id="tooltipText"></div></td> 
+				<td bgcolor="#A5A5A5" width="1"><img src="/shared/wow-com/images/layout/pixel.gif" width="1" height="1"></td>
+			  </tr>
+			  <tr>
+				<td width="1" height="1" bgcolor="#000000"></td>
+				<td bgcolor="#4F4F4F"><img src="/shared/wow-com/images/layout/pixel.gif" width="1" height="2"></td>
+				<td width="1" height="1" bgcolor="#000000"></td>
+			  </tr>
+			</table>
+	
+	</td>
+	<td bgcolor="#000000"></td>
+</tr>
+<tr>
+	<td><img src="/shared/wow-com/images/layout/pixel.gif" width="1" height="1"></td>
+	<td bgcolor="#000000"></td>
+	<td><img src="/shared/wow-com/images/layout/pixel.gif" width="1" height="1"></td>
+</tr>
+</table>
+	</td>
+	<td>
+			
+
+</div>
+
+<script language="javascript">
+//The following is not my own code; somebody PLEASE teach the guys at DDrive how to write readable code. Bleargh!
+
+/***********************************************
+* Cool DHTML tooltip script- � Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+var agt=navigator.userAgent.toLowerCase();
+var offsetxpoint=10 //Customize x offset of tooltip
+var offsetypoint=-10 //Customize y offset of tooltip
+var ie=document.all
+var ns6=document.getElementById && !document.all
+var is_safari = ((agt.indexOf('safari')!=-1)&&(agt.indexOf('mac')!=-1))?true:false;
+var enabletip=false
+
+if (ie||ns6)
+var contentobj=document.all? document.all["contents"] : document.getElementById? document.getElementById("contents") : ""
+var tipTextObj=document.all? document.all["tooltipText"] : document.getElementById? document.getElementById("tooltipText") : ""
+var dynamicTipObj=document.all? document.all["dynamicTooltip"] : document.getElementById? document.getElementById("dynamicTooltip") : ""
+
+function ietruebody() { return (document.compatMode && document.compatMode!="BackCompat")? document.documentElement : document.body }
+
+//FROST: Changed the below function for readability and functionality
+function ddrivetip(thetext, thecolor, thewidth)
+{
+ if(thetext != "")
+ {
+  if (ns6||ie)
+  {
+    if (thetext.indexOf("~") >= 0) tipTextObj.innerHTML = dynamicTipObj.innerHTML;
+	else
+	{
+	  tipTextObj.innerHTML = thetext;
+	  //tipTextObj.style.color=thecolor;
+	}
+	if (typeof thewidth=="undefined")
+	{ 
+	  contentobj.style.width=tipTextObj.clientWidth+"px";
+	  contentobj.style.height=tipTextObj.clientHeight+"px";
+	}
+	else
+	{
+	  contentobj.style.width=thewidth+"px";
+	}
+	enabletip=true;
+	return false;
+  }
+ }
+}
+
+//FROST: Changed the below function for readability and so it doesn't suck anymore.
+function positiontip(e)
+{
+  if (enabletip)
+  {
+	var curX= e.clientX; //(ns6)?e.pageX : event.x+ietruebody().scrollLeft;
+	var curY= e.clientY; //(ns6)?e.pageY : event.y+ietruebody().scrollTop;
+//Find out how close the mouse is to the corner of the window
+	var rightedge=ie&&!window.opera? ietruebody().clientWidth-event.clientX-offsetxpoint : window.innerWidth-e.clientX-offsetxpoint-20;
+	var bottomedge=ie&&!window.opera? ietruebody().clientHeight-event.clientY-offsetypoint : window.innerHeight-e.clientY-offsetypoint-20;
+	var leftedge=(offsetxpoint<0)? offsetxpoint*(-1) : -1000;
+//if the horizontal distance isn't enough to accomodate the width of the context menu
+	if (rightedge<contentobj.offsetWidth)
+	{
+//move the horizontal position of the menu to the left by it's width
+	  contentobj.style.left= curX - contentobj.offsetWidth-10+"px";//ie? ietruebody().scrollLeft+event.clientX-contentobj.offsetWidth+"px" : window.pageXOffset+e.clientX-contentobj.offsetWidth+"px"
+	}
+	else if (curX<leftedge)
+	{
+	  contentobj.style.left="5px"
+	}
+	else
+	{
+//position the horizontal position of the menu where the mouse is positioned
+	  contentobj.style.left=curX+offsetxpoint+"px"
+	}
+//same concept with the vertical position
+	if ((bottomedge<contentobj.offsetHeight)&&!is_safari)
+	{
+	  contentobj.style.top=ie? ietruebody().scrollTop+event.clientY-contentobj.offsetHeight-offsetypoint+"px" : window.pageYOffset+e.clientY-contentobj.offsetHeight-offsetypoint+"px"
+	  contentobj.style.visibility="visible";
+	  tipTextObj.style.visibility="visible";
+	}
+	else
+	{
+	  contentobj.style.top= mouseY+document.body.scrollTop+"px"; //curY+offsetypoint+"px";
+	  contentobj.style.visibility="visible";
+	  tipTextObj.style.visibility="visible";
+	}
+  }
+}
+
+function hideddrivetip(){
+if (ns6||ie){
+enabletip=false;
+contentobj.style.visibility="hidden";
+contentobj.style.left="-1000px";
+contentobj.style.backgroundColor='';
+contentobj.style.width='';
+}
+}
+</script>
+
+<script language="javascript" type="text/javascript">
+//FROST: I'll properly comment this someday, but for now, let's just say that this is some messed up crazy stuff right here. Object oriented javascript for teh win!
+mouseX = 0;
+mouseY = 0;
+
+mouseOverTexts = new Object();
+blueGemText = "\
+<table border='0' cellpadding='0' cellspacing='0' width='200'><tr><td><div class='myTable'>\
+<span class='myGreen'>Solid Blue Example Gem</span><br>\
++7 Stamina <br>(Counts as Blue)\
+</div></td></tr></table>";
+mouseOverTexts["blueGemText"] = blueGemText;
+red1GemText = "\
+<table border='0' cellpadding='0' cellspacing='0' width='200'><tr><td><div class='myTable'>\
+<span class='myGreen'>Teardrop Red Example Gem</span><br>\
++15 Healing Spells <br>(Counts as Red)\
+</div></td></tr></table>";
+mouseOverTexts["red1GemText"] = red1GemText;
+red2GemText = "\
+<table border='0' cellpadding='0' cellspacing='0' width='200'><tr><td><div class='myTable'>\
+<span class='myGreen'>Runed Red Example Gem</span><br>\
++8 Spell Damage <br>(Counts as Red)\
+</div></td></tr></table>";
+mouseOverTexts["red2GemText"] = red2GemText;
+orangeGemText = "\
+<table border='0' cellpadding='0' cellspacing='0' width='200'><tr><td><div class='myTable'>\
+<span class='myGreen'>Luminous Orange Example Gem</span><br>\
++8 Healing Spells, +3 Intellect <br>(Counts as Red and Yellow)\
+</div></td></tr></table>";
+mouseOverTexts["orangeGemText"] = orangeGemText;
+orange2GemText = "\
+<table border='0' cellpadding='0' cellspacing='0' width='200'><tr><td><div class='myTable'>\
+<span class='myGreen'>Luminous Orange Example Gem</span><br>\
++8 Healing Spells, +3 Intellect <br>(Counts as Red and Yellow)\
+</div></td></tr></table>";
+mouseOverTexts["orange2GemText"] = orange2GemText;
+purpleGemText = "\
+<table border='0' cellpadding='0' cellspacing='0' width='200'><tr><td><div class='myTable'>\
+<span class='myGreen'>Royal Purple Example Gem</span><br>\
++6 Healing, +2 Mana every 5 seconds <br>(Counts as Red and Blue)\
+</div></td></tr></table>";
+mouseOverTexts["purpleGemText"] = purpleGemText;
+yellowGemText = "\
+<table border='0' cellpadding='0' cellspacing='0' width='200'><tr><td><div class='myTable'>\
+<span class='myGreen'>Brilliant Golden Example Gem</span><br>\
++7 Intellect <br>(Counts as Yellow)\
+</div></td></tr></table>";
+mouseOverTexts["yellowGemText"] = yellowGemText;
+mouseOverTexts["empty"] = "";
+
+isDragging = false;
+isMagnetized = false;
+dragTarget = "";
+thisMagnet = "";
+targetOffsetX = 0;
+targetOffsetY = 0;
+dragObjects = new Object();
+magnetObjects = new Object();
+
+function DragObject(xOffset, yOffset, targetID, bonusString)
+{
+  this.xOffset = xOffset;
+  this.yOffset = yOffset;
+  this.targetID = targetID;
+  this.bonusString = bonusString;
+}
+
+function MagnetObject(topDistance, leftDistance, occupiedByItem, mouseOverText)
+{
+  this.topDistance = topDistance;
+  this.leftDistance = leftDistance;
+  this.occupiedByItem = occupiedByItem;
+  this.mouseOverText = mouseOverText;
+  this.calculatedLeft = calculateLeftForMagnet;
+}
+
+function calculateLeftForMagnet()
+{
+  return (document.body.clientWidth - 955)/2 + this.leftDistance;
+}
+
+socketOne = new MagnetObject(606,642,"empty",""); magnetObjects["socketOne"] = socketOne;
+socketTwo = new MagnetObject(606,718,"empty",""); magnetObjects["socketTwo"] = socketTwo;
+socketThree = new MagnetObject(606,794,"empty",""); magnetObjects["socketThree"] = socketThree;
+
+a1 = new MagnetObject(737,720,"blueGem",blueGemText); magnetObjects["a1"] = a1;
+a2 = new MagnetObject(737,762,"red1Gem",red1GemText); magnetObjects["a2"] = a2;
+a3 = new MagnetObject(737,804,"red2Gem",red2GemText); magnetObjects["a3"] = a3;
+a4 = new MagnetObject(737,846,"empty",""); magnetObjects["a4"] = a4;
+
+b1 = new MagnetObject(778,720,"purpleGem",purpleGemText); magnetObjects["b1"] = b1;
+b2 = new MagnetObject(778,762,"yellowGem",yellowGemText); magnetObjects["b2"] = b2;
+b3 = new MagnetObject(778,804,"orangeGem",orangeGemText); magnetObjects["b3"] = b3;
+b4 = new MagnetObject(778,846,"orange2Gem",orange2GemText); magnetObjects["b4"] = b4;
+
+blueGem = new DragObject(0, 0, "blueGem", "<img src=images/jewelcrafting/blue-mini.gif align=left>&nbsp;+7 Stamina"); dragObjects["blueGem"] = blueGem;
+red1Gem = new DragObject(0, 0, "red1Gem", "<img src=images/jewelcrafting/red-mini.gif align=left>&nbsp;+15 Healing Spells"); dragObjects["red1Gem"] = red1Gem;
+red2Gem = new DragObject(0, 0, "red2Gem", "<img src=images/jewelcrafting/red2-mini.gif align=left>&nbsp;+8 Spell Damage"); dragObjects["red2Gem"] = red2Gem;
+orangeGem = new DragObject(0, 0, "orangeGem", "<img src=images/jewelcrafting/orange-mini.gif align=left>&nbsp;+8 Healing Spells, +3 Intellect"); dragObjects["orangeGem"] = orangeGem;
+orange2Gem = new DragObject(0, 0, "orange2Gem", "<img src=images/jewelcrafting/orange-mini.gif align=left>&nbsp;+8 Healing Spells, +3 Intellect"); dragObjects["orange2Gem"] = orange2Gem;
+purpleGem = new DragObject(0, 0, "purpleGem", "<img src=images/jewelcrafting/purple-mini.gif align=left>&nbsp;+6 Healing Spells, +2 Mana every 5 seconds"); dragObjects["purpleGem"] = purpleGem;
+yellowGem = new DragObject(0, 0, "yellowGem", "<img src=images/jewelcrafting/yellow-mini.gif align=left>&nbsp;+7 Intellect"); dragObjects["yellowGem"] = yellowGem;
+
+function comboCheck()
+{
+  if((socketOne.occupiedByItem.indexOf("blue") != -1 || socketOne.occupiedByItem.indexOf("purple") != -1) && (socketTwo.occupiedByItem.indexOf("red") != -1 || socketTwo.occupiedByItem.indexOf("purple") != -1 || socketTwo.occupiedByItem.indexOf("orange") != -1) && (socketThree.occupiedByItem.indexOf("red") != -1 || socketThree.occupiedByItem.indexOf("purple") != -1 || socketThree.occupiedByItem.indexOf("orange") != -1))
+  {
+	document.getElementById("extraBonus").style.color = "#00ff00";
+	document.getElementById("comboGem").src = "images/jewelcrafting/combogems-active.gif";
+	//alert("Debug: Now occupied by "+socketThree.occupiedByItem);
+  }
+  else
+  {
+	document.getElementById("extraBonus").style.color = "#666666";
+	document.getElementById("comboGem").src = "images/jewelcrafting/combogems-off.gif";
+  }
+}
+
+function dragToggle(thisMagnet)
+{
+  if(isDragging)
+  {
+    isDragging = false;
+	if(thisMagnet.indexOf("socket") != -1)
+	{
+	  document.getElementById("gemEffect"+thisMagnet.split("ocket")[1]).innerHTML = dragObjects[dragTarget].bonusString;
+	  document.getElementById("gemEffect"+thisMagnet.split("ocket")[1]).style.height = "14px";
+	}
+    dragObjects[dragTarget].xOffset += mouseX;
+    dragObjects[dragTarget].yOffset += mouseY;
+	document.getElementById(dragTarget).style.zIndex = 20;
+	if(magnetObjects[thisMagnet].occupiedByItem != dragTarget && magnetObjects[thisMagnet].occupiedByItem != "empty")
+	{
+	  var itemSwitch = true;
+	  var theSwitchedItem = magnetObjects[thisMagnet].occupiedByItem;
+	}
+	else { var itemSwitch = false; }
+	magnetObjects[thisMagnet].occupiedByItem = dragTarget;
+	magnetObjects[thisMagnet].mouseOverText = mouseOverTexts[dragTarget+"Text"];
+	dragTarget = "";
+	comboCheck();
+	if(itemSwitch) { dragStart(dragObjects[theSwitchedItem]); }
+  }
+  else if(magnetObjects[thisMagnet].occupiedByItem != "empty")
+  {
+    isDragging = true;
+	if(thisMagnet.indexOf("socket") != -1)
+	{
+	  document.getElementById("gemEffect"+thisMagnet.split("ocket")[1]).innerHTML = "";
+	  document.getElementById("gemEffect"+thisMagnet.split("ocket")[1]).style.height = "1px";
+	}
+    dragTarget = magnetObjects[thisMagnet].occupiedByItem;
+	magnetObjects[thisMagnet].occupiedByItem = "empty";
+	magnetObjects[thisMagnet].mouseOverText = mouseOverTexts["empty"];
+	document.getElementById(dragTarget).style.zIndex = 30;
+    dragObjects[dragTarget].xOffset -= mouseX;
+    dragObjects[dragTarget].yOffset -= mouseY;
+	//alert("Debug: "+(socketOne.occupiedByItem.indexOf("blue") != -1 || socketOne.occupiedByItem.indexOf("purple") != -1)+";"+(socketTwo.occupiedByItem.indexOf("red") != -1 || socketTwo.occupiedByItem.indexOf("purple") != -1 || socketTwo.occupiedByItem.indexOf("orange") != -1)+";"+(socketThree.occupiedByItem.indexOf("red") != -1 || socketThree.occupiedByItem.indexOf("purple") != -1 || socketThree.occupiedByItem.indexOf("orange") != -1))
+	comboCheck();
+  }
+}
+
+function dragStart(thisObject)
+{
+  if(!isDragging)
+  {
+    isDragging = true;
+	comboCheck();
+	dragTarget = thisObject.targetID;
+	document.getElementById(dragTarget).style.zIndex = 30;
+    dragObjects[dragTarget].xOffset -= mouseX;
+    dragObjects[dragTarget].yOffset -= mouseY;
+  }
+}
+
+function dragTheThing(callingEvent)
+{
+  if (!callingEvent) callingEvent = window.event;
+  mouseX = callingEvent.clientX-((document.body.clientWidth-955)/2);//callingEvent.clientX-153;
+  mouseY = callingEvent.clientY-1;
+  if (isDragging)
+  {
+	document.getElementById(dragTarget).style.left = (!isMagnetized) ? mouseX+6+"px" : magnetObjects[thisMagnet].leftDistance+"px";
+	document.getElementById(dragTarget).style.top = (!isMagnetized) ? mouseY+6+document.body.scrollTop+"px" : magnetObjects[thisMagnet].topDistance+"px";
+  }
+  else
+  {
+    positiontip(callingEvent);
+  }
+}
+
+
+function magnetizeNow(thisObject)
+{
+  thisMagnet = thisObject;
+  isMagnetized = true;
+  ddrivetip(magnetObjects[thisMagnet].mouseOverText);
+}
+
+function deMagnetize() { isMagnetized = false; hideddrivetip(); }
+
+document.onmousemove = dragTheThing;
+
+//END OF DRAG DROP STUFF
+//---------------------------------------------------------------------------------------------------------------------------------
+//Chapter jumping stuff
+
+var isIE_PNG = (navigator.appName == "Microsoft Internet Explorer" && navigator.userAgent.indexOf('Opera') == -1);
+function pngImage(imgSource)
+{
+  if(isIE_PNG) document.write('<img src="/shared/wow-com/images/layout/pixel.gif" border="0" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='+imgSource+');">');
+  else document.write("<img src="+imgSource+" border='0'>");
+}
+
+function popUpOmega (screenshot, width, height, caption) 
+{
+	//Browser detection - is the user relying on the one browser where this script does not work?
+	var is_safari = ((navigator.appName.indexOf('safari')!=-1)&&(navigator.appName.indexOf('mac')!=-1))?true:false;
+
+	var name = "Sheenscrot"; 
+	widthHeight = "width=" + width + ",height=" + height;
+	winFeatures = "width=" + width + ",height=" + height + ",left=50,top=50,menubar=no,resizable=no,scrollbars=no,statusbar=no,toolbar=no,locationbar=no"
+	if (is_safari) spawn = window.open(screenshot,name,winFeatures);
+	else
+	{
+		spawn = window.open("/shared/wow-com/images/layout/pixel.gif",name,winFeatures)
+		spawn.document.write("<html> <head> <title>" + caption + "<\/title> <\/head> <body onBlur='self.close()' style='background-image:url(" + screenshot + "); background-repeat:no-repeat;'><\/body><\/html>"); 
+		spawn.document.close();
+	}
+}
+
+var theChuck = (isIE_PNG) ? "<img src='/shared/wow-com/images/layout/pixel.gif' border='0' style='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/netherdrake/trailerbox2.png);' class='oddGroupsToTheLeft' style='top:-45px;'>" : "<img src='images/netherdrake/trailerbox2.png' class='oddGroupsToTheLeft' style='top:-26px;'>";
+
+currentItem = 0;
+var textArray = new Array();
+i = 0;
+textArray[i++] = "\
+<b class='chapterHeader'>Jewelcrafting</b><br>\
+<div class='capContainer'><img src='images/history-be/plaincap-w.gif' class='capStyle'></div>\
+<b>orld of Warcraft: The Burning Crusade will introduce</b> a lot of new features to expand the game in many interesting and fun ways. One of these additions is the introduction of a new profession: jewelcrafting.\
+<p>\
+<div class='moreDOTs'><a href=javascript:popUpOmega('images/jewelcrafting/ss01.jpg',800,600,'');><img src='images/jewelcrafting/ss01-thumb.jpg' class='oddGroupsToTheLeft'></a></div>\
+Jewelcrafters learn the art of creating beautiful jewelry and trinkets from metals and rare gems. By processing the raw ore mined from the various deposits and mineral veins, jewelcrafters can extract gems from the ore which they can then use for their craft. Although miners sometimes find gems while gathering ore, jewelcrafters mostly rely on their prospecting skills to get more of the precious stones.\
+<p>\
+Jewelcrafters work with gems in many different ways. If a jewelcrafter uses gems to create jewelry, he usually only needs the raw, uncut stones for his work. These rings, amulets, and trinkets function just like those that can already be found in the game, with a few notable exceptions. For example, jewelcrafters can learn to create gemmed figurines that they can carry in their trinket slots. While these figurines all provide passive benefits, they can also be used to provide the player with a short buff &ndash; just enough to give you that little damage boost or maybe that quick burst of extra healing power you may need in a tricky situation. These figurines will bind when picked up, so only jewelcrafters will be able to use their powers.\
+<p>\
+Another way jewelcrafters can use gems is by cutting them, preparing them to be used in socketed items. Gems come in many different colors and shapes. Different types of gems have different basic properties, and a gem's cut also determines the effect this gem will have. Jewelcrafters can learn several types of cuts for each kind of gem: the Azure Moonstone, for example, can be cut into a lustrous, stormy, solid, or sparkling Azure Moonstone, and each one of these cuts offers different bonuses when used in a socketable item. Placing cut gems into an item's sockets will add the bonuses of these gems to those of the item, allowing players to customize their equipment to better suit their individual play style or the different roles their class can fulfill.\
+<p>\
+At higher levels, socketed items and specially cut gems become an important part of an adventurer's \"bag of tricks\". Both armor and weapons can have sockets. Some socketed items can be found in dungeons, but the expansion will also introduce a lot of new recipes for all the professions, including many recipes that let leatherworkers, blacksmiths, and tailors create socketed items. Socketed items can be of uncommon, rare, or even epic quality. An item's sockets can also have a specific color; if you put a gem of a matching color in each socket, the item will reward you with a special stat bonus beyond the gems' regular effects. However, you can also put gems of a different color in these slots if you would rather have a specific gem's effect instead of the added bonus.";
+textArray[i++] = "\
+<b class='chapterHeader'>Socketing an Item</b><br>\
+<div class='capContainer'><img src='images/history-be/plaincap-a.gif' class='capStyle'></div>\
+<b>ny character can insert gems</b> into an item's sockets &ndash; you do not need to be a jewelcrafter to do that. However, you will need to ask a jewelcrafter or become one yourself to obtain most of the gems you can socket. Another source of cut gems are the expansion's high-level bosses. There are rumors that some of these monsters hold stones with powers beyond those of regular gems, but getting your hands on these jewels might prove to be a most formidable challenge; it seems unlikely that their owners would part with their precious stones willingly.\
+<p>\
+<div class='moreDOTs' style='height:132px;'><div style='background-color:#000000; width:202px; height:125px; margin:0px; padding:6px; border:1px solid #c5a428; position:absolute;'>\
+<u><b>Socketing Instructions</b></u><br><br>\
+<div style='font-size:11px; text-indent:0px; padding-left:15px;'>- Click on any gem in your inventory to pick it up<br>\
+- Click on any slot or bag space to place the gem<br>\
+- See what happens when you match all socket colors</div>\
+</div></div>\
+On the right side, you can see a preview of the current item-socketing interface from the game. When you shift-right click a socketed item, this box will appear, displaying the item's current stats and any gem effects that are currently on the item. You can add new gems to the item by placing one of the gems from your inventory into one of the item's sockets. The interface allows you to play around with different gem configurations, so you can try out how different gems will affect your item before you decide on what gems you want to socket. Once you have found a configuration you like, you can press the \"Socket Gems\" button to socket the gems you picked.\
+<p>\
+Socketing gems will lock them into place, and there is no way to remove a gem once it has been socketed. You can put a new gem into a socket that already holds a gem, but by doing so you break the old one out of its socket, shattering the gem and making it unusable. This allows you to add gems to your new socketed items right away without having to wait until you find the \"perfect\" collection of gems, since you always have the option of upgrading your item later.\
+<p>\
+Try putting some gems from your inventory into the socketed item and check out how they affect its stats; this should give you an idea of how socketing will work in the expansion, but please keep in mind that both the stats and the interface presented here may change as we progress further in the development of the new jewelcrafting and item-socketing features of World of Warcraft: The Burning Crusade.";
+
+function nextChapter(prevIInext)
+{
+  document.getElementById("link"+currentItem).style.color = "#ffac04";
+  currentItem += prevIInext;
+  switch (currentItem)
+  {
+    case 0:
+	  document.getElementById("prev").style.visibility="hidden";
+	  document.getElementById("next").style.visibility="visible";
+	  break;
+	case 1:
+	  document.getElementById("next").style.visibility="hidden";
+	  document.getElementById("prev").style.visibility="visible";
+	  break;
+	default:
+	  document.getElementById("next").style.visibility="visible";
+	  document.getElementById("prev").style.visibility="visible";
+	  break;
+  }
+  document.getElementById("historyContainer").innerHTML = textArray[currentItem];
+  document.getElementById("link"+currentItem).style.color = "#ffffff";
+}
+
+function jumpChapter(thisChapter)
+{
+  document.getElementById("link"+currentItem).style.color = "#ffac04";
+  currentItem = thisChapter;
+  document.getElementById("historyContainer").innerHTML = textArray[currentItem];
+  document.getElementById("link"+currentItem).style.color = "#ffffff";
+  switch (currentItem)
+  {
+    case 0:
+	  document.getElementById("prev").style.visibility="hidden";
+	  document.getElementById("next").style.visibility="visible";
+	  break;
+	case 1:
+	  document.getElementById("next").style.visibility="hidden";
+	  document.getElementById("prev").style.visibility="visible";
+	  break;
+	default:
+	  document.getElementById("next").style.visibility="visible";
+	  document.getElementById("prev").style.visibility="visible";
+	  break;
+  }
+}
+</script>
+<style type="text/css">
+
+.capContainer { position:relative; width:29px; height:20px; float:left; margin-right:5px; }
+.capStyle { position:absolute; top:-1px; left:0px; border:1px solid black;_left:1px;}
+.chapterHeader { font-size:16px; line-height:32px; color:#c5a428; position:relative; left:-8px; }
+.moreDOTs { height:148px; width:135px; float:right; margin-left:0px; position:relative; z-index:90; }
+.oddGroupsToTheLeft { position:absolute; top:0px; left:0px; border:0px; }
+
+.tooltipText{
+color: #CCCCCC;
+font-family: arial, helvetica, sans-serif;
+font-size:10pt;
+font-weight:normal;
+}
+
+.bandAidForIE
+{
+  position:absolute;
+  left:0px;
+  top:8px;
+}
+
+.goomba
+{
+  position:absolute;
+  left:-40px;
+  bottom:-20px;
+  _top:-52px;
+}
+
+.topLeft{width:14px; height:24px; background-repeat:no-repeat; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/top-left.png',sizingMethod='scale');}
+.topBox{height:24px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/top.png',sizingMethod='scale'); background-repeat:repeat-x;}
+.topRight{width:14px; height:24px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/top-right.png',sizingMethod='scale'); background-repeat:no-repeat;}
+.leftBox{width:14px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/left.png',sizingMethod='scale'); background-repeat:repeat-y;}
+.rightBox{width:14px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/right.png',sizingMethod='scale'); background-repeat:repeat-y;}
+.botLeft{width:14px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/bot-left.png',sizingMethod='scale'); background-repeat:no-repeat;}
+.botBox{height:24px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/bot.png',sizingMethod='scale'); background-repeat:repeat-x;}
+.botRight{width:14px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/bot-right.png',sizingMethod='scale'); background-repeat:no-repeat;}
+.mainBod{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/black-bg.png',sizingMethod='scale');}
+
+.topLeft[class]{width:14px; height:24px; background-image:url("/burningcrusade/townhall/images/bestiary/top-left.png"); background-repeat:no-repeat;}
+.topBox[class]{height:24px; background-image:url("/burningcrusade/townhall/images/bestiary/top.png"); background-repeat:repeat-x;}
+.topRight[class]{width:14px; height:24px; background-image:url("/burningcrusade/townhall/images/bestiary/top-right.png"); background-repeat:no-repeat;}
+.leftBox[class]{width:14px; background-image:url("/burningcrusade/townhall/images/bestiary/left.png"); background-repeat:repeat-y;}
+.rightBox[class]{width:14px; background-image:url("/burningcrusade/townhall/images/bestiary/right.png"); background-repeat:repeat-y;}
+.botLeft[class]{width:14px; height:24px; background-image:url("/burningcrusade/townhall/images/bestiary/bot-left.png"); background-repeat:no-repeat;}
+.botBox[class]{height:24px; background-image:url("/burningcrusade/townhall/images/bestiary/bot.png"); background-repeat:repeat-x;}
+.botRight[class]{width:14px; height:24px; background-image:url("/burningcrusade/townhall/images/bestiary/bot-right.png"); background-repeat:no-repeat;}
+.mainBod[class]{background-image:url("/burningcrusade/townhall/images/bestiary/black-bg.png")}
+
+.magnetStyleOne { z-index:40; visibility:visible; cursor:pointer; position:absolute; width:50px; height:50px; background-image:url("/shared/wow-com/images/layout/pixel.gif"); }
+.magnetStyleTwo { z-index:40; visibility:visible; cursor:pointer; position:absolute; width:33px; height:33px; background-image:url("/shared/wow-com/images/layout/pixel.gif"); }
+
+</style>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000000" style="background-image:url(&quot;/burningcrusade/images/2_bgtile.jpg&quot;); background-position:top; background-repeat:repeat-x;">
+  <tr>
+    <td width="50%" valign="top" style="background-image:url(&quot;/burningcrusade/images/2_leftbg.gif&quot;); background-repeat:repeat-y; background-position:top right;">
+	  <div style="background-image:url(&quot;/burningcrusade/images/2_topleft.jpg&quot;); background-repeat:no-repeat; background-position:top right; width:100%; height:170px;"></div>
+	</td>
+	<td width="955" style="background-image:url(&quot;/burningcrusade/townhall/images/bestiary/bg-fix.gif&quot;); background-repeat:repeat-y; background-position:top right;">
+<!-- TOP BACKGROUND -->
+	  <div style="background-image:url(&quot;/burningcrusade/townhall/images/jewelcrafting/bg-top1.jpg&quot;); background-position:top; background-repeat:no-repeat; height:243px; width:955px; position:relative;">
+	    <div style="position:absolute; left:326px; top:175px;"><center><small><a href="/burningcrusade/index.html">Home</a> |
+<a href="/info/burningcrusade/index.xml">Features</a> |  
+<a href="/burningcrusade/townhall/index.html">Townhall</a> | 
+<a href="/burningcrusade/screenshots.html">Screenshots</a> | 
+<a href="/burningcrusade/artwork.html">Artwork</a><br> 
+<a href="/burningcrusade/wallpapers.html">Wallpapers</a> | 
+<a href="/burningcrusade/movies.html">Movies</a> | 
+<a href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Ftownhall%2Fjewelcrafting.html&amp;requested=http%3A%2F%2Fmedia.worldofwarcraft.com%2Fbc-minisite%2Findex.htm&amp;reason=invalid-overlay-or-uncollected-site-resource">Flash Mini-Site</a> | 
+<a href="/burningcrusade/faq.html">FAQ</a> |
+<a href="/burningcrusade/faq.html#sys">System Req.</a> 
+</small></center></div>
+		<div style="position:absolute; left:316px; top:15px;"><a href="/burningcrusade/index.html"><img src="/shared/wow-com/images/layout/pixel.gif" width="320" height="140" border="0"></a></div>
+
+<div id="socketingFrame" style="position:relative;"> <!-- STOP / THE ROCK / CANT STOP / THE ROCK / YOU CANT / STOP / THE ROCK... Get it? Rocks? Oh, the hilarity! -->
+
+  <div id="blueGem" style="position:absolute; top:737px; left:720px; z-index:20;"><img src="/burningcrusade/townhall/images/jewelcrafting/blue.gif"></div>
+  <div id="red1Gem" style="position:absolute; top:737px; left:762px; z-index:20;"><img src="/burningcrusade/townhall/images/jewelcrafting/red.gif"></div>
+  <div id="red2Gem" style="position:absolute; top:737px; left:804px; z-index:20;"><img src="/burningcrusade/townhall/images/jewelcrafting/red2.gif"></div>
+  <div id="orangeGem" style="position:absolute; top:778px; left:804px; z-index:20;"><img src="/burningcrusade/townhall/images/jewelcrafting/orange.gif"></div>
+  <div id="purpleGem" style="position:absolute; top:778px; left:720px; z-index:20;"><img src="/burningcrusade/townhall/images/jewelcrafting/purple.gif"></div>
+  <div id="yellowGem" style="position:absolute; top:778px; left:762px; z-index:20;"><img src="/burningcrusade/townhall/images/jewelcrafting/yellow.gif"></div>
+  <div id="orange2Gem" style="position:absolute; top:778px; left:846px; z-index:20;"><img src="/burningcrusade/townhall/images/jewelcrafting/orange.gif"></div>  
+
+  <div name="magnetBox" id="socketOne" class="magnetStyleOne" style="top:597px; left:634px;" onmouseover="magnetizeNow(&quot;socketOne&quot;);" onmouseout="deMagnetize();" onclick="dragToggle(&quot;socketOne&quot;);"></div>
+  <div name="magnetBox" id="socketTwo" class="magnetStyleOne" style="top:597px; left:709px;" onmouseover="magnetizeNow(&quot;socketTwo&quot;);" onmouseout="deMagnetize();" onclick="dragToggle(&quot;socketTwo&quot;);"></div>
+  <div name="magnetBox" id="socketThree" class="magnetStyleOne" style="top:597px; left:785px;" onmouseover="magnetizeNow(&quot;socketThree&quot;);" onmouseout="deMagnetize();" onclick="dragToggle(&quot;socketThree&quot;);"></div>
+
+  <div name="magnetBox" id="a1" class="magnetStyleTwo" style="top:736px; left:720px;" onmouseover="magnetizeNow(&quot;a1&quot;);" onmouseout="deMagnetize();" onclick="dragToggle(&quot;a1&quot;);"></div>
+  <div name="magnetBox" id="a2" class="magnetStyleTwo" style="top:736px; left:762px;" onmouseover="magnetizeNow(&quot;a2&quot;);" onmouseout="deMagnetize();" onclick="dragToggle(&quot;a2&quot;);"></div>
+  <div name="magnetBox" id="a3" class="magnetStyleTwo" style="top:736px; left:804px;" onmouseover="magnetizeNow(&quot;a3&quot;);" onmouseout="deMagnetize();" onclick="dragToggle(&quot;a3&quot;);"></div>
+  <div name="magnetBox" id="a4" class="magnetStyleTwo" style="top:736px; left:846px;" onmouseover="magnetizeNow(&quot;a4&quot;);" onmouseout="deMagnetize();" onclick="dragToggle(&quot;a4&quot;);"></div>
+  <div name="magnetBox" id="b1" class="magnetStyleTwo" style="top:778px; left:720px;" onmouseover="magnetizeNow(&quot;b1&quot;);" onmouseout="deMagnetize();" onclick="dragToggle(&quot;b1&quot;);"></div>
+  <div name="magnetBox" id="b2" class="magnetStyleTwo" style="top:778px; left:762px;" onmouseover="magnetizeNow(&quot;b2&quot;);" onmouseout="deMagnetize();" onclick="dragToggle(&quot;b2&quot;);"></div>
+  <div name="magnetBox" id="b3" class="magnetStyleTwo" style="top:778px; left:804px;" onmouseover="magnetizeNow(&quot;b3&quot;);" onmouseout="deMagnetize();" onclick="dragToggle(&quot;b3&quot;);"></div>
+  <div name="magnetBox" id="b4" class="magnetStyleTwo" style="top:778px; left:846px;" onmouseover="magnetizeNow(&quot;b4&quot;);" onmouseout="deMagnetize();" onclick="dragToggle(&quot;b4&quot;);"></div>
+
+  <div id="imageRight" style="position:absolute; left:549px; top:236px; width:367px; height:595px; background-image:url(&quot;/burningcrusade/townhall/images/jewelcrafting/socketing-back.jpg&quot;); background-repeat:no-repeat;">
+    <div class="myTable" style="position:relative;">
+	
+	  <div style="position:absolute; top:20px; left:150px;"><b class="myYellow">Item Socketing</b></div>
+	  <div style="position:absolute; top:100px; left:50px; width:270px;">
+	    <b class="myGreen">Tribal Leather Example Tunic</b><br>
+	    Binds when equipped<br>
+	    Chest<span class="myRight">Leather</span><br>
+	    142 Armor<br>
+	    +10 Stamina<br>
+	    +10 Intellect<br>
+	    +10 Spirit<br>
+		<div id="extraBonus" style="color:#666666"><img id="comboGem" src="/burningcrusade/townhall/images/jewelcrafting/combogems-off.gif" align="left">&nbsp;+6 Stamina</div>
+        <div id="gemEffectOne" class="myGreen" style="height:1px;"></div>
+	    <div id="gemEffectTwo" class="myGreen" style="height:1px;"></div>
+	    <div id="gemEffectThree" class="myGreen" style="height:1px;"></div>
+	    <br>Durability 85/85<br>
+	    Requires Level 50<br>
+	  </div>
+
+    </div>
+  </div>
+</div>
+
+	  </div>
+<!-- MAIN BACKGROUND -->
+	  <div style="background-image:url(&quot;/burningcrusade/townhall/images/jewelcrafting/bg-center1.jpg&quot;); background-repeat:no-repeat; background-position:top; width:955px; height:526px; display:table;">
+
+<!-- LEFT INFO BOX -->
+		<table border="000" cellpadding="0" cellspacing="0" width="480" style="margin-left:30px; margin-top:6px;">
+		  <tr>
+		    <td class="topLeft"></td>
+			<td class="topBox"></td>
+		    <td class="topRight"></td>
+		  </tr>
+		  <tr>
+		    <td class="leftBox" rowspan="2"></td>
+			<td class="mainBod">
+			  <div style="position:relative;">
+			    
+				<span style="position:absolute; top:-70px; left:-20px;"><script language="javascript">pngImage("images/jewelcrafting/page-title.png");</script></span>
+				
+				<div class="tooltipText" id="sideBox" style="text-align:center; background-color:#000000; width:90px; height:65px; margin:0px; padding:0px 5px; line-height:30px; display:table; border-color:#c5a428; border-style:solid; border-width:1px; position:absolute; top:30px; left:-90px; top:45px; _left:-86px;">
+				  <a id="link0" href="javascript:jumpChapter(0);">Jewelcrafting</a><br>
+				  <a id="link1" href="javascript:jumpChapter(1);">Socketing</a><br>
+				</div>
+				<div id="historyContainer" style="padding:7px 20px 40px 20px; color:#cccccc; font-family:arial, helvetica, sans-serif; font-size:10pt; text-indent:0px;"></div>
+
+			  </div>
+			</td>
+<!-- I DON'T KNOW WHAT WE'RE YELLING ABOUT! -->
+			<td class="rightBox" rowspan="2">
+			</td>
+		  </tr>
+		  <tr>
+		    <td class="mainBod">
+			  <div class="toolTipText" style="position:relative;">
+	            <div class="tooltipText" id="prev" style="visibility:hidden; padding:0px; height:20px; width:50px; position:absolute; right:110px; bottom:10px;">
+	              <span style="position:absolute; top:-3px; left:-26px;"><a href="javascript:nextChapter(-1);"><img src="/burningcrusade/townhall/images/bestiary/button-left.gif" border="0"></a></span>
+	              <a href="javascript:nextChapter(-1);">Previous</a>
+	            </div>
+<!-- LOOOOOOOUUUD NOISES! -->
+	            <div class="tooltipText" id="next" style="padding:0px; height:20px; width:50px; position:absolute; right:40px; bottom:10px; text-align:right;">
+	              <span style="position:absolute; top:-3px; right:-26px;"><a href="javascript:nextChapter(1);"><img src="/burningcrusade/townhall/images/bestiary/button-right.gif" border="0"></a></span>
+	              <a href="javascript:nextChapter(1);">Next</a>
+	            </div>			  
+			  </div>
+			</td>
+		  </tr>
+		  <tr>
+		    <td class="botLeft"></td>
+			<td class="botBox"></td>
+		    <td class="botRight"></td>
+		  </tr>
+		</table>
+
+<!-- END OF LEFT INFO BOX -->
+	  </div>
+<!-- END OF MAIN BACKGROUND -->
+    </td>
+	<td width="50%" valign="top" style="background-image:url(&quot;/burningcrusade/images/2_rightbg.gif&quot;); background-repeat:repeat-y; background-position:top left;">
+      <div style="background-image:url(&quot;/burningcrusade/images/2_topright.jpg&quot;); background-repeat:no-repeat; background-position:top left; width:100%; height:170px;"></div>
+	</td>
+  </tr>
+</table>
+<table width="100%" height="107" cellpadding="0" cellspacing="0" border="0" background="/burningcrusade/images/2_bottom_tile.jpg">
+<tr>
+<td width="50%" height="107" style="background-image:url(&quot;/burningcrusade/images/2_botleft.gif&quot;); background-position:bottom right; background-repeat:no-repeat;"></td>
+<td width="955" height="107" background="/burningcrusade/images/2_bot.gif" valign="top">
+
+<div style="background-image:url(&quot;/burningcrusade/images/index_linkbg.gif&quot;); position:absolute; background-repeat:repeat-x; margin-top:125px; margin-left:65px;"><span style="font-size:11px;"><a href="/index.xml"><img src="/burningcrusade/images/backarrow.gif" width="24" height="24" border="0" style="vertical-align:middle;"></a> <a href="/index.xml">Return to WorldofWarcraft.com</a></span></div>
+
+<div style="position:relative;"><div style="position:absolute; left:437px; top:107px;"><a href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Ftownhall%2Fjewelcrafting.html&amp;requested=http%3A%2F%2Fwww.blizzard.com&amp;reason=external-or-uncollected-resource"><img src="/burningcrusade/images/blizzlogo_bot.jpg" border="0" width="81" height="15" /></a></div></div>
+
+<img src="/shared/wow-com/images/layout/pixel.gif" width="955" height="1"><div style="position:relative;"><div style="position:absolute; left:438px; top:73px;"><a href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Ftownhall%2Fjewelcrafting.html&amp;requested=http%3A%2F%2Fwww.blizzard.com&amp;reason=external-or-uncollected-resource"><img src="/shared/wow-com/images/layout/pixel.gif" border="0" width="79" height="33"></a></div></div>
+
+<div style="position:relative; top:35px;"><center><a class="tiny" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Ftownhall%2Fjewelcrafting.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Fprivacy.shtml&amp;reason=external-or-uncollected-resource">Online Privacy Policy</a></small><br /><a class="tiny" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Ftownhall%2Fjewelcrafting.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Flegalfaq.shtml&amp;reason=external-or-uncollected-resource">&copy;2008 Blizzard Entertainment. All rights reserved.</a></small></center></div>
+
+
+</td>
+<td width="50%" height="107" style="background-image:url(&quot;/burningcrusade/images/2_botright.gif&quot;); background-position:bottom left; background-repeat:no-repeat;"></td>
+</tr>
+</table>
+
+
+<table width="100%" height="104" cellpadding="0" cellspacing="0" border="0" bgcolor="#000000">
+<tr>
+<td width="100%" style="background-image:url(&quot;/burningcrusade/images/bottom_tile.jpg&quot;); background-position:top; background-repeat:repeat-x;"></td>
+</tr>
+</table>
+
+<script type="text/javascript">/* offline analytics tracker removed; no external request is made */
+</script>
+<script type="text/javascript">/* offline analytics tracker removed; no external request is made */
+</script>
+
+<script language="javascript">
+magnetBoxes = new Array();
+allDivs = document.getElementsByTagName("div");
+for (i=0;i<allDivs.length;i++) { if(allDivs[i].getAttribute("name")=="magnetBox") magnetBoxes.push(allDivs[i]); }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,248 @@
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+	<head>
+		<title>World of Warcraft Community Site &gt; Game Info &gt; High Level Armor Sets</title>
+		<link rel="stylesheet" type="text/css" href="/new-hp/css/newarmorsetsstyle.css">
+		<script language="javascript" src="/new-hp/js/tooltip-standalone.js"></script>
+		<script language="javascript" src="/info/items/armorsets/mainline.js"></script>
+		<script language="javascript" src="/new-hp/js/enhancedtip.js"></script>
+		<script language="javascript" src="/info/items/armorsets/armorsetdata.js"></script>
+		<script language="javascript" src="/new-hp/js/elementfader.js"></script>
+		<script language="javascript">
+			is_ie6 = ((navigator.userAgent.indexOf("MSIE 6")!=-1))?true:false;
+			
+			function pngImage(imgSource)
+			{
+				if(is_ie6) document.write('<img src="/shared/wow-com/images/layout/pixel.gif" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='+imgSource+');">');
+				else document.write("<img src="+imgSource+">");
+			}
+			
+			function hideDropdownsIE6()
+			{
+				document.getElementById("tierSelector").style.visibility = "hidden";
+				document.getElementById("subSetSelector").style.visibility = "hidden";
+				document.getElementById("classSelector").style.visibility = "hidden";
+				document.getElementById("raceSelector").style.visibility = "hidden";
+				document.getElementById("genderSelector").style.visibility = "hidden";
+			}
+			
+			function unHideDropdownsIE6()
+			{
+				document.getElementById("tierSelector").style.visibility = "visible";
+				document.getElementById("subSetSelector").style.visibility = "visible";
+				document.getElementById("classSelector").style.visibility = "visible";
+				document.getElementById("raceSelector").style.visibility = "visible";
+				document.getElementById("genderSelector").style.visibility = "visible";
+			}
+		</script>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="/__offline/compat.css">
+<script src="/__offline/compat.js"></script>
+</head>
+	<body style="background:url(&quot;/new-hp/images/page-bg-alt3.jpg&quot;) #000000 0 0 repeat-x; color:#000000; margin:0;">
+		<style type="text/css">
+			@import "/shared/wow-com/includes/css/load.css";
+		</style>
+		<!--[if lte IE 6]>
+		<link rel="stylesheet" type="text/css" media="screen" href="/shared/wow-com/includes/css/additional-win-ie.css" charset="utf-8" />
+		<![endif]-->
+		<!--[if gt IE 6]>
+		<link rel="stylesheet" href="/shared/wow-com/includes/css/additional-win-ie7.css" type="text/css" media="screen" charset="utf-8" />
+		<![endif]-->
+		<a name="top"></a>
+		<div id="header">
+			<div class="logo-container">
+				<div class="logo-right">
+					<h1 class="wow-logo"><a href="/index.xml"><img src="/shared/wow-com/includes/images/pixel.gif" border="0" alt="World Of Warcraft" title="World Of Warcraft" width="262" height="106" /></a></h1>
+				</div>
+			</div>
+		</div>
+		<div class="gryph-container">
+			<div class="gryph-z">
+				<span class="left-gryphon"></span>
+				<span class="right-gryphon"></span>
+			</div><!-- Grrrrr!! -->
+			<!--[if lte IE 6]>
+			<img src="/shared/wow-com/includes/images/pixel.gif" border="0" width="775" height="1" alt="" />
+			<![endif]-->
+		</div>
+		<div id="style-switcher">
+			<div class="language-switcher-container">
+				<h1 class="language-title"></h1>
+				<div class="language-selector"></div>
+			</div>
+			<!--[if lte IE 6]>
+			<img src="/shared/wow-com/includes/images/pixel.gif" border="0" width="775" height="1" alt="" />
+			<![endif]-->
+		</div>
+		<div class="top-shadow"></div>
+		<center style="z-index:999; position:relative; zoom:1; ">
+			<table cellspacing="0" cellpadding="0" border="0" width="100%">
+				<tr>
+					<td width="50%"></td>
+					<td width="500" valign="top" bgcolor="000000">
+						<div style="width:738px; height:746px; background:url(&quot;/info/items/armorsets/images/main-bg.jpg&quot;); position:relative;">
+							<div style="background:#9e761d; width:402px; height:549px; position:absolute; top:60px; left:36px;">
+								<div style="background:black; width:400px; height:547px; margin:1px; position:relative;" id="mainSetImageDiv">
+									<div style="position:absolute; bottom:-24px; right:0; font-family:Tahoma; color:#ffffff; font-size:19px; line-height:25px; letter-spacing:1px;" id="nameHolderDiv">OMG!!!</div>
+								</div>
+							</div>
+							<div style="background:black; border:1px solid #9e761d; width:229px; position:absolute; top:60px; left:477px;">
+								<center>
+									<div style="border:1px solid #9e761d; width:219px; margin-top:4px; color:white;">
+										<table cellpadding="0" cellspacing="6" border="0" class="uiTable">
+											<tbody id="uiTableElement">
+												<tr id="tierRow">
+													<td>Armor&nbsp;Set:</td>
+													<td style="width:100%; text-align:right">
+														<select onchange="loadTier(this.value);" id="tierSelector">
+															<option value="dungeon1">Dungeon Set One</option>
+															<option value="dungeon2">Dungeon Set Two</option>
+															<option value="dungeon3">Dungeon Set Three</option>
+															<option value="tier1raid">Tier One Raid</option>
+															<option value="tier2raid">Tier Two Raid</option>
+															<option value="tier3raid">Tier Three Raid</option>
+															<option value="tier4raid">Tier Four Raid</option>
+															<option value="tier5raid">Tier Five Raid</option>
+															<option value="tier6raid">Tier Six Raid</option>
+															<option value="pvpsuperior">PvP - Superior</option>
+															<option value="pvpepic">PvP - Epic</option>
+															<option value="pvplevel70">PvP - Level 70</option>
+															<option value="arenagladiator">Arena Season One</option>
+															<option value="arenagladiator2">Arena Season Two</option>
+															<option value="arenagladiator3">Arena Season Three</option>
+														</select>
+													</td>
+												</tr>
+												<tr style="text-align:right" id="subSetRow">
+													<td colspan="2">
+														<select onchange="loadSubSet(this.value);" id="subSetSelector"></select>
+													</td>
+												</tr>
+												<tr id="characterClassRow">
+													<td>Class:</td>
+													<td style="width:100%; text-align:right">
+														<select onchange="loadClass(this.value);" id="classSelector">
+															<option value="druid" id="druidOption">Druid</option>
+															<option value="hunter" id="hunterOption">Hunter</option>
+															<option value="mage" id="mageOption">Mage</option>
+															<option value="paladin" id="paladinOption">Paladin</option>
+															<option value="priest" id="priestOption">Priest</option>
+															<option value="rogue" id="rogueOption">Rogue</option>
+															<option value="shaman" id="shamanOption">Shaman</option>
+															<option value="warlock" id="warlockOption">Warlock</option>
+															<option value="warrior" id="warriorOption">Warrior</option>
+														</select>
+													</td>
+												</tr>
+												<tr id="raceRow">
+													<td>Race:</td>
+													<td style="width:100%; text-align:right">
+														<select onchange="loadRace(this.value);" id="raceSelector">
+															<option value="draenei" id="draeneiOption">Draenei</option>
+															<option value="dwarf" id="dwarfOption">Dwarf</option>
+															<option value="gnome" id="gnomeOption">Gnome</option>
+															<option value="human" id="humanOption">Human</option>
+															<option value="nightelf" id="nightelfOption">Night Elf</option>
+															<option value="bloodelf" id="bloodelfOption">Blood Elf</option>
+															<option value="orc" id="orcOption">Orc</option>
+															<option value="tauren" id="taurenOption">Tauren</option>
+															<option value="troll" id="trollOption">Troll</option>
+															<option value="undead" id="undeadOption">Undead</option>
+														</select>
+													</td>
+												</tr>
+												<tr id="genderRow">
+													<td>Gender:</td>
+													<td style="width:100%; text-align:right">
+														<select onchange="loadGender(this.value);" id="genderSelector">
+															<option value="female">Female</option>
+															<option value="male">Male</option>
+														</select>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div style="width:229px; height:34px; margin-top:30px;">
+										<div style="float:left;">
+											<script language="javascript">pngImage("images/stats.png")</script>
+										</div>
+									</div>
+									<div class="frameDiv" id="inventoryFrameDiv">
+										<div class="inventoryDiv" onmouseover="if(is_ie6) hideDropdownsIE6()" onmouseout="if(is_ie6) unHideDropdownsIE6()">
+											<div>
+												<div id="inventoryHead"><img src="/info/items/armorsets/images/cover.gif" /></div>
+												<div id="inventoryChest"><img src="/info/items/armorsets/images/cover.gif" /></div>
+											</div>
+											<div>
+												<div id="inventoryHands"><img src="/info/items/armorsets/images/cover.gif" /></div>
+												<div id="inventoryShoulder"><img src="/info/items/armorsets/images/cover.gif" /></div>
+											</div>
+											<div>
+												<div id="inventoryLegs"><img src="/info/items/armorsets/images/cover.gif" /></div>
+												<div id="inventoryFeet"><img src="/info/items/armorsets/images/cover.gif" /></div>
+											</div>
+											<div>
+												<div id="inventoryWrist"><img src="/info/items/armorsets/images/cover.gif" /></div>
+												<div id="inventoryWaist"><img src="/info/items/armorsets/images/cover.gif" /></div>
+											</div>
+											<div>
+												<div id="inventoryRing"><img src="/info/items/armorsets/images/cover.gif" /></div>
+											</div>
+										</div>
+									</div>
+									<div class="fakeOut"><!-- --></div>
+									<span style="font-size:9px">Mouse over icons for item stats</span>
+									<br><br><br><br>
+								</center>
+							</div>
+							<div style="position:absolute; top:23px; left:31px; width:333px; height:59px;">
+								<script language="javascript">pngImage("images/title.png")</script>
+							</div>
+							<div style="position:absolute; top:26px; left:472px; width:121px; height:39px;">
+								<script language="javascript">pngImage("images/options.png")</script>
+							</div>
+						</div>
+					</td>
+					<td width="50%"></td>
+				</tr>
+			</table>
+		</center>
+		<p>
+		<br>
+		<div style="display:none;" id="graveyardDiv"></div>
+		<script language="javascript">
+			firstLoad();
+		</script>
+		<map name="bottom_blizzlogo_Map">
+			<area shape="rect" href="/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fitems%2Farmorsets%2F&amp;requested=http%3A%2F%2Fwww.blizzard.com%2F&amp;reason=external-or-uncollected-resource" alt="Blizzard Entertainment" coords="161,6,239,42">
+		</map>
+		<table cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr>
+				<td valign="bottom" align="center" width="100%">
+					<p>
+					<center>
+						<small style="font-size:11px; font-family:Arial, Helvetica, sans-serif;">
+							<a href="/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fitems%2Farmorsets%2F&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Fprivacy.shtml&amp;reason=external-or-uncollected-resource" style="font-size:11px; font-family:Arial, Helvetica, sans-serif;">Online Privacy Policy</a><br>
+							<a href="/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fitems%2Farmorsets%2F&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Flegalfaq.shtml&amp;reason=external-or-uncollected-resource" style="font-size:11px; font-family:Arial, Helvetica, sans-serif;">&reg;2007 Blizzard Entertainment. All rights reserved.</a>
+						</small>
+					</center>	
+					<table cellspacing="0" cellpadding="0" border="0" width="100%" background="/shared/screenshots/layout/bottom-bg.gif">
+						<tr>
+							<td width="50%"><img src="/shared/wow-com/images/layout/pixel.gif" height="46" width="1"></td>
+							<td width="586"><img src="/shared/screenshots/layout/bottom-blizzlogo.gif" width="400" height="46" border="0" usemap="#bottom_blizzlogo_Map"></td>
+							<td width="50%" align="right"><img src="/shared/wow-com/images/layout/pixel.gif" height="46" width="1"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

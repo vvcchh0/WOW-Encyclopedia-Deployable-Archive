@@ -1,0 +1,269 @@
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<meta http-equiv="imagetoolbar" content="no" />
+	<title>World of Warcraft: The Burning Crusade - Caverns of Time</title>
+	
+	<link rel="stylesheet" type="text/css" href="/burningcrusade/includes/wowx.css">
+		
+	
+<link rel="stylesheet" href="/__offline/compat.css">
+<script src="/__offline/compat.js"></script>
+</head>
+
+<body leftmargin="0" rightmargin="0" topmargin="0" bottommargin="0" bgcolor="#000000">
+
+<script language="javascript" type="text/javascript">
+var isIE_PNG = (navigator.appName == "Microsoft Internet Explorer" && navigator.userAgent.indexOf('Opera') == -1);
+function pngImage(imgSource)
+{
+  if(isIE_PNG) document.write('<img src="/shared/wow-com/images/layout/pixel.gif" border="0" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='+imgSource+');">');
+  else document.write("<img src="+imgSource+" border='0'>");
+}
+
+function popUpOmega (screenshot, width, height, caption) 
+{
+	//Browser detection - is the user relying on the one browser where this script does not work?
+	var is_safari = ((navigator.appName.indexOf('safari')!=-1)&&(navigator.appName.indexOf('mac')!=-1))?true:false;
+
+	var name = "Sheenscrot"; 
+	widthHeight = "width=" + width + ",height=" + height;
+	winFeatures = "width=" + width + ",height=" + height + ",left=50,top=50,menubar=no,resizable=no,scrollbars=no,statusbar=no,toolbar=no,locationbar=no"
+	if (is_safari) spawn = window.open(screenshot,name,winFeatures);
+	else
+	{
+		spawn = window.open("/shared/wow-com/images/layout/pixel.gif",name,winFeatures)
+		spawn.document.write("<html> <head> <title>" + caption + "<\/title> <\/head> <body onBlur='self.close()' style='background-image:url(" + screenshot + "); background-repeat:no-repeat;'><\/body><\/html>"); 
+		spawn.document.close();
+	}
+}
+
+var theChuck = (isIE_PNG) ? "<img src='/shared/wow-com/images/layout/pixel.gif' border='0' style='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/netherdrake/trailerbox2.png);' class='oddGroupsToTheLeft' style='top:-45px;'>" : "<img src='images/netherdrake/trailerbox2.png' class='oddGroupsToTheLeft' style='top:-26px;'>";
+
+lockTimeLapse = false;
+timeKeeper = 500;
+fadeDirection = 0.5;
+function timeLapse()
+{
+  if(!lockTimeLapse)
+  {
+    lockTimeLapse = true;
+	timeLapseContainer = window.setInterval("fadeTheImage()",20);
+  }
+}
+
+function fadeTheImage()
+{
+  if (timeKeeper == 0)
+  {
+    timeKeeper = 500;
+	fadeDirection *= -1;
+	window.clearInterval(timeLapseContainer);
+	lockTimeLapse = false;
+  }
+  else
+  {
+    timeKeeper -= 20;
+	document.getElementById("frontImg").style.opacity = (0.5+fadeDirection) - (timeKeeper/500)*(0.5/fadeDirection);
+	document.getElementById("frontImg").style.filter = "alpha(opacity="+((0.5+fadeDirection) - (timeKeeper/500)*(0.5/fadeDirection))*100+")";
+  }
+}
+
+function switchLapse(thisLapse)
+{
+  document.getElementById("backFrame").style.backgroundImage = "url(images/caverns/"+thisLapse+"-old.jpg)";
+  document.getElementById("frontImg").src = "images/caverns/"+thisLapse+"-new.jpg";
+  document.getElementById(thisLapse+"Thumb").style.backgroundPosition = "0px 0px";
+}
+</script>
+<style type="text/css">
+
+.capContainer { position:relative; width:29px; height:20px; float:left; margin-right:5px; }
+.capStyle { position:absolute; top:-1px; left:0px; border:1px solid black;_left:1px;}
+.chapterHeader { font-size:16px; line-height:32px; color:#c5a428; position:relative; left:-8px; }
+.moreDOTs { height:373px; width:60px; float:left; margin-right:10px; position:relative; z-index:90; }
+.oddGroupsToTheLeft { position:absolute; right:0px; border:0px; }
+
+.tooltipText{
+color: #ffffff;
+font-family: verdana, arial, sans-serif;
+font-size:8pt;
+font-weight:normal;
+}
+
+.bandAidForIE
+{
+  position:absolute;
+  left:0px;
+  top:8px;
+}
+
+.goomba
+{
+  position:absolute;
+  left:-40px;
+  bottom:-20px;
+  _top:-52px;
+}
+
+<!-- what follows is a cheap IE h4x; man, I really wish Bill's company would get their act together! Grrrr! -->
+.topLeft{width:14px; height:24px; background-repeat:no-repeat; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/top-left.png',sizingMethod='scale');}
+.topBox{height:24px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/top.png',sizingMethod='scale'); background-repeat:repeat-x;}
+.topRight{width:14px; height:24px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/top-right.png',sizingMethod='scale'); background-repeat:no-repeat;}
+.leftBox{width:14px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/left.png',sizingMethod='scale'); background-repeat:repeat-y;}
+.rightBox{width:14px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/right.png',sizingMethod='scale'); background-repeat:repeat-y;}
+.botLeft{width:14px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/bot-left.png',sizingMethod='scale'); background-repeat:no-repeat;}
+.botBox{height:24px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/bot.png',sizingMethod='scale'); background-repeat:repeat-x;}
+.botRight{width:14px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/bot-right.png',sizingMethod='scale'); background-repeat:no-repeat;}
+.mainBod{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/black-bg.png',sizingMethod='scale');}
+
+.topLeft[class]{width:14px; height:24px; background-image:url("/burningcrusade/townhall/images/bestiary/top-left.png"); background-repeat:no-repeat;}
+.topBox[class]{height:24px; background-image:url("/burningcrusade/townhall/images/bestiary/top.png"); background-repeat:repeat-x;}
+.topRight[class]{width:14px; height:24px; background-image:url("/burningcrusade/townhall/images/bestiary/top-right.png"); background-repeat:no-repeat;}
+.leftBox[class]{width:14px; background-image:url("/burningcrusade/townhall/images/bestiary/left.png"); background-repeat:repeat-y;}
+.rightBox[class]{width:14px; background-image:url("/burningcrusade/townhall/images/bestiary/right.png"); background-repeat:repeat-y;}
+.botLeft[class]{width:14px; height:24px; background-image:url("/burningcrusade/townhall/images/bestiary/bot-left.png"); background-repeat:no-repeat;}
+.botBox[class]{height:24px; background-image:url("/burningcrusade/townhall/images/bestiary/bot.png"); background-repeat:repeat-x;}
+.botRight[class]{width:14px; height:24px; background-image:url("/burningcrusade/townhall/images/bestiary/bot-right.png"); background-repeat:no-repeat;}
+.mainBod[class]{background-image:url("/burningcrusade/townhall/images/bestiary/black-bg.png")}
+
+</style>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000000" style="background-image:url(&quot;/burningcrusade/images/2_bgtile.jpg&quot;); background-position:top; background-repeat:repeat-x;">
+  <tr>
+    <td width="50%" valign="top" style="background-image:url(&quot;/burningcrusade/images/2_leftbg.gif&quot;); background-repeat:repeat-y; background-position:top right;">
+	  <div style="background-image:url(&quot;/burningcrusade/images/2_topleft.jpg&quot;); background-repeat:no-repeat; background-position:top right; width:100%; height:170px;"></div>
+	</td>
+	<td width="955" style="background-image:url(&quot;/burningcrusade/townhall/images/bestiary/bg-fix.gif&quot;); background-repeat:repeat-y; background-position:top right;">
+<!-- TOP BACKGROUND -->
+	  <div style="background-image:url(&quot;/burningcrusade/townhall/images/caverns/bg-top.jpg&quot;); background-position:top; background-repeat:no-repeat; height:243px; position:relative;">
+	    <img src="/shared/wow-com/images/layout/pixel.gif" width="955" height="1">
+	    <div style="position:absolute; left:326px; top:175px;"><center><small><a href="/burningcrusade/index.html">Home</a> |
+<a href="/info/burningcrusade/index.xml">Features</a> |  
+<a href="/burningcrusade/townhall/index.html">Townhall</a> | 
+<a href="/burningcrusade/screenshots.html">Screenshots</a> | 
+<a href="/burningcrusade/artwork.html">Artwork</a><br> 
+<a href="/burningcrusade/wallpapers.html">Wallpapers</a> | 
+<a href="/burningcrusade/movies.html">Movies</a> | 
+<a href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Ftownhall%2Fcavernsoftime.html&amp;requested=http%3A%2F%2Fmedia.worldofwarcraft.com%2Fbc-minisite%2Findex.htm&amp;reason=invalid-overlay-or-uncollected-site-resource">Flash Mini-Site</a> | 
+<a href="/burningcrusade/faq.html">FAQ</a> |
+<a href="/burningcrusade/faq.html#sys">System Req.</a> 
+</small></center></div>
+		<div style="position:absolute; left: 316px; top:15px;"><a href="/burningcrusade/index.html"><img src="/shared/wow-com/images/layout/pixel.gif" width="320" height="140" border="0"></a></div>
+	  </div>
+<!-- MAIN BACKGROUND -->
+	  <div style="background-image:url(&quot;/burningcrusade/townhall/images/caverns/bg-center.jpg&quot;); background-repeat:no-repeat; background-position:top; width:955px; height:526px; display:table;">
+
+<!-- LEFT INFO BOX -->
+		<table border="000" cellpadding="0" cellspacing="0" width="478" style="margin-right:20px; margin-top:40px;" align="right">
+		  <tr>
+		    <td class="topLeft"></td>
+			<td class="topBox"></td>
+		    <td class="topRight"></td>
+		  </tr>
+		  <tr>
+		    <td class="leftBox"></td>
+			<td class="mainBod">
+			  <div style="position:relative;">
+			    
+				<span style="position:absolute; top:-60px; left:-50px;"><script language="javascript">pngImage("images/caverns/page-title.png");</script></span>
+
+				<div style="float:right; clear:right; width:190px; height:160px; z-index:5;">
+				  <span style="position:absolute; top:1px; right:1px;" title="Safety not guaranteed!"><script language="javascript">pngImage("images/caverns/cornering.png");</script></span>
+				</div>
+				<div id="historyContainer" style="padding:14px 10px 40px 10px; color:#CCCCCC; font-family:Arial, Helvetica, sans-serif; font-size:10pt; z-index:10;">
+				<div class="capContainer"><img src="/burningcrusade/townhall/images/history-be/plaincap-d.gif" class="capStyle"></div>
+				<b>eep within the Caverns of Time,</b> the brooding dragon Nozdormu has awakened.
+				<p>
+				<div class="moreDOTs">
+				  <div id="dkThumb" style="position:absolute; right:0px; top:0px; background-image:url(&quot;/burningcrusade/townhall/images/caverns/ss01-thumb.jpg&quot;); background-position:0px 184px; width:237px; height:184px; cursor:pointer;" onclick="switchLapse(&#x27;tm&#x27;); this.style.backgroundPosition = &#x27;0px 184px&#x27;;"></div>
+				  <div id="tmThumb" style="position:absolute; right:0px; top:189px; background-image:url(&quot;/burningcrusade/townhall/images/caverns/ss02-thumb.jpg&quot;); background-position:0px 0px; width:237px; height:184px; cursor:pointer;" onclick="switchLapse(&#x27;dk&#x27;); this.style.backgroundPosition = &#x27;0px 184px&#x27;;"></div>
+				</div>
+				Since the world was young, the bronze dragonflight has safeguarded the winding labyrinth, monitoring the shifting timeways to ensure that the delicate balance of time is upheld.
+				<p>
+				But now the ancient Dragon Aspect Nozdormu has been roused by an elusive threat to his beloved caverns: dark, sinister agents have infiltrated the timeways, embarking on shadowy missions to alter the course of the past, present and future.
+				<p>
+				As a result, the bronze dragonflight has begun enlisting heroes to prevent the fabric of history from unraveling forever. For the first time, adventurers will enter the domain of the Timeless One, where they will undertake missions to prevent the sabotage of three key historical events:
+				<p>
+				Young Thrall's escape from Durnholde Keep, the first step on the path to his ascension as the greatest warchief the orcs have ever known...
+				<p>
+				The momentous Battle of Mount Hyjal, where Jaina, Thrall, Tyrande, and Malfurion succeeded in turning the tide against the dreaded demon, Archimonde...
+				<p>
+				And the opening of the original Dark Portal by the crazed wizard Medivh &ndash; an action that ushered in the First War and introduced the mighty orcs to the world of Azeroth.
+				<p>
+				<div style="padding:25px 0px 30px 0px;">
+				<img src="/burningcrusade/townhall/images/caverns/interspace.gif">
+				</div>
+				The assault on the timeways has begun. The balance of time is in jeopardy, and if the past is not saved...
+				<p>
+				There will be no future.
+				</div>
+				<div style="color:#FFFFFF; font-family:Arial, Helvetica, sans-serif; font-size:x-small; position:absolute; bottom:500px; left:-440px;"><i>Mouse over image for timelapse</i></div>
+				<div id="backFrame" style="background-image:url(&quot;/burningcrusade/townhall/images/caverns/tm-old.jpg&quot;); width:420px; height:280px; position:absolute; bottom:210px; left:-440px; cursor:pointer;">
+				  <img id="frontImg" src="/burningcrusade/townhall/images/caverns/tm-new.jpg" style="filter:alpha(opacity=00); opacity:0;" width="420" height="280" onmouseover="timeLapse();" onmouseout="timeLapse();">
+				</div>
+
+		<div style="position:absolute; right:10px; width:420px;">
+		  <a href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Ftownhall%2Fcavernsoftime.html&amp;requested=https%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Fimageviewer.html%3F%2Fburningcrusade%2F%2Cimages%2Fscreenshots%2F%2C82%2C86%2C%2Fburningcrusade%2Fscreenshots.html&amp;reason=invalid-overlay-or-uncollected-site-resource"><img src="/burningcrusade/townhall/images/caverns/ss03-thumb.jpg" border="0"></a>
+		  <a href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Ftownhall%2Fcavernsoftime.html&amp;requested=https%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Fimageviewer.html%3F%2Fburningcrusade%2F%2Cimages%2Fscreenshots%2F%2C84%2C86%2C%2Fburningcrusade%2Fscreenshots.html&amp;reason=invalid-overlay-or-uncollected-site-resource"><img src="/burningcrusade/townhall/images/caverns/ss04-thumb.jpg" border="0"></a>
+		</div>				
+				<br><br><br><br><br><br><br><br><br>
+			  </div>
+			</td>
+			<td class="rightBox">
+			</td>
+		  </tr>
+		  <tr>
+		    <td class="botLeft"></td>
+			<td class="botBox"></td>
+		    <td class="botRight"></td>
+		  </tr>
+		</table>
+<!-- END OF LEFT INFO BOX -->
+	  </div>
+<!-- END OF MAIN BACKGROUND -->
+    </td>
+	<td width="50%" valign="top" style="background-image:url(&quot;/burningcrusade/images/2_rightbg.gif&quot;); background-repeat:repeat-y; background-position:top left;">
+      <div style="background-image:url(&quot;/burningcrusade/images/2_topright.jpg&quot;); background-repeat:no-repeat; background-position:top left; width:100%; height:170px;"></div>
+	</td>
+  </tr>
+</table>
+
+<table width="100%" height="107" cellpadding="0" cellspacing="0" border="0" background="/burningcrusade/images/2_bottom_tile.jpg">
+<tr>
+<td width="50%" height="107" style="background-image:url(&quot;/burningcrusade/images/2_botleft.gif&quot;); background-position:bottom right; background-repeat:no-repeat;"></td>
+<td width="955" height="107" background="/burningcrusade/images/2_bot.gif" valign="top">
+
+<div style="background-image:url(&quot;/burningcrusade/images/index_linkbg.gif&quot;); position:absolute; background-repeat:repeat-x; margin-top:125px; margin-left:65px;"><span style="font-size:11px;"><a href="/index.xml"><img src="/burningcrusade/images/backarrow.gif" width="24" height="24" border="0" style="vertical-align:middle;"></a> <a href="/index.xml">Return to WorldofWarcraft.com</a></span></div>
+
+<div style="position:relative;"><div style="position:absolute; left:437px; top:107px;"><a href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Ftownhall%2Fcavernsoftime.html&amp;requested=http%3A%2F%2Fwww.blizzard.com&amp;reason=external-or-uncollected-resource"><img src="/burningcrusade/images/blizzlogo_bot.jpg" border="0" width="81" height="15" /></a></div></div>
+
+<img src="/shared/wow-com/images/layout/pixel.gif" width="955" height="1"><div style="position:relative;"><div style="position:absolute; left:438px; top:73px;"><a href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Ftownhall%2Fcavernsoftime.html&amp;requested=http%3A%2F%2Fwww.blizzard.com&amp;reason=external-or-uncollected-resource"><img src="/shared/wow-com/images/layout/pixel.gif" border="0" width="79" height="33"></a></div></div>
+
+<div style="position:relative; top:35px;"><center><a class="tiny" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Ftownhall%2Fcavernsoftime.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Fprivacy.shtml&amp;reason=external-or-uncollected-resource">Online Privacy Policy</a></small><br /><a class="tiny" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Ftownhall%2Fcavernsoftime.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Flegalfaq.shtml&amp;reason=external-or-uncollected-resource">&copy;2008 Blizzard Entertainment. All rights reserved.</a></small></center></div>
+
+
+</td>
+<td width="50%" height="107" style="background-image:url(&quot;/burningcrusade/images/2_botright.gif&quot;); background-position:bottom left; background-repeat:no-repeat;"></td>
+</tr>
+</table>
+
+
+<table width="100%" height="104" cellpadding="0" cellspacing="0" border="0" bgcolor="#000000">
+<tr>
+<td width="100%" style="background-image:url(&quot;/burningcrusade/images/bottom_tile.jpg&quot;); background-position:top; background-repeat:repeat-x;"></td>
+</tr>
+</table>
+
+<script type="text/javascript">/* offline analytics tracker removed; no external request is made */
+</script>
+<script type="text/javascript">/* offline analytics tracker removed; no external request is made */
+</script>
+
+</body>
+</html>

@@ -1,0 +1,807 @@
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<html>
+<head>
+	<title>WoW -&gt; Info -&gt; Basics - &gt; Combat</title>
+
+
+
+
+
+	
+	<script language="JavaScript" src="/shared/wow-com/includes-client/detection.js"></script>
+    
+	<link rel="stylesheet" type="text/css" href="/shared/wow-com/includes-client/wow.css" id="pageStyle">
+	<style type="text/css" title="currentStyle" media="screen">
+        @import "/new-hp/css/loader_screen.css";
+    </style>
+	
+	<link rel="alternate stylesheet" type="text/css" media="screen, projection" href="/new-hp/css/orc.css" title="orc" />
+	<!--[if gte IE 5]>
+		<link rel="stylesheet" type="text/css" href="/new-hp/css/additional_win_ie.css" media="screen, projection" />
+	<![endif]-->
+	<link rel="stylesheet" type="text/css" href="/new-hp/css/additional_html_css.css" media="screen, projection" />
+
+	<script type="text/javascript">
+	if(is_opera)
+		document.write('<link rel="stylesheet" type="text/css" href="/new-hp/css/additional_opera.css" media="screen, projection" />')
+	</script>
+	
+
+	<script language="JavaScript" src="/shared/wow-com/includes-client/wow.js"></script>
+	<script type="text/javascript" src="/new-hp/js/functions.js"></script>
+	<script type="text/javascript" src="/new-hp/js/p7_eqCols2_10.js"></script>
+
+	<script src="/new-hp/js/screenie.js"></script>
+	<link rel="stylesheet" href="/new-hp/js/screenie.css" />
+
+<title>World of Warcraft</title>
+<link rel="stylesheet" href="/__offline/compat.css">
+<script src="/__offline/compat.js"></script>
+</head>
+<body>
+<style> @import "/shared/global/menu/topnav/topnav.css"; </style>
+<div id="shared_topnav"><script src="/shared/global/menu/topnav/buildtopnav.js"></script></div>
+<a name="pagetop"></a>
+<div style="background: url(&quot;/new-hp/images/burningcrusade/page-bg-top.jpg&quot;) repeat-x 0 0; height: 88px; position: relative; width: 100%;"></div>
+
+<center>
+<table cellspacing="0" cellpadding="0" border="0"><tr><td>
+<div id="hp">
+
+	<!--Search Box-->
+    <div style="position:relative; z-index:999999;">
+	<div class="top-nav">
+	
+	<form name="topSearch" id="topSearch" onsubmit="return searchCall()">
+
+	<div id="searchBoxContainer">
+		<div class="searchBoxLeft"></div>
+		<div class="searchBoxBg">
+			<ul>
+				<li class="searchBoxInput"><input style="width:203px" name="searchBox" id="searchBox" class="searchBoxForm" /></li>
+				<li class="searchBoxSelect">
+					<select id="searchType" name="searchType" class="searchBoxForm">
+						<option value="site">Community Site</option>
+						<option value="encyclopedia">Encyclopedia</option>
+						<option value="ingamesupport">In-game Support</option>
+						<option value="techsupport">Tech Support</option>
+					</select>
+				</li>				
+				<li class="searchBoxButton">
+				
+<div class="redButton-container"><div class="leftNopadd"><img src="/new-hp/images/button-left.gif" height="22" width="5"></div><div class="leftNopadd rdbtn">
+            <a href="javascript:searchCall()" style="width:55px; line-height:22px;">Search</a>
+ 	        <div class="rdbtn_sh" style="width:55px; line-height:22px;">Search</div><!--
+            <script language="VBScript">
+				Sub searchBoxButtonFlash_FSCommand(ByVal command, ByVal args)
+				    call searchBoxButtonFlash_DoFSCommand(command, args)
+				end sub
+			</script><script language="javascript">
+				function searchBoxButtonFlash_DoFSCommand(command, args) { 
+					if (args.indexOf('javascript:')>=0) {
+						var javascriptCalls = args.split(":");
+						eval(javascriptCalls[1]);
+					}else{
+						document.location.href=args;		
+					}
+				}
+			</script>
+            <div id="searchBoxButton"></div><script language="javascript">
+
+			printFlash("searchBoxButton", "/new-hp/flash/button.swf", "", "", "", "55", "", "", "", "textLabelString=Search&xCoord=8&canvasWidth=55&theURL=javascript:searchCall()", "<a href=javascript:searchCall()><img src = /new-hp/images/learnmore.gif border=0 alt=Search></a>")
+		
+		</script>--></div><div class="leftNopadd"><img src="/new-hp/images/button-right.gif" height="22" width="7"></div></div>
+				
+				</li>
+				
+			</ul>
+		</div>
+		<div class="searchBoxRight"></div>
+		
+	</div>				
+				
+	</form>
+		
+	</div>
+	</div>
+	<!--End Search Box-->
+
+
+<div class="top-nav-container"> 
+
+	<div style="position: absolute; right: 170px; top: 38px; z-index:999999">
+		<div id="countryDropDown" style="z-index:999999999;"></div>
+	</div>	
+	<!--
+	<div class="theme-container">		
+		<div class="select-theme"></div>
+			<div class="alliance"><a href="#" onclick="setActiveStyleSheet('', 1);return false;"><img src="/new-hp/images/pixel.gif" height="25" width="38" border="0" title="Select Alliance Theme" /></a></div>
+			<div class="horde"><a href="#" onclick="setActiveStyleSheet('orc', 1);return false;"><img src="/new-hp/images/pixel.gif" height="50" width="38" border="0" title="Select Horde Theme" /></a></div>
+	</div>
+	-->
+    <div style="position: absolute; top: 0; left: 0; z-index: 20002;">
+			<div id="wow-logo2">
+				<a href="/index.xml"><img src="/new-hp/images/pixel.gif" width="252" height="103" alt="wowlogo" title="World of Warcraft" /></a>
+			</div>
+    </div>
+   
+</div>
+<div>
+
+    <div id="hpWrapper">
+		<table cellspacing="0" cellpadding="0" border="0" width="100%"><tr><td valign="top">
+        <div id="navWrapper">
+            <div id="nav"><div id="ne-top-left"></div><div id="ne-center"></div><div id="ne-bottom-left"></div><div id="ne-nav-bg"></div>
+			
+                <div id="leftMenu">
+					<div id="leftMenuContainer">
+
+
+
+
+<div id="menuNews"><div onclick="javascript:toggleNewMenu(1-1);" class="menu-button-off" id="menuNews-button"><span class="menuNews-icon-off" id="menuNews-icon">&nbsp;</span><a class="menuNews-header-off" id="menuNews-header"><em>Game Guide</em></a><a class="leftMenu-plusLink" id="menuNews-collapse"></a><span class="menuEntry-rightBorder"></span></div><div style="display: none;" id="menuNews-inner"><script type="text/javascript">
+
+								//This script handles the default status of each menu based on the user's cookies
+                                if (menuCookie[1-1] == 0)
+								{ foldMenu("News",1); } 
+								else { foldMenu("News",2); }
+
+                            </script><div class="leftMenu-cont-top"></div><div class="leftMenu-cont-mid"><div class="m-left"><div class="m-right"><div class="leftMenu-cnt"><ul class="mainNav"><div style="position: relative;" id="menuFiller1"><div class="mainnav_acnt"><a class="menuFiller" href="/index.xml">Current News</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/news/wow-news-06-2006.html">Archived News</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/misc/awards.html">Awards and Honors</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fcombat.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Fpress%2F&amp;reason=external-or-uncollected-resource">Press Releases</a></div></div></ul></div></div></div></div><div class="leftMenu-cont-bot"></div></div></div><div id="menuAccount"><div onclick="javascript:toggleNewMenu(2-1);" class="menu-button-off" id="menuAccount-button"><span class="menuAccount-icon-off" id="menuAccount-icon">&nbsp;</span><a class="menuAccount-header-off" id="menuAccount-header"><em>Game Guide</em></a><a class="leftMenu-plusLink" id="menuAccount-collapse"></a><span class="menuEntry-rightBorder"></span></div><div style="display: none;" id="menuAccount-inner"><script type="text/javascript">
+
+								//This script handles the default status of each menu based on the user's cookies
+                                if (menuCookie[2-1] == 0) 
+								{ foldMenu("Account",1); } 
+								else { foldMenu("Account",2); }
+
+                            </script><div class="leftMenu-cont-top"></div><div class="leftMenu-cont-mid"><div class="m-left"><div class="m-right"><div class="leftMenu-cnt"><ul class="mainNav"><div style="position: relative;" id="menuFiller2"><div class="mainnav_acnt"><a class="menuFiller" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fcombat.html&amp;requested=http%3A%2F%2Fsignup.worldofwarcraft.com%2F&amp;reason=invalid-overlay-or-uncollected-site-resource">Create Account</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fcombat.html&amp;requested=https%3A%2F%2Fwww.worldofwarcraft.com%2Faccount%2F&amp;reason=invalid-overlay-or-uncollected-site-resource">Manage Account</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fcombat.html&amp;requested=https%3A%2F%2Fwww.worldofwarcraft.com%2Floginsupport%2Fpassword.html&amp;reason=invalid-overlay-or-uncollected-site-resource">Retrieve Password</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fcombat.html&amp;requested=https%3A%2F%2Fwww.worldofwarcraft.com%2Faccount%2Fcharacter-move.html&amp;reason=invalid-overlay-or-uncollected-site-resource">Character Move</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fcombat.html&amp;requested=https%3A%2F%2Fwww.worldofwarcraft.com%2Faccount%2Fcharacter-transfer-intro.html&amp;reason=invalid-overlay-or-uncollected-site-resource">Paid Char Transfer</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fcombat.html&amp;requested=https%3A%2F%2Fwww.worldofwarcraft.com%2Faccount%2Frecruit-a-friend.html&amp;reason=invalid-overlay-or-uncollected-site-resource">Recruit-A-Friend</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fcombat.html&amp;requested=https%3A%2F%2Fwww.worldofwarcraft.com%2Faccount%2Fresurrect-a-friend.html&amp;reason=invalid-overlay-or-uncollected-site-resource">Scroll of Resurrection</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fcombat.html&amp;requested=https%3A%2F%2Fwww.worldofwarcraft.com%2Faccount%2Fparental-control-schedule.html&amp;reason=invalid-overlay-or-uncollected-site-resource">Parental Controls</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/realmstatus/index.html">Realm Status</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fcombat.html&amp;requested=https%3A%2F%2Fwww.worldofwarcraft.com%2Fptr%2F&amp;reason=invalid-overlay-or-uncollected-site-resource">Public Test Realm</a></div></div></ul></div></div></div></div><div class="leftMenu-cont-bot"></div></div></div><div id="menuGameGuide"><div onclick="javascript:toggleNewMenu(3-1);" class="menu-button-off" id="menuGameGuide-button"><span class="menuGameGuide-icon-off" id="menuGameGuide-icon">&nbsp;</span><a class="menuGameGuide-header-off" id="menuGameGuide-header"><em>Game Guide</em></a><a class="leftMenu-plusLink" id="menuGameGuide-collapse"></a><span class="menuEntry-rightBorder"></span></div><div style="display: none;" id="menuGameGuide-inner"><script type="text/javascript">
+
+								//This script handles the default status of each menu based on the user's cookies
+                                if (menuCookie[3-1] == 0)
+								{ foldMenu("GameGuide",1); } 
+								else { foldMenu("GameGuide",2); }
+
+
+                            </script><div class="leftMenu-cont-top"></div><div class="leftMenu-cont-mid"><div class="m-left"><div class="m-right"><div class="leftMenu-cnt"><ul class="mainNav"><div style="position: relative;" id="menuFiller3"><div class="mainnav_acnt"><a class="menuFiller" href="/info/index.html">Game Guide</a></div><div class="mainnav_bgtrans">&nbsp;&nbsp;<a class="menuFiller" href="/info/index.html#introduction">Introduction</a></div><div class="mainnav_bgtrans">&nbsp;&nbsp;<a class="menuFiller" href="/info/index.html#gettingstarted">Getting Started</a></div><div class="mainnav_bgtrans">&nbsp;&nbsp;<a class="menuFiller" href="/info/index.html#character">Character</a></div><div class="mainnav_bgtrans">&nbsp;&nbsp;<a class="menuFiller" href="/info/index.html#reputations">Reputations</a></div><div class="mainnav_bgtrans">&nbsp;&nbsp;<a class="menuFiller" href="/info/index.html#items">Items</a></div><div class="mainnav_bgtrans">&nbsp;&nbsp;<a class="menuFiller" href="/info/index.html#world">The World</a></div><div class="mainnav_bgtrans">&nbsp;&nbsp;<a class="menuFiller" href="/info/index.html#transportation">Transportation</a></div><div class="mainnav_bgtrans">&nbsp;&nbsp;<a class="menuFiller" href="/info/index.html#playerinteraction">Player Interaction</a></div><div class="mainnav_bgtrans">&nbsp;&nbsp;<a class="menuFiller" href="/info/index.html#pvp">Player vs Player</a></div><div class="mainnav_bgtrans">&nbsp;&nbsp;<a class="menuFiller" href="/info/index.html#faq">FAQ</a></div><div class="mainnav_bgtrans">&nbsp;&nbsp;<a class="menuFiller" href="/info/story/index.html">Story</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/burningcrusade/index.html">Burning Crusade</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/wrath/index.html">Wrath of Lich King</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/info/underdev/index.html">Under Development</a></div><div class="mainnav_bgtrans">&nbsp;&nbsp;<a class="menuFiller" href="/info/underdev/implemented/index.html">Previous Patches</a></div></div></ul></div></div></div></div><div class="leftMenu-cont-bot"></div></div></div><div id="menuInteractive"><div onclick="javascript:toggleNewMenu(4-1);" class="menu-button-off" id="menuInteractive-button"><span class="menuInteractive-icon-off" id="menuInteractive-icon">&nbsp;</span><a class="menuInteractive-header-off" id="menuInteractive-header"><em>Game Guide</em></a><a class="leftMenu-plusLink" id="menuInteractive-collapse"></a><span class="menuEntry-rightBorder"></span></div><div style="display: none;" id="menuInteractive-inner"><script type="text/javascript">
+
+								//This script handles the default status of each menu based on the user's cookies
+                                if (menuCookie[4-1] == 0) 
+								{ foldMenu("Interactive",1); } 
+								else { foldMenu("Interactive",2); }
+
+                            </script><div class="leftMenu-cont-top"></div><div class="leftMenu-cont-mid"><div class="m-left"><div class="m-right"><div class="leftMenu-cnt"><ul class="mainNav"><div style="position: relative;" id="menuFiller4"><div class="mainnav_acnt"><a class="menuFiller" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fcombat.html&amp;requested=http%3A%2F%2Farmory.worldofwarcraft.com%2F&amp;reason=invalid-overlay-or-uncollected-site-resource">Armory</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/misc/arenatournament/index.html">Arena</a></div><!--<div class="mainnav_acnt"><a class="menuFiller" href="/toplist/buttons.html">Game Statistics</a></div>--> <div class="mainnav_acnt"><a class="menuFiller" href="/info/encyclopedia/index.xml">Encyclopedia</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/info/classes/talent-index/index.html">Talent Calculators</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/info/events/calendar/index.html">Events Calendar</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/info/items/armorsets/index.html">Armor Sets</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/info/flashmap/index.html">World Map</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/pvp/battlegrounds/battlegroups/index.html">Battlegroups</a></div></div></ul></div></div></div></div><div class="leftMenu-cont-bot"></div></div></div><div id="menuMedia"><div onclick="javascript:toggleNewMenu(5-1);" class="menu-button-off" id="menuMedia-button"><span class="menuMedia-icon-off" id="menuMedia-icon">&nbsp;</span><a class="menuMedia-header-off" id="menuMedia-header"><em>Game Guide</em></a><a class="leftMenu-plusLink" id="menuMedia-collapse"></a><span class="menuEntry-rightBorder"></span></div><div style="display: none;" id="menuMedia-inner"><script type="text/javascript">
+
+								//This script handles the default status of each menu based on the user's cookies
+                                if (menuCookie[5-1] == 0) 
+								{ foldMenu("Media",1); } 
+								else { foldMenu("Media",2); }
+
+                            </script><div class="leftMenu-cont-top"></div><div class="leftMenu-cont-mid"><div class="m-left"><div class="m-right"><div class="leftMenu-cnt"><ul class="mainNav"><div style="position: relative;" id="menuFiller5"><div class="mainnav_acnt"><a class="menuFiller" href="/downloads/index.html">Overview</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fcombat.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Fwow%2Fssotd%2Fscreenshot.aspx%3Fimageindex%3D1%26Set%3D0&amp;reason=external-or-uncollected-resource">Screenshots</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/downloads/movies.html">Movies</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/downloads/sounds.html">Music</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/downloads/wallpapers.html">Wallpapers</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/downloads/other-downloads.html">Other Downloads</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/gadgetzan/archives.html">Gadgetzan Times</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fcombat.html&amp;requested=http%3A%2F%2Fshop.blizzard.com%2F&amp;reason=external-or-uncollected-resource">Blizzard Store</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fcombat.html&amp;requested=http%3A%2F%2Fus.blizzard.com%2Fblizzcast&amp;reason=external-or-uncollected-resource">BlizzCast</a></div></div></ul></div></div></div></div><div class="leftMenu-cont-bot"></div></div></div><div id="menuForums"><div onclick="javascript:toggleNewMenu(6-1);" class="menu-button-off" id="menuForums-button"><span class="menuForums-icon-off" id="menuForums-icon">&nbsp;</span><a class="menuForums-header-off" id="menuForums-header"><em>Game Guide</em></a><a class="leftMenu-plusLink" id="menuForums-collapse"></a><span class="menuEntry-rightBorder"></span></div><div style="display: none;" id="menuForums-inner"><script type="text/javascript">
+
+								//This script handles the default status of each menu based on the user's cookies
+                                if (menuCookie[6-1] == 0) 
+								{ foldMenu("Forums",1); } 
+								else { foldMenu("Forums",2); }
+
+                            </script><div class="leftMenu-cont-top"></div><div class="leftMenu-cont-mid"><div class="m-left"><div class="m-right"><div class="leftMenu-cnt"><ul class="mainNav"><div style="position: relative;" id="menuFiller6"><div class="mainnav_acnt"><a class="menuFiller" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fcombat.html&amp;requested=http%3A%2F%2Fforums.worldofwarcraft.com%2Fboard.html%3FforumId%3D10001&amp;reason=invalid-overlay-or-uncollected-site-resource">General</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fcombat.html&amp;requested=http%3A%2F%2Fforums.worldofwarcraft.com%2F%23classes&amp;reason=invalid-overlay-or-uncollected-site-resource">Class Forums</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fcombat.html&amp;requested=http%3A%2F%2Fforums.worldofwarcraft.com%2Frealmforums.shtml&amp;reason=invalid-overlay-or-uncollected-site-resource">Realm Forums</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fcombat.html&amp;requested=http%3A%2F%2Fforums.worldofwarcraft.com%2Fboard.html%3FforumId%3D11123&amp;reason=invalid-overlay-or-uncollected-site-resource">Guild Recruitment</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fcombat.html&amp;requested=http%3A%2F%2Fforums.worldofwarcraft.com%2Fboard.html%3FforumId%3D11124&amp;reason=invalid-overlay-or-uncollected-site-resource">Guild Relations</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fcombat.html&amp;requested=http%3A%2F%2Fforums.worldofwarcraft.com%2Fboard.html%3FforumId%3D11110%26sid%3D1&amp;reason=invalid-overlay-or-uncollected-site-resource">Support</a></div></div></ul></div></div></div></div><div class="leftMenu-cont-bot"></div></div></div><div id="menuCommunity"><div onclick="javascript:toggleNewMenu(7-1);" class="menu-button-off" id="menuCommunity-button"><span class="menuCommunity-icon-off" id="menuCommunity-icon">&nbsp;</span><a class="menuCommunity-header-off" id="menuCommunity-header"><em>Game Guide</em></a><a class="leftMenu-plusLink" id="menuCommunity-collapse"></a><span class="menuEntry-rightBorder"></span></div><div style="display: none;" id="menuCommunity-inner"><script type="text/javascript">
+
+								//This script handles the default status of each menu based on the user's cookies
+                                if (menuCookie[7-1] == 0)
+								{ foldMenu("Community",1); } 
+								else { foldMenu("Community",2); }
+
+                            </script><div class="leftMenu-cont-top"></div><div class="leftMenu-cont-mid"><div class="m-left"><div class="m-right"><div class="leftMenu-cnt"><ul class="mainNav"><div style="position: relative;" id="menuFiller7"><div class="mainnav_acnt"><a class="menuFiller" href="/community/index.html">Overview</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/community/comics.html">Comics</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/community/machinima/index.html">Machinima</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/community/stories/index.html">Player Stories</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/community/communitylinks.html">Community Spotlight</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/contests/index.html">Contests</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/community/guildrelations.html">Guild Relations</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/community/reallifeevents.html">Real-Life Events</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fcombat.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Ffanart%2Fpage1.shtml&amp;reason=external-or-uncollected-resource">Fan Art</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/community/fansites.html">Fan Sites</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/downloads/wallpapers/fan-wallpapers/index.html">Fan Wallpapers</a></div></div></ul></div></div></div></div><div class="leftMenu-cont-bot"></div></div></div><div id="menuSupport"><div onclick="javascript:toggleNewMenu(8-1);" class="menu-button-off" id="menuSupport-button"><span class="menuSupport-icon-off" id="menuSupport-icon">empty space</span><a class="menuSupport-header-off" id="menuSupport-header"><em>Game Guide</em></a><a class="leftMenu-plusLink" id="menuSupport-collapse"></a><span class="menuEntry-rightBorder"></span></div><div style="display: none;" id="menuSupport-inner"><script type="text/javascript">
+
+								//This script handles the default status of each menu based on the user's cookies
+                                if (menuCookie[8-1] == 0) 
+								{ foldMenu("Support",1); } 
+								else { foldMenu("Support",2); }
+
+                            </script><div class="leftMenu-cont-top"></div><div class="leftMenu-cont-mid"><div class="m-left"><div class="m-right"><div class="leftMenu-cnt"><ul class="mainNav"><div style="position: relative;" id="menuFiller8"><div class="mainnav_acnt"><a class="menuFiller" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fcombat.html&amp;requested=http%3A%2F%2Fus.blizzard.com%2Fsupport%2Farticle.xml%3FarticleId%3D21422&amp;reason=external-or-uncollected-resource">Support News</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fcombat.html&amp;requested=http%3A%2F%2Fus.blizzard.com%2Fsupport%2Findex.xml%3FrootCategoryId%3D2691%26gameId%3D11&amp;reason=external-or-uncollected-resource">Account Admin</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fcombat.html&amp;requested=http%3A%2F%2Fus.blizzard.com%2Fsupport%2Findex.xml%3FrootCategoryId%3D2317%26gameId%3D11&amp;reason=external-or-uncollected-resource">Billing and Account</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fcombat.html&amp;requested=http%3A%2F%2Fus.blizzard.com%2Fsupport%2Findex.xml%3FrootCategoryId%3D2316%26gameId%3D11&amp;reason=external-or-uncollected-resource">Technical Support</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fcombat.html&amp;requested=http%3A%2F%2Fus.blizzard.com%2Fsupport%2Findex.xml%3FrootCategoryId%3D2318%26gameId%3D11&amp;reason=external-or-uncollected-resource">In-Game Support</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fcombat.html&amp;requested=http%3A%2F%2Fus.blizzard.com%2Fsupport%2Farticle.xml%3FarticleId%3D21465&amp;reason=external-or-uncollected-resource">Support Tools</a></div><div class="mainnav_acnt"><a class="menuFiller" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fcombat.html&amp;requested=http%3A%2F%2Fus.blizzard.com%2Fsupport%2Findex.xml%3FcategoryId%3D2415%26rootCategoryId%3D2318%26gameId%3D11&amp;reason=external-or-uncollected-resource">Game Policies</a></div></div></ul></div></div></div></div><div class="leftMenu-cont-bot"></div></div></div></div>
+
+
+					</div>
+                </div>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+		</td>
+		<td valign="top">
+        <div id="mainWrapper">
+            <div id="main">
+                
+				<div id="main-content-wrapper">
+                    <div id="main-content">
+						<table border="0" cellpadding="0" cellspacing="0"><tr><td>
+						<div id="main-top"><div><div></div></div></div>
+						</td></tr>
+						<tr><td>
+                        <div id="contentPadding">
+                            <div id="cnt">
+                                
+              
+  
+                                            <div id="cnt-wrapper">
+											  	<div id="contentContainer">
+
+
+
+
+
+
+
+
+
+<!--HEADER------------------------------------------>
+<div class="header">
+
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+
+<tr>
+	<td width="29"><img src="/shared/wow-com/images/headers/dateheader/dateheader-left.gif" width="31" height="38"></td>
+	<td background="/shared/wow-com/images/headers/dateheader/dateheader-bg.gif" width="100%"><h3 class="titleLight">Combat</h3></td>
+	<td width="29"><img src="/shared/wow-com/images/headers/dateheader/dateheader-right.gif" width="17" height="38"></td>
+</tr>
+</table>
+
+</div>
+ 
+<!---Subnav----->
+<script language="javascript">
+var pageId = "Combat";
+</script>
+<script type="text/javascript" src="/shared/wow-com/includes-client/navtree.js"></script>
+<script type="text/javascript" src="/new-hp/js/menu132_com.js"></script>
+<script type="text/javascript" src="/shared/wow-com/includes-client/navtreefunctions.js"></script>
+
+
+<style type="text/css">
+
+a.subMenuLink, a.subMenuLink:link, a.subMenuLink:visited { color: white; font-weight:normal; text-decoration: none; font-family:arial,comic sans ms,technical; font-size: 11px; width:100px; display:block;}
+a.subMenuLink img {border-style:none;}
+
+.navigation
+		{
+		font-family:arial,palatino, georgia, verdana, arial, sans-serif;
+		color:#000000;
+		padding:5px;
+		margin-bottom: 4px;
+		background-color: #E7CFA3;
+		background-image: url("/shared/wow-com/images/parchment/plain/light.jpg");
+		border-style: solid; border-color: #000000; border-width: 0px; border-bottom-width:1px; border-top-width:1px;
+
+		}
+
+.button
+		{
+		color:#FFFFFF;
+		font-size:9px;
+		letter-spacing:-1px;
+		}
+
+a.nav:link		{ 	
+			font-family: arial,verdana, sans-serif;
+			color: CBA300;
+			font-size: 11px;
+			font-weight:normal;
+			}
+			
+a.nav:visited 	{
+			font-family: arial,verdana, sans-serif;
+			color: CBA300;
+			font-size: 11px;
+			font-weight:normal;
+			}
+			
+a.nav:hover		{ 
+			font-family: arial,verdana, sans-serif;
+			color: FFFFFF;
+			font-size: 11px;
+			font-weight:normal;
+			}
+			
+a.nav:active 	{ 
+			font-family: arial,verdana, sans-serif;
+			color: CBA300;
+			font-size: 11px;
+			font-weight:normal;
+			}
+			
+#filterMenu{position:relative;}
+
+</style>
+<div class="navigation">
+<center>
+<table cellspacing="0" cellpadding="0" border="0" width="96%">
+<tr>
+
+<script language="javascript">
+	var iconId;
+	if (result!=1)
+		document.write('<td width="59" rowspan="3" valign = "top"><a href = "' + Menu2[1] + '"><img src = "/shared/wow-com/images/subnav/icon_' + Menu2[0].toLowerCase() + '.jpg" width="59" height="65" border = "0"></a></td>');
+	else 
+		document.write('<td width="59" rowspan="3" valign = "top"><a href = "' + Menu1[1] + '"><img src = "/shared/wow-com/images/subnav/icon_' + Menu1[0].toLowerCase() + '.jpg" width="59" height="65" border = "0"></a></td>');
+
+	//addEvent(window, 'load', RePos);
+
+</script>
+		
+
+
+<td height="15" background="/shared/wow-com/images/subnav/nav_top.jpg"></td>
+<td width="18" height="65" rowspan="3" style="background-image:url(&quot;/shared/wow-com/images/subnav/nav_right.jpg&quot;); background-position:top; background-repeat:no-repeat;"></td>
+</tr>
+
+<tr>
+<td height="17" background="/shared/wow-com/images/subnav/nav_middle.jpg" nowrap><div id="filterMenu"></div></td>
+</tr>
+
+<tr>
+<td>
+	<table width="100%" cellpadding="0" cellspacing="0" border="0">
+	<tr>
+	<td width="5" height="33" style="background-image:url(&quot;/shared/wow-com/images/subnav/leftsubnav.jpg&quot;); background-position:top; background-repeat:repeat-x;"><img src="/images/layout/pixel.gif" width="5" height="1"></td>
+	<td height="33" background="/shared/wow-com/images/subnav/subnav.jpg" width="100%">
+		<table width="100%" height="33" cellpadding="0" cellspacing="0" border="0">
+		<tr>
+		<td width="5" height="5" background="/shared/wow-com/images/subnav/subnav_topleft.gif"></td>
+		<td height="5" background="/shared/wow-com/images/subnav/subnav_top.gif"></td>
+		<td width="6" height="5" background="/shared/wow-com/images/subnav/subnav_topright.gif"></td>
+		</tr> 
+		<tr>
+		<td width="5" height="19" background="/shared/wow-com/images/subnav/subnav_left.gif"><img src="/shared/wow-com/images/layout/pixel.gif" width="5"></td>
+		<td height="19" style="text-align:center;" background="/shared/wow-com/images/subnav/subnav_bg.gif" valign="middle"><img src="/images/layout/pixel.gif" width="1" height="1"><small class="button" style="color:#808080; letter-spacing:normal;">
+		
+<script language="javascript">
+
+//printSubNav(result,1);
+
+printSubNav2(result);
+
+</script>
+		
+		
+		</small></td>
+		<td width="6" height="19" background="/shared/wow-com/images/subnav/subnav_right.gif"><img src="/shared/wow-com/images/layout/pixel.gif" width="6"></td>
+		</tr>
+		<tr>
+		<td width="5" height="9" background="/shared/wow-com/images/subnav/subnav_botleft.gif"></td>
+		<td height="9" background="/shared/wow-com/images/subnav/subnav_bot.gif"></td>
+		<td width="6" height="9" background="/shared/wow-com/images/subnav/subnav_botright.gif"></td>
+		</tr>
+		</table>
+	</td>
+	</tr>
+	</table>
+</td>
+</tr>
+
+</table>
+</center>
+</div>
+
+
+
+
+<!---End Subnav----->
+<!--END HEADER------------------------------------------>
+
+<!-----------------------------MAIN------------------------------>
+
+<div class="guideHeader">
+<table width="100%" align="center" cellspacing="0" cellpadding="0" border="0">
+	<tr>
+		<td width="10"><img src="/shared/wow-com/images/headers/tabheader/tabheader-left-left.jpg" width="17" height="29" border="0"></td>
+	    <td width="362" background="/shared/wow-com/images/headers/tabheader/tabheader-left.jpg" align="left" nowrap><h3 class="guideTitle">Combat Basics</h3></td>
+		<td width="100%" background="/shared/wow-com/images/headers/tabheader/tabheader-bg.jpg"></td>
+	  	<td width="26"><img src="/shared/wow-com/images/headers/tabheader/tabheader-right.jpg" width="26" height="29" border="0"></td>
+		<td width="50"><img src="/shared/wow-com/images/layout/pixel.gif" width="50" height="29" border="0"></td>
+	</tr>
+</table>
+</div>
+
+<div class="postContainerPlain">
+<div class="postBody">
+<img src="/shared/wow-com/images/smallcaps/plain/t.gif" align="left">he combat of World of Warcraft pits your character's skills, spells, and abilities in real time against both human and computer-controlled opponents. Here is an overview of some of the basic mechanics in World of Warcraft's combat system.
+<p>
+
+
+
+
+<b>Attack Range</b><br>
+You must be in range of your targeted enemy to begin attacking it. If you are out of range, you will see an error message on your screen when you select a melee attack. For melee classes, the auto-attack will always be in close proximity to the enemy, and most melee abilities (such as Sinister Strike, Heroic Strike, and Shield Bash) have a maximum range of five yards. Certain abilities (such as Blind and Intercept) are usable outside of the standard 5 yard attack range. For ranged attacks, such as with a gun or bow, the standard range to shoot is from 8-30 yards. Hunters can fire their ranged weapon up to 35 yards away, and even farther with certain talents. For spells, every spell has its own maximum range which is displayed on the spell's tooltip.
+<p>
+
+<b>Cooldown on Attacks, Spells, and Abilities</b><br>
+While World of Warcraft has a real-time combat system, weapon users must wait their turn to swing again based on the delay or speed of their weapon. Likewise, casters must wait for the length of the spell's cooldown until they can cast a spell again. Many abilities have such cooldowns, and the length of any cooldowns are displayed on the ability's tooltip. However, many abilities with no listed cooldown are still subject to a 1.5 second cooldown that affects all of a character's abilities. This is known as the global cooldown. You will see this effect on your spell and skill icons as they simultaneously display the global cooldown after using an ability. 
+<p>
+
+<b>Health</b><br>
+Health points represent how much damage a character can take in combat before dying. Your health is visually represented on the upper left corner of your screen next to your character portrait, and numerically represented as well when you open your character panel and/or hover your mouse over your health bar. You can increase your maximum health by  leveling up, increasing stamina through talents, abilities, and spells, or by equipping items that increase stamina (1 stamina = 10 health). During combat, you can restore your health most commonly by being the recipient of a healing spell, drinking a healing potion, or using a bandage. After battle, you can accelerate the healing process by eating food or simply waiting for your health to recover on its own. Under certain conditions, such as a warlock under the effects of Demon Armor, health will also regenerate while you are in combat.
+<p>
+
+<b>Non-combat Spells or Abilities</b><br>
+Some abilities and spells will not work while your character is in combat. If this is the case, you will see an error message on your screen informing you that the action is not available during combat. For example, Warriors cannot use their Charge ability in combat, and no character can  eat or drink while in combat.
+<p>
+
+<b>Facing the Right Direction</b><br>
+Which direction your character is facing in relation to an enemy is important for certain abilities and spells, which may require you to be facing the enemy head on or from behind. An example is the Rogue's Ambush and Backstab abilities, which require the rogue to be behind his target. If you are not in the proper position you will receive a warning message when you attempt to use the ability.
+<p>
+
+</div></div>
+
+<div class="guideHeader">
+<table width="100%" align="center" cellspacing="0" cellpadding="0" border="0">
+	<tr>
+		<td width="10"><img src="/shared/wow-com/images/headers/tabheader/tabheader-left-left.jpg" width="17" height="29" border="0"></td>
+	    <td width="362" background="/shared/wow-com/images/headers/tabheader/tabheader-left.jpg" align="left" nowrap><h3 class="guideTitle">Negative Status Effects</h3></td>
+		<td width="100%" background="/shared/wow-com/images/headers/tabheader/tabheader-bg.jpg"></td>
+	  	<td width="26"><img src="/shared/wow-com/images/headers/tabheader/tabheader-right.jpg" width="26" height="29" border="0"></td>
+		<td width="50"><img src="/shared/wow-com/images/layout/pixel.gif" width="50" height="29" border="0"></td>
+	</tr>
+</table>
+</div>
+
+<div class="postContainerPlain">
+<div class="postBody">
+
+
+
+<img src="/shared/wow-com/images/smallcaps/plain/y.gif" align="left">our character can fall prey to an assortment of negative status effects, each of which have their own methods for removal. Here are some of the most common negative status effects you may encounter.
+<p>
+
+
+
+
+
+<b>Daze</b><br>
+The daze effect causes your character to suffer from reduced movement speed. While movement is reduced, casting and attack speeds remain unaffected. The most common situation where a player character can become dazed is when running away from an enemy, such as riding or running through a group of monsters. In addition, some player abilities can daze targets under a variety of circumstances. Daze expires on its own after a set duration.
+<p>
+Defense skill will not reduce the chance players have to receive the Daze effect when attacked from behind by enemies.
+The best thing you can do to keep from being dazed is to simply avoid the aggro radius of 
+mobs you don't intend to fight.
+<p>
+
+<b>Stun</b><br>
+If you are stunned during battle, you cannot move or act. Outside of special abilities and items such as the PvP trinket for some classes and a Paladin's Divine Shield, you must simply wait out the duration of the stun. If you place your cursor over the stun's icon in the top right of your screen you will see its duration.
+<p>
+
+<b>Fear</b><br>
+Fear causes you to lose control over your character, unable to control their movements or actions, as they flee in panic. They may run off in a random direction for the duration of the fear. Outside of special abilities and items such as the PvP trinket for some classes and the racial ability Will of the Forsaken, you simply have to wait until the fear effect has worn off. If you place your mouse cursor over the icon for the fear effect, you will see its duration. While in a party, it's also common and expected that you inform your party members that you've been feared.
+<p>
+
+<b>Mind Control</b><br>
+When mind controlled, you will lose control over your character. You will become hostile to your party members and may attack them. Other party members can also target and attack you. Inform your party members that you are "MC'd!" This effect can be removed by Dispel Magic and Cleanse if cast by an enemy Priest character, and the latter two spells may also remove mind control cast by computer-controlled enemies. It may be a good idea to attack the source of the mind control directly as well. Left unchecked, mind control effects will expire after a set duration.
+<p>
+
+<b>Poison</b><br>
+Poison is one of the most common negative status that can affect your character. Many monsters, particularly naturally poisonous ones such as spiders, will add a poison effect to their attacks. Most poisons will damage your character slowly over time, but other poisons may have different effects in addition to or in lieu of this DoT effect. Enemy player-controlled or computer-controlled rogues have a wide variety of poisons that they may use with different effects, such as causing instant damage, reducing healing effects, reducing movement speed, increasing casting time, and others. Poisons can be cured by spells available to Paladins, Shaman, and Druids, by antitoxins created with First Aid, and other means. Left unchecked, poison effects will expire after a set duration.
+<p>
+
+<b>Curses</b><br>
+Curses can inflict your character with a wide range of effects that range from irritating to deadly. The main way to remove a curse will be from a player ability - Druids and Mages can remove curses from players. The fact that some curses can last quite some time, combined with their often debilitating effects, will make their removal a high priority.
+<p>
+
+<b>Disease</b><br>
+Diseases, like curses, have effects that vary widely in severity and type. Also like curses, they can persist for a considerable left of time if left uncured. Some diseases can actually spread to other players by proximity. Priests and paladins can cast spells that can remove diseases.
+<p>
+
+<b>Silence</b><br>
+Silence renders you unable to cast spells. They are usually short duration, and can be dispelled before their duration ends with spells such as Cleanse and Dispel Magic.
+<p>
+
+<b>Polymorph</b><br>
+Polymorph will turn you into a harmless creature such as a sheep or pig, unable to move or act for the duration. Certain classes can remove this effect on themselves with their PvP trinket, and spells such as Dispel Magic and Cleanse can remove this from other players. Polymorph is typically a mage ability, but some computer-controlled enemies will use it as well.
+<p>
+
+<b>Disarm</b><br>
+When your character is disarmed by a monster or player, you will begin fighting hand-to-hand which you might notice will likely greatly reduce your damage. You can only be disarmed when wielding a weapon, and will disarm the weapon in your off-hand if there is no weapon in your main hand slot.
+<p>
+
+<b>Miscellaneous Magic Effects</b><br>
+Your character can also be afflicted by a wide range of magic effects that do not fall under any of the above categories. These magic effects will expire after a set duration, or can be removed with a Priest's Dispel Magic or a Paladin's Cleanse.
+<p>
+
+
+
+
+
+</div></div>
+
+<div class="guideHeader">
+<table width="100%" align="center" cellspacing="0" cellpadding="0" border="0">
+	<tr>
+		<td width="10"><img src="/shared/wow-com/images/headers/tabheader/tabheader-left-left.jpg" width="17" height="29" border="0"></td>
+	    <td width="362" background="/shared/wow-com/images/headers/tabheader/tabheader-left.jpg" align="left" nowrap><h3 class="guideTitle">Enemy Behavior</h3></td>
+		<td width="100%" background="/shared/wow-com/images/headers/tabheader/tabheader-bg.jpg"></td>
+	  	<td width="26"><img src="/shared/wow-com/images/headers/tabheader/tabheader-right.jpg" width="26" height="29" border="0"></td>
+		<td width="50"><img src="/shared/wow-com/images/layout/pixel.gif" width="50" height="29" border="0"></td>
+	</tr>
+</table>
+</div>
+
+<div class="postContainerPlain">
+<div class="postBody">
+
+<img src="/shared/wow-com/images/smallcaps/plain/t.gif" align="left">he enemies you encounter in World of Warcraft, both human and computer-controlled, will exhibit a variety of behaviors during combat that you should be prepared to handle. Some of these are unique to either human or computer-controlled opponents.
+<p>
+
+
+<b>Spell and Ability Resists</b><br>
+Every time you use a spell or ability on an enemy, such as a Mage's Frostbolt or a Priest's Psychic Scream, there is a chance that it will be resisted. When resisted, an enemy either completely negates (fully resists) or partially negates (partially resists) the attack. The level of your enemy in relation to yours is one of the main factors governing resists. Enemies of higher level than yours have a higher chance to resist your spells and abilities. Inherent resistances, such as fire resistance, will increase the chance that spells of that type will be resisted. However, having more of certain character attributes such as Spell Penetration will reduce your target's resistances, lowering the chance that your spells are resisted.
+<p>
+
+<b>Spell Interruption</b><br>
+If you are attacked while casting a spell, there is a chance that your spell will be interrupted. When this occurs, your casting bar will be seen to "roll back" slightly, lengthening the time it takes to successfully cast the spell. Some classes have talents that reduce the chance that their spells will be interrupted, and a Paladin's Concentration Aura has this effect as well. <p>
+Learn more about <a href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fcombat.html&amp;requested=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fspells.shtml&amp;reason=invalid-overlay-or-uncollected-site-resource">spells</a>.
+<p>
+
+<b>Enemy Immune</b><br>
+Some enemies will be completely immune to the spell or ability you are using against it - if so, you will see "immune" display over the enemy. This means the enemy cannot be harmed by whatever ability you are attempting to use. It is possible that this immunity is only temporary, and/or only to a particular type of magic (such as Fire or Frost), particular effect (such as Fear or Polymorph), or damage type (physical or magic). For instance, some monsters have the ability to cast a temporary anti-magic shield on themselves. 
+<p>
+
+<b>Fleeing Enemies</b><br>
+Humanoid and certain other types of enemies often run when they are about to die. In some cases, such as the infamous murlocs, they will run for help. However, you can stop them from fleeing with the aid of abilities and spells designed for that purpose - or simply kill them before they can get far. Examples of abilities and spells that have a snaring or rooting effect include Engangle, Frost Nova, Hamstring, and Earthbind Totem. These abilities are also effective against human opponents who try to flee in PvP engagements.
+<p>
+
+<b>Enemy Spellcasting</b><br>
+Enemy spells can be interrupted in the same way that your own spells can - by inflicting damage on them. If a monster starts casting a spell, such as a healing spell, you can damage it to slow down its casting time. Certain classes have abilities to interrupt spellcasting, such as Kick, Counterspell, and Silence.
+<p>
+
+<b>Assisting Enemies</b><br>
+When attacking computer-controlled enemies, they may come in groups if they are in close proximity to each other when one is attacked. For more information on how to pull only one monster at a time read our <a href="/info/basics/partiespulling.html">guide to pulling effectively.</a>
+<p>
+
+
+
+
+</div></div>
+
+<div class="guideHeader">
+<table width="100%" align="center" cellspacing="0" cellpadding="0" border="0">
+	<tr>
+		<td width="10"><img src="/shared/wow-com/images/headers/tabheader/tabheader-left-left.jpg" width="17" height="29" border="0"></td>
+	    <td width="362" background="/shared/wow-com/images/headers/tabheader/tabheader-left.jpg" align="left" nowrap><h3 class="guideTitle">Battle Tactics and Tips</h3></td>
+		<td width="100%" background="/shared/wow-com/images/headers/tabheader/tabheader-bg.jpg"></td>
+	  	<td width="26"><img src="/shared/wow-com/images/headers/tabheader/tabheader-right.jpg" width="26" height="29" border="0"></td>
+		<td width="50"><img src="/shared/wow-com/images/layout/pixel.gif" width="50" height="29" border="0"></td>
+	</tr>
+</table>
+</div>
+
+<div class="postContainerPlain">
+<div class="postBody">
+
+
+<img src="/shared/wow-com/images/smallcaps/plain/b.gif" align="left">ecoming a skilled combatant in World of Warcraft will take time, effort, and practice. Here are some tips to help you become a force to be reckoned with on the battlefield.
+<p>
+
+<b>Optimize Combat</b><br>
+With practice, you can fine tune your combat skills to the point where your reactions and decision making in combat become second nature. Optimizing your combat skills will help you and your allies to emerge from battle victorious, and with no casualties. You will become a better player overall, have an easier time in combat, and gain respect from other players due to your abilities.
+<p>
+<ul>
+<li>	Take time to organize your action bar. Put your most used abilities on the default hotkey bar. Put abilities you use less often on other "pages" of the main action bar, or on the optional upper and right side bars. These extra action bars are enabled through the Interface Options menu, and can be bound to keys using the Key Bindings menu. If you use extra pages of the main hotbar, learn to switch quickly between bars during combat (using shift mouse wheel or shift-2). 
+<li> Use the hot keys for your action bar to use abilities and spells more quickly.
+<li>	Learn all of your abilities. Learn the ins and outs of each ability you have so that you will know what it is used for and when to use it. If you need help, talk to more experienced players of your class or read class strategy guides.
+<li>	Become skilled at maneuvering your character during combat. Positioning and movement are crucial to use many class skills and spells effectively. A combination of the mouse to control a character's facing and the keyboard for movement is an effective method for responsive movement.
+</ul>
+
+<b>Situational Awareness - Camera View</b><br>
+As you are fighting and moving around the world, use the mouse to rotate the camera around to view your surroundings. You can check if you're about to run into enemies, or if they're heading towards you. Keep aware of your surroundings at all times, especially when in combat - knowing the source of any threats against your character is needed before you can react to them.
+
+<p>
+
+
+<b>Combat Log</b><br>
+Your combat log can be very helpful to inform you how you are doing and what is happening during combat,
+and to test the impact made in your abilities by talent or gear changes. Additionally, there are interface mods made by the fan community which can provide you with performance analysis.
+<p>
+
+
+</div></div>
+
+<div class="guideHeader">
+<table width="100%" align="center" cellspacing="0" cellpadding="0" border="0">
+	<tr>
+		<td width="10"><img src="/shared/wow-com/images/headers/tabheader/tabheader-left-left.jpg" width="17" height="29" border="0"></td>
+	    <td width="362" background="/shared/wow-com/images/headers/tabheader/tabheader-left.jpg" align="left" nowrap><h3 class="guideTitle">Additional Information</h3></td>
+		<td width="100%" background="/shared/wow-com/images/headers/tabheader/tabheader-bg.jpg"></td>
+	  	<td width="26"><img src="/shared/wow-com/images/headers/tabheader/tabheader-right.jpg" width="26" height="29" border="0"></td>
+		<td width="50"><img src="/shared/wow-com/images/layout/pixel.gif" width="50" height="29" border="0"></td>
+	</tr>
+</table>
+</div>
+
+<div class="postContainerPlain">
+<div class="postBody">
+
+
+<img src="/shared/wow-com/images/smallcaps/plain/t.gif" align="left">his section will compile additional information about the combat system, some of which has been added or modified in the course of the ongoing evolution of the game.
+<p>
+
+<b>Weapon Switching</b><br>
+Switching weapons in combat triggers a 1 second global cooldown for all abilities for Rogues and a 1.5 second global 
+cooldown for all other classes.
+<p>
+
+<b>Instant Melee Attacks</b><br>
+The attack power bonus is multiplied by a fixed number pulled from the following table:
+<ul>
+<li>Two-handed weapons: 3.3 
+<li>Daggers: 1.7 
+<li>All other one-handed weapons: 2.4
+</ul>
+All normal weapon swings are completely unaffected by this change. Only instant special melee attacks, such as Sinister Strike, Ambush, Backstab, Whirlwind, Mortal Strike, and Overpower, are affected by the design change.
+<p>
+
+<b>Damage Absorption</b><br>
+Damage absorption does not protect against falling, drowning, or fatigue damage.
+<p>
+
+<b>Sitting</b><br>
+Sitting characters will stand up immediately after an attack, even if stunned. 
+<p>
+
+<b>Resilience</b><br />
+This combat stat decreases the chance of an enemy scoring a critical hit on you, and also reduces the damage taken from a critical strike. Your character has a base rating and items
+with bonus resilience rating modify this rating.
+<p>
+
+<b>Weapon Skill</b><br>
+Players gain 0.1% to their critical strike rating per weapon skill against enemies above their level.
+<p>
+
+<b>Spell Penetration</b><br>
+Spell Penetration reduces the target's resistance to your spells. Items can modify this rating. 
+<p>
+
+<b>Haste Rating</b><br />
+Haste Rating lowers the time between melee/ranged attacks. Spell Haste rating lowers the casting time of spells, including channeled spells. Items can modify these ratings.
+<p>
+
+<b>Other Random Information</b><br>
+<ul>
+<li>Glancing Blows have significantly less of a chance to occur during a player's melee attacks when targets are near the player's level.
+<li>Chance to break crowd control from damage: All targets over level 60 have a slightly larger chance to break out of crowd-controlling effects when they take damage.  
+<li><a href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fcombat.html&amp;requested=http%3A%2F%2Fwww.wowwiki.com%2FCategory%3AFormulas_and_Game_Mechanics&amp;reason=external-or-uncollected-resource" target="new_window">Fan Site: Formulae and Gameplay Mechanics</a>*
+<p>*The content in this link is created by other companies/individuals that are neither affiliated with nor supported by Blizzard Entertainment.
+</ul>
+
+<!---------------------------END MAIN------------------------------>
+</div>
+</div>
+
+<!--Related Links-->
+<div class="guideHeader">
+<table width="100%" align="center" cellspacing="0" cellpadding="0" border="0">
+<tr>
+	<td width="10"><img src="/shared/wow-com/images/headers/tabheader/tabheader-left-left.jpg" width="17" height="29" border="0"></td>
+    <td width="362" background="/shared/wow-com/images/headers/tabheader/tabheader-left.jpg" align="left" nowrap><h3 class="guideTitle">Related Links</h3></td>
+	
+	<td width="100%" background="/shared/wow-com/images/headers/tabheader/tabheader-bg.jpg" align="right"><img src="/shared/wow-com/images/layout/pixel.gif" width="1" height="2"><br>
+<script language="javascript">
+
+if (stripId(Menu1[0]) == "Game Guide") 
+	document.write("<a href = 'mailto:wowguide@blizzard.com?subject=Fan Strategy: " + stripId(pageId) + "&body=Strategy relates to: " + document.location.href + "%0A%0AAuthor Name:%0A%0AType your strategy here(or attach):%0A%0A%0A%0A%0A%0A---------------%0ARead the submission guidelines before submitting your strategy%0Ahttp://www.worldofwarcraft.com/info/faq/guide-strategies.html%0ABy sending this email, you agree that Blizzard Entertainment, Inc., shall have the right to share any and all tips, guidelines, advice and suggestions you submit with the rest of the World of Warcraft Community through the World of Warcraft Community Site located at www.worldofwarcaft.com, as well as any online or printed strategy guides related to Blizzard Entertainment, Inc.'s World of Warcraft game.'><img src = '/shared/wow-com/images/buttons/button-submitstrat.gif' width = '127' height ='22' border = '0' alt = 'Submit a strategy on this page'></a>");
+</script>
+	
+	</td>	
+	<td background="/shared/wow-com/images/headers/tabheader/tabheader-bg.jpg"><img src="/shared/wow-com/images/layout/pixel.gif" width="3" height="1"></td>
+	<td width="127" background="/shared/wow-com/images/headers/tabheader/tabheader-bg.jpg"><img src="/shared/wow-com/images/layout/pixel.gif" width="1" height="2"><br>
+<script language="javascript">
+if (document.location.href.indexOf("/account/") == -1 && document.location.href.indexOf("/loginsupport/") == -1)
+document.write("<a href = 'mailto:wowguide@blizzard.com?subject=Wow Guide Error: " + stripId(pageId) + "&body=Error on page: " + document.location.href + "%0A%0AType your error report here:%0A%0A%0A%0A%0A%0A---------------%0ARead the error reporting guidelines before submitting your email%0Ahttp://www.worldofwarcraft.com/info/faq/guide.html%0APlease use this email to report guide errors only. Any problems with the game or your account should be reported here: http://www.blizzard.com/support/wow/?id=aww01730p'><img src = '/shared/wow-com/images/buttons/button-reporterror.gif' width = '127' height ='22' border = '0' alt = 'Report an error on this page'></a>");
+</script>
+	
+	</td>
+</tr>
+</table>
+</div>
+
+<div class="postContainerPlain">
+<div class="postBody" style="font-size:12px; line-height:17px;">
+<script language="javascript">
+printSubNav(result,2)
+printRelatedLinks(result);
+
+
+</script>
+
+
+
+</div>
+</div>
+<!--End Related Links-->
+
+
+
+
+
+</div>
+                                            </div>
+
+       
+                                
+                            </div>
+					<div style="clear: both; font-size: 1px;">&#160;</div> <!-- netscape fix -->
+						<center>
+							<div id="copyright">
+								<span class="esrb">
+									<a href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fcombat.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Fprivacy.shtml&amp;reason=external-or-uncollected-resource" target="_blank">
+									<img src="/new-hp/images/ectppsvivendi.gif" width="117" height="43" border="0" alt="esrb" title="ESRB Privacy Certified" /></a></span>
+								<span class="rating">
+									<a href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fcombat.html&amp;requested=http%3A%2F%2Fwww.esrb.org%2Fesrbratings_guide.asp&amp;reason=external-or-uncollected-resource" target="_blank">
+									<img src="/shared/wow-com/images/icons/esrb/teen-desc.gif" width="125" height="70" border="0" alt="rating" title="Rated Teen" /></a></span>
+								<span class="esrb-caution">
+									<a href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fcombat.html&amp;requested=http%3A%2F%2Fwww.esrb.org%2Fesrbratings_guide.asp&amp;reason=external-or-uncollected-resource" target="_blank">
+									<img src="/shared/wow-com/images/icons/esrb/content-warning.gif" width="147" height="44" border="0" alt="esrb-caution" title="ESRB Notice" /></a></span>
+									<span class="textlinks">
+
+									<small>
+									<a href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fcombat.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Fprivacy.shtml&amp;reason=external-or-uncollected-resource" target="_blank">Online Privacy Policy</a> | 
+									<a href="/legal/index.html">Legal Documents</a> | 
+									<a href="/policy/index.html">Policies</a>
+									<br />&#169;2004-2008 Blizzard Entertainment, Inc. All rights reserved.</small>
+
+								</span>
+							</div><!-- end copyright -->
+						</center>
+					</div>
+						<map name="bot_blizzlogo_Map">
+						<area shape="rect" alt="Blizzard.com" coords="8,8,86,54" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fcombat.html&amp;requested=http%3A%2F%2Fwww.blizzard.com&amp;reason=external-or-uncollected-resource" />
+						</map>
+						</td></tr>
+						<tr><td>
+						<div id="main-bottom"><div><div><div id="blizzlogo-bot"><img src="/new-hp/images/new/bot-blizzlogo.gif" width="97" height="57" border="0" usemap="#bot_blizzlogo_Map" alt="Blizzard.com" style="position: absolute; top: 14px; left: 45%;" /></div></div></div></div>
+                    	</td></tr></table>
+					</div>
+                </div>
+               
+                <div style="position: relative;">
+                    <img src="/new-hp/images/burningcrusade/statue-left.jpg" alt="statue" style="position: absolute; top: -445px; left: -243px;" />
+                    
+                </div>
+            </div><!-- /main -->
+			
+        </div><!-- /mainWrapper -->
+		</td>
+		</tr></table>
+    </div><!-- /hpWrapper -->
+</div>
+</div><!-- /hp -->
+</td></tr></table>
+</center>
+<div id="ironFrame"></div>
+
+<!--iframes that call the left side menus-->
+<iframe src="/new-hp/menus/menu1.htm" width="0" height="0" frameborder="0" id="menuIframe1" name="menuIframe1"></iframe>
+<iframe src="/new-hp/menus/menu2.htm" width="0" height="0" frameborder="0" id="menuIframe2" name="menuIframe2"></iframe>
+<iframe src="/new-hp/menus/menu3.htm" width="0" height="0" frameborder="0" id="menuIframe3" name="menuIframe3"></iframe>
+<iframe src="/new-hp/menus/menu4.htm" width="0" height="0" frameborder="0" id="menuIframe4" name="menuIframe4"></iframe>
+<iframe src="/new-hp/menus/menu5.htm" width="0" height="0" frameborder="0" id="menuIframe5" name="menuIframe5"></iframe>
+<iframe src="/new-hp/menus/menu6.htm" width="0" height="0" frameborder="0" id="menuIframe6" name="menuIframe6"></iframe>
+<iframe src="/new-hp/menus/menu7.htm" width="0" height="0" frameborder="0" id="menuIframe7" name="menuIframe7"></iframe>
+<iframe src="/new-hp/menus/menu8.htm" width="0" height="0" frameborder="0" id="menuIframe8" name="menuIframe8"></iframe>
+
+<div id="toolBox" style="display:none; position:absolute; top:20px; color:#FFFFFF; background-color:#000000; border:1px solid #DDDDDD; font-family:Arial, Helvetica, sans-serif; padding:3px; text-align:center; font-size:9px; border-bottom-color:#666666; border-right-color:#666666;">TEST</div>
+<div id="pageEnd"></div>
+
+
+</td>
+</tr>
+</table>
+</div>
+
+</center>
+</div>
+
+<script type="text/javascript" src="/__offline/empty.js?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fcombat.html&amp;requested=https%3A%2F%2Fssl.google-analytics.com%2Fga.js&amp;reason=external-or-uncollected-resource"></script>
+<script type="text/javascript">/* offline analytics tracker removed; no external request is made */
+</script>
+
+</body>
+</html>

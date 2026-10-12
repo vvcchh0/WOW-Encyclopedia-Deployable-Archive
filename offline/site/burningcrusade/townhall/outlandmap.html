@@ -1,0 +1,503 @@
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>World of Warcraft: The Burning Crusade - Map of Outland</title>
+	<link rel="stylesheet" type="text/css" href="/burningcrusade/includes/wowx.css">
+
+<script language="javascript" src="/burningcrusade/townhall/images/bestiary/bestiary-script.js"></script>
+<script language="javascript">
+is_safari = ((navigator.userAgent.indexOf("Safari")!=-1))?true:false;
+isShowing = false;
+
+function showTip(thisText)
+{
+  isShowing = true;
+  document.getElementById("toolBox").style.left = mouseX+10+"px";
+  document.getElementById("toolBox").style.top = mouseY+10+document.body.scrollTop+"px";
+  document.getElementById("toolBox").innerHTML = thisText;
+  document.getElementById("toolBox").style.display = "block";
+}
+
+function hideTip()
+{
+  document.getElementById("toolBox").style.display = "none";
+  isShowing = false;
+}
+
+function tipPosition(callingEvent)
+{
+  if (!callingEvent) callingEvent = window.event;
+  mouseX = callingEvent.clientX;
+  mouseY = callingEvent.clientY-1;
+  if (isShowing)
+  {
+	document.getElementById("toolBox").style.left = mouseX+10+"px";
+	document.getElementById("toolBox").style.top = (!is_safari) ? mouseY+10+document.body.scrollTop+"px" : mouseY+10+"px" ;
+  }
+}
+
+function popUpOmega (screenshot, width, height, caption) 
+{
+	//Browser detection - is the user relying on the one browser where this script does not work?
+	
+	var name = "Sheenscrot"; 
+	widthHeight = "width=" + width + ",height=" + height;
+	winFeatures = "width=" + width + ",height=" + height + ",left=50,top=50,menubar=no,resizable=no,scrollbars=no,statusbar=no,toolbar=no,locationbar=no"
+	if (is_safari) spawn = window.open(screenshot,name,winFeatures);
+	else
+	{
+		spawn = window.open("/shared/wow-com/images/layout/pixel.gif",name,winFeatures)
+		spawn.document.write("<html> <head> <title>" + caption + "<\/title> <\/head> <body onBlur='self.close()' style='background-image:url(" + screenshot + "); background-repeat:no-repeat;'><\/body><\/html>"); 
+		spawn.document.close();
+	}
+}
+zoneNames = new Array("blades","hellfire","nagrand","nether","shadow","terokkar","zangar");
+zoneLore = new Array();
+i = 0;
+zoneLore[i++] = "\
+<span class='myTitle'>Blade's Edge Mountains</span>\
+<br><br>\
+<b>Level Range:</b> 65-68\
+<br><br>\
+<b>Cities:</b><br>\
+<div class='myBlue'>Sylvanaar</div>\
+<div class='myRed'>Thunderlord Stronghold</div>\
+<div class='myOrange'>Gronn'bor Shrine</div>\
+<br><br>\
+<b>Dungeon: Gruul's Lair</b> (Raid)<br>";
+zoneLore[i++] = "\
+<span class='myTitle'>Hellfire Peninsula</span>\
+<br><br>\
+<b>Level Range:</b> 58-63\
+<br><br>\
+<b>Cities:</b><br>\
+<div class='myBlue'>Honor Hold</div>\
+<div class='myBlue'>Temple of Sha'naar</div>\
+<div class='myRed'>Thrallmar</div>\
+<div class='myRed'>Falcon Watch</div>\
+<br><br>\
+<b>Dungeon: Hellfire Citadel</b><br>\
+<div class='myRight'>Level 60-62</div><div class='myLeft'>Hellfire Ramparts</div>\
+<div class='myRight'>Level 61-63</div><div class='myLeft'>The Blood Furnace</div>\
+<div class='myRight'>Level 70-72</div><div class='myLeft'>The Shattered Halls</div>\
+<div class='myRight'><b>Raid</b></div><div class='myLeft'>Magtheridon's Lair</div>\
+";
+zoneLore[i++] = "\
+<span class='myTitle'>Nagrand</span>\
+<br><br>\
+<b>Level Range:</b> 64-67\
+<br><br>\
+<b>Cities:</b><br>\
+<div class='myBlue'>Telaar</div>\
+<div class='myRed'>Garadar</div>\
+<div class='myOrange'>Aeris</div>\
+<div class='myYellow'>Halaa</div>\
+";
+zoneLore[i++] = "\
+<span class='myTitle'>Netherstorm</span>\
+<br><br>\
+<b>Level Range:</b> 67-70\
+<br><br>\
+<b>Cities:</b><br>\
+<div class='myYellow'>Area 52</div>\
+<div class='myYellow'>The Stormspire</div>\
+<br><br>\
+<b>Dungeon: Tempest Keep</b><br>\
+<div class='myRight'>Level 69-72</div><div class='myLeft'>The Mechanar</div>\
+<div class='myRight'>Level 70-72</div><div class='myLeft'>The Botanica</div>\
+<div class='myRight'>Level 70-72</div><div class='myLeft'>The Arcatraz</div>\
+<div class='myRight'><b>Raid</b></div><div class='myLeft'>Eye of the Storm</div>";
+zoneLore[i++] = "\
+<span class='myTitle'>Shadowmoon Valley</span>\
+<br><br>\
+<b>Level Range:</b> 67-70\
+<br><br>\
+<b>Cities:</b><br>\
+<div class='myBlue'>Wildhammer Stronghold</div>\
+<div class='myRed'>Shadowmoon Village</div>\
+<div class='myOrange'>Ancient Draenei Base</div>\
+<br><br>\
+<b>Dungeon: Black Temple</b> (Raid)<br>";
+zoneLore[i++] = "\
+<span class='myTitle'>Terokkar Forest</span>\
+<br><br>\
+<b>Level Range:</b> 62-65\
+<br><br>\
+<b>Cities:</b><br>\
+<div class='myBlue'>Allerian Stronghold</div>\
+<div class='myRed'>Stonebreaker Hold</div>\
+<div class='myYellow'>Shattrath City</div>\
+<br><br>\
+<b>Dungeon: Auchindoun</b><br>\
+<div class='myRight'>Level 64-66</div><div class='myLeft'>Auchenai Crypts</div>\
+<div class='myRight'>Level 65-67</div><div class='myLeft'>Shadow Labyrinth</div>\
+<div class='myRight'>Level 67-69</div><div class='myLeft'>Sethekk Halls</div>\
+<div class='myRight'>Level 70-72</div><div class='myLeft'>Mana-Tombs</div>\
+";
+zoneLore[i++] = "\
+<span class='myTitle'>Zangarmarsh</span>\
+<br><br>\
+<b>Level Range:</b> 60-64\
+<br><br>\
+<b>Cities:</b><br>\
+<div class='myBlue'>Telredor</div>\
+<div class='myBlue'>Orebor Harborage</div>\
+<div class='myRed'>Swamprat Post</div>\
+<div class='myRed'>Zabra'jin</div>\
+<div class='myOrange'>Cenarion Refuge</div>\
+<div class='myOrange'>Sporeggar</div>\
+<br><br>\
+<b>Dungeon: Coilfang Reservoir</b><br>\
+<div class='myRight'>Level 62-64</div><div class='myLeft'>The Slave Pens</div>\
+<div class='myRight'>Level 63-65</div><div class='myLeft'>The Underbog</div>\
+<div class='myRight'>Level 70-72</div><div class='myLeft'>The Steamvault</div>\
+<div class='myRight'><b>Raid</b></div><div class='myLeft'>Serpentshrine Cavern</div>\
+";
+i = 0;
+
+function showInfo(thisZone)
+{
+  document.getElementById("infoBox").innerHTML = zoneLore[thisZone];
+  document.getElementById("zoneLink").href = "javascript:popUpOmega('images/outlandmap/ss"+thisZone+".jpg',800,600);";
+  document.getElementById("zoneThumb").src = "images/outlandmap/ss"+thisZone+"-thumb.jpg";
+  checkForInteger(thisZone);
+}
+
+function toggleZoneOn(thisZone) { clearHighlights(); document.getElementById(thisZone).className = "zoneDivVis"; }
+function toggleZoneOff(thisZone) { document.getElementById(thisZone).className = "zoneDivHide"; }
+
+function clearHighlights()
+{
+  document.getElementById("blades").className = "zoneDivHide";
+  document.getElementById("hellfire").className = "zoneDivHide";
+  document.getElementById("nagrand").className = "zoneDivHide";
+  document.getElementById("nether").className = "zoneDivHide";
+  document.getElementById("shadow").className = "zoneDivHide";
+  document.getElementById("terokkar").className = "zoneDivHide";
+  document.getElementById("zangar").className = "zoneDivHide";
+}
+
+//-------- Frost's pointless integer check stuff for Rupert
+listOfIntegers = new Array(4,0,2,3,6,1,5);
+neitherFourNor = "false";
+
+function setNextToInteger() { for(j=0;j<7;j++) document.getElementById("nonInteger"+j).style.visibility = "hidden"; }
+
+function checkForInteger(notFour)
+{
+  if(notFour == 4) { neitherFourNor = "true"; setNextToInteger(); } if(neitherFourNor) { if(notFour != listOfIntegers[i]) { neitherFourNor = "false";
+  i = 0; setNextToInteger(); } else { document.getElementById("nonInteger"+notFour).style.visibility = "visible"; i++; } if(i==7) { resetAllIntegers();
+  } } else { setNextToInteger(); } document.getElementById("nonInteger"+notFour).style.visibility = "visible";
+}
+
+letterCounter = 0;
+ticToc = 0;
+function resetAllIntegers() { revealerContainer = window.setInterval("unfadeLetter("+letterCounter+")",30); }
+
+function unfadeLetter(thisLetter)
+{
+  if (ticToc > 500)
+  {
+    window.clearInterval(revealerContainer);
+	letterCounter++;
+	ticToc = 0;
+	if (letterCounter < 7)
+	{
+	  revealerContainer = window.setInterval("unfadeLetter("+letterCounter+")",30);
+	}
+	else
+	{
+	  document.getElementById("rupert").src = "images/outlandmap/elf-dance.gif";
+	}
+  }
+  else
+  {
+    ticToc += 20;
+	document.getElementById("stage"+thisLetter).style.opacity = ticToc / 500;
+	document.getElementById("stage"+thisLetter).style.filter = "alpha(opacity="+(ticToc/5)+")";
+  }
+}
+
+document.onmousemove = tipPosition;
+</script>
+
+<link rel="stylesheet" href="/__offline/compat.css">
+<script src="/__offline/compat.js"></script>
+</head>
+
+<body leftmargin="0" rightmargin="0" topmargin="0" bottommargin="0" bgcolor="#000000">
+
+<style type="text/css">
+
+.tooltipText{
+color: #ffffff;
+font-family: verdana, arial, sans-serif;
+font-size:11px;
+font-weight:normal;
+padding: 6px;
+text-align:justify;
+}
+
+.bandAidForIE
+{
+  position:absolute;
+  left:0px;
+  top:8px;
+}
+
+.goomba
+{
+  position:absolute;
+  left:-40px;
+  bottom:-20px;
+  _top:-52px;
+}
+
+.topLeft{width:14px; height:24px; background-repeat:no-repeat; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/top-left.png',sizingMethod='scale');}
+.topBox{height:24px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/top.png',sizingMethod='scale'); background-repeat:repeat-x;}
+.topRight{width:14px; height:24px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/top-right.png',sizingMethod='scale'); background-repeat:no-repeat;}
+.leftBox{width:14px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/left.png',sizingMethod='scale'); background-repeat:repeat-y;}
+.rightBox{width:14px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/right.png',sizingMethod='scale'); background-repeat:repeat-y;}
+.botLeft{width:14px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/bot-left.png',sizingMethod='scale'); background-repeat:no-repeat;}
+.botBox{height:24px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/bot.png',sizingMethod='scale'); background-repeat:repeat-x;}
+.botRight{width:14px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/bot-right.png',sizingMethod='scale'); background-repeat:no-repeat;}
+.mainBod{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bestiary/black-bg.png',sizingMethod='scale');}
+
+.topLeft[class]{width:14px; height:24px; background-image:url("/burningcrusade/townhall/images/bestiary/top-left.png"); background-repeat:no-repeat;}
+.topBox[class]{height:24px; background-image:url("/burningcrusade/townhall/images/bestiary/top.png"); background-repeat:repeat-x;}
+.topRight[class]{width:14px; height:24px; background-image:url("/burningcrusade/townhall/images/bestiary/top-right.png"); background-repeat:no-repeat;}
+.leftBox[class]{width:14px; background-image:url("/burningcrusade/townhall/images/bestiary/left.png"); background-repeat:repeat-y;}
+.rightBox[class]{width:14px; background-image:url("/burningcrusade/townhall/images/bestiary/right.png"); background-repeat:repeat-y;}
+.botLeft[class]{width:14px; height:24px; background-image:url("/burningcrusade/townhall/images/bestiary/bot-left.png"); background-repeat:no-repeat;}
+.botBox[class]{height:24px; background-image:url("/burningcrusade/townhall/images/bestiary/bot.png"); background-repeat:repeat-x;}
+.botRight[class]{width:14px; height:24px; background-image:url("/burningcrusade/townhall/images/bestiary/bot-right.png"); background-repeat:no-repeat;}
+.mainBod[class]{background-image:url("/burningcrusade/townhall/images/bestiary/black-bg.png")}
+
+.zoneDivHide { background-repeat:no-repeat; position:absolute; visibility:hidden; }
+.zoneDivVis { background-repeat:no-repeat; position:absolute; cursor:pointer; visibility:visible; }
+
+.myPurple { color: A335EE; font-weight: bold; }
+.myTitle { font-size:10pt; font-weight:bold; }
+.myBlue { color: 0070DD; font-weight: bold; margin-left:7px; font-size:11px; line-height:13px; }
+.myRed { color: DD0000; font-weight: bold; margin-left:7px; font-size:11px; line-height:13px; }
+.myOrange { color: DD7000; font-weight: bold; margin-left:7px; font-size:11px; line-height:13px; }
+.myYellow { color: DDDD00; font-weight: bold; margin-left:7px; font-size:11px; line-height:13px; }
+.myLeft { margin-left:7px; font-size:11px; line-height:13px; }
+.myRight { position:absolute; right:5px; font-size:11px; }
+
+.cNeu { color: DD7000; font-weight: bold; font-size:11px; line-height:13px; }
+.cAll { color: 0070DD; font-weight: bold; font-size:11px; line-height:13px; }
+.cHor { color: DD0000; font-weight: bold; font-size:11px; line-height:13px; }
+.cYel { color: DDDD00; font-weight: bold; font-size:11px; line-height:13px; }
+.cPur { color: A335EE; font-weight: bold; font-size:11px; line-height:13px; }
+
+.integerStyle { position:absolute; background-color:#BCBCBC; width:2px; height:2px; line-height:2px; font-size:2px; top:490px; visibility:hidden; }
+.POIstyle { position:absolute; width:15px; height:15px; line-height:2px; font-size:2px; }
+.letterStyle { filter:alpha(opacity=0); position:absolute; top:482px; left:30px; opacity:0; }
+
+</style>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000000" style="background-image:url(&quot;/burningcrusade/images/2_bgtile.jpg&quot;); background-position:top; background-repeat:repeat-x;">
+  <tr>
+    <td width="50%" valign="top" style="background-image:url(&quot;/burningcrusade/images/2_leftbg.gif&quot;); background-repeat:repeat-y; background-position:top right;">
+	  <div style="background-image:url(&quot;/burningcrusade/images/2_topleft.jpg&quot;); background-repeat:no-repeat; background-position:top right; width:100%; height:170;"></div>
+	</td>
+	<td width="955" style="background-image:url(&quot;/burningcrusade/townhall/images/bestiary/bg-fix.gif&quot;); background-repeat:repeat-y; background-position:top right;">
+<!-- TOP BACKGROUND -->
+	  <div style="background-image:url(&quot;/burningcrusade/townhall/images/outlandmap/bg-top.jpg&quot;); background-position:top; background-repeat:no-repeat; height:243px; position:relative;">
+	    <img src="/shared/wow-com/images/layout/pixel.gif" width="955" height="1">
+	    <div style="position:absolute; left:326px; top:175px;"><center><small><a href="/burningcrusade/index.html">Home</a> |
+<a href="/info/burningcrusade/index.xml">Features</a> |  
+<a href="/burningcrusade/townhall/index.html">Townhall</a> | 
+<a href="/burningcrusade/screenshots.html">Screenshots</a> | 
+<a href="/burningcrusade/artwork.html">Artwork</a><br> 
+<a href="/burningcrusade/wallpapers.html">Wallpapers</a> | 
+<a href="/burningcrusade/movies.html">Movies</a> | 
+<a href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Ftownhall%2Foutlandmap.html&amp;requested=http%3A%2F%2Fmedia.worldofwarcraft.com%2Fbc-minisite%2Findex.htm&amp;reason=invalid-overlay-or-uncollected-site-resource">Flash Mini-Site</a> | 
+<a href="/burningcrusade/faq.html">FAQ</a> |
+<a href="/burningcrusade/faq.html#sys">System Req.</a> 
+</small></center></div>
+		<div style="position:absolute; left: 316px; top:15px;"><a href="/burningcrusade/index.html"><img src="/shared/wow-com/images/layout/pixel.gif" width="320" height="140" border="0"></a></div>
+	  </div>
+<!-- MAIN BACKGROUND -->
+	  <div style="background-image:url(&quot;/burningcrusade/townhall/images/outlandmap/bg-center.jpg&quot;); position:relative; background-repeat:no-repeat; background-position:top; width:955px; height:635px;">
+
+		<table border="0" cellpadding="0" cellspacing="0" style="margin-left:15px; margin-top:10px;">
+		  <tr>
+		    <td class="topLeft"></td>
+			<td class="topBox"></td>
+		    <td class="topRight"></td>
+		  </tr>
+		  <tr>
+		    <td class="leftBox"></td>
+			<td>
+<div style="background-image:url(&quot;/burningcrusade/townhall/images/outlandmap/mapback.jpg&quot;); width:800px; height:579px; position:relative;">
+
+<map name="zoneMap">
+<!--
+<area shape="poly" onMouseOver="clearHighlights();" coords="377,2, 377,56, 325,65, 308,78, 259,88, 249,104, 224,211, 184,210, 153,287, 169,322, 161,342, 117,352, 117,386, 131,394, 138,409, 187,463, 312,483, 322,513, 377,516, 377,577, 0,574, 4,0">
+<area shape="poly" coords="799,4, 795,578, 378,577, 378,516, 430,522, 457,538, 593,537, 669,502, 690,470, 661,446, 568,415, 506,422, 500,409, 478,387, 512,382, 542,387, 591,374, 629,343, 639,305, 617,258, 572,222, 506,221, 501,240, 457,235, 451,249, 397,250, 397,216, 423,206, 414,154, 428,153, 433,174, 496,198, 560,201, 606,162, 628,109, 611,53, 579,31, 506,20, 452,31, 389,57, 378,56, 378,2">
+-->
+<area href="javascript:showInfo(4);" coords="642,467,657,482" onmouseover="showTip(&#x27;&lt;span class=cPur&gt;Black Temple&lt;/span&gt;&lt;br&gt;- Dungeon -&#x27;)" onmouseout="hideTip()" shape="rect">
+<area href="javascript:showInfo(4);" coords="538,500,553,515" onmouseover="showTip(&#x27;&lt;span class=cAll&gt;Wildhammer Stronghold&lt;/span&gt;&lt;br&gt;- Alliance -&#x27;)" onmouseout="hideTip()" shape="rect">
+<area href="javascript:showInfo(4);" coords="585,449,600,464" onmouseover="showTip(&#x27;&lt;span class=cNeu&gt;Ancient Draenei Base&lt;/span&gt;&lt;br&gt;- Faction -&#x27;)" onmouseout="hideTip()" shape="rect">
+<area href="javascript:showInfo(4);" coords="514,451,529,466" onmouseover="showTip(&#x27;&lt;span class=cHor&gt;Shadowmoon Village&lt;/span&gt;&lt;br&gt;- Horde -&#x27;)" onmouseout="hideTip()" shape="rect">
+
+<area href="javascript:showInfo(5);" shape="rect" coords="433,455,448,470" onmouseover="showTip(&#x27;&lt;span class=cAll&gt;Allerian Stronghold&lt;/span&gt;&lt;br&gt;- Alliance -&#x27;)" onmouseout="hideTip()">
+<area href="javascript:showInfo(5);" shape="rect" coords="385,469,400,484" onmouseover="showTip(&#x27;&lt;span class=cPur&gt;Auchindoun&lt;/span&gt;&lt;br&gt;- Dungeon -&#x27;)" onmouseout="hideTip()">
+<area href="javascript:showInfo(5);" shape="rect" coords="407,432,422,447" onmouseover="showTip(&#x27;&lt;span class=cHor&gt;Stonebreaker Hold&lt;/span&gt;&lt;br&gt;- Horde -&#x27;)" onmouseout="hideTip()">
+<area href="javascript:showInfo(5);" shape="rect" coords="361,389,376,404" onmouseover="showTip(&#x27;&lt;span class=cYel&gt;Shattrath City&lt;/span&gt;&lt;br&gt;- Neutral -&#x27;)" onmouseout="hideTip()">
+
+<area href="javascript:showInfo(2);" shape="rect" coords="256,430,271,445" onmouseover="showTip(&#x27;&lt;span class=cAll&gt;Telaar&lt;/span&gt;&lt;br&gt;- Alliance -&#x27;)" onmouseout="hideTip()">
+<area href="javascript:showInfo(2);" shape="rect" coords="188,397,203,412" onmouseover="showTip(&#x27;&lt;span class=cNeu&gt;Aeris&lt;/span&gt;&lt;br&gt;- Faction -&#x27;)" onmouseout="hideTip()">
+<area href="javascript:showInfo(2);" shape="rect" coords="260,356,275,371" onmouseover="showTip(&#x27;&lt;span class=cHor&gt;Garadar&lt;/span&gt;&lt;br&gt;- Horde -&#x27;)" onmouseout="hideTip()">
+<area href="javascript:showInfo(2);" shape="rect" coords="221,371,236,386" onmouseover="showTip(&#x27;&lt;span class=cYel&gt;Halaa&lt;/span&gt;&lt;br&gt;- Neutral -&#x27;)" onmouseout="hideTip()">
+
+<area href="javascript:showInfo(6);" shape="rect" coords="191,272,206,287" onmouseover="showTip(&#x27;&lt;span class=cNeu&gt;Sporeggar&lt;/span&gt;&lt;br&gt;- Faction -&#x27;)" onmouseout="hideTip()">
+<area href="javascript:showInfo(6);" shape="rect" coords="223,270,238,285" onmouseover="showTip(&#x27;&lt;span class=cHor&gt;Zabra\&#x27;jin&lt;/span&gt;&lt;br&gt;- Horde -&#x27;)" onmouseout="hideTip()">
+<area href="javascript:showInfo(6);" shape="rect" coords="276,254,291,269" onmouseover="showTip(&#x27;&lt;span class=cPur&gt;Coilfang Reservoir&lt;/span&gt;&lt;br&gt;- Dungeon -&#x27;)" onmouseout="hideTip()">
+<area href="javascript:showInfo(6);" shape="rect" coords="250,234,265,249" onmouseover="showTip(&#x27;&lt;span class=cAll&gt;Orebor Harborage&lt;/span&gt;&lt;br&gt;- Alliance -&#x27;)" onmouseout="hideTip()">
+<area href="javascript:showInfo(6);" shape="rect" coords="325,271,340,286" onmouseover="showTip(&#x27;&lt;span class=cAll&gt;Telredor&lt;/span&gt;&lt;br&gt;- Alliance -&#x27;)" onmouseout="hideTip()">
+<area href="javascript:showInfo(6);" shape="rect" coords="354,296,369,311" onmouseover="showTip(&#x27;&lt;span class=cNeu&gt;Cenarion Refuge&lt;/span&gt;&lt;br&gt;- Faction -&#x27;)" onmouseout="hideTip()">
+<area href="javascript:showInfo(6);" shape="rect" coords="369,279,384,294" onmouseover="showTip(&#x27;&lt;span class=cHor&gt;Swamprat Post&lt;/span&gt;&lt;br&gt;- Horde -&#x27;)" onmouseout="hideTip()">
+
+<area href="javascript:showInfo(1);" shape="rect" coords="430,320,445,335" onmouseover="showTip(&#x27;&lt;span class=cHor&gt;Falcon Watch&lt;/span&gt;&lt;br&gt;- Horde -&#x27;)" onmouseout="hideTip()">
+<area href="javascript:showInfo(1);" shape="rect" coords="420,276,435,291" onmouseover="showTip(&#x27;&lt;span class=cAll&gt;Temple of Sha\&#x27;naar&lt;/span&gt;&lt;br&gt;- Alliance -&#x27;)" onmouseout="hideTip()">
+<area href="javascript:showInfo(1);" shape="rect" coords="510,324,525,339" onmouseover="showTip(&#x27;&lt;span class=cAll&gt;Honor Hold&lt;/span&gt;&lt;br&gt;- Alliance -&#x27;)" onmouseout="hideTip()">
+<area href="javascript:showInfo(1);" shape="rect" coords="489,300,504,315" onmouseover="showTip(&#x27;&lt;span class=cPur&gt;Hellfire Citadel&lt;/span&gt;&lt;br&gt;- Dungeon -&#x27;)" onmouseout="hideTip()">
+<area href="javascript:showInfo(1);" shape="rect" coords="601,297,616,312" onmouseover="showTip(&#x27;&lt;span class=cNeu&gt;The Dark Portal&lt;/span&gt;&lt;br&gt;&#x27;)" onmouseout="hideTip()">
+<area href="javascript:showInfo(1);" shape="rect" coords="509,271,524,286" onmouseover="showTip(&#x27;&lt;span class=cHor&gt;Thrallmar&lt;/span&gt;&lt;br&gt;- Horde -&#x27;)" onmouseout="hideTip()">
+
+<area href="javascript:showInfo(3);" shape="rect" coords="596,133,611,148" onmouseover="showTip(&#x27;&lt;span class=cPur&gt;Tempest Keep&lt;/span&gt;&lt;br&gt;- Dungeon -&#x27;)" onmouseout="hideTip()">
+<area href="javascript:showInfo(3);" shape="rect" coords="498,71,513,86" onmouseover="showTip(&#x27;&lt;span class=cYel&gt;The Stormspire&lt;/span&gt;&lt;br&gt;- Neutral -&#x27;)" onmouseout="hideTip()">
+<area href="javascript:showInfo(3);" shape="rect" coords="467,138,482,153" onmouseover="showTip(&#x27;&lt;span class=cYel&gt;Area 52&lt;/span&gt;&lt;br&gt;- Neutral -&#x27;)" onmouseout="hideTip()">
+
+<area href="javascript:showInfo(0);" shape="rect" coords="332,153,347,168" onmouseover="showTip(&#x27;&lt;span class=cHor&gt;Thunderlord Stronghold&lt;/span&gt;&lt;br&gt;- Horde -&#x27;)" onmouseout="hideTip()">
+<area href="javascript:showInfo(0);" shape="rect" coords="283,176,298,191" onmouseover="showTip(&#x27;&lt;span class=cAll&gt;Sylvanaar&lt;/span&gt;&lt;br&gt;- Alliance -&#x27;)" onmouseout="hideTip()">
+<area href="javascript:showInfo(0);" shape="rect" coords="298,152,313,167" onmouseover="showTip(&#x27;&lt;span class=cNeu&gt;Gronn\&#x27;bor Shrine&lt;/span&gt;&lt;br&gt;- Faction -&#x27;)" onmouseout="hideTip()">
+<area href="javascript:showInfo(0);" shape="rect" coords="347,106,362,121" onmouseover="showTip(&#x27;&lt;span class=cPur&gt;Gruul\&#x27;s Lair&lt;/span&gt;&lt;br&gt;- Dungeon -&#x27;)" onmouseout="hideTip()">
+
+<area href="javascript:showInfo(4);" onmouseover="toggleZoneOn(&#x27;shadow&#x27;);" shape="poly" coords="526,427, 497,443, 488,460, 503,483, 531,495, 538,508, 530,533, 580,536, 663,500, 685,470, 664,453, 618,443, 575,420">
+<area href="javascript:showInfo(5);" onmouseover="toggleZoneOn(&#x27;terokkar&#x27;);" shape="poly" coords="345,357, 345,363, 360,371, 348,379, 358,386, 348,432, 357,435, 355,455, 343,460, 332,484, 324,484, 326,507, 422,511, 457,532, 524,528, 532,509, 523,499, 495,486, 483,461, 491,438, 498,434, 499,417, 485,400, 461,390, 438,398, 387,374, 373,359">
+<area href="javascript:showInfo(2);" onmouseover="toggleZoneOn(&#x27;nagrand&#x27;);" shape="poly" coords="176,323, 176,333, 166,347, 122,352, 119,383, 135,388, 137,399, 186,457, 328,476, 338,453, 349,450, 350,439, 342,438, 352,388, 336,379, 347,371, 334,365, 332,352, 302,324, 245,319, 200,330">
+<area href="javascript:showInfo(6);" onmouseover="toggleZoneOn(&#x27;zangar&#x27;);" shape="poly" coords="232,219, 248,230, 270,230, 270,247, 382,269, 388,278, 387,297, 369,315, 368,333, 387,345, 377,354, 342,353, 308,319, 241,314, 202,323, 177,318, 160,284, 188,213">
+<area href="javascript:showInfo(1);" onmouseover="toggleZoneOn(&#x27;hellfire&#x27;);" shape="poly" coords="396,261, 391,265, 394,298, 378,315, 378,330, 397,343, 385,357, 393,370, 439,392, 501,371, 537,384, 577,374, 621,346, 632,310, 614,266, 572,228, 512,223, 509,248, 480,240, 462,242, 459,253">
+<area href="javascript:showInfo(3);" onmouseover="toggleZoneOn(&#x27;nether&#x27;);" shape="poly" coords="429,82, 416,99, 429,131, 435,168, 488,191, 551,199, 614,156, 623,114, 609,59, 580,38, 520,26, 467,28, 424,51">
+<area href="javascript:showInfo(0);" onmouseover="toggleZoneOn(&#x27;blades&#x27;);" shape="poly" coords="317,80, 267,87, 256,101, 239,212, 252,221, 274,224, 281,244, 381,263, 389,257, 389,212, 417,203, 405,151, 422,131, 408,97, 421,81, 415,67, 372,60, 332,66">
+
+<area shape="rect" onmouseover="clearHighlights();" coords="0,0, 800,579">
+</map>
+
+  <div id="blades" class="zoneDivHide" style="width:207px; height:230px; background-image:url(&quot;/burningcrusade/townhall/images/outlandmap/blades.jpg&quot;); left:227px; top:47px;"></div>
+  <div id="hellfire" class="zoneDivHide" style="width:274px; height:188px; background-image:url(&quot;/burningcrusade/townhall/images/outlandmap/hellfire.jpg&quot;); left:361px; top:215px;"></div>
+  <div id="zangar" class="zoneDivHide" style="width:252px; height:165px; background-image:url(&quot;/burningcrusade/townhall/images/outlandmap/zangar.jpg&quot;); left:149px; top:202px;"></div>
+  <div id="nagrand" class="zoneDivHide" style="width:258px; height:182px; background-image:url(&quot;/burningcrusade/townhall/images/outlandmap/nagrand.jpg&quot;); left:106px; top:303px;"></div>
+  <div id="nether" class="zoneDivHide" style="width:213px; height:184px; background-image:url(&quot;/burningcrusade/townhall/images/outlandmap/nether.jpg&quot;); left:405px; top:23px;"></div>
+  <div id="terokkar" class="zoneDivHide" style="width:236px; height:202px; background-image:url(&quot;/burningcrusade/townhall/images/outlandmap/terokkar.jpg&quot;); left:310px; top:344px;"></div>
+  <div id="shadow" class="zoneDivHide" style="width:213px; height:133px; background-image:url(&quot;/burningcrusade/townhall/images/outlandmap/shadow.jpg&quot;); left:477px; top:413px;"></div>
+
+  <span style="position:absolute; top:-48px; left:-33px;"><script language="javascript">pngImage("images/outlandmap/page-title.png");</script></span>
+  <div style="position:absolute; top:-10px; left:-30px;"><img id="rupert" src="/burningcrusade/townhall/images/outlandmap/elf-stand2.gif"></div>
+  <img src="/burningcrusade/townhall/images/outlandmap/pixel.gif" width="800" height="579" border="0" usemap="#zoneMap" style="position:absolute;" />
+<!--
+  <div class="POIstyle" style="border:1px solid red; left:283px; top:174px;" onMouseOver="showTip('<span class=cAll>Sylvanaar</span><br>- Alliance -')" onMouseOut="hideTip()"></div>
+-->
+
+  <div id="nonInteger4" class="integerStyle" style="left:70px;"></div><div id="nonInteger0" class="integerStyle" style="left:110px;"></div>
+  <div id="nonInteger2" class="integerStyle" style="left:145px;"></div><div id="nonInteger3" class="integerStyle" style="left:170px;"></div>
+  <div id="nonInteger6" class="integerStyle" style="left:208px;"></div><div id="nonInteger1" class="integerStyle" style="left:246px;"></div>
+  <div id="nonInteger5" class="integerStyle" style="left:283px;"></div>
+
+  <img id="stage0" class="letterStyle" src="/burningcrusade/townhall/images/outlandmap/stage0.jpg"><img id="stage1" class="letterStyle" src="/burningcrusade/townhall/images/outlandmap/stage1.jpg">
+  <img id="stage2" class="letterStyle" src="/burningcrusade/townhall/images/outlandmap/stage2.jpg"><img id="stage3" class="letterStyle" src="/burningcrusade/townhall/images/outlandmap/stage3.jpg">
+  <img id="stage4" class="letterStyle" src="/burningcrusade/townhall/images/outlandmap/stage4.jpg"><img id="stage5" class="letterStyle" src="/burningcrusade/townhall/images/outlandmap/stage5.jpg">
+  <img id="stage6" class="letterStyle" src="/burningcrusade/townhall/images/outlandmap/stage6.jpg">
+  
+  <div style="width:270px; height:405px; position:absolute; top:30px; right:-117px;">
+		<table border="0" cellpadding="0" cellspacing="0" width="270" height="405">
+		  <tr>
+		    <td class="topLeft"></td>
+			<td class="topBox"></td>
+		    <td class="topRight"></td>
+		  </tr>
+		  <tr>
+		    <td class="leftBox"></td>
+			<td class="mainBod" valign="top">
+			  <div class="tooltipText" style="text-align:left; position:relative;">
+				<div id="infoBox">
+				<span class="myTitle">Outland awaits...</span>
+                <br><br>
+				Beyond the Dark Portal lies the shattered realm of Outland, the broken remains of the orcs' homeworld, Draenor. Among the ruins of this world, the survivors of the cataclysm are trying to rebuild, and in other parts of Outland, life continues to thrive. Those brave enough to make the journey through the Dark Portal will find new allies, new enemies, and limitless adventure beyond an untamed horizon.
+                <br><br>
+				Click on any region in the map to learn more about that zone's faction bases, dungeons, and neutral cities waiting to be discovered in World of Warcraft: The Burning Crusade.
+				</div>
+			  </div>
+			</td>
+			<td class="rightBox"></td>
+		  </tr>
+		  <tr>
+		    <td class="botLeft"></td>
+			<td class="botBox"></td>
+		    <td class="botRight"></td>
+		  </tr>
+		</table>  
+  </div>
+  <div style="position:absolute; right:-120px; top:325px;"><a id="zoneLink" href="javascript:popUpOmega(&#x27;images/newclasses/ss01.jpg&#x27;,800,600);"><img id="zoneThumb" src="/burningcrusade/townhall/images/newclasses/ss01-thumb.jpg" border="0"></a></div>
+</div>
+			</td>
+			<td class="rightBox"></td>
+		  </tr>
+		  <tr>
+		    <td class="botLeft"></td>
+			<td class="botBox"></td>
+		    <td class="botRight"></td>
+		  </tr>
+		</table>  
+		<div style="padding-left:45px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:white;">Note: All dungeon and region levels on this page are the expected monster levels, not player character levels</div>
+<!-- END OF MAIN BACKGROUND -->
+	 </div>
+    </td>
+	<td width="50%" valign="top" style="background-image:url(&quot;/burningcrusade/images/2_rightbg.gif&quot;); background-repeat:repeat-y; background-position:top left;">
+      <div style="background-image:url(&quot;/burningcrusade/images/2_topright.jpg&quot;); background-repeat:no-repeat; background-position:top left; width:100%; height:170;"></div>
+	</td>
+  </tr>
+</table>
+<div id="toolBox" style="display:none; position:absolute; top:20px; color:#FFFFFF; background-color:#000000; border:1px solid #DDDDDD; font-family:Arial, Helvetica, sans-serif; padding:3px; text-align:center; font-size:9px; border-bottom-color:#666666; border-right-color:#666666;">TEST</div>
+
+<table width="100%" height="107" cellpadding="0" cellspacing="0" border="0" background="/burningcrusade/images/2_bottom_tile.jpg">
+<tr>
+<td width="50%" height="107" style="background-image:url(&quot;/burningcrusade/images/2_botleft.gif&quot;); background-position:bottom right; background-repeat:no-repeat;"></td>
+<td width="955" height="107" background="/burningcrusade/images/2_bot.gif" valign="top">
+
+<div style="background-image:url(&quot;/burningcrusade/images/index_linkbg.gif&quot;); position:absolute; background-repeat:repeat-x; margin-top:125px; margin-left:65px;"><span style="font-size:11px;"><a href="/index.xml"><img src="/burningcrusade/images/backarrow.gif" width="24" height="24" border="0" style="vertical-align:middle;"></a> <a href="/index.xml">Return to WorldofWarcraft.com</a></span></div>
+
+<div style="position:relative;"><div style="position:absolute; left:437px; top:107px;"><a href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Ftownhall%2Foutlandmap.html&amp;requested=http%3A%2F%2Fwww.blizzard.com&amp;reason=external-or-uncollected-resource"><img src="/burningcrusade/images/blizzlogo_bot.jpg" border="0" width="81" height="15" /></a></div></div>
+
+<img src="/shared/wow-com/images/layout/pixel.gif" width="955" height="1"><div style="position:relative;"><div style="position:absolute; left:438px; top:73px;"><a href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Ftownhall%2Foutlandmap.html&amp;requested=http%3A%2F%2Fwww.blizzard.com&amp;reason=external-or-uncollected-resource"><img src="/shared/wow-com/images/layout/pixel.gif" border="0" width="79" height="33"></a></div></div>
+
+<div style="position:relative; top:35px;"><center><a class="tiny" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Ftownhall%2Foutlandmap.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Fprivacy.shtml&amp;reason=external-or-uncollected-resource">Online Privacy Policy</a></small><br /><a class="tiny" href="/__offline/missing.html?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Ftownhall%2Foutlandmap.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Flegalfaq.shtml&amp;reason=external-or-uncollected-resource">&copy;2008 Blizzard Entertainment. All rights reserved.</a></small></center></div>
+
+
+</td>
+<td width="50%" height="107" style="background-image:url(&quot;/burningcrusade/images/2_botright.gif&quot;); background-position:bottom left; background-repeat:no-repeat;"></td>
+</tr>
+</table>
+
+
+<table width="100%" height="104" cellpadding="0" cellspacing="0" border="0" bgcolor="#000000">
+<tr>
+<td width="100%" style="background-image:url(&quot;/burningcrusade/images/bottom_tile.jpg&quot;); background-position:top; background-repeat:repeat-x;"></td>
+</tr>
+</table>
+
+<script type="text/javascript">/* offline analytics tracker removed; no external request is made */
+</script>
+<script type="text/javascript">/* offline analytics tracker removed; no external request is made */
+</script>
+
+</body>
+</html>
