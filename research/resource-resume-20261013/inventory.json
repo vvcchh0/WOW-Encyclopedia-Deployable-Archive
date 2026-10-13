@@ -1,0 +1,4468 @@
+{
+  "schema_version": 1,
+  "kind": "resource_resume_inventory_20261013",
+  "generated_utc": "2026-10-13",
+  "network_performed": false,
+  "anchor": "20080512210044",
+  "source_of_truth": {
+    "path": "research/final-gap-closure-20261012/final-build/targets.json",
+    "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+    "count": 3358
+  },
+  "historical_context": {
+    "negative_review": {
+      "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+      "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+      "bytes": 5436854,
+      "source_kind": "historical_coverage_review"
+    },
+    "temporal_review": {
+      "path": "research/final-gap-closure-20261012/cdx-only-temporal-review.json",
+      "sha256": "ff64a73373c01cc23a97b8c29c5047e3c264e08b08a0be5591dca8f15c009823",
+      "bytes": 1869645,
+      "source_kind": "historical_cdx_temporal_review"
+    },
+    "historical_target_count": 3768,
+    "joined_temporal_pairs": 14,
+    "join_modes": {
+      "exact": 14
+    },
+    "temporal_primary_class_counts_on_join": {
+      "2008_nonimage_or_error_no_2008_image": 14
+    }
+  },
+  "current_state_counts": {
+    "known_browser_gap_no_local_entity": 1727,
+    "cdx_row_evidence_no_local_entity": 14,
+    "unmatched_local_evidence": 1613,
+    "local_plan_only_evidence": 2,
+    "local_error_entity_evidence": 2
+  },
+  "candidate_count": 50,
+  "candidates": [
+    {
+      "logical_url": "http://www.worldofwarcraft.com/info/classes/images/talents/icon-over-parchment.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/info/classes/images/talents/icon-over-parchment.gif",
+      "host": "www.worldofwarcraft.com",
+      "path": "/info/classes/images/talents/icon-over-parchment.gif",
+      "query": "",
+      "kind": "image",
+      "role": "pre2008_static_supplement_candidate",
+      "priority": "P2",
+      "current_state": "cdx_row_evidence_no_local_entity",
+      "events": 9,
+      "page_count": 9,
+      "pages": [
+        "/info/classes/bc-druid/spells.html",
+        "/info/classes/bc-hunter/spells.html",
+        "/info/classes/bc-mage/spells.html",
+        "/info/classes/bc-paladin/spells.html",
+        "/info/classes/bc-priest/spells.html",
+        "/info/classes/bc-rogue/spells.html",
+        "/info/classes/bc-shaman/spells.html",
+        "/info/classes/bc-warlock/spells.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "reason": "Current target has only pre-2008 status-200 image rows in the saved sample; full exact 2008 empty proof and opt-in validation remain required.",
+      "requested_next_step": "verify_full_exact_2008_empty_then_entity_get",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        }
+      ],
+      "cdx_candidates": [
+        {
+          "timestamp": "20060213032412",
+          "original": "http://www.worldofwarcraft.com/info/classes/images/talents/icon-over-parchment.gif",
+          "status": "200",
+          "mime": "image/gif",
+          "digest": "IYDFYYK37RR35OJDHESN6VAIZUTB2QD4",
+          "cdx_file": "research/site-recovery-2008/narrow-cdx/batch-1/004-4a085a8f8d3c3d38.json"
+        },
+        {
+          "timestamp": "20060414124522",
+          "original": "http://www.worldofwarcraft.com/info/classes/images/talents/icon-over-parchment.gif",
+          "status": "200",
+          "mime": "image/gif",
+          "digest": "IYDFYYK37RR35OJDHESN6VAIZUTB2QD4",
+          "cdx_file": "research/site-recovery-2008/narrow-cdx/batch-1/004-4a085a8f8d3c3d38.json"
+        },
+        {
+          "timestamp": "20061205081751",
+          "original": "http://www.worldofwarcraft.com:80/info/classes/images/talents/icon-over-parchment.gif",
+          "status": "200",
+          "mime": "image/gif",
+          "digest": "BVAQZGLE7BHL3ZKCRBHXVSBOGYQAVXO4",
+          "cdx_file": "research/site-recovery-2008/narrow-cdx/batch-1/004-4a085a8f8d3c3d38.json"
+        },
+        {
+          "timestamp": "20061209234130",
+          "original": "http://www.worldofwarcraft.com:80/info/classes/images/talents/icon-over-parchment.gif",
+          "status": "200",
+          "mime": "image/gif",
+          "digest": "BVAQZGLE7BHL3ZKCRBHXVSBOGYQAVXO4",
+          "cdx_file": "research/site-recovery-2008/narrow-cdx/batch-1/004-4a085a8f8d3c3d38.json"
+        }
+      ],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "This is not a baseline candidate and the CDX sample is not itself a complete-empty proof.",
+      "rank": 1
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/burningcrusade/townhall/images/bestiary/title-thebroken.png",
+      "comparison_key": "http://www.worldofwarcraft.com/burningcrusade/townhall/images/bestiary/title-thebroken.png",
+      "host": "www.worldofwarcraft.com",
+      "path": "/burningcrusade/townhall/images/bestiary/title-thebroken.png",
+      "query": "",
+      "kind": "image",
+      "role": "pre2008_static_supplement_candidate",
+      "priority": "P2",
+      "current_state": "cdx_row_evidence_no_local_entity",
+      "events": 1,
+      "page_count": 1,
+      "pages": [
+        "/burningcrusade/townhall/bestiary.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "reason": "Current target has only pre-2008 status-200 image rows in the saved sample; full exact 2008 empty proof and opt-in validation remain required.",
+      "requested_next_step": "verify_full_exact_2008_empty_then_entity_get",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        }
+      ],
+      "cdx_candidates": [
+        {
+          "timestamp": "20060424020303",
+          "original": "http://www.worldofwarcraft.com:80/burningcrusade/townhall/images/bestiary/title-thebroken.png",
+          "status": "200",
+          "mime": "image/png",
+          "digest": "2KJFRLWQHDTGWNHKHVGKWSYWCSEBSI6W",
+          "cdx_file": "research/site-recovery-2008/prefix-cdx/006-125df563e51d0001.json"
+        },
+        {
+          "timestamp": "20060430121402",
+          "original": "http://www.worldofwarcraft.com:80/burningcrusade/townhall/images/bestiary/title-thebroken.png",
+          "status": "200",
+          "mime": "image/png",
+          "digest": "2KJFRLWQHDTGWNHKHVGKWSYWCSEBSI6W",
+          "cdx_file": "research/site-recovery-2008/prefix-cdx/006-125df563e51d0001.json"
+        }
+      ],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "This is not a baseline candidate and the CDX sample is not itself a complete-empty proof.",
+      "rank": 2
+    },
+    {
+      "logical_url": "https://www.worldofwarcraft.com/burningcrusade/townhall/images/bestiary/thumb-thebroken.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/burningcrusade/townhall/images/bestiary/thumb-thebroken.jpg",
+      "host": "www.worldofwarcraft.com",
+      "path": "/burningcrusade/townhall/images/bestiary/thumb-thebroken.jpg",
+      "query": "",
+      "kind": "image",
+      "role": "pre2008_static_supplement_candidate",
+      "priority": "P2",
+      "current_state": "cdx_row_evidence_no_local_entity",
+      "events": 1,
+      "page_count": 1,
+      "pages": [
+        "/burningcrusade/townhall/bestiary.html"
+      ],
+      "target_kinds": [
+        "generated_placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "official"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-016-runtime-resource-gaps.json"
+        ]
+      },
+      "reason": "Current target has only pre-2008 status-200 image rows in the saved sample; full exact 2008 empty proof and opt-in validation remain required.",
+      "requested_next_step": "verify_full_exact_2008_empty_then_entity_get",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        }
+      ],
+      "cdx_candidates": [
+        {
+          "timestamp": "20060424020257",
+          "original": "http://www.worldofwarcraft.com:80/burningcrusade/townhall/images/bestiary/thumb-thebroken.jpg",
+          "status": "200",
+          "mime": "image/jpeg",
+          "digest": "BWVB6YEPIKC32KW5NFOFKMXTM2AU5UHS",
+          "cdx_file": "research/site-recovery-2008/prefix-cdx/006-125df563e51d0001.json"
+        },
+        {
+          "timestamp": "20060430121533",
+          "original": "http://www.worldofwarcraft.com:80/burningcrusade/townhall/images/bestiary/thumb-thebroken.jpg",
+          "status": "200",
+          "mime": "image/jpeg",
+          "digest": "BWVB6YEPIKC32KW5NFOFKMXTM2AU5UHS",
+          "cdx_file": "research/site-recovery-2008/prefix-cdx/006-125df563e51d0001.json"
+        }
+      ],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "This is not a baseline candidate and the CDX sample is not itself a complete-empty proof.",
+      "rank": 3
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/dot.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/dot.gif",
+      "host": "www.worldofwarcraft.com",
+      "path": "/shared/wow-com/images/subnav/dot.gif",
+      "query": "",
+      "kind": "image",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 295,
+      "page_count": 295,
+      "pages": [
+        "/calendar/index.html",
+        "/community/comics/2006-07.html",
+        "/community/comics/2006-08.html",
+        "/community/comics/2006-10.html",
+        "/community/comics/2006-11.html",
+        "/community/comics/2007-04.html",
+        "/community/comics/2007-05.html",
+        "/community/comics/2007-09.html"
+      ],
+      "target_kinds": [
+        "generated_placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "official"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-001-resource-gaps.json",
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-016-runtime-resource-gaps.json"
+        ]
+      },
+      "reason": "Historical coverage review classifies this URL as complete_2008_no_index; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "complete_2008_no_index",
+      "historical_coverage_match_sample": [
+        {
+          "coverage_index": 5418,
+          "primary_class": "no_record_complete_2008_prefix",
+          "original": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/dot.gif",
+          "complete_prefixes": [
+            {
+              "meta_file": "research/resource-gap-coverage-audit/cdx-2008/raw/07-f0e1bc49c2964f96.meta.json",
+              "meta_sha256": "b34e2e826282a29943ca12d601bdb4f2aea1a839092202232b316af5aa144685",
+              "raw_file": "research/resource-gap-coverage-audit/cdx-2008/raw/07-f0e1bc49c2964f96.json",
+              "raw_sha256": "92d55dc69741ec98a3c937f058de27499306d5e3228c83e43f5ca4f1638268f2",
+              "schema_ok": true,
+              "contract_ok": true,
+              "not_truncated": false,
+              "path_query_covered": true,
+              "reasons": [],
+              "query_url": "http://www.worldofwarcraft.com/shared/wow-com/",
+              "window_from": "20080101000000",
+              "window_to": "20081231235959",
+              "match_type": "prefix",
+              "filters": [],
+              "collapse": null,
+              "show_num_pages": false,
+              "status": 200,
+              "coverage": {
+                "json_parsed": true,
+                "header_present": true,
+                "capture_row_count": 6973,
+                "row_count": 6974,
+                "possibly_truncated": false,
+                "invalid_rows": 0,
+                "first_timestamp": "20080113033517",
+                "last_timestamp": "20081206214559"
+              },
+              "raw_bytes": 1171779,
+              "contract_fields": {
+                "window_from": true,
+                "window_to": true,
+                "match_type": true,
+                "filters_empty": true,
+                "collapse_none": true,
+                "show_num_pages_false": true,
+                "http_200": true,
+                "json_parsed": true,
+                "header_present": true,
+                "not_truncated": true,
+                "no_invalid_rows": true
+              },
+              "ok": true
+            }
+          ],
+          "item_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/dot.gif",
+          "row_count": 0,
+          "status_counts": {}
+        }
+      ],
+      "rank": 4
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_community.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_community.jpg",
+      "host": "www.worldofwarcraft.com",
+      "path": "/shared/wow-com/images/subnav/icon_community.jpg",
+      "query": "",
+      "kind": "image",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 70,
+      "page_count": 70,
+      "pages": [
+        "/community/chinaicoke.html",
+        "/community/comics.html",
+        "/community/comics/2006-05.html",
+        "/community/comics/2006-06.html",
+        "/community/comics/2006-07.html",
+        "/community/comics/2006-08.html",
+        "/community/comics/2006-09.html",
+        "/community/comics/2006-10.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-001-resource-gaps.json",
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "reason": "Historical coverage review classifies this URL as complete_2008_no_index; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "complete_2008_no_index",
+      "historical_coverage_match_sample": [
+        {
+          "coverage_index": 5422,
+          "primary_class": "no_record_complete_2008_prefix",
+          "original": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_community.jpg",
+          "complete_prefixes": [
+            {
+              "meta_file": "research/resource-gap-coverage-audit/cdx-2008/raw/07-f0e1bc49c2964f96.meta.json",
+              "meta_sha256": "b34e2e826282a29943ca12d601bdb4f2aea1a839092202232b316af5aa144685",
+              "raw_file": "research/resource-gap-coverage-audit/cdx-2008/raw/07-f0e1bc49c2964f96.json",
+              "raw_sha256": "92d55dc69741ec98a3c937f058de27499306d5e3228c83e43f5ca4f1638268f2",
+              "schema_ok": true,
+              "contract_ok": true,
+              "not_truncated": false,
+              "path_query_covered": true,
+              "reasons": [],
+              "query_url": "http://www.worldofwarcraft.com/shared/wow-com/",
+              "window_from": "20080101000000",
+              "window_to": "20081231235959",
+              "match_type": "prefix",
+              "filters": [],
+              "collapse": null,
+              "show_num_pages": false,
+              "status": 200,
+              "coverage": {
+                "json_parsed": true,
+                "header_present": true,
+                "capture_row_count": 6973,
+                "row_count": 6974,
+                "possibly_truncated": false,
+                "invalid_rows": 0,
+                "first_timestamp": "20080113033517",
+                "last_timestamp": "20081206214559"
+              },
+              "raw_bytes": 1171779,
+              "contract_fields": {
+                "window_from": true,
+                "window_to": true,
+                "match_type": true,
+                "filters_empty": true,
+                "collapse_none": true,
+                "show_num_pages_false": true,
+                "http_200": true,
+                "json_parsed": true,
+                "header_present": true,
+                "not_truncated": true,
+                "no_invalid_rows": true
+              },
+              "ok": true
+            }
+          ],
+          "item_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_community.jpg",
+          "row_count": 0,
+          "status_counts": {}
+        }
+      ],
+      "rank": 5
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_player%20vs%20player.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_player%20vs%20player.jpg",
+      "host": "www.worldofwarcraft.com",
+      "path": "/shared/wow-com/images/subnav/icon_player%20vs%20player.jpg",
+      "query": "",
+      "kind": "image",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 39,
+      "page_count": 39,
+      "pages": [
+        "/info/basics/factions/alterac/index.html",
+        "/info/basics/factions/arathi/index.html",
+        "/info/basics/factions/bonewastes/bonewastes.xml",
+        "/info/basics/factions/halaa/halaa.xml",
+        "/info/basics/factions/hellfire/hellfire-tokens.xml",
+        "/info/basics/factions/warsong/index.html",
+        "/info/basics/factions/zangarmarsh/zangarpvp.xml",
+        "/info/basics/pvpcombat.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-001-resource-gaps.json",
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "reason": "Historical coverage review classifies this URL as complete_2008_no_index; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "complete_2008_no_index",
+      "historical_coverage_match_sample": [
+        {
+          "coverage_index": 5430,
+          "primary_class": "no_record_complete_2008_prefix",
+          "original": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_player%20vs%20player.jpg",
+          "complete_prefixes": [
+            {
+              "meta_file": "research/resource-gap-coverage-audit/cdx-2008/raw/07-f0e1bc49c2964f96.meta.json",
+              "meta_sha256": "b34e2e826282a29943ca12d601bdb4f2aea1a839092202232b316af5aa144685",
+              "raw_file": "research/resource-gap-coverage-audit/cdx-2008/raw/07-f0e1bc49c2964f96.json",
+              "raw_sha256": "92d55dc69741ec98a3c937f058de27499306d5e3228c83e43f5ca4f1638268f2",
+              "schema_ok": true,
+              "contract_ok": true,
+              "not_truncated": false,
+              "path_query_covered": true,
+              "reasons": [],
+              "query_url": "http://www.worldofwarcraft.com/shared/wow-com/",
+              "window_from": "20080101000000",
+              "window_to": "20081231235959",
+              "match_type": "prefix",
+              "filters": [],
+              "collapse": null,
+              "show_num_pages": false,
+              "status": 200,
+              "coverage": {
+                "json_parsed": true,
+                "header_present": true,
+                "capture_row_count": 6973,
+                "row_count": 6974,
+                "possibly_truncated": false,
+                "invalid_rows": 0,
+                "first_timestamp": "20080113033517",
+                "last_timestamp": "20081206214559"
+              },
+              "raw_bytes": 1171779,
+              "contract_fields": {
+                "window_from": true,
+                "window_to": true,
+                "match_type": true,
+                "filters_empty": true,
+                "collapse_none": true,
+                "show_num_pages_false": true,
+                "http_200": true,
+                "json_parsed": true,
+                "header_present": true,
+                "not_truncated": true,
+                "no_invalid_rows": true
+              },
+              "ok": true
+            }
+          ],
+          "item_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_player%20vs%20player.jpg",
+          "row_count": 0,
+          "status_counts": {}
+        }
+      ],
+      "rank": 6
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_the%20world.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_the%20world.jpg",
+      "host": "www.worldofwarcraft.com",
+      "path": "/shared/wow-com/images/subnav/icon_the%20world.jpg",
+      "query": "",
+      "kind": "image",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 37,
+      "page_count": 37,
+      "pages": [
+        "/community/ingameevents.html",
+        "/info/basics/bcraidarea.html",
+        "/info/basics/bcworlddungeons.html",
+        "/info/basics/cities.html",
+        "/info/basics/dungeons.html",
+        "/info/basics/dungeontips.html",
+        "/info/basics/instancing.html",
+        "/info/basics/map.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "reason": "Historical coverage review classifies this URL as complete_2008_no_index; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "complete_2008_no_index",
+      "historical_coverage_match_sample": [
+        {
+          "coverage_index": 5434,
+          "primary_class": "no_record_complete_2008_prefix",
+          "original": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_the%20world.jpg",
+          "complete_prefixes": [
+            {
+              "meta_file": "research/resource-gap-coverage-audit/cdx-2008/raw/07-f0e1bc49c2964f96.meta.json",
+              "meta_sha256": "b34e2e826282a29943ca12d601bdb4f2aea1a839092202232b316af5aa144685",
+              "raw_file": "research/resource-gap-coverage-audit/cdx-2008/raw/07-f0e1bc49c2964f96.json",
+              "raw_sha256": "92d55dc69741ec98a3c937f058de27499306d5e3228c83e43f5ca4f1638268f2",
+              "schema_ok": true,
+              "contract_ok": true,
+              "not_truncated": false,
+              "path_query_covered": true,
+              "reasons": [],
+              "query_url": "http://www.worldofwarcraft.com/shared/wow-com/",
+              "window_from": "20080101000000",
+              "window_to": "20081231235959",
+              "match_type": "prefix",
+              "filters": [],
+              "collapse": null,
+              "show_num_pages": false,
+              "status": 200,
+              "coverage": {
+                "json_parsed": true,
+                "header_present": true,
+                "capture_row_count": 6973,
+                "row_count": 6974,
+                "possibly_truncated": false,
+                "invalid_rows": 0,
+                "first_timestamp": "20080113033517",
+                "last_timestamp": "20081206214559"
+              },
+              "raw_bytes": 1171779,
+              "contract_fields": {
+                "window_from": true,
+                "window_to": true,
+                "match_type": true,
+                "filters_empty": true,
+                "collapse_none": true,
+                "show_num_pages_false": true,
+                "http_200": true,
+                "json_parsed": true,
+                "header_present": true,
+                "not_truncated": true,
+                "no_invalid_rows": true
+              },
+              "ok": true
+            }
+          ],
+          "item_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_the%20world.jpg",
+          "row_count": 0,
+          "status_counts": {}
+        }
+      ],
+      "rank": 7
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_reputations.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_reputations.jpg",
+      "host": "www.worldofwarcraft.com",
+      "path": "/shared/wow-com/images/subnav/icon_reputations.jpg",
+      "query": "",
+      "kind": "image",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 31,
+      "page_count": 31,
+      "pages": [
+        "/info/basics/factions/aldorscryers/aldor-scryers-tokens.xml",
+        "/info/basics/factions/aldorscryers/aldor-scryers.xml",
+        "/info/basics/factions/argent/index.html",
+        "/info/basics/factions/badgesofjustice/badges-of-justice.html",
+        "/info/basics/factions/badgesofjustice/badges-of-justice2.html",
+        "/info/basics/factions/broodofnozdormu/index.html",
+        "/info/basics/factions/cenarion/index.html",
+        "/info/basics/factions/cenarionxp/cenarionxp.xml"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "reason": "Historical coverage review classifies this URL as complete_2008_no_index; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "complete_2008_no_index",
+      "historical_coverage_match_sample": [
+        {
+          "coverage_index": 5432,
+          "primary_class": "no_record_complete_2008_prefix",
+          "original": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_reputations.jpg",
+          "complete_prefixes": [
+            {
+              "meta_file": "research/resource-gap-coverage-audit/cdx-2008/raw/07-f0e1bc49c2964f96.meta.json",
+              "meta_sha256": "b34e2e826282a29943ca12d601bdb4f2aea1a839092202232b316af5aa144685",
+              "raw_file": "research/resource-gap-coverage-audit/cdx-2008/raw/07-f0e1bc49c2964f96.json",
+              "raw_sha256": "92d55dc69741ec98a3c937f058de27499306d5e3228c83e43f5ca4f1638268f2",
+              "schema_ok": true,
+              "contract_ok": true,
+              "not_truncated": false,
+              "path_query_covered": true,
+              "reasons": [],
+              "query_url": "http://www.worldofwarcraft.com/shared/wow-com/",
+              "window_from": "20080101000000",
+              "window_to": "20081231235959",
+              "match_type": "prefix",
+              "filters": [],
+              "collapse": null,
+              "show_num_pages": false,
+              "status": 200,
+              "coverage": {
+                "json_parsed": true,
+                "header_present": true,
+                "capture_row_count": 6973,
+                "row_count": 6974,
+                "possibly_truncated": false,
+                "invalid_rows": 0,
+                "first_timestamp": "20080113033517",
+                "last_timestamp": "20081206214559"
+              },
+              "raw_bytes": 1171779,
+              "contract_fields": {
+                "window_from": true,
+                "window_to": true,
+                "match_type": true,
+                "filters_empty": true,
+                "collapse_none": true,
+                "show_num_pages_false": true,
+                "http_200": true,
+                "json_parsed": true,
+                "header_present": true,
+                "not_truncated": true,
+                "no_invalid_rows": true
+              },
+              "ok": true
+            }
+          ],
+          "item_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_reputations.jpg",
+          "row_count": 0,
+          "status_counts": {}
+        }
+      ],
+      "rank": 8
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_player%20interaction.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_player%20interaction.jpg",
+      "host": "www.worldofwarcraft.com",
+      "path": "/shared/wow-com/images/subnav/icon_player%20interaction.jpg",
+      "query": "",
+      "kind": "image",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 27,
+      "page_count": 27,
+      "pages": [
+        "/info/basics/benice.html",
+        "/info/basics/chat-commandglossary.html",
+        "/info/basics/chat-customization.html",
+        "/info/basics/chat-other.html",
+        "/info/basics/chat-overview.html",
+        "/info/basics/chat.html",
+        "/info/basics/controls.html",
+        "/info/basics/emotes.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "reason": "Historical coverage review classifies this URL as complete_2008_no_index; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "complete_2008_no_index",
+      "historical_coverage_match_sample": [
+        {
+          "coverage_index": 5429,
+          "primary_class": "no_record_complete_2008_prefix",
+          "original": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_player%20interaction.jpg",
+          "complete_prefixes": [
+            {
+              "meta_file": "research/resource-gap-coverage-audit/cdx-2008/raw/07-f0e1bc49c2964f96.meta.json",
+              "meta_sha256": "b34e2e826282a29943ca12d601bdb4f2aea1a839092202232b316af5aa144685",
+              "raw_file": "research/resource-gap-coverage-audit/cdx-2008/raw/07-f0e1bc49c2964f96.json",
+              "raw_sha256": "92d55dc69741ec98a3c937f058de27499306d5e3228c83e43f5ca4f1638268f2",
+              "schema_ok": true,
+              "contract_ok": true,
+              "not_truncated": false,
+              "path_query_covered": true,
+              "reasons": [],
+              "query_url": "http://www.worldofwarcraft.com/shared/wow-com/",
+              "window_from": "20080101000000",
+              "window_to": "20081231235959",
+              "match_type": "prefix",
+              "filters": [],
+              "collapse": null,
+              "show_num_pages": false,
+              "status": 200,
+              "coverage": {
+                "json_parsed": true,
+                "header_present": true,
+                "capture_row_count": 6973,
+                "row_count": 6974,
+                "possibly_truncated": false,
+                "invalid_rows": 0,
+                "first_timestamp": "20080113033517",
+                "last_timestamp": "20081206214559"
+              },
+              "raw_bytes": 1171779,
+              "contract_fields": {
+                "window_from": true,
+                "window_to": true,
+                "match_type": true,
+                "filters_empty": true,
+                "collapse_none": true,
+                "show_num_pages_false": true,
+                "http_200": true,
+                "json_parsed": true,
+                "header_present": true,
+                "not_truncated": true,
+                "no_invalid_rows": true
+              },
+              "ok": true
+            }
+          ],
+          "item_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_player%20interaction.jpg",
+          "row_count": 0,
+          "status_counts": {}
+        }
+      ],
+      "rank": 9
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_faq.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_faq.jpg",
+      "host": "www.worldofwarcraft.com",
+      "path": "/shared/wow-com/images/subnav/icon_faq.jpg",
+      "query": "",
+      "kind": "image",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 26,
+      "page_count": 26,
+      "pages": [
+        "/info/faq/blizzarddownloader.html",
+        "/info/faq/characters.html",
+        "/info/faq/classes.html",
+        "/info/faq/dungeons.html",
+        "/info/faq/gameplay.html",
+        "/info/faq/general.html",
+        "/info/faq/guide.html",
+        "/info/faq/hordevalliance.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-001-resource-gaps.json",
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "reason": "Historical coverage review classifies this URL as complete_2008_no_index; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "complete_2008_no_index",
+      "historical_coverage_match_sample": [
+        {
+          "coverage_index": 5423,
+          "primary_class": "no_record_complete_2008_prefix",
+          "original": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_faq.jpg",
+          "complete_prefixes": [
+            {
+              "meta_file": "research/resource-gap-coverage-audit/cdx-2008/raw/07-f0e1bc49c2964f96.meta.json",
+              "meta_sha256": "b34e2e826282a29943ca12d601bdb4f2aea1a839092202232b316af5aa144685",
+              "raw_file": "research/resource-gap-coverage-audit/cdx-2008/raw/07-f0e1bc49c2964f96.json",
+              "raw_sha256": "92d55dc69741ec98a3c937f058de27499306d5e3228c83e43f5ca4f1638268f2",
+              "schema_ok": true,
+              "contract_ok": true,
+              "not_truncated": false,
+              "path_query_covered": true,
+              "reasons": [],
+              "query_url": "http://www.worldofwarcraft.com/shared/wow-com/",
+              "window_from": "20080101000000",
+              "window_to": "20081231235959",
+              "match_type": "prefix",
+              "filters": [],
+              "collapse": null,
+              "show_num_pages": false,
+              "status": 200,
+              "coverage": {
+                "json_parsed": true,
+                "header_present": true,
+                "capture_row_count": 6973,
+                "row_count": 6974,
+                "possibly_truncated": false,
+                "invalid_rows": 0,
+                "first_timestamp": "20080113033517",
+                "last_timestamp": "20081206214559"
+              },
+              "raw_bytes": 1171779,
+              "contract_fields": {
+                "window_from": true,
+                "window_to": true,
+                "match_type": true,
+                "filters_empty": true,
+                "collapse_none": true,
+                "show_num_pages_false": true,
+                "http_200": true,
+                "json_parsed": true,
+                "header_present": true,
+                "not_truncated": true,
+                "no_invalid_rows": true
+              },
+              "ok": true
+            }
+          ],
+          "item_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_faq.jpg",
+          "row_count": 0,
+          "status_counts": {}
+        }
+      ],
+      "rank": 10
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_story.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_story.jpg",
+      "host": "www.worldofwarcraft.com",
+      "path": "/shared/wow-com/images/subnav/icon_story.jpg",
+      "query": "",
+      "kind": "image",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 25,
+      "page_count": 25,
+      "pages": [
+        "/info/story/chapter1.html",
+        "/info/story/chapter2.html",
+        "/info/story/chapter3.html",
+        "/info/story/chapter4.html",
+        "/info/story/chapter5.html",
+        "/info/story/chapter6.html",
+        "/info/story/index.html",
+        "/info/story/shiftingsands.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-001-resource-gaps.json",
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "reason": "Historical coverage review classifies this URL as complete_2008_no_index; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "complete_2008_no_index",
+      "historical_coverage_match_sample": [
+        {
+          "coverage_index": 5433,
+          "primary_class": "no_record_complete_2008_prefix",
+          "original": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_story.jpg",
+          "complete_prefixes": [
+            {
+              "meta_file": "research/resource-gap-coverage-audit/cdx-2008/raw/07-f0e1bc49c2964f96.meta.json",
+              "meta_sha256": "b34e2e826282a29943ca12d601bdb4f2aea1a839092202232b316af5aa144685",
+              "raw_file": "research/resource-gap-coverage-audit/cdx-2008/raw/07-f0e1bc49c2964f96.json",
+              "raw_sha256": "92d55dc69741ec98a3c937f058de27499306d5e3228c83e43f5ca4f1638268f2",
+              "schema_ok": true,
+              "contract_ok": true,
+              "not_truncated": false,
+              "path_query_covered": true,
+              "reasons": [],
+              "query_url": "http://www.worldofwarcraft.com/shared/wow-com/",
+              "window_from": "20080101000000",
+              "window_to": "20081231235959",
+              "match_type": "prefix",
+              "filters": [],
+              "collapse": null,
+              "show_num_pages": false,
+              "status": 200,
+              "coverage": {
+                "json_parsed": true,
+                "header_present": true,
+                "capture_row_count": 6973,
+                "row_count": 6974,
+                "possibly_truncated": false,
+                "invalid_rows": 0,
+                "first_timestamp": "20080113033517",
+                "last_timestamp": "20081206214559"
+              },
+              "raw_bytes": 1171779,
+              "contract_fields": {
+                "window_from": true,
+                "window_to": true,
+                "match_type": true,
+                "filters_empty": true,
+                "collapse_none": true,
+                "show_num_pages_false": true,
+                "http_200": true,
+                "json_parsed": true,
+                "header_present": true,
+                "not_truncated": true,
+                "no_invalid_rows": true
+              },
+              "ok": true
+            }
+          ],
+          "item_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_story.jpg",
+          "row_count": 0,
+          "status_counts": {}
+        }
+      ],
+      "rank": 11
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_getting%20started.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_getting%20started.jpg",
+      "host": "www.worldofwarcraft.com",
+      "path": "/shared/wow-com/images/subnav/icon_getting%20started.jpg",
+      "query": "",
+      "kind": "image",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 22,
+      "page_count": 22,
+      "pages": [
+        "/info/basics/characters.html",
+        "/info/basics/chat-qna.html",
+        "/info/basics/combat.html",
+        "/info/basics/combatpets.html",
+        "/info/basics/dailyquests.html",
+        "/info/basics/death.html",
+        "/info/basics/duels.html",
+        "/info/basics/firstfewlevels.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "reason": "Historical coverage review classifies this URL as complete_2008_no_index; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "complete_2008_no_index",
+      "historical_coverage_match_sample": [
+        {
+          "coverage_index": 5425,
+          "primary_class": "no_record_complete_2008_prefix",
+          "original": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_getting%20started.jpg",
+          "complete_prefixes": [
+            {
+              "meta_file": "research/resource-gap-coverage-audit/cdx-2008/raw/07-f0e1bc49c2964f96.meta.json",
+              "meta_sha256": "b34e2e826282a29943ca12d601bdb4f2aea1a839092202232b316af5aa144685",
+              "raw_file": "research/resource-gap-coverage-audit/cdx-2008/raw/07-f0e1bc49c2964f96.json",
+              "raw_sha256": "92d55dc69741ec98a3c937f058de27499306d5e3228c83e43f5ca4f1638268f2",
+              "schema_ok": true,
+              "contract_ok": true,
+              "not_truncated": false,
+              "path_query_covered": true,
+              "reasons": [],
+              "query_url": "http://www.worldofwarcraft.com/shared/wow-com/",
+              "window_from": "20080101000000",
+              "window_to": "20081231235959",
+              "match_type": "prefix",
+              "filters": [],
+              "collapse": null,
+              "show_num_pages": false,
+              "status": 200,
+              "coverage": {
+                "json_parsed": true,
+                "header_present": true,
+                "capture_row_count": 6973,
+                "row_count": 6974,
+                "possibly_truncated": false,
+                "invalid_rows": 0,
+                "first_timestamp": "20080113033517",
+                "last_timestamp": "20081206214559"
+              },
+              "raw_bytes": 1171779,
+              "contract_fields": {
+                "window_from": true,
+                "window_to": true,
+                "match_type": true,
+                "filters_empty": true,
+                "collapse_none": true,
+                "show_num_pages_false": true,
+                "http_200": true,
+                "json_parsed": true,
+                "header_present": true,
+                "not_truncated": true,
+                "no_invalid_rows": true
+              },
+              "ok": true
+            }
+          ],
+          "item_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_getting%20started.jpg",
+          "row_count": 0,
+          "status_counts": {}
+        }
+      ],
+      "rank": 12
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_transportation.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_transportation.jpg",
+      "host": "www.worldofwarcraft.com",
+      "path": "/shared/wow-com/images/subnav/icon_transportation.jpg",
+      "query": "",
+      "kind": "image",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 18,
+      "page_count": 18,
+      "pages": [
+        "/info/basics/mounts/alteracvalley.html",
+        "/info/basics/mounts/elekks.html",
+        "/info/basics/mounts/flying.html",
+        "/info/basics/mounts/hawkstriders.html",
+        "/info/basics/mounts/horses.html",
+        "/info/basics/mounts/index.html",
+        "/info/basics/mounts/kodos.html",
+        "/info/basics/mounts/mechanostriders.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "reason": "Historical coverage review classifies this URL as complete_2008_no_index; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "complete_2008_no_index",
+      "historical_coverage_match_sample": [
+        {
+          "coverage_index": 5436,
+          "primary_class": "no_record_complete_2008_prefix",
+          "original": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_transportation.jpg",
+          "complete_prefixes": [
+            {
+              "meta_file": "research/resource-gap-coverage-audit/cdx-2008/raw/07-f0e1bc49c2964f96.meta.json",
+              "meta_sha256": "b34e2e826282a29943ca12d601bdb4f2aea1a839092202232b316af5aa144685",
+              "raw_file": "research/resource-gap-coverage-audit/cdx-2008/raw/07-f0e1bc49c2964f96.json",
+              "raw_sha256": "92d55dc69741ec98a3c937f058de27499306d5e3228c83e43f5ca4f1638268f2",
+              "schema_ok": true,
+              "contract_ok": true,
+              "not_truncated": false,
+              "path_query_covered": true,
+              "reasons": [],
+              "query_url": "http://www.worldofwarcraft.com/shared/wow-com/",
+              "window_from": "20080101000000",
+              "window_to": "20081231235959",
+              "match_type": "prefix",
+              "filters": [],
+              "collapse": null,
+              "show_num_pages": false,
+              "status": 200,
+              "coverage": {
+                "json_parsed": true,
+                "header_present": true,
+                "capture_row_count": 6973,
+                "row_count": 6974,
+                "possibly_truncated": false,
+                "invalid_rows": 0,
+                "first_timestamp": "20080113033517",
+                "last_timestamp": "20081206214559"
+              },
+              "raw_bytes": 1171779,
+              "contract_fields": {
+                "window_from": true,
+                "window_to": true,
+                "match_type": true,
+                "filters_empty": true,
+                "collapse_none": true,
+                "show_num_pages_false": true,
+                "http_200": true,
+                "json_parsed": true,
+                "header_present": true,
+                "not_truncated": true,
+                "no_invalid_rows": true
+              },
+              "ok": true
+            }
+          ],
+          "item_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_transportation.jpg",
+          "row_count": 0,
+          "status_counts": {}
+        }
+      ],
+      "rank": 13
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_items.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_items.jpg",
+      "host": "www.worldofwarcraft.com",
+      "path": "/shared/wow-com/images/subnav/icon_items.jpg",
+      "query": "",
+      "kind": "image",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 14,
+      "page_count": 14,
+      "pages": [
+        "/info/basics/auctionhouses.html",
+        "/info/basics/auctionhousetips.html",
+        "/info/basics/bags.html",
+        "/info/basics/banking.html",
+        "/info/basics/chatauctions.html",
+        "/info/basics/food.html",
+        "/info/basics/mail.html",
+        "/info/basics/merchants.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "reason": "Historical coverage review classifies this URL as complete_2008_no_index; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "complete_2008_no_index",
+      "historical_coverage_match_sample": [
+        {
+          "coverage_index": 5427,
+          "primary_class": "no_record_complete_2008_prefix",
+          "original": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_items.jpg",
+          "complete_prefixes": [
+            {
+              "meta_file": "research/resource-gap-coverage-audit/cdx-2008/raw/07-f0e1bc49c2964f96.meta.json",
+              "meta_sha256": "b34e2e826282a29943ca12d601bdb4f2aea1a839092202232b316af5aa144685",
+              "raw_file": "research/resource-gap-coverage-audit/cdx-2008/raw/07-f0e1bc49c2964f96.json",
+              "raw_sha256": "92d55dc69741ec98a3c937f058de27499306d5e3228c83e43f5ca4f1638268f2",
+              "schema_ok": true,
+              "contract_ok": true,
+              "not_truncated": false,
+              "path_query_covered": true,
+              "reasons": [],
+              "query_url": "http://www.worldofwarcraft.com/shared/wow-com/",
+              "window_from": "20080101000000",
+              "window_to": "20081231235959",
+              "match_type": "prefix",
+              "filters": [],
+              "collapse": null,
+              "show_num_pages": false,
+              "status": 200,
+              "coverage": {
+                "json_parsed": true,
+                "header_present": true,
+                "capture_row_count": 6973,
+                "row_count": 6974,
+                "possibly_truncated": false,
+                "invalid_rows": 0,
+                "first_timestamp": "20080113033517",
+                "last_timestamp": "20081206214559"
+              },
+              "raw_bytes": 1171779,
+              "contract_fields": {
+                "window_from": true,
+                "window_to": true,
+                "match_type": true,
+                "filters_empty": true,
+                "collapse_none": true,
+                "show_num_pages_false": true,
+                "http_200": true,
+                "json_parsed": true,
+                "header_present": true,
+                "not_truncated": true,
+                "no_invalid_rows": true
+              },
+              "ok": true
+            }
+          ],
+          "item_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_items.jpg",
+          "row_count": 0,
+          "status_counts": {}
+        }
+      ],
+      "rank": 14
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/pvp/battlegrounds/images/warsonggulch/rewards/button-alliance-hilit.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/pvp/battlegrounds/images/warsonggulch/rewards/button-alliance-hilit.jpg",
+      "host": "www.worldofwarcraft.com",
+      "path": "/pvp/battlegrounds/images/warsonggulch/rewards/button-alliance-hilit.jpg",
+      "query": "",
+      "kind": "image",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 12,
+      "page_count": 12,
+      "pages": [
+        "/info/basics/factions/alterac/index.html",
+        "/info/basics/factions/arathi/index.html",
+        "/info/basics/factions/warsong/index.html",
+        "/pvp/battlegrounds/rewards-alterac.html",
+        "/pvp/battlegrounds/rewards-warsong.html",
+        "/pvp/rewards-arena-class-armor.html",
+        "/pvp/rewards-class-armor.html",
+        "/pvp/rewards-general-armor.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "reason": "Historical coverage review classifies this URL as complete_2008_no_index; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "complete_2008_no_index",
+      "historical_coverage_match_sample": [
+        {
+          "coverage_index": 332,
+          "primary_class": "no_record_complete_2008_prefix",
+          "original": "http://www.worldofwarcraft.com/pvp/battlegrounds/images/warsonggulch/rewards/button-alliance-hilit.jpg",
+          "complete_prefixes": [
+            {
+              "meta_file": "research/resource-gap-coverage-audit/cdx-2008/raw/11-5605c1b298627efe.meta.json",
+              "meta_sha256": "ab12bf3a9de3949546c3dea8f8184318c6b5a0189136c1df33ec6631aef6dbc8",
+              "raw_file": "research/resource-gap-coverage-audit/cdx-2008/raw/11-5605c1b298627efe.json",
+              "raw_sha256": "dfc930d8b3d0575d5efc19c288d57093fd8b5a84f71cd48386e7377cf5f1a857",
+              "schema_ok": true,
+              "contract_ok": true,
+              "not_truncated": false,
+              "path_query_covered": true,
+              "reasons": [],
+              "query_url": "http://www.worldofwarcraft.com/pvp/battlegrounds/",
+              "window_from": "20080101000000",
+              "window_to": "20081231235959",
+              "match_type": "prefix",
+              "filters": [],
+              "collapse": null,
+              "show_num_pages": false,
+              "status": 200,
+              "coverage": {
+                "json_parsed": true,
+                "header_present": true,
+                "capture_row_count": 2557,
+                "row_count": 2558,
+                "possibly_truncated": false,
+                "invalid_rows": 0,
+                "first_timestamp": "20080101122528",
+                "last_timestamp": "20081220121922"
+              },
+              "raw_bytes": 426552,
+              "contract_fields": {
+                "window_from": true,
+                "window_to": true,
+                "match_type": true,
+                "filters_empty": true,
+                "collapse_none": true,
+                "show_num_pages_false": true,
+                "http_200": true,
+                "json_parsed": true,
+                "header_present": true,
+                "not_truncated": true,
+                "no_invalid_rows": true
+              },
+              "ok": true
+            }
+          ],
+          "item_url": "http://www.worldofwarcraft.com/pvp/battlegrounds/images/warsonggulch/rewards/button-alliance-hilit.jpg",
+          "row_count": 0,
+          "status_counts": {}
+        }
+      ],
+      "rank": 15
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/pvp/battlegrounds/images/warsonggulch/rewards/button-horde.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/pvp/battlegrounds/images/warsonggulch/rewards/button-horde.jpg",
+      "host": "www.worldofwarcraft.com",
+      "path": "/pvp/battlegrounds/images/warsonggulch/rewards/button-horde.jpg",
+      "query": "",
+      "kind": "image",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 12,
+      "page_count": 12,
+      "pages": [
+        "/info/basics/factions/alterac/index.html",
+        "/info/basics/factions/arathi/index.html",
+        "/info/basics/factions/warsong/index.html",
+        "/pvp/battlegrounds/rewards-alterac.html",
+        "/pvp/battlegrounds/rewards-warsong.html",
+        "/pvp/rewards-arena-class-armor.html",
+        "/pvp/rewards-class-armor.html",
+        "/pvp/rewards-general-armor.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "reason": "Historical coverage review classifies this URL as complete_2008_no_index; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "complete_2008_no_index",
+      "historical_coverage_match_sample": [
+        {
+          "coverage_index": 333,
+          "primary_class": "no_record_complete_2008_prefix",
+          "original": "http://www.worldofwarcraft.com/pvp/battlegrounds/images/warsonggulch/rewards/button-horde.jpg",
+          "complete_prefixes": [
+            {
+              "meta_file": "research/resource-gap-coverage-audit/cdx-2008/raw/11-5605c1b298627efe.meta.json",
+              "meta_sha256": "ab12bf3a9de3949546c3dea8f8184318c6b5a0189136c1df33ec6631aef6dbc8",
+              "raw_file": "research/resource-gap-coverage-audit/cdx-2008/raw/11-5605c1b298627efe.json",
+              "raw_sha256": "dfc930d8b3d0575d5efc19c288d57093fd8b5a84f71cd48386e7377cf5f1a857",
+              "schema_ok": true,
+              "contract_ok": true,
+              "not_truncated": false,
+              "path_query_covered": true,
+              "reasons": [],
+              "query_url": "http://www.worldofwarcraft.com/pvp/battlegrounds/",
+              "window_from": "20080101000000",
+              "window_to": "20081231235959",
+              "match_type": "prefix",
+              "filters": [],
+              "collapse": null,
+              "show_num_pages": false,
+              "status": 200,
+              "coverage": {
+                "json_parsed": true,
+                "header_present": true,
+                "capture_row_count": 2557,
+                "row_count": 2558,
+                "possibly_truncated": false,
+                "invalid_rows": 0,
+                "first_timestamp": "20080101122528",
+                "last_timestamp": "20081220121922"
+              },
+              "raw_bytes": 426552,
+              "contract_fields": {
+                "window_from": true,
+                "window_to": true,
+                "match_type": true,
+                "filters_empty": true,
+                "collapse_none": true,
+                "show_num_pages_false": true,
+                "http_200": true,
+                "json_parsed": true,
+                "header_present": true,
+                "not_truncated": true,
+                "no_invalid_rows": true
+              },
+              "ok": true
+            }
+          ],
+          "item_url": "http://www.worldofwarcraft.com/pvp/battlegrounds/images/warsonggulch/rewards/button-horde.jpg",
+          "row_count": 0,
+          "status_counts": {}
+        }
+      ],
+      "rank": 16
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/shared/wow-com/images/basics/factions/alliance-honor.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/wow-com/images/basics/factions/alliance-honor.gif",
+      "host": "www.worldofwarcraft.com",
+      "path": "/shared/wow-com/images/basics/factions/alliance-honor.gif",
+      "query": "",
+      "kind": "image",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 11,
+      "page_count": 11,
+      "pages": [
+        "/info/basics/factions/alterac/index.html",
+        "/info/basics/factions/arathi/index.html",
+        "/info/basics/factions/warsong/index.html",
+        "/pvp/battlegrounds/rewards-alterac.html",
+        "/pvp/battlegrounds/rewards-warsong.html",
+        "/pvp/rewards-class-armor.html",
+        "/pvp/rewards-general-armor.html",
+        "/pvp/rewards-general.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "reason": "Historical coverage review classifies this URL as complete_2008_no_index; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "complete_2008_no_index",
+      "historical_coverage_match_sample": [
+        {
+          "coverage_index": 5310,
+          "primary_class": "no_record_complete_2008_prefix",
+          "original": "http://www.worldofwarcraft.com/shared/wow-com/images/basics/factions/alliance-honor.gif",
+          "complete_prefixes": [
+            {
+              "meta_file": "research/resource-gap-coverage-audit/cdx-2008/raw/07-f0e1bc49c2964f96.meta.json",
+              "meta_sha256": "b34e2e826282a29943ca12d601bdb4f2aea1a839092202232b316af5aa144685",
+              "raw_file": "research/resource-gap-coverage-audit/cdx-2008/raw/07-f0e1bc49c2964f96.json",
+              "raw_sha256": "92d55dc69741ec98a3c937f058de27499306d5e3228c83e43f5ca4f1638268f2",
+              "schema_ok": true,
+              "contract_ok": true,
+              "not_truncated": false,
+              "path_query_covered": true,
+              "reasons": [],
+              "query_url": "http://www.worldofwarcraft.com/shared/wow-com/",
+              "window_from": "20080101000000",
+              "window_to": "20081231235959",
+              "match_type": "prefix",
+              "filters": [],
+              "collapse": null,
+              "show_num_pages": false,
+              "status": 200,
+              "coverage": {
+                "json_parsed": true,
+                "header_present": true,
+                "capture_row_count": 6973,
+                "row_count": 6974,
+                "possibly_truncated": false,
+                "invalid_rows": 0,
+                "first_timestamp": "20080113033517",
+                "last_timestamp": "20081206214559"
+              },
+              "raw_bytes": 1171779,
+              "contract_fields": {
+                "window_from": true,
+                "window_to": true,
+                "match_type": true,
+                "filters_empty": true,
+                "collapse_none": true,
+                "show_num_pages_false": true,
+                "http_200": true,
+                "json_parsed": true,
+                "header_present": true,
+                "not_truncated": true,
+                "no_invalid_rows": true
+              },
+              "ok": true
+            }
+          ],
+          "item_url": "http://www.worldofwarcraft.com/shared/wow-com/images/basics/factions/alliance-honor.gif",
+          "row_count": 0,
+          "status_counts": {}
+        }
+      ],
+      "rank": 17
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/shared/wow-com/images/basics/factions/horde-honor.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/wow-com/images/basics/factions/horde-honor.gif",
+      "host": "www.worldofwarcraft.com",
+      "path": "/shared/wow-com/images/basics/factions/horde-honor.gif",
+      "query": "",
+      "kind": "image",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 11,
+      "page_count": 11,
+      "pages": [
+        "/info/basics/factions/alterac/index.html",
+        "/info/basics/factions/arathi/index.html",
+        "/info/basics/factions/warsong/index.html",
+        "/pvp/battlegrounds/rewards-alterac.html",
+        "/pvp/battlegrounds/rewards-warsong.html",
+        "/pvp/rewards-class-armor.html",
+        "/pvp/rewards-general-armor.html",
+        "/pvp/rewards-general.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "reason": "Historical coverage review classifies this URL as complete_2008_no_index; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "complete_2008_no_index",
+      "historical_coverage_match_sample": [
+        {
+          "coverage_index": 5371,
+          "primary_class": "no_record_complete_2008_prefix",
+          "original": "http://www.worldofwarcraft.com/shared/wow-com/images/basics/factions/horde-honor.gif",
+          "complete_prefixes": [
+            {
+              "meta_file": "research/resource-gap-coverage-audit/cdx-2008/raw/07-f0e1bc49c2964f96.meta.json",
+              "meta_sha256": "b34e2e826282a29943ca12d601bdb4f2aea1a839092202232b316af5aa144685",
+              "raw_file": "research/resource-gap-coverage-audit/cdx-2008/raw/07-f0e1bc49c2964f96.json",
+              "raw_sha256": "92d55dc69741ec98a3c937f058de27499306d5e3228c83e43f5ca4f1638268f2",
+              "schema_ok": true,
+              "contract_ok": true,
+              "not_truncated": false,
+              "path_query_covered": true,
+              "reasons": [],
+              "query_url": "http://www.worldofwarcraft.com/shared/wow-com/",
+              "window_from": "20080101000000",
+              "window_to": "20081231235959",
+              "match_type": "prefix",
+              "filters": [],
+              "collapse": null,
+              "show_num_pages": false,
+              "status": 200,
+              "coverage": {
+                "json_parsed": true,
+                "header_present": true,
+                "capture_row_count": 6973,
+                "row_count": 6974,
+                "possibly_truncated": false,
+                "invalid_rows": 0,
+                "first_timestamp": "20080113033517",
+                "last_timestamp": "20081206214559"
+              },
+              "raw_bytes": 1171779,
+              "contract_fields": {
+                "window_from": true,
+                "window_to": true,
+                "match_type": true,
+                "filters_empty": true,
+                "collapse_none": true,
+                "show_num_pages_false": true,
+                "http_200": true,
+                "json_parsed": true,
+                "header_present": true,
+                "not_truncated": true,
+                "no_invalid_rows": true
+              },
+              "ok": true
+            }
+          ],
+          "item_url": "http://www.worldofwarcraft.com/shared/wow-com/images/basics/factions/horde-honor.gif",
+          "row_count": 0,
+          "status_counts": {}
+        }
+      ],
+      "rank": 18
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_media.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_media.jpg",
+      "host": "www.worldofwarcraft.com",
+      "path": "/shared/wow-com/images/subnav/icon_media.jpg",
+      "query": "",
+      "kind": "image",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 11,
+      "page_count": 11,
+      "pages": [
+        "/downloads/index.html",
+        "/downloads/languagepack-en.xml",
+        "/downloads/languagepack-es.xml",
+        "/downloads/movies.html",
+        "/downloads/other-downloads.html",
+        "/downloads/sounds.html",
+        "/downloads/wallpapers.html",
+        "/downloads/wallpapers/fan-wallpapers/index.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-001-resource-gaps.json",
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "reason": "Historical coverage review classifies this URL as complete_2008_no_index; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "complete_2008_no_index",
+      "historical_coverage_match_sample": [
+        {
+          "coverage_index": 5428,
+          "primary_class": "no_record_complete_2008_prefix",
+          "original": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_media.jpg",
+          "complete_prefixes": [
+            {
+              "meta_file": "research/resource-gap-coverage-audit/cdx-2008/raw/07-f0e1bc49c2964f96.meta.json",
+              "meta_sha256": "b34e2e826282a29943ca12d601bdb4f2aea1a839092202232b316af5aa144685",
+              "raw_file": "research/resource-gap-coverage-audit/cdx-2008/raw/07-f0e1bc49c2964f96.json",
+              "raw_sha256": "92d55dc69741ec98a3c937f058de27499306d5e3228c83e43f5ca4f1638268f2",
+              "schema_ok": true,
+              "contract_ok": true,
+              "not_truncated": false,
+              "path_query_covered": true,
+              "reasons": [],
+              "query_url": "http://www.worldofwarcraft.com/shared/wow-com/",
+              "window_from": "20080101000000",
+              "window_to": "20081231235959",
+              "match_type": "prefix",
+              "filters": [],
+              "collapse": null,
+              "show_num_pages": false,
+              "status": 200,
+              "coverage": {
+                "json_parsed": true,
+                "header_present": true,
+                "capture_row_count": 6973,
+                "row_count": 6974,
+                "possibly_truncated": false,
+                "invalid_rows": 0,
+                "first_timestamp": "20080113033517",
+                "last_timestamp": "20081206214559"
+              },
+              "raw_bytes": 1171779,
+              "contract_fields": {
+                "window_from": true,
+                "window_to": true,
+                "match_type": true,
+                "filters_empty": true,
+                "collapse_none": true,
+                "show_num_pages_false": true,
+                "http_200": true,
+                "json_parsed": true,
+                "header_present": true,
+                "not_truncated": true,
+                "no_invalid_rows": true
+              },
+              "ok": true
+            }
+          ],
+          "item_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_media.jpg",
+          "row_count": 0,
+          "status_counts": {}
+        }
+      ],
+      "rank": 19
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/info/encyclopedia/images/icons/508.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/info/encyclopedia/images/icons/508.jpg",
+      "host": "www.worldofwarcraft.com",
+      "path": "/info/encyclopedia/images/icons/508.jpg",
+      "query": "",
+      "kind": "image",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 10,
+      "page_count": 10,
+      "pages": [
+        "/info/encyclopedia/367.xml",
+        "/info/encyclopedia/401.xml",
+        "/info/encyclopedia/449.xml",
+        "/info/encyclopedia/463.xml",
+        "/info/encyclopedia/464.xml",
+        "/info/encyclopedia/472.xml",
+        "/info/encyclopedia/474.xml",
+        "/info/encyclopedia/598.xml"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-001-resource-gaps.json",
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "reason": "Historical coverage review classifies this URL as complete_2008_no_index; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "complete_2008_no_index",
+      "historical_coverage_match_sample": [
+        {
+          "coverage_index": 4250,
+          "primary_class": "no_record_complete_2008_prefix",
+          "original": "http://www.worldofwarcraft.com/info/encyclopedia/images/icons/508.jpg",
+          "complete_prefixes": [
+            {
+              "meta_file": "research/resource-gap-coverage-audit/cdx-2008/raw/15-e28938b84bf76f6a.meta.json",
+              "meta_sha256": "8b8e098795275592591607e3b45dae46eb83370b5043627cae913a5d146dcd3a",
+              "raw_file": "research/resource-gap-coverage-audit/cdx-2008/raw/15-e28938b84bf76f6a.json",
+              "raw_sha256": "f35ddc32ac0e05238b8a9413cae0864010ecf94affadcdb14fff2777e2fe650f",
+              "schema_ok": true,
+              "contract_ok": true,
+              "not_truncated": false,
+              "path_query_covered": true,
+              "reasons": [],
+              "query_url": "http://www.worldofwarcraft.com/info/encyclopedia/",
+              "window_from": "20080101000000",
+              "window_to": "20081231235959",
+              "match_type": "prefix",
+              "filters": [],
+              "collapse": null,
+              "show_num_pages": false,
+              "status": 200,
+              "coverage": {
+                "json_parsed": true,
+                "header_present": true,
+                "capture_row_count": 1125,
+                "row_count": 1126,
+                "possibly_truncated": false,
+                "invalid_rows": 0,
+                "first_timestamp": "20080101035326",
+                "last_timestamp": "20081231132327"
+              },
+              "raw_bytes": 173113,
+              "contract_fields": {
+                "window_from": true,
+                "window_to": true,
+                "match_type": true,
+                "filters_empty": true,
+                "collapse_none": true,
+                "show_num_pages_false": true,
+                "http_200": true,
+                "json_parsed": true,
+                "header_present": true,
+                "not_truncated": true,
+                "no_invalid_rows": true
+              },
+              "ok": true
+            }
+          ],
+          "item_url": "http://www.worldofwarcraft.com/info/encyclopedia/images/icons/508.jpg",
+          "row_count": 0,
+          "status_counts": {}
+        }
+      ],
+      "rank": 20
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1340-thumb.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1340-thumb.jpg",
+      "host": "www.worldofwarcraft.com",
+      "path": "/downloads/ssotd/images/screens/ss1340-thumb.jpg",
+      "query": "",
+      "kind": "image",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "page_count": 9,
+      "pages": [
+        "/index.xml",
+        "/new-hp/menus/menu1.htm",
+        "/new-hp/menus/menu2.htm",
+        "/new-hp/menus/menu3.htm",
+        "/new-hp/menus/menu4.htm",
+        "/new-hp/menus/menu5.htm",
+        "/new-hp/menus/menu6.htm",
+        "/new-hp/menus/menu7.htm"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "reason": "Historical coverage review classifies this URL as unmatched_exact; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "unmatched_exact",
+      "rank": 21
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/new-hp/images/countrymenu-bg.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/new-hp/images/countrymenu-bg.gif",
+      "host": "www.worldofwarcraft.com",
+      "path": "/new-hp/images/countrymenu-bg.gif",
+      "query": "",
+      "kind": "image",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 9,
+      "page_count": 9,
+      "pages": [
+        "/index.xml",
+        "/new-hp/menus/menu1.htm",
+        "/new-hp/menus/menu2.htm",
+        "/new-hp/menus/menu3.htm",
+        "/new-hp/menus/menu4.htm",
+        "/new-hp/menus/menu5.htm",
+        "/new-hp/menus/menu6.htm",
+        "/new-hp/menus/menu7.htm"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "reason": "Historical coverage review classifies this URL as complete_2008_no_index; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "complete_2008_no_index",
+      "historical_coverage_match_sample": [
+        {
+          "coverage_index": 277,
+          "primary_class": "no_record_complete_2008_prefix",
+          "original": "http://www.worldofwarcraft.com/new-hp/images/countrymenu-bg.gif",
+          "complete_prefixes": [
+            {
+              "meta_file": "research/resource-gap-coverage-audit/cdx-2008/raw/14-90ce87d3c4c71557.meta.json",
+              "meta_sha256": "9d798e91fdcd473108eb716a71651aa1e345605b56171a4df80cf53ee5f1560e",
+              "raw_file": "research/resource-gap-coverage-audit/cdx-2008/raw/14-90ce87d3c4c71557.json",
+              "raw_sha256": "47a8f8d7c2158ae2d9e0ca37b6713cb6ce48c7fed94cb85d9639ea28f6796b44",
+              "schema_ok": true,
+              "contract_ok": true,
+              "not_truncated": false,
+              "path_query_covered": true,
+              "reasons": [],
+              "query_url": "http://www.worldofwarcraft.com/new-hp/images/",
+              "window_from": "20080101000000",
+              "window_to": "20081231235959",
+              "match_type": "prefix",
+              "filters": [],
+              "collapse": null,
+              "show_num_pages": false,
+              "status": 200,
+              "coverage": {
+                "json_parsed": true,
+                "header_present": true,
+                "capture_row_count": 4496,
+                "row_count": 4497,
+                "possibly_truncated": false,
+                "invalid_rows": 0,
+                "first_timestamp": "20080113140754",
+                "last_timestamp": "20081206184449"
+              },
+              "raw_bytes": 682300,
+              "contract_fields": {
+                "window_from": true,
+                "window_to": true,
+                "match_type": true,
+                "filters_empty": true,
+                "collapse_none": true,
+                "show_num_pages_false": true,
+                "http_200": true,
+                "json_parsed": true,
+                "header_present": true,
+                "not_truncated": true,
+                "no_invalid_rows": true
+              },
+              "ok": true
+            }
+          ],
+          "item_url": "http://www.worldofwarcraft.com/new-hp/images/countrymenu-bg.gif",
+          "row_count": 0,
+          "status_counts": {}
+        }
+      ],
+      "rank": 22
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/images/talents/arrows/down-2-green.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/images/talents/arrows/down-2-green.gif",
+      "host": "www.worldofwarcraft.com",
+      "path": "/shared/global/talents/images/talents/arrows/down-2-green.gif",
+      "query": "",
+      "kind": "image",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "page_count": 9,
+      "pages": [
+        "/info/classes/druid/talents.html",
+        "/info/classes/hunter/talents.html",
+        "/info/classes/mage/talents.html",
+        "/info/classes/paladin/talents.html",
+        "/info/classes/priest/talents.html",
+        "/info/classes/rogue/talents.html",
+        "/info/classes/shaman/talents.html",
+        "/info/classes/warlock/talents.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "reason": "Historical coverage review classifies this URL as unmatched_exact; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "unmatched_exact",
+      "rank": 23
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/images/talents/arrows/down-2-grey.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/images/talents/arrows/down-2-grey.gif",
+      "host": "www.worldofwarcraft.com",
+      "path": "/shared/global/talents/images/talents/arrows/down-2-grey.gif",
+      "query": "",
+      "kind": "image",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "page_count": 9,
+      "pages": [
+        "/info/classes/druid/talents.html",
+        "/info/classes/hunter/talents.html",
+        "/info/classes/mage/talents.html",
+        "/info/classes/paladin/talents.html",
+        "/info/classes/priest/talents.html",
+        "/info/classes/rogue/talents.html",
+        "/info/classes/shaman/talents.html",
+        "/info/classes/warlock/talents.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "reason": "Historical coverage review classifies this URL as unmatched_exact; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "unmatched_exact",
+      "rank": 24
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/images/talents/arrows/down-2-yellow.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/images/talents/arrows/down-2-yellow.gif",
+      "host": "www.worldofwarcraft.com",
+      "path": "/shared/global/talents/images/talents/arrows/down-2-yellow.gif",
+      "query": "",
+      "kind": "image",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "page_count": 9,
+      "pages": [
+        "/info/classes/druid/talents.html",
+        "/info/classes/hunter/talents.html",
+        "/info/classes/mage/talents.html",
+        "/info/classes/paladin/talents.html",
+        "/info/classes/priest/talents.html",
+        "/info/classes/rogue/talents.html",
+        "/info/classes/shaman/talents.html",
+        "/info/classes/warlock/talents.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "reason": "Historical coverage review classifies this URL as unmatched_exact; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "unmatched_exact",
+      "rank": 25
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/images/talents/icon-over-green.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/images/talents/icon-over-green.gif",
+      "host": "www.worldofwarcraft.com",
+      "path": "/shared/global/talents/images/talents/icon-over-green.gif",
+      "query": "",
+      "kind": "image",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "page_count": 9,
+      "pages": [
+        "/info/classes/druid/talents.html",
+        "/info/classes/hunter/talents.html",
+        "/info/classes/mage/talents.html",
+        "/info/classes/paladin/talents.html",
+        "/info/classes/priest/talents.html",
+        "/info/classes/rogue/talents.html",
+        "/info/classes/shaman/talents.html",
+        "/info/classes/warlock/talents.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "reason": "Historical coverage review classifies this URL as unmatched_exact; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "unmatched_exact",
+      "rank": 26
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/images/talents/icon-over-grey.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/images/talents/icon-over-grey.gif",
+      "host": "www.worldofwarcraft.com",
+      "path": "/shared/global/talents/images/talents/icon-over-grey.gif",
+      "query": "",
+      "kind": "image",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "page_count": 9,
+      "pages": [
+        "/info/classes/druid/talents.html",
+        "/info/classes/hunter/talents.html",
+        "/info/classes/mage/talents.html",
+        "/info/classes/paladin/talents.html",
+        "/info/classes/priest/talents.html",
+        "/info/classes/rogue/talents.html",
+        "/info/classes/shaman/talents.html",
+        "/info/classes/warlock/talents.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "reason": "Historical coverage review classifies this URL as unmatched_exact; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "unmatched_exact",
+      "rank": 27
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/images/talents/icon-over-yellow.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/images/talents/icon-over-yellow.gif",
+      "host": "www.worldofwarcraft.com",
+      "path": "/shared/global/talents/images/talents/icon-over-yellow.gif",
+      "query": "",
+      "kind": "image",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "page_count": 9,
+      "pages": [
+        "/info/classes/druid/talents.html",
+        "/info/classes/hunter/talents.html",
+        "/info/classes/mage/talents.html",
+        "/info/classes/paladin/talents.html",
+        "/info/classes/priest/talents.html",
+        "/info/classes/rogue/talents.html",
+        "/info/classes/shaman/talents.html",
+        "/info/classes/warlock/talents.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "reason": "Historical coverage review classifies this URL as unmatched_exact; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "unmatched_exact",
+      "rank": 28
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/bot-box/bot-left.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/bot-box/bot-left.gif",
+      "host": "www.worldofwarcraft.com",
+      "path": "/shared/global/talents/includes/images/bot-box/bot-left.gif",
+      "query": "",
+      "kind": "image",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "page_count": 9,
+      "pages": [
+        "/info/classes/druid/talents.html",
+        "/info/classes/hunter/talents.html",
+        "/info/classes/mage/talents.html",
+        "/info/classes/paladin/talents.html",
+        "/info/classes/priest/talents.html",
+        "/info/classes/rogue/talents.html",
+        "/info/classes/shaman/talents.html",
+        "/info/classes/warlock/talents.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "reason": "Historical coverage review classifies this URL as unmatched_exact; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "unmatched_exact",
+      "rank": 29
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/bot-box/bot-right.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/bot-box/bot-right.gif",
+      "host": "www.worldofwarcraft.com",
+      "path": "/shared/global/talents/includes/images/bot-box/bot-right.gif",
+      "query": "",
+      "kind": "image",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "page_count": 9,
+      "pages": [
+        "/info/classes/druid/talents.html",
+        "/info/classes/hunter/talents.html",
+        "/info/classes/mage/talents.html",
+        "/info/classes/paladin/talents.html",
+        "/info/classes/priest/talents.html",
+        "/info/classes/rogue/talents.html",
+        "/info/classes/shaman/talents.html",
+        "/info/classes/warlock/talents.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "reason": "Historical coverage review classifies this URL as unmatched_exact; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "unmatched_exact",
+      "rank": 30
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/bot-box/bot.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/bot-box/bot.gif",
+      "host": "www.worldofwarcraft.com",
+      "path": "/shared/global/talents/includes/images/bot-box/bot.gif",
+      "query": "",
+      "kind": "image",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "page_count": 9,
+      "pages": [
+        "/info/classes/druid/talents.html",
+        "/info/classes/hunter/talents.html",
+        "/info/classes/mage/talents.html",
+        "/info/classes/paladin/talents.html",
+        "/info/classes/priest/talents.html",
+        "/info/classes/rogue/talents.html",
+        "/info/classes/shaman/talents.html",
+        "/info/classes/warlock/talents.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "reason": "Historical coverage review classifies this URL as unmatched_exact; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "unmatched_exact",
+      "rank": 31
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/bot-box/left.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/bot-box/left.gif",
+      "host": "www.worldofwarcraft.com",
+      "path": "/shared/global/talents/includes/images/bot-box/left.gif",
+      "query": "",
+      "kind": "image",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "page_count": 9,
+      "pages": [
+        "/info/classes/druid/talents.html",
+        "/info/classes/hunter/talents.html",
+        "/info/classes/mage/talents.html",
+        "/info/classes/paladin/talents.html",
+        "/info/classes/priest/talents.html",
+        "/info/classes/rogue/talents.html",
+        "/info/classes/shaman/talents.html",
+        "/info/classes/warlock/talents.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "reason": "Historical coverage review classifies this URL as unmatched_exact; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "unmatched_exact",
+      "rank": 32
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/bot-box/right.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/bot-box/right.gif",
+      "host": "www.worldofwarcraft.com",
+      "path": "/shared/global/talents/includes/images/bot-box/right.gif",
+      "query": "",
+      "kind": "image",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "page_count": 9,
+      "pages": [
+        "/info/classes/druid/talents.html",
+        "/info/classes/hunter/talents.html",
+        "/info/classes/mage/talents.html",
+        "/info/classes/paladin/talents.html",
+        "/info/classes/priest/talents.html",
+        "/info/classes/rogue/talents.html",
+        "/info/classes/shaman/talents.html",
+        "/info/classes/warlock/talents.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "reason": "Historical coverage review classifies this URL as unmatched_exact; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "unmatched_exact",
+      "rank": 33
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/bot-box/top-left.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/bot-box/top-left.gif",
+      "host": "www.worldofwarcraft.com",
+      "path": "/shared/global/talents/includes/images/bot-box/top-left.gif",
+      "query": "",
+      "kind": "image",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "page_count": 9,
+      "pages": [
+        "/info/classes/druid/talents.html",
+        "/info/classes/hunter/talents.html",
+        "/info/classes/mage/talents.html",
+        "/info/classes/paladin/talents.html",
+        "/info/classes/priest/talents.html",
+        "/info/classes/rogue/talents.html",
+        "/info/classes/shaman/talents.html",
+        "/info/classes/warlock/talents.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "reason": "Historical coverage review classifies this URL as unmatched_exact; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "unmatched_exact",
+      "rank": 34
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/bot-box/top-right.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/bot-box/top-right.gif",
+      "host": "www.worldofwarcraft.com",
+      "path": "/shared/global/talents/includes/images/bot-box/top-right.gif",
+      "query": "",
+      "kind": "image",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "page_count": 9,
+      "pages": [
+        "/info/classes/druid/talents.html",
+        "/info/classes/hunter/talents.html",
+        "/info/classes/mage/talents.html",
+        "/info/classes/paladin/talents.html",
+        "/info/classes/priest/talents.html",
+        "/info/classes/rogue/talents.html",
+        "/info/classes/shaman/talents.html",
+        "/info/classes/warlock/talents.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "reason": "Historical coverage review classifies this URL as unmatched_exact; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "unmatched_exact",
+      "rank": 35
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/bot-box/top.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/bot-box/top.gif",
+      "host": "www.worldofwarcraft.com",
+      "path": "/shared/global/talents/includes/images/bot-box/top.gif",
+      "query": "",
+      "kind": "image",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "page_count": 9,
+      "pages": [
+        "/info/classes/druid/talents.html",
+        "/info/classes/hunter/talents.html",
+        "/info/classes/mage/talents.html",
+        "/info/classes/paladin/talents.html",
+        "/info/classes/priest/talents.html",
+        "/info/classes/rogue/talents.html",
+        "/info/classes/shaman/talents.html",
+        "/info/classes/warlock/talents.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "reason": "Historical coverage review classifies this URL as unmatched_exact; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "unmatched_exact",
+      "rank": 36
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/printableversion.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/printableversion.gif",
+      "host": "www.worldofwarcraft.com",
+      "path": "/shared/global/talents/includes/images/printableversion.gif",
+      "query": "",
+      "kind": "image",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "page_count": 9,
+      "pages": [
+        "/info/classes/druid/talents.html",
+        "/info/classes/hunter/talents.html",
+        "/info/classes/mage/talents.html",
+        "/info/classes/paladin/talents.html",
+        "/info/classes/priest/talents.html",
+        "/info/classes/rogue/talents.html",
+        "/info/classes/shaman/talents.html",
+        "/info/classes/warlock/talents.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "reason": "Historical coverage review classifies this URL as unmatched_exact; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "unmatched_exact",
+      "rank": 37
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/reset.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/reset.gif",
+      "host": "www.worldofwarcraft.com",
+      "path": "/shared/global/talents/includes/images/reset.gif",
+      "query": "",
+      "kind": "image",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "page_count": 9,
+      "pages": [
+        "/info/classes/druid/talents.html",
+        "/info/classes/hunter/talents.html",
+        "/info/classes/mage/talents.html",
+        "/info/classes/paladin/talents.html",
+        "/info/classes/priest/talents.html",
+        "/info/classes/rogue/talents.html",
+        "/info/classes/shaman/talents.html",
+        "/info/classes/warlock/talents.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "reason": "Historical coverage review classifies this URL as unmatched_exact; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "unmatched_exact",
+      "rank": 38
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/resetall.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/resetall.gif",
+      "host": "www.worldofwarcraft.com",
+      "path": "/shared/global/talents/includes/images/resetall.gif",
+      "query": "",
+      "kind": "image",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "page_count": 9,
+      "pages": [
+        "/info/classes/druid/talents.html",
+        "/info/classes/hunter/talents.html",
+        "/info/classes/mage/talents.html",
+        "/info/classes/paladin/talents.html",
+        "/info/classes/priest/talents.html",
+        "/info/classes/rogue/talents.html",
+        "/info/classes/shaman/talents.html",
+        "/info/classes/warlock/talents.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "reason": "Historical coverage review classifies this URL as unmatched_exact; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "unmatched_exact",
+      "rank": 39
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/text-talents.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/text-talents.gif",
+      "host": "www.worldofwarcraft.com",
+      "path": "/shared/global/talents/includes/images/text-talents.gif",
+      "query": "",
+      "kind": "image",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "page_count": 9,
+      "pages": [
+        "/info/classes/druid/talents.html",
+        "/info/classes/hunter/talents.html",
+        "/info/classes/mage/talents.html",
+        "/info/classes/paladin/talents.html",
+        "/info/classes/priest/talents.html",
+        "/info/classes/rogue/talents.html",
+        "/info/classes/shaman/talents.html",
+        "/info/classes/warlock/talents.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "reason": "Historical coverage review classifies this URL as unmatched_exact; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "unmatched_exact",
+      "rank": 40
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_character_black.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_character_black.gif",
+      "host": "www.worldofwarcraft.com",
+      "path": "/shared/wow-com/images/subnav/icon_character_black.gif",
+      "query": "",
+      "kind": "image",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 9,
+      "page_count": 9,
+      "pages": [
+        "/info/classes/druid/talents.html",
+        "/info/classes/hunter/talents.html",
+        "/info/classes/mage/talents.html",
+        "/info/classes/paladin/talents.html",
+        "/info/classes/priest/talents.html",
+        "/info/classes/rogue/talents.html",
+        "/info/classes/shaman/talents.html",
+        "/info/classes/warlock/talents.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "reason": "Historical coverage review classifies this URL as complete_2008_no_index; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "complete_2008_no_index",
+      "historical_coverage_match_sample": [
+        {
+          "coverage_index": 5421,
+          "primary_class": "no_record_complete_2008_prefix",
+          "original": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_character_black.gif",
+          "complete_prefixes": [
+            {
+              "meta_file": "research/resource-gap-coverage-audit/cdx-2008/raw/07-f0e1bc49c2964f96.meta.json",
+              "meta_sha256": "b34e2e826282a29943ca12d601bdb4f2aea1a839092202232b316af5aa144685",
+              "raw_file": "research/resource-gap-coverage-audit/cdx-2008/raw/07-f0e1bc49c2964f96.json",
+              "raw_sha256": "92d55dc69741ec98a3c937f058de27499306d5e3228c83e43f5ca4f1638268f2",
+              "schema_ok": true,
+              "contract_ok": true,
+              "not_truncated": false,
+              "path_query_covered": true,
+              "reasons": [],
+              "query_url": "http://www.worldofwarcraft.com/shared/wow-com/",
+              "window_from": "20080101000000",
+              "window_to": "20081231235959",
+              "match_type": "prefix",
+              "filters": [],
+              "collapse": null,
+              "show_num_pages": false,
+              "status": 200,
+              "coverage": {
+                "json_parsed": true,
+                "header_present": true,
+                "capture_row_count": 6973,
+                "row_count": 6974,
+                "possibly_truncated": false,
+                "invalid_rows": 0,
+                "first_timestamp": "20080113033517",
+                "last_timestamp": "20081206214559"
+              },
+              "raw_bytes": 1171779,
+              "contract_fields": {
+                "window_from": true,
+                "window_to": true,
+                "match_type": true,
+                "filters_empty": true,
+                "collapse_none": true,
+                "show_num_pages_false": true,
+                "http_200": true,
+                "json_parsed": true,
+                "header_present": true,
+                "not_truncated": true,
+                "no_invalid_rows": true
+              },
+              "ok": true
+            }
+          ],
+          "item_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_character_black.gif",
+          "row_count": 0,
+          "status_counts": {}
+        }
+      ],
+      "rank": 41
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/info/encyclopedia/images/icons/400.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/info/encyclopedia/images/icons/400.jpg",
+      "host": "www.worldofwarcraft.com",
+      "path": "/info/encyclopedia/images/icons/400.jpg",
+      "query": "",
+      "kind": "image",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 8,
+      "page_count": 8,
+      "pages": [
+        "/info/encyclopedia/346.xml",
+        "/info/encyclopedia/349.xml",
+        "/info/encyclopedia/402.xml",
+        "/info/encyclopedia/430.xml",
+        "/info/encyclopedia/481.xml",
+        "/info/encyclopedia/546.xml",
+        "/info/encyclopedia/554.xml",
+        "/info/encyclopedia/624.xml"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-001-resource-gaps.json",
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "reason": "Historical coverage review classifies this URL as complete_2008_no_index; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "complete_2008_no_index",
+      "historical_coverage_match_sample": [
+        {
+          "coverage_index": 4246,
+          "primary_class": "no_record_complete_2008_prefix",
+          "original": "http://www.worldofwarcraft.com/info/encyclopedia/images/icons/400.jpg",
+          "complete_prefixes": [
+            {
+              "meta_file": "research/resource-gap-coverage-audit/cdx-2008/raw/15-e28938b84bf76f6a.meta.json",
+              "meta_sha256": "8b8e098795275592591607e3b45dae46eb83370b5043627cae913a5d146dcd3a",
+              "raw_file": "research/resource-gap-coverage-audit/cdx-2008/raw/15-e28938b84bf76f6a.json",
+              "raw_sha256": "f35ddc32ac0e05238b8a9413cae0864010ecf94affadcdb14fff2777e2fe650f",
+              "schema_ok": true,
+              "contract_ok": true,
+              "not_truncated": false,
+              "path_query_covered": true,
+              "reasons": [],
+              "query_url": "http://www.worldofwarcraft.com/info/encyclopedia/",
+              "window_from": "20080101000000",
+              "window_to": "20081231235959",
+              "match_type": "prefix",
+              "filters": [],
+              "collapse": null,
+              "show_num_pages": false,
+              "status": 200,
+              "coverage": {
+                "json_parsed": true,
+                "header_present": true,
+                "capture_row_count": 1125,
+                "row_count": 1126,
+                "possibly_truncated": false,
+                "invalid_rows": 0,
+                "first_timestamp": "20080101035326",
+                "last_timestamp": "20081231132327"
+              },
+              "raw_bytes": 173113,
+              "contract_fields": {
+                "window_from": true,
+                "window_to": true,
+                "match_type": true,
+                "filters_empty": true,
+                "collapse_none": true,
+                "show_num_pages_false": true,
+                "http_200": true,
+                "json_parsed": true,
+                "header_present": true,
+                "not_truncated": true,
+                "no_invalid_rows": true
+              },
+              "ok": true
+            }
+          ],
+          "item_url": "http://www.worldofwarcraft.com/info/encyclopedia/images/icons/400.jpg",
+          "row_count": 0,
+          "status_counts": {}
+        }
+      ],
+      "rank": 42
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/images/talents/arrows/down-1-green.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/images/talents/arrows/down-1-green.gif",
+      "host": "www.worldofwarcraft.com",
+      "path": "/shared/global/talents/images/talents/arrows/down-1-green.gif",
+      "query": "",
+      "kind": "image",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 8,
+      "page_count": 8,
+      "pages": [
+        "/info/classes/druid/talents.html",
+        "/info/classes/hunter/talents.html",
+        "/info/classes/mage/talents.html",
+        "/info/classes/paladin/talents.html",
+        "/info/classes/rogue/talents.html",
+        "/info/classes/shaman/talents.html",
+        "/info/classes/warlock/talents.html",
+        "/info/classes/warrior/talents.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "reason": "Historical coverage review classifies this URL as unmatched_exact; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "unmatched_exact",
+      "rank": 43
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/images/talents/arrows/down-1-grey.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/images/talents/arrows/down-1-grey.gif",
+      "host": "www.worldofwarcraft.com",
+      "path": "/shared/global/talents/images/talents/arrows/down-1-grey.gif",
+      "query": "",
+      "kind": "image",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 8,
+      "page_count": 8,
+      "pages": [
+        "/info/classes/druid/talents.html",
+        "/info/classes/hunter/talents.html",
+        "/info/classes/mage/talents.html",
+        "/info/classes/paladin/talents.html",
+        "/info/classes/rogue/talents.html",
+        "/info/classes/shaman/talents.html",
+        "/info/classes/warlock/talents.html",
+        "/info/classes/warrior/talents.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "reason": "Historical coverage review classifies this URL as unmatched_exact; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "unmatched_exact",
+      "rank": 44
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/images/talents/arrows/down-1-yellow.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/images/talents/arrows/down-1-yellow.gif",
+      "host": "www.worldofwarcraft.com",
+      "path": "/shared/global/talents/images/talents/arrows/down-1-yellow.gif",
+      "query": "",
+      "kind": "image",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 8,
+      "page_count": 8,
+      "pages": [
+        "/info/classes/druid/talents.html",
+        "/info/classes/hunter/talents.html",
+        "/info/classes/mage/talents.html",
+        "/info/classes/paladin/talents.html",
+        "/info/classes/rogue/talents.html",
+        "/info/classes/shaman/talents.html",
+        "/info/classes/warlock/talents.html",
+        "/info/classes/warrior/talents.html"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "reason": "Historical coverage review classifies this URL as unmatched_exact; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "unmatched_exact",
+      "rank": 45
+    },
+    {
+      "logical_url": "https://www.worldofwarcraft.com/gadgetzan/gt002/images/dalaran.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/gadgetzan/gt002/images/dalaran.jpg",
+      "host": "www.worldofwarcraft.com",
+      "path": "/gadgetzan/gt002/images/dalaran.jpg",
+      "query": "",
+      "kind": "image",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 8,
+      "page_count": 8,
+      "pages": [
+        "/gadgetzan/gt002/auntiefizzle.html",
+        "/gadgetzan/gt002/index.html",
+        "/gadgetzan/gt002/jetsett.html",
+        "/gadgetzan/gt002/lettertoeditor.html",
+        "/gadgetzan/gt002/magicalhistory.html",
+        "/gadgetzan/gt002/mailbag.html",
+        "/gadgetzan/gt002/marah.html",
+        "/gadgetzan/gt002/servantsofazora.html"
+      ],
+      "target_kinds": [
+        "generated_placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "official"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-016-runtime-resource-gaps.json"
+        ]
+      },
+      "reason": "Historical coverage review classifies this URL as unmatched_exact; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "unmatched_exact",
+      "rank": 46
+    },
+    {
+      "logical_url": "https://www.worldofwarcraft.com/gadgetzan/gt002/images/dalaranbg.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/gadgetzan/gt002/images/dalaranbg.jpg",
+      "host": "www.worldofwarcraft.com",
+      "path": "/gadgetzan/gt002/images/dalaranbg.jpg",
+      "query": "",
+      "kind": "image",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 8,
+      "page_count": 8,
+      "pages": [
+        "/gadgetzan/gt002/auntiefizzle.html",
+        "/gadgetzan/gt002/index.html",
+        "/gadgetzan/gt002/jetsett.html",
+        "/gadgetzan/gt002/lettertoeditor.html",
+        "/gadgetzan/gt002/magicalhistory.html",
+        "/gadgetzan/gt002/mailbag.html",
+        "/gadgetzan/gt002/marah.html",
+        "/gadgetzan/gt002/servantsofazora.html"
+      ],
+      "target_kinds": [
+        "generated_placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "official"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-016-runtime-resource-gaps.json"
+        ]
+      },
+      "reason": "Historical coverage review classifies this URL as unmatched_exact; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "unmatched_exact",
+      "rank": 47
+    },
+    {
+      "logical_url": "https://www.worldofwarcraft.com/gadgetzan/gt002/images/dalaranfloat.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/gadgetzan/gt002/images/dalaranfloat.gif",
+      "host": "www.worldofwarcraft.com",
+      "path": "/gadgetzan/gt002/images/dalaranfloat.gif",
+      "query": "",
+      "kind": "image",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 8,
+      "page_count": 8,
+      "pages": [
+        "/gadgetzan/gt002/auntiefizzle.html",
+        "/gadgetzan/gt002/index.html",
+        "/gadgetzan/gt002/jetsett.html",
+        "/gadgetzan/gt002/lettertoeditor.html",
+        "/gadgetzan/gt002/magicalhistory.html",
+        "/gadgetzan/gt002/mailbag.html",
+        "/gadgetzan/gt002/marah.html",
+        "/gadgetzan/gt002/servantsofazora.html"
+      ],
+      "target_kinds": [
+        "generated_placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "official"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-016-runtime-resource-gaps.json"
+        ]
+      },
+      "reason": "Historical coverage review classifies this URL as unmatched_exact; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "unmatched_exact",
+      "rank": 48
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/images/parchment/plain/light.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/images/parchment/plain/light.jpg",
+      "host": "www.worldofwarcraft.com",
+      "path": "/images/parchment/plain/light.jpg",
+      "query": "",
+      "kind": "image",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 7,
+      "page_count": 7,
+      "pages": [
+        "/info/classes/bc-druid/spells.html",
+        "/info/classes/bc-hunter/spells.html",
+        "/info/classes/bc-paladin/spells.html",
+        "/info/classes/bc-priest/spells.html",
+        "/info/classes/bc-rogue/spells.html",
+        "/info/classes/bc-shaman/spells.html",
+        "/info/classes/bc-warrior/spells.html"
+      ],
+      "target_kinds": [
+        "generated_placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "official"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-016-runtime-resource-gaps.json"
+        ]
+      },
+      "reason": "Historical coverage review classifies this URL as uncovered_or_incomplete; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "uncovered_or_incomplete",
+      "historical_coverage_match_sample": [
+        {
+          "coverage_index": 1576,
+          "primary_class": "uncovered_or_incomplete_prefix",
+          "original": "http://www.worldofwarcraft.com/images/parchment/plain/light.jpg",
+          "complete_prefixes": [],
+          "item_url": "http://www.worldofwarcraft.com/images/parchment/plain/light.jpg",
+          "row_count": 0,
+          "status_counts": {}
+        }
+      ],
+      "rank": 49
+    },
+    {
+      "logical_url": "http://www.worldofwarcraft.com/info/encyclopedia/images/icons/339.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/info/encyclopedia/images/icons/339.jpg",
+      "host": "www.worldofwarcraft.com",
+      "path": "/info/encyclopedia/images/icons/339.jpg",
+      "query": "",
+      "kind": "image",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 7,
+      "page_count": 7,
+      "pages": [
+        "/info/encyclopedia/315.xml",
+        "/info/encyclopedia/319.xml",
+        "/info/encyclopedia/338.xml",
+        "/info/encyclopedia/363.xml",
+        "/info/encyclopedia/429.xml",
+        "/info/encyclopedia/451.xml",
+        "/info/encyclopedia/611.xml"
+      ],
+      "target_kinds": [
+        "uncollected-image-placeholder"
+      ],
+      "target_types": [
+        "image"
+      ],
+      "target_scopes": [
+        "local-unresolved"
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-001-resource-gaps.json",
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "reason": "Historical coverage review classifies this URL as complete_2008_no_index; exact 2008 all-state CDX evidence is still required before any entity request.",
+      "requested_next_step": "exact_cdx_2008_only",
+      "baseline_eligible_if_validated": false,
+      "evidence_sources": [
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "source_kind": "current_target_ssot"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "source_kind": "historical_negative_coverage_review"
+        }
+      ],
+      "cdx_candidates": [],
+      "duplicate_check": "deduped by current target comparison_key; historical temporal rows are evidence only",
+      "note": "Prefix empty/limited evidence is not a physical absence claim.",
+      "historical_status": "complete_2008_no_index",
+      "historical_coverage_match_sample": [
+        {
+          "coverage_index": 4243,
+          "primary_class": "no_record_complete_2008_prefix",
+          "original": "http://www.worldofwarcraft.com/info/encyclopedia/images/icons/339.jpg",
+          "complete_prefixes": [
+            {
+              "meta_file": "research/resource-gap-coverage-audit/cdx-2008/raw/15-e28938b84bf76f6a.meta.json",
+              "meta_sha256": "8b8e098795275592591607e3b45dae46eb83370b5043627cae913a5d146dcd3a",
+              "raw_file": "research/resource-gap-coverage-audit/cdx-2008/raw/15-e28938b84bf76f6a.json",
+              "raw_sha256": "f35ddc32ac0e05238b8a9413cae0864010ecf94affadcdb14fff2777e2fe650f",
+              "schema_ok": true,
+              "contract_ok": true,
+              "not_truncated": false,
+              "path_query_covered": true,
+              "reasons": [],
+              "query_url": "http://www.worldofwarcraft.com/info/encyclopedia/",
+              "window_from": "20080101000000",
+              "window_to": "20081231235959",
+              "match_type": "prefix",
+              "filters": [],
+              "collapse": null,
+              "show_num_pages": false,
+              "status": 200,
+              "coverage": {
+                "json_parsed": true,
+                "header_present": true,
+                "capture_row_count": 1125,
+                "row_count": 1126,
+                "possibly_truncated": false,
+                "invalid_rows": 0,
+                "first_timestamp": "20080101035326",
+                "last_timestamp": "20081231132327"
+              },
+              "raw_bytes": 173113,
+              "contract_fields": {
+                "window_from": true,
+                "window_to": true,
+                "match_type": true,
+                "filters_empty": true,
+                "collapse_none": true,
+                "show_num_pages_false": true,
+                "http_200": true,
+                "json_parsed": true,
+                "header_present": true,
+                "not_truncated": true,
+                "no_invalid_rows": true
+              },
+              "ok": true
+            }
+          ],
+          "item_url": "http://www.worldofwarcraft.com/info/encyclopedia/images/icons/339.jpg",
+          "row_count": 0,
+          "status_counts": {}
+        }
+      ],
+      "rank": 50
+    }
+  ],
+  "excluded_counts": {
+    "current_cdx_only_no_valid_image_row": 11
+  },
+  "temporal_gate": {
+    "baseline_2008": "Requires exact original URL CDX evidence within 20080101000000..20081231235959, status 200, expected static MIME, actual entity bytes, CDX digest, ZIP/CRC/SHA and MIME/Pillow or parser checks. A late-2008 row is not silently substituted for the 20080512 baseline.",
+    "pre2008_supplement": "Requires complete exact full-year 2008 all-state empty proof for the exact URL, explicit temporal_class=pre2008_static_supplement, year_fallback_evidence, image MIME and full Pillow validation, and --allow-pre2008-static-supplement. It remains a separate supplement.",
+    "error_rows": "HTTP 200 text/html or known origin/Wayback soft-error rows are not image evidence and are excluded from entity acquisition."
+  },
+  "resume_commands": {
+    "runtime": "C:/Users/17630/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe (Python 3.12.14); no network was invoked by this inventory",
+    "query_reference": "research/resource-recovery-2008/query_priority_full_year_cdx.py (contract/example; its two targets are hardcoded, so do not run it unchanged for this list)",
+    "exact_cdx_2008_contract": "GET https://web.archive.org/cdx/search/cdx?url=<exact>&from=20080101000000&to=20081231235959&matchType=exact&output=json (no status/mime filter, collapse, showNumPages, or other result-shaping parameter; actual runner should encode query and preserve raw/meta)",
+    "entity": "Use existing tools/wayback_pooled_transport.py through a finite shard runner such as research/resource-recovery-2008/global-image-wave/agent-b-wave002/run_wave002_shard.py --plan <plan> --out <out> --runtime <runtime.json> --shard <id>; fallback CLI tools/wayback_backup.py --plan <plan> --out <out> with budget/deadline flags. TLS verification and Archive-only redirects remain required.",
+    "backup_cli": "bundled Python 3.12 tools/wayback_backup.py --plan <plan> --out <out> --budget-root D:/WOW_Encyclopedia --max-requests <N> --max-object-bytes 16777216 --deadline-seconds <seconds> --reserve-bytes 268435456",
+    "validation": "bundled Python 3.12 tools/validate_recovery_sources.py --map <supplement-map> --report <report.json> --allow-pre2008-static-supplement (add --allow-legacy-arc-lf-framing only when explicit framing evidence exists)",
+    "current_resume_state": "No continuation requests are running or authorized by this inventory. The current SSOT residual is 3,358 targets; 14 retain CDX row evidence, of which only 3 have saved pre-2008 image rows and 11 have no valid image row. Two are local plan-only and two local-error records; the latter are excluded when local source evidence exists.",
+    "note": "This inventory is advisory only; it performs no CDX query, entity GET, map approval, or site rebuild."
+  },
+  "existing_evidence": [
+    {
+      "path": "research/final-gap-closure-20261012/final-build/targets.json",
+      "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+      "bytes": 4109891,
+      "source_kind": "current_target_ssot"
+    },
+    {
+      "path": "research/final-gap-closure-20261012/final-build/summary.json",
+      "sha256": "5008f3fc46764a1f240a352ebeec257c3c0bf930dc693926d60ea65473921762",
+      "bytes": 74832,
+      "source_kind": "current_final_build_summary"
+    },
+    {
+      "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+      "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+      "bytes": 5436854,
+      "source_kind": "historical_negative_coverage_review"
+    },
+    {
+      "path": "research/final-gap-closure-20261012/cdx-only-temporal-review.json",
+      "sha256": "ff64a73373c01cc23a97b8c29c5047e3c264e08b08a0be5591dca8f15c009823",
+      "bytes": 1869645,
+      "source_kind": "historical_cdx_temporal_review"
+    },
+    {
+      "path": "research/resource-gap-coverage-audit/coverage-audit.json",
+      "sha256": "a7a3b139ee4922e747d89ff1643179718c0459771a398d745ef14192fd0832f8",
+      "bytes": 8165616,
+      "source_kind": "prefix_coverage_audit"
+    },
+    {
+      "path": "research/resource-recovery-2008/full-page-static-cdx-selection.json",
+      "sha256": "978498a4b9ceaae4648273e9e9b47518e02da12f27a9c4781f0b505585ef2473",
+      "bytes": 60642989,
+      "source_kind": "finite_cdx_selection_plan"
+    },
+    {
+      "path": "research/resource-recovery-2008/full-page-static-followup-plan.json",
+      "sha256": "ec0d9e8e3a560628b3f929aae82cf1d61fe77e1d4470a78a3663c0e106a02e5f",
+      "bytes": 37305405,
+      "source_kind": "historical_fetch_plan"
+    }
+  ],
+  "coverage_limitations": [
+    "Current target SSOT is 3,358; negative-coverage-review.json is historical 3,768 and was joined only as evidence.",
+    "Historical unmatched_exact and incomplete prefix records do not prove that a snapshot is absent.",
+    "A status-200 CDX row is not entity validity until actual body, MIME, digest, and format checks pass.",
+    "External/social/account/armory surfaces and known local error entities are excluded from this next-round page/resource plan.",
+    "No network was used and no candidate is approved by this file."
+  ]
+}

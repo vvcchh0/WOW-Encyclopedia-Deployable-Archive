@@ -1,0 +1,3724 @@
+{
+  "schema_version": 1,
+  "kind": "resource_resume_deduplicated_plan_20261013",
+  "generated_utc": "2026-10-13",
+  "network_performed": false,
+  "input_inventory": {
+    "path": "research/resource-resume-20261013/inventory.json",
+    "sha256": "c13572b64878229851fa11dec2444a186d6986db6ef285d89fe2da0b9c344e29",
+    "candidate_count": 50
+  },
+  "scan_roots": [
+    {
+      "path": "research/pre2008-candidate-followup-20261012",
+      "exists": true
+    },
+    {
+      "path": "research/final-pre2008-image-wave-20261012",
+      "exists": true
+    },
+    {
+      "path": "research/shared-image-final-followup-20261012",
+      "exists": true
+    },
+    {
+      "path": "research/final-gap-closure-20261012",
+      "exists": true
+    }
+  ],
+  "scan_file_count": 1740,
+  "scan_scope": "Only JSON/JSONL under the four specified bounded evidence roots; no ZIP extraction, site scan, or network.",
+  "action_counts": {
+    "noimage": 3,
+    "reuseproof": 17,
+    "skipalreadyfailed": 30
+  },
+  "evidence_kind_counts": {
+    "exact_2008_cdx_evidence": 3,
+    "failure_or_error": 98,
+    "url_mention_only": 55,
+    "exact_2008_empty_proof": 18,
+    "html_or_nonimage_row": 53,
+    "coverage_only": 110
+  },
+  "items": [
+    {
+      "rank": 1,
+      "logical_url": "http://www.worldofwarcraft.com/info/classes/images/talents/icon-over-parchment.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/info/classes/images/talents/icon-over-parchment.gif",
+      "role": "pre2008_static_supplement_candidate",
+      "priority": "P2",
+      "current_state": "cdx_row_evidence_no_local_entity",
+      "events": 9,
+      "next_action": "noimage",
+      "reason": "Existing evidence contains non-empty/error/non-image 2008 rows; even if another record says empty, the conflicting 2008 evidence blocks the strict pre-2008 supplement gate.",
+      "evidence_kinds": {
+        "exact_2008_cdx_evidence": 3,
+        "failure_or_error": 2,
+        "url_mention_only": 1,
+        "exact_2008_empty_proof": 1,
+        "html_or_nonimage_row": 4,
+        "coverage_only": 5
+      },
+      "evidence_files": [
+        {
+          "path": "research/pre2008-candidate-followup-20261012/audit.json",
+          "sha256": "f49952acc94c811ca0e5c55016cc8f73017e9ba1c2286521205c894fbb9e229d",
+          "bytes": 268667,
+          "evidence_kind": "exact_2008_cdx_evidence"
+        },
+        {
+          "path": "research/pre2008-candidate-followup-20261012/freeze-plan.json",
+          "sha256": "f06caba92beef8776009eef5a6c1259c474eb5f779de7dcedd6d8995f08a46f4",
+          "bytes": 201347,
+          "evidence_kind": "exact_2008_cdx_evidence"
+        },
+        {
+          "path": "research/pre2008-candidate-followup-20261012/full-2008-cdx/pre2008-supplement-plan.json",
+          "sha256": "47cba53ffa8e441b11305e9823704a5186278fd5d4dd5f185626c1e2c3a83339",
+          "bytes": 276957,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/pre2008-candidate-followup-20261012/full-2008-cdx/proof-normalized-summary.json",
+          "sha256": "b2f2725a0a22d320ae0100e9af7bb5c8d501ddbe58c9e729820af2921c4db4fb",
+          "bytes": 2167,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/pre2008-candidate-followup-20261012/full-2008-cdx/proof-validator-report.json",
+          "sha256": "83fc95ceaee20c3f11ac7708528fd135e63f83f8fd96d90a3039d9cd32691d91",
+          "bytes": 257315,
+          "evidence_kind": "exact_2008_cdx_evidence"
+        },
+        {
+          "path": "research/pre2008-candidate-followup-20261012/full-2008-cdx/summary.json",
+          "sha256": "e87a133eb8d322b2b683f62ae1012d15f14746cdfe5a16aa17af1350c90ba4e0",
+          "bytes": 437703,
+          "evidence_kind": "exact_2008_empty_proof"
+        },
+        {
+          "path": "research/pre2008-candidate-followup-20261012/full-2008-cdx/proof-normalized/142-e62a9aff0d82d728.meta.json",
+          "sha256": "26ca76073b1604ed99d3ef8e5bc43d3488130017038f3cd9401b5662d9dd7fa3",
+          "bytes": 5597,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/pre2008-candidate-followup-20261012/full-2008-cdx/raw/142-e62a9aff0d82d728.json",
+          "sha256": "09c218c39098215f1e868b5827c609138b99e854eaec7b38fbcb3a035953fb68",
+          "bytes": 895,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/pre2008-candidate-followup-20261012/full-2008-cdx/raw/142-e62a9aff0d82d728.meta.json",
+          "sha256": "bd7e18c8cc7a900d145734ee2c2d62566e95b89b9e0222f09710d14154fa495c",
+          "bytes": 3737,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/cdx-only-temporal-review.json",
+          "sha256": "ff64a73373c01cc23a97b8c29c5047e3c264e08b08a0be5591dca8f15c009823",
+          "bytes": 1869645,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/nonimage-final-reconciliation.json",
+          "sha256": "0df25d3502f9b03917b4ff4b4d6ca9fceff59bb2da7e15bdfcc344ffa1d06ce0",
+          "bytes": 140754,
+          "evidence_kind": "failure_or_error"
+        }
+      ],
+      "old_candidate_next_step": "verify_full_exact_2008_empty_then_entity_get",
+      "old_candidate_cdx": [
+        {
+          "timestamp": "20060213032412",
+          "original": "http://www.worldofwarcraft.com/info/classes/images/talents/icon-over-parchment.gif",
+          "status": "200",
+          "mime": "image/gif",
+          "digest": "IYDFYYK37RR35OJDHESN6VAIZUTB2QD4",
+          "cdx_file": "research/site-recovery-2008/narrow-cdx/batch-1/004-4a085a8f8d3c3d38.json"
+        },
+        {
+          "timestamp": "20060414124522",
+          "original": "http://www.worldofwarcraft.com/info/classes/images/talents/icon-over-parchment.gif",
+          "status": "200",
+          "mime": "image/gif",
+          "digest": "IYDFYYK37RR35OJDHESN6VAIZUTB2QD4",
+          "cdx_file": "research/site-recovery-2008/narrow-cdx/batch-1/004-4a085a8f8d3c3d38.json"
+        },
+        {
+          "timestamp": "20061205081751",
+          "original": "http://www.worldofwarcraft.com:80/info/classes/images/talents/icon-over-parchment.gif",
+          "status": "200",
+          "mime": "image/gif",
+          "digest": "BVAQZGLE7BHL3ZKCRBHXVSBOGYQAVXO4",
+          "cdx_file": "research/site-recovery-2008/narrow-cdx/batch-1/004-4a085a8f8d3c3d38.json"
+        },
+        {
+          "timestamp": "20061209234130",
+          "original": "http://www.worldofwarcraft.com:80/info/classes/images/talents/icon-over-parchment.gif",
+          "status": "200",
+          "mime": "image/gif",
+          "digest": "BVAQZGLE7BHL3ZKCRBHXVSBOGYQAVXO4",
+          "cdx_file": "research/site-recovery-2008/narrow-cdx/batch-1/004-4a085a8f8d3c3d38.json"
+        }
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 1
+    },
+    {
+      "rank": 2,
+      "logical_url": "http://www.worldofwarcraft.com/burningcrusade/townhall/images/bestiary/title-thebroken.png",
+      "comparison_key": "http://www.worldofwarcraft.com/burningcrusade/townhall/images/bestiary/title-thebroken.png",
+      "role": "pre2008_static_supplement_candidate",
+      "priority": "P2",
+      "current_state": "cdx_row_evidence_no_local_entity",
+      "events": 1,
+      "next_action": "noimage",
+      "reason": "Existing evidence contains non-empty/error/non-image 2008 rows; even if another record says empty, the conflicting 2008 evidence blocks the strict pre-2008 supplement gate.",
+      "evidence_kinds": {
+        "coverage_only": 5,
+        "failure_or_error": 1,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/final-gap-closure-20261012/cdx-only-temporal-review.json",
+          "sha256": "ff64a73373c01cc23a97b8c29c5047e3c264e08b08a0be5591dca8f15c009823",
+          "bytes": 1869645,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/nonimage-final-reconciliation.json",
+          "sha256": "0df25d3502f9b03917b4ff4b4d6ca9fceff59bb2da7e15bdfcc344ffa1d06ce0",
+          "bytes": 140754,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/initial-stale-closure-acceptance.json",
+          "sha256": "3288070180e2a5fde7c9e4f84f9027d6fed66b8f8c0222b0c30763322f8f2295",
+          "bytes": 14831,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/nonimage-reconciliation-acceptance.json",
+          "sha256": "ad33bc241231e957220a5c7670657a07dfaf9e90f0f69a5bbceb9f977f0bf7f9",
+          "bytes": 18280,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "verify_full_exact_2008_empty_then_entity_get",
+      "old_candidate_cdx": [
+        {
+          "timestamp": "20060424020303",
+          "original": "http://www.worldofwarcraft.com:80/burningcrusade/townhall/images/bestiary/title-thebroken.png",
+          "status": "200",
+          "mime": "image/png",
+          "digest": "2KJFRLWQHDTGWNHKHVGKWSYWCSEBSI6W",
+          "cdx_file": "research/site-recovery-2008/prefix-cdx/006-125df563e51d0001.json"
+        },
+        {
+          "timestamp": "20060430121402",
+          "original": "http://www.worldofwarcraft.com:80/burningcrusade/townhall/images/bestiary/title-thebroken.png",
+          "status": "200",
+          "mime": "image/png",
+          "digest": "2KJFRLWQHDTGWNHKHVGKWSYWCSEBSI6W",
+          "cdx_file": "research/site-recovery-2008/prefix-cdx/006-125df563e51d0001.json"
+        }
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 2
+    },
+    {
+      "rank": 3,
+      "logical_url": "https://www.worldofwarcraft.com/burningcrusade/townhall/images/bestiary/thumb-thebroken.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/burningcrusade/townhall/images/bestiary/thumb-thebroken.jpg",
+      "role": "pre2008_static_supplement_candidate",
+      "priority": "P2",
+      "current_state": "cdx_row_evidence_no_local_entity",
+      "events": 1,
+      "next_action": "noimage",
+      "reason": "Existing evidence contains non-empty/error/non-image 2008 rows; even if another record says empty, the conflicting 2008 evidence blocks the strict pre-2008 supplement gate.",
+      "evidence_kinds": {
+        "coverage_only": 5,
+        "failure_or_error": 1,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/final-gap-closure-20261012/cdx-only-temporal-review.json",
+          "sha256": "ff64a73373c01cc23a97b8c29c5047e3c264e08b08a0be5591dca8f15c009823",
+          "bytes": 1869645,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/nonimage-final-reconciliation.json",
+          "sha256": "0df25d3502f9b03917b4ff4b4d6ca9fceff59bb2da7e15bdfcc344ffa1d06ce0",
+          "bytes": 140754,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/initial-stale-closure-acceptance.json",
+          "sha256": "3288070180e2a5fde7c9e4f84f9027d6fed66b8f8c0222b0c30763322f8f2295",
+          "bytes": 14831,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/nonimage-reconciliation-acceptance.json",
+          "sha256": "ad33bc241231e957220a5c7670657a07dfaf9e90f0f69a5bbceb9f977f0bf7f9",
+          "bytes": 18280,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "verify_full_exact_2008_empty_then_entity_get",
+      "old_candidate_cdx": [
+        {
+          "timestamp": "20060424020257",
+          "original": "http://www.worldofwarcraft.com:80/burningcrusade/townhall/images/bestiary/thumb-thebroken.jpg",
+          "status": "200",
+          "mime": "image/jpeg",
+          "digest": "BWVB6YEPIKC32KW5NFOFKMXTM2AU5UHS",
+          "cdx_file": "research/site-recovery-2008/prefix-cdx/006-125df563e51d0001.json"
+        },
+        {
+          "timestamp": "20060430121533",
+          "original": "http://www.worldofwarcraft.com:80/burningcrusade/townhall/images/bestiary/thumb-thebroken.jpg",
+          "status": "200",
+          "mime": "image/jpeg",
+          "digest": "BWVB6YEPIKC32KW5NFOFKMXTM2AU5UHS",
+          "cdx_file": "research/site-recovery-2008/prefix-cdx/006-125df563e51d0001.json"
+        }
+      ],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-016-runtime-resource-gaps.json"
+        ]
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 3
+    },
+    {
+      "rank": 4,
+      "logical_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/dot.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/dot.gif",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 295,
+      "next_action": "reuseproof",
+      "reason": "Complete exact-2008 empty proof is already present; reuse its raw/meta evidence and do not repeat the same CDX query. No entity is approved by an empty proof alone.",
+      "evidence_kinds": {
+        "url_mention_only": 3,
+        "failure_or_error": 4,
+        "exact_2008_empty_proof": 1,
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/shared-image-final-followup-20261012/candidate-freeze-summary.json",
+          "sha256": "b4e24013a7a71f4f3d7fe34ea8e2e667b4be73d79fb8ca92276ff94562974e52",
+          "bytes": 4283,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/candidate-freeze.json",
+          "sha256": "6ae130ab930c22696da15f887b3f9f1e0ab4d714ec6417baa92105b2137b59f9",
+          "bytes": 1819982,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx-validation.json",
+          "sha256": "a2bd462ddd5dc04d9a3c6b4eb2a2174a82f98020a6f95c6f311a6d6ebe5e005b",
+          "bytes": 7790,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resolution.json",
+          "sha256": "cd131a9f5b1989e552f30a4c84e45473223256a70701fcfa1a169d7e47755bde",
+          "bytes": 25923,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx/summary.json",
+          "sha256": "1fcb9347e2539f6e904c19e1403526dc946cba165ffd80385e584ff5a3535793",
+          "bytes": 59577,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/resume-summary.json",
+          "sha256": "1b2fed21dadd53b1a1fc11351dd862188263bb843b93e485a6bbbb177c473a6d",
+          "bytes": 72198,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx/raw/01-a437337d24829c56.meta.json",
+          "sha256": "588d587e83e4a63aa84a3d52fc20c925cb651b3f601ec7d96829d263898e27d0",
+          "bytes": 2487,
+          "evidence_kind": "exact_2008_empty_proof"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/cdx/raw/pre2008-chrome-01-a437337d24829c56.meta.json",
+          "sha256": "45f40ada8541fe825f413e47227912bc04227afdf12c2c47054dde6b274a5376",
+          "bytes": 2513,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-001-resource-gaps.json",
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-016-runtime-resource-gaps.json"
+        ]
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 4
+    },
+    {
+      "rank": 5,
+      "logical_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_community.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_community.jpg",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 70,
+      "next_action": "reuseproof",
+      "reason": "Complete exact-2008 empty proof is already present; reuse its raw/meta evidence and do not repeat the same CDX query. No entity is approved by an empty proof alone.",
+      "evidence_kinds": {
+        "failure_or_error": 5,
+        "url_mention_only": 3,
+        "exact_2008_empty_proof": 1,
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/pre2008-candidate-followup-20261012/high-reference-audit/audit.json",
+          "sha256": "59ada342a4256e43f44f1d7303646dbf9649ca4387565258b803356b7901a487",
+          "bytes": 1032004,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/candidate-freeze-summary.json",
+          "sha256": "b4e24013a7a71f4f3d7fe34ea8e2e667b4be73d79fb8ca92276ff94562974e52",
+          "bytes": 4283,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/candidate-freeze.json",
+          "sha256": "6ae130ab930c22696da15f887b3f9f1e0ab4d714ec6417baa92105b2137b59f9",
+          "bytes": 1819982,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx-validation.json",
+          "sha256": "a2bd462ddd5dc04d9a3c6b4eb2a2174a82f98020a6f95c6f311a6d6ebe5e005b",
+          "bytes": 7790,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resolution.json",
+          "sha256": "cd131a9f5b1989e552f30a4c84e45473223256a70701fcfa1a169d7e47755bde",
+          "bytes": 25923,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx/summary.json",
+          "sha256": "1fcb9347e2539f6e904c19e1403526dc946cba165ffd80385e584ff5a3535793",
+          "bytes": 59577,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/resume-summary.json",
+          "sha256": "1b2fed21dadd53b1a1fc11351dd862188263bb843b93e485a6bbbb177c473a6d",
+          "bytes": 72198,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx/raw/02-156685df81843836.meta.json",
+          "sha256": "d174eb1360a4ba4c00231a40bbe6403498f5ff6f0b84254215234e7b7f56ed1c",
+          "bytes": 2465,
+          "evidence_kind": "exact_2008_empty_proof"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/cdx/raw/pre2008-chrome-02-156685df81843836.meta.json",
+          "sha256": "4a9581ecf906758a8452cad6eef418369307b28238cfa58904e5671ac5cb1808",
+          "bytes": 2489,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-001-resource-gaps.json",
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 5
+    },
+    {
+      "rank": 6,
+      "logical_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_player%20vs%20player.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_player%20vs%20player.jpg",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 39,
+      "next_action": "reuseproof",
+      "reason": "Complete exact-2008 empty proof is already present; reuse its raw/meta evidence and do not repeat the same CDX query. No entity is approved by an empty proof alone.",
+      "evidence_kinds": {
+        "failure_or_error": 5,
+        "url_mention_only": 3,
+        "exact_2008_empty_proof": 1,
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/pre2008-candidate-followup-20261012/high-reference-audit/audit.json",
+          "sha256": "59ada342a4256e43f44f1d7303646dbf9649ca4387565258b803356b7901a487",
+          "bytes": 1032004,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/candidate-freeze-summary.json",
+          "sha256": "b4e24013a7a71f4f3d7fe34ea8e2e667b4be73d79fb8ca92276ff94562974e52",
+          "bytes": 4283,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/candidate-freeze.json",
+          "sha256": "6ae130ab930c22696da15f887b3f9f1e0ab4d714ec6417baa92105b2137b59f9",
+          "bytes": 1819982,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx-validation.json",
+          "sha256": "a2bd462ddd5dc04d9a3c6b4eb2a2174a82f98020a6f95c6f311a6d6ebe5e005b",
+          "bytes": 7790,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resolution.json",
+          "sha256": "cd131a9f5b1989e552f30a4c84e45473223256a70701fcfa1a169d7e47755bde",
+          "bytes": 25923,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx/summary.json",
+          "sha256": "1fcb9347e2539f6e904c19e1403526dc946cba165ffd80385e584ff5a3535793",
+          "bytes": 59577,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/resume-summary.json",
+          "sha256": "1b2fed21dadd53b1a1fc11351dd862188263bb843b93e485a6bbbb177c473a6d",
+          "bytes": 72198,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx/raw/04-c520ba8ad9ec0385.meta.json",
+          "sha256": "75c91b43b62a5381359a1c5c13fdafdc3634b8d5e3252a4d9a383ec9a21af79d",
+          "bytes": 2506,
+          "evidence_kind": "exact_2008_empty_proof"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/cdx/raw/pre2008-chrome-04-c520ba8ad9ec0385.meta.json",
+          "sha256": "1e082a03cfade440ba81baa62ea6a70cdba588a492fbd5847fb56ba01710f8f7",
+          "bytes": 2530,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-001-resource-gaps.json",
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 6
+    },
+    {
+      "rank": 7,
+      "logical_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_the%20world.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_the%20world.jpg",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 37,
+      "next_action": "reuseproof",
+      "reason": "Complete exact-2008 empty proof is already present; reuse its raw/meta evidence and do not repeat the same CDX query. No entity is approved by an empty proof alone.",
+      "evidence_kinds": {
+        "failure_or_error": 5,
+        "url_mention_only": 3,
+        "exact_2008_empty_proof": 1,
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/pre2008-candidate-followup-20261012/high-reference-audit/audit.json",
+          "sha256": "59ada342a4256e43f44f1d7303646dbf9649ca4387565258b803356b7901a487",
+          "bytes": 1032004,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/candidate-freeze-summary.json",
+          "sha256": "b4e24013a7a71f4f3d7fe34ea8e2e667b4be73d79fb8ca92276ff94562974e52",
+          "bytes": 4283,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/candidate-freeze.json",
+          "sha256": "6ae130ab930c22696da15f887b3f9f1e0ab4d714ec6417baa92105b2137b59f9",
+          "bytes": 1819982,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx-validation.json",
+          "sha256": "a2bd462ddd5dc04d9a3c6b4eb2a2174a82f98020a6f95c6f311a6d6ebe5e005b",
+          "bytes": 7790,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resolution.json",
+          "sha256": "cd131a9f5b1989e552f30a4c84e45473223256a70701fcfa1a169d7e47755bde",
+          "bytes": 25923,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx/summary.json",
+          "sha256": "1fcb9347e2539f6e904c19e1403526dc946cba165ffd80385e584ff5a3535793",
+          "bytes": 59577,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/resume-summary.json",
+          "sha256": "1b2fed21dadd53b1a1fc11351dd862188263bb843b93e485a6bbbb177c473a6d",
+          "bytes": 72198,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx/raw/05-6c220720549e3f1b.meta.json",
+          "sha256": "05618c8119e24cc5f937aa9541453ac7c079d7307fa5109e86849b900e5b8f20",
+          "bytes": 2475,
+          "evidence_kind": "exact_2008_empty_proof"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/cdx/raw/pre2008-chrome-05-6c220720549e3f1b.meta.json",
+          "sha256": "8e388a3134327eb0d4ade384992228da172d70212da3c62d68ad02bc58466008",
+          "bytes": 2500,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 7
+    },
+    {
+      "rank": 8,
+      "logical_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_reputations.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_reputations.jpg",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 31,
+      "next_action": "reuseproof",
+      "reason": "Complete exact-2008 empty proof is already present; reuse its raw/meta evidence and do not repeat the same CDX query. No entity is approved by an empty proof alone.",
+      "evidence_kinds": {
+        "failure_or_error": 5,
+        "url_mention_only": 3,
+        "exact_2008_empty_proof": 1,
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/pre2008-candidate-followup-20261012/high-reference-audit/audit.json",
+          "sha256": "59ada342a4256e43f44f1d7303646dbf9649ca4387565258b803356b7901a487",
+          "bytes": 1032004,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/candidate-freeze-summary.json",
+          "sha256": "b4e24013a7a71f4f3d7fe34ea8e2e667b4be73d79fb8ca92276ff94562974e52",
+          "bytes": 4283,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/candidate-freeze.json",
+          "sha256": "6ae130ab930c22696da15f887b3f9f1e0ab4d714ec6417baa92105b2137b59f9",
+          "bytes": 1819982,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx-validation.json",
+          "sha256": "a2bd462ddd5dc04d9a3c6b4eb2a2174a82f98020a6f95c6f311a6d6ebe5e005b",
+          "bytes": 7790,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resolution.json",
+          "sha256": "cd131a9f5b1989e552f30a4c84e45473223256a70701fcfa1a169d7e47755bde",
+          "bytes": 25923,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx/summary.json",
+          "sha256": "1fcb9347e2539f6e904c19e1403526dc946cba165ffd80385e584ff5a3535793",
+          "bytes": 59577,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/resume-summary.json",
+          "sha256": "1b2fed21dadd53b1a1fc11351dd862188263bb843b93e485a6bbbb177c473a6d",
+          "bytes": 72198,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx/raw/06-b5644f1b446f6f6c.meta.json",
+          "sha256": "398330b7a5aea387b6f1ff6d722e041ac7f6f4e60ea361d4364b6d8ba307982a",
+          "bytes": 2470,
+          "evidence_kind": "exact_2008_empty_proof"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/cdx/raw/pre2008-chrome-06-b5644f1b446f6f6c.meta.json",
+          "sha256": "876f8a4e992eaaf206156fc9e53507fad9169d1636dc10e8fe2da2a921ef82d2",
+          "bytes": 2496,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 8
+    },
+    {
+      "rank": 9,
+      "logical_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_player%20interaction.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_player%20interaction.jpg",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 27,
+      "next_action": "reuseproof",
+      "reason": "Complete exact-2008 empty proof is already present; reuse its raw/meta evidence and do not repeat the same CDX query. No entity is approved by an empty proof alone.",
+      "evidence_kinds": {
+        "failure_or_error": 5,
+        "url_mention_only": 3,
+        "exact_2008_empty_proof": 1,
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/pre2008-candidate-followup-20261012/high-reference-audit/audit.json",
+          "sha256": "59ada342a4256e43f44f1d7303646dbf9649ca4387565258b803356b7901a487",
+          "bytes": 1032004,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/candidate-freeze-summary.json",
+          "sha256": "b4e24013a7a71f4f3d7fe34ea8e2e667b4be73d79fb8ca92276ff94562974e52",
+          "bytes": 4283,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/candidate-freeze.json",
+          "sha256": "6ae130ab930c22696da15f887b3f9f1e0ab4d714ec6417baa92105b2137b59f9",
+          "bytes": 1819982,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx-validation.json",
+          "sha256": "a2bd462ddd5dc04d9a3c6b4eb2a2174a82f98020a6f95c6f311a6d6ebe5e005b",
+          "bytes": 7790,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resolution.json",
+          "sha256": "cd131a9f5b1989e552f30a4c84e45473223256a70701fcfa1a169d7e47755bde",
+          "bytes": 25923,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx/summary.json",
+          "sha256": "1fcb9347e2539f6e904c19e1403526dc946cba165ffd80385e584ff5a3535793",
+          "bytes": 59577,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/resume-summary.json",
+          "sha256": "1b2fed21dadd53b1a1fc11351dd862188263bb843b93e485a6bbbb177c473a6d",
+          "bytes": 72198,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx/raw/07-465befde9b8db556.meta.json",
+          "sha256": "6942458e11ced5d2e49f40fee964a2d2add2defdb13d0a803822c38f734229df",
+          "bytes": 2502,
+          "evidence_kind": "exact_2008_empty_proof"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/cdx/raw/pre2008-chrome-07-465befde9b8db556.meta.json",
+          "sha256": "9c1dc9f0d8b90ea239ef04cdac07c105a65d022e5b8a203f97cb1d9d75326c13",
+          "bytes": 2527,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 9
+    },
+    {
+      "rank": 10,
+      "logical_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_faq.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_faq.jpg",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 26,
+      "next_action": "reuseproof",
+      "reason": "Complete exact-2008 empty proof is already present; reuse its raw/meta evidence and do not repeat the same CDX query. No entity is approved by an empty proof alone.",
+      "evidence_kinds": {
+        "failure_or_error": 5,
+        "url_mention_only": 3,
+        "exact_2008_empty_proof": 1,
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/pre2008-candidate-followup-20261012/high-reference-audit/audit.json",
+          "sha256": "59ada342a4256e43f44f1d7303646dbf9649ca4387565258b803356b7901a487",
+          "bytes": 1032004,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/candidate-freeze-summary.json",
+          "sha256": "b4e24013a7a71f4f3d7fe34ea8e2e667b4be73d79fb8ca92276ff94562974e52",
+          "bytes": 4283,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/candidate-freeze.json",
+          "sha256": "6ae130ab930c22696da15f887b3f9f1e0ab4d714ec6417baa92105b2137b59f9",
+          "bytes": 1819982,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx-validation.json",
+          "sha256": "a2bd462ddd5dc04d9a3c6b4eb2a2174a82f98020a6f95c6f311a6d6ebe5e005b",
+          "bytes": 7790,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resolution.json",
+          "sha256": "cd131a9f5b1989e552f30a4c84e45473223256a70701fcfa1a169d7e47755bde",
+          "bytes": 25923,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx/summary.json",
+          "sha256": "1fcb9347e2539f6e904c19e1403526dc946cba165ffd80385e584ff5a3535793",
+          "bytes": 59577,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/resume-summary.json",
+          "sha256": "1b2fed21dadd53b1a1fc11351dd862188263bb843b93e485a6bbbb177c473a6d",
+          "bytes": 72198,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx/raw/08-00b580415fbdf373.meta.json",
+          "sha256": "dafc5fac739d502a2964daeec35bbbed2260b4b5b874c20eabc092d7c775f27f",
+          "bytes": 2446,
+          "evidence_kind": "exact_2008_empty_proof"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/cdx/raw/pre2008-chrome-08-00b580415fbdf373.meta.json",
+          "sha256": "caef7d3d6f378e98153f70e74b87fae89698e4506f9fa4b9dde74f0684dcea86",
+          "bytes": 2470,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-001-resource-gaps.json",
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 10
+    },
+    {
+      "rank": 11,
+      "logical_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_story.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_story.jpg",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 25,
+      "next_action": "reuseproof",
+      "reason": "Complete exact-2008 empty proof is already present; reuse its raw/meta evidence and do not repeat the same CDX query. No entity is approved by an empty proof alone.",
+      "evidence_kinds": {
+        "failure_or_error": 5,
+        "url_mention_only": 3,
+        "exact_2008_empty_proof": 1,
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/pre2008-candidate-followup-20261012/high-reference-audit/audit.json",
+          "sha256": "59ada342a4256e43f44f1d7303646dbf9649ca4387565258b803356b7901a487",
+          "bytes": 1032004,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/candidate-freeze-summary.json",
+          "sha256": "b4e24013a7a71f4f3d7fe34ea8e2e667b4be73d79fb8ca92276ff94562974e52",
+          "bytes": 4283,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/candidate-freeze.json",
+          "sha256": "6ae130ab930c22696da15f887b3f9f1e0ab4d714ec6417baa92105b2137b59f9",
+          "bytes": 1819982,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx-validation.json",
+          "sha256": "a2bd462ddd5dc04d9a3c6b4eb2a2174a82f98020a6f95c6f311a6d6ebe5e005b",
+          "bytes": 7790,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resolution.json",
+          "sha256": "cd131a9f5b1989e552f30a4c84e45473223256a70701fcfa1a169d7e47755bde",
+          "bytes": 25923,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx/summary.json",
+          "sha256": "1fcb9347e2539f6e904c19e1403526dc946cba165ffd80385e584ff5a3535793",
+          "bytes": 59577,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/resume-summary.json",
+          "sha256": "1b2fed21dadd53b1a1fc11351dd862188263bb843b93e485a6bbbb177c473a6d",
+          "bytes": 72198,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx/raw/09-cd5fbda7b35f0bec.meta.json",
+          "sha256": "c9920c9b7c5ee5c1fa20d53cb80ffdd0ad7f09d47f4f3d484f52661c7de9e057",
+          "bytes": 2452,
+          "evidence_kind": "exact_2008_empty_proof"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/cdx/raw/pre2008-chrome-09-cd5fbda7b35f0bec.meta.json",
+          "sha256": "94983bd2ed41e140cee27600ccf9f84ecc37b5856f049e79914cf9af79e9cbf9",
+          "bytes": 2478,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-001-resource-gaps.json",
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 11
+    },
+    {
+      "rank": 12,
+      "logical_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_getting%20started.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_getting%20started.jpg",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 22,
+      "next_action": "reuseproof",
+      "reason": "Complete exact-2008 empty proof is already present; reuse its raw/meta evidence and do not repeat the same CDX query. No entity is approved by an empty proof alone.",
+      "evidence_kinds": {
+        "failure_or_error": 5,
+        "url_mention_only": 3,
+        "exact_2008_empty_proof": 1,
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/pre2008-candidate-followup-20261012/high-reference-audit/audit.json",
+          "sha256": "59ada342a4256e43f44f1d7303646dbf9649ca4387565258b803356b7901a487",
+          "bytes": 1032004,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/candidate-freeze-summary.json",
+          "sha256": "b4e24013a7a71f4f3d7fe34ea8e2e667b4be73d79fb8ca92276ff94562974e52",
+          "bytes": 4283,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/candidate-freeze.json",
+          "sha256": "6ae130ab930c22696da15f887b3f9f1e0ab4d714ec6417baa92105b2137b59f9",
+          "bytes": 1819982,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx-validation.json",
+          "sha256": "a2bd462ddd5dc04d9a3c6b4eb2a2174a82f98020a6f95c6f311a6d6ebe5e005b",
+          "bytes": 7790,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resolution.json",
+          "sha256": "cd131a9f5b1989e552f30a4c84e45473223256a70701fcfa1a169d7e47755bde",
+          "bytes": 25923,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx/summary.json",
+          "sha256": "1fcb9347e2539f6e904c19e1403526dc946cba165ffd80385e584ff5a3535793",
+          "bytes": 59577,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/resume-summary.json",
+          "sha256": "1b2fed21dadd53b1a1fc11351dd862188263bb843b93e485a6bbbb177c473a6d",
+          "bytes": 72198,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx/raw/10-ddb968519bd3f078.meta.json",
+          "sha256": "fc53081eb770bb8d5cf9899d0e10e28a10e1988ed78a9a6023c9610f43599df2",
+          "bytes": 2493,
+          "evidence_kind": "exact_2008_empty_proof"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/cdx/raw/pre2008-chrome-10-ddb968519bd3f078.meta.json",
+          "sha256": "6ad2dc0eae79bea9bdd8211b72a00b6709b9c1e9448be3b6aae0d187c96d5b44",
+          "bytes": 2519,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 12
+    },
+    {
+      "rank": 13,
+      "logical_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_transportation.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_transportation.jpg",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 18,
+      "next_action": "reuseproof",
+      "reason": "Complete exact-2008 empty proof is already present; reuse its raw/meta evidence and do not repeat the same CDX query. No entity is approved by an empty proof alone.",
+      "evidence_kinds": {
+        "failure_or_error": 5,
+        "url_mention_only": 3,
+        "exact_2008_empty_proof": 1,
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/pre2008-candidate-followup-20261012/high-reference-audit/audit.json",
+          "sha256": "59ada342a4256e43f44f1d7303646dbf9649ca4387565258b803356b7901a487",
+          "bytes": 1032004,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/candidate-freeze-summary.json",
+          "sha256": "b4e24013a7a71f4f3d7fe34ea8e2e667b4be73d79fb8ca92276ff94562974e52",
+          "bytes": 4283,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/candidate-freeze.json",
+          "sha256": "6ae130ab930c22696da15f887b3f9f1e0ab4d714ec6417baa92105b2137b59f9",
+          "bytes": 1819982,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx-validation.json",
+          "sha256": "a2bd462ddd5dc04d9a3c6b4eb2a2174a82f98020a6f95c6f311a6d6ebe5e005b",
+          "bytes": 7790,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resolution.json",
+          "sha256": "cd131a9f5b1989e552f30a4c84e45473223256a70701fcfa1a169d7e47755bde",
+          "bytes": 25923,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx/summary.json",
+          "sha256": "1fcb9347e2539f6e904c19e1403526dc946cba165ffd80385e584ff5a3535793",
+          "bytes": 59577,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/resume-summary.json",
+          "sha256": "1b2fed21dadd53b1a1fc11351dd862188263bb843b93e485a6bbbb177c473a6d",
+          "bytes": 72198,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx/raw/11-6de3bc51c7f18360.meta.json",
+          "sha256": "f6cb6d263aa4ab6e3f6c018e94b9851ab16dc5ed1463fc0081da9e4f4eb71511",
+          "bytes": 2480,
+          "evidence_kind": "exact_2008_empty_proof"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/cdx/raw/pre2008-chrome-11-6de3bc51c7f18360.meta.json",
+          "sha256": "41d6ac10a79a144b7ec75f88079c34126db7d13bcd10fe416fa4e6370f9e16dd",
+          "bytes": 2506,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 13
+    },
+    {
+      "rank": 14,
+      "logical_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_items.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_items.jpg",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 14,
+      "next_action": "reuseproof",
+      "reason": "Complete exact-2008 empty proof is already present; reuse its raw/meta evidence and do not repeat the same CDX query. No entity is approved by an empty proof alone.",
+      "evidence_kinds": {
+        "failure_or_error": 5,
+        "url_mention_only": 3,
+        "exact_2008_empty_proof": 1,
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/pre2008-candidate-followup-20261012/high-reference-audit/audit.json",
+          "sha256": "59ada342a4256e43f44f1d7303646dbf9649ca4387565258b803356b7901a487",
+          "bytes": 1032004,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/candidate-freeze-summary.json",
+          "sha256": "b4e24013a7a71f4f3d7fe34ea8e2e667b4be73d79fb8ca92276ff94562974e52",
+          "bytes": 4283,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/candidate-freeze.json",
+          "sha256": "6ae130ab930c22696da15f887b3f9f1e0ab4d714ec6417baa92105b2137b59f9",
+          "bytes": 1819982,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx-validation.json",
+          "sha256": "a2bd462ddd5dc04d9a3c6b4eb2a2174a82f98020a6f95c6f311a6d6ebe5e005b",
+          "bytes": 7790,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resolution.json",
+          "sha256": "cd131a9f5b1989e552f30a4c84e45473223256a70701fcfa1a169d7e47755bde",
+          "bytes": 25923,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx/summary.json",
+          "sha256": "1fcb9347e2539f6e904c19e1403526dc946cba165ffd80385e584ff5a3535793",
+          "bytes": 59577,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/resume-summary.json",
+          "sha256": "1b2fed21dadd53b1a1fc11351dd862188263bb843b93e485a6bbbb177c473a6d",
+          "bytes": 72198,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx/raw/12-4e09179ae5aee260.meta.json",
+          "sha256": "8f17b1588b1eda4721f76bcdb66a4a56d719087b79d5f3d8e025e9bdd55f47b1",
+          "bytes": 2454,
+          "evidence_kind": "exact_2008_empty_proof"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/cdx/raw/pre2008-chrome-12-4e09179ae5aee260.meta.json",
+          "sha256": "86c220985a07de7ef34ef407eaf1ce8bcc6234b7da8d466da09fb2e22d5d47a0",
+          "bytes": 2479,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 14
+    },
+    {
+      "rank": 15,
+      "logical_url": "http://www.worldofwarcraft.com/pvp/battlegrounds/images/warsonggulch/rewards/button-alliance-hilit.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/pvp/battlegrounds/images/warsonggulch/rewards/button-alliance-hilit.jpg",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 12,
+      "next_action": "reuseproof",
+      "reason": "Complete exact-2008 empty proof is already present; reuse its raw/meta evidence and do not repeat the same CDX query. No entity is approved by an empty proof alone.",
+      "evidence_kinds": {
+        "failure_or_error": 5,
+        "url_mention_only": 3,
+        "exact_2008_empty_proof": 1,
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/pre2008-candidate-followup-20261012/high-reference-audit/audit.json",
+          "sha256": "59ada342a4256e43f44f1d7303646dbf9649ca4387565258b803356b7901a487",
+          "bytes": 1032004,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/candidate-freeze-summary.json",
+          "sha256": "b4e24013a7a71f4f3d7fe34ea8e2e667b4be73d79fb8ca92276ff94562974e52",
+          "bytes": 4283,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/candidate-freeze.json",
+          "sha256": "6ae130ab930c22696da15f887b3f9f1e0ab4d714ec6417baa92105b2137b59f9",
+          "bytes": 1819982,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx-validation.json",
+          "sha256": "a2bd462ddd5dc04d9a3c6b4eb2a2174a82f98020a6f95c6f311a6d6ebe5e005b",
+          "bytes": 7790,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resolution.json",
+          "sha256": "cd131a9f5b1989e552f30a4c84e45473223256a70701fcfa1a169d7e47755bde",
+          "bytes": 25923,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx/summary.json",
+          "sha256": "1fcb9347e2539f6e904c19e1403526dc946cba165ffd80385e584ff5a3535793",
+          "bytes": 59577,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/resume-summary.json",
+          "sha256": "1b2fed21dadd53b1a1fc11351dd862188263bb843b93e485a6bbbb177c473a6d",
+          "bytes": 72198,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx/raw/13-f38f780e0d626617.meta.json",
+          "sha256": "f3f0ebe071cb09689799f8a7a5663fc8e034dbea87448234c785d78f2c6891db",
+          "bytes": 2541,
+          "evidence_kind": "exact_2008_empty_proof"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/cdx/raw/pre2008-chrome-13-f38f780e0d626617.meta.json",
+          "sha256": "4fe2184987c2cb188fa2d674f7b30a2c8f7a60e1f52869af8284182f7275e0b6",
+          "bytes": 2568,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 15
+    },
+    {
+      "rank": 16,
+      "logical_url": "http://www.worldofwarcraft.com/pvp/battlegrounds/images/warsonggulch/rewards/button-horde.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/pvp/battlegrounds/images/warsonggulch/rewards/button-horde.jpg",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 12,
+      "next_action": "reuseproof",
+      "reason": "Complete exact-2008 empty proof is already present; reuse its raw/meta evidence and do not repeat the same CDX query. No entity is approved by an empty proof alone.",
+      "evidence_kinds": {
+        "failure_or_error": 5,
+        "url_mention_only": 3,
+        "exact_2008_empty_proof": 1,
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/pre2008-candidate-followup-20261012/high-reference-audit/audit.json",
+          "sha256": "59ada342a4256e43f44f1d7303646dbf9649ca4387565258b803356b7901a487",
+          "bytes": 1032004,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/candidate-freeze-summary.json",
+          "sha256": "b4e24013a7a71f4f3d7fe34ea8e2e667b4be73d79fb8ca92276ff94562974e52",
+          "bytes": 4283,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/candidate-freeze.json",
+          "sha256": "6ae130ab930c22696da15f887b3f9f1e0ab4d714ec6417baa92105b2137b59f9",
+          "bytes": 1819982,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx-validation.json",
+          "sha256": "a2bd462ddd5dc04d9a3c6b4eb2a2174a82f98020a6f95c6f311a6d6ebe5e005b",
+          "bytes": 7790,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resolution.json",
+          "sha256": "cd131a9f5b1989e552f30a4c84e45473223256a70701fcfa1a169d7e47755bde",
+          "bytes": 25923,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx/summary.json",
+          "sha256": "1fcb9347e2539f6e904c19e1403526dc946cba165ffd80385e584ff5a3535793",
+          "bytes": 59577,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/resume-summary.json",
+          "sha256": "1b2fed21dadd53b1a1fc11351dd862188263bb843b93e485a6bbbb177c473a6d",
+          "bytes": 72198,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx/raw/14-219cc553973d054b.meta.json",
+          "sha256": "0bca017b43b4c4f1dba65054dff03a8f3b8caa1304587f1bdb6ea03c3ffaf85c",
+          "bytes": 2515,
+          "evidence_kind": "exact_2008_empty_proof"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/cdx/raw/pre2008-chrome-14-219cc553973d054b.meta.json",
+          "sha256": "5ad873c38cef36d0b469452b4df304ead706769fd97cc69a965c4029ccc32d45",
+          "bytes": 2539,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 16
+    },
+    {
+      "rank": 17,
+      "logical_url": "http://www.worldofwarcraft.com/shared/wow-com/images/basics/factions/alliance-honor.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/wow-com/images/basics/factions/alliance-honor.gif",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 11,
+      "next_action": "skipalreadyfailed",
+      "reason": "Only prior failure/HTML-or-error evidence was found; no new digest or transport evidence exists in this preparation pass.",
+      "evidence_kinds": {
+        "failure_or_error": 7,
+        "url_mention_only": 2,
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/pre2008-candidate-followup-20261012/high-reference-audit/audit.json",
+          "sha256": "59ada342a4256e43f44f1d7303646dbf9649ca4387565258b803356b7901a487",
+          "bytes": 1032004,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/candidate-freeze-summary.json",
+          "sha256": "b4e24013a7a71f4f3d7fe34ea8e2e667b4be73d79fb8ca92276ff94562974e52",
+          "bytes": 4283,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/candidate-freeze.json",
+          "sha256": "6ae130ab930c22696da15f887b3f9f1e0ab4d714ec6417baa92105b2137b59f9",
+          "bytes": 1819982,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx-validation.json",
+          "sha256": "a2bd462ddd5dc04d9a3c6b4eb2a2174a82f98020a6f95c6f311a6d6ebe5e005b",
+          "bytes": 7790,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resolution.json",
+          "sha256": "cd131a9f5b1989e552f30a4c84e45473223256a70701fcfa1a169d7e47755bde",
+          "bytes": 25923,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx/summary.json",
+          "sha256": "1fcb9347e2539f6e904c19e1403526dc946cba165ffd80385e584ff5a3535793",
+          "bytes": 59577,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/resume-summary.json",
+          "sha256": "1b2fed21dadd53b1a1fc11351dd862188263bb843b93e485a6bbbb177c473a6d",
+          "bytes": 72198,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx/raw/16-d8c9cde4286961c0.meta.json",
+          "sha256": "1e5adec9d8eeff661218e520dba5fea9ebf5c6a3f6414236d14bdba86c44f146",
+          "bytes": 5743,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/cdx/raw/pooled-16-d8c9cde4286961c0.meta.json",
+          "sha256": "8559567b755b8f1a6c37cf89458ab1a9e945ab336f6dabaed22b017948a738d2",
+          "bytes": 7223,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 17
+    },
+    {
+      "rank": 18,
+      "logical_url": "http://www.worldofwarcraft.com/shared/wow-com/images/basics/factions/horde-honor.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/wow-com/images/basics/factions/horde-honor.gif",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 11,
+      "next_action": "reuseproof",
+      "reason": "Complete exact-2008 empty proof is already present; reuse its raw/meta evidence and do not repeat the same CDX query. No entity is approved by an empty proof alone.",
+      "evidence_kinds": {
+        "failure_or_error": 6,
+        "url_mention_only": 3,
+        "exact_2008_empty_proof": 1,
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/pre2008-candidate-followup-20261012/high-reference-audit/audit.json",
+          "sha256": "59ada342a4256e43f44f1d7303646dbf9649ca4387565258b803356b7901a487",
+          "bytes": 1032004,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/candidate-freeze-summary.json",
+          "sha256": "b4e24013a7a71f4f3d7fe34ea8e2e667b4be73d79fb8ca92276ff94562974e52",
+          "bytes": 4283,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/candidate-freeze.json",
+          "sha256": "6ae130ab930c22696da15f887b3f9f1e0ab4d714ec6417baa92105b2137b59f9",
+          "bytes": 1819982,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx-validation.json",
+          "sha256": "a2bd462ddd5dc04d9a3c6b4eb2a2174a82f98020a6f95c6f311a6d6ebe5e005b",
+          "bytes": 7790,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resolution.json",
+          "sha256": "cd131a9f5b1989e552f30a4c84e45473223256a70701fcfa1a169d7e47755bde",
+          "bytes": 25923,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx/summary.json",
+          "sha256": "1fcb9347e2539f6e904c19e1403526dc946cba165ffd80385e584ff5a3535793",
+          "bytes": 59577,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/resume-summary.json",
+          "sha256": "1b2fed21dadd53b1a1fc11351dd862188263bb843b93e485a6bbbb177c473a6d",
+          "bytes": 72198,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx/raw/17-262f51a8f7a442b6.meta.json",
+          "sha256": "aedccdf250520a3d349aa13f83715e7bc182c9a50b17d35f09841f036f9d80fd",
+          "bytes": 5713,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/cdx/raw/pooled-17-262f51a8f7a442b6.meta.json",
+          "sha256": "e9f69f3f68aa6603e8dfae038ea0719bf09eb859bb813f2b331dca284bb0fe70",
+          "bytes": 2494,
+          "evidence_kind": "exact_2008_empty_proof"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/cdx/raw/pre2008-chrome-17-262f51a8f7a442b6.meta.json",
+          "sha256": "941340e3edd745b78194774f02ecf7f199a8ebbbfbd33497cb46cdd61759697b",
+          "bytes": 2513,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 18
+    },
+    {
+      "rank": 19,
+      "logical_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_media.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_media.jpg",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 11,
+      "next_action": "reuseproof",
+      "reason": "Complete exact-2008 empty proof is already present; reuse its raw/meta evidence and do not repeat the same CDX query. No entity is approved by an empty proof alone.",
+      "evidence_kinds": {
+        "failure_or_error": 5,
+        "url_mention_only": 3,
+        "exact_2008_empty_proof": 1,
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/pre2008-candidate-followup-20261012/high-reference-audit/audit.json",
+          "sha256": "59ada342a4256e43f44f1d7303646dbf9649ca4387565258b803356b7901a487",
+          "bytes": 1032004,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/candidate-freeze-summary.json",
+          "sha256": "b4e24013a7a71f4f3d7fe34ea8e2e667b4be73d79fb8ca92276ff94562974e52",
+          "bytes": 4283,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/candidate-freeze.json",
+          "sha256": "6ae130ab930c22696da15f887b3f9f1e0ab4d714ec6417baa92105b2137b59f9",
+          "bytes": 1819982,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx-validation.json",
+          "sha256": "a2bd462ddd5dc04d9a3c6b4eb2a2174a82f98020a6f95c6f311a6d6ebe5e005b",
+          "bytes": 7790,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resolution.json",
+          "sha256": "cd131a9f5b1989e552f30a4c84e45473223256a70701fcfa1a169d7e47755bde",
+          "bytes": 25923,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx/summary.json",
+          "sha256": "1fcb9347e2539f6e904c19e1403526dc946cba165ffd80385e584ff5a3535793",
+          "bytes": 59577,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/resume-summary.json",
+          "sha256": "1b2fed21dadd53b1a1fc11351dd862188263bb843b93e485a6bbbb177c473a6d",
+          "bytes": 72198,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/cdx/raw/15-197b6f6c5d3da74b.meta.json",
+          "sha256": "90fa350c13374408b4d03dbefc52f08d0b5c44246b9476d998c40e09f2e1bef3",
+          "bytes": 2454,
+          "evidence_kind": "exact_2008_empty_proof"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/cdx/raw/pre2008-chrome-15-197b6f6c5d3da74b.meta.json",
+          "sha256": "be141ba128542cb39b541f67ba9abbeff3337bfd8518390037f03464fc22c109",
+          "bytes": 2478,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-001-resource-gaps.json",
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 19
+    },
+    {
+      "rank": 20,
+      "logical_url": "http://www.worldofwarcraft.com/info/encyclopedia/images/icons/508.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/info/encyclopedia/images/icons/508.jpg",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 10,
+      "next_action": "reuseproof",
+      "reason": "Complete exact-2008 empty proof is already present; reuse its raw/meta evidence and do not repeat the same CDX query. No entity is approved by an empty proof alone.",
+      "evidence_kinds": {
+        "failure_or_error": 3,
+        "url_mention_only": 3,
+        "exact_2008_empty_proof": 1,
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/pre2008-candidate-followup-20261012/high-reference-audit/audit.json",
+          "sha256": "59ada342a4256e43f44f1d7303646dbf9649ca4387565258b803356b7901a487",
+          "bytes": 1032004,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/candidate-freeze-summary.json",
+          "sha256": "b4e24013a7a71f4f3d7fe34ea8e2e667b4be73d79fb8ca92276ff94562974e52",
+          "bytes": 4283,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/candidate-freeze.json",
+          "sha256": "6ae130ab930c22696da15f887b3f9f1e0ab4d714ec6417baa92105b2137b59f9",
+          "bytes": 1819982,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resolution.json",
+          "sha256": "cd131a9f5b1989e552f30a4c84e45473223256a70701fcfa1a169d7e47755bde",
+          "bytes": 25923,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/resume-summary.json",
+          "sha256": "1b2fed21dadd53b1a1fc11351dd862188263bb843b93e485a6bbbb177c473a6d",
+          "bytes": 72198,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/cdx/raw/fresh-chrome-19-79b9e72d94bf1c3b.meta.json",
+          "sha256": "5db2aa05a795c212e5b2219e27ca163faa47ef31785f3e4128885ca1e5849af1",
+          "bytes": 2512,
+          "evidence_kind": "exact_2008_empty_proof"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/cdx/raw/pre2008-chrome-19-79b9e72d94bf1c3b.meta.json",
+          "sha256": "3e35664a3cdb867b356a72af152135c6926020a84d77ded167ba98cff6d78d36",
+          "bytes": 2464,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-001-resource-gaps.json",
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 20
+    },
+    {
+      "rank": 21,
+      "logical_url": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1340-thumb.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1340-thumb.jpg",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "next_action": "skipalreadyfailed",
+      "reason": "Only prior failure/HTML-or-error evidence was found; no new digest or transport evidence exists in this preparation pass.",
+      "evidence_kinds": {
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 21
+    },
+    {
+      "rank": 22,
+      "logical_url": "http://www.worldofwarcraft.com/new-hp/images/countrymenu-bg.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/new-hp/images/countrymenu-bg.gif",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 9,
+      "next_action": "skipalreadyfailed",
+      "reason": "Only prior failure/HTML-or-error evidence was found; no new digest or transport evidence exists in this preparation pass.",
+      "evidence_kinds": {
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 22
+    },
+    {
+      "rank": 23,
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/images/talents/arrows/down-2-green.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/images/talents/arrows/down-2-green.gif",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "next_action": "skipalreadyfailed",
+      "reason": "Only prior failure/HTML-or-error evidence was found; no new digest or transport evidence exists in this preparation pass.",
+      "evidence_kinds": {
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 23
+    },
+    {
+      "rank": 24,
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/images/talents/arrows/down-2-grey.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/images/talents/arrows/down-2-grey.gif",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "next_action": "skipalreadyfailed",
+      "reason": "Only prior failure/HTML-or-error evidence was found; no new digest or transport evidence exists in this preparation pass.",
+      "evidence_kinds": {
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 24
+    },
+    {
+      "rank": 25,
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/images/talents/arrows/down-2-yellow.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/images/talents/arrows/down-2-yellow.gif",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "next_action": "skipalreadyfailed",
+      "reason": "Only prior failure/HTML-or-error evidence was found; no new digest or transport evidence exists in this preparation pass.",
+      "evidence_kinds": {
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 25
+    },
+    {
+      "rank": 26,
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/images/talents/icon-over-green.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/images/talents/icon-over-green.gif",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "next_action": "skipalreadyfailed",
+      "reason": "Only prior failure/HTML-or-error evidence was found; no new digest or transport evidence exists in this preparation pass.",
+      "evidence_kinds": {
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 26
+    },
+    {
+      "rank": 27,
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/images/talents/icon-over-grey.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/images/talents/icon-over-grey.gif",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "next_action": "skipalreadyfailed",
+      "reason": "Only prior failure/HTML-or-error evidence was found; no new digest or transport evidence exists in this preparation pass.",
+      "evidence_kinds": {
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 27
+    },
+    {
+      "rank": 28,
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/images/talents/icon-over-yellow.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/images/talents/icon-over-yellow.gif",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "next_action": "skipalreadyfailed",
+      "reason": "Only prior failure/HTML-or-error evidence was found; no new digest or transport evidence exists in this preparation pass.",
+      "evidence_kinds": {
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 28
+    },
+    {
+      "rank": 29,
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/bot-box/bot-left.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/bot-box/bot-left.gif",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "next_action": "skipalreadyfailed",
+      "reason": "Only prior failure/HTML-or-error evidence was found; no new digest or transport evidence exists in this preparation pass.",
+      "evidence_kinds": {
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 29
+    },
+    {
+      "rank": 30,
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/bot-box/bot-right.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/bot-box/bot-right.gif",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "next_action": "skipalreadyfailed",
+      "reason": "Only prior failure/HTML-or-error evidence was found; no new digest or transport evidence exists in this preparation pass.",
+      "evidence_kinds": {
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 30
+    },
+    {
+      "rank": 31,
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/bot-box/bot.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/bot-box/bot.gif",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "next_action": "skipalreadyfailed",
+      "reason": "Only prior failure/HTML-or-error evidence was found; no new digest or transport evidence exists in this preparation pass.",
+      "evidence_kinds": {
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 31
+    },
+    {
+      "rank": 32,
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/bot-box/left.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/bot-box/left.gif",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "next_action": "skipalreadyfailed",
+      "reason": "Only prior failure/HTML-or-error evidence was found; no new digest or transport evidence exists in this preparation pass.",
+      "evidence_kinds": {
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 32
+    },
+    {
+      "rank": 33,
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/bot-box/right.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/bot-box/right.gif",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "next_action": "skipalreadyfailed",
+      "reason": "Only prior failure/HTML-or-error evidence was found; no new digest or transport evidence exists in this preparation pass.",
+      "evidence_kinds": {
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 33
+    },
+    {
+      "rank": 34,
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/bot-box/top-left.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/bot-box/top-left.gif",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "next_action": "skipalreadyfailed",
+      "reason": "Only prior failure/HTML-or-error evidence was found; no new digest or transport evidence exists in this preparation pass.",
+      "evidence_kinds": {
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 34
+    },
+    {
+      "rank": 35,
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/bot-box/top-right.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/bot-box/top-right.gif",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "next_action": "skipalreadyfailed",
+      "reason": "Only prior failure/HTML-or-error evidence was found; no new digest or transport evidence exists in this preparation pass.",
+      "evidence_kinds": {
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 35
+    },
+    {
+      "rank": 36,
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/bot-box/top.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/bot-box/top.gif",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "next_action": "skipalreadyfailed",
+      "reason": "Only prior failure/HTML-or-error evidence was found; no new digest or transport evidence exists in this preparation pass.",
+      "evidence_kinds": {
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 36
+    },
+    {
+      "rank": 37,
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/printableversion.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/printableversion.gif",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "next_action": "skipalreadyfailed",
+      "reason": "Only prior failure/HTML-or-error evidence was found; no new digest or transport evidence exists in this preparation pass.",
+      "evidence_kinds": {
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 37
+    },
+    {
+      "rank": 38,
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/reset.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/reset.gif",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "next_action": "skipalreadyfailed",
+      "reason": "Only prior failure/HTML-or-error evidence was found; no new digest or transport evidence exists in this preparation pass.",
+      "evidence_kinds": {
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 38
+    },
+    {
+      "rank": 39,
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/resetall.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/resetall.gif",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "next_action": "skipalreadyfailed",
+      "reason": "Only prior failure/HTML-or-error evidence was found; no new digest or transport evidence exists in this preparation pass.",
+      "evidence_kinds": {
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 39
+    },
+    {
+      "rank": 40,
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/text-talents.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/includes/images/text-talents.gif",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 9,
+      "next_action": "skipalreadyfailed",
+      "reason": "Only prior failure/HTML-or-error evidence was found; no new digest or transport evidence exists in this preparation pass.",
+      "evidence_kinds": {
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 40
+    },
+    {
+      "rank": 41,
+      "logical_url": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_character_black.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/icon_character_black.gif",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 9,
+      "next_action": "reuseproof",
+      "reason": "Complete exact-2008 empty proof is already present; reuse its raw/meta evidence and do not repeat the same CDX query. No entity is approved by an empty proof alone.",
+      "evidence_kinds": {
+        "failure_or_error": 3,
+        "url_mention_only": 3,
+        "exact_2008_empty_proof": 1,
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/pre2008-candidate-followup-20261012/high-reference-audit/audit.json",
+          "sha256": "59ada342a4256e43f44f1d7303646dbf9649ca4387565258b803356b7901a487",
+          "bytes": 1032004,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/candidate-freeze-summary.json",
+          "sha256": "b4e24013a7a71f4f3d7fe34ea8e2e667b4be73d79fb8ca92276ff94562974e52",
+          "bytes": 4283,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/candidate-freeze.json",
+          "sha256": "6ae130ab930c22696da15f887b3f9f1e0ab4d714ec6417baa92105b2137b59f9",
+          "bytes": 1819982,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resolution.json",
+          "sha256": "cd131a9f5b1989e552f30a4c84e45473223256a70701fcfa1a169d7e47755bde",
+          "bytes": 25923,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/resume-summary.json",
+          "sha256": "1b2fed21dadd53b1a1fc11351dd862188263bb843b93e485a6bbbb177c473a6d",
+          "bytes": 72198,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/cdx/raw/fresh-chrome-20-4c97dccca20c787e.meta.json",
+          "sha256": "ba295442a7728b9b503f8983d8573b22a372fc0914ef0cea5fdda0730b26fdd5",
+          "bytes": 2502,
+          "evidence_kind": "exact_2008_empty_proof"
+        },
+        {
+          "path": "research/shared-image-final-followup-20261012/resume/cdx/raw/pre2008-chrome-20-4c97dccca20c787e.meta.json",
+          "sha256": "f65253ac7090c0f16cbf2407a8e144bb3e7aee2711ba49b484ae20d4bb45b604",
+          "bytes": 2510,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 41
+    },
+    {
+      "rank": 42,
+      "logical_url": "http://www.worldofwarcraft.com/info/encyclopedia/images/icons/400.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/info/encyclopedia/images/icons/400.jpg",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 8,
+      "next_action": "skipalreadyfailed",
+      "reason": "Only prior failure/HTML-or-error evidence was found; no new digest or transport evidence exists in this preparation pass.",
+      "evidence_kinds": {
+        "failure_or_error": 1,
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/pre2008-candidate-followup-20261012/high-reference-audit/audit.json",
+          "sha256": "59ada342a4256e43f44f1d7303646dbf9649ca4387565258b803356b7901a487",
+          "bytes": 1032004,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-001-resource-gaps.json",
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 42
+    },
+    {
+      "rank": 43,
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/images/talents/arrows/down-1-green.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/images/talents/arrows/down-1-green.gif",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 8,
+      "next_action": "skipalreadyfailed",
+      "reason": "Only prior failure/HTML-or-error evidence was found; no new digest or transport evidence exists in this preparation pass.",
+      "evidence_kinds": {
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 43
+    },
+    {
+      "rank": 44,
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/images/talents/arrows/down-1-grey.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/images/talents/arrows/down-1-grey.gif",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 8,
+      "next_action": "skipalreadyfailed",
+      "reason": "Only prior failure/HTML-or-error evidence was found; no new digest or transport evidence exists in this preparation pass.",
+      "evidence_kinds": {
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 44
+    },
+    {
+      "rank": 45,
+      "logical_url": "http://www.worldofwarcraft.com/shared/global/talents/images/talents/arrows/down-1-yellow.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/shared/global/talents/images/talents/arrows/down-1-yellow.gif",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "unmatched_local_evidence",
+      "events": 8,
+      "next_action": "skipalreadyfailed",
+      "reason": "Only prior failure/HTML-or-error evidence was found; no new digest or transport evidence exists in this preparation pass.",
+      "evidence_kinds": {
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": []
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 45
+    },
+    {
+      "rank": 46,
+      "logical_url": "https://www.worldofwarcraft.com/gadgetzan/gt002/images/dalaran.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/gadgetzan/gt002/images/dalaran.jpg",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 8,
+      "next_action": "skipalreadyfailed",
+      "reason": "Only prior failure/HTML-or-error evidence was found; no new digest or transport evidence exists in this preparation pass.",
+      "evidence_kinds": {
+        "failure_or_error": 1,
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/pre2008-candidate-followup-20261012/high-reference-audit/audit.json",
+          "sha256": "59ada342a4256e43f44f1d7303646dbf9649ca4387565258b803356b7901a487",
+          "bytes": 1032004,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-016-runtime-resource-gaps.json"
+        ]
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 46
+    },
+    {
+      "rank": 47,
+      "logical_url": "https://www.worldofwarcraft.com/gadgetzan/gt002/images/dalaranbg.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/gadgetzan/gt002/images/dalaranbg.jpg",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 8,
+      "next_action": "skipalreadyfailed",
+      "reason": "Only prior failure/HTML-or-error evidence was found; no new digest or transport evidence exists in this preparation pass.",
+      "evidence_kinds": {
+        "failure_or_error": 1,
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/pre2008-candidate-followup-20261012/high-reference-audit/audit.json",
+          "sha256": "59ada342a4256e43f44f1d7303646dbf9649ca4387565258b803356b7901a487",
+          "bytes": 1032004,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-016-runtime-resource-gaps.json"
+        ]
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 47
+    },
+    {
+      "rank": 48,
+      "logical_url": "https://www.worldofwarcraft.com/gadgetzan/gt002/images/dalaranfloat.gif",
+      "comparison_key": "http://www.worldofwarcraft.com/gadgetzan/gt002/images/dalaranfloat.gif",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 8,
+      "next_action": "skipalreadyfailed",
+      "reason": "Only prior failure/HTML-or-error evidence was found; no new digest or transport evidence exists in this preparation pass.",
+      "evidence_kinds": {
+        "failure_or_error": 1,
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/pre2008-candidate-followup-20261012/high-reference-audit/audit.json",
+          "sha256": "59ada342a4256e43f44f1d7303646dbf9649ca4387565258b803356b7901a487",
+          "bytes": 1032004,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-016-runtime-resource-gaps.json"
+        ]
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 48
+    },
+    {
+      "rank": 49,
+      "logical_url": "http://www.worldofwarcraft.com/images/parchment/plain/light.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/images/parchment/plain/light.jpg",
+      "role": "needs_exact_2008_cdx",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 7,
+      "next_action": "skipalreadyfailed",
+      "reason": "Only prior failure/HTML-or-error evidence was found; no new digest or transport evidence exists in this preparation pass.",
+      "evidence_kinds": {
+        "failure_or_error": 1,
+        "url_mention_only": 1,
+        "coverage_only": 3,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/pre2008-candidate-followup-20261012/high-reference-audit/audit.json",
+          "sha256": "59ada342a4256e43f44f1d7303646dbf9649ca4387565258b803356b7901a487",
+          "bytes": 1032004,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/http-https-variant-groups.json",
+          "sha256": "ce98ac28f8ac75e44c0bd66d60dd4b259f2b089bbbcf6d8663c6cb5b9b5c8920",
+          "bytes": 4832,
+          "evidence_kind": "url_mention_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/http-https-variant-groups.json",
+          "sha256": "fabd528e5ed8c651c8e54ab70741eb7336c5f73d5f2b5fdfeac8a444be55f4a8",
+          "bytes": 1895,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-016-runtime-resource-gaps.json"
+        ]
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 49
+    },
+    {
+      "rank": 50,
+      "logical_url": "http://www.worldofwarcraft.com/info/encyclopedia/images/icons/339.jpg",
+      "comparison_key": "http://www.worldofwarcraft.com/info/encyclopedia/images/icons/339.jpg",
+      "role": "complete_prefix_needs_exact_index",
+      "priority": "P3",
+      "current_state": "known_browser_gap_no_local_entity",
+      "events": 7,
+      "next_action": "skipalreadyfailed",
+      "reason": "Only prior failure/HTML-or-error evidence was found; no new digest or transport evidence exists in this preparation pass.",
+      "evidence_kinds": {
+        "failure_or_error": 1,
+        "coverage_only": 2,
+        "html_or_nonimage_row": 1
+      },
+      "evidence_files": [
+        {
+          "path": "research/pre2008-candidate-followup-20261012/high-reference-audit/audit.json",
+          "sha256": "59ada342a4256e43f44f1d7303646dbf9649ca4387565258b803356b7901a487",
+          "bytes": 1032004,
+          "evidence_kind": "failure_or_error"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/negative-coverage-review.json",
+          "sha256": "09ac05311b380a987aa868ef26e95a919199dc0ae428c15ea0676bf325fa72e8",
+          "bytes": 5436854,
+          "evidence_kind": "coverage_only"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/targets.json",
+          "sha256": "222c956d732b9c0aa4014db56bcfaebbd5f63491c341d1465ea871919bccde94",
+          "bytes": 5066695,
+          "evidence_kind": "html_or_nonimage_row"
+        },
+        {
+          "path": "research/final-gap-closure-20261012/final-build/targets.json",
+          "sha256": "a4900bb989c3395e6ab10ef4442e4ddc591f361e8b14d29446e54a0344624345",
+          "bytes": 4109891,
+          "evidence_kind": "coverage_only"
+        }
+      ],
+      "old_candidate_next_step": "exact_cdx_2008_only",
+      "old_candidate_cdx": [],
+      "existing_download_evidence": {
+        "local_map_count": 0,
+        "local_map_grouped_count": 0,
+        "local_plan_count": 0,
+        "local_error_count": 0,
+        "gap_sources": [
+          "research/offline-2008/full-recovery/round-001-resource-gaps.json",
+          "research/offline-2008/full-recovery/round-007-runtime-static-targets.json",
+          "research/offline-2008/full-recovery/round-008-runtime-static-targets.json"
+        ]
+      },
+      "requires_new_evidence": false,
+      "network_performed_by_this_pass": false,
+      "dedup_rank": 50
+    }
+  ],
+  "dedup_policy": {
+    "reuseproof": "A local source-map/catalog/validation record is evidence to reuse, not a request to redownload.",
+    "skipalreadyfailed": "Prior failure/error-only evidence is retained and not retried absent a new digest or transport path.",
+    "noimage": "A pre-2008 item with prior non-image/error evidence and no complete exact-2008 empty proof cannot pass the supplement gate.",
+    "fetch_new": "Only a future parent-authorized exact 2008 CDX stage, followed conditionally by one entity GET, may proceed.",
+    "normalization": "http/https and default-port variants are matched for dedup evidence, while the original logical URL remains unchanged in every item."
+  },
+  "temporal_gate": {
+    "exact_2008": "20080101000000..20081231235959, matchType=exact, all statuses/MIME, no collapse/showNumPages/filter; complete raw response required.",
+    "pre2008": "Only after complete exact-2008 empty proof, explicit pre2008_static_supplement metadata, image MIME/format validation, and opt-in validator."
+  },
+  "runner": {
+    "path": "research/resource-resume-20261013/round001/run_round001.py",
+    "default": "dry-run only; no Archive request unless explicit --allow-network --parent-release-token is supplied later"
+  }
+}

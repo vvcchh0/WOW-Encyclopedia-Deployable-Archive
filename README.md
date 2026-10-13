@@ -4,6 +4,12 @@
 
 原始入口：[The Official Warcraft Encyclopedia](https://web.archive.org/web/20080512210044/http://www.worldofwarcraft.com/info/encyclopedia/index.xml)。各文件保留自己的实际捕获时间；较晚的 2008 素材、更早的静态补充及现代兼容文件分别记录，不把整站称为同一秒的快照。
 
+## 在线浏览
+
+[官网首页](https://vvcchh0.github.io/WOW-Encyclopedia-Deployable-Archive/) · [Warcraft Encyclopedia](https://vvcchh0.github.io/WOW-Encyclopedia-Deployable-Archive/info/encyclopedia/index.xml.html)
+
+GitHub Pages 使用独立 `gh-pages` 分支；HTML 内容的历史 `.xml` 地址导出为 `.xml.html`，兼容项目路径、菜单与本地标题搜索。本站是非官方历史保存，仍有资源缺口，账号和原站在线服务不可用。发布方法及验收记录见[GitHub Pages 部署说明](docs/github-pages-deployment.md)。
+
 ## 本地启动
 
 安装 Python 3，克隆仓库后在仓库目录执行：

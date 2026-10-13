@@ -1,0 +1,96 @@
+{
+  "schema": "github-pages-export-verification/v3",
+  "generated_at": "2026-10-13T12:46:20.1237544Z",
+  "output": ".scratch/pages-preview-final",
+  "base_path": "/WOW-Encyclopedia-Deployable-Archive/",
+  "source_manifest": "offline/build-manifest.json",
+  "source_manifest_sha256": "397f7dcdbc774d80c6f8c1f3dabf7933211ff182427bd2ef77c895752334f459",
+  "on_disk_files": 8399,
+  "on_disk_bytes": 555433910,
+  "provenance_records": 8398,
+  "provenance_duplicate_output_paths": 0,
+  "source_records": 8304,
+  "source_paths_unique": 8304,
+  "nojekyll": true,
+  "readme_provenance_hash_matches": true,
+  "route_checks": {
+    "/info/encyclopedia/index.xml": "/WOW-Encyclopedia-Deployable-Archive/info/encyclopedia/index.xml.html",
+    "/info/encyclopedia/392.xml": "/WOW-Encyclopedia-Deployable-Archive/info/encyclopedia/392.xml.html",
+    "/__offline/uncollected/index.html": "/WOW-Encyclopedia-Deployable-Archive/__offline/uncollected/index.html",
+    "/": "/WOW-Encyclopedia-Deployable-Archive/index.html"
+  },
+  "dynamic_checks": {
+    "compat_uncollected_prefix": true,
+    "runtime_embedded_route_map": true,
+    "runtime_topic_link_mapper": true,
+    "runtime_document_write_all_args": true,
+    "runtime_style_background_mapper": true,
+    "runtime_image_src_mapper": true,
+    "runtime_data_blob_preserve": true,
+    "form_action_self": true,
+    "banner_unofficial": true,
+    "compat_exact_topic_sync_map_href": true,
+    "runtime_inner_html_mapper": true,
+    "runtime_public_map_css_images": true,
+    "runtime_cascade_avatar_basename_mapper": true
+  },
+  "runtime_syntax_check": {
+    "paths": 3,
+    "vm_script": "passed",
+    "control_bytes": 0,
+    "runtime_bytes": 1126118
+  },
+  "xml_xsl_parse": {
+    "derived_records": 19,
+    "derived_parsed": 18,
+    "derived_failures": [
+      {
+        "output_path": "new-hp/layout/layout.xsl",
+        "source": "offline/site/new-hp/layout/layout.xsl",
+        "ok": false,
+        "error": "not well-formed (invalid token): line 442, column 81"
+      }
+    ],
+    "source_xsl_failures": 14,
+    "source_xsl_failure_note": "Historical malformed XSL source is retained; exporter escapes most bare ampersands, while new-hp/layout/layout.xsl remains malformed because the frozen source also contains nested unescaped attribute quotes.",
+    "source_xsl_failure_examples": [
+      {
+        "source": "offline\\site\\new-hp\\layout\\layout.xsl",
+        "error": "not well-formed (invalid token): line 77, column 168"
+      },
+      {
+        "source": "offline\\site\\community\\stories\\layout\\stories.xsl",
+        "error": "not well-formed (invalid token): line 64, column 148"
+      },
+      {
+        "source": "offline\\site\\info\\layout\\gameguide.xsl",
+        "error": "not well-formed (invalid token): line 96, column 129"
+      }
+    ]
+  },
+  "validation": {
+    "py_compile": "passed",
+    "fixture_unittest": "2 tests passed",
+    "browser_qa": "pending parent QA",
+    "source_site_modified": false,
+    "frozen_manifest_modified": false,
+    "external_fetches": false
+  },
+  "export_stats": {
+    "css_derived": 60,
+    "js_derived": 160,
+    "binary_copied": 7142,
+    "html_derived": 919,
+    "markup_derived": 23,
+    "estimated_bytes": 808002520,
+    "workspace_bytes_after_export": 12637789208,
+    "disk_free_bytes_after_export": 25009111040
+  },
+  "known_limits": [
+    "GitHub Pages static route aliases are emitted as concrete redirect HTML or client route-map rewrites.",
+    "HTML/XML source entities are UTF-8 derived HTML variants; original frozen bytes remain in offline/site and manifest provenance.",
+    "Dynamic or uncollected resources remain typed local placeholders; no external fetch is performed.",
+    "new-hp/layout/layout.xsl remains an inherited malformed historical source; it is explicitly reported and not silently marked XML-valid.",
+    "Browser acceptance remains a parent-agent step."
+  ]
+}
