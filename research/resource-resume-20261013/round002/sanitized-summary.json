@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "kind": "resource_resume_round002_sanitized_summary",
+  "generated_utc": "2026-10-13T13:56:07.186225+00:00",
+  "scope": {
+    "plan": "research/resource-resume-20261013/round002-plan.json",
+    "planned_items": 50,
+    "query_window": {
+      "from": "20080101000000",
+      "to": "20081231235959",
+      "matchType": "exact",
+      "output": "json",
+      "collapse": null,
+      "showNumPages": null
+    },
+    "parent_release_url": "https://vvcchh0.github.io/WOW-Encyclopedia-Deployable-Archive/",
+    "parent_release_url_usage": "public scheduling flag only; not a credential",
+    "network_policy": {
+      "workers_max": 4,
+      "request_timeout_seconds": 60,
+      "batch_deadline_seconds": 1200,
+      "retries": 0,
+      "max_entity_bytes": 16777216,
+      "response_budget_bytes": 134217728,
+      "workspace_max_bytes": 14000000000,
+      "disk_free_reserve_bytes": 11000000000
+    }
+  },
+  "runs": [
+    {
+      "phase": "cdx-precheck",
+      "session_id": 71775,
+      "exit_code": 0,
+      "started_utc": "2026-10-13T13:52:31.473781+00:00",
+      "finished_utc": "2026-10-13T13:52:39.710664+00:00",
+      "requests": 1,
+      "runner_reused_existing_metadata": true,
+      "validation": {
+        "http_status": 200,
+        "complete": true,
+        "raw_json_array": true,
+        "raw_array_elements": 5,
+        "candidate_rows": 4,
+        "entity_selections": 1
+      }
+    },
+    {
+      "phase": "cdx-remaining",
+      "session_id": 76532,
+      "exit_code": 0,
+      "generated_utc": "2026-10-13T13:54:43.145802+00:00",
+      "requested_new_queries": 49,
+      "aggregate_attempted_in_summary": 50,
+      "complete": 20,
+      "complete_empty": 1,
+      "complete_with_rows": 19,
+      "transport_or_http_error": 30,
+      "not_attempted": 0,
+      "entity_plan_items": 19,
+      "decoded_response_bytes": 16415,
+      "stop_reason": "planned_requests_completed"
+    },
+    {
+      "phase": "entity",
+      "session_id": 68045,
+      "exit_code": 0,
+      "generated_utc": "2026-10-13T13:56:01.605397+00:00",
+      "planned": 19,
+      "attempted": 19,
+      "accepted": 1,
+      "validation_failed": 0,
+      "transport_or_http_error": 18,
+      "not_attempted": 0,
+      "decoded_response_bytes": 17650,
+      "stop_reason": "planned_entities_completed"
+    }
+  ],
+  "cdx": {
+    "record_count": 50,
+    "status_histogram": {
+      "complete": 20,
+      "transport_or_http_error": 30
+    },
+    "observed_http_status_histogram": {
+      "200": 20,
+      "null_transport_status": 30
+    },
+    "transport_error_type_histogram": {
+      "FetchError": 30
+    },
+    "transport_error_message_histogram": {
+      "network_error:[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)": 30
+    },
+    "transport_error_rank_range": [
+      21,
+      50
+    ],
+    "same_transport_error_run_length": 30,
+    "complete_empty_count": 1,
+    "complete_empty_is_not_transport_failure": true,
+    "classified_as_empty_index": false
+  },
+  "entity": {
+    "record_count": 19,
+    "status_histogram": {
+      "accepted": 1,
+      "transport_or_http_error": 18
+    },
+    "observed_http_status_histogram": {
+      "200": 1,
+      "null_transport_status": 18
+    },
+    "transport_error_type_histogram": {
+      "FetchError": 18
+    },
+    "transport_error_message_histogram": {
+      "network_error:[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)": 18
+    },
+    "transport_error_rank_range": [
+      2,
+      19
+    ],
+    "same_transport_error_run_length": 18,
+    "classified_as_empty_index": false
+  },
+  "accepted_resources": [
+    {
+      "rank": 1,
+      "logical_url": "https://www.worldofwarcraft.com/visa/reward/images/border-bot.gif",
+      "original": "https://www.worldofwarcraft.com/visa/reward/images/border-bot.gif",
+      "selected_timestamp": "20080402093136",
+      "actual_timestamp": "20080402093136",
+      "temporal_class": "baseline_2008",
+      "mime": "image/gif",
+      "magic": "gif",
+      "pillow_valid": true,
+      "body_length": 1235,
+      "body_sha256": "b0e30447e867b280a465b999aa7a92a3a1b16dda3b1a51a53365c3ef187dd5de",
+      "observed_cdx_digest": "2JQRFJR3IKEMZUZYFONXMJOUGBHVVOEY",
+      "cdx_digest_match": true,
+      "actual_timestamp_match": true,
+      "content_length_match": true,
+      "local_raw_path": "research/resource-resume-20261013/round002/entity/raw/001-b0e30447e867b280a465.bin"
+    }
+  ],
+  "evidence": {
+    "zip_path": "research/resource-resume-20261013/round002/evidence.zip",
+    "zip_bytes": 112410,
+    "verification_path": "research/resource-resume-20261013/round002/evidence-verification.json",
+    "verification_generated_utc": "2026-10-13T13:56:07.186225+00:00",
+    "member_count": 97,
+    "crc_verified": true,
+    "sha256_verified": true,
+    "entity_raw_members": 1,
+    "entity_raw_compression": "ZIP_STORED"
+  },
+  "storage": {
+    "round002_output_bytes_after_run": 815006,
+    "d_free_bytes_after_run": 26145792000,
+    "workspace_bytes_at_release_reported_by_parent": 12640049633,
+    "retained_raw_evidence_local_only": true
+  },
+  "stop_and_deviation": {
+    "same_transport_failure_reached_three": true,
+    "same_transport_failure_was_retried": false,
+    "runner_fetch_error_sets_stop": false,
+    "runner_has_consecutive_same_error_counter": false,
+    "runner_future_cancellation_or_queue_suppression": false,
+    "why_remaining_records_exist": "The current runner's ordinary FetchError path does not set stop and has no consecutive-same-error counter. It pre-submitted all bounded pending futures to its four-worker executor and did not cancel or suppress later queued work, so all remaining records were attempted with the same transport error. This is a runner limitation against the required three-same-failure stop rule; no additional request batch or retry was launched.",
+    "cdx_phase_auto_stopped_after_three_same_errors": false,
+    "entity_phase_auto_stopped_after_three_same_errors": false,
+    "proxy_switch_used": false,
+    "sensitive_response_content_in_this_summary": false
+  },
+  "ownership": {
+    "new_files": [
+      "research/resource-resume-20261013/round002/sanitized-summary.json",
+      "research/resource-resume-20261013/round002/sanitized-summary.md"
+    ],
+    "existing_backup_maps_and_zips_overwritten": false,
+    "raw_cdx_and_entity_evidence_retained_only_under_round002": true
+  }
+}

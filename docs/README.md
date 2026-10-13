@@ -16,3 +16,4 @@ Git 主树保存部署文件、工具、这些文档与关键验收；历史记�
 - [空间与压缩策略](storage-and-compression.md)：全部文件的测量、与 Thuum 的结构差异，以及已生成的轻量部署包。
 
 - [GitHub Pages部署与本地补齐](github-pages-deployment.md)：静态派生层、发布分支、验证与新批次边界。
+- [部署后的资源补齐](resource-resume-20261013.md)：实际查询、TLS 错误、传输复核及续传记录。

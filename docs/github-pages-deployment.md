@@ -31,6 +31,7 @@ python tools/publish_github_pages.py --site .scratch/pages-preview --branch gh-p
 - GitHub Pages 构建 `1281533117` 于 `2026-10-13 13:50:53 UTC` 成功；source 为 `gh-pages` 根目录，HTTPS 已启用。
 - 最终普通静态浏览器验收：11 个代表路由、4 个 XML 探针、4 项交互、2 张截图；无外部请求、路径越界、页面脚本错误或意外资源失败。旧 XML 入口的预期 HTTP 404 随后由静态 404 页正确映射到 `.xml.html`。
 - 线上另检查 6 个页面/脚本/图片对象，均 HTTP 200，响应 MIME 正确，SHA-256 与发布实体一致。
+- 公开网址的真实 Chrome 烟测也通过：首页、百科、菜单开闭、Factions 展开和 Elune 搜索跳转正常；没有外部或 Archive 请求、路径越界、资源失败及脚本/控制台错误。[线上浏览器报告](../research/github-pages-20261013/online-browser-validation.json)附两张截图。
 - 不可变 Git tree 验收覆盖 8,304 个来源记录；8,395 个相同 Git blob 复用已完成的完整字节扫描，只对 4 个改动 blob 重扫。没有跳过字节或未决公开内容检查项。
 
 证据：[部署回执](../research/github-pages-20261013/deployment-receipt.json)、[线上 HTTP/SHA 核验](../research/github-pages-20261013/online-http-verification.json)、[不可变发布树验收](../research/github-pages-20261013/root-pages-tree-acceptance.json)、[最终静态浏览器验收](../research/github-pages-20261013/browser-pages-qa-final-5/browser-validation.json)。Pages 的浏览器检查覆盖代表路由；此前 917/917 文档的全量浏览检查针对本地镜像服务器，二者分别记录。
