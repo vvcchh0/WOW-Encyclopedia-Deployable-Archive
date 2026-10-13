@@ -72,6 +72,18 @@
             return lead + quote + mapped + quote;
         });
     }
+    function installMarkupAdapter() {
+        var owner = window.Element && window.Element.prototype;
+        if (!owner || owner.__pagesMarkupAdapter) return;
+        var descriptor = Object.getOwnPropertyDescriptor(owner, "innerHTML");
+        if (descriptor && descriptor.get && descriptor.set) Object.defineProperty(owner, "innerHTML", {
+            configurable: descriptor.configurable,
+            enumerable: descriptor.enumerable,
+            get: descriptor.get,
+            set: function (value) { return descriptor.set.call(this, mapDynamicMarkup(value)); }
+        });
+        owner.__pagesMarkupAdapter = true;
+    }
     function installDocumentAdapter() {
         if (document.__pagesWriteAdapter) return;
         var originalWrite = document.write;
@@ -133,8 +145,9 @@
         }
         proto.__pagesImageAdapter = true;
     }
-    window.__WOWPages = { prefix: PREFIX, ready: ready, mapHref: mapHref };
+    window.__WOWPages = { prefix: PREFIX, ready: ready, mapHref: mapHref, mapCssImages: mapCssImages, mapImage: mapImage, mapDynamicMarkup: mapDynamicMarkup };
     installDocumentAdapter();
+    installMarkupAdapter();
     installStyleAdapter();
     installImageAdapter();
     document.addEventListener("click", function (event) {

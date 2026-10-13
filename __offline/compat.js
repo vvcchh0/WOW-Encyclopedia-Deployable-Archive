@@ -265,7 +265,7 @@
         if (type === "encyclopedia") {
             exactTopic = topicTitleTarget(value);
             if (exactTopic) {
-                window.location.href = exactTopic;
+                window.location.href = window.__WOWPages.mapHref(exactTopic);
                 return false;
             }
             target = "/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2F__offline%2Fcompat.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fsearch%2Findex.xml%3Fq%3D&reason=external-or-uncollected-resource" + encodeURIComponent(value) + "&restrict=Encyclopedia";

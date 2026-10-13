@@ -130,7 +130,7 @@ function initializationSequence()
 	document.getElementById("headLine").innerHTML = document.title;
 	document.getElementById("TopLevel").style.display = "none";
 	document.getElementById("dragMenuContainer").style.backgroundImage = "url(images/openmenu.gif)";
-	document.getElementById("avatarImageContainer").style.backgroundImage = "url(images/icons/"+topicsArray[topicsArray[document.title].parentString].linkString.split(".xml")[0]+".jpg)";
+	document.getElementById("avatarImageContainer").style.backgroundImage = window.__WOWPages.mapCssImages("url(images/icons/" + String(topicsArray[topicsArray[document.title].parentString].linkString).split("/").pop().split(".xml")[0] + ".jpg)");
 	assembleTheList();
 	replaceText();
 	displaySubArticles(document.title);
