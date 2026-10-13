@@ -34,3 +34,13 @@ GitHub 自动 Source code 包仅代表 Git 主树。历史文档可能引用完�
 公开 Release 提供 502,151,286 字节的轻量部署 ZIP、SHA-256、打包核验、压缩测量和权利说明。8,314 成员逐项匹配已全字节扫描的 Git 内容，另外两个成员为审阅过的新 README 和路径/摘要校验表，共 8,316 成员。[根代理复核](../research/github-publication-20261012/runtime-root-acceptance.json)独立核对整体 SHA 和这项成员关系。
 
 完整取证包的有限检查发现响应 Cookie 字段，部分历史会话/偏好字段来源未精确确认，检查也未覆盖所有嵌套载荷。因此本次将原取证 ZIP 和历史来源 ZIP 留在本地，不上传。原拟17资产清单保留为准备记录，实际发布以 `active-release-assets.json` 与上传回执为准。原 ZIP、分卷和证据都未删除/改写；后续公开取证材料需另行处理响应元数据并保留变换说明。运行层与本地取证层不能互相替代。见[空间策略](storage-and-compression.md)。
+
+## 实际发布回执
+
+- 公开仓库：[WOW Encyclopedia Deployable Archive](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive)。
+- 内容提交：`731328931bf74d391b196ad24127df167a052899`；Release tag 指向同一提交。
+- [已公开 Release](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-processed-20261012)，GitHub published_at：`2026-10-13T10:23:32Z`。
+- 6/6 资产名称、大小、GitHub服务器 SHA-256 全部匹配；runtime ZIP 为502,151,286字节。
+- 本地原始取证包未上传且保持不变。发布后工作区约12.00 GB，D盘可用约27.41 GB，满足14GB工作区与10GB余量要求。
+
+机器可读依据：[最终发布回执](../research/github-publication-20261012/publication-receipt.json)、[根代理发布前资产核对](../research/github-publication-20261012/root-release-prepublish-acceptance.json)、[上传回执](../research/github-publication-20261012/upload-20261013-receipt.json)。随后提交的回执文件不改变冻结镜像或Release目标内容。
