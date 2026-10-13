@@ -46,7 +46,7 @@
 | 静态引用交叉验收 | 52 页及百科 CSS 的 90 个唯一 URL 全部纳入；28 个 JS/HTC 源的 49 个具体静态 URL 全部纳入 |
 | 历史字节复用 | 337 条 CDX/本地摘要匹配证据，256 个唯一 URL；原始获取时间与早期索引日期分别保留 |
 
-文件树位于 `mirror/20080512/`。本轮正文体量约数 MiB，不能以 Thuum 的 100,722 个 HTML/查询变体和 3 GB 解压体量推断本百科应该同样巨大；本次 51 个词条已经按官方导航逐项核对，来源包还包含共享模板、原始 ZIP、索引与研究证据。
+文件树位于 `mirror/20080512/`，本轮正文体量约数 MiB。目录组织参考了 [posh-crouton/dovahzul-archive 收录的 Thuum.org 备份包](https://github.com/posh-crouton/dovahzul-archive/blob/main/other/thuum-backup/thuumbackup.7z)；备份来源、署名及本项目的只读结构分析见[基准复核](reassessment-2008.md#thuum-对照与可检查的目录)。该参照包含 100,722 个 HTML/查询变体，解压约 3 GB；本次百科范围为首页与 51 个词条，已按官方导航逐项核对，来源包还包含共享模板、原始 ZIP、索引与研究证据。
 
 437 个选用实体的时间分类为 `{"anchor_consistent": 368, "same_day_static": 69}`；其中 201 个选用实体依靠早期 CDX 摘要证明其较晚观察到的字节已经存在。2008-05-12 同日稍后静态捕获按已声明策略选用，并未伪称抓取于精确锚点。首页仍严格为 `20080512210044`，SHA-256 为 `4951546ef139ac64d93f1811dec06ef2b84dea22cd9d278fac9262070b079ec3`。
 

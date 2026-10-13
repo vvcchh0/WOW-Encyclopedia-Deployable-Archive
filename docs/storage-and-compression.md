@@ -13,7 +13,7 @@
 
 图片占部署文件字节约 91%。179 组精确 SHA 重复涉及 243 个冗余路径，理论最大仅省 2,066,256 字节。当前 Git 对象 pack 约 497,531,702 字节，已经使用压缩及内容寻址；再次把网页 gzip 后提交，对 Git 存储的额外收益有限，还会增加路由和摘要处理成本。
 
-Thuum 的只读结构扫描为 3,062,212,968 字节，其中 HTML 3,025,051,284 字节，约占 98.8%。这种以文字为主的文件树与本项目以图片为主的镜像差异很大，不能期待将完整美术素材也压到约 40 MB。这里没有根据压缩率推断 Thuum 页面有效性或其完整性。
+压缩分析参考了 [posh-crouton/dovahzul-archive 收录的 Thuum.org 备份包](https://github.com/posh-crouton/dovahzul-archive/blob/main/other/thuum-backup/thuumbackup.7z)，备份来源与抓取者署名见[上游说明](https://github.com/posh-crouton/dovahzul-archive/blob/main/other/thuum-backup/Index.md)。对其本地解包副本的只读扫描为 3,062,212,968 字节，其中 HTML 3,025,051,284 字节，约占 98.8%。它以文字为主，本项目镜像则以图片为主，二者的压缩收益不同。
 
 ## 已采用：轻量部署与完整取证分开
 

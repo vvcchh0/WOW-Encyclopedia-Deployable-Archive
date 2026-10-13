@@ -44,6 +44,8 @@
 
 ## Thuum 对照与可检查的目录
 
+结构参照采用 [posh-crouton/dovahzul-archive 收录的 Thuum.org 备份包](https://github.com/posh-crouton/dovahzul-archive/blob/main/other/thuum-backup/thuumbackup.7z)。本节记录对其本地解包副本的只读扫描，备份来源与抓取者署名见[上游说明](https://github.com/posh-crouton/dovahzul-archive/blob/main/other/thuum-backup/Index.md)。
+
 对 `D:\Thuum\thuum-backup\thuumbackup` 只读扫描得到 **101,089 个文件、3,062,212,968 字节**，其中 **100,722 个 HTML、3,025,051,284 字节**。文件名中有 6,766 个 `_page=` 变体、496 个字典 `letter` 参数变体；有限样本中五个页面共享相同外壳前缀。其大体积来自十万级页面和查询参数组合；目前百科导航只有首页与 51 个词条，不能据 Thuum 的 3 GB 推导百科也必须达到 GB 级才完整。用户所述约 40 MB 压缩包未另行打开验证。
 
 Thuum 的“URL 对应本地文件”结构适合后续恢复。先前百科使用的内容寻址 ZIP 也保存了文件，但肉眼难以检查。本轮额外导出未修改实体，按原 URL 路径排列：
