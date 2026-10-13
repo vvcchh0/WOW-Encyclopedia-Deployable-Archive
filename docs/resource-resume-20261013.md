@@ -20,4 +20,14 @@ CDX 查询覆盖 2008 全年、exact、所有 status/MIME，不使用 collapse �
 
 48 个失败均为 `SSL: UNEXPECTED_EOF_WHILE_READING`，没有 HTTP 状态，不能据此判定 Archive 缺少文件。换用 curl、HTTP/1.1 与本机已有代理完成单项实验：原失败的 `frame-bot-bg.gif` 得到 HTTP 200，捕获 `20080402093145`，4,380 字节、121×79 GIF，严格核验全部通过。[探针记录](../research/resource-resume-20261013/round003-transport-probe/probe-validation.md)提供独立证据。
 
-据此，下一批只对上述失败项换传输方式续传，复用已成功的探针实体、既有完整索引及已下载文件。采用单并发、每项本轮最多一次请求、1 秒间隔、60 秒请求超时、20 分钟截止及连续三错停批；每实体 16 MiB、索引 4 MiB、累计响应 128 MiB。工作区上限 14,000,000,000 字节，D 盘保留 11,000,000,000 字节加 256 MiB 余量。新实体按捕获日期分列，验证后再决定镜像整合。
+据此，Round003 只对上述失败项换传输方式续传，复用已成功的探针实体、既有完整索引及已下载文件。采用单并发、每项本轮最多一次请求、1 秒间隔、60 秒请求超时、20 分钟截止及连续三错停批；每实体 16 MiB、索引 4 MiB、累计响应 128 MiB。工作区上限 14,000,000,000 字节，D 盘保留 11,000,000,000 字节加 256 MiB 余量。
+
+## 本轮结束结果
+
+Round003 在 `2026-10-13 14:15:35 UTC` 结束，共发出 47 个 curl 请求：30 个 CDX 查询中 29 个得到完整全年空结果、1 个超时；17 个实体 GET 全部通过严格核验，另复用已成功的 probe 1 个。Round003 的 18 张图片加上 Round002 的 1 张，共取得 **19 个去重图片 URL**，捕获时间均为基准之前的 2008 年。没有进行第四轮或 pre-2008 下载。
+
+原 50 个候选的最终状态为：19 个图片 URL 已取得、30 个具有完整 exact-2008 全年空证明、1 个仍为查询超时。空证明不表示更早年份也没有捕获；超时也不作为空证明。
+
+Round003 证据 ZIP 共 261 个成员、466,043 字节，CRC、成员 SHA 与原始实体摘要通过核验。新增图片尚未写入冻结镜像或上线快照；可从本地 `round002/entity-source-map.json` 与 `round003/entity-source-map.json` 继续进行整合。
+
+参见 [Round003 脱敏运行摘要](../research/resource-resume-20261013/round003/sanitized-summary.md)、[串行续传工具](../research/resource-resume-20261013/round003/run_round003.py)及[主代理独立核验](../research/github-pages-20261013/resource-root-acceptance.json)。全部 raw CDX、响应头、实体和两个证据 ZIP 留在本地，不公开含 Cookie 字段的原始响应元数据。
