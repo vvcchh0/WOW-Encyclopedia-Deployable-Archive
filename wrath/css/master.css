@@ -1,0 +1,576 @@
+/*	Wrath of the Lich King - Blizzard Entertainment 2007 */
+
+* {margin:0; padding:0;}
+html, body { height: 100%; }
+
+/* General Styles */
+body { background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/page_background.jpg") #02080e top center repeat-y;}
+a img {border:none;}
+a:active {outline:none;}
+a:focus {-moz-outline-style:none;}
+q {display:block;} q:before, q:after {content:"";}
+table {border-collapse:collapse; border-spacing:0;}
+.clear {clear:both;}
+.left {float:left;}
+.right {float:right;}
+div.reldiv 				{ position: relative; }
+div.page-container 		{ width: 100%; text-align: center;   background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/page_background_top.jpg") top center no-repeat;}
+div.frontpage-container { width: 100%; text-align: center;   background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/page_background_top_main.jpg") top center no-repeat; height: 600px;}
+div.content-container 	{ width: 980px; margin: 0 auto 0; text-align: left;}
+div.nav					{ position: absolute; margin: 0px; width: 980px; height: 100px; text-align: center;}	
+a:link,a:active,a:visited	{ color:#feaf00; text-decoration: none; }
+a:hover						{ color:#00b3fe; }
+a:focus						{ outline: none }
+.hr {border:none; background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/hr.png") no-repeat center left; width:100%; height:2px; padding:10px 0; position:relative;}
+
+/* Frontpage Styles */
+div.frontpage-left { text-align: left; margin: 0; width: 466px; float: left;}
+div.frontpage-right { text-align: left; margin: 0; width: 514px; height: 1300px; float: right;}
+div.frontpage-news-top {  display: table; text-align: left; margin: 0; width: 466px; height: 360px; background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/frontpage_news_bgt.jpg") top left no-repeat; text-align: center;}
+div.frontpage-news-featured { text-align: left; margin: 0; width: 466px; height: 183px;}
+div.frontpage-news-midtop { width: 466px;  margin: 0; padding:0; background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/frontpage_news_bgmt.jpg") top left no-repeat;}
+div.frontpage-news-mid { width: 466px;  margin: 0; padding:0; background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/frontpage_news_bgm.jpg") top left repeat-y;}
+div.frontpage-news-content { margin: 0; padding: 0; position: relative; font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #d6f9ff; letter-spacing: -0.0px; line-height: 18px; background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/frontpage_news_bgm_fade.gif") bottom left no-repeat;}
+div.frontpage-news-spacer { font-family: Arial, Helvetica, sans-serif; font-size: 1px; color: #ffffff; line-height: 1px; height: 1px; width: 466px;}
+div.frontpage-news-text { margin: 10px 30px 10px 50px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #d6f9ff; letter-spacing: -0.0px; line-height: 18px;}
+div.frontpage-news-bottom { text-align: left; margin: 0; height: 485px; width: 466px; background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/frontpage_news_bgb.jpg") top left no-repeat;}
+div.frontpage-right-top { width: 514px; height: 80px;  margin: 0; padding:0; background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/frontpage_topright.jpg") top left no-repeat;}
+div.frontpage-right-bottom { width: 514px; height: 207px;  margin: 0;  padding:0; background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/frontpage_bottomright.jpg") top left no-repeat;}
+div.frontpage-mainflash { width: 514px; height: 1013px;  margin: 0;  padding:0; }
+div.frontpage-news-right { z-index: 100; width: 134px; height: 380px; position: absolute; margin: 26px 0 0 466px; background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/frontpage_news_right.gif") top left no-repeat;}
+div.frontpage-news-left { position: absolute; margin: 0px 0 0 -49px; text-align: left; width: 49px; height: 323px; background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/frontpage_news_left.gif") top left no-repeat;}
+div.featured {position: absolute; margin: 330px 0 0 35px; width: 425px; height: 115px;}
+div.page-sub-left { text-align: left; margin: 0; width: 466px; float: left;  border: 1px purple solid;}
+div.frontpage-overview { margin-bottom: -20px; min-height: 520px; position: relative; z-index: 5 }
+div.frontpage-arthas {  margin: 0; padding: 0; width: 514px; height: 1013px; background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/noflash/frontpage_arthas.jpg") top left no-repeat; }
+
+.frontpage-overview h1 { font: 14pt Georgia, "Times New Roman", Times, serif; color: #feaf00; margin: 20px 0 15px;}
+.frontpage-overview ul {margin-left:0;}
+.frontpage-overview li {margin:1em 0; font-size:11px; list-style:none; padding:0 0 0 30px; background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/frontpage_bullet.gif") 0 0px no-repeat; line-height: 15px;}
+.frontpage-overview h3 {width:336px; height:16px; margin-bottom:15px; background:url("/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fwrath%2Fcss%2Fmaster.css&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fimages%2Flayout%2Ftitle-overview.png&reason=invalid-overlay-or-uncollected-site-resource") 0 0 no-repeat;}
+.frontpage-overview h3 span {display:none;}
+.frontpage-overview strong { color:#77d8f3; font:11px  Arial, Helvetica, sans-serif; letter-spacing:0px; font-weight: bold; }
+
+a.toggle-flash { text-transform: uppercase; font:11px  Arial, Helvetica, sans-serif; letter-spacing: 1px; font-weight: bold; margin-top: 2px; }
+
+a.link-jobs:link { text-transform: uppercase; font:14px  Arial Black, Arial, Helvetica, sans-serif; letter-spacing: -1px; margin-top: 2px; color: #feaf00; }
+a.link-jobs:hover { text-transform: uppercase; font:14px  Arial Black, Arial, Helvetica, sans-serif; letter-spacing: -1px;  margin-top: 2px; color: #00b3fe!important;}
+a.link-jobs:active { text-transform: uppercase; font:14px  Arial Black, Arial, Helvetica, sans-serif; letter-spacing: -1px; margin-top: 2px; color: #feaf00; }
+a.link-jobs:visited { text-transform: uppercase; font:14px  Arial Black, Arial, Helvetica, sans-serif; letter-spacing: -1px; margin-top: 2px; color: #feaf00; }
+
+#wowcomlink { font-weight:bold; position:absolute; margin:-33px 0 0 20px;  }
+#wowcomlink img { margin-right:10px;  }
+
+/* Feature Box Styles */
+
+a.watch-trailer { display:block; width: 466px; height: 67px;}
+a.watch-trailer:hover { background-position: 0 -67px; }
+
+.feature-container, .feature-overlay, .feature-links {width:466px; height:116px; }
+.feature-overlay { position:absolute; background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/noflash/frontpage_featured_bottom.png") no-repeat;}
+.feature-links { position:absolute; z-index:999999;}
+.feature1, .feature2, .feature3, .feature-links a{ width: 140px; height: 100px; position:absolute;}
+
+.feature-title {  position:absolute; bottom:0px; padding: 0 0 10px 10px; }
+.feature-title h1 { font-family: Helvetica, sans-serif; font-size: 11px; color: #E1A900; }
+.feature-title h2 { font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #C9E3F1; }
+.feature1, .feature-links .link1 { margin: 8px 0 0 27px; }
+.feature2, .feature-links .link2 { margin: 8px 0 0 168px; }
+.feature3, .feature-links .link3 { margin: 8px 0 0 309px; }
+
+
+/* Nav Bar Styles */
+
+.navbox { position: relative;}
+
+.navbox-left {width:127px; height:47px; background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/noflash/navi_left_outer.png") no-repeat; float:left;}
+.navbox-middle { background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/noflash/navi_bg.png") no-repeat top center; float:left; height: 66px;}
+.navbox-right { width:127px; height:47px; background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/noflash/navi_right_outer.png") no-repeat; float:left;}
+
+.navbox-inner-left { width:43px; height:52px; background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/noflash/navi_left_inner.png") no-repeat; float:left;}
+.navbox-inner-middle { position:relative; z-index:999999; top: 9px; float:left; text-align:center; width: 625px;}
+
+.navbox-inner-middle a { color: #fff; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; text-transform:uppercase; position:relative;top:-3px;}
+.navbox-inner-middle a:visited { color: #fff; }
+.navbox-inner-middle a:hover   { color:#feaf00; }
+
+.navbox-inner-right { width:43px; height:52px; background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/noflash/navi_right_inner.png") no-repeat; float:left;}
+
+.navbox-inner-middle em { padding: 0 7px 0 0; background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/noflash/nav_separator.png") no-repeat; margin: 0 10px 0 10px;}
+
+/* Language Menu*/
+
+.language-filter-front {font:8px Arial, Helvetica, sans-serif; color: #D6D6D6; width:75px; margin: -5px 20px 0 0; padding:0; z-index:1000000; text-align:left; float: right;}
+.language-filter {font:8px Arial, Helvetica, sans-serif; color: #D6D6D6; position:absolute; top:11px; left:850px; width:75px; margin:0; padding:0; z-index:1000000; text-align:left;}
+.language-filter strong {position:relative; top:4px; left:3px;}
+.dropdown {position:relative; z-index:905; top:4px;}
+.dropdown-bg {position:absolute; background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/tooltip/backplate.png") no-repeat; width:97px; height:28px;}
+.dropdown a {position:absolute; font:9px bold Arial, Helvetica, sans-serif; text-transform:uppercase; display:block; text-decoration:none; color:#D3FFFD; font-weight: bold; width:97px; height:28px; padding: 7px 0 0 10px;}
+.dropdown a:hover {color:#fff;}
+.langarrow {width:9px; height:7px; position:absolute; right:9px; top:2px;}
+
+.drop-lang {position:absolute; top:35px; z-index:99999; font:8px Arial, Helvetica, sans-serif; line-height:4px;  }
+.drop-lang ul {list-style:none; position:relative; z-index:999999; padding:0; }
+.drop-lang li, .drop-link li {width:100%; position:relative; z-index:99999999;}
+.drop-lang a, .drop-lang a:visited, .drop-lang a:active, .drop-link a, .drop-link a:visited, .drop-link a:active { font:8px Arial, Helvetica, sans-serif; background-image:none; display:block; width:80px; font-weight:bold; color:#ff9c00; text-decoration:none; z-index:9999999999999; padding:5px;}
+.drop-lang a:hover, .drop-link a:hover {color:white; background:#0B538B;}
+
+.light-tip {position: relative; z-index:99999999999; white-space:nowrap; width:100px; font:8px Arial, Helvetica, sans-serif;}
+.light-tip table {width:100%;}
+.light-tip td.tl, .light-tip td.t, .light-tip td.tr  { height:6px !important }
+.light-tip td.bl, .light-tip td.b, .light-tip td.br  { height:10px !important }
+.light-tip td.tl, .light-tip td.l, .light-tip td.bl, .light-tip td.l q, .light-tip td.tl q  { width:6px !important }
+.light-tip td.tr, .light-tip td.r, .light-tip td.br, .light-tip td.r q, .light-tip td.tr q   { width:9px !important }
+.light-tip td.tl, .light-tip td.t, .light-tip td.tr { padding:0 !important; margin:0 !important; }
+.light-tip td.l q, .light-tip td.r q, .light-tip td.tr q, .light-tip td.tl q, .light-tip td.t q {display: block; height: 1px; visibility:hidden }
+.light-tip td.tl 	{ background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/tooltip/lp-tl.png") no-repeat; }
+.light-tip td.tr 	{ background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/tooltip/lp-tr.png") no-repeat;}
+.light-tip td.t 	{ width:auto; background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/tooltip/lp-t.png") repeat-x; }
+.light-tip td.l 	{ background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/tooltip/lp-l.png") repeat-y; }
+.light-tip td.r 	{ background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/tooltip/lp-r.png") repeat-y; }
+.light-tip td.bg	{ background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/tooltip/lp-bg.png") repeat; }
+.light-tip td.bl 	{ background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/tooltip/lp-bl.png") no-repeat; }
+.light-tip td.br 	{ background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/tooltip/lp-br.png") no-repeat; }
+.light-tip td.b 	{ width: auto; background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/tooltip/lp-b.png") repeat-x; }
+
+
+/* Subpages Styles */
+
+.sub-header-top { width: 980px; height: 305px; clear: both; background-position: top left; background-repeat: no-repeat; }
+.sub-header-left { width: 83px; float: left; background-position: top left; background-repeat: no-repeat; }
+.sub-header-right { width: 83px; float: left; background-position: top left; background-repeat: no-repeat; }
+.sub-contents-container { width: 814px; float: left; }
+.sub-wood-top { width: 814px; height: 170px; clear: both; background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/sub_wood_top_crossbar.jpg") top left no-repeat; }
+.sub-wood-container { width: 814px; clear: both; background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/sub_wood_loop.jpg") top left repeat-y;}
+.sub-wood-contents { width: 814px; clear: both; background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/sub_wood_fade.gif") bottom left no-repeat;}
+.sub-wood-footer { width: 980px; height: 196px; clear: both; background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/sub_wood_foot.jpg") top left no-repeat;}
+.sub-text-container { margin: 0; font-family: Arial, Helvetica, sans-serif; color: #EAFDFF; font-size: 12px; line-height: 20px; }
+.subcat { margin: 0 auto; position: relative }
+.sub-footer { width: 980px; height: 240px; clear: both; background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/sub_footer.jpg") top left no-repeat;}
+.subtitle-container {  width: 814px; height: 170px;} 
+.sub-crest { position: absolute;  width: 97px; height: 122px; background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/noflash/sub_crest.png") top left no-repeat; margin: 32px 0 0 25px;}
+.sub-orangetext { position: absolute;  width: 700px; height: 50px;}
+
+/* Features Page */
+
+.top-rule, .top-rule_fade { background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/features_top_rule.jpg") -7px 0 no-repeat; height: 58px; width:784px; position: absolute; top: -56px; left: 19px; }
+.top-rule_fade	{ background-image: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/features_top_fade.jpg") }
+.features { background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/blackmid-dark.png") 0 0 repeat }
+.features-top  { background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/features-wood-top.gif") 0px -59px no-repeat;}
+.deathknight-top { background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/features_wood_bridge.jpg") no-repeat;}
+.features-bot  { background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/blackbot-dark.png") 0 100% repeat-x; height:92px}
+.features h1	{ font:bold 24px Georgia, "Times New Roman", Times, serif; letter-spacing:-1px; font-variant:small-caps; color: #598cb8; padding: 0 18px 8px 58px; margin:0 }
+.update-list { padding: 0 0 20px 0 }
+a.feature-update,a.feature-update:active,a.feature-update:visited	{ width: 696px; height: 28px; margin: 0 auto; background: transparent url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/feature-update.png") no-repeat; display: block; color: #87b7e6; cursor: pointer }
+a.feature-update:hover { background-position: 0 -28px }
+a.feature-update li.item,a.zone-menu li.item { height:28px; background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/feature-bullet2.gif") 10px 8px no-repeat; padding: 0 0 0 30px;}
+a.feature-update span { color: #feaf00; }
+a.feature-update:hover span { color: white }
+a.feature-update ul { list-style: none; }
+a.feature-update li { float: left; padding: 0 0 0 15px; width: 250px; height:28px; line-height:28px; }
+a.feature-update li.date { width: 125px }
+a.feature-toggle { line-height: 0.8em }
+a.feature-toggle u, a.feature-toggle-up u  { background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/arrow-toggle_d.gif") no-repeat 630px 50%;  display:block;   }
+a.feature-toggle-up u { background-image: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/arrow-toggle_u.gif"); }
+
+a.feature-toggle em, a.feature-toggle-up em {  height:6px; width: 12px; }
+a.feature-toggle-up em {}
+.feature-category { width: 696px; padding: 0; margin: 0 auto; background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/features-category-fade.png") 0 0 no-repeat; }
+.feature-category .environment { background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/feature-block-environment.jpg") no-repeat 0 0; }
+.feature-category .story { background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/feature-block-story.jpg") no-repeat 0 0; }
+.feature-category .deathknight { background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/feature-block-deathknight.jpg") no-repeat 0 0; }
+.feature-category .bard { background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/feature-block-bard.jpg") no-repeat 0 0; }
+.feature-category .dungeons { background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/feature-block-dungeons.jpg") no-repeat 0 0; }
+.feature-category .factions { background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/feature-block-factions.jpg") no-repeat 0 0; }
+.feature-category .blanks { background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/feature-block-null.jpg") no-repeat 0 0; height:76px;  }
+.feature-category .blanks-bot {background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/feature-block-null-bot.png") 0 0 no-repeat; height:83px; }
+.feature-category .blanks h1 { padding: 12px 18px 0 18px; color: #598cb8; line-height: 0.9em }
+.feature-category .blanks span { text-transform: uppercase; color: #dadada; margin: 0 0 1px 0; position:relative; top:-4px; }
+.feature-category h1 {color:#feaf00; padding: 12px 18px 0 18px; line-height: 1.0em;}
+.feature-category span {padding: 0 0 0 18px; font-size: 0.9em;}
+.fblock-container	{padding: 0 0 40px 0;}
+.fblock	{padding: 5px 18px; cursor: pointer;}
+.fblock a {clear: both; display: block; padding: 8px; margin: 0 auto; background-image:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/brown.png"); background-position:0 0; background-repeat:no-repeat; cursor: pointer;}
+.fblock a:hover {background-position: 0 -114px; cursor: pointer;}
+.fblock a dfn { float: left; display: block; width: 350px; font-style: normal; color: white; position:relative; cursor: pointer;}
+.fblock h2 { font: normal 1.4em/1.1em "Arial Black", Arial, Helvetica, sans-serif; letter-spacing: -1px }
+.fblock span { padding: 0; font-size: 10px; color: #79949e; text-transform: uppercase }
+.fblock p	{ color: #3b96e0; font-size: 0.9em; line-height: 1.4em }
+.fblock em	{ display: block; height: 97px; width: 268px; margin: 0 0 0 auto;  }
+.fblock u	{ text-decoration:none; }
+
+
+/* Deathknight Specific Images */
+
+.dk_subnav { position:absolute; z-index:2; margin:-35px 0 0 0; width:300px;}
+
+.dk_bigimage { background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/death_knight_marquee_t.jpg") no-repeat; width:634px;  position:absolute; top:-46px; margin-left:313px; z-index:1;  }
+.dk_bigimage_r { background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/death_knight_marquee_r.jpg") right no-repeat; height:729px; }
+.dk_interview_blockel { float:right; width:380px; height:650px;  }
+.dk_interviewcopy { background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/death_knight_marquee.jpg") top right no-repeat; }
+
+.dk_kneel_r { background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/death_knight_kneel_r.jpg") right no-repeat;  width:653px; height:513px; position:absolute; top:-8px; margin-left:313px; z-index:1;  }
+.dk_skel_r { background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/death_knight_skel_r.jpg") no-repeat; height:800px; width:200px; position:absolute; top:-48px; margin-left:734px; z-index:1;  }
+.dk_lore_blockel { float:right; width:312px; height:750px;  }
+.dk_lorecopy { background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/death_knight_skel_bg.jpg") right 0 no-repeat; padding-top:40px }
+.dk_lorecopy h2 { font:bold 26px Georgia; padding-top:20px; padding-bottom:10px; }
+
+
+
+.qdrop { width:85px; height:50px; display:block; float:left; background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/question_drop.gif") no-repeat; display:none;}
+.dk_interviewcopy h2, .bh2 { font:bold 26px Georgia; padding-top:60px; padding-bottom:15px; }
+ .bh2 { padding:5px 0;}
+.dk_interviewcopy .leadin { font-size:13px; color:#9ed1f3; line-height:25px; }
+.dk_interviewcopy blockquote { float:right; color:white; background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/blockquote_bg.gif") no-repeat; font:bold italic 16px Georgia; width:52%;  padding:15px 0 10px 15px; line-height:24px; text-align:justify }
+
+.question   { background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/leadin.gif")  no-repeat; padding-left:35px; margin-left:-28px;   font:bold 13px Georgia; color:white; line-height:26px; }
+.response { margin:30px 0 20px 20px; padding:0 50px; background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/response_line.gif") 0 50% no-repeat; color:#3576a2;   }
+.copy .response p { margin:0 0 10px 0;  }
+
+.bgfracture { width:814px; height:73px; display:block; position:absolute;  margin-left:-39px; background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/bg_fracture.gif") no-repeat; }
+.bgshim { height:53px; display:block; margin:25px 0 45px 0; z-index:1; }
+
+/* Dungeon Specific */ 
+
+.dungeons blockquote {   color:white; margin:0; font:bold italic 16px Georgia; padding:0 20px; line-height:24px; text-align:justify; padding-top:20px; }
+.dungeons blockquote p {  text-align:justify;  }
+
+.dstats { font-size:11px; line-height:24px; width:221px; float:right; color:white; margin:0;  background:50% 0 no-repeat;}
+.dcontent { padding:0px 10px 35px 12px; }
+.statdesc { color:#d7e7fa; float:left;  clear:right; font-weight:bold; }
+.statval { float:right; width:125px; } 
+.linefeed { float:none; width:auto; clear:left; text-align:left; padding-left:20px;}
+
+.dungeons .dcontent h2 { color:#021822; padding:0; padding-bottom:15px; margin-top:20px !important ; position:relative; } 
+.dungeons .dcontent h2 span { color:white; position:absolute; margin:-3px 0 0 -3px; } 
+
+.dungeons .copy  h2 { margin-top:30px; font:bold 20px Georgia; }
+
+.customart { margin:14px; background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/bg-custom-ss.jpg");  }
+.bport { padding: 4px 20px; }
+.bport .customart { margin:0px 4px; } 
+.customart  a { display:block; text-align:center; }
+.customart  a:hover { background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/bg-custom-ss_h.jpg"); }
+.customart img { padding:6px; padding-bottom:0; }
+
+.lft { float:left; margin:20px 10px 15px 0; }
+.lft .customart { margin-left:0; }
+
+.cimg { padding:6px; background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/bg-custom-ss.jpg"); margin:0 14px; }
+.cimg img { display:block; }
+ 
+.morewall { text-align:right; z-index:199; margin:-100px 0 0 620px; position:absolute }
+
+.dungeons .feature-ss {margin:10px; width:249px; height:188px; background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/bg-feature-ss.png") 0 0 no-repeat; float:left; }
+.dungeons .feature-ss div {width:100%; height:100%;}
+.dungeons .feature-ss a {display:block; height:100%;}
+.dungeons .zone-list, .factions .zone-list  { margin-right:0 !important; }
+.dungeons .zone-list, .dungeons a.zone-menu,.dungeons a.zone-menu:active,.dungeons a.zone-menu:visited,
+.factions .zone-list, .factions a.zone-menu,.factions a.zone-menu:active,.factions a.zone-menu:visited { width: 215px ; }
+
+
+
+.sidebarbg {width:210px; float:right; margin:-40px 5px 20px 45px; font-size:12px; line-height:24px; color:#b5d4f7;  text-align:justify; clear:both; }
+.sidebarbg h2 { position:relative; top:-14px; color:#D5E9FF;  } 
+.sidebarbg h3 { color:#d5e9ff; font:bold 24px Times; position:absolute; margin:-50px 0 0 10px; }
+.sidebarbg h3 span { position:absolute; font-size:20px; margin:-20px 0 0 -10px;}
+.sidebarbg .customart { margin:20px 0px; }
+
+
+/* Movies Page */
+
+.intro-graph { display: none; padding: 20px 40px; background: black; position: relative; top: -20px; margin: 0 40px -20px 40px }
+.movie-frame { padding: 0 0 30px 0; position: relative; top: -30px; }
+.movie		{ width: 782px; margin: 0 auto -30px }
+.movie-top	{ background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/movie-frame-top.gif") no-repeat; height: 38px }
+.movie-bg	{ background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/movie-frame-bg.jpg") no-repeat; height: 239px }
+.movie-bot	{ background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/movie-frame-bot.gif") no-repeat; height: 100px }
+.movie a.mov	{ display: block; height: 239px; width: 327px; float: left; margin:0 0 0 25px; padding:0 }
+.movie a.mov:hover { background-position: 0 -239px !important }
+.movie h2	{ font: 1.7em Georgia, "Times New Roman", Times, serif; color: #feaf00; }
+.movie h3	{ font-weight: normal; font-size: 1.0em }
+.movie em	{ display: block; float: left; font-style: normal; padding: 20px 20px 20px 40px }
+.movie ul	{ list-style: none; line-height: 22px; padding: 30px 0 0 30px }
+a.pcd,a.macd,a.flvd { display: inline-block; padding: 5px 21px 0 0; height: 21px; margin: 0 3px 0 3px }
+a.pcd		{ background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/button-pc.png") no-repeat }
+a.macd		{ background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/button-mac.png") no-repeat }
+a.flvd		{ background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/button-flv.png") no-repeat }
+.movie h1	{ font: 24px "Arial Black", Helvetica, sans-serif; letter-spacing: -1px; text-transform: uppercase; color: #676568 }
+.movie p	{ padding: 90px 0 0 0; text-align: center }
+
+/* Story */
+.smallcap {margin:0 2px 0 0; position:relative; top:1px; width:48px; height:48px }
+.storypad	{ padding: 20px 0 0 0 }
+.stories-top  { background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/blacktop-dark2.png") repeat-x 0 0; height: 92px }
+.story-back { width: 693px; position: relative; margin: 0 auto; background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/story-bg.jpg") repeat 38px 40px; }
+.story-sub-top { background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/story-sub-top.gif") no-repeat 0 0 }
+.story-sub-bot { background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/story-sub-bot.gif") no-repeat -1px 100%; padding: 0 0 10px 0; }
+.story-bot	{ background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/story-bot.gif") no-repeat; position: absolute; bottom: -179px; height: 299px; width: 766px; left: 33px; text-align: center }
+.story-bot a,.story-bot a:visited,.story-bot a:active { position: relative; top: 15px; padding: 0 20px 0 0; color:#cdf9ff }
+.story-top	{ background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/story-top.gif") no-repeat; position: absolute; top: -155px; height: 175px; width: 786px; left: 9px;}
+.story-footer { height: 120px; position: relative }
+.story-sides { background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/story-sides.gif") repeat-y 0 0 }
+.story-block { margin: 0 auto; padding: 0 90px }
+#replaceSection {  min-height:500px }
+.story-block h1,.story-block h1 strong,.story-block h4,.story-block h4 strong { font-family: Georgia, "Times New Roman", Times, serif;font-variant:small-caps; letter-spacing: -1px }
+.story-block h1 strong,.story-block h4 strong { position: absolute; z-index: 10; top: -2px; left: -1px }
+.story-block h1,.story-block h4 { position: relative; z-index: 5; }
+.story-block h1 { color: black; font-size: 24px; padding: 0 }
+.story-block h1 strong { color: #feaf00; font-size:24px }
+.story-block h4 { color: black; font-size: 18px }
+.story-block h4 strong { color: #7ad4f6; font-size: 18px }
+.story-block p.lead, .copy p.lead {color: white; font: normal 16px/24px Georgia, "Times New Roman", Times, serif; margin-top:1em;}
+.story-block p.sublead { color: #bdebff; font: 1.2em/1.4em Georgia, "Times New Roman", Times, serif }
+.story-block p { font-size:12px; line-height: 24px; color: #87aad0; margin:1.25em 0; position: relative; z-index: 5 }
+.story-title { padding: 0 0 20px 0 }
+.copy p { font-size:12px; line-height: 24px; color: #87aad0; margin:1.25em 0;}
+.story-controls { text-align: center; padding: 20px 0 0 0; position: relative; z-index: 20 }
+#changeArrowLeft,#changeArrowRight { position: relative; top: -15px; margin: -10px 0 }
+#changeArrowLeft { float: left; }
+#changeArrowRight { float: right; margin-right: 20px !important; }
+#changeArrowLeft a,#changeArrowRight a,#changeArrowLeft strong,#changeArrowRight strong { display: block; height: 30px; font:bold 18px Georgia, "Times New Roman", Times, serif; }
+#changeArrowLeft a,#changeArrowRight a { position: absolute; top: -1px; left: -1px; color:#cdf9ff; cursor: pointer }
+#changeArrowLeft a:hover,#changeArrowRight a:hover { color: white }
+#changeArrowLeft strong { padding: 0 0 0 30px }
+#changeArrowLeft strong,#changeArrowRight strong { position: relative; color: black }
+#changeArrowLeft a { background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/arrow-prev.gif") no-repeat 0 0; padding-left: 30px; }
+#changeArrowRight a { background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/arrow-next.gif") no-repeat 100% 0; padding-right: 30px; }
+.arrowleft-off a,.arrowright-off a { color: #3e4d54 !important; cursor: default !important }
+.arrowleft-off a { background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/arrow-prevgrey.gif") no-repeat 0 0 !important; }
+.arrowright-off a { background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/arrow-nextgrey.gif") no-repeat 100% 0 !important; }
+#replacePaging { position: relative }
+#replacePaging a,a.story-paging,a.story-paging:active,a.story-paging:visited { color:#cdf9ff; font: 18px Georgia, "Times New Roman", Times, serif; padding: 0 3px; cursor: pointer }
+#replacePaging a:hover,.story-bot a:hover,a.story-paging:hover { color: white }
+a.story-paging-off { color: #3e4d54 !important; cursor: default }
+.copy {padding: 0 40px;}
+b.col {width: 65%;}
+.story-brackets { position: relative; height: 100%; display: table }
+.story-brackets i { display: table-cell; vertical-align: middle; position: absolute; top: 46%; height: 1px; width: 1px; border: 1px solid red; }
+.story-brackets b { position: absolute; display: block; height: 115px; width: 115px; top: -55px; }
+.story-brackets i.left { left: 0 }
+.story-brackets i.right { right: 0 }
+.story-brackets i.left b { left: -35px; background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/story-left.gif") no-repeat }
+.story-brackets i.right b { right: -33px; background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/story-right.gif") no-repeat }
+p.cont { text-align:right }
+p.cont,p.quote { color: white; font:italic 18px Georgia, "Times New Roman", Times, serif; }
+.rise-img1,.rise-img2,.rise-img3,.rise-img4,.rise-img5,.rise-img6,.rise-img7,.rise-img8,.rise-img9	{ width: 657px; height: 199px; position: absolute; top: -113px; left: 12px }
+.rise-img1	{ background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/features/story/s1-top.gif") no-repeat 0 0; }
+.rise-img2	{ background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/features/story/s2-top.gif") no-repeat 0 0; }
+.rise-img3	{ background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/features/story/s3-top.gif") no-repeat 0 0; }
+.rise-img4	{ background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/features/story/s4-top.gif") no-repeat 0 0; }
+.rise-img5	{ background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/features/story/s5-top.gif") no-repeat 0 0; }
+.rise-img6	{ background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/features/story/s6-top.gif") no-repeat 0 0; }
+.rise-img7	{ background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/features/story/s7-top.gif") no-repeat 0 0; }
+.rise-img8	{ background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/features/story/s8-top.gif") no-repeat 0 0; }
+.rise-img9	{ background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/features/story/s9-top.gif") no-repeat 0 0; }
+.story-list { position:absolute; width:149px; right: 60px; top: -80px; z-index:99; background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/features/chapter-bg.jpg"); padding: 5px; border: 1px solid #004571 }
+.story-list h2 { color:#004571 !important }
+.story-list a.zone-menu li {width: 115px !important}
+.story-list a.zone-menu,.story-list a.zone-menu:active,.story-list a.zone-menu:visited	{ width: 149px !important}
+
+/* Northrend */
+.thumb-right {margin: 0 0 10px 20px; text-align:center; float:right; width:250px;}
+.thumb-right .feature-ss {margin:5px auto 10px; width:249px; height:188px; background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/bg-feature-ss.png") 0 0 no-repeat;}
+.thumb-right .feature-ss div {width:100%; height:100%;}
+.thumb-right .feature-ss a {display:block; height:100%;}
+.thumb-left { float: left; margin: 0 15px 10px 0; clear:left;}
+.copy em { display: block; height: 60px; width: 50px; float: left; position: relative; top: 25px; left: 0px; margin: 0 }
+
+.copy q { display: block; width: 210px; padding: 10px 5px 5px 20px; font: normal 12px "Arial Narrow",Arial,Helvetica,sans-serif; text-transform: uppercase; background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/quote.gif") no-repeat; text-align:left;}
+
+.zone-list	{width:249px; margin:0 auto; text-align:left;}
+.zone-list h2,.story-list h2 { font:bold 24px/18px Georgia, "Times New Roman", Times, serif; padding: 0 5px; text-transform:lowercase;color:#1e2b33; text-align:right; cursor:default;}
+a.zone-menu,a.zone-menu:active,a.zone-menu:visited	{ width: 249px; height: 28px; margin: 0 auto; background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/feature-update.png") no-repeat; display: block; color: #87b7e6; cursor: pointer }
+a.zone-menu:hover { background-position: 0 -28px }
+a.zone-menu span { color: #feaf00; }
+a.zone-menu:hover span { color: white }
+a.zone-menu ul {list-style:none;}
+a.zone-menu li {width: 215px; height:28px; line-height:28px;}
+
+.zones-footer {height:28px; line-height:28px; margin:3em 0 0; background: transparent url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/bg-zones-footer.png") no-repeat; color:#bdebff;}
+.zones-footer div {padding-left:10px;}
+.zones-footer div a {position:relative;}
+.zones-footer:hover {background-position: 0 -28px;}
+.zones-footer span {position:relative; top:-2px;}
+
+/* FAQ Styles */
+.faq {padding: 0 40px; color: #d6f9ff; position:relative; top:-26px;}
+.faq blockquote {margin: 20px 40px 0 40px;}
+.faq ul {margin: 10px 0 0 35px;}
+.faq h1 {color:#fff; font:bold 24px Georgia, "Times New Roman", Times, serif; letter-spacing:-1px; font-variant:small-caps;} 
+.faq h2 {color:#00b3fe; background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/bullet.gif") no-repeat; padding:6px 0 10px 22px; margin: 0 0 0 -24px; font-size: 16px;}
+.faq .top {position:absolute; right:0px; top:-5px;}
+
+/* Downloads */ 
+
+.downloads { background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/downloads_bg.jpg") no-repeat; margin-left:58px; height:348px; padding:38px 60px 0 334px; color:#253846; margin-bottom:-100px;  } 
+.downloads h1 {height:37px; font:bold 24px Georgia, 'Times New Roman', Times, serif; color:#253846; letter-spacing:-1px; font-variant:small-caps; margin-bottom:10px; }
+.downloads h1 span { display: block; font-size:80%; margin:-10px 0 0 15px; color:#17469E;}
+
+.dl_link { position:absolute; margin-top:160px; width:300px }
+.dl_link a { color:white; }
+.dl_link a img { padding-right:15px; } 
+.dl_link .file { float:right; color:#ACE2E2; }
+
+.subsection { position:absolute; z-index:100; margin:-40px 0 0 80px; color:#FEAD00; }
+
+/* Wallpapers */
+.wallpaper {background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/bg-wallpapers.png") 0 0 no-repeat; width:795px; height:415px; margin:0 auto -100px;}
+.wallpaper2 {background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/bg-wallpapers2.jpg") 53px 53px no-repeat; height:100%; position:relative;}
+.wall-thumb {width:284px; height:213px; position:absolute; left:87px; top:77px;}
+.wall-thumb ul {list-style:none; width:284px;}
+.wall-thumb a {display:block; height:100%;}
+.wall-info {float:right; width:398px; margin-top:78px;}
+.wall-info h1 {height:37px; font:bold 24px Georgia, 'Times New Roman', Times, serif; color:#253846; letter-spacing:-1px; font-variant:small-caps;}
+.wall-info ul {list-style:none;}
+.wall-info ul li {height:24px; padding-left:7px; font:bold 12px/24px Georgia, 'Times New Roman', Times, serif; color:#03629b;}
+.wall-info ul li a {position:relative;}
+.wall-info ul li a:link, .wall-info ul li a:visited, .wall-info ul li a:active {color:#03629b;}
+.wall-info ul li a:hover {color:#03629b; text-decoration:underline;}
+
+
+/* Screenshot Index */
+a.paging:link, a.paging:visited, a.paging:active {text-decoration:none; font:bold 18px Georgia, "Times New Roman", Times, serif; margin:0; padding:0; color:#cdf9ff; z-index:9999999; position:relative;}
+a.paging:hover {color:#fff;}
+.paging span {color:#678da0; cursor:default;}
+.pagearrow {margin:0 20px; height:24px; display:inline; z-index:999999; position:relative;}
+.pagearrow img {width:24px; height:24px; vertical-align:bottom; position:relative; top:0px;}
+.pageprev, .pagenext {display:inline; font:bold 18px Georgia, "Times New Roman", Times, serif; padding:0 5px; color:#3e4d54; cursor:default; position:relative; z-index:2;}
+.pageprev a:link, .pageprev a:visited, .pageprev a:active, .pagenext a:link, .pagenext a:visited, .pagenext a:active {color:#cdf9ff; cursor:pointer;}
+.pageprev a:hover, .pagenext a:hover {color:#fff; cursor:pointer;}
+.pageprevshadow {position:absolute; z-index:1; top:3px; right:3px; color:#000; font:bold 18px Georgia, "Times New Roman", Times, serif;}
+.pagenextshadow {position:absolute; z-index:1; top:3px; left:7px; color:#000; font:bold 18px Georgia, "Times New Roman", Times, serif;}
+.paging-divider {color:#333; cursor:default;}
+.ssborder {width:243px; height:193px; background-position:4px 10px; background-repeat:no-repeat;}
+.ssborder div {width:243px; height:193px; background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/ssborder2.png") 0 0 no-repeat; text-align:center;}
+.ssborder div img {margin:10px 0 0 2px;}
+.screenindex {margin:0 0 -58px 3px; clear:both; position:relative; top:-32px;}
+.blacktop {background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/blacktop.png") 0 100% repeat-x; height:46px;}
+.blackmid {background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/blackmid.png") 0 0 repeat;}
+.blackbot {background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/blackbot.png") 0 100% repeat-x; height:46px;}
+
+/* Image Viewer */
+#Screenie {position:relative; background-repeat:no-repeat; background-position:center; cursor:pointer;}
+#Screenie2 {position:absolute; top:0; left:0; background-repeat:no-repeat; background-position:center; opacity:0; filter:alpha(opacity=0); cursor:pointer;}
+.imageviewer-table {margin:0 auto 20px; position:relative; top:-27px;}
+.imageviewer-table table {width:100%;}
+.ssborder-t {background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/ssborder-t.gif") 0 100% repeat-x; height:21px;}
+.ssborder-t-shadow {background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/ssborder-t-shadow.png") 100% 0 repeat-x; height:27px;}
+.ssborder-tl {background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/ssborder-tl.png") 100% 100% no-repeat; height:48px; width:47px;}
+.ssborder-tr {background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/ssborder-tr.png") 0 100% no-repeat; height:48px; width:48px;}
+.ssborder-l {background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/ssborder-l.gif") 100% 0 repeat-y; width:20px;}
+.ssborder-l-shadow {background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/ssborder-l-shadow.png") 100% 0 repeat-y; width:27px;}
+.ssborder-r {background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/ssborder-r.gif") 0 0 repeat-y; width:21px;}
+.ssborder-r-shadow {background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/ssborder-r-shadow.png") 0 0 repeat-y; width:27px;}
+.ssborder-b {background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/ssborder-b.gif") 0 0 repeat-x; height:30px;}
+.ssborder-b-shadow {background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/ssborder-b-shadow.png") 0 0 repeat-x; text-align:center; height:53px;}
+.ssborder-bl {background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/ssborder-bl.png") 0 0 no-repeat; width:240px; height:83px;}
+.ssborder-bl div, .ssborder-br div {position:relative; z-index:99999;}
+.ssborder-br {background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/ssborder-br.png") 100% 0 no-repeat; width:240px; height:83px;}
+.prev-arrow {float:left; margin-left:27px; display:inline;}
+.next-arrow {float:right; margin-right:27px; display:inline;}
+.next-text {float:right; height:21px; line-height:21px; text-align:right; padding:0 3px; margin-top:23px;}
+.prev-text {float:left; height:21px; line-height:21px; text-align:left; padding:0 3px; margin-top:23px;}
+.next-text a:link, .next-text a:visited, .next-text a:active, .prev-text a:link, .prev-text a:visited, .prev-text a:active {font:bold 17px Georgia, "Times New Roman", Times, serif; color:#cdf9ff;}
+.next-text a:hover, .prev-text a:hover {color:#fff;}
+.returntoorigin {text-align:center; font:bold 10px Georgia, "Times New Roman", Times, serif;}
+.screenshot-total {font:bold 14px Georgia, Arial, Helvetica, sans-serif; color:#fff;}
+.screenshot-total div {padding-top:5px;}
+.screenshot-total div div {display:inline; padding:0;}
+.screenshot-total a {font-size:10px; display:block; margin-top:4px;}
+
+/* Lightbox */
+#blackDrop {position:absolute; z-index:150; display:none; top:0; width:100%; left:0; /*background-color:#000000; opacity:0.2; filter:alpha(opacity=20);*/}
+#lightBoxRoot {visibility:hidden; position:absolute; z-index:151; top:50px; left:100px; background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/bg-lightbox.png") 0 0 repeat;}
+#lightBoxRoot div {padding:10px;}
+#lightBoxRoot div div {background:transparent; padding:0; cursor:pointer;}
+
+/* Wrath of the Lich King Logo  */
+div.wrathlogopng { margin: 0 auto 0; width: 366px; height: 191px; background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/logo_wrath.png") top left no-repeat;}
+div.wrathlogogif { margin: 0; width: 366px; height: 191px; background-position: top left; background-repeat: no-repeat;}
+div.wrathlogogif a {display:block; height:100%;}
+div.logocontainer-frontpage { padding-top: 60px; margin: 0 auto 0;}
+div.logocontainer-frontpage2 { margin-left: 10px;}
+div.logocontainer-subpage { padding-top: 73px; margin: 0 auto 0;}
+
+/* Blizzard Logo */
+div.blizzlogocontainerfront { width: 980px; text-align: center; margin-top: 380px; position: absolute; z-index: 200;}
+div.blizzlogocontainer { width: 980px; text-align: center; margin-top: 150px; position: absolute; z-index: 200;}
+div.legalcontainer { width: 100%; margin: 0px 0 60px 0; text-align: center; font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #728a96; position:relative;}
+.legalcontainer .logo-esrbrating {width:56px; height:85px; position:absolute; right:60px; top:-50px;}
+div.blizzlogo { width: 157px; height: 84px; margin: 0 auto 15px auto; background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/logo_blizzard.gif") no-repeat; }
+.blizzlogo a { display: block; height: 84px }
+div.copyrights { width: 500px; text-align: center; font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #728a96; margin: 15px auto;} 
+
+/* Bestiary Stuff */
+
+.little-icicle { position:absolute; left:383px; top:58px; background-image:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/bestiary/icicle.gif"); width:5px; height:28px; }
+.bestiaryRoot { position:relative; line-height:16px; }
+.bestiarySlideshowArrows { padding:0 20px 0 318px; height:25px; }
+.bestiarySlideshowArrows a { font:bold 18px Georgia, "Times New Roman", Times, serif; color:#cdf9ff; cursor:pointer }
+.bestiarySlideshowArrows a:hover { color: white }
+.bestiaryArrowLeft { padding-left:30px; background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/arrow-prev.gif") no-repeat top left; float:left; }
+.bestiaryArrowRight { padding-right:30px; background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/arrow-next.gif") no-repeat top right; float:right; }
+.bestiaryFrame { position:absolute; top:0; left:20px; width:877px; height:750px; overflow:hidden; }
+.bestiaryLeftBox { position:absolute; top:10px; width:285px; background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/bestiary/bestiary-main-bg.jpg") no-repeat; }
+.bestiaryLeftBox { color:#3b96e0; }
+.bestiaryLeftBox div { padding:15px; }
+.bestiaryLeftBox h2 { color:#feaf00; font:bold 20px Georgia, "Times New Roman", Times, serif; letter-spacing:-1px; font-variant:small-caps; }
+.bestiaryLeftBox span { display:block; padding:10px; }
+.bestiaryContainer { position:absolute; top:10px; left:300px; width:474px; }
+.bestiaryContainerTop { background-image:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/bestiary/infobox-top.gif"); width:474px; height:21px; }
+.bestiaryContainerMiddle { background-image:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/bestiary/infobox-middle.jpg"); padding:5px 25px; }
+.beastName { font:bold 24px Georgia, "Times New Roman", Times, serif; letter-spacing:-1px; font-variant:small-caps; color:#000000; position:relative; /*color: #598cb8;*/ }
+.beastName div { position:absolute; top:-2px; left:-2px; color:#9ed1f3; }
+.bestiaryContainerThumbSpacer { height:60px; width:1px; float:right; }
+.bestiaryContainerThumb { height:193px; width:130px; float:right; clear:right; position:relative; margin:15px 0px 5px 5px; }
+.bestiaryContainerThumb div { position:absolute; left:0px; top:0px; width:243px; height:193px; background-image:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/ssborder2.png"); }
+.bestiaryContainerThumb div div { position:absolute; left:4px; top:10px; width:237px; height:176px; cursor:pointer; }
+.bestiaryContainerBottom { background-image:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/bestiary/infobox-bottom.gif"); width:474px; height:21px; position:relative; }
+.bestiaryContainerBottom div { width:437px; height:108px; position:absolute; left:20px; top:21px; overflow:hidden; }
+.bestiaryContainerBottom div div { top:-10px; position:absolute; width:199px; height:108px; cursor:pointer; display:none; }
+.bestiaryCreaturesList { margin-left:30px; font-weight:bold; }
+.bestiaryCreaturesList b { color:#555555; }
+
+.bardside {padding-top:90px;}
+.bardside h2 {font:20px Georgia, "Times New Roman", Times, serif; font-variant:small-caps; letter-spacing: -1px; color:#CDF9FF;}
+.bardtalents, .barditems {margin:1em 0 3em;}
+.bardtalents img {width:27px; height:27px; vertical-align:middle;}
+.bardtalents h3 {font:bold 11px/27px Georgia, "Times New Roman", Times, serif; display:block; color:#fff;}
+.bardtalents td {padding:0 5px;}
+.bardtalents div {width:202px; height:96px; position:relative; margin-left:12px;}
+.bardtalents .metaltree div {background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/bard-talent1.gif") 0 0 no-repeat;}
+.bardtalents .punkrocktree div {background:url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/bard-talent2.gif") 0 0 no-repeat;}
+.bardtalents a {display:block; width:33px; height:34px; position:absolute; top:33px; cursor:default;}
+.starstruck {left:12px;}
+.epicsolo {left:60px;}
+.axespecialization {left:108px;}
+.rockandrollracing {left:155px;}
+.spelltip {font:13px/16px Verdana, Tahoma, Arial, Helvetica,"Sans-Serif";}
+.spelltip span, .spelltip small {display:block;}
+.spelltip h4 {font-weight:normal; font:13px/1.4 Verdana, Tahoma, Arial, Helvetica,"Sans-Serif";}
+.spelltip .purple {color:#A335EE;}
+.spelltip .equip {color:#00FF00;}
+.spelltip .flavor {color:#FFD100;}
+.spelltip small {font-size:10px;}
+.spelltip span {font-size:11px;}
+.talenttip span {color:#ffd100;}
+.itemtip span {color:#fff;}
+.spelltip .red {color:#ff0000; white-space:nowrap;}
+.spelltip .left, .spelltip .right {color:#fff; white-space:nowrap;}
+.spelltip .left {float:left; clear:left;}
+.spelltip .right {float:right; clear:right;}
+.spelltip .desc {clear:both;}
+.itemtooltip td.tl, .tooltip td.t, .tooltip td.tr, .tooltip td.bl, .tooltip td.b, .tooltip td.br {height:7px !important; }
+.itemtooltip td.tl, .tooltip td.tr, .tooltip td.bl, .tooltip td.br, .tooltip td.l, tr.r	{width:7px !important;}
+.itemtooltip td.tl, .tooltip td.t, .tooltip td.tr { padding:0 !important; margin:0 !important; }
+.itemtooltip td.l span, .tooltip td.r span { width:7px !important; display: block !important; height: 1px !important; margin:0; padding:0; }
+.itemtooltip td.tl 	{ background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/ttip-tl.png") no-repeat; }
+.itemtooltip td.tr 	{ background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/ttip-tr.png") no-repeat; }
+.itemtooltip td.t 	{ width:auto; background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/ttip-t.png") repeat-x; }
+.itemtooltip td.l 	{ background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/ttip-l.png") repeat-y; }
+.itemtooltip td.r 	{ background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/ttip-r.png") repeat-y; }
+.itemtooltip td.bg	{ background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/ttipbg.png") repeat; }
+.itemtooltip td.bl 	{ background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/ttip-bl.png") no-repeat; }
+.itemtooltip td.br 	{ background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/ttip-br.png") no-repeat; }
+.itemtooltip td.b 	{ width: auto; background: url("/WOW-Encyclopedia-Deployable-Archive/wrath/images/layout/ttip-b.png") repeat-x; }

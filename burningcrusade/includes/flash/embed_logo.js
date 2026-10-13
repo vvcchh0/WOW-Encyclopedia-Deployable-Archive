@@ -1,0 +1,5 @@
+document.write('<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="/WOW-Encyclopedia-Deployable-Archive/__offline/empty.js?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Fincludes%2Fflash%2Fembed_logo.js&requested=http%3A%2F%2Fdownload.macromedia.com%2Fpub%2Fshockwave%2Fcabs%2Fflash%2Fswflash.cab%23version%3D6%2C0%2C29%2C0&reason=external-or-uncollected-resource" width="321" height="170">')
+document.write('<param name="movie" value="swf/logo.swf">')
+document.write('<param name="quality" value="high">')
+document.write('<param name="menu" value="false">')
+document.write('<embed src="swf/logo.swf" quality="high" menu="false" pluginspage="/WOW-Encyclopedia-Deployable-Archive/__offline/empty.js?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Fincludes%2Fflash%2Fembed_logo.js&requested=http%3A%2F%2Fwww.macromedia.com%2Fgo%2Fgetflashplayer&reason=external-or-uncollected-resource" type="application/x-shockwave-flash" width="321" height="170"></embed></object>')

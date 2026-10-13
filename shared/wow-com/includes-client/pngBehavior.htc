@@ -1,0 +1,51 @@
+<public:component>
+<public:attach event="onpropertychange" onevent="propertyChanged()" />
+<script>
+
+var supported = /MSIE (5\.5)|[6789]/.test(navigator.userAgent) &amp;&amp; navigator.platform == "Win32";
+var realSrc;
+var blankSrc = "/WOW-Encyclopedia-Deployable-Archive/shared/wow-com/images/layout/pixel.gif";
+
+if (supported) fixImage();
+
+function propertyChanged() {
+   if (!supported) return;
+
+   var pName = event.propertyName;
+   if (pName != "src") return;
+   // if not set to blank
+   if ( ! new RegExp(blankSrc).test(src))
+      fixImage();
+};
+
+function fixImage() {
+   // get src
+   var src = "/WOW-Encyclopedia-Deployable-Archive/__offline/empty.js?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fshared%2Fwow-com%2Fincludes-client%2FpngBehavior.htc&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fshared%2Fwow-com%2Fincludes-client%2Felement.src&amp;reason=invalid-overlay-or-uncollected-site-resource"
+
+   // check for real change
+   if (src ="/WOW-Encyclopedia-Deployable-Archive/__offline/empty.js?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fshared%2Fwow-com%2Fincludes-client%2FpngBehavior.htc&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fshared%2Fwow-com%2Fincludes-client%2F%3D&amp;reason=invalid-overlay-or-uncollected-site-resource" realSrc) {
+      element.src = "/WOW-Encyclopedia-Deployable-Archive/__offline/empty.js?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fshared%2Fwow-com%2Fincludes-client%2FpngBehavior.htc&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fshared%2Fwow-com%2Fincludes-client%2FblankSrc&amp;reason=invalid-overlay-or-uncollected-site-resource"
+      return;
+   }
+
+   if ( ! new RegExp(blankSrc).test(src)) {
+      // backup old src
+      realSrc = src;
+   }
+
+   // test for png
+   if ( /\.png$/.test( realSrc.toLowerCase() ) ) {
+      // set blank image
+      element.src = "/WOW-Encyclopedia-Deployable-Archive/__offline/empty.js?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fshared%2Fwow-com%2Fincludes-client%2FpngBehavior.htc&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fshared%2Fwow-com%2Fincludes-client%2FblankSrc&amp;reason=invalid-overlay-or-uncollected-site-resource"
+      // set filter
+      element.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + src + "',sizingMethod='image')";
+   }
+   else {
+      // remove filter
+      element.runtimeStyle.filter = "";
+   }
+}
+
+</script>
+</public:component>
+

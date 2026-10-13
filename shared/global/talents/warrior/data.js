@@ -1,0 +1,691 @@
+var i = 0;
+var t = 0;
+
+var className = "Warrior Talents";
+var talentPath = "/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fshared%2Fglobal%2Ftalents%2Fwarrior%2Fdata.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ftalents%2F&reason=external-or-uncollected-resource";
+
+tree[i] = "Arms"; i++;
+tree[i] = "Fury"; i++;
+tree[i] = "Protection"; i++;
+
+i = 0;
+
+talent[i] = [0, "Improved Heroic Strike", 3, 1, 1]; i++;
+talent[i] = [0, "Deflection", 5, 2, 1]; i++;
+talent[i] = [0, "Improved Rend", 3, 3, 1]; i++;
+talent[i] = [0, "Improved Charge", 2, 1, 2]; i++; 
+talent[i] = [0, "Iron Will", 5, 2, 2]; i++;
+talent[i] = [0, "Improved Thunder Clap", 3, 3, 2]; i++;
+talent[i] = [0, "Improved Overpower", 2, 1, 3]; i++;
+talent[i] = [0, "Anger Management", 1, 2, 3]; i++;
+talent[i] = [0, "Deep Wounds", 3, 3, 3]; i++;
+talent[i] = [0, "Two-Handed Weapon Specialization", 5, 2, 4]; i++;
+talent[i] = [0, "Impale", 2, 3, 4, [getTalentID("Deep Wounds"),3]]; i++;
+talent[i] = [0, "Poleaxe Specialization", 5, 1, 5]; i++; 
+talent[i] = [0, "Death Wish", 1, 2, 5]; i++;
+talent[i] = [0, "Mace Specialization", 5, 3, 5]; i++;
+talent[i] = [0, "Sword Specialization", 5, 4, 5]; i++;
+talent[i] = [0, "Improved Intercept", 2, 1, 6]; i++;
+talent[i] = [0, "Improved Hamstring", 3, 3, 6]; i++;
+talent[i] = [0, "Improved Disciplines", 3, 4, 6]; i++;
+talent[i] = [0, "Blood Frenzy", 2, 1, 7]; i++;
+talent[i] = [0, "Mortal Strike", 1, 2, 7, [getTalentID("Death Wish"),1]]; i++;
+talent[i] = [0, "Second Wind", 2, 3, 7]; i++;
+talent[i] = [0, "Improved Mortal Strike", 5, 2, 8, [getTalentID("Mortal Strike"),1]]; i++;
+talent[i] = [0, "Endless Rage", 1, 2, 9]; i++;
+
+treeStartStop[t] = i -1;
+t++;
+
+//fury talents
+talent[i] = [1, "Booming Voice", 5, 2, 1]; i++;
+talent[i] = [1, "Cruelty", 5, 3, 1]; i++;
+talent[i] = [1, "Improved Demoralizing Shout", 5, 2, 2]; i++;
+talent[i] = [1, "Unbridled Wrath", 5, 3, 2]; i++;
+talent[i] = [1, "Improved Cleave", 3, 1, 3]; i++;
+talent[i] = [1, "Piercing Howl", 1, 2, 3]; i++;
+talent[i] = [1, "Blood Craze", 3, 3, 3]; i++;
+talent[i] = [1, "Commanding Presence", 5, 4, 3]; i++;
+talent[i] = [1, "Dual Wield Specialization", 5, 1, 4]; i++;
+talent[i] = [1, "Improved Execute", 2, 2, 4]; i++;
+talent[i] = [1, "Enrage", 5, 3, 4]; i++;
+talent[i] = [1, "Improved Slam", 2, 1, 5]; i++;
+talent[i] = [1, "Sweeping Strikes", 1, 2, 5]; i++;
+talent[i] = [1, "Weapon Mastery", 2, 4, 5]; i++;
+talent[i] = [1, "Improved Berserker Rage", 2, 1, 6]; i++;
+talent[i] = [1, "Flurry", 5, 3, 6, [getTalentID("Enrage"),5]]; i++;
+talent[i] = [1, "Precision", 3, 1, 7]; i++;
+talent[i] = [1, "Bloodthirst", 1, 2, 7, [getTalentID("Sweeping Strikes"),1]]; i++;
+talent[i] = [1, "Improved Whirlwind", 2, 3, 7]; i++;
+talent[i] = [1, "Improved Berserker Stance", 5, 3, 8]; i++;
+talent[i] = [1, "Rampage", 1, 2, 9, [getTalentID("Bloodthirst"),1]]; i++;
+
+treeStartStop[t] = i -1;
+t++;
+
+//protection talents
+talent[i] = [2, "Improved Bloodrage", 2, 1, 1]; i++;
+talent[i] = [2, "Tactical Mastery", 3, 2, 1]; i++;
+talent[i] = [2, "Anticipation", 5, 3, 1]; i++;
+talent[i] = [2, "Shield Specialization", 5, 2, 2]; i++;
+talent[i] = [2, "Toughness", 5, 3, 2]; i++;
+talent[i] = [2, "Last Stand", 1, 1, 3]; i++;
+talent[i] = [2, "Improved Shield Block", 1, 2, 3, [getTalentID("Shield Specialization"),5]]; i++;
+talent[i] = [2, "Improved Revenge", 3, 3, 3]; i++;
+talent[i] = [2, "Defiance", 3, 4, 3]; i++;
+talent[i] = [2, "Improved Sunder Armor", 3, 1, 4]; i++;
+talent[i] = [2, "Improved Disarm", 3, 2, 4]; i++;
+talent[i] = [2, "Improved Taunt", 2, 3, 4]; i++;
+talent[i] = [2, "Improved Shield Wall", 2, 1, 5]; i++;
+talent[i] = [2, "Concussion Blow", 1, 2, 5]; i++;
+talent[i] = [2, "Improved Shield Bash", 2, 3, 5]; i++;
+talent[i] = [2, "Shield Mastery", 3, 1, 6]; i++;
+talent[i] = [2, "One-Handed Weapon Specialization", 5, 3, 6]; i++;
+talent[i] = [2, "Improved Defensive Stance", 3, 1, 7]; i++;
+talent[i] = [2, "Shield Slam", 1, 2, 7, [getTalentID("Concussion Blow"),1]]; i++;
+talent[i] = [2, "Focused Rage", 3, 3, 7]; i++;
+talent[i] = [2, "Vitality", 5, 2, 8]; i++;
+talent[i] = [2, "Devastate", 1, 2, 9]; i++;
+
+treeStartStop[t] = i -1;
+t++;
+
+i = 0;
+
+
+
+//Arms Talents Begin
+
+//Improved Heroic Strike - Arms
+rank[i] = [
+"Reduces the cost of your Heroic Strike ability by 1 rage point.",
+"Reduces the cost of your Heroic Strike ability by 2 rage points.",
+"Reduces the cost of your Heroic Strike ability by 3 rage points."
+		];
+i++;		
+		
+//Deflection - Arms
+rank[i] = [
+"Increases your Parry chance by 1%.",
+"Increases your Parry chance by 2%.",
+"Increases your Parry chance by 3%.",
+"Increases your Parry chance by 4%.",
+"Increases your Parry chance by 5%."
+		];
+i++;		
+
+//Improved Rend - Arms
+rank[i] = [
+"Increases the bleed damage done by your Rend ability by 25%.",
+"Increases the bleed damage done by your Rend ability by 50%.",
+"Increases the bleed damage done by your Rend ability by 75%."
+		];
+i++;		
+		
+//Improved Charge - Arms 
+rank[i] = [
+"Increases the amount of rage generated by your Charge ability by 3.",
+"Increases the amount of rage generated by your Charge ability by 6."
+		];
+i++;		
+
+
+
+//Iron Will - Protection
+rank[i]=[
+"Increases your chance to resist Stun and Charm effects by an additional 3%.",
+"Increases your chance to resist Stun and Charm effects by an additional 6%.",
+"Increases your chance to resist Stun and Charm effects by an additional 9%.",
+"Increases your chance to resist Stun and Charm effects by an additional 12%.",
+"Increases your chance to resist Stun and Charm effects by an additional 15%."
+		];
+i++;		
+
+//Improved Thunder Clap - Arms
+rank[i] = [
+"Reduces the cost of your Thunder Clap ability by 1 rage point and increases the damage by 40% and the slowing effect by an additional 4%.",
+"Reduces the cost of your Thunder Clap ability by 2 rage points and increases the damage by 70% and the slowing effect by an additional 7%.",
+"Reduces the cost of your Thunder Clap ability by 4 rage points and increases the damage by 100% and the slowing effect by an additional 10%."
+		];
+i++;		
+		
+//Improved Overpower - Arms
+rank[i] = [
+"Increases the critical strike chance of your Overpower ability by 25%.",
+"Increases the critical strike chance of your Overpower ability by 50%."
+		];		
+i++;		
+
+
+//Anger Management - Arms	
+rank[i] = [ 
+"Generates 1 rage per 3 seconds."
+		];
+i++;		
+
+
+//Deep Wounds - Arms
+rank[i] = [
+"Your critical strikes cause the opponent to bleed, dealing 20% of your melee weapon's average damage over 12 sec.",
+"Your critical strikes cause the opponent to bleed, dealing 40% of your melee weapon's average damage over 12 sec.",
+"Your critical strikes cause the opponent to bleed, dealing 60% of your melee weapon's average damage over 12 sec."
+		];
+i++;		
+
+//Two-Handed Weapon Specialization - Arms
+rank[i] = [
+"Increases the damage you deal with two-handed melee weapons by 1%.",
+"Increases the damage you deal with two-handed melee weapons by 2%.",
+"Increases the damage you deal with two-handed melee weapons by 3%.",
+"Increases the damage you deal with two-handed melee weapons by 4%.",
+"Increases the damage you deal with two-handed melee weapons by 5%."
+		];
+i++;		
+
+//Impale - Arms	
+rank[i] = [
+"Increases the critical strike damage bonus of your abilities in Battle, Defensive, and Berserker stance by 10%.",
+"Increases the critical strike damage bonus of your abilities in Battle, Defensive, and Berserker stance by 20%."
+		];
+i++;		
+
+//Axe Specialization - Arms
+rank[i] = [
+"Increases your chance to get a critical strike with Axes and Polearms by 1%.",
+"Increases your chance to get a critical strike with Axes and Polearms by 2%.",
+"Increases your chance to get a critical strike with Axes and Polearms by 3%.",
+"Increases your chance to get a critical strike with Axes and Polearms by 4%.",
+"Increases your chance to get a critical strike with Axes and Polearms by 5%."
+		];
+i++;		
+
+//Death Wish - Arms
+rank[i]=[
+		"10 Rage<br><span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>3 min cooldown</span><br>When activated, increases your physical damage by 20% and makes you immune to Fear effects, but increases all damage taken by 5%. Lasts 30 sec."
+			];
+i++;	
+
+//Mace Specialization - Arms	
+rank[i] = [
+"Gives your melee attacks a chance to stun your target for 3 sec and generate 7 rage when using a Mace.",
+"Gives your melee attacks a chance to stun your target for 3 sec and generate 7 rage when using a Mace. More effective than Mace Specialization (Rank 1).",
+"Gives your melee attacks a chance to stun your target for 3 sec and generate 7 rage when using a Mace. More effective than Mace Specialization (Rank 2).",
+"Gives your melee attacks a chance to stun your target for 3 sec and generate 7 rage when using a Mace. More effective than Mace Specialization (Rank 3).",
+"Gives your melee attacks a chance to stun your target for 3 sec and generate 7 rage when using a Mace. More effective than Mace Specialization (Rank 4)."
+		];		
+i++;		
+
+//Sword Specialization - Arms				
+rank[i] = [
+"Gives you a 1% chance to get an extra attack on the same target after hitting your target with your Sword.",
+"Gives you a 2% chance to get an extra attack on the same target after hitting your target with your Sword.",
+"Gives you a 3% chance to get an extra attack on the same target after hitting your target with your Sword.",
+"Gives you a 4% chance to get an extra attack on the same target after hitting your target with your Sword.",
+"Gives you a 5% chance to get an extra attack on the same target after hitting your target with your Sword."
+		];
+i++;		
+
+
+//Improved Intercept - Arms
+rank[i]=[
+"Reduces the cooldown of your Intercept ability by 5 sec.",
+"Reduces the cooldown of your Intercept ability by 10 sec."
+		];
+i++;	
+
+
+
+
+//Improved Hamstring - Arms	
+rank[i] = [
+"Gives your Hamstring ability a 5% chance to immobilize the target for 5 sec.",
+"Gives your Hamstring ability a 10% chance to immobilize the target for 5 sec.",
+"Gives your Hamstring ability a 15% chance to immobilize the target for 5 sec."
+		];
+i++;
+
+//Improved Disciplines - Arms	
+rank[i] = [
+"Reduces the cooldown of your Retaliation, Recklessness and Shield Wall abilities by 4 min and increases their duration by 2 sec.",
+"Reduces the cooldown of your Retaliation, Recklessness and Shield Wall abilities by 7 min and increases their duration by 4 sec.",
+"Reduces the cooldown of your Retaliation, Recklessness and Shield Wall abilities by 10 min and increases their duration by 6 sec."
+
+		];
+i++;
+
+//Blood Frenzy - Arms
+rank[i] = [
+"Your Rend and Deep Wounds abilities also increase all melee damage caused to that target by 2%.",
+"Your Rend and Deep Wounds abilities also increase all melee damage caused to that target by 4%."
+		];
+i++;
+
+//Mortal Strike - Arms
+rank[i] = [
+		"<span style=text-align:left;float:left;>30 Rage</span><span style=text-align:right;float:right;>Melee range</span><br><span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>6 sec cooldown</span><br>Requires Melee Weapon<br>A vicious strike that deals weapon damage plus 85 and wounds the target, reducing the effectiveness of any healing by 50% for 10 sec.<br><br>\
+		&nbsp;Trainable Ranks Listed Below:<br>\
+		&nbsp;&nbsp;Rank 2: +110 Damage<br>\
+		&nbsp;&nbsp;Rank 3: +135 Damage<br>\
+		&nbsp;&nbsp;Rank 4: +160 Damage<br>\
+		&nbsp;&nbsp;Rank 5: +185 Damage<br>\
+		&nbsp;&nbsp;Rank 6: +210 Damage"
+		];		
+i++;
+
+
+//Second Wind - Arms
+rank[i] = [
+"Whenever you are struck by a Stun or Immobilize effect you will generate 10 rage and 5% of your total health over 10 sec.",
+"Whenever you are struck by a Stun or Immobilize effect you will generate 20 rage and 10% of your total health over 10 sec."
+		];
+i++;
+
+//Improved Mortal Strike - Arms	
+rank[i] = [
+"Reduces the cooldown of your Mortal Strike ability by 0.2 sec and increases the damage it causes by 1%.",
+"Reduces the cooldown of your Mortal Strike ability by 0.4 sec and increases the damage it causes by 2%.",
+"Reduces the cooldown of your Mortal Strike ability by 0.6 sec and increases the damage it causes by 3%.",
+"Reduces the cooldown of your Mortal Strike ability by 0.8 sec and increases the damage it causes by 4%.",
+"Reduces the cooldown of your Mortal Strike ability by 1 sec and increases the damage it causes by 5%."
+		];
+i++;
+
+
+//Endless Rage - Arms
+rank[i] = [
+				"You generate 25% more rage from damage dealt."
+];		
+i++;
+
+
+
+
+
+
+
+
+
+
+
+
+//Booming Voice - Fury
+rank[i] = [
+"Increases the area of effect and duration of your Battle Shout, Demoralizing Shout, and Commanding Shout by 10%.",
+"Increases the area of effect and duration of your Battle Shout, Demoralizing Shout, and Commanding Shout by 20%.",
+"Increases the area of effect and duration of your Battle Shout, Demoralizing Shout, and Commanding Shout by 30%.",
+"Increases the area of effect and duration of your Battle Shout, Demoralizing Shout, and Commanding Shout by 40%.",
+"Increases the area of effect and duration of your Battle Shout, Demoralizing Shout, and Commanding Shout by 50%."
+		];
+i++;		
+
+//Cruelty - Fury
+rank[i] = [
+"Increases your chance to get a critical strike with melee weapons by 1%.",
+"Increases your chance to get a critical strike with melee weapons by 2%.",
+"Increases your chance to get a critical strike with melee weapons by 3%.",
+"Increases your chance to get a critical strike with melee weapons by 4%.",
+"Increases your chance to get a critical strike with melee weapons by 5%."
+		];
+i++;
+
+//Improved Demoralizing Shout - Fury	
+rank[i] = [
+"Increases the melee attack power reduction of your Demoralizing Shout by 8%.",
+"Increases the melee attack power reduction of your Demoralizing Shout by 16%.",
+"Increases the melee attack power reduction of your Demoralizing Shout by 24%.",
+"Increases the melee attack power reduction of your Demoralizing Shout by 32%.",
+"Increases the melee attack power reduction of your Demoralizing Shout by 40%."
+		];
+i++;		
+
+//Unbridled Wrath - Fury
+rank[i] = [
+"Gives you a chance to generate an additional rage point when you deal melee damage with a weapon.",
+"Gives you a chance to generate an additional rage point when you deal melee damage with a weapon.  Effect occurs more often than Unbridled Wrath (Rank 1).",
+"Gives you a chance to generate an additional rage point when you deal melee damage with a weapon.  Effect occurs more often than Unbridled Wrath (Rank 2).",
+"Gives you a chance to generate an additional rage point when you deal melee damage with a weapon.  Effect occurs more often than Unbridled Wrath (Rank 3).",
+"Gives you a chance to generate an additional rage point when you deal melee damage with a weapon.  Effect occurs more often than Unbridled Wrath (Rank 4)."
+		];		
+i++;		
+
+//Improved Cleave - Fury
+rank[i] = [
+
+"Increases the bonus damage done by your Cleave ability by 40%.",
+"Increases the bonus damage done by your Cleave ability by 80%.",
+"Increases the bonus damage done by your Cleave ability by 120%."
+		];
+i++;		
+
+//Piercing Howl - Fury
+rank[i] = [
+		"10 Rage<br>Instant<br>Causes all enemies within 10 yards to be Dazed, reducing movement speed by 50% for 6 sec."
+		];
+i++;		
+
+//Blood Craze - Fury	
+rank[i] = [
+"Regenerates 1% of your total Health over 6 sec after being the victim of a critical strike.",
+"Regenerates 2% of your total Health over 6 sec after being the victim of a critical strike.",
+"Regenerates 3% of your total Health over 6 sec after being the victim of a critical strike."
+		];
+i++;		
+
+//Commanding Presence - Fury (ex. Improved Battle Shout)
+rank[i] = [
+"Increases the melee attack power bonus of your Battle Shout and the health bonus of your Commanding Shout by 5%.",
+"Increases the melee attack power bonus of your Battle Shout and the health bonus of your Commanding Shout by 10%.",
+"Increases the melee attack power bonus of your Battle Shout and the health bonus of your Commanding Shout by 15%.",
+"Increases the melee attack power bonus of your Battle Shout and the health bonus of your Commanding Shout by 20%.",
+"Increases the melee attack power bonus of your Battle Shout and the health bonus of your Commanding Shout by 25%."
+		];
+i++;		
+
+//Dual Wield Specialization - Fury
+rank[i] = [
+"Increases the damage done by your offhand weapon by 5%.",
+"Increases the damage done by your offhand weapon by 10%.",
+"Increases the damage done by your offhand weapon by 15%.",
+"Increases the damage done by your offhand weapon by 20%.",
+"Increases the damage done by your offhand weapon by 25%."
+		];i++;		
+
+//Improved Execute - Fury
+rank[i] = [
+"Reduces the rage cost of your Execute ability by 2.",
+"Reduces the rage cost of your Execute ability by 5."
+		];
+i++;		
+
+//Enrage - Fury
+rank[i] = [
+"Gives you a 5% melee damage bonus for 12 sec up to a maximum of 12 swings after being the victim of a critical strike.",
+"Gives you a 10% melee damage bonus for 12 sec up to a maximum of 12 swings after being the victim of a critical strike.",
+"Gives you a 15% melee damage bonus for 12 sec up to a maximum of 12 swings after being the victim of a critical strike.",
+"Gives you a 20% melee damage bonus for 12 sec up to a maximum of 12 swings after being the victim of a critical strike.",
+"Gives you a 25% melee damage bonus for 12 sec up to a maximum of 12 swings after being the victim of a critical strike."
+		];
+i++;
+
+//Improved Slam - Fury
+
+rank[i] = [
+"Decreases the casting time of your Slam ability by 0.5 sec.",
+"Decreases the casting time of your Slam ability by 1 sec."
+		];
+i++;
+		
+//Sweeping Strikes - Fury	
+rank[i] = [
+		"30 Rage<br><span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>30 sec cooldown</span><br>Requires Melee Weapon<br>Requires Battle Stance, Berserker Stance<br>Your next 10 melee weapon swings strike an additional nearby opponent."
+		];
+i++;			
+			
+
+//Weapon Mastery - Fury
+rank[i] = [
+"Reduces the chance for your attacks to be dodged by 1% and reduces the duration of all Disarm effects used against you by 25%. This does not stack with other Disarm duration reducing effects.",
+"Reduces the chance for your attacks to be dodged by 2% and reduces the duration of all Disarm effects used against you by 50%. This does not stack with other Disarm duration reducing effects."
+		];
+i++;	
+		
+//Improved Berserker Rage - Fury
+rank[i]=[
+"The Berserker Rage ability will generate 5 rage when used.",
+"The Berserker Rage ability will generate 10 rage when used."
+		];
+i++;		
+		
+//Flurry - Fury
+rank[i]=[
+"Increases your attack speed by 5% for your next 3 swings after dealing a melee critical strike.",
+"Increases your attack speed by 10% for your next 3 swings after dealing a melee critical strike.",
+"Increases your attack speed by 15% for your next 3 swings after dealing a melee critical strike.",
+"Increases your attack speed by 20% for your next 3 swings after dealing a melee critical strike.",
+"Increases your attack speed by 25% for your next 3 swings after dealing a melee critical strike."
+		];
+i++;		
+		
+//Precision - Fury
+rank[i]=[
+"Increases your chance to hit with melee weapons by 1%.",
+"Increases your chance to hit with melee weapons by 2%.",
+"Increases your chance to hit with melee weapons by 3%."
+		];
+i++;				
+		
+//Bloodthirst - Fury
+rank[i]=[
+		"<span style=text-align:left;float:left;>30 Rage</span><span style=text-align:right;float:right;>Melee range</span><br><span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>6 sec cooldown</span><br>Instantly attack the target causing 217 damage. In addition, the next 5 successful melee attacks will restore 10 health. This effect lasts 8 sec. Damage is based on your attack power.<br><br>\
+		&nbsp;Trainable Ranks Listed Below:<br>\
+		&nbsp;&nbsp;Rank 2: 13 Health<br>\
+		&nbsp;&nbsp;Rank 3: 17 Health<br>\
+		&nbsp;&nbsp;Rank 4: 20 Health<br>\
+		&nbsp;&nbsp;Rank 5: 25 Health<br>\
+		&nbsp;&nbsp;Rank 6: 30 Health"
+		];
+i++;	
+
+//Improved Whirlwind - Fury
+rank[i]=[
+"Reduces the cooldown of your Whirlwind ability by 1 sec.",
+"Reduces the cooldown of your Whirlwind ability by 2 sec."
+		];
+i++;				
+
+			
+
+//Improved Berserker Stance - Fury
+rank[i]=[
+"Increases attack power by 2% and reduces threat caused by 2% while in Berserker Stance.",
+"Increases attack power by 4% and reduces threat caused by 4% while in Berserker Stance.",
+"Increases attack power by 6% and reduces threat caused by 6% while in Berserker Stance.",
+"Increases attack power by 8% and reduces threat caused by 8% while in Berserker Stance.",
+"Increases attack power by 10% and reduces threat caused by 10% while in Berserker Stance."
+		];
+i++;				
+
+//Rampage - Fury
+rank[i]=[
+		"20 Rage<br>Instant<br>Warrior goes on a rampage, increasing attack power by 30 and causing most successful melee attacks to increase attack power by an additional 30. This effect will stack up to 5 times. Lasts 30 sec. This ability can only be used after scoring a critical hit.<br><br>\
+		&nbsp;Trainable Ranks Listed Below:<br>\
+		&nbsp;&nbsp;Rank 2: +40 Attack Power<br>\
+		&nbsp;&nbsp;Rank 3: +50 Attack Power"
+		];
+i++;
+		
+//Improved Bloodrage - Protection
+rank[i]=[
+"Increases the instant rage generated by your Bloodrage ability by 3.",
+"Increases the instant rage generated by your Bloodrage ability by 6."
+		];
+i++;
+
+
+//Tactical Mastery - Protection
+rank[i] = [
+"You retain up to an additional 5 of your rage points when you change stances. Also greatly increases the threat generated by your Bloodthirst and Mortal Strike abilities when you are in Defensive Stance.",
+"You retain up to an additional 10 of your rage points when you change stances. Also greatly increases the threat generated by your Bloodthirst and Mortal Strike abilities when you are in Defensive Stance (More effective than Rank 1).",
+"You retain up to an additional 15 of your rage points when you change stances. Also greatly increases the threat generated by your Bloodthirst and Mortal Strike abilities when you are in Defensive Stance (More effective than Rank 2)."
+];
+i++;			
+	
+//Anticipation - Protection
+rank[i]=[
+"Increases your Defense skill by 4.",
+"Increases your Defense skill by 8.",
+"Increases your Defense skill by 12.",
+"Increases your Defense skill by 16.",
+"Increases your Defense skill by 20."
+		];
+i++;		
+		
+		
+
+//Shield Specialization - Protection
+rank[i]=[
+"Increases your chance to block attacks with a shield by 1% and has a 20% chance to generate 1 rage when a block occurs.",
+"Increases your chance to block attacks with a shield by 2% and has a 40% chance to generate 1 rage when a block occurs.",
+"Increases your chance to block attacks with a shield by 3% and has a 60% chance to generate 1 rage when a block occurs.",
+"Increases your chance to block attacks with a shield by 4% and has a 80% chance to generate 1 rage when a block occurs.",
+"Increases your chance to block attacks with a shield by 5% and has a 100% chance to generate 1 rage when a block occurs."
+		];
+i++;		
+		
+//Toughness - Protection
+rank[i]=[
+"Increases your armor value from items by 2%.",
+"Increases your armor value from items by 4%.",
+"Increases your armor value from items by 6%.",
+"Increases your armor value from items by 8%.",
+"Increases your armor value from items by 10%."
+		];
+i++;		
+		
+
+		
+//Last Stand - Protection
+rank[i]=[
+		"<span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>8 min cooldown</span><br>When activated, this ability temporarily grants you 30% of your maximum hit points for 20 sec. After the effect expires, the hit points are lost."
+		];
+i++;		
+		
+//Improved Shield Block - Protection
+rank[i]=[
+"Allows your Shield Block ability to block an additional attack, and increases the duration by 1 sec."
+		];
+i++;		
+		
+//Improved Revenge - Protection
+rank[i]=[
+"Gives your Revenge ability a 15% chance to stun the target for 3 sec.",
+"Gives your Revenge ability a 30% chance to stun the target for 3 sec.",
+"Gives your Revenge ability a 45% chance to stun the target for 3 sec."
+		];
+i++;		
+		
+//Defiance - Protection
+rank[i]=[
+"Increases the threat generated by your attacks by 5% while in Defensive Stance and increases your expertise by 2.",
+"Increases the threat generated by your attacks by 10% while in Defensive Stance and increases your expertise by 4.",
+"Increases the threat generated by your attacks by 15% while in Defensive Stance and increases your expertise by 6."
+		];
+i++;		
+		
+//Improved Sunder Armor - Protection
+rank[i]=[
+"Reduces the cost of your Sunder Armor and Devastate abilities by 1 rage point.",
+"Reduces the cost of your Sunder Armor and Devastate abilities by 2 rage points.",
+"Reduces the cost of your Sunder Armor and Devastate abilities by 3 rage points."
+		];
+i++;	
+		
+//Improved Disarm - Protection
+rank[i]=[
+"Increases the duration of your Disarm ability by 1 secs.",
+"Increases the duration of your Disarm ability by 2 secs.",
+"Increases the duration of your Disarm ability by 3 secs."
+		];
+i++;	
+
+
+//Improved Taunt - Protection
+rank[i]=[
+"Reduces the cooldown of your Taunt ability by 1 sec.",
+"Reduces the cooldown of your Taunt ability by 2 sec."
+		];
+i++;	
+
+//Improved Shield Wall - Protection
+rank[i]=[
+"Increases the effect duration of your Shield Wall ability by 3 secs.",
+"Increases the effect duration of your Shield Wall ability by 5 secs."
+		];
+i++;	
+
+
+//Concussion Blow - Protection
+rank[i]=[
+		"<span style=text-align:left;float:left;>15 Rage</span><span style=text-align:right;float:right;>Melee Range</span><br><span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>45 sec cooldown</span><br>Requires Melee Weapon<br>Stuns the opponent for 5 sec."
+		];
+i++;	
+
+//Improved Shield Bash - Protection
+rank[i]=[
+"Gives your Shield Bash ability a 50% chance to silence the target for 3 sec.",
+"Gives your Shield Bash ability a 100% chance to silence the target for 3 sec."
+		];
+i++;	
+
+//Shield Mastery - Protection
+rank[i]=[
+"Increases the amount of damage absorbed by your shield by 10%.",
+"Increases the amount of damage absorbed by your shield by 20%.",
+"Increases the amount of damage absorbed by your shield by 30%."
+		];
+i++;
+
+
+//One-Handed Weapon Specialization - Protection
+rank[i]=[
+"Increases physical damage you deal when a one-handed melee weapon is equipped by 2%.",
+"Increases physical damage you deal when a one-handed melee weapon is equipped by 4%.",
+"Increases physical damage you deal when a one-handed melee weapon is equipped by 6%.",
+"Increases physical damage you deal when a one-handed melee weapon is equipped by 8%.",
+"Increases physical damage you deal when a one-handed melee weapon is equipped by 10%."
+		];
+i++;	
+
+//Improved Defensive Stance - Protection
+rank[i]=[
+"Reduces all spell damage taken while in Defensive Stance by 2%.",
+"Reduces all spell damage taken while in Defensive Stance by 4%.",
+"Reduces all spell damage taken while in Defensive Stance by 6%.",
+"Reduces all spell damage taken while in Defensive Stance by 8%.",
+"Reduces all spell damage taken while in Defensive Stance by 10%."
+		];
+i++;	
+
+//Shield Slam - Protection
+rank[i]=[
+		"<span style=text-align:left;float:left;>20 Rage</span><span style=text-align:right;float:right;>Melee Range</span><br><span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>6 sec cooldown</span><br>Requires Shields<br>Slam the target with your shield, causing 225 to 235 damage, modified by your shield block value, and dispels 1 magic effect on the target. Also causes a high amount of threat.<br><br>\
+		&nbsp;Trainable Ranks Listed Below:<br>\
+		&nbsp;&nbsp;Rank 2: 264-276 Damage<br>\
+		&nbsp;&nbsp;Rank 3: 303-317 Damage<br>\
+		&nbsp;&nbsp;Rank 4: 342-358 Damage<br>\
+		&nbsp;&nbsp;Rank 5: 381-399 Damage<br>\
+		&nbsp;&nbsp;Rank 6: 420-440 Damage"
+		];
+i++;	
+
+//Improved Defensive Stance - Protection
+rank[i]=[
+"Reduces the rage cost of your offensive abilities by 1.",
+"Reduces the rage cost of your offensive abilities by 2.",
+"Reduces the rage cost of your offensive abilities by 3.",
+"Reduces the rage cost of your offensive abilities by 4.",
+"Reduces the rage cost of your offensive abilities by 5."
+		];
+i++;	
+
+//Vitality - Protection
+rank[i]=[
+"Increases your total Stamina by 1% and your total Strength by 2%.",
+"Increases your total Stamina by 2% and your total Strength by 4%.",
+"Increases your total Stamina by 3% and your total Strength by 6%.",
+"Increases your total Stamina by 4% and your total Strength by 8%.",
+"Increases your total Stamina by 5% and your total Strength by 10%."
+		];
+i++;	
+		
+//Devastate - Protection
+rank[i]=[
+		"<span style=text-align:left;float:left;>15 Rage</span><span style=text-align:right;float:right;>Melee Range</span><br>Instant<br>Requires One-Handed Melee Weapon<br>Sunder the target's armor causing the Sunder Armor effect.  In addition, causes 50% of weapon damage plus 15 for each application of Sunder Armor on the target.  The Sunder Armor effect can stack up to 5 times.<br><br>\
+		&nbsp;Trainable Ranks Listed Below:<br>\
+		&nbsp;&nbsp;Rank 2: +25 Damage<br>\
+		&nbsp;&nbsp;Rank 3: +35 Damage"
+		];
+i++;			
+		
+//Protection Talents End^^
+
