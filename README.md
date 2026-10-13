@@ -1,6 +1,6 @@
 # WOW Encyclopedia Deployable Archive
 
-以 **2008-05-12 21:00:44 UTC** 的 Wayback Machine 快照为基准，保存并重建早期魔兽世界官方百科与部分官网。处理与发布整理日期：**2026-10-12**。
+以 **2008-05-12 21:00:44 UTC** 的 Wayback Machine 快照为基准，保存并重建早期魔兽世界官方百科与部分官网。资源处理日期：**2026-10-12**；GitHub 发布验收日期：**2026-10-13**。
 
 原始入口：[The Official Warcraft Encyclopedia](https://web.archive.org/web/20080512210044/http://www.worldofwarcraft.com/info/encyclopedia/index.xml)。各文件保留自己的实际捕获时间；较晚的 2008 素材、更早的静态补充及现代兼容文件分别记录，不把整站称为同一秒的快照。
 
@@ -28,22 +28,17 @@ Windows 也可双击 `START_OFFLINE.cmd`。服务运行后打开[官网首页](h
 
 浏览检查通过代表镜像可浏览，**不代表原官网资源已全部恢复**。剩余缺口、部分动态数据及 Flash 内容仍限制完整性；登录、账号与其他线上服务不具备原站功能。源文件、改写副本、占位响应和浏览证据分开记录。
 
-## 完整备份下载
+## 轻量部署包与压缩
 
-[2026-10-12 Release](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-processed-20261012) 提供最新恢复包的三份字节分卷、校验清单和历史来源包。三卷合计 **2,251,344,514 字节**，合并后 ZIP 的 SHA-256 为：
+仅浏览镜像可下载 [轻量部署 ZIP（502 MB）](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/download/archive-20080512-processed-20261012/WOW_Encyclopedia_20080512_runtime_20261013.zip)，解压约 613 MB，然后运行 `START_OFFLINE.cmd`。它包含同一份 8,304 路由镜像、来源清单和启动文件，不包含原始下载与完整研究证据。包的 CRC、成员 SHA、长度及白名单全部核验通过；原始图片未重编码。
 
-```text
-66553fcd368ae5ee48dfb9f1b11897ac7fb3fd6a1983a0e303c2c088522c1c63
-```
+镜像约 91% 的字节来自图片，文本 gzip 可省约 38.8 MB，图片再 gzip 仅省约 4.2 MB，精确重复内容约 2.1 MB。Git 对象已经压缩；当前采用无损 ZIP 分离“浏览部署”与“完整取证”，避免为了压缩修改冻结页面或图片。详见[空间与压缩策略](docs/storage-and-compression.md)。
 
-把 `.001`、`.002`、`.003` 和 `release-assets.json` 下载到同一目录，然后运行：
+## 完整取证备份（本地保留）
 
-```sh
-python tools/release_archive.py verify --manifest /path/to/release-assets.json
-python tools/release_archive.py join --manifest /path/to/release-assets.json --output /path/to/WoW2008.zip
-```
+完整恢复 ZIP 为 **2,251,344,514 字节**，SHA-256 为 `66553fcd368ae5ee48dfb9f1b11897ac7fb3fd6a1983a0e303c2c088522c1c63`。它与原始来源包、历史版本和三份分卷保持不变，目前保留在项目维护者本地，**尚未上传到此次 Release**。
 
-分卷是同一个 ZIP 的连续字节段，各卷不能单独解压。请解压到短目录，如 `D:\WoW2008`，然后运行其中的 `START_OFFLINE.cmd`。完整包含研究证据，解压约 5.19 GB；短目录解压和独立启动已验证。GitHub 自动生成的 Source code 压缩包仅覆盖 Git 主树，完整备份请下载上述 Release 资产。
+原始下载元数据包含 Archive/历史站点响应 Cookie 字段，有限扫描尚不能确认全部字段用途。首次发布选择已完成全内容检查的部署副本和关键证据，不直接公开这些未确认的原始元数据。`tools/release_archive.py` 和 `artifacts/github-release-20261012/release-assets.json` 用于维护者本地校验/合并原备份分卷。GitHub 自动 Source code 包只覆盖 Git 主树，不等同于完整取证备份。
 
 ## 工作记录与证据
 

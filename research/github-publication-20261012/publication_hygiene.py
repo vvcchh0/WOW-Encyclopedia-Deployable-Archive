@@ -10,6 +10,7 @@ is intentionally outside the credential-content scan because words such as
 from __future__ import annotations
 
 import hashlib
+import io
 import json
 import re
 import zipfile
@@ -23,6 +24,9 @@ ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "research/github-publication-20261012"
 ZIP_PATH = ROOT / "artifacts/WOW_Encyclopedia_20080512_offline_recovery_20261012.zip"
 MAX_TEXT_BYTES = 128 * 1024 * 1024
+MAX_ZIP_METADATA_BYTES = 512 * 1024 * 1024
+MAX_NESTED_ZIP_BYTES = 128 * 1024 * 1024
+MAX_NESTED_ZIP_DEPTH = 3
 TEXT_SUFFIXES = {
     ".json",
     ".jsonl",
@@ -68,6 +72,18 @@ FIELD_PATTERNS: dict[str, re.Pattern[str]] = {
     "cookie_field": re.compile(r"(?i)(?:\"|')?(?:cookie|set-cookie)(?:\"|')?\s*[:=]"),
     "authorization_field": re.compile(r"(?i)(?:\"|')?authorization(?:\"|')?\s*[:=]"),
 }
+BYTE_VALUE_PATTERNS: dict[str, re.Pattern[bytes]] = {
+    "authorization_bearer_or_basic_value": re.compile(rb"(?i)\bauthorization\b\s*[:=]\s*[\"']?(?:bearer|basic)\s+[A-Za-z0-9+/=_\-.]{8,}"),
+    "github_token_shape": re.compile(rb"\b(?:gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,})\b"),
+    "jwt_shape": re.compile(rb"\beyJ[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,}\b"),
+    "private_key_block": re.compile(rb"-----BEGIN [A-Z0-9 ]*PRIVATE KEY-----"),
+}
+BYTE_FIELD_PATTERNS: dict[str, re.Pattern[bytes]] = {
+    "cookie_field": re.compile(rb"(?i)(?:\"|')?(?:cookie|set-cookie)(?:\"|')?\s*[:=]"),
+    "authorization_field": re.compile(rb"(?i)(?:\"|')?authorization(?:\"|')?\s*[:=]"),
+}
+COOKIE_NAME_PATTERN = re.compile(rb"(?i)(?:set-cookie|cookie)\s*[\"']?\s*[:=]\s*[\"']?\s*([A-Za-z0-9_.-]{1,80})\s*=")
+DOMAIN_PATTERN = re.compile(rb"(?i)\b(?:[a-z0-9-]+\.)+(?:web\.archive\.org|archive\.org|worldofwarcraft\.com|wow-europe\.com|blizzard\.com)\b")
 PERSONAL_PATTERNS = {
     "windows_absolute_path": re.compile(r"(?i)(?:[A-Z]:\\Users\\|[A-Z]:/Users/)[^\r\n\"']+"),
     "unix_home_path": re.compile(r"(?i)(?:/home/|/Users/)[^\r\n\"']+"),
@@ -218,6 +234,212 @@ def scan_zip_names(path: Path) -> dict[str, Any]:
     }
 
 
+def scan_zip_text_metadata(path: Path, *, max_bytes: int = MAX_ZIP_METADATA_BYTES) -> dict[str, Any]:
+    """Stream bounded metadata members without extracting them to disk."""
+    allowed_suffixes = TEXT_SUFFIXES | {".py", ".ps1"}
+    scanned_bytes = 0
+    selected_members = 0
+    skipped_cdx_members = 0
+    skipped_other_members = 0
+    value_counts: Counter[str] = Counter()
+    field_counts: Counter[str] = Counter()
+    location_counts: dict[str, Counter[str]] = defaultdict(Counter)
+    truncated = False
+    with zipfile.ZipFile(path, "r") as archive:
+        for info in archive.infolist():
+            name = info.filename
+            low = name.casefold()
+            suffix = Path(name).suffix.casefold()
+            if suffix not in allowed_suffixes:
+                skipped_other_members += 1
+                continue
+            if "cdx" in low or "/prefix" in low or low.startswith("prefix"):
+                skipped_cdx_members += 1
+                continue
+            if scanned_bytes >= max_bytes:
+                truncated = True
+                break
+            budget = min(max_bytes - scanned_bytes, info.file_size)
+            if budget <= 0:
+                truncated = True
+                break
+            selected_members += 1
+            member_read = 0
+            pending = ""
+            try:
+                with archive.open(info, "r") as handle:
+                    while member_read < budget:
+                        chunk = handle.read(min(1024 * 1024, budget - member_read))
+                        if not chunk:
+                            break
+                        member_read += len(chunk)
+                        scanned_bytes += len(chunk)
+                        pending += chunk.decode("utf-8", errors="replace")
+                        lines = pending.splitlines(keepends=True)
+                        pending = lines.pop() if lines and not lines[-1].endswith(("\n", "\r")) else ""
+                        for line in lines:
+                            for category, pattern in VALUE_PATTERNS.items():
+                                if pattern.search(line):
+                                    value_counts[category] += 1
+                                    location_counts[rel(path)][category] += 1
+                            for category, pattern in FIELD_PATTERNS.items():
+                                if pattern.search(line):
+                                    field_counts[category] += 1
+                                    location_counts[rel(path)][category] += 1
+                    if member_read < info.file_size:
+                        truncated = True
+            except (OSError, RuntimeError, zipfile.BadZipFile):
+                # Preserve the fact that a metadata member was not fully read;
+                # never turn a transport/decompression error into "clean".
+                truncated = True
+    return {
+        "path": rel(path),
+        "metadata_member_count": selected_members,
+        "scanned_uncompressed_bytes": scanned_bytes,
+        "max_bytes": max_bytes,
+        "skipped_cdx_member_count": skipped_cdx_members,
+        "skipped_other_member_count": skipped_other_members,
+        "truncated_by_bound_or_member_error": truncated,
+        "value_shape_counts": dict(sorted(value_counts.items())),
+        "field_counts": dict(sorted(field_counts.items())),
+        "location_counts": {k: dict(v) for k, v in sorted(location_counts.items())},
+        "values_emitted": False,
+        "coverage_note": "Streamed selected JSON/JSONL/header/log/Markdown/Python-like metadata; excluded HTML/CSS/JS/XML and CDX/prefix members. No member was extracted to disk.",
+    }
+
+
+def _scan_payload_bytes(
+    data: bytes,
+    *,
+    member_name: str,
+    archive_path: str,
+    depth: int,
+    counters: dict[str, Any],
+) -> None:
+    """Scan bytes for credential-shaped values without retaining content."""
+    overlap = b""
+    offset = 0
+    seen: set[tuple[str, int]] = set()
+    chunk_size = 1024 * 1024
+    for start in range(0, len(data), chunk_size):
+        chunk = data[start : start + chunk_size]
+        joined = overlap + chunk
+        base = start - len(overlap)
+        for category, pattern in BYTE_VALUE_PATTERNS.items():
+            for match in pattern.finditer(joined):
+                location = (category, base + match.start())
+                if location not in seen:
+                    seen.add(location)
+                    counters["value_counts"][category] += 1
+                    if len(counters["locations"].setdefault(category, [])) < 50:
+                        counters["locations"][category].append({"archive": archive_path, "member": member_name, "depth": depth})
+        for category, pattern in BYTE_FIELD_PATTERNS.items():
+            for match in pattern.finditer(joined):
+                location = (category, base + match.start())
+                if location not in seen:
+                    seen.add(location)
+                    counters["field_counts"][category] += 1
+                    if len(counters["field_locations"].setdefault(category, [])) < 50:
+                        counters["field_locations"][category].append({"archive": archive_path, "member": member_name, "depth": depth})
+        for match in COOKIE_NAME_PATTERN.finditer(joined):
+            cookie_name = match.group(1).decode("ascii", errors="replace")
+            counters["cookie_name_counts"][cookie_name] += 1
+            label = joined[max(0, match.start() - 32) : match.start()].lower()
+            kind = "set-cookie" if b"set-cookie" in label else "request-cookie-or-cookie-field"
+            counters["cookie_kind_counts"][kind] += 1
+            for domain in DOMAIN_PATTERN.findall(joined[max(0, match.start() - 512) : min(len(joined), match.end() + 512)]):
+                counters["cookie_domain_counts"][domain.decode("ascii", errors="replace").casefold()] += 1
+        overlap = joined[-8192:]
+    counters["scanned_bytes"] += len(data)
+
+
+def _scan_zip_stream(source: Any, *, archive_path: str, depth: int, counters: dict[str, Any]) -> None:
+    """Scan one ZIP stream and recurse into bounded nested ZIP members."""
+    try:
+        archive = zipfile.ZipFile(source, "r")
+    except (OSError, RuntimeError, zipfile.BadZipFile):
+        counters["zip_errors"] += 1
+        return
+    try:
+        for info in archive.infolist():
+            counters["member_count"] += 1
+            name = info.filename
+            low = name.casefold()
+            try:
+                with archive.open(info, "r") as handle:
+                    # For ordinary members scan incrementally. Nested ZIPs are
+                    # bounded in memory before a recursive pass.
+                    is_candidate_nested = low.endswith(".zip") or info.file_size <= MAX_NESTED_ZIP_BYTES
+                    if is_candidate_nested and info.file_size <= MAX_NESTED_ZIP_BYTES and depth < MAX_NESTED_ZIP_DEPTH:
+                        payload = handle.read(MAX_NESTED_ZIP_BYTES + 1)
+                        _scan_payload_bytes(payload, member_name=name, archive_path=archive_path, depth=depth, counters=counters)
+                        if payload.startswith(b"PK\x03\x04"):
+                            counters["nested_candidates"] += 1
+                            nested_name = f"{archive_path}!{name}"
+                            _scan_zip_stream(io.BytesIO(payload), archive_path=nested_name, depth=depth + 1, counters=counters)
+                        if len(payload) < info.file_size:
+                            counters["member_read_errors"] += 1
+                    else:
+                        while True:
+                            chunk = handle.read(1024 * 1024)
+                            if not chunk:
+                                break
+                            _scan_payload_bytes(chunk, member_name=name, archive_path=archive_path, depth=depth, counters=counters)
+                        if depth >= MAX_NESTED_ZIP_DEPTH and low.endswith(".zip"):
+                            counters["nested_depth_skips"] += 1
+                        elif info.file_size > MAX_NESTED_ZIP_BYTES and low.endswith(".zip"):
+                            counters["nested_size_skips"] += 1
+            except (OSError, RuntimeError, EOFError, zipfile.BadZipFile):
+                counters["member_read_errors"] += 1
+    finally:
+        archive.close()
+
+
+def scan_zip_payloads(path: Path) -> dict[str, Any]:
+    counters: dict[str, Any] = {
+        "member_count": 0,
+        "scanned_bytes": 0,
+        "nested_candidates": 0,
+        "nested_depth_skips": 0,
+        "nested_size_skips": 0,
+        "member_read_errors": 0,
+        "zip_errors": 0,
+        "value_counts": Counter(),
+        "field_counts": Counter(),
+        "locations": {},
+        "field_locations": {},
+        "cookie_name_counts": Counter(),
+        "cookie_kind_counts": Counter(),
+        "cookie_domain_counts": Counter(),
+    }
+    try:
+        with path.open("rb") as handle:
+            _scan_zip_stream(handle, archive_path=rel(path), depth=0, counters=counters)
+    except OSError:
+        counters["zip_errors"] += 1
+    return {
+        "path": rel(path),
+        "bytes": path.stat().st_size,
+        "sha256": digest(path),
+        "member_count": counters["member_count"],
+        "scanned_uncompressed_bytes": counters["scanned_bytes"],
+        "nested_candidates": counters["nested_candidates"],
+        "nested_depth_skips": counters["nested_depth_skips"],
+        "nested_size_skips": counters["nested_size_skips"],
+        "member_read_errors": counters["member_read_errors"],
+        "zip_errors": counters["zip_errors"],
+        "value_shape_counts": dict(sorted(counters["value_counts"].items())),
+        "field_counts": dict(sorted(counters["field_counts"].items())),
+        "value_locations_without_values": counters["locations"],
+        "field_locations_without_values": counters["field_locations"],
+        "cookie_name_counts": dict(sorted(counters["cookie_name_counts"].items())),
+        "cookie_kind_counts": dict(sorted(counters["cookie_kind_counts"].items())),
+        "cookie_domain_counts": dict(sorted(counters["cookie_domain_counts"].items())),
+        "values_emitted": False,
+        "coverage_note": "All readable outer members were streamed; nested ZIP candidates were scanned in memory only when <=128 MiB and depth <=3. No payload was extracted to disk.",
+    }
+
+
 def main() -> int:
     OUT.mkdir(parents=True, exist_ok=True)
     # Prefer the parent's concrete candidate-files.json so this audit follows
@@ -286,6 +508,8 @@ def main() -> int:
 
     zip_paths = sorted(p for p in (ROOT / "artifacts").glob("*.zip") if p.is_file())
     zip_info = [scan_zip_names(path) for path in zip_paths]
+    zip_text_info = [scan_zip_text_metadata(path) for path in zip_paths]
+    zip_payload_info = [scan_zip_payloads(path) for path in zip_paths]
     # Never publish value-bearing records.  Only aggregate counters and up to
     # ten line locations per file are retained.
     report: dict[str, Any] = {
@@ -294,6 +518,8 @@ def main() -> int:
         "generated_utc": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
         "network_performed": False,
         "zip_central_directory": zip_info,
+        "zip_metadata_content_scan": zip_text_info,
+        "zip_payload_content_scan": zip_payload_info,
         "metadata_scan": {
             "roots": [rel(p) for p in roots] + ["explicit key reports", "offline/build-manifest.json"],
             "candidate_files_path": rel(candidate_path) if candidate_data is not None else None,
@@ -319,6 +545,25 @@ def main() -> int:
             "authorization_field_occurrences_without_value": field_counts.get("authorization_field", 0),
             "credential_field_findings": 0,
             "cookie_field_findings": field_counts.get("cookie_field", 0),
+            "zip_metadata_credential_value_findings": sum(sum(item.get("value_shape_counts", {}).values()) for item in zip_text_info),
+            "zip_metadata_authorization_field_occurrences": sum(item.get("field_counts", {}).get("authorization_field", 0) for item in zip_text_info),
+            "zip_metadata_cookie_field_occurrences": sum(item.get("field_counts", {}).get("cookie_field", 0) for item in zip_text_info),
+            "zip_payload_credential_value_findings": sum(sum(item.get("value_shape_counts", {}).values()) for item in zip_payload_info),
+            "zip_payload_authorization_field_occurrences": sum(item.get("field_counts", {}).get("authorization_field", 0) for item in zip_payload_info),
+            "zip_payload_cookie_field_occurrences": sum(item.get("field_counts", {}).get("cookie_field", 0) for item in zip_payload_info),
+            "zip_payload_cookie_name_counts": {
+                name: sum(item.get("cookie_name_counts", {}).get(name, 0) for item in zip_payload_info)
+                for name in sorted({name for item in zip_payload_info for name in item.get("cookie_name_counts", {})})
+            },
+            "zip_payload_cookie_kind_counts": {
+                kind: sum(item.get("cookie_kind_counts", {}).get(kind, 0) for item in zip_payload_info)
+                for kind in sorted({kind for item in zip_payload_info for kind in item.get("cookie_kind_counts", {})})
+            },
+            "zip_payload_cookie_domain_counts": {
+                domain: sum(item.get("cookie_domain_counts", {}).get(domain, 0) for item in zip_payload_info)
+                for domain in sorted({domain for item in zip_payload_info for domain in item.get("cookie_domain_counts", {})})
+            },
+            "zip_payload_read_errors": sum(item.get("member_read_errors", 0) + item.get("zip_errors", 0) for item in zip_payload_info),
             "personal_path_or_email_findings": sum(personal_counts.values()),
             "zip_member_sensitive_name_findings": sum(
                 archive.get("member_name_categories", {}).get(key, {}).get("count", 0)
@@ -334,7 +579,7 @@ def main() -> int:
             "A personal path or email-shaped string is reported only by location/count; no value is copied into the report.",
             "Large text metadata over the configured 128 MiB bound are listed as skipped and are not declared clean.",
         ],
-        "release_action": "Do not publish if credential-shaped value counts are nonzero without manual review. Treat all Cookie/Set-Cookie fields as ambiguous until reviewed. Remove or redact local paths/emails from the new public narrative even when historical evidence retains them locally.",
+        "release_action": "Do not publish if credential-shaped value counts are nonzero without manual review. Treat all source and ZIP metadata Cookie/Set-Cookie fields as ambiguous until reviewed. Remove or redact local paths/emails from the new public narrative even when historical evidence retains them locally.",
     }
     json_path = OUT / "publication_hygiene.json"
     json_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -344,11 +589,13 @@ def main() -> int:
         "Read-only, offline scan. No ZIP payload was extracted or changed; no matched secret value is printed.",
         "",
         f"Scanned {len(zip_info)} artifact ZIP central directories without extraction. Top-level directories, research coverage, and member-name classifications are in JSON.",
+        f"Streamed bounded ZIP metadata members (JSON/headers/log/Markdown/Python-like, excluding HTML/CSS/JS/XML and CDX/prefix members): {sum(item.get('scanned_uncompressed_bytes', 0) for item in zip_text_info):,} bytes; bound/truncation flags are retained per ZIP.",
+        f"Streamed all readable ZIP member payloads without extraction: {sum(item.get('scanned_uncompressed_bytes', 0) for item in zip_payload_info):,} uncompressed bytes; nested candidates={sum(item.get('nested_candidates', 0) for item in zip_payload_info)}, read/ZIP errors={sum(item.get('member_read_errors', 0) + item.get('zip_errors', 0) for item in zip_payload_info)}.",
         "",
         "## Metadata scan",
         "",
         f"Scanned {len(records):,} selected metadata/text files ({report['metadata_scan']['total_scanned_bytes']:,} bytes) under the recorded roots and key final reports. Large skipped files: {len(skipped)}; read errors: {report['metadata_scan']['read_error_count']}.",
-        f"Credential-shaped value matches: {report['classification']['credential_value_findings']} (likely fixed test-fixture subset: {sum(fixture_counts.values())}); authorization fields: {report['classification']['credential_field_findings']}; Cookie/Set-Cookie fields: {report['classification']['cookie_field_findings']}.",
+        f"Credential-shaped value matches: {report['classification']['credential_value_findings']} (likely fixed test-fixture subset: {sum(fixture_counts.values())}); source authorization fields without values: {report['classification']['authorization_field_occurrences_without_value']}; source Cookie/Set-Cookie fields: {report['classification']['cookie_field_findings']}; ZIP metadata value matches: {report['classification']['zip_metadata_credential_value_findings']}, Cookie fields: {report['classification']['zip_metadata_cookie_field_occurrences']}; full ZIP payload value matches: {report['classification']['zip_payload_credential_value_findings']}, Cookie fields: {report['classification']['zip_payload_cookie_field_occurrences']}.",
         f"Absolute-path/email-shaped matches: {report['classification']['personal_path_or_email_findings']}. Locations and line numbers are in JSON; values are intentionally omitted.",
         "",
         "Cookie and Set-Cookie metadata are classified as ambiguous: an Archive replay cookie can be anonymous replay infrastructure state, but this scan cannot prove it is not a login/session cookie. Human review is required for every occurrence before publication.",

@@ -6,9 +6,9 @@
 
 Git 主树包含冻结的 `offline/site/`、`offline/build-manifest.json`、兼容支持、启动器、源码、测试、工作回顾和关键验收报告。克隆后可直接用 Python 标准库启动，不依赖本机原始下载目录。构建来源清单和部署字节保持不变；Git 属性关闭换行转换，以免破坏冻结摘要。
 
-完整恢复 ZIP 长度为 2,251,344,514 字节，SHA-256 为 `66553fcd368ae5ee48dfb9f1b11897ac7fb3fd6a1983a0e303c2c088522c1c63`。它通过 Release 发布为三个连续字节分卷，保留逐卷与整体摘要；不在 Git 对象库中存放大 ZIP。分卷与原 ZIP 的整体流式校验通过，不为验证再生成一份完整 ZIP。清单见 [`release-assets.json`](../artifacts/github-release-20261012/release-assets.json)。
+完整恢复 ZIP 长度为 2,251,344,514 字节，SHA-256 为 `66553fcd368ae5ee48dfb9f1b11897ac7fb3fd6a1983a0e303c2c088522c1c63`。它已准备为三个连续字节分卷并在本地保留，逐卷与整体摘要不变；不在 Git 对象库中存放大 ZIP。分卷与原 ZIP 的整体流式校验通过，不为验证再生成一份完整 ZIP。清单见 [`release-assets.json`](../artifacts/github-release-20261012/release-assets.json)。
 
-恢复包提供可浏览镜像、恢复期来源和研究证据。最初百科采集的原始批次另保存在 `WOW_Encyclopedia_20080512_full_source.zip`；历史样本、17 项复核、首版镜像及被否定为浏览基准的 2010 来源包一并保留在 Release，名称与内容不变。它们记录不同阶段，不应替换为“当前最新完整官网”。
+恢复包提供可浏览镜像、恢复期来源和研究证据。最初百科采集的原始批次另保存在 `WOW_Encyclopedia_20080512_full_source.zip`；历史样本、17 项复核、首版镜像及被否定为浏览基准的 2010 来源包一并保留在本地，名称与内容不变，本次不上传这些原始元数据包。它们记录不同阶段，不应替换为“当前最新完整官网”。
 
 ## 验证
 
@@ -28,3 +28,9 @@ GitHub 自动 Source code 包仅代表 Git 主树。历史文档可能引用完�
 首次推送因初步卫生扫描未覆盖 HTML/CSS/JS 和二进制内容而被自动审批拒绝，实际未执行。随后对固定提交的 8,408 个受跟踪文件、652,421,785 字节完成全字节扫描，零跳过、零读取错误；5 处字面量候选经复核为游戏代币提示文字与固定 Cookie 能力探针，没有未解决的凭据发现。新的完整扫描覆盖并替代初步报告对 Git 主树的内容扫描边界。
 
 仅含 Git 文件的全新克隆对 8,304 个部署文件逐项验证 SHA/长度/路径全部通过，首页、百科、Elune、GameGuide、Media、Current News、JS 共 7 个 HTTP 检查通过，所有请求均为 loopback，且无原始 mirror/backups 目录依赖。自己的临时服务已停止，验证克隆已清理。见[主代理验收](../research/github-publication-20261012/git-root-acceptance.json)、[完整内容扫描](../research/github-publication-20261012/full-tree-hygiene.md)及[独立启动报告](../research/github-publication-20261012/git-checkout-smoke/smoke-report.md)。原定处理日期仍记为 2026-10-12，跨日发布验收的实际日期另列。
+
+## 首次 Release 的最终范围
+
+公开 Release 提供 502,151,286 字节的轻量部署 ZIP、SHA-256、打包核验、压缩测量和权利说明。8,314 成员逐项匹配已全字节扫描的 Git 内容，另外两个成员为审阅过的新 README 和路径/摘要校验表，共 8,316 成员。[根代理复核](../research/github-publication-20261012/runtime-root-acceptance.json)独立核对整体 SHA 和这项成员关系。
+
+完整取证包的有限检查发现响应 Cookie 字段，部分历史会话/偏好字段来源未精确确认，检查也未覆盖所有嵌套载荷。因此本次将原取证 ZIP 和历史来源 ZIP 留在本地，不上传。原拟17资产清单保留为准备记录，实际发布以 `active-release-assets.json` 与上传回执为准。原 ZIP、分卷和证据都未删除/改写；后续公开取证材料需另行处理响应元数据并保留变换说明。运行层与本地取证层不能互相替代。见[空间策略](storage-and-compression.md)。
