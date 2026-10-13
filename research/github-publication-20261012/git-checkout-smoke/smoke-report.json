@@ -1,0 +1,154 @@
+{
+  "purpose": "Git-only publication clone smoke validation",
+  "commit_requested": "b8d655ca51c4e4f73101e8e774eb46b37bda9c4f",
+  "clone": "D:\\WOW_Encyclopedia\\.scratch\\pub12",
+  "checkout": {
+    "head": "b8d655ca51c4e4f73101e8e774eb46b37bda9c4f",
+    "clean_status": true,
+    "core_longpaths": "true",
+    "initial_clone_mode": "git clone --local --no-hardlinks",
+    "safe_directory_workaround": "temporary exact source .git safe.directory was required; removed after clone smoke"
+  },
+  "manifest": {
+    "path": "D:\\WOW_Encyclopedia\\.scratch\\pub12\\offline\\build-manifest.json",
+    "sha256": "397f7dcdbc774d80c6f8c1f3dabf7933211ff182427bd2ef77c895752334f459",
+    "bytes": 73067980,
+    "file_records": 8304,
+    "unique_routes": 8304,
+    "derived_bytes_sum": 539027834
+  },
+  "file_validation": {
+    "hashed": 8304,
+    "missing": [],
+    "nonregular": [],
+    "unsafe_or_duplicate": [],
+    "hash_mismatch": [],
+    "length_mismatch": [],
+    "pass": true
+  },
+  "layout": {
+    "offline_site_present": true,
+    "mirror_present": false,
+    "backups_present": false,
+    "top_level_entries": [
+      ".git",
+      ".gitattributes",
+      ".gitignore",
+      "NOTICE.md",
+      "README.md",
+      "START_OFFLINE.cmd",
+      "artifacts",
+      "docs",
+      "offline",
+      "packaging",
+      "research",
+      "tests",
+      "tools"
+    ]
+  },
+  "loopback": {
+    "health": {
+      "status": 200,
+      "mime": [
+        "application/json; charset=UTF-8"
+      ],
+      "body": "{\n  \"server_pid\": 29892,\n  \"build_manifest_sha256\": \"397f7dcdbc774d80c6f8c1f3dabf7933211ff182427bd2ef77c895752334f459\",\n  \"routes\": 8304\n}\n",
+      "attempts": 1,
+      "checked_utc": "2026-10-12T15:40:33.6800381Z"
+    },
+    "route_check": [
+      {
+        "name": "homepage",
+        "requested": "http://127.0.0.1:8878/index.xml",
+        "status": 200,
+        "final_url": null,
+        "mime": "text/html; charset=UTF-8",
+        "body_bytes": 125086,
+        "body_nonempty": true,
+        "body_prefix": "<!-- offline derived from source SHA-256 6773c49d340e085eaec1f9c429b9435f2366cf5f8048ea3fa0ef1c4d745"
+      },
+      {
+        "name": "encyclopedia",
+        "requested": "http://127.0.0.1:8878/info/encyclopedia/index.xml",
+        "status": 200,
+        "final_url": null,
+        "mime": "text/html; charset=UTF-8",
+        "body_bytes": 59432,
+        "body_nonempty": true,
+        "body_prefix": "<!-- offline derived from source SHA-256 4951546ef139ac64d93f1811dec06ef2b84dea22cd9d278fac9262070b0"
+      },
+      {
+        "name": "elune",
+        "requested": "http://127.0.0.1:8878/info/encyclopedia/392.xml",
+        "status": 200,
+        "final_url": null,
+        "mime": "text/html; charset=UTF-8",
+        "body_bytes": 59409,
+        "body_nonempty": true,
+        "body_prefix": "<!-- offline derived from source SHA-256 2f8b9dedc0ff05c720815f788c0fb6368bf46091ffb36708d3c8fce568a"
+      },
+      {
+        "name": "gameguide",
+        "requested": "http://127.0.0.1:8878/info/basics/auctionhouses.html",
+        "status": 200,
+        "final_url": null,
+        "mime": "text/html; charset=UTF-8",
+        "body_bytes": 60705,
+        "body_nonempty": true,
+        "body_prefix": "        <!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">  <meta http-equiv=\"Content-Ty"
+      },
+      {
+        "name": "media",
+        "requested": "http://127.0.0.1:8878/community/machinima/index.html",
+        "status": 200,
+        "final_url": null,
+        "mime": "text/html; charset=UTF-8",
+        "body_bytes": 40868,
+        "body_nonempty": true,
+        "body_prefix": "        <!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">  <meta http-equiv=\"Content-Ty"
+      },
+      {
+        "name": "current_news",
+        "requested": "http://127.0.0.1:8878/news/wow-news-01-2006.html",
+        "status": 200,
+        "final_url": null,
+        "mime": "text/html; charset=UTF-8",
+        "body_bytes": 68476,
+        "body_nonempty": true,
+        "body_prefix": "        <!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">  <meta http-equiv=\"Content-Ty"
+      },
+      {
+        "name": "js_resource",
+        "requested": "http://127.0.0.1:8878/info/encyclopedia/scripts/cascade.js",
+        "status": 200,
+        "final_url": null,
+        "mime": "application/x-javascript",
+        "body_bytes": 6843,
+        "body_nonempty": true,
+        "body_prefix": "// JavaScript Document    function transformData(startPoint)  {  \tvar branchLength = eval(\"Menu\" + s"
+      }
+    ],
+    "request_records": 8,
+    "status_counts": {
+      "200": 8
+    },
+    "external_or_nonlocal_routes": [],
+    "parse_errors": [],
+    "all_local_routes": true
+  },
+  "cleanup": {
+    "clone": "D:\\WOW_Encyclopedia\\.scratch\\pub12",
+    "clone_bytes_before": 1151359522,
+    "d_free_before": 17458049024,
+    "d_free_after": 18627579904,
+    "server_pid": 29892,
+    "server_stopped": true,
+    "listener_count_after": 0,
+    "clone_removed": true,
+    "reparse_count_before": 0
+  },
+  "limitations": [
+    "Validation used the committed derived files and the local loopback server; no archive or external network request was made.",
+    "The clone was removed after validation because the workspace disk reserve became constrained; captured logs and hashes remain in this directory."
+  ]
+}

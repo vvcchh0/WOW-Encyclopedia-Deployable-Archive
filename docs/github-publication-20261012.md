@@ -22,3 +22,9 @@ Git 主树包含冻结的 `offline/site/`、`offline/build-manifest.json`、兼�
 GitHub 自动 Source code 包仅代表 Git 主树。历史文档可能引用完整包内的证据路径。保存原始报告及失败记录，回顾文档负责说明更正；没有改写旧 ZIP 来制造一致的历史。
 
 实际仓库、提交、Release 与上传资产核对完成后，追加机器可读发布回执，不在准备阶段虚构成功。
+
+## Git 主树复核（2026-10-13）
+
+首次推送因初步卫生扫描未覆盖 HTML/CSS/JS 和二进制内容而被自动审批拒绝，实际未执行。随后对固定提交的 8,408 个受跟踪文件、652,421,785 字节完成全字节扫描，零跳过、零读取错误；5 处字面量候选经复核为游戏代币提示文字与固定 Cookie 能力探针，没有未解决的凭据发现。新的完整扫描覆盖并替代初步报告对 Git 主树的内容扫描边界。
+
+仅含 Git 文件的全新克隆对 8,304 个部署文件逐项验证 SHA/长度/路径全部通过，首页、百科、Elune、GameGuide、Media、Current News、JS 共 7 个 HTTP 检查通过，所有请求均为 loopback，且无原始 mirror/backups 目录依赖。自己的临时服务已停止，验证克隆已清理。见[主代理验收](../research/github-publication-20261012/git-root-acceptance.json)、[完整内容扫描](../research/github-publication-20261012/full-tree-hygiene.md)及[独立启动报告](../research/github-publication-20261012/git-checkout-smoke/smoke-report.md)。原定处理日期仍记为 2026-10-12，跨日发布验收的实际日期另列。
