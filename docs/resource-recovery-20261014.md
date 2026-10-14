@@ -74,3 +74,23 @@ Fishing 的少量 exact 回退也没有找到前几张图库图片；未完成�
 本轮完成时工作区含 `.git` 约 13.22 GB，D 盘剩余约 45.87 GB。所有下载批次已结束并保存状态；本地预览服务独立运行。
 
 Search Console 复核另见[复核准备](search-console-review-20261014.md)。当前没有取得所有权验证或正式安全问题报告，也没有提交复核。
+
+## v5 图库现况复核（2026-10-14）
+
+用户报告当前预览的 Raid、Dungeon 仍缺图。本轮以 `.scratch/pages-local-maintenance-20261014-v5/` 为实际输入，重读 50 个分区的页面声明和 `addshots`，逐一检查其编号对应的原图、同层缩略图、导出来源记录与路由表。Zul'Aman 从介绍 XML 转到实际图库 HTML 后计数。
+
+| 范围 | 分区 | 声明截图数 | 现有原图 | 现有同层缩略图 |
+| --- | ---: | ---: | ---: | ---: |
+| Raid | 9 | 332 | 0 | 0 |
+| Dungeon | 15 | 537 | 0 | 0 |
+| 全部图库 | 50 | 1,684 | 0 | 0 |
+
+50 个 `addshots` 目录均与原页面一致并具有正确的项目路径前缀。对应 3,368 个原图／缩略图地址没有图片实体、来源记录或直接路由条目。Karazhan、Black Temple、Zul'Aman、Magister's Terrace 四个代表图库的页面实测均为 HTTP 200；各自的 `ss1.jpg`、`ss1-thumb.jpg` 为 HTTP 404，正文是归档缺失页。
+
+因此目前图库缺口按未取得图片实体处理。此前目录被改写为缺失页的兼容问题已经修复。图库脚本通过编号生成 `ssN.jpg` 和 `ssN-thumb.jpg`，页面保存及目录修复不会自动取得这些文件。
+
+当前另有 25 张具有 JPEG 文件签名的独立 `thumbs/` 预览小图，分布在 Karazhan、Zul'Aman、Fishing、三个节日及 World PvP 页面。它们的路径和用途不同；Karazhan 后来取得的三张预览图已接入，仍不补足其图库的原图与同层缩略图。现有补充清单与 Karazhan／Fishing 下载收据未发现可直接补入序列的遗漏实体。本轮未穷尽扫描每个嵌套历史 ZIP。
+
+此前保存的 Karazhan 2008 年完整目录索引仅包含目录错误捕获及三张预览图的多个捕获，直接图库原图／缩略图没有记录；Fishing 的已查询目录也没有其真实图库路径下的直接实体。这些结论限于已查询的主机、路径和年份，不能扩展为全部 50 个图库在 Wayback 中均无捕获。本轮未请求 Wayback；当前 429 也不作为无捕获的证据。
+
+详见[当前逐分区与 HTTP 记录](../research/local-maintenance-20261014/gallery-route-entity-recheck.json)、[复核脚本](../research/local-maintenance-20261014/recheck_gallery_entities.py)、[Karazhan 索引与下载摘要](../research/gallery-recovery-20261014/karazhan/sanitized-summary.md)及[后续索引查询摘要](../research/gallery-recovery-20261014/discovery-002/sanitized-summary.md)。

@@ -44,3 +44,11 @@ GitHub 自动 Source code 包仅代表 Git 主树。历史文档可能引用完�
 - 本地原始取证包未上传且保持不变。发布后工作区约12.00 GB，D盘可用约27.41 GB，满足14GB工作区与10GB余量要求。
 
 机器可读依据：[最终发布回执](../research/github-publication-20261012/publication-receipt.json)、[根代理发布前资产核对](../research/github-publication-20261012/root-release-prepublish-acceptance.json)、[上传回执](../research/github-publication-20261012/upload-20261013-receipt.json)。随后提交的回执文件不改变冻结镜像或Release目标内容。
+
+## 发布范围复核（2026-10-14）
+
+通过 GitHub API 直连复核，仓库仍有一个已发布 Release、六个附件，浏览包为 2026-10-13 的约 502 MB 版本。当天完成本地验收的 v5 浏览包尚未更新到 Release；它是上轮本地整理的交付物。[当前附件回执](../research/github-publication-20261012/release-scope-recheck-20261014.json)
+
+约 2.25 GB 原始取证包继续留在本地。前述有限检查识别到的主要是响应 `Set-Cookie` 与历史 `x-archive-orig-set-cookie` 字段，包含 Wayback 路由信息及未确认形态的历史会话字段；字段命中本身不是已确认的有效凭据泄漏。公开原始资料前仍需完成嵌套载荷及元数据处理，制作保留来源关系和变换清单的公开副本，本地原件继续保留。
+
+浏览包覆盖已恢复的可浏览文件；原始取证包另含来源和恢复过程材料。两者均保留资源缺口，名称中的“完整取证包”指材料范围，并不表示官网所有图片已经取得。
