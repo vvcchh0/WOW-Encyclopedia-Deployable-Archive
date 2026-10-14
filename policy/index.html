@@ -349,21 +349,21 @@ if (typeof addEvent == "function" && typeof stretchContainer == "function") addE
 			var articleId=20309;
 		</script>
 <div class="articleRating">
-<form action="" name="commentForm" style="margin:0">
+<div name="commentForm" style="margin:0" class="offline-archive-form offline-business-form" data-offline-form="static" data-offline-static-form="true"><p class="offline-archive-notice offline-form-notice">Historical form — display only. Submissions are unavailable.</p>
 <p id="ratingDisabled">Rating an article is only possible when JavaScript is enabled for your browser.</p>
 <p id="pleaseRate">Was this solution helpful to you?<br>
-<label for="rateYes">Yes</label><input class="radiobutton" id="rateYes" name="articleRating" onclick="$(&#x27;articleComment&#x27;).style.display=&#x27;block&#x27;" type="radio" value="1"> / <label for="rateNo">No</label><input class="radiobutton" id="rateNo" name="articleRating" onclick="$(&#x27;articleComment&#x27;).style.display=&#x27;block&#x27;" type="radio" value="0">
+<label for="rateYes">Yes</label><span class="offline-archive-control" data-offline-control="input">Not selected</span> / <label for="rateNo">No</label><span class="offline-archive-control" data-offline-control="input">Not selected</span>
 </p>
 <div id="articleComment">
 <p>If you'd like, you can also write a comment on this solution:</p>
-<textarea cols="85" id="articleCommentField" name="articleComment" onkeydown="limitLength(this,250);" onkeyup="limitLength(this,250);" onblur="if(this.value==&#x27;&#x27;) this.value=&#x27;&#x27;" onfocus="if(this.value==&#x27;&#x27;) this.value=&#x27;&#x27;" rows="3" style="margin-bottom:5px" type="text"></textarea>
+<span class="offline-archive-control" data-offline-control="textarea">—</span>
 <br>
-<input class="submit" name="Submit" onclick="javascript:commentArticle(); return false;" type="submit" value="Submit Feedback">
+<span class="offline-archive-control" data-offline-control="input">Submit Feedback</span>
 </div>
 <p id="ratingSent">Thank you for sending feedback on this article.</p>
 <p id="sendingRating">
 <span>Sending your feedback....</span><img border="0" height="16" src="/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpolicy%2F&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fsupport%2Fimages%2Findicator2.gif&amp;reason=invalid-overlay-or-uncollected-site-resource" width="16"></p>
-</form>
+</div>
 </div>
 <br>
 <table cellpadding="0" cellspacing="0" class="smallbox" style="float: right;">

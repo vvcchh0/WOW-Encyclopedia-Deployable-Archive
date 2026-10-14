@@ -276,7 +276,7 @@
 <!-----------------------------MAIN------------------------------>
 <div style="text-align:right"><strong style="float:left">*All visible fields are required</strong><a href="/WOW-Encyclopedia-Deployable-Archive/community/stories/index.html"><img src="/WOW-Encyclopedia-Deployable-Archive/shared/wow-com/new-hp/images/icons/arrow-grey-left.gif" hspace="10" align="absmiddle" />Return to Player Stories home</a></div>
 
-<form name="storyForm" method="post" action="/WOW-Encyclopedia-Deployable-Archive/community/stories/submit.html" id="screenshotForm" onsubmit="javascript: return validation();" enctype="multipart/form-data" data-offline-disabled="true" onsubmit="return false">
+<div name="storyForm" id="screenshotForm" class="offline-archive-form offline-business-form" data-offline-form="static" data-offline-static-form="true"><p class="offline-archive-notice offline-form-notice">Historical form — display only. Submissions are unavailable.</p>
 <script language="javascript">
 <!--
 
@@ -336,7 +336,7 @@ function setanon(targ,mod)
 
 
 <!--PlainBox Top-->
-<form id="submission" method="post" action="/WOW-Encyclopedia-Deployable-Archive/community/stories/submit.html">
+<div id="submission" class="offline-archive-form offline-business-form" data-offline-form="static" data-offline-static-form="true"><p class="offline-archive-notice offline-form-notice">Historical form — display only. Submissions are unavailable.</p>
 
 <tr><td colspan="3">
 <br />
@@ -346,20 +346,15 @@ function setanon(targ,mod)
 <div class="c1">Display Information:</div>
 <div class="c2">
     
-    	<select id="displayInformation" name="displayInformation" onchange="nameopt(this)">
-        <option value="Real name, Location">Real name, Location</option>
-        <option value="Character name, Realm">Character name, Realm</option>
-        <option value="Both real info and character info" selected="selected">Both real info and character info</option>
-        <option value="Neither">Neither</option>
-        </select>
+    	<span class="offline-archive-control" data-offline-control="select">Both real info and character info</span>
         </div>
     <div class="c3"></div>
     </div>
 <br clear="all" />
 <div class="col1"><div id="author" class="row">
 	<div class="c1">Name:</div>
-	<div class="c2"><input tabindex="1" name="name" type="text" maxlength="50" id="name" class="color" value="" />
-	  <a onmouseover="showTip(&#x27;Your real name.&#x27;);" onmouseout="hideTip()" href="javascript:;"><img src="/WOW-Encyclopedia-Deployable-Archive/community/stories/images/moreinfo.gif" /></a></div>
+	<div class="c2"><span class="offline-archive-control" data-offline-control="input">—</span>
+	  <a href="javascript:;"><img src="/WOW-Encyclopedia-Deployable-Archive/community/stories/images/moreinfo.gif" /></a></div>
 	<div class="c3">
 
 
@@ -368,8 +363,8 @@ function setanon(targ,mod)
 </div>
 <div id="loc" class="row">
 	<div class="c1">Location:</div>
-	<div class="c2"><input tabindex="2" name="location" type="text" maxlength="50" id="location" class="color" value="" />
-      <a onmouseover="showTip(&#x27;This can be as broad or specific as you like. &lt;br/&gt;ie: Idaho, New York, Europe&#x27;);" onmouseout="hideTip()" href="javascript:;"><img src="/WOW-Encyclopedia-Deployable-Archive/community/stories/images/moreinfo.gif" /></a></div>
+	<div class="c2"><span class="offline-archive-control" data-offline-control="input">—</span>
+      <a href="javascript:;"><img src="/WOW-Encyclopedia-Deployable-Archive/community/stories/images/moreinfo.gif" /></a></div>
 	<div class="c3">
 
 
@@ -381,8 +376,8 @@ function setanon(targ,mod)
 <div class="col2">
 <div id="char" class="row">
 	<div class="c1">Character&nbsp;Name:</div>
-	<div class="c2"><input tabindex="3" name="characterName" type="text" maxlength="50" id="location" class="color" value="" />
-      <a onmouseover="showTip(&#x27;This is the character played by you, the author.&#x27;);" onmouseout="hideTip()" href="javascript:;"><img src="/WOW-Encyclopedia-Deployable-Archive/community/stories/images/moreinfo.gif" /></a></div>
+	<div class="c2"><span class="offline-archive-control" data-offline-control="input">—</span>
+      <a href="javascript:;"><img src="/WOW-Encyclopedia-Deployable-Archive/community/stories/images/moreinfo.gif" /></a></div>
 	<div class="c3">
 
 
@@ -392,8 +387,8 @@ function setanon(targ,mod)
 
 <div id="realm" class="row">
 	<div class="c1">Realm:</div>
-	<div class="c2"><input tabindex="4" name="realm" type="text" maxlength="50" id="location" class="color" value="" />
-      <a onmouseover="showTip(&#x27;This is your character’s Realm&#x27;);" onmouseout="hideTip()" href="javascript:;"><img src="/WOW-Encyclopedia-Deployable-Archive/community/stories/images/moreinfo.gif" /></a></div>
+	<div class="c2"><span class="offline-archive-control" data-offline-control="input">—</span>
+      <a href="javascript:;"><img src="/WOW-Encyclopedia-Deployable-Archive/community/stories/images/moreinfo.gif" /></a></div>
 	<div class="c3">
 
 
@@ -407,7 +402,7 @@ This information is for record keeping and will not be made public.
 <div class="priv">
 <div class="row" style="">
 	<div class="c1"><b>Email:</b></div>
-	<div class="c2"><input tabindex="5" name="email" type="text" maxlength="50" id="eMail" class="color" value="" /></div>
+	<div class="c2"><span class="offline-archive-control" data-offline-control="input">—</span></div>
 	<div class="c3">
 
 
@@ -416,8 +411,8 @@ This information is for record keeping and will not be made public.
 </div>
 <div class="row">
 	<div class="c1"><b>Account:</b></div>
-	<div class="c2"><input tabindex="6" name="account" type="text" maxlength="50" id="account" class="color" value="" / disabled="disabled">
-	  <a onmouseover="showTip(&#x27;This is your WoW account, which we´ll use to contact you for print permission.&#x27;);" onmouseout="hideTip()" href="javascript:;"><img src="/WOW-Encyclopedia-Deployable-Archive/community/stories/images/moreinfo.gif" /></a></div>
+	<div class="c2"><span class="offline-archive-control" data-offline-control="input">—</span>
+	  <a href="javascript:;"><img src="/WOW-Encyclopedia-Deployable-Archive/community/stories/images/moreinfo.gif" /></a></div>
 	<div class="c3">
 
 
@@ -433,9 +428,9 @@ This information is for record keeping and will not be made public.
 <table>
 <tr>
 	<td colspan="2">
-	  <b>Story:</b> <a onmouseover="showTip(&#x27;The character count varies between browsers.&lt;br/&gt;We recommend composing your story in a &lt;br/&gt; text program and copy/pasting it here.&#x27;);" onmouseout="hideTip()" href="javascript:;"><img src="/WOW-Encyclopedia-Deployable-Archive/community/stories/images/moreinfo.gif" /></a><br />
-	  <textarea tabindex="7" onkeypress="return charcap(this,3000)" onblur="circumsize(this,3000)" name="story" id="story" rows="15" style="width:677px" class="color"></textarea>
-	  <div id="pr_bar"><img onmouseover="showTip(Math.round(clen/3000*100)+&#x27;%&#x27;);" onmouseout="hideTip();" src="/WOW-Encyclopedia-Deployable-Archive/community/stories/images/bar_top.gif" /></div><div id="somediv">
+	  <b>Story:</b> <a href="javascript:;"><img src="/WOW-Encyclopedia-Deployable-Archive/community/stories/images/moreinfo.gif" /></a><br />
+	  <span class="offline-archive-control" data-offline-control="textarea">—</span>
+	  <div id="pr_bar"><img src="/WOW-Encyclopedia-Deployable-Archive/community/stories/images/bar_top.gif" /></div><div id="somediv">
       <script>circumsize(document.getElementById('story'),3000)</script></div></td>
 	<td valign="top">
 
@@ -447,9 +442,9 @@ This information is for record keeping and will not be made public.
 
 <tr><td colspan="3"> 
 <div style="float:left; width:20px; margin:15px 0; text-align:center;">
-<a onmouseover="showTip(&#x27;If you click inside the scroll window to the right, &lt;br/&gt;you can press SPACE to read through the text*, &lt;br/&gt;or press the button below to expand it.&lt;br/&gt;*Except some versions of Safari&#x27;);" onmouseout="hideTip()" href="javascript:;"><img src="/WOW-Encyclopedia-Deployable-Archive/community/stories/images/moreinfo.gif" /></a>
+<a href="javascript:;"><img src="/WOW-Encyclopedia-Deployable-Archive/community/stories/images/moreinfo.gif" /></a>
 
-<a onclick="showdis(this)" href="javascript:;"><img src="/WOW-Encyclopedia-Deployable-Archive/new-hp/images/leftmenu-plus.gif" /></a></div>
+<a href="javascript:;"><img src="/WOW-Encyclopedia-Deployable-Archive/new-hp/images/leftmenu-plus.gif" /></a></div>
 <div id="disclaimer"><p align="center"><strong><u>World of Warcraft Stories Submission  Agreement</u></strong></p>
     <p>The following represents an agreement between  Blizzard Entertainment, Inc., a Delaware  corporation (&ldquo;Blizzard Entertainment&rdquo;), and yourself, relating to your  participation in Blizzard&rsquo;s &ldquo;World of Warcraft Stories&rdquo; as follows:</p>
     <ol>
@@ -465,7 +460,7 @@ This information is for record keeping and will not be made public.
 <tr>
 	<td align="right"><b>I agree:</b></td>
 	<td>
-	<input type="checkbox" tabindex="8" name="legal" value="true" <input type="hidden" name="_legal"><a onmouseover="showTip(&#x27;This signifies that you agree to the Legal Terms above. &lt;br/&gt;(There will be a quiz later.)&#x27;);" onmouseout="hideTip()" href="javascript:;"><img src="/WOW-Encyclopedia-Deployable-Archive/community/stories/images/moreinfo.gif" /></a></td>
+	<span class="offline-archive-control" data-offline-control="input">Not selected</span><a href="javascript:;"><img src="/WOW-Encyclopedia-Deployable-Archive/community/stories/images/moreinfo.gif" /></a></td>
 	<td valign="top">
 
 
@@ -474,7 +469,7 @@ This information is for record keeping and will not be made public.
 </tr>
 </table>	
 
-</form>
+</div>
 
 
 
@@ -485,7 +480,7 @@ This information is for record keeping and will not be made public.
 <center>
 <table>
 <tr>
-	<td><input type="image" src="/WOW-Encyclopedia-Deployable-Archive/community/submission/images/button-submit.gif" width="174" height="46" alt="Submit" class="nobutton" onclick="undisable(); storyForm.submit();"></td>
+	<td><img src="/WOW-Encyclopedia-Deployable-Archive/community/submission/images/button-submit.gif" width="174" height="46" alt="Submit" class="nobutton" /></td>
 	<td><a href="/WOW-Encyclopedia-Deployable-Archive/index.xml.html"><img src="/WOW-Encyclopedia-Deployable-Archive/community/submission/images/button-cancel.gif" width="174" height="46" alt="Cancel" border="0"></a></td>
 </tr>
 </table>

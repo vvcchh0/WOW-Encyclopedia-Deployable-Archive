@@ -13,21 +13,24 @@ path = roothost;
 
 
 
-var query = window.location.search.substring(1);
-  var vars = query.split("s=");
-/*  for (var i=0;i<vars.length;i++) {
-    var pair = vars[i].split("@");
-}*/
-	var queryCurrentPage = vars[1];
-
-	var queryTotalPages;
-	
-	if (!queryCurrentPage) {
+var queryParams = new URLSearchParams(window.location.search);
+var queryValues = queryParams.getAll("s");
+var queryCurrentPage = 1;
+if (queryValues.length === 1 && /^[1-9][0-9]*$/.test(queryValues[0])) {
+	var parsedPage = Number(queryValues[0]);
+	if (Number.isSafeInteger(parsedPage) && parsedPage >= 1)
+		queryCurrentPage = parsedPage;
+}
+var queryTotalPages = 1;
+function printPageNumbers() {
+	var actualPages = Number(pages);
+	if (!Number.isSafeInteger(actualPages) || actualPages < 1)
+		actualPages = 1;
+	queryTotalPages = actualPages;
+	if (!Number.isSafeInteger(queryCurrentPage) || queryCurrentPage < 1 || queryCurrentPage > actualPages)
 		queryCurrentPage = 1;
-		queryTotalPages = 1;
-	}
+	currentPage = queryCurrentPage;
 	
-function printPageNumbers() {	
 var sPath = window.location.pathname;
 var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
 
@@ -35,8 +38,8 @@ var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
 massiveReplaceString += "<div style='margin:0 40px;'>"
 
 	if (pages != 1) {
-		var calcPreviousPage = eval(queryCurrentPage) - 1;
-		var calcNextPage = eval(queryCurrentPage) + 1;
+		var calcPreviousPage = queryCurrentPage - 1;
+		var calcNextPage = queryCurrentPage + 1;
 		if (calcPreviousPage)
 			massiveReplaceString += "<div class='pagearrow left'><a href ="+ path + sPage +"?s="+ calcPreviousPage +"><img src='./images/layout/arrow-prev.gif' /></a><div class='pageprev'><a href ="+ path + sPage +"?s="+ calcPreviousPage +">"+ tPrev +"</a></div><div class='pageprevshadow'>"+ tPrev +"</div></div>";
 			else massiveReplaceString += "<div class='pagearrow left'><img src='./images/layout/arrow-prevgrey.gif' /><div class='pageprev'>"+ tPrev +"</div><div class='pageprevshadow'>"+ tPrev +"</div></div>";
