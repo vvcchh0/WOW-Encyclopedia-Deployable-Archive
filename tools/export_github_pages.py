@@ -22,7 +22,9 @@ import shutil
 import sys
 import urllib.parse
 from collections import Counter
+from dataclasses import dataclass
 from datetime import datetime, timezone
+from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any
 
@@ -396,42 +398,553 @@ def inject_html_runtime(text: str, *, base_path: str, source_sha: str) -> str:
     return text
 
 
-def disable_sensitive_forms(text: str) -> str:
-    """Disable credential/account/payment forms in the derived copy.
+@dataclass(frozen=True)
+class _MarkupToken:
+    """A source-positioned HTML token used by the derived form pass.
 
-    Historical pages sometimes carry account or support forms even though the
-    corresponding endpoint was never collected.  The static export must not
-    turn those forms into a confusing local submission flow.  Search forms
-    and ordinary navigation forms remain unchanged.
+    ``HTMLParser`` gives us reliable tag boundaries even for the malformed
+    table/form nesting found in the historical pages.  The output pass only
+    replaces the tokens that carry submit semantics; all other source slices
+    remain byte-for-byte equal to the already localized HTML.
     """
 
-    form_re = re.compile(r"<form\b(?P<attrs>[^>]*)>(?P<body>.*?)</form\s*>", re.I | re.S)
-    sensitive_re = re.compile(
-        r"(?:type\s*=\s*['\"]?(?:password|credit-card|creditcard)['\"]?)|"
-        r"(?:name\s*=\s*['\"]?[^'\"]*(?:password|passwd|card|cvv|account|payment|billing)[^'\"]*['\"]?)|"
-        r"(?:action\s*=\s*['\"]?[^'\"]*(?:/account|/login|/payment|/billing|/checkout)[^'\"]*['\"]?)",
-        re.I,
+    kind: str
+    name: str
+    start: int
+    end: int
+    raw: str
+    attrs: tuple[tuple[str, str | None], ...] = ()
+    self_closing: bool = False
+
+
+class _MarkupTokenParser(HTMLParser):
+    def __init__(self, text: str):
+        super().__init__(convert_charrefs=False)
+        self.text = text
+        self.tokens: list[_MarkupToken] = []
+        self._line_starts = [0]
+        self._line_starts.extend(match.end() for match in re.finditer("\n", text))
+
+    def _offset(self) -> int:
+        line, column = self.getpos()
+        return self._line_starts[line - 1] + column
+
+    def _start_token(self, tag: str, attrs: list[tuple[str, str | None]], *, self_closing: bool) -> None:
+        start = self._offset()
+        raw = self.get_starttag_text() or "<" + tag + ">"
+        self.tokens.append(_MarkupToken("start", tag.casefold(), start, start + len(raw), raw, tuple(attrs), self_closing))
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        self._start_token(tag, attrs, self_closing=False)
+
+    def handle_startendtag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        self._start_token(tag, attrs, self_closing=True)
+
+    def handle_endtag(self, tag: str) -> None:
+        start = self._offset()
+        end = self.text.find(">", start)
+        if end < 0:
+            end = len(self.text)
+        else:
+            end += 1
+        self.tokens.append(_MarkupToken("end", tag.casefold(), start, end, self.text[start:end]))
+
+
+_FORM_CONTROL_TAGS = {"input", "select", "textarea", "button"}
+_VOID_HTML_TAGS = {
+    "area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr",
+}
+_FORM_ALLOWED_IDS = {"topsearch", "formdropdownlang", "searchform1", "searchform2"}
+_LOCAL_BROWSER_FORM_ROUTES = {
+    "/info/basics/factions/arathi/index.html",
+    "/info/basics/factions/argent/index.html",
+    "/info/basics/factions/badgesofjustice/badges-of-justice2.html",
+    "/info/basics/factions/warsong/index.html",
+    "/pvp/rewards-arena-class-armor.html",
+    "/pvp/rewards-class-armor.html",
+    "/pvp/rewards-vindicators-armor.html",
+    "/pvp/rewards-weapons.html",
+}
+_LOCAL_BROWSER_BRACKET_HANDLER_RE = re.compile(
+    r"\s*levelBracket\s*=\s*this\.form\.bracketSelector\.options\[this\.form\.bracketSelector\.selectedIndex\]\.value\s*;\s*reloadTable\s*\(\s*\)\s*;?\s*",
+    re.I | re.S,
+)
+_LOCAL_BROWSER_ARGENT_HANDLER_RE = re.compile(
+    r"\s*(?:changeQuestForRealThisTime|changeQuest|changeProfession)\s*\(\s*this\.value\s*\)\s*;?\s*",
+    re.I,
+)
+_SENSITIVE_FIELD_RE = re.compile(
+    r"(?:password|passwd|passcode|ssn|social[ _-]*security|credit[ _-]*card|card[ _-]*number|cvv|cvc|security[ _-]*code|billing|account[ _-]*number)",
+    re.I,
+)
+_BUSINESS_EVENT_RE = re.compile(
+    r"(?:directsubmit|undisable|commentarticle|confirmredeem|validation|setanon|nameopt|\.submit\s*\(|\bsubmit\s*\()",
+    re.I,
+)
+_STATIC_FORM_NOTICE = "Historical form — display only. Submissions are unavailable."
+
+
+def _attrs_map(attrs: tuple[tuple[str, str | None], ...] | list[tuple[str, str | None]]) -> dict[str, str]:
+    result: dict[str, str] = {}
+    for name, value in attrs:
+        if value is not None:
+            result.setdefault(name.casefold(), value)
+    return result
+
+
+def _form_identity(attrs: tuple[tuple[str, str | None], ...]) -> set[str]:
+    values: set[str] = set()
+    for key in ("id", "name", "class"):
+        value = _attrs_map(attrs).get(key, "")
+        for part in re.split(r"[\s,]+", value):
+            if part:
+                folded = part.casefold()
+                values.add(folded)
+                values.add(re.sub(r"[^a-z0-9]", "", folded))
+    return values
+
+
+def _form_kind(attrs: tuple[tuple[str, str | None], ...], route: str) -> str:
+    """Return ``allowed``, ``layout`` or ``business`` for one form token."""
+
+    values = _attrs_map(attrs)
+    identity = _form_identity(attrs)
+    if identity & _FORM_ALLOWED_IDS:
+        return "allowed"
+    route_lower = route.casefold().rstrip("/")
+    if route_lower == "/toplist" or route_lower.startswith("/toplist/"):
+        # Toplist has a browser-side filter shell whose form deliberately
+        # submits false.  It is a local browsing interaction, not a service
+        # submission.  Keep it even when the frozen markup has no id.
+        if "toplistfilters" in identity or values.get("onsubmit", "").strip().casefold() in {"return false", "return false;"}:
+            return "allowed"
+    if route_lower == "/contests/05-12-giveaway/contest.html" and "form3" in identity:
+        # The historical form3 wraps only the date-header table and is left
+        # as a non-form layout container.  It has no controls or submit path.
+        return "layout"
+    return "business"
+
+
+def _is_local_browser_form(
+    tokens: list[_MarkupToken],
+    start_index: int,
+    end_index: int | None,
+    route: str,
+) -> bool:
+    """Recognize the small, source-confirmed family of local filter forms.
+
+    These forms are anonymous in the frozen HTML, so identity-only allowlists
+    cannot preserve them.  Require both the exact route family and the
+    expected select body/handler; a random anonymous form or a POST form with
+    a select remains business content.
+    """
+
+    route_lower = route.casefold().rstrip("/")
+    if route_lower not in _LOCAL_BROWSER_FORM_ROUTES:
+        return False
+    form_attrs = _attrs_map(tokens[start_index].attrs)
+    if any(name in form_attrs for name in ("action", "method", "enctype", "id", "name")):
+        return False
+    if any(name.casefold().startswith("on") for name, _ in tokens[start_index].attrs):
+        return False
+    limit = end_index if end_index is not None else len(tokens)
+    controls = [
+        token
+        for token_index, token in enumerate(tokens)
+        if start_index < token_index < limit
+        and token.kind == "start"
+        and token.name in _FORM_CONTROL_TAGS
+    ]
+    if not controls or any(token.name != "select" for token in controls):
+        return False
+    for token in controls:
+        values = _attrs_map(token.attrs)
+        onchange = values.get("onchange", "")
+        if route_lower == "/info/basics/factions/argent/index.html":
+            if not _LOCAL_BROWSER_ARGENT_HANDLER_RE.fullmatch(onchange):
+                return False
+        else:
+            if values.get("name", "").casefold() != "bracketselector":
+                return False
+            if not _LOCAL_BROWSER_BRACKET_HANDLER_RE.fullmatch(onchange):
+                return False
+    return True
+
+
+def _safe_render_attrs(
+    tag: str,
+    attrs: tuple[tuple[str, str | None], ...],
+    *,
+    drop_events: bool = False,
+    drop_submit: bool = False,
+    extra_class: str | None = None,
+) -> str:
+    kept: list[tuple[str, str | None]] = []
+    seen: set[str] = set()
+    drop_submit_names = {
+        "action", "method", "enctype", "encoding", "target", "formenctype", "formmethod", "formtarget", "formaction",
+        "accept-charset", "novalidate",
+    }
+    for name, value in attrs:
+        lname = name.casefold()
+        if lname in seen:
+            continue
+        if drop_events and lname.startswith("on"):
+            continue
+        if drop_submit and lname in drop_submit_names:
+            continue
+        if drop_submit and lname == "autocomplete":
+            continue
+        if drop_submit and lname == "form":
+            continue
+        if lname == "class" and extra_class:
+            value = ((value or "").strip() + " " + extra_class).strip()
+        kept.append((name, value))
+        seen.add(lname)
+    if extra_class and "class" not in seen:
+        kept.append(("class", extra_class))
+    rendered: list[str] = []
+    for name, value in kept:
+        rendered.append(name if value is None else f'{name}="{html.escape(value, quote=True)}"')
+    return (" " + " ".join(rendered)) if rendered else ""
+
+
+def _static_span(label: str, kind: str) -> str:
+    return '<span class="offline-archive-control" data-offline-control="' + html.escape(kind, quote=True) + '">' + html.escape(label) + "</span>"
+
+
+def _plain_visible_text(text: str) -> str:
+    text = re.sub(r"<!--.*?-->", " ", text, flags=re.S)
+    text = re.sub(r"<[^>]*>", " ", text, flags=re.S)
+    return " ".join(html.unescape(text).split())
+
+
+def _selected_option_text(text: str) -> str:
+    options = list(re.finditer(r"<option\b(?P<attrs>[^>]*)>(?P<body>.*?)</option\s*>", text, re.I | re.S))
+    if not options:
+        return _plain_visible_text(text)
+    selected = next((option for option in options if re.search(r"\bselected(?:\s*=|\s*$)", option.group("attrs"), re.I)), options[0])
+    return _plain_visible_text(selected.group("body"))
+
+
+def _sensitive_attrs(attrs: tuple[tuple[str, str | None], ...]) -> bool:
+    values = _attrs_map(attrs)
+    field_type = values.get("type", "text").casefold()
+    return field_type == "password" or bool(_SENSITIVE_FIELD_RE.search(" ".join(values.get(key, "") for key in ("name", "id", "autocomplete", "aria-label"))))
+
+
+def _static_control_replacement(token: _MarkupToken, text: str, end_token: _MarkupToken | None) -> str:
+    values = _attrs_map(token.attrs)
+    tag = token.name
+    field_type = values.get("type", "text").casefold()
+    sensitive = _sensitive_attrs(token.attrs)
+    if tag == "input":
+        if field_type == "hidden":
+            return ""
+        if field_type == "image":
+            image_attrs: list[tuple[str, str | None]] = []
+            for name, value in token.attrs:
+                lname = name.casefold()
+                if lname in {"src", "alt", "title", "width", "height", "class", "style", "border", "align", "hspace", "vspace"}:
+                    image_attrs.append((name, value))
+            return "<img" + _safe_render_attrs("img", tuple(image_attrs)) + " />"
+        if field_type == "file":
+            label = "File upload unavailable in archive"
+        elif sensitive:
+            label = "Unavailable"
+        elif field_type in {"checkbox", "radio"}:
+            label = "Selected" if "checked" in {name.casefold() for name, _ in token.attrs} else "Not selected"
+        else:
+            label = values.get("value", "") or values.get("placeholder", "") or "—"
+        return _static_span(label, "input")
+    inner = ""
+    if end_token is not None:
+        inner = text[token.end:end_token.start]
+    if tag == "select":
+        label = _selected_option_text(inner)
+        return _static_span(label or "—", "select")
+    if tag == "textarea":
+        label = "Unavailable" if sensitive else (_plain_visible_text(inner) or "—")
+        return _static_span(label, "textarea")
+    if tag == "button":
+        label = _plain_visible_text(inner) or values.get("value", "") or "—"
+        return _static_span(label, "button")
+    return _static_span("Field", tag)
+
+
+def disable_sensitive_forms(text: str, route: str = "") -> str:
+    """Render non-search forms as inert archive content.
+
+    This is deliberately a token/position pass instead of a ``<form>...</form>``
+    regular expression.  The preserved pages contain forms inside tables,
+    nested form tags, controls with an external ``form=`` binding, and
+    malformed/unclosed forms.  ``HTMLParser`` provides tag boundaries while
+    the original localized text is retained for every untouched range.
+    """
+
+    parser = _MarkupTokenParser(text)
+    try:
+        parser.feed(text)
+        parser.close()
+    except Exception as exc:
+        raise PagesExportError(f"form safety tokenization failed for {route or '<unknown-route>'}") from exc
+    tokens = parser.tokens
+    if not any(token.name == "form" and token.kind == "start" for token in tokens):
+        return text
+
+    form_kinds: dict[int, str] = {}
+    form_ids: dict[str, str] = {}
+    form_start_stack: list[int] = []
+    form_end_for_start: dict[int, int] = {}
+    form_start_for_end: dict[int, int] = {}
+    for index, token in enumerate(tokens):
+        if token.kind == "start" and token.name == "form":
+            kind = _form_kind(token.attrs, route)
+            form_kinds[index] = kind
+            values = _attrs_map(token.attrs)
+            for key in (values.get("id", ""), values.get("name", "")):
+                if key:
+                    form_ids[key.casefold()] = kind
+            if not token.self_closing:
+                form_start_stack.append(index)
+        elif token.kind == "end" and token.name == "form":
+            if form_start_stack:
+                start_index = form_start_stack.pop()
+                form_end_for_start[start_index] = index
+                form_start_for_end[index] = start_index
+
+    # Some preserved browsing filters use anonymous <form> wrappers.  Keep
+    # only the source-confirmed family whose exact route and select handler
+    # prove that it is a local view switch; unknown anonymous forms stay
+    # business forms and are rendered inert below.
+    for start_index, kind in list(form_kinds.items()):
+        if kind == "business" and _is_local_browser_form(tokens, start_index, form_end_for_start.get(start_index), route):
+            form_kinds[start_index] = "allowed"
+
+    # ``form3`` is a known date-header layout wrapper, but keep the decision
+    # evidence-based: if a future capture places any control inside it (or
+    # binds a control to it from outside), treat it as a business form.
+    for start_index, kind in list(form_kinds.items()):
+        if kind != "layout":
+            continue
+        form_token = tokens[start_index]
+        end_index = form_end_for_start.get(start_index)
+        limit = end_index if end_index is not None else len(tokens)
+        has_control = any(
+            token.kind == "start"
+            and token.name in _FORM_CONTROL_TAGS
+            and (
+                start_index < token_index < limit
+                or _attrs_map(token.attrs).get("form", "").casefold() in _form_identity(form_token.attrs)
+            )
+            for token_index, token in enumerate(tokens)
+        )
+        if has_control:
+            form_kinds[start_index] = "business"
+
+    # Rebuild bindings after the evidence-based form3 decision.
+    form_ids.clear()
+    for start_index, kind in form_kinds.items():
+        values = _attrs_map(tokens[start_index].attrs)
+        for key in (values.get("id", ""), values.get("name", "")):
+            if key:
+                form_ids[key.casefold()] = kind
+
+    # Pair regular controls for whole-region replacements.  Void elements are
+    # intentionally excluded; an explicit legacy </input> is handled below.
+    tag_stack: list[tuple[str, int]] = []
+    pair_end_for_start: dict[int, int] = {}
+    for index, token in enumerate(tokens):
+        if token.kind == "start":
+            if not token.self_closing and token.name not in _VOID_HTML_TAGS:
+                tag_stack.append((token.name, index))
+        elif token.kind == "end":
+            for stack_index in range(len(tag_stack) - 1, -1, -1):
+                name, start_index = tag_stack[stack_index]
+                if name == token.name:
+                    pair_end_for_start[start_index] = index
+                    del tag_stack[stack_index:]
+                    break
+
+    # A few old pages use </input>.  Pair only the immediately relevant
+    # closing token so an unclosed input cannot swallow later controls.
+    for index, token in enumerate(tokens):
+        if token.kind != "start" or token.name != "input" or token.self_closing:
+            continue
+        for candidate in range(index + 1, len(tokens)):
+            other = tokens[candidate]
+            if other.kind == "start" and other.name == "input":
+                break
+            if other.kind == "end" and other.name == "input":
+                pair_end_for_start[index] = candidate
+                break
+
+    # Determine the nearest business form for every token.  Layout-only
+    # form3 is not pushed, so its unclosed tag cannot accidentally capture the
+    # remainder of the page.  Explicit form= bindings always take precedence.
+    active_forms: list[tuple[int, str]] = []
+    owner_kind: dict[int, str | None] = {}
+    for index, token in enumerate(tokens):
+        if token.kind == "start" and token.name == "form":
+            kind = form_kinds.get(index, "business")
+            if kind != "layout":
+                active_forms.append((index, kind))
+        elif token.kind == "end" and token.name == "form":
+            start_index = form_start_for_end.get(index)
+            if start_index is not None:
+                for stack_index in range(len(active_forms) - 1, -1, -1):
+                    if active_forms[stack_index][0] == start_index:
+                        del active_forms[stack_index:]
+                        break
+        if token.kind == "start" and token.name in _FORM_CONTROL_TAGS:
+            values = _attrs_map(token.attrs)
+            explicit_form = values.get("form", "").casefold()
+            if explicit_form and explicit_form in form_ids:
+                owner_kind[index] = form_ids[explicit_form]
+            elif active_forms:
+                owner_kind[index] = active_forms[-1][1]
+            else:
+                owner_kind[index] = None
+
+    replacements: list[tuple[int, int, str]] = []
+    covered_controls: list[tuple[int, int]] = []
+    business_form_indices = {index for index, kind in form_kinds.items() if kind == "business"}
+    layout_form_indices = {index for index, kind in form_kinds.items() if kind == "layout"}
+
+    for index, token in enumerate(tokens):
+        if token.kind == "start" and token.name == "form":
+            kind = form_kinds.get(index, "business")
+            if kind == "allowed":
+                continue
+            if kind == "layout":
+                replacement = "<div" + _safe_render_attrs("div", token.attrs, drop_events=True, drop_submit=True, extra_class="offline-archive-layout") + ">"
+            else:
+                replacement = (
+                    "<div"
+                    + _safe_render_attrs("div", token.attrs, drop_events=True, drop_submit=True, extra_class="offline-archive-form offline-business-form")
+                    + ' data-offline-form="static" data-offline-static-form="true">'
+                    + '<p class="offline-archive-notice offline-form-notice">'
+                    + _STATIC_FORM_NOTICE
+                    + "</p>"
+                )
+            replacements.append((token.start, token.end, replacement))
+        elif token.kind == "end" and token.name == "form":
+            start_index = form_start_for_end.get(index)
+            if start_index in business_form_indices or start_index in layout_form_indices:
+                replacements.append((token.start, token.end, "</div>"))
+
+    # Select/textarea/button regions are replaced as one range, so no option,
+    # event or nested control survives inside the static span.
+    for index, token in enumerate(tokens):
+        if token.kind != "start" or token.name not in _FORM_CONTROL_TAGS:
+            continue
+        owner = owner_kind.get(index)
+        values = _attrs_map(token.attrs)
+        event_text = " ".join(value or "" for name, value in token.attrs if name.casefold().startswith("on"))
+        if owner == "allowed":
+            continue
+        outside_business = owner != "business" and bool(_BUSINESS_EVENT_RE.search(event_text))
+        suspicious_outside = owner != "business" and (
+            _sensitive_attrs(token.attrs)
+            or values.get("type", "").casefold() in {"password", "file", "hidden", "submit", "reset", "image"}
+        )
+        if owner != "business" and not outside_business and not suspicious_outside:
+            continue
+        end_index = pair_end_for_start.get(index)
+        end_token = tokens[end_index] if end_index is not None else None
+        end_offset = end_token.end if end_token is not None else token.end
+        replacements.append((token.start, end_offset, _static_control_replacement(token, text, end_token)))
+        covered_controls.append((token.start, end_offset))
+
+    def is_covered(start: int, end: int) -> bool:
+        return any(start >= covered_start and end <= covered_end for covered_start, covered_end in covered_controls)
+
+    # Remove direct business event attributes from ordinary descendants that
+    # remain visible in a staticized form.  Search/navigation forms are never
+    # in this branch and retain their historical local behavior.
+    active_business: list[int] = []
+    for index, token in enumerate(tokens):
+        if token.kind == "start" and token.name == "form":
+            kind = form_kinds.get(index, "business")
+            if kind == "business":
+                active_business.append(index)
+        elif token.kind == "end" and token.name == "form":
+            start_index = form_start_for_end.get(index)
+            if start_index is not None:
+                for stack_index in range(len(active_business) - 1, -1, -1):
+                    if active_business[stack_index] == start_index:
+                        del active_business[stack_index:]
+                        break
+        if token.kind != "start" or not active_business or token.name == "form" or is_covered(token.start, token.end):
+            continue
+        event_text = " ".join(value or "" for name, value in token.attrs if name.casefold().startswith("on"))
+        if not event_text and not any(name.casefold() in {"formaction", "formenctype", "formmethod", "formtarget"} for name, _ in token.attrs):
+            continue
+        replacements.append((token.start, token.end, "<" + token.name + _safe_render_attrs(token.name, token.attrs, drop_events=True, drop_submit=True) + (" />" if token.self_closing else ">")))
+
+    if not replacements:
+        return text
+    replacements.sort(key=lambda item: (item[0], -(item[1] - item[0])))
+    output: list[str] = []
+    cursor = 0
+    for start, end, replacement in replacements:
+        if start < cursor:
+            continue
+        output.append(text[cursor:start])
+        output.append(replacement)
+        cursor = end
+    output.append(text[cursor:])
+    return "".join(output)
+
+
+def rewrite_wrath_thumbnails_script(text: str) -> str:
+    """Harden Wrath thumbnail pagination without changing other expansions."""
+
+    query_pattern = re.compile(
+        r"var\s+query\s*=\s*window\.location\.search\.substring\(1\)\s*;"
+        r"\s*var\s+vars\s*=\s*query\.split\(\"s=\"\)\s*;"
+        r"\s*/\*.*?\*/\s*"
+        r"var\s+queryCurrentPage\s*=\s*vars\[1\]\s*;\s*"
+        r"var\s+queryTotalPages\s*;\s*"
+        r"if\s*\(\s*!queryCurrentPage\s*\)\s*\{\s*"
+        r"queryCurrentPage\s*=\s*1\s*;\s*queryTotalPages\s*=\s*1\s*;\s*\}\s*",
+        re.I | re.S,
     )
+    query_replacement = """var queryParams = new URLSearchParams(window.location.search);
+var queryValues = queryParams.getAll(\"s\");
+var queryCurrentPage = 1;
+if (queryValues.length === 1 && /^[1-9][0-9]*$/.test(queryValues[0])) {
+\tvar parsedPage = Number(queryValues[0]);
+\tif (Number.isSafeInteger(parsedPage) && parsedPage >= 1)
+\t\tqueryCurrentPage = parsedPage;
+}
+var queryTotalPages = 1;
+"""
+    text, query_count = query_pattern.subn(query_replacement, text, count=1)
+    if query_count != 1:
+        raise PagesExportError("Wrath thumbnails script query parser did not match the expected fragment")
 
-    def form_replace(match: re.Match[str]) -> str:
-        attrs = match.group("attrs")
-        body = match.group("body")
-        block = match.group(0)
-        if not sensitive_re.search(attrs + body):
-            return block
-        if "data-offline-disabled" not in attrs.casefold():
-            attrs += ' data-offline-disabled="true" onsubmit="return false"'
-        def disable_control(control: re.Match[str]) -> str:
-            tag = control.group(0)
-            if re.search(r"\bdisabled\s*=", tag, re.I):
-                return tag
-            return tag[:-1] + ' disabled="disabled">'
-        body = re.sub(r"<input\b[^>]*?(?:type\s*=\s*['\"]?(?:password|credit-card|creditcard)['\"]?|name\s*=\s*['\"]?[^'\"]*(?:password|passwd|card|cvv|account|payment|billing)[^'\"]*['\"]?)[^>]*>", disable_control, body, flags=re.I)
-        body = re.sub(r"<button\b[^>]*\btype\s*=\s*['\"]?submit['\"]?[^>]*>", disable_control, body, flags=re.I)
-        body = re.sub(r"<input\b[^>]*\btype\s*=\s*['\"]?submit['\"]?[^>]*>", disable_control, body, flags=re.I)
-        return "<form" + attrs + ">" + body + "</form>"
+    entry_pattern = re.compile(r"function\s+printPageNumbers\s*\(\s*\)\s*\{", re.I)
+    entry_replacement = """function printPageNumbers() {
+\tvar actualPages = Number(pages);
+\tif (!Number.isSafeInteger(actualPages) || actualPages < 1)
+\t\tactualPages = 1;
+\tqueryTotalPages = actualPages;
+\tif (!Number.isSafeInteger(queryCurrentPage) || queryCurrentPage < 1 || queryCurrentPage > actualPages)
+\t\tqueryCurrentPage = 1;
+\tcurrentPage = queryCurrentPage;
+"""
+    text, entry_count = entry_pattern.subn(entry_replacement, text, count=1)
+    if entry_count != 1:
+        raise PagesExportError("Wrath thumbnails script printPageNumbers entry did not match the expected fragment")
 
-    return form_re.sub(form_replace, text)
+    previous_pattern = re.compile(r"var\s+calcPreviousPage\s*=\s*eval\(\s*queryCurrentPage\s*\)\s*-\s*1\s*;", re.I)
+    text, previous_count = previous_pattern.subn("var calcPreviousPage = queryCurrentPage - 1;", text, count=1)
+    next_pattern = re.compile(r"var\s+calcNextPage\s*=\s*eval\(\s*queryCurrentPage\s*\)\s*\+\s*1\s*;", re.I)
+    text, next_count = next_pattern.subn("var calcNextPage = queryCurrentPage + 1;", text, count=1)
+    if previous_count != 1 or next_count != 1:
+        raise PagesExportError("Wrath thumbnails script page calculations did not match the expected eval fragments")
+    return text
 
 
 def runtime_js(base_path: str, route_map: dict[str, str] | None = None) -> str:
@@ -821,7 +1334,7 @@ def export_pages(
                 text = mirror.rewrite_html(text, base_url=base_url, localizer=localizer, recorder=recorder, source_sha=source_sha, compat_assets=[])
                 text = rewrite_inline_scripts(text, base_url=base_url, localizer=localizer, recorder=recorder)
                 text = normalize_html_charset(text)
-                text = disable_sensitive_forms(text)
+                text = disable_sensitive_forms(text, route=route)
                 text = inject_html_runtime(text, base_path=base_path, source_sha=source_sha)
                 derived = text.encode("utf-8")
                 stats["html_derived"] += 1
@@ -837,6 +1350,8 @@ def export_pages(
                     text = rewrite_compat_script(text)
                 if route == "/info/encyclopedia/scripts/cascade.js":
                     text = rewrite_cascade_script(text)
+                if route == "/wrath/js/thumbnailslayout.js":
+                    text = rewrite_wrath_thumbnails_script(text)
                 derived = text.encode("utf-8")
                 stats["js_derived"] += 1
             elif kind in {"xsl", "xml", "legacy_component"}:

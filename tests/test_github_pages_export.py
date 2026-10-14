@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 from pathlib import Path
 import sys
 import tempfile
@@ -77,7 +78,11 @@ class GithubPagesExportTests(unittest.TestCase):
             self.assertIn("/WOW-Encyclopedia-Deployable-Archive/__offline/pages_runtime.js", page)
             self.assertIn("Content-Security-Policy", page)
             self.assertIn("form-action", page)
-            self.assertIn('disabled="disabled"', page)
+            self.assertNotRegex(page, r"<form\b")
+            self.assertNotRegex(page, r"<(?:input|select|textarea|button)\b")
+            self.assertIn("offline-archive-notice", page)
+            self.assertIn("Unavailable", page)
+            self.assertNotIn('name="password"', page)
             self.assertIn("/WOW-Encyclopedia-Deployable-Archive/article.xml.html", page)
             self.assertIn("Unofficial historical educational preservation (not affiliated with Blizzard)", page)
             self.assertIn('topicsArray={elune:{linkString:"/WOW-Encyclopedia-Deployable-Archive/article.xml.html"}};', page)
@@ -122,6 +127,96 @@ class GithubPagesExportTests(unittest.TestCase):
             manifest.write_text(json.dumps(data), encoding="utf-8")
             with self.assertRaises(pages.PagesExportError):
                 pages.export_pages(source_site=site, manifest_path=manifest, output=output, workspace_root=base, min_free_bytes=0)
+
+    def test_form_token_pass_handles_external_controls_and_preserves_search(self) -> None:
+        text = """<div>
+<form id=biz method=post action=/submit onsubmit="directsubmit()">
+<input type=password name=ssn value=SECRET onclick="undisable()"><input type=hidden name=token value=SECRET>
+<select name=region><option value=US>US</option><option value=EU selected>EU</option></select>
+<textarea name=comment onkeyup="submit()">visible comment</textarea>
+<button type=submit onclick="submit()">Send</button>
+<input type=image src=/send.gif alt="Send" onclick="biz.submit()">
+<input type=file name=upload>
+</form><input form=biz type=text value="outside" onclick="directsubmit()">
+<form name=topSearch onsubmit="return searchCall()"><input name=searchQuery value="keep"></form>
+<form id=form3><table><tr><td>layout</td></tr></table>
+</div>"""
+        output = pages.disable_sensitive_forms(text, route="/contests/05-12-giveaway/contest.html")
+        self.assertEqual(len(re.findall(r"<form\b", output, re.I)), 1)
+        self.assertNotIn('<form id="biz"', output)
+        self.assertNotRegex(output, r"<(?:select|textarea|button)\b")
+        self.assertNotRegex(output, r'<input\b[^>]*\b(?:password|hidden|type="image")')
+        self.assertRegex(output, r"<form\b[^>]*\bname=topSearch\b")
+        self.assertIn("offline-archive-notice", output)
+        self.assertIn("Unavailable", output)
+        self.assertIn('data-offline-control="select">EU</span>', output)
+        self.assertIn("File upload unavailable in archive", output)
+        self.assertIn('<img src="/send.gif" alt="Send" />', output)
+        self.assertIn("visible comment", output)
+        self.assertNotIn("SECRET", output)
+        self.assertNotIn("directsubmit", output)
+        self.assertNotIn("undisable", output)
+        self.assertNotIn("onclick", output)
+        search = pages.disable_sensitive_forms(
+            '<form name="searchForm1"><input type="hidden" name="gameId" value="11"><input type="submit" value="Search"></form>',
+            route="/policy/index.html",
+        )
+        self.assertIn('<form name="searchForm1">', search)
+        self.assertIn('type="hidden"', search)
+        self.assertIn('type="submit"', search)
+
+    def test_local_filter_forms_require_route_and_handler_evidence(self) -> None:
+        local_filter_cases = {
+            "/info/basics/factions/arathi/index.html": "info/basics/factions/arathi/index.html",
+            "/info/basics/factions/argent/index.html": "info/basics/factions/argent/index.html",
+            "/info/basics/factions/badgesofjustice/badges-of-justice2.html": "info/basics/factions/badgesofjustice/badges-of-justice2.html",
+            "/info/basics/factions/warsong/index.html": "info/basics/factions/warsong/index.html",
+            "/pvp/rewards-arena-class-armor.html": "pvp/rewards-arena-class-armor.html",
+            "/pvp/rewards-class-armor.html": "pvp/rewards-class-armor.html",
+            "/pvp/rewards-vindicators-armor.html": "pvp/rewards-vindicators-armor.html",
+            "/pvp/rewards-weapons.html": "pvp/rewards-weapons.html",
+        }
+        for route, relative in local_filter_cases.items():
+            source = (ROOT / "offline/site" / relative).read_text(encoding="utf-8")
+            output = pages.disable_sensitive_forms(source, route=route)
+            self.assertEqual(output.count("offline-archive-notice"), 0, route)
+            self.assertGreaterEqual(len(re.findall(r"<form\b", output, re.I)), 2, route)
+            self.assertGreaterEqual(len(re.findall(r"<select\b", output, re.I)), 2, route)
+
+        # Route and handler evidence are both required; an anonymous unknown
+        # form with the same-looking select must remain inert.
+        unknown = pages.disable_sensitive_forms(
+            '<form><select name="bracketSelector" onchange="levelBracket=this.form.bracketSelector.options[this.form.bracketSelector.selectedIndex].value; reloadTable();"><option>One</option></select></form>',
+            route="/info/basics/factions/unknown/index.html",
+        )
+        self.assertNotRegex(unknown, r"<form\b")
+        self.assertNotRegex(unknown, r"<select\b")
+        self.assertIn("offline-archive-notice", unknown)
+
+        same_route_with_extra_submit = pages.disable_sensitive_forms(
+            '<form><select name="bracketSelector" onchange="levelBracket=this.form.bracketSelector.options[this.form.bracketSelector.selectedIndex].value; reloadTable(); directsubmit();"><option>One</option></select></form>',
+            route="/pvp/rewards-class-armor.html",
+        )
+        self.assertNotRegex(same_route_with_extra_submit, r"<form\b")
+        self.assertNotRegex(same_route_with_extra_submit, r"<select\b")
+        self.assertIn("offline-archive-notice", same_route_with_extra_submit)
+        post_with_filter = pages.disable_sensitive_forms(
+            '<form method="post" action="/submit"><select name="bracketSelector" onchange="levelBracket=this.form.bracketSelector.options[this.form.bracketSelector.selectedIndex].value; reloadTable();"><option>One</option></select></form>',
+            route="/pvp/rewards-class-armor.html",
+        )
+        self.assertNotRegex(post_with_filter, r"<form\b")
+        self.assertNotRegex(post_with_filter, r"<select\b")
+
+    def test_wrath_thumbnail_rewrite_is_strict_and_route_scoped(self) -> None:
+        source = (ROOT / "offline/site/wrath/js/thumbnailslayout.js").read_text(encoding="utf-8")
+        rewritten = pages.rewrite_wrath_thumbnails_script(source)
+        self.assertIn("URLSearchParams", rewritten)
+        self.assertEqual(rewritten.count("eval("), 0)
+        self.assertIn("queryParams.getAll(\"s\")", rewritten)
+        self.assertIn("queryTotalPages = actualPages", rewritten)
+        self.assertIn("currentPage = queryCurrentPage", rewritten)
+        with self.assertRaises(pages.PagesExportError):
+            pages.rewrite_wrath_thumbnails_script(source.replace('query.split("s=")', 'query.split("page=")'))
 
 
 if __name__ == "__main__":
