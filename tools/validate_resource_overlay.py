@@ -7,6 +7,7 @@ import argparse
 import hashlib
 import json
 import re
+import shutil
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import unquote
@@ -22,6 +23,8 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--site", type=Path, default=ROOT / ".scratch/pages-resources-20261014")
     parser.add_argument("--output", type=Path, default=ROOT / "research/resource-integration-20261014/root-acceptance.json")
+    parser.add_argument("--max-bytes", type=int, default=pages.DEFAULT_MAX_BYTES)
+    parser.add_argument("--min-free-bytes", type=int, default=pages.DEFAULT_MIN_FREE_BYTES)
     args = parser.parse_args()
     site = args.site.resolve()
     prov = json.loads((site / "export-provenance.json").read_text(encoding="utf-8"))
@@ -81,10 +84,14 @@ def main() -> None:
         "previous_placeholder_occurrences": 67,
         "direct_gallery_pairs_available": direct_pairs,
         "workspace_bytes_including_git": pages.workspace_size(ROOT),
+        "workspace_limit_bytes": args.max_bytes,
+        "drive_free_bytes": shutil.disk_usage(site).free,
+        "min_free_bytes": args.min_free_bytes,
     }
     result["passed"] = bool(manifest_unchanged and result["all_gallery_directories_correct"]
                             and images and result["image_bytes_unchanged"] and not remaining
-                            and result["workspace_bytes_including_git"] < pages.DEFAULT_MAX_BYTES)
+                            and (args.max_bytes is None or result["workspace_bytes_including_git"] < args.max_bytes)
+                            and result["drive_free_bytes"] >= args.min_free_bytes)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({key: value for key, value in result.items() if key != "gallery_directory_checks"}, indent=2))

@@ -7,6 +7,8 @@ from pathlib import Path
 import sys
 import tempfile
 import unittest
+from unittest import mock
+from types import SimpleNamespace
 
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT / "tools") not in sys.path:
@@ -16,6 +18,18 @@ import export_github_pages as pages  # noqa: E402
 
 
 class GithubPagesExportTests(unittest.TestCase):
+    def test_workspace_limit_is_optional_and_disk_reserve_still_applies(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            base, site, manifest = self._fixture(Path(tmp))
+            with mock.patch.object(pages, "workspace_size", return_value=15_000_000_000):
+                result = pages.export_pages(source_site=site, manifest_path=manifest, output=base / "uncapped", workspace_root=base, min_free_bytes=0)
+                self.assertEqual(result["workspace_bytes"], 15_000_000_000)
+                with self.assertRaisesRegex(pages.PagesExportError, "workspace budget exceeded"):
+                    pages.export_pages(source_site=site, manifest_path=manifest, output=base / "limited", workspace_root=base, max_bytes=14_000_000_000, min_free_bytes=0)
+            with mock.patch.object(pages.shutil, "disk_usage", return_value=SimpleNamespace(free=pages.DEFAULT_MIN_FREE_BYTES - 1)):
+                with self.assertRaisesRegex(pages.PagesExportError, "disk reserve"):
+                    pages.export_pages(source_site=site, manifest_path=manifest, output=base / "low-space", workspace_root=base)
+
     def _fixture(self, base: Path) -> tuple[Path, Path, Path]:
         site = base / "offline/site"
         site.mkdir(parents=True)

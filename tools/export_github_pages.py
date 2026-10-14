@@ -36,7 +36,7 @@ DEFAULT_SITE = ROOT / "offline/site"
 DEFAULT_MANIFEST = ROOT / "offline/build-manifest.json"
 DEFAULT_OUTPUT = ROOT / ".scratch/pages-preview"
 DEFAULT_BASE_PATH = "/WOW-Encyclopedia-Deployable-Archive/"
-DEFAULT_MAX_BYTES = 14_000_000_000
+DEFAULT_MAX_BYTES: int | None = None
 DEFAULT_MIN_FREE_BYTES = 11_005_853_696
 PAGES_CSP = (
     "default-src 'self' data: blob:; script-src 'self' 'unsafe-inline' 'unsafe-eval'; "
@@ -1632,7 +1632,7 @@ def export_pages(
     output: Path = DEFAULT_OUTPUT,
     base_path: str = DEFAULT_BASE_PATH,
     workspace_root: Path = ROOT,
-    max_bytes: int = DEFAULT_MAX_BYTES,
+    max_bytes: int | None = DEFAULT_MAX_BYTES,
     min_free_bytes: int = DEFAULT_MIN_FREE_BYTES,
     image_source_maps: list[Path] | tuple[Path, ...] = (),
     supplement_image_source_maps: list[Path] | tuple[Path, ...] = (),
@@ -1691,7 +1691,7 @@ def export_pages(
     overlays = primary_overlays + supplement_overlays
     overlay_bytes = primary_overlay_bytes + supplement_overlay_bytes
     estimate = output_estimate(records, overlay_bytes)
-    if before_workspace + estimate >= max_bytes:
+    if max_bytes is not None and before_workspace + estimate >= max_bytes:
         raise PagesExportError(f"workspace budget exceeded before export: {before_workspace}+{estimate} >= {max_bytes}")
     if free_before - estimate < min_free_bytes:
         raise PagesExportError(f"disk reserve would be breached before export: {free_before}-{estimate} < {min_free_bytes}")
@@ -2024,7 +2024,7 @@ def export_pages(
         (partial / "export-provenance.json").write_bytes(prov_data)
         after_workspace = workspace_size(workspace_root, output)
         free_after = shutil.disk_usage(output.parent).free
-        if after_workspace >= max_bytes or free_after < min_free_bytes:
+        if (max_bytes is not None and after_workspace >= max_bytes) or free_after < min_free_bytes:
             raise PagesExportError(f"budget exceeded after export: workspace={after_workspace}, free={free_after}")
         partial.replace(output)
         return {
@@ -2053,7 +2053,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--site", type=Path, default=DEFAULT_SITE)
     parser.add_argument("--manifest", type=Path, default=DEFAULT_MANIFEST)
     parser.add_argument("--base-path", default=DEFAULT_BASE_PATH)
-    parser.add_argument("--max-bytes", type=int, default=DEFAULT_MAX_BYTES)
+    parser.add_argument("--max-bytes", type=int, default=DEFAULT_MAX_BYTES, help="Optional total workspace limit; the disk free-space reserve always applies")
     parser.add_argument("--min-free-bytes", type=int, default=DEFAULT_MIN_FREE_BYTES)
     parser.add_argument("--image-source-map", dest="image_source_maps", action="append", type=Path, default=[])
     parser.add_argument("--supplement-image-source-map", dest="supplement_image_source_maps", action="append", type=Path, default=[])
