@@ -128,6 +128,69 @@ class GithubPagesExportTests(unittest.TestCase):
             self.assertIn('String(topicsArray[topicsArray[document.title].parentString].linkString).split("/").pop()', cascade)
             self.assertEqual((site / "index.xml").read_text(encoding="utf-8").split("<meta", 1)[0], "<html><head>")
 
+    def test_prefixed_account_menu_labels_on_real_home_and_encyclopedia_pages(self) -> None:
+        base_path = pages.DEFAULT_BASE_PATH
+        for route in ("/index.xml", "/info/encyclopedia/index.xml"):
+            with self.subTest(route=route):
+                source = (ROOT / "offline/site" / route.lstrip("/")).read_text(
+                    encoding="utf-8", errors="replace"
+                )
+                prefixed = re.sub(
+                    r'href="/__offline/missing\.html',
+                    'href="' + base_path + '__offline/missing.html',
+                    source,
+                    flags=re.I,
+                )
+                derived = pages.historical_exhibits.transform_derived_page(
+                    prefixed, route, base_path=base_path
+                )
+                self.assertIn("Historical: Create Account", derived)
+                self.assertIn("Historical: Manage Account", derived)
+                self.assertIn("Historical: Retrieve Password", derived)
+                self.assertIn(
+                    base_path + '__offline/missing.html?source=', derived
+                )
+
+    def test_html_prolog_bom_is_removed_before_runtime_injection(self) -> None:
+        source = (
+            "<!-- derived comment -->\n\ufeff<!doctype html><html><head>"
+            "<title>Legacy</title></head><body>literal\ufeffbody</body></html>"
+        )
+        normalized = pages.normalize_html_prolog(source)
+        self.assertNotIn("\ufeff<!doctype", normalized.casefold())
+        self.assertIn("literal\ufeffbody", normalized)
+        derived = pages.inject_html_runtime(
+            normalized,
+            base_path=pages.DEFAULT_BASE_PATH,
+            source_sha="fixture",
+        )
+        head_start = derived.casefold().index("<head")
+        head_end = derived.casefold().index("</head>")
+        csp = derived.index('http-equiv="Content-Security-Policy"')
+        self.assertLess(head_start, csp)
+        self.assertLess(csp, head_end)
+        self.assertIn("literal\ufeffbody", derived)
+
+    def test_story_exhibit_disables_only_retired_form_initializers(self) -> None:
+        route = "/community/stories/submit.html"
+        source = (ROOT / "offline/site" / route.lstrip("/")).read_text(
+            encoding="utf-8", errors="replace"
+        )
+        inert = pages.disable_sensitive_forms(source, route=route)
+        derived = pages.historical_exhibits.transform_derived_page(
+            inert, route, base_path=pages.DEFAULT_BASE_PATH
+        )
+        self.assertNotIn(
+            'nameopt(document.getElementById("displayInformation"))', derived
+        )
+        self.assertNotIn(
+            "circumsize(document.getElementById('story'),3000)", derived
+        )
+        self.assertIn("p7_eqCols2_10.js", derived)
+        self.assertIn("function count(", derived)
+        self.assertIn("searchCall()", derived)
+        self.assertIn("buildtopnav.js", derived)
+
     def test_iframe_fallback_urls_remain_local_on_raw_text_parsers(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             base, site, manifest = self._fixture(Path(tmp))

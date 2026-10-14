@@ -96,11 +96,12 @@ async function main() {
                 businessForms: [...document.forms].filter(form => !allowed(form)).map(form => form.name || form.id || '(unnamed)'),
                 editable: [...document.querySelectorAll('input,select,textarea,button,[contenteditable="true"]')].filter(el => !allowed(el.form) && !languageNavigation(el)).map(el => ({ tag: el.tagName, name: el.name || el.id, type: el.type })),
                 activeBusinessHandlers: [...document.querySelectorAll('*')].flatMap(el => [...el.attributes].filter(a => /^on/i.test(a.name) && /(?:\.submit\s*\(|undisable\s*\()/i.test(a.value)).map(a => a.value)),
-                archiveNotices: document.querySelectorAll('[data-offline-form="static"]').length
+                archiveNotices: document.querySelectorAll('[data-offline-form="static"]').length,
+                historicalExhibits: document.querySelectorAll('.historical-exhibit').length
               };
             });
             assert.deepEqual(state.businessForms, []); assert.deepEqual(state.editable, []); assert.deepEqual(state.activeBusinessHandlers, []);
-            if (file !== 'contests/05-12-giveaway/contest.html') assert.ok(state.archiveNotices > 0);
+            if (file !== 'contests/05-12-giveaway/contest.html') assert.ok(state.archiveNotices > 0 || state.historicalExhibits > 0);
             return { state };
           } finally { await page.close(); }
         });

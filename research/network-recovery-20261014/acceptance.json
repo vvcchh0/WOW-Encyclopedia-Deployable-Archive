@@ -1,0 +1,80 @@
+{
+  "checked_utc": "2026-10-14T10:17:52.396893+00:00",
+  "http_attempts": 12,
+  "response_body_bytes": 927,
+  "new_valid_images": 0,
+  "direct_first": true,
+  "system_network_settings_changed": false,
+  "tls_validation_disabled": false,
+  "baseline": {
+    "http_attempts": 6,
+    "default_direct_phase": "TCP connect timeout before TLS",
+    "proxy_controls_http": [
+      200,
+      404
+    ],
+    "proxy_jpeg_http": 429,
+    "proxy_jpeg_body_bytes": 162
+  },
+  "doh_initial": {
+    "http_attempts": 4,
+    "query_type": 255,
+    "method_deviation": "ANY query did not test the required A record; corrected later",
+    "google_proxy_failure": "CRYPT_E_REVOCATION_OFFLINE"
+  },
+  "doh_corrected": {
+    "http_attempts": 2,
+    "dns_status": 0,
+    "question_type": 1,
+    "ad": false,
+    "answers": [
+      {
+        "name": "web.archive.org",
+        "type": 1,
+        "TTL": 120,
+        "data": "207.241.237.3"
+      }
+    ],
+    "tls_validation": true,
+    "resolve_control": {
+      "curl_exit_code": 35,
+      "http_status": null,
+      "timing_seconds": {
+        "time_namelookup": 1.8e-05,
+        "time_connect": 0.262965,
+        "time_appconnect": 0.0,
+        "time_starttransfer": 0.0,
+        "time_total": 0.303805
+      },
+      "body_bytes": 0
+    }
+  },
+  "result": "No working replay transport; DNS override established TCP but failed before TLS completed",
+  "official_api_reference": "https://developers.cloudflare.com/1.1.1.1/encryption/dns-over-https/make-api-requests/dns-json/",
+  "local_evidence": [
+    {
+      "path": "research/network-recovery-20261014/diagnosis/summary.json",
+      "sha256": "2f344033e47500d5cdf2cd0150707937a74d50fe1ca4753659bc954400474c02"
+    },
+    {
+      "path": "research/network-recovery-20261014/diagnosis/run-001/diagnosis.json",
+      "sha256": "9710cda6639325f9b7d27687e2bd8498f1a30887a8341b06b121508d95185e62"
+    },
+    {
+      "path": "research/network-recovery-20261014/diagnosis/run-002-proxy/diagnosis.json",
+      "sha256": "3bb6b3f4987171d7987a82a9d424857b95953bbed6711475acfc349f6a1e8c84"
+    },
+    {
+      "path": "research/network-recovery-20261014/diagnosis/run-003-proxy-jpeg/diagnosis.json",
+      "sha256": "940ca1b4a293d7d84cdcd21d0e9ef818aa689b885ed65774840adaf50f4e876a"
+    },
+    {
+      "path": "research/network-recovery-20261014/diagnosis/process-local-dns-attempt/run-001/doh-comparison.json",
+      "sha256": "6f619b03d3cae9c7c4e24852e9a51902702ee1733b7839ac99f65f86d354aeea"
+    },
+    {
+      "path": "research/network-recovery-20261014/diagnosis/corrected-a-attempt/run-001/corrected-a-result.json",
+      "sha256": "c18305bc3af1e319e7a03ae35e2e12c5f40477b884358534e287fb59cd51ff1d"
+    }
+  ]
+}

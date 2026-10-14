@@ -22,5 +22,7 @@ Git 主树保存部署文件、工具、这些文档与关键验收；历史记�
 - [浏览版脚本与表单修复](browser-security-remediation-20261014.md)：分页参数处理、历史业务表单静态展示、验收与发布记录。
 - [Search Console 复核准备](search-console-review-20261014.md)：所有权验证、报告记录、英文复核说明与 Edge 补充。
 - [欺骗性网页与历史归档专项分析](google-deceptive-archive-analysis-20261014.md)：Google 官方依据、线上旧业务入口、视觉证据和后续方案。
+- [历史展品改造](historical-exhibits-20261014.md)：敏感业务措辞的派生层修改、实际验收及发布记录。
+- [资源连接诊断](network-recovery-20261014.md)：直连超时、代理回放 429、进程内 HTTPS DNS 与修复尝试。
 - [本地资源补充](resource-recovery-20261014.md)：独立图片补充层、图库目录修复、首批查询与本地验收。
 - [关联站点素材与第二批恢复](related-sites-recovery-20261014.md)：已有站点覆盖、欧服图片、素材目录、旧队列去重更正和本地验收证据。

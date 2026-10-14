@@ -47,6 +47,7 @@ PAGES_CSP = (
 if str(ROOT / "tools") not in sys.path:
     sys.path.insert(0, str(ROOT / "tools"))
 import offline_mirror as mirror  # noqa: E402
+import historical_exhibits  # noqa: E402
 
 
 class PagesExportError(RuntimeError):
@@ -765,6 +766,20 @@ def normalize_html_charset(text: str) -> str:
     if head and not re.search(r"<meta\b[^>]*charset", text[: text.lower().find("</head>")] if "</head>" in text.lower() else text, re.I):
         text = text[: head.end()] + '\n<meta charset="utf-8">' + text[head.end() :]
     return text
+
+
+def normalize_html_prolog(text: str) -> str:
+    """Remove BOMs stranded before the document's real HTML prolog only."""
+
+    document_start = re.search(
+        r"<!doctype\b|<html\b|<head\b", text, flags=re.I
+    )
+    if document_start is None:
+        return text
+    prolog = text[: document_start.start()]
+    if "\ufeff" not in prolog:
+        return text
+    return prolog.replace("\ufeff", "") + text[document_start.start() :]
 
 
 def inject_html_runtime(text: str, *, base_path: str, source_sha: str) -> str:
@@ -1804,6 +1819,8 @@ def export_pages(
                 text = rewrite_inline_scripts(text, base_url=base_url, localizer=localizer, recorder=recorder)
                 text = normalize_html_charset(text)
                 text = disable_sensitive_forms(text, route=route)
+                text = historical_exhibits.transform_derived_page(text, route, base_path=base_path)
+                text = normalize_html_prolog(text)
                 text = inject_html_runtime(text, base_path=base_path, source_sha=source_sha)
                 derived = text.encode("utf-8")
                 stats["html_derived"] += 1

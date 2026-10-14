@@ -1,0 +1,66 @@
+{
+  "accepted_utc": "2026-10-14T10:59:57.195710+00:00",
+  "site": ".scratch/pages-historical-exhibits-20261014-v3",
+  "source_files": {
+    "tools/historical_exhibits.py": "97770f70573f793124a54e55c224d23376d4029fc515a3701d881a2fa76664b2",
+    "tools/export_github_pages.py": "98b355b35faf6d7a4eacfd622eedf2725dfbab6148a2a21c8f4dd580dae257fe",
+    "tools/validate_historical_exhibits.js": "8f096d04cbebada95435565df0037f17834b82fdcab31a278b4f71fbd33eae06"
+  },
+  "unit_tests": {
+    "command": "python -X utf8 -m unittest tests.test_historical_exhibits tests.test_github_pages_export tests.test_pages_image_overlay tests.test_pages_origin_routing tests.test_related_image_overlay",
+    "observed_count": 32,
+    "exit_code": 0,
+    "passed": true
+  },
+  "historical_exhibit_checks": {
+    "p0_scenarios": 12,
+    "p1_pages": 14,
+    "alias_checks": 1,
+    "cross_page_checks": 1,
+    "account_navigation_subcheck": true,
+    "reported_total": 29,
+    "unexpected_page_errors": 0,
+    "external_requests": 0,
+    "post_attempts": 0,
+    "expected_legacy_swf_blocks": 2,
+    "passed": true
+  },
+  "existing_browser_regression_checks": {
+    "pagination": 17,
+    "forms": 16,
+    "browsing": 6,
+    "total": 39,
+    "passed": true
+  },
+  "visual_review": {
+    "performed_by": "root agent",
+    "screenshots": [
+      "browser/desktop-js-visa_reward_index_html.png",
+      "browser/mobile-js-visa_reward_wow_login_html.png",
+      "browser/desktop-no-js-visa_reward_login_html.png"
+    ],
+    "result": "Historical identity and retired-service explanation readable; mobile first-screen notice complete; original button artwork shown as captioned noninteractive figures."
+  },
+  "resources": {
+    "export_manifest_sha256": "397f7dcdbc774d80c6f8c1f3dabf7933211ff182427bd2ef77c895752334f459",
+    "source_records": 8304,
+    "overlay_entities": 36,
+    "overlay_bytes": 1526500,
+    "image_bytes_unchanged": true,
+    "all_gallery_directories_correct": true,
+    "direct_gallery_pairs_available": 0,
+    "drive_free_bytes": 43374481408,
+    "min_free_bytes": 11005853696,
+    "workspace_limit_bytes": null
+  },
+  "network": {
+    "http_attempts": 12,
+    "new_valid_images": 0,
+    "result": "No working replay transport; DNS override established TCP but failed before TLS completed"
+  },
+  "frozen_tracked_files_diff_empty": true,
+  "review_submitted": false,
+  "google_triggering_url_identified": false,
+  "deployment_record": "deployment.json",
+  "passed": true
+}
