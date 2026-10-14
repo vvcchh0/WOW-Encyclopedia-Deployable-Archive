@@ -1,0 +1,322 @@
+{
+  "attempts": {
+    "attempt_001": {
+      "accepted": 0,
+      "evidence_root": "research/resource-resume-20261014/round004/entity/attempt-001-local-write-error",
+      "failure_class": "local_write_error_curl_exit_23",
+      "failure_streak_recorded": 1,
+      "note": "The raw/header parents were absent before curl; every response write failed locally. Downstream empty-body Pillow errors had per-process memory addresses, so the original same-failure counter did not reach three. This is a recorded procedural deviation, not an image rejection.",
+      "requests": 29,
+      "stop_reason": "planned_entities_completed"
+    },
+    "attempt_002": {
+      "accepted": 18,
+      "failure_class": "transport_tls_close_notify_curl_exit_56",
+      "last_attempted_rank": 20,
+      "note": "The downloader mkdir fix was applied before this retry; two entities reached HTTP 200 headers but Schannel closed without close_notify and yielded empty bodies.",
+      "requests": 20,
+      "stop_reason": "parent_requested_stop_after_local_write_probe",
+      "tls_failed": 2
+    },
+    "single_probe": {
+      "accepted_into_map": 0,
+      "evidence": "research/resource-resume-20261014/round004/entity/probe/rank013-probe-result.json",
+      "note": "One no-ALPN/insecure/ssl-no-revoke curl probe succeeded locally, but remains a diagnostic probe and is deliberately excluded from the map pending parent review.",
+      "requests": 1
+    }
+  },
+  "completed": {
+    "accepted": 18,
+    "not_attempted": 9,
+    "tls_failed": 2
+  },
+  "deployment_reconciliation": {
+    "new_unique_resources": 0,
+    "duplicate_existing_resources": 18,
+    "existing_route_check": "research/related-sites-20261014/integration/news-existing-route-check.json",
+    "note": "All 18 accepted historical replays are already present in the deployed build-manifest with matching derived SHA-256 values; they add no new deployed resource routes."
+  },
+  "failed_entities": [
+    {
+      "curl_exit_code": 56,
+      "failure_class": "transport_tls_close_notify_curl_exit_56",
+      "http_status": 200,
+      "length": 0,
+      "logical_url": "http://www.worldofwarcraft.com/news/images/06-05/5-18-06-1.jpg",
+      "metadata_path": "research/resource-resume-20261014/round004/entity/meta/013-c4f79464f4a22e8134bf.json",
+      "rank": 13,
+      "status": "transport_or_http_error"
+    },
+    {
+      "curl_exit_code": 56,
+      "failure_class": "transport_tls_close_notify_curl_exit_56",
+      "http_status": 200,
+      "length": 0,
+      "logical_url": "http://www.worldofwarcraft.com/news/images/06-05/5-4-06-1.jpg",
+      "metadata_path": "research/resource-resume-20261014/round004/entity/meta/019-d24f2bc8edbd05fd1e50.json",
+      "rank": 19,
+      "status": "transport_or_http_error"
+    }
+  ],
+  "generated_utc": "2026-10-14T06:31:25.562799+00:00",
+  "kind": "resource_resume_round004_final_checkpoint",
+  "network_cutoff": "No further network requests after the single diagnostic probe; remaining candidates require a new authorized batch.",
+  "network_requests_total": 50,
+  "not_attempted_entities": [
+    {
+      "indexed_capture_timestamp": "20080402044533",
+      "logical_url": "http://www.worldofwarcraft.com/news/images/06-05/5-4-06-3.jpg",
+      "rank": 21,
+      "status": "not_attempted_after_parent_stop"
+    },
+    {
+      "indexed_capture_timestamp": "20080402044601",
+      "logical_url": "http://www.worldofwarcraft.com/news/images/06-05/eggs.jpg",
+      "rank": 22,
+      "status": "not_attempted_after_parent_stop"
+    },
+    {
+      "indexed_capture_timestamp": "20080402044545",
+      "logical_url": "http://www.worldofwarcraft.com/news/images/06-05/emusic-thumb.jpg",
+      "rank": 23,
+      "status": "not_attempted_after_parent_stop"
+    },
+    {
+      "indexed_capture_timestamp": "20080402044529",
+      "logical_url": "http://www.worldofwarcraft.com/news/images/06-05/murloc-egg-thumb.jpg",
+      "rank": 24,
+      "status": "not_attempted_after_parent_stop"
+    },
+    {
+      "indexed_capture_timestamp": "20080402044535",
+      "logical_url": "http://www.worldofwarcraft.com/news/images/06-05/thaddius.jpg",
+      "rank": 25,
+      "status": "not_attempted_after_parent_stop"
+    },
+    {
+      "indexed_capture_timestamp": "20080402044603",
+      "logical_url": "http://www.worldofwarcraft.com/news/images/06-05/wallpaper1-thumb.jpg",
+      "rank": 26,
+      "status": "not_attempted_after_parent_stop"
+    },
+    {
+      "indexed_capture_timestamp": "20080402044519",
+      "logical_url": "http://www.worldofwarcraft.com/news/images/06-05/wallpaper2-thumb.jpg",
+      "rank": 27,
+      "status": "not_attempted_after_parent_stop"
+    },
+    {
+      "indexed_capture_timestamp": "20080402044606",
+      "logical_url": "http://www.worldofwarcraft.com/news/images/06-05/wallpaper3-thumb.jpg",
+      "rank": 28,
+      "status": "not_attempted_after_parent_stop"
+    },
+    {
+      "indexed_capture_timestamp": "20080402044525",
+      "logical_url": "http://www.worldofwarcraft.com/news/images/06-05/zeppelin-thumb.jpg",
+      "rank": 29,
+      "status": "not_attempted_after_parent_stop"
+    }
+  ],
+  "planned": 29,
+  "raw_evidence": {
+    "entity_root": "research/resource-resume-20261014/round004/entity",
+    "initial_invalid_attempt": "research/resource-resume-20261014/round004/entity/attempt-001-local-write-error",
+    "local_only": true
+  },
+  "rechecks": {
+    "accepted_files": [
+      {
+        "checks": {
+          "body_exists": true,
+          "cdx_digest": true,
+          "length": true,
+          "sha256": true
+        },
+        "logical_url": "http://www.worldofwarcraft.com/misc/murloclore/images/murloc.jpg",
+        "rank": 1
+      },
+      {
+        "checks": {
+          "body_exists": true,
+          "cdx_digest": true,
+          "length": true,
+          "sha256": true
+        },
+        "logical_url": "http://www.worldofwarcraft.com/news/images/05-11/year1/banner-bg.jpg",
+        "rank": 2
+      },
+      {
+        "checks": {
+          "body_exists": true,
+          "cdx_digest": true,
+          "length": true,
+          "sha256": true
+        },
+        "logical_url": "http://www.worldofwarcraft.com/news/images/05-11/year1/human.jpg",
+        "rank": 3
+      },
+      {
+        "checks": {
+          "body_exists": true,
+          "cdx_digest": true,
+          "length": true,
+          "sha256": true
+        },
+        "logical_url": "http://www.worldofwarcraft.com/news/images/06-01/aeus-still.gif",
+        "rank": 4
+      },
+      {
+        "checks": {
+          "body_exists": true,
+          "cdx_digest": true,
+          "length": true,
+          "sha256": true
+        },
+        "logical_url": "http://www.worldofwarcraft.com/news/images/06-03/ptrcontests.jpg",
+        "rank": 5
+      },
+      {
+        "checks": {
+          "body_exists": true,
+          "cdx_digest": true,
+          "length": true,
+          "sha256": true
+        },
+        "logical_url": "http://www.worldofwarcraft.com/news/images/06-03/ptrcontestsfloat.gif",
+        "rank": 6
+      },
+      {
+        "checks": {
+          "body_exists": true,
+          "cdx_digest": true,
+          "length": true,
+          "sha256": true
+        },
+        "logical_url": "http://www.worldofwarcraft.com/news/images/04-12/fatherwinter.jpg",
+        "rank": 7
+      },
+      {
+        "checks": {
+          "body_exists": true,
+          "cdx_digest": true,
+          "length": true,
+          "sha256": true
+        },
+        "logical_url": "http://www.worldofwarcraft.com/news/images/05-06/stardock-thumb.jpg",
+        "rank": 8
+      },
+      {
+        "checks": {
+          "body_exists": true,
+          "cdx_digest": true,
+          "length": true,
+          "sha256": true
+        },
+        "logical_url": "http://www.worldofwarcraft.com/news/images/06-02/editor.gif",
+        "rank": 9
+      },
+      {
+        "checks": {
+          "body_exists": true,
+          "cdx_digest": true,
+          "length": true,
+          "sha256": true
+        },
+        "logical_url": "http://www.worldofwarcraft.com/news/images/06-05/5-11-06-1.jpg",
+        "rank": 10
+      },
+      {
+        "checks": {
+          "body_exists": true,
+          "cdx_digest": true,
+          "length": true,
+          "sha256": true
+        },
+        "logical_url": "http://www.worldofwarcraft.com/news/images/06-05/5-11-06-2.jpg",
+        "rank": 11
+      },
+      {
+        "checks": {
+          "body_exists": true,
+          "cdx_digest": true,
+          "length": true,
+          "sha256": true
+        },
+        "logical_url": "http://www.worldofwarcraft.com/news/images/06-05/5-11-06-3.jpg",
+        "rank": 12
+      },
+      {
+        "checks": {
+          "body_exists": true,
+          "cdx_digest": true,
+          "length": true,
+          "sha256": true
+        },
+        "logical_url": "http://www.worldofwarcraft.com/news/images/06-05/5-18-06-2.jpg",
+        "rank": 14
+      },
+      {
+        "checks": {
+          "body_exists": true,
+          "cdx_digest": true,
+          "length": true,
+          "sha256": true
+        },
+        "logical_url": "http://www.worldofwarcraft.com/news/images/06-05/5-18-06-3.jpg",
+        "rank": 15
+      },
+      {
+        "checks": {
+          "body_exists": true,
+          "cdx_digest": true,
+          "length": true,
+          "sha256": true
+        },
+        "logical_url": "http://www.worldofwarcraft.com/news/images/06-05/5-25-06-1.jpg",
+        "rank": 16
+      },
+      {
+        "checks": {
+          "body_exists": true,
+          "cdx_digest": true,
+          "length": true,
+          "sha256": true
+        },
+        "logical_url": "http://www.worldofwarcraft.com/news/images/06-05/5-25-06-2.jpg",
+        "rank": 17
+      },
+      {
+        "checks": {
+          "body_exists": true,
+          "cdx_digest": true,
+          "length": true,
+          "sha256": true
+        },
+        "logical_url": "http://www.worldofwarcraft.com/news/images/06-05/5-25-06-3.jpg",
+        "rank": 18
+      },
+      {
+        "checks": {
+          "body_exists": true,
+          "cdx_digest": true,
+          "length": true,
+          "sha256": true
+        },
+        "logical_url": "http://www.worldofwarcraft.com/news/images/06-05/5-4-06-2.jpg",
+        "rank": 20
+      }
+    ],
+    "all_passed": true
+  },
+  "schema_version": 1,
+  "scope": "历史新闻及活动页缺图",
+  "source_provenance": {
+    "annual_cdx_completeness_reverified": false,
+    "freeze_sha256": "f7aa908b9e9a810d443e9aa8d997d292362d8b45e7a4557e7ffb4554f699e4d8",
+    "queue_sha256": "8b5a4fab2d98c1f3b735b8ebaf271bb126f4abf24b4c98dc02cb3a79feca44a0",
+    "selection_scope": "unique image candidates with selected CDX timestamp in 2008 at or before anchor",
+    "source_selection": "research/resource-recovery-2008/full-page-static-cdx-selection.json",
+    "source_selection_sha256": "978498a4b9ceaae4648273e9e9b47518e02da12f27a9c4781f0b505585ef2473"
+  }
+}

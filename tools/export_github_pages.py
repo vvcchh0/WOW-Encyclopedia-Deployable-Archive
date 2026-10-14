@@ -150,6 +150,7 @@ def output_estimate(records: list[dict[str, Any]], extra_bytes: int = 0) -> int:
 
 _OVERLAY_MIMES = {"image/gif": "GIF", "image/png": "PNG", "image/jpeg": "JPEG"}
 _OVERLAY_URL_HOSTS = {"www.worldofwarcraft.com", "worldofwarcraft.com"}
+_SUPPLEMENT_OVERLAY_URL_HOSTS = _OVERLAY_URL_HOSTS | {"www.wow-europe.com", "wow-europe.com"}
 _OVERLAY_TIMESTAMP_RE = re.compile(r"^2008\d{10}$")
 
 
@@ -164,7 +165,12 @@ def _workspace_path(path: Path, workspace_root: Path, *, label: str) -> Path:
     return resolved
 
 
-def _overlay_url(value: Any, *, label: str) -> tuple[str, urllib.parse.SplitResult]:
+def _overlay_url(
+    value: Any,
+    *,
+    label: str,
+    allowed_hosts: set[str] | frozenset[str] = frozenset(_OVERLAY_URL_HOSTS),
+) -> tuple[str, urllib.parse.SplitResult]:
     if not isinstance(value, str) or not value:
         raise PagesExportError(f"image overlay {label} URL is missing")
     try:
@@ -172,9 +178,12 @@ def _overlay_url(value: Any, *, label: str) -> tuple[str, urllib.parse.SplitResu
         port = parsed.port
     except ValueError as exc:
         raise PagesExportError(f"image overlay {label} URL is invalid: {value!r}") from exc
-    if parsed.scheme.casefold() not in {"http", "https"} or (parsed.hostname or "").casefold() not in _OVERLAY_URL_HOSTS:
-        raise PagesExportError(f"image overlay {label} URL is not the official primary origin: {value!r}")
-    if parsed.username or parsed.password or port is not None or parsed.query or parsed.fragment:
+    scheme = parsed.scheme.casefold()
+    host = (parsed.hostname or "").casefold().rstrip(".")
+    if scheme not in {"http", "https"} or host not in allowed_hosts:
+        raise PagesExportError(f"image overlay {label} URL is not an approved image origin: {value!r}")
+    default_port = (scheme == "http" and port == 80) or (scheme == "https" and port == 443)
+    if parsed.username or parsed.password or (port is not None and not default_port) or parsed.query or parsed.fragment:
         raise PagesExportError(f"image overlay {label} URL has unsafe authority or suffix: {value!r}")
     if not parsed.path.startswith("/") or "\\" in parsed.path or "\x00" in parsed.path:
         raise PagesExportError(f"image overlay {label} URL path is unsafe: {value!r}")
@@ -231,19 +240,32 @@ def _overlay_relative_source(map_path: Path, local_path: str, workspace_root: Pa
     return _workspace_path(resolved, workspace_root, label=f"image overlay {label} local_path")
 
 
-def load_image_overlays(
+def _overlay_temporal_class(actual_dt: datetime, anchor_dt: datetime) -> str:
+    year_start = datetime(2008, 1, 1)
+    year_end = datetime(2008, 12, 31, 23, 59, 59)
+    if actual_dt < year_start:
+        return "pre_2008"
+    if actual_dt <= anchor_dt:
+        return "baseline_2008"
+    if actual_dt <= year_end:
+        return "late_2008"
+    raise PagesExportError(f"image supplement capture is after 2008: {actual_dt:%Y%m%d%H%M%S}")
+
+
+def _load_image_overlay_maps(
     image_source_maps: list[Path] | tuple[Path, ...],
     *,
     workspace_root: Path,
     anchor_timestamp: str,
     frozen_routes: set[str],
     frozen_static_paths: set[str],
+    supplement: bool,
 ) -> tuple[list[dict[str, Any]], int]:
-    """Validate image entity maps and return safe, byte-preserving overlays.
+    """Validate primary or explicit supplement image maps.
 
-    The returned records contain the source bytes only in memory for the
-    current export.  No source map or raw acquisition metadata is copied into
-    the Pages tree.
+    The primary loader remains restricted to the two canonical WoW hosts and
+    the fixed 2008 anchor.  Supplement maps have their own explicit host and
+    date policy; they never enter this path implicitly.
     """
 
     if not image_source_maps:
@@ -258,6 +280,8 @@ def load_image_overlays(
     by_route: dict[str, dict[str, Any]] = {}
     source_map_hashes: dict[Path, str] = {}
     static_paths = {str(path).casefold() for path in frozen_static_paths}
+    allowed_hosts = _SUPPLEMENT_OVERLAY_URL_HOSTS if supplement else _OVERLAY_URL_HOSTS
+    strategy = "explicit_supplement_image_overlay" if supplement else "primary_image_overlay"
     total_bytes = 0
     for raw_map in image_source_maps:
         map_path = _workspace_path(Path(raw_map), workspace_root, label="image source map")
@@ -279,12 +303,13 @@ def load_image_overlays(
             if not isinstance(item, dict) or str(item.get("kind") or "").casefold() != "image":
                 raise PagesExportError(f"{label} is not an image entity")
             logical_url = item.get("logical_url") or item.get("original")
-            logical_url, _ = _overlay_url(logical_url, label=label)
+            logical_url, _ = _overlay_url(logical_url, label=label, allowed_hosts=allowed_hosts)
             original = item.get("original") or logical_url
-            original, _ = _overlay_url(original, label=label)
+            original, _ = _overlay_url(original, label=label, allowed_hosts=allowed_hosts)
             if mirror.origin_key(logical_url) != mirror.origin_key(original):
                 raise PagesExportError(f"{label} logical_url and original disagree")
-            route = mirror.route_path(logical_url)
+            is_primary = mirror.is_primary_origin(logical_url)
+            route = mirror.route_path(logical_url) if is_primary else mirror.origin_route(logical_url)
             if route in frozen_routes or route.startswith("/__offline/") or route in {"/404.html", "/README.md"}:
                 raise PagesExportError(f"{label} would override an existing route: {route}")
             if not route.casefold().endswith((".gif", ".png", ".jpg", ".jpeg")):
@@ -292,15 +317,31 @@ def load_image_overlays(
             relative = static_rel_for_route(route)
             actual = str(item.get("actual_timestamp") or "")
             indexed = str(item.get("indexed_capture_timestamp") or "")
-            if not _OVERLAY_TIMESTAMP_RE.fullmatch(actual) or not _OVERLAY_TIMESTAMP_RE.fullmatch(indexed) or actual != indexed:
-                raise PagesExportError(f"{label} capture timestamp is outside the 2008 baseline: {actual!r}/{indexed!r}")
+            if not re.fullmatch(r"\d{14}", actual) or not re.fullmatch(r"\d{14}", indexed) or actual != indexed:
+                raise PagesExportError(f"{label} capture timestamp is invalid or differs: {actual!r}/{indexed!r}")
             try:
                 actual_dt = datetime.strptime(actual, "%Y%m%d%H%M%S")
                 indexed_dt = datetime.strptime(indexed, "%Y%m%d%H%M%S")
             except ValueError as exc:
                 raise PagesExportError(f"{label} capture timestamp is not a real date: {actual!r}/{indexed!r}") from exc
-            if actual_dt.year != 2008 or indexed_dt != actual_dt or actual_dt > anchor_dt:
-                raise PagesExportError(f"{label} capture timestamp is outside the 2008 baseline: {actual!r}/{indexed!r}")
+            if indexed_dt != actual_dt:
+                raise PagesExportError(f"{label} capture timestamp is invalid or differs: {actual!r}/{indexed!r}")
+            if supplement:
+                temporal_class = _overlay_temporal_class(actual_dt, anchor_dt)
+                declared_class = str(item.get("temporal_class") or "")
+                if declared_class != temporal_class:
+                    raise PagesExportError(
+                        f"{label} temporal_class does not match capture date: {declared_class!r}/{temporal_class!r}"
+                    )
+            else:
+                if not _OVERLAY_TIMESTAMP_RE.fullmatch(actual) or actual_dt.year != 2008 or actual_dt > anchor_dt:
+                    raise PagesExportError(f"{label} capture timestamp is outside the 2008 baseline: {actual!r}/{indexed!r}")
+                temporal_class = "baseline_2008"
+                declared_class = str(item.get("temporal_class") or "")
+                if declared_class and declared_class != temporal_class:
+                    raise PagesExportError(
+                        f"{label} temporal_class is not allowed on the primary baseline entry: {declared_class!r}"
+                    )
             digest = item.get("cdx_digest")
             if digest is not None and (not isinstance(digest, str) or not re.fullmatch(r"[A-Z2-7]+", digest.upper())):
                 raise PagesExportError(f"{label} CDX digest is invalid")
@@ -335,6 +376,9 @@ def load_image_overlays(
                 "original_url": original,
                 "actual_timestamp": actual,
                 "indexed_capture_timestamp": indexed,
+                "temporal_class": temporal_class,
+                "origin_namespace": mirror.origin_namespace_host(logical_url),
+                "supplement_strategy": strategy,
                 "cdx_digest": digest.upper() if isinstance(digest, str) else None,
                 "mime": mime,
                 "source_sha256": actual_sha,
@@ -346,8 +390,6 @@ def load_image_overlays(
             if previous is not None:
                 if previous["source_sha256"] != actual_sha:
                     raise PagesExportError(f"{label} conflicts with another overlay for route: {route}")
-                # Validate duplicate map entries fully, then retain one
-                # byte-identical output and account for the deduplication.
                 continue
             if relative.casefold() in static_paths:
                 raise PagesExportError(f"{label} would collide with static output path: {relative}")
@@ -356,6 +398,46 @@ def load_image_overlays(
             static_paths.add(relative.casefold())
             total_bytes += len(data)
     return entries, total_bytes
+
+
+def load_image_overlays(
+    image_source_maps: list[Path] | tuple[Path, ...],
+    *,
+    workspace_root: Path,
+    anchor_timestamp: str,
+    frozen_routes: set[str],
+    frozen_static_paths: set[str],
+) -> tuple[list[dict[str, Any]], int]:
+    """Validate strict pre-anchor primary-origin image overlays."""
+
+    return _load_image_overlay_maps(
+        image_source_maps,
+        workspace_root=workspace_root,
+        anchor_timestamp=anchor_timestamp,
+        frozen_routes=frozen_routes,
+        frozen_static_paths=frozen_static_paths,
+        supplement=False,
+    )
+
+
+def load_supplement_image_overlays(
+    supplement_image_source_maps: list[Path] | tuple[Path, ...],
+    *,
+    workspace_root: Path,
+    anchor_timestamp: str,
+    frozen_routes: set[str],
+    frozen_static_paths: set[str],
+) -> tuple[list[dict[str, Any]], int]:
+    """Validate explicit 2008 related-site and late-capture image overlays."""
+
+    return _load_image_overlay_maps(
+        supplement_image_source_maps,
+        workspace_root=workspace_root,
+        anchor_timestamp=anchor_timestamp,
+        frozen_routes=frozen_routes,
+        frozen_static_paths=frozen_static_paths,
+        supplement=True,
+    )
 
 
 def _context_for_literal(raw: str) -> str:
@@ -460,7 +542,12 @@ class PagesLocalizer:
         route = self.origin_index.get(key)
         if route is None:
             path = mirror.route_path(absolute)
-            route = self.aliases.get(path) or (path if path in self.route_to_static else None)
+            # An uncollected regional or third-party image can have the same
+            # path as a main-site file.  Only exact origin entries may join
+            # those sites; frozen local support/namespaced paths remain valid.
+            explicit_local = literal.startswith("/") and not literal.startswith("//") and path.startswith(("/__offline/", "/_origins/"))
+            if mirror.is_primary_origin(absolute) or explicit_local:
+                route = self.aliases.get(path) or (path if path in self.route_to_static else None)
         target = self._static_for_route(route) if route else None
         if target:
             suffix = ("?" + parsed.query if parsed.query else "") + ("#" + parsed.fragment if parsed.fragment else "")
@@ -1502,6 +1589,34 @@ def generated_redirect(base_path: str, target: str) -> str:
 <p>Redirecting to <a href="{escaped}">{escaped}</a>.</p></body></html>"""
 
 
+def generated_related_images_index(base_path: str, overlays: list[dict[str, Any]]) -> str:
+    """Render a small local catalog for explicit non-primary image supplements."""
+
+    cards: list[str] = []
+    for overlay in overlays:
+        image_url = static_url(base_path, str(overlay["relative"]))
+        original_url = str(overlay["original_url"])
+        capture_date = datetime.strptime(str(overlay["actual_timestamp"]), "%Y%m%d%H%M%S")
+        captured = capture_date.strftime("%Y-%m-%d %H:%M:%S UTC")
+        temporal_label = {"baseline_2008": "2008 baseline", "pre_2008": "Earlier capture", "late_2008": "Later 2008 capture"}[str(overlay["temporal_class"])]
+        cards.append(
+            f"<article class=\"related-image-card\" data-temporal-class=\"{html.escape(str(overlay['temporal_class']), quote=True)}\">"
+            f"<a href=\"{html.escape(image_url, quote=True)}\"><img loading=\"lazy\" src=\"{html.escape(image_url, quote=True)}\" alt=\"{html.escape(original_url, quote=True)}\"></a>"
+            f"<p><code>{html.escape(str(overlay['origin_namespace']))}</code> "
+            f"<time datetime=\"{capture_date:%Y-%m-%dT%H:%M:%SZ}\">{captured}</time> "
+            f"<span>{temporal_label}</span></p>"
+            f"<p class=\"source\">{html.escape(original_url)}</p>"
+            "</article>"
+        )
+    body = "\n".join(cards) or "<p>No supplement images were accepted.</p>"
+    return f"""<!doctype html><html><head><meta charset="utf-8"><title>Related image supplements</title>
+<meta http-equiv="Content-Security-Policy" content="{html.escape(PAGES_CSP, quote=True)}">
+<script src="{base_path}__offline/pages_runtime.js"></script>
+<style>body{{margin:0;background:#f3ead4;color:#2d2418;font:15px/1.45 Arial,sans-serif}}main{{max-width:1100px;margin:0 auto;padding:24px}}h1{{font-size:26px}}.notice{{background:#fff8e8;border:1px solid #c9b68f;padding:12px}}.grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px;margin-top:20px}}.related-image-card{{background:#fff;border:1px solid #d2c4a6;padding:10px;overflow:hidden}}.related-image-card img{{display:block;max-width:100%;height:auto;margin:0 auto}}.related-image-card p{{margin:8px 0 0;word-break:break-word}}.related-image-card code{{font-size:12px}}.source{{font-size:12px;color:#665b4a}}</style></head><body>
+<div id="__offline-pages-banner" style="background:#241b0b;color:#f7e7b0;font:12px/1.4 Arial,sans-serif;padding:6px 10px;text-align:center">Unofficial historical educational preservation (not affiliated with Blizzard) • material catalog only • no user data collection</div>
+<main><h1>Related site images</h1><p class="notice">Recovered images from historical World of Warcraft sites. Dates show each file's capture time in UTC.</p><section class="grid">{body}</section></main></body></html>"""
+
+
 def generated_404(base_path: str) -> str:
     return generated_uncollected(base_path, "Offline route not found").replace(
         "<meta charset=\"utf-8\">",
@@ -1520,6 +1635,7 @@ def export_pages(
     max_bytes: int = DEFAULT_MAX_BYTES,
     min_free_bytes: int = DEFAULT_MIN_FREE_BYTES,
     image_source_maps: list[Path] | tuple[Path, ...] = (),
+    supplement_image_source_maps: list[Path] | tuple[Path, ...] = (),
 ) -> dict[str, Any]:
     source_site = source_site.resolve()
     manifest_path = manifest_path.resolve()
@@ -1556,13 +1672,24 @@ def export_pages(
         route_to_static[route] = static_url(base_path, relative)
 
     raw_aliases = manifest.get("route_aliases") or {}
-    overlays, overlay_bytes = load_image_overlays(
+    primary_overlays, primary_overlay_bytes = load_image_overlays(
         tuple(image_source_maps),
         workspace_root=workspace_root,
         anchor_timestamp=str(manifest.get("anchor_timestamp") or ""),
         frozen_routes=set(route_records) | {str(alias) for alias in raw_aliases},
         frozen_static_paths=set(relative_paths),
     )
+    overlay_routes = set(route_records) | {str(alias) for alias in raw_aliases} | {str(item["route"]) for item in primary_overlays}
+    overlay_static_paths = set(relative_paths) | {str(item["relative"]) for item in primary_overlays}
+    supplement_overlays, supplement_overlay_bytes = load_supplement_image_overlays(
+        tuple(supplement_image_source_maps),
+        workspace_root=workspace_root,
+        anchor_timestamp=str(manifest.get("anchor_timestamp") or ""),
+        frozen_routes=overlay_routes,
+        frozen_static_paths=overlay_static_paths,
+    )
+    overlays = primary_overlays + supplement_overlays
+    overlay_bytes = primary_overlay_bytes + supplement_overlay_bytes
     estimate = output_estimate(records, overlay_bytes)
     if before_workspace + estimate >= max_bytes:
         raise PagesExportError(f"workspace budget exceeded before export: {before_workspace}+{estimate} >= {max_bytes}")
@@ -1574,6 +1701,12 @@ def export_pages(
         relative = str(overlay["relative"])
         route_to_static[route] = static_url(base_path, relative)
         relative_paths.add(relative)
+    related_image_overlays = [
+        overlay for overlay in supplement_overlays if not mirror.is_primary_origin(str(overlay["logical_url"]))
+    ]
+    related_images_route = "/__offline/related-images/index.html"
+    if related_image_overlays:
+        route_to_static[related_images_route] = static_url(base_path, related_images_route.lstrip("/"))
     aliases: dict[str, str] = {}
     alias_routes: dict[str, str] = {}
     for alias, target in raw_aliases.items():
@@ -1612,13 +1745,16 @@ def export_pages(
     # manifest, but source scripts may construct them dynamically (for
     # example compat.js's uncollected search target).  Register their final
     # static paths before any source text is localized.
-    for generated_route in (
+    generated_routes = [
         "/__offline/uncollected/index.html",
         "/__offline/missing.html",
         "/__offline/pages_runtime.js",
         "/__offline/route-map.json",
         "/404.html",
-    ):
+    ]
+    if related_image_overlays:
+        generated_routes.append(related_images_route)
+    for generated_route in generated_routes:
         route_lookup.setdefault(generated_route, static_url(base_path, generated_route.lstrip("/")))
 
     origin_index = {str(k): str(v) for k, v in (manifest.get("origin_index") or {}).items()}
@@ -1745,6 +1881,9 @@ def export_pages(
                 "source_map": str(Path(overlay["map_path"]).relative_to(workspace_root).as_posix()),
                 "source_map_sha256": overlay["source_map_sha256"],
                 "source_path": str(Path(overlay["source"]).relative_to(workspace_root).as_posix()),
+                "origin_namespace": overlay["origin_namespace"],
+                "temporal_class": overlay["temporal_class"],
+                "supplement_strategy": overlay["supplement_strategy"],
                 "original_url": overlay["original_url"],
                 "actual_capture_timestamp": overlay["actual_timestamp"],
                 "indexed_capture_timestamp": overlay["indexed_capture_timestamp"],
@@ -1797,6 +1936,12 @@ def export_pages(
             ("__offline/missing.html", (offline_dir / "missing.html").read_bytes(), "pages_missing"),
             ("404.html", (partial / "404.html").read_bytes(), "pages_404"),
         ]
+        if related_image_overlays:
+            related_images_data = generated_related_images_index(base_path, supplement_overlays).encode("utf-8")
+            related_images_path = partial / related_images_route.lstrip("/")
+            related_images_path.parent.mkdir(parents=True, exist_ok=True)
+            related_images_path.write_bytes(related_images_data)
+            generated_support.append((related_images_route.lstrip("/"), related_images_data, "related_images_index"))
         for rel, data, kind in generated_support:
             route = "/" + rel
             mime = "application/json" if rel.endswith(".json") else ("application/javascript; charset=UTF-8" if rel.endswith(".js") else "text/html; charset=UTF-8")
@@ -1830,6 +1975,8 @@ def export_pages(
                 }
                 prior.update(generated_record)
                 prior.update(source_fields)
+            if kind == "related_images_index":
+                stats["related_images_index"] += 1
 
         # Keep GitHub Pages from treating the generated ``__offline`` support
         # tree as a Jekyll input.  This marker is metadata only and contains no
@@ -1863,7 +2010,14 @@ def export_pages(
             "source_manifest": str(manifest_path.relative_to(workspace_root).as_posix()),
             "source_manifest_sha256": manifest_sha,
             "files": provenance,
-            "stats": dict(stats) | {"source_records": len(records), "image_overlay_records": len(overlays), "output_files": len(provenance), "route_aliases": len(aliases)},
+            "stats": dict(stats) | {
+                "source_records": len(records),
+                "image_overlay_records": len(overlays),
+                "primary_image_overlay_records": len(primary_overlays),
+                "supplement_image_overlay_records": len(supplement_overlays),
+                "output_files": len(provenance),
+                "route_aliases": len(aliases),
+            },
             "security": {"external_fetches": False, "project_prefix": base_path, "source_unchanged": True, "path_traversal_rejected": True},
         }
         prov_data = (json.dumps(provenance_payload, ensure_ascii=False, sort_keys=True, indent=2) + "\n").encode("utf-8")
@@ -1873,7 +2027,21 @@ def export_pages(
         if after_workspace >= max_bytes or free_after < min_free_bytes:
             raise PagesExportError(f"budget exceeded after export: workspace={after_workspace}, free={free_after}")
         partial.replace(output)
-        return {"output": str(output), "output_files": len(provenance), "manifest_sha256": manifest_sha, "base_path": base_path, "workspace_bytes": after_workspace, "disk_free_bytes": free_after, "estimated_bytes": estimate, "stats": dict(stats) | {"source_records": len(records), "image_overlay_records": len(overlays)}}
+        return {
+            "output": str(output),
+            "output_files": len(provenance),
+            "manifest_sha256": manifest_sha,
+            "base_path": base_path,
+            "workspace_bytes": after_workspace,
+            "disk_free_bytes": free_after,
+            "estimated_bytes": estimate,
+            "stats": dict(stats) | {
+                "source_records": len(records),
+                "image_overlay_records": len(overlays),
+                "primary_image_overlay_records": len(primary_overlays),
+                "supplement_image_overlay_records": len(supplement_overlays),
+            },
+        }
     except Exception:
         shutil.rmtree(partial, ignore_errors=True)
         raise
@@ -1888,9 +2056,10 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--max-bytes", type=int, default=DEFAULT_MAX_BYTES)
     parser.add_argument("--min-free-bytes", type=int, default=DEFAULT_MIN_FREE_BYTES)
     parser.add_argument("--image-source-map", dest="image_source_maps", action="append", type=Path, default=[])
+    parser.add_argument("--supplement-image-source-map", dest="supplement_image_source_maps", action="append", type=Path, default=[])
     args = parser.parse_args(argv)
     try:
-        result = export_pages(output=args.output, source_site=args.site, manifest_path=args.manifest, base_path=args.base_path, max_bytes=args.max_bytes, min_free_bytes=args.min_free_bytes, image_source_maps=args.image_source_maps)
+        result = export_pages(output=args.output, source_site=args.site, manifest_path=args.manifest, base_path=args.base_path, max_bytes=args.max_bytes, min_free_bytes=args.min_free_bytes, image_source_maps=args.image_source_maps, supplement_image_source_maps=args.supplement_image_source_maps)
     except PagesExportError as exc:
         parser.error(str(exc))
     print(json.dumps(result, ensure_ascii=False, indent=2))

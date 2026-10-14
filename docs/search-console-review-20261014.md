@@ -1,6 +1,18 @@
 # Google Search Console 复核材料（准备稿，2026-10-14）
 
-> **状态：修复已部署；所有权尚未验证，复核尚未提交。** 已填入本轮代码、测试与部署结果；方括号中的正式问题类型、检测日期和样本网址待 Search Console 报告补齐。
+> **状态：修复已部署；根站点的所有权验证文件已发布，待在 Search Console 点击验证；复核尚未提交。** 已填入本轮代码、测试与部署结果；方括号中的正式问题类型、检测日期和样本网址待 Search Console 报告补齐。
+
+## 根站点所有权文件发布（2026-10-14）
+
+用户在 Search Console 选择了 URL-prefix `https://vvcchh0.github.io/`，并提供 `D:\GithubIO\googled4e2187611b0fbea.html`。根地址此前返回 404，账号尚无用户站点仓库；本轮创建 [vvcchh0.github.io](https://github.com/vvcchh0/vvcchh0.github.io)，将文件原样放在 `main` 根目录并发布。文件网址为：
+
+[https://vvcchh0.github.io/googled4e2187611b0fbea.html](https://vvcchh0.github.io/googled4e2187611b0fbea.html)
+
+Pages 提交为 `e02544be5f01291319a4bdf352c2b7630e545658`，构建于 2026-10-14 16:19:58（Asia/Shanghai）完成。公网 direct 请求返回 HTTP 200，响应字节与用户提供的文件一致。[发布核对记录](../research/github-root-verification-20261014/publication.json)保存了结果。
+
+接下来在 Search Console 点击“验证”，读取根属性的“安全问题”报告，再按报告范围补充本文的复核材料。发布文件不等于 Google 已确认所有权或完成安全复核；本轮未操作这两个提交。验证成功后仍保留该文件。Google 说明已验证父属性可用于自动验证其子属性，见[所有权验证说明](https://support.google.com/webmasters/answer/9008080)。
+
+WOW 与 Gitube 项目的发布内容本轮没有更改。下文原先按项目分别准备的复核草稿继续保留，正式提交时以实际选中的属性及其报告为准。
 
 ## 范围与已知观察
 
