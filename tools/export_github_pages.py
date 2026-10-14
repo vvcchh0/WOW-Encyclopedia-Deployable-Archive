@@ -863,6 +863,92 @@ class _MarkupTokenParser(HTMLParser):
         self.tokens.append(_MarkupToken("end", tag.casefold(), start, end, self.text[start:end]))
 
 
+_HTML_ATTRIBUTE_SPAN_RE = re.compile(
+    r"\s+(?P<name>[^\s\"'<>/=]+)"
+    r"(?:\s*=\s*(?P<value>\"[^\"]*\"|'[^']*'|[^\s\"'=<>`]+))?",
+    re.I,
+)
+
+
+def _is_historical_flash_cab_url(value: str) -> bool:
+    """Recognize only the old Macromedia/Adobe Flash CAB install URL."""
+
+    try:
+        parsed = urllib.parse.urlsplit(html.unescape(value).strip())
+    except ValueError:
+        return False
+    if parsed.scheme.casefold() not in {"http", "https"}:
+        return False
+    hostname = (parsed.hostname or "").casefold().rstrip(".")
+    if not (
+        hostname == "macromedia.com"
+        or hostname.endswith(".macromedia.com")
+        or hostname == "adobe.com"
+        or hostname.endswith(".adobe.com")
+    ):
+        return False
+    path = parsed.path.casefold()
+    return bool(re.search(r"/shockwave/cabs/flash/[^/]+\.cab$", path))
+
+
+def rename_flash_codebase_metadata(text: str, recorder: mirror.ReferenceRecorder | None = None) -> str:
+    """Rename real object Flash installer attributes in the derived HTML.
+
+    ``HTMLParser`` supplies source positions for actual start tags, so script
+    strings, comments, visible prose, CSS, and ordinary object ``codebase``
+    values never enter the attribute rewrite.  The matched URL bytes stay
+    unchanged as historical metadata.
+    """
+
+    parser = _MarkupTokenParser(text)
+    try:
+        parser.feed(text)
+        parser.close()
+    except Exception as exc:
+        raise PagesExportError("Flash codebase tokenization failed") from exc
+
+    replacements: list[tuple[int, int, str, str]] = []
+    for token in parser.tokens:
+        if token.kind != "start" or token.name != "object":
+            continue
+        codebase_values = [value for name, value in token.attrs if name.casefold() == "codebase" and value is not None]
+        if not codebase_values:
+            continue
+        header = re.match(r"<\s*object\b", token.raw, re.I)
+        if header is None:
+            continue
+        # Consume every complete attribute, including quoted values.  Looking
+        # only for whitespace followed by `codebase` could match prose inside
+        # another attribute's value and leave the real installer active.
+        for match in _HTML_ATTRIBUTE_SPAN_RE.finditer(token.raw, header.end()):
+            if match.group("name").casefold() != "codebase":
+                continue
+            raw_value = match.group("value")
+            if raw_value is None:
+                continue
+            unquoted = raw_value[1:-1] if len(raw_value) >= 2 and raw_value[0] in "\"'" and raw_value[-1] == raw_value[0] else raw_value
+            if not _is_historical_flash_cab_url(unquoted):
+                continue
+            name_start = token.start + match.start("name")
+            name_end = token.start + match.end("name")
+            replacements.append((name_start, name_end, "data-archive-codebase", html.unescape(unquoted)))
+
+    if not replacements:
+        return text
+    for start, end, replacement, value in reversed(replacements):
+        text = text[:start] + replacement + text[end:]
+        if recorder is not None:
+            recorder.add(
+                value,
+                value,
+                "flash_codebase_renamed",
+                value,
+                "html_object_codebase",
+                "preserved historical Flash CAB installer metadata",
+            )
+    return text
+
+
 _FORM_CONTROL_TAGS = {"input", "select", "textarea", "button"}
 _VOID_HTML_TAGS = {
     "area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr",
@@ -1633,10 +1719,18 @@ def generated_related_images_index(base_path: str, overlays: list[dict[str, Any]
 
 
 def generated_404(base_path: str) -> str:
-    return generated_uncollected(base_path, "Offline route not found").replace(
-        "<meta charset=\"utf-8\">",
-        '<meta charset="utf-8"><meta name="offline-pages-404" content="true">',
-        1,
+    return (
+        generated_uncollected(base_path, "Page not in this archive")
+        .replace(
+            "This route was not collected in the verified archive. GitHub Pages will not fetch it from the Internet.",
+            "This page was not saved in the available archive.",
+            1,
+        )
+        .replace(
+            "<meta charset=\"utf-8\">",
+            '<meta charset="utf-8"><meta name="offline-pages-404" content="true">',
+            1,
+        )
     )
 
 
@@ -1815,6 +1909,7 @@ def export_pages(
             if kind in HTML_KINDS or is_html_record(record):
                 text = data.decode(mirror.charset_for(str(record.get("mime") or ""), data), errors="replace")
                 text = mirror.rewrite_html(text, base_url=base_url, localizer=localizer, recorder=recorder, source_sha=source_sha, compat_assets=[])
+                text = rename_flash_codebase_metadata(text, recorder=recorder)
                 text = rewrite_iframe_fallbacks(text, base_url=base_url, localizer=localizer, recorder=recorder)
                 text = rewrite_inline_scripts(text, base_url=base_url, localizer=localizer, recorder=recorder)
                 text = normalize_html_charset(text)

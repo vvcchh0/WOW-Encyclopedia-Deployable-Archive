@@ -171,6 +171,98 @@ class GithubPagesExportTests(unittest.TestCase):
         self.assertLess(csp, head_end)
         self.assertIn("literal\ufeffbody", derived)
 
+    def test_real_audited_flash_codebase_attributes_are_renamed_by_source_page(self) -> None:
+        cases = {
+            "info/items/socketeditems.html": 5,
+            "visa/index.html": 1,
+            "info/races/dancing.html": 1,
+        }
+        recorder = pages.mirror.ReferenceRecorder("/flash-audit.html", "http://www.worldofwarcraft.com/flash-audit.html")
+        total = 0
+        for relative, expected in cases.items():
+            source = (ROOT / "offline/site" / relative).read_text(encoding="utf-8", errors="replace")
+            rewritten = pages.rename_flash_codebase_metadata(source, recorder=recorder)
+            self.assertEqual(rewritten.count("data-archive-codebase"), expected, relative)
+            self.assertEqual(len(re.findall(r"(?<!data-archive-)\bcodebase\s*=\s*\"http://", rewritten, re.I)), 0, relative)
+            total += expected
+        self.assertEqual(total, 7)
+        self.assertEqual(recorder.counts["flash_codebase_renamed"], 7)
+
+    def test_flash_codebase_export_is_token_scoped_and_traceable(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            base, site, manifest = self._fixture(Path(tmp))
+            flash = site / "flash.html"
+            cab_a = "http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0"
+            cab_b = "http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0"
+            cab_c = "https://download.adobe.com/shockwave/cabs/flash/swflash.cab"
+            objects = "".join(f'<object codebase="{value}" data="movie.swf"></object>' for value in [cab_a] * 5 + [cab_b, cab_c])
+            flash.write_text(
+                "<html><body>"
+                + objects
+                + '<object codebase="/ordinary/object.cab" data="ordinary.swf"></object>'
+                + '<object codebase="https://evilmacromedia.com/shockwave/cabs/flash/swflash.cab" data="evil.swf"></object>'
+                + '<p>codebase="' + cab_a + '"</p>'
+                + "<script>var literal = 'codebase=\"" + cab_a + "\"';</script>"
+                + "</body></html>",
+                encoding="utf-8",
+            )
+            data = flash.read_bytes()
+            payload = json.loads(manifest.read_text(encoding="utf-8"))
+            payload["files"].append({
+                "route": "/flash.html",
+                "output_path": "offline/site/flash.html",
+                "derived_sha256": hashlib.sha256(data).hexdigest(),
+                "derived_length": len(data),
+                "mime": "text/html; charset=UTF-8",
+                "kind": "html",
+                "source_base_url": "http://www.worldofwarcraft.com/flash.html",
+            })
+            payload["origin_index"]["www.worldofwarcraft.com/flash.html"] = "/flash.html"
+            manifest.write_text(json.dumps(payload), encoding="utf-8")
+            pages.export_pages(
+                source_site=site,
+                manifest_path=manifest,
+                output=base / "pages",
+                workspace_root=base,
+                max_bytes=500_000_000,
+                min_free_bytes=0,
+            )
+            exported = (base / "pages/flash.html").read_text(encoding="utf-8")
+            self.assertEqual(exported.count("data-archive-codebase"), 7)
+            self.assertEqual(exported.count('codebase="/ordinary/object.cab"'), 1)
+            self.assertIn("codebase=\"https://evilmacromedia.com/shockwave/cabs/flash/swflash.cab\"", exported)
+            self.assertIn('codebase=\"' + cab_a + '\"', exported)
+            self.assertIn("var literal", exported)
+            provenance = json.loads((base / "pages/export-provenance.json").read_text(encoding="utf-8"))
+            item = next(row for row in provenance["files"] if row.get("route") == "/flash.html")
+            self.assertEqual(item["reference_counts"]["flash_codebase_renamed"], 7)
+
+            raw_negative = (
+                "<script>var markup = '<object codebase=\"" + cab_a + "\">';</script>"
+                + '<p>codebase="' + cab_a + '"</p>'
+                + '<object codebase="/ordinary/object.cab"></object>'
+            )
+            self.assertEqual(pages.rename_flash_codebase_metadata(raw_negative), raw_negative)
+            self.assertNotIn("data-archive-codebase", raw_negative)
+
+    def test_flash_codebase_ignores_installer_text_in_other_attributes(self) -> None:
+        cab = "http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab"
+        title = "note codebase='" + cab + "'"
+        source = '<object title="' + title + '" codebase="' + cab + '"></object>'
+        rewritten = pages.rename_flash_codebase_metadata(source)
+        self.assertIn('title="' + title + '"', rewritten)
+        self.assertIn('data-archive-codebase="' + cab + '"', rewritten)
+        self.assertEqual(rewritten, pages.rename_flash_codebase_metadata(rewritten))
+
+    def test_generated_404_uses_archive_missing_copy_and_keeps_runtime_marker(self) -> None:
+        page = pages.generated_404(pages.DEFAULT_BASE_PATH)
+        self.assertIn("<title>Page not in this archive</title>", page)
+        self.assertIn("This page was not saved in the available archive.", page)
+        self.assertNotIn("will not fetch it from the Internet", page)
+        self.assertIn('<meta name="offline-pages-404" content="true">', page)
+        self.assertIn("URLSearchParams", page)
+        self.assertIn(pages.DEFAULT_BASE_PATH + "__offline/pages_runtime.js", page)
+
     def test_story_exhibit_disables_only_retired_form_initializers(self) -> None:
         route = "/community/stories/submit.html"
         source = (ROOT / "offline/site" / route.lstrip("/")).read_text(
