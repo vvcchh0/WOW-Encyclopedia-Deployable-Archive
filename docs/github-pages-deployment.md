@@ -43,3 +43,7 @@ python tools/publish_github_pages.py --site .scratch/pages-preview --branch gh-p
 本地补齐从当前3,358条目标SSOT重新选出有界候选，先复用已有exact索引与失败证据，避免无新依据地重试。新的查询、实体、错误和日期补充继续分开保存；任何HTTP200错误HTML均不算图片，pre2008素材仍必须有完整exact2008全年空证明。新采集不自动覆盖已发布快照。
 
 依据：[服务器职责盘点](../research/github-pages-20261013/server-contract-inventory.md)、[本地补齐初选](../research/resource-resume-20261013/inventory.md)、[GitHub Pages限额](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits)、[GitHub Pages REST API](https://docs.github.com/en/rest/pages/pages)。
+
+## 2026-10-14 浏览版修复
+
+[浏览版安全修复](browser-security-remediation-20261014.md)更新了分页参数处理与历史业务表单展示，保留原始来源及旧离线包。最终部署为 `97f7cf66255593c3b936d7957abcd134674de048`，Pages 构建成功，13 个远程对象与最终导出一致。所有权验证和复核按[Search Console 准备稿](search-console-review-20261014.md)继续。
