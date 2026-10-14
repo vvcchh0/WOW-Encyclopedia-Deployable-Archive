@@ -184,7 +184,7 @@ function collapse(authorId) {
 				document.getElementById("userpanel"+postIdArray[count]).style.top = "-77px";
 				document.getElementById("pinfo"+postIdArray[count]).style.background = "transparent url('/WOW-Encyclopedia-Deployable-Archive/_origins/forums.worldofwarcraft.com/images/pinfo-tile.gif') repeat-y 3px 0";
 				document.getElementById("pinfo"+postIdArray[count]).style.padding = "8px 0 0 0";
-				document.getElementById("ignore"+postIdArray[count]).src = "/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fforums.worldofwarcraft.com%2Fjs%2Fforum.js&requested=http%3A%2F%2Fforums.worldofwarcraft.com%2Fimages%2Ficons%2Fignore-user.gif&reason=invalid-overlay-or-uncollected-site-resource";
+				document.getElementById("ignore"+postIdArray[count]).src = "/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fforums.worldofwarcraft.com%2Fjs%2Fforum.js&requested=http%3A%2F%2Fforums.worldofwarcraft.com%2Fimages%2Ficons%2Fignore-user.gif&reason=external-or-uncollected-resource";
 				
 				var switchColor = postIdArray[count].split("_switch");
 				//alert(switchColor[1]);
@@ -206,7 +206,7 @@ function collapse(authorId) {
 				document.getElementById("pinfo"+postIdArray[count]).style.background = "none";
 				document.getElementById("pinfo"+postIdArray[count]).style.padding = "5px 0 0 0";
 				document.getElementById("id"+postIdArray[count]).style.backgroundImage = "none";
-				document.getElementById("ignore"+postIdArray[count]).src = "/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fforums.worldofwarcraft.com%2Fjs%2Fforum.js&requested=http%3A%2F%2Fforums.worldofwarcraft.com%2Fimages%2Ficons%2Funignore-user.gif&reason=invalid-overlay-or-uncollected-site-resource";
+				document.getElementById("ignore"+postIdArray[count]).src = "/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fforums.worldofwarcraft.com%2Fjs%2Fforum.js&requested=http%3A%2F%2Fforums.worldofwarcraft.com%2Fimages%2Ficons%2Funignore-user.gif&reason=external-or-uncollected-resource";
 				
 				if (Browser.ie) {
 				document.getElementById("pinfobackground"+postIdArray[count]).style.filter = "none";
@@ -249,7 +249,7 @@ function collapseSingle(authorId,count) {
 			document.getElementById("pinfo"+postIdArray[count]).style.background = "transparent url('/WOW-Encyclopedia-Deployable-Archive/_origins/forums.worldofwarcraft.com/images/pinfo-tile.gif') repeat-y 3px 0";
 			document.getElementById("pinfo"+postIdArray[count]).style.padding = "8px 0 0 0";
 			document.getElementById("id"+postIdArray[count]).style.backgroundImage = "url('/WOW-Encyclopedia-Deployable-Archive/_origins/forums.worldofwarcraft.com/images/avatar-shadow-bg2.gif')";
-			document.getElementById("ignore"+postIdArray[count]).src = "/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fforums.worldofwarcraft.com%2Fjs%2Fforum.js&requested=http%3A%2F%2Fforums.worldofwarcraft.com%2Fimages%2Ficons%2Fignore-user.gif&reason=invalid-overlay-or-uncollected-site-resource";
+			document.getElementById("ignore"+postIdArray[count]).src = "/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fforums.worldofwarcraft.com%2Fjs%2Fforum.js&requested=http%3A%2F%2Fforums.worldofwarcraft.com%2Fimages%2Ficons%2Fignore-user.gif&reason=external-or-uncollected-resource";
 			
 				if (Browser.ie) {
 					document.getElementById("pinfobackground"+postIdArray[count]).style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='/WOW-Encyclopedia-Deployable-Archive/_origins/forums.worldofwarcraft.com/images/back.png')";
@@ -267,7 +267,7 @@ function collapseSingle(authorId,count) {
 			document.getElementById("pinfo"+postIdArray[count]).style.background = "none";	
 			document.getElementById("pinfo"+postIdArray[count]).style.padding = "5px 0 0 0";
 			document.getElementById("id"+postIdArray[count]).style.backgroundImage = "none";
-			document.getElementById("ignore"+postIdArray[count]).src = "/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fforums.worldofwarcraft.com%2Fjs%2Fforum.js&requested=http%3A%2F%2Fforums.worldofwarcraft.com%2Fimages%2Ficons%2Funignore-user.gif&reason=invalid-overlay-or-uncollected-site-resource";
+			document.getElementById("ignore"+postIdArray[count]).src = "/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fforums.worldofwarcraft.com%2Fjs%2Fforum.js&requested=http%3A%2F%2Fforums.worldofwarcraft.com%2Fimages%2Ficons%2Funignore-user.gif&reason=external-or-uncollected-resource";
 			
 				if (Browser.ie) {
 					document.getElementById("pinfobackground"+postIdArray[count]).style.filter = "none";

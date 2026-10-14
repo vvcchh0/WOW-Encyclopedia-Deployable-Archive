@@ -439,7 +439,7 @@ pageTracker._trackPageview();
 								<div class="news-border-left"></div>
 								<div class="news-border-right"></div>
 						<div class="news-listing">
-						<div class="hoverContainer" onmouseover="javascript:this.style.background="#EEDB99"" onmouseout="javascript:this.style.background="/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Flayout%2Flayout.xsl&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Flayout%2Fnone&amp;reason=invalid-overlay-or-uncollected-site-resource"" onclick="javascript:toggleEntry('{pubDate}-{string-length()}','{$hilite}')">
+						<div class="hoverContainer" onmouseover="javascript:this.style.background="#EEDB99"" onmouseout="javascript:this.style.background="/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Flayout%2Flayout.xsl&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Flayout%2Fnone&amp;reason=external-or-uncollected-resource"" onclick="javascript:toggleEntry('{pubDate}-{string-length()}','{$hilite}')">
 						  <div>
 						    <div class="news-top">
 							<ul>
@@ -447,7 +447,7 @@ pageTracker._trackPageview();
 								
 								<xsl:choose>
 									<xsl:when test="icon">
-										<img src="/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Flayout%2Flayout.xsl&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Ficons%2F%7Bicon%7D.gif&amp;reason=invalid-overlay-or-uncollected-site-resource" alt="new-post" border="0" />
+										<img src="/WOW-Encyclopedia-Deployable-Archive/__offline/empty.js?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Flayout%2Flayout.xsl&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Ficons%2F%7Bicon%7D.gif&amp;reason=external-or-uncollected-resource" alt="new-post" border="0" />
 									</xsl:when>
 									<xsl:otherwise>
 										<img src="/WOW-Encyclopedia-Deployable-Archive/new-hp/images/icons/news-wow.gif" alt="new-post" border="0" />
@@ -593,7 +593,7 @@ pageTracker._trackPageview();
 <xsl:template name="cap">
    <xsl:param name="letter" />
    <xsl:param name="align">left</xsl:param>
- 		<img src = "/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Flayout%2Flayout.xsl&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fshared%2Fwow-com%2Fimages%2Fsmallcaps%2Fplain%2F%7B%24letter%7D.gif&amp;reason=invalid-overlay-or-uncollected-site-resource" align="{$align}" style="margin-right: 4px;" />
+ 		<img src = "/WOW-Encyclopedia-Deployable-Archive/__offline/empty.js?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Flayout%2Flayout.xsl&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fshared%2Fwow-com%2Fimages%2Fsmallcaps%2Fplain%2F%7B%24letter%7D.gif&amp;reason=external-or-uncollected-resource" align="{$align}" style="margin-right: 4px;" />
 </xsl:template>
 
 
@@ -922,7 +922,7 @@ background-image:url(/shared/wow-com/images/backgrounds/blue-bg.png);
 	</tr>
 	<tr>
 	  <td width="8" style="background-image:url(/shared/wow-com/images/borders/screenshot/left.gif); background-repeat:repeat-y;"></td>
-	  <td><a id="{$source}" href="#" onMouseOver="setGalleryLink('{$source}');"><img src="/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Flayout%2Flayout.xsl&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Flayout%2F%7B%24source%7D-thumb.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource" border="0" style="display:block;"/></a></td>
+	  <td><a id="{$source}" href="#" onMouseOver="setGalleryLink('{$source}');"><img src="/WOW-Encyclopedia-Deployable-Archive/__offline/empty.js?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Flayout%2Flayout.xsl&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Flayout%2F%7B%24source%7D-thumb.jpg&amp;reason=external-or-uncollected-resource" border="0" style="display:block;"/></a></td>
 	  <td width="9" style="background-image:url(/shared/wow-com/images/borders/screenshot/right.gif); background-repeat:repeat-y;"></td>
 	</tr>
     <tr>
@@ -963,7 +963,7 @@ background-image:url(/shared/wow-com/images/backgrounds/blue-bg.png);
 	</tr>
 	<tr>
 	  <td width="8" style="background-image:url(/shared/wow-com/images/borders/screenshot/left.gif); background-repeat:repeat-y;"></td>
-	  <td><a id="{$source}" href="#" onMouseOver="setPopupLink('{$source}',{$width},{$height});"><img src="/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Flayout%2Flayout.xsl&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Flayout%2F%7B%24source%7D-thumb.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource" border="0" style="display:block;"/></a></td>
+	  <td><a id="{$source}" href="#" onMouseOver="setPopupLink('{$source}',{$width},{$height});"><img src="/WOW-Encyclopedia-Deployable-Archive/__offline/empty.js?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Flayout%2Flayout.xsl&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Flayout%2F%7B%24source%7D-thumb.jpg&amp;reason=external-or-uncollected-resource" border="0" style="display:block;"/></a></td>
 	  <td width="9" style="background-image:url(/shared/wow-com/images/borders/screenshot/right.gif); background-repeat:repeat-y;"></td>
 	</tr>
     <tr>

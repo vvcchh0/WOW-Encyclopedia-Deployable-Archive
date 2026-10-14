@@ -115,7 +115,7 @@ break;
  default:
     link1 = new Object();
     link1.text = "WorldofWarcraft.com"
-    link1.href = "/WOW-Encyclopedia-Deployable-Archive/index.xml.html"
+    link1.href = "/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fforums.worldofwarcraft.com%2Fjs%2Fbuildtopnav.js&requested=http%3A%2F%2Fforums.worldofwarcraft.com%2Findex.xml&reason=external-or-uncollected-resource"
     
     link2 = new Object();
     link2.text = "The Armory"
@@ -134,7 +134,7 @@ linkarray.push(link2)
 linkarray.push(link3)
 
 for(i=0; i<linkarray.length; i++)
-{ div = (i<linkarray.length-1) ? "<img src='/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fforums.worldofwarcraft.com%2Fjs%2Fbuildtopnav.js&requested=http%3A%2F%2Fforums.worldofwarcraft.com%2Fimages%2Ftopnav_div.gif&reason=invalid-overlay-or-uncollected-site-resource'/>":""
+{ div = (i<linkarray.length-1) ? "<img src='/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fforums.worldofwarcraft.com%2Fjs%2Fbuildtopnav.js&requested=http%3A%2F%2Fforums.worldofwarcraft.com%2Fimages%2Ftopnav_div.gif&reason=external-or-uncollected-resource'/>":""
   outstring += "<a href='"+linkarray[i].href+ "'>"+ linkarray[i].text +"</a>"+div; }
 
 	topnavguts = "";

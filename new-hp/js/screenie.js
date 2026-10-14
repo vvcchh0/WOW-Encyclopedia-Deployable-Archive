@@ -60,14 +60,14 @@ function omegaLightBox(thisScreenshot, omegaoverride)
 
 		if(prevShot){
 		backGifElement = document.createElement("img");
-		backGifElement.src = "/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fjs%2Fscreenie.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fmenu%2FbackGif.gif&reason=invalid-overlay-or-uncollected-site-resource";
+		backGifElement.src = "/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fjs%2Fscreenie.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fmenu%2FbackGif.gif&reason=external-or-uncollected-resource";
 		backGifElement.onclick = function(){prevScreenshot()};
 		backGifElement.className = "backGifStyle"; 
 		}
 		
 		if(nextShot){
 		fwdGifElement = document.createElement("img");
-		fwdGifElement.src = "/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fjs%2Fscreenie.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fmenu%2FfwdGif.gif&reason=invalid-overlay-or-uncollected-site-resource";
+		fwdGifElement.src = "/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fjs%2Fscreenie.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fmenu%2FfwdGif.gif&reason=external-or-uncollected-resource";
 		fwdGifElement.onclick = function(){nextScreenshot()};
 		fwdGifElement.className = "fwdGifStyle";
 		}

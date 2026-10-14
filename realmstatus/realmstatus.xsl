@@ -54,7 +54,7 @@
 			                   <img src = "/WOW-Encyclopedia-Deployable-Archive/shared/wow-com/images/icons/serverstatus/uparrow.gif" width = "18" height = "18"/>
 			                </xsl:when>
 			                <xsl:otherwise>
-			                   <img src = "/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Frealmstatus%2Frealmstatus.xsl&amp;requested=https%3A%2F%2Fwww.worldofwarcraft.com%2Fshared%2Fwow-com%2Fimages%2Ficons%2Fserverstatus%2Fdownarrow.gif&amp;reason=invalid-overlay-or-uncollected-site-resource" width = "18" height = "18"/>
+			                   <img src = "/WOW-Encyclopedia-Deployable-Archive/__offline/empty.js?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Frealmstatus%2Frealmstatus.xsl&amp;requested=https%3A%2F%2Fwww.worldofwarcraft.com%2Fshared%2Fwow-com%2Fimages%2Ficons%2Fserverstatus%2Fdownarrow.gif&amp;reason=external-or-uncollected-resource" width = "18" height = "18"/>
 			                </xsl:otherwise>
 		             	</xsl:choose>					
 				

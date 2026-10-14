@@ -20,7 +20,7 @@ function tree(pageId) {
 	
 	if (eval('Menu' + pageId + '[3]') == 0) {
 		NoOffFirstLineMenus = treeArray.length + 1;
-		eval('Menu' + NoOffFirstLineMenus + '=new Array("<div style = position:absolute><img src = /WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fshared%2Fwow-com%2Fincludes-client%2Fnavtreefunctions.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fshared%2Fwow-com%2Fimages%2Fsubnav%2Fdot.gif&reason=invalid-overlay-or-uncollected-site-resource></div>","#","/WOW-Encyclopedia-Deployable-Archive/shared/wow-com/images/subnav/button_bg.gif",0,15,13,"","","","","","",-1,-1,-1,"","");');
+		eval('Menu' + NoOffFirstLineMenus + '=new Array("<div style = position:absolute><img src = /WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fshared%2Fwow-com%2Fincludes-client%2Fnavtreefunctions.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fshared%2Fwow-com%2Fimages%2Fsubnav%2Fdot.gif&reason=external-or-uncollected-resource></div>","#","/WOW-Encyclopedia-Deployable-Archive/shared/wow-com/images/subnav/button_bg.gif",0,15,13,"","","","","","",-1,-1,-1,"","");');
 	}
 
 

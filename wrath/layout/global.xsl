@@ -331,7 +331,7 @@
 <xsl:template match="customart">
 <!-- art viewer-->
 <div class="customart" style="float:{@align}; {@style}">
-<a href="#" onclick="fiatLux('{$baseurl}images/artwork/ss{@id}.jpg'); return false"><img src="/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fwrath%2Flayout%2Fglobal.xsl&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fwrath%2Flayout%2F%7B%24baseurl%7Dimages%2Fartwork%2Fss%7B%40id%7D-thumb.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource"/></a></div>
+<a href="#" onclick="fiatLux('{$baseurl}images/artwork/ss{@id}.jpg'); return false"><img src="/WOW-Encyclopedia-Deployable-Archive/__offline/empty.js?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fwrath%2Flayout%2Fglobal.xsl&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fwrath%2Flayout%2F%7B%24baseurl%7Dimages%2Fartwork%2Fss%7B%40id%7D-thumb.jpg&amp;reason=external-or-uncollected-resource"/></a></div>
 </xsl:template>
 
 
@@ -381,7 +381,7 @@
 <xsl:template name="cap">
    <xsl:param name="letter" />
    <xsl:param name="align">left</xsl:param>
- 		<img src="/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fwrath%2Flayout%2Fglobal.xsl&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fwrath%2Flayout%2F%7B%24baseurl%7D%2Fimages%2Fletters%2F%7B%24letter%7D.gif&amp;reason=invalid-overlay-or-uncollected-site-resource" align="{$align}" class="smallcap" />
+ 		<img src="/WOW-Encyclopedia-Deployable-Archive/__offline/empty.js?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fwrath%2Flayout%2Fglobal.xsl&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fwrath%2Flayout%2F%7B%24baseurl%7D%2Fimages%2Fletters%2F%7B%24letter%7D.gif&amp;reason=external-or-uncollected-resource" align="{$align}" class="smallcap" />
 </xsl:template>
 
 

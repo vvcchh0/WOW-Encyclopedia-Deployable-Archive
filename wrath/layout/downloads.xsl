@@ -63,7 +63,7 @@
 <div class="downloads">
 <div class="dl_content"> 
 <h1><xsl:copy-of select="$loc/strs/str[@id='wrath.downloads.fankit.title']"/></h1>
-<div class="dl_link"><div class="file">(<xsl:copy-of select="$loc/strs/str[@id='wrath.downloads.fankit.filesize']"/>)</div><a href="{$loc/strs/str[@id='wrath.downloads.fankit.link']}"><img class="png" src="/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fwrath%2Flayout%2Fdownloads.xsl&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fwrath%2Flayout%2F%7B%24baseurl%7D%2Fimages%2Flayout%2Fdl_icon.png&amp;reason=invalid-overlay-or-uncollected-site-resource" align="absmiddle"/><xsl:copy-of select="$loc/strs/str[@id='wrath.downloads.fankit.download']"/>  </a></div>
+<div class="dl_link"><div class="file">(<xsl:copy-of select="$loc/strs/str[@id='wrath.downloads.fankit.filesize']"/>)</div><a href="{$loc/strs/str[@id='wrath.downloads.fankit.link']}"><img class="png" src="/WOW-Encyclopedia-Deployable-Archive/__offline/empty.js?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fwrath%2Flayout%2Fdownloads.xsl&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fwrath%2Flayout%2F%7B%24baseurl%7D%2Fimages%2Flayout%2Fdl_icon.png&amp;reason=external-or-uncollected-resource" align="absmiddle"/><xsl:copy-of select="$loc/strs/str[@id='wrath.downloads.fankit.download']"/>  </a></div>
 <xsl:copy-of select="$loc/strs/str[@id='wrath.downloads.fankit.desc']"/>
 </div></div>
 <div id="wp_title"></div>
