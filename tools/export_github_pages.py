@@ -300,6 +300,24 @@ def rewrite_inline_scripts(
     return script_re.sub(replace, text)
 
 
+def rewrite_iframe_fallbacks(text: str, *, base_url: str, localizer: PagesLocalizer, recorder: Any) -> str:
+    """Localize archival iframe fallback markup even when Python treats it as raw text."""
+
+    class FallbackParser(mirror.LocalizingHTMLParser):
+        CDATA_CONTENT_ELEMENTS = ("script", "style")
+
+    def replace(match: re.Match[str]) -> str:
+        parser = FallbackParser(base_url=base_url, localizer=localizer, recorder=recorder, marker="")
+        try:
+            parser.feed(match.group(2))
+            parser.close()
+        except Exception as exc:
+            raise PagesExportError(f"iframe fallback localization failed for {base_url}") from exc
+        return match.group(1) + parser.output() + match.group(3)
+
+    return re.sub(r"(<iframe\b[^>]*>)(.*?)(</iframe\s*>)", replace, text, flags=re.I | re.S)
+
+
 def rewrite_compat_script(text: str) -> str:
     """Make the compatibility search's exact-topic jump synchronous on Pages.
 
@@ -1332,6 +1350,7 @@ def export_pages(
             if kind in HTML_KINDS or is_html_record(record):
                 text = data.decode(mirror.charset_for(str(record.get("mime") or ""), data), errors="replace")
                 text = mirror.rewrite_html(text, base_url=base_url, localizer=localizer, recorder=recorder, source_sha=source_sha, compat_assets=[])
+                text = rewrite_iframe_fallbacks(text, base_url=base_url, localizer=localizer, recorder=recorder)
                 text = rewrite_inline_scripts(text, base_url=base_url, localizer=localizer, recorder=recorder)
                 text = normalize_html_charset(text)
                 text = disable_sensitive_forms(text, route=route)

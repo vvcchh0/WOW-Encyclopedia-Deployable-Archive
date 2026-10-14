@@ -9,7 +9,7 @@ function option(name, fallback) {
   const index = process.argv.indexOf(name);
   return index < 0 ? fallback : process.argv[index + 1];
 }
-const root = path.resolve(option('--site', '.scratch/pages-security-20261014'));
+const root = path.resolve(option('--site', '.scratch/pages-preview'));
 const output = path.resolve(option('--output', '.scratch/browser-security-validation.json'));
 const prefix = '/WOW-Encyclopedia-Deployable-Archive/';
 const { chromium } = require(option('--playwright-module', 'playwright'));
@@ -140,6 +140,13 @@ async function main() {
       const state = await page.evaluate(() => ({ blue: document.getElementById('blueQuest').style.display, purple: document.getElementById('purpleQuest').style.display }));
       assert.equal(state.blue, 'none'); assert.equal(state.purple, 'inline');
       return { state };
+    });
+    await record('browsing', 'iframe fallback keeps archived advertisements local', async () => {
+      await page.goto(origin + prefix + 'gadgetzantimes/gt001/auntiefizzle.html', { waitUntil: 'domcontentloaded' });
+      const fallback = await page.locator('iframe').first().evaluate(el => el.innerHTML);
+      assert.doesNotMatch(fallback, /(?:href|src)=["']https?:\/\/(?:clk|view)\.atdmt\.com/i);
+      assert.match(fallback, /WOW-Encyclopedia-Deployable-Archive\/__offline\//);
+      return { localized: true };
     });
     await record('browsing', 'static business presentation screenshot', async () => {
       await page.goto(origin + prefix + 'visa/reward/login.html', { waitUntil: 'domcontentloaded' });

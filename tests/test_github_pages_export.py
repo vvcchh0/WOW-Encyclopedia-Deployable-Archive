@@ -114,6 +114,27 @@ class GithubPagesExportTests(unittest.TestCase):
             self.assertIn('String(topicsArray[topicsArray[document.title].parentString].linkString).split("/").pop()', cascade)
             self.assertEqual((site / "index.xml").read_text(encoding="utf-8").split("<meta", 1)[0], "<html><head>")
 
+    def test_iframe_fallback_urls_remain_local_on_raw_text_parsers(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            base, site, manifest = self._fixture(Path(tmp))
+            homepage = site / "index.xml"
+            text = homepage.read_text(encoding="utf-8").replace(
+                "</body>",
+                '<iframe src="https://ads.example/frame"><script>document.write(\'<a href="https://ads.example/click"><img src="https://ads.example/pixel.jpg"></a>\');</script><noscript><a href="https://ads.example/click"><img src="https://ads.example/pixel.jpg"></a></noscript></iframe></body>',
+            )
+            data = text.encode("utf-8")
+            homepage.write_bytes(data)
+            payload = json.loads(manifest.read_text(encoding="utf-8"))
+            payload["files"][0]["derived_sha256"] = hashlib.sha256(data).hexdigest()
+            payload["files"][0]["derived_length"] = len(data)
+            manifest.write_text(json.dumps(payload), encoding="utf-8")
+            pages.export_pages(source_site=site, manifest_path=manifest, output=base / "pages", workspace_root=base, max_bytes=500_000_000, min_free_bytes=0)
+            exported = (base / "pages/index.xml.html").read_text(encoding="utf-8")
+            self.assertNotIn('href="https://ads.example', exported)
+            self.assertNotIn('src="https://ads.example', exported)
+            self.assertIn('/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg', exported)
+            self.assertEqual(homepage.read_bytes(), data)
+
     def test_existing_output_and_traversal_are_rejected(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             base, site, manifest = self._fixture(Path(tmp))
