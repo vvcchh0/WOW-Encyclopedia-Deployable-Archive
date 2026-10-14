@@ -1517,10 +1517,16 @@ def runtime_js(base_path: str, route_map: dict[str, str] | None = None) -> str:
         }});
     }}
     function mapDynamicMarkup(markup) {{
-        var attr = /(\\b(?:src|href|background|poster)\\s*=\\s*)(["']?)([^"'<>\\s]+)\\2/ig;
-        return String(markup).replace(attr, function (full, lead, quote, raw) {{
+        // Historical document.write calls often assemble a quoted URL from
+        // JavaScript fragments.  The resulting value can contain spaces
+        // (for example ``icon_player interaction.jpg``), so the quoted arm
+        // must not use the unquoted token grammar.
+        var attr = /(\\b(?:src|href|background|poster)\\s*=\\s*)(?:(['"])([^'"<>]*)\\2|([^\\s'"<>]+))/ig;
+        return String(markup).replace(attr, function (full, lead, quote, quotedRaw, bareRaw) {{
+            var raw = quote ? quotedRaw : bareRaw;
             var mapped = /href\\s*=\\s*$/i.test(lead) ? mapHref(raw) : mapImage(raw);
-            return lead + quote + mapped + quote;
+            var delimiter = quote || "";
+            return lead + delimiter + mapped + delimiter;
         }});
     }}
     function installMarkupAdapter() {{

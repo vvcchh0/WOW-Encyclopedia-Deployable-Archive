@@ -4,7 +4,9 @@ import hashlib
 import json
 import re
 from pathlib import Path
+import shutil
 import sys
+import subprocess
 import tempfile
 import unittest
 from unittest import mock
@@ -170,6 +172,57 @@ class GithubPagesExportTests(unittest.TestCase):
         self.assertLess(head_start, csp)
         self.assertLess(csp, head_end)
         self.assertIn("literal\ufeffbody", derived)
+
+    def test_runtime_maps_dynamic_document_write_image_with_spaces(self) -> None:
+        node = shutil.which("node")
+        if not node:
+            self.skipTest("Node.js is unavailable for the runtime regression")
+        runtime = pages.runtime_js(pages.DEFAULT_BASE_PATH, {})
+        driver = f"""
+const window = {{
+    location: {{
+        origin: "https://pages.test",
+        href: "https://pages.test{pages.DEFAULT_BASE_PATH}info/races/dancing.html"
+    }},
+    Element: undefined,
+    CSSStyleDeclaration: undefined,
+    HTMLImageElement: undefined
+}};
+const writes = [];
+const document = {{
+    baseURI: window.location.href,
+    write: function (value) {{ writes.push(String(value)); }},
+    writeln: function (value) {{ writes.push(String(value)); }},
+    addEventListener: function () {{}},
+    querySelector: function () {{ return null; }},
+    images: []
+}};
+globalThis.location = window.location;
+globalThis.fetch = function () {{
+    return Promise.resolve({{ok: true, json: function () {{ return Promise.resolve({{routes: {{}}}}); }}}});
+}};
+{runtime}
+const Menu2 = ["Player Interaction"];
+document.write('<img src = "/shared/wow-com/images/subnav/icon_' + Menu2[0].toLowerCase() + '.jpg">');
+process.stdout.write(writes[0]);
+"""
+        result = subprocess.run(
+            [node, "-e", driver],
+            capture_output=True,
+            text=True,
+            check=False,
+            timeout=10,
+        )
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn(
+            'src = "/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?',
+            result.stdout,
+        )
+        self.assertIn("reason=dynamic-image-uncollected", result.stdout)
+        self.assertNotIn(
+            'src = "/shared/wow-com/images/subnav/icon_player interaction.jpg"',
+            result.stdout,
+        )
 
     def test_real_audited_flash_codebase_attributes_are_renamed_by_source_page(self) -> None:
         cases = {
