@@ -21,3 +21,4 @@ Git 主树保存部署文件、工具、这些文档与关键验收；历史记�
 
 - [浏览版脚本与表单修复](browser-security-remediation-20261014.md)：分页参数处理、历史业务表单静态展示、验收与发布记录。
 - [Search Console 复核准备](search-console-review-20261014.md)：所有权验证、报告记录、英文复核说明与 Edge 补充。
+- [本地资源补充](resource-recovery-20261014.md)：独立图片补充层、图库目录修复、首批查询与本地验收。

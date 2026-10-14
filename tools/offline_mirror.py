@@ -499,6 +499,19 @@ def rewrite_css(text: str, *, base_url: str, localizer: Localizer, recorder: Ref
     def url_replace(match: re.Match[str]) -> str:
         raw = match.group("url")
         if raw.strip().casefold().startswith("/__offline/"):
+            # Pages exports may receive a frozen CSS value that already
+            # points at the local missing-image marker.  Only an explicit
+            # Pages localizer may revisit that one marker; the loopback
+            # default keeps all generated support URLs byte-for-byte stable.
+            if getattr(localizer, "relocalize_image_placeholders", False):
+                try:
+                    placeholder = urllib.parse.urlsplit(raw.strip())
+                except ValueError:
+                    placeholder = None
+                if placeholder and placeholder.path.casefold() == "/__offline/missing-image.svg":
+                    local = localizer.localize(raw, base_url=base_url, context="css_url", recorder=recorder)
+                    if local != raw:
+                        return "url(\"" + local.replace('"', "%22") + "\")"
             return match.group(0)
         local = localizer.localize(raw, base_url=base_url, context="css_url", recorder=recorder)
         return "url(\"" + local.replace('"', "%22") + "\")"
