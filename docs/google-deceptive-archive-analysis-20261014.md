@@ -126,3 +126,7 @@ Google 文档由已装 Firecrawl 连接器实时读取。Google 文档主机 dir
 [G3]: https://safebrowsing.google.com/safebrowsing/report_error/?hl=en
 [G4]: https://support.google.com/webmasters/answer/10432366?hl=en
 [G5]: https://support.google.com/webmasters/answer/34592?hl=en
+
+## 后续实施记录
+
+上文保留专项分析时的发布基线与建议。随后已按 P0/P1 方案完成历史展品改造并发布为 Pages `86dc069b4fa806388ac9a966f3d88880166d4fcd`；实际范围、移动端及禁用 JavaScript 验收、公网核对见[历史展品改造记录](historical-exhibits-20261014.md)。原始触发 URL 仍未知，Google 复核尚未提交。

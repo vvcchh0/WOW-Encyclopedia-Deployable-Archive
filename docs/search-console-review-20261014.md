@@ -1,6 +1,6 @@
 # Google Search Console 复核材料（准备稿，2026-10-14）
 
-> **状态：修复与根站点验证文件已部署；用户已提供安全问题报告，类别为“欺骗性网页”；复核尚未提交。** 正式报告未给出示例网址，首次检测日期仍待补充。
+> **状态：修复与根站点验证文件已部署；用户已提供安全问题报告，类别为“欺骗性网页”；复核尚未提交。** 正式报告未给出示例网址或首次检测日期。
 
 ## 根站点所有权文件发布（2026-10-14）
 
@@ -12,7 +12,13 @@ Pages 提交为 `e02544be5f01291319a4bdf352c2b7630e545658`，构建于 2026-10-1
 
 文件发布后，用户已提供根属性的“安全问题”报告，详见下节；所有权验证的具体操作时间未单独记录。本轮代理没有点击 Google 的验证或复核提交。该文件继续保留。Google 说明已验证父属性可用于自动验证其子属性，见[所有权验证说明](https://support.google.com/webmasters/answer/9008080)。
 
-WOW 与 Gitube 项目的发布内容本轮没有更改。下文原先按项目分别准备的复核草稿继续保留，正式提交时以实际选中的属性及其报告为准。
+根验证文件发布阶段没有更改 WOW 与 Gitube 项目的内容。WOW 后续发布的历史展品改造见下节；Gitube 尚未在本轮检查。正式提交须以实际选中的属性及其报告范围为准。
+
+## 历史展品改造已发布
+
+源码 `c3cf6f9638c8ee6de6accc6ccc77af1b630839e7`，Pages `86dc069b4fa806388ac9a966f3d88880166d4fcd`。旧奖励与登录入口已改为明确的 2008 年历史展品；报名、兑换、投稿、软件下载页及三个账号菜单标签采用历史语境。旧业务没有可填写或提交控件，搜索和正常文献浏览保留。
+
+32 项单元回归、29 项展品浏览检查和 39 项既有功能检查通过。展品检查覆盖桌面、390px 手机和禁用 JavaScript；意外脚本异常、非预期 CSP 错误、外部请求和提交请求为 0。2026-10-14 19:14:37 Asia/Shanghai 核对 18 个线上对象，均为 HTTP 200，字节与本地导出一致。详细证据见[改造与发布记录](historical-exhibits-20261014.md)。这些检查没有提供 Google 已解除标记的结果。
 
 ## 用户提供的正式报告（2026-10-14）
 
@@ -26,7 +32,7 @@ WOW 与 Gitube 项目的发布内容本轮没有更改。下文原先按项目�
 
 ## 范围与已知观察
 
-项目保存的是非官方的 2008 Warcraft Encyclopedia 历史教育档案。归档基准是 `20080512210044`（2008-05-12 21:00:44 UTC），资源处理日为 2026-10-12，浏览器安全修复处理日为 2026-10-14（Asia/Shanghai）。本次拟复核的 URL-prefix 属性优先是：
+项目保存的是非官方的 2008 Warcraft Encyclopedia 历史教育档案。归档基准是 `20080512210044`（2008-05-12 21:00:44 UTC），首批资源处理日为 2026-10-12，浏览器安全修复处理日为 2026-10-14（Asia/Shanghai）。当前正式报告来自根属性；为定位问题，可另检查这些项目级 URL-prefix 属性：
 
 1. `https://vvcchh0.github.io/WOW-Encyclopedia-Deployable-Archive/`
 2. `https://vvcchh0.github.io/Gitube/`（另一项目，**不在本次修复范围**，只为避免将两个项目混在一个报告中而记录）
@@ -35,64 +41,48 @@ WOW 与 Gitube 项目的发布内容本轮没有更改。下文原先按项目�
 
 分享给访问者的浏览未收到拦截反馈；手机 Chrome 正常打开，本机 Chrome 曾出现拦截；用户随后报告本机 Edge 也提示“被人举报不安全”。这些浏览器上下文不同，记录只保留为观察，不能写成所有设备都被拦截，也不能据此断定误报。
 
-## 复核前步骤
+## 提交前仍需完成的范围核对
 
-1. **先确认报告对象。** 在 Search Console 中打开实际 owner 报告，记录 issue type、`first detected`、最近刷新时间和所有返回的 sample URLs。Google 明确说明报告中的 sample URLs 不是完整清单，复核对象应是属性报告所覆盖的全部问题；流程、测试和 Request review 规则见 [Search Console 安全问题报告与复核](https://support.google.com/webmasters/answer/9044101?hl=zh-Hans)。
-2. **确认属性和权限。** 优先分别使用上面的两个 URL-prefix 属性。URL-prefix 可以包含项目路径；验证说明见 [URL-prefix 属性](https://support.google.com/webmasters/answer/10432366?hl=en)。`github.io` 的 DNS 不归本项目控制，因此不要把 Domain property 的 DNS 验证当作现成方案。若选择 HTML 文件验证，必须将 Google 给出的完整原样文件名和字节放在该 URL-prefix 的属性根，并在验证成功后保留它；规则见 [Google 网站所有权验证](https://support.google.com/webmasters/answer/9008080?hl=en)。
-3. **核对已部署版本。** 本轮最终部署为 `97f7cf6`，Pages 于 2026-10-14 10:03:30（Asia/Shanghai）构建成功，13 个远程对象与最终本地导出一致。详细方法与结果见[修复记录](browser-security-remediation-20261014.md)。Gitube 的状态另记。
-4. **核对报告列出的全部可复现范围。** 对 sample URL、入口页和代表性不存在路径分别记录 HTTP/浏览器结果、浏览器上下文和检查时间。报告没有足够信息时，应把“触发项目/原始 URL 未确定”作为事实保留，不猜测触发源。
-5. **先 Test，再 Request review。** Google 的复核说明要求先解决报告问题并测试整个报告范围，再提交复核；提交时说明问题、采取的行动和结果。一次复核处于 pending 时不重复提交。复核提交时间、状态和 Google 回复要写回下表。
+正式报告来自根属性 `https://vvcchh0.github.io/`，覆盖其下的项目路径。当前报告只有“欺骗性网页”1 项，示例网址“不适用”，原始触发 URL 未确定；首次检测日期及刷新时间未提供。不要猜测日期或把本轮修复写成已定位原始触发原因。
 
-## 报告信息记录表
+本轮检查和修复的是 WOW 项目，Gitube 未审计。新增项目级 URL-prefix 属性可帮助检查对应报告，但不会缩小已有根属性报告的范围。提交根属性复核前，应继续核对该属性覆盖的其他公开内容，并记录结果。Google 的处理步骤见[安全问题报告与复核](https://support.google.com/webmasters/answer/9044101?hl=zh-Hans)。
 
-| 字段 | WOW Encyclopedia URL-prefix | Gitube URL-prefix（范围外） | 记录规则 |
-| --- | --- | --- | --- |
-| Search Console property | `https://vvcchh0.github.io/WOW-Encyclopedia-Deployable-Archive/` | `https://vvcchh0.github.io/Gitube/` | `[待填：实际 property 名称及权限确认时间]` |
-| Issue type / category | `[待填：报告原文]` | `[待填：若有独立报告]` | 原样抄录，勿用 `unsafe/deceptive` 替代正式 issue 名称 |
-| First detected | `[待填：YYYY-MM-DD HH:mm 时区]` | `[待填]` | 以报告字段为准，不用本地观察日期替代 |
-| Last refreshed | `[待填]` | `[待填]` | 保留报告显示的时区 |
-| Sample URLs | `[待填：逐条列出全部返回样本；注明样本不完整]` | `[待填]` | 不写成全站 URL 清单 |
-| Trigger project / original URL | `[待填：目前未确定]` | `[待填]` | 只有报告或证据确认后才能填具体值 |
-| Ownership method | `[待填：URL-prefix + HTML file / 其他]` | `[待填]` | 记录验证 URL 和保留文件名 |
-| Fix scope | WOW Pages exporter 的生成树 | 本次不修复 | 不把 Gitube 的状态并入 WOW 结论 |
-| Final source commit | `94433b2e2e5d0dfdf07214ca252b4da9a0ae5df6` | `[待填：若另有]` | 以实际 review 对应的提交为准 |
-| Final Pages deployment commit | `97f7cf66255593c3b936d7957abcd134674de048` | `[待填]` | 不填旧发布 `9ee94f1bbcaf3ec819b65b7dcfb4128e3819d443`，除非报告明确复核该版本 |
-| Published URL check | `2026-10-14 10:04 Asia/Shanghai；13/13 HTTP 200，与本地一致；HTTPS 启用` | `[待填]` | 记录浏览器上下文 |
-| Test result | `6 单元测试、39 本地 Chrome 检查通过；详见修复记录；网址检查工具待需要时补充` | `[待填]` | 本地与远程检查分别记录；可另补网址检查工具结果 |
-| Request review | `[待填：提交时间、状态、review ID]` | `[待填]` | pending 期间不再次提交 |
-| Google outcome | `[待填：原样回复]` | `[待填]` | 不自行解释为“信誉已恢复” |
+此前技术修复于 2026-10-14 10:03:30 Asia/Shanghai 发布为 Pages `97f7cf66255593c3b936d7957abcd134674de048`，10:04 完成 13 个对象对照。本节上方记录的是随后增加历史展品改造的最新发布，保留旧记录用于追溯。
 
-## 英文 review body 草案
+| 项目 | 当前事实 |
+| --- | --- |
+| 报告属性 | `https://vvcchh0.github.io/` |
+| 问题类型 | 欺骗性网页，1 项 |
+| 示例网址 | 不适用 |
+| 原始触发 URL | 未确定 |
+| 首次检测 / 刷新日期 | 未提供 |
+| 已检查修复范围 | WOW Encyclopedia 项目；Gitube 未审计 |
+| WOW 源码提交 | `c3cf6f9638c8ee6de6accc6ccc77af1b630839e7` |
+| WOW Pages 提交 | `86dc069b4fa806388ac9a966f3d88880166d4fcd` |
+| 最新公网检查 | 2026-10-14 19:14:37 Asia/Shanghai；18/18 HTTP 200，与本地一致 |
+| 本地验收 | 32 单元回归、29 展品检查、39 既有浏览检查通过 |
+| 复核提交 | 未提交 |
+| Google 结果 | 未取得解除标记结果 |
 
-以下文字标为“完成报告核对后使用”。提交前必须把方括号替换为事实，并删除不适用的段落；先核对正式报告列出的全部问题；本地与线上测试已记录，必要时再用网址检查工具补充。
+## 英文复核说明草案
+
+以下内容记录已完成的 WOW 修复。根属性其他项目的核对完成后，再补充其结果并决定提交范围；不要把这段草稿当作根属性所有问题都已排除的声明。通过 Search Console 的“申请审核”提交；本轮代理没有点击提交。审核处于 pending 时不重复申请。
 
 ```text
-This URL-prefix hosts an unofficial educational archive of the 2008 Warcraft Encyclopedia and related historical pages. It is not affiliated with Blizzard and does not provide account, payment, registration or submission services.
+The Security Issues report for https://vvcchh0.github.io/ shows one Deceptive pages issue and no example URLs. We have not identified the original triggering URL.
 
-The Security Issues report identifies [EXACT ISSUE TYPE], first detected [FIRST DETECTED], with these sample URLs: [SAMPLE URLS].
+The WOW Encyclopedia project is an independent archive of 2008 Blizzard website material. On 14 October 2026 we replaced its old rewards and account-login pages with explicit historical exhibits. They describe the retired interfaces in the past tense and contain no editable identity, account or payment fields. Old registration, redemption, submission and software-download pages now explain their historical context. Original login artwork is presented only as captioned, non-interactive material. Local archive search, menus and browsing filters remain available.
 
-On 14 October 2026 we deployed browser fixes in Pages commit 97f7cf66255593c3b936d7957abcd134674de048. We removed query-string evaluation from the Wrath screenshot pagination and replaced historical business forms with non-interactive text and images. Those pages no longer provide business data-entry, autofill, file upload or submission controls. Local archive search, menus and reward/quest filters remain available. We also preserved local placeholders for old advertisement URLs inside iframe fallback content.
+We also removed query-string evaluation from the old screenshot pagination and retained static replacements for historical business forms. The latest Pages commit is 86dc069b4fa806388ac9a966f3d88880166d4fcd, from source commit c3cf6f9638c8ee6de6accc6ccc77af1b630839e7. Thirty-two unit tests, 29 exhibit checks and 39 existing browser checks passed. The exhibit checks included desktop, mobile and JavaScript-disabled browsing. Eighteen published objects returned HTTP 200 and matched the verified local export on 2026-10-14 19:14:37 Asia/Shanghai.
 
-Validation passed six unit tests and 39 local Chrome checks, including JavaScript-enabled and JavaScript-disabled contexts. Thirteen published objects returned HTTP 200 and matched the verified local export on 14 October 2026 at 10:04 Asia/Shanghai. Source changes are recorded in commits 139f41f and 94433b2 of https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive .
-
-Please recrawl and review this URL-prefix after the fixes. This request covers https://vvcchh0.github.io/WOW-Encyclopedia-Deployable-Archive/ .
+The completed work above covers https://vvcchh0.github.io/WOW-Encyclopedia-Deployable-Archive/ .
+[Before submitting for the root property, add the results of checks for other hosted projects and the final scope of this review request.]
 ```
 
-## 待取得的正式报告信息
-
-- 实际 issue type、`first detected`、刷新时间、返回的 sample URLs 及报告 property；
-- owner 权限和 URL-prefix 验证结果（含验证方式和保留文件）；
-- 已完成：源码、Pages 提交、构建/HTTPS 和线上对象对照，见上表；
-- 已完成：本地与远程测试；网址检查工具结果可作为补充；
-- 已完成：13 个远程对象对照；
-- review 提交时间、review ID、pending 状态和最终 Google 回复。
-
-取得所有权验证和正式报告后，核对问题类别与样本网址，再使用草稿提交复核。当前没有提交记录，Gitube 的检查与修复另行记录。
-
-2026-10-14 10:04 的 Google 公共查询仍返回风险状态。本材料用于核对并申请复核，未取得 Google 的解除标记结果。
+复核提交时间、状态及 Google 原文回复待实际操作后记录。当前没有提交记录，也没有新的风险状态结论。2026-10-14 10:04 的公共查询风险状态仅作为当时观察保留。
 
 ## Edge 与 DNS 排查记录
 
 本机 Edge 的“已举报为不安全”提示与 Microsoft Defender SmartScreen 的警告类别一致，具体判定仍以警告页标识为准。SmartScreen 有独立的网址信誉判定；Google 复核通过不能代替 Microsoft 的复核。如果修复部署后 Edge 仍拦截，可按 [Microsoft 官方复核说明](https://learn.microsoft.com/en-us/troubleshoot/microsoft-edge/development/unexpected-block-warning)从警告页的 More information 进入报告入口，使用本文相同的修复与部署证据。本轮仅准备材料，没有提交 Microsoft 请求。
 
-`ipconfig /flushdns` 清理的是 DNS 解析缓存，不会移除安全服务的风险记录。它适合排查旧地址或解析失败；当前有 Google 公共风险状态及两种浏览器的警告，优先完成内容修复和对应服务的复核。见 [Microsoft ipconfig 文档](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/ipconfig)及 [Edge SmartScreen 工作方式](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-security-smartscreen)。本轮未更改 DNS 或浏览器安全设置。
+`ipconfig /flushdns` 清理的是 DNS 解析缓存，不会移除安全服务的风险记录。它适合排查旧地址或解析失败；已有 Google 风险状态及两种浏览器警告的记录，优先完成内容修复和对应服务的复核。见 [Microsoft ipconfig 文档](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/ipconfig)及 [Edge SmartScreen 工作方式](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-security-smartscreen)。本轮未更改 DNS 或浏览器安全设置。

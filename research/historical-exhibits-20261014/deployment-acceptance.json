@@ -1,0 +1,61 @@
+{
+  "accepted_utc": "2026-10-14T11:20:35.204494+00:00",
+  "source_commit": "c3cf6f9638c8ee6de6accc6ccc77af1b630839e7",
+  "pages_commit": "86dc069b4fa806388ac9a966f3d88880166d4fcd",
+  "static_object_report": "deployment.json",
+  "static_objects_checked": 18,
+  "static_objects_passed": 18,
+  "static_direct_successes": 18,
+  "workflow_evidence": {
+    "api_url": "https://api.github.com/repos/vvcchh0/WOW-Encyclopedia-Deployable-Archive/actions/runs?branch=gh-pages&per_page=1",
+    "http_status": 200,
+    "transport": "direct",
+    "run": {
+      "id": 38554326972,
+      "name": "pages build and deployment",
+      "head_branch": "gh-pages",
+      "head_sha": "86dc069b4fa806388ac9a966f3d88880166d4fcd",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-14T11:07:08Z",
+      "updated_at": "2026-10-14T11:08:18Z",
+      "html_url": "https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/actions/runs/38554326972",
+      "run_attempt": 1
+    }
+  },
+  "management_api_limitations": {
+    "pages_and_latest_build_probe_status": [
+      404,
+      404
+    ],
+    "original_composite_verifier_all_passed": false,
+    "original_failures": [
+      {
+        "scope": "pages_metadata",
+        "reason": "http_status",
+        "status": 404
+      },
+      {
+        "scope": "pages_build",
+        "reason": "http_status",
+        "status": 404
+      }
+    ],
+    "cause": "Unresolved; Pages management endpoints returned 404. The public workflow and deployed bytes provide independent deployment evidence.",
+    "polling_deviation": "Ten management-API poll cycles exhausted the bound despite repeated errors. These errors should have ended the poll sooner; no further same-endpoint retries were made."
+  },
+  "push": {
+    "gh_pages": {
+      "direct_result": "connection_reset",
+      "proxy_result": "success",
+      "force": false
+    },
+    "main_source": {
+      "direct_result": "connection_reset",
+      "proxy_result": "success",
+      "force": false
+    }
+  },
+  "google_review_submitted": false,
+  "passed": true
+}
