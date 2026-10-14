@@ -1,0 +1,652 @@
+{
+  "archive": "D:\\WOW_Encyclopedia\\artifacts\\WOW_Encyclopedia_20080512_browser_20261014.zip",
+  "checks": {
+    "browser": {
+      "command": [
+        "D:\\NodeTools\\nvm\\v22.22.0\\node.exe",
+        "D:\\WOW_Encyclopedia\\research\\local-maintenance-20261014\\portable-validation\\portable_browser_checks.js",
+        "--base-url",
+        "http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/",
+        "--site",
+        "D:\\WOW_Encyclopedia\\.scratch\\local-bundle-smoke-20261014\\site",
+        "--output",
+        "D:\\WOW_Encyclopedia\\research\\local-maintenance-20261014\\portable-validation\\portable-browser-validation.json",
+        "--mobile-screenshot",
+        "D:\\WOW_Encyclopedia\\research\\local-maintenance-20261014\\portable-validation\\portable-mobile-login-history.png",
+        "--unknown-screenshot",
+        "D:\\WOW_Encyclopedia\\research\\local-maintenance-20261014\\portable-validation\\portable-unknown404-query.png",
+        "--playwright-module",
+        "C:\\Users\\17630\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\playwright",
+        "--browser",
+        "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+      ],
+      "cwd": "D:\\WOW_Encyclopedia\\.scratch\\local-bundle-smoke-20261014",
+      "passed": false,
+      "report": {
+        "baseUrl": "http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/",
+        "checkedAt": "2026-10-14T13:06:53.254Z",
+        "consoleErrors": [
+          {
+            "location": {
+              "column": 0,
+              "columnNumber": 0,
+              "line": 0,
+              "lineNumber": 0,
+              "url": "http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/__portable-browser-unknown__.html?source=portable&requested=%3Cscript%3Ewindow.__PORTABLE_QUERY_EXECUTED__%3D1%3C%2Fscript%3E"
+            },
+            "scenario": "unknown404-query",
+            "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+          },
+          {
+            "location": {
+              "column": 0,
+              "columnNumber": 0,
+              "line": 0,
+              "lineNumber": 0,
+              "url": "http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/socketeditems.html"
+            },
+            "scenario": "socketeditems-flash",
+            "text": "Loading plugin data from 'http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/images/socket_anim.swf' violates the following Content Security Policy directive: \"object-src 'none'\". The action has been blocked."
+          },
+          {
+            "location": {
+              "column": 0,
+              "columnNumber": 0,
+              "line": 0,
+              "lineNumber": 0,
+              "url": "http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/socketeditems.html"
+            },
+            "scenario": "socketeditems-flash",
+            "text": "Loading plugin data from 'http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/images/socket_anim.swf' violates the following Content Security Policy directive: \"object-src 'none'\". The action has been blocked."
+          },
+          {
+            "location": {
+              "column": 0,
+              "columnNumber": 0,
+              "line": 0,
+              "lineNumber": 0,
+              "url": "http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/socketeditems.html"
+            },
+            "scenario": "socketeditems-flash",
+            "text": "Loading plugin data from 'http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/images/socket_anim.swf' violates the following Content Security Policy directive: \"object-src 'none'\". The action has been blocked."
+          },
+          {
+            "location": {
+              "column": 0,
+              "columnNumber": 0,
+              "line": 0,
+              "lineNumber": 0,
+              "url": "http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/socketeditems.html"
+            },
+            "scenario": "socketeditems-flash",
+            "text": "Loading plugin data from 'http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/images/socket_anim.swf' violates the following Content Security Policy directive: \"object-src 'none'\". The action has been blocked."
+          },
+          {
+            "location": {
+              "column": 0,
+              "columnNumber": 0,
+              "line": 0,
+              "lineNumber": 0,
+              "url": "http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/socketeditems.html"
+            },
+            "scenario": "socketeditems-flash",
+            "text": "Loading plugin data from 'http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/images/socket_anim.swf' violates the following Content Security Policy directive: \"object-src 'none'\". The action has been blocked."
+          },
+          {
+            "location": {
+              "column": 0,
+              "columnNumber": 0,
+              "line": 0,
+              "lineNumber": 0,
+              "url": "http://127.0.0.1:16350/shared/wow-com/images/subnav/icon_player%20interaction.jpg"
+            },
+            "scenario": "dancing-flash",
+            "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "location": {
+              "column": 0,
+              "columnNumber": 0,
+              "line": 0,
+              "lineNumber": 0,
+              "url": "http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/races/dancing.html"
+            },
+            "scenario": "dancing-flash",
+            "text": "Loading plugin data from 'http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/races/images/dancing/gifs/dwarf_male.swf' violates the following Content Security Policy directive: \"object-src 'none'\". The action has been blocked."
+          }
+        ],
+        "counts": {
+          "consoleErrors": 8,
+          "expected404": 1,
+          "expectedSwfCspEvents": 8,
+          "externalRequests": 1,
+          "nonGetRequests": 0,
+          "pageErrors": 0,
+          "passedScenarios": 5,
+          "postAttempts": 0,
+          "requestFailures": 1,
+          "scenarios": 6
+        },
+        "expected": {
+          "knownMissing404": [
+            {
+              "path": "/WOW-Encyclopedia-Deployable-Archive/__portable-browser-unknown__.html",
+              "scenario": "unknown404-query",
+              "status": 404
+            }
+          ],
+          "swfObjectSrcNone": [
+            {
+              "location": {
+                "column": 0,
+                "columnNumber": 0,
+                "line": 0,
+                "lineNumber": 0,
+                "url": "http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/socketeditems.html"
+              },
+              "scenario": "socketeditems-flash",
+              "text": "Loading plugin data from 'http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/images/socket_anim.swf' violates the following Content Security Policy directive: \"object-src 'none'\". The action has been blocked."
+            },
+            {
+              "location": {
+                "column": 0,
+                "columnNumber": 0,
+                "line": 0,
+                "lineNumber": 0,
+                "url": "http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/socketeditems.html"
+              },
+              "scenario": "socketeditems-flash",
+              "text": "Loading plugin data from 'http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/images/socket_anim.swf' violates the following Content Security Policy directive: \"object-src 'none'\". The action has been blocked."
+            },
+            {
+              "location": {
+                "column": 0,
+                "columnNumber": 0,
+                "line": 0,
+                "lineNumber": 0,
+                "url": "http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/socketeditems.html"
+              },
+              "scenario": "socketeditems-flash",
+              "text": "Loading plugin data from 'http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/images/socket_anim.swf' violates the following Content Security Policy directive: \"object-src 'none'\". The action has been blocked."
+            },
+            {
+              "location": {
+                "column": 0,
+                "columnNumber": 0,
+                "line": 0,
+                "lineNumber": 0,
+                "url": "http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/socketeditems.html"
+              },
+              "scenario": "socketeditems-flash",
+              "text": "Loading plugin data from 'http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/images/socket_anim.swf' violates the following Content Security Policy directive: \"object-src 'none'\". The action has been blocked."
+            },
+            {
+              "location": {
+                "column": 0,
+                "columnNumber": 0,
+                "line": 0,
+                "lineNumber": 0,
+                "url": "http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/socketeditems.html"
+              },
+              "scenario": "socketeditems-flash",
+              "text": "Loading plugin data from 'http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/images/socket_anim.swf' violates the following Content Security Policy directive: \"object-src 'none'\". The action has been blocked."
+            },
+            {
+              "cspObjectSrcNone": true,
+              "route": "info/items/socketeditems.html",
+              "scenario": "socketeditems-flash"
+            },
+            {
+              "location": {
+                "column": 0,
+                "columnNumber": 0,
+                "line": 0,
+                "lineNumber": 0,
+                "url": "http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/races/dancing.html"
+              },
+              "scenario": "dancing-flash",
+              "text": "Loading plugin data from 'http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/races/images/dancing/gifs/dwarf_male.swf' violates the following Content Security Policy directive: \"object-src 'none'\". The action has been blocked."
+            },
+            {
+              "cspObjectSrcNone": true,
+              "route": "info/races/dancing.html",
+              "scenario": "dancing-flash"
+            }
+          ]
+        },
+        "externalRequests": [
+          {
+            "method": "GET",
+            "path": "/shared/wow-com/images/subnav/icon_player%20interaction.jpg",
+            "url": "http://127.0.0.1:16350/shared/wow-com/images/subnav/icon_player%20interaction.jpg"
+          }
+        ],
+        "failures": [
+          {
+            "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at checkMobileLogin (D:\\WOW_Encyclopedia\\research\\local-maintenance-20261014\\portable-validation\\portable_browser_checks.js:210:12)\n    at async scenario (D:\\WOW_Encyclopedia\\research\\local-maintenance-20261014\\portable-validation\\portable_browser_checks.js:143:20)\n    at async D:\\WOW_Encyclopedia\\research\\local-maintenance-20261014\\portable-validation\\portable_browser_checks.js:289:5",
+            "name": "mobile-login-history-js-off"
+          },
+          {
+            "count": 1,
+            "name": "external-requests-blocked",
+            "requests": [
+              {
+                "method": "GET",
+                "path": "/shared/wow-com/images/subnav/icon_player%20interaction.jpg",
+                "url": "http://127.0.0.1:16350/shared/wow-com/images/subnav/icon_player%20interaction.jpg"
+              }
+            ]
+          },
+          {
+            "errors": [
+              {
+                "location": {
+                  "column": 0,
+                  "columnNumber": 0,
+                  "line": 0,
+                  "lineNumber": 0,
+                  "url": "http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/__portable-browser-unknown__.html?source=portable&requested=%3Cscript%3Ewindow.__PORTABLE_QUERY_EXECUTED__%3D1%3C%2Fscript%3E"
+                },
+                "scenario": "unknown404-query",
+                "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+              },
+              {
+                "location": {
+                  "column": 0,
+                  "columnNumber": 0,
+                  "line": 0,
+                  "lineNumber": 0,
+                  "url": "http://127.0.0.1:16350/shared/wow-com/images/subnav/icon_player%20interaction.jpg"
+                },
+                "scenario": "dancing-flash",
+                "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector"
+              }
+            ],
+            "name": "unexpected-console-errors"
+          }
+        ],
+        "launch": {
+          "browser": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+          "headless": true,
+          "ignoreDefaultArgs": [
+            "--disable-client-side-phishing-detection"
+          ],
+          "serviceWorkers": "block"
+        },
+        "method": "Fresh Chrome contexts; six local scenarios; external and non-GET requests aborted before network access.",
+        "nonGetRequests": [],
+        "observed404": [
+          {
+            "path": "/WOW-Encyclopedia-Deployable-Archive/__portable-browser-unknown__.html",
+            "scenario": "unknown404-query",
+            "status": 404
+          }
+        ],
+        "pageErrors": [],
+        "passed": false,
+        "postAttempts": [],
+        "prefix": "/WOW-Encyclopedia-Deployable-Archive/",
+        "requestFailures": [
+          {
+            "failure": {
+              "errorText": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+            },
+            "method": "GET",
+            "scenario": "dancing-flash",
+            "url": "http://127.0.0.1:16350/shared/wow-com/images/subnav/icon_player%20interaction.jpg"
+          }
+        ],
+        "scenarios": [
+          {
+            "modes": [
+              {
+                "finalPath": "/WOW-Encyclopedia-Deployable-Archive/info/encyclopedia/index.xml.html",
+                "javaScriptEnabled": true,
+                "query": "?portable=1&requested=%3Csafe%3E"
+              },
+              {
+                "finalPath": "/WOW-Encyclopedia-Deployable-Archive/info/encyclopedia/index.xml.html",
+                "javaScriptEnabled": false,
+                "query": "?portable=1&requested=%3Csafe%3E"
+              }
+            ],
+            "name": "old-xml-js-on-off",
+            "passed": true
+          },
+          {
+            "menuChanged": true,
+            "name": "encyclopedia-menu-elune-search",
+            "passed": true,
+            "searchTarget": "/WOW-Encyclopedia-Deployable-Archive/info/encyclopedia/392.xml.html",
+            "title": "Elune"
+          },
+          {
+            "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at checkMobileLogin (D:\\WOW_Encyclopedia\\research\\local-maintenance-20261014\\portable-validation\\portable_browser_checks.js:210:12)\n    at async scenario (D:\\WOW_Encyclopedia\\research\\local-maintenance-20261014\\portable-validation\\portable_browser_checks.js:143:20)\n    at async D:\\WOW_Encyclopedia\\research\\local-maintenance-20261014\\portable-validation\\portable_browser_checks.js:289:5",
+            "name": "mobile-login-history-js-off",
+            "passed": false
+          },
+          {
+            "name": "unknown404-query-safety",
+            "passed": true,
+            "queryTextEscaped": true,
+            "screenshot": "D:\\WOW_Encyclopedia\\research\\local-maintenance-20261014\\portable-validation\\portable-unknown404-query.png",
+            "status": 404
+          },
+          {
+            "name": "socketeditems-flash",
+            "passed": true,
+            "route": "info/items/socketeditems.html",
+            "state": {
+              "cspObjectSrcNone": true,
+              "dataArchiveCodebase": [
+                "http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0",
+                "http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0",
+                "http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0",
+                "http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0",
+                "http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0"
+              ],
+              "dataArchiveCodebaseCount": 5,
+              "externalInstallCodebaseCount": 0,
+              "objectCount": 5,
+              "remainingLocalCodebase": []
+            }
+          },
+          {
+            "name": "dancing-flash",
+            "passed": true,
+            "route": "info/races/dancing.html",
+            "state": {
+              "cspObjectSrcNone": true,
+              "dataArchiveCodebase": [
+                "http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0"
+              ],
+              "dataArchiveCodebaseCount": 1,
+              "externalInstallCodebaseCount": 0,
+              "objectCount": 1,
+              "remainingLocalCodebase": []
+            }
+          }
+        ],
+        "schema": "wow-encyclopedia-portable-browser-validation/v1",
+        "site": "D:\\WOW_Encyclopedia\\.scratch\\local-bundle-smoke-20261014\\site"
+      },
+      "returncode": 1,
+      "stderr_tail": "",
+      "stdout_tail": "{\"passed\":false,\"scenarios\":6,\"failures\":[{\"name\":\"mobile-login-history-js-off\",\"error\":\"AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\\n\\nfalse !== true\\n\\n    at checkMobileLogin (D:\\\\WOW_Encyclopedia\\\\research\\\\local-maintenance-20261014\\\\portable-validation\\\\portable_browser_checks.js:210:12)\\n    at async scenario (D:\\\\WOW_Encyclopedia\\\\research\\\\local-maintenance-20261014\\\\portable-validation\\\\portable_browser_checks.js:143:20)\\n    at async D:\\\\WOW_Encyclopedia\\\\research\\\\local-maintenance-20261014\\\\portable-validation\\\\portable_browser_checks.js:289:5\"},{\"name\":\"external-requests-blocked\",\"count\":1,\"requests\":[{\"url\":\"http://127.0.0.1:16350/shared/wow-com/images/subnav/icon_player%20interaction.jpg\",\"method\":\"GET\",\"path\":\"/shared/wow-com/images/subnav/icon_player%20interaction.jpg\"}]},{\"name\":\"unexpected-console-errors\",\"errors\":[{\"scenario\":\"unknown404-query\",\"text\":\"Failed to load resource: the server responded with a status of 404 (Not Found)\",\"location\":{\"url\":\"http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/__portable-browser-unknown__.html?source=portable&requested=%3Cscript%3Ewindow.__PORTABLE_QUERY_EXECUTED__%3D1%3C%2Fscript%3E\",\"line\":0,\"column\":0,\"lineNumber\":0,\"columnNumber\":0}},{\"scenario\":\"dancing-flash\",\"text\":\"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector\",\"location\":{\"url\":\"http://127.0.0.1:16350/shared/wow-com/images/subnav/icon_player%20interaction.jpg\",\"line\":0,\"column\":0,\"lineNumber\":0,\"columnNumber\":0}}]}],\"output\":\"D:\\\\WOW_Encyclopedia\\\\research\\\\local-maintenance-20261014\\\\portable-validation\\\\portable-browser-validation.json\"}\n"
+    },
+    "disk_preflight": {
+      "drive": "D:",
+      "free_bytes_before": 42288693248,
+      "minimum_free_reserve_bytes": 11005853696,
+      "preflight_passed": true,
+      "required_before_extraction_bytes": 11566429543,
+      "uncompressed_bytes_to_extract": 560575847
+    },
+    "extraction": {
+      "member_count": 8442,
+      "member_set_exact": true,
+      "regular_files_only": true,
+      "resolved_root": "D:\\WOW_Encyclopedia\\.scratch\\local-bundle-smoke-20261014"
+    },
+    "http": {
+      "checks": [
+        {
+          "bytes": 0,
+          "content_length": "0",
+          "content_type": null,
+          "location": "/WOW-Encyclopedia-Deployable-Archive/info/encyclopedia/index.xml.html?portable=1&requested=%3Csafe%3E",
+          "method": "GET",
+          "name": "old XML GET redirects",
+          "passed": true,
+          "path": "/WOW-Encyclopedia-Deployable-Archive/info/encyclopedia/index.xml?portable=1&requested=%3Csafe%3E",
+          "status": 302
+        },
+        {
+          "bytes": 67861,
+          "content_length": "67861",
+          "content_type": "text/html; charset=utf-8",
+          "html_bytes": 67861,
+          "method": "GET",
+          "name": "canonical XML-page GET",
+          "passed": true,
+          "path": "/WOW-Encyclopedia-Deployable-Archive/info/encyclopedia/index.xml.html?portable=1&requested=%3Csafe%3E",
+          "status": 200
+        },
+        {
+          "bytes": 0,
+          "content_length": "0",
+          "content_type": null,
+          "location": "/WOW-Encyclopedia-Deployable-Archive/info/encyclopedia/index.xml.html?portable=1&requested=%3Csafe%3E",
+          "method": "HEAD",
+          "name": "old XML HEAD redirects",
+          "passed": true,
+          "path": "/WOW-Encyclopedia-Deployable-Archive/info/encyclopedia/index.xml?portable=1&requested=%3Csafe%3E",
+          "status": 302
+        },
+        {
+          "body_bytes": 0,
+          "bytes": 0,
+          "content_length": "67861",
+          "content_type": "text/html; charset=utf-8",
+          "method": "HEAD",
+          "name": "canonical XML-page HEAD",
+          "passed": true,
+          "path": "/WOW-Encyclopedia-Deployable-Archive/info/encyclopedia/index.xml.html?portable=1&requested=%3Csafe%3E",
+          "status": 200
+        },
+        {
+          "bytes": 0,
+          "content_length": "0",
+          "content_type": null,
+          "directory": "visa/reward",
+          "location": "/WOW-Encyclopedia-Deployable-Archive/visa/reward/?portable-directory=1",
+          "method": "GET",
+          "name": "directory URL adds slash",
+          "passed": true,
+          "path": "/WOW-Encyclopedia-Deployable-Archive/visa/reward?portable-directory=1",
+          "status": 302
+        },
+        {
+          "bytes": 4935,
+          "content_length": "4935",
+          "content_type": "text/html; charset=utf-8",
+          "directory": "visa/reward",
+          "method": "GET",
+          "name": "directory slash target",
+          "passed": true,
+          "path": "/WOW-Encyclopedia-Deployable-Archive/visa/reward/?portable-directory=1",
+          "status": 200
+        },
+        {
+          "bytes": 1378,
+          "content_length": "1378",
+          "content_type": "text/html; charset=utf-8",
+          "method": "GET",
+          "name": "real missing route uses archive 404",
+          "passed": true,
+          "path": "/WOW-Encyclopedia-Deployable-Archive/__portable-qa-missing__.html?source=portable&requested=%2Fmissing.png",
+          "status": 404
+        },
+        {
+          "bytes": 330,
+          "content_length": "330",
+          "content_type": "text/html;charset=utf-8",
+          "method": "GET",
+          "name": "traversal plain 404",
+          "passed": true,
+          "path": "/WOW-Encyclopedia-Deployable-Archive/../outside.html",
+          "status": 404
+        },
+        {
+          "bytes": 330,
+          "content_length": "330",
+          "content_type": "text/html;charset=utf-8",
+          "method": "GET",
+          "name": "backslash plain 404",
+          "passed": true,
+          "path": "/WOW-Encyclopedia-Deployable-Archive/nested%5Coutside.html",
+          "status": 404
+        },
+        {
+          "bytes": 330,
+          "content_length": "330",
+          "content_type": "text/html;charset=utf-8",
+          "method": "GET",
+          "name": "NUL plain 404",
+          "passed": true,
+          "path": "/WOW-Encyclopedia-Deployable-Archive/nul%00outside.html",
+          "status": 404
+        },
+        {
+          "bytes": 67861,
+          "content_length": "67861",
+          "content_type": "text/html; charset=utf-8",
+          "method": "GET",
+          "name": "representative HTML bytes",
+          "passed": true,
+          "path": "/WOW-Encyclopedia-Deployable-Archive/info/encyclopedia/index.xml.html",
+          "relative_path": "info/encyclopedia/index.xml.html",
+          "status": 200
+        },
+        {
+          "bytes": 35301,
+          "content_length": "35301",
+          "content_type": "image/jpeg",
+          "method": "GET",
+          "name": "representative binary bytes",
+          "passed": true,
+          "path": "/WOW-Encyclopedia-Deployable-Archive/info/races/images/dancing/banner/background.jpg",
+          "relative_path": "info/races/images/dancing/banner/background.jpg",
+          "sha256": "2f88de20ae46ef4572e6139ddeb0977cd2e3830f6ca08d7aaf2f96965a61631a",
+          "status": 200
+        },
+        {
+          "bytes": 0,
+          "content_length": "35301",
+          "content_type": "image/jpeg",
+          "method": "HEAD",
+          "name": "representative binary HEAD",
+          "passed": true,
+          "path": "/WOW-Encyclopedia-Deployable-Archive/info/races/images/dancing/banner/background.jpg",
+          "relative_path": "info/races/images/dancing/banner/background.jpg",
+          "status": 200
+        }
+      ],
+      "expected_archive_404": "/WOW-Encyclopedia-Deployable-Archive/__portable-qa-missing__.html?source=portable&requested=%2Fmissing.png",
+      "failed_checks": [
+        "archive 404 body lacks its historical missing-page marker"
+      ],
+      "origin": "http://127.0.0.1:16350",
+      "passed": false,
+      "prefix": "/WOW-Encyclopedia-Deployable-Archive/",
+      "proxy_handler": "explicit empty ProxyHandler",
+      "representative_binary": "info/races/images/dancing/banner/background.jpg",
+      "representative_html": "info/encyclopedia/index.xml.html"
+    },
+    "package_metadata": {
+      "archive_metadata_matches_zip": true,
+      "archive_metadata_member_count": 8442,
+      "archive_metadata_network_performed": false,
+      "project_prefix": "/WOW-Encyclopedia-Deployable-Archive/",
+      "route_map_loaded": true,
+      "site": "D:\\WOW_Encyclopedia\\.scratch\\local-bundle-smoke-20261014\\site"
+    },
+    "receipt": {
+      "archive": "D:\\WOW_Encyclopedia\\artifacts\\WOW_Encyclopedia_20080512_browser_20261014.zip",
+      "archive_bytes": 501698187,
+      "archive_sha256": "7321ff1e4c0911258d0996a5a7bba5820ec07a4f6edb42472c955c2d33a5c075",
+      "generation_report": "D:\\WOW_Encyclopedia\\research\\local-maintenance-20261014\\portable-package-report.json",
+      "generation_report_schema": "wow-encyclopedia-portable-archive/v1",
+      "generation_report_verified": true,
+      "network_performed": false,
+      "sidecar": {
+        "archive_name": "WOW_Encyclopedia_20080512_browser_20261014.zip",
+        "path": "D:\\WOW_Encyclopedia\\artifacts\\WOW_Encyclopedia_20080512_browser_20261014.zip.sha256",
+        "sha256": "7321ff1e4c0911258d0996a5a7bba5820ec07a4f6edb42472c955c2d33a5c075"
+      }
+    },
+    "source_site": {
+      "exists": true,
+      "recorded_only": true,
+      "resolved": "D:\\WOW_Encyclopedia\\.scratch\\pages-local-maintenance-20261014-v4"
+    },
+    "zip": {
+      "compressed_bytes": 500052163,
+      "crc_check": true,
+      "member_count": 8442,
+      "member_names_safe": true,
+      "required_members_present": true,
+      "sample_members": [
+        {
+          "bytes": 1038733,
+          "compressed_bytes": 424730,
+          "crc32": "da1a8d7d",
+          "path": "FILE_SHA256SUMS.txt"
+        },
+        {
+          "bytes": 882,
+          "compressed_bytes": 465,
+          "crc32": "0900a756",
+          "path": "NOTICE.md"
+        },
+        {
+          "bytes": 916,
+          "compressed_bytes": 534,
+          "crc32": "1425921a",
+          "path": "README.md"
+        },
+        {
+          "bytes": 543,
+          "compressed_bytes": 253,
+          "crc32": "33cbdf52",
+          "path": "START_BROWSE.cmd"
+        },
+        {
+          "bytes": 2553902,
+          "compressed_bytes": 484997,
+          "crc32": "13ad6e30",
+          "path": "archive-metadata.json"
+        }
+      ],
+      "symlink_members": 0,
+      "uncompressed_bytes": 560575847
+    }
+  },
+  "failures": [
+    "archive 404 body lacks its historical missing-page marker",
+    "Playwright browser acceptance failed"
+  ],
+  "finished_utc": "2026-10-14T13:07:01.985012Z",
+  "network_performed": false,
+  "output": "D:\\WOW_Encyclopedia\\research\\local-maintenance-20261014\\portable-validation\\portable-bundle-validation.json",
+  "passed": false,
+  "schema": "wow-encyclopedia-portable-bundle-validation/v1",
+  "scratch_cleanup": {
+    "cleaned": false,
+    "requested": true
+  },
+  "scratch_requested": "D:\\WOW_Encyclopedia\\.scratch\\local-bundle-smoke-20261014",
+  "server": {
+    "command": [
+      "C:\\Users\\17630\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "-I",
+      "tools/serve_pages_preview.py",
+      "--site",
+      "site",
+      "--port",
+      "0"
+    ],
+    "cwd": "D:\\WOW_Encyclopedia\\.scratch\\local-bundle-smoke-20261014",
+    "openbrowser_argument_present": false,
+    "python_isolated": true,
+    "stderr_log": "D:\\WOW_Encyclopedia\\.scratch\\local-bundle-smoke-20261014\\server.stderr.log",
+    "stdout_log": "D:\\WOW_Encyclopedia\\.scratch\\local-bundle-smoke-20261014\\server.stdout.log",
+    "url": "http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/"
+  },
+  "server_stop": {
+    "returncode": 1,
+    "stopped": true
+  },
+  "source_site": "D:\\WOW_Encyclopedia\\.scratch\\pages-local-maintenance-20261014-v4",
+  "started_utc": "2026-10-14T13:06:17.049733Z"
+}

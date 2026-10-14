@@ -1,0 +1,84 @@
+{
+  "checked_utc": "2026-10-14T13:23:29.415905+00:00",
+  "base_url": "http://127.0.0.1:63862/WOW-Encyclopedia-Deployable-Archive/",
+  "network_scope": "loopback only",
+  "process": {
+    "site": ".scratch/pages-local-maintenance-20261014-v5",
+    "pid": 19424,
+    "port": 63862,
+    "replaced_pid": 21352
+  },
+  "checks": [
+    {
+      "name": "root redirect",
+      "method": "GET",
+      "path": "/",
+      "status": 302,
+      "location": "/WOW-Encyclopedia-Deployable-Archive/",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "passed": true
+    },
+    {
+      "name": "project root",
+      "method": "GET",
+      "path": "/WOW-Encyclopedia-Deployable-Archive/",
+      "status": 200,
+      "location": null,
+      "bytes": 989,
+      "sha256": "403647c5c93de2ea330d8035a4092b69df06608c1dc3bc25d4240f824c16e27b",
+      "passed": true
+    },
+    {
+      "name": "old XML redirect",
+      "method": "GET",
+      "path": "/WOW-Encyclopedia-Deployable-Archive/info/encyclopedia/index.xml?preview=1&requested=%3Csafe%3E",
+      "status": 302,
+      "location": "/WOW-Encyclopedia-Deployable-Archive/info/encyclopedia/index.xml.html?preview=1&requested=%3Csafe%3E",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "passed": true
+    },
+    {
+      "name": "canonical XML bytes",
+      "method": "GET",
+      "path": "/WOW-Encyclopedia-Deployable-Archive/info/encyclopedia/index.xml.html?preview=1&requested=%3Csafe%3E",
+      "status": 200,
+      "location": null,
+      "bytes": 67861,
+      "sha256": "e96bb063823f20fdf902a246854b931611ffad5cb18b9f415a83a24091e1c844",
+      "passed": true
+    },
+    {
+      "name": "old XML HEAD",
+      "method": "HEAD",
+      "path": "/WOW-Encyclopedia-Deployable-Archive/info/encyclopedia/index.xml?preview=1&requested=%3Csafe%3E",
+      "status": 302,
+      "location": "/WOW-Encyclopedia-Deployable-Archive/info/encyclopedia/index.xml.html?preview=1&requested=%3Csafe%3E",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "passed": true
+    },
+    {
+      "name": "directory slash",
+      "method": "GET",
+      "path": "/WOW-Encyclopedia-Deployable-Archive/info/encyclopedia?preview=1&requested=%3Csafe%3E",
+      "status": 302,
+      "location": "/WOW-Encyclopedia-Deployable-Archive/info/encyclopedia/?preview=1&requested=%3Csafe%3E",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "passed": true
+    },
+    {
+      "name": "archive 404",
+      "method": "GET",
+      "path": "/WOW-Encyclopedia-Deployable-Archive/__root-preview-unknown__.html",
+      "status": 404,
+      "location": null,
+      "bytes": 1378,
+      "sha256": "92300e507c68b65f3c6971908f96ff02dca9a55937963f4f7d6d8c1aecec086b",
+      "passed": true
+    }
+  ],
+  "passed": true
+}

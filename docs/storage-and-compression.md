@@ -32,3 +32,20 @@ Git 主树继续提供可审阅、直接启动的文件；完整恢复 ZIP、原
 [NTFS 文件压缩](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/compact)可作为保留原字节的本机可选方案，尤其适合大 JSON/文字证据；本轮未对整个工作区启用，也未计入收益。工作区 14,000,000,000 字节预算仍按逻辑文件大小保守计数，D 盘另保留至少 10 GB 安全空间；压缩不成为超额下载的理由。
 
 依据：[完整测量](../research/github-publication-20261012/compression-analysis.md)、[逐文件测量 JSON](../research/github-publication-20261012/compression-analysis.json)、[轻量包核验](../research/github-publication-20261012/runtime-package-verification.md)。
+
+## 2026-10-14：当前浏览版便携包
+
+新版浏览包直接收录当前派生站点、历史展品改造、36 张已有补充图片、本地旧地址兼容和动态图片地址修复。解压后运行 `START_BROWSE.cmd`，需要本机 Python；浏览时无需原仓库及研究目录。该包本轮保存在本地，线上下载入口仍指向此前发布的运行包。
+
+| 范围 | 字节 |
+| --- | ---: |
+| 静态浏览站点 | 556,973,990 |
+| 全包解压成员总量 | 560,576,253 |
+| DEFLATE-6 ZIP | 501,698,432 |
+| 无损压缩节省 | 58,877,821 |
+
+包名 `WOW_Encyclopedia_20080512_browser_20261014_v5.zip`，8,442 个成员，SHA-256 为 `a3bfb85d3f8f03fe02e5dd72b1782aae5f43da2e612f7bd12941b09f81e2ced4`。图片保持原字节；完整逐成员报告保留在本地，Git 保存[简要打包记录](../research/local-maintenance-20261014/portable-package-summary.json)和独立浏览验收。
+
+新增本轮浏览版与候选包之前的空间盘点约 15.49 GB；五份旧 Pages 派生树合计约 2.78 GB，内容与当前版存在差异，因此继续作为检查点保留。大份静态引用明细已无损压缩为约 355–359 KB 的 gzip 文件，Git 仅纳入摘要。工作区总量按用户最新约定不设固定 14GB 上限；下载、导出和打包预检继续保留 D 盘 10GiB 加 256MiB 缓冲。
+
+旧运行包、首次候选包及来源包仍保留，版本用途与实际验收见[本地整理记录](local-maintenance-20261014.md)。

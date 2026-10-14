@@ -1,0 +1,348 @@
+{
+  "schema": "wow-encyclopedia-portable-browser-validation/v1",
+  "checkedAt": "2026-10-14T13:06:53.254Z",
+  "site": "D:\\WOW_Encyclopedia\\.scratch\\local-bundle-smoke-20261014\\site",
+  "baseUrl": "http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/",
+  "prefix": "/WOW-Encyclopedia-Deployable-Archive/",
+  "method": "Fresh Chrome contexts; six local scenarios; external and non-GET requests aborted before network access.",
+  "launch": {
+    "headless": true,
+    "browser": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    "ignoreDefaultArgs": [
+      "--disable-client-side-phishing-detection"
+    ],
+    "serviceWorkers": "block"
+  },
+  "scenarios": [
+    {
+      "name": "old-xml-js-on-off",
+      "passed": true,
+      "modes": [
+        {
+          "javaScriptEnabled": true,
+          "finalPath": "/WOW-Encyclopedia-Deployable-Archive/info/encyclopedia/index.xml.html",
+          "query": "?portable=1&requested=%3Csafe%3E"
+        },
+        {
+          "javaScriptEnabled": false,
+          "finalPath": "/WOW-Encyclopedia-Deployable-Archive/info/encyclopedia/index.xml.html",
+          "query": "?portable=1&requested=%3Csafe%3E"
+        }
+      ]
+    },
+    {
+      "name": "encyclopedia-menu-elune-search",
+      "passed": true,
+      "menuChanged": true,
+      "searchTarget": "/WOW-Encyclopedia-Deployable-Archive/info/encyclopedia/392.xml.html",
+      "title": "Elune"
+    },
+    {
+      "name": "mobile-login-history-js-off",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at checkMobileLogin (D:\\WOW_Encyclopedia\\research\\local-maintenance-20261014\\portable-validation\\portable_browser_checks.js:210:12)\n    at async scenario (D:\\WOW_Encyclopedia\\research\\local-maintenance-20261014\\portable-validation\\portable_browser_checks.js:143:20)\n    at async D:\\WOW_Encyclopedia\\research\\local-maintenance-20261014\\portable-validation\\portable_browser_checks.js:289:5"
+    },
+    {
+      "name": "unknown404-query-safety",
+      "passed": true,
+      "status": 404,
+      "queryTextEscaped": true,
+      "screenshot": "D:\\WOW_Encyclopedia\\research\\local-maintenance-20261014\\portable-validation\\portable-unknown404-query.png"
+    },
+    {
+      "name": "socketeditems-flash",
+      "passed": true,
+      "route": "info/items/socketeditems.html",
+      "state": {
+        "objectCount": 5,
+        "dataArchiveCodebaseCount": 5,
+        "dataArchiveCodebase": [
+          "http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0",
+          "http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0",
+          "http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0",
+          "http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0",
+          "http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0"
+        ],
+        "externalInstallCodebaseCount": 0,
+        "remainingLocalCodebase": [],
+        "cspObjectSrcNone": true
+      }
+    },
+    {
+      "name": "dancing-flash",
+      "passed": true,
+      "route": "info/races/dancing.html",
+      "state": {
+        "objectCount": 1,
+        "dataArchiveCodebaseCount": 1,
+        "dataArchiveCodebase": [
+          "http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0"
+        ],
+        "externalInstallCodebaseCount": 0,
+        "remainingLocalCodebase": [],
+        "cspObjectSrcNone": true
+      }
+    }
+  ],
+  "externalRequests": [
+    {
+      "url": "http://127.0.0.1:16350/shared/wow-com/images/subnav/icon_player%20interaction.jpg",
+      "method": "GET",
+      "path": "/shared/wow-com/images/subnav/icon_player%20interaction.jpg"
+    }
+  ],
+  "postAttempts": [],
+  "nonGetRequests": [],
+  "observed404": [
+    {
+      "scenario": "unknown404-query",
+      "path": "/WOW-Encyclopedia-Deployable-Archive/__portable-browser-unknown__.html",
+      "status": 404
+    }
+  ],
+  "consoleErrors": [
+    {
+      "scenario": "unknown404-query",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "location": {
+        "url": "http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/__portable-browser-unknown__.html?source=portable&requested=%3Cscript%3Ewindow.__PORTABLE_QUERY_EXECUTED__%3D1%3C%2Fscript%3E",
+        "line": 0,
+        "column": 0,
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "scenario": "socketeditems-flash",
+      "text": "Loading plugin data from 'http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/images/socket_anim.swf' violates the following Content Security Policy directive: \"object-src 'none'\". The action has been blocked.",
+      "location": {
+        "url": "http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/socketeditems.html",
+        "line": 0,
+        "column": 0,
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "scenario": "socketeditems-flash",
+      "text": "Loading plugin data from 'http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/images/socket_anim.swf' violates the following Content Security Policy directive: \"object-src 'none'\". The action has been blocked.",
+      "location": {
+        "url": "http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/socketeditems.html",
+        "line": 0,
+        "column": 0,
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "scenario": "socketeditems-flash",
+      "text": "Loading plugin data from 'http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/images/socket_anim.swf' violates the following Content Security Policy directive: \"object-src 'none'\". The action has been blocked.",
+      "location": {
+        "url": "http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/socketeditems.html",
+        "line": 0,
+        "column": 0,
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "scenario": "socketeditems-flash",
+      "text": "Loading plugin data from 'http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/images/socket_anim.swf' violates the following Content Security Policy directive: \"object-src 'none'\". The action has been blocked.",
+      "location": {
+        "url": "http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/socketeditems.html",
+        "line": 0,
+        "column": 0,
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "scenario": "socketeditems-flash",
+      "text": "Loading plugin data from 'http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/images/socket_anim.swf' violates the following Content Security Policy directive: \"object-src 'none'\". The action has been blocked.",
+      "location": {
+        "url": "http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/socketeditems.html",
+        "line": 0,
+        "column": 0,
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "scenario": "dancing-flash",
+      "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+      "location": {
+        "url": "http://127.0.0.1:16350/shared/wow-com/images/subnav/icon_player%20interaction.jpg",
+        "line": 0,
+        "column": 0,
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "scenario": "dancing-flash",
+      "text": "Loading plugin data from 'http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/races/images/dancing/gifs/dwarf_male.swf' violates the following Content Security Policy directive: \"object-src 'none'\". The action has been blocked.",
+      "location": {
+        "url": "http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/races/dancing.html",
+        "line": 0,
+        "column": 0,
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    }
+  ],
+  "pageErrors": [],
+  "requestFailures": [
+    {
+      "scenario": "dancing-flash",
+      "url": "http://127.0.0.1:16350/shared/wow-com/images/subnav/icon_player%20interaction.jpg",
+      "method": "GET",
+      "failure": {
+        "errorText": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+      }
+    }
+  ],
+  "expected": {
+    "knownMissing404": [
+      {
+        "scenario": "unknown404-query",
+        "path": "/WOW-Encyclopedia-Deployable-Archive/__portable-browser-unknown__.html",
+        "status": 404
+      }
+    ],
+    "swfObjectSrcNone": [
+      {
+        "scenario": "socketeditems-flash",
+        "text": "Loading plugin data from 'http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/images/socket_anim.swf' violates the following Content Security Policy directive: \"object-src 'none'\". The action has been blocked.",
+        "location": {
+          "url": "http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/socketeditems.html",
+          "line": 0,
+          "column": 0,
+          "lineNumber": 0,
+          "columnNumber": 0
+        }
+      },
+      {
+        "scenario": "socketeditems-flash",
+        "text": "Loading plugin data from 'http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/images/socket_anim.swf' violates the following Content Security Policy directive: \"object-src 'none'\". The action has been blocked.",
+        "location": {
+          "url": "http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/socketeditems.html",
+          "line": 0,
+          "column": 0,
+          "lineNumber": 0,
+          "columnNumber": 0
+        }
+      },
+      {
+        "scenario": "socketeditems-flash",
+        "text": "Loading plugin data from 'http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/images/socket_anim.swf' violates the following Content Security Policy directive: \"object-src 'none'\". The action has been blocked.",
+        "location": {
+          "url": "http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/socketeditems.html",
+          "line": 0,
+          "column": 0,
+          "lineNumber": 0,
+          "columnNumber": 0
+        }
+      },
+      {
+        "scenario": "socketeditems-flash",
+        "text": "Loading plugin data from 'http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/images/socket_anim.swf' violates the following Content Security Policy directive: \"object-src 'none'\". The action has been blocked.",
+        "location": {
+          "url": "http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/socketeditems.html",
+          "line": 0,
+          "column": 0,
+          "lineNumber": 0,
+          "columnNumber": 0
+        }
+      },
+      {
+        "scenario": "socketeditems-flash",
+        "text": "Loading plugin data from 'http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/images/socket_anim.swf' violates the following Content Security Policy directive: \"object-src 'none'\". The action has been blocked.",
+        "location": {
+          "url": "http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/items/socketeditems.html",
+          "line": 0,
+          "column": 0,
+          "lineNumber": 0,
+          "columnNumber": 0
+        }
+      },
+      {
+        "scenario": "socketeditems-flash",
+        "route": "info/items/socketeditems.html",
+        "cspObjectSrcNone": true
+      },
+      {
+        "scenario": "dancing-flash",
+        "text": "Loading plugin data from 'http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/races/images/dancing/gifs/dwarf_male.swf' violates the following Content Security Policy directive: \"object-src 'none'\". The action has been blocked.",
+        "location": {
+          "url": "http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/info/races/dancing.html",
+          "line": 0,
+          "column": 0,
+          "lineNumber": 0,
+          "columnNumber": 0
+        }
+      },
+      {
+        "scenario": "dancing-flash",
+        "route": "info/races/dancing.html",
+        "cspObjectSrcNone": true
+      }
+    ]
+  },
+  "failures": [
+    {
+      "name": "mobile-login-history-js-off",
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at checkMobileLogin (D:\\WOW_Encyclopedia\\research\\local-maintenance-20261014\\portable-validation\\portable_browser_checks.js:210:12)\n    at async scenario (D:\\WOW_Encyclopedia\\research\\local-maintenance-20261014\\portable-validation\\portable_browser_checks.js:143:20)\n    at async D:\\WOW_Encyclopedia\\research\\local-maintenance-20261014\\portable-validation\\portable_browser_checks.js:289:5"
+    },
+    {
+      "name": "external-requests-blocked",
+      "count": 1,
+      "requests": [
+        {
+          "url": "http://127.0.0.1:16350/shared/wow-com/images/subnav/icon_player%20interaction.jpg",
+          "method": "GET",
+          "path": "/shared/wow-com/images/subnav/icon_player%20interaction.jpg"
+        }
+      ]
+    },
+    {
+      "name": "unexpected-console-errors",
+      "errors": [
+        {
+          "scenario": "unknown404-query",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "location": {
+            "url": "http://127.0.0.1:16350/WOW-Encyclopedia-Deployable-Archive/__portable-browser-unknown__.html?source=portable&requested=%3Cscript%3Ewindow.__PORTABLE_QUERY_EXECUTED__%3D1%3C%2Fscript%3E",
+            "line": 0,
+            "column": 0,
+            "lineNumber": 0,
+            "columnNumber": 0
+          }
+        },
+        {
+          "scenario": "dancing-flash",
+          "text": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "location": {
+            "url": "http://127.0.0.1:16350/shared/wow-com/images/subnav/icon_player%20interaction.jpg",
+            "line": 0,
+            "column": 0,
+            "lineNumber": 0,
+            "columnNumber": 0
+          }
+        }
+      ]
+    }
+  ],
+  "passed": false,
+  "counts": {
+    "scenarios": 6,
+    "passedScenarios": 5,
+    "externalRequests": 1,
+    "postAttempts": 0,
+    "nonGetRequests": 0,
+    "consoleErrors": 8,
+    "pageErrors": 0,
+    "requestFailures": 1,
+    "expected404": 1,
+    "expectedSwfCspEvents": 8
+  }
+}
