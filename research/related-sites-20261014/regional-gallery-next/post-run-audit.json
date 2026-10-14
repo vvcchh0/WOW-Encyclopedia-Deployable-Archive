@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "kind": "post_run_transport_audit",
+  "source_batch_state": "research/related-sites-20261014/regional-gallery-next/batch-state.json",
+  "started_utc": "2026-10-14T08:29:07.673013+00:00",
+  "finished_utc": "2026-10-14T08:33:39.719611+00:00",
+  "elapsed_seconds": 272.047,
+  "selected_entities": 18,
+  "attempted_entities": 18,
+  "direct_attempts": 18,
+  "direct_curl_exit_28": 18,
+  "proxy_attempts": 18,
+  "proxy_http_429": 17,
+  "proxy_curl_exit_28": 1,
+  "valid_replays": 0,
+  "accepted_bytes": 0,
+  "response_bytes_recorded": 2754,
+  "network_window_seconds": 480,
+  "acceptance_gate": [
+    "HTTP 200",
+    "Memento capture timestamp matches selected CDX timestamp",
+    "image/jpeg response MIME",
+    "JPEG magic",
+    "Pillow full decode",
+    "CDX SHA-1 digest"
+  ],
+  "cdx_length_interpretation": "CDX length is recorded metadata and is not compared with decoded JPEG body length; Content-Length is checked only when supplied by the HTTP response.",
+  "execution_deviations": [
+    "The original run completed all 18 entities because it counted matching direct/proxy failure classes instead of the final entity failure class; the corrected tool stops after three consecutive final HTTP failures and resets on a class change.",
+    "The original run used fixed curl timeouts; it finished in 272.047 seconds, so no request was truncated by the eight-minute deadline. The corrected tool tightens each direct/proxy timeout to the remaining deadline.",
+    "The original run had no accepted image, so no successful raw was duplicated. The corrected tool moves an accepted attempt body into the final raw path."
+  ],
+  "decision": "No new image entered the source map. Do not retry this batch without new network evidence.",
+  "source_map": "research/related-sites-20261014/regional-gallery-next/image-source-map.json"
+}
