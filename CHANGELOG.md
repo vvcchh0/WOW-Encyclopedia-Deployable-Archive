@@ -9,6 +9,8 @@
 
 ## 2026-10-14
 
+- 限时检查 Karazhan 玩家图库：覆盖 54/126 个图片地址，32 项返回未存档、8 项仅取得历史重定向，未取得有效图片；代理连续 TLS 错误后停止，72 项待检查。[检查记录](docs/karazhan-gallery-accessibility-20261014.md)
+
 - 抽样检查 Wayback 截图资源：3 张已有图片可回放，2 张图库原图返回 404；本轮未遇到 429，CDX 超时、Availability API 返回 503，暂无新增图片。[可及性报告](docs/screenshot-accessibility-20261014.md)
 
 - 本地修复旧百科 XML 地址跳转及含空格的动态图片地址，停用 7 处旧 Flash 安装属性；整理静态缺口与空间清单，生成含历史展品改造的新版便携浏览包。[本地整理记录](docs/local-maintenance-20261014.md)
