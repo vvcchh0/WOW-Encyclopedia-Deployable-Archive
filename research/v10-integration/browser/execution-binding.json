@@ -1,0 +1,75 @@
+{
+  "schema": "wow-recovery.core-source-v10-browser-execution-binding.v1",
+  "generated_utc": "2026-10-15T10:54:38.3065769Z",
+  "status": "completed_local_only",
+  "network_requests": 0,
+  "server": {
+    "base_url": "http://127.0.0.1:29006",
+    "prefix": "/WOW-Encyclopedia-Deployable-Archive/",
+    "server_started_by_runner": false
+  },
+  "node": "C:\\Users\\17630\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+  "playwright_module": "C:\\Users\\17630\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\playwright",
+  "runner_hashes": {
+    "runner_sha256_saved_in_receipt_at_dispatch": null,
+    "known_dispatch_freeze_sha256": "a062adfa2a268506062ea7b3a6fa67c42b34a490c05ff8394c45c48fdc445cd9",
+    "current_corrected_runner_sha256": "21a947944b4b98fdd3e6040b3666052bb2d15748e11df455892bc816810347f4",
+    "note": "The first receipt did not embed a runner hash. The freeze SHA is the saved pre-dispatch value; the current SHA is post-run harness correction and is not retroactively assigned to the first run."
+  },
+  "runs": [
+    {
+      "id": "first-full-run",
+      "kind": "full",
+      "only": null,
+      "started_utc": "2026-10-15T10:47:13.086Z",
+      "finished_utc": "2026-10-15T10:47:42.695Z",
+      "command": "& \"C:\\Users\\17630\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe\" research/v10-integration/browser/v10_acceptance.js --server-ready --base-url \"http://127.0.0.1:29006\" --prefix \"/WOW-Encyclopedia-Deployable-Archive/\" --playwright-module \"C:\\Users\\17630\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\playwright\" --manifest \".scratch/offline-navigation-20261015-v10/build-manifest.json\" --provenance \".scratch/pages-resources-20261015-v10/export-provenance.json\" --output \"research/v10-integration/browser/v10-browser-receipt.json\"",
+      "receipt": {
+        "path": "research/v10-integration/browser/v10-browser-receipt.json",
+        "sha256": "bbe3f59f364bb465c3cee320cdfd3dea459cc80191ed670b0ff9c9a532cbbbd8",
+        "status": "completed_with_failures",
+        "passed": false
+      }
+    },
+    {
+      "id": "rss-corrected-intermediate",
+      "kind": "targeted-rerun",
+      "only": "rss",
+      "started_utc": "2026-10-15T10:48:32.273Z",
+      "finished_utc": "2026-10-15T10:48:38.837Z",
+      "command": "& \"C:\\Users\\17630\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe\" research/v10-integration/browser/v10_acceptance.js --server-ready --only rss --base-url \"http://127.0.0.1:29006\" --prefix \"/WOW-Encyclopedia-Deployable-Archive/\" --playwright-module \"C:\\Users\\17630\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\playwright\" --manifest \".scratch/offline-navigation-20261015-v10/build-manifest.json\" --provenance \".scratch/pages-resources-20261015-v10/export-provenance.json\" --output \"research/v10-integration/browser/v10-browser-receipt.rss-corrected.json\"",
+      "receipt": {
+        "path": "research/v10-integration/browser/v10-browser-receipt.rss-corrected.json",
+        "sha256": "50d9e5dca79e271d796864d12e29a1696e741f65c238e9ca09602a3f79aa7672",
+        "status": "passed",
+        "passed": true,
+        "superseded_by": "research/v10-integration/browser/v10-browser-receipt.rss-corrected-v2.json",
+        "superseded_reason": "summary counted skipped checks as failed; browser evidence was preserved"
+      }
+    },
+    {
+      "id": "rss-corrected-v2-final",
+      "kind": "targeted-rerun",
+      "only": "rss",
+      "started_utc": "2026-10-15T10:49:15.916Z",
+      "finished_utc": "2026-10-15T10:49:22.268Z",
+      "command": "& \"C:\\Users\\17630\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe\" research/v10-integration/browser/v10_acceptance.js --server-ready --only rss --base-url \"http://127.0.0.1:29006\" --prefix \"/WOW-Encyclopedia-Deployable-Archive/\" --playwright-module \"C:\\Users\\17630\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\playwright\" --manifest \".scratch/offline-navigation-20261015-v10/build-manifest.json\" --provenance \".scratch/pages-resources-20261015-v10/export-provenance.json\" --output \"research/v10-integration/browser/v10-browser-receipt.rss-corrected-v2.json\"",
+      "receipt": {
+        "path": "research/v10-integration/browser/v10-browser-receipt.rss-corrected-v2.json",
+        "sha256": "9a6654e3b5302b558597e79acbfa876a0feb5eeee60004b261370783996d5a29",
+        "status": "passed",
+        "passed": true,
+        "skipped_checks": 4
+      }
+    }
+  ],
+  "constraints": {
+    "request_gate": "loopback GET/HEAD only",
+    "external_requests": 0,
+    "production_modified": false,
+    "source_modified": false,
+    "export_repeated": false,
+    "server_started": false,
+    "old_receipts_modified": false
+  }
+}

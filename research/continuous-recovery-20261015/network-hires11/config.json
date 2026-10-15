@@ -1,0 +1,46 @@
+{
+  "schema": "continuous-wow-network-hires11-config/v1",
+  "batch_id": "NET-HIRES-011",
+  "candidate_path": "research/continuous-recovery-20261015/network-hires11/candidates.json",
+  "candidate_sha256": "fba02b7ed794c9de7988eb03849fc99be555b749282e5cb3338276cbef8296ce",
+  "transport_helper": "research/continuous-recovery-20261015/network-core-pages3/core_pages3.py",
+  "dispatch_gate_helper": "research/continuous-recovery-20261015/network-control7/control7.py",
+  "network_requests": 0,
+  "policy": {
+    "max_distinct_targets": 13,
+    "max_attempts": 32,
+    "network_window_seconds": 480,
+    "minimum_dispatch_interval_seconds": 1.25,
+    "minimum_free_bytes": 11005853696,
+    "max_total_body_bytes": 67108864,
+    "max_entity_body_bytes": 16777216,
+    "direct_first_then_existing_proxy": true,
+    "proxy": "http://127.0.0.1:7890",
+    "automatic_redirects": 0,
+    "manual_redirect_follow_hops": 0,
+    "tls_verification": "curl default verification enabled",
+    "stop_http_codes": [
+      429,
+      503
+    ],
+    "concurrent_source_requests": 1,
+    "source_http_excludes_connect_200": true,
+    "cdx_length_is_index_metadata": true,
+    "raw_headers_trace_body_local_only": true
+  },
+  "windows": {
+    "preanchor": {
+      "name": "preanchor",
+      "from": "20040101000000",
+      "to": "20080512210044",
+      "temporal_status": "preanchor"
+    },
+    "late": {
+      "name": "late",
+      "from": "20080513000000",
+      "to": "20101231235959",
+      "temporal_status": "temporal_supplement"
+    }
+  },
+  "late_query_guard": "only preanchor source_status=200, cdx_parse_valid=true, capture_index_count=0"
+}

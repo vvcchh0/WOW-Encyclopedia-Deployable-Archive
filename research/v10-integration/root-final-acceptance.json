@@ -1,0 +1,101 @@
+{
+  "schema": "wow-v10-root-final-acceptance/v1",
+  "checked_utc": "2026-10-15T11:00:49.821999+00:00",
+  "accepted": true,
+  "ready_for_pages_publication": true,
+  "published": false,
+  "gates": {
+    "source": {
+      "path": "research/v10-integration/root-source-acceptance.json",
+      "sha256": "bddf4a5ac323dcf809ab12c6830221d54947a74b175878e9525851e5acae5092",
+      "accepted": true
+    },
+    "export": {
+      "path": "research/v10-integration/root-export-acceptance.json",
+      "sha256": "c246a25896aaf6dc08063ca9d7de6786d60a16e99f2aacb5afa55d6442729ae6",
+      "accepted": true
+    },
+    "sidebar": {
+      "path": "research/v10-integration/root-sidebar-check.json",
+      "sha256": "bf4cb0797cecde3797249d214260a3f1787087f41f2c973854e70ae20141650a",
+      "accepted": true
+    },
+    "ledger": {
+      "path": "research/v10-integration/root-ledger-acceptance.json",
+      "sha256": "e647282d1fe8a1b97959a35224412873c497f938fce4b9b7398f428bd34442d0",
+      "accepted": true
+    },
+    "native_viewer": {
+      "path": "research/continuous-recovery-20261015/native-viewer-acceptance.json",
+      "sha256": "cf20b540bc6ef0bbea97342aec87f73c99231f8a86ac13dc9a2df6027dab1120",
+      "accepted": true
+    },
+    "browser": {
+      "path": "research/continuous-recovery-20261015/v10-browser-independent-review.json",
+      "sha256": "e75475be58f37a770e9d3b6ed89a4c654caa80ba3543037c1c746258ddba142a",
+      "accepted": true
+    }
+  },
+  "unit_tests": {
+    "receipt_sha256": "d5d72535a6b8f5f2c47d171f9299072cb2a578a09f6243d1734b411f9e5be848",
+    "tests_run": 42,
+    "exit_code": 0,
+    "scope": "Relevant exporter and historical exhibit modules; unchanged baseline suites were not repeated."
+  },
+  "tested_implementation": [
+    {
+      "path": "tools/export_github_pages.py",
+      "sha256": "e6c13afe80a691bbeda46abe7f5b9b1b74bd3f28f1c4a2a08e946eedf7aa9569",
+      "matches_tested_code": true
+    },
+    {
+      "path": "tests/test_github_pages_export.py",
+      "sha256": "b6035754363fce52095b8bfa061904ece2906bfb5fbc81df654b87f3d15d09b2",
+      "matches_tested_code": true
+    }
+  ],
+  "root_visual_reviews": [
+    {
+      "path": "research/v10-integration/browser/screenshots/wrath-artwork-page-1.png",
+      "bytes": 2745386,
+      "sha256": "bebb0b4a8e74801a8e8de9858c6961a00b4a03f1e97c51cf8554732b2b82882a",
+      "reviewed_by_root": true
+    },
+    {
+      "path": "research/v10-integration/browser/screenshots/wrath-viewer-s12.png",
+      "bytes": 2539563,
+      "sha256": "4e2b2bc9823f7894fcf988627580762a0dde9ae77bfd7ece85d1b8bbe0c8169a",
+      "reviewed_by_root": true
+    }
+  ],
+  "source_records": 8338,
+  "declared_export_objects": 8477,
+  "retained_image_overlays": 38,
+  "restored_sidebar_routes_this_version": 7,
+  "remaining_missing_sidebar_routes": 16,
+  "known_gaps": {
+    "wrath_artwork_available_ordinary_pairs": [
+      1,
+      3,
+      6,
+      9,
+      12
+    ],
+    "wrath_artwork_missing_ordinary_pairs": [
+      2,
+      4,
+      5,
+      7,
+      8,
+      10,
+      11,
+      13
+    ],
+    "decorative_ssborder1_png": "not recovered; derived hit area and decorative placeholder visibility repaired",
+    "hires_artwork": "No high-resolution image recovered in NET-HIRES-011.",
+    "player_screenshot_galleries": "Game Guide gallery payload gaps remain separate from Wrath artwork."
+  },
+  "scope": "Current source/export/routes and focused browser changes. This does not claim all historical website assets recovered.",
+  "frozen_manifest_sha256": "397f7dcdbc774d80c6f8c1f3dabf7933211ff182427bd2ef77c895752334f459",
+  "errors": []
+}

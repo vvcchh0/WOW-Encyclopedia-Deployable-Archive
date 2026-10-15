@@ -119,6 +119,28 @@ main 已由根代理推送并独立确认至 `8a7b30eb57632bf3353506c886d93d575b
 
 唯一网络执行者 B 独立执行 `NET-HIRES-011`，只查询真实 JS 模板举证的 common 1..12 与 locale 1 共 13 个精确 hires 地址。先按精确 URL 查既有索引，优先普通图已有的 1/3/6/9/12；pre-anchor CDX 确实为空时才在余量内查询单独晚期窗口。晚期素材若取得，会明确记录 temporal supplement，不替代基准原图。该批目录已有实际 dispatch journal，结果仍待验收；任何新增素材不追加入已冻结的 v10 选择表。
 
+### 10:40 检查点：源树完成、高清批次没有实体
+
+根代理已推送并独立确认 main `0208573d58f03607e674777453fd4af6713f57c8`，包括 viewer 参数/点击区实现及已验收来源证据。Pages 仍为已验收 v8；v10 未发布。
+
+v10 source 一次构建完成，validation-only 最终退出 0；实际 **8,338 条来源/路由、183 个别名**。统筹[独立来源验收](../research/continuous-recovery-20261015/v10-source-independent-acceptance.json)核对全部 8,328 条旧来源关键元数据与别名守恒、两个 generated support 路径迁移的相同字节，以及十份新增 raw、真实 Memento 和派生文件。源 JS 仍保留原始内容，严格参数转换将在根代理 fresh Pages export 应用。根代理另实读全部 8,338 份派生文件；38 个旧图片补充层也留给最终 export。源[构建回执](../research/v10-integration/source/v10-source-receipt.json)与旧 v9、冻结 baseline 分别保存。
+
+`NET-HIRES-011` 完成[独立逐请求验收](../research/continuous-recovery-20261015/hires11-acceptance.json)：24 次尝试、17 个真实 CDX HTTP 200 响应，共 51 字节索引正文，**0 条捕获记录、0 次回放、0 张图片**。七个地址在声明的 pre-anchor 与 2008-05-13–2010-12-31 两个窗口均为空；三个 pre-anchor 查询传输失败而未查 late，另三个 pre-anchor 为空、late 查询传输失败。空索引仅限精确地址和声明时窗，不代表全时域不存在。最小实际派发间隔 1.25 秒、最大连续传输失败 2，磁盘高于保留阈值；没有图片正文，因此没有 Pillow 图片验证样例。
+
+A 现准备独立 `v10-integration/browser/` focused runner，等根代理 29006 ready 后才运行。只查七个月份 HTML、图库 13 卡两页、common12 卡片中心实际点击与 viewer 参数/翻页、真实图和已知缺口，不重跑无关旧场景。B 已结束网络，复用为 15 分钟纯本地 SSOTD 续页/脚本证据方案；当前不授权新网络。现有 648 条入口捕获、未筛选图片索引两页及真实续页键须先对照旧请求集合，避免重复查询。
+
+### 10:55 检查点：v10 最终本地验收
+
+根代理已完成 v10 全量 source/export 验收：8,338 份派生来源实读 541,216,852 字节；最终导出 **8,477 个声明文件、559,921,267 字节、38 个旧图片补充层**。与 v9 相同路径和摘要的文件复用已接受的公开卫生结论，全部新改文件另完整扫描，无未解决发现。线上仍为 v8，v10 是否发布由根代理处理并另写发布回执。
+
+[focused 浏览独立复核](../research/continuous-recovery-20261015/v10-browser-independent-review.json)已接受。首轮实际执行五组检查，其中四组通过，RSS 组因 harness 将完整文档标题误当作正文可见文字而失败。保留首轮后只重跑 RSS：最终七页全部 HTTP 200，月份日期与两处原站标题异常核对通过；该轮是一组实际通过、四组 skip，不能称为单轮五组全通过。首轮 40 条标准 404 console 文本与 40 个已知缺图响应按 check 和数量吻合，零未知 404、页面错误、失败请求或阻止请求。原 console 未存 location，结论仅为聚合已知缺图诊断，不声称逐条 URL 绑定，也不拿 RSS-only 零 console 覆盖首轮。
+
+原画列表实际为 9/4 卡片，每个点击区 243×193；common12 中心点击进入真实 viewer，实际背景与 screenImage 均显示已验收的 700×420 JPEG（50,533 字节，摘要和 decode 匹配）。12 个真实参数样例及 sentinel=0 通过，Next/Previous 实际从 12 变为 11/13；这两项仍缺原图，只验收索引。八对内容图、共享 border 原图及十三张 hires 仍缺，派生装饰占位隐藏没有增加原始恢复数。三张截图实读摘要和解码，统筹另目视 common12 原画。
+
+根代理[1,241 条菜单复核](../research/v10-integration/root-sidebar-check.json)守恒，1,167 条当前范围中 **1,088 条 resolved、467 个不同文件**；七个 RSS-path HTML 新路由接通，剩余 **19 条缺路由观察、16 个地址**，无旧路由回归。[当前总账](../research/continuous-recovery-20261015/ledger.current.json)的 page 字段已更新为本地未发布 v10；[旧 v9 总账](../research/continuous-recovery-20261015/ledger.v9-accepted-0950.json)先逐字节保存。资源及交互字段逐值保留 v9 并显式标记版本，954 条旧 partial 观察未被称作新 v10 全资源审计。
+
+SSOTD [纯本地方案独立审阅](../research/continuous-recovery-20261015/ssotd-next-plan-independent-review.json)核对真实第二页 cursor 与原查询参数。原候选中的 2008 入口已有 5,038 字节原始来源，2018 年 bare HTTPS 高编号重定向与基准图库相关性较弱，两者从下一批排除，旧方案保留。根代理批准的[独立优先级覆盖](../research/continuous-recovery-20261015/ssotd12-approved-plan.json)只续取最多三页真实新 key，并取 2010-12-27 `ss1057-thumb.jpg` 已见 301 的一个首跳。唯一 B 已派发 `NET-SSOTD-012`，不自动跟随、不回放新行、不接入当前 v10；仍受原请求、时间、字节、磁盘和停止边界限制。
+
 ## 取舍与后续顺序
 
 优先修复已有真实内容因地址规范化或客户端逻辑无法访问的问题；其次补取来源明确且过去因网络失败没有取得内容判定的对象；再沿历史脚本、菜单和 CDX 记录提取有证据的缺失资源。按编号生成的截图地址可以作为来源证据，不能凭猜测把实体记为已取得。若本地审计发现更高价值的缺口，下一批按证据与可恢复性调整，不为填满时间盲目重试。

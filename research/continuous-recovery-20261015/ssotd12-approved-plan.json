@@ -1,0 +1,81 @@
+{
+  "schema": "continuous-wow-ssotd12-approved-plan/v1",
+  "created_utc": "2026-10-15T10:51:37.194019+00:00",
+  "root_authorized": true,
+  "parent_review": "research/continuous-recovery-20261015/ssotd-next-plan-independent-review.json",
+  "parent_review_sha256": "41fe5ece541389f383fdf59e554b047b63a914d340cee96dc9b1dcc9b1c7ff22",
+  "original_proposal": "research/continuous-recovery-20261015/ssotd-next-plan/candidate-queue.json",
+  "original_proposal_sha256": "29b62cb85e40bd3eed901ed4bbd80fcfb89f3da2c026d9d50f3eca3a23717157",
+  "override_reason": {
+    "exclude_entry_replay": "Exact20080512204328 original5038B SHA24d0242d... already local; source evidence can be read offline",
+    "exclude2018_redirects": "bareHTTPS/high numbers absent in2008counter; weaker temporal/content relevance",
+    "include": "max3new resume pages and one20101227014645 ss1057-thumb301 first-hop evidence"
+  },
+  "first_cdx_request_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fdownloads%2Fssotd%2Fimages%2Fscreens%2F&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&showResumeKey=true&limit=1000&resumeKey=eJwVyFsKgCAQAMCr9BtUboJYx9l8Vagbq-H1s88ZQ2lqxNGSb8iG0ddRWGo5EtoiSqFqxZUwuA7DzuU_FYCe6_mmY7mfMEhYN1BSQ2-5fyTuHJE",
+  "original_query_parameters": {
+    "url": [
+      "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/"
+    ],
+    "matchType": [
+      "prefix"
+    ],
+    "output": [
+      "json"
+    ],
+    "fl": [
+      "timestamp,original,statuscode,mimetype,digest,length"
+    ],
+    "showResumeKey": [
+      "true"
+    ],
+    "limit": [
+      "1000"
+    ]
+  },
+  "initial_resume_key": "eJwVyFsKgCAQAMCr9BtUboJYx9l8Vagbq-H1s88ZQ2lqxNGSb8iG0ddRWGo5EtoiSqFqxZUwuA7DzuU_FYCe6_mmY7mfMEhYN1BSQ2-5fyTuHJE",
+  "previously_used_resume_keys": [
+    "eJwVyDEOgCAMAMCvuJqolDKIz0EKqAFqAMP31fHOcpo6l0jsuym2GN9GQdxzZENV1MqNxJlMcB9scS7_iSvouR1P2pfrDgOCREDYpFYK8AUlORyM"
+  ],
+  "max_new_cdx_pages": 3,
+  "cursor_rule": "Every subsequent key must be read from actual valid previous response; keep original query parameters byte/semantic identity, only replace resumeKey; stop at exhausted or repeated key, no retry loop.",
+  "redirect_probe": {
+    "original_url": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1057-thumb.jpg",
+    "requested_capture": "20101227014645",
+    "cdx_status": "301",
+    "cdx_mime": "text/html",
+    "cdx_digest": "EHJDW7RFCFWMSQBGL67RQNFHDIQOHYZG",
+    "cdx_warc_index_length": "594",
+    "request_url": "https://web.archive.org/web/20101227014645id_/http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1057-thumb.jpg",
+    "evidence_bodies": [
+      "research/media-screenshots-20261015/wayback-window/raw/07-ssotd_screens_prefix_rows_all.body",
+      "research/media-screenshots-20261015/wayback-window/raw/13-ssotd_screens_prefix_resume_page1.body"
+    ],
+    "max_first_hop_operations": 1,
+    "automatic_or_manual_follow": 0
+  },
+  "limits": {
+    "attempts": 32,
+    "seconds": 480,
+    "total_body_bytes": 67108864,
+    "single_body_bytes": 16777216,
+    "minimum_dispatch_interval_seconds": 1.25,
+    "disk_floor_bytes": 11005853696,
+    "concurrent_source_requests": 1,
+    "stop_statuses": [
+      429,
+      503
+    ],
+    "stop_consecutive_transport_failures": 5,
+    "automatic_redirects": 0,
+    "manual_redirects": 0
+  },
+  "classify": "CDX rows are index evidence only; preserve raw original scheme/host/port/query and temporal buckets. Source status excludes CONNECT; redirect authenticity needs actual Memento and x-archive-orig-location/Location provenance.",
+  "integration": "No payload or index row auto-integrated; v10 source/export frozen.",
+  "excluded_operations": [
+    "repeat2008entry",
+    "2018bareHTTPSredirects",
+    "old2images",
+    "earlierexactemptyqueries",
+    "guessednumericURLs"
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "schema": "continuous-wow-recovery-tasks/v1",
   "deadline_utc": "2026-10-15T14:44:00Z",
-  "updated_utc": "2026-10-15T10:32:29.921326+00:00",
+  "updated_utc": "2026-10-15T10:59:05.343512+00:00",
   "coordination": {
     "heartbeat_id": "wow-8",
     "heartbeat_interval_minutes": 15,
@@ -705,7 +705,7 @@
     },
     {
       "id": "CORE-SOURCE-V10-013",
-      "status": "running_source_built_validate_existing_awaiting_receipt",
+      "status": "source_and_root_final_export_accepted_browser_accepted_pending_root_publication",
       "owner": "sidebar_local_audit",
       "goal": "Build fresh v10 source mirror from frozen ten additions and all accepted v9 inputs, retaining8328 prior sources and aliases.",
       "write_scope": [
@@ -733,13 +733,26 @@
         "layout_images_added": 1,
         "image_overlays_preserved_for_root_export": 38,
         "final_export_owner": "root",
-        "phase_observed_utc": "2026-10-15T10:32:29.921326+00:00",
-        "phase_note": "Root observed fresh v10 manifest75463144B and validate-existing PID7540 started10:29; awaiting stable worker receipt, independent source acceptance pending"
+        "phase_observed_utc": "2026-10-15T10:40:27.098107+00:00",
+        "phase_note": "One build completed; validate-existing exit0; source stage frozen. Root full8338source acceptance/export/browser separate.",
+        "actual_sources": 8338,
+        "actual_routes": 8338,
+        "actual_aliases": 183,
+        "worker_receipt": "research/v10-integration/source/v10-source-receipt.json",
+        "worker_receipt_sha256": "23b7e5cdfc9b26aea42e7fe8840670adb38c29d8e6e0486cb298a65911006cd5",
+        "manifest_sha256": "bc664a728da4bb6c5a49b2c2d46bc2837e2ae40e8a09f6e59c6dc755caa83d86",
+        "independent_acceptance": "research/continuous-recovery-20261015/v10-source-independent-acceptance.json",
+        "root_source_acceptance": "research/v10-integration/root-source-acceptance.json",
+        "root_export_acceptance": "research/v10-integration/root-export-acceptance.json",
+        "export_declared_files": 8477,
+        "export_read_bytes": 559921267,
+        "old_image_overlays_verified": 38,
+        "published": false
       }
     },
     {
       "id": "NET-HIRES-011",
-      "status": "running_single_fetcher_dispatch_journal_present",
+      "status": "accepted_zero_images_scoped_cdx_empty_and_transport_unknown",
       "owner": "wayback_recheck_batch1",
       "goal": "Acquire thirteen exact high-resolution artwork URLs proven by native dirList/hiResList templates, keeping pre-anchor and late supplements separate.",
       "write_scope": "research/continuous-recovery-20261015/network-hires11/**",
@@ -770,26 +783,167 @@
       ],
       "stop": "Declared target/request/time/byte bounds,429/503, five consecutive transport failures; return idle",
       "result": {
-        "phase_observed_utc": "2026-10-15T10:31:27.132533+00:00",
-        "phase_note": "10:29 dispatch journal/raw directory present; outcomes pending independent acceptance",
-        "frozen_v10_selection_unchanged": true
+        "phase_observed_utc": "2026-10-15T10:40:27.098107+00:00",
+        "phase_note": "Network batch complete; original report category retained, independent scope classification controls. No Pillow case without actual image.",
+        "frozen_v10_selection_unchanged": true,
+        "attempts": 24,
+        "source_responses": 17,
+        "total_batch_body_bytes": 51,
+        "raw_cdx_capture_rows": 0,
+        "replays": 0,
+        "valid_images": 0,
+        "minimum_monotonic_dispatch_interval_seconds": 1.25,
+        "maximum_consecutive_transport_failures": 2,
+        "counts": {
+          "cdx_empty_in_two_scoped_windows": 7,
+          "preanchor_transport_unknown_late_not_queried": 3,
+          "preanchor_cdx_empty_late_transport_unknown": 3
+        },
+        "acceptance": "research/continuous-recovery-20261015/hires11-acceptance.json"
       }
+    },
+    {
+      "id": "LOCAL-BROWSER-V10-014",
+      "status": "independently_accepted_focused_runtime_with_known_original_asset_gaps",
+      "owner": "sidebar_local_audit",
+      "goal": "Focused actual v10 browser proof for seven monthly HTML routes and real Wrath gallery/viewer interactions.",
+      "write_scope": "research/v10-integration/browser/**",
+      "network": false,
+      "limits": {
+        "minutes": 20,
+        "loopback_only": true,
+        "allowed_methods": [
+          "GET",
+          "HEAD"
+        ],
+        "production_source_export_writes": 0
+      },
+      "inputs": [
+        "research/v10-integration/source/v10-source-receipt.json",
+        "research/continuous-recovery-20261015/native-viewer-acceptance.json",
+        "root confirmed fresh v10 export and29006server, not yet ready at dispatch"
+      ],
+      "acceptance": [
+        "Seven RSS-path HTML months and two preserved original title anomalies",
+        "Thirteen gallery cards9/4, five real ordinary pairs/eight gaps, decoration distinct",
+        "Actual center click common12 into query viewer; real image HTTP/MIME/hash/decode",
+        "Native viewer1/3/13/default/invalid and prev/next index behavior; no injected shotList or forced click",
+        "No index.htmlimages URLs; classify expected and unexpected404 separately"
+      ],
+      "stop": "Wait for root ready before runtime; completed cases or20min; no unrelated old scenarios or all-site browse",
+      "result": {
+        "first_full_executed": 5,
+        "first_full_passed": 4,
+        "first_full_harness_failed": 1,
+        "final_rss_only_executed": 1,
+        "final_rss_only_passed": 1,
+        "final_rss_only_skipped": 4,
+        "distinct_accepted_check_groups": 5,
+        "original_content_image_pairs_missing": 8,
+        "original_shared_border_missing": true,
+        "gallery_complete": false,
+        "native_query_cases": 12,
+        "actual_controls_current_values": [
+          11,
+          13
+        ],
+        "known404responses": 40,
+        "standard404console_errors": 40,
+        "console_url_binding": "aggregate check/count only; no per-message location in original receipt",
+        "unexpected404responses": 0,
+        "page_errors": 0,
+        "acceptance": "research/continuous-recovery-20261015/v10-browser-independent-review.json",
+        "a_idle": true
+      }
+    },
+    {
+      "id": "LOCAL-SSOTD-PLAN-015",
+      "status": "independent_evidence_accepted_priority_override_root_approved",
+      "owner": "wayback_recheck_batch1",
+      "goal": "Reconcile existing SSOTD unfiltered CDX continuation and historical script evidence into a bounded non-duplicate next acquisition proposal.",
+      "write_scope": "research/continuous-recovery-20261015/ssotd-next-plan/**",
+      "network": false,
+      "limits": {
+        "minutes": 15,
+        "network_requests": 0,
+        "broad_repository_glob_text_scans": 0
+      },
+      "inputs": [
+        "docs/media-and-navigation-recovery-20261015.md",
+        "research/media-screenshots-20261015/capture-ledger.json",
+        "research/media-screenshots-20261015/wayback-window/**",
+        "research/media-screenshots-20261015/inventory.json"
+      ],
+      "acceptance": [
+        "Exact requested query/replay set and actual resumeKey/query identity",
+        "Seen CDX status/MIME/original/revisit/redirect distribution; no payload inference",
+        "Concrete next queue with32attempt/480s bound, exclude already recovered two images and duplicate requests",
+        "Only inventory-declared source script paths; no guessed numbered targets"
+      ],
+      "stop": "Local plan complete or15min; return idle and wait for root network approval",
+      "result": {
+        "saved_cdx_pages": 2,
+        "saved_prefix_rows": 2000,
+        "entry_capture_rows": 648,
+        "local_network_requests": 0,
+        "next_real_cursor_identity_verified": true,
+        "original_proposal_preserved": true,
+        "exclude_redundant_2008_entry": true,
+        "exclude_2018_high_number_bare_https_redirects": true,
+        "independent_review": "research/continuous-recovery-20261015/ssotd-next-plan-independent-review.json",
+        "approved_override": "research/continuous-recovery-20261015/ssotd12-approved-plan.json"
+      }
+    },
+    {
+      "id": "NET-SSOTD-012",
+      "status": "dispatched_single_fetcher_pending_actual_receipt",
+      "owner": "wayback_recheck_batch1",
+      "goal": "Continue original unfiltered SSOTD prefix CDX with real saved cursor, at most3new pages, and one known2010ss1057-thumb301 first-hop probe.",
+      "write_scope": "research/continuous-recovery-20261015/network-ssotd12/**",
+      "network": true,
+      "inputs": [
+        "research/continuous-recovery-20261015/ssotd12-approved-plan.json"
+      ],
+      "plan_sha256": "b88eaff981d420d8e22b78b9b6b461082e7ce4b5247583359c5a4db6cd1d35c0",
+      "limits": {
+        "max_new_prefix_pages": 3,
+        "max_redirect_first_hop_operations": 1,
+        "attempts": 32,
+        "seconds": 480,
+        "total_body_bytes": 67108864,
+        "single_body_bytes": 16777216,
+        "minimum_dispatch_interval_seconds": 1.25,
+        "disk_floor_bytes": 11005853696,
+        "automatic_redirects": 0,
+        "manual_redirects": 0,
+        "concurrent_source_requests": 1
+      },
+      "acceptance": [
+        "Each cursor from actual valid preceding response and query parameters unchanged",
+        "No repeated key/loop or new-row automatic replay",
+        "CDX index evidence separate from payload and original scheme/host/time identity",
+        "301 actual Memento and origin Location separate from Wayback dispatcher"
+      ],
+      "stop": "32attempt/480s/bytes/disk/429503/5consecutive failures or declared queue complete; return idle, no follow-up"
     }
   ],
   "release_state": {
-    "main_verified_commit": "8a7b30eb57632bf3353506c886d93d575b6afd27",
+    "main_verified_commit": "0208573d58f03607e674777453fd4af6713f57c8",
     "pages_still_v8": "7cfe6ac6a82137fc9df0673630e66c09adf03a49",
     "local_v9_source_export_and_core_diagnostics_accepted": true,
     "v9_published": false,
     "root_directory_fix": "38 tests/18actual-source rewrites accepted; included in frozen exporter with parser/CSS42tests; fresh full export/browser pending",
     "rss4_integration": "accepted sources held for next derivative",
     "viewer_integration": "query source and true generic API accepted; canonical mapping approved with exact-route strict parser and native12case proof",
-    "current_ledger_represents": "local_unpublished_v9",
+    "current_ledger_represents": "local_unpublished_v10_page_fields; resources/interaction remainv9static",
     "rss_integration": "seven accepted expanded HTML sources frozen in v10 additions; original RSS not recovered",
     "v10_source_expected_count": 8338,
     "v10_additions_map": "research/continuous-recovery-20261015/selected-v10-final-additions.json",
     "v10_additions_sha256": "c73b02d2f9353402eb4b568640e1359031e25756604cbbc5f21552f0acd52a55",
-    "v10_source_build": "fresh manifest generated; worker validate-existing running PID7540, stable receipt and independent acceptance pending",
-    "hires_batch": "existing B sole fetcher; separate next derivative, never added to frozen v10"
+    "v10_source_build": "root all8338source accepted; fresh8477export allbytes/hygiene/38overlays accepted",
+    "hires_batch": "accepted completed with0images;7scoped empty/6unknown; no v10 additions drift",
+    "browser_v10": "independent focused runtime accepted across first4groups plus RSS-only sevenpages; known gaps retained",
+    "ssotd_next": "NET012 root-approved narrowed override, sole B dispatched; no automatic integration",
+    "v10_published": false
   }
 }
