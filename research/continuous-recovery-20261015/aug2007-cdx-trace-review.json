@@ -1,0 +1,143 @@
+{
+  "schema": "continuous-wow-aug2007-cdx-trace-local-review/v1",
+  "checked_utc": "2026-10-15T14:07:25.735579+00:00",
+  "network_requests": 0,
+  "raw_trace_contents_public": false,
+  "scope": "Two existing August2007 CDX timeout attempts and their nearest successful CDX neighbors, existing NET020/021 only. No new request or global configuration change.",
+  "rows": [
+    {
+      "batch": "network-rss20",
+      "role": "August2007 no-source-HTTP attempt",
+      "attempt": 8,
+      "target": "http://www.worldofwarcraft.com/news/rss-08-2007.xml",
+      "transport": "proxy",
+      "curl_exit": 28,
+      "source_HTTP_excludingCONNECT": null,
+      "start_utc": "2026-10-15T13:42:28.251835+00:00",
+      "finish_utc": "2026-10-15T13:42:48.295625+00:00",
+      "trace_local_only": {
+        "path": "research/continuous-recovery-20261015/network-rss20/raw/08-http_www.worldofwarcraft.com_news_rss-08-2007.xml-cdx-proxy.trace.txt",
+        "bytes": 15395,
+        "sha256": "9ea1a88844a17e3323daa4540d3a880d87f9ff8e7193a75dd1fbd2f7c2f2d6b6"
+      },
+      "trace_observations": {
+        "TCP_connected_marker": true,
+        "proxy_CONNECT200_marker": true,
+        "TLS_connected_marker": false,
+        "HTTP_CDX_GET_sent_marker": true,
+        "send_header_marker": true,
+        "any_HTTP200_marker_may_includeCONNECT": true,
+        "schannel_TLS_connection_renegotiated_marker": true,
+        "generic_TLS_connected_marker_absence_is_not_failure": true,
+        "timeout": "curl28 after about20s with0 source bytes, following application-level GET send marker and Schannel TLS renegotiated marker."
+      }
+    },
+    {
+      "batch": "network-rss20",
+      "role": "nearest earlier successful CDX",
+      "attempt": 6,
+      "target": "http://www.worldofwarcraft.com/news/rss-09-2007.xml",
+      "transport": "proxy",
+      "curl_exit": 0,
+      "source_HTTP_excludingCONNECT": 200,
+      "start_utc": "2026-10-15T13:42:14.921798+00:00",
+      "finish_utc": "2026-10-15T13:42:23.098109+00:00",
+      "trace_local_only": {
+        "path": "research/continuous-recovery-20261015/network-rss20/raw/06-http_www.worldofwarcraft.com_news_rss-09-2007.xml-cdx-proxy.trace.txt",
+        "bytes": 20147,
+        "sha256": "aa5749237bfd3fd50d404b8c88280720a5146d9c594230cd6e080a8d3563c1bb"
+      },
+      "trace_observations": {
+        "TCP_connected_marker": true,
+        "proxy_CONNECT200_marker": true,
+        "TLS_connected_marker": false,
+        "HTTP_CDX_GET_sent_marker": true,
+        "send_header_marker": true,
+        "any_HTTP200_marker_may_includeCONNECT": true,
+        "schannel_TLS_connection_renegotiated_marker": true,
+        "generic_TLS_connected_marker_absence_is_not_failure": true
+      }
+    },
+    {
+      "batch": "network-rss20",
+      "role": "nearest later successful CDX",
+      "attempt": 9,
+      "target": "http://www.worldofwarcraft.com/news/rss-03-2007.xml",
+      "transport": "proxy",
+      "curl_exit": 0,
+      "source_HTTP_excludingCONNECT": 200,
+      "start_utc": "2026-10-15T13:42:48.308642+00:00",
+      "finish_utc": "2026-10-15T13:43:00.874439+00:00",
+      "trace_local_only": {
+        "path": "research/continuous-recovery-20261015/network-rss20/raw/09-http_www.worldofwarcraft.com_news_rss-03-2007.xml-cdx-proxy.trace.txt",
+        "bytes": 20152,
+        "sha256": "2dbc0865d229d7e52e02c13ebc7ca0622d48f3f5d5d59ec29ade7e591c172be9"
+      },
+      "trace_observations": {
+        "TCP_connected_marker": true,
+        "proxy_CONNECT200_marker": true,
+        "TLS_connected_marker": false,
+        "HTTP_CDX_GET_sent_marker": true,
+        "send_header_marker": true,
+        "any_HTTP200_marker_may_includeCONNECT": true,
+        "schannel_TLS_connection_renegotiated_marker": true,
+        "generic_TLS_connected_marker_absence_is_not_failure": true
+      }
+    },
+    {
+      "batch": "network-rss21",
+      "role": "August2007 no-source-HTTP attempt",
+      "attempt": 6,
+      "target": "http://www.worldofwarcraft.com/news/rss-08-2007.xml",
+      "transport": "proxy",
+      "curl_exit": 28,
+      "source_HTTP_excludingCONNECT": null,
+      "start_utc": "2026-10-15T13:54:24.252695+00:00",
+      "finish_utc": "2026-10-15T13:54:44.317857+00:00",
+      "trace_local_only": {
+        "path": "research/continuous-recovery-20261015/network-rss21/raw/06-http_www.worldofwarcraft.com_news_rss-08-2007.xml-cdx-proxy.trace.txt",
+        "bytes": 15395,
+        "sha256": "621d48b578971bb9c094ea41f31756c75603c6e826c9d78add776ecbd5f2a7af"
+      },
+      "trace_observations": {
+        "TCP_connected_marker": true,
+        "proxy_CONNECT200_marker": true,
+        "TLS_connected_marker": false,
+        "HTTP_CDX_GET_sent_marker": true,
+        "send_header_marker": true,
+        "any_HTTP200_marker_may_includeCONNECT": true,
+        "schannel_TLS_connection_renegotiated_marker": true,
+        "generic_TLS_connected_marker_absence_is_not_failure": true,
+        "timeout": "curl28 after about20s with0 source bytes, following application-level GET send marker and Schannel TLS renegotiated marker."
+      }
+    },
+    {
+      "batch": "network-rss21",
+      "role": "nearest earlier successful CDX",
+      "attempt": 4,
+      "target": "http://www.worldofwarcraft.com/news/rss-10-2006.xml",
+      "transport": "proxy",
+      "curl_exit": 0,
+      "source_HTTP_excludingCONNECT": 200,
+      "start_utc": "2026-10-15T13:54:12.210371+00:00",
+      "finish_utc": "2026-10-15T13:54:16.800173+00:00",
+      "trace_local_only": {
+        "path": "research/continuous-recovery-20261015/network-rss21/raw/04-http_www.worldofwarcraft.com_news_rss-10-2006.xml-cdx-proxy.trace.txt",
+        "bytes": 23631,
+        "sha256": "e542282ab5555df1e935c206d93408579ee115dfba911cf21c5dd27f20e73be2"
+      },
+      "trace_observations": {
+        "TCP_connected_marker": true,
+        "proxy_CONNECT200_marker": true,
+        "TLS_connected_marker": false,
+        "HTTP_CDX_GET_sent_marker": true,
+        "send_header_marker": true,
+        "any_HTTP200_marker_may_includeCONNECT": true,
+        "schannel_TLS_connection_renegotiated_marker": true,
+        "generic_TLS_connected_marker_absence_is_not_failure": true
+      }
+    }
+  ],
+  "conclusion": "Both August2007 attempts contain a curl application-level HTTP CDX GET send marker and completed Schannel TLS renegotiation markers, then curl28 after about20s with0 source bytes. Proxy CONNECT200 is excluded from source HTTP. Neighboring CDX URLs returned source200. This localizes the observation beyond an absent initial handshake, but does not prove remote receipt, archive absence, rate limiting, or a specific backend root cause. Generic SSL-connected marker absence is a Schannel logging difference, not evidence of TLS failure.",
+  "deferred": "No more August2007 query this run; final source14/export/package takes priority."
+}

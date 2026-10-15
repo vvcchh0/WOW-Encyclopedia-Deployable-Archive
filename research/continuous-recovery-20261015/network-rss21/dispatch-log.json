@@ -1,0 +1,172 @@
+{
+  "schema": "continuous-wow-net-rss21-dispatch-log/v1",
+  "batch_id": "NET-RSS-021",
+  "simulation": false,
+  "policy": {
+    "declared_request_start_minimum_seconds": 5.0,
+    "minimum_dispatch_monotonic_seconds": 5.1,
+    "max_attempts": 12,
+    "network_window_seconds": 240,
+    "hard_cutoff_utc": "2026-10-15T14:05:00+00:00",
+    "redirects": 0,
+    "late_windows": 0,
+    "continuation_pages": 0
+  },
+  "health_gate": {
+    "path": "research/continuous-recovery-20261015/rss20-acceptance.json",
+    "sha256": "decc5d48b5a55ffff2026299da1b8822ecd7f87d0ec4fa03e771286ebc346de4",
+    "accepted": true
+  },
+  "disk_preflight": {
+    "checked_utc": "2026-10-15T13:53:45.087707+00:00",
+    "disk_free_bytes": 32898490368,
+    "minimum_free_bytes": 11005853696
+  },
+  "dispatches": [
+    {
+      "attempt": 1,
+      "transport": "direct",
+      "target": "http://www.worldofwarcraft.com/news/rss-08-2006.xml",
+      "guard_open_utc": "2026-10-15T13:53:45.089708+00:00",
+      "dispatch_utc": "2026-10-15T13:53:45.089708+00:00",
+      "dispatch_monotonic": 39175.078,
+      "interval_since_previous_dispatch_seconds": null,
+      "guard_wait": {
+        "first_checked_utc": "2026-10-15T13:53:45.089708+00:00",
+        "opened_utc": "2026-10-15T13:53:45.089708+00:00",
+        "first_monotonic": 39175.078,
+        "opened_monotonic": 39175.078,
+        "sleeps": [],
+        "final_wall_remaining_seconds": -1.002001,
+        "final_monotonic_remaining_seconds": 0.0
+      },
+      "interval_sleeps": [],
+      "persisted_before_transport": true
+    },
+    {
+      "attempt": 2,
+      "transport": "proxy",
+      "target": "http://www.worldofwarcraft.com/news/rss-08-2006.xml",
+      "guard_open_utc": "2026-10-15T13:53:50.189286+00:00",
+      "dispatch_utc": "2026-10-15T13:53:50.189286+00:00",
+      "dispatch_monotonic": 39180.187,
+      "interval_since_previous_dispatch_seconds": 5.10899999999674,
+      "guard_wait": {
+        "first_checked_utc": "2026-10-15T13:53:49.170604+00:00",
+        "opened_utc": "2026-10-15T13:53:49.170604+00:00",
+        "first_monotonic": 39179.171,
+        "opened_monotonic": 39179.171,
+        "sleeps": [],
+        "final_wall_remaining_seconds": -5.082897,
+        "final_monotonic_remaining_seconds": 0.0
+      },
+      "interval_sleeps": [
+        {
+          "requested_seconds": 1.006999999999243,
+          "started_monotonic": 39179.171,
+          "finished_monotonic": 39180.171
+        },
+        {
+          "requested_seconds": 0.01,
+          "started_monotonic": 39180.171,
+          "finished_monotonic": 39180.187
+        }
+      ],
+      "persisted_before_transport": true
+    },
+    {
+      "attempt": 3,
+      "transport": "proxy",
+      "target": "http://www.worldofwarcraft.com/news/rss-08-2006.xml",
+      "guard_open_utc": "2026-10-15T13:54:04.503667+00:00",
+      "dispatch_utc": "2026-10-15T13:54:04.503667+00:00",
+      "dispatch_monotonic": 39194.5,
+      "interval_since_previous_dispatch_seconds": 14.31300000000192,
+      "guard_wait": {
+        "first_checked_utc": "2026-10-15T13:54:04.503667+00:00",
+        "opened_utc": "2026-10-15T13:54:04.503667+00:00",
+        "first_monotonic": 39194.5,
+        "opened_monotonic": 39194.5,
+        "sleeps": [],
+        "final_wall_remaining_seconds": -20.41596,
+        "final_monotonic_remaining_seconds": 0.0
+      },
+      "interval_sleeps": [],
+      "persisted_before_transport": true
+    },
+    {
+      "attempt": 4,
+      "transport": "proxy",
+      "target": "http://www.worldofwarcraft.com/news/rss-10-2006.xml",
+      "guard_open_utc": "2026-10-15T13:54:12.208864+00:00",
+      "dispatch_utc": "2026-10-15T13:54:12.208864+00:00",
+      "dispatch_monotonic": 39202.203,
+      "interval_since_previous_dispatch_seconds": 7.703000000001339,
+      "guard_wait": {
+        "first_checked_utc": "2026-10-15T13:54:12.208864+00:00",
+        "opened_utc": "2026-10-15T13:54:12.208864+00:00",
+        "first_monotonic": 39202.203,
+        "opened_monotonic": 39202.203,
+        "sleeps": [],
+        "final_wall_remaining_seconds": -28.121157,
+        "final_monotonic_remaining_seconds": 0.0
+      },
+      "interval_sleeps": [],
+      "persisted_before_transport": true
+    },
+    {
+      "attempt": 5,
+      "transport": "proxy",
+      "target": "http://www.worldofwarcraft.com/news/rss-10-2006.xml",
+      "guard_open_utc": "2026-10-15T13:54:17.316603+00:00",
+      "dispatch_utc": "2026-10-15T13:54:17.316603+00:00",
+      "dispatch_monotonic": 39207.312,
+      "interval_since_previous_dispatch_seconds": 5.10899999999674,
+      "guard_wait": {
+        "first_checked_utc": "2026-10-15T13:54:16.840889+00:00",
+        "opened_utc": "2026-10-15T13:54:16.840889+00:00",
+        "first_monotonic": 39206.828,
+        "opened_monotonic": 39206.828,
+        "sleeps": [],
+        "final_wall_remaining_seconds": -32.753182,
+        "final_monotonic_remaining_seconds": 0.0
+      },
+      "interval_sleeps": [
+        {
+          "requested_seconds": 0.47499999999999964,
+          "started_monotonic": 39206.828,
+          "finished_monotonic": 39207.312
+        }
+      ],
+      "persisted_before_transport": true
+    },
+    {
+      "attempt": 6,
+      "transport": "proxy",
+      "target": "http://www.worldofwarcraft.com/news/rss-08-2007.xml",
+      "guard_open_utc": "2026-10-15T13:54:24.250710+00:00",
+      "dispatch_utc": "2026-10-15T13:54:24.250710+00:00",
+      "dispatch_monotonic": 39214.25,
+      "interval_since_previous_dispatch_seconds": 6.938000000001921,
+      "guard_wait": {
+        "first_checked_utc": "2026-10-15T13:54:24.250710+00:00",
+        "opened_utc": "2026-10-15T13:54:24.250710+00:00",
+        "first_monotonic": 39214.25,
+        "opened_monotonic": 39214.25,
+        "sleeps": [],
+        "final_wall_remaining_seconds": -40.163003,
+        "final_monotonic_remaining_seconds": 0.0
+      },
+      "interval_sleeps": [],
+      "persisted_before_transport": true
+    }
+  ],
+  "disk_postflight": {
+    "checked_utc": "2026-10-15T13:54:44.323856+00:00",
+    "disk_free_bytes": 32897605632,
+    "attempts_count": 6,
+    "persisted_in_finally": true
+  },
+  "postflight_persisted_in_finally": true,
+  "final_attempt_count": 6
+}

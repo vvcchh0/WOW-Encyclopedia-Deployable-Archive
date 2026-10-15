@@ -1,0 +1,178 @@
+{
+  "schema": "wow-recovery.core-source-v14-focused-browser-receipt.v1",
+  "status": "runner_error",
+  "started_utc": "2026-10-15T14:19:06.436Z",
+  "finished_utc": "2026-10-15T14:19:06.860Z",
+  "server_ready_flag": true,
+  "base_url": "http://127.0.0.1:29010",
+  "prefix": "/WOW-Encyclopedia-Deployable-Archive/",
+  "method": "Loopback server only; Playwright GET/HEAD requests are restricted to the supplied origin and prefix; no server is started.",
+  "scope": {
+    "selected_map_is_fixed": true,
+    "selected_page_count": 9,
+    "expected_total_posted_articles": 350,
+    "date_frequency_rule": "article_posted_date_count must equal the sum of article_posted_dates frequencies; unique date-key count is not used as article count.",
+    "shared_css": "/news/newsarchive.css",
+    "shared_css_expected_bytes": 109,
+    "shared_css_expected_sha256": "69915a4eea19ec455a60b89c64ed661fc55d48bc3a724bdffcc91d2d617aa7b",
+    "one_real_title_click": "Choose one genuinely default-collapsed news entry from the first selected page, click its visible h1 a once, record before/after state, and save one expanded-entry screenshot.",
+    "july_toggle_regressions": [
+      "anchor-center: one fresh context with two activations, collapsed -> expanded -> collapsed",
+      "anchor-enter: one fresh context with two activations, collapsed -> expanded -> collapsed"
+    ],
+    "july_toggle_route": "/news/rss-07-2007.xml",
+    "july_toggle_entry_id": "news7-30-07-513",
+    "july_anchor_expectation": "Matched derived news-toggle anchor expected 14px by 11px; original href and nearest hoverContainer onclick are recorded.",
+    "old_v13_pointer_and_enter_matrix": "Not rerun as a full matrix; only the two retained July anchor regressions run below.",
+    "screenshot_limit": 1,
+    "no_force_click_or_dom_mutation": true
+  },
+  "inputs": {
+    "runner": {
+      "path": "research/v14-integration/browser/v14_acceptance.js",
+      "bytes": 35343,
+      "sha256": "1c3d62668d13fd2e7f17c3cdcd717288c250d1263649bc54a0ba9fc5c55e424b"
+    },
+    "v14_manifest": {
+      "path": ".scratch/offline-navigation-20261015-v14/build-manifest.json",
+      "bytes": 75486696,
+      "sha256": "fb4c7c2e3fd4d421c6894fe90d4bc926dbbe6bb90147dfed9d3a93a8865e54d8",
+      "expected_sha256": "fb4c7c2e3fd4d421c6894fe90d4bc926dbbe6bb90147dfed9d3a93a8865e54d8"
+    },
+    "selected_rss_map": {
+      "path": "research/continuous-recovery-20261015/selected-final-rss14-source-map.json",
+      "bytes": 17641,
+      "sha256": "7019d82bca12be63f5ad832ae72729c1ac8b8fa3c4c4b6936f2d452f780d166b",
+      "expected_sha256": "7019d82bca12be63f5ad832ae72729c1ac8b8fa3c4c4b6936f2d452f780d166b"
+    },
+    "rss_acceptance": {
+      "path": "research/continuous-recovery-20261015/rss20-acceptance.json",
+      "bytes": 4359,
+      "sha256": "decc5d48b5a55ffff2026299da1b8822ecd7f87d0ec4fa03e771286ebc346de4",
+      "expected_sha256": "decc5d48b5a55ffff2026299da1b8822ecd7f87d0ec4fa03e771286ebc346de4"
+    },
+    "rss21_acceptance": {
+      "path": "research/continuous-recovery-20261015/rss21-acceptance.json",
+      "bytes": 2763,
+      "sha256": "535f854d7e13573a8a36b6cc8548ef0f20a08314a62beb4ef52ceecec07130cc",
+      "expected_sha256": "535f854d7e13573a8a36b6cc8548ef0f20a08314a62beb4ef52ceecec07130cc"
+    },
+    "final_export_provenance": {
+      "path": ".scratch/pages-resources-20261015-v14/export-provenance.json",
+      "bytes": 7877521,
+      "sha256": "22b3b9e0fe9ef03d1ec1cc4136a6cf884d97b1d480bc17a1b81d9d6bbd740268",
+      "expected_sha256": "22b3b9e0fe9ef03d1ec1cc4136a6cf884d97b1d480bc17a1b81d9d6bbd740268"
+    },
+    "final_export_route_map": {
+      "path": ".scratch/pages-resources-20261015-v14/__offline/route-map.json",
+      "bytes": 1144411,
+      "sha256": "8c6aadfe04b7ec1b1bf6279a5b4df6e33e5e0a599fe73e2f082bae1b33a49cc4",
+      "expected_sha256": "8c6aadfe04b7ec1b1bf6279a5b4df6e33e5e0a599fe73e2f082bae1b33a49cc4"
+    },
+    "production_exporter": {
+      "path": "tools/export_github_pages.py",
+      "bytes": 135685,
+      "sha256": "636925a2b9721f408b7d9225d3c8e63c2bab1232b51225a8963c6f9cd443258e",
+      "expected_sha256": "636925a2b9721f408b7d9225d3c8e63c2bab1232b51225a8963c6f9cd443258e"
+    },
+    "v14_source_receipt": {
+      "path": "research/v14-integration/source/v14-source-receipt.json",
+      "bytes": 17690,
+      "sha256": "5e6fdf20eef8cfb4d27c36f1d1eec47dcd336f8dee13b6ddaa4a53b62a7c045f",
+      "expected_sha256": "5e6fdf20eef8cfb4d27c36f1d1eec47dcd336f8dee13b6ddaa4a53b62a7c045f"
+    },
+    "v14_source_plan": {
+      "path": "research/v14-integration/source/v14-source-plan.json",
+      "bytes": 27250,
+      "sha256": "deeb03d8d8f2fe479d0cfeea6b386505bc30c584b15df803841d612f4edf10b1",
+      "expected_sha256": "deeb03d8d8f2fe479d0cfeea6b386505bc30c584b15df803841d612f4edf10b1"
+    }
+  },
+  "command": {
+    "argv": [
+      "D:\\WOW_Encyclopedia\\research\\v14-integration\\browser\\v14_acceptance.js",
+      "--server-ready",
+      "--base-url",
+      "http://127.0.0.1:29010",
+      "--prefix",
+      "/WOW-Encyclopedia-Deployable-Archive/",
+      "--playwright-module",
+      "C:/Users/17630/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright",
+      "--manifest",
+      ".scratch/offline-navigation-20261015-v14/build-manifest.json",
+      "--provenance",
+      ".scratch/pages-resources-20261015-v14/export-provenance.json",
+      "--route-map",
+      ".scratch/pages-resources-20261015-v14/__offline/route-map.json",
+      "--selected",
+      "research/continuous-recovery-20261015/selected-final-rss14-source-map.json",
+      "--acceptance",
+      "research/continuous-recovery-20261015/rss20-acceptance.json",
+      "--acceptance-secondary",
+      "research/continuous-recovery-20261015/rss21-acceptance.json",
+      "--expected-selected-sha256",
+      "7019d82bca12be63f5ad832ae72729c1ac8b8fa3c4c4b6936f2d452f780d166b",
+      "--expected-acceptance-sha256",
+      "decc5d48b5a55ffff2026299da1b8822ecd7f87d0ec4fa03e771286ebc346de4",
+      "--expected-acceptance-secondary-sha256",
+      "535f854d7e13573a8a36b6cc8548ef0f20a08314a62beb4ef52ceecec07130cc",
+      "--source-receipt",
+      "research/v14-integration/source/v14-source-receipt.json",
+      "--source-plan",
+      "research/v14-integration/source/v14-source-plan.json",
+      "--expected-source-receipt-sha256",
+      "5e6fdf20eef8cfb4d27c36f1d1eec47dcd336f8dee13b6ddaa4a53b62a7c045f",
+      "--expected-source-plan-sha256",
+      "deeb03d8d8f2fe479d0cfeea6b386505bc30c584b15df803841d612f4edf10b1",
+      "--expected-manifest-sha256",
+      "fb4c7c2e3fd4d421c6894fe90d4bc926dbbe6bb90147dfed9d3a93a8865e54d8",
+      "--expected-provenance-sha256",
+      "22b3b9e0fe9ef03d1ec1cc4136a6cf884d97b1d480bc17a1b81d9d6bbd740268",
+      "--expected-route-map-sha256",
+      "8c6aadfe04b7ec1b1bf6279a5b4df6e33e5e0a599fe73e2f082bae1b33a49cc4",
+      "--expected-source-count",
+      "8356",
+      "--expected-alias-count",
+      "183",
+      "--expected-production-sha256",
+      "636925a2b9721f408b7d9225d3c8e63c2bab1232b51225a8963c6f9cd443258e",
+      "--production-file",
+      "tools/export_github_pages.py",
+      "--output",
+      "research/v14-integration/browser/v14-browser-receipt.json",
+      "--screenshot-dir",
+      "research/v14-integration/browser/screenshots",
+      "--toggle-route",
+      "/news/rss-07-2007.xml",
+      "--toggle-entry-id",
+      "news7-30-07-513"
+    ],
+    "node": "C:\\Users\\17630\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "cwd": "D:\\WOW_Encyclopedia"
+  },
+  "checks": [],
+  "requests": [],
+  "responses": [],
+  "route_decisions": [],
+  "request_failed": [],
+  "page_errors": [],
+  "console_errors": [],
+  "screenshots": [],
+  "failures": [
+    {
+      "name": "runner",
+      "error": "Error: newsarchive.css manifest SHA mismatch"
+    }
+  ],
+  "notes": [],
+  "diagnostics": {
+    "requests": 0,
+    "responses": 0,
+    "blocked_requests": 0,
+    "known_placeholder_404": [],
+    "unknown_404": [],
+    "request_failures": [],
+    "page_errors": [],
+    "console_errors": []
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "schema": "continuous-wow-net-rss21-config/v1",
+  "batch_id": "NET-RSS-021",
+  "prepared_utc": "2026-10-15T13:53:34.982271+00:00",
+  "network_requests": 0,
+  "inputs": {
+    "approved_plan": {
+      "path": "research/continuous-recovery-20261015/rss21-approved-plan.json",
+      "bytes": 13130,
+      "sha256": "305c0f7c8888b537423cebf7672fa6bb16e476b4b49340b6ca1aca4d0be33900"
+    },
+    "proposal": {
+      "path": "research/continuous-recovery-20261015/network-rss21-proposal/rss21-proposal.json",
+      "bytes": 12738,
+      "sha256": "67d770c03900f5ae79cbac70e1f8936214cf7e1c1bead51808935848bf401903"
+    },
+    "remaining_proposal": {
+      "path": "research/continuous-recovery-20261015/remaining-rss-next-proposal.json",
+      "bytes": 34762,
+      "sha256": "966e2e3236fad23023fdd57ee6cbd9177ca3d867ba63f2931dbc1cac5ac1dd4c"
+    },
+    "net020_acceptance": {
+      "path": "research/continuous-recovery-20261015/rss20-acceptance.json",
+      "bytes": 4359,
+      "sha256": "decc5d48b5a55ffff2026299da1b8822ecd7f87d0ec4fa03e771286ebc346de4"
+    },
+    "net020_report": {
+      "path": "research/continuous-recovery-20261015/network-rss20/batch-report.json",
+      "bytes": 559014,
+      "sha256": "9338941a3fb48f03b33d7947aaa568836039baddc2d8c777ee880d6544e91f46"
+    },
+    "net020_journal": {
+      "path": "research/continuous-recovery-20261015/network-rss20/dispatch-log.json",
+      "bytes": 15962,
+      "sha256": "9bcbf28836a7d8271f00960b61731ce67bfabd6d619333b8fa7ec29cfc62975c"
+    },
+    "net020_driver": {
+      "path": "research/continuous-recovery-20261015/network-rss20/rss20_driver.py",
+      "bytes": 33162,
+      "sha256": "ad938771055cb54f3853958287b27ae72dae0a47bca1b9a34f658eb4f265e222"
+    },
+    "net020_candidates": {
+      "path": "research/continuous-recovery-20261015/network-rss20/candidates.json",
+      "bytes": 20098,
+      "sha256": "2773fb4f81058d9b86e262b77860628e3e946520c786237cc9975905a447ad77"
+    },
+    "rss16_corrected_driver": {
+      "path": "research/continuous-recovery-20261015/network-rss16/rss16_driver.py",
+      "bytes": 61059,
+      "sha256": "c791f401085ff7b36174aaec19bb1dcb41844be6c13d2ff0a3c44176a0d008ac"
+    }
+  },
+  "targets": [
+    {
+      "rank": 1,
+      "target": "/news/rss-08-2006.xml",
+      "operation": "exact_CDX_then_at_most_one_eligible_replay",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-08-2006.xml&matchType=exact&from=20040101&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=1000&showResumeKey=true",
+      "saved_replay_url": null
+    },
+    {
+      "rank": 2,
+      "target": "/news/rss-10-2006.xml",
+      "operation": "exact_CDX_then_at_most_one_eligible_replay",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-10-2006.xml&matchType=exact&from=20040101&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=1000&showResumeKey=true",
+      "saved_replay_url": null
+    },
+    {
+      "rank": 3,
+      "target": "/news/rss-08-2007.xml",
+      "operation": "exact_CDX_then_at_most_one_eligible_replay",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-08-2007.xml&matchType=exact&from=20040101&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=1000&showResumeKey=true",
+      "saved_replay_url": null
+    }
+  ],
+  "policy": {
+    "max_targets": 3,
+    "max_attempts": 12,
+    "window_seconds": 240,
+    "declared_minimum_dispatch_seconds": 5.0,
+    "actual_gate_monotonic_seconds": 5.1,
+    "hard_cutoff_utc": "2026-10-15T14:05:00+00:00",
+    "minimum_free_bytes": 11005853696,
+    "max_total_body_bytes": 33554432,
+    "max_entity_body_bytes": 16777216,
+    "direct_first_then_confirmed_transport": true,
+    "automatic_redirects": 0,
+    "manual_redirect_follow": 0,
+    "late_windows": 0,
+    "continuation_pages": 0,
+    "tls_verification": "curl default verification enabled"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "schema": "wow-v14-root-final-acceptance/v1",
+  "checked_utc": "2026-10-15T14:25:14.066669+00:00",
+  "accepted": true,
+  "ready_for_pages_publication": true,
+  "published": false,
+  "gates": {
+    "source": {
+      "path": "research/v14-integration/root-source-acceptance.json",
+      "sha256": "bfa617ac84c2035425a9f2ce95cb09bca28c454912ce71130a00d6dde35be759",
+      "accepted": true
+    },
+    "source_independent": {
+      "path": "research/continuous-recovery-20261015/source14-independent-acceptance.json",
+      "sha256": "b8e4f6e0696c7324bbab7f46d4dc4ab281bafa21c5ea2b7c7bfe4234696cc32b",
+      "accepted": true
+    },
+    "export": {
+      "path": "research/v14-integration/root-export-acceptance.json",
+      "sha256": "4800b2b510a05a3e6e43a83652f6d4ce2f3684e612730d02a1e9e9ead72272bd",
+      "accepted": true
+    },
+    "routes": {
+      "path": "research/v14-integration/root-sidebar-check.json",
+      "sha256": "7e13b791dfc3d9f7bb8a4f44f6d22c654fb749ed2289ba316b93c7cc4a92c049",
+      "accepted": true
+    },
+    "browser": {
+      "path": "research/continuous-recovery-20261015/v14-browser-independent-review.json",
+      "sha256": "9adfe9d5b47b8efd063d90b2e436addfbc209c141a98977a4d545198056a28fe",
+      "accepted": true
+    },
+    "code": {
+      "path": "research/v13-integration/root-code-acceptance.json",
+      "sha256": "4382ed5c89858fbb017dc577e0c6b53c82f46452b39ec8090580fd1eb708b90f",
+      "accepted": true
+    },
+    "patch_independent": {
+      "path": "research/continuous-recovery-20261015/news-toggle-derived-fix-027-independent-acceptance.json",
+      "sha256": "721674c012d05099da49bd094d31c53099e5233a0bae17bbbfba5f3682a28166",
+      "accepted": true
+    },
+    "prior_browser": {
+      "path": "research/continuous-recovery-20261015/v13-browser-independent-review.json",
+      "sha256": "af70fc1089723466a285cab91188f11316bfa3b311cd1a67a08720ad9e7304f4",
+      "accepted": true
+    }
+  },
+  "unit_test_reuse": {
+    "receipt_sha256": "9b70b8bff13a4f478a991cc6e5894cff021564ecfcdb75ea5ab184ada173907b",
+    "tests_run": 44,
+    "exit_code": 0,
+    "reason": "New toggle implementation passed the 44-test relevant suite; current code hashes are bound without repeating it."
+  },
+  "tested_implementation": [
+    {
+      "path": "tools/export_github_pages.py",
+      "sha256": "636925a2b9721f408b7d9225d3c8e63c2bab1232b51225a8963c6f9cd443258e",
+      "matches_tested_code": true
+    },
+    {
+      "path": "tests/test_github_pages_export.py",
+      "sha256": "7602f461833aeb5a1206d33b779ac4ffb7fe4d5f9236559771b72f5f35c659aa",
+      "matches_tested_code": true
+    }
+  ],
+  "root_visual_reviews": {
+    "checked_utc": "2026-10-15T14:22:55.769125+00:00",
+    "images": [
+      {
+        "path": "research/v14-integration/browser/screenshots/v14-title-expanded.png",
+        "sha256": "10d8eb2958c8c6a63c9531f2efd487907fc96eb9c5132d6922191a3a7110a040",
+        "reviewed_by_root": true
+      }
+    ],
+    "observations": "Expanded November 28 2007 Blood Elf vs. Draenei Diorama news title, posted date and article text are visible in the preserved parchment layout, with a minus toggle. The existing missing article-icon X remains visible."
+  },
+  "source_records": 8356,
+  "declared_export_objects": 8495,
+  "retained_image_overlays": 38,
+  "new_source_entities": 9,
+  "new_original_images": 0,
+  "new_stylesheets": 0,
+  "remaining_missing_sidebar_routes": 1,
+  "new_sidebar_pages": 9,
+  "known_gaps": "Game Guide player screenshot originals/thumbnails remain unavailable locally; other historical asset gaps persist.",
+  "scope": "Nine new news pages, all current export bytes, conserved menu identities and focused new-page reading and toggle checks; current anchor/Enter checks plus the accepted v13 title/li interaction and unchanged image/viewer evidence.",
+  "frozen_manifest_sha256": "397f7dcdbc774d80c6f8c1f3dabf7933211ff182427bd2ef77c895752334f459",
+  "errors": []
+}

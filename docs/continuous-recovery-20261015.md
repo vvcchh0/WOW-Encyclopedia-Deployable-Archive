@@ -278,3 +278,26 @@ NET020独立接受七份真实 expanded HTML（Nov/Oct/Sep/Mar/Feb07、Dec/Nov06
 
 
 Root 已明确授权唯一 B 最后一批 NET021（Aug06/Oct06/Aug07，3exact/12attempt/240s/32MiB、mono5.1/UTC5.0、14:05硬截止），已正式派发；没有后续批次或control授权。A只准备读取最终selected map的7–10页v14浏览runner，未运行。最后source14须待NET021独立接受后root再批准，避免中间建树与重复500MB包。
+
+
+### 2026-10-15T14:00:03.405469+00:00 — 最后source14正式启动，网络停止
+
+NET021独立接受Aug06/Oct06两份 expanded HTML（35/53 posted-date，与news-entry-date一致），合计316313B，54CDX行/6尝试/4源HTTP，捕获日期均为2008-04-02；Aug07再次无源HTTP，仍是传输未知，不能称未存档或限流。全轮不再发新获取/control。NET020七+NET021二冻结为九exact实体、350条文章日期，selected-final-rss14-source-map SHA7019d82bca12be63f5ad832ae72729c1ac8b8fa3c4c4b6936f2d452f780d166b。
+
+Root已明确批准一次最后SOURCE14，B只在新v14 source目录最小复用既有producer/extra-map配方，预期8356来源/183别名/38overlay配方；所有旧source身份与rawSHA保留，派生href接通单列取证。A只将已准备runner绑定最终九页，不运行，等root最终导出/预览READY；不再新建中间树、重复包或新网络。当前public仍v13/4af35dd，main394109f56cac63929b055e0b34255aa5b17458c6已由root正常push/API核实。
+
+
+### 2026-10-15T14:14:57.933948+00:00 — 最终source14冻结并验收
+
+Source14已实际build exit0，8347旧来源+9新来源=8356、183aliases守恒、38overlay配方待root导出；manifest SHAfb4c7c2e3fd4d421c6894fe90d4bc926dbbe6bb90147dfed9d3a93a8865e54d8。Root独立sourcegate与统筹review均通过；9raw/derived字节与既有SHA/Memento一致，唯一旧derived内容变化是Jan07页footer精确接通December2006本地页，原始source SHA不变。生成support路径迁移字节相同。初版统筹路径检查误把既有双斜线和目录route直接当filepath，false回执保留；改按原route→output mapping守恒复核0差异，源树没有因此变更。
+
+Source14从此冻结，B idle，无任何新网络/版本授权；root fresh最终export执行中。A已准备最终九页和两项native anchor/Enter回归，等待实际29010 READY后单次运行。当前published仍v13，最终本地页面总账待新route/file证据更新。
+
+
+### 2026-10-15T14:31:54.415481+00:00 — 最终v14已发布；便携包已验收，Release待上传
+
+最终Pages commit c53efc2077e39b5b336d3a97585bd880f632c65e 的API前后built一致，15/15线上对象direct HTTP200、长度/SHA/MIME与本地一致。最终8495声明文件/562830315B逐字节验收、38旧overlay守恒；44联合单测与最终13项真实浏览检查通过。菜单1241观察/1167有效scope中，1106内容入口接通到482个文件，剩唯一Aug07页为CDX传输未知；原rawRSS XML未恢复，RSS路径捕获内容为expanded HTML。资源/交互仍按旧混合子集审计口径，不声明全站图片齐全。
+
+相对v8，新增50份已验证primary来源（34HTML，其中22份RSS路径月页；16静态资源），菜单多接通39观察/33文件。原始基线、历史zip和原始取证保持。最终便携ZIP本地独立CRC/SHA/长度与隔离HTTP验收通过：502662461B、8502members，SHA256 7d13b98943180e52cc024d43f73148e8450dd5f81379b95083b9ce1f57df0c9e。GitHub Release上传和公开API确认仍由root收尾，未在此声称已公开；中间v11候选包未上传。
+
+两执行者均idle，获取与source版本工作关闭。published ledger已切最终v14，逐字节保留原local accepted总账，全部1241项与summary不变；只更新发布/验证元数据。剩余原始Guide图库、Wrath部分图片/装饰/hires、SSOTD缩略图与旧Flash缺口照实保留，业务敏感入口保持静态历史展品。

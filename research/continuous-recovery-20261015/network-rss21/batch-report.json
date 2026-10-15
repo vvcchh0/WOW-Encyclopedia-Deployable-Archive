@@ -1,0 +1,5667 @@
+{
+  "schema": "continuous-wow-net-rss21-batch-report/v1",
+  "batch_id": "NET-RSS-021",
+  "mode": "executed",
+  "started_utc": "2026-10-15T13:53:45.087707+00:00",
+  "request_window_finished_utc": "2026-10-15T13:54:44.324839+00:00",
+  "finished_utc": "2026-10-15T13:54:44.324839+00:00",
+  "report_updated_utc": "2026-10-15T13:54:44.324839+00:00",
+  "inputs": {
+    "approved_plan": {
+      "path": "research/continuous-recovery-20261015/rss21-approved-plan.json",
+      "bytes": 13130,
+      "sha256": "305c0f7c8888b537423cebf7672fa6bb16e476b4b49340b6ca1aca4d0be33900"
+    },
+    "proposal": {
+      "path": "research/continuous-recovery-20261015/network-rss21-proposal/rss21-proposal.json",
+      "bytes": 12738,
+      "sha256": "67d770c03900f5ae79cbac70e1f8936214cf7e1c1bead51808935848bf401903"
+    },
+    "remaining_proposal": {
+      "path": "research/continuous-recovery-20261015/remaining-rss-next-proposal.json",
+      "bytes": 34762,
+      "sha256": "966e2e3236fad23023fdd57ee6cbd9177ca3d867ba63f2931dbc1cac5ac1dd4c"
+    },
+    "net020_acceptance": {
+      "path": "research/continuous-recovery-20261015/rss20-acceptance.json",
+      "bytes": 4359,
+      "sha256": "decc5d48b5a55ffff2026299da1b8822ecd7f87d0ec4fa03e771286ebc346de4"
+    },
+    "net020_report": {
+      "path": "research/continuous-recovery-20261015/network-rss20/batch-report.json",
+      "bytes": 559014,
+      "sha256": "9338941a3fb48f03b33d7947aaa568836039baddc2d8c777ee880d6544e91f46"
+    },
+    "net020_journal": {
+      "path": "research/continuous-recovery-20261015/network-rss20/dispatch-log.json",
+      "bytes": 15962,
+      "sha256": "9bcbf28836a7d8271f00960b61731ce67bfabd6d619333b8fa7ec29cfc62975c"
+    },
+    "net020_driver": {
+      "path": "research/continuous-recovery-20261015/network-rss20/rss20_driver.py",
+      "bytes": 33162,
+      "sha256": "ad938771055cb54f3853958287b27ae72dae0a47bca1b9a34f658eb4f265e222"
+    },
+    "net020_candidates": {
+      "path": "research/continuous-recovery-20261015/network-rss20/candidates.json",
+      "bytes": 20098,
+      "sha256": "2773fb4f81058d9b86e262b77860628e3e946520c786237cc9975905a447ad77"
+    },
+    "rss16_corrected_driver": {
+      "path": "research/continuous-recovery-20261015/network-rss16/rss16_driver.py",
+      "bytes": 61059,
+      "sha256": "c791f401085ff7b36174aaec19bb1dcb41844be6c13d2ff0a3c44176a0d008ac"
+    }
+  },
+  "policy": {
+    "targets": 3,
+    "max_attempts": 12,
+    "max_seconds": 240,
+    "max_total_body_bytes": 33554432,
+    "max_entity_body_bytes": 16777216,
+    "declared_request_start_minimum_seconds": 5.0,
+    "actual_dispatch_monotonic_minimum_seconds": 5.1,
+    "disk_floor_bytes": 11005853696,
+    "preanchor_from": "20040101000000",
+    "preanchor_to": "20080512210044",
+    "cdx_pages_per_target": 1,
+    "cdx_limit": 1000,
+    "replays_per_target": 1,
+    "continuation_pages": 0,
+    "late_windows": 0,
+    "redirect_follows": 0,
+    "declared_minimum_dispatch_seconds": 5.0,
+    "actual_gate_monotonic_seconds": 5.1,
+    "hard_cutoff_utc": "2026-10-15T14:05:00+00:00",
+    "cdx_fields": [
+      "urlkey",
+      "timestamp",
+      "original",
+      "mimetype",
+      "statuscode",
+      "digest",
+      "length"
+    ],
+    "strict_origin": "same scheme/host/path/query; default ports only; no aliases"
+  },
+  "transport": {
+    "confirmed_transport": "proxy",
+    "curl": "C:\\Windows\\System32\\curl.exe",
+    "proxy": "http://127.0.0.1:7890",
+    "tls_verification": "curl default verification enabled"
+  },
+  "confirmed_transport": "proxy",
+  "preflight": {
+    "disk_free_bytes_before": 32898490368,
+    "disk_free_bytes_after": 32897605632,
+    "minimum_free_bytes": 11005853696
+  },
+  "postflight": {
+    "checked_utc": "2026-10-15T13:54:44.323856+00:00",
+    "disk_free_bytes": 32897605632,
+    "attempts_count": 6,
+    "persisted_in_finally": true
+  },
+  "target_count": 3,
+  "unique_target_count": 3,
+  "cdx_target_count": 3,
+  "saved_replay_target_count": 0,
+  "category_counts": {
+    "transport_error": 1,
+    "valid_html_payload": 2
+  },
+  "transport_attempt_count": 6,
+  "source_request_count": 6,
+  "failed_attempt_count": 2,
+  "source_response_count": 4,
+  "cdx_source_response_count": 2,
+  "replay_source_response_count": 2,
+  "capture_index_count": 54,
+  "valid_entity_count": 2,
+  "valid_rss_count": 0,
+  "valid_html_count": 2,
+  "total_body_bytes": 326250,
+  "payload_body_bytes": 316313,
+  "stop_reason": "completed",
+  "stop_detail": {},
+  "rate_limit": null,
+  "execution_error": null,
+  "gate_validation": {
+    "min_dispatch_interval_seconds": 5.10899999999674,
+    "min_request_start_interval_seconds": 5.100589990615845,
+    "required_dispatch_monotonic_seconds": 5.1,
+    "required_request_start_utc_seconds": 5.0,
+    "dispatch_intervals_compliant": true,
+    "request_start_intervals_compliant": true,
+    "batch_policy_accepted": true,
+    "dispatch_count": 6,
+    "dispatch_intervals": [
+      5.10899999999674,
+      14.31300000000192,
+      7.703000000001339,
+      5.10899999999674,
+      6.938000000001921
+    ],
+    "request_start_intervals": [
+      5.100589990615845,
+      14.313369035720825,
+      7.705703973770142,
+      5.107796907424927,
+      6.934527158737183
+    ],
+    "hard_cutoff_utc": "2026-10-15T14:05:00+00:00"
+  },
+  "cadence_experiment": {
+    "declared_request_start_minimum_seconds": 5.0,
+    "actual_dispatch_monotonic_minimum_seconds": 5.1,
+    "hard_cutoff_utc": "2026-10-15T14:05:00+00:00",
+    "request_start_utc_intervals_compliant": true,
+    "dispatch_monotonic_intervals_compliant": true
+  },
+  "resume_key_policy": {
+    "observed_saved": true,
+    "used": false,
+    "continuation_pages_requested": 0
+  },
+  "dispatch_log": "dispatch-log.json",
+  "results": [
+    {
+      "rank": 1,
+      "target": "/news/rss-08-2006.xml",
+      "query_original": "http://www.worldofwarcraft.com/news/rss-08-2006.xml",
+      "year": 2006,
+      "month": 8,
+      "operation": "exact_CDX_then_at_most_one_eligible_replay",
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:98:Menu2_3_5",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:161",
+          "label": "August, 2006",
+          "href": "/news/rss-08-2006.xml "
+        }
+      ],
+      "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-08-2006.xml&matchType=exact&from=20040101&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=1000&showResumeKey=true",
+      "cdx": {
+        "query_performed": true,
+        "source_status": 200,
+        "source_response_count": 1,
+        "capture_index_count": 23,
+        "eligible_status_200_count": 20,
+        "redirect_index_count": 0,
+        "capture_records": [
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-08-2006.xml",
+            "timestamp": "20060820104534",
+            "original": "http://worldofwarcraft.com:80/news/rss-08-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "EIXODF2R6THLJZO4ZRHMILAUUPFDSUQX",
+            "length": "8673",
+            "record_index": 0,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": null,
+            "exact_original_match": false,
+            "valid_replay_candidate": false
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-08-2006.xml",
+            "timestamp": "20060831190918",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-08-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "AHSGLBJPZSNQQE7GV4CQTIYULZICLYEU",
+            "length": "15124",
+            "record_index": 1,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-08-2006.xml",
+            "timestamp": "20060902134307",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-08-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "JB4IHGZ6L2L5CE33NOWLD64CPUWJZLAY",
+            "length": "16384",
+            "record_index": 2,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-08-2006.xml",
+            "timestamp": "20061029224720",
+            "original": "http://worldofwarcraft.com:80/news/rss-08-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "V77GUJZUVVVAGOOFDPKNXLVN5QRMYJH3",
+            "length": "19765",
+            "record_index": 3,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": null,
+            "exact_original_match": false,
+            "valid_replay_candidate": false
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-08-2006.xml",
+            "timestamp": "20061109031604",
+            "original": "http://worldofwarcraft.com:80/news/rss-08-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "500",
+            "digest": "EHRZQG6ULLDUVTIW2DLQ2EI2FLF4MIV3",
+            "length": "1078",
+            "record_index": 4,
+            "statuscode_int": 500,
+            "within_query_range": true,
+            "original_match_kind": null,
+            "exact_original_match": false,
+            "valid_replay_candidate": false
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-08-2006.xml",
+            "timestamp": "20061110103717",
+            "original": "http://www.worldofwarcraft.com/news/rss-08-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "HAY4BUU5HQ5YVRCB3S3G5UI7KUDVE5HB",
+            "length": "19782",
+            "record_index": 5,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "exact",
+            "exact_original_match": true,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-08-2006.xml",
+            "timestamp": "20070108230026",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-08-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "6Z4LTBRK6XBUSPARRWR7F5PM2NXYOQK4",
+            "length": "19976",
+            "record_index": 6,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-08-2006.xml",
+            "timestamp": "20070113192350",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-08-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "JN6OMOHECKW2NIYQWHML6U5R5KJH5W5H",
+            "length": "20008",
+            "record_index": 7,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-08-2006.xml",
+            "timestamp": "20070118153915",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-08-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "CQ3SXYMDRWDPRFGUQVXMWUHY66ETMTCF",
+            "length": "20036",
+            "record_index": 8,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-08-2006.xml",
+            "timestamp": "20070123225640",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-08-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "OLTS7XPDW7PBUGHUSG5S5QPKKOMIT5SU",
+            "length": "20089",
+            "record_index": 9,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-08-2006.xml",
+            "timestamp": "20070129103222",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-08-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "OLTS7XPDW7PBUGHUSG5S5QPKKOMIT5SU",
+            "length": "20087",
+            "record_index": 10,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-08-2006.xml",
+            "timestamp": "20070315215106",
+            "original": "http://www.worldofwarcraft.com/news/rss-08-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "VRD75JZ4757HYELLTOAO5G7KTPNUH5JE",
+            "length": "20162",
+            "record_index": 11,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "exact",
+            "exact_original_match": true,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-08-2006.xml",
+            "timestamp": "20070315215207",
+            "original": "http://www.worldofwarcraft.com/news/rss-08-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "VRD75JZ4757HYELLTOAO5G7KTPNUH5JE",
+            "length": "20160",
+            "record_index": 12,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "exact",
+            "exact_original_match": true,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-08-2006.xml",
+            "timestamp": "20070430023149",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-08-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "ARH5DZEDPWDAC2G3RZSI4B3WEH5XNE3P",
+            "length": "15309",
+            "record_index": 13,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-08-2006.xml",
+            "timestamp": "20070530072022",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-08-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "ARH5DZEDPWDAC2G3RZSI4B3WEH5XNE3P",
+            "length": "15307",
+            "record_index": 14,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-08-2006.xml",
+            "timestamp": "20070629204651",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-08-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "4NBGDJEILBAZLAXSULUWN6TD2CFYJPEV",
+            "length": "15341",
+            "record_index": 15,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-08-2006.xml",
+            "timestamp": "20070817104446",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-08-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "QZLCXDL5HBWZ2UAF6ZFHCHROKAKK55CL",
+            "length": "15298",
+            "record_index": 16,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-08-2006.xml",
+            "timestamp": "20071007003811",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-08-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "XNILYXD6I3AJVD7QMWSHPVZKHGZU52DI",
+            "length": "14789",
+            "record_index": 17,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-08-2006.xml",
+            "timestamp": "20071008155012",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-08-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "XNILYXD6I3AJVD7QMWSHPVZKHGZU52DI",
+            "length": "14791",
+            "record_index": 18,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-08-2006.xml",
+            "timestamp": "20071203082556",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-08-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "LY72G4XN4J5AFUUIX75SUZPCQ76QC447",
+            "length": "14877",
+            "record_index": 19,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-08-2006.xml",
+            "timestamp": "20080103073907",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-08-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "D7ZJM6AN5B33454LKHFO2ATPJ2SVR6Z4",
+            "length": "14822",
+            "record_index": 20,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-08-2006.xml",
+            "timestamp": "20080205014910",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-08-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "LFFKLCH7WRUXBSQOC62KHIRSMLKHCMOT",
+            "length": "14841",
+            "record_index": 21,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-08-2006.xml",
+            "timestamp": "20080402083605",
+            "original": "http://www.worldofwarcraft.com/news/rss-08-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "I3HYIVYNVWMZNG3XCIPJFVU5E7XFM5Q3",
+            "length": "14763",
+            "record_index": 22,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "exact",
+            "exact_original_match": true,
+            "valid_replay_candidate": true
+          }
+        ],
+        "selected_capture": {
+          "urlkey": "com,worldofwarcraft)/news/rss-08-2006.xml",
+          "timestamp": "20080402083605",
+          "original": "http://www.worldofwarcraft.com/news/rss-08-2006.xml",
+          "mimetype": "text/html",
+          "statuscode": "200",
+          "digest": "I3HYIVYNVWMZNG3XCIPJFVU5E7XFM5Q3",
+          "length": "14763",
+          "record_index": 22,
+          "statuscode_int": 200,
+          "within_query_range": true,
+          "original_match_kind": "exact",
+          "exact_original_match": true,
+          "valid_replay_candidate": true
+        },
+        "other_origin_metadata": {
+          "excluded_from_eligible_candidates": true,
+          "record_count": 3,
+          "original_identities": [
+            "http://worldofwarcraft.com:80/news/rss-08-2006.xml"
+          ],
+          "records": [
+            {
+              "urlkey": "com,worldofwarcraft)/news/rss-08-2006.xml",
+              "timestamp": "20060820104534",
+              "original": "http://worldofwarcraft.com:80/news/rss-08-2006.xml",
+              "mimetype": "text/html",
+              "statuscode": "200",
+              "digest": "EIXODF2R6THLJZO4ZRHMILAUUPFDSUQX",
+              "length": "8673",
+              "record_index": 0,
+              "statuscode_int": 200,
+              "within_query_range": true,
+              "original_match_kind": null,
+              "exact_original_match": false,
+              "valid_replay_candidate": false,
+              "origin_exclusion_reason": "host_mismatch"
+            },
+            {
+              "urlkey": "com,worldofwarcraft)/news/rss-08-2006.xml",
+              "timestamp": "20061029224720",
+              "original": "http://worldofwarcraft.com:80/news/rss-08-2006.xml",
+              "mimetype": "text/html",
+              "statuscode": "200",
+              "digest": "V77GUJZUVVVAGOOFDPKNXLVN5QRMYJH3",
+              "length": "19765",
+              "record_index": 3,
+              "statuscode_int": 200,
+              "within_query_range": true,
+              "original_match_kind": null,
+              "exact_original_match": false,
+              "valid_replay_candidate": false,
+              "origin_exclusion_reason": "host_mismatch"
+            },
+            {
+              "urlkey": "com,worldofwarcraft)/news/rss-08-2006.xml",
+              "timestamp": "20061109031604",
+              "original": "http://worldofwarcraft.com:80/news/rss-08-2006.xml",
+              "mimetype": "text/html",
+              "statuscode": "500",
+              "digest": "EHRZQG6ULLDUVTIW2DLQ2EI2FLF4MIV3",
+              "length": "1078",
+              "record_index": 4,
+              "statuscode_int": 500,
+              "within_query_range": true,
+              "original_match_kind": null,
+              "exact_original_match": false,
+              "valid_replay_candidate": false,
+              "origin_exclusion_reason": "host_mismatch"
+            }
+          ],
+          "policy": {
+            "same_scheme_required": true,
+            "same_lower_cased_host_required": true,
+            "only_default_port_equivalence": true,
+            "bare_www_are_separate_origins": true,
+            "http_https_are_separate_origins": true
+          }
+        },
+        "attempts": [
+          {
+            "executed": true,
+            "attempt": 1,
+            "kind": "cdx",
+            "target_key": "http://www.worldofwarcraft.com/news/rss-08-2006.xml",
+            "transport": "direct",
+            "url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-08-2006.xml&matchType=exact&from=20040101&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=1000&showResumeKey=true",
+            "started_utc": "2026-10-15T13:53:45.090708+00:00",
+            "finished_utc": "2026-10-15T13:53:49.163605+00:00",
+            "duration_ms": 4078.0,
+            "curl_exit": 28,
+            "source_status": null,
+            "connect_status": null,
+            "content_type": null,
+            "location": null,
+            "retry_after": null,
+            "memento_datetime": null,
+            "redirects_requested": 0,
+            "automatic_redirects": 0,
+            "body_bytes": 0,
+            "body_sha256": null,
+            "transport_error": true,
+            "transport_reason": "no_http_status",
+            "raw": {
+              "headers": "raw/01-http_www.worldofwarcraft.com_news_rss-08-2006.xml-cdx-direct.headers.txt",
+              "body": "raw/01-http_www.worldofwarcraft.com_news_rss-08-2006.xml-cdx-direct.body",
+              "stderr": "raw/01-http_www.worldofwarcraft.com_news_rss-08-2006.xml-cdx-direct.stderr.txt",
+              "trace": "raw/01-http_www.worldofwarcraft.com_news_rss-08-2006.xml-cdx-direct.trace.txt",
+              "metrics": "raw/01-http_www.worldofwarcraft.com_news_rss-08-2006.xml-cdx-direct.metrics.txt"
+            },
+            "cdx_parse_valid": false,
+            "cdx_parse_error": "no_200_source_response",
+            "dispatch_utc": "2026-10-15T13:53:45.089708+00:00",
+            "dispatch_monotonic": 39175.078,
+            "dispatch_interval_seconds": null,
+            "gate_persisted_before_transport": true,
+            "local_zero_byte_body_placeholder": true,
+            "body_is_source_response": false
+          },
+          {
+            "executed": true,
+            "attempt": 2,
+            "kind": "cdx",
+            "target_key": "http://www.worldofwarcraft.com/news/rss-08-2006.xml",
+            "transport": "proxy",
+            "url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-08-2006.xml&matchType=exact&from=20040101&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=1000&showResumeKey=true",
+            "started_utc": "2026-10-15T13:53:50.191298+00:00",
+            "finished_utc": "2026-10-15T13:54:04.471668+00:00",
+            "duration_ms": 14297.0,
+            "curl_exit": 0,
+            "source_status": 200,
+            "connect_status": 200,
+            "content_type": "application/json",
+            "location": null,
+            "retry_after": null,
+            "memento_datetime": null,
+            "redirects_requested": 0,
+            "automatic_redirects": 0,
+            "body_bytes": 4238,
+            "body_sha256": "573c5c667119225b691e9c724387a70fdc0df44d8b586c672846d3f74de2df09",
+            "transport_error": false,
+            "transport_reason": null,
+            "raw": {
+              "headers": "raw/02-http_www.worldofwarcraft.com_news_rss-08-2006.xml-cdx-proxy.headers.txt",
+              "body": "raw/02-http_www.worldofwarcraft.com_news_rss-08-2006.xml-cdx-proxy.body",
+              "stderr": "raw/02-http_www.worldofwarcraft.com_news_rss-08-2006.xml-cdx-proxy.stderr.txt",
+              "trace": "raw/02-http_www.worldofwarcraft.com_news_rss-08-2006.xml-cdx-proxy.trace.txt",
+              "metrics": "raw/02-http_www.worldofwarcraft.com_news_rss-08-2006.xml-cdx-proxy.metrics.txt"
+            },
+            "cdx_parse_valid": true,
+            "cdx_parse_error": null,
+            "dispatch_utc": "2026-10-15T13:53:50.189286+00:00",
+            "dispatch_monotonic": 39180.187,
+            "dispatch_interval_seconds": 5.10899999999674,
+            "gate_persisted_before_transport": true,
+            "local_zero_byte_body_placeholder": false,
+            "body_is_source_response": true
+          }
+        ],
+        "header_fields_observed": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "resume_keys_observed": [],
+        "resume_key_used": null,
+        "continuation_followed": false,
+        "body_bytes": 4238,
+        "body_sha256": "573c5c667119225b691e9c724387a70fdc0df44d8b586c672846d3f74de2df09",
+        "index_distribution": {
+          "statuscode": {
+            "200": 22,
+            "500": 1
+          },
+          "mimetype": {
+            "text/html": 23
+          },
+          "origin_match_kind": {
+            "": 3,
+            "default_port_80": 16,
+            "exact": 4
+          }
+        }
+      },
+      "selected_capture": {
+        "urlkey": "com,worldofwarcraft)/news/rss-08-2006.xml",
+        "timestamp": "20080402083605",
+        "original": "http://www.worldofwarcraft.com/news/rss-08-2006.xml",
+        "mimetype": "text/html",
+        "statuscode": "200",
+        "digest": "I3HYIVYNVWMZNG3XCIPJFVU5E7XFM5Q3",
+        "length": "14763",
+        "record_index": 22,
+        "statuscode_int": 200,
+        "within_query_range": true,
+        "original_match_kind": "exact",
+        "exact_original_match": true,
+        "valid_replay_candidate": true
+      },
+      "replay_attempt_count": 1,
+      "replay_source_response_count": 1,
+      "replay_hops": [
+        {
+          "capture": {
+            "urlkey": "com,worldofwarcraft)/news/rss-08-2006.xml",
+            "timestamp": "20080402083605",
+            "original": "http://www.worldofwarcraft.com/news/rss-08-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "I3HYIVYNVWMZNG3XCIPJFVU5E7XFM5Q3",
+            "length": "14763",
+            "record_index": 22,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "exact",
+            "exact_original_match": true,
+            "valid_replay_candidate": true
+          },
+          "replay_url": "https://web.archive.org/web/20080402083605id_/http://www.worldofwarcraft.com/news/rss-08-2006.xml",
+          "attempts": [
+            {
+              "executed": true,
+              "attempt": 3,
+              "kind": "replay",
+              "target_key": "http://www.worldofwarcraft.com/news/rss-08-2006.xml",
+              "transport": "proxy",
+              "url": "https://web.archive.org/web/20080402083605id_/http://www.worldofwarcraft.com/news/rss-08-2006.xml",
+              "started_utc": "2026-10-15T13:54:04.504667+00:00",
+              "finished_utc": "2026-10-15T13:54:11.729512+00:00",
+              "duration_ms": 7578.0,
+              "curl_exit": 0,
+              "source_status": 200,
+              "connect_status": 200,
+              "content_type": "text/html;charset=UTF-8",
+              "location": null,
+              "retry_after": null,
+              "memento_datetime": "2008-04-02T08:36:05+00:00",
+              "redirects_requested": 0,
+              "automatic_redirects": 0,
+              "body_bytes": 135388,
+              "body_sha256": "9b013c86eaa02254b00effdc6a18f785308e9c438d5dbe3c5c2e8e20f0cfb161",
+              "transport_error": false,
+              "transport_reason": null,
+              "raw": {
+                "headers": "raw/03-http_www.worldofwarcraft.com_news_rss-08-2006.xml-replay-proxy.headers.txt",
+                "body": "raw/03-http_www.worldofwarcraft.com_news_rss-08-2006.xml-replay-proxy.body",
+                "stderr": "raw/03-http_www.worldofwarcraft.com_news_rss-08-2006.xml-replay-proxy.stderr.txt",
+                "trace": "raw/03-http_www.worldofwarcraft.com_news_rss-08-2006.xml-replay-proxy.trace.txt",
+                "metrics": "raw/03-http_www.worldofwarcraft.com_news_rss-08-2006.xml-replay-proxy.metrics.txt"
+              },
+              "html": {
+                "is_html": true,
+                "markers": [],
+                "title": "WoW -> Archived News -> August, 2006",
+                "parse_ok": true
+              },
+              "xml": {
+                "is_xml": true,
+                "parse_ok": false,
+                "root": null,
+                "parse_error": "ParseError"
+              },
+              "dispatch_utc": "2026-10-15T13:54:04.503667+00:00",
+              "dispatch_monotonic": 39194.5,
+              "dispatch_interval_seconds": 14.31300000000192,
+              "gate_persisted_before_transport": true,
+              "local_zero_byte_body_placeholder": false,
+              "body_is_source_response": true
+            }
+          ],
+          "category": "valid_html_payload",
+          "reason": "valid_html_payload",
+          "validation": {
+            "body_bytes": 135388,
+            "body_sha256": "9b013c86eaa02254b00effdc6a18f785308e9c438d5dbe3c5c2e8e20f0cfb161",
+            "cdx_digest_expected": "I3HYIVYNVWMZNG3XCIPJFVU5E7XFM5Q3",
+            "cdx_digest_calculated": "I3HYIVYNVWMZNG3XCIPJFVU5E7XFM5Q3",
+            "cdx_digest_match": true,
+            "cdx_length": 14763,
+            "actual_memento": "2008-04-02T08:36:05+00:00",
+            "source_status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "raw_body_path": "raw/03-http_www.worldofwarcraft.com_news_rss-08-2006.xml-replay-proxy.body",
+            "raw_headers_path": "raw/03-http_www.worldofwarcraft.com_news_rss-08-2006.xml-replay-proxy.headers.txt",
+            "body_observation": {
+              "encoding": "utf-8",
+              "mime": "text/html",
+              "parse_ok": true,
+              "parse_error": null,
+              "title": "WoW -> Archived News -> August, 2006",
+              "headings": [
+                {
+                  "tag": "h1",
+                  "text": "World of Warcraft Comic Contest: Winner"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Talents Preview Part 1 Update"
+                },
+                {
+                  "tag": "h1",
+                  "text": "New World of Warcraft Fan Art"
+                },
+                {
+                  "tag": "h1",
+                  "text": "New Burning Crusade Screenshots"
+                },
+                {
+                  "tag": "h1",
+                  "text": "The Burning Crusade: Spells and Talents"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Q&A with Jeff Kaplan"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "New World of Warcraft Items in Online Store"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Sunwell Trilogy Vol. II: Shadows of Ice Now Available"
+                },
+                {
+                  "tag": "h1",
+                  "text": "The New World of Warcraft Forums Are Here!"
+                },
+                {
+                  "tag": "h1",
+                  "text": "New World of Warcraft Fan Art"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Interview with Burning Crusade's Executive Producer"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Eastern Plaguelands PvP Trailer"
+                },
+                {
+                  "tag": "h1",
+                  "text": "New Burning Crusade Screenshots"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Drums of War: Patch 1.12 Released!"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Two New Realms Available!"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Music Player Updated"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "World of Warcraft Insider #9 Released"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "New Burning Crusade Screenshot"
+                },
+                {
+                  "tag": "h1",
+                  "text": "New World of Warcraft Fan Art"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Bestiary Update"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Game Guide: Player-Created Strategy Guides"
+                },
+                {
+                  "tag": "h1",
+                  "text": "New World of Warcraft Fan Wallpaper"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Burning Crusade Previews from Around the Web"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Two New Realms Available!"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "The Burning Crusade: Caverns of Time"
+                },
+                {
+                  "tag": "h1",
+                  "text": "New World of Warcraft Fan Art"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "World of Warcraft Invades MySpace"
+                },
+                {
+                  "tag": "h1",
+                  "text": "New World of Warcraft Wallpaper and Fan Art"
+                },
+                {
+                  "tag": "h1",
+                  "text": "More Old News"
+                }
+              ],
+              "content_identity_sha256": "35d14a19d6faeb6a45c7fecf07f95dbf8af543f289c869bab4dd63bf7a03b8b6",
+              "content_preview": "WoW -> Archived News -> August, 2006 @import \"/new-hp/css/loader_screen.css\"; @import \"/shared/global/menu/topnav/topnav.css\"; var scriptsLoaded=0; if(document.location.href.indexOf(\"worldofwarcraft.com\") != -1) document.domain = \"worldofwarcraft.com\"; try { document.execCommand(\"BackgroundImageCache\", false, true); } catch(err) {} scriptsLoaded=1; // var agt=navigator.userAgent.toLowerCase(); var iePos = appVer.indexOf('msie'); var is_opera = (agt.indexOf(\"opera\") != -1); var is_ie = ((iePos!=-",
+              "archive_markers": [],
+              "is_html": true
+            },
+            "body_format": "html",
+            "valid": true,
+            "validation_reason": "valid_html_payload",
+            "html_month_evidence": {
+              "declared_url_year": 2006,
+              "declared_url_month": 8,
+              "title": "WoW -> Archived News -> August, 2006",
+              "title_date_tokens": [
+                "August, 2006"
+              ],
+              "title_year_months": [
+                [
+                  2006,
+                  8
+                ]
+              ],
+              "title_month_evidence": {
+                "expected_year": 2006,
+                "expected_month": 8,
+                "date_field_count": 1,
+                "parseable_count": 1,
+                "unparseable_count": 0,
+                "matching_count": 1,
+                "mismatch_count": 0,
+                "matching_examples": [
+                  "August, 2006"
+                ],
+                "mismatch_examples": [],
+                "month_counts": {
+                  "2006-08": 1
+                },
+                "date_range": null,
+                "state": "match"
+              },
+              "h1_count": 35,
+              "h1_titles": [
+                "World of Warcraft Comic Contest: Winner",
+                "Talents Preview Part 1 Update",
+                "New World of Warcraft Fan Art",
+                "New Burning Crusade Screenshots",
+                "The Burning Crusade: Spells and Talents",
+                "Q&A with Jeff Kaplan",
+                "WoW Comic Contest: Honorable Mentions",
+                "New World of Warcraft Items in Online Store",
+                "Sunwell Trilogy Vol. II: Shadows of Ice Now Available",
+                "The New World of Warcraft Forums Are Here!",
+                "New World of Warcraft Fan Art",
+                "Interview with Burning Crusade's Executive Producer",
+                "Eastern Plaguelands PvP Trailer",
+                "New Burning Crusade Screenshots",
+                "Drums of War: Patch 1.12 Released!",
+                "Two New Realms Available!",
+                "Music Player Updated",
+                "WoW Comic Contest: Honorable Mentions",
+                "World of Warcraft Insider #9 Released",
+                "WoW Comic Contest: Honorable Mentions",
+                "New Burning Crusade Screenshot",
+                "New World of Warcraft Fan Art",
+                "Bestiary Update",
+                "Game Guide: Player-Created Strategy Guides",
+                "New World of Warcraft Fan Wallpaper",
+                "Burning Crusade Previews from Around the Web",
+                "Two New Realms Available!",
+                "WoW Comic Contest: Honorable Mentions",
+                "The Burning Crusade: Caverns of Time",
+                "New World of Warcraft Fan Art",
+                "WoW Comic Contest: Honorable Mentions",
+                "WoW Comic Contest: Honorable Mentions",
+                "World of Warcraft Invades MySpace",
+                "New World of Warcraft Wallpaper and Fan Art",
+                "More Old News"
+              ],
+              "posted_date_source": "posted",
+              "posted_date_node_count": 35,
+              "news_entry_date_node_count": 35,
+              "posted_date_records": [
+                {
+                  "token": "8-31-06",
+                  "year": 2006,
+                  "month": 8,
+                  "day": 31,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "8-31-06"
+                },
+                {
+                  "token": "8-31-06",
+                  "year": 2006,
+                  "month": 8,
+                  "day": 31,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "8-31-06"
+                },
+                {
+                  "token": "8-31-06",
+                  "year": 2006,
+                  "month": 8,
+                  "day": 31,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "8-31-06"
+                },
+                {
+                  "token": "8-30-06",
+                  "year": 2006,
+                  "month": 8,
+                  "day": 30,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "8-30-06"
+                },
+                {
+                  "token": "8-28-06",
+                  "year": 2006,
+                  "month": 8,
+                  "day": 28,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "8-28-06"
+                },
+                {
+                  "token": "8-28-06",
+                  "year": 2006,
+                  "month": 8,
+                  "day": 28,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "8-28-06"
+                },
+                {
+                  "token": "8-28-06",
+                  "year": 2006,
+                  "month": 8,
+                  "day": 28,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "8-28-06"
+                },
+                {
+                  "token": "8-25-06",
+                  "year": 2006,
+                  "month": 8,
+                  "day": 25,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "8-25-06"
+                },
+                {
+                  "token": "8-25-06",
+                  "year": 2006,
+                  "month": 8,
+                  "day": 25,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "8-25-06"
+                },
+                {
+                  "token": "8-24-06",
+                  "year": 2006,
+                  "month": 8,
+                  "day": 24,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "8-24-06"
+                },
+                {
+                  "token": "8-24-06",
+                  "year": 2006,
+                  "month": 8,
+                  "day": 24,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "8-24-06"
+                },
+                {
+                  "token": "8-24-06",
+                  "year": 2006,
+                  "month": 8,
+                  "day": 24,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "8-24-06"
+                },
+                {
+                  "token": "8-23-06",
+                  "year": 2006,
+                  "month": 8,
+                  "day": 23,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "8-23-06"
+                },
+                {
+                  "token": "8-23-06",
+                  "year": 2006,
+                  "month": 8,
+                  "day": 23,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "8-23-06"
+                },
+                {
+                  "token": "8-22-06",
+                  "year": 2006,
+                  "month": 8,
+                  "day": 22,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "8-22-06"
+                },
+                {
+                  "token": "8-21-06",
+                  "year": 2006,
+                  "month": 8,
+                  "day": 21,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "8-21-06"
+                },
+                {
+                  "token": "8-21-06",
+                  "year": 2006,
+                  "month": 8,
+                  "day": 21,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "8-21-06"
+                },
+                {
+                  "token": "8-21-06",
+                  "year": 2006,
+                  "month": 8,
+                  "day": 21,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "8-21-06"
+                },
+                {
+                  "token": "8-18-06",
+                  "year": 2006,
+                  "month": 8,
+                  "day": 18,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "8-18-06"
+                },
+                {
+                  "token": "8-18-06",
+                  "year": 2006,
+                  "month": 8,
+                  "day": 18,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "8-18-06"
+                },
+                {
+                  "token": "8-17-06",
+                  "year": 2006,
+                  "month": 8,
+                  "day": 17,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "8-17-06"
+                },
+                {
+                  "token": "8-17-06",
+                  "year": 2006,
+                  "month": 8,
+                  "day": 17,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "8-17-06"
+                },
+                {
+                  "token": "8-17-06",
+                  "year": 2006,
+                  "month": 8,
+                  "day": 17,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "8-17-06"
+                },
+                {
+                  "token": "8-15-06",
+                  "year": 2006,
+                  "month": 8,
+                  "day": 15,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "8-15-06"
+                },
+                {
+                  "token": "8-15-06",
+                  "year": 2006,
+                  "month": 8,
+                  "day": 15,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "8-15-06"
+                },
+                {
+                  "token": "8-14-06",
+                  "year": 2006,
+                  "month": 8,
+                  "day": 14,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "8-14-06"
+                },
+                {
+                  "token": "8-14-06",
+                  "year": 2006,
+                  "month": 8,
+                  "day": 14,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "8-14-06"
+                },
+                {
+                  "token": "8-11-06",
+                  "year": 2006,
+                  "month": 8,
+                  "day": 11,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "8-11-06"
+                },
+                {
+                  "token": "8-10-06",
+                  "year": 2006,
+                  "month": 8,
+                  "day": 10,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "8-10-06"
+                },
+                {
+                  "token": "8-10-06",
+                  "year": 2006,
+                  "month": 8,
+                  "day": 10,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "8-10-06"
+                },
+                {
+                  "token": "8-07-06",
+                  "year": 2006,
+                  "month": 8,
+                  "day": 7,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "8-07-06"
+                },
+                {
+                  "token": "8-04-06",
+                  "year": 2006,
+                  "month": 8,
+                  "day": 4,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "8-04-06"
+                },
+                {
+                  "token": "8-04-06",
+                  "year": 2006,
+                  "month": 8,
+                  "day": 4,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "8-04-06"
+                },
+                {
+                  "token": "8-03-06",
+                  "year": 2006,
+                  "month": 8,
+                  "day": 3,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "8-03-06"
+                },
+                {
+                  "token": "8-01-06",
+                  "year": 2006,
+                  "month": 8,
+                  "day": 1,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "8-01-06"
+                }
+              ],
+              "posted_or_visible_date_tokens": [
+                "8-31-06",
+                "8-31-06",
+                "8-31-06",
+                "8-30-06",
+                "8-28-06",
+                "8-28-06",
+                "8-28-06",
+                "8-25-06",
+                "8-25-06",
+                "8-24-06",
+                "8-24-06",
+                "8-24-06",
+                "8-23-06",
+                "8-23-06",
+                "8-22-06",
+                "8-21-06",
+                "8-21-06",
+                "8-21-06",
+                "8-18-06",
+                "8-18-06",
+                "8-17-06",
+                "8-17-06",
+                "8-17-06",
+                "8-15-06",
+                "8-15-06",
+                "8-14-06",
+                "8-14-06",
+                "8-11-06",
+                "8-10-06",
+                "8-10-06",
+                "8-07-06",
+                "8-04-06",
+                "8-04-06",
+                "8-03-06",
+                "8-01-06"
+              ],
+              "posted_or_visible_year_months": [
+                [
+                  2006,
+                  8
+                ],
+                [
+                  2006,
+                  8
+                ],
+                [
+                  2006,
+                  8
+                ],
+                [
+                  2006,
+                  8
+                ],
+                [
+                  2006,
+                  8
+                ],
+                [
+                  2006,
+                  8
+                ],
+                [
+                  2006,
+                  8
+                ],
+                [
+                  2006,
+                  8
+                ],
+                [
+                  2006,
+                  8
+                ],
+                [
+                  2006,
+                  8
+                ],
+                [
+                  2006,
+                  8
+                ],
+                [
+                  2006,
+                  8
+                ],
+                [
+                  2006,
+                  8
+                ],
+                [
+                  2006,
+                  8
+                ],
+                [
+                  2006,
+                  8
+                ],
+                [
+                  2006,
+                  8
+                ],
+                [
+                  2006,
+                  8
+                ],
+                [
+                  2006,
+                  8
+                ],
+                [
+                  2006,
+                  8
+                ],
+                [
+                  2006,
+                  8
+                ],
+                [
+                  2006,
+                  8
+                ],
+                [
+                  2006,
+                  8
+                ],
+                [
+                  2006,
+                  8
+                ],
+                [
+                  2006,
+                  8
+                ],
+                [
+                  2006,
+                  8
+                ],
+                [
+                  2006,
+                  8
+                ],
+                [
+                  2006,
+                  8
+                ],
+                [
+                  2006,
+                  8
+                ],
+                [
+                  2006,
+                  8
+                ],
+                [
+                  2006,
+                  8
+                ],
+                [
+                  2006,
+                  8
+                ],
+                [
+                  2006,
+                  8
+                ],
+                [
+                  2006,
+                  8
+                ],
+                [
+                  2006,
+                  8
+                ],
+                [
+                  2006,
+                  8
+                ]
+              ],
+              "posted_date_evidence": {
+                "expected_year": 2006,
+                "expected_month": 8,
+                "date_field_count": 35,
+                "parseable_count": 35,
+                "unparseable_count": 0,
+                "matching_count": 35,
+                "mismatch_count": 0,
+                "matching_examples": [
+                  "8-31-06",
+                  "8-31-06",
+                  "8-31-06",
+                  "8-30-06",
+                  "8-28-06",
+                  "8-28-06",
+                  "8-28-06",
+                  "8-25-06",
+                  "8-25-06",
+                  "8-24-06"
+                ],
+                "mismatch_examples": [],
+                "month_counts": {
+                  "2006-08": 35
+                },
+                "date_range": {
+                  "min": "2006-08-01",
+                  "max": "2006-08-31"
+                },
+                "state": "match"
+              },
+              "article_month_evidence": {
+                "expected_year": 2006,
+                "expected_month": 8,
+                "date_field_count": 35,
+                "parseable_count": 35,
+                "unparseable_count": 0,
+                "matching_count": 35,
+                "mismatch_count": 0,
+                "matching_examples": [
+                  "8-31-06",
+                  "8-31-06",
+                  "8-31-06",
+                  "8-30-06",
+                  "8-28-06",
+                  "8-28-06",
+                  "8-28-06",
+                  "8-25-06",
+                  "8-25-06",
+                  "8-24-06"
+                ],
+                "mismatch_examples": [],
+                "month_counts": {
+                  "2006-08": 35
+                },
+                "date_range": {
+                  "min": "2006-08-01",
+                  "max": "2006-08-31"
+                },
+                "state": "match"
+              },
+              "article_posted_date_count": 35,
+              "article_posted_date_month_counts": {
+                "2006-08": 35
+              },
+              "article_posted_date_range": {
+                "min": "2006-08-01",
+                "max": "2006-08-31"
+              },
+              "event_date_evidence": {
+                "classification": "event_or_description_date_candidates",
+                "date_field_count": 1,
+                "date_tokens": [
+                  "2006/08/11"
+                ],
+                "year_months": [
+                  [
+                    2006,
+                    8
+                  ]
+                ],
+                "examples": [
+                  {
+                    "token": "2006/08/11",
+                    "year": 2006,
+                    "month": 8,
+                    "day": 11
+                  }
+                ],
+                "note": "Body-wide named/ISO dates are retained as event or description evidence and excluded from the article posted-month verdict."
+              },
+              "event_date_tokens": [
+                "2006/08/11"
+              ],
+              "event_date_year_months": [
+                [
+                  2006,
+                  8
+                ]
+              ],
+              "article_month_matches_url": true,
+              "source_anomaly": null
+            },
+            "actual_memento_capture_timestamp_match": true,
+            "actual_memento_at_or_before_anchor": true
+          }
+        }
+      ],
+      "category": "valid_html_payload",
+      "reason": "valid_html_payload",
+      "actual_memento": "2008-04-02T08:36:05+00:00",
+      "source_status": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "body_bytes": 135388,
+      "body_sha256": "9b013c86eaa02254b00effdc6a18f785308e9c438d5dbe3c5c2e8e20f0cfb161",
+      "validation": {
+        "body_bytes": 135388,
+        "body_sha256": "9b013c86eaa02254b00effdc6a18f785308e9c438d5dbe3c5c2e8e20f0cfb161",
+        "cdx_digest_expected": "I3HYIVYNVWMZNG3XCIPJFVU5E7XFM5Q3",
+        "cdx_digest_calculated": "I3HYIVYNVWMZNG3XCIPJFVU5E7XFM5Q3",
+        "cdx_digest_match": true,
+        "cdx_length": 14763,
+        "actual_memento": "2008-04-02T08:36:05+00:00",
+        "source_status": 200,
+        "content_type": "text/html;charset=UTF-8",
+        "raw_body_path": "raw/03-http_www.worldofwarcraft.com_news_rss-08-2006.xml-replay-proxy.body",
+        "raw_headers_path": "raw/03-http_www.worldofwarcraft.com_news_rss-08-2006.xml-replay-proxy.headers.txt",
+        "body_observation": {
+          "encoding": "utf-8",
+          "mime": "text/html",
+          "parse_ok": true,
+          "parse_error": null,
+          "title": "WoW -> Archived News -> August, 2006",
+          "headings": [
+            {
+              "tag": "h1",
+              "text": "World of Warcraft Comic Contest: Winner"
+            },
+            {
+              "tag": "h1",
+              "text": "Talents Preview Part 1 Update"
+            },
+            {
+              "tag": "h1",
+              "text": "New World of Warcraft Fan Art"
+            },
+            {
+              "tag": "h1",
+              "text": "New Burning Crusade Screenshots"
+            },
+            {
+              "tag": "h1",
+              "text": "The Burning Crusade: Spells and Talents"
+            },
+            {
+              "tag": "h1",
+              "text": "Q&A with Jeff Kaplan"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "New World of Warcraft Items in Online Store"
+            },
+            {
+              "tag": "h1",
+              "text": "Sunwell Trilogy Vol. II: Shadows of Ice Now Available"
+            },
+            {
+              "tag": "h1",
+              "text": "The New World of Warcraft Forums Are Here!"
+            },
+            {
+              "tag": "h1",
+              "text": "New World of Warcraft Fan Art"
+            },
+            {
+              "tag": "h1",
+              "text": "Interview with Burning Crusade's Executive Producer"
+            },
+            {
+              "tag": "h1",
+              "text": "Eastern Plaguelands PvP Trailer"
+            },
+            {
+              "tag": "h1",
+              "text": "New Burning Crusade Screenshots"
+            },
+            {
+              "tag": "h1",
+              "text": "Drums of War: Patch 1.12 Released!"
+            },
+            {
+              "tag": "h1",
+              "text": "Two New Realms Available!"
+            },
+            {
+              "tag": "h1",
+              "text": "Music Player Updated"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "World of Warcraft Insider #9 Released"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "New Burning Crusade Screenshot"
+            },
+            {
+              "tag": "h1",
+              "text": "New World of Warcraft Fan Art"
+            },
+            {
+              "tag": "h1",
+              "text": "Bestiary Update"
+            },
+            {
+              "tag": "h1",
+              "text": "Game Guide: Player-Created Strategy Guides"
+            },
+            {
+              "tag": "h1",
+              "text": "New World of Warcraft Fan Wallpaper"
+            },
+            {
+              "tag": "h1",
+              "text": "Burning Crusade Previews from Around the Web"
+            },
+            {
+              "tag": "h1",
+              "text": "Two New Realms Available!"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "The Burning Crusade: Caverns of Time"
+            },
+            {
+              "tag": "h1",
+              "text": "New World of Warcraft Fan Art"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "World of Warcraft Invades MySpace"
+            },
+            {
+              "tag": "h1",
+              "text": "New World of Warcraft Wallpaper and Fan Art"
+            },
+            {
+              "tag": "h1",
+              "text": "More Old News"
+            }
+          ],
+          "content_identity_sha256": "35d14a19d6faeb6a45c7fecf07f95dbf8af543f289c869bab4dd63bf7a03b8b6",
+          "content_preview": "WoW -> Archived News -> August, 2006 @import \"/new-hp/css/loader_screen.css\"; @import \"/shared/global/menu/topnav/topnav.css\"; var scriptsLoaded=0; if(document.location.href.indexOf(\"worldofwarcraft.com\") != -1) document.domain = \"worldofwarcraft.com\"; try { document.execCommand(\"BackgroundImageCache\", false, true); } catch(err) {} scriptsLoaded=1; // var agt=navigator.userAgent.toLowerCase(); var iePos = appVer.indexOf('msie'); var is_opera = (agt.indexOf(\"opera\") != -1); var is_ie = ((iePos!=-",
+          "archive_markers": [],
+          "is_html": true
+        },
+        "body_format": "html",
+        "valid": true,
+        "validation_reason": "valid_html_payload",
+        "html_month_evidence": {
+          "declared_url_year": 2006,
+          "declared_url_month": 8,
+          "title": "WoW -> Archived News -> August, 2006",
+          "title_date_tokens": [
+            "August, 2006"
+          ],
+          "title_year_months": [
+            [
+              2006,
+              8
+            ]
+          ],
+          "title_month_evidence": {
+            "expected_year": 2006,
+            "expected_month": 8,
+            "date_field_count": 1,
+            "parseable_count": 1,
+            "unparseable_count": 0,
+            "matching_count": 1,
+            "mismatch_count": 0,
+            "matching_examples": [
+              "August, 2006"
+            ],
+            "mismatch_examples": [],
+            "month_counts": {
+              "2006-08": 1
+            },
+            "date_range": null,
+            "state": "match"
+          },
+          "h1_count": 35,
+          "h1_titles": [
+            "World of Warcraft Comic Contest: Winner",
+            "Talents Preview Part 1 Update",
+            "New World of Warcraft Fan Art",
+            "New Burning Crusade Screenshots",
+            "The Burning Crusade: Spells and Talents",
+            "Q&A with Jeff Kaplan",
+            "WoW Comic Contest: Honorable Mentions",
+            "New World of Warcraft Items in Online Store",
+            "Sunwell Trilogy Vol. II: Shadows of Ice Now Available",
+            "The New World of Warcraft Forums Are Here!",
+            "New World of Warcraft Fan Art",
+            "Interview with Burning Crusade's Executive Producer",
+            "Eastern Plaguelands PvP Trailer",
+            "New Burning Crusade Screenshots",
+            "Drums of War: Patch 1.12 Released!",
+            "Two New Realms Available!",
+            "Music Player Updated",
+            "WoW Comic Contest: Honorable Mentions",
+            "World of Warcraft Insider #9 Released",
+            "WoW Comic Contest: Honorable Mentions",
+            "New Burning Crusade Screenshot",
+            "New World of Warcraft Fan Art",
+            "Bestiary Update",
+            "Game Guide: Player-Created Strategy Guides",
+            "New World of Warcraft Fan Wallpaper",
+            "Burning Crusade Previews from Around the Web",
+            "Two New Realms Available!",
+            "WoW Comic Contest: Honorable Mentions",
+            "The Burning Crusade: Caverns of Time",
+            "New World of Warcraft Fan Art",
+            "WoW Comic Contest: Honorable Mentions",
+            "WoW Comic Contest: Honorable Mentions",
+            "World of Warcraft Invades MySpace",
+            "New World of Warcraft Wallpaper and Fan Art",
+            "More Old News"
+          ],
+          "posted_date_source": "posted",
+          "posted_date_node_count": 35,
+          "news_entry_date_node_count": 35,
+          "posted_date_records": [
+            {
+              "token": "8-31-06",
+              "year": 2006,
+              "month": 8,
+              "day": 31,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "8-31-06"
+            },
+            {
+              "token": "8-31-06",
+              "year": 2006,
+              "month": 8,
+              "day": 31,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "8-31-06"
+            },
+            {
+              "token": "8-31-06",
+              "year": 2006,
+              "month": 8,
+              "day": 31,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "8-31-06"
+            },
+            {
+              "token": "8-30-06",
+              "year": 2006,
+              "month": 8,
+              "day": 30,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "8-30-06"
+            },
+            {
+              "token": "8-28-06",
+              "year": 2006,
+              "month": 8,
+              "day": 28,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "8-28-06"
+            },
+            {
+              "token": "8-28-06",
+              "year": 2006,
+              "month": 8,
+              "day": 28,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "8-28-06"
+            },
+            {
+              "token": "8-28-06",
+              "year": 2006,
+              "month": 8,
+              "day": 28,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "8-28-06"
+            },
+            {
+              "token": "8-25-06",
+              "year": 2006,
+              "month": 8,
+              "day": 25,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "8-25-06"
+            },
+            {
+              "token": "8-25-06",
+              "year": 2006,
+              "month": 8,
+              "day": 25,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "8-25-06"
+            },
+            {
+              "token": "8-24-06",
+              "year": 2006,
+              "month": 8,
+              "day": 24,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "8-24-06"
+            },
+            {
+              "token": "8-24-06",
+              "year": 2006,
+              "month": 8,
+              "day": 24,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "8-24-06"
+            },
+            {
+              "token": "8-24-06",
+              "year": 2006,
+              "month": 8,
+              "day": 24,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "8-24-06"
+            },
+            {
+              "token": "8-23-06",
+              "year": 2006,
+              "month": 8,
+              "day": 23,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "8-23-06"
+            },
+            {
+              "token": "8-23-06",
+              "year": 2006,
+              "month": 8,
+              "day": 23,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "8-23-06"
+            },
+            {
+              "token": "8-22-06",
+              "year": 2006,
+              "month": 8,
+              "day": 22,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "8-22-06"
+            },
+            {
+              "token": "8-21-06",
+              "year": 2006,
+              "month": 8,
+              "day": 21,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "8-21-06"
+            },
+            {
+              "token": "8-21-06",
+              "year": 2006,
+              "month": 8,
+              "day": 21,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "8-21-06"
+            },
+            {
+              "token": "8-21-06",
+              "year": 2006,
+              "month": 8,
+              "day": 21,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "8-21-06"
+            },
+            {
+              "token": "8-18-06",
+              "year": 2006,
+              "month": 8,
+              "day": 18,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "8-18-06"
+            },
+            {
+              "token": "8-18-06",
+              "year": 2006,
+              "month": 8,
+              "day": 18,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "8-18-06"
+            },
+            {
+              "token": "8-17-06",
+              "year": 2006,
+              "month": 8,
+              "day": 17,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "8-17-06"
+            },
+            {
+              "token": "8-17-06",
+              "year": 2006,
+              "month": 8,
+              "day": 17,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "8-17-06"
+            },
+            {
+              "token": "8-17-06",
+              "year": 2006,
+              "month": 8,
+              "day": 17,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "8-17-06"
+            },
+            {
+              "token": "8-15-06",
+              "year": 2006,
+              "month": 8,
+              "day": 15,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "8-15-06"
+            },
+            {
+              "token": "8-15-06",
+              "year": 2006,
+              "month": 8,
+              "day": 15,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "8-15-06"
+            },
+            {
+              "token": "8-14-06",
+              "year": 2006,
+              "month": 8,
+              "day": 14,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "8-14-06"
+            },
+            {
+              "token": "8-14-06",
+              "year": 2006,
+              "month": 8,
+              "day": 14,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "8-14-06"
+            },
+            {
+              "token": "8-11-06",
+              "year": 2006,
+              "month": 8,
+              "day": 11,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "8-11-06"
+            },
+            {
+              "token": "8-10-06",
+              "year": 2006,
+              "month": 8,
+              "day": 10,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "8-10-06"
+            },
+            {
+              "token": "8-10-06",
+              "year": 2006,
+              "month": 8,
+              "day": 10,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "8-10-06"
+            },
+            {
+              "token": "8-07-06",
+              "year": 2006,
+              "month": 8,
+              "day": 7,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "8-07-06"
+            },
+            {
+              "token": "8-04-06",
+              "year": 2006,
+              "month": 8,
+              "day": 4,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "8-04-06"
+            },
+            {
+              "token": "8-04-06",
+              "year": 2006,
+              "month": 8,
+              "day": 4,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "8-04-06"
+            },
+            {
+              "token": "8-03-06",
+              "year": 2006,
+              "month": 8,
+              "day": 3,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "8-03-06"
+            },
+            {
+              "token": "8-01-06",
+              "year": 2006,
+              "month": 8,
+              "day": 1,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "8-01-06"
+            }
+          ],
+          "posted_or_visible_date_tokens": [
+            "8-31-06",
+            "8-31-06",
+            "8-31-06",
+            "8-30-06",
+            "8-28-06",
+            "8-28-06",
+            "8-28-06",
+            "8-25-06",
+            "8-25-06",
+            "8-24-06",
+            "8-24-06",
+            "8-24-06",
+            "8-23-06",
+            "8-23-06",
+            "8-22-06",
+            "8-21-06",
+            "8-21-06",
+            "8-21-06",
+            "8-18-06",
+            "8-18-06",
+            "8-17-06",
+            "8-17-06",
+            "8-17-06",
+            "8-15-06",
+            "8-15-06",
+            "8-14-06",
+            "8-14-06",
+            "8-11-06",
+            "8-10-06",
+            "8-10-06",
+            "8-07-06",
+            "8-04-06",
+            "8-04-06",
+            "8-03-06",
+            "8-01-06"
+          ],
+          "posted_or_visible_year_months": [
+            [
+              2006,
+              8
+            ],
+            [
+              2006,
+              8
+            ],
+            [
+              2006,
+              8
+            ],
+            [
+              2006,
+              8
+            ],
+            [
+              2006,
+              8
+            ],
+            [
+              2006,
+              8
+            ],
+            [
+              2006,
+              8
+            ],
+            [
+              2006,
+              8
+            ],
+            [
+              2006,
+              8
+            ],
+            [
+              2006,
+              8
+            ],
+            [
+              2006,
+              8
+            ],
+            [
+              2006,
+              8
+            ],
+            [
+              2006,
+              8
+            ],
+            [
+              2006,
+              8
+            ],
+            [
+              2006,
+              8
+            ],
+            [
+              2006,
+              8
+            ],
+            [
+              2006,
+              8
+            ],
+            [
+              2006,
+              8
+            ],
+            [
+              2006,
+              8
+            ],
+            [
+              2006,
+              8
+            ],
+            [
+              2006,
+              8
+            ],
+            [
+              2006,
+              8
+            ],
+            [
+              2006,
+              8
+            ],
+            [
+              2006,
+              8
+            ],
+            [
+              2006,
+              8
+            ],
+            [
+              2006,
+              8
+            ],
+            [
+              2006,
+              8
+            ],
+            [
+              2006,
+              8
+            ],
+            [
+              2006,
+              8
+            ],
+            [
+              2006,
+              8
+            ],
+            [
+              2006,
+              8
+            ],
+            [
+              2006,
+              8
+            ],
+            [
+              2006,
+              8
+            ],
+            [
+              2006,
+              8
+            ],
+            [
+              2006,
+              8
+            ]
+          ],
+          "posted_date_evidence": {
+            "expected_year": 2006,
+            "expected_month": 8,
+            "date_field_count": 35,
+            "parseable_count": 35,
+            "unparseable_count": 0,
+            "matching_count": 35,
+            "mismatch_count": 0,
+            "matching_examples": [
+              "8-31-06",
+              "8-31-06",
+              "8-31-06",
+              "8-30-06",
+              "8-28-06",
+              "8-28-06",
+              "8-28-06",
+              "8-25-06",
+              "8-25-06",
+              "8-24-06"
+            ],
+            "mismatch_examples": [],
+            "month_counts": {
+              "2006-08": 35
+            },
+            "date_range": {
+              "min": "2006-08-01",
+              "max": "2006-08-31"
+            },
+            "state": "match"
+          },
+          "article_month_evidence": {
+            "expected_year": 2006,
+            "expected_month": 8,
+            "date_field_count": 35,
+            "parseable_count": 35,
+            "unparseable_count": 0,
+            "matching_count": 35,
+            "mismatch_count": 0,
+            "matching_examples": [
+              "8-31-06",
+              "8-31-06",
+              "8-31-06",
+              "8-30-06",
+              "8-28-06",
+              "8-28-06",
+              "8-28-06",
+              "8-25-06",
+              "8-25-06",
+              "8-24-06"
+            ],
+            "mismatch_examples": [],
+            "month_counts": {
+              "2006-08": 35
+            },
+            "date_range": {
+              "min": "2006-08-01",
+              "max": "2006-08-31"
+            },
+            "state": "match"
+          },
+          "article_posted_date_count": 35,
+          "article_posted_date_month_counts": {
+            "2006-08": 35
+          },
+          "article_posted_date_range": {
+            "min": "2006-08-01",
+            "max": "2006-08-31"
+          },
+          "event_date_evidence": {
+            "classification": "event_or_description_date_candidates",
+            "date_field_count": 1,
+            "date_tokens": [
+              "2006/08/11"
+            ],
+            "year_months": [
+              [
+                2006,
+                8
+              ]
+            ],
+            "examples": [
+              {
+                "token": "2006/08/11",
+                "year": 2006,
+                "month": 8,
+                "day": 11
+              }
+            ],
+            "note": "Body-wide named/ISO dates are retained as event or description evidence and excluded from the article posted-month verdict."
+          },
+          "event_date_tokens": [
+            "2006/08/11"
+          ],
+          "event_date_year_months": [
+            [
+              2006,
+              8
+            ]
+          ],
+          "article_month_matches_url": true,
+          "source_anomaly": null
+        },
+        "actual_memento_capture_timestamp_match": true,
+        "actual_memento_at_or_before_anchor": true
+      },
+      "entity_valid": true,
+      "unrequested_reason": null
+    },
+    {
+      "rank": 2,
+      "target": "/news/rss-10-2006.xml",
+      "query_original": "http://www.worldofwarcraft.com/news/rss-10-2006.xml",
+      "year": 2006,
+      "month": 10,
+      "operation": "exact_CDX_then_at_most_one_eligible_replay",
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:96:Menu2_3_3",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:159",
+          "label": "October, 2006",
+          "href": "/news/rss-10-2006.xml "
+        }
+      ],
+      "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-10-2006.xml&matchType=exact&from=20040101&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=1000&showResumeKey=true",
+      "cdx": {
+        "query_performed": true,
+        "source_status": 200,
+        "source_response_count": 1,
+        "capture_index_count": 31,
+        "eligible_status_200_count": 27,
+        "redirect_index_count": 0,
+        "capture_records": [
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+            "timestamp": "20061108055443",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-10-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "VGG2BDENN2KCU4AXAMFCWBAIFW63PDRV",
+            "length": "24495",
+            "record_index": 0,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+            "timestamp": "20061110095431",
+            "original": "https://www.worldofwarcraft.com/news/rss-10-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "503",
+            "digest": "CSYD2PXMVLZFP376UJSTVBBFRCMOCGUL",
+            "length": "425",
+            "record_index": 1,
+            "statuscode_int": 503,
+            "within_query_range": true,
+            "original_match_kind": null,
+            "exact_original_match": false,
+            "valid_replay_candidate": false
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+            "timestamp": "20061110095707",
+            "original": "http://www.worldofwarcraft.com/news/rss-10-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "76ENUFDY7VGWBFRVSWXFOQ2CAS7ETZDU",
+            "length": "24490",
+            "record_index": 2,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "exact",
+            "exact_original_match": true,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+            "timestamp": "20061116163527",
+            "original": "http://worldofwarcraft.com:80/news/rss-10-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "500",
+            "digest": "EHRZQG6ULLDUVTIW2DLQ2EI2FLF4MIV3",
+            "length": "1077",
+            "record_index": 3,
+            "statuscode_int": 500,
+            "within_query_range": true,
+            "original_match_kind": null,
+            "exact_original_match": false,
+            "valid_replay_candidate": false
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+            "timestamp": "20061124012037",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-10-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "XVVRFAKNPIFX5OTWK2ZMCHYO2ECBSSTK",
+            "length": "24515",
+            "record_index": 4,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+            "timestamp": "20061129121613",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-10-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "KBAV466Q5MEGEU4LNAORQ335EVIESW3L",
+            "length": "24543",
+            "record_index": 5,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+            "timestamp": "20061205074042",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-10-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "KBAV466Q5MEGEU4LNAORQ335EVIESW3L",
+            "length": "24545",
+            "record_index": 6,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+            "timestamp": "20061209222749",
+            "original": "http://worldofwarcraft.com:80/news/rss-10-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "RJBI6XOWBVRXVYRZPAL57MM5N3TEIDZ2",
+            "length": "24504",
+            "record_index": 7,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": null,
+            "exact_original_match": false,
+            "valid_replay_candidate": false
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+            "timestamp": "20061214123709",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-10-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "RJBI6XOWBVRXVYRZPAL57MM5N3TEIDZ2",
+            "length": "24505",
+            "record_index": 8,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+            "timestamp": "20061219155235",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-10-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "GFSBHQY55AXYFVQZJRTQL52GN5KDP5BG",
+            "length": "24508",
+            "record_index": 9,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+            "timestamp": "20061225011348",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-10-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "GFSBHQY55AXYFVQZJRTQL52GN5KDP5BG",
+            "length": "24508",
+            "record_index": 10,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+            "timestamp": "20070101185814",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-10-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "GFSBHQY55AXYFVQZJRTQL52GN5KDP5BG",
+            "length": "24510",
+            "record_index": 11,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+            "timestamp": "20070106080545",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-10-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "KQX3KEX4RURYHOESZ7D2XJY3UAZSS2G6",
+            "length": "24693",
+            "record_index": 12,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+            "timestamp": "20070111025024",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-10-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "AQEZUKECFRFDWY34FQWQAVCRZN5QVLXH",
+            "length": "24705",
+            "record_index": 13,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+            "timestamp": "20070115224214",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-10-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "IHRN24OUZPES3HHKFHTBSTR6DK7CTIOJ",
+            "length": "24705",
+            "record_index": 14,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+            "timestamp": "20070121012723",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-10-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "SIMF7MHWPTXWXO72HOEO3G6RMNG3FGI4",
+            "length": "24756",
+            "record_index": 15,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+            "timestamp": "20070123071147",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-10-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "H4AYMGRFLZXD2MJPQQMWBRKOEXJH2WKY",
+            "length": "24779",
+            "record_index": 16,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+            "timestamp": "20070126092615",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-10-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "H4AYMGRFLZXD2MJPQQMWBRKOEXJH2WKY",
+            "length": "24780",
+            "record_index": 17,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+            "timestamp": "20070324164635",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-10-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "PP3ZZYTBLLKT5TVEKDV7IRSNMIW5K6N4",
+            "length": "19016",
+            "record_index": 18,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+            "timestamp": "20070326020628",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-10-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "PP3ZZYTBLLKT5TVEKDV7IRSNMIW5K6N4",
+            "length": "19019",
+            "record_index": 19,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+            "timestamp": "20070601153201",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-10-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "SW53OS472NYY3L5WQVRCH5KI5VPJY65H",
+            "length": "19045",
+            "record_index": 20,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+            "timestamp": "20070702081944",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-10-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "LB44OF25AEUKKBSEO6AW53RZG4F3WATB",
+            "length": "19060",
+            "record_index": 21,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+            "timestamp": "20070813145345",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-10-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "K6HPQRVLQZ6ULQJM3L34OPVOPQGKA2XT",
+            "length": "19013",
+            "record_index": 22,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+            "timestamp": "20070916041830",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-10-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "VOSDBQL2EWEVNNKWNAT5P7WAUVL3JTBK",
+            "length": "18415",
+            "record_index": 23,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+            "timestamp": "20071018043010",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-10-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "5BJNAKIS2JYPT43WFRLQNCA34ITKBEEZ",
+            "length": "18442",
+            "record_index": 24,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+            "timestamp": "20071117190443",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-10-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "AA2NDZXRJ5N3H3XGRMAVOYLBZO5PEBBJ",
+            "length": "18557",
+            "record_index": 25,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+            "timestamp": "20071218075133",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-10-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "7OIWUJKGAE24FVIF5ECJNF2COJV36JYW",
+            "length": "18623",
+            "record_index": 26,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+            "timestamp": "20080123052446",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-10-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "QIHQEXDQ5ZSMOQTIV22IPM2UAED5P5OT",
+            "length": "18557",
+            "record_index": 27,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+            "timestamp": "20080223133847",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-10-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "UOJL4BR2A7R5K7E6TQLZ3AWYM2QWNVZ4",
+            "length": "18501",
+            "record_index": 28,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+            "timestamp": "20080402083154",
+            "original": "http://www.worldofwarcraft.com/news/rss-10-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "ESRPAVRUCWBV4Z2CX3LG5DLP33HO4W7F",
+            "length": "18466",
+            "record_index": 29,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "exact",
+            "exact_original_match": true,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+            "timestamp": "20080402102212",
+            "original": "https://www.worldofwarcraft.com/news/rss-10-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "ESRPAVRUCWBV4Z2CX3LG5DLP33HO4W7F",
+            "length": "18468",
+            "record_index": 30,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": null,
+            "exact_original_match": false,
+            "valid_replay_candidate": false
+          }
+        ],
+        "selected_capture": {
+          "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+          "timestamp": "20080402083154",
+          "original": "http://www.worldofwarcraft.com/news/rss-10-2006.xml",
+          "mimetype": "text/html",
+          "statuscode": "200",
+          "digest": "ESRPAVRUCWBV4Z2CX3LG5DLP33HO4W7F",
+          "length": "18466",
+          "record_index": 29,
+          "statuscode_int": 200,
+          "within_query_range": true,
+          "original_match_kind": "exact",
+          "exact_original_match": true,
+          "valid_replay_candidate": true
+        },
+        "other_origin_metadata": {
+          "excluded_from_eligible_candidates": true,
+          "record_count": 4,
+          "original_identities": [
+            "http://worldofwarcraft.com:80/news/rss-10-2006.xml",
+            "https://www.worldofwarcraft.com/news/rss-10-2006.xml"
+          ],
+          "records": [
+            {
+              "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+              "timestamp": "20061110095431",
+              "original": "https://www.worldofwarcraft.com/news/rss-10-2006.xml",
+              "mimetype": "text/html",
+              "statuscode": "503",
+              "digest": "CSYD2PXMVLZFP376UJSTVBBFRCMOCGUL",
+              "length": "425",
+              "record_index": 1,
+              "statuscode_int": 503,
+              "within_query_range": true,
+              "original_match_kind": null,
+              "exact_original_match": false,
+              "valid_replay_candidate": false,
+              "origin_exclusion_reason": "scheme_mismatch"
+            },
+            {
+              "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+              "timestamp": "20061116163527",
+              "original": "http://worldofwarcraft.com:80/news/rss-10-2006.xml",
+              "mimetype": "text/html",
+              "statuscode": "500",
+              "digest": "EHRZQG6ULLDUVTIW2DLQ2EI2FLF4MIV3",
+              "length": "1077",
+              "record_index": 3,
+              "statuscode_int": 500,
+              "within_query_range": true,
+              "original_match_kind": null,
+              "exact_original_match": false,
+              "valid_replay_candidate": false,
+              "origin_exclusion_reason": "host_mismatch"
+            },
+            {
+              "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+              "timestamp": "20061209222749",
+              "original": "http://worldofwarcraft.com:80/news/rss-10-2006.xml",
+              "mimetype": "text/html",
+              "statuscode": "200",
+              "digest": "RJBI6XOWBVRXVYRZPAL57MM5N3TEIDZ2",
+              "length": "24504",
+              "record_index": 7,
+              "statuscode_int": 200,
+              "within_query_range": true,
+              "original_match_kind": null,
+              "exact_original_match": false,
+              "valid_replay_candidate": false,
+              "origin_exclusion_reason": "host_mismatch"
+            },
+            {
+              "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+              "timestamp": "20080402102212",
+              "original": "https://www.worldofwarcraft.com/news/rss-10-2006.xml",
+              "mimetype": "text/html",
+              "statuscode": "200",
+              "digest": "ESRPAVRUCWBV4Z2CX3LG5DLP33HO4W7F",
+              "length": "18468",
+              "record_index": 30,
+              "statuscode_int": 200,
+              "within_query_range": true,
+              "original_match_kind": null,
+              "exact_original_match": false,
+              "valid_replay_candidate": false,
+              "origin_exclusion_reason": "scheme_mismatch"
+            }
+          ],
+          "policy": {
+            "same_scheme_required": true,
+            "same_lower_cased_host_required": true,
+            "only_default_port_equivalence": true,
+            "bare_www_are_separate_origins": true,
+            "http_https_are_separate_origins": true
+          }
+        },
+        "attempts": [
+          {
+            "executed": true,
+            "attempt": 4,
+            "kind": "cdx",
+            "target_key": "http://www.worldofwarcraft.com/news/rss-10-2006.xml",
+            "transport": "proxy",
+            "url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-10-2006.xml&matchType=exact&from=20040101&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=1000&showResumeKey=true",
+            "started_utc": "2026-10-15T13:54:12.210371+00:00",
+            "finished_utc": "2026-10-15T13:54:16.800173+00:00",
+            "duration_ms": 4625.0,
+            "curl_exit": 0,
+            "source_status": 200,
+            "connect_status": 200,
+            "content_type": "application/json",
+            "location": null,
+            "retry_after": null,
+            "memento_datetime": null,
+            "redirects_requested": 0,
+            "automatic_redirects": 0,
+            "body_bytes": 5699,
+            "body_sha256": "1a1166d45bafd1a32139aaa3beed93ba1e79f5ff28a04140fe4dc1f130742743",
+            "transport_error": false,
+            "transport_reason": null,
+            "raw": {
+              "headers": "raw/04-http_www.worldofwarcraft.com_news_rss-10-2006.xml-cdx-proxy.headers.txt",
+              "body": "raw/04-http_www.worldofwarcraft.com_news_rss-10-2006.xml-cdx-proxy.body",
+              "stderr": "raw/04-http_www.worldofwarcraft.com_news_rss-10-2006.xml-cdx-proxy.stderr.txt",
+              "trace": "raw/04-http_www.worldofwarcraft.com_news_rss-10-2006.xml-cdx-proxy.trace.txt",
+              "metrics": "raw/04-http_www.worldofwarcraft.com_news_rss-10-2006.xml-cdx-proxy.metrics.txt"
+            },
+            "cdx_parse_valid": true,
+            "cdx_parse_error": null,
+            "dispatch_utc": "2026-10-15T13:54:12.208864+00:00",
+            "dispatch_monotonic": 39202.203,
+            "dispatch_interval_seconds": 7.703000000001339,
+            "gate_persisted_before_transport": true,
+            "local_zero_byte_body_placeholder": false,
+            "body_is_source_response": true
+          }
+        ],
+        "header_fields_observed": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "resume_keys_observed": [],
+        "resume_key_used": null,
+        "continuation_followed": false,
+        "body_bytes": 5699,
+        "body_sha256": "1a1166d45bafd1a32139aaa3beed93ba1e79f5ff28a04140fe4dc1f130742743",
+        "index_distribution": {
+          "statuscode": {
+            "200": 29,
+            "500": 1,
+            "503": 1
+          },
+          "mimetype": {
+            "text/html": 31
+          },
+          "origin_match_kind": {
+            "": 4,
+            "default_port_80": 25,
+            "exact": 2
+          }
+        }
+      },
+      "selected_capture": {
+        "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+        "timestamp": "20080402083154",
+        "original": "http://www.worldofwarcraft.com/news/rss-10-2006.xml",
+        "mimetype": "text/html",
+        "statuscode": "200",
+        "digest": "ESRPAVRUCWBV4Z2CX3LG5DLP33HO4W7F",
+        "length": "18466",
+        "record_index": 29,
+        "statuscode_int": 200,
+        "within_query_range": true,
+        "original_match_kind": "exact",
+        "exact_original_match": true,
+        "valid_replay_candidate": true
+      },
+      "replay_attempt_count": 1,
+      "replay_source_response_count": 1,
+      "replay_hops": [
+        {
+          "capture": {
+            "urlkey": "com,worldofwarcraft)/news/rss-10-2006.xml",
+            "timestamp": "20080402083154",
+            "original": "http://www.worldofwarcraft.com/news/rss-10-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "ESRPAVRUCWBV4Z2CX3LG5DLP33HO4W7F",
+            "length": "18466",
+            "record_index": 29,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "exact",
+            "exact_original_match": true,
+            "valid_replay_candidate": true
+          },
+          "replay_url": "https://web.archive.org/web/20080402083154id_/http://www.worldofwarcraft.com/news/rss-10-2006.xml",
+          "attempts": [
+            {
+              "executed": true,
+              "attempt": 5,
+              "kind": "replay",
+              "target_key": "http://www.worldofwarcraft.com/news/rss-10-2006.xml",
+              "transport": "proxy",
+              "url": "https://web.archive.org/web/20080402083154id_/http://www.worldofwarcraft.com/news/rss-10-2006.xml",
+              "started_utc": "2026-10-15T13:54:17.318168+00:00",
+              "finished_utc": "2026-10-15T13:54:23.610516+00:00",
+              "duration_ms": 6781.0,
+              "curl_exit": 0,
+              "source_status": 200,
+              "connect_status": 200,
+              "content_type": "text/html;charset=UTF-8",
+              "location": null,
+              "retry_after": null,
+              "memento_datetime": "2008-04-02T08:31:54+00:00",
+              "redirects_requested": 0,
+              "automatic_redirects": 0,
+              "body_bytes": 180925,
+              "body_sha256": "4607f05fbd0f71bc30f94fe674a7b3aded0a36c0b12e2245c718b359a53b0a5b",
+              "transport_error": false,
+              "transport_reason": null,
+              "raw": {
+                "headers": "raw/05-http_www.worldofwarcraft.com_news_rss-10-2006.xml-replay-proxy.headers.txt",
+                "body": "raw/05-http_www.worldofwarcraft.com_news_rss-10-2006.xml-replay-proxy.body",
+                "stderr": "raw/05-http_www.worldofwarcraft.com_news_rss-10-2006.xml-replay-proxy.stderr.txt",
+                "trace": "raw/05-http_www.worldofwarcraft.com_news_rss-10-2006.xml-replay-proxy.trace.txt",
+                "metrics": "raw/05-http_www.worldofwarcraft.com_news_rss-10-2006.xml-replay-proxy.metrics.txt"
+              },
+              "html": {
+                "is_html": true,
+                "markers": [
+                  "error_404"
+                ],
+                "title": "WoW -> Archived News -> October, 2006",
+                "parse_ok": true
+              },
+              "xml": {
+                "is_xml": true,
+                "parse_ok": false,
+                "root": null,
+                "parse_error": "ParseError"
+              },
+              "dispatch_utc": "2026-10-15T13:54:17.316603+00:00",
+              "dispatch_monotonic": 39207.312,
+              "dispatch_interval_seconds": 5.10899999999674,
+              "gate_persisted_before_transport": true,
+              "local_zero_byte_body_placeholder": false,
+              "body_is_source_response": true
+            }
+          ],
+          "category": "valid_html_payload",
+          "reason": "valid_html_payload",
+          "validation": {
+            "body_bytes": 180925,
+            "body_sha256": "4607f05fbd0f71bc30f94fe674a7b3aded0a36c0b12e2245c718b359a53b0a5b",
+            "cdx_digest_expected": "ESRPAVRUCWBV4Z2CX3LG5DLP33HO4W7F",
+            "cdx_digest_calculated": "ESRPAVRUCWBV4Z2CX3LG5DLP33HO4W7F",
+            "cdx_digest_match": true,
+            "cdx_length": 18466,
+            "actual_memento": "2008-04-02T08:31:54+00:00",
+            "source_status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "raw_body_path": "raw/05-http_www.worldofwarcraft.com_news_rss-10-2006.xml-replay-proxy.body",
+            "raw_headers_path": "raw/05-http_www.worldofwarcraft.com_news_rss-10-2006.xml-replay-proxy.headers.txt",
+            "body_observation": {
+              "encoding": "utf-8",
+              "mime": "text/html",
+              "parse_ok": true,
+              "parse_error": null,
+              "title": "WoW -> Archived News -> October, 2006",
+              "headings": [
+                {
+                  "tag": "h1",
+                  "text": "1st Annual Blizzard Art Contest Winners Announced!"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Blizzard's Elite Halloween Spooktacular"
+                },
+                {
+                  "tag": "h1",
+                  "text": "New World of Warcraft Wallpaper"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW 2nd Year Anniversary Sweepstakes"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Jayne Goes to Outland"
+                },
+                {
+                  "tag": "h1",
+                  "text": "World of Warcraft Comic Contest: Winner"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "New World of Warcraft Wallpaper"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Guide Update: Raid Tips"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "World of Warcraft Card Game Now Available!"
+                },
+                {
+                  "tag": "h1",
+                  "text": "New Battlegroup Names"
+                },
+                {
+                  "tag": "h1",
+                  "text": "New Burning Crusade Screenshots"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Blizzard Job Opportunities!"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Burning Crusade Spells and Talents Updated"
+                },
+                {
+                  "tag": "h1",
+                  "text": "The Burning Crusade to be Released January 2007"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Burning Crusade Spells and Talents Updated"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "New World of Warcraft Fan Art"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Burning Crusade Closed Beta Previews"
+                },
+                {
+                  "tag": "h1",
+                  "text": "World of Warcraft Insider #10 Released"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "New World of Warcraft Fan Art"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Burning Crusade: System Requirements"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Burning Crusade Spells and Talents Updated"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Hallow's End is Here"
+                },
+                {
+                  "tag": "h1",
+                  "text": "New Interface Preview: Looking For Group"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Gear Now In Stock!"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "New World of Warcraft Fan Art"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "World of Warcraft Accounts Closed Worldwide"
+                },
+                {
+                  "tag": "h1",
+                  "text": "New Burning Crusade Screenshots"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Burning Crusade Spells and Talents Updated"
+                },
+                {
+                  "tag": "h1",
+                  "text": "World of Warcraft Summer Movie Contest"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW in New ABC Sitcom: \"Help Me Help You\""
+                },
+                {
+                  "tag": "h1",
+                  "text": "Burning Crusade Spells and Talents Updated"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "World of Warcraft Costume and Pumpkin Contests!"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "World (of Warcraft) Saved by Heroes of South Park"
+                },
+                {
+                  "tag": "h1",
+                  "text": "New Realms"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Burning Crusade Collector's Edition Announced!"
+                },
+                {
+                  "tag": "h1",
+                  "text": "World of Warcraft Comes to South Park Tonight"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Burning Crusade Spells and Talents Updated"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "World of Warcraft Two-Sided Map in Online Store"
+                },
+                {
+                  "tag": "h1",
+                  "text": "New Burning Crusade Screenshots"
+                }
+              ],
+              "content_identity_sha256": "a9d501d960867277f9d9034f0e1bfdf8e7995c8122c70f6af6f8065cf61d4f0e",
+              "content_preview": "WoW -> Archived News -> October, 2006 @import \"/new-hp/css/loader_screen.css\"; @import \"/shared/global/menu/topnav/topnav.css\"; var scriptsLoaded=0; if(document.location.href.indexOf(\"worldofwarcraft.com\") != -1) document.domain = \"worldofwarcraft.com\"; try { document.execCommand(\"BackgroundImageCache\", false, true); } catch(err) {} scriptsLoaded=1; // var agt=navigator.userAgent.toLowerCase(); var iePos = appVer.indexOf('msie'); var is_opera = (agt.indexOf(\"opera\") != -1); var is_ie = ((iePos!=",
+              "archive_markers": [
+                "error_404"
+              ],
+              "is_html": true
+            },
+            "body_format": "html",
+            "valid": true,
+            "validation_reason": "valid_html_payload",
+            "html_month_evidence": {
+              "declared_url_year": 2006,
+              "declared_url_month": 10,
+              "title": "WoW -> Archived News -> October, 2006",
+              "title_date_tokens": [
+                "October, 2006"
+              ],
+              "title_year_months": [
+                [
+                  2006,
+                  10
+                ]
+              ],
+              "title_month_evidence": {
+                "expected_year": 2006,
+                "expected_month": 10,
+                "date_field_count": 1,
+                "parseable_count": 1,
+                "unparseable_count": 0,
+                "matching_count": 1,
+                "mismatch_count": 0,
+                "matching_examples": [
+                  "October, 2006"
+                ],
+                "mismatch_examples": [],
+                "month_counts": {
+                  "2006-10": 1
+                },
+                "date_range": null,
+                "state": "match"
+              },
+              "h1_count": 53,
+              "h1_titles": [
+                "1st Annual Blizzard Art Contest Winners Announced!",
+                "Blizzard's Elite Halloween Spooktacular",
+                "New World of Warcraft Wallpaper",
+                "WoW 2nd Year Anniversary Sweepstakes",
+                "Jayne Goes to Outland",
+                "World of Warcraft Comic Contest: Winner",
+                "WoW Comic Contest: Honorable Mentions",
+                "New World of Warcraft Wallpaper",
+                "WoW Guide Update: Raid Tips",
+                "WoW Comic Contest: Honorable Mentions",
+                "World of Warcraft Card Game Now Available!",
+                "New Battlegroup Names",
+                "New Burning Crusade Screenshots",
+                "Blizzard Job Opportunities!",
+                "Burning Crusade Spells and Talents Updated",
+                "The Burning Crusade to be Released January 2007",
+                "Burning Crusade Spells and Talents Updated",
+                "WoW Comic Contest: Honorable Mentions",
+                "New World of Warcraft Fan Art",
+                "Burning Crusade Closed Beta Previews",
+                "World of Warcraft Insider #10 Released",
+                "WoW Comic Contest: Honorable Mentions",
+                "New World of Warcraft Fan Art",
+                "Burning Crusade: System Requirements",
+                "WoW Comic Contest: Honorable Mentions",
+                "Burning Crusade Spells and Talents Updated",
+                "Hallow's End is Here",
+                "New Interface Preview: Looking For Group",
+                "WoW Gear Now In Stock!",
+                "WoW Comic Contest: Honorable Mentions",
+                "New World of Warcraft Fan Art",
+                "WoW Comic Contest: Honorable Mentions",
+                "World of Warcraft Accounts Closed Worldwide",
+                "New Burning Crusade Screenshots",
+                "WoW Comic Contest: Honorable Mentions",
+                "Burning Crusade Spells and Talents Updated",
+                "World of Warcraft Summer Movie Contest",
+                "WoW in New ABC Sitcom: \"Help Me Help You\"",
+                "Burning Crusade Spells and Talents Updated",
+                "WoW Comic Contest: Honorable Mentions",
+                "World of Warcraft Costume and Pumpkin Contests!",
+                "WoW Comic Contest: Honorable Mentions",
+                "World (of Warcraft) Saved by Heroes of South Park",
+                "New Realms",
+                "Burning Crusade Collector's Edition Announced!",
+                "World of Warcraft Comes to South Park Tonight",
+                "Burning Crusade Spells and Talents Updated",
+                "WoW Comic Contest: Honorable Mentions",
+                "World of Warcraft Two-Sided Map in Online Store",
+                "New Burning Crusade Screenshots",
+                "Harvest Festival Is Here",
+                "WoW Comic Contest: Honorable Mentions",
+                "More Old News"
+              ],
+              "posted_date_source": "posted",
+              "posted_date_node_count": 53,
+              "news_entry_date_node_count": 53,
+              "posted_date_records": [
+                {
+                  "token": "10-31-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 31,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-31-06"
+                },
+                {
+                  "token": "10-31-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 31,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-31-06"
+                },
+                {
+                  "token": "10-31-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 31,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-31-06"
+                },
+                {
+                  "token": "10-30-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 30,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-30-06"
+                },
+                {
+                  "token": "10-30-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 30,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-30-06"
+                },
+                {
+                  "token": "10-30-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 30,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-30-06"
+                },
+                {
+                  "token": "10-27-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 27,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-27-06"
+                },
+                {
+                  "token": "10-26-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 26,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-26-06"
+                },
+                {
+                  "token": "10-26-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 26,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-26-06"
+                },
+                {
+                  "token": "10-26-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 26,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-26-06"
+                },
+                {
+                  "token": "10-25-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 25,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-25-06"
+                },
+                {
+                  "token": "10-25-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 25,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-25-06"
+                },
+                {
+                  "token": "10-25-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 25,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-25-06"
+                },
+                {
+                  "token": "10-25-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 25,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-25-06"
+                },
+                {
+                  "token": "10-25-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 25,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-25-06"
+                },
+                {
+                  "token": "10-25-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 25,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-25-06"
+                },
+                {
+                  "token": "10-24-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 24,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-24-06"
+                },
+                {
+                  "token": "10-24-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 24,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-24-06"
+                },
+                {
+                  "token": "10-24-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 24,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-24-06"
+                },
+                {
+                  "token": "10-23-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 23,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-23-06"
+                },
+                {
+                  "token": "10-23-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 23,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-23-06"
+                },
+                {
+                  "token": "10-20-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 20,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-20-06"
+                },
+                {
+                  "token": "10-19-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 19,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-19-06"
+                },
+                {
+                  "token": "10-18-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 18,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-18-06"
+                },
+                {
+                  "token": "10-18-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 18,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-18-06"
+                },
+                {
+                  "token": "10-18-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 18,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-18-06"
+                },
+                {
+                  "token": "10-17-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 17,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-17-06"
+                },
+                {
+                  "token": "10-16-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 16,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-16-06"
+                },
+                {
+                  "token": "10-16-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 16,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-16-06"
+                },
+                {
+                  "token": "10-16-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 16,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-16-06"
+                },
+                {
+                  "token": "10-12-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 12,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-12-06"
+                },
+                {
+                  "token": "10-12-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 12,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-12-06"
+                },
+                {
+                  "token": "10-12-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 12,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-12-06"
+                },
+                {
+                  "token": "10-11-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 11,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-11-06"
+                },
+                {
+                  "token": "10-11-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 11,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-11-06"
+                },
+                {
+                  "token": "10-10-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 10,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-10-06"
+                },
+                {
+                  "token": "10-10-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 10,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-10-06"
+                },
+                {
+                  "token": "10-09-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 9,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-09-06"
+                },
+                {
+                  "token": "10-09-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 9,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-09-06"
+                },
+                {
+                  "token": "10-09-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 9,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-09-06"
+                },
+                {
+                  "token": "10-09-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 9,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-09-06"
+                },
+                {
+                  "token": "10-06-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 6,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-06-06"
+                },
+                {
+                  "token": "10-05-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 5,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-05-06"
+                },
+                {
+                  "token": "10-05-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 5,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-05-06"
+                },
+                {
+                  "token": "10-04-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 4,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-04-06"
+                },
+                {
+                  "token": "10-04-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 4,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-04-06"
+                },
+                {
+                  "token": "10-04-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 4,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-04-06"
+                },
+                {
+                  "token": "10-04-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 4,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-04-06"
+                },
+                {
+                  "token": "10-04-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 4,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-04-06"
+                },
+                {
+                  "token": "10-04-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 4,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-04-06"
+                },
+                {
+                  "token": "10-03-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 3,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-03-06"
+                },
+                {
+                  "token": "10-02-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 2,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-02-06"
+                },
+                {
+                  "token": "10-01-06",
+                  "year": 2006,
+                  "month": 10,
+                  "day": 1,
+                  "node_type": "posted",
+                  "tag": "span",
+                  "raw_text": "10-01-06"
+                }
+              ],
+              "posted_or_visible_date_tokens": [
+                "10-31-06",
+                "10-31-06",
+                "10-31-06",
+                "10-30-06",
+                "10-30-06",
+                "10-30-06",
+                "10-27-06",
+                "10-26-06",
+                "10-26-06",
+                "10-26-06",
+                "10-25-06",
+                "10-25-06",
+                "10-25-06",
+                "10-25-06",
+                "10-25-06",
+                "10-25-06",
+                "10-24-06",
+                "10-24-06",
+                "10-24-06",
+                "10-23-06",
+                "10-23-06",
+                "10-20-06",
+                "10-19-06",
+                "10-18-06",
+                "10-18-06",
+                "10-18-06",
+                "10-17-06",
+                "10-16-06",
+                "10-16-06",
+                "10-16-06",
+                "10-12-06",
+                "10-12-06",
+                "10-12-06",
+                "10-11-06",
+                "10-11-06",
+                "10-10-06",
+                "10-10-06",
+                "10-09-06",
+                "10-09-06",
+                "10-09-06",
+                "10-09-06",
+                "10-06-06",
+                "10-05-06",
+                "10-05-06",
+                "10-04-06",
+                "10-04-06",
+                "10-04-06",
+                "10-04-06",
+                "10-04-06",
+                "10-04-06",
+                "10-03-06",
+                "10-02-06",
+                "10-01-06"
+              ],
+              "posted_or_visible_year_months": [
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ],
+                [
+                  2006,
+                  10
+                ]
+              ],
+              "posted_date_evidence": {
+                "expected_year": 2006,
+                "expected_month": 10,
+                "date_field_count": 53,
+                "parseable_count": 53,
+                "unparseable_count": 0,
+                "matching_count": 53,
+                "mismatch_count": 0,
+                "matching_examples": [
+                  "10-31-06",
+                  "10-31-06",
+                  "10-31-06",
+                  "10-30-06",
+                  "10-30-06",
+                  "10-30-06",
+                  "10-27-06",
+                  "10-26-06",
+                  "10-26-06",
+                  "10-26-06"
+                ],
+                "mismatch_examples": [],
+                "month_counts": {
+                  "2006-10": 53
+                },
+                "date_range": {
+                  "min": "2006-10-01",
+                  "max": "2006-10-31"
+                },
+                "state": "match"
+              },
+              "article_month_evidence": {
+                "expected_year": 2006,
+                "expected_month": 10,
+                "date_field_count": 53,
+                "parseable_count": 53,
+                "unparseable_count": 0,
+                "matching_count": 53,
+                "mismatch_count": 0,
+                "matching_examples": [
+                  "10-31-06",
+                  "10-31-06",
+                  "10-31-06",
+                  "10-30-06",
+                  "10-30-06",
+                  "10-30-06",
+                  "10-27-06",
+                  "10-26-06",
+                  "10-26-06",
+                  "10-26-06"
+                ],
+                "mismatch_examples": [],
+                "month_counts": {
+                  "2006-10": 53
+                },
+                "date_range": {
+                  "min": "2006-10-01",
+                  "max": "2006-10-31"
+                },
+                "state": "match"
+              },
+              "article_posted_date_count": 53,
+              "article_posted_date_month_counts": {
+                "2006-10": 53
+              },
+              "article_posted_date_range": {
+                "min": "2006-10-01",
+                "max": "2006-10-31"
+              },
+              "event_date_evidence": {
+                "classification": "event_or_description_date_candidates",
+                "date_field_count": 0,
+                "date_tokens": [],
+                "year_months": [],
+                "examples": [],
+                "note": "Body-wide named/ISO dates are retained as event or description evidence and excluded from the article posted-month verdict."
+              },
+              "event_date_tokens": [],
+              "event_date_year_months": [],
+              "article_month_matches_url": true,
+              "source_anomaly": null
+            },
+            "actual_memento_capture_timestamp_match": true,
+            "actual_memento_at_or_before_anchor": true
+          }
+        }
+      ],
+      "category": "valid_html_payload",
+      "reason": "valid_html_payload",
+      "actual_memento": "2008-04-02T08:31:54+00:00",
+      "source_status": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "body_bytes": 180925,
+      "body_sha256": "4607f05fbd0f71bc30f94fe674a7b3aded0a36c0b12e2245c718b359a53b0a5b",
+      "validation": {
+        "body_bytes": 180925,
+        "body_sha256": "4607f05fbd0f71bc30f94fe674a7b3aded0a36c0b12e2245c718b359a53b0a5b",
+        "cdx_digest_expected": "ESRPAVRUCWBV4Z2CX3LG5DLP33HO4W7F",
+        "cdx_digest_calculated": "ESRPAVRUCWBV4Z2CX3LG5DLP33HO4W7F",
+        "cdx_digest_match": true,
+        "cdx_length": 18466,
+        "actual_memento": "2008-04-02T08:31:54+00:00",
+        "source_status": 200,
+        "content_type": "text/html;charset=UTF-8",
+        "raw_body_path": "raw/05-http_www.worldofwarcraft.com_news_rss-10-2006.xml-replay-proxy.body",
+        "raw_headers_path": "raw/05-http_www.worldofwarcraft.com_news_rss-10-2006.xml-replay-proxy.headers.txt",
+        "body_observation": {
+          "encoding": "utf-8",
+          "mime": "text/html",
+          "parse_ok": true,
+          "parse_error": null,
+          "title": "WoW -> Archived News -> October, 2006",
+          "headings": [
+            {
+              "tag": "h1",
+              "text": "1st Annual Blizzard Art Contest Winners Announced!"
+            },
+            {
+              "tag": "h1",
+              "text": "Blizzard's Elite Halloween Spooktacular"
+            },
+            {
+              "tag": "h1",
+              "text": "New World of Warcraft Wallpaper"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW 2nd Year Anniversary Sweepstakes"
+            },
+            {
+              "tag": "h1",
+              "text": "Jayne Goes to Outland"
+            },
+            {
+              "tag": "h1",
+              "text": "World of Warcraft Comic Contest: Winner"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "New World of Warcraft Wallpaper"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Guide Update: Raid Tips"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "World of Warcraft Card Game Now Available!"
+            },
+            {
+              "tag": "h1",
+              "text": "New Battlegroup Names"
+            },
+            {
+              "tag": "h1",
+              "text": "New Burning Crusade Screenshots"
+            },
+            {
+              "tag": "h1",
+              "text": "Blizzard Job Opportunities!"
+            },
+            {
+              "tag": "h1",
+              "text": "Burning Crusade Spells and Talents Updated"
+            },
+            {
+              "tag": "h1",
+              "text": "The Burning Crusade to be Released January 2007"
+            },
+            {
+              "tag": "h1",
+              "text": "Burning Crusade Spells and Talents Updated"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "New World of Warcraft Fan Art"
+            },
+            {
+              "tag": "h1",
+              "text": "Burning Crusade Closed Beta Previews"
+            },
+            {
+              "tag": "h1",
+              "text": "World of Warcraft Insider #10 Released"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "New World of Warcraft Fan Art"
+            },
+            {
+              "tag": "h1",
+              "text": "Burning Crusade: System Requirements"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "Burning Crusade Spells and Talents Updated"
+            },
+            {
+              "tag": "h1",
+              "text": "Hallow's End is Here"
+            },
+            {
+              "tag": "h1",
+              "text": "New Interface Preview: Looking For Group"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Gear Now In Stock!"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "New World of Warcraft Fan Art"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "World of Warcraft Accounts Closed Worldwide"
+            },
+            {
+              "tag": "h1",
+              "text": "New Burning Crusade Screenshots"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "Burning Crusade Spells and Talents Updated"
+            },
+            {
+              "tag": "h1",
+              "text": "World of Warcraft Summer Movie Contest"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW in New ABC Sitcom: \"Help Me Help You\""
+            },
+            {
+              "tag": "h1",
+              "text": "Burning Crusade Spells and Talents Updated"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "World of Warcraft Costume and Pumpkin Contests!"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "World (of Warcraft) Saved by Heroes of South Park"
+            },
+            {
+              "tag": "h1",
+              "text": "New Realms"
+            },
+            {
+              "tag": "h1",
+              "text": "Burning Crusade Collector's Edition Announced!"
+            },
+            {
+              "tag": "h1",
+              "text": "World of Warcraft Comes to South Park Tonight"
+            },
+            {
+              "tag": "h1",
+              "text": "Burning Crusade Spells and Talents Updated"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "World of Warcraft Two-Sided Map in Online Store"
+            },
+            {
+              "tag": "h1",
+              "text": "New Burning Crusade Screenshots"
+            }
+          ],
+          "content_identity_sha256": "a9d501d960867277f9d9034f0e1bfdf8e7995c8122c70f6af6f8065cf61d4f0e",
+          "content_preview": "WoW -> Archived News -> October, 2006 @import \"/new-hp/css/loader_screen.css\"; @import \"/shared/global/menu/topnav/topnav.css\"; var scriptsLoaded=0; if(document.location.href.indexOf(\"worldofwarcraft.com\") != -1) document.domain = \"worldofwarcraft.com\"; try { document.execCommand(\"BackgroundImageCache\", false, true); } catch(err) {} scriptsLoaded=1; // var agt=navigator.userAgent.toLowerCase(); var iePos = appVer.indexOf('msie'); var is_opera = (agt.indexOf(\"opera\") != -1); var is_ie = ((iePos!=",
+          "archive_markers": [
+            "error_404"
+          ],
+          "is_html": true
+        },
+        "body_format": "html",
+        "valid": true,
+        "validation_reason": "valid_html_payload",
+        "html_month_evidence": {
+          "declared_url_year": 2006,
+          "declared_url_month": 10,
+          "title": "WoW -> Archived News -> October, 2006",
+          "title_date_tokens": [
+            "October, 2006"
+          ],
+          "title_year_months": [
+            [
+              2006,
+              10
+            ]
+          ],
+          "title_month_evidence": {
+            "expected_year": 2006,
+            "expected_month": 10,
+            "date_field_count": 1,
+            "parseable_count": 1,
+            "unparseable_count": 0,
+            "matching_count": 1,
+            "mismatch_count": 0,
+            "matching_examples": [
+              "October, 2006"
+            ],
+            "mismatch_examples": [],
+            "month_counts": {
+              "2006-10": 1
+            },
+            "date_range": null,
+            "state": "match"
+          },
+          "h1_count": 53,
+          "h1_titles": [
+            "1st Annual Blizzard Art Contest Winners Announced!",
+            "Blizzard's Elite Halloween Spooktacular",
+            "New World of Warcraft Wallpaper",
+            "WoW 2nd Year Anniversary Sweepstakes",
+            "Jayne Goes to Outland",
+            "World of Warcraft Comic Contest: Winner",
+            "WoW Comic Contest: Honorable Mentions",
+            "New World of Warcraft Wallpaper",
+            "WoW Guide Update: Raid Tips",
+            "WoW Comic Contest: Honorable Mentions",
+            "World of Warcraft Card Game Now Available!",
+            "New Battlegroup Names",
+            "New Burning Crusade Screenshots",
+            "Blizzard Job Opportunities!",
+            "Burning Crusade Spells and Talents Updated",
+            "The Burning Crusade to be Released January 2007",
+            "Burning Crusade Spells and Talents Updated",
+            "WoW Comic Contest: Honorable Mentions",
+            "New World of Warcraft Fan Art",
+            "Burning Crusade Closed Beta Previews",
+            "World of Warcraft Insider #10 Released",
+            "WoW Comic Contest: Honorable Mentions",
+            "New World of Warcraft Fan Art",
+            "Burning Crusade: System Requirements",
+            "WoW Comic Contest: Honorable Mentions",
+            "Burning Crusade Spells and Talents Updated",
+            "Hallow's End is Here",
+            "New Interface Preview: Looking For Group",
+            "WoW Gear Now In Stock!",
+            "WoW Comic Contest: Honorable Mentions",
+            "New World of Warcraft Fan Art",
+            "WoW Comic Contest: Honorable Mentions",
+            "World of Warcraft Accounts Closed Worldwide",
+            "New Burning Crusade Screenshots",
+            "WoW Comic Contest: Honorable Mentions",
+            "Burning Crusade Spells and Talents Updated",
+            "World of Warcraft Summer Movie Contest",
+            "WoW in New ABC Sitcom: \"Help Me Help You\"",
+            "Burning Crusade Spells and Talents Updated",
+            "WoW Comic Contest: Honorable Mentions",
+            "World of Warcraft Costume and Pumpkin Contests!",
+            "WoW Comic Contest: Honorable Mentions",
+            "World (of Warcraft) Saved by Heroes of South Park",
+            "New Realms",
+            "Burning Crusade Collector's Edition Announced!",
+            "World of Warcraft Comes to South Park Tonight",
+            "Burning Crusade Spells and Talents Updated",
+            "WoW Comic Contest: Honorable Mentions",
+            "World of Warcraft Two-Sided Map in Online Store",
+            "New Burning Crusade Screenshots",
+            "Harvest Festival Is Here",
+            "WoW Comic Contest: Honorable Mentions",
+            "More Old News"
+          ],
+          "posted_date_source": "posted",
+          "posted_date_node_count": 53,
+          "news_entry_date_node_count": 53,
+          "posted_date_records": [
+            {
+              "token": "10-31-06",
+              "year": 2006,
+              "month": 10,
+              "day": 31,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-31-06"
+            },
+            {
+              "token": "10-31-06",
+              "year": 2006,
+              "month": 10,
+              "day": 31,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-31-06"
+            },
+            {
+              "token": "10-31-06",
+              "year": 2006,
+              "month": 10,
+              "day": 31,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-31-06"
+            },
+            {
+              "token": "10-30-06",
+              "year": 2006,
+              "month": 10,
+              "day": 30,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-30-06"
+            },
+            {
+              "token": "10-30-06",
+              "year": 2006,
+              "month": 10,
+              "day": 30,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-30-06"
+            },
+            {
+              "token": "10-30-06",
+              "year": 2006,
+              "month": 10,
+              "day": 30,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-30-06"
+            },
+            {
+              "token": "10-27-06",
+              "year": 2006,
+              "month": 10,
+              "day": 27,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-27-06"
+            },
+            {
+              "token": "10-26-06",
+              "year": 2006,
+              "month": 10,
+              "day": 26,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-26-06"
+            },
+            {
+              "token": "10-26-06",
+              "year": 2006,
+              "month": 10,
+              "day": 26,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-26-06"
+            },
+            {
+              "token": "10-26-06",
+              "year": 2006,
+              "month": 10,
+              "day": 26,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-26-06"
+            },
+            {
+              "token": "10-25-06",
+              "year": 2006,
+              "month": 10,
+              "day": 25,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-25-06"
+            },
+            {
+              "token": "10-25-06",
+              "year": 2006,
+              "month": 10,
+              "day": 25,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-25-06"
+            },
+            {
+              "token": "10-25-06",
+              "year": 2006,
+              "month": 10,
+              "day": 25,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-25-06"
+            },
+            {
+              "token": "10-25-06",
+              "year": 2006,
+              "month": 10,
+              "day": 25,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-25-06"
+            },
+            {
+              "token": "10-25-06",
+              "year": 2006,
+              "month": 10,
+              "day": 25,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-25-06"
+            },
+            {
+              "token": "10-25-06",
+              "year": 2006,
+              "month": 10,
+              "day": 25,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-25-06"
+            },
+            {
+              "token": "10-24-06",
+              "year": 2006,
+              "month": 10,
+              "day": 24,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-24-06"
+            },
+            {
+              "token": "10-24-06",
+              "year": 2006,
+              "month": 10,
+              "day": 24,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-24-06"
+            },
+            {
+              "token": "10-24-06",
+              "year": 2006,
+              "month": 10,
+              "day": 24,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-24-06"
+            },
+            {
+              "token": "10-23-06",
+              "year": 2006,
+              "month": 10,
+              "day": 23,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-23-06"
+            },
+            {
+              "token": "10-23-06",
+              "year": 2006,
+              "month": 10,
+              "day": 23,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-23-06"
+            },
+            {
+              "token": "10-20-06",
+              "year": 2006,
+              "month": 10,
+              "day": 20,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-20-06"
+            },
+            {
+              "token": "10-19-06",
+              "year": 2006,
+              "month": 10,
+              "day": 19,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-19-06"
+            },
+            {
+              "token": "10-18-06",
+              "year": 2006,
+              "month": 10,
+              "day": 18,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-18-06"
+            },
+            {
+              "token": "10-18-06",
+              "year": 2006,
+              "month": 10,
+              "day": 18,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-18-06"
+            },
+            {
+              "token": "10-18-06",
+              "year": 2006,
+              "month": 10,
+              "day": 18,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-18-06"
+            },
+            {
+              "token": "10-17-06",
+              "year": 2006,
+              "month": 10,
+              "day": 17,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-17-06"
+            },
+            {
+              "token": "10-16-06",
+              "year": 2006,
+              "month": 10,
+              "day": 16,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-16-06"
+            },
+            {
+              "token": "10-16-06",
+              "year": 2006,
+              "month": 10,
+              "day": 16,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-16-06"
+            },
+            {
+              "token": "10-16-06",
+              "year": 2006,
+              "month": 10,
+              "day": 16,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-16-06"
+            },
+            {
+              "token": "10-12-06",
+              "year": 2006,
+              "month": 10,
+              "day": 12,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-12-06"
+            },
+            {
+              "token": "10-12-06",
+              "year": 2006,
+              "month": 10,
+              "day": 12,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-12-06"
+            },
+            {
+              "token": "10-12-06",
+              "year": 2006,
+              "month": 10,
+              "day": 12,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-12-06"
+            },
+            {
+              "token": "10-11-06",
+              "year": 2006,
+              "month": 10,
+              "day": 11,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-11-06"
+            },
+            {
+              "token": "10-11-06",
+              "year": 2006,
+              "month": 10,
+              "day": 11,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-11-06"
+            },
+            {
+              "token": "10-10-06",
+              "year": 2006,
+              "month": 10,
+              "day": 10,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-10-06"
+            },
+            {
+              "token": "10-10-06",
+              "year": 2006,
+              "month": 10,
+              "day": 10,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-10-06"
+            },
+            {
+              "token": "10-09-06",
+              "year": 2006,
+              "month": 10,
+              "day": 9,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-09-06"
+            },
+            {
+              "token": "10-09-06",
+              "year": 2006,
+              "month": 10,
+              "day": 9,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-09-06"
+            },
+            {
+              "token": "10-09-06",
+              "year": 2006,
+              "month": 10,
+              "day": 9,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-09-06"
+            },
+            {
+              "token": "10-09-06",
+              "year": 2006,
+              "month": 10,
+              "day": 9,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-09-06"
+            },
+            {
+              "token": "10-06-06",
+              "year": 2006,
+              "month": 10,
+              "day": 6,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-06-06"
+            },
+            {
+              "token": "10-05-06",
+              "year": 2006,
+              "month": 10,
+              "day": 5,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-05-06"
+            },
+            {
+              "token": "10-05-06",
+              "year": 2006,
+              "month": 10,
+              "day": 5,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-05-06"
+            },
+            {
+              "token": "10-04-06",
+              "year": 2006,
+              "month": 10,
+              "day": 4,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-04-06"
+            },
+            {
+              "token": "10-04-06",
+              "year": 2006,
+              "month": 10,
+              "day": 4,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-04-06"
+            },
+            {
+              "token": "10-04-06",
+              "year": 2006,
+              "month": 10,
+              "day": 4,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-04-06"
+            },
+            {
+              "token": "10-04-06",
+              "year": 2006,
+              "month": 10,
+              "day": 4,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-04-06"
+            },
+            {
+              "token": "10-04-06",
+              "year": 2006,
+              "month": 10,
+              "day": 4,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-04-06"
+            },
+            {
+              "token": "10-04-06",
+              "year": 2006,
+              "month": 10,
+              "day": 4,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-04-06"
+            },
+            {
+              "token": "10-03-06",
+              "year": 2006,
+              "month": 10,
+              "day": 3,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-03-06"
+            },
+            {
+              "token": "10-02-06",
+              "year": 2006,
+              "month": 10,
+              "day": 2,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-02-06"
+            },
+            {
+              "token": "10-01-06",
+              "year": 2006,
+              "month": 10,
+              "day": 1,
+              "node_type": "posted",
+              "tag": "span",
+              "raw_text": "10-01-06"
+            }
+          ],
+          "posted_or_visible_date_tokens": [
+            "10-31-06",
+            "10-31-06",
+            "10-31-06",
+            "10-30-06",
+            "10-30-06",
+            "10-30-06",
+            "10-27-06",
+            "10-26-06",
+            "10-26-06",
+            "10-26-06",
+            "10-25-06",
+            "10-25-06",
+            "10-25-06",
+            "10-25-06",
+            "10-25-06",
+            "10-25-06",
+            "10-24-06",
+            "10-24-06",
+            "10-24-06",
+            "10-23-06",
+            "10-23-06",
+            "10-20-06",
+            "10-19-06",
+            "10-18-06",
+            "10-18-06",
+            "10-18-06",
+            "10-17-06",
+            "10-16-06",
+            "10-16-06",
+            "10-16-06",
+            "10-12-06",
+            "10-12-06",
+            "10-12-06",
+            "10-11-06",
+            "10-11-06",
+            "10-10-06",
+            "10-10-06",
+            "10-09-06",
+            "10-09-06",
+            "10-09-06",
+            "10-09-06",
+            "10-06-06",
+            "10-05-06",
+            "10-05-06",
+            "10-04-06",
+            "10-04-06",
+            "10-04-06",
+            "10-04-06",
+            "10-04-06",
+            "10-04-06",
+            "10-03-06",
+            "10-02-06",
+            "10-01-06"
+          ],
+          "posted_or_visible_year_months": [
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ],
+            [
+              2006,
+              10
+            ]
+          ],
+          "posted_date_evidence": {
+            "expected_year": 2006,
+            "expected_month": 10,
+            "date_field_count": 53,
+            "parseable_count": 53,
+            "unparseable_count": 0,
+            "matching_count": 53,
+            "mismatch_count": 0,
+            "matching_examples": [
+              "10-31-06",
+              "10-31-06",
+              "10-31-06",
+              "10-30-06",
+              "10-30-06",
+              "10-30-06",
+              "10-27-06",
+              "10-26-06",
+              "10-26-06",
+              "10-26-06"
+            ],
+            "mismatch_examples": [],
+            "month_counts": {
+              "2006-10": 53
+            },
+            "date_range": {
+              "min": "2006-10-01",
+              "max": "2006-10-31"
+            },
+            "state": "match"
+          },
+          "article_month_evidence": {
+            "expected_year": 2006,
+            "expected_month": 10,
+            "date_field_count": 53,
+            "parseable_count": 53,
+            "unparseable_count": 0,
+            "matching_count": 53,
+            "mismatch_count": 0,
+            "matching_examples": [
+              "10-31-06",
+              "10-31-06",
+              "10-31-06",
+              "10-30-06",
+              "10-30-06",
+              "10-30-06",
+              "10-27-06",
+              "10-26-06",
+              "10-26-06",
+              "10-26-06"
+            ],
+            "mismatch_examples": [],
+            "month_counts": {
+              "2006-10": 53
+            },
+            "date_range": {
+              "min": "2006-10-01",
+              "max": "2006-10-31"
+            },
+            "state": "match"
+          },
+          "article_posted_date_count": 53,
+          "article_posted_date_month_counts": {
+            "2006-10": 53
+          },
+          "article_posted_date_range": {
+            "min": "2006-10-01",
+            "max": "2006-10-31"
+          },
+          "event_date_evidence": {
+            "classification": "event_or_description_date_candidates",
+            "date_field_count": 0,
+            "date_tokens": [],
+            "year_months": [],
+            "examples": [],
+            "note": "Body-wide named/ISO dates are retained as event or description evidence and excluded from the article posted-month verdict."
+          },
+          "event_date_tokens": [],
+          "event_date_year_months": [],
+          "article_month_matches_url": true,
+          "source_anomaly": null
+        },
+        "actual_memento_capture_timestamp_match": true,
+        "actual_memento_at_or_before_anchor": true
+      },
+      "entity_valid": true,
+      "unrequested_reason": null
+    },
+    {
+      "rank": 3,
+      "target": "/news/rss-08-2007.xml",
+      "query_original": "http://www.worldofwarcraft.com/news/rss-08-2007.xml",
+      "year": 2007,
+      "month": 8,
+      "operation": "exact_CDX_then_at_most_one_eligible_replay",
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:85:Menu2_2_5",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:147",
+          "label": "August, 2007",
+          "href": "/news/rss-08-2007.xml "
+        }
+      ],
+      "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-08-2007.xml&matchType=exact&from=20040101&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=1000&showResumeKey=true",
+      "cdx": {
+        "query_performed": true,
+        "source_status": null,
+        "source_response_count": 0,
+        "capture_index_count": 0,
+        "eligible_status_200_count": 0,
+        "redirect_index_count": 0,
+        "capture_records": [],
+        "selected_capture": null,
+        "other_origin_metadata": {},
+        "attempts": [
+          {
+            "executed": true,
+            "attempt": 6,
+            "kind": "cdx",
+            "target_key": "http://www.worldofwarcraft.com/news/rss-08-2007.xml",
+            "transport": "proxy",
+            "url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-08-2007.xml&matchType=exact&from=20040101&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=1000&showResumeKey=true",
+            "started_utc": "2026-10-15T13:54:24.252695+00:00",
+            "finished_utc": "2026-10-15T13:54:44.317857+00:00",
+            "duration_ms": 20062.0,
+            "curl_exit": 28,
+            "source_status": null,
+            "connect_status": 200,
+            "content_type": null,
+            "location": null,
+            "retry_after": null,
+            "memento_datetime": null,
+            "redirects_requested": 0,
+            "automatic_redirects": 0,
+            "body_bytes": 0,
+            "body_sha256": null,
+            "transport_error": true,
+            "transport_reason": "no_http_status",
+            "raw": {
+              "headers": "raw/06-http_www.worldofwarcraft.com_news_rss-08-2007.xml-cdx-proxy.headers.txt",
+              "body": "raw/06-http_www.worldofwarcraft.com_news_rss-08-2007.xml-cdx-proxy.body",
+              "stderr": "raw/06-http_www.worldofwarcraft.com_news_rss-08-2007.xml-cdx-proxy.stderr.txt",
+              "trace": "raw/06-http_www.worldofwarcraft.com_news_rss-08-2007.xml-cdx-proxy.trace.txt",
+              "metrics": "raw/06-http_www.worldofwarcraft.com_news_rss-08-2007.xml-cdx-proxy.metrics.txt"
+            },
+            "cdx_parse_valid": false,
+            "cdx_parse_error": "no_200_source_response",
+            "dispatch_utc": "2026-10-15T13:54:24.250710+00:00",
+            "dispatch_monotonic": 39214.25,
+            "dispatch_interval_seconds": 6.938000000001921,
+            "gate_persisted_before_transport": true,
+            "local_zero_byte_body_placeholder": true,
+            "body_is_source_response": false
+          }
+        ],
+        "header_fields_observed": null,
+        "resume_keys_observed": [],
+        "resume_key_used": null,
+        "continuation_followed": false,
+        "body_bytes": 0,
+        "body_sha256": null,
+        "index_distribution": {
+          "statuscode": {},
+          "mimetype": {},
+          "origin_match_kind": {}
+        }
+      },
+      "selected_capture": null,
+      "replay_attempt_count": 0,
+      "replay_source_response_count": 0,
+      "replay_hops": [],
+      "category": "transport_error",
+      "reason": "no_http_status",
+      "actual_memento": null,
+      "source_status": null,
+      "content_type": null,
+      "body_bytes": 0,
+      "body_sha256": null,
+      "validation": null,
+      "entity_valid": false,
+      "unrequested_reason": "no_http_status"
+    }
+  ],
+  "raw_evidence_note": "Raw headers, traces, stderr and bodies remain only below this batch raw directory. A zero-byte no-response body is a local placeholder, not source content; CONNECT is excluded; CDX length is index metadata, not payload bytes."
+}
