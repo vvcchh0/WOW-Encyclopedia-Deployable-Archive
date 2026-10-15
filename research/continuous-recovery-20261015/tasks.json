@@ -1,6 +1,7 @@
 {
   "schema": "continuous-wow-recovery-tasks/v1",
   "deadline_utc": "2026-10-15T14:44:00Z",
+  "updated_utc": "2026-10-15T07:25:11.457433+00:00",
   "coordination": {
     "heartbeat_id": "wow-8",
     "heartbeat_interval_minutes": 15,
@@ -11,14 +12,26 @@
   "tasks": [
     {
       "id": "LOCAL-SIDEBAR-001",
-      "status": "running",
+      "status": "accepted",
       "owner": "sidebar_local_audit",
       "goal": "Audit all sidebar menu observations against the accepted v8 derivative and extract evidence-backed dependency gaps.",
       "write_scope": "research/continuous-recovery-20261015/sidebar-audit/**",
       "inputs": ["research/navigation-gaps-20261015/inventory.json", ".scratch/pages-resources-20261015-v8/__offline/route-map.json"],
       "network": false,
       "acceptance": ["Count conservation for 588 in-scope observations and 653 excluded observations", "Every reported gap has a local evidence pointer", "Current page, resources and interaction states are separate", "No production or frozen-baseline modifications"],
-      "stop": "25 minute batch; report infrastructure failure or required interface/scope change"
+      "stop": "25 minute batch; report infrastructure failure or required interface/scope change",
+      "result": {
+        "menu_observations": 1241,
+        "reviewed_legacy_observations": 579,
+        "resolved_observations": 1067,
+        "resolved_distinct_files": 449,
+        "missing_route_observations": 40,
+        "distinct_missing_routes": 35,
+        "external_or_dynamic_observations": 54,
+        "additional_sensitive_observations": 6,
+        "acceptance": "research/continuous-recovery-20261015/sidebar-acceptance.json",
+        "current_ledger": "research/continuous-recovery-20261015/ledger.current.json"
+      }
     },
     {
       "id": "NET-KARAZHAN-001",
@@ -44,8 +57,8 @@
     },
     {
       "id": "NET-CONTROL-002",
-      "status": "cooldown_pending",
-      "owner": "wayback_recheck_batch1 (idle until explicit followup)",
+      "status": "accepted_ready",
+      "owner": "wayback_recheck_batch1 (idle after accepted control)",
       "goal": "After at least fifteen minutes of cooldown, test one previously decoded JPEG control before choosing any new recovery batch.",
       "not_before_utc": "2026-10-15T07:14:35.213520+00:00",
       "write_scope": "research/continuous-recovery-20261015/network-control2/**",
@@ -53,7 +66,28 @@
       "network": true,
       "limits": {"control_targets": 1, "source_requests": 2, "direct_then_proxy": true, "automatic_redirects": 0},
       "acceptance": ["Expected 3347 bytes, JPEG 150x110, SHA256 45936113efa432f3c8188445ae255108c2af3d06fecf902202f0611068a74a11", "Source HTTP status excludes CONNECT", "Actual Memento is independent of requested timestamp"],
-      "stop": "Control failure; any limit or 429/503. Do not rerun the thirty-target batch after a failed control."
+      "stop": "Control failure; any limit or 429/503. Do not rerun the thirty-target batch after a failed control.",
+      "result": {
+        "started_utc": "2026-10-15T07:15:13.812985+00:00",
+        "request_window_finished_utc": "2026-10-15T07:15:20.778089+00:00",
+        "source_request_count": 2,
+        "source_response_count": 1,
+        "ready": true,
+        "acceptance": "research/continuous-recovery-20261015/control2-acceptance.json",
+        "new_recovered_assets": 0
+      }
+    },
+    {
+      "id": "LOCAL-TARGET-RECONCILE-002",
+      "status": "running",
+      "owner": "sidebar_local_audit",
+      "goal": "Reconcile all 35 distinct missing menu targets against local raw entities and prove any proposed route alias before choosing the next network batch.",
+      "write_scope": "research/continuous-recovery-20261015/local-target-reconcile/**",
+      "inputs": ["research/continuous-recovery-20261015/sidebar-audit/audit.json", "offline/build-manifest.json", ".scratch/offline-navigation-20261015-v7c"],
+      "network": false,
+      "limits": {"minutes": 15, "targets": 35},
+      "acceptance": ["35 target count conservation", "Existing raw entity byte length and SHA256 are read", "News RSS and HTML monthly pages are not treated as aliases without evidence", "Each proposed network query links a source-menu line and local search evidence"],
+      "stop": "Fifteen minute batch or required interface/scope change; no broad raw-file scan or network requests"
     }
   ]
 }

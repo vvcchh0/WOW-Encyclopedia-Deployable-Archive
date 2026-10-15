@@ -8,6 +8,8 @@
 
 每条观察分别记录页面状态、资源状态、交互状态、来源证据、关联任务与下一动作。旧盘点针对 v5 派生版，其覆盖状态保留在 `prior_inventory_status`；当前状态须核对 v8 后更新。页面可达不等于图片、Flash 或历史交互完整，补充素材的实际捕获日期单独记录。
 
+07:25 UTC 已完成[独立侧栏验收](../research/continuous-recovery-20261015/sidebar-acceptance.json)并生成[当前总账](../research/continuous-recovery-20261015/ledger.current.json)。旧 `Legacy menu` 按真实源文件分组：`menu1_var.js` 的 44 条归 News，`menu3_var.js` 的 511 条归 Game Guide，晚期 XML 的 24 条归其 Account、Forums、Support 类目。保留 `prior_group` 和分组理由，不改写旧盘点。
+
 当前任务和验收条件保存在[任务队列](../research/continuous-recovery-20261015/tasks.json)。各批次在独立目录保存候选队列、逐请求结果、原始响应与脱敏回执；新增有效实体先验证，再决定是否接入派生版。旧原始包、失败记录与检查点保留。
 
 ## 第一批
@@ -24,6 +26,16 @@
 统筹[独立验收](../research/continuous-recovery-20261015/network-batch1-acceptance.json)逐一重读全部原始响应头、长度与 SHA256，核对未存档提示、图片解码和冻结清单；验收没有发起网络请求。Karazhan 126 个目标当前累计 73 个取得未存档内容判定，53 个仍未获得内容判定。本批[脱敏逐项回执](../research/continuous-recovery-20261015/wayback-karazhan-batch1/sanitized-summary.md)保留未请求项及停止原因。
 
 网络进入至少 15 分钟冷却，最早 `2026-10-15T07:14:35.213520Z` 才检查一个已知可解码 JPEG 控制对象。若控制失败，不重发本批目标；继续本地审计，留到下一检查点再评估。控制对象来源为[此前控制回执](../research/tls-poll-20261015/summary.json)，预期 3,347 字节、150×110 JPEG，摘要和实际捕获日期须重新核对。
+
+`NET-CONTROL-002` 随后在 07:15:13–07:15:20 UTC 执行：direct 在约四秒连接超时，proxy 返回真实源 HTTP 200。独立重读原始响应与正文后，确认 3,347 字节、SHA256、150×110 JPEG 与实际 Memento `2008-05-12T21:26:53Z` 均匹配。[控制验收](../research/continuous-recovery-20261015/control2-acceptance.json)为 ready；这是一份已有对象的连接控制，没有新增恢复素材，也不推定所有目标均可访问。
+
+### 侧栏结果与第二批本地工作
+
+修正后的[逐项审计](../research/continuous-recovery-20261015/sidebar-audit/audit.md)包含全部 1,241 条菜单观察。1,167 条纳入当前本地状态检查，其中 1,067 条解析为真实页面或别名，对应 **449 个不同文件**；54 条为外部或动态入口，6 条为新识别的账号或登录支持入口，40 条缺路由观察对应 **35 个不同地址**。另有原始明示范围排除的 74 条保留排除记录。
+
+独立验收核对全部菜单身份与索引、全部已解析页面的路由、长度和 SHA256、全部缺失路由键以及六个规范化误报样例。交互结论仅为静态引用迹象；资源扫描与 Flash 引用不当作浏览器运行验收或独立缺页数。根代理并发更新的 `CHANGELOG.md` 仅作为上下文摘要漂移记录，关键输入和冻结清单摘要未变化。
+
+35 个地址以 2006–2008 年 RSS 月份、2005 年旧新闻月页和年页为主，另有 BC professions、PTR、Battlegroups 与 WLK artwork。`LOCAL-TARGET-RECONCILE-002` 先在本地核对它们是否已有原始实体或可证明的规范路由，输出精确网络查询队列；在这一步验收前不扩大网络批次。RSS XML 和新闻 HTML 不能仅因月份相同就互相映射。生产文件尚未修改。
 
 ## 取舍与后续顺序
 

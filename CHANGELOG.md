@@ -9,6 +9,7 @@
 
 ## 2026-10-15
 
+- 完成 1,241 条菜单观察的本地审计，确认 35 个不同内容地址缺少路由，主要涉及旧新闻与 RSS；启动原始实体及别名核对。冷却后的 JPEG 控制测试通过，代理可取得有效图片，直连仍超时。[持续恢复总账](docs/continuous-recovery-20261015.md)
 - 将九个本地提交推送至 GitHub，并发布新版 Pages；12 个线上对象与本地一致。启动按侧栏逐项检查的持续恢复，旧菜单中 579 条未分组观察重新纳入审计。[发布与后续安排](docs/github-sync-20261015.md)
 - Karazhan 新一批检查确认 14 个未存档资源，累计 73/126 个目标已取得内容判定，53 个仍受连接故障影响；本轮未取得新图片。[持续恢复总账](docs/continuous-recovery-20261015.md)
 - 本地补回 MEDIA Screenshot of the Day 的两张原图，修复历史日期计算、缩略显示与 Community 菜单分组，并恢复 Archived News 的五处旧地址跳转。[截图与导航恢复](docs/media-and-navigation-recovery-20261015.md)
