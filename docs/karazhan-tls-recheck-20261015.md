@@ -16,6 +16,7 @@
 - 本机代理为 `127.0.0.1:7890`，监听进程 `clash-win64`。同代理访问 Cloudflare 可以完成 TLS 并取得 HTTP 200。
 - Wayback 已知 JPEG 对照在约 11:10:51 和 11:11:44 分别通过 Windows curl/Schannel、Python urllib/OpenSSL 成功取得，长度和摘要与原件一致。稍后的两个客户端对照均在 TLS 握手中失败：Schannel 报 `failed to receive handshake`，OpenSSL 报 `UNEXPECTED_EOF_WHILE_READING`。
 - 强制 TLS 1.2，以及仅对当前代理请求指定 HTTPS DNS 回答的目标 IP，均未恢复握手。代理已返回 CONNECT 200，但 Wayback TLS 没有完成，没有出现源站 HTTP 状态或证书校验失败消息。
+- 只读配置检查发现 `archive.org` 后缀规则指向代理选择组，并非显式 DIRECT；相关日志没有给出对应 EOF/reset/TLS 原因。未调用控制器，因此实际出口节点及失败位置仍未确认。
 
 现有证据更支持 **Wayback 目标连接链路的间歇性中断**。系统 DNS 差异是一个实际问题线索，但指定地址后的失败表明它不能解释全部故障。跨 TLS 客户端复现也降低了单一 Schannel 实现问题的可能性。仅凭客户端记录，还不能定位连接由 Clash、上游代理、网络中间层还是远端关闭；也没有证据把 TLS 故障解释成 HTTP 429。
 
@@ -26,5 +27,6 @@
 - [逐项最终报告](../research/karazhan-recheck-20261015/batch-report.final.json)与[独立验收](../research/karazhan-recheck-20261015/root-acceptance.json)。
 - [DNS 对照](../research/karazhan-recheck-20261015/dns-parent/summary.json)、[默认传输对照](../research/karazhan-recheck-20261015/control-parent/summary.json)、[跨客户端及进程内参数对照](../research/karazhan-recheck-20261015/tls-parent/summary.json)。
 - [前次限时检查](karazhan-gallery-accessibility-20261014.md)。
+- [Clash 本地配置与日志检查](../research/karazhan-recheck-20261015/proxy-local/clash-local-evidence.md)。
 
 初始批次报告把 CONNECT 200 误记为源站响应，将 67 项 TLS 失败归入其他响应，连续传输失败停批也因此没有触发。父代理依据全部原始响应离线更正报告，并修正脚本的状态解析；没有为更正重发请求。初始报告与原始响应保留在本地，Git 保存最终报告。全部地址已尝试，不等于全部地址都取得了可用于判断存档内容的响应。
