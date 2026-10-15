@@ -1,0 +1,1 @@
+screenshotsLocTotal = 1;
