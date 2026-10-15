@@ -1,0 +1,85 @@
+{
+  "schema": "wow-v13-root-final-acceptance/v1",
+  "checked_utc": "2026-10-15T13:43:00.305095+00:00",
+  "accepted": true,
+  "ready_for_pages_publication": true,
+  "published": false,
+  "gates": {
+    "source": {
+      "path": "research/v13-integration/root-source-acceptance.json",
+      "sha256": "24d9e3609f186cbeadea73a219ccc8422e283e4f41c0414b44cd20a2656c9d6a",
+      "accepted": true
+    },
+    "export": {
+      "path": "research/v13-integration/root-export-acceptance.json",
+      "sha256": "e6c628963ab5b40c7a500eebfe35e3cbe87e4ceb5dc7f2ea76e37570e7bea1fe",
+      "accepted": true
+    },
+    "routes": {
+      "path": "research/v13-integration/root-sidebar-check.json",
+      "sha256": "664aca3327db6fab63a732b8181057c1ece2df768582b1063d84e1d64db3a3c9",
+      "accepted": true
+    },
+    "browser": {
+      "path": "research/continuous-recovery-20261015/v13-browser-independent-review.json",
+      "sha256": "af70fc1089723466a285cab91188f11316bfa3b311cd1a67a08720ad9e7304f4",
+      "accepted": true
+    },
+    "code": {
+      "path": "research/v13-integration/root-code-acceptance.json",
+      "sha256": "4382ed5c89858fbb017dc577e0c6b53c82f46452b39ec8090580fd1eb708b90f",
+      "accepted": true
+    },
+    "patch_independent": {
+      "path": "research/continuous-recovery-20261015/news-toggle-derived-fix-027-independent-acceptance.json",
+      "sha256": "721674c012d05099da49bd094d31c53099e5233a0bae17bbbfba5f3682a28166",
+      "accepted": true
+    },
+    "prior_browser": {
+      "path": "research/continuous-recovery-20261015/v11-browser-independent-review.json",
+      "sha256": "0a731b52b572e2e50563686e4fd67929ad6c8c808c838f7505adae75a715dfae",
+      "accepted": true
+    }
+  },
+  "unit_test_reuse": {
+    "receipt_sha256": "9b70b8bff13a4f478a991cc6e5894cff021564ecfcdb75ea5ab184ada173907b",
+    "tests_run": 44,
+    "exit_code": 0,
+    "reason": "New toggle implementation passed the 44-test relevant suite; current code hashes are bound without repeating it."
+  },
+  "tested_implementation": [
+    {
+      "path": "tools/export_github_pages.py",
+      "sha256": "636925a2b9721f408b7d9225d3c8e63c2bab1232b51225a8963c6f9cd443258e",
+      "matches_tested_code": true
+    },
+    {
+      "path": "tests/test_github_pages_export.py",
+      "sha256": "7602f461833aeb5a1206d33b779ac4ffb7fe4d5f9236559771b72f5f35c659aa",
+      "matches_tested_code": true
+    }
+  ],
+  "root_visual_reviews": {
+    "checked_utc": "2026-10-15T13:42:03.789171+00:00",
+    "images": [
+      {
+        "path": "research/v13-integration/browser/screenshots/v13-anchor-center-expanded-3.png",
+        "sha256": "08ee8f0b3e9d307505c211277be462fcbd3adae96b494a894986afe54a3254fd",
+        "reviewed_by_root": true
+      }
+    ],
+    "observations": "Real anchor-center click exposes July 30 2007 World of Warcraft Comic Contest article, historical comic image and text in preserved layout; minus control visible. Existing image bytes reused, no new image recovery claimed."
+  },
+  "source_records": 8347,
+  "declared_export_objects": 8486,
+  "retained_image_overlays": 38,
+  "new_source_entities": 3,
+  "new_original_images": 0,
+  "new_stylesheets": 0,
+  "remaining_missing_sidebar_routes": 10,
+  "new_sidebar_pages": 3,
+  "known_gaps": "Game Guide player screenshot originals/thumbnails remain unavailable locally; other historical asset gaps persist.",
+  "scope": "Three new news pages, all current export bytes, conserved menu identities and focused real-click and Enter regression checks for the new derived news anchors; unchanged v11 image/viewer evidence reused.",
+  "frozen_manifest_sha256": "397f7dcdbc774d80c6f8c1f3dabf7933211ff182427bd2ef77c895752334f459",
+  "errors": []
+}

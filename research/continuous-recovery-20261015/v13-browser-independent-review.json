@@ -1,0 +1,325 @@
+{
+  "schema": "continuous-wow-v13-browser-independent-review/v1",
+  "checked_utc": "2026-10-15T13:42:01.869351+00:00",
+  "accepted": true,
+  "actual_receipt": {
+    "path": "research/v13-integration/browser/v13-browser-receipt.json",
+    "bytes": 1660339,
+    "sha256": "faa428f0acfdec282e417a253b375243b67a55ad87a9b39ccac437e56678e1e9"
+  },
+  "execution_binding": {
+    "path": "research/v13-integration/browser/execution-binding.json",
+    "bytes": 7166,
+    "sha256": "b5b3fbc2a6b360121452f388097255c2508cb748111febb7dd537565ec656c4a"
+  },
+  "preliminary_setup_failure": {
+    "receipt": {
+      "path": "research/v13-integration/browser/v13-browser-receipt.setup-date-map-failure.json",
+      "bytes": 6268,
+      "sha256": "1de8941130fbdb44b78908de83de0fb503e1b95cada6fae87af36b896c7b990d"
+    },
+    "status": "runner_error",
+    "executed_browser_checks": 0,
+    "requests": 0,
+    "cause": "Harness compared unique date-key count instead of article-date frequency sum. Actual selected source has repeated dates. Only local frequency-sum check changed; product/source unchanged.",
+    "recorded_runner_sha256": "f7268d49420200dedc56bb6c6dd89722f1fc9769697ee7a2b0e7fcd8fcc2ae69"
+  },
+  "execution": {
+    "final_checks": 8,
+    "passed": 8,
+    "failed": 0,
+    "skipped": 0,
+    "window": [
+      "2026-10-15T13:38:32.181Z",
+      "2026-10-15T13:38:44.945Z"
+    ],
+    "command": {
+      "argv": [
+        "D:\\WOW_Encyclopedia\\research\\v13-integration\\browser\\v13_acceptance.js",
+        "--server-ready",
+        "--base-url",
+        "http://127.0.0.1:29009",
+        "--prefix",
+        "/WOW-Encyclopedia-Deployable-Archive/",
+        "--playwright-module",
+        "C:/Users/17630/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright",
+        "--manifest",
+        ".scratch/offline-navigation-20261015-v13/build-manifest.json",
+        "--expected-manifest-sha256",
+        "b9f26e1aa4544b5b1279c7a7e54acbf1306da5518c6a3b7aa685e05df9cfbdc9",
+        "--provenance",
+        ".scratch/pages-resources-20261015-v13/export-provenance.json",
+        "--route-map",
+        ".scratch/pages-resources-20261015-v13/__offline/route-map.json",
+        "--source-receipt",
+        "research/v13-integration/source/v13-source-receipt.json",
+        "--source-plan",
+        "research/v13-integration/source/v13-source-plan.json",
+        "--selected",
+        "research/continuous-recovery-20261015/selected-rss18-source-map.json",
+        "--acceptance",
+        "research/continuous-recovery-20261015/rss18-acceptance.json",
+        "--production-file",
+        "tools/export_github_pages.py",
+        "--output",
+        "research/v13-integration/browser/v13-browser-receipt.json",
+        "--screenshot-dir",
+        "research/v13-integration/browser/screenshots"
+      ],
+      "node": "C:\\Users\\17630\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+      "cwd": "D:\\WOW_Encyclopedia"
+    }
+  },
+  "verified_actual_input_bindings": [
+    {
+      "path": "research/v13-integration/browser/v13_acceptance.js",
+      "bytes": 31018,
+      "sha256": "c7708f57e87e5fadb5bc85bcf79e5a9396d8a2b0da5282dd39e0d42fa23e87df"
+    },
+    {
+      "path": ".scratch/offline-navigation-20261015-v13/build-manifest.json",
+      "bytes": 75473776,
+      "sha256": "b9f26e1aa4544b5b1279c7a7e54acbf1306da5518c6a3b7aa685e05df9cfbdc9"
+    },
+    {
+      "path": "research/v13-integration/source/v13-source-receipt.json",
+      "bytes": 10480,
+      "sha256": "e3f2f51c4be9eaa10e30e0143fc301b166dbc4e84feb134933658f8e9d1befe2"
+    },
+    {
+      "path": "research/v13-integration/source/v13-source-plan.json",
+      "bytes": 14211,
+      "sha256": "118d767da3a0f6ce4588ccde079a6832d3c93d5890991da3210af03bf5bc0ff1"
+    },
+    {
+      "path": "research/continuous-recovery-20261015/selected-rss18-source-map.json",
+      "bytes": 5212,
+      "sha256": "e3af3c2c9cb8c40b96bd5a6964d32faac92d4a2e6da158bcb34ad9b59313c591"
+    },
+    {
+      "path": "research/continuous-recovery-20261015/rss18-acceptance.json",
+      "bytes": 4186,
+      "sha256": "e5ed5e6ada59892ef211442eac60e8378742f8e3c95b9533188a8da0f290ca74"
+    },
+    {
+      "path": ".scratch/pages-resources-20261015-v13/export-provenance.json",
+      "bytes": 7866929,
+      "sha256": "f1929a7f478e6579c8b1a809e512d46ca150872b4f2780787ad6d3884e42624b"
+    },
+    {
+      "path": ".scratch/pages-resources-20261015-v13/__offline/route-map.json",
+      "bytes": 1143610,
+      "sha256": "daa80a87e2b6c7309cf7096181fe4b10f7ca05d4eaa2f7a68e75b040064d4af6"
+    },
+    {
+      "path": "tools/export_github_pages.py",
+      "bytes": 135685,
+      "sha256": "636925a2b9721f408b7d9225d3c8e63c2bab1232b51225a8963c6f9cd443258e"
+    }
+  ],
+  "page_scope": "September2006 38, May2008 11, December2007 29 actual posted-date entries exactly match news-entry dates and corresponding month/year; titles match. May is capture-specific May1-8 partial month. Expanded HTML, not original RSS XML.",
+  "CSS_scope": "Each of the three pages attaches the actual109B shared CSS with expected SHA and HTTP200.",
+  "native_interactions": [
+    {
+      "name": "toggle:title",
+      "actions": [
+        {
+          "method": "Playwright locator.click",
+          "selector": "h1 a",
+          "coordinates": null
+        },
+        {
+          "method": "Playwright locator.click",
+          "selector": "h1 a",
+          "coordinates": null
+        }
+      ],
+      "classes": [
+        "news-collapse",
+        "news-expand",
+        "news-collapse"
+      ],
+      "news_item_display": [
+        "none",
+        "block",
+        "none"
+      ],
+      "news_item_visible": [
+        false,
+        true,
+        false
+      ],
+      "anchor_box": {
+        "width": 14,
+        "height": 11
+      },
+      "href": "javascript:toggleEntry('7-30-07-513','')",
+      "parent_onclick": "javascript:toggleEntry('7-30-07-513','')"
+    },
+    {
+      "name": "toggle:li-center",
+      "actions": [
+        {
+          "method": "page.mouse.click",
+          "selector": "li.news-toggle center",
+          "coordinates": {
+            "x": 1017.5,
+            "y": 506.296875,
+            "width": 14,
+            "height": 11
+          }
+        },
+        {
+          "method": "page.mouse.click",
+          "selector": "li.news-toggle center",
+          "coordinates": {
+            "x": 1017.5,
+            "y": 511.296875,
+            "width": 14,
+            "height": 11
+          }
+        }
+      ],
+      "classes": [
+        "news-collapse",
+        "news-expand",
+        "news-collapse"
+      ],
+      "news_item_display": [
+        "none",
+        "block",
+        "none"
+      ],
+      "news_item_visible": [
+        false,
+        true,
+        false
+      ],
+      "anchor_box": {
+        "width": 14,
+        "height": 11
+      },
+      "href": "javascript:toggleEntry('7-30-07-513','')",
+      "parent_onclick": "javascript:toggleEntry('7-30-07-513','')"
+    },
+    {
+      "name": "toggle:anchor-center",
+      "actions": [
+        {
+          "method": "page.mouse.click",
+          "selector": "li.news-toggle a center",
+          "coordinates": {
+            "x": 1017.5,
+            "y": 506.296875,
+            "width": 14,
+            "height": 11
+          }
+        },
+        {
+          "method": "page.mouse.click",
+          "selector": "li.news-toggle a center",
+          "coordinates": {
+            "x": 1017.5,
+            "y": 511.296875,
+            "width": 14,
+            "height": 11
+          }
+        }
+      ],
+      "classes": [
+        "news-collapse",
+        "news-expand",
+        "news-collapse"
+      ],
+      "news_item_display": [
+        "none",
+        "block",
+        "none"
+      ],
+      "news_item_visible": [
+        false,
+        true,
+        false
+      ],
+      "anchor_box": {
+        "width": 14,
+        "height": 11
+      },
+      "href": "javascript:toggleEntry('7-30-07-513','')",
+      "parent_onclick": "javascript:toggleEntry('7-30-07-513','')"
+    },
+    {
+      "name": "toggle:anchor-enter",
+      "actions": [
+        {
+          "method": "locator.focus + locator.press(Enter)",
+          "selector": "li.news-toggle a",
+          "coordinates": null,
+          "active_before": {
+            "tag": "A",
+            "href": "javascript:toggleEntry('7-30-07-513','')"
+          },
+          "active_after": {
+            "tag": "A",
+            "href": "javascript:toggleEntry('7-30-07-513','')"
+          }
+        },
+        {
+          "method": "locator.focus + locator.press(Enter)",
+          "selector": "li.news-toggle a",
+          "coordinates": null,
+          "active_before": {
+            "tag": "A",
+            "href": "javascript:toggleEntry('7-30-07-513','')"
+          },
+          "active_after": {
+            "tag": "A",
+            "href": "javascript:toggleEntry('7-30-07-513','')"
+          }
+        }
+      ],
+      "classes": [
+        "news-collapse",
+        "news-expand",
+        "news-collapse"
+      ],
+      "news_item_display": [
+        "none",
+        "block",
+        "none"
+      ],
+      "news_item_visible": [
+        false,
+        true,
+        false
+      ],
+      "anchor_box": {
+        "width": 14,
+        "height": 11
+      },
+      "href": "javascript:toggleEntry('7-30-07-513','')",
+      "parent_onclick": "javascript:toggleEntry('7-30-07-513','')"
+    }
+  ],
+  "reviewer_note": "Visibility checks use the selected news_item/description, not the top-level document body (which remains visible in all states). Each fresh context performs two real activations. Marker repairs are derived compatibility, not new historical payload recovery.",
+  "network_safety": {
+    "requests_read": 1911,
+    "responses_read": 1911,
+    "all_actual_requests_loopback_GET_HEAD": true,
+    "all_responses_200": true,
+    "blocked": 0,
+    "unknown_404": 0,
+    "request_errors": 0,
+    "page_errors": 0,
+    "console_errors": 0
+  },
+  "screenshot": {
+    "path": "research/v13-integration/browser/screenshots/v13-anchor-center-expanded-3.png",
+    "bytes": 171600,
+    "sha256": "08ee8f0b3e9d307505c211277be462fcbd3adae96b494a894986afe54a3254fd"
+  },
+  "visual_review": "Reviewer inspected the one PNG: July30 Comic Contest entry visibly expanded with body and historical comic illustration; minus control present. This image is prior content, not a newly acquired original.",
+  "known_gaps": "Existing placeholder URLs/SVGs can return200; no new original-image recovery inferred from those responses. Full resource/interaction audit not rerun.",
+  "no_browser_rerun_by_reviewer": true,
+  "errors": []
+}

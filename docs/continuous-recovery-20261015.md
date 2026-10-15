@@ -256,8 +256,25 @@ B 只执行已授权 CONTROL019 的同一 CSS109B 连接检查；八目标 NET02
 CONTROL019 已独立接受：两次尝试 direct curl28、proxy真实源200；CSS109B、Memento2007-03-22、正文 SHA/CDX digest 参考一致，mono间隔4.219s、UTC4.216279s，磁盘前后满足边界，无CDX/跳转/新增资源。B现idle；NET020仍仅提案。A只准备 v13 的三新月页与四种真实新闻展开交互 runner，等待 root 新预览 READY。
 
 
-### 13:45 UTC — v13 实际预览验收与唯一降频批次
+### v13 实际预览验收与唯一降频批次
 
 Root 已实际导出 v13（8347来源、8486声明文件、450个匹配新闻锚点），29009预览READY；A已收到正式执行指令，验三新月页与真实title/li/anchor pointer/Enter两次切换，不重跑图库矩阵。正式 root 最终验收和发布仍待完成，当前已发布版本保持v12。
 
 CONTROL019 accepted 后 root 明确批准 NET020：B唯一执行者按既定八exact地址，pre-anchor单CDX页和每页最多一回放，32attempt/480s旧边界；最低UTC5.0s、实际mono gate5.1s独立验收，14:05 UTC硬停止新获取，五连续传输失败/429503立即停批，无自动control或下一批。素材与冻结v13分离，是否下一版本由root依据剩余时间另行决定。
+
+
+### 2026-10-15T13:44:26.584001+00:00 — v13 本地最终验收与页面总账
+
+v13 的 root 全量导出验收8486声明文件/561092659B、38overlay守恒，菜单复核1096个已接通观察/473个文件，剩11观察/10个不同URL。浏览最终8/8真实检查独立接受，三个月页日期38/11/29一致，四种真实新闻交互均连续展开/收起；首轮harness在浏览前失败（0request/0browsercheck）独立保留，不当产品失败或已执行检查。唯一PNG已目视正文展开与减号正常。
+
+更新current ledger页面层到本地尚未发布v13；逐字节快照原已发布v12总账，1241项全部资源/交互旧版本字段守恒，不宣称全站资源重新审计。published字段仍为v12/c479d9，等待真实线上验收再切换。main47fc2b902f762ac072cd70662dc7f0d69431ea75已由root正常push/API核实。
+
+
+### 2026-10-15T13:50:28.333130+00:00 — v13 已发布，最终新闻来源待整合
+
+Pages commit4af35dd54a2bea0cc17d8d4bcc47263f68e94969已由root发布；API前后built一致，11/11线上对象direct HTTP200、长度/SHA/MIME与本地一致。published ledger现切v13；原local accepted ledger逐字节保存为ledger.v13-local-accepted-prepublication.json，1241项与summary完全不变。
+
+NET020独立接受七份真实 expanded HTML（Nov/Oct/Sep/Mar/Feb07、Dec/Nov06），共993993B；16尝试/14源HTTP/134CDX行，两次孤立传输失败，mono最小5.109s、UTC5.101740s，未触发五连失败或限流。降频下本批成功较多是观察事实，仍不能断言TLS根因。剩Aug06/Oct06/Aug07三exact地址的NET021纯本地提案已独立接受，B idle等待root明确execute；不改已发布v13或自行开新树。最终只公开一份最新稳定接受版浏览包。
+
+
+Root 已明确授权唯一 B 最后一批 NET021（Aug06/Oct06/Aug07，3exact/12attempt/240s/32MiB、mono5.1/UTC5.0、14:05硬截止），已正式派发；没有后续批次或control授权。A只准备读取最终selected map的7–10页v14浏览runner，未运行。最后source14须待NET021独立接受后root再批准，避免中间建树与重复500MB包。

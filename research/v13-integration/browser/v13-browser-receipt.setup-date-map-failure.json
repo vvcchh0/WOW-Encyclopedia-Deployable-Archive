@@ -1,0 +1,155 @@
+{
+  "schema": "wow-recovery.core-source-v13-focused-browser-receipt.v1",
+  "status": "runner_error",
+  "started_utc": "2026-10-15T13:37:52.778Z",
+  "finished_utc": "2026-10-15T13:37:53.135Z",
+  "server_ready_flag": true,
+  "base_url": "http://127.0.0.1:29009",
+  "prefix": "/WOW-Encyclopedia-Deployable-Archive/",
+  "method": "Loopback server only; Playwright GET/HEAD requests are restricted to the supplied origin and prefix; no server is started.",
+  "scope": {
+    "rss_paths": [
+      "/news/rss-09-2006.xml",
+      "/news/rss-05-2008.xml",
+      "/news/rss-12-2007.xml"
+    ],
+    "expected_posted_dates": {
+      "/news/rss-09-2006.xml": 38,
+      "/news/rss-05-2008.xml": 11,
+      "/news/rss-12-2007.xml": 29
+    },
+    "expected_date_months": {
+      "/news/rss-09-2006.xml": "9-06",
+      "/news/rss-05-2008.xml": "5-08",
+      "/news/rss-12-2007.xml": "12-07"
+    },
+    "may_capture_boundary": "May 2008 source contains 11 articles dated May 1 through May 8; this run checks the observed partial capture and does not claim full-month completeness.",
+    "shared_css": "/news/newsarchive.css",
+    "shared_css_expected_bytes": 109,
+    "shared_css_expected_sha256": "69915a4eea19ec455a60b89c64ed661fc55d48bc3a724bdffcc91bd2d617aa7b",
+    "toggle_route": "/news/rss-07-2007.xml",
+    "toggle_entry_id": "news7-30-07-513",
+    "toggle_actions": [
+      "title: collapsed -> expanded -> collapsed",
+      "li-center: collapsed -> expanded -> collapsed",
+      "anchor-center: collapsed -> expanded -> collapsed",
+      "anchor-enter: collapsed -> expanded -> collapsed"
+    ],
+    "anchor_expectation": "Matched derived news-toggle anchor expected 14px by 11px; original href and nearest hoverContainer onclick are recorded.",
+    "screenshot_limit": 1,
+    "no_force_click_or_dom_mutation": true
+  },
+  "inputs": {
+    "runner": {
+      "path": "research/v13-integration/browser/v13_acceptance.js",
+      "bytes": 30841,
+      "sha256": "f7268d49420200dedc56bb6c6dd89722f1fc9769697ee7a2b0e7fcd8fcc2ae69"
+    },
+    "v13_manifest": {
+      "path": ".scratch/offline-navigation-20261015-v13/build-manifest.json",
+      "bytes": 75473776,
+      "sha256": "b9f26e1aa4544b5b1279c7a7e54acbf1306da5518c6a3b7aa685e05df9cfbdc9",
+      "expected_sha256": "b9f26e1aa4544b5b1279c7a7e54acbf1306da5518c6a3b7aa685e05df9cfbdc9"
+    },
+    "v13_source_receipt": {
+      "path": "research/v13-integration/source/v13-source-receipt.json",
+      "bytes": 10480,
+      "sha256": "e3f2f51c4be9eaa10e30e0143fc301b166dbc4e84feb134933658f8e9d1befe2",
+      "expected_sha256": "e3f2f51c4be9eaa10e30e0143fc301b166dbc4e84feb134933658f8e9d1befe2"
+    },
+    "v13_source_plan": {
+      "path": "research/v13-integration/source/v13-source-plan.json",
+      "bytes": 14211,
+      "sha256": "118d767da3a0f6ce4588ccde079a6832d3c93d5890991da3210af03bf5bc0ff1",
+      "expected_sha256": "118d767da3a0f6ce4588ccde079a6832d3c93d5890991da3210af03bf5bc0ff1"
+    },
+    "selected_rss18": {
+      "path": "research/continuous-recovery-20261015/selected-rss18-source-map.json",
+      "bytes": 5212,
+      "sha256": "e3af3c2c9cb8c40b96bd5a6964d32faac92d4a2e6da158bcb34ad9b59313c591",
+      "expected_sha256": "e3af3c2c9cb8c40b96bd5a6964d32faac92d4a2e6da158bcb34ad9b59313c591"
+    },
+    "rss18_acceptance": {
+      "path": "research/continuous-recovery-20261015/rss18-acceptance.json",
+      "bytes": 4186,
+      "sha256": "e5ed5e6ada59892ef211442eac60e8378742f8e3c95b9533188a8da0f290ca74",
+      "expected_sha256": "e5ed5e6ada59892ef211442eac60e8378742f8e3c95b9533188a8da0f290ca74"
+    },
+    "final_export_provenance": {
+      "path": ".scratch/pages-resources-20261015-v13/export-provenance.json",
+      "bytes": 7866929,
+      "sha256": "f1929a7f478e6579c8b1a809e512d46ca150872b4f2780787ad6d3884e42624b"
+    },
+    "final_export_route_map": {
+      "path": ".scratch/pages-resources-20261015-v13/__offline/route-map.json",
+      "bytes": 1143610,
+      "sha256": "daa80a87e2b6c7309cf7096181fe4b10f7ca05d4eaa2f7a68e75b040064d4af6"
+    },
+    "production_exporter": {
+      "path": "tools/export_github_pages.py",
+      "bytes": 135685,
+      "sha256": "636925a2b9721f408b7d9225d3c8e63c2bab1232b51225a8963c6f9cd443258e"
+    }
+  },
+  "command": {
+    "argv": [
+      "D:\\WOW_Encyclopedia\\research\\v13-integration\\browser\\v13_acceptance.js",
+      "--server-ready",
+      "--base-url",
+      "http://127.0.0.1:29009",
+      "--prefix",
+      "/WOW-Encyclopedia-Deployable-Archive/",
+      "--playwright-module",
+      "C:/Users/17630/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright",
+      "--manifest",
+      ".scratch/offline-navigation-20261015-v13/build-manifest.json",
+      "--expected-manifest-sha256",
+      "b9f26e1aa4544b5b1279c7a7e54acbf1306da5518c6a3b7aa685e05df9cfbdc9",
+      "--provenance",
+      ".scratch/pages-resources-20261015-v13/export-provenance.json",
+      "--route-map",
+      ".scratch/pages-resources-20261015-v13/__offline/route-map.json",
+      "--source-receipt",
+      "research/v13-integration/source/v13-source-receipt.json",
+      "--source-plan",
+      "research/v13-integration/source/v13-source-plan.json",
+      "--selected",
+      "research/continuous-recovery-20261015/selected-rss18-source-map.json",
+      "--acceptance",
+      "research/continuous-recovery-20261015/rss18-acceptance.json",
+      "--production-file",
+      "tools/export_github_pages.py",
+      "--output",
+      "research/v13-integration/browser/v13-browser-receipt.json",
+      "--screenshot-dir",
+      "research/v13-integration/browser/screenshots"
+    ],
+    "node": "C:\\Users\\17630\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "cwd": "D:\\WOW_Encyclopedia"
+  },
+  "checks": [],
+  "requests": [],
+  "responses": [],
+  "route_decisions": [],
+  "request_failed": [],
+  "page_errors": [],
+  "console_errors": [],
+  "screenshots": [],
+  "failures": [
+    {
+      "name": "runner",
+      "error": "Error: /news/rss-09-2006.xml selected date map mismatch"
+    }
+  ],
+  "notes": [],
+  "diagnostics": {
+    "requests": 0,
+    "responses": 0,
+    "blocked_requests": 0,
+    "known_placeholder_404": [],
+    "unknown_404": [],
+    "request_failures": [],
+    "page_errors": [],
+    "console_errors": []
+  }
+}
