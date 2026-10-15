@@ -153,7 +153,7 @@ Menu2_7=new Array(bulletImg+"FAQ"+underLine,"/WOW-Encyclopedia-Deployable-Archiv
 Menu2_8=new Array(bulletImg+"System Req."+underLine,"/WOW-Encyclopedia-Deployable-Archive/info/faq/technology.html",menuBg,2,15,125,"","","","","","",-1,-1,-1,"","");
 	Menu2_8_1=new Array(bulletImg+"Classic"+underLine,"/WOW-Encyclopedia-Deployable-Archive/info/faq/technology.html",menuBg,0,15,125,"","","","","","",-1,-1,-1,"","");
 	Menu2_8_2=new Array(bulletImg+"Burning Crusade"+underLine,"/WOW-Encyclopedia-Deployable-Archive/burningcrusade/faq.html#sys",menuBg,0,15,125,"","","","","","",-1,-1,-1,"","");
-Menu2_9=new Array(bulletImg+"Free Trials"+underLine,"/WOW-Encyclopedia-Deployable-Archive/__offline/empty.js?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fjs%2Fmenu3_var.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Ftrial%2Findex.html%3Freferrer%3DWORLDOFWARCRAFT%26source%3Dwowhome%26promo%3D1&reason=invalid-overlay-or-uncollected-site-resource",menuBg,0,15,125,"","","","","","",-1,-1,-1,"","");
+Menu2_9=new Array(bulletImg+"Free Trials"+underLine,"/WOW-Encyclopedia-Deployable-Archive/burningcrusade/trial/index.html?referrer=WORLDOFWARCRAFT&source=wowhome&promo=1",menuBg,0,15,125,"","","","","","",-1,-1,-1,"","");
 Menu2_10=new Array(bulletImg+"Credits"+underLine,"/WOW-Encyclopedia-Deployable-Archive/info/basics/classic-credits.html",menuBg,2,15,125,"","","","","","",-1,-1,-1,"","");
 Menu2_10_1=new Array(bulletImg+"Classic Credits"+underLine,"/WOW-Encyclopedia-Deployable-Archive/info/basics/classic-credits.html",menuBg,0,15,125,"","","","","","",-1,-1,-1,"","");
 Menu2_10_2=new Array(bulletImg+"BC Credits"+underLine,"/WOW-Encyclopedia-Deployable-Archive/info/basics/bc-credits.html",menuBg,0,15,125,"","","","","","",-1,-1,-1,"","");
@@ -188,7 +188,7 @@ Menu3_8=new Array(bulletImg+"Quests"+underLine,"/WOW-Encyclopedia-Deployable-Arc
 Menu3_8_1=new Array(bulletImg+"Basics"+underLine,"/WOW-Encyclopedia-Deployable-Archive/info/basics/questbasics.html",menuBg,0,15,125,"","","","","","",-1,-1,-1,"","");
 Menu3_8_2=new Array(bulletImg+"Levels"+underLine,"/WOW-Encyclopedia-Deployable-Archive/info/basics/questlevels.html",menuBg,0,15,125,"","","","","","",-1,-1,-1,"","");
 Menu3_8_3=new Array(bulletImg+"Management"+underLine,"/WOW-Encyclopedia-Deployable-Archive/info/basics/questmanagement.html",menuBg,0,15,125,"","","","","","",-1,-1,-1,"","");
-Menu3_8_4=new Array(bulletImg+"Daily Quests"+underLine,"/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fjs%2Fmenu3_var.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fdailyquests.shtml&reason=external-or-uncollected-resource",menuBg,0,15,125,"","","","","","",-1,-1,-1,"","");
+Menu3_8_4=new Array(bulletImg+"Daily Quests"+underLine,"/WOW-Encyclopedia-Deployable-Archive/info/basics/dailyquests.html",menuBg,0,15,125,"","","","","","",-1,-1,-1,"","");
 Menu3_9=new Array(bulletImg+"Combat Pets"+underLine,"/WOW-Encyclopedia-Deployable-Archive/info/basics/combatpets.html",menuBg,0,15,125,"","","","","","",-1,-1,-1,"","");
 Menu3_10=new Array(bulletImg+"Small Pets"+underLine,"/WOW-Encyclopedia-Deployable-Archive/info/basics/smallpets.html",menuBg,0,15,125,"","","","","","",-1,-1,-1,"","");
 Menu3_11=new Array(bulletImg+"Items"+underLine,"/WOW-Encyclopedia-Deployable-Archive/info/items/basics.html",menuBg,0,15,125,"","","","","","",-1,-1,-1,"","");
@@ -660,7 +660,7 @@ Menu14_1=new Array(bulletImg+"Features"+underLine,"/WOW-Encyclopedia-Deployable-
 Menu14_2=new Array(bulletImg+"Media"+underLine,"/WOW-Encyclopedia-Deployable-Archive/wrath/index.html",menuBg,4,15,140,"","","","","","",-1,-1,-1,"","");
 	Menu14_2_1=new Array(bulletImg+"Screenshots"+underLine,"/WOW-Encyclopedia-Deployable-Archive/wrath/screenshots.xml.html",menuBg,0,15,140,"","","","","","",-1,-1,-1,"","");
 	Menu14_2_2=new Array(bulletImg+"Artwork"+underLine,"/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fjs%2Fmenu3_var.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fwrath%2Fartwork.xml&reason=external-or-uncollected-resource",menuBg,0,15,140,"","","","","","",-1,-1,-1,"","");
-	Menu14_2_3=new Array(bulletImg+"Wallpapers"+underLine,"/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fjs%2Fmenu3_var.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fwrath%2Fwallpapers.xml&reason=external-or-uncollected-resource",menuBg,0,15,140,"","","","","","",-1,-1,-1,"","");
+	Menu14_2_3=new Array(bulletImg+"Wallpapers"+underLine,"/WOW-Encyclopedia-Deployable-Archive/wrath/wallpapers.xml.html",menuBg,0,15,140,"","","","","","",-1,-1,-1,"","");
 	Menu14_2_4=new Array(bulletImg+"Movies"+underLine,"/WOW-Encyclopedia-Deployable-Archive/wrath/movies.xml.html",menuBg,0,15,140,"","","","","","",-1,-1,-1,"","");
 Menu14_3=new Array(bulletImg+"FAQ"+underLine,"/WOW-Encyclopedia-Deployable-Archive/wrath/faq.xml.html",menuBg,0,15,140,"","","","","","",-1,-1,-1,"","");
 

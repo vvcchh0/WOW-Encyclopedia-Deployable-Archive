@@ -73,20 +73,8 @@
 			...trust me, it does make sense. =)
 			*/
 			
-			function checkRequestHeader()
-			{
-				if(xmlTimeVerification.readyState == 4)
-				{
-					xmlServerDate = new Date(xmlTimeVerification.getResponseHeader("Date"));
-					currentShotNumber = Math.floor(Math.floor(Math.floor(Math.floor(eval(xmlServerDate.getTime())/1000)/60)/60)/24) - startDate;
-					addshots("/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fdownloads%2Fssotd%2F&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fdownloads%2Fssotd%2Fimages%2Fscreens&reason=external-or-uncollected-resource","ss",currentShotNumber);
-				}
-			}
-			
-			var xmlTimeVerification = (typeof XMLHttpRequest != "undefined") ? new XMLHttpRequest() : new ActiveXObject("Msxml2.XMLHTTP");
-			xmlTimeVerification.onreadystatechange = checkRequestHeader;
-			xmlTimeVerification.open("HEAD","anachronos.xml",true);
-			xmlTimeVerification.send(null);
+			currentShotNumber = 1340;
+			addshots("/WOW-Encyclopedia-Deployable-Archive/downloads/ssotd/images/screens","ss",currentShotNumber);
 		
 		//	document.onmousemove = tipPosition;
 			

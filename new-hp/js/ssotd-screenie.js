@@ -453,7 +453,8 @@ function printPages()
 		n = shotsPerPage*currentPage+i;
 		if(shotList[n])
 		{
-			thumbnail = shotList[n].replace(".jpg","-thumb.jpg");
+			var __WOW_SSOTD_THUMB_FALLBACK = {"/WOW-Encyclopedia-Deployable-Archive/downloads/ssotd/images/screens/ss1314.jpg":"/WOW-Encyclopedia-Deployable-Archive/downloads/ssotd/images/screens/ss1314.jpg","/WOW-Encyclopedia-Deployable-Archive/downloads/ssotd/images/screens/ss1336.jpg":"/WOW-Encyclopedia-Deployable-Archive/downloads/ssotd/images/screens/ss1336.jpg"};
+			thumbnail = __WOW_SSOTD_THUMB_FALLBACK[shotList[n]] || shotList[n].replace(".jpg","-thumb.jpg");
 			outString += "<div><div><a href='javascript:omegaLightBox("+n+")'><img src='"+thumbnail+"'></a></div></div>";
 		}
 	}

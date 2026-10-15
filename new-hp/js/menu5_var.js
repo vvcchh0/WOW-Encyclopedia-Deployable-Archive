@@ -138,7 +138,7 @@ Menu3=new Array(bulletImg+"Movies"+underLine,"/WOW-Encyclopedia-Deployable-Archi
 Menu4=new Array(bulletImg+"Music"+underLine,"/WOW-Encyclopedia-Deployable-Archive/downloads/sounds.html ",menuBg,0,15,140,"transparent","","","","transparent","",-1,-1,-1,"","");
 
 Menu5=new Array(bulletImg+"Wallpapers"+underLine,"/WOW-Encyclopedia-Deployable-Archive/downloads/wallpapers.html",menuBg,3,15,125,"transparent","","","","transparent","",-1,-1,-1,"","");
-  Menu5_1=new Array(bulletImg+"Wrath"+underLine,"/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fjs%2Fmenu5_var.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fwrath%2Fwallpapers.xml&reason=external-or-uncollected-resource",menuBg,0,15,125,"","","","","","",-1,-1,-1,"","");
+  Menu5_1=new Array(bulletImg+"Wrath"+underLine,"/WOW-Encyclopedia-Deployable-Archive/wrath/wallpapers.xml.html",menuBg,0,15,125,"","","","","","",-1,-1,-1,"","");
   Menu5_2=new Array(bulletImg+"Burning Crusade Wallpapers"+underLine,"/WOW-Encyclopedia-Deployable-Archive/burningcrusade/wallpapers.html",menuBg,0,15,125,"","","","","","",-1,-1,-1,"","");
   Menu5_3=new Array(bulletImg+"Fan Wallpapers"+underLine,"/WOW-Encyclopedia-Deployable-Archive/downloads/wallpapers/fan-wallpapers/index.html ",menuBg,0,15,125,"","","","","","",-1,-1,-1,"","");
 
