@@ -1,0 +1,3542 @@
+{
+  "schema": "wow-recovery.guide-gallery-plan.v1",
+  "generated_utc": "2026-10-15T11:28:50.477265Z",
+  "network_requests": 0,
+  "scope": "Black Temple, Serpentshrine Cavern, Magister's Terrace only",
+  "excluded_scope": [
+    "Karazhan",
+    "Fishing",
+    "Zul'Aman wrapper"
+  ],
+  "inputs": {
+    "research/github-pages-20261013/gallery-inventory-20261013.json": {
+      "bytes": 1955545,
+      "sha256": "3862aa9990cf8ed3bc5e93b539107d44c9d8552af4aeebab9d40e510a5a0c66e"
+    },
+    "research/github-pages-20261013/gallery-inspection-20261013.md": {
+      "bytes": 8218,
+      "sha256": "a8b419a72f2c25359b2297380d5b05e583c9726b443a84ab035e9029daebe3f5"
+    },
+    ".scratch/offline-navigation-20261015-v10/build-manifest.json": {
+      "bytes": 75463144,
+      "sha256": "bc664a728da4bb6c5a49b2c2d46bc2837e2ae40e8a09f6e59c6dc755caa83d86"
+    },
+    ".scratch/pages-resources-20261015-v10/export-provenance.json": {
+      "bytes": 7855373,
+      "sha256": "7c585c7cf343411c91051650d26a9a78afb98101009f2f14732c574f108217f6"
+    },
+    ".scratch/offline-navigation-20261015-v10/site/new-hp/js/guidegallery-screenie.js": {
+      "bytes": 18711,
+      "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c"
+    },
+    "research/gallery-recovery-20261014/karazhan/sanitized-summary.json": {
+      "bytes": 649,
+      "sha256": "8f29cfa8f8520ee9e4d0c383d39917824ca21a7383a8ef8d0ad5b486d4b0074a"
+    },
+    "research/gallery-recovery-20261014/discovery-002/sanitized-summary.json": {
+      "bytes": 2595,
+      "sha256": "c398896f30fd147a6795f8176cd380f84e0d7fac4fa7bbfe0cbadc23744eb34c"
+    }
+  },
+  "shared_gallery_js": {
+    "route": "/new-hp/js/guidegallery-screenie.js",
+    "path": ".scratch/offline-navigation-20261015-v10/site/new-hp/js/guidegallery-screenie.js",
+    "bytes": 18711,
+    "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+    "manifest_sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+    "manifest_length": 18711,
+    "lines": {
+      "471": "function addshots(sourceDirectory,filename,endnum)",
+      "472": "{",
+      "473": "\tstartnum = 0;",
+      "474": "\tcurrentShotNumber = endnum;",
+      "475": "\tif(reverseOrder)",
+      "476": "\t{",
+      "477": "\t\tfor(i=endnum; i>0; i--)",
+      "478": "\t\t{",
+      "479": "\t\t\tshotList[endnum-i] = sourceDirectory + filename + (i) +\".jpg\";",
+      "480": "\t\t}",
+      "481": "\t}",
+      "482": "\telse",
+      "483": "\t{",
+      "484": "\t\tfor(i=0; i<endnum; i++)",
+      "485": "\t\t{",
+      "486": "\t\t\tshotList[i] = sourceDirectory + filename + (i+1) +\".jpg\";",
+      "487": "\t\t}",
+      "506": "\t\t\tthumbnail = shotList[n].replace(\".jpg\",\"-thumb.jpg\");",
+      "507": "\t\t\toutString += \"<div><div><a href='javascript:omegaLightBox(\"+n+\")'><img src='\"+thumbnail+\"'></a></div></div>\";"
+    },
+    "rules": {
+      "full": "sourceDirectory + filename + N + '.jpg'",
+      "thumb": "full URL with '.jpg' replaced by '-thumb.jpg' (guidegallery-screenie.js:506-507)"
+    }
+  },
+  "galleries": [
+    {
+      "label": "Black Temple",
+      "category": "Raid",
+      "route": "/info/dungeons/black-temple-gallery.html",
+      "index_line": 548,
+      "page_source_base_url": "http://www.worldofwarcraft.com/info/dungeons/black-temple-gallery.html",
+      "page_source_identity": {
+        "scheme": "http",
+        "host": "www.worldofwarcraft.com",
+        "path": "/info/dungeons/black-temple-gallery.html",
+        "query": ""
+      },
+      "inventory_observation": {
+        "source_html_exists": true,
+        "export_html_exists": true,
+        "source_html_manifest": true,
+        "export_html_provenance": true,
+        "route_map_html": true,
+        "source_counts": {
+          "full_valid": 0,
+          "thumb_valid": 0,
+          "pair_valid": 0,
+          "full_ns": [],
+          "thumb_ns": [],
+          "pair_ns": []
+        },
+        "export_counts": {
+          "full_valid": 0,
+          "thumb_valid": 0,
+          "pair_valid": 0,
+          "full_ns": [],
+          "thumb_ns": [],
+          "pair_ns": []
+        },
+        "manifest_direct_full": 0,
+        "manifest_direct_thumb": 0,
+        "provenance_direct_full": 0,
+        "provenance_direct_thumb": 0
+      },
+      "source_html": {
+        "path": "offline/source-entities-pages-recovery/97221ef6ac83b5f93fd22aed6a2e7c775db264e165cc20d59baeb0005b4b4be2.bin",
+        "bytes": 9096,
+        "sha256": "97221ef6ac83b5f93fd22aed6a2e7c775db264e165cc20d59baeb0005b4b4be2",
+        "manifest_sha256": "97221ef6ac83b5f93fd22aed6a2e7c775db264e165cc20d59baeb0005b4b4be2",
+        "manifest_length": 9096,
+        "actual_timestamp": "20080512205145",
+        "template": {
+          "num_shots": 48,
+          "addshots_source_dir": "/info/dungeons/images/blacktemple/",
+          "addshots_filename": "ss",
+          "addshots_line": 110,
+          "addshots_markup": "addshots(\"/info/dungeons/images/blacktemple/\",\"ss\",numShots);"
+        }
+      },
+      "v10_derived_html": {
+        "path": ".scratch/offline-navigation-20261015-v10/site/info/dungeons/black-temple-gallery.html",
+        "bytes": 16062,
+        "sha256": "04c728723c639d4613f77bf449cd93ae68c494b08151b76da00899984ffff4ff",
+        "manifest_sha256": "04c728723c639d4613f77bf449cd93ae68c494b08151b76da00899984ffff4ff",
+        "manifest_length": 16062,
+        "template": {
+          "num_shots": 48,
+          "addshots_source_dir": "/info/dungeons/images/blacktemple/",
+          "addshots_filename": "ss",
+          "addshots_line": 112,
+          "addshots_markup": "addshots(\"/info/dungeons/images/blacktemple/\",\"ss\",numShots);"
+        }
+      },
+      "final_export_html": {
+        "path": ".scratch/pages-resources-20261015-v10/info/dungeons/black-temple-gallery.html",
+        "bytes": 18992,
+        "sha256": "d2bfe059e5617b6c888a7c81ae57b43f30c2a74e2cc3bc4bed440eedb590feba",
+        "provenance_sha256": "d2bfe059e5617b6c888a7c81ae57b43f30c2a74e2cc3bc4bed440eedb590feba",
+        "provenance_length": 18992,
+        "template": {
+          "num_shots": 48,
+          "addshots_source_dir": "/WOW-Encyclopedia-Deployable-Archive/info/dungeons/images/blacktemple/",
+          "addshots_filename": "ss",
+          "addshots_line": 118,
+          "addshots_markup": "addshots(\"/WOW-Encyclopedia-Deployable-Archive/info/dungeons/images/blacktemple/\",\"ss\",numShots);"
+        }
+      },
+      "shot_template": {
+        "source_directory": "/info/dungeons/images/blacktemple/",
+        "filename": "ss",
+        "num_shots": 48,
+        "first_full_url": "http://www.worldofwarcraft.com/info/dungeons/images/blacktemple/ss1.jpg",
+        "first_thumb_url": "http://www.worldofwarcraft.com/info/dungeons/images/blacktemple/ss1-thumb.jpg",
+        "last_full_url": "http://www.worldofwarcraft.com/info/dungeons/images/blacktemple/ss48.jpg",
+        "last_thumb_url": "http://www.worldofwarcraft.com/info/dungeons/images/blacktemple/ss48-thumb.jpg"
+      },
+      "direct_entity_state": {
+        "expected_slots": 48,
+        "expected_direct_entities": 96,
+        "full_manifest_records": 0,
+        "thumb_manifest_records": 0,
+        "full_provenance_records": 0,
+        "thumb_provenance_records": 0,
+        "full_origin_index_records": 0,
+        "thumb_origin_index_records": 0,
+        "missing_examples": [
+          {
+            "slot": 1,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss1.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 1,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss1-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 2,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss2.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 2,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss2-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 3,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss3.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 3,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss3-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          }
+        ],
+        "full_records": [
+          {
+            "slot": 1,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss1.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 2,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss2.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 3,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss3.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 4,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss4.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 5,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss5.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 6,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss6.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 7,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss7.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 8,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss8.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 9,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss9.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 10,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss10.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 11,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss11.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 12,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss12.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 13,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss13.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 14,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss14.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 15,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss15.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 16,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss16.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 17,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss17.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 18,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss18.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 19,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss19.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 20,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss20.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 21,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss21.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 22,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss22.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 23,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss23.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 24,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss24.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 25,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss25.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 26,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss26.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 27,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss27.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 28,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss28.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 29,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss29.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 30,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss30.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 31,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss31.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 32,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss32.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 33,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss33.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 34,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss34.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 35,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss35.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 36,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss36.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 37,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss37.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 38,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss38.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 39,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss39.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 40,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss40.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 41,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss41.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 42,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss42.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 43,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss43.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 44,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss44.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 45,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss45.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 46,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss46.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 47,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss47.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 48,
+            "kind": "full",
+            "route": "/info/dungeons/images/blacktemple/ss48.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          }
+        ],
+        "thumb_records": [
+          {
+            "slot": 1,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss1-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 2,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss2-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 3,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss3-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 4,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss4-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 5,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss5-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 6,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss6-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 7,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss7-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 8,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss8-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 9,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss9-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 10,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss10-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 11,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss11-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 12,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss12-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 13,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss13-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 14,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss14-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 15,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss15-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 16,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss16-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 17,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss17-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 18,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss18-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 19,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss19-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 20,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss20-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 21,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss21-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 22,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss22-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 23,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss23-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 24,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss24-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 25,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss25-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 26,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss26-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 27,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss27-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 28,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss28-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 29,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss29-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 30,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss30-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 31,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss31-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 32,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss32-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 33,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss33-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 34,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss34-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 35,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss35-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 36,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss36-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 37,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss37-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 38,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss38-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 39,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss39-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 40,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss40-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 41,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss41-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 42,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss42-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 43,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss43-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 44,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss44-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 45,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss45-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 46,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss46-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 47,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss47-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 48,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/blacktemple/ss48-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          }
+        ]
+      },
+      "prior_query_coverage": {
+        "status": "not_checked",
+        "evidence_files": [
+          {
+            "path": "research/gallery-recovery-20261014/karazhan/sanitized-summary.json",
+            "bytes": 649,
+            "sha256": "8f29cfa8f8520ee9e4d0c383d39917824ca21a7383a8ef8d0ad5b486d4b0074a"
+          },
+          {
+            "path": "research/gallery-recovery-20261014/discovery-002/sanitized-summary.json",
+            "bytes": 2595,
+            "sha256": "c398896f30fd147a6795f8176cd380f84e0d7fac4fa7bbfe0cbadc23744eb34c"
+          }
+        ],
+        "prefix_hits": [],
+        "reason": "Only the explicitly listed Karazhan/discovery-002 summaries were inspected; absence is not evidence that this prefix was never queried."
+      },
+      "derived_addshots_diagnostic": {
+        "source": "/info/dungeons/images/blacktemple/",
+        "v10_derived": "/info/dungeons/images/blacktemple/",
+        "final_export": "/WOW-Encyclopedia-Deployable-Archive/info/dungeons/images/blacktemple/",
+        "final_export_is_missing_html": false,
+        "final_export_is_localized_route": true,
+        "interpretation": "static export-path diagnostic only; no production fix made"
+      }
+    },
+    {
+      "label": "Serpentshrine Cavern",
+      "category": "Raid",
+      "route": "/info/dungeons/serpentshrine-gallery.html",
+      "index_line": 545,
+      "page_source_base_url": "http://www.worldofwarcraft.com/info/dungeons/serpentshrine-gallery.html",
+      "page_source_identity": {
+        "scheme": "http",
+        "host": "www.worldofwarcraft.com",
+        "path": "/info/dungeons/serpentshrine-gallery.html",
+        "query": ""
+      },
+      "inventory_observation": {
+        "source_html_exists": true,
+        "export_html_exists": true,
+        "source_html_manifest": true,
+        "export_html_provenance": true,
+        "route_map_html": true,
+        "source_counts": {
+          "full_valid": 0,
+          "thumb_valid": 0,
+          "pair_valid": 0,
+          "full_ns": [],
+          "thumb_ns": [],
+          "pair_ns": []
+        },
+        "export_counts": {
+          "full_valid": 0,
+          "thumb_valid": 0,
+          "pair_valid": 0,
+          "full_ns": [],
+          "thumb_ns": [],
+          "pair_ns": []
+        },
+        "manifest_direct_full": 0,
+        "manifest_direct_thumb": 0,
+        "provenance_direct_full": 0,
+        "provenance_direct_thumb": 0
+      },
+      "source_html": {
+        "path": "offline/source-entities-pages-recovery/8f31f294775b253de989c41a8caa92d5c2083fba78e0eade540b9aae1569a0ec.bin",
+        "bytes": 7018,
+        "sha256": "8f31f294775b253de989c41a8caa92d5c2083fba78e0eade540b9aae1569a0ec",
+        "manifest_sha256": "8f31f294775b253de989c41a8caa92d5c2083fba78e0eade540b9aae1569a0ec",
+        "manifest_length": 7018,
+        "actual_timestamp": "20080512205810",
+        "template": {
+          "num_shots": 29,
+          "addshots_source_dir": "/info/dungeons/images/serpentshrine/",
+          "addshots_filename": "ss",
+          "addshots_line": 90,
+          "addshots_markup": "addshots(\"/info/dungeons/images/serpentshrine/\",\"ss\",numShots);"
+        }
+      },
+      "v10_derived_html": {
+        "path": ".scratch/offline-navigation-20261015-v10/site/info/dungeons/serpentshrine-gallery.html",
+        "bytes": 11303,
+        "sha256": "f64ca255d9325cd0e137ec22c1cd59014a5b78405639031516c15c3465f2b815",
+        "manifest_sha256": "f64ca255d9325cd0e137ec22c1cd59014a5b78405639031516c15c3465f2b815",
+        "manifest_length": 11303,
+        "template": {
+          "num_shots": 29,
+          "addshots_source_dir": "/info/dungeons/images/serpentshrine/",
+          "addshots_filename": "ss",
+          "addshots_line": 92,
+          "addshots_markup": "addshots(\"/info/dungeons/images/serpentshrine/\",\"ss\",numShots);"
+        }
+      },
+      "final_export_html": {
+        "path": ".scratch/pages-resources-20261015-v10/info/dungeons/serpentshrine-gallery.html",
+        "bytes": 13693,
+        "sha256": "7d696251adc4a66bd2b9fc04f8f03bafa6d80574db82b5e57712f96e09ecef6f",
+        "provenance_sha256": "7d696251adc4a66bd2b9fc04f8f03bafa6d80574db82b5e57712f96e09ecef6f",
+        "provenance_length": 13693,
+        "template": {
+          "num_shots": 29,
+          "addshots_source_dir": "/WOW-Encyclopedia-Deployable-Archive/info/dungeons/images/serpentshrine/",
+          "addshots_filename": "ss",
+          "addshots_line": 98,
+          "addshots_markup": "addshots(\"/WOW-Encyclopedia-Deployable-Archive/info/dungeons/images/serpentshrine/\",\"ss\",numShots);"
+        }
+      },
+      "shot_template": {
+        "source_directory": "/info/dungeons/images/serpentshrine/",
+        "filename": "ss",
+        "num_shots": 29,
+        "first_full_url": "http://www.worldofwarcraft.com/info/dungeons/images/serpentshrine/ss1.jpg",
+        "first_thumb_url": "http://www.worldofwarcraft.com/info/dungeons/images/serpentshrine/ss1-thumb.jpg",
+        "last_full_url": "http://www.worldofwarcraft.com/info/dungeons/images/serpentshrine/ss29.jpg",
+        "last_thumb_url": "http://www.worldofwarcraft.com/info/dungeons/images/serpentshrine/ss29-thumb.jpg"
+      },
+      "direct_entity_state": {
+        "expected_slots": 29,
+        "expected_direct_entities": 58,
+        "full_manifest_records": 0,
+        "thumb_manifest_records": 0,
+        "full_provenance_records": 0,
+        "thumb_provenance_records": 0,
+        "full_origin_index_records": 0,
+        "thumb_origin_index_records": 0,
+        "missing_examples": [
+          {
+            "slot": 1,
+            "kind": "full",
+            "route": "/info/dungeons/images/serpentshrine/ss1.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 1,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/serpentshrine/ss1-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 2,
+            "kind": "full",
+            "route": "/info/dungeons/images/serpentshrine/ss2.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 2,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/serpentshrine/ss2-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 3,
+            "kind": "full",
+            "route": "/info/dungeons/images/serpentshrine/ss3.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 3,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/serpentshrine/ss3-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          }
+        ],
+        "full_records": [
+          {
+            "slot": 1,
+            "kind": "full",
+            "route": "/info/dungeons/images/serpentshrine/ss1.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 2,
+            "kind": "full",
+            "route": "/info/dungeons/images/serpentshrine/ss2.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 3,
+            "kind": "full",
+            "route": "/info/dungeons/images/serpentshrine/ss3.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 4,
+            "kind": "full",
+            "route": "/info/dungeons/images/serpentshrine/ss4.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 5,
+            "kind": "full",
+            "route": "/info/dungeons/images/serpentshrine/ss5.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 6,
+            "kind": "full",
+            "route": "/info/dungeons/images/serpentshrine/ss6.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 7,
+            "kind": "full",
+            "route": "/info/dungeons/images/serpentshrine/ss7.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 8,
+            "kind": "full",
+            "route": "/info/dungeons/images/serpentshrine/ss8.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 9,
+            "kind": "full",
+            "route": "/info/dungeons/images/serpentshrine/ss9.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 10,
+            "kind": "full",
+            "route": "/info/dungeons/images/serpentshrine/ss10.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 11,
+            "kind": "full",
+            "route": "/info/dungeons/images/serpentshrine/ss11.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 12,
+            "kind": "full",
+            "route": "/info/dungeons/images/serpentshrine/ss12.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 13,
+            "kind": "full",
+            "route": "/info/dungeons/images/serpentshrine/ss13.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 14,
+            "kind": "full",
+            "route": "/info/dungeons/images/serpentshrine/ss14.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 15,
+            "kind": "full",
+            "route": "/info/dungeons/images/serpentshrine/ss15.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 16,
+            "kind": "full",
+            "route": "/info/dungeons/images/serpentshrine/ss16.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 17,
+            "kind": "full",
+            "route": "/info/dungeons/images/serpentshrine/ss17.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 18,
+            "kind": "full",
+            "route": "/info/dungeons/images/serpentshrine/ss18.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 19,
+            "kind": "full",
+            "route": "/info/dungeons/images/serpentshrine/ss19.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 20,
+            "kind": "full",
+            "route": "/info/dungeons/images/serpentshrine/ss20.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 21,
+            "kind": "full",
+            "route": "/info/dungeons/images/serpentshrine/ss21.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 22,
+            "kind": "full",
+            "route": "/info/dungeons/images/serpentshrine/ss22.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 23,
+            "kind": "full",
+            "route": "/info/dungeons/images/serpentshrine/ss23.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 24,
+            "kind": "full",
+            "route": "/info/dungeons/images/serpentshrine/ss24.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 25,
+            "kind": "full",
+            "route": "/info/dungeons/images/serpentshrine/ss25.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 26,
+            "kind": "full",
+            "route": "/info/dungeons/images/serpentshrine/ss26.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 27,
+            "kind": "full",
+            "route": "/info/dungeons/images/serpentshrine/ss27.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 28,
+            "kind": "full",
+            "route": "/info/dungeons/images/serpentshrine/ss28.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 29,
+            "kind": "full",
+            "route": "/info/dungeons/images/serpentshrine/ss29.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          }
+        ],
+        "thumb_records": [
+          {
+            "slot": 1,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/serpentshrine/ss1-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 2,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/serpentshrine/ss2-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 3,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/serpentshrine/ss3-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 4,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/serpentshrine/ss4-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 5,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/serpentshrine/ss5-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 6,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/serpentshrine/ss6-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 7,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/serpentshrine/ss7-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 8,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/serpentshrine/ss8-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 9,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/serpentshrine/ss9-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 10,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/serpentshrine/ss10-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 11,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/serpentshrine/ss11-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 12,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/serpentshrine/ss12-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 13,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/serpentshrine/ss13-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 14,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/serpentshrine/ss14-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 15,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/serpentshrine/ss15-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 16,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/serpentshrine/ss16-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 17,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/serpentshrine/ss17-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 18,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/serpentshrine/ss18-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 19,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/serpentshrine/ss19-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 20,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/serpentshrine/ss20-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 21,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/serpentshrine/ss21-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 22,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/serpentshrine/ss22-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 23,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/serpentshrine/ss23-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 24,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/serpentshrine/ss24-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 25,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/serpentshrine/ss25-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 26,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/serpentshrine/ss26-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 27,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/serpentshrine/ss27-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 28,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/serpentshrine/ss28-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 29,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/serpentshrine/ss29-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          }
+        ]
+      },
+      "prior_query_coverage": {
+        "status": "not_checked",
+        "evidence_files": [
+          {
+            "path": "research/gallery-recovery-20261014/karazhan/sanitized-summary.json",
+            "bytes": 649,
+            "sha256": "8f29cfa8f8520ee9e4d0c383d39917824ca21a7383a8ef8d0ad5b486d4b0074a"
+          },
+          {
+            "path": "research/gallery-recovery-20261014/discovery-002/sanitized-summary.json",
+            "bytes": 2595,
+            "sha256": "c398896f30fd147a6795f8176cd380f84e0d7fac4fa7bbfe0cbadc23744eb34c"
+          }
+        ],
+        "prefix_hits": [],
+        "reason": "Only the explicitly listed Karazhan/discovery-002 summaries were inspected; absence is not evidence that this prefix was never queried."
+      },
+      "derived_addshots_diagnostic": {
+        "source": "/info/dungeons/images/serpentshrine/",
+        "v10_derived": "/info/dungeons/images/serpentshrine/",
+        "final_export": "/WOW-Encyclopedia-Deployable-Archive/info/dungeons/images/serpentshrine/",
+        "final_export_is_missing_html": false,
+        "final_export_is_localized_route": true,
+        "interpretation": "static export-path diagnostic only; no production fix made"
+      }
+    },
+    {
+      "label": "Magister's Terrace",
+      "category": "Dungeon",
+      "route": "/info/dungeons/magisters-terrace-gallery.html",
+      "index_line": 550,
+      "page_source_base_url": "http://www.worldofwarcraft.com/info/dungeons/magisters-terrace-gallery.html",
+      "page_source_identity": {
+        "scheme": "http",
+        "host": "www.worldofwarcraft.com",
+        "path": "/info/dungeons/magisters-terrace-gallery.html",
+        "query": ""
+      },
+      "inventory_observation": {
+        "source_html_exists": true,
+        "export_html_exists": true,
+        "source_html_manifest": true,
+        "export_html_provenance": true,
+        "route_map_html": true,
+        "source_counts": {
+          "full_valid": 0,
+          "thumb_valid": 0,
+          "pair_valid": 0,
+          "full_ns": [],
+          "thumb_ns": [],
+          "pair_ns": []
+        },
+        "export_counts": {
+          "full_valid": 0,
+          "thumb_valid": 0,
+          "pair_valid": 0,
+          "full_ns": [],
+          "thumb_ns": [],
+          "pair_ns": []
+        },
+        "manifest_direct_full": 0,
+        "manifest_direct_thumb": 0,
+        "provenance_direct_full": 0,
+        "provenance_direct_thumb": 0
+      },
+      "source_html": {
+        "path": "offline/source-entities-pages-recovery/4eba21aaccfd46a084b1630d35adc098ec7f40cddba324d83d624480e338ff5f.bin",
+        "bytes": 9000,
+        "sha256": "4eba21aaccfd46a084b1630d35adc098ec7f40cddba324d83d624480e338ff5f",
+        "manifest_sha256": "4eba21aaccfd46a084b1630d35adc098ec7f40cddba324d83d624480e338ff5f",
+        "manifest_length": 9000,
+        "actual_timestamp": "20080512205749",
+        "template": {
+          "num_shots": 47,
+          "addshots_source_dir": "/info/dungeons/images/magisters/",
+          "addshots_filename": "ss",
+          "addshots_line": 108,
+          "addshots_markup": "addshots(\"/info/dungeons/images/magisters/\",\"ss\",numShots);"
+        }
+      },
+      "v10_derived_html": {
+        "path": ".scratch/offline-navigation-20261015-v10/site/info/dungeons/magisters-terrace-gallery.html",
+        "bytes": 16196,
+        "sha256": "ec6f9e7dcbacbd46315e72595a1a3e1d93005fcd7de3ff2e7c0d8f5209b2391a",
+        "manifest_sha256": "ec6f9e7dcbacbd46315e72595a1a3e1d93005fcd7de3ff2e7c0d8f5209b2391a",
+        "manifest_length": 16196,
+        "template": {
+          "num_shots": 47,
+          "addshots_source_dir": "/info/dungeons/images/magisters/",
+          "addshots_filename": "ss",
+          "addshots_line": 110,
+          "addshots_markup": "addshots(\"/info/dungeons/images/magisters/\",\"ss\",numShots);"
+        }
+      },
+      "final_export_html": {
+        "path": ".scratch/pages-resources-20261015-v10/info/dungeons/magisters-terrace-gallery.html",
+        "bytes": 19126,
+        "sha256": "a3fdff8660c2b20a3ebad42fcb7fdbdc6333323ea7a45c909b2c274548610bbb",
+        "provenance_sha256": "a3fdff8660c2b20a3ebad42fcb7fdbdc6333323ea7a45c909b2c274548610bbb",
+        "provenance_length": 19126,
+        "template": {
+          "num_shots": 47,
+          "addshots_source_dir": "/WOW-Encyclopedia-Deployable-Archive/info/dungeons/images/magisters/",
+          "addshots_filename": "ss",
+          "addshots_line": 116,
+          "addshots_markup": "addshots(\"/WOW-Encyclopedia-Deployable-Archive/info/dungeons/images/magisters/\",\"ss\",numShots);"
+        }
+      },
+      "shot_template": {
+        "source_directory": "/info/dungeons/images/magisters/",
+        "filename": "ss",
+        "num_shots": 47,
+        "first_full_url": "http://www.worldofwarcraft.com/info/dungeons/images/magisters/ss1.jpg",
+        "first_thumb_url": "http://www.worldofwarcraft.com/info/dungeons/images/magisters/ss1-thumb.jpg",
+        "last_full_url": "http://www.worldofwarcraft.com/info/dungeons/images/magisters/ss47.jpg",
+        "last_thumb_url": "http://www.worldofwarcraft.com/info/dungeons/images/magisters/ss47-thumb.jpg"
+      },
+      "direct_entity_state": {
+        "expected_slots": 47,
+        "expected_direct_entities": 94,
+        "full_manifest_records": 0,
+        "thumb_manifest_records": 0,
+        "full_provenance_records": 0,
+        "thumb_provenance_records": 0,
+        "full_origin_index_records": 0,
+        "thumb_origin_index_records": 0,
+        "missing_examples": [
+          {
+            "slot": 1,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss1.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 1,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss1-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 2,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss2.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 2,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss2-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 3,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss3.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 3,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss3-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          }
+        ],
+        "full_records": [
+          {
+            "slot": 1,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss1.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 2,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss2.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 3,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss3.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 4,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss4.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 5,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss5.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 6,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss6.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 7,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss7.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 8,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss8.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 9,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss9.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 10,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss10.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 11,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss11.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 12,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss12.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 13,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss13.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 14,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss14.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 15,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss15.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 16,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss16.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 17,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss17.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 18,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss18.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 19,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss19.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 20,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss20.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 21,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss21.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 22,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss22.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 23,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss23.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 24,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss24.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 25,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss25.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 26,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss26.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 27,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss27.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 28,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss28.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 29,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss29.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 30,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss30.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 31,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss31.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 32,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss32.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 33,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss33.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 34,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss34.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 35,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss35.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 36,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss36.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 37,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss37.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 38,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss38.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 39,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss39.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 40,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss40.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 41,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss41.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 42,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss42.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 43,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss43.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 44,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss44.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 45,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss45.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 46,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss46.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 47,
+            "kind": "full",
+            "route": "/info/dungeons/images/magisters/ss47.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          }
+        ],
+        "thumb_records": [
+          {
+            "slot": 1,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss1-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 2,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss2-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 3,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss3-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 4,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss4-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 5,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss5-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 6,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss6-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 7,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss7-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 8,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss8-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 9,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss9-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 10,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss10-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 11,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss11-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 12,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss12-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 13,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss13-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 14,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss14-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 15,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss15-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 16,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss16-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 17,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss17-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 18,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss18-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 19,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss19-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 20,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss20-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 21,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss21-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 22,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss22-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 23,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss23-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 24,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss24-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 25,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss25-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 26,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss26-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 27,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss27-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 28,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss28-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 29,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss29-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 30,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss30-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 31,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss31-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 32,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss32-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 33,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss33-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 34,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss34-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 35,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss35-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 36,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss36-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 37,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss37-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 38,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss38-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 39,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss39-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 40,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss40-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 41,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss41-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 42,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss42-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 43,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss43-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 44,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss44-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 45,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss45-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 46,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss46-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          },
+          {
+            "slot": 47,
+            "kind": "thumb",
+            "route": "/info/dungeons/images/magisters/ss47-thumb.jpg",
+            "manifest_record": false,
+            "provenance_record": false,
+            "origin_index_route": null,
+            "manifest_output": null,
+            "manifest_sha256": null,
+            "manifest_length": null
+          }
+        ]
+      },
+      "prior_query_coverage": {
+        "status": "not_checked",
+        "evidence_files": [
+          {
+            "path": "research/gallery-recovery-20261014/karazhan/sanitized-summary.json",
+            "bytes": 649,
+            "sha256": "8f29cfa8f8520ee9e4d0c383d39917824ca21a7383a8ef8d0ad5b486d4b0074a"
+          },
+          {
+            "path": "research/gallery-recovery-20261014/discovery-002/sanitized-summary.json",
+            "bytes": 2595,
+            "sha256": "c398896f30fd147a6795f8176cd380f84e0d7fac4fa7bbfe0cbadc23744eb34c"
+          }
+        ],
+        "prefix_hits": [],
+        "reason": "Only the explicitly listed Karazhan/discovery-002 summaries were inspected; absence is not evidence that this prefix was never queried."
+      },
+      "derived_addshots_diagnostic": {
+        "source": "/info/dungeons/images/magisters/",
+        "v10_derived": "/info/dungeons/images/magisters/",
+        "final_export": "/WOW-Encyclopedia-Deployable-Archive/info/dungeons/images/magisters/",
+        "final_export_is_missing_html": false,
+        "final_export_is_localized_route": true,
+        "interpretation": "static export-path diagnostic only; no production fix made"
+      }
+    }
+  ],
+  "summary": {
+    "target_galleries": 3,
+    "total_shots": 124,
+    "expected_direct_entities": 248,
+    "manifest_direct_full": 0,
+    "manifest_direct_thumb": 0,
+    "provenance_direct_full": 0,
+    "provenance_direct_thumb": 0,
+    "prior_prefixes_with_explicit_evidence": 0,
+    "network_requests": 0,
+    "final_export_missing_html_addshots": 0,
+    "final_export_localized_addshots": 3
+  },
+  "cdx_prefix_proposals": [
+    {
+      "gallery": "Black Temple",
+      "exact_prefix_url": "http://www.worldofwarcraft.com/info/dungeons/images/blacktemple/",
+      "matchType": "prefix",
+      "query_constraints": [
+        "statuscode:200",
+        "mimetype:image/*",
+        "collapse=digest",
+        "preserve exact origin and prefix; no basename substitution"
+      ],
+      "time_window_proposal": {
+        "from": "20060101000000",
+        "to": "20081231235959",
+        "reason": "bounded historical proposal around the fixed 2008 archive anchor; not a claim of existing captures"
+      },
+      "expected_slot_count": 48,
+      "expected_entities": 96,
+      "local_evidence": {
+        "manifest_full": 0,
+        "manifest_thumb": 0,
+        "provenance_full": 0,
+        "provenance_thumb": 0
+      },
+      "prior_query_coverage": {
+        "status": "not_checked",
+        "evidence_files": [
+          {
+            "path": "research/gallery-recovery-20261014/karazhan/sanitized-summary.json",
+            "bytes": 649,
+            "sha256": "8f29cfa8f8520ee9e4d0c383d39917824ca21a7383a8ef8d0ad5b486d4b0074a"
+          },
+          {
+            "path": "research/gallery-recovery-20261014/discovery-002/sanitized-summary.json",
+            "bytes": 2595,
+            "sha256": "c398896f30fd147a6795f8176cd380f84e0d7fac4fa7bbfe0cbadc23744eb34c"
+          }
+        ],
+        "prefix_hits": [],
+        "reason": "Only the explicitly listed Karazhan/discovery-002 summaries were inspected; absence is not evidence that this prefix was never queried."
+      },
+      "priority": "P1"
+    },
+    {
+      "gallery": "Serpentshrine Cavern",
+      "exact_prefix_url": "http://www.worldofwarcraft.com/info/dungeons/images/serpentshrine/",
+      "matchType": "prefix",
+      "query_constraints": [
+        "statuscode:200",
+        "mimetype:image/*",
+        "collapse=digest",
+        "preserve exact origin and prefix; no basename substitution"
+      ],
+      "time_window_proposal": {
+        "from": "20060101000000",
+        "to": "20081231235959",
+        "reason": "bounded historical proposal around the fixed 2008 archive anchor; not a claim of existing captures"
+      },
+      "expected_slot_count": 29,
+      "expected_entities": 58,
+      "local_evidence": {
+        "manifest_full": 0,
+        "manifest_thumb": 0,
+        "provenance_full": 0,
+        "provenance_thumb": 0
+      },
+      "prior_query_coverage": {
+        "status": "not_checked",
+        "evidence_files": [
+          {
+            "path": "research/gallery-recovery-20261014/karazhan/sanitized-summary.json",
+            "bytes": 649,
+            "sha256": "8f29cfa8f8520ee9e4d0c383d39917824ca21a7383a8ef8d0ad5b486d4b0074a"
+          },
+          {
+            "path": "research/gallery-recovery-20261014/discovery-002/sanitized-summary.json",
+            "bytes": 2595,
+            "sha256": "c398896f30fd147a6795f8176cd380f84e0d7fac4fa7bbfe0cbadc23744eb34c"
+          }
+        ],
+        "prefix_hits": [],
+        "reason": "Only the explicitly listed Karazhan/discovery-002 summaries were inspected; absence is not evidence that this prefix was never queried."
+      },
+      "priority": "P1"
+    },
+    {
+      "gallery": "Magister's Terrace",
+      "exact_prefix_url": "http://www.worldofwarcraft.com/info/dungeons/images/magisters/",
+      "matchType": "prefix",
+      "query_constraints": [
+        "statuscode:200",
+        "mimetype:image/*",
+        "collapse=digest",
+        "preserve exact origin and prefix; no basename substitution"
+      ],
+      "time_window_proposal": {
+        "from": "20060101000000",
+        "to": "20081231235959",
+        "reason": "bounded historical proposal around the fixed 2008 archive anchor; not a claim of existing captures"
+      },
+      "expected_slot_count": 47,
+      "expected_entities": 94,
+      "local_evidence": {
+        "manifest_full": 0,
+        "manifest_thumb": 0,
+        "provenance_full": 0,
+        "provenance_thumb": 0
+      },
+      "prior_query_coverage": {
+        "status": "not_checked",
+        "evidence_files": [
+          {
+            "path": "research/gallery-recovery-20261014/karazhan/sanitized-summary.json",
+            "bytes": 649,
+            "sha256": "8f29cfa8f8520ee9e4d0c383d39917824ca21a7383a8ef8d0ad5b486d4b0074a"
+          },
+          {
+            "path": "research/gallery-recovery-20261014/discovery-002/sanitized-summary.json",
+            "bytes": 2595,
+            "sha256": "c398896f30fd147a6795f8176cd380f84e0d7fac4fa7bbfe0cbadc23744eb34c"
+          }
+        ],
+        "prefix_hits": [],
+        "reason": "Only the explicitly listed Karazhan/discovery-002 summaries were inspected; absence is not evidence that this prefix was never queried."
+      },
+      "priority": "P1"
+    }
+  ]
+}

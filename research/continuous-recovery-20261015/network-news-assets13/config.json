@@ -1,0 +1,44 @@
+{
+  "schema": "continuous-wow-network-news-assets13-config/v1",
+  "batch_id": "NET-NEWS-ASSETS-013",
+  "prepared_utc": "2026-10-15T11:29:24.125465+00:00",
+  "network_requests": 0,
+  "input_digests": {
+    "research/continuous-recovery-20261015/news-assets13-approved-plan.json": {
+      "sha256": "49e8d0d434430c52f68ad9ac45a971ec7d75876d1673178e6b858ae675e15c31",
+      "bytes": 35388
+    },
+    "research/continuous-recovery-20261015/rss7-resource-review/rss7-resource-review.json": {
+      "sha256": "5813b0fe714ab8d7d21b33a86142b8d0b5f5cb0a6774194c27ff7650748a7bba",
+      "bytes": 4235610
+    },
+    "research/continuous-recovery-20261015/rss7-resource-review/network-resource-candidates.json": {
+      "sha256": "4c9efd703e1ad9e0e26e4f353936dac28b9018659d2b674a474b131e049364b5",
+      "bytes": 39330
+    },
+    "research/continuous-recovery-20261015/rss7-resource-acceptance.json": {
+      "sha256": "8d97fcfc61fb47d0e15b1f8802a38dcc65bd1aa44b110144f40a2014b9c2d422",
+      "bytes": 2412
+    }
+  },
+  "candidates_sha256": "6193c963a76e071a73e20e54b811ee65b1975d92d797c24667cbb1d3a7e93e86",
+  "reuse": {
+    "transport": "research/continuous-recovery-20261015/network-core-pages3/core_pages3.py",
+    "dispatch_gate": "research/continuous-recovery-20261015/network-control7/control7.py"
+  },
+  "execution": {
+    "preanchor_from": "20040101000000",
+    "preanchor_to": "20080512210044",
+    "max_targets": 16,
+    "max_attempts": 32,
+    "network_window_seconds": 480,
+    "minimum_dispatch_interval_seconds": 1.25,
+    "minimum_free_bytes": 11005853696,
+    "max_total_body_bytes": 67108864,
+    "max_entity_body_bytes": 16777216,
+    "no_redirects": true,
+    "no_external_follow": true,
+    "integration_held": true
+  },
+  "selection": "latest same-origin status-200 pre-anchor capture; default port only; bare/www and http/https separate; no redirects/follows"
+}

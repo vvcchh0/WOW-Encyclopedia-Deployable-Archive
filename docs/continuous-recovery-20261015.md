@@ -6,7 +6,7 @@
 
 [初始总账](../research/continuous-recovery-20261015/ledger.initial.json)从已有多代菜单盘点生成，每条菜单观察保留独立标识、分组、名称、原始地址、菜单文件与行号。旧盘点口径为 588 条内容观察、653 条排除观察。启动时复查发现，其中 **579 条 `Legacy menu` 只是旧解析器未分组**，包含 `/news/rss-05-2008.xml` 等真实内容地址，不能据此排除。已生成[范围修正检查点](../research/continuous-recovery-20261015/ledger.scope-review.json)，将这 579 条恢复为待分类审计；原来的 588 条口径继续保留以便比较，74 条明确的结构、业务或外部观察另行记录。初始快照保留其原始状态并由修正检查点取代。
 
-每条观察分别记录页面状态、资源状态、交互状态、来源证据、关联任务与下一动作。旧盘点针对 v5 派生版，其覆盖状态保留在 `prior_inventory_status`；当前 page 状态已按 v10 全菜单路由检查更新，发布版 v10 已完成线上抽样验收；资源和交互字段保留 v9 静态检查版本，历史快照分别保存。页面可达不等于图片、Flash 或历史交互完整，补充素材的实际捕获日期单独记录。
+每条观察分别记录页面状态、资源状态、交互状态、来源证据、关联任务与下一动作。旧盘点针对 v5 派生版，其覆盖状态保留在 `prior_inventory_status`；当前 page 状态已按 v10 全菜单路由检查更新，发布版 v10 已完成线上抽样验收；资源和交互字段采用 mixed 静态版本：实际匹配的七个新 RSS 页使用已接受 v10 子集证据，其余 1,234 条观察保留 v9 字段与版本；历史快照分别保存。页面可达不等于图片、Flash 或历史交互完整，补充素材的实际捕获日期单独记录。
 
 07:25 UTC 已完成[独立侧栏验收](../research/continuous-recovery-20261015/sidebar-acceptance.json)并生成[当前总账](../research/continuous-recovery-20261015/ledger.current.json)。旧 `Legacy menu` 按真实源文件分组：`menu1_var.js` 的 44 条归 News，`menu3_var.js` 的 511 条归 Game Guide，晚期 XML 的 24 条归其 Account、Forums、Support 类目。保留 `prior_group` 和分组理由，不改写旧盘点。
 
@@ -157,11 +157,33 @@ SSOTD [纯本地方案独立审阅](../research/continuous-recovery-20261015/sso
 
 `NET-SSOTD-012` 已验收结束，B idle；A 的七新闻页面资源子集输出已落盘，仍待独立验收，未据生成队列自动授权新网络或改变资源总账。
 
+### 11:20 工作交接：NET013 与 Guide 三分区方案
+
+当前已确认 main 为 `41fe2bd397e00a7c8dcc4141ccbb1c6e7d97915e`，Pages 为 `77015ca477cc8794f9014f4082f1e11635f7e3dc`，线上 14 对象已通过。目录基地址修复、四份旧待接入 RSS HTML 与 viewer 均已在发布 v10 中，不再处于等待新 export/browser 的状态。
+
+七新闻页面的[修正资源子集独立验收](../research/continuous-recovery-20261015/rss7-resource-acceptance.json)已接受：1,373 条静态资源引用、193 个不同地址；95 个本地实体可读，其中 92 个来源 scheme/host/path/query 精确匹配，三个 HTTP 请求只有 HTTPS 来源，单列为未证实兼容候选，不计精确恢复。另 98 个未映射或未知。132 个正文图候选包含已在本地的图片，不能称为 132 张缺图。原审计首版和 origin 误报证据保留。每 URL 最多列 12 条样例，独立核对使用全部逐页 1,373 条明细；其中 14 条为 script 块中完整字面 `document.write` stylesheet link，只作为条件静态依赖，未执行。资源总账旧字段暂不改为全站新审计。
+
+根代理批准的[NET013 声明计划](../research/continuous-recovery-20261015/news-assets13-approved-plan.json)已满足独立验收门槛：共享 `newsarchive.css` 首位，随后取原队列 rank1–15 的正文图片，最多 16 个不同地址；旧 rank16 仅因上限省略，原队列与快照保留。只查 pre-anchor，不扩晚期窗口、不追链接、不自动接入。唯一 B 已正式派发任务，当前尚无实际 dispatch journal 回执，不把准备状态算作下载完成。既有请求只检查声明的近期台账，未覆盖的历史保持 not_checked。
+
+A 复用为 20 分钟纯本地 Game Guide 三分区可及性方案，初选 Black Temple、Serpentshrine Cavern、Magister's Terrace；避开已查 Karazhan/Fishing 与 ZulAman wrapper 特例。只读真实原页、共享图库脚本、既有 CDX/请求记录，输出 count/full/thumb/origin 证据和最多三个 prefix query，不向网络枚举 3,368 个地址。若 NET013 有有效实体，下一 v11 只追加独立接受的 primary 来源到 v10 的 8,338 条，保留 38 个 overlay 配方，根代理负责整合验收；没有有效实体就不构建空变化版本。
+
+### RSS7 子集总账与下一来源版本
+
+根代理授权后，[子集总账验收](../research/continuous-recovery-20261015/ledger-rss7-subset-acceptance.json)按真实 root-sidebar record 身份关联，只更新七个对应 RSS 页的资源及静态交互字段；其余 1,234 条观察全部字段和旧版本逐项不变。旧页状态总账先逐字节保存。全局资源与交互 summary 从 1,241 条实际 item 重算，包含 74 条明确排除观察；另列原 1,167 条当前范围计数供比较。资源为 127 local、961 partial、153 not_available，其中 not_available 包含 74 个排除观察，不是缺页或缺图数量。验证版本明确 mixed，没有称作全站 v10 资源复算。
+
+`NET-NEWS-ASSETS-013` 已[独立接受三份载荷](../research/continuous-recovery-20261015/news-assets13-acceptance.json)：109 字节共享 CSS（真实三条 selector，无依赖 URL）、7,533 字节 JPEG（197×86）和 27,559 字节 GIF（215×178），共 35,201 字节。来源 scheme/host/path/query、实际 pre-anchor Memento、CDX SHA1、正文 SHA256、Pillow verify/load 全部核对。20 次尝试、9 个真实源响应、37,056 字节批次正文，连续五次传输失败后停止，三个目标未请求。journal 的最小 monotonic 派发间隔为 1.25 秒，记录 request-start UTC 最小间隔为 1.241199 秒；后者满足原始 1.2 秒下限，但低于本批声明 1.25 秒，批次 policy 保留 false，载荷接受与时间偏差分别记录，历史时间不改写。
+
+按根代理单次授权冷却后，`NET-CONTROL-014` 在 11:39 UTC 仅重放已接受的 CSS：[独立验收](../research/continuous-recovery-20261015/control14-acceptance.json)通过。direct 连接超时后 proxy 返回原 109 字节、摘要、Memento 与 MIME；monotonic、UTC、curl trace 的顺序核对一致，没有 CDX、重定向或新增实体。该对象只提供新的连接证据，不能推定其他 URL 均可访问，B 完成后 idle，没有自动新批。
+
+A 已切换最小 fresh v11 source 追加任务：沿 v10 已核十三份 extra map 再加[三实体来源表](../research/continuous-recovery-20261015/selected-news-assets13-source-map.json)，预期 8,338+3=8,341 来源，183 个别名和 38 个 overlay 配方保留；稳定构建回执尚待交付。三份新文件属于 primary pre-anchor 来源，不是晚期 overlay。已发布 v10 与旧来源、ZIP 均不覆盖。根代理负责全量保留、最终 export/browser 和必要时一次最新便携包。
+
+三 Guide 分区的[本地来源事实](../research/continuous-recovery-20261015/guide-gallery-plan-acceptance.json)已接受：Black Temple 48、Serpentshrine 29、Magister's Terrace 47 个槽位，共 248 个原图/缩略图待恢复实体；当前 final export 目录赋值正确，仍无这些原始图片。原网络提案跨到 2008 年底，仅作为历史方案保留；下一批须先限定 pre-anchor 并由根代理另行批准，当前没有图库网络请求。
+
 ## 取舍与后续顺序
 
 优先修复已有真实内容因地址规范化或客户端逻辑无法访问的问题；其次补取来源明确且过去因网络失败没有取得内容判定的对象；再沿历史脚本、菜单和 CDX 记录提取有证据的缺失资源。按编号生成的截图地址可以作为来源证据，不能凭猜测把实体记为已取得。若本地审计发现更高价值的缺口，下一批按证据与可恢复性调整，不为填满时间盲目重试。
 
-Karazhan 复查结束后，剩余旧 TLS 未判定项是否继续，取决于本批是否取得新的有效内容判定。MEDIA SSOTD 的未筛选图片索引仅遍历了两页，尚有续页；可在后续有界批次检查重访、重定向和历史脚本线索。Game Guide 的 50 个截图分区合计声明 1,684 张图，3,368 个原图与原缩略图仍是独立缺口。PvP `intro.swf` 与 Trial 图片保留为有证据待恢复项。
+Karazhan 复查结束后，剩余旧 TLS 未判定项是否继续，取决于本批是否取得新的有效内容判定。MEDIA SSOTD 的同一未筛选 prefix 查询现已续至终页，共核对 2,082 条索引记录，无下一 cursor；只有两条有效 JPEG 索引已取回，新增终页是后期 redirect/revisit 证据。其他 origin、目录或未声明查询范围仍不能据此判为全域不存在。Game Guide 的 50 个截图分区合计声明 1,684 张图，3,368 个原图与原缩略图仍是独立缺口。PvP `intro.swf` 与 Trial 图片保留为有证据待恢复项。
 
 ## 每批边界与验收
 

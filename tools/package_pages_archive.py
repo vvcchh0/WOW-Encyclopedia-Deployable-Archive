@@ -218,8 +218,8 @@ def make_readme(provenance: dict[str, Any], processed_date: str, site_count: int
     prefix = provenance["base_path"]
     text = (
         "# World of Warcraft Encyclopedia historical archive\n\n"
-        f"A portable, browse-only reconstruction based on the 2008-05-12 21:00:44 "
-        f"Wayback Machine capture. This package was processed on {processed_date}.\n\n"
+        "A portable historical archive reconstruction based on 2008-05-12. "
+        f"This package was prepared on {processed_date}.\n\n"
         f"The generated site contains {site_count:,} static files and keeps its project "
         f"prefix `{prefix}`. It presents the preserved pages and media as a historical "
         "exhibit; retired account services and software installers are not active.\n\n"

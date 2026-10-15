@@ -1,0 +1,72 @@
+{
+  "schema": "continuous-wow-network-control14-dispatch-log/v1",
+  "batch_id": "NET-CONTROL-014",
+  "simulation": false,
+  "policy": {
+    "minimum_dispatch_interval_seconds": 1.35,
+    "max_attempts": 2,
+    "network_window_seconds": 120
+  },
+  "guard_preflight": {
+    "checked_utc": "2026-10-15T11:39:17.296221+00:00",
+    "checked_monotonic": 31107.296,
+    "not_before_utc": "2026-10-15T11:32:57.032434+00:00",
+    "remaining_seconds": 0.0,
+    "satisfied": true
+  },
+  "disk_preflight": {
+    "checked_utc": "2026-10-15T11:39:17.297222+00:00",
+    "disk_free_bytes": 37131460608,
+    "minimum_free_bytes": 11005853696
+  },
+  "dispatches": [
+    {
+      "attempt": 1,
+      "transport": "direct",
+      "target": "http://www.worldofwarcraft.com/news/newsarchive.css",
+      "guard_open_utc": "2026-10-15T11:39:17.299221+00:00",
+      "dispatch_utc": "2026-10-15T11:39:17.299221+00:00",
+      "dispatch_monotonic": 31107.296,
+      "interval_since_previous_dispatch_seconds": null,
+      "guard_wait": {
+        "first_checked_utc": "2026-10-15T11:39:17.299221+00:00",
+        "opened_utc": "2026-10-15T11:39:17.299221+00:00",
+        "first_monotonic": 31107.296,
+        "opened_monotonic": 31107.296,
+        "sleeps": [],
+        "final_wall_remaining_seconds": -380.266787,
+        "final_monotonic_remaining_seconds": 0.0
+      },
+      "interval_sleeps": [],
+      "persisted_before_transport": true
+    },
+    {
+      "attempt": 2,
+      "transport": "proxy",
+      "target": "http://www.worldofwarcraft.com/news/newsarchive.css",
+      "guard_open_utc": "2026-10-15T11:39:21.372549+00:00",
+      "dispatch_utc": "2026-10-15T11:39:21.372549+00:00",
+      "dispatch_monotonic": 31111.375,
+      "interval_since_previous_dispatch_seconds": 4.0790000000015425,
+      "guard_wait": {
+        "first_checked_utc": "2026-10-15T11:39:21.372549+00:00",
+        "opened_utc": "2026-10-15T11:39:21.372549+00:00",
+        "first_monotonic": 31111.375,
+        "opened_monotonic": 31111.375,
+        "sleeps": [],
+        "final_wall_remaining_seconds": -384.340115,
+        "final_monotonic_remaining_seconds": 0.0
+      },
+      "interval_sleeps": [],
+      "persisted_before_transport": true
+    }
+  ],
+  "disk_postflight": {
+    "checked_utc": "2026-10-15T11:39:24.465643+00:00",
+    "disk_free_bytes": 37131427840,
+    "attempts_count": 2,
+    "persisted_in_finally": true
+  },
+  "postflight_persisted_in_finally": true,
+  "final_attempt_count": 2
+}

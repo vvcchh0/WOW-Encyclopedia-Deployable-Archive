@@ -1,6 +1,6 @@
 {
   "schema": "continuous-wow-recovery-ledger/v1",
-  "generated_utc": "2026-10-15T11:09:04.429390+00:00",
+  "generated_utc": "2026-10-15T11:33:39.145769+00:00",
   "deadline_utc": "2026-10-15T14:44:00+00:00",
   "inputs": {
     "inventory": "research/navigation-gaps-20261015/inventory.json",
@@ -9,7 +9,7 @@
     "baseline_sha256": "397f7dcdbc774d80c6f8c1f3dabf7933211ff182427bd2ef77c895752334f459"
   },
   "current_preview": ".scratch/pages-resources-20261015-v10",
-  "status_note": "Page fields reflect acceptedv10 full local menu route/file check. Root publication is accepted at Pages77015ca with14online exact-byte/MIME object checks. Resource and interaction fields retainv9 static indications and are not a fullv10 resource/runtime audit; focusedv10 browser is separately accepted with known gaps.",
+  "status_note": "Page fields reflect acceptedv10 full local menu routes and publishedPages77015ca/14onlineobjects. Resource/interaction fields are mixed: only root-record-matched sevenRSS-page subset updated from acceptedstatic audit; all other observations retainv9values/versions. No fullsitev10resource/runtimeaudit is claimed.",
   "summary": {
     "observations": 1241,
     "in_scope_distinct_routes_prior": 411,
@@ -47,22 +47,40 @@
     "current_content_route_observations": 1107,
     "resource_status_counts": {
       "local_dependencies_resolved": 127,
-      "partial_missing_assets": 954,
-      "not_available": 86
+      "partial_missing_assets": 961,
+      "not_available": 153
     },
     "interaction_status_counts": {
       "static_surface_static_indication": 12,
       "legacy_plugin_static_indication": 912,
       "localized_script_static_indication": 90,
-      "not_available": 86,
-      "localized_form_static_indication": 67
+      "not_available": 153,
+      "localized_form_static_indication": 67,
+      "form_and_script_static_indication": 7
     },
     "resolved_distinct_files": 467,
     "asset_status_count_scope": "menu observations with static placeholder/dependency indications; shared URLs, navigation and intentional placeholders overlap and are not unique missing-image counts",
     "page_observations_resolved": 1088,
     "page_missing_observations": 19,
-    "resource_counts_version": "v9_954partial_observations_overlap_not_v10_audit",
-    "interaction_counts_version": "v9_static_only_not_v10_runtime_audit"
+    "resource_counts_version": "mixed_versions_from_actual_items; only selectedRSS7subsetupdated",
+    "interaction_counts_version": "mixed_static_versions_from_actual_items; no fullsitev10runtimeclaim",
+    "resource_subset_updated_observations": 7,
+    "resource_subset_unchanged_observations": 1234,
+    "resource_status_count_scope": "All1241menu observations including74explicitexclusions; not_available is not a missingpage/image count.",
+    "interaction_status_count_scope": "All1241observations; mixedstaticversions only, not runtime completeness.",
+    "resource_status_counts_in_current_1167_scope": {
+      "local_dependencies_resolved": 127,
+      "partial_missing_assets": 961,
+      "not_available": 79
+    },
+    "interaction_status_counts_in_current_1167_scope": {
+      "static_surface_static_indication": 12,
+      "legacy_plugin_static_indication": 912,
+      "localized_script_static_indication": 90,
+      "not_available": 79,
+      "localized_form_static_indication": 67,
+      "form_and_script_static_indication": 7
+    }
   },
   "items": [
     {
@@ -36700,8 +36718,8 @@
       "normalized_route": "/news/rss-04-2008.xml",
       "scope": "content_recovery",
       "page_status": "resolved",
-      "resource_status": "not_available",
-      "interaction_status": "not_available",
+      "resource_status": "partial_missing_assets",
+      "interaction_status": "form_and_script_static_indication",
       "prior_inventory_status": "out_of_scope_business_or_external",
       "prior_inventory_preview": ".scratch/pages-local-maintenance-20261014-v5",
       "evidence": [
@@ -36728,9 +36746,9 @@
         "LOCAL-SIDEBAR-001",
         "LOCAL-SIDEBAR-V9-006"
       ],
-      "next_action": "已验收 expanded HTML 页面路由；新增页面资源与交互另行核对，旧状态保留v9版本，不视为RSS/XML原始订阅恢复。",
+      "next_action": "页面已可读；静态依赖存在缺图/样式，按已举证精确URL队列恢复；交互仅源/导出markup迹象，未运行表单。",
       "scope_review_reason": "The inherited inventory labels 579 legacy observations as excluded, including explicit News RSS and guide routes.",
-      "interaction_validation": "not_available",
+      "interaction_validation": "static_source_and_export_presence_only_no_form_execution",
       "resolved_path": ".scratch/pages-resources-20261015-v10/news/rss-04-2008.xml.html",
       "priority": "P0",
       "audit_record_id": "legacy_reclassified:76:Menu2_1_2",
@@ -36738,8 +36756,8 @@
       "group_reason": "menu1_var.js Current News / Archived News / Awards / Press top-level headings",
       "prior_v9_page_status": "missing_export_route",
       "page_validation_preview": ".scratch/pages-resources-20261015-v10",
-      "resource_validation_preview": ".scratch/pages-resources-20261015-v9",
-      "interaction_validation_preview": ".scratch/pages-resources-20261015-v9",
+      "resource_validation_preview": "v10_rss7_static_subset",
+      "interaction_validation_preview": "v10_rss7_static_subset",
       "page_validation_evidence": {
         "path": "research/v10-integration/root-sidebar-check.json",
         "record_id": "legacy_reclassified:76:Menu2_1_2",
@@ -36748,6 +36766,22 @@
       "page_file_evidence": {
         "bytes": 88068,
         "sha256": "54fdfae13fe7bc1a24ed48875a972a995caca1bd6ff361448d074c12c0d7255f"
+      },
+      "resource_subset_evidence": {
+        "path": "research/continuous-recovery-20261015/rss7-resource-review/rss7-resource-review.json",
+        "target": "/news/rss-04-2008.xml",
+        "acceptance": "research/continuous-recovery-20261015/rss7-resource-acceptance.json",
+        "references": 130,
+        "unique_urls": 51,
+        "unresolved_reference_occurrences": 7
+      },
+      "interaction_subset_evidence": {
+        "path": "research/continuous-recovery-20261015/rss7-resource-review/rss7-resource-review.json",
+        "target": "/news/rss-04-2008.xml",
+        "forms": 1,
+        "inline_event_handlers": 17,
+        "script_src_count": 6,
+        "claim": "Static source and exported form presence; handlers and form submission not executed."
       }
     },
     {
@@ -36759,8 +36793,8 @@
       "normalized_route": "/news/rss-03-2008.xml",
       "scope": "content_recovery",
       "page_status": "resolved",
-      "resource_status": "not_available",
-      "interaction_status": "not_available",
+      "resource_status": "partial_missing_assets",
+      "interaction_status": "form_and_script_static_indication",
       "prior_inventory_status": "out_of_scope_business_or_external",
       "prior_inventory_preview": ".scratch/pages-local-maintenance-20261014-v5",
       "evidence": [
@@ -36787,9 +36821,9 @@
         "LOCAL-SIDEBAR-001",
         "LOCAL-SIDEBAR-V9-006"
       ],
-      "next_action": "已验收 expanded HTML 页面路由；新增页面资源与交互另行核对，旧状态保留v9版本，不视为RSS/XML原始订阅恢复。",
+      "next_action": "页面已可读；静态依赖存在缺图/样式，按已举证精确URL队列恢复；交互仅源/导出markup迹象，未运行表单。",
       "scope_review_reason": "The inherited inventory labels 579 legacy observations as excluded, including explicit News RSS and guide routes.",
-      "interaction_validation": "not_available",
+      "interaction_validation": "static_source_and_export_presence_only_no_form_execution",
       "resolved_path": ".scratch/pages-resources-20261015-v10/news/rss-03-2008.xml.html",
       "priority": "P0",
       "audit_record_id": "legacy_reclassified:77:Menu2_1_3",
@@ -36797,8 +36831,8 @@
       "group_reason": "menu1_var.js Current News / Archived News / Awards / Press top-level headings",
       "prior_v9_page_status": "missing_export_route",
       "page_validation_preview": ".scratch/pages-resources-20261015-v10",
-      "resource_validation_preview": ".scratch/pages-resources-20261015-v9",
-      "interaction_validation_preview": ".scratch/pages-resources-20261015-v9",
+      "resource_validation_preview": "v10_rss7_static_subset",
+      "interaction_validation_preview": "v10_rss7_static_subset",
       "page_validation_evidence": {
         "path": "research/v10-integration/root-sidebar-check.json",
         "record_id": "legacy_reclassified:77:Menu2_1_3",
@@ -36807,6 +36841,22 @@
       "page_file_evidence": {
         "bytes": 160253,
         "sha256": "a46e7eb09babfc071f566e4a51da52a26fe322e10d83af501f16745a4fefa147"
+      },
+      "resource_subset_evidence": {
+        "path": "research/continuous-recovery-20261015/rss7-resource-review/rss7-resource-review.json",
+        "target": "/news/rss-03-2008.xml",
+        "acceptance": "research/continuous-recovery-20261015/rss7-resource-acceptance.json",
+        "references": 187,
+        "unique_urls": 71,
+        "unresolved_reference_occurrences": 22
+      },
+      "interaction_subset_evidence": {
+        "path": "research/continuous-recovery-20261015/rss7-resource-review/rss7-resource-review.json",
+        "target": "/news/rss-03-2008.xml",
+        "forms": 1,
+        "inline_event_handlers": 39,
+        "script_src_count": 6,
+        "claim": "Static source and exported form presence; handlers and form submission not executed."
       }
     },
     {
@@ -36818,8 +36868,8 @@
       "normalized_route": "/news/rss-02-2008.xml",
       "scope": "content_recovery",
       "page_status": "resolved",
-      "resource_status": "not_available",
-      "interaction_status": "not_available",
+      "resource_status": "partial_missing_assets",
+      "interaction_status": "form_and_script_static_indication",
       "prior_inventory_status": "out_of_scope_business_or_external",
       "prior_inventory_preview": ".scratch/pages-local-maintenance-20261014-v5",
       "evidence": [
@@ -36846,9 +36896,9 @@
         "LOCAL-SIDEBAR-001",
         "LOCAL-SIDEBAR-V9-006"
       ],
-      "next_action": "已验收 expanded HTML 页面路由；新增页面资源与交互另行核对，旧状态保留v9版本，不视为RSS/XML原始订阅恢复。",
+      "next_action": "页面已可读；静态依赖存在缺图/样式，按已举证精确URL队列恢复；交互仅源/导出markup迹象，未运行表单。",
       "scope_review_reason": "The inherited inventory labels 579 legacy observations as excluded, including explicit News RSS and guide routes.",
-      "interaction_validation": "not_available",
+      "interaction_validation": "static_source_and_export_presence_only_no_form_execution",
       "resolved_path": ".scratch/pages-resources-20261015-v10/news/rss-02-2008.xml.html",
       "priority": "P0",
       "audit_record_id": "legacy_reclassified:78:Menu2_1_4",
@@ -36856,8 +36906,8 @@
       "group_reason": "menu1_var.js Current News / Archived News / Awards / Press top-level headings",
       "prior_v9_page_status": "missing_export_route",
       "page_validation_preview": ".scratch/pages-resources-20261015-v10",
-      "resource_validation_preview": ".scratch/pages-resources-20261015-v9",
-      "interaction_validation_preview": ".scratch/pages-resources-20261015-v9",
+      "resource_validation_preview": "v10_rss7_static_subset",
+      "interaction_validation_preview": "v10_rss7_static_subset",
       "page_validation_evidence": {
         "path": "research/v10-integration/root-sidebar-check.json",
         "record_id": "legacy_reclassified:78:Menu2_1_4",
@@ -36866,6 +36916,22 @@
       "page_file_evidence": {
         "bytes": 201341,
         "sha256": "ce131535da46f53d3651690cb74414654edff50c97796d106bb93be0fd318bd7"
+      },
+      "resource_subset_evidence": {
+        "path": "research/continuous-recovery-20261015/rss7-resource-review/rss7-resource-review.json",
+        "target": "/news/rss-02-2008.xml",
+        "acceptance": "research/continuous-recovery-20261015/rss7-resource-acceptance.json",
+        "references": 231,
+        "unique_urls": 83,
+        "unresolved_reference_occurrences": 36
+      },
+      "interaction_subset_evidence": {
+        "path": "research/continuous-recovery-20261015/rss7-resource-review/rss7-resource-review.json",
+        "target": "/news/rss-02-2008.xml",
+        "forms": 1,
+        "inline_event_handlers": 53,
+        "script_src_count": 6,
+        "claim": "Static source and exported form presence; handlers and form submission not executed."
       }
     },
     {
@@ -36877,8 +36943,8 @@
       "normalized_route": "/news/rss-01-2008.xml",
       "scope": "content_recovery",
       "page_status": "resolved",
-      "resource_status": "not_available",
-      "interaction_status": "not_available",
+      "resource_status": "partial_missing_assets",
+      "interaction_status": "form_and_script_static_indication",
       "prior_inventory_status": "out_of_scope_business_or_external",
       "prior_inventory_preview": ".scratch/pages-local-maintenance-20261014-v5",
       "evidence": [
@@ -36905,9 +36971,9 @@
         "LOCAL-SIDEBAR-001",
         "LOCAL-SIDEBAR-V9-006"
       ],
-      "next_action": "已验收 expanded HTML 页面路由；新增页面资源与交互另行核对，旧状态保留v9版本，不视为RSS/XML原始订阅恢复。",
+      "next_action": "页面已可读；静态依赖存在缺图/样式，按已举证精确URL队列恢复；交互仅源/导出markup迹象，未运行表单。",
       "scope_review_reason": "The inherited inventory labels 579 legacy observations as excluded, including explicit News RSS and guide routes.",
-      "interaction_validation": "not_available",
+      "interaction_validation": "static_source_and_export_presence_only_no_form_execution",
       "resolved_path": ".scratch/pages-resources-20261015-v10/news/rss-01-2008.xml.html",
       "priority": "P0",
       "audit_record_id": "legacy_reclassified:79:Menu2_1_5",
@@ -36915,8 +36981,8 @@
       "group_reason": "menu1_var.js Current News / Archived News / Awards / Press top-level headings",
       "prior_v9_page_status": "missing_export_route",
       "page_validation_preview": ".scratch/pages-resources-20261015-v10",
-      "resource_validation_preview": ".scratch/pages-resources-20261015-v9",
-      "interaction_validation_preview": ".scratch/pages-resources-20261015-v9",
+      "resource_validation_preview": "v10_rss7_static_subset",
+      "interaction_validation_preview": "v10_rss7_static_subset",
       "page_validation_evidence": {
         "path": "research/v10-integration/root-sidebar-check.json",
         "record_id": "legacy_reclassified:79:Menu2_1_5",
@@ -36925,6 +36991,22 @@
       "page_file_evidence": {
         "bytes": 141771,
         "sha256": "ddf104d00941b058d953d9f8efd9e693f63b80dbed3171a84f68cc7132010936"
+      },
+      "resource_subset_evidence": {
+        "path": "research/continuous-recovery-20261015/rss7-resource-review/rss7-resource-review.json",
+        "target": "/news/rss-01-2008.xml",
+        "acceptance": "research/continuous-recovery-20261015/rss7-resource-acceptance.json",
+        "references": 176,
+        "unique_urls": 69,
+        "unresolved_reference_occurrences": 22
+      },
+      "interaction_subset_evidence": {
+        "path": "research/continuous-recovery-20261015/rss7-resource-review/rss7-resource-review.json",
+        "target": "/news/rss-01-2008.xml",
+        "forms": 1,
+        "inline_event_handlers": 33,
+        "script_src_count": 6,
+        "claim": "Static source and exported form presence; handlers and form submission not executed."
       }
     },
     {
@@ -37368,8 +37450,8 @@
       "normalized_route": "/news/rss-05-2007.xml",
       "scope": "content_recovery",
       "page_status": "resolved",
-      "resource_status": "not_available",
-      "interaction_status": "not_available",
+      "resource_status": "partial_missing_assets",
+      "interaction_status": "form_and_script_static_indication",
       "prior_inventory_status": "out_of_scope_business_or_external",
       "prior_inventory_preview": ".scratch/pages-local-maintenance-20261014-v5",
       "evidence": [
@@ -37396,9 +37478,9 @@
         "LOCAL-SIDEBAR-001",
         "LOCAL-SIDEBAR-V9-006"
       ],
-      "next_action": "已验收 expanded HTML 页面路由；新增页面资源与交互另行核对，旧状态保留v9版本，不视为RSS/XML原始订阅恢复。",
+      "next_action": "页面已可读；静态依赖存在缺图/样式，按已举证精确URL队列恢复；交互仅源/导出markup迹象，未运行表单。",
       "scope_review_reason": "The inherited inventory labels 579 legacy observations as excluded, including explicit News RSS and guide routes.",
-      "interaction_validation": "not_available",
+      "interaction_validation": "static_source_and_export_presence_only_no_form_execution",
       "resolved_path": ".scratch/pages-resources-20261015-v10/news/rss-05-2007.xml.html",
       "priority": "P0",
       "audit_record_id": "legacy_reclassified:88:Menu2_2_8",
@@ -37406,8 +37488,8 @@
       "group_reason": "menu1_var.js Current News / Archived News / Awards / Press top-level headings",
       "prior_v9_page_status": "missing_export_route",
       "page_validation_preview": ".scratch/pages-resources-20261015-v10",
-      "resource_validation_preview": ".scratch/pages-resources-20261015-v9",
-      "interaction_validation_preview": ".scratch/pages-resources-20261015-v9",
+      "resource_validation_preview": "v10_rss7_static_subset",
+      "interaction_validation_preview": "v10_rss7_static_subset",
       "page_validation_evidence": {
         "path": "research/v10-integration/root-sidebar-check.json",
         "record_id": "legacy_reclassified:88:Menu2_2_8",
@@ -37416,6 +37498,22 @@
       "page_file_evidence": {
         "bytes": 173990,
         "sha256": "f123d65f2003727b289f1ca2154643376eabb0a51792363c54720d8c8118d298"
+      },
+      "resource_subset_evidence": {
+        "path": "research/continuous-recovery-20261015/rss7-resource-review/rss7-resource-review.json",
+        "target": "/news/rss-05-2007.xml",
+        "acceptance": "research/continuous-recovery-20261015/rss7-resource-acceptance.json",
+        "references": 206,
+        "unique_urls": 71,
+        "unresolved_reference_occurrences": 23
+      },
+      "interaction_subset_evidence": {
+        "path": "research/continuous-recovery-20261015/rss7-resource-review/rss7-resource-review.json",
+        "target": "/news/rss-05-2007.xml",
+        "forms": 1,
+        "inline_event_handlers": 45,
+        "script_src_count": 6,
+        "claim": "Static source and exported form presence; handlers and form submission not executed."
       }
     },
     {
@@ -37589,8 +37687,8 @@
       "normalized_route": "/news/rss-01-2007.xml",
       "scope": "content_recovery",
       "page_status": "resolved",
-      "resource_status": "not_available",
-      "interaction_status": "not_available",
+      "resource_status": "partial_missing_assets",
+      "interaction_status": "form_and_script_static_indication",
       "prior_inventory_status": "out_of_scope_business_or_external",
       "prior_inventory_preview": ".scratch/pages-local-maintenance-20261014-v5",
       "evidence": [
@@ -37617,9 +37715,9 @@
         "LOCAL-SIDEBAR-001",
         "LOCAL-SIDEBAR-V9-006"
       ],
-      "next_action": "已验收 expanded HTML 页面路由；新增页面资源与交互另行核对，旧状态保留v9版本，不视为RSS/XML原始订阅恢复。",
+      "next_action": "页面已可读；静态依赖存在缺图/样式，按已举证精确URL队列恢复；交互仅源/导出markup迹象，未运行表单。",
       "scope_review_reason": "The inherited inventory labels 579 legacy observations as excluded, including explicit News RSS and guide routes.",
-      "interaction_validation": "not_available",
+      "interaction_validation": "static_source_and_export_presence_only_no_form_execution",
       "resolved_path": ".scratch/pages-resources-20261015-v10/news/rss-01-2007.xml.html",
       "priority": "P0",
       "audit_record_id": "legacy_reclassified:92:Menu2_2_12",
@@ -37627,8 +37725,8 @@
       "group_reason": "menu1_var.js Current News / Archived News / Awards / Press top-level headings",
       "prior_v9_page_status": "missing_export_route",
       "page_validation_preview": ".scratch/pages-resources-20261015-v10",
-      "resource_validation_preview": ".scratch/pages-resources-20261015-v9",
-      "interaction_validation_preview": ".scratch/pages-resources-20261015-v9",
+      "resource_validation_preview": "v10_rss7_static_subset",
+      "interaction_validation_preview": "v10_rss7_static_subset",
       "page_validation_evidence": {
         "path": "research/v10-integration/root-sidebar-check.json",
         "record_id": "legacy_reclassified:92:Menu2_2_12",
@@ -37637,6 +37735,22 @@
       "page_file_evidence": {
         "bytes": 200826,
         "sha256": "15e0c2901942c7532015c60b3b8df0d8fd6db240f122b2a7010b2226a42b171b"
+      },
+      "resource_subset_evidence": {
+        "path": "research/continuous-recovery-20261015/rss7-resource-review/rss7-resource-review.json",
+        "target": "/news/rss-01-2007.xml",
+        "acceptance": "research/continuous-recovery-20261015/rss7-resource-acceptance.json",
+        "references": 214,
+        "unique_urls": 63,
+        "unresolved_reference_occurrences": 23
+      },
+      "interaction_subset_evidence": {
+        "path": "research/continuous-recovery-20261015/rss7-resource-review/rss7-resource-review.json",
+        "target": "/news/rss-01-2007.xml",
+        "forms": 1,
+        "inline_event_handlers": 54,
+        "script_src_count": 6,
+        "claim": "Static source and exported form presence; handlers and form submission not executed."
       }
     },
     {
@@ -37972,8 +38086,8 @@
       "normalized_route": "/news/rss-07-2006.xml",
       "scope": "content_recovery",
       "page_status": "resolved",
-      "resource_status": "not_available",
-      "interaction_status": "not_available",
+      "resource_status": "partial_missing_assets",
+      "interaction_status": "form_and_script_static_indication",
       "prior_inventory_status": "out_of_scope_business_or_external",
       "prior_inventory_preview": ".scratch/pages-local-maintenance-20261014-v5",
       "evidence": [
@@ -38000,9 +38114,9 @@
         "LOCAL-SIDEBAR-001",
         "LOCAL-SIDEBAR-V9-006"
       ],
-      "next_action": "已验收 expanded HTML 页面路由；新增页面资源与交互另行核对，旧状态保留v9版本，不视为RSS/XML原始订阅恢复。",
+      "next_action": "页面已可读；静态依赖存在缺图/样式，按已举证精确URL队列恢复；交互仅源/导出markup迹象，未运行表单。",
       "scope_review_reason": "The inherited inventory labels 579 legacy observations as excluded, including explicit News RSS and guide routes.",
-      "interaction_validation": "not_available",
+      "interaction_validation": "static_source_and_export_presence_only_no_form_execution",
       "resolved_path": ".scratch/pages-resources-20261015-v10/news/rss-07-2006.xml.html",
       "priority": "P0",
       "audit_record_id": "legacy_reclassified:99:Menu2_3_6",
@@ -38010,8 +38124,8 @@
       "group_reason": "menu1_var.js Current News / Archived News / Awards / Press top-level headings",
       "prior_v9_page_status": "missing_export_route",
       "page_validation_preview": ".scratch/pages-resources-20261015-v10",
-      "resource_validation_preview": ".scratch/pages-resources-20261015-v9",
-      "interaction_validation_preview": ".scratch/pages-resources-20261015-v9",
+      "resource_validation_preview": "v10_rss7_static_subset",
+      "interaction_validation_preview": "v10_rss7_static_subset",
       "page_validation_evidence": {
         "path": "research/v10-integration/root-sidebar-check.json",
         "record_id": "legacy_reclassified:99:Menu2_3_6",
@@ -38020,6 +38134,22 @@
       "page_file_evidence": {
         "bytes": 176336,
         "sha256": "e98d95e0aa2f3a4959ee8456b8f6d5155122462f89f9472e598489b53001273d"
+      },
+      "resource_subset_evidence": {
+        "path": "research/continuous-recovery-20261015/rss7-resource-review/rss7-resource-review.json",
+        "target": "/news/rss-07-2006.xml",
+        "acceptance": "research/continuous-recovery-20261015/rss7-resource-acceptance.json",
+        "references": 229,
+        "unique_urls": 72,
+        "unresolved_reference_occurrences": 43
+      },
+      "interaction_subset_evidence": {
+        "path": "research/continuous-recovery-20261015/rss7-resource-review/rss7-resource-review.json",
+        "target": "/news/rss-07-2006.xml",
+        "forms": 1,
+        "inline_event_handlers": 43,
+        "script_src_count": 6,
+        "claim": "Static source and exported form presence; handlers and form submission not executed."
       }
     },
     {
@@ -70510,8 +70640,8 @@
   },
   "current_audit_acceptance": "research/v10-integration/root-sidebar-check.json",
   "page_validation_version": "v10_local_full_menu_check_published_tree_online14object_sample",
-  "resource_validation_version": "v9_static_observations_not_recomputed",
-  "interaction_validation_version": "v9_static_indications_not_recomputed",
+  "resource_validation_version": "mixed_v9_static_plus_v10_rss7_subset",
+  "interaction_validation_version": "mixed_v9_static_plus_v10_rss7_subset",
   "published_accepted_pages_commit": "77015ca477cc8794f9014f4082f1e11635f7e3dc",
   "published_accepted_evidence": {
     "publication": {
@@ -70536,5 +70666,18 @@
       "pages_commit": "77015ca477cc8794f9014f4082f1e11635f7e3dc",
       "online_accepted_utc": "2026-10-15T11:05:36.005295+00:00"
     }
-  ]
+  ],
+  "resource_subset_acceptance": {
+    "path": "research/continuous-recovery-20261015/rss7-resource-acceptance.json",
+    "sha256": "8d97fcfc61fb47d0e15b1f8802a38dcc65bd1aa44b110144f40a2014b9c2d422",
+    "updated_record_ids": [
+      "legacy_reclassified:76:Menu2_1_2",
+      "legacy_reclassified:77:Menu2_1_3",
+      "legacy_reclassified:78:Menu2_1_4",
+      "legacy_reclassified:79:Menu2_1_5",
+      "legacy_reclassified:88:Menu2_2_8",
+      "legacy_reclassified:92:Menu2_2_12",
+      "legacy_reclassified:99:Menu2_3_6"
+    ]
+  }
 }
