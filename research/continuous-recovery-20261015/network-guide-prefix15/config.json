@@ -1,0 +1,63 @@
+{
+  "schema": "wow-recovery.net-guide-prefix15-config.v1",
+  "batch_id": "NET-GUIDE-PREFIX-015",
+  "mode": "prepared",
+  "generated_utc": "2026-10-15T11:59:27.672105+00:00",
+  "approved_plan": {
+    "path": "research/continuous-recovery-20261015/guide-prefix15-approved-plan.json",
+    "bytes": 7816,
+    "sha256": "479819f3cfb44bd1321bffa6e6a07c0c0ee7211a7853ae5658c7be8cbd1d2135"
+  },
+  "inputs": {
+    "research/continuous-recovery-20261015/guide-prefix15-approved-plan.json": {
+      "path": "research/continuous-recovery-20261015/guide-prefix15-approved-plan.json",
+      "bytes": 7816,
+      "sha256": "479819f3cfb44bd1321bffa6e6a07c0c0ee7211a7853ae5658c7be8cbd1d2135"
+    },
+    "research/continuous-recovery-20261015/guide-gallery-plan-acceptance.json": {
+      "path": "research/continuous-recovery-20261015/guide-gallery-plan-acceptance.json",
+      "bytes": 2517,
+      "sha256": "536320b2f501795880c00505122bbe99d677ad23f73a376edd5baf929dc83b68"
+    },
+    "research/continuous-recovery-20261015/guide-gallery-plan/guide-gallery-plan.json": {
+      "path": "research/continuous-recovery-20261015/guide-gallery-plan/guide-gallery-plan.json",
+      "bytes": 128313,
+      "sha256": "1e93a84cecb229c2fd4b795c91fa3943e85e8ad5cb71f53ad31bfce46b9279be"
+    },
+    "research/continuous-recovery-20261015/control14-acceptance.json": {
+      "path": "research/continuous-recovery-20261015/control14-acceptance.json",
+      "bytes": 1763,
+      "sha256": "e4c963c038a9e58a07f8bab47e28f44700b3d893a3f9e4424bd585146ab29fc7"
+    }
+  },
+  "helpers": {
+    "core3": "research/continuous-recovery-20261015/network-core-pages3/core_pages3.py",
+    "control7": "research/continuous-recovery-20261015/network-control7/control7.py",
+    "curl": "C:\\Windows\\System32\\curl.exe",
+    "proxy": "http://127.0.0.1:7890"
+  },
+  "policy": {
+    "direct_first_then_confirmed_proxy": true,
+    "direct_connect_timeout_seconds": 4,
+    "direct_total_timeout_seconds": 12,
+    "proxy_connect_timeout_seconds": 8,
+    "proxy_total_timeout_seconds": 20,
+    "tls_verification": "curl default verification enabled",
+    "automatic_redirects": 0,
+    "manual_redirect_follow": 0,
+    "max_attempts": 32,
+    "window_seconds": 480,
+    "minimum_dispatch_interval_seconds": 1.35,
+    "minimum_free_bytes": 11005853696,
+    "max_total_body_bytes": 67108864,
+    "max_entity_body_bytes": 16777216,
+    "stop_http_codes": [
+      429,
+      503
+    ],
+    "concurrent_source_requests": 1
+  },
+  "network_requests": 0,
+  "prepared": true,
+  "raw_note": "raw headers, trace, stderr and bodies remain local; a zero-byte body after no source status is a local placeholder, not source content"
+}

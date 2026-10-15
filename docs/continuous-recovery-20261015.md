@@ -179,6 +179,28 @@ A 已切换最小 fresh v11 source 追加任务：沿 v10 已核十三份 extra 
 
 三 Guide 分区的[本地来源事实](../research/continuous-recovery-20261015/guide-gallery-plan-acceptance.json)已接受：Black Temple 48、Serpentshrine 29、Magister's Terrace 47 个槽位，共 248 个原图/缩略图待恢复实体；当前 final export 目录赋值正确，仍无这些原始图片。原网络提案跨到 2008 年底，仅作为历史方案保留；下一批须先限定 pre-anchor 并由根代理另行批准，当前没有图库网络请求。
 
+### 12:00 工作交接：v11 浏览与 NET015
+
+当前已发布版本仍为 v10/Pages `77015ca`，main 已确认 `41fe2bd`；11:45 master 暂存快照保留，以下为后续当前状态。v11 最小源树已生成并通过[独立来源验收](../research/continuous-recovery-20261015/v11-source-independent-acceptance.json)：8,341 来源、183 别名，三份新 primary 来源追加；根代理另全量实读 541,249,805 字节通过。最终 export 已完成 8,480 声明文件并应用 38 个旧 overlay；根代理继续全字节及卫生检查，A 已收到 29007 READY，准备或执行七页共享 CSS 三条 computed 规则、三处新图片实例及 common12 查看器的有界浏览验收，尚无通过回执，不先标发布。
+
+根代理批准的[NET015 独立覆盖计划](../research/continuous-recovery-20261015/guide-prefix15-approved-plan.json)已正式派给唯一 B。仅 Black Temple、Serpentshrine、Magister's Terrace 三个真实 prefix，pre-anchor 到 20080512210044；每目录只取未过滤、无 collapse 的首个最多 1,000 行 CDX 页，保存真实 resumeKey 但不续页。仅实际有效索引行允许每组一原图、一缩略图，最多六实体；派发间隔保守 1.35 秒，其余请求、时间、字节、磁盘及停止上限保留。新素材留后续版本，不追加入正在验收的 v11。
+
+[剩余 RSS 本地提案](../research/continuous-recovery-20261015/remaining-rss-next-proposal.json)按 root 的 16 个缺路由及 NET006/010 台账分类：两个此前未请求、两个已有 eligible CDX 但正文传输未知、十二个 CDX 传输未知；该声明范围没有终态空 CDX。下一批建议八个地址，先 Jun/Jul2007，再直接回放已有 Apr2007/Sep2006 索引，其后四个较新未知目标，最坏 28 次尝试。此文件只是提案，仍须 NET015 结果、健康连接证据与根代理明确批准，不以换候选重置连续失败状态。
+
+### 12:30 发布与来源交接：v11 已上线、v12 仅源构建
+
+根代理已发布 v11，Pages commit `915b014dc411c4232250adfd7999a8c4088b97ec`；API 前后 built 一致，[线上十二对象](../research/v11-integration/root-pages-online-acceptance.json)全部 direct HTTP 200、正文长度/SHA256/MIME 与本地匹配。[发布回执](../research/v11-integration/root-pages-publication.json)确认 main HEAD/index 不变。主分支此前已确认 `bc358f52acc593bd45f532dac4ffd429f9ba73a0`，本轮新回执提交仍由根代理处理。
+
+[浏览独立验收](../research/continuous-recovery-20261015/v11-browser-independent-review.json)已通过：首轮十组实际九通过、一组路径前缀 harness 失败；保留后续失败与中间一次 hoverContainer 成功记录，最终只跑新图组，一通过、九 skip。三个真实文章实例均经原生标题单击展开后可见，197×86 JPEG 在 Jan/Feb BlizzCast 重用、215×178 GIF 在 Feb Arena 显示，HTTP/MIME/SHA/decode 均匹配。七页共享 CSS 实际 HTTP 200，三条 computed 规则在一个真实页面核对；没有称作逐七页 computed。五张最终/首轮必要 PNG 保留，重复截图只本地留存。＋控件的双调用仅为待证实交互候选；默认正文折叠属于历史正常行为，原生标题展开已经证实，生产文件未因 harness 修改。
+
+当前总账已先保存 v10 mixed 子集快照，再按 v11 root 的全路由/别名守恒和实际 export 摘要更新 page 字段，发布指针现为 v11。[page 层验收](../research/continuous-recovery-20261015/v11-ledger-page-acceptance.json)与[发布指针验收](../research/continuous-recovery-20261015/v11-ledger-publication-acceptance.json)分别记录；1,241 条所有非 page 字段、资源/交互版本与 summary 保持原样，仍明确 mixed v9 + v10 RSS7 子集。当前 v11 菜单缺口仍为 19 条观察、16 个地址。
+
+[NET015](../research/continuous-recovery-20261015/guide-prefix15-acceptance.json)三目录 pre-anchor 单页查询已独立接受：四次尝试、三个真实 CDX 响应、2,070 字节、九条目录 404 HTML 索引，零有效图片，均无下一 cursor。该范围没有编号图片索引，不能据此声称所有 origin、目录或年代均未存档。
+
+[NET016](../research/continuous-recovery-20261015/rss16-acceptance.json)取得三份真实 expanded HTML：Jul/Jun/Apr2007，185,016/174,728/143,477 字节，实际捕获均为 2008-04-02，文章标题及全量 57/49/39 个 posted-date 与 news-entry-date 交叉匹配。Apr 正文的 August 3, 2007 是 BlizzCon 活动日期，旧 adapter 将描述日期误当文章日期，原回执快照保留，已仅离线修正，不重发网络。11 次尝试、五个真实源响应、25 条新 CDX 行、503,221 字节有效载荷；连续五次传输失败停止，另五目标保持网络未知，原 RSS/XML 正文仍未取得。B 已 idle，当前无后续网络授权。
+
+根代理条件批准的[最小 v12 source-only 方案](../research/continuous-recovery-20261015/v12-source-approved-plan.json)已满足来源验收门槛并派给 A：以冻结 v11 的 8,341 条为唯一守恒起点，追加[三份选定来源](../research/continuous-recovery-20261015/selected-rss16-source-map.json)，预期 8,344 来源、183 别名和 38 个 overlay 配方；不改任何旧树、生产、ZIP、ledger，不执行 export/网络。尚无稳定 v12 构建回执，不把预期减少的菜单缺口当完成。根代理保留未上传 v11 ZIP 候选，等后续最终版本决定一次最新公开便携包。
+
 ## 取舍与后续顺序
 
 优先修复已有真实内容因地址规范化或客户端逻辑无法访问的问题；其次补取来源明确且过去因网络失败没有取得内容判定的对象；再沿历史脚本、菜单和 CDX 记录提取有证据的缺失资源。按编号生成的截图地址可以作为来源证据，不能凭猜测把实体记为已取得。若本地审计发现更高价值的缺口，下一批按证据与可恢复性调整，不为填满时间盲目重试。

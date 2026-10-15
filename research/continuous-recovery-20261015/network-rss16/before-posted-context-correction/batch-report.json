@@ -1,0 +1,3347 @@
+{
+  "schema": "continuous-wow-net-rss16-batch-report/v1",
+  "batch_id": "NET-RSS-016",
+  "mode": "executed",
+  "started_utc": "2026-10-15T12:08:55.420140+00:00",
+  "request_window_finished_utc": "2026-10-15T12:09:30.115333+00:00",
+  "finished_utc": "2026-10-15T12:09:30.115333+00:00",
+  "report_updated_utc": "2026-10-15T12:11:03.108664+00:00",
+  "inputs": {
+    "approved_plan": {
+      "path": "research/continuous-recovery-20261015/rss16-approved-plan.json",
+      "bytes": 19682,
+      "sha256": "4309afda45a518b9843862369ea063ef83c37d44c71eb430f7ca066350181bb2"
+    },
+    "candidates": {
+      "path": "research/continuous-recovery-20261015/network-rss16/candidates.json",
+      "bytes": 19405,
+      "sha256": "374442309378763dbe6c04f54fc3e142062ed84a1fcb99ff7ab9133588c50d54"
+    },
+    "research/continuous-recovery-20261015/rss16-approved-plan.json": {
+      "path": "research/continuous-recovery-20261015/rss16-approved-plan.json",
+      "bytes": 19682,
+      "sha256": "4309afda45a518b9843862369ea063ef83c37d44c71eb430f7ca066350181bb2"
+    },
+    "research/continuous-recovery-20261015/remaining-rss-next-proposal.json": {
+      "path": "research/continuous-recovery-20261015/remaining-rss-next-proposal.json",
+      "bytes": 34762,
+      "sha256": "966e2e3236fad23023fdd57ee6cbd9177ca3d867ba63f2931dbc1cac5ac1dd4c"
+    },
+    "research/continuous-recovery-20261015/guide-prefix15-acceptance.json": {
+      "path": "research/continuous-recovery-20261015/guide-prefix15-acceptance.json",
+      "bytes": 3625,
+      "sha256": "d04949368cdaa7868984572c8dd03364bb96409f23b2cbb1d12a386f199b3d9b"
+    }
+  },
+  "policy": {
+    "target_count": 8,
+    "max_attempts": 32,
+    "network_window_seconds": 480,
+    "minimum_dispatch_interval_seconds": 1.35,
+    "minimum_free_bytes": 11005853696,
+    "max_total_body_bytes": 67108864,
+    "max_entity_body_bytes": 16777216,
+    "preanchor_from": "20040101000000",
+    "preanchor_to": "20080512210044",
+    "cdx_pages_per_target": 1,
+    "cdx_limit": 1000,
+    "collapse": null,
+    "automatic_redirects": 0,
+    "manual_redirect_follow": 0,
+    "continuation_pages": 0,
+    "strict_origin": "same scheme/host/path/query; only default ports normalize; bare/www and HTTP/HTTPS stay separate",
+    "body_classification": "RSS/Atom/XML parsed from actual body; expanded HTML independently observed; XML extension does not imply XML",
+    "integration": "hold accepted entities for later source version; do not modify v11/source/export"
+  },
+  "transport": {
+    "confirmed_transport": "proxy",
+    "curl": "C:\\Windows\\System32\\curl.exe",
+    "proxy": "http://127.0.0.1:7890",
+    "tls_verification": "curl default verification enabled"
+  },
+  "preflight": {
+    "disk_free_bytes_before": 35397550080,
+    "disk_free_bytes_after": 35396263936,
+    "minimum_free_bytes": 11005853696
+  },
+  "postflight": {
+    "checked_utc": "2026-10-15T12:09:30.113353+00:00",
+    "disk_free_bytes": 35396263936,
+    "attempts_count": 11,
+    "persisted_in_finally": true
+  },
+  "target_count": 8,
+  "unique_target_count": 8,
+  "cdx_target_count": 6,
+  "known_replay_target_count": 2,
+  "category_counts": {
+    "transport_error": 5,
+    "valid_html_payload": 3
+  },
+  "transport_attempt_count": 11,
+  "source_request_count": 11,
+  "failed_attempt_count": 6,
+  "source_response_count": 5,
+  "cdx_source_response_count": 2,
+  "replay_source_response_count": 3,
+  "capture_index_count": 25,
+  "valid_entity_count": 3,
+  "total_body_bytes": 507904,
+  "payload_body_bytes": 503221,
+  "stop_reason": "five_consecutive_tls_or_transport_failures",
+  "stop_detail": {
+    "failure_streak": 5,
+    "last_curl_exit": 35,
+    "last_source_status": null
+  },
+  "rate_limit": null,
+  "gate_validation": {
+    "min_dispatch_interval_seconds": 1.3589999999967404,
+    "min_request_start_interval_seconds": 1.3539838790893555,
+    "required_minimum_seconds": 1.35,
+    "dispatch_intervals_compliant": true,
+    "request_start_intervals_compliant": true,
+    "batch_policy_accepted": true,
+    "dispatch_count": 11
+  },
+  "resume_key_policy": {
+    "observed_saved": true,
+    "used": false,
+    "continuation_pages_requested": 0
+  },
+  "dispatch_log": "dispatch-log.json",
+  "results": [
+    {
+      "rank": 1,
+      "target": "/news/rss-07-2007.xml",
+      "query_original": "http://www.worldofwarcraft.com/news/rss-07-2007.xml",
+      "year": 2007,
+      "month": 7,
+      "operation": "exact_CDX_then_at_most_one_eligible_replay",
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:86:Menu2_2_6",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:148",
+          "label": "July, 2007",
+          "href": "/news/rss-07-2007.xml "
+        }
+      ],
+      "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-07-2007.xml&matchType=exact&from=20040101&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=1000&showResumeKey=true",
+      "cdx": {
+        "query_performed": true,
+        "source_status": 200,
+        "source_response_count": 1,
+        "capture_index_count": 13,
+        "eligible_status_200_count": 11,
+        "redirect_index_count": 0,
+        "capture_records": [
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-07-2007.xml",
+            "timestamp": "20070708234520",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-07-2007.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "UPGDYLCPVJTVF37NTW7QO3RWXZVTZASY",
+            "length": "8551",
+            "record_index": 0,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-07-2007.xml",
+            "timestamp": "20070813150348",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-07-2007.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "DG2AJ52IJFRWOL2AI42FP4AABTQJZ662",
+            "length": "21389",
+            "record_index": 1,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-07-2007.xml",
+            "timestamp": "20070911170542",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-07-2007.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "RZ63YEA4DP3S2EWXS75SCF3IZL3HATRL",
+            "length": "20669",
+            "record_index": 2,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-07-2007.xml",
+            "timestamp": "20070917010736",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-07-2007.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "LTUDDYUYRLG3Q6RFMIMJVMYJKVMNTYIJ",
+            "length": "20763",
+            "record_index": 3,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-07-2007.xml",
+            "timestamp": "20071009095358",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-07-2007.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "HRI5L4B4BE4ADNNZ4ANYPFAEHLNXBEGM",
+            "length": "20854",
+            "record_index": 4,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-07-2007.xml",
+            "timestamp": "20071013184246",
+            "original": "http://worldofwarcraft.com:80/news/rss-07-2007.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "X5QJYIJ5VQWFJGKECEWMQSVY4I2YZ3VG",
+            "length": "20785",
+            "record_index": 5,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": null,
+            "exact_original_match": false,
+            "valid_replay_candidate": false
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-07-2007.xml",
+            "timestamp": "20071015040430",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-07-2007.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "X5QJYIJ5VQWFJGKECEWMQSVY4I2YZ3VG",
+            "length": "20849",
+            "record_index": 6,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-07-2007.xml",
+            "timestamp": "20071114144727",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-07-2007.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "EYBDTQS7HVJYDRJCZ4ISZE3MMJPSIPMM",
+            "length": "20965",
+            "record_index": 7,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-07-2007.xml",
+            "timestamp": "20071215055516",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-07-2007.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "NLU3J3D3LUOBN56RH5GMQB7TEQZCJIFF",
+            "length": "20951",
+            "record_index": 8,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-07-2007.xml",
+            "timestamp": "20080115082039",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-07-2007.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "V7F7GY7TSBGFXEFMAXL6ZPPIXUHQM53K",
+            "length": "20907",
+            "record_index": 9,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-07-2007.xml",
+            "timestamp": "20080219075313",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-07-2007.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "GNBULNJ75KKUEULTWCC2IYZJJYSSZO3N",
+            "length": "20925",
+            "record_index": 10,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-07-2007.xml",
+            "timestamp": "20080402080637",
+            "original": "http://www.worldofwarcraft.com/news/rss-07-2007.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "734YB5PWRALEKCYV2J37VEN6NCKESMAF",
+            "length": "20768",
+            "record_index": 11,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "exact",
+            "exact_original_match": true,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-07-2007.xml",
+            "timestamp": "20080402101119",
+            "original": "https://www.worldofwarcraft.com/news/rss-07-2007.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "734YB5PWRALEKCYV2J37VEN6NCKESMAF",
+            "length": "20771",
+            "record_index": 12,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": null,
+            "exact_original_match": false,
+            "valid_replay_candidate": false
+          }
+        ],
+        "selected_capture": {
+          "urlkey": "com,worldofwarcraft)/news/rss-07-2007.xml",
+          "timestamp": "20080402080637",
+          "original": "http://www.worldofwarcraft.com/news/rss-07-2007.xml",
+          "mimetype": "text/html",
+          "statuscode": "200",
+          "digest": "734YB5PWRALEKCYV2J37VEN6NCKESMAF",
+          "length": "20768",
+          "record_index": 11,
+          "statuscode_int": 200,
+          "within_query_range": true,
+          "original_match_kind": "exact",
+          "exact_original_match": true,
+          "valid_replay_candidate": true
+        },
+        "other_origin_metadata": {
+          "excluded_from_eligible_candidates": true,
+          "record_count": 2,
+          "original_identities": [
+            "http://worldofwarcraft.com:80/news/rss-07-2007.xml",
+            "https://www.worldofwarcraft.com/news/rss-07-2007.xml"
+          ],
+          "records": [
+            {
+              "urlkey": "com,worldofwarcraft)/news/rss-07-2007.xml",
+              "timestamp": "20071013184246",
+              "original": "http://worldofwarcraft.com:80/news/rss-07-2007.xml",
+              "mimetype": "text/html",
+              "statuscode": "200",
+              "digest": "X5QJYIJ5VQWFJGKECEWMQSVY4I2YZ3VG",
+              "length": "20785",
+              "record_index": 5,
+              "statuscode_int": 200,
+              "within_query_range": true,
+              "original_match_kind": null,
+              "exact_original_match": false,
+              "valid_replay_candidate": false,
+              "origin_exclusion_reason": "host_mismatch"
+            },
+            {
+              "urlkey": "com,worldofwarcraft)/news/rss-07-2007.xml",
+              "timestamp": "20080402101119",
+              "original": "https://www.worldofwarcraft.com/news/rss-07-2007.xml",
+              "mimetype": "text/html",
+              "statuscode": "200",
+              "digest": "734YB5PWRALEKCYV2J37VEN6NCKESMAF",
+              "length": "20771",
+              "record_index": 12,
+              "statuscode_int": 200,
+              "within_query_range": true,
+              "original_match_kind": null,
+              "exact_original_match": false,
+              "valid_replay_candidate": false,
+              "origin_exclusion_reason": "scheme_mismatch"
+            }
+          ],
+          "policy": {
+            "same_scheme_required": true,
+            "same_lower_cased_host_required": true,
+            "only_default_port_equivalence": true,
+            "bare_www_are_separate_origins": true,
+            "http_https_are_separate_origins": true
+          }
+        },
+        "attempts": [
+          {
+            "executed": true,
+            "attempt": 1,
+            "kind": "cdx",
+            "target_key": "http://www.worldofwarcraft.com/news/rss-07-2007.xml",
+            "transport": "direct",
+            "url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-07-2007.xml&matchType=exact&from=20040101&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=1000&showResumeKey=true",
+            "started_utc": "2026-10-15T12:08:55.423173+00:00",
+            "finished_utc": "2026-10-15T12:08:59.504933+00:00",
+            "duration_ms": 4079.0,
+            "curl_exit": 28,
+            "source_status": null,
+            "connect_status": null,
+            "content_type": null,
+            "location": null,
+            "retry_after": null,
+            "memento_datetime": null,
+            "redirects_requested": 0,
+            "automatic_redirects": 0,
+            "body_bytes": 0,
+            "body_sha256": null,
+            "transport_error": true,
+            "transport_reason": "no_http_status",
+            "raw": {
+              "headers": "raw/01-http_www.worldofwarcraft.com_news_rss-07-2007.xml-cdx-direct.headers.txt",
+              "body": "raw/01-http_www.worldofwarcraft.com_news_rss-07-2007.xml-cdx-direct.body",
+              "stderr": "raw/01-http_www.worldofwarcraft.com_news_rss-07-2007.xml-cdx-direct.stderr.txt",
+              "trace": "raw/01-http_www.worldofwarcraft.com_news_rss-07-2007.xml-cdx-direct.trace.txt",
+              "metrics": "raw/01-http_www.worldofwarcraft.com_news_rss-07-2007.xml-cdx-direct.metrics.txt"
+            },
+            "cdx_parse_valid": false,
+            "cdx_parse_error": "no_200_source_response",
+            "dispatch_utc": "2026-10-15T12:08:55.422140+00:00",
+            "dispatch_monotonic": 32885.421,
+            "dispatch_interval_seconds": null,
+            "gate_persisted_before_transport": true,
+            "local_zero_byte_body_placeholder": true,
+            "body_is_source_response": false
+          },
+          {
+            "executed": true,
+            "attempt": 2,
+            "kind": "cdx",
+            "target_key": "http://www.worldofwarcraft.com/news/rss-07-2007.xml",
+            "transport": "proxy",
+            "url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-07-2007.xml&matchType=exact&from=20040101&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=1000&showResumeKey=true",
+            "started_utc": "2026-10-15T12:08:59.514931+00:00",
+            "finished_utc": "2026-10-15T12:09:02.502214+00:00",
+            "duration_ms": 3016.0,
+            "curl_exit": 0,
+            "source_status": 200,
+            "connect_status": 200,
+            "content_type": "application/json",
+            "location": null,
+            "retry_after": null,
+            "memento_datetime": null,
+            "redirects_requested": 0,
+            "automatic_redirects": 0,
+            "body_bytes": 2434,
+            "body_sha256": "90cf69541b1267ce6a90dc59774ccec878aa763a561bd636bd440f28e48e77b3",
+            "transport_error": false,
+            "transport_reason": null,
+            "raw": {
+              "headers": "raw/02-http_www.worldofwarcraft.com_news_rss-07-2007.xml-cdx-proxy.headers.txt",
+              "body": "raw/02-http_www.worldofwarcraft.com_news_rss-07-2007.xml-cdx-proxy.body",
+              "stderr": "raw/02-http_www.worldofwarcraft.com_news_rss-07-2007.xml-cdx-proxy.stderr.txt",
+              "trace": "raw/02-http_www.worldofwarcraft.com_news_rss-07-2007.xml-cdx-proxy.trace.txt",
+              "metrics": "raw/02-http_www.worldofwarcraft.com_news_rss-07-2007.xml-cdx-proxy.metrics.txt"
+            },
+            "cdx_parse_valid": true,
+            "cdx_parse_error": null,
+            "dispatch_utc": "2026-10-15T12:08:59.512931+00:00",
+            "dispatch_monotonic": 32889.5,
+            "dispatch_interval_seconds": 4.0789999999979045,
+            "gate_persisted_before_transport": true,
+            "local_zero_byte_body_placeholder": false,
+            "body_is_source_response": true
+          }
+        ],
+        "header_fields_observed": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "resume_keys_observed": [],
+        "resume_key_used": null,
+        "continuation_followed": false,
+        "body_bytes": 2434,
+        "body_sha256": "90cf69541b1267ce6a90dc59774ccec878aa763a561bd636bd440f28e48e77b3",
+        "index_distribution": {
+          "statuscode": {
+            "200": 13
+          },
+          "mimetype": {
+            "text/html": 13
+          },
+          "origin_match_kind": {
+            "": 2,
+            "default_port_80": 10,
+            "exact": 1
+          }
+        }
+      },
+      "selected_capture": {
+        "urlkey": "com,worldofwarcraft)/news/rss-07-2007.xml",
+        "timestamp": "20080402080637",
+        "original": "http://www.worldofwarcraft.com/news/rss-07-2007.xml",
+        "mimetype": "text/html",
+        "statuscode": "200",
+        "digest": "734YB5PWRALEKCYV2J37VEN6NCKESMAF",
+        "length": "20768",
+        "record_index": 11,
+        "statuscode_int": 200,
+        "within_query_range": true,
+        "original_match_kind": "exact",
+        "exact_original_match": true,
+        "valid_replay_candidate": true
+      },
+      "replay_attempt_count": 1,
+      "replay_source_response_count": 1,
+      "replay_hops": [
+        {
+          "capture": {
+            "urlkey": "com,worldofwarcraft)/news/rss-07-2007.xml",
+            "timestamp": "20080402080637",
+            "original": "http://www.worldofwarcraft.com/news/rss-07-2007.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "734YB5PWRALEKCYV2J37VEN6NCKESMAF",
+            "length": "20768",
+            "record_index": 11,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "exact",
+            "exact_original_match": true,
+            "valid_replay_candidate": true
+          },
+          "replay_url": "https://web.archive.org/web/20080402080637id_/http://www.worldofwarcraft.com/news/rss-07-2007.xml",
+          "attempts": [
+            {
+              "executed": true,
+              "attempt": 3,
+              "kind": "replay",
+              "target_key": "http://www.worldofwarcraft.com/news/rss-07-2007.xml",
+              "transport": "proxy",
+              "url": "https://web.archive.org/web/20080402080637id_/http://www.worldofwarcraft.com/news/rss-07-2007.xml",
+              "started_utc": "2026-10-15T12:09:02.553867+00:00",
+              "finished_utc": "2026-10-15T12:09:08.325604+00:00",
+              "duration_ms": 6313.0,
+              "curl_exit": 0,
+              "source_status": 200,
+              "connect_status": 200,
+              "content_type": "text/html;charset=UTF-8",
+              "location": null,
+              "retry_after": null,
+              "memento_datetime": "2008-04-02T08:06:37+00:00",
+              "redirects_requested": 0,
+              "automatic_redirects": 0,
+              "body_bytes": 185016,
+              "body_sha256": "867f0c5003c525d116295e54fcd328845c4d41c3566206d38226b107d8283696",
+              "transport_error": false,
+              "transport_reason": null,
+              "raw": {
+                "headers": "raw/03-http_www.worldofwarcraft.com_news_rss-07-2007.xml-replay-proxy.headers.txt",
+                "body": "raw/03-http_www.worldofwarcraft.com_news_rss-07-2007.xml-replay-proxy.body",
+                "stderr": "raw/03-http_www.worldofwarcraft.com_news_rss-07-2007.xml-replay-proxy.stderr.txt",
+                "trace": "raw/03-http_www.worldofwarcraft.com_news_rss-07-2007.xml-replay-proxy.trace.txt",
+                "metrics": "raw/03-http_www.worldofwarcraft.com_news_rss-07-2007.xml-replay-proxy.metrics.txt"
+              },
+              "html": {
+                "is_html": true,
+                "markers": [],
+                "title": "WoW -> Archived News -> July, 2007",
+                "parse_ok": true
+              },
+              "xml": {
+                "is_xml": true,
+                "parse_ok": false,
+                "root": null,
+                "parse_error": "ParseError"
+              },
+              "dispatch_utc": "2026-10-15T12:09:02.551868+00:00",
+              "dispatch_monotonic": 32892.546,
+              "dispatch_interval_seconds": 3.0460000000020955,
+              "gate_persisted_before_transport": true,
+              "local_zero_byte_body_placeholder": false,
+              "body_is_source_response": true
+            }
+          ],
+          "category": "valid_html_payload",
+          "reason": "valid_html_payload",
+          "validation": {
+            "body_bytes": 185016,
+            "body_sha256": "867f0c5003c525d116295e54fcd328845c4d41c3566206d38226b107d8283696",
+            "cdx_digest_expected": "734YB5PWRALEKCYV2J37VEN6NCKESMAF",
+            "cdx_digest_calculated": "734YB5PWRALEKCYV2J37VEN6NCKESMAF",
+            "cdx_digest_match": true,
+            "cdx_length": 20768,
+            "actual_memento": "2008-04-02T08:06:37+00:00",
+            "source_status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "raw_body_path": "raw/03-http_www.worldofwarcraft.com_news_rss-07-2007.xml-replay-proxy.body",
+            "raw_headers_path": "raw/03-http_www.worldofwarcraft.com_news_rss-07-2007.xml-replay-proxy.headers.txt",
+            "body_observation": {
+              "encoding": "utf-8",
+              "mime": "text/html",
+              "parse_ok": true,
+              "parse_error": null,
+              "title": "WoW -> Archived News -> July, 2007",
+              "headings": [
+                {
+                  "tag": "h1",
+                  "text": "BlizzCon Panels and Schedule"
+                },
+                {
+                  "tag": "h1",
+                  "text": "World of Warcraft Comic Contest: Winner"
+                },
+                {
+                  "tag": "h1",
+                  "text": "World of Warcraft Comic Cover Artist Jim Lee at BlizzCon"
+                },
+                {
+                  "tag": "h1",
+                  "text": "BlizzCon Begins This Week!"
+                },
+                {
+                  "tag": "h1",
+                  "text": "BlizzCon Tournament Brackets and Player Profiles"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Jay Mohr to Appear at BlizzCon"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Unbroken"
+                },
+                {
+                  "tag": "h1",
+                  "text": "BlizzCon Survival Guide"
+                },
+                {
+                  "tag": "h1",
+                  "text": "New Fan Art"
+                },
+                {
+                  "tag": "h1",
+                  "text": "World of Warcraft Invades CBS Sport"
+                },
+                {
+                  "tag": "h1",
+                  "text": "World of Warcraft Reaches New Milestone"
+                },
+                {
+                  "tag": "h1",
+                  "text": "New Wallpaper: Level 70 Elite Tauren Chieftain"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Introducing World of Warcraft, the Comic"
+                },
+                {
+                  "tag": "h1",
+                  "text": "BlizzCon Online Contest Submissions Closed"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "BlizzCon FAQ Update"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Selected Fan Art From Europe"
+                },
+                {
+                  "tag": "h1",
+                  "text": "South Park Receives Emmy Nomination"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Curse Gaming Interviews"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Class Guides Wanted!"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Profession Guides Wanted!"
+                },
+                {
+                  "tag": "h1",
+                  "text": "BlizzCon Online Contests"
+                },
+                {
+                  "tag": "h1",
+                  "text": "News From World of Warcraft Stratics"
+                },
+                {
+                  "tag": "h1",
+                  "text": "New Fan Art"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Flying Mounts Page Update"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Arena 2v2 CGS Second Qualification Concluded"
+                },
+                {
+                  "tag": "h1",
+                  "text": "New World of Warcraft Fan Wallpaper"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WSVG Arena Tournament – Toronto, Canada"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Level 70 Elite Tauren Chieftain to Rock BlizzCon 2007"
+                },
+                {
+                  "tag": "h1",
+                  "text": "World of Warcraft TCG Marquee Event July 20-22"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Armor Sets Page Update: Arena Season 2"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "World of Warcraft TCG US Nationals at Gen Con Indy"
+                },
+                {
+                  "tag": "h1",
+                  "text": "BlizzCon Online Contests - Submit Now!"
+                },
+                {
+                  "tag": "h1",
+                  "text": "E3 2007: Upcoming World of Warcraft Features"
+                },
+                {
+                  "tag": "h1",
+                  "text": "New Fan Art"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Arena 2v2 CGS Second Qualification Begins"
+                },
+                {
+                  "tag": "h1",
+                  "text": "The Arena Hall of Fame: Season One"
+                },
+                {
+                  "tag": "h1",
+                  "text": "New World of Warcraft Wallpaper"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Small Patch and Mail System Updates"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Live Contests at BlizzCon - Register Now!"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Armor Sets Page Update: Tier 6"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Honor Rewards Update: Veteran Rewards"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Q&A with World of Warcraft's Jeff Kaplan"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Killer Trivia Contest"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Community Request: Blizzard-Related News"
+                }
+              ],
+              "content_identity_sha256": "2007e632aae8e0504402dcaafc50d93a24a866ce809c92dfb8d4a1530696af0b",
+              "content_preview": "WoW -> Archived News -> July, 2007 @import \"/new-hp/css/loader_screen.css\"; @import \"/shared/global/menu/topnav/topnav.css\"; var scriptsLoaded=0; if(document.location.href.indexOf(\"worldofwarcraft.com\") != -1) document.domain = \"worldofwarcraft.com\"; try { document.execCommand(\"BackgroundImageCache\", false, true); } catch(err) {} scriptsLoaded=1; // var agt=navigator.userAgent.toLowerCase(); var iePos = appVer.indexOf('msie'); var is_opera = (agt.indexOf(\"opera\") != -1); var is_ie = ((iePos!=-1)",
+              "archive_markers": [],
+              "is_html": true
+            },
+            "body_format": "html",
+            "valid": true,
+            "validation_reason": "valid_html_payload",
+            "html_month_evidence": {
+              "declared_url_year": 2007,
+              "declared_url_month": 7,
+              "title": "WoW -> Archived News -> July, 2007",
+              "title_date_tokens": [
+                "July, 2007"
+              ],
+              "title_year_months": [
+                [
+                  2007,
+                  7
+                ]
+              ],
+              "title_month_evidence": {
+                "expected_year": 2007,
+                "expected_month": 7,
+                "date_field_count": 1,
+                "matching_count": 1,
+                "mismatch_count": 0,
+                "matching_examples": [
+                  "July, 2007"
+                ],
+                "mismatch_examples": [],
+                "state": "match"
+              },
+              "posted_or_visible_date_tokens": [
+                "July 22, 2007"
+              ],
+              "posted_or_visible_year_months": [
+                [
+                  2007,
+                  7
+                ]
+              ],
+              "posted_date_evidence": {
+                "expected_year": 2007,
+                "expected_month": 7,
+                "date_field_count": 1,
+                "matching_count": 1,
+                "mismatch_count": 0,
+                "matching_examples": [
+                  "July 22, 2007"
+                ],
+                "mismatch_examples": [],
+                "state": "match"
+              },
+              "article_month_matches_url": true,
+              "source_anomaly": null
+            },
+            "actual_memento_capture_timestamp_match": true,
+            "actual_memento_at_or_before_anchor": true
+          }
+        }
+      ],
+      "category": "valid_html_payload",
+      "reason": "valid_html_payload",
+      "actual_memento": "2008-04-02T08:06:37+00:00",
+      "source_status": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "body_bytes": 185016,
+      "body_sha256": "867f0c5003c525d116295e54fcd328845c4d41c3566206d38226b107d8283696",
+      "validation": {
+        "body_bytes": 185016,
+        "body_sha256": "867f0c5003c525d116295e54fcd328845c4d41c3566206d38226b107d8283696",
+        "cdx_digest_expected": "734YB5PWRALEKCYV2J37VEN6NCKESMAF",
+        "cdx_digest_calculated": "734YB5PWRALEKCYV2J37VEN6NCKESMAF",
+        "cdx_digest_match": true,
+        "cdx_length": 20768,
+        "actual_memento": "2008-04-02T08:06:37+00:00",
+        "source_status": 200,
+        "content_type": "text/html;charset=UTF-8",
+        "raw_body_path": "raw/03-http_www.worldofwarcraft.com_news_rss-07-2007.xml-replay-proxy.body",
+        "raw_headers_path": "raw/03-http_www.worldofwarcraft.com_news_rss-07-2007.xml-replay-proxy.headers.txt",
+        "body_observation": {
+          "encoding": "utf-8",
+          "mime": "text/html",
+          "parse_ok": true,
+          "parse_error": null,
+          "title": "WoW -> Archived News -> July, 2007",
+          "headings": [
+            {
+              "tag": "h1",
+              "text": "BlizzCon Panels and Schedule"
+            },
+            {
+              "tag": "h1",
+              "text": "World of Warcraft Comic Contest: Winner"
+            },
+            {
+              "tag": "h1",
+              "text": "World of Warcraft Comic Cover Artist Jim Lee at BlizzCon"
+            },
+            {
+              "tag": "h1",
+              "text": "BlizzCon Begins This Week!"
+            },
+            {
+              "tag": "h1",
+              "text": "BlizzCon Tournament Brackets and Player Profiles"
+            },
+            {
+              "tag": "h1",
+              "text": "Jay Mohr to Appear at BlizzCon"
+            },
+            {
+              "tag": "h1",
+              "text": "Unbroken"
+            },
+            {
+              "tag": "h1",
+              "text": "BlizzCon Survival Guide"
+            },
+            {
+              "tag": "h1",
+              "text": "New Fan Art"
+            },
+            {
+              "tag": "h1",
+              "text": "World of Warcraft Invades CBS Sport"
+            },
+            {
+              "tag": "h1",
+              "text": "World of Warcraft Reaches New Milestone"
+            },
+            {
+              "tag": "h1",
+              "text": "New Wallpaper: Level 70 Elite Tauren Chieftain"
+            },
+            {
+              "tag": "h1",
+              "text": "Introducing World of Warcraft, the Comic"
+            },
+            {
+              "tag": "h1",
+              "text": "BlizzCon Online Contest Submissions Closed"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "BlizzCon FAQ Update"
+            },
+            {
+              "tag": "h1",
+              "text": "Selected Fan Art From Europe"
+            },
+            {
+              "tag": "h1",
+              "text": "South Park Receives Emmy Nomination"
+            },
+            {
+              "tag": "h1",
+              "text": "Curse Gaming Interviews"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "Class Guides Wanted!"
+            },
+            {
+              "tag": "h1",
+              "text": "Profession Guides Wanted!"
+            },
+            {
+              "tag": "h1",
+              "text": "BlizzCon Online Contests"
+            },
+            {
+              "tag": "h1",
+              "text": "News From World of Warcraft Stratics"
+            },
+            {
+              "tag": "h1",
+              "text": "New Fan Art"
+            },
+            {
+              "tag": "h1",
+              "text": "Flying Mounts Page Update"
+            },
+            {
+              "tag": "h1",
+              "text": "Arena 2v2 CGS Second Qualification Concluded"
+            },
+            {
+              "tag": "h1",
+              "text": "New World of Warcraft Fan Wallpaper"
+            },
+            {
+              "tag": "h1",
+              "text": "WSVG Arena Tournament – Toronto, Canada"
+            },
+            {
+              "tag": "h1",
+              "text": "Level 70 Elite Tauren Chieftain to Rock BlizzCon 2007"
+            },
+            {
+              "tag": "h1",
+              "text": "World of Warcraft TCG Marquee Event July 20-22"
+            },
+            {
+              "tag": "h1",
+              "text": "Armor Sets Page Update: Arena Season 2"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "World of Warcraft TCG US Nationals at Gen Con Indy"
+            },
+            {
+              "tag": "h1",
+              "text": "BlizzCon Online Contests - Submit Now!"
+            },
+            {
+              "tag": "h1",
+              "text": "E3 2007: Upcoming World of Warcraft Features"
+            },
+            {
+              "tag": "h1",
+              "text": "New Fan Art"
+            },
+            {
+              "tag": "h1",
+              "text": "Arena 2v2 CGS Second Qualification Begins"
+            },
+            {
+              "tag": "h1",
+              "text": "The Arena Hall of Fame: Season One"
+            },
+            {
+              "tag": "h1",
+              "text": "New World of Warcraft Wallpaper"
+            },
+            {
+              "tag": "h1",
+              "text": "Small Patch and Mail System Updates"
+            },
+            {
+              "tag": "h1",
+              "text": "Live Contests at BlizzCon - Register Now!"
+            },
+            {
+              "tag": "h1",
+              "text": "Armor Sets Page Update: Tier 6"
+            },
+            {
+              "tag": "h1",
+              "text": "Honor Rewards Update: Veteran Rewards"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "Q&A with World of Warcraft's Jeff Kaplan"
+            },
+            {
+              "tag": "h1",
+              "text": "Killer Trivia Contest"
+            },
+            {
+              "tag": "h1",
+              "text": "Community Request: Blizzard-Related News"
+            }
+          ],
+          "content_identity_sha256": "2007e632aae8e0504402dcaafc50d93a24a866ce809c92dfb8d4a1530696af0b",
+          "content_preview": "WoW -> Archived News -> July, 2007 @import \"/new-hp/css/loader_screen.css\"; @import \"/shared/global/menu/topnav/topnav.css\"; var scriptsLoaded=0; if(document.location.href.indexOf(\"worldofwarcraft.com\") != -1) document.domain = \"worldofwarcraft.com\"; try { document.execCommand(\"BackgroundImageCache\", false, true); } catch(err) {} scriptsLoaded=1; // var agt=navigator.userAgent.toLowerCase(); var iePos = appVer.indexOf('msie'); var is_opera = (agt.indexOf(\"opera\") != -1); var is_ie = ((iePos!=-1)",
+          "archive_markers": [],
+          "is_html": true
+        },
+        "body_format": "html",
+        "valid": true,
+        "validation_reason": "valid_html_payload",
+        "html_month_evidence": {
+          "declared_url_year": 2007,
+          "declared_url_month": 7,
+          "title": "WoW -> Archived News -> July, 2007",
+          "title_date_tokens": [
+            "July, 2007"
+          ],
+          "title_year_months": [
+            [
+              2007,
+              7
+            ]
+          ],
+          "title_month_evidence": {
+            "expected_year": 2007,
+            "expected_month": 7,
+            "date_field_count": 1,
+            "matching_count": 1,
+            "mismatch_count": 0,
+            "matching_examples": [
+              "July, 2007"
+            ],
+            "mismatch_examples": [],
+            "state": "match"
+          },
+          "posted_or_visible_date_tokens": [
+            "July 22, 2007"
+          ],
+          "posted_or_visible_year_months": [
+            [
+              2007,
+              7
+            ]
+          ],
+          "posted_date_evidence": {
+            "expected_year": 2007,
+            "expected_month": 7,
+            "date_field_count": 1,
+            "matching_count": 1,
+            "mismatch_count": 0,
+            "matching_examples": [
+              "July 22, 2007"
+            ],
+            "mismatch_examples": [],
+            "state": "match"
+          },
+          "article_month_matches_url": true,
+          "source_anomaly": null
+        },
+        "actual_memento_capture_timestamp_match": true,
+        "actual_memento_at_or_before_anchor": true
+      },
+      "entity_valid": true,
+      "unrequested_reason": null
+    },
+    {
+      "rank": 2,
+      "target": "/news/rss-06-2007.xml",
+      "query_original": "http://www.worldofwarcraft.com/news/rss-06-2007.xml",
+      "year": 2007,
+      "month": 6,
+      "operation": "exact_CDX_then_at_most_one_eligible_replay",
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:87:Menu2_2_7",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:149",
+          "label": "June, 2007",
+          "href": "/news/rss-06-2007.xml "
+        }
+      ],
+      "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-06-2007.xml&matchType=exact&from=20040101&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=1000&showResumeKey=true",
+      "cdx": {
+        "query_performed": true,
+        "source_status": 200,
+        "source_response_count": 1,
+        "capture_index_count": 12,
+        "eligible_status_200_count": 10,
+        "redirect_index_count": 0,
+        "capture_records": [
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-06-2007.xml",
+            "timestamp": "20070608123918",
+            "original": "http://worldofwarcraft.com:80/news/rss-06-2007.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "CUA47F772XSEKZF22FIZOH2PEKER2JJJ",
+            "length": "8633",
+            "record_index": 0,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": null,
+            "exact_original_match": false,
+            "valid_replay_candidate": false
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-06-2007.xml",
+            "timestamp": "20070628235308",
+            "original": "http://www.worldofwarcraft.com/news/rss-06-2007.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "2723ULNGAZXVOOQ2JYCFGZ7YB6TSVNE5",
+            "length": "16216",
+            "record_index": 1,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "exact",
+            "exact_original_match": true,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-06-2007.xml",
+            "timestamp": "20070709061027",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-06-2007.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "EWNJZDJ2DROQOJT6UJV2LC7PP5EWMHV6",
+            "length": "21869",
+            "record_index": 2,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-06-2007.xml",
+            "timestamp": "20070813154051",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-06-2007.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "6BDCUZRSYVDEDQ4PVV7NTH6K2AEV7P3C",
+            "length": "21822",
+            "record_index": 3,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-06-2007.xml",
+            "timestamp": "20070916172043",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-06-2007.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "HRA6ROBX7BJYS4DUSXSTE6QC6XGIK4CL",
+            "length": "21223",
+            "record_index": 4,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-06-2007.xml",
+            "timestamp": "20070916221259",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-06-2007.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "HRA6ROBX7BJYS4DUSXSTE6QC6XGIK4CL",
+            "length": "21223",
+            "record_index": 5,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-06-2007.xml",
+            "timestamp": "20071026045536",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-06-2007.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "YQYB63HJED6GR6VBRBZFRGWZI25NH4S5",
+            "length": "21233",
+            "record_index": 6,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-06-2007.xml",
+            "timestamp": "20071126091108",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-06-2007.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "MN3B5L6BBQVTJVTIIWP3L3GKERPA6E6M",
+            "length": "21404",
+            "record_index": 7,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-06-2007.xml",
+            "timestamp": "20071227033215",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-06-2007.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "GMZ6JN5QEUD7IFIHUBA7KIOM7FY2MPK2",
+            "length": "21309",
+            "record_index": 8,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-06-2007.xml",
+            "timestamp": "20080205022555",
+            "original": "http://www.worldofwarcraft.com:80/news/rss-06-2007.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "OY2GXKMQITIDOKCJVRISRCJ7Q6SGY6RT",
+            "length": "21354",
+            "record_index": 9,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "default_port_80",
+            "exact_original_match": false,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-06-2007.xml",
+            "timestamp": "20080402080828",
+            "original": "http://www.worldofwarcraft.com/news/rss-06-2007.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "TDPZMUL2VIUBGLZYXQVCGGQAVU54RLE4",
+            "length": "21244",
+            "record_index": 10,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "exact",
+            "exact_original_match": true,
+            "valid_replay_candidate": true
+          },
+          {
+            "urlkey": "com,worldofwarcraft)/news/rss-06-2007.xml",
+            "timestamp": "20080402101202",
+            "original": "https://www.worldofwarcraft.com/news/rss-06-2007.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "TDPZMUL2VIUBGLZYXQVCGGQAVU54RLE4",
+            "length": "21247",
+            "record_index": 11,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": null,
+            "exact_original_match": false,
+            "valid_replay_candidate": false
+          }
+        ],
+        "selected_capture": {
+          "urlkey": "com,worldofwarcraft)/news/rss-06-2007.xml",
+          "timestamp": "20080402080828",
+          "original": "http://www.worldofwarcraft.com/news/rss-06-2007.xml",
+          "mimetype": "text/html",
+          "statuscode": "200",
+          "digest": "TDPZMUL2VIUBGLZYXQVCGGQAVU54RLE4",
+          "length": "21244",
+          "record_index": 10,
+          "statuscode_int": 200,
+          "within_query_range": true,
+          "original_match_kind": "exact",
+          "exact_original_match": true,
+          "valid_replay_candidate": true
+        },
+        "other_origin_metadata": {
+          "excluded_from_eligible_candidates": true,
+          "record_count": 2,
+          "original_identities": [
+            "http://worldofwarcraft.com:80/news/rss-06-2007.xml",
+            "https://www.worldofwarcraft.com/news/rss-06-2007.xml"
+          ],
+          "records": [
+            {
+              "urlkey": "com,worldofwarcraft)/news/rss-06-2007.xml",
+              "timestamp": "20070608123918",
+              "original": "http://worldofwarcraft.com:80/news/rss-06-2007.xml",
+              "mimetype": "text/html",
+              "statuscode": "200",
+              "digest": "CUA47F772XSEKZF22FIZOH2PEKER2JJJ",
+              "length": "8633",
+              "record_index": 0,
+              "statuscode_int": 200,
+              "within_query_range": true,
+              "original_match_kind": null,
+              "exact_original_match": false,
+              "valid_replay_candidate": false,
+              "origin_exclusion_reason": "host_mismatch"
+            },
+            {
+              "urlkey": "com,worldofwarcraft)/news/rss-06-2007.xml",
+              "timestamp": "20080402101202",
+              "original": "https://www.worldofwarcraft.com/news/rss-06-2007.xml",
+              "mimetype": "text/html",
+              "statuscode": "200",
+              "digest": "TDPZMUL2VIUBGLZYXQVCGGQAVU54RLE4",
+              "length": "21247",
+              "record_index": 11,
+              "statuscode_int": 200,
+              "within_query_range": true,
+              "original_match_kind": null,
+              "exact_original_match": false,
+              "valid_replay_candidate": false,
+              "origin_exclusion_reason": "scheme_mismatch"
+            }
+          ],
+          "policy": {
+            "same_scheme_required": true,
+            "same_lower_cased_host_required": true,
+            "only_default_port_equivalence": true,
+            "bare_www_are_separate_origins": true,
+            "http_https_are_separate_origins": true
+          }
+        },
+        "attempts": [
+          {
+            "executed": true,
+            "attempt": 4,
+            "kind": "cdx",
+            "target_key": "http://www.worldofwarcraft.com/news/rss-06-2007.xml",
+            "transport": "proxy",
+            "url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-06-2007.xml&matchType=exact&from=20040101&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=1000&showResumeKey=true",
+            "started_utc": "2026-10-15T12:09:08.983401+00:00",
+            "finished_utc": "2026-10-15T12:09:17.616523+00:00",
+            "duration_ms": 8656.0,
+            "curl_exit": 0,
+            "source_status": 200,
+            "connect_status": 200,
+            "content_type": "application/json",
+            "location": null,
+            "retry_after": null,
+            "memento_datetime": null,
+            "redirects_requested": 0,
+            "automatic_redirects": 0,
+            "body_bytes": 2249,
+            "body_sha256": "e915e8e10830743f0327ac600a5d5894f314764bef4fee25c8ae302c28cf615d",
+            "transport_error": false,
+            "transport_reason": null,
+            "raw": {
+              "headers": "raw/04-http_www.worldofwarcraft.com_news_rss-06-2007.xml-cdx-proxy.headers.txt",
+              "body": "raw/04-http_www.worldofwarcraft.com_news_rss-06-2007.xml-cdx-proxy.body",
+              "stderr": "raw/04-http_www.worldofwarcraft.com_news_rss-06-2007.xml-cdx-proxy.stderr.txt",
+              "trace": "raw/04-http_www.worldofwarcraft.com_news_rss-06-2007.xml-cdx-proxy.trace.txt",
+              "metrics": "raw/04-http_www.worldofwarcraft.com_news_rss-06-2007.xml-cdx-proxy.metrics.txt"
+            },
+            "cdx_parse_valid": true,
+            "cdx_parse_error": null,
+            "dispatch_utc": "2026-10-15T12:09:08.981419+00:00",
+            "dispatch_monotonic": 32898.968,
+            "dispatch_interval_seconds": 6.421999999998661,
+            "gate_persisted_before_transport": true,
+            "local_zero_byte_body_placeholder": false,
+            "body_is_source_response": true
+          }
+        ],
+        "header_fields_observed": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "resume_keys_observed": [],
+        "resume_key_used": null,
+        "continuation_followed": false,
+        "body_bytes": 2249,
+        "body_sha256": "e915e8e10830743f0327ac600a5d5894f314764bef4fee25c8ae302c28cf615d",
+        "index_distribution": {
+          "statuscode": {
+            "200": 12
+          },
+          "mimetype": {
+            "text/html": 12
+          },
+          "origin_match_kind": {
+            "": 2,
+            "default_port_80": 8,
+            "exact": 2
+          }
+        }
+      },
+      "selected_capture": {
+        "urlkey": "com,worldofwarcraft)/news/rss-06-2007.xml",
+        "timestamp": "20080402080828",
+        "original": "http://www.worldofwarcraft.com/news/rss-06-2007.xml",
+        "mimetype": "text/html",
+        "statuscode": "200",
+        "digest": "TDPZMUL2VIUBGLZYXQVCGGQAVU54RLE4",
+        "length": "21244",
+        "record_index": 10,
+        "statuscode_int": 200,
+        "within_query_range": true,
+        "original_match_kind": "exact",
+        "exact_original_match": true,
+        "valid_replay_candidate": true
+      },
+      "replay_attempt_count": 1,
+      "replay_source_response_count": 1,
+      "replay_hops": [
+        {
+          "capture": {
+            "urlkey": "com,worldofwarcraft)/news/rss-06-2007.xml",
+            "timestamp": "20080402080828",
+            "original": "http://www.worldofwarcraft.com/news/rss-06-2007.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "TDPZMUL2VIUBGLZYXQVCGGQAVU54RLE4",
+            "length": "21244",
+            "record_index": 10,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "exact",
+            "exact_original_match": true,
+            "valid_replay_candidate": true
+          },
+          "replay_url": "https://web.archive.org/web/20080402080828id_/http://www.worldofwarcraft.com/news/rss-06-2007.xml",
+          "attempts": [
+            {
+              "executed": true,
+              "attempt": 5,
+              "kind": "replay",
+              "target_key": "http://www.worldofwarcraft.com/news/rss-06-2007.xml",
+              "transport": "proxy",
+              "url": "https://web.archive.org/web/20080402080828id_/http://www.worldofwarcraft.com/news/rss-06-2007.xml",
+              "started_utc": "2026-10-15T12:09:17.647155+00:00",
+              "finished_utc": "2026-10-15T12:09:20.479144+00:00",
+              "duration_ms": 3297.0,
+              "curl_exit": 0,
+              "source_status": 200,
+              "connect_status": 200,
+              "content_type": "text/html;charset=UTF-8",
+              "location": null,
+              "retry_after": null,
+              "memento_datetime": "2008-04-02T08:08:28+00:00",
+              "redirects_requested": 0,
+              "automatic_redirects": 0,
+              "body_bytes": 174728,
+              "body_sha256": "410cf53924a4226558b5736fad5b50e5b141e1db8f5514274342ea2ffadfdd2b",
+              "transport_error": false,
+              "transport_reason": null,
+              "raw": {
+                "headers": "raw/05-http_www.worldofwarcraft.com_news_rss-06-2007.xml-replay-proxy.headers.txt",
+                "body": "raw/05-http_www.worldofwarcraft.com_news_rss-06-2007.xml-replay-proxy.body",
+                "stderr": "raw/05-http_www.worldofwarcraft.com_news_rss-06-2007.xml-replay-proxy.stderr.txt",
+                "trace": "raw/05-http_www.worldofwarcraft.com_news_rss-06-2007.xml-replay-proxy.trace.txt",
+                "metrics": "raw/05-http_www.worldofwarcraft.com_news_rss-06-2007.xml-replay-proxy.metrics.txt"
+              },
+              "html": {
+                "is_html": true,
+                "markers": [
+                  "error_404"
+                ],
+                "title": "WoW -> Archived News -> June, 2007",
+                "parse_ok": true
+              },
+              "xml": {
+                "is_xml": true,
+                "parse_ok": false,
+                "root": null,
+                "parse_error": "ParseError"
+              },
+              "dispatch_utc": "2026-10-15T12:09:17.646652+00:00",
+              "dispatch_monotonic": 32907.64,
+              "dispatch_interval_seconds": 8.671999999998661,
+              "gate_persisted_before_transport": true,
+              "local_zero_byte_body_placeholder": false,
+              "body_is_source_response": true
+            }
+          ],
+          "category": "valid_html_payload",
+          "reason": "valid_html_payload",
+          "validation": {
+            "body_bytes": 174728,
+            "body_sha256": "410cf53924a4226558b5736fad5b50e5b141e1db8f5514274342ea2ffadfdd2b",
+            "cdx_digest_expected": "TDPZMUL2VIUBGLZYXQVCGGQAVU54RLE4",
+            "cdx_digest_calculated": "TDPZMUL2VIUBGLZYXQVCGGQAVU54RLE4",
+            "cdx_digest_match": true,
+            "cdx_length": 21244,
+            "actual_memento": "2008-04-02T08:08:28+00:00",
+            "source_status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "raw_body_path": "raw/05-http_www.worldofwarcraft.com_news_rss-06-2007.xml-replay-proxy.body",
+            "raw_headers_path": "raw/05-http_www.worldofwarcraft.com_news_rss-06-2007.xml-replay-proxy.headers.txt",
+            "body_observation": {
+              "encoding": "utf-8",
+              "mime": "text/html",
+              "parse_ok": true,
+              "parse_error": null,
+              "title": "WoW -> Archived News -> June, 2007",
+              "headings": [
+                {
+                  "tag": "h1",
+                  "text": "The Renaissance Faire: Party Like It's 1599!"
+                },
+                {
+                  "tag": "h1",
+                  "text": "World of Warcraft Comic Contest: Winner"
+                },
+                {
+                  "tag": "h1",
+                  "text": "BlizzCon Online Contests"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Blizzard European Regional Finals Conclude!"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Win BlizzCon Tickets From Blizzard Fan Sites"
+                },
+                {
+                  "tag": "h1",
+                  "text": "New Fan Art"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "New World of Warcraft Wallpaper"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Arena 2v2 CGS World Championship"
+                },
+                {
+                  "tag": "h1",
+                  "text": "World of Warcraft TCG Art Card Sets!"
+                },
+                {
+                  "tag": "h1",
+                  "text": "European Finals Commence!"
+                },
+                {
+                  "tag": "h1",
+                  "text": "World of Warcraft Video Contest: Last Call"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Midsummer Fire Festival"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Warcraft Music Featured in New Video Games Live Tour"
+                },
+                {
+                  "tag": "h1",
+                  "text": "World of Warcraft Featured at WSVG"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Robin Hood Screenshot Contest Winners"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Burning Crusade Attunement Chart Updated"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Interview With Aaron Rosenberg"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Free Character Transfers Available: Oceanic"
+                },
+                {
+                  "tag": "h1",
+                  "text": "New Fan Art"
+                },
+                {
+                  "tag": "h1",
+                  "text": "World of Warcraft Patch 2.1.2 Released"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Disciplinary Action Notice"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Blizzard Featured in Father's Day Week on Gamasutra"
+                },
+                {
+                  "tag": "h1",
+                  "text": "World of Warcraft Music Contest: Let the Votes Begin!"
+                },
+                {
+                  "tag": "h1",
+                  "text": "European Regionals: World of Warcraft and Warcraft III"
+                },
+                {
+                  "tag": "h1",
+                  "text": "BlizzCon 2007 Tickets: Sold Out!"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Win a Trip to the Blizzard Offices"
+                },
+                {
+                  "tag": "h1",
+                  "text": "New Fan Art"
+                },
+                {
+                  "tag": "h1",
+                  "text": "BlizzCon 2007 Tickets Going Quickly...Get Yours Now"
+                },
+                {
+                  "tag": "h1",
+                  "text": "BlizzCon 2007 Tickets on Sale!"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Blizzard American Regional Finals - Coverage"
+                },
+                {
+                  "tag": "h1",
+                  "text": "New Fan Art"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Armory FAQ and Updates Page: Essential Information"
+                },
+                {
+                  "tag": "h1",
+                  "text": "The World of Warcraft Item Database Has Arrived!"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Molten Core Raid Decks"
+                },
+                {
+                  "tag": "h1",
+                  "text": "World of Warcraft Music Video Contest!"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Selected Fan Art From Europe"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Blizzard American Regional Finals"
+                },
+                {
+                  "tag": "h1",
+                  "text": "BlizzCon Swag, Beta Key and Murloc Suit!"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Blizzard Americas Regional Update"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Getting spammed? Right-click to make it stop"
+                },
+                {
+                  "tag": "h1",
+                  "text": "More Old News"
+                }
+              ],
+              "content_identity_sha256": "2aeccacd1fe62edb595fcbb2b69382875a7b2683dc9e98db1557ae0993043929",
+              "content_preview": "WoW -> Archived News -> June, 2007 @import \"/new-hp/css/loader_screen.css\"; @import \"/shared/global/menu/topnav/topnav.css\"; var scriptsLoaded=0; if(document.location.href.indexOf(\"worldofwarcraft.com\") != -1) document.domain = \"worldofwarcraft.com\"; try { document.execCommand(\"BackgroundImageCache\", false, true); } catch(err) {} scriptsLoaded=1; // var agt=navigator.userAgent.toLowerCase(); var iePos = appVer.indexOf('msie'); var is_opera = (agt.indexOf(\"opera\") != -1); var is_ie = ((iePos!=-1)",
+              "archive_markers": [
+                "error_404"
+              ],
+              "is_html": true
+            },
+            "body_format": "html",
+            "valid": true,
+            "validation_reason": "valid_html_payload",
+            "html_month_evidence": {
+              "declared_url_year": 2007,
+              "declared_url_month": 6,
+              "title": "WoW -> Archived News -> June, 2007",
+              "title_date_tokens": [
+                "June, 2007"
+              ],
+              "title_year_months": [
+                [
+                  2007,
+                  6
+                ]
+              ],
+              "title_month_evidence": {
+                "expected_year": 2007,
+                "expected_month": 6,
+                "date_field_count": 1,
+                "matching_count": 1,
+                "mismatch_count": 0,
+                "matching_examples": [
+                  "June, 2007"
+                ],
+                "mismatch_examples": [],
+                "state": "match"
+              },
+              "posted_or_visible_date_tokens": [
+                "June 10, 2007",
+                "2007/06/27"
+              ],
+              "posted_or_visible_year_months": [
+                [
+                  2007,
+                  6
+                ],
+                [
+                  2007,
+                  6
+                ]
+              ],
+              "posted_date_evidence": {
+                "expected_year": 2007,
+                "expected_month": 6,
+                "date_field_count": 2,
+                "matching_count": 2,
+                "mismatch_count": 0,
+                "matching_examples": [
+                  "June 10, 2007",
+                  "2007/06/27"
+                ],
+                "mismatch_examples": [],
+                "state": "match"
+              },
+              "article_month_matches_url": true,
+              "source_anomaly": null
+            },
+            "actual_memento_capture_timestamp_match": true,
+            "actual_memento_at_or_before_anchor": true
+          }
+        }
+      ],
+      "category": "valid_html_payload",
+      "reason": "valid_html_payload",
+      "actual_memento": "2008-04-02T08:08:28+00:00",
+      "source_status": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "body_bytes": 174728,
+      "body_sha256": "410cf53924a4226558b5736fad5b50e5b141e1db8f5514274342ea2ffadfdd2b",
+      "validation": {
+        "body_bytes": 174728,
+        "body_sha256": "410cf53924a4226558b5736fad5b50e5b141e1db8f5514274342ea2ffadfdd2b",
+        "cdx_digest_expected": "TDPZMUL2VIUBGLZYXQVCGGQAVU54RLE4",
+        "cdx_digest_calculated": "TDPZMUL2VIUBGLZYXQVCGGQAVU54RLE4",
+        "cdx_digest_match": true,
+        "cdx_length": 21244,
+        "actual_memento": "2008-04-02T08:08:28+00:00",
+        "source_status": 200,
+        "content_type": "text/html;charset=UTF-8",
+        "raw_body_path": "raw/05-http_www.worldofwarcraft.com_news_rss-06-2007.xml-replay-proxy.body",
+        "raw_headers_path": "raw/05-http_www.worldofwarcraft.com_news_rss-06-2007.xml-replay-proxy.headers.txt",
+        "body_observation": {
+          "encoding": "utf-8",
+          "mime": "text/html",
+          "parse_ok": true,
+          "parse_error": null,
+          "title": "WoW -> Archived News -> June, 2007",
+          "headings": [
+            {
+              "tag": "h1",
+              "text": "The Renaissance Faire: Party Like It's 1599!"
+            },
+            {
+              "tag": "h1",
+              "text": "World of Warcraft Comic Contest: Winner"
+            },
+            {
+              "tag": "h1",
+              "text": "BlizzCon Online Contests"
+            },
+            {
+              "tag": "h1",
+              "text": "Blizzard European Regional Finals Conclude!"
+            },
+            {
+              "tag": "h1",
+              "text": "Win BlizzCon Tickets From Blizzard Fan Sites"
+            },
+            {
+              "tag": "h1",
+              "text": "New Fan Art"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "New World of Warcraft Wallpaper"
+            },
+            {
+              "tag": "h1",
+              "text": "Arena 2v2 CGS World Championship"
+            },
+            {
+              "tag": "h1",
+              "text": "World of Warcraft TCG Art Card Sets!"
+            },
+            {
+              "tag": "h1",
+              "text": "European Finals Commence!"
+            },
+            {
+              "tag": "h1",
+              "text": "World of Warcraft Video Contest: Last Call"
+            },
+            {
+              "tag": "h1",
+              "text": "Midsummer Fire Festival"
+            },
+            {
+              "tag": "h1",
+              "text": "Warcraft Music Featured in New Video Games Live Tour"
+            },
+            {
+              "tag": "h1",
+              "text": "World of Warcraft Featured at WSVG"
+            },
+            {
+              "tag": "h1",
+              "text": "Robin Hood Screenshot Contest Winners"
+            },
+            {
+              "tag": "h1",
+              "text": "Burning Crusade Attunement Chart Updated"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "Interview With Aaron Rosenberg"
+            },
+            {
+              "tag": "h1",
+              "text": "Free Character Transfers Available: Oceanic"
+            },
+            {
+              "tag": "h1",
+              "text": "New Fan Art"
+            },
+            {
+              "tag": "h1",
+              "text": "World of Warcraft Patch 2.1.2 Released"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "Disciplinary Action Notice"
+            },
+            {
+              "tag": "h1",
+              "text": "Blizzard Featured in Father's Day Week on Gamasutra"
+            },
+            {
+              "tag": "h1",
+              "text": "World of Warcraft Music Contest: Let the Votes Begin!"
+            },
+            {
+              "tag": "h1",
+              "text": "European Regionals: World of Warcraft and Warcraft III"
+            },
+            {
+              "tag": "h1",
+              "text": "BlizzCon 2007 Tickets: Sold Out!"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "Win a Trip to the Blizzard Offices"
+            },
+            {
+              "tag": "h1",
+              "text": "New Fan Art"
+            },
+            {
+              "tag": "h1",
+              "text": "BlizzCon 2007 Tickets Going Quickly...Get Yours Now"
+            },
+            {
+              "tag": "h1",
+              "text": "BlizzCon 2007 Tickets on Sale!"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "Blizzard American Regional Finals - Coverage"
+            },
+            {
+              "tag": "h1",
+              "text": "New Fan Art"
+            },
+            {
+              "tag": "h1",
+              "text": "Armory FAQ and Updates Page: Essential Information"
+            },
+            {
+              "tag": "h1",
+              "text": "The World of Warcraft Item Database Has Arrived!"
+            },
+            {
+              "tag": "h1",
+              "text": "Molten Core Raid Decks"
+            },
+            {
+              "tag": "h1",
+              "text": "World of Warcraft Music Video Contest!"
+            },
+            {
+              "tag": "h1",
+              "text": "Selected Fan Art From Europe"
+            },
+            {
+              "tag": "h1",
+              "text": "Blizzard American Regional Finals"
+            },
+            {
+              "tag": "h1",
+              "text": "BlizzCon Swag, Beta Key and Murloc Suit!"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "Blizzard Americas Regional Update"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "Getting spammed? Right-click to make it stop"
+            },
+            {
+              "tag": "h1",
+              "text": "More Old News"
+            }
+          ],
+          "content_identity_sha256": "2aeccacd1fe62edb595fcbb2b69382875a7b2683dc9e98db1557ae0993043929",
+          "content_preview": "WoW -> Archived News -> June, 2007 @import \"/new-hp/css/loader_screen.css\"; @import \"/shared/global/menu/topnav/topnav.css\"; var scriptsLoaded=0; if(document.location.href.indexOf(\"worldofwarcraft.com\") != -1) document.domain = \"worldofwarcraft.com\"; try { document.execCommand(\"BackgroundImageCache\", false, true); } catch(err) {} scriptsLoaded=1; // var agt=navigator.userAgent.toLowerCase(); var iePos = appVer.indexOf('msie'); var is_opera = (agt.indexOf(\"opera\") != -1); var is_ie = ((iePos!=-1)",
+          "archive_markers": [
+            "error_404"
+          ],
+          "is_html": true
+        },
+        "body_format": "html",
+        "valid": true,
+        "validation_reason": "valid_html_payload",
+        "html_month_evidence": {
+          "declared_url_year": 2007,
+          "declared_url_month": 6,
+          "title": "WoW -> Archived News -> June, 2007",
+          "title_date_tokens": [
+            "June, 2007"
+          ],
+          "title_year_months": [
+            [
+              2007,
+              6
+            ]
+          ],
+          "title_month_evidence": {
+            "expected_year": 2007,
+            "expected_month": 6,
+            "date_field_count": 1,
+            "matching_count": 1,
+            "mismatch_count": 0,
+            "matching_examples": [
+              "June, 2007"
+            ],
+            "mismatch_examples": [],
+            "state": "match"
+          },
+          "posted_or_visible_date_tokens": [
+            "June 10, 2007",
+            "2007/06/27"
+          ],
+          "posted_or_visible_year_months": [
+            [
+              2007,
+              6
+            ],
+            [
+              2007,
+              6
+            ]
+          ],
+          "posted_date_evidence": {
+            "expected_year": 2007,
+            "expected_month": 6,
+            "date_field_count": 2,
+            "matching_count": 2,
+            "mismatch_count": 0,
+            "matching_examples": [
+              "June 10, 2007",
+              "2007/06/27"
+            ],
+            "mismatch_examples": [],
+            "state": "match"
+          },
+          "article_month_matches_url": true,
+          "source_anomaly": null
+        },
+        "actual_memento_capture_timestamp_match": true,
+        "actual_memento_at_or_before_anchor": true
+      },
+      "entity_valid": true,
+      "unrequested_reason": null
+    },
+    {
+      "rank": 3,
+      "target": "/news/rss-04-2007.xml",
+      "query_original": "http://www.worldofwarcraft.com/news/rss-04-2007.xml",
+      "year": 2007,
+      "month": 4,
+      "operation": "replay_saved_eligible_capture_without_requery",
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:89:Menu2_2_9",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:151",
+          "label": "April, 2007",
+          "href": "/news/rss-04-2007.xml "
+        }
+      ],
+      "query_url": null,
+      "cdx": {
+        "query_performed": false,
+        "source_status": null,
+        "source_response_count": 0,
+        "capture_index_count": 0,
+        "eligible_status_200_count": 0,
+        "redirect_index_count": 0,
+        "capture_records": [],
+        "selected_capture": {
+          "timestamp": "20080402081359",
+          "original": "http://www.worldofwarcraft.com/news/rss-04-2007.xml",
+          "mimetype": "text/html",
+          "statuscode": "200",
+          "digest": "EQJEFYNJTDC4GLAJZ2D262OPUDGYKEYP",
+          "length": "16966",
+          "record_index": 8,
+          "statuscode_int": 200,
+          "within_query_range": true,
+          "original_match_kind": "exact",
+          "exact_original_match": true,
+          "valid_replay_candidate": true
+        },
+        "other_origin_metadata": {},
+        "attempts": [],
+        "header_fields_observed": null,
+        "resume_keys_observed": [],
+        "resume_key_used": null,
+        "continuation_followed": false,
+        "body_bytes": 0,
+        "body_sha256": null,
+        "index_distribution": {
+          "statuscode": {},
+          "mimetype": {},
+          "origin_match_kind": {}
+        },
+        "query_url": null,
+        "saved_capture_source": "rss16-approved-plan.selected_capture"
+      },
+      "selected_capture": {
+        "timestamp": "20080402081359",
+        "original": "http://www.worldofwarcraft.com/news/rss-04-2007.xml",
+        "mimetype": "text/html",
+        "statuscode": "200",
+        "digest": "EQJEFYNJTDC4GLAJZ2D262OPUDGYKEYP",
+        "length": "16966",
+        "record_index": 8,
+        "statuscode_int": 200,
+        "within_query_range": true,
+        "original_match_kind": "exact",
+        "exact_original_match": true,
+        "valid_replay_candidate": true
+      },
+      "replay_attempt_count": 1,
+      "replay_source_response_count": 1,
+      "replay_hops": [
+        {
+          "capture": {
+            "timestamp": "20080402081359",
+            "original": "http://www.worldofwarcraft.com/news/rss-04-2007.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "EQJEFYNJTDC4GLAJZ2D262OPUDGYKEYP",
+            "length": "16966",
+            "record_index": 8,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "exact",
+            "exact_original_match": true,
+            "valid_replay_candidate": true
+          },
+          "replay_url": "https://web.archive.org/web/20080402081359id_/http://www.worldofwarcraft.com/news/rss-04-2007.xml",
+          "attempts": [
+            {
+              "executed": true,
+              "attempt": 6,
+              "kind": "replay",
+              "target_key": "http://www.worldofwarcraft.com/news/rss-04-2007.xml",
+              "transport": "proxy",
+              "url": "https://web.archive.org/web/20080402081359id_/http://www.worldofwarcraft.com/news/rss-04-2007.xml",
+              "started_utc": "2026-10-15T12:09:21.054796+00:00",
+              "finished_utc": "2026-10-15T12:09:23.628098+00:00",
+              "duration_ms": 2985.0,
+              "curl_exit": 0,
+              "source_status": 200,
+              "connect_status": 200,
+              "content_type": "text/html;charset=UTF-8",
+              "location": null,
+              "retry_after": null,
+              "memento_datetime": "2008-04-02T08:13:59+00:00",
+              "redirects_requested": 0,
+              "automatic_redirects": 0,
+              "body_bytes": 143477,
+              "body_sha256": "94afe06db69d0fe5198f3312808e5b1426636c067b29cd6a9fdc639ce190b532",
+              "transport_error": false,
+              "transport_reason": null,
+              "raw": {
+                "headers": "raw/06-http_www.worldofwarcraft.com_news_rss-04-2007.xml-replay-proxy.headers.txt",
+                "body": "raw/06-http_www.worldofwarcraft.com_news_rss-04-2007.xml-replay-proxy.body",
+                "stderr": "raw/06-http_www.worldofwarcraft.com_news_rss-04-2007.xml-replay-proxy.stderr.txt",
+                "trace": "raw/06-http_www.worldofwarcraft.com_news_rss-04-2007.xml-replay-proxy.trace.txt",
+                "metrics": "raw/06-http_www.worldofwarcraft.com_news_rss-04-2007.xml-replay-proxy.metrics.txt"
+              },
+              "html": {
+                "is_html": true,
+                "markers": [],
+                "title": "WoW -> Archived News -> April, 2007",
+                "parse_ok": true
+              },
+              "xml": {
+                "is_xml": true,
+                "parse_ok": false,
+                "root": null,
+                "parse_error": "ParseError"
+              },
+              "dispatch_utc": "2026-10-15T12:09:21.053287+00:00",
+              "dispatch_monotonic": 32911.046,
+              "dispatch_interval_seconds": 3.4060000000026776,
+              "gate_persisted_before_transport": true,
+              "local_zero_byte_body_placeholder": false,
+              "body_is_source_response": true
+            }
+          ],
+          "category": "valid_html_payload",
+          "reason": "valid_html_payload",
+          "validation": {
+            "body_bytes": 143477,
+            "body_sha256": "94afe06db69d0fe5198f3312808e5b1426636c067b29cd6a9fdc639ce190b532",
+            "cdx_digest_expected": "EQJEFYNJTDC4GLAJZ2D262OPUDGYKEYP",
+            "cdx_digest_calculated": "EQJEFYNJTDC4GLAJZ2D262OPUDGYKEYP",
+            "cdx_digest_match": true,
+            "cdx_length": 16966,
+            "actual_memento": "2008-04-02T08:13:59+00:00",
+            "source_status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "raw_body_path": "raw/06-http_www.worldofwarcraft.com_news_rss-04-2007.xml-replay-proxy.body",
+            "raw_headers_path": "raw/06-http_www.worldofwarcraft.com_news_rss-04-2007.xml-replay-proxy.headers.txt",
+            "body_observation": {
+              "encoding": "utf-8",
+              "mime": "text/html",
+              "parse_ok": true,
+              "parse_error": null,
+              "title": "WoW -> Archived News -> April, 2007",
+              "headings": [
+                {
+                  "tag": "h1",
+                  "text": "World of Warcraft Comic Contest: Winner"
+                },
+                {
+                  "tag": "h1",
+                  "text": "The World Series of Video Games has begun"
+                },
+                {
+                  "tag": "h1",
+                  "text": "New Extended Support Hours!"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Renaissance Faire Welcomes Denizens of Azeroth"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Expansion Factions Update"
+                },
+                {
+                  "tag": "h1",
+                  "text": "New World of Warcraft Fan Art"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Arena Tournament Second Qualification Round Begins"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Armor Sets Page Update: Part 2"
+                },
+                {
+                  "tag": "h1",
+                  "text": "World of Warcraft Down Under!"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Expansion Factions Update"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "(G)News From Outland: Crisis at Da Portal!"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW TCG Through the Dark Portal Loot Cards"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Expansion Factions Update: Tips"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Expansion Factions Update: The Consortium"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Introducing the Burning Crusade Free Trial!"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Expansion Factions Update: Sporeggar"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "BlizzCon 2007 Announced!"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Expansion Factions Update: Nagrand PvP"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Expansion Factions Update"
+                },
+                {
+                  "tag": "h1",
+                  "text": "World of Warcraft TCG Expansion Released"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Under Development: New End Game Content"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Expansion Factions Update"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Expansion Factions Update"
+                },
+                {
+                  "tag": "h1",
+                  "text": "WoW Comic Contest: Honorable Mentions"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Expansion Live in Region of Taiwan"
+                },
+                {
+                  "tag": "h1",
+                  "text": "New Employment Opportunity – Web Designer"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Expansion Strat Guide and Onyxia Raid Decks Available"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Darkmoon Faire Coming to Austin"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Comic Contest Rolls On"
+                },
+                {
+                  "tag": "h1",
+                  "text": "Expansion Factions Update"
+                },
+                {
+                  "tag": "h1",
+                  "text": "April Fools!"
+                },
+                {
+                  "tag": "h1",
+                  "text": "More Old News"
+                }
+              ],
+              "content_identity_sha256": "1dbf7a23e1e999b31e4902bb9492a5484f4a719524cf8ffe970d3970020d43be",
+              "content_preview": "WoW -> Archived News -> April, 2007 @import \"/new-hp/css/loader_screen.css\"; @import \"/shared/global/menu/topnav/topnav.css\"; var scriptsLoaded=0; if(document.location.href.indexOf(\"worldofwarcraft.com\") != -1) document.domain = \"worldofwarcraft.com\"; try { document.execCommand(\"BackgroundImageCache\", false, true); } catch(err) {} scriptsLoaded=1; // var agt=navigator.userAgent.toLowerCase(); var iePos = appVer.indexOf('msie'); var is_opera = (agt.indexOf(\"opera\") != -1); var is_ie = ((iePos!=-1",
+              "archive_markers": [],
+              "is_html": true
+            },
+            "body_format": "html",
+            "valid": true,
+            "validation_reason": "valid_html_payload",
+            "html_month_evidence": {
+              "declared_url_year": 2007,
+              "declared_url_month": 4,
+              "title": "WoW -> Archived News -> April, 2007",
+              "title_date_tokens": [
+                "April, 2007"
+              ],
+              "title_year_months": [
+                [
+                  2007,
+                  4
+                ]
+              ],
+              "title_month_evidence": {
+                "expected_year": 2007,
+                "expected_month": 4,
+                "date_field_count": 1,
+                "matching_count": 1,
+                "mismatch_count": 0,
+                "matching_examples": [
+                  "April, 2007"
+                ],
+                "mismatch_examples": [],
+                "state": "match"
+              },
+              "posted_or_visible_date_tokens": [
+                "August 3, 2007"
+              ],
+              "posted_or_visible_year_months": [
+                [
+                  2007,
+                  8
+                ]
+              ],
+              "posted_date_evidence": {
+                "expected_year": 2007,
+                "expected_month": 4,
+                "date_field_count": 1,
+                "matching_count": 0,
+                "mismatch_count": 1,
+                "matching_examples": [],
+                "mismatch_examples": [
+                  "August 3, 2007"
+                ],
+                "state": "mismatch"
+              },
+              "article_month_matches_url": false,
+              "source_anomaly": null
+            },
+            "actual_memento_capture_timestamp_match": true,
+            "actual_memento_at_or_before_anchor": true
+          }
+        }
+      ],
+      "category": "valid_html_payload",
+      "reason": "valid_html_payload",
+      "actual_memento": "2008-04-02T08:13:59+00:00",
+      "source_status": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "body_bytes": 143477,
+      "body_sha256": "94afe06db69d0fe5198f3312808e5b1426636c067b29cd6a9fdc639ce190b532",
+      "validation": {
+        "body_bytes": 143477,
+        "body_sha256": "94afe06db69d0fe5198f3312808e5b1426636c067b29cd6a9fdc639ce190b532",
+        "cdx_digest_expected": "EQJEFYNJTDC4GLAJZ2D262OPUDGYKEYP",
+        "cdx_digest_calculated": "EQJEFYNJTDC4GLAJZ2D262OPUDGYKEYP",
+        "cdx_digest_match": true,
+        "cdx_length": 16966,
+        "actual_memento": "2008-04-02T08:13:59+00:00",
+        "source_status": 200,
+        "content_type": "text/html;charset=UTF-8",
+        "raw_body_path": "raw/06-http_www.worldofwarcraft.com_news_rss-04-2007.xml-replay-proxy.body",
+        "raw_headers_path": "raw/06-http_www.worldofwarcraft.com_news_rss-04-2007.xml-replay-proxy.headers.txt",
+        "body_observation": {
+          "encoding": "utf-8",
+          "mime": "text/html",
+          "parse_ok": true,
+          "parse_error": null,
+          "title": "WoW -> Archived News -> April, 2007",
+          "headings": [
+            {
+              "tag": "h1",
+              "text": "World of Warcraft Comic Contest: Winner"
+            },
+            {
+              "tag": "h1",
+              "text": "The World Series of Video Games has begun"
+            },
+            {
+              "tag": "h1",
+              "text": "New Extended Support Hours!"
+            },
+            {
+              "tag": "h1",
+              "text": "Renaissance Faire Welcomes Denizens of Azeroth"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "Expansion Factions Update"
+            },
+            {
+              "tag": "h1",
+              "text": "New World of Warcraft Fan Art"
+            },
+            {
+              "tag": "h1",
+              "text": "Arena Tournament Second Qualification Round Begins"
+            },
+            {
+              "tag": "h1",
+              "text": "Armor Sets Page Update: Part 2"
+            },
+            {
+              "tag": "h1",
+              "text": "World of Warcraft Down Under!"
+            },
+            {
+              "tag": "h1",
+              "text": "Expansion Factions Update"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "(G)News From Outland: Crisis at Da Portal!"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW TCG Through the Dark Portal Loot Cards"
+            },
+            {
+              "tag": "h1",
+              "text": "Expansion Factions Update: Tips"
+            },
+            {
+              "tag": "h1",
+              "text": "Expansion Factions Update: The Consortium"
+            },
+            {
+              "tag": "h1",
+              "text": "Introducing the Burning Crusade Free Trial!"
+            },
+            {
+              "tag": "h1",
+              "text": "Expansion Factions Update: Sporeggar"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "BlizzCon 2007 Announced!"
+            },
+            {
+              "tag": "h1",
+              "text": "Expansion Factions Update: Nagrand PvP"
+            },
+            {
+              "tag": "h1",
+              "text": "Expansion Factions Update"
+            },
+            {
+              "tag": "h1",
+              "text": "World of Warcraft TCG Expansion Released"
+            },
+            {
+              "tag": "h1",
+              "text": "Under Development: New End Game Content"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "Expansion Factions Update"
+            },
+            {
+              "tag": "h1",
+              "text": "Expansion Factions Update"
+            },
+            {
+              "tag": "h1",
+              "text": "WoW Comic Contest: Honorable Mentions"
+            },
+            {
+              "tag": "h1",
+              "text": "Expansion Live in Region of Taiwan"
+            },
+            {
+              "tag": "h1",
+              "text": "New Employment Opportunity – Web Designer"
+            },
+            {
+              "tag": "h1",
+              "text": "Expansion Strat Guide and Onyxia Raid Decks Available"
+            },
+            {
+              "tag": "h1",
+              "text": "Darkmoon Faire Coming to Austin"
+            },
+            {
+              "tag": "h1",
+              "text": "Comic Contest Rolls On"
+            },
+            {
+              "tag": "h1",
+              "text": "Expansion Factions Update"
+            },
+            {
+              "tag": "h1",
+              "text": "April Fools!"
+            },
+            {
+              "tag": "h1",
+              "text": "More Old News"
+            }
+          ],
+          "content_identity_sha256": "1dbf7a23e1e999b31e4902bb9492a5484f4a719524cf8ffe970d3970020d43be",
+          "content_preview": "WoW -> Archived News -> April, 2007 @import \"/new-hp/css/loader_screen.css\"; @import \"/shared/global/menu/topnav/topnav.css\"; var scriptsLoaded=0; if(document.location.href.indexOf(\"worldofwarcraft.com\") != -1) document.domain = \"worldofwarcraft.com\"; try { document.execCommand(\"BackgroundImageCache\", false, true); } catch(err) {} scriptsLoaded=1; // var agt=navigator.userAgent.toLowerCase(); var iePos = appVer.indexOf('msie'); var is_opera = (agt.indexOf(\"opera\") != -1); var is_ie = ((iePos!=-1",
+          "archive_markers": [],
+          "is_html": true
+        },
+        "body_format": "html",
+        "valid": true,
+        "validation_reason": "valid_html_payload",
+        "html_month_evidence": {
+          "declared_url_year": 2007,
+          "declared_url_month": 4,
+          "title": "WoW -> Archived News -> April, 2007",
+          "title_date_tokens": [
+            "April, 2007"
+          ],
+          "title_year_months": [
+            [
+              2007,
+              4
+            ]
+          ],
+          "title_month_evidence": {
+            "expected_year": 2007,
+            "expected_month": 4,
+            "date_field_count": 1,
+            "matching_count": 1,
+            "mismatch_count": 0,
+            "matching_examples": [
+              "April, 2007"
+            ],
+            "mismatch_examples": [],
+            "state": "match"
+          },
+          "posted_or_visible_date_tokens": [
+            "August 3, 2007"
+          ],
+          "posted_or_visible_year_months": [
+            [
+              2007,
+              8
+            ]
+          ],
+          "posted_date_evidence": {
+            "expected_year": 2007,
+            "expected_month": 4,
+            "date_field_count": 1,
+            "matching_count": 0,
+            "mismatch_count": 1,
+            "matching_examples": [],
+            "mismatch_examples": [
+              "August 3, 2007"
+            ],
+            "state": "mismatch"
+          },
+          "article_month_matches_url": false,
+          "source_anomaly": "body_month_differs_from_declared_url"
+        },
+        "actual_memento_capture_timestamp_match": true,
+        "actual_memento_at_or_before_anchor": true
+      },
+      "entity_valid": true,
+      "unrequested_reason": null
+    },
+    {
+      "rank": 4,
+      "target": "/news/rss-09-2006.xml",
+      "query_original": "http://www.worldofwarcraft.com/news/rss-09-2006.xml",
+      "year": 2006,
+      "month": 9,
+      "operation": "replay_saved_eligible_capture_without_requery",
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:97:Menu2_3_4",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:160",
+          "label": "September, 2006",
+          "href": "/news/rss-09-2006.xml "
+        }
+      ],
+      "query_url": null,
+      "cdx": {
+        "query_performed": false,
+        "source_status": null,
+        "source_response_count": 0,
+        "capture_index_count": 0,
+        "eligible_status_200_count": 0,
+        "redirect_index_count": 0,
+        "capture_records": [],
+        "selected_capture": {
+          "timestamp": "20080402083522",
+          "original": "http://www.worldofwarcraft.com/news/rss-09-2006.xml",
+          "mimetype": "text/html",
+          "statuscode": "200",
+          "digest": "TE2VYLABFISJDHWAHPLXPUGNEGTEOWHT",
+          "length": "16078",
+          "record_index": 19,
+          "statuscode_int": 200,
+          "within_query_range": true,
+          "original_match_kind": "exact",
+          "exact_original_match": true,
+          "valid_replay_candidate": true
+        },
+        "other_origin_metadata": {},
+        "attempts": [],
+        "header_fields_observed": null,
+        "resume_keys_observed": [],
+        "resume_key_used": null,
+        "continuation_followed": false,
+        "body_bytes": 0,
+        "body_sha256": null,
+        "index_distribution": {
+          "statuscode": {},
+          "mimetype": {},
+          "origin_match_kind": {}
+        },
+        "query_url": null,
+        "saved_capture_source": "rss16-approved-plan.selected_capture"
+      },
+      "selected_capture": {
+        "timestamp": "20080402083522",
+        "original": "http://www.worldofwarcraft.com/news/rss-09-2006.xml",
+        "mimetype": "text/html",
+        "statuscode": "200",
+        "digest": "TE2VYLABFISJDHWAHPLXPUGNEGTEOWHT",
+        "length": "16078",
+        "record_index": 19,
+        "statuscode_int": 200,
+        "within_query_range": true,
+        "original_match_kind": "exact",
+        "exact_original_match": true,
+        "valid_replay_candidate": true
+      },
+      "replay_attempt_count": 1,
+      "replay_source_response_count": 0,
+      "replay_hops": [
+        {
+          "capture": {
+            "timestamp": "20080402083522",
+            "original": "http://www.worldofwarcraft.com/news/rss-09-2006.xml",
+            "mimetype": "text/html",
+            "statuscode": "200",
+            "digest": "TE2VYLABFISJDHWAHPLXPUGNEGTEOWHT",
+            "length": "16078",
+            "record_index": 19,
+            "statuscode_int": 200,
+            "within_query_range": true,
+            "original_match_kind": "exact",
+            "exact_original_match": true,
+            "valid_replay_candidate": true
+          },
+          "replay_url": "https://web.archive.org/web/20080402083522id_/http://www.worldofwarcraft.com/news/rss-09-2006.xml",
+          "attempts": [
+            {
+              "executed": true,
+              "attempt": 7,
+              "kind": "replay",
+              "target_key": "http://www.worldofwarcraft.com/news/rss-09-2006.xml",
+              "transport": "proxy",
+              "url": "https://web.archive.org/web/20080402083522id_/http://www.worldofwarcraft.com/news/rss-09-2006.xml",
+              "started_utc": "2026-10-15T12:09:24.113796+00:00",
+              "finished_utc": "2026-10-15T12:09:24.693357+00:00",
+              "duration_ms": 594.0,
+              "curl_exit": 35,
+              "source_status": null,
+              "connect_status": 200,
+              "content_type": null,
+              "location": null,
+              "retry_after": null,
+              "memento_datetime": null,
+              "redirects_requested": 0,
+              "automatic_redirects": 0,
+              "body_bytes": 0,
+              "body_sha256": null,
+              "transport_error": true,
+              "transport_reason": "no_http_status",
+              "raw": {
+                "headers": "raw/07-http_www.worldofwarcraft.com_news_rss-09-2006.xml-replay-proxy.headers.txt",
+                "body": "raw/07-http_www.worldofwarcraft.com_news_rss-09-2006.xml-replay-proxy.body",
+                "stderr": "raw/07-http_www.worldofwarcraft.com_news_rss-09-2006.xml-replay-proxy.stderr.txt",
+                "trace": "raw/07-http_www.worldofwarcraft.com_news_rss-09-2006.xml-replay-proxy.trace.txt",
+                "metrics": "raw/07-http_www.worldofwarcraft.com_news_rss-09-2006.xml-replay-proxy.metrics.txt"
+              },
+              "html": {
+                "is_html": false,
+                "markers": [],
+                "title": null,
+                "parse_ok": null
+              },
+              "xml": {
+                "is_xml": false,
+                "parse_ok": null,
+                "root": null
+              },
+              "dispatch_utc": "2026-10-15T12:09:24.111798+00:00",
+              "dispatch_monotonic": 32914.109,
+              "dispatch_interval_seconds": 3.062999999994645,
+              "gate_persisted_before_transport": true,
+              "local_zero_byte_body_placeholder": true,
+              "body_is_source_response": false
+            }
+          ],
+          "category": "transport_error",
+          "reason": "no_http_status",
+          "validation": null
+        }
+      ],
+      "category": "transport_error",
+      "reason": "no_http_status",
+      "actual_memento": null,
+      "source_status": null,
+      "content_type": null,
+      "body_bytes": 0,
+      "body_sha256": null,
+      "validation": null,
+      "entity_valid": false,
+      "unrequested_reason": null
+    },
+    {
+      "rank": 5,
+      "target": "/news/rss-05-2008.xml",
+      "query_original": "http://www.worldofwarcraft.com/news/rss-05-2008.xml",
+      "year": 2008,
+      "month": 5,
+      "operation": "exact_CDX_then_at_most_one_eligible_replay",
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:74:Menu2_1",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:135",
+          "label": "2008 Archive",
+          "href": "/news/rss-05-2008.xml "
+        },
+        {
+          "record_id": "legacy_reclassified:75:Menu2_1_1",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:136",
+          "label": "May, 2008",
+          "href": "/news/rss-05-2008.xml "
+        }
+      ],
+      "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-05-2008.xml&matchType=exact&from=20040101&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=1000&showResumeKey=true",
+      "cdx": {
+        "query_performed": true,
+        "source_status": null,
+        "source_response_count": 0,
+        "capture_index_count": 0,
+        "eligible_status_200_count": 0,
+        "redirect_index_count": 0,
+        "capture_records": [],
+        "selected_capture": null,
+        "other_origin_metadata": {},
+        "attempts": [
+          {
+            "executed": true,
+            "attempt": 8,
+            "kind": "cdx",
+            "target_key": "http://www.worldofwarcraft.com/news/rss-05-2008.xml",
+            "transport": "proxy",
+            "url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-05-2008.xml&matchType=exact&from=20040101&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=1000&showResumeKey=true",
+            "started_utc": "2026-10-15T12:09:25.470759+00:00",
+            "finished_utc": "2026-10-15T12:09:26.093323+00:00",
+            "duration_ms": 625.0,
+            "curl_exit": 35,
+            "source_status": null,
+            "connect_status": 200,
+            "content_type": null,
+            "location": null,
+            "retry_after": null,
+            "memento_datetime": null,
+            "redirects_requested": 0,
+            "automatic_redirects": 0,
+            "body_bytes": 0,
+            "body_sha256": null,
+            "transport_error": true,
+            "transport_reason": "no_http_status",
+            "raw": {
+              "headers": "raw/08-http_www.worldofwarcraft.com_news_rss-05-2008.xml-cdx-proxy.headers.txt",
+              "body": "raw/08-http_www.worldofwarcraft.com_news_rss-05-2008.xml-cdx-proxy.body",
+              "stderr": "raw/08-http_www.worldofwarcraft.com_news_rss-05-2008.xml-cdx-proxy.stderr.txt",
+              "trace": "raw/08-http_www.worldofwarcraft.com_news_rss-05-2008.xml-cdx-proxy.trace.txt",
+              "metrics": "raw/08-http_www.worldofwarcraft.com_news_rss-05-2008.xml-cdx-proxy.metrics.txt"
+            },
+            "cdx_parse_valid": false,
+            "cdx_parse_error": "no_200_source_response",
+            "dispatch_utc": "2026-10-15T12:09:25.469214+00:00",
+            "dispatch_monotonic": 32915.468,
+            "dispatch_interval_seconds": 1.3590000000040163,
+            "gate_persisted_before_transport": true,
+            "local_zero_byte_body_placeholder": true,
+            "body_is_source_response": false
+          }
+        ],
+        "header_fields_observed": null,
+        "resume_keys_observed": [],
+        "resume_key_used": null,
+        "continuation_followed": false,
+        "body_bytes": 0,
+        "body_sha256": null,
+        "index_distribution": {
+          "statuscode": {},
+          "mimetype": {},
+          "origin_match_kind": {}
+        }
+      },
+      "selected_capture": null,
+      "replay_attempt_count": 0,
+      "replay_source_response_count": 0,
+      "replay_hops": [],
+      "category": "transport_error",
+      "reason": "no_http_status",
+      "actual_memento": null,
+      "source_status": null,
+      "content_type": null,
+      "body_bytes": 0,
+      "body_sha256": null,
+      "validation": null,
+      "entity_valid": false,
+      "unrequested_reason": "no_http_status"
+    },
+    {
+      "rank": 6,
+      "target": "/news/rss-12-2007.xml",
+      "query_original": "http://www.worldofwarcraft.com/news/rss-12-2007.xml",
+      "year": 2007,
+      "month": 12,
+      "operation": "exact_CDX_then_at_most_one_eligible_replay",
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:80:Menu2_2",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:142",
+          "label": "2007 Archive",
+          "href": "/news/rss-12-2007.xml "
+        },
+        {
+          "record_id": "legacy_reclassified:81:Menu2_2_1",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:143",
+          "label": "December, 2007",
+          "href": "/news/rss-12-2007.xml "
+        }
+      ],
+      "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-12-2007.xml&matchType=exact&from=20040101&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=1000&showResumeKey=true",
+      "cdx": {
+        "query_performed": true,
+        "source_status": null,
+        "source_response_count": 0,
+        "capture_index_count": 0,
+        "eligible_status_200_count": 0,
+        "redirect_index_count": 0,
+        "capture_records": [],
+        "selected_capture": null,
+        "other_origin_metadata": {},
+        "attempts": [
+          {
+            "executed": true,
+            "attempt": 9,
+            "kind": "cdx",
+            "target_key": "http://www.worldofwarcraft.com/news/rss-12-2007.xml",
+            "transport": "proxy",
+            "url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-12-2007.xml&matchType=exact&from=20040101&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=1000&showResumeKey=true",
+            "started_utc": "2026-10-15T12:09:26.836539+00:00",
+            "finished_utc": "2026-10-15T12:09:27.411173+00:00",
+            "duration_ms": 578.0,
+            "curl_exit": 35,
+            "source_status": null,
+            "connect_status": 200,
+            "content_type": null,
+            "location": null,
+            "retry_after": null,
+            "memento_datetime": null,
+            "redirects_requested": 0,
+            "automatic_redirects": 0,
+            "body_bytes": 0,
+            "body_sha256": null,
+            "transport_error": true,
+            "transport_reason": "no_http_status",
+            "raw": {
+              "headers": "raw/09-http_www.worldofwarcraft.com_news_rss-12-2007.xml-cdx-proxy.headers.txt",
+              "body": "raw/09-http_www.worldofwarcraft.com_news_rss-12-2007.xml-cdx-proxy.body",
+              "stderr": "raw/09-http_www.worldofwarcraft.com_news_rss-12-2007.xml-cdx-proxy.stderr.txt",
+              "trace": "raw/09-http_www.worldofwarcraft.com_news_rss-12-2007.xml-cdx-proxy.trace.txt",
+              "metrics": "raw/09-http_www.worldofwarcraft.com_news_rss-12-2007.xml-cdx-proxy.metrics.txt"
+            },
+            "cdx_parse_valid": false,
+            "cdx_parse_error": "no_200_source_response",
+            "dispatch_utc": "2026-10-15T12:09:26.835020+00:00",
+            "dispatch_monotonic": 32916.828,
+            "dispatch_interval_seconds": 1.360000000000582,
+            "gate_persisted_before_transport": true,
+            "local_zero_byte_body_placeholder": true,
+            "body_is_source_response": false
+          }
+        ],
+        "header_fields_observed": null,
+        "resume_keys_observed": [],
+        "resume_key_used": null,
+        "continuation_followed": false,
+        "body_bytes": 0,
+        "body_sha256": null,
+        "index_distribution": {
+          "statuscode": {},
+          "mimetype": {},
+          "origin_match_kind": {}
+        }
+      },
+      "selected_capture": null,
+      "replay_attempt_count": 0,
+      "replay_source_response_count": 0,
+      "replay_hops": [],
+      "category": "transport_error",
+      "reason": "no_http_status",
+      "actual_memento": null,
+      "source_status": null,
+      "content_type": null,
+      "body_bytes": 0,
+      "body_sha256": null,
+      "validation": null,
+      "entity_valid": false,
+      "unrequested_reason": "no_http_status"
+    },
+    {
+      "rank": 7,
+      "target": "/news/rss-11-2007.xml",
+      "query_original": "http://www.worldofwarcraft.com/news/rss-11-2007.xml",
+      "year": 2007,
+      "month": 11,
+      "operation": "exact_CDX_then_at_most_one_eligible_replay",
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:82:Menu2_2_2",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:144",
+          "label": "November, 2007",
+          "href": "/news/rss-11-2007.xml "
+        }
+      ],
+      "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-11-2007.xml&matchType=exact&from=20040101&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=1000&showResumeKey=true",
+      "cdx": {
+        "query_performed": true,
+        "source_status": null,
+        "source_response_count": 0,
+        "capture_index_count": 0,
+        "eligible_status_200_count": 0,
+        "redirect_index_count": 0,
+        "capture_records": [],
+        "selected_capture": null,
+        "other_origin_metadata": {},
+        "attempts": [
+          {
+            "executed": true,
+            "attempt": 10,
+            "kind": "cdx",
+            "target_key": "http://www.worldofwarcraft.com/news/rss-11-2007.xml",
+            "transport": "proxy",
+            "url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-11-2007.xml&matchType=exact&from=20040101&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=1000&showResumeKey=true",
+            "started_utc": "2026-10-15T12:09:28.190523+00:00",
+            "finished_utc": "2026-10-15T12:09:28.758200+00:00",
+            "duration_ms": 563.0,
+            "curl_exit": 35,
+            "source_status": null,
+            "connect_status": 200,
+            "content_type": null,
+            "location": null,
+            "retry_after": null,
+            "memento_datetime": null,
+            "redirects_requested": 0,
+            "automatic_redirects": 0,
+            "body_bytes": 0,
+            "body_sha256": null,
+            "transport_error": true,
+            "transport_reason": "no_http_status",
+            "raw": {
+              "headers": "raw/10-http_www.worldofwarcraft.com_news_rss-11-2007.xml-cdx-proxy.headers.txt",
+              "body": "raw/10-http_www.worldofwarcraft.com_news_rss-11-2007.xml-cdx-proxy.body",
+              "stderr": "raw/10-http_www.worldofwarcraft.com_news_rss-11-2007.xml-cdx-proxy.stderr.txt",
+              "trace": "raw/10-http_www.worldofwarcraft.com_news_rss-11-2007.xml-cdx-proxy.trace.txt",
+              "metrics": "raw/10-http_www.worldofwarcraft.com_news_rss-11-2007.xml-cdx-proxy.metrics.txt"
+            },
+            "cdx_parse_valid": false,
+            "cdx_parse_error": "no_200_source_response",
+            "dispatch_utc": "2026-10-15T12:09:28.188508+00:00",
+            "dispatch_monotonic": 32918.187,
+            "dispatch_interval_seconds": 1.3589999999967404,
+            "gate_persisted_before_transport": true,
+            "local_zero_byte_body_placeholder": true,
+            "body_is_source_response": false
+          }
+        ],
+        "header_fields_observed": null,
+        "resume_keys_observed": [],
+        "resume_key_used": null,
+        "continuation_followed": false,
+        "body_bytes": 0,
+        "body_sha256": null,
+        "index_distribution": {
+          "statuscode": {},
+          "mimetype": {},
+          "origin_match_kind": {}
+        }
+      },
+      "selected_capture": null,
+      "replay_attempt_count": 0,
+      "replay_source_response_count": 0,
+      "replay_hops": [],
+      "category": "transport_error",
+      "reason": "no_http_status",
+      "actual_memento": null,
+      "source_status": null,
+      "content_type": null,
+      "body_bytes": 0,
+      "body_sha256": null,
+      "validation": null,
+      "entity_valid": false,
+      "unrequested_reason": "no_http_status"
+    },
+    {
+      "rank": 8,
+      "target": "/news/rss-10-2007.xml",
+      "query_original": "http://www.worldofwarcraft.com/news/rss-10-2007.xml",
+      "year": 2007,
+      "month": 10,
+      "operation": "exact_CDX_then_at_most_one_eligible_replay",
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:83:Menu2_2_3",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:145",
+          "label": "October, 2007",
+          "href": "/news/rss-10-2007.xml "
+        }
+      ],
+      "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-10-2007.xml&matchType=exact&from=20040101&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=1000&showResumeKey=true",
+      "cdx": {
+        "query_performed": true,
+        "source_status": null,
+        "source_response_count": 0,
+        "capture_index_count": 0,
+        "eligible_status_200_count": 0,
+        "redirect_index_count": 0,
+        "capture_records": [],
+        "selected_capture": null,
+        "other_origin_metadata": {},
+        "attempts": [
+          {
+            "executed": true,
+            "attempt": 11,
+            "kind": "cdx",
+            "target_key": "http://www.worldofwarcraft.com/news/rss-10-2007.xml",
+            "transport": "proxy",
+            "url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-10-2007.xml&matchType=exact&from=20040101&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=1000&showResumeKey=true",
+            "started_utc": "2026-10-15T12:09:29.549235+00:00",
+            "finished_utc": "2026-10-15T12:09:30.103732+00:00",
+            "duration_ms": 563.0,
+            "curl_exit": 35,
+            "source_status": null,
+            "connect_status": 200,
+            "content_type": null,
+            "location": null,
+            "retry_after": null,
+            "memento_datetime": null,
+            "redirects_requested": 0,
+            "automatic_redirects": 0,
+            "body_bytes": 0,
+            "body_sha256": null,
+            "transport_error": true,
+            "transport_reason": "no_http_status",
+            "raw": {
+              "headers": "raw/11-http_www.worldofwarcraft.com_news_rss-10-2007.xml-cdx-proxy.headers.txt",
+              "body": "raw/11-http_www.worldofwarcraft.com_news_rss-10-2007.xml-cdx-proxy.body",
+              "stderr": "raw/11-http_www.worldofwarcraft.com_news_rss-10-2007.xml-cdx-proxy.stderr.txt",
+              "trace": "raw/11-http_www.worldofwarcraft.com_news_rss-10-2007.xml-cdx-proxy.trace.txt",
+              "metrics": "raw/11-http_www.worldofwarcraft.com_news_rss-10-2007.xml-cdx-proxy.metrics.txt"
+            },
+            "cdx_parse_valid": false,
+            "cdx_parse_error": "no_200_source_response",
+            "dispatch_utc": "2026-10-15T12:09:29.547206+00:00",
+            "dispatch_monotonic": 32919.546,
+            "dispatch_interval_seconds": 1.3590000000040163,
+            "gate_persisted_before_transport": true,
+            "local_zero_byte_body_placeholder": true,
+            "body_is_source_response": false
+          }
+        ],
+        "header_fields_observed": null,
+        "resume_keys_observed": [],
+        "resume_key_used": null,
+        "continuation_followed": false,
+        "body_bytes": 0,
+        "body_sha256": null,
+        "index_distribution": {
+          "statuscode": {},
+          "mimetype": {},
+          "origin_match_kind": {}
+        }
+      },
+      "selected_capture": null,
+      "replay_attempt_count": 0,
+      "replay_source_response_count": 0,
+      "replay_hops": [],
+      "category": "transport_error",
+      "reason": "no_http_status",
+      "actual_memento": null,
+      "source_status": null,
+      "content_type": null,
+      "body_bytes": 0,
+      "body_sha256": null,
+      "validation": null,
+      "entity_valid": false,
+      "unrequested_reason": "no_http_status"
+    }
+  ],
+  "raw_evidence_note": "Raw headers, traces, stderr and bodies remain only below this batch raw directory. A zero-byte no-response body is a local placeholder, not source content; CONNECT is excluded; CDX length is index metadata, not payload bytes.",
+  "confirmed_transport": "proxy",
+  "offline_rebuild": {
+    "performed": true,
+    "network_requests": 0,
+    "reason": "summary assembly field lookup corrected after network/raw/report persistence"
+  }
+}

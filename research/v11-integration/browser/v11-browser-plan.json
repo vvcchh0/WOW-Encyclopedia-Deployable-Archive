@@ -1,0 +1,71 @@
+{
+  "schema": "wow-recovery.core-source-v11-browser-plan.v1",
+  "status": "server_ready_pending_execution",
+  "server": {
+    "base_url": "http://127.0.0.1:29007",
+    "prefix": "/WOW-Encyclopedia-Deployable-Archive/",
+    "request_gate": "loopback GET/HEAD only",
+    "server_started_by_runner": false
+  },
+  "scope": {
+    "rss_paths": 7,
+    "css_route": "/news/newsarchive.css",
+    "css_selectors": [
+      ".news-border-left",
+      ".news-border-right",
+      "#contentContainer img"
+    ],
+    "new_image_routes": [
+      "/news/images/08-01/01-10-08-01.jpg",
+      "/news/images/08-02/arenatourney2.gif"
+    ],
+    "image_page_instances": 3,
+    "viewer_route": "/wrath/art.xml?s=12",
+    "viewer_expected_index": 12
+  },
+  "inputs": {
+    "source_receipt": {
+      "path": "research/v11-integration/source/v11-source-receipt.json",
+      "sha256": "7faca80435f1cb5582ee35b84047708b9983737770f8a59f6f57b58b578455dd"
+    },
+    "source_map": {
+      "path": "research/v11-integration/source/v11-additions-source-map.json",
+      "sha256": "b9bf3562412396a6c2dca5543e70c706718964bbb3182d379e9c8d0dce5af3b4"
+    },
+    "selected": {
+      "path": "research/continuous-recovery-20261015/selected-news-assets13-source-map.json",
+      "sha256": "08f6e4bfc836eb56c4704c6f23582f1bc3f37a4d985d2dbde66ac281f649b8a3"
+    },
+    "acceptance": {
+      "path": "research/continuous-recovery-20261015/news-assets13-acceptance.json",
+      "sha256": "e9748d3a9f7a5d2483766262856c621fbfa05a8a2bb58d3ebd77b51161e5099c"
+    },
+    "manifest": {
+      "path": ".scratch/offline-navigation-20261015-v11/build-manifest.json",
+      "sha256": "bb3c398edc7baab8ee185428a9674afa6b53d5709c313cd69d894ceaeca530db"
+    },
+    "provenance": ".scratch/pages-resources-20261015-v11/export-provenance.json",
+    "route_map": ".scratch/pages-resources-20261015-v11/__offline/route-map.json",
+    "production": "tools/export_github_pages.py",
+    "reference_common12": {
+      "path": "research/v10-integration/browser/v10-browser-receipt.json",
+      "sha256": "bbe3f59f364bb465c3cee320cdfd3dea459cc80191ed670b0ff9c9a532cbbbd8"
+    }
+  },
+  "runner": {
+    "path": "research/v11-integration/browser/v11_acceptance.js",
+    "node_check": {
+      "command": "node --check research/v11-integration/browser/v11_acceptance.js",
+      "exit_code": 0,
+      "runner_sha256": "d295325536288a3ff0624f0b0bad1fa4e072e312395ebcef4f1ef5a0a0aad4c1",
+      "runner_bytes": 33219
+    },
+    "output": "research/v11-integration/browser/v11-browser-receipt.json",
+    "screenshots": "research/v11-integration/browser/screenshots/"
+  },
+  "network": {
+    "allowed_requests": 0,
+    "external_network": false,
+    "wayback": false
+  }
+}

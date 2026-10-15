@@ -1,0 +1,106 @@
+{
+  "schema": "wow-recovery.net-guide-prefix15-dispatch-log.v1",
+  "batch_id": "NET-GUIDE-PREFIX-015",
+  "simulation": false,
+  "policy": {
+    "minimum_dispatch_interval_seconds": 1.35,
+    "max_attempts": 32,
+    "network_window_seconds": 480,
+    "redirects": 0
+  },
+  "disk_preflight": {
+    "checked_utc": "2026-10-15T11:59:45.309766+00:00",
+    "disk_free_bytes": 35909464064,
+    "minimum_free_bytes": 11005853696
+  },
+  "dispatches": [
+    {
+      "attempt": 1,
+      "transport": "direct",
+      "target": "prefix-1-blacktemple",
+      "guard_open_utc": "2026-10-15T11:59:45.310766+00:00",
+      "dispatch_utc": "2026-10-15T11:59:45.310766+00:00",
+      "dispatch_monotonic": 32335.312,
+      "interval_since_previous_dispatch_seconds": null,
+      "guard_wait": {
+        "first_checked_utc": "2026-10-15T11:59:45.310766+00:00",
+        "opened_utc": "2026-10-15T11:59:45.310766+00:00",
+        "first_monotonic": 32335.312,
+        "opened_monotonic": 32335.312,
+        "sleeps": [],
+        "final_wall_remaining_seconds": -1.001,
+        "final_monotonic_remaining_seconds": 0.0
+      },
+      "interval_sleeps": [],
+      "persisted_before_transport": true
+    },
+    {
+      "attempt": 2,
+      "transport": "proxy",
+      "target": "prefix-1-blacktemple",
+      "guard_open_utc": "2026-10-15T11:59:49.431446+00:00",
+      "dispatch_utc": "2026-10-15T11:59:49.431446+00:00",
+      "dispatch_monotonic": 32339.421,
+      "interval_since_previous_dispatch_seconds": 4.10899999999674,
+      "guard_wait": {
+        "first_checked_utc": "2026-10-15T11:59:49.431446+00:00",
+        "opened_utc": "2026-10-15T11:59:49.431446+00:00",
+        "first_monotonic": 32339.421,
+        "opened_monotonic": 32339.421,
+        "sleeps": [],
+        "final_wall_remaining_seconds": -5.12168,
+        "final_monotonic_remaining_seconds": 0.0
+      },
+      "interval_sleeps": [],
+      "persisted_before_transport": true
+    },
+    {
+      "attempt": 3,
+      "transport": "proxy",
+      "target": "prefix-2-serpentshrine",
+      "guard_open_utc": "2026-10-15T11:59:51.079655+00:00",
+      "dispatch_utc": "2026-10-15T11:59:51.079655+00:00",
+      "dispatch_monotonic": 32341.078,
+      "interval_since_previous_dispatch_seconds": 1.6570000000028813,
+      "guard_wait": {
+        "first_checked_utc": "2026-10-15T11:59:51.079655+00:00",
+        "opened_utc": "2026-10-15T11:59:51.079655+00:00",
+        "first_monotonic": 32341.078,
+        "opened_monotonic": 32341.078,
+        "sleeps": [],
+        "final_wall_remaining_seconds": -6.769889,
+        "final_monotonic_remaining_seconds": 0.0
+      },
+      "interval_sleeps": [],
+      "persisted_before_transport": true
+    },
+    {
+      "attempt": 4,
+      "transport": "proxy",
+      "target": "prefix-3-magisters",
+      "guard_open_utc": "2026-10-15T11:59:58.449461+00:00",
+      "dispatch_utc": "2026-10-15T11:59:58.449461+00:00",
+      "dispatch_monotonic": 32348.437,
+      "interval_since_previous_dispatch_seconds": 7.359000000000378,
+      "guard_wait": {
+        "first_checked_utc": "2026-10-15T11:59:58.449461+00:00",
+        "opened_utc": "2026-10-15T11:59:58.449461+00:00",
+        "first_monotonic": 32348.437,
+        "opened_monotonic": 32348.437,
+        "sleeps": [],
+        "final_wall_remaining_seconds": -14.139695,
+        "final_monotonic_remaining_seconds": 0.0
+      },
+      "interval_sleeps": [],
+      "persisted_before_transport": true
+    }
+  ],
+  "disk_postflight": {
+    "checked_utc": "2026-10-15T12:00:07.381585+00:00",
+    "disk_free_bytes": 35909369856,
+    "attempts_count": 4,
+    "persisted_in_finally": true
+  },
+  "postflight_persisted_in_finally": true,
+  "final_attempt_count": 4
+}

@@ -1,0 +1,53 @@
+{
+  "schema": "continuous-wow-net-rss16-config/v1",
+  "batch_id": "NET-RSS-016",
+  "mode": "prepared",
+  "generated_utc": "2026-10-15T12:08:37.910796+00:00",
+  "inputs": {
+    "research/continuous-recovery-20261015/rss16-approved-plan.json": {
+      "path": "research/continuous-recovery-20261015/rss16-approved-plan.json",
+      "bytes": 19682,
+      "sha256": "4309afda45a518b9843862369ea063ef83c37d44c71eb430f7ca066350181bb2"
+    },
+    "research/continuous-recovery-20261015/remaining-rss-next-proposal.json": {
+      "path": "research/continuous-recovery-20261015/remaining-rss-next-proposal.json",
+      "bytes": 34762,
+      "sha256": "966e2e3236fad23023fdd57ee6cbd9177ca3d867ba63f2931dbc1cac5ac1dd4c"
+    },
+    "research/continuous-recovery-20261015/guide-prefix15-acceptance.json": {
+      "path": "research/continuous-recovery-20261015/guide-prefix15-acceptance.json",
+      "bytes": 3625,
+      "sha256": "d04949368cdaa7868984572c8dd03364bb96409f23b2cbb1d12a386f199b3d9b"
+    }
+  },
+  "helpers": {
+    "core3": "research/continuous-recovery-20261015/network-core-pages3/core_pages3.py",
+    "control7": "research/continuous-recovery-20261015/network-control7/control7.py",
+    "rss6_observers": "research/continuous-recovery-20261015/network-rss6/rss_batch6.py",
+    "curl": "C:\\Windows\\System32\\curl.exe",
+    "proxy": "http://127.0.0.1:7890"
+  },
+  "policy": {
+    "target_count": 8,
+    "max_attempts": 32,
+    "network_window_seconds": 480,
+    "minimum_dispatch_interval_seconds": 1.35,
+    "minimum_free_bytes": 11005853696,
+    "max_total_body_bytes": 67108864,
+    "max_entity_body_bytes": 16777216,
+    "preanchor_from": "20040101000000",
+    "preanchor_to": "20080512210044",
+    "cdx_pages_per_target": 1,
+    "cdx_limit": 1000,
+    "collapse": null,
+    "automatic_redirects": 0,
+    "manual_redirect_follow": 0,
+    "continuation_pages": 0,
+    "strict_origin": "same scheme/host/path/query; only default ports normalize; bare/www and HTTP/HTTPS stay separate",
+    "body_classification": "RSS/Atom/XML parsed from actual body; expanded HTML independently observed; XML extension does not imply XML",
+    "integration": "hold accepted entities for later source version; do not modify v11/source/export"
+  },
+  "network_requests": 0,
+  "prepared": true,
+  "raw_note": "Raw headers, traces, stderr and bodies remain local. A zero-byte body after no source status is a local placeholder, not source response content."
+}

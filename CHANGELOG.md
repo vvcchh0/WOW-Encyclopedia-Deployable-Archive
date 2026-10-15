@@ -9,6 +9,9 @@
 
 ## 2026-10-15
 
+- 发布 v11，补回 BlizzCast 与 2008 年竞技场新闻的两张配图，以及旧新闻共享样式；实际展开文章后确认图片正常显示。[线上验收](research/v11-integration/root-pages-online-acceptance.json)
+- 取回 2007 年 4、6、7 月旧新闻，准备接入下一版；检查三个副本图库目录的基准前存档，尚未找到图片捕获。[持续恢复记录](docs/continuous-recovery-20261015.md)
+
 - 发布 v10 浏览镜像，接通旧新闻、BC 专业、PTR 历史展品及原画目录等 19 个原缺失入口，修复原画查看器和卡片点击。侧栏剩余 16 个缺失地址，原画仍缺八组图片。[发布验收](research/v10-integration/root-pages-online-acceptance.json)
 - 复查本地 v9 的全部侧栏入口，缺路由地址由 35 个减至 23 个；新补的新闻、BC、PTR 和 Battlegroups 入口可浏览。原画目录仍缺八组图片及共享边框；查看器 HTML 已取回，正在补齐并修复其依赖。线上仍为 v8。[侧栏与浏览复核](docs/continuous-recovery-20261015.md)
 - 新增 PTR 历史展品，保留捕获日期及相关档案链接；浏览版横幅注明以 2008-05-12 为重建基准。[本地镜像验收](research/continuous-recovery-20261015/root-v9-export-acceptance.json)
