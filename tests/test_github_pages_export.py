@@ -131,6 +131,64 @@ class GithubPagesExportTests(unittest.TestCase):
             self.assertIn('String(topicsArray[topicsArray[document.title].parentString].linkString).split("/").pop()', cascade)
             self.assertEqual((site / "index.xml").read_text(encoding="utf-8").split("<meta", 1)[0], "<html><head>")
 
+    def test_ptr_export_path_uses_manifest_capture_and_generated_home(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            base, site, manifest = self._fixture(Path(tmp))
+            source = """<!doctype html><html><head><title>WoW -> Public Test Realm</title></head><body>
+<script>document.write('legacy operational control')</script>
+<form action=\"http://test.worldofwarcraft.com/us/copy/character-copy.html\"><input name=\"copy\"></form>
+<p>The World of Warcraft Public Test Realms (PTRs) are used to test upcoming content patches in a public environment before they are released to live realms.</p>
+</body></html>""".encode("utf-8")
+            ptr = site / "ptr/index.html"
+            ptr.parent.mkdir(parents=True, exist_ok=True)
+            ptr.write_bytes(source)
+            payload = json.loads(manifest.read_text(encoding="utf-8"))
+            payload["files"].append(
+                {
+                    "route": "/ptr/index.html",
+                    "output_path": "offline/site/ptr/index.html",
+                    "derived_sha256": hashlib.sha256(source).hexdigest(),
+                    "derived_length": len(source),
+                    "mime": "text/html; charset=UTF-8",
+                    "kind": "html",
+                    "role": "historical_ptr_exhibit",
+                    "actual_timestamp": "20061110075927",
+                    "source_base_url": "http://www.worldofwarcraft.com/ptr/",
+                }
+            )
+            payload["route_aliases"].update(
+                {"/ptr": "/ptr/index.html", "/ptr/": "/ptr/index.html"}
+            )
+            payload["origin_index"]["www.worldofwarcraft.com/ptr/"] = "/ptr/index.html"
+            manifest.write_text(json.dumps(payload), encoding="utf-8")
+
+            output = base / "pages"
+            pages.export_pages(
+                source_site=site,
+                manifest_path=manifest,
+                output=output,
+                workspace_root=base,
+                max_bytes=500_000_000,
+                min_free_bytes=0,
+            )
+            exported = (output / "ptr/index.html").read_text(encoding="utf-8")
+            prefix = pages.DEFAULT_BASE_PATH
+            self.assertIn(
+                "<title>World of Warcraft Public Test Realm — Historical Exhibit</title>",
+                exported,
+            )
+            self.assertIn("Selected archival capture: 2006-11-10 07:59:27 UTC.", exported)
+            self.assertIn(prefix + "index.html", exported)
+            self.assertNotIn(prefix + "index.xml", exported)
+            self.assertNotRegex(exported, r"<\s*(?:form|input|select|textarea|button)\b")
+            self.assertNotIn("test.worldofwarcraft.com", exported)
+            self.assertNotIn("character-copy", exported.casefold())
+            route_map = json.loads(
+                (output / "__offline/route-map.json").read_text(encoding="utf-8")
+            )
+            self.assertIn("/ptr", route_map["aliases"])
+            self.assertIn(prefix + "ptr/index.html", route_map["aliases"]["/ptr/"])
+
     def test_navtree_community_fix_is_derived_and_idempotent(self) -> None:
         source_path = ROOT / "mirror/20080512/www.worldofwarcraft.com/shared/wow-com/includes-client/navtree-main.js"
         frozen = source_path.read_bytes()

@@ -76,6 +76,48 @@ class HistoricalExhibitTests(unittest.TestCase):
         self.assertNotRegex(page, r"<\s*img\b")
         self.assertNotRegex(page, r"https?://")
 
+    def test_ptr_aliases_render_neutral_static_exhibit_with_local_links_only(self) -> None:
+        source = """<html><head><title>WoW -> Public Test Realm</title></head><body>
+        <script>document.write('legacy operational control')</script>
+        <form action="http://test.worldofwarcraft.com/us/copy/character-copy.html"><input name="copy"></form>
+        <p>The World of Warcraft Public Test Realms (PTRs) are used to test upcoming content patches in a public environment before they are released to live realms.</p>
+        </body></html>"""
+        metadata = {
+            "actual_timestamp": "20061110075927",
+            "actual_memento": "2006-11-10T07:59:27+00:00",
+        }
+        for route in ("/ptr", "/ptr/", "/ptr/index.html"):
+            with self.subTest(route=route):
+                self.assertTrue(exhibits.is_historical_exhibit_route(route))
+                self.assertEqual(exhibits.canonical_exhibit_route(route), "/ptr/index.html")
+                page = exhibits.transform_derived_page(
+                    source,
+                    route,
+                    base_path=self.prefix,
+                    source_metadata=metadata,
+                )
+                self.assertIn("<title>World of Warcraft Public Test Realm — Historical Exhibit</title>", page)
+                self.assertIn("Selected archival capture: 2006-11-10 07:59:27 UTC.", page)
+                self.assertNotIn("2006 World of Warcraft", page)
+                self.assertIn(
+                    "The Public Test Realms were used to test upcoming content patches",
+                    page,
+                )
+                self.assertIn("<h2>About the Public Test Realm</h2>", page)
+                self.assertIn("<h2>Related archived pages</h2>", page)
+                self.assertIn(">Archive home</a>", page)
+                self.assertNotIn("selected source", page.casefold())
+                self.assertNotRegex(page, r"<\s*(?:script|form|input|select|textarea|button)\b")
+                self.assertNotRegex(page, r"(?i)character[- ]copy|software[- ]download|download for")
+                self.assertNotRegex(page, r"https?://")
+                for local_route in (
+                    "index.html",
+                    "info/basics/guide.html",
+                    "info/faq/ptr.html",
+                    "patchnotes/test-realm-patchnotes.html",
+                ):
+                    self.assertIn(self.prefix + local_route, page)
+
     def test_p1_rewrite_does_not_touch_scripts_or_search_controls(self) -> None:
         source = '''<html><body><form id="topSearch"><input name="searchBox"></form>
 <p>Welcome to the Future Beta Sign-Up Form!</p>

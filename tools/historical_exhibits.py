@@ -14,6 +14,7 @@ import html
 import re
 import urllib.parse
 from dataclasses import dataclass
+from datetime import datetime, timezone
 from html.parser import HTMLParser
 from typing import Iterable
 
@@ -53,6 +54,12 @@ P1_ROUTES = frozenset(
 )
 
 TRIAL_ROUTE = "/burningcrusade/trial/index.html"
+PTR_ROUTE = "/ptr/index.html"
+PTR_ALIASES = {
+    "/ptr": PTR_ROUTE,
+    "/ptr/": PTR_ROUTE,
+    PTR_ROUTE: PTR_ROUTE,
+}
 
 _HISTORICAL_ACCOUNT_TARGETS = {
     ("signup.worldofwarcraft.com", "/"): "Historical: Create Account",
@@ -67,6 +74,8 @@ def canonical_exhibit_route(route: str) -> str | None:
     """Return a P0 canonical route for a canonical or manifest alias."""
 
     normalized = "/" + route.lstrip("/")
+    if normalized in PTR_ALIASES:
+        return PTR_ALIASES[normalized]
     return P0_ALIASES.get(normalized, normalized if normalized in P0_ROUTES else None)
 
 
@@ -144,6 +153,108 @@ def _render_trial_exhibit(base_path: str, route: str) -> str:
 </main></body></html>'''
 
 
+def _ptr_verified_facts(source_text: str, source_metadata: dict[str, object] | None) -> list[str]:
+    """Return only source-backed PTR statements suitable for a static exhibit."""
+
+    # The accepted original body is the authority for exhibit facts.  Metadata
+    # carries provenance such as the capture timestamp, but never arbitrary
+    # replacement copy supplied by a caller.
+    plain = html.unescape(re.sub(r"<[^>]+>", " ", source_text or ""))
+    plain = " ".join(plain.split())
+    facts: list[str] = []
+    if re.search(r"Public Test Realms.*?test upcoming content patches.*?live realms", plain, re.I):
+        facts.append(
+            "The Public Test Realms were used to test upcoming content patches in a public environment before release to live realms."
+        )
+    if re.search(r"feedback from the public test.*?test realm forum", plain, re.I):
+        facts.append(
+            "Feedback came from the public test and the test realm forum."
+        )
+    return facts
+
+
+def _format_ptr_capture(source_metadata: dict[str, object] | None) -> str | None:
+    """Format the accepted manifest timestamp as a human UTC capture date."""
+
+    metadata = source_metadata or {}
+    actual_timestamp = str(metadata.get("actual_timestamp") or "").strip()
+    if re.fullmatch(r"\d{14}", actual_timestamp):
+        try:
+            captured = datetime.strptime(actual_timestamp, "%Y%m%d%H%M%S").replace(
+                tzinfo=timezone.utc
+            )
+            return captured.strftime("%Y-%m-%d %H:%M:%S UTC")
+        except ValueError:
+            pass
+    for key in ("actual_memento", "capture"):
+        value = str(metadata.get(key) or "").strip()
+        if not value:
+            continue
+        try:
+            captured = datetime.fromisoformat(value.replace("Z", "+00:00"))
+            if captured.tzinfo is None:
+                captured = captured.replace(tzinfo=timezone.utc)
+            return captured.astimezone(timezone.utc).strftime(
+                "%Y-%m-%d %H:%M:%S UTC"
+            )
+        except ValueError:
+            return value
+    return None
+
+
+def _render_ptr_exhibit(
+    base_path: str,
+    route: str,
+    *,
+    source_text: str = "",
+    source_metadata: dict[str, object] | None = None,
+) -> str:
+    """Render the PTR capture as a neutral, static historical exhibit.
+
+    Operational character-copy, download, form, and script behavior from the
+    captured page is intentionally omitted.  Only facts found in the selected
+    source text or an accepted source manifest are described.
+    """
+
+    # Pages emits the generated archive root at index.html; the captured
+    # /index.xml entity is a separate static XML/HTML output and is not the
+    # archive home link.
+    home = _local(base_path, "/index.html")
+    guide = _local(base_path, "/info/basics/guide.html")
+    faq = _local(base_path, "/info/faq/ptr.html")
+    patchnotes = _local(base_path, "/patchnotes/test-realm-patchnotes.html")
+    capture = _format_ptr_capture(source_metadata)
+    capture_note = (
+        "Selected archival capture: " + html.escape(str(capture)) + "."
+        if capture
+        else "The selected source capture is preserved in the local archive."
+    )
+    facts = _ptr_verified_facts(source_text, source_metadata)
+    facts_markup = "".join(f"<li>{html.escape(fact)}</li>" for fact in facts)
+    if not facts_markup:
+        facts_markup = "<li>The selected source is presented here as a static historical exhibit.</li>"
+    return f'''<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>World of Warcraft Public Test Realm — Historical Exhibit</title>
+<meta name="description" content="Historical exhibit of a World of Warcraft Public Test Realm capture">
+<style>{_EXHIBIT_CSS}</style></head><body>
+<main class="historical-exhibit" data-exhibit-route="{html.escape(PTR_ROUTE, quote=True)}">
+<div class="kicker">Historical exhibit</div>
+<h1>World of Warcraft Public Test Realm</h1>
+<p class="notice">{capture_note} This historical exhibit preserves the capture as archival material; former operational controls are not enabled.</p>
+<h2>About the Public Test Realm</h2>
+<ul class="history-list">{facts_markup}</ul>
+<h2>Related archived pages</h2>
+<div class="exhibit-links" aria-label="Related archived pages">
+  <a class="exhibit-link" href="{html.escape(faq, quote=True)}">PTR F.A.Q.</a>
+  <a class="exhibit-link" href="{html.escape(patchnotes, quote=True)}">Test Realm Patch Notes</a>
+  <a class="exhibit-link" href="{html.escape(guide, quote=True)}">Local Game Guide</a>
+</div>
+<p class="return"><a href="{html.escape(home, quote=True)}">Archive home</a></p>
+</main></body></html>'''
+
+
 def _p0_shell(*, base_path: str, route: str, title: str, heading: str, intro: str, body: str) -> str:
     parent = _local(base_path, "/visa/reward/index.html")
     return f'''<!doctype html>
@@ -217,12 +328,25 @@ def _render_p0_wow(base_path: str, route: str) -> str:
     )
 
 
-def render_historical_exhibit(text: str, route: str, *, base_path: str = "") -> str:
-    """Return a standalone P0 exhibit, or the original derived HTML otherwise."""
+def render_historical_exhibit(
+    text: str,
+    route: str,
+    *,
+    base_path: str = "",
+    source_metadata: dict[str, object] | None = None,
+) -> str:
+    """Return a standalone historical exhibit, or the original derived HTML."""
 
     canonical = canonical_exhibit_route(route)
     if canonical is None:
         return text
+    if canonical == PTR_ROUTE:
+        return _render_ptr_exhibit(
+            base_path,
+            canonical,
+            source_text=text,
+            source_metadata=source_metadata,
+        )
     if canonical.endswith("/index.html"):
         return _render_p0_index(base_path, canonical)
     if canonical.endswith("/login.html"):
@@ -687,11 +811,22 @@ def _disable_story_submission_scripts(text: str) -> str:
     return script_pattern.sub(replace, text)
 
 
-def transform_derived_page(text: str, route: str, *, base_path: str = "") -> str:
+def transform_derived_page(
+    text: str,
+    route: str,
+    *,
+    base_path: str = "",
+    source_metadata: dict[str, object] | None = None,
+) -> str:
     """Apply route-specific replacements, then the narrow P1 historical pass."""
 
     if is_historical_exhibit_route(route):
-        return render_historical_exhibit(text, route, base_path=base_path)
+        return render_historical_exhibit(
+            text,
+            route,
+            base_path=base_path,
+            source_metadata=source_metadata,
+        )
     normalized_route = "/" + route.lstrip("/")
     if normalized_route == TRIAL_ROUTE:
         return _render_trial_exhibit(base_path, TRIAL_ROUTE)

@@ -73,6 +73,20 @@
 
 `NET-RSS-006` 复用唯一网络执行者，从已验收的 23 个 RSS 目标按年月倒序选择最新 12 个精确来源，另存 `network-rss6/` 候选与回执。按正文判断 raw RSS/XML、扩展 HTML 或重定向，不因 `.xml` 扩展重用 XSL，也不把 RSS 和同月新闻 HTML 等价。其余 11 个 RSS 留待本批结果后另行安排。
 
+v9 源树现已完成[独立来源验收](../research/continuous-recovery-20261015/core-pages-integration-acceptance.json)：实际 8,328 条来源记录，原 8,306 条来源的摘要、长度、时间、来源 URL 与命名空间不变，180 个旧别名保留；22 份新来源和对应镜像正文均实读核验。根代理独立检查另记录两个 generated support 路径迁移，内容相同。此处只验收 source mirror；38 个图片补充层等待最终 Pages export 应用，PTR 静态展品与图库运行仍需根代理最终导出及浏览器验收。
+
+`NET-RSS-006` 已[独立验收实际载荷](../research/continuous-recovery-20261015/rss6-acceptance.json)：15 次尝试、8 个真实源响应，取得 Jan–Apr 2008 四份 `.xml` 地址实际返回的 **expanded HTML**，正文共 452,039 字节；没有取得原始 RSS。April 旧标题仍写 March，原正文 8 条 `posted-date` 全为 April 2008，保留源站标题异常；其他三个月分别有 28、43、24 条对应月份日期。四份来源[单独保存](../research/continuous-recovery-20261015/selected-rss6-source-map.json)，不加入当前 v9 构建，避免构建中漂移。
+
+本批另有六个目标传输未判定、两个未请求，连续五次传输失败后停止。两处记录的 UTC 开始间隔为 1.188815 与 1.195702 秒，curl trace 开始间隔约 1.184 与 1.186 秒，均低于要求的 1.2 秒；原时间不改写。载荷真实性通过，批次间隔合规未通过。至少冷却到 `2026-10-15T09:03:32.169574Z`，随后 `NET-CONTROL-007` 只检查一个已知 JPEG，新进程 wrapper 在实际派发前循环重检 monotonic 剩余等待，采用 1.25 秒保守间隔，并持久 UTC 与 monotonic 派发时间。成功或失败均返回，不自动重发 RSS。
+
+`LOCAL-BROWSER-V9-005` 复用本地执行者准备有界浏览验收，等待根代理 29005 服务 ready。检查 12 个新菜单目标、PTR 允许链接和别名、Battlegroups 旧导航、Wrath 图库翻页/图片解码/lightbox及一个既有 SSOTD 补充层回归；仅 loopback GET，20 分钟，不修改生产文件。
+
+`NET-CONTROL-007` 实际已在冷却结束后完成，一个已知 JPEG 的 direct 失败、proxy 源 HTTP 200；3,347 字节、150×110、摘要和实际 Memento 均[独立复核通过](../research/continuous-recovery-20261015/control7-acceptance.json)，trace 派发间隔 4.039 秒。原进程在报告组装时异常，内存中的 monotonic 与磁盘精确数值丢失，报告由原 raw 纯离线重建并保留这些 `null`，没有重发请求。新 wrapper 修复即时 journal、preflight 和 `finally` postflight 后，[独立重跑本地隔离测试](../research/continuous-recovery-20261015/control7-wrapper-acceptance.json)通过；模拟记录与真实执行分开，历史证据未改写。
+
+根代理最终导出已完成并开放 29005 本地服务，声明 8,467 个导出文件、8,328 个来源与 38 个补充层；浏览验收现已启动，发布前仍须根代理的逐文件与公开卫生检查。图库新增发现两个独立缺口：原脚本组合的[精确查看页 `/wrath/art.xml`](../research/continuous-recovery-20261015/wrath-artwork-viewer-gap.json)没有本地来源；当前 counter 覆盖的 13 项中仅 common 1/3/6/9/12 五对已有图，47 个旧 artwork 路由包含更高编号，不能当作当前 13 项全齐。浏览验收必须真实点卡片，其他页面的 lightbox 回归不能替代图库展开结果。
+
+`NET-WRATH-008` 因而优先精确查看页，base 无有效 HTML 才查询独立 `?s=1`；随后按 11、10、8、7、5、4 的顺序补首屏六缺项，每项缩略图和原图交错。最大 14 个不同候选、32 次尝试，保守派发间隔 1.25 秒并保存 monotonic/UTC；其余资源边界不变。第二页 common2/locale1 两对与 11 个从未请求的 RSS 留下一批，不自动扩大。
+
 ## 取舍与后续顺序
 
 优先修复已有真实内容因地址规范化或客户端逻辑无法访问的问题；其次补取来源明确且过去因网络失败没有取得内容判定的对象；再沿历史脚本、菜单和 CDX 记录提取有证据的缺失资源。按编号生成的截图地址可以作为来源证据，不能凭猜测把实体记为已取得。若本地审计发现更高价值的缺口，下一批按证据与可恢复性调整，不为填满时间盲目重试。

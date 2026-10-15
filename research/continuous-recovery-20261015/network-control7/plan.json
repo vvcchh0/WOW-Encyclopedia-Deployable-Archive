@@ -1,0 +1,76 @@
+{
+  "schema": "wayback-net-control7-plan-20261015.v1",
+  "mode": "plan_only",
+  "prepared_utc": "2026-10-15T09:01:08.341558+00:00",
+  "not_before_utc": "2026-10-15T09:03:32.169574+00:00",
+  "time_guard": {
+    "current_utc": "2026-10-15T09:01:08.341558+00:00",
+    "open": false,
+    "execute_requires_current_at_or_after": "2026-10-15T09:03:32.169574+00:00",
+    "actual_dispatch_rechecks_guard": true,
+    "monotonic_recheck_loop": true,
+    "maximum_sleep_seconds": 60
+  },
+  "inputs": {
+    "summary_path": "research/continuous-recovery-20261015/network-control2/sanitized-summary.json",
+    "summary_sha256": "b428bf45813a2eb825d3f3654771650bff1a5fa06d64205e2d4e01d2199877f4",
+    "acceptance_path": "research/continuous-recovery-20261015/control2-acceptance.json",
+    "acceptance_sha256": "0a88b399ae62321a04ed615dd159cd2c101f9dd92c8cc6d5c7517950686b16e8",
+    "control_report_path": "research/continuous-recovery-20261015/network-control2/control-report.json",
+    "control_report_sha256": "804820ea2fbe9703d94cb03e29495d774d1d7870456d2062185e3ebe743addaa"
+  },
+  "target": "https://web.archive.org/web/20080512212653id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/thumbs/ss2-thumb.jpg",
+  "expected": {
+    "bytes": 3347,
+    "sha256": "45936113efa432f3c8188445ae255108c2af3d06fecf902202f0611068a74a11",
+    "format": "JPEG",
+    "size": [
+      150,
+      110
+    ],
+    "memento": "2008-05-12T21:26:53+00:00"
+  },
+  "policy": {
+    "direct_first": true,
+    "direct_connect_timeout_seconds": 4,
+    "direct_total_timeout_seconds": 12,
+    "proxy": "http://127.0.0.1:7890",
+    "proxy_connect_timeout_seconds": 8,
+    "proxy_total_timeout_seconds": 20,
+    "tls_verification": "enabled_by_curl_default",
+    "max_targets": 1,
+    "max_source_requests": 2,
+    "network_window_seconds": 120,
+    "redirects": 0,
+    "automatic_redirects": 0,
+    "min_dispatch_interval_seconds": 1.25,
+    "min_free_bytes": 11005853696,
+    "max_total_body_bytes": 67108864,
+    "max_entity_body_bytes": 16777216,
+    "stop_http_codes": [
+      429,
+      503
+    ],
+    "cdx": "not queried; accepted control2 is the exact known Memento control"
+  },
+  "offline_checks": {
+    "input_digest_checked": true,
+    "target_expected_checked": true,
+    "request_cap": 2,
+    "time_guard_declared": true,
+    "dispatch_gate_fakeclock": {
+      "passed": true,
+      "minimum_interval_seconds": 1.25,
+      "early_wake_elapsed_seconds": 0.5,
+      "recomputed_waits_seconds": [
+        0.75,
+        0.25
+      ],
+      "dispatch_allowed_at_elapsed_seconds": 1.25
+    },
+    "network_requests": 0
+  },
+  "raw_evidence_note": "Raw headers, body, stderr and trace remain local only. A zero-byte body for a transport attempt is a local placeholder, not source response content.",
+  "prepared": true,
+  "ready_to_execute": false
+}

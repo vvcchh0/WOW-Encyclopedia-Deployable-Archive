@@ -1089,7 +1089,7 @@ def inject_html_runtime(text: str, *, base_path: str, source_sha: str) -> str:
         '<div id="__offline-pages-banner" style="background:#241b0b;color:#f7e7b0;'
         'font:12px/1.4 Arial,sans-serif;padding:6px 10px;text-align:center;position:relative;z-index:2147483647">'
         "Unofficial historical educational preservation (not affiliated with Blizzard) • "
-        "2008-05-12 21:00:44 snapshot • "
+        "Archive reconstruction based on 2008-05-12 • "
         "no user data collection</div>"
     )
     if "__offline-pages-banner" not in text:
@@ -2248,7 +2248,12 @@ def export_pages(
                 text = rewrite_inline_scripts(text, base_url=base_url, localizer=localizer, recorder=recorder)
                 text = normalize_html_charset(text)
                 text = disable_sensitive_forms(text, route=route)
-                text = historical_exhibits.transform_derived_page(text, route, base_path=base_path)
+                text = historical_exhibits.transform_derived_page(
+                    text,
+                    route,
+                    base_path=base_path,
+                    source_metadata={"actual_timestamp": str(record.get("actual_timestamp") or "")},
+                )
                 text = normalize_html_prolog(text)
                 text = inject_html_runtime(text, base_path=base_path, source_sha=source_sha)
                 derived = text.encode("utf-8")

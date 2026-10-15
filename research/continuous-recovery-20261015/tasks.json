@@ -1,7 +1,7 @@
 {
   "schema": "continuous-wow-recovery-tasks/v1",
   "deadline_utc": "2026-10-15T14:44:00Z",
-  "updated_utc": "2026-10-15T08:45:58.723247+00:00",
+  "updated_utc": "2026-10-15T09:15:57.484136+00:00",
   "coordination": {
     "heartbeat_id": "wow-8",
     "heartbeat_interval_minutes": 15,
@@ -285,7 +285,7 @@
     },
     {
       "id": "CORE-PAGES-INTEGRATION-004",
-      "status": "core_and_static_sources_ready_integration_active",
+      "status": "source_mirror_accepted_pending_root_export_browser",
       "owner": "sidebar_local_audit (directly assigned by root)",
       "goal": "Prepare a fresh v9 source builder and neutral historical PTR exhibit, then use the latest accepted pre-anchor core-page sources when NET004 is ready.",
       "write_scope": [
@@ -309,7 +309,16 @@
       "exporter_owner": "root agent exclusively owns tools/export_github_pages.py; worker must not edit it",
       "selected_static_source_map": "research/continuous-recovery-20261015/selected-static-source-map.json",
       "expected_source_count_if_distinct": 8328,
-      "actual_build_counts_authoritative": true
+      "actual_build_counts_authoritative": true,
+      "result": {
+        "actual_source_records": 8328,
+        "prior_records_preserved": 8306,
+        "prior_aliases_preserved": 180,
+        "new_sources": 22,
+        "mirror_acceptance": "research/continuous-recovery-20261015/core-pages-integration-acceptance.json",
+        "pages_acceptance": "pending root export/browser",
+        "image_overlay_recipe_count": 38
+      }
     },
     {
       "id": "NET-ASSETS-005",
@@ -357,7 +366,7 @@
     },
     {
       "id": "NET-RSS-006",
-      "status": "dispatched",
+      "status": "payloads_accepted_batch_timing_withheld",
       "owner": "wayback_recheck_batch1",
       "goal": "Acquire and classify the twelve newest monthly RSS targets from the accepted 23-target exact-source reconciliation.",
       "write_scope": "research/continuous-recovery-20261015/network-rss6/**",
@@ -382,7 +391,127 @@
         "Record RSS item/pubDate/month identity evidence or explicit HTML/redirect classification",
         "Retain original accepted queue and source origins without HTML/RSS aliases"
       ],
-      "stop": "Same disk/rate-limit/transport/time/body stops as prior batches; save and return, no automatic next batch"
+      "stop": "Same disk/rate-limit/transport/time/body stops as prior batches; save and return, no automatic next batch",
+      "result": {
+        "attempts": 15,
+        "source_responses": 8,
+        "valid_expanded_html": 4,
+        "original_raw_rss": 0,
+        "valid_payload_body_bytes": 452039,
+        "total_batch_body_bytes": 453544,
+        "transport_unknown_targets": 6,
+        "not_requested_targets": 2,
+        "stop_reason": "five_consecutive_tls_or_transport_failures",
+        "observed_utc_intervals_below_1_2_seconds": [
+          1.188815,
+          1.195702
+        ],
+        "observed_trace_intervals_seconds": [
+          1.184,
+          1.186
+        ],
+        "batch_policy_accepted": false,
+        "control_not_before_utc": "2026-10-15T09:03:32.169574Z",
+        "acceptance": "research/continuous-recovery-20261015/rss6-acceptance.json",
+        "source_map": "research/continuous-recovery-20261015/selected-rss6-source-map.json",
+        "integration": "held separately from currently building v9"
+      }
+    },
+    {
+      "id": "NET-CONTROL-007",
+      "status": "connection_payload_accepted_wrapper_local_fix_accepted",
+      "owner": "wayback_recheck_batch1",
+      "goal": "After RSS006 cooldown, test one already accepted JPEG using a dispatch-time monotonic recheck loop with conservative 1.25-second spacing.",
+      "write_scope": "research/continuous-recovery-20261015/network-control7/**",
+      "network": true,
+      "not_before_utc": "2026-10-15T09:03:32.169574Z",
+      "limits": {
+        "targets": 1,
+        "attempts": 2,
+        "seconds": 120,
+        "body_bytes": 67108864,
+        "single_body_bytes": 16777216,
+        "minimum_interval_seconds": 1.25,
+        "disk_floor_bytes": 11005853696,
+        "automatic_redirects": 0
+      },
+      "acceptance": [
+        "Persist actual dispatch UTC and monotonic timestamps",
+        "Early wakeup rechecks remaining delay in a loop",
+        "Known JPEG length/hash/Pillow verify and load",
+        "Actual source status excludes CONNECT; valid Memento read independently"
+      ],
+      "stop": "One control only; failure ends batch; success returns idle without automatic RSS follow-up",
+      "result": {
+        "attempts": 2,
+        "source_responses": 1,
+        "known_existing_payload_bytes": 3347,
+        "trace_dispatch_interval_seconds": 4.039,
+        "connection_acceptance": "research/continuous-recovery-20261015/control7-acceptance.json",
+        "original_monotonic_and_disk_values_lost": true,
+        "original_report_assembly_exception": "UnboundLocalError; raw evidence preserved and report rebuilt offline without more requests",
+        "new_wrapper_local_acceptance": "research/continuous-recovery-20261015/control7-wrapper-acceptance.json",
+        "new_wrapper_test_network_requests": 0
+      }
+    },
+    {
+      "id": "LOCAL-BROWSER-V9-005",
+      "status": "running_root_29005_ready",
+      "owner": "sidebar_local_audit",
+      "goal": "Verify 12 new menu targets, PTR allowed links/aliases, Battlegroups sidebar href, Wrath gallery/images/lightbox and an existing SSOTD overlay after root final export.",
+      "write_scope": "research/continuous-recovery-20261015/core-pages-integration/browser/**",
+      "network": false,
+      "limits": {
+        "minutes": 20,
+        "loopback_only": true,
+        "external_and_non_get_requests_blocked": true
+      },
+      "acceptance": [
+        "Root confirms 29005 server ready before execution",
+        "Record statuses, visible content, screenshots, errors and actual image decode",
+        "Gallery page count uses recovered counter variables and existing layout logic",
+        "No production changes and no inferred runtime passes"
+      ],
+      "stop": "Twenty-minute bound, interface/scope change, or completed scenarios; report failures without production edits",
+      "server_ready_by": "root; final export 8467 declared files, 8328 sources and 38 overlays"
+    },
+    {
+      "id": "NET-WRATH-008",
+      "status": "running",
+      "owner": "wayback_recheck_batch1",
+      "goal": "Acquire the exact historical art.xml viewer first, then missing first-page common artwork pairs 11/10/8/7/5/4.",
+      "write_scope": "research/continuous-recovery-20261015/network-wrath8/**",
+      "inputs": [
+        "research/continuous-recovery-20261015/wrath-artwork-viewer-gap.json",
+        "research/continuous-recovery-20261015/control7-wrapper-acceptance.json",
+        "research/continuous-recovery-20261015/selected-core-pages-source-map.json",
+        ".scratch/offline-navigation-20261015-v9/build-manifest.json"
+      ],
+      "network": true,
+      "limits": {
+        "distinct_targets": 14,
+        "attempts": 32,
+        "seconds": 480,
+        "body_bytes": 67108864,
+        "single_body_bytes": 16777216,
+        "minimum_dispatch_interval_seconds": 1.25,
+        "disk_floor_bytes": 11005853696,
+        "automatic_redirects": 0,
+        "manual_redirect_follow": 0
+      },
+      "candidate_rule": "Base /wrath/art.xml first; independent ?s=1 only if base lacks valid HTML; six first-page missing pairs thumb+original interleaved. Existing counter/layout and same-origin known pairs support candidates, but actual CDX row and valid body are required for recovery.",
+      "acceptance": [
+        "Persist UTC/monotonic dispatch and disk before transport; postflight in finally",
+        "CDX rows and real payloads counted separately",
+        "Images independently verify/load and match source/Memento/digest",
+        "Do not run viewer scripts during acquisition"
+      ],
+      "stop": "Rate limit, five transport failures, resource bound or completed queue; no automatic additional targets",
+      "excluded_next_batch": [
+        "common2 and locale1 artwork pairs",
+        "eleven untouched RSS targets",
+        "RSS006 transport failures and unrequested targets"
+      ]
     }
   ]
 }

@@ -1,0 +1,32 @@
+{
+  "schema": "wayback-net-control7-gate-persistence-self-test/v1",
+  "simulation": true,
+  "network_requests": 0,
+  "isolated_output": "isolated-self-test/persistence-case/dispatch-log.json",
+  "assertions": {
+    "simulation": true,
+    "network_requests": 0,
+    "subprocess_network_guard": true,
+    "early_wake_recomputed": true,
+    "dispatch_count": 3,
+    "dispatch_utc_monotonic_persisted_immediately": true,
+    "minimum_dispatch_interval_seconds": 1.25,
+    "minimum_interval_required_seconds": 1.25,
+    "interval_assertion": true,
+    "disk_preflight_persisted": true,
+    "summary_exception_simulated": "RuntimeError: simulated summary assembly exception",
+    "postflight_persisted_in_finally": true,
+    "postflight_disk_bytes": 19999998000,
+    "real_report_unchanged": true,
+    "real_dispatch_log_unchanged": true
+  },
+  "real_artifacts_before": {
+    "report": "7c41b708e09fb3878138b4223218e5fae56d56aecf30a77ed9f53c9417b683f7",
+    "dispatch_log": "b43a8d9470bb5e558154b7037e4fb951b9d85cfc612e24a017d16a4a0c0e10dc"
+  },
+  "real_artifacts_after": {
+    "report": "7c41b708e09fb3878138b4223218e5fae56d56aecf30a77ed9f53c9417b683f7",
+    "dispatch_log": "b43a8d9470bb5e558154b7037e4fb951b9d85cfc612e24a017d16a4a0c0e10dc"
+  },
+  "journal_sha256": "c30bb1a8f0dec6ab7595c1c39e9d9e7f41e0bd64e1c199c16b08d2838896aee4"
+}

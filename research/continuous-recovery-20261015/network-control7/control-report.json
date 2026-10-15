@@ -1,0 +1,191 @@
+{
+  "schema": "wayback-net-control7-20261015.v1",
+  "mode": "executed_offline_rebuilt_after_report_write_error",
+  "started_utc": "2026-10-15T09:03:32.649000+00:00",
+  "finished_utc": "2026-10-15T09:03:38.457000+00:00",
+  "request_window_finished_utc": "2026-10-15T09:03:38.457000+00:00",
+  "report_updated_utc": "2026-10-15T09:05:57.346030+00:00",
+  "not_before_utc": "2026-10-15T09:03:32.169574+00:00",
+  "guard_open_observed": true,
+  "input_sha256": "b428bf45813a2eb825d3f3654771650bff1a5fa06d64205e2d4e01d2199877f4",
+  "inputs": {
+    "summary_path": "research/continuous-recovery-20261015/network-control2/sanitized-summary.json",
+    "summary_sha256": "b428bf45813a2eb825d3f3654771650bff1a5fa06d64205e2d4e01d2199877f4",
+    "acceptance_path": "research/continuous-recovery-20261015/control2-acceptance.json",
+    "acceptance_sha256": "0a88b399ae62321a04ed615dd159cd2c101f9dd92c8cc6d5c7517950686b16e8",
+    "control_report_path": "research/continuous-recovery-20261015/network-control2/control-report.json",
+    "control_report_sha256": "804820ea2fbe9703d94cb03e29495d774d1d7870456d2062185e3ebe743addaa"
+  },
+  "target": "https://web.archive.org/web/20080512212653id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/thumbs/ss2-thumb.jpg",
+  "expected": {
+    "bytes": 3347,
+    "sha256": "45936113efa432f3c8188445ae255108c2af3d06fecf902202f0611068a74a11",
+    "format": "JPEG",
+    "size": [
+      150,
+      110
+    ],
+    "memento": "2008-05-12T21:26:53+00:00"
+  },
+  "category": "valid_image",
+  "detail": {
+    "expected_match": true,
+    "image": {
+      "available": true,
+      "valid": true,
+      "format": "JPEG",
+      "size": [
+        150,
+        110
+      ],
+      "verify": true,
+      "load": true
+    }
+  },
+  "source_request_count": 2,
+  "transport_attempt_count": 2,
+  "failed_attempt_count": 1,
+  "source_response_count": 1,
+  "total_body_bytes": 3347,
+  "payload_body_bytes": 3347,
+  "stop_reason": null,
+  "rate_limit": null,
+  "disk_free_bytes_before": null,
+  "disk_free_bytes_after": null,
+  "disk_threshold_precheck": "passed because the original process reached dispatch; exact values were lost before report write",
+  "network_window_seconds_observed_from_trace": 5.808,
+  "minimum_dispatch_interval_seconds_observed_from_trace": 4.039,
+  "minimum_dispatch_interval_seconds_monotonic": null,
+  "policy": {
+    "max_targets": 1,
+    "max_source_requests": 2,
+    "network_window_seconds": 120,
+    "min_dispatch_interval_seconds": 1.25,
+    "min_free_bytes": 11005853696,
+    "automatic_redirects": 0,
+    "tls_verification": "enabled_by_curl_default"
+  },
+  "gate_self_test": {
+    "passed": true,
+    "minimum_interval_seconds": 1.25,
+    "early_wake_recomputed": true
+  },
+  "dispatch_persistence": {
+    "wrapper_monotonic_values_persisted": false,
+    "reason": "control7.py crashed while assembling report before dispatch log was written",
+    "observed_trace_timestamps_persisted": true,
+    "offline_rebuild": true
+  },
+  "attempts": [
+    {
+      "executed": true,
+      "attempt": 1,
+      "transport": "direct",
+      "url": "https://web.archive.org/web/20080512212653id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/thumbs/ss2-thumb.jpg",
+      "started_utc": "2026-10-15T09:03:32.649000+00:00",
+      "finished_utc": "2026-10-15T09:03:36.566000+00:00",
+      "started_monotonic": null,
+      "finished_monotonic": null,
+      "duration_ms": 3917.0,
+      "dispatch": {
+        "attempt": 1,
+        "transport": "direct",
+        "target": "https://web.archive.org/web/20080512212653id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/thumbs/ss2-thumb.jpg",
+        "dispatch_utc_observed_from_trace": "2026-10-15T09:03:32.649000+00:00",
+        "dispatch_utc_source": "curl_trace_first_event_after_report_write_crash",
+        "dispatch_monotonic": null,
+        "monotonic_persistence": "lost_on_report_write_exception"
+      },
+      "curl_exit": 28,
+      "source_status": null,
+      "connect_status": null,
+      "memento_datetime": null,
+      "location": null,
+      "retry_after": null,
+      "redirects_requested": 0,
+      "automatic_redirects": 0,
+      "body_bytes": 0,
+      "body_sha256": null,
+      "content_type": null,
+      "image": {
+        "available": true,
+        "valid": false,
+        "format": null,
+        "size": null,
+        "verify": false,
+        "load": false
+      },
+      "transport_error": true,
+      "transport_reason": "no_http_status",
+      "raw": {
+        "headers": "raw/attempt-01-direct.headers.txt",
+        "body": "raw/attempt-01-direct.body",
+        "stderr": "raw/attempt-01-direct.stderr.txt",
+        "trace": "raw/attempt-01-direct.trace.txt",
+        "metrics": "raw/attempt-01-direct.metrics.txt"
+      }
+    },
+    {
+      "executed": true,
+      "attempt": 2,
+      "transport": "proxy",
+      "url": "https://web.archive.org/web/20080512212653id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/thumbs/ss2-thumb.jpg",
+      "started_utc": "2026-10-15T09:03:36.688000+00:00",
+      "finished_utc": "2026-10-15T09:03:38.457000+00:00",
+      "started_monotonic": null,
+      "finished_monotonic": null,
+      "duration_ms": 1769.0,
+      "dispatch": {
+        "attempt": 2,
+        "transport": "proxy",
+        "target": "https://web.archive.org/web/20080512212653id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/thumbs/ss2-thumb.jpg",
+        "dispatch_utc_observed_from_trace": "2026-10-15T09:03:36.688000+00:00",
+        "dispatch_utc_source": "curl_trace_first_event_after_report_write_crash",
+        "dispatch_monotonic": null,
+        "monotonic_persistence": "lost_on_report_write_exception"
+      },
+      "curl_exit": 0,
+      "source_status": 200,
+      "connect_status": 200,
+      "memento_datetime": "2008-05-12T21:26:53+00:00",
+      "location": null,
+      "retry_after": null,
+      "redirects_requested": 0,
+      "automatic_redirects": 0,
+      "body_bytes": 3347,
+      "body_sha256": "45936113efa432f3c8188445ae255108c2af3d06fecf902202f0611068a74a11",
+      "content_type": "image/jpeg",
+      "image": {
+        "available": true,
+        "valid": true,
+        "format": "JPEG",
+        "size": [
+          150,
+          110
+        ],
+        "verify": true,
+        "load": true
+      },
+      "transport_error": false,
+      "transport_reason": null,
+      "raw": {
+        "headers": "raw/attempt-02-proxy.headers.txt",
+        "body": "raw/attempt-02-proxy.body",
+        "stderr": "raw/attempt-02-proxy.stderr.txt",
+        "trace": "raw/attempt-02-proxy.trace.txt",
+        "metrics": "raw/attempt-02-proxy.metrics.txt"
+      }
+    }
+  ],
+  "cdx": {
+    "queried": false,
+    "accepted_control2_digest": null,
+    "note": "No new CDX query; exact Memento control was already accepted by control2."
+  },
+  "raw_evidence_note": "Raw headers, body, stderr and trace remain local only. A zero-byte body for the direct transport attempt is a local placeholder, not source response content.",
+  "execution_error": {
+    "type": "UnboundLocalError",
+    "message": "report referenced before assignment while computing network_window_seconds",
+    "network_requests_completed_before_error": 2
+  }
+}
