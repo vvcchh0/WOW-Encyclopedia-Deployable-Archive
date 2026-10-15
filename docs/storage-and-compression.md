@@ -29,7 +29,7 @@ Git 主树继续提供可审阅、直接启动的文件；完整恢复 ZIP、原
 
 没有将站点文件改为 `.gz`，服务器仍按原路由读取原文件。预压缩文本需要服务层明确支持 Content-Encoding、回退路径和原始/压缩摘要；本轮约 39 MB 的站点文本收益不足以要求用户承担这项格式变化。图片不进行 JPEG/WebP 重编码，以免改变历史素材。
 
-[NTFS 文件压缩](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/compact)可作为保留原字节的本机可选方案，尤其适合大 JSON/文字证据；本轮未对整个工作区启用，也未计入收益。工作区 14,000,000,000 字节预算仍按逻辑文件大小保守计数，D 盘另保留至少 10 GB 安全空间；压缩不成为超额下载的理由。
+[NTFS 文件压缩](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/compact)可作为保留原字节的本机可选方案，尤其适合大 JSON/文字证据；本轮未对整个工作区启用，也未计入收益。早期的 14,000,000,000 字节预算已于 2026-10-14 取消；当前按新增量预检 D 盘余量，并保留 10GiB 加 256MiB 缓冲。
 
 依据：[完整测量](../research/github-publication-20261012/compression-analysis.md)、[逐文件测量 JSON](../research/github-publication-20261012/compression-analysis.json)、[轻量包核验](../research/github-publication-20261012/runtime-package-verification.md)。
 
@@ -49,3 +49,20 @@ Git 主树继续提供可审阅、直接启动的文件；完整恢复 ZIP、原
 新增本轮浏览版与候选包之前的空间盘点约 15.49 GB；五份旧 Pages 派生树合计约 2.78 GB，内容与当前版存在差异，因此继续作为检查点保留。大份静态引用明细已无损压缩为约 355–359 KB 的 gzip 文件，Git 仅纳入摘要。工作区总量按用户最新约定不设固定 14GB 上限；下载、导出和打包预检继续保留 D 盘 10GiB 加 256MiB 缓冲。
 
 旧运行包、首次候选包及来源包仍保留，版本用途与实际验收见[本地整理记录](local-maintenance-20261014.md)。
+
+## 2026-10-15：发布当前浏览包（v14）
+
+[新版离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261015)收录当前派生站点和独立启动器，解压后不需要 Git 仓库或研究目录。旧 Release 和本地历史 ZIP 继续保留。
+
+| 文件类别 | 解压字节 | ZIP 成员压缩字节 |
+| --- | ---: | ---: |
+| HTML / XML / XSL | 54,337,780 | 8,634,650 |
+| JavaScript / CSS | 5,414,033 | 686,465 |
+| 图片 | 492,130,501 | 488,011,916 |
+| 其他（含来源索引与启动文件） | 14,573,208 | 3,673,454 |
+
+ZIP 共 502,662,461 字节，8,502 个成员，解压成员合计 566,455,522 字节；容器目录等开销另占 1,655,976 字节。图片占解压总量约 86.9%，已有压缩格式的图片仅进一步缩小约 0.84%；保留原图字节并使用 DEFLATE-6，因此本项目不会得到以 HTML 为主的备份包那样的体积降幅。
+
+SHA-256 为 `7d13b98943180e52cc024d43f73148e8450dd5f81379b95083b9ce1f57df0c9e`。独立验收实读全部成员核对 CRC、SHA、长度与清单，再从带空格路径的解压副本以 Python `-I` 启动本地服务器，完成 44 次 GET / HEAD 检查；Windows 启动器未实际双击。详见[打包摘要](../research/v14-integration/portable-package-summary.json)、[独立验收](../research/v14-integration/root-portable-acceptance.json)与[Release 资产确认](../research/v14-integration/root-release-publication.json)。
+
+完整取证 ZIP 及原始响应元数据继续留本地；公开浏览包只包含派生站点、来源索引和启动文件。检查后 D 盘余量为 30,550,495,232 字节，仍高于 11,005,853,696 字节安全阈值。本轮没有清理冻结副本，也未对图片重新编码。

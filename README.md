@@ -16,21 +16,19 @@
 
 - 图片与部分静态资源仍有缺口。50 个玩家截图图库的原图与配套缩略图尚待恢复。
 - Flash、账号和依赖原站服务的功能不可用。
-- 已发布离线包仍为 2026-10-13 版本；后续修复与补图进度见[更新记录](CHANGELOG.md)。
+- Archived News 尚缺 2007 年 8 月，部分新闻配图仍待补齐。
 
 ## 本地使用
 
-下载[离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/download/archive-20080512-processed-20261012/WOW_Encyclopedia_20080512_runtime_20261013.zip)（约 502 MB，解压后约 613 MB），Windows 用户可解压后双击 `START_OFFLINE.cmd`。
+安装 Python 3 后，下载 [2026-10-15 离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/download/archive-20080512-browser-20261015/WOW_Encyclopedia_20080512_browser_20261015_v14.zip)（约 503 MB，解压后约 566 MB）。Windows 用户解压后双击 `START_BROWSE.cmd`。
 
-也可安装 Python 3，克隆仓库并启动：
+macOS / Linux 用户在解压目录运行：
 
 ```sh
-git clone https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive.git
-cd WOW-Encyclopedia-Deployable-Archive
-python tools/offline_mirror.py serve --host 127.0.0.1 --port 8765
+python3 tools/serve_pages_preview.py --site site --port 0 --open-browser
 ```
 
-启动后打开[本地官网](http://127.0.0.1:8765/)或[本地百科](http://127.0.0.1:8765/info/encyclopedia/index.xml)。
+启动后会打开本地浏览页面。新版包含当前的页面修复与补充素材，后续进度见[更新记录](CHANGELOG.md)。
 
 ## 参与协作
 

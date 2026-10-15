@@ -301,3 +301,8 @@ Source14从此冻结，B idle，无任何新网络/版本授权；root fresh最�
 相对v8，新增50份已验证primary来源（34HTML，其中22份RSS路径月页；16静态资源），菜单多接通39观察/33文件。原始基线、历史zip和原始取证保持。最终便携ZIP本地独立CRC/SHA/长度与隔离HTTP验收通过：502662461B、8502members，SHA256 7d13b98943180e52cc024d43f73148e8450dd5f81379b95083b9ce1f57df0c9e。GitHub Release上传和公开API确认仍由root收尾，未在此声称已公开；中间v11候选包未上传。
 
 两执行者均idle，获取与source版本工作关闭。published ledger已切最终v14，逐字节保留原local accepted总账，全部1241项与summary不变；只更新发布/验证元数据。剩余原始Guide图库、Wrath部分图片/装饰/hires、SSOTD缩略图与旧Flash缺口照实保留，业务敏感入口保持静态历史展品。
+
+
+### 2026-10-15T14:44:32.252232+00:00 — 最终便携Release公开并核验
+
+[最终便携浏览包Release](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261015) 已公开，root-release-publication.json接受：Release413917488，ZIP asset644144570为502662461B，服务端SHA256 7d13b98943180e52cc024d43f73148e8450dd5f81379b95083b9ce1f57df0c9e与已独立验收本地包一致；NOTICE644144569和sidecar644144578也已核验。tag解析main108c9287e910dbd1a0872f16a7078b89cd1f5911。此前待上传状态现已完成；root只同步README/storage/CHANGELOG并提交最终文档，恢复工作结束，两执行者idle等待用户。

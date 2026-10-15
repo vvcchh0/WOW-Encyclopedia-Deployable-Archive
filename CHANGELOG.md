@@ -9,6 +9,8 @@
 
 ## 2026-10-15
 
+- 发布 [2026-10-15 浏览版离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261015)（约 503 MB，解压约 566 MB），包含当前页面与素材；更新 README 的使用入口，并保留旧版供历史对照。
+
 - 发布 v14，新增九页、350 条历史新闻；侧栏仅余 2007 年 8 月新闻待取得，图片缺口继续保留。[线上验收](research/v14-integration/root-pages-online-acceptance.json)
 
 - 发布 v13，补回 2006 年 9 月、2007 年 12 月和 2008 年 5 月旧新闻，侧栏剩余 10 个缺失地址；修复新闻加号点击和回车展开。5 月页保留原存档截至 5 月 8 日的内容。[线上验收](research/v13-integration/root-pages-online-acceptance.json)
