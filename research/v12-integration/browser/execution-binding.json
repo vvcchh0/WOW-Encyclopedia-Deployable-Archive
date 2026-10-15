@@ -1,0 +1,105 @@
+{
+  "schema": "wow-recovery.v12-focused-browser-execution-binding.v1",
+  "status": "completed_pass",
+  "generated_utc": "2026-10-15T12:35:12.624Z",
+  "scope": "V12 three RSS paths, shared newsarchive.css, and one real default-collapsed title-link expansion",
+  "runtime": {
+    "server_ready": true,
+    "base_url": "http://127.0.0.1:29008",
+    "prefix": "/WOW-Encyclopedia-Deployable-Archive/",
+    "request_policy": "loopback origin and prefix only; GET/HEAD only; no external network; no server start",
+    "runtime_not_started": false,
+    "server_ready_declared_utc": null,
+    "server_ready_declaration": "Root message declared 29008 READY before this run; exact message timestamp was not captured."
+  },
+  "runner": {
+    "path": "research/v12-integration/browser/v12_acceptance.js",
+    "bytes": 23663,
+    "sha256": "569b18c4ab0db863a6b996b702ea443b9cd9ae5f3fa24db5e4dd22bed039e27d",
+    "node_syntax_check": "passed",
+    "node_path": "C:/Users/17630/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "playwright_module": "C:/Users/17630/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright"
+  },
+  "command": {
+    "argv": [
+      "research/v12-integration/browser/v12_acceptance.js",
+      "--server-ready",
+      "--base-url",
+      "http://127.0.0.1:29008",
+      "--prefix",
+      "/WOW-Encyclopedia-Deployable-Archive/",
+      "--playwright-module",
+      "C:/Users/17630/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright",
+      "--manifest",
+      ".scratch/offline-navigation-20261015-v12/build-manifest.json",
+      "--provenance",
+      ".scratch/pages-resources-20261015-v12/export-provenance.json",
+      "--route-map",
+      ".scratch/pages-resources-20261015-v12/__offline/route-map.json",
+      "--output",
+      "research/v12-integration/browser/v12-browser-receipt.json",
+      "--screenshot-dir",
+      "research/v12-integration/browser/screenshots"
+    ],
+    "cwd": "D:/WOW_Encyclopedia",
+    "executed": true,
+    "exit_code": 0,
+    "started_utc": "2026-10-15T12:39:41.411Z",
+    "finished_utc": "2026-10-15T12:39:49.657Z",
+    "receipt": {
+      "path": "research/v12-integration/browser/v12-browser-receipt.json",
+      "bytes": 1210637,
+      "sha256": "77e65e1e0cdffa1823f00d4a34d3d3e2a5b414def696f220b7d3120bf93e9f63"
+    }
+  },
+  "fixed_inputs": {
+    "v12_manifest": {
+      "path": ".scratch/offline-navigation-20261015-v12/build-manifest.json",
+      "sha256": "590f06cf30266d0b6fc02a365d9810a564693e9dd67e3051572bfc414a570b16",
+      "expected_source_count": 8344,
+      "expected_alias_count": 183
+    },
+    "v12_source_receipt": {
+      "path": "research/v12-integration/source/v12-source-receipt.json",
+      "sha256": "5b935a587487e6eaa25a2ea662710b57fd3a17a3fa72afa2589791591e8c95c1"
+    },
+    "selected_rss16": {
+      "path": "research/continuous-recovery-20261015/selected-rss16-source-map.json",
+      "sha256": "04cd170e67bb4c7efeb143cb43314ba33ee03ed1837478220d88dabffe6f76eb"
+    },
+    "rss16_acceptance": {
+      "path": "research/continuous-recovery-20261015/rss16-acceptance.json",
+      "sha256": "8dee2630b9e84caca3588fc578c40c8930d68f9d0cd7b3b5f3d0568fbcbe1a43"
+    }
+  },
+  "runtime_inputs_bound": {
+    "final_export_provenance": {
+      "path": ".scratch/pages-resources-20261015-v12/export-provenance.json",
+      "bytes": 7860722,
+      "sha256": "06bca443bad92d272de35627e2032bd04b18a72d7fba96d16b5333267f585926"
+    },
+    "final_export_route_map": {
+      "path": ".scratch/pages-resources-20261015-v12/__offline/route-map.json",
+      "bytes": 1143343,
+      "sha256": "cc67bea6c863ad32b7fddeeae4556df173b108afaa361cd1f2a4df30d9511603"
+    }
+  },
+  "expected_checks": {
+    "rss_routes": [
+      { "route": "/news/rss-07-2007.xml", "posted_date_count": 57, "month": 7, "year": "07" },
+      { "route": "/news/rss-06-2007.xml", "posted_date_count": 49, "month": 6, "year": "07" },
+      { "route": "/news/rss-04-2007.xml", "posted_date_count": 39, "month": 4, "year": "07" }
+    ],
+    "shared_css": {
+      "route": "/news/newsarchive.css",
+      "bytes": 109,
+      "sha256": "69915a4eea19ec455a60b89bc3a724bdffcc91bd2d617aa7b"
+    },
+    "accordion": "one real default-collapsed July entry expanded by visible h1 a locator.click"
+  },
+  "notes": [
+    "Single authorized runtime completed with exit 0 against the root-provided loopback server.",
+    "Receipt reports 5 executed and passed checks, 1365 responses, no blocked requests, no request failures, no page errors, no console errors, and no unknown 404 responses.",
+    "Do not rerun the V11 image/viewer matrix or treat placeholder/SVG decode as original asset recovery."
+  ]
+}

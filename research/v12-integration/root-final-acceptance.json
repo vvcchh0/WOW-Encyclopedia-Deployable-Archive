@@ -1,0 +1,75 @@
+{
+  "schema": "wow-v12-root-final-acceptance/v1",
+  "checked_utc": "2026-10-15T12:45:30.445800+00:00",
+  "accepted": true,
+  "ready_for_pages_publication": true,
+  "published": false,
+  "gates": {
+    "source": {
+      "path": "research/v12-integration/root-source-acceptance.json",
+      "sha256": "6485d49576634ee21984c796dbf33d632487d1c9c8b734a53094df4460c88785",
+      "accepted": true
+    },
+    "export": {
+      "path": "research/v12-integration/root-export-acceptance.json",
+      "sha256": "6922231d970b8455da7ba35fb8458a4385740a63012d9a66a7f089c0efcba462",
+      "accepted": true
+    },
+    "routes": {
+      "path": "research/v12-integration/root-sidebar-check.json",
+      "sha256": "b600b62a4d2efa5fddbdeacbdbe24087ad151a140512c8b5bc636254c4ab9e72",
+      "accepted": true
+    },
+    "browser": {
+      "path": "research/continuous-recovery-20261015/v12-browser-independent-review.json",
+      "sha256": "9b22bc1651f42652be11f4a57286a72cbfa29c485963e0846e39c10428e71fd1",
+      "accepted": true
+    },
+    "prior_browser": {
+      "path": "research/continuous-recovery-20261015/v11-browser-independent-review.json",
+      "sha256": "0a731b52b572e2e50563686e4fd67929ad6c8c808c838f7505adae75a715dfae",
+      "accepted": true
+    }
+  },
+  "unit_test_reuse": {
+    "receipt_sha256": "d5d72535a6b8f5f2c47d171f9299072cb2a578a09f6243d1734b411f9e5be848",
+    "tests_run": 42,
+    "exit_code": 0,
+    "reason": "Relevant production implementation is byte-identical; no repeated unchanged suite."
+  },
+  "tested_implementation": [
+    {
+      "path": "tools/export_github_pages.py",
+      "sha256": "e6c13afe80a691bbeda46abe7f5b9b1b74bd3f28f1c4a2a08e946eedf7aa9569",
+      "matches_tested_code": true
+    },
+    {
+      "path": "tests/test_github_pages_export.py",
+      "sha256": "b6035754363fce52095b8bfa061904ece2906bfb5fbc81df654b87f3d15d09b2",
+      "matches_tested_code": true
+    }
+  ],
+  "root_visual_reviews": {
+    "checked_utc": "2026-10-15T12:41:47.760685+00:00",
+    "images": [
+      {
+        "path": "research/v12-integration/browser/screenshots/v12-expanded-rss-07-2007.xml-news7-30-07-513.png",
+        "sha256": "2baf32275cd005d05386bb1e671d06425545de6d8bff210064cd49e899f604ad",
+        "reviewed_by_root": true
+      }
+    ],
+    "observations": "July 2007 archive heading, dates and actual expanded comic news article visible in preserved layout. Existing missing placeholders remain visible; no new screenshot image payload claimed."
+  },
+  "source_records": 8344,
+  "declared_export_objects": 8483,
+  "retained_image_overlays": 38,
+  "new_source_entities": 3,
+  "new_original_images": 0,
+  "new_stylesheets": 0,
+  "remaining_missing_sidebar_routes": 13,
+  "new_sidebar_pages": 3,
+  "known_gaps": "Game Guide player screenshot originals/thumbnails remain unavailable locally; other historical asset gaps persist.",
+  "scope": "Three new news pages, all current export bytes, conserved menu identities and focused page/accordion checks; unchanged v11 image/viewer browser evidence reused.",
+  "frozen_manifest_sha256": "397f7dcdbc774d80c6f8c1f3dabf7933211ff182427bd2ef77c895752334f459",
+  "errors": []
+}

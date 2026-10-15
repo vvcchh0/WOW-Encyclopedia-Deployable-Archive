@@ -1,0 +1,193 @@
+{
+  "schema": "continuous-wow-network-control17-config/v1",
+  "batch_id": "NET-CONTROL-017",
+  "prepared_utc": "2026-10-15T12:40:38.516954+00:00",
+  "network_requests": 0,
+  "not_before_utc": "2026-10-15T12:11:30.115333+00:00",
+  "guard_snapshot": {
+    "checked_utc": "2026-10-15T12:40:38.516954+00:00",
+    "checked_monotonic": 34788.515,
+    "not_before_utc": "2026-10-15T12:11:30.115333+00:00",
+    "remaining_seconds": 0.0,
+    "satisfied": true
+  },
+  "target": "http://www.worldofwarcraft.com/news/newsarchive.css",
+  "captured_original_url": "http://www.worldofwarcraft.com:80/news/newsarchive.css",
+  "replay_url": "https://web.archive.org/web/20070322234302id_/http://www.worldofwarcraft.com:80/news/newsarchive.css",
+  "expected": {
+    "source_HTTP": 200,
+    "mime": "text/css",
+    "bytes": 109,
+    "sha256": "69915a4eea19ec455a60b89c64ed661fc55d48bc3a724bdffcc91bd2d617aa7b",
+    "actual_memento": "2007-03-22T23:43:02+00:00",
+    "cdx_digest_reference": "67KDGC7ADIDSHVIZKCXTAZYR24FOAYWP"
+  },
+  "policy": {
+    "direct_first": true,
+    "proxy": "http://127.0.0.1:7890",
+    "max_attempts": 2,
+    "network_window_seconds": 120,
+    "minimum_dispatch_monotonic_seconds": 1.35,
+    "minimum_free_bytes": 11005853696,
+    "max_total_body_bytes": 16384,
+    "max_entity_body_bytes": 16384,
+    "tls_verification": "curl default verification enabled",
+    "redirects": 0,
+    "cdx_queries": 0,
+    "stop_http_codes": [
+      429,
+      503
+    ]
+  },
+  "inputs": {
+    "plan": {
+      "path": "research/continuous-recovery-20261015/control17-approved-plan.json",
+      "bytes": 1609,
+      "sha256": "3c1ba8c3c0f8ee680c68a2eb73f7a1eb332203f8d46c48b605a53be64b867f9a"
+    },
+    "rss16_acceptance": {
+      "path": "research/continuous-recovery-20261015/rss16-acceptance.json",
+      "bytes": 4756,
+      "sha256": "8dee2630b9e84caca3588fc578c40c8930d68f9d0cd7b3b5f3d0568fbcbe1a43"
+    },
+    "rss16_report": {
+      "path": "research/continuous-recovery-20261015/network-rss16/batch-report.json",
+      "bytes": 197558,
+      "sha256": "9c40325f6cdf4522458d86af39e9a943c4208837e4368aba92d2bda421295cfd"
+    },
+    "rss16_journal": {
+      "path": "research/continuous-recovery-20261015/network-rss16/dispatch-log.json",
+      "bytes": 10624,
+      "sha256": "e28f92edc59fe9450a22609634714a3b687263a7cf2f1e6899cfa04387bbddd4"
+    },
+    "control14_driver": {
+      "path": "research/continuous-recovery-20261015/network-control14/control14.py",
+      "bytes": 19317,
+      "sha256": "ceb6fbc621358f28601050aec84c4a012d9a51ba23464ce599542306649cda40"
+    },
+    "acceptance": {
+      "schema": "continuous-wow-rss16-independent-acceptance/v1",
+      "checked_utc": "2026-10-15T12:22:07.379083Z",
+      "accepted": true,
+      "network_requests_by_acceptance": 0,
+      "report_sha256": "9c40325f6cdf4522458d86af39e9a943c4208837e4368aba92d2bda421295cfd",
+      "journal_sha256": "e28f92edc59fe9450a22609634714a3b687263a7cf2f1e6899cfa04387bbddd4",
+      "selected_map_sha256": "04cd170e67bb4c7efeb143cb43314ba33ee03ed1837478220d88dabffe6f76eb",
+      "attempts": 11,
+      "source_responses_excludingCONNECT": 5,
+      "transport_failures": 6,
+      "CDX_rows_newly_fetched": 25,
+      "valid_expanded_HTML_entities": 3,
+      "raw_RSS_XML_entities": 0,
+      "payload_bytes": 503221,
+      "total_batch_body_bytes": 507904,
+      "minimum_monotonic_dispatch_seconds": 1.3589999999967404,
+      "minimum_recorded_request_startUTC_seconds": 1.353984,
+      "max_consecutive_transport_failures": 5,
+      "stopped_exactly_after5": true,
+      "cooldown_state": "No further networkauthorized. Preserve failurestop; rootmust separatelydecidecooldown/control beforeanotherbatch.",
+      "actual_request_window_utc": [
+        "2026-10-15T12:08:55.420140+00:00",
+        "2026-10-15T12:09:30.115333+00:00"
+      ],
+      "entities": [
+        {
+          "target": "/news/rss-07-2007.xml",
+          "title": "WoW -> Archived News -> July, 2007",
+          "body_format": "expanded_html",
+          "h1_article_count": 57,
+          "article_posted_date_count": 57,
+          "date_range": [
+            "2007-07-01",
+            "2007-07-31"
+          ],
+          "article_month_distribution": {
+            "2007-07": 57
+          },
+          "source_title_anomaly": null,
+          "actual_memento": "2008-04-02T08:06:37+00:00",
+          "actual_timestamp": "20080402080637",
+          "bytes": 185016,
+          "sha256": "867f0c5003c525d116295e54fcd328845c4d41c3566206d38226b107d8283696",
+          "CDXdigest": "734YB5PWRALEKCYV2J37VEN6NCKESMAF",
+          "event_description_dates": [
+            "July 22, 2007"
+          ]
+        },
+        {
+          "target": "/news/rss-06-2007.xml",
+          "title": "WoW -> Archived News -> June, 2007",
+          "body_format": "expanded_html",
+          "h1_article_count": 49,
+          "article_posted_date_count": 49,
+          "date_range": [
+            "2007-06-01",
+            "2007-06-29"
+          ],
+          "article_month_distribution": {
+            "2007-06": 49
+          },
+          "source_title_anomaly": null,
+          "actual_memento": "2008-04-02T08:08:28+00:00",
+          "actual_timestamp": "20080402080828",
+          "bytes": 174728,
+          "sha256": "410cf53924a4226558b5736fad5b50e5b141e1db8f5514274342ea2ffadfdd2b",
+          "CDXdigest": "TDPZMUL2VIUBGLZYXQVCGGQAVU54RLE4",
+          "event_description_dates": [
+            "June 10, 2007"
+          ]
+        },
+        {
+          "target": "/news/rss-04-2007.xml",
+          "title": "WoW -> Archived News -> April, 2007",
+          "body_format": "expanded_html",
+          "h1_article_count": 39,
+          "article_posted_date_count": 39,
+          "date_range": [
+            "2007-04-01",
+            "2007-04-30"
+          ],
+          "article_month_distribution": {
+            "2007-04": 39
+          },
+          "source_title_anomaly": null,
+          "actual_memento": "2008-04-02T08:13:59+00:00",
+          "actual_timestamp": "20080402081359",
+          "bytes": 143477,
+          "sha256": "94afe06db69d0fe5198f3312808e5b1426636c067b29cd6a9fdc639ce190b532",
+          "CDXdigest": "EQJEFYNJTDC4GLAJZ2D262OPUDGYKEYP",
+          "event_description_dates": [
+            "August 3, 2007"
+          ]
+        }
+      ],
+      "failed_targets": [
+        {
+          "target": "/news/rss-09-2006.xml",
+          "category": "transport_unknown_no_source_HTTP"
+        },
+        {
+          "target": "/news/rss-05-2008.xml",
+          "category": "transport_unknown_no_source_HTTP"
+        },
+        {
+          "target": "/news/rss-12-2007.xml",
+          "category": "transport_unknown_no_source_HTTP"
+        },
+        {
+          "target": "/news/rss-11-2007.xml",
+          "category": "transport_unknown_no_source_HTTP"
+        },
+        {
+          "target": "/news/rss-10-2007.xml",
+          "category": "transport_unknown_no_source_HTTP"
+        }
+      ],
+      "semantic_correction": "Originaldriver useddescriptionlongdates; AprilAugust3isBlizzConeventdate, notarticleposteddate. Before-posted-context snapshots preserved; all145realposted-date nodes and matchingnews-entry-date contexts checked independently, allcorrectmonths.",
+      "execution_deviation": "Worker reportedexecute exit1 during summaryassembly after raw/journal saved; offlinefieldrepair/rebuild exit0 and subsequentdatecontextrepair used0network. Authentication/semanticacceptance derives actualsavedheaders/bodies independently.",
+      "query_from_equivalence": "Actualfrom20040101000000 is explicitmidnight form of approveddate20040101; no windowexpansion.",
+      "integration": "3entitiesheldforfuturev12; v11source/exportunchanged.",
+      "errors": []
+    }
+  }
+}

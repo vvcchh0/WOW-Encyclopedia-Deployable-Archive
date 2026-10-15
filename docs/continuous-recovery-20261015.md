@@ -201,6 +201,24 @@ A 已切换最小 fresh v11 source 追加任务：沿 v10 已核十三份 extra 
 
 根代理条件批准的[最小 v12 source-only 方案](../research/continuous-recovery-20261015/v12-source-approved-plan.json)已满足来源验收门槛并派给 A：以冻结 v11 的 8,341 条为唯一守恒起点，追加[三份选定来源](../research/continuous-recovery-20261015/selected-rss16-source-map.json)，预期 8,344 来源、183 别名和 38 个 overlay 配方；不改任何旧树、生产、ZIP、ledger，不执行 export/网络。尚无稳定 v12 构建回执，不把预期减少的菜单缺口当完成。根代理保留未上传 v11 ZIP 候选，等后续最终版本决定一次最新公开便携包。
 
+### 12:40 当前工作：v12 极小浏览与一次连接控制
+
+主分支检查点已由根代理确认到 `0d1a03130c85312515253751dfc5b09f2325b19b`，已发布版本仍为 v11/Pages `915b014`。v12 源树已[独立接受](../research/continuous-recovery-20261015/v12-source-independent-acceptance.json)，8,344 来源、183 别名和 38 个 overlay 配方守恒；[最初严格预检](../research/continuous-recovery-20261015/v12-source-precheck-derived-link-difference.json)保留。实读证明旧 May2007 派生正文只有一处 href 从缺页说明变为新 April2007 页面，原 source SHA 未变；不能为保留旧 derived SHA 退回已连通的链接。
+
+根代理完成 v12 导出 8,483 个声明对象并启动 29008。A 已正式复用为仅三页、57/49/39 条实际 posted-date 与对应标题/样式、一个原生标题点击展开及一张正文截图的检查；全 export 字节/卫生及全菜单检查另由根代理处理。目前没有 v12 浏览或发布通过声明，旧新图/查看器若字节保持则复用 v11 已接受证据。
+
+根代理单次批准[CONTROL017](../research/continuous-recovery-20261015/control17-approved-plan.json)：只重放原已接受 109 字节 CSS，NET016 末请求后至少 120 秒，最多两次 direct/proxy 尝试、120 秒、16 KiB，不查 CDX、不跟跳转、不增加资源；B 已正式派发，成功也不自动开始下一批。[剩十三 RSS 下一八目标提案](../research/continuous-recovery-20261015/remaining-rss13-next8-proposal.json)已纯本地保存：Sep2006 已存 capture 先回放，再处理七个 CDX 传输未知地址；排除刚接受三页与已有有效来源，不扩窗口。13 是已取得三份新来源后的 acquisition 集合，当前已发布 v11 的菜单缺口仍为 16 个，须后续真实 route 验收才变化。
+
+### 12:55 v12 上线检查点
+
+v12 已由根代理发布为 Pages `c479d9d623a30886a8ec89a8a7635bd9f7b5ef4a`，[线上九对象](../research/v12-integration/root-pages-online-acceptance.json)全部 direct HTTP 200、正文长度/SHA/MIME 一致，API 前后 built 同一 commit。[单次浏览独立验收](../research/continuous-recovery-20261015/v12-browser-independent-review.json)五组全部实际通过：三页 57/49/39 条文章发布日期与显示行日期相等，三页共享 CSS 实际挂载/109 字节正确，一个原生标题点击将默认折叠正文展开；只保留一张相关正文截图。没有重复旧原画/新图片矩阵，也没有将 HTTP200 的 SVG 占位当原图恢复。
+
+[全菜单 page 层更新](../research/continuous-recovery-20261015/v12-ledger-page-acceptance.json)按真实三个 record 恢复，现 1,091 条 resolved、470 个不同文件，16 条缺页观察、13 个地址；[发布指针更新](../research/continuous-recovery-20261015/v12-ledger-publication-acceptance.json)另记录线上范围。资源与交互字段全部保留混合旧版本，三页新 next_action 明示仍待真实资源子集复核，未用页面恢复替代资源完整性。
+
+[CONTROL017 独立验收](../research/continuous-recovery-20261015/control17-acceptance.json)确认冷却后一次 known CSS：direct 超时、proxy 返回 109 字节原正文/摘要/Memento，实际 monotonic、UTC、trace 顺序、磁盘前后和 finally 落盘通过，零新增资源。其后根代理明确批准 NET018 八目标，B 已完成并报告三份新 expanded HTML、连续五次传输失败停止，仍待独立来源验收，不追加入已发布 v12，不自动新批或控制。
+
+A 当前仅按根代理授权做五分钟原新闻控件诊断：分别在全新 context 点标题、可见 li 中心、窄 anchor 中心及键盘 Enter，区分真实用户可见控件与静态双 handler 迹象，不改生产或 v12。最终公开便携 Release 留到本轮最后稳定接受版本统一生成/上传，中间 ZIP 候选与旧包保留。
+
 ## 取舍与后续顺序
 
 优先修复已有真实内容因地址规范化或客户端逻辑无法访问的问题；其次补取来源明确且过去因网络失败没有取得内容判定的对象；再沿历史脚本、菜单和 CDX 记录提取有证据的缺失资源。按编号生成的截图地址可以作为来源证据，不能凭猜测把实体记为已取得。若本地审计发现更高价值的缺口，下一批按证据与可恢复性调整，不为填满时间盲目重试。

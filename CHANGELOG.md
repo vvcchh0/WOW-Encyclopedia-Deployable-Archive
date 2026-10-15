@@ -9,6 +9,8 @@
 
 ## 2026-10-15
 
+- 发布 v12，恢复 2007 年 4、6、7 月旧新闻及相关回链；侧栏剩余 13 个缺失地址，新增页面可展开浏览。[线上验收](research/v12-integration/root-pages-online-acceptance.json)
+
 - 发布 v11，补回 BlizzCast 与 2008 年竞技场新闻的两张配图，以及旧新闻共享样式；实际展开文章后确认图片正常显示。[线上验收](research/v11-integration/root-pages-online-acceptance.json)
 - 取回 2007 年 4、6、7 月旧新闻，准备接入下一版；检查三个副本图库目录的基准前存档，尚未找到图片捕获。[持续恢复记录](docs/continuous-recovery-20261015.md)
 
