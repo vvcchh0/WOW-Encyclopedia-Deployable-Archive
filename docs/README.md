@@ -29,3 +29,4 @@ Git 主树保存部署文件、工具、这些文档与关键验收；历史记�
 - [关联站点素材与第二批恢复](related-sites-recovery-20261014.md)：已有站点覆盖、欧服图片、素材目录、旧队列去重更正和本地验收证据。
 - [截图资源可及性检查](screenshot-accessibility-20261014.md)：五个图片 URL 的实际回放、图库原图缺口与 CDX/API 连接结果。
 - [Karazhan 玩家图库限时检查](karazhan-gallery-accessibility-20261014.md)：126 个目标中的 54 项实际请求、历史重定向和 72 项未检查清单。
+- [Karazhan 图库复查与 TLS 诊断](karazhan-tls-recheck-20261015.md)：126 项实际请求、59 个未存档响应、67 项握手失败及跨客户端对照。

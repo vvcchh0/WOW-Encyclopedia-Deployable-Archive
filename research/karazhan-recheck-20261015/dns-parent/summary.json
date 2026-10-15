@@ -1,0 +1,77 @@
+{
+  "checked_utc": "2026-10-15T03:12:38.806778+00:00",
+  "endpoint": "https://cloudflare-dns.com/dns-query?name=web.archive.org&type=A",
+  "system_dns_observed": [
+    "199.59.149.237"
+  ],
+  "network_configuration_changed": false,
+  "tls_verification_disabled": false,
+  "attempts": [
+    {
+      "transport": "direct",
+      "curl_exit": 35,
+      "metrics_fields": [
+        "status",
+        "time_connect",
+        "time_appconnect",
+        "time_total",
+        "remote_ip"
+      ],
+      "metrics": [
+        "000",
+        "0.496947",
+        "0.000000",
+        "0.811413",
+        ""
+      ],
+      "stderr": "curl: (35) Recv failure: Connection was reset\r\n",
+      "body_bytes": 0,
+      "dns_json": null
+    },
+    {
+      "transport": "proxy",
+      "curl_exit": 0,
+      "metrics_fields": [
+        "status",
+        "time_connect",
+        "time_appconnect",
+        "time_total",
+        "remote_ip"
+      ],
+      "metrics": [
+        "200",
+        "0.001444",
+        "0.812043",
+        "1.178229",
+        "127.0.0.1"
+      ],
+      "stderr": "",
+      "body_bytes": 227,
+      "dns_json": {
+        "Status": 0,
+        "TC": false,
+        "RD": true,
+        "RA": true,
+        "AD": false,
+        "CD": false,
+        "Question": [
+          {
+            "name": "web.archive.org",
+            "type": 1
+          }
+        ],
+        "Answer": [
+          {
+            "name": "web.archive.org",
+            "type": 1,
+            "TTL": 86,
+            "data": "207.241.237.3"
+          }
+        ],
+        "Comment": [
+          "EDE(18): Prohibited"
+        ]
+      }
+    }
+  ]
+}
