@@ -1,0 +1,3286 @@
+{
+  "schema": "continuous-wow-network-wrath8-candidates/v1",
+  "batch_id": "NET-WRATH-008",
+  "generated_utc": "2026-10-15T09:32:43.232652+00:00",
+  "network_requests": 0,
+  "primary_target_count": 12,
+  "conditional_target_count": 13,
+  "fallback_policy": "art.xml?s=1 query only if base has no valid HTML replay",
+  "gallery_order": [
+    11,
+    10,
+    8,
+    7,
+    5
+  ],
+  "gallery_interleave": "thumb then original",
+  "prioritization_change": {
+    "reason": "inserted exact border dependency after viewer and removed the last common ss4 thumb/original pair to remain within the 14-target cap",
+    "inserted_target": "border-layout",
+    "excluded_targets": [
+      {
+        "target_key": "gallery-ss4-thumb",
+        "url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss4-thumb.jpg",
+        "category": "not_requested",
+        "reason": "queue reduced after border priority"
+      },
+      {
+        "target_key": "gallery-ss4",
+        "url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss4.jpg",
+        "category": "not_requested",
+        "reason": "queue reduced after border priority"
+      }
+    ],
+    "actual_primary_target_count": 12,
+    "actual_conditional_target_count": 13,
+    "max_primary_target_count": 13,
+    "max_with_fallback_target_count": 14
+  },
+  "input_digests": {
+    "research/continuous-recovery-20261015/wrath-artwork-viewer-gap.json": {
+      "path": "research/continuous-recovery-20261015/wrath-artwork-viewer-gap.json",
+      "sha256": "40487274d762fc4556a01e441305632c92ccddfdd1f737a40f2758b492c80b63",
+      "bytes": 3074
+    },
+    "research/continuous-recovery-20261015/selected-core-pages-source-map.json": {
+      "path": "research/continuous-recovery-20261015/selected-core-pages-source-map.json",
+      "sha256": "d5b259b9cac0b5f1318132c1f860c85609ff9cad747c169ce83668c80b193fc4",
+      "bytes": 18458
+    },
+    "research/continuous-recovery-20261015/control7-wrapper-acceptance.json": {
+      "path": "research/continuous-recovery-20261015/control7-wrapper-acceptance.json",
+      "sha256": "cf9407ee0521701d4a1cdde117d69fe06a16e852d5fa725e0651f88f70004ffc",
+      "bytes": 850
+    },
+    "research/continuous-recovery-20261015/wrath-artwork-dependencies.json": {
+      "path": "research/continuous-recovery-20261015/wrath-artwork-dependencies.json",
+      "sha256": "bd870ff7d29a29293266a140a3be1d5a1c1018692d8a60847810e5a5491a27df",
+      "bytes": 5388
+    },
+    "research/continuous-recovery-20261015/network-assets5/sanitized-summary.json": {
+      "path": "research/continuous-recovery-20261015/network-assets5/sanitized-summary.json",
+      "sha256": "d6fd41188beb90653f487deab2d5897c2ff7089b07f78dad9c7c2fb3b61b6af4",
+      "bytes": 21852
+    },
+    "research/continuous-recovery-20261015/network-assets5/asset-source-map.json": {
+      "path": "research/continuous-recovery-20261015/network-assets5/asset-source-map.json",
+      "sha256": "c5b4b7b2660b396493e352512aaf6acf352a2e43f3cc6548de58c7954374272e",
+      "bytes": 20209
+    },
+    ".scratch/offline-navigation-20261015-v9/build-manifest.json": {
+      "path": ".scratch/offline-navigation-20261015-v9/build-manifest.json",
+      "sha256": "0da72688ec5057650c2ef46a4634097323dc9c43eb19997afcad264b12dba3b8",
+      "bytes": 74357170
+    },
+    ".scratch/offline-navigation-20261015-v9/site/wrath/js/thumbnailslayout.js": {
+      "path": ".scratch/offline-navigation-20261015-v9/site/wrath/js/thumbnailslayout.js",
+      "sha256": "7988ff0ea5029526b50f1e21a2b3e2817cfb8288c197eda329eee6aa2ef65528",
+      "bytes": 2729
+    },
+    "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body": {
+      "path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body",
+      "sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+      "bytes": 11054
+    },
+    "research/continuous-recovery-20261015/network-core-pages3/core_pages3.py": {
+      "path": "research/continuous-recovery-20261015/network-core-pages3/core_pages3.py",
+      "sha256": "a052959be96955cda42a1febb724392e90ecd00b76c40a5623cfc96aeaffdc70",
+      "bytes": 68417
+    },
+    "research/continuous-recovery-20261015/network-control7/control7.py": {
+      "path": "research/continuous-recovery-20261015/network-control7/control7.py",
+      "sha256": "0af202be56fb208582a8a1f922d74d935c6ccf10af63b7cfee3cb3c475fa0d0a",
+      "bytes": 28365
+    }
+  },
+  "query_scope": {
+    "endpoint": "https://web.archive.org/cdx/search/cdx",
+    "from": "20040101000000",
+    "to": "20080512210044",
+    "anchor_timestamp": "20080512210044",
+    "columns": [
+      "timestamp",
+      "original",
+      "mimetype",
+      "statuscode",
+      "digest",
+      "length"
+    ],
+    "limit": 1000,
+    "collapse": "digest",
+    "matchType": "exact",
+    "actual_memento": "valid replay response header only"
+  },
+  "policy": {
+    "direct_first": true,
+    "proxy": "http://127.0.0.1:7890",
+    "direct_connect_timeout_seconds": 4,
+    "direct_total_timeout_seconds": 12,
+    "proxy_connect_timeout_seconds": 8,
+    "proxy_total_timeout_seconds": 20,
+    "max_distinct_targets_primary": 13,
+    "max_distinct_targets_with_fallback": 14,
+    "max_attempts": 32,
+    "window_seconds": 480,
+    "minimum_dispatch_interval_seconds": 1.25,
+    "minimum_free_bytes": 11005853696,
+    "max_total_body_bytes": 67108864,
+    "max_entity_body_bytes": 16777216,
+    "automatic_redirects": 0,
+    "manual_redirect_follow_hops": 0,
+    "stop_http_codes": [
+      429,
+      503
+    ],
+    "tls_verification": "enabled_by_curl_default",
+    "concurrent_source_requests": 1
+  },
+  "entries": [
+    {
+      "candidate_rank": 1,
+      "target_key": "viewer-base",
+      "kind": "viewer_html",
+      "conditional": false,
+      "execute_if": null,
+      "query_original_url": "http://www.worldofwarcraft.com/wrath/art.xml",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fwrath%2Fart.xml&from=20040101000000&to=20080512210044&output=json&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=1000&collapse=digest&matchType=exact",
+      "replay_selection": "latest valid status-200-or-Wayback-redirect pre-anchor capture",
+      "same_origin_policy": "same scheme/lowercase host; only default ports normalize; path/query literal",
+      "evidence": {
+        "gap": {
+          "path": "research/continuous-recovery-20261015/wrath-artwork-viewer-gap.json",
+          "sha256": "40487274d762fc4556a01e441305632c92ccddfdd1f737a40f2758b492c80b63",
+          "source_page": {
+            "path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body",
+            "sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+            "actual_memento": "2008-05-09T12:33:33+00:00",
+            "evidence": [
+              {
+                "line": 148,
+                "text": "var whichImageviewer = \"art\";"
+              }
+            ]
+          },
+          "exact_viewer_candidates": [
+            {
+              "url": "http://www.worldofwarcraft.com/wrath/art.xml",
+              "evidence_class": "source-code concatenation of whichImageviewer art and .xml",
+              "priority": 0
+            },
+            {
+              "url": "http://www.worldofwarcraft.com/wrath/art.xml?s=1",
+              "evidence_class": "source-code-generated query for artwork item1, supported by recovered counter and existing item route",
+              "priority": 1,
+              "execute_if": "base viewer lacks usable payload; exact query remains distinct URL"
+            }
+          ]
+        },
+        "artwork_page": {
+          "path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body",
+          "sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+          "selected": {
+            "target": "/wrath/artwork.xml",
+            "actual_memento": "2008-05-09T12:33:33+00:00",
+            "body_sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+            "body_bytes": 11054,
+            "local_path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body"
+          },
+          "lines": [
+            {
+              "line": 22,
+              "text": "var roothost = \"/wrath/\";"
+            },
+            {
+              "line": 148,
+              "text": "var whichImageviewer = art"
+            },
+            {
+              "line": 150,
+              "text": "two artworkcounter.js references"
+            },
+            {
+              "line": 153,
+              "text": "theCommonDirectory = ./images/artwork/"
+            },
+            {
+              "line": 161,
+              "text": "screenshotsTotal = local + common"
+            },
+            {
+              "line": 168,
+              "text": "screenshotsPerPage = 9"
+            }
+          ]
+        },
+        "layout": {
+          "path": ".scratch/offline-navigation-20261015-v9/site/wrath/js/thumbnailslayout.js",
+          "sha256": "7988ff0ea5029526b50f1e21a2b3e2817cfb8288c197eda329eee6aa2ef65528",
+          "line": 4,
+          "text": "massiveReplaceString += ... background-image:url(... ss + number + -thumb.jpg) ... src=\"'+roothost+'images/layout/ssborder1.png\" ..."
+        },
+        "counter_observations": [
+          {
+            "url": "http://www.worldofwarcraft.com/wrath/images/artwork/artworkcounter.js",
+            "status": "valid_javascript_counter",
+            "count_values": [
+              12
+            ],
+            "api_names": [
+              "screenshotsCommonTotal"
+            ]
+          },
+          {
+            "url": "http://www.worldofwarcraft.com/wrath/images/artwork/en_us/artworkcounter.js",
+            "status": "valid_javascript_counter",
+            "count_values": [
+              1
+            ],
+            "api_names": [
+              "screenshotsLocTotal"
+            ]
+          }
+        ],
+        "existing_pair_manifest": {
+          "path": ".scratch/offline-navigation-20261015-v9/build-manifest.json",
+          "sha256": "0da72688ec5057650c2ef46a4634097323dc9c43eb19997afcad264b12dba3b8",
+          "records": {
+            "ss1-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss1-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss1-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/746a348ff8de603662bee88b214a8ea3c23f2a077db6d198e373a07a74cfce52.bin",
+              "source_sha256": "746a348ff8de603662bee88b214a8ea3c23f2a077db6d198e373a07a74cfce52",
+              "source_length": 16548,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402011002",
+              "requested_timestamp": "20080402011002",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss1.jpg": {
+              "route": "/wrath/images/artwork/ss1.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss1.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/b38f67882925dc37e494e8c9facecd5d85cd47e8cb339df86a7caf8c08dc7a5f.bin",
+              "source_sha256": "b38f67882925dc37e494e8c9facecd5d85cd47e8cb339df86a7caf8c08dc7a5f",
+              "source_length": 59598,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402011006",
+              "requested_timestamp": "20080402011006",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss12-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss12-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss12-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/65ed06195b604d35cc408ed02e86d5a6d65b6c3cc8e291a9d5da70a0f9a4aa9f.bin",
+              "source_sha256": "65ed06195b604d35cc408ed02e86d5a6d65b6c3cc8e291a9d5da70a0f9a4aa9f",
+              "source_length": 12359,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054212",
+              "requested_timestamp": "20080402054212",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss12.jpg": {
+              "route": "/wrath/images/artwork/ss12.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss12.jpg",
+              "source_local_path": "offline/source-entities-static-support/81f5930f21cb912294de1bf2020ce6c0e8f25da94d2f7fe47baf8274675aa787.bin",
+              "source_sha256": "81f5930f21cb912294de1bf2020ce6c0e8f25da94d2f7fe47baf8274675aa787",
+              "source_length": 50533,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054250",
+              "requested_timestamp": "20080402054250",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss3-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss3-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss3-thumb.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/4c33dbd2e153c474e3d57f5f7d26a9aea10e667317cce91573d8a28397f94581.bin",
+              "source_sha256": "4c33dbd2e153c474e3d57f5f7d26a9aea10e667317cce91573d8a28397f94581",
+              "source_length": 10954,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050123",
+              "requested_timestamp": "20080402050123",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss3.jpg": {
+              "route": "/wrath/images/artwork/ss3.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss3.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/82c6c4c0839d3843f0d93ab6e4d514872a92ba80cbb71b25e571124c2d711e9e.bin",
+              "source_sha256": "82c6c4c0839d3843f0d93ab6e4d514872a92ba80cbb71b25e571124c2d711e9e",
+              "source_length": 43646,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050114",
+              "requested_timestamp": "20080402050114",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss6-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss6-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss6-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/4c0225cd0ac5a5500b7390c9e5cec39090831f069739646d9c19928ad1f8c45f.bin",
+              "source_sha256": "4c0225cd0ac5a5500b7390c9e5cec39090831f069739646d9c19928ad1f8c45f",
+              "source_length": 15810,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050110",
+              "requested_timestamp": "20080402050110",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss6.jpg": {
+              "route": "/wrath/images/artwork/ss6.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss6.jpg",
+              "source_local_path": "offline/source-entities-static-support/eaae0879053c94ec097baccf00eec8282be5121e451728007ca19329ed2c6523.bin",
+              "source_sha256": "eaae0879053c94ec097baccf00eec8282be5121e451728007ca19329ed2c6523",
+              "source_length": 93060,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050059",
+              "requested_timestamp": "20080402050059",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss9-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss9-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss9-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/80a0cf1fa5b04ce57aa1aeeb70b3928966add2a1f062edd72d64e8a68d3d50da.bin",
+              "source_sha256": "80a0cf1fa5b04ce57aa1aeeb70b3928966add2a1f062edd72d64e8a68d3d50da",
+              "source_length": 10243,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054200",
+              "requested_timestamp": "20080402054200",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss9.jpg": {
+              "route": "/wrath/images/artwork/ss9.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss9.jpg",
+              "source_local_path": "offline/source-entities-static-support/cfb15016c77a0f324ccbcd301cac5d2a0da7ed2490984203aaecd8b160955c71.bin",
+              "source_sha256": "cfb15016c77a0f324ccbcd301cac5d2a0da7ed2490984203aaecd8b160955c71",
+              "source_length": 46605,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054223",
+              "requested_timestamp": "20080402054223",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            }
+          }
+        }
+      }
+    },
+    {
+      "candidate_rank": 2,
+      "target_key": "border-layout",
+      "kind": "image_layout_dependency",
+      "conditional": false,
+      "execute_if": null,
+      "query_original_url": "http://www.worldofwarcraft.com/wrath/images/layout/ssborder1.png",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fwrath%2Fimages%2Flayout%2Fssborder1.png&from=20040101000000&to=20080512210044&output=json&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=1000&collapse=digest&matchType=exact",
+      "replay_selection": "latest valid status-200-or-Wayback-redirect pre-anchor capture",
+      "same_origin_policy": "same scheme/lowercase host; only default ports normalize; path/query literal",
+      "evidence": {
+        "gap": {
+          "path": "research/continuous-recovery-20261015/wrath-artwork-viewer-gap.json",
+          "sha256": "40487274d762fc4556a01e441305632c92ccddfdd1f737a40f2758b492c80b63",
+          "source_page": {
+            "path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body",
+            "sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+            "actual_memento": "2008-05-09T12:33:33+00:00",
+            "evidence": [
+              {
+                "line": 148,
+                "text": "var whichImageviewer = \"art\";"
+              }
+            ]
+          },
+          "exact_viewer_candidates": [
+            {
+              "url": "http://www.worldofwarcraft.com/wrath/art.xml",
+              "evidence_class": "source-code concatenation of whichImageviewer art and .xml",
+              "priority": 0
+            },
+            {
+              "url": "http://www.worldofwarcraft.com/wrath/art.xml?s=1",
+              "evidence_class": "source-code-generated query for artwork item1, supported by recovered counter and existing item route",
+              "priority": 1,
+              "execute_if": "base viewer lacks usable payload; exact query remains distinct URL"
+            }
+          ]
+        },
+        "artwork_page": {
+          "path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body",
+          "sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+          "selected": {
+            "target": "/wrath/artwork.xml",
+            "actual_memento": "2008-05-09T12:33:33+00:00",
+            "body_sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+            "body_bytes": 11054,
+            "local_path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body"
+          },
+          "lines": [
+            {
+              "line": 22,
+              "text": "var roothost = \"/wrath/\";"
+            },
+            {
+              "line": 148,
+              "text": "var whichImageviewer = art"
+            },
+            {
+              "line": 150,
+              "text": "two artworkcounter.js references"
+            },
+            {
+              "line": 153,
+              "text": "theCommonDirectory = ./images/artwork/"
+            },
+            {
+              "line": 161,
+              "text": "screenshotsTotal = local + common"
+            },
+            {
+              "line": 168,
+              "text": "screenshotsPerPage = 9"
+            }
+          ]
+        },
+        "layout": {
+          "path": ".scratch/offline-navigation-20261015-v9/site/wrath/js/thumbnailslayout.js",
+          "sha256": "7988ff0ea5029526b50f1e21a2b3e2817cfb8288c197eda329eee6aa2ef65528",
+          "line": 4,
+          "text": "massiveReplaceString += ... background-image:url(... ss + number + -thumb.jpg) ... src=\"'+roothost+'images/layout/ssborder1.png\" ..."
+        },
+        "counter_observations": [
+          {
+            "url": "http://www.worldofwarcraft.com/wrath/images/artwork/artworkcounter.js",
+            "status": "valid_javascript_counter",
+            "count_values": [
+              12
+            ],
+            "api_names": [
+              "screenshotsCommonTotal"
+            ]
+          },
+          {
+            "url": "http://www.worldofwarcraft.com/wrath/images/artwork/en_us/artworkcounter.js",
+            "status": "valid_javascript_counter",
+            "count_values": [
+              1
+            ],
+            "api_names": [
+              "screenshotsLocTotal"
+            ]
+          }
+        ],
+        "existing_pair_manifest": {
+          "path": ".scratch/offline-navigation-20261015-v9/build-manifest.json",
+          "sha256": "0da72688ec5057650c2ef46a4634097323dc9c43eb19997afcad264b12dba3b8",
+          "records": {
+            "ss1-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss1-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss1-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/746a348ff8de603662bee88b214a8ea3c23f2a077db6d198e373a07a74cfce52.bin",
+              "source_sha256": "746a348ff8de603662bee88b214a8ea3c23f2a077db6d198e373a07a74cfce52",
+              "source_length": 16548,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402011002",
+              "requested_timestamp": "20080402011002",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss1.jpg": {
+              "route": "/wrath/images/artwork/ss1.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss1.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/b38f67882925dc37e494e8c9facecd5d85cd47e8cb339df86a7caf8c08dc7a5f.bin",
+              "source_sha256": "b38f67882925dc37e494e8c9facecd5d85cd47e8cb339df86a7caf8c08dc7a5f",
+              "source_length": 59598,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402011006",
+              "requested_timestamp": "20080402011006",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss12-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss12-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss12-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/65ed06195b604d35cc408ed02e86d5a6d65b6c3cc8e291a9d5da70a0f9a4aa9f.bin",
+              "source_sha256": "65ed06195b604d35cc408ed02e86d5a6d65b6c3cc8e291a9d5da70a0f9a4aa9f",
+              "source_length": 12359,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054212",
+              "requested_timestamp": "20080402054212",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss12.jpg": {
+              "route": "/wrath/images/artwork/ss12.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss12.jpg",
+              "source_local_path": "offline/source-entities-static-support/81f5930f21cb912294de1bf2020ce6c0e8f25da94d2f7fe47baf8274675aa787.bin",
+              "source_sha256": "81f5930f21cb912294de1bf2020ce6c0e8f25da94d2f7fe47baf8274675aa787",
+              "source_length": 50533,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054250",
+              "requested_timestamp": "20080402054250",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss3-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss3-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss3-thumb.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/4c33dbd2e153c474e3d57f5f7d26a9aea10e667317cce91573d8a28397f94581.bin",
+              "source_sha256": "4c33dbd2e153c474e3d57f5f7d26a9aea10e667317cce91573d8a28397f94581",
+              "source_length": 10954,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050123",
+              "requested_timestamp": "20080402050123",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss3.jpg": {
+              "route": "/wrath/images/artwork/ss3.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss3.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/82c6c4c0839d3843f0d93ab6e4d514872a92ba80cbb71b25e571124c2d711e9e.bin",
+              "source_sha256": "82c6c4c0839d3843f0d93ab6e4d514872a92ba80cbb71b25e571124c2d711e9e",
+              "source_length": 43646,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050114",
+              "requested_timestamp": "20080402050114",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss6-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss6-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss6-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/4c0225cd0ac5a5500b7390c9e5cec39090831f069739646d9c19928ad1f8c45f.bin",
+              "source_sha256": "4c0225cd0ac5a5500b7390c9e5cec39090831f069739646d9c19928ad1f8c45f",
+              "source_length": 15810,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050110",
+              "requested_timestamp": "20080402050110",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss6.jpg": {
+              "route": "/wrath/images/artwork/ss6.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss6.jpg",
+              "source_local_path": "offline/source-entities-static-support/eaae0879053c94ec097baccf00eec8282be5121e451728007ca19329ed2c6523.bin",
+              "source_sha256": "eaae0879053c94ec097baccf00eec8282be5121e451728007ca19329ed2c6523",
+              "source_length": 93060,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050059",
+              "requested_timestamp": "20080402050059",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss9-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss9-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss9-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/80a0cf1fa5b04ce57aa1aeeb70b3928966add2a1f062edd72d64e8a68d3d50da.bin",
+              "source_sha256": "80a0cf1fa5b04ce57aa1aeeb70b3928966add2a1f062edd72d64e8a68d3d50da",
+              "source_length": 10243,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054200",
+              "requested_timestamp": "20080402054200",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss9.jpg": {
+              "route": "/wrath/images/artwork/ss9.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss9.jpg",
+              "source_local_path": "offline/source-entities-static-support/cfb15016c77a0f324ccbcd301cac5d2a0da7ed2490984203aaecd8b160955c71.bin",
+              "source_sha256": "cfb15016c77a0f324ccbcd301cac5d2a0da7ed2490984203aaecd8b160955c71",
+              "source_length": 46605,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054223",
+              "requested_timestamp": "20080402054223",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            }
+          }
+        }
+      }
+    },
+    {
+      "candidate_rank": 3,
+      "target_key": "viewer-fallback-s1",
+      "kind": "viewer_html",
+      "conditional": true,
+      "execute_if": "base viewer does not produce valid historical HTML",
+      "query_original_url": "http://www.worldofwarcraft.com/wrath/art.xml?s=1",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fwrath%2Fart.xml%3Fs%3D1&from=20040101000000&to=20080512210044&output=json&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=1000&collapse=digest&matchType=exact",
+      "replay_selection": "latest valid status-200-or-Wayback-redirect pre-anchor capture",
+      "same_origin_policy": "same scheme/lowercase host; only default ports normalize; path/query literal",
+      "evidence": {
+        "gap": {
+          "path": "research/continuous-recovery-20261015/wrath-artwork-viewer-gap.json",
+          "sha256": "40487274d762fc4556a01e441305632c92ccddfdd1f737a40f2758b492c80b63",
+          "source_page": {
+            "path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body",
+            "sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+            "actual_memento": "2008-05-09T12:33:33+00:00",
+            "evidence": [
+              {
+                "line": 148,
+                "text": "var whichImageviewer = \"art\";"
+              }
+            ]
+          },
+          "exact_viewer_candidates": [
+            {
+              "url": "http://www.worldofwarcraft.com/wrath/art.xml",
+              "evidence_class": "source-code concatenation of whichImageviewer art and .xml",
+              "priority": 0
+            },
+            {
+              "url": "http://www.worldofwarcraft.com/wrath/art.xml?s=1",
+              "evidence_class": "source-code-generated query for artwork item1, supported by recovered counter and existing item route",
+              "priority": 1,
+              "execute_if": "base viewer lacks usable payload; exact query remains distinct URL"
+            }
+          ]
+        },
+        "artwork_page": {
+          "path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body",
+          "sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+          "selected": {
+            "target": "/wrath/artwork.xml",
+            "actual_memento": "2008-05-09T12:33:33+00:00",
+            "body_sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+            "body_bytes": 11054,
+            "local_path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body"
+          },
+          "lines": [
+            {
+              "line": 22,
+              "text": "var roothost = \"/wrath/\";"
+            },
+            {
+              "line": 148,
+              "text": "var whichImageviewer = art"
+            },
+            {
+              "line": 150,
+              "text": "two artworkcounter.js references"
+            },
+            {
+              "line": 153,
+              "text": "theCommonDirectory = ./images/artwork/"
+            },
+            {
+              "line": 161,
+              "text": "screenshotsTotal = local + common"
+            },
+            {
+              "line": 168,
+              "text": "screenshotsPerPage = 9"
+            }
+          ]
+        },
+        "layout": {
+          "path": ".scratch/offline-navigation-20261015-v9/site/wrath/js/thumbnailslayout.js",
+          "sha256": "7988ff0ea5029526b50f1e21a2b3e2817cfb8288c197eda329eee6aa2ef65528",
+          "line": 4,
+          "text": "massiveReplaceString += ... background-image:url(... ss + number + -thumb.jpg) ... src=\"'+roothost+'images/layout/ssborder1.png\" ..."
+        },
+        "counter_observations": [
+          {
+            "url": "http://www.worldofwarcraft.com/wrath/images/artwork/artworkcounter.js",
+            "status": "valid_javascript_counter",
+            "count_values": [
+              12
+            ],
+            "api_names": [
+              "screenshotsCommonTotal"
+            ]
+          },
+          {
+            "url": "http://www.worldofwarcraft.com/wrath/images/artwork/en_us/artworkcounter.js",
+            "status": "valid_javascript_counter",
+            "count_values": [
+              1
+            ],
+            "api_names": [
+              "screenshotsLocTotal"
+            ]
+          }
+        ],
+        "existing_pair_manifest": {
+          "path": ".scratch/offline-navigation-20261015-v9/build-manifest.json",
+          "sha256": "0da72688ec5057650c2ef46a4634097323dc9c43eb19997afcad264b12dba3b8",
+          "records": {
+            "ss1-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss1-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss1-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/746a348ff8de603662bee88b214a8ea3c23f2a077db6d198e373a07a74cfce52.bin",
+              "source_sha256": "746a348ff8de603662bee88b214a8ea3c23f2a077db6d198e373a07a74cfce52",
+              "source_length": 16548,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402011002",
+              "requested_timestamp": "20080402011002",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss1.jpg": {
+              "route": "/wrath/images/artwork/ss1.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss1.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/b38f67882925dc37e494e8c9facecd5d85cd47e8cb339df86a7caf8c08dc7a5f.bin",
+              "source_sha256": "b38f67882925dc37e494e8c9facecd5d85cd47e8cb339df86a7caf8c08dc7a5f",
+              "source_length": 59598,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402011006",
+              "requested_timestamp": "20080402011006",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss12-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss12-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss12-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/65ed06195b604d35cc408ed02e86d5a6d65b6c3cc8e291a9d5da70a0f9a4aa9f.bin",
+              "source_sha256": "65ed06195b604d35cc408ed02e86d5a6d65b6c3cc8e291a9d5da70a0f9a4aa9f",
+              "source_length": 12359,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054212",
+              "requested_timestamp": "20080402054212",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss12.jpg": {
+              "route": "/wrath/images/artwork/ss12.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss12.jpg",
+              "source_local_path": "offline/source-entities-static-support/81f5930f21cb912294de1bf2020ce6c0e8f25da94d2f7fe47baf8274675aa787.bin",
+              "source_sha256": "81f5930f21cb912294de1bf2020ce6c0e8f25da94d2f7fe47baf8274675aa787",
+              "source_length": 50533,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054250",
+              "requested_timestamp": "20080402054250",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss3-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss3-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss3-thumb.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/4c33dbd2e153c474e3d57f5f7d26a9aea10e667317cce91573d8a28397f94581.bin",
+              "source_sha256": "4c33dbd2e153c474e3d57f5f7d26a9aea10e667317cce91573d8a28397f94581",
+              "source_length": 10954,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050123",
+              "requested_timestamp": "20080402050123",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss3.jpg": {
+              "route": "/wrath/images/artwork/ss3.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss3.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/82c6c4c0839d3843f0d93ab6e4d514872a92ba80cbb71b25e571124c2d711e9e.bin",
+              "source_sha256": "82c6c4c0839d3843f0d93ab6e4d514872a92ba80cbb71b25e571124c2d711e9e",
+              "source_length": 43646,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050114",
+              "requested_timestamp": "20080402050114",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss6-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss6-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss6-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/4c0225cd0ac5a5500b7390c9e5cec39090831f069739646d9c19928ad1f8c45f.bin",
+              "source_sha256": "4c0225cd0ac5a5500b7390c9e5cec39090831f069739646d9c19928ad1f8c45f",
+              "source_length": 15810,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050110",
+              "requested_timestamp": "20080402050110",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss6.jpg": {
+              "route": "/wrath/images/artwork/ss6.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss6.jpg",
+              "source_local_path": "offline/source-entities-static-support/eaae0879053c94ec097baccf00eec8282be5121e451728007ca19329ed2c6523.bin",
+              "source_sha256": "eaae0879053c94ec097baccf00eec8282be5121e451728007ca19329ed2c6523",
+              "source_length": 93060,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050059",
+              "requested_timestamp": "20080402050059",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss9-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss9-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss9-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/80a0cf1fa5b04ce57aa1aeeb70b3928966add2a1f062edd72d64e8a68d3d50da.bin",
+              "source_sha256": "80a0cf1fa5b04ce57aa1aeeb70b3928966add2a1f062edd72d64e8a68d3d50da",
+              "source_length": 10243,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054200",
+              "requested_timestamp": "20080402054200",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss9.jpg": {
+              "route": "/wrath/images/artwork/ss9.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss9.jpg",
+              "source_local_path": "offline/source-entities-static-support/cfb15016c77a0f324ccbcd301cac5d2a0da7ed2490984203aaecd8b160955c71.bin",
+              "source_sha256": "cfb15016c77a0f324ccbcd301cac5d2a0da7ed2490984203aaecd8b160955c71",
+              "source_length": 46605,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054223",
+              "requested_timestamp": "20080402054223",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            }
+          }
+        }
+      }
+    },
+    {
+      "candidate_rank": 4,
+      "target_key": "gallery-ss11-thumb",
+      "kind": "image_thumb",
+      "conditional": false,
+      "execute_if": null,
+      "query_original_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss11-thumb.jpg",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fwrath%2Fimages%2Fartwork%2Fss11-thumb.jpg&from=20040101000000&to=20080512210044&output=json&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=1000&collapse=digest&matchType=exact",
+      "replay_selection": "latest valid status-200-or-Wayback-redirect pre-anchor capture",
+      "same_origin_policy": "same scheme/lowercase host; only default ports normalize; path/query literal",
+      "evidence": {
+        "gap": {
+          "path": "research/continuous-recovery-20261015/wrath-artwork-viewer-gap.json",
+          "sha256": "40487274d762fc4556a01e441305632c92ccddfdd1f737a40f2758b492c80b63",
+          "source_page": {
+            "path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body",
+            "sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+            "actual_memento": "2008-05-09T12:33:33+00:00",
+            "evidence": [
+              {
+                "line": 148,
+                "text": "var whichImageviewer = \"art\";"
+              }
+            ]
+          },
+          "exact_viewer_candidates": [
+            {
+              "url": "http://www.worldofwarcraft.com/wrath/art.xml",
+              "evidence_class": "source-code concatenation of whichImageviewer art and .xml",
+              "priority": 0
+            },
+            {
+              "url": "http://www.worldofwarcraft.com/wrath/art.xml?s=1",
+              "evidence_class": "source-code-generated query for artwork item1, supported by recovered counter and existing item route",
+              "priority": 1,
+              "execute_if": "base viewer lacks usable payload; exact query remains distinct URL"
+            }
+          ]
+        },
+        "artwork_page": {
+          "path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body",
+          "sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+          "selected": {
+            "target": "/wrath/artwork.xml",
+            "actual_memento": "2008-05-09T12:33:33+00:00",
+            "body_sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+            "body_bytes": 11054,
+            "local_path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body"
+          },
+          "lines": [
+            {
+              "line": 22,
+              "text": "var roothost = \"/wrath/\";"
+            },
+            {
+              "line": 148,
+              "text": "var whichImageviewer = art"
+            },
+            {
+              "line": 150,
+              "text": "two artworkcounter.js references"
+            },
+            {
+              "line": 153,
+              "text": "theCommonDirectory = ./images/artwork/"
+            },
+            {
+              "line": 161,
+              "text": "screenshotsTotal = local + common"
+            },
+            {
+              "line": 168,
+              "text": "screenshotsPerPage = 9"
+            }
+          ]
+        },
+        "layout": {
+          "path": ".scratch/offline-navigation-20261015-v9/site/wrath/js/thumbnailslayout.js",
+          "sha256": "7988ff0ea5029526b50f1e21a2b3e2817cfb8288c197eda329eee6aa2ef65528",
+          "line": 4,
+          "text": "massiveReplaceString += ... background-image:url(... ss + number + -thumb.jpg) ... src=\"'+roothost+'images/layout/ssborder1.png\" ..."
+        },
+        "counter_observations": [
+          {
+            "url": "http://www.worldofwarcraft.com/wrath/images/artwork/artworkcounter.js",
+            "status": "valid_javascript_counter",
+            "count_values": [
+              12
+            ],
+            "api_names": [
+              "screenshotsCommonTotal"
+            ]
+          },
+          {
+            "url": "http://www.worldofwarcraft.com/wrath/images/artwork/en_us/artworkcounter.js",
+            "status": "valid_javascript_counter",
+            "count_values": [
+              1
+            ],
+            "api_names": [
+              "screenshotsLocTotal"
+            ]
+          }
+        ],
+        "existing_pair_manifest": {
+          "path": ".scratch/offline-navigation-20261015-v9/build-manifest.json",
+          "sha256": "0da72688ec5057650c2ef46a4634097323dc9c43eb19997afcad264b12dba3b8",
+          "records": {
+            "ss1-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss1-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss1-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/746a348ff8de603662bee88b214a8ea3c23f2a077db6d198e373a07a74cfce52.bin",
+              "source_sha256": "746a348ff8de603662bee88b214a8ea3c23f2a077db6d198e373a07a74cfce52",
+              "source_length": 16548,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402011002",
+              "requested_timestamp": "20080402011002",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss1.jpg": {
+              "route": "/wrath/images/artwork/ss1.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss1.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/b38f67882925dc37e494e8c9facecd5d85cd47e8cb339df86a7caf8c08dc7a5f.bin",
+              "source_sha256": "b38f67882925dc37e494e8c9facecd5d85cd47e8cb339df86a7caf8c08dc7a5f",
+              "source_length": 59598,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402011006",
+              "requested_timestamp": "20080402011006",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss12-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss12-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss12-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/65ed06195b604d35cc408ed02e86d5a6d65b6c3cc8e291a9d5da70a0f9a4aa9f.bin",
+              "source_sha256": "65ed06195b604d35cc408ed02e86d5a6d65b6c3cc8e291a9d5da70a0f9a4aa9f",
+              "source_length": 12359,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054212",
+              "requested_timestamp": "20080402054212",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss12.jpg": {
+              "route": "/wrath/images/artwork/ss12.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss12.jpg",
+              "source_local_path": "offline/source-entities-static-support/81f5930f21cb912294de1bf2020ce6c0e8f25da94d2f7fe47baf8274675aa787.bin",
+              "source_sha256": "81f5930f21cb912294de1bf2020ce6c0e8f25da94d2f7fe47baf8274675aa787",
+              "source_length": 50533,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054250",
+              "requested_timestamp": "20080402054250",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss3-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss3-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss3-thumb.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/4c33dbd2e153c474e3d57f5f7d26a9aea10e667317cce91573d8a28397f94581.bin",
+              "source_sha256": "4c33dbd2e153c474e3d57f5f7d26a9aea10e667317cce91573d8a28397f94581",
+              "source_length": 10954,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050123",
+              "requested_timestamp": "20080402050123",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss3.jpg": {
+              "route": "/wrath/images/artwork/ss3.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss3.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/82c6c4c0839d3843f0d93ab6e4d514872a92ba80cbb71b25e571124c2d711e9e.bin",
+              "source_sha256": "82c6c4c0839d3843f0d93ab6e4d514872a92ba80cbb71b25e571124c2d711e9e",
+              "source_length": 43646,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050114",
+              "requested_timestamp": "20080402050114",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss6-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss6-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss6-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/4c0225cd0ac5a5500b7390c9e5cec39090831f069739646d9c19928ad1f8c45f.bin",
+              "source_sha256": "4c0225cd0ac5a5500b7390c9e5cec39090831f069739646d9c19928ad1f8c45f",
+              "source_length": 15810,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050110",
+              "requested_timestamp": "20080402050110",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss6.jpg": {
+              "route": "/wrath/images/artwork/ss6.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss6.jpg",
+              "source_local_path": "offline/source-entities-static-support/eaae0879053c94ec097baccf00eec8282be5121e451728007ca19329ed2c6523.bin",
+              "source_sha256": "eaae0879053c94ec097baccf00eec8282be5121e451728007ca19329ed2c6523",
+              "source_length": 93060,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050059",
+              "requested_timestamp": "20080402050059",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss9-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss9-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss9-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/80a0cf1fa5b04ce57aa1aeeb70b3928966add2a1f062edd72d64e8a68d3d50da.bin",
+              "source_sha256": "80a0cf1fa5b04ce57aa1aeeb70b3928966add2a1f062edd72d64e8a68d3d50da",
+              "source_length": 10243,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054200",
+              "requested_timestamp": "20080402054200",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss9.jpg": {
+              "route": "/wrath/images/artwork/ss9.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss9.jpg",
+              "source_local_path": "offline/source-entities-static-support/cfb15016c77a0f324ccbcd301cac5d2a0da7ed2490984203aaecd8b160955c71.bin",
+              "source_sha256": "cfb15016c77a0f324ccbcd301cac5d2a0da7ed2490984203aaecd8b160955c71",
+              "source_length": 46605,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054223",
+              "requested_timestamp": "20080402054223",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            }
+          }
+        }
+      },
+      "gallery_number": 11,
+      "gallery_suffix": "-thumb",
+      "candidate_basis": {
+        "literal": "ssN-thumb.jpg",
+        "existing_examples": [
+          "ss1-thumb.jpg",
+          "ss3-thumb.jpg",
+          "ss6-thumb.jpg",
+          "ss9-thumb.jpg",
+          "ss12-thumb.jpg"
+        ],
+        "actual_cdx_row_required": true
+      }
+    },
+    {
+      "candidate_rank": 5,
+      "target_key": "gallery-ss11",
+      "kind": "image_original",
+      "conditional": false,
+      "execute_if": null,
+      "query_original_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss11.jpg",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fwrath%2Fimages%2Fartwork%2Fss11.jpg&from=20040101000000&to=20080512210044&output=json&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=1000&collapse=digest&matchType=exact",
+      "replay_selection": "latest valid status-200-or-Wayback-redirect pre-anchor capture",
+      "same_origin_policy": "same scheme/lowercase host; only default ports normalize; path/query literal",
+      "evidence": {
+        "gap": {
+          "path": "research/continuous-recovery-20261015/wrath-artwork-viewer-gap.json",
+          "sha256": "40487274d762fc4556a01e441305632c92ccddfdd1f737a40f2758b492c80b63",
+          "source_page": {
+            "path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body",
+            "sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+            "actual_memento": "2008-05-09T12:33:33+00:00",
+            "evidence": [
+              {
+                "line": 148,
+                "text": "var whichImageviewer = \"art\";"
+              }
+            ]
+          },
+          "exact_viewer_candidates": [
+            {
+              "url": "http://www.worldofwarcraft.com/wrath/art.xml",
+              "evidence_class": "source-code concatenation of whichImageviewer art and .xml",
+              "priority": 0
+            },
+            {
+              "url": "http://www.worldofwarcraft.com/wrath/art.xml?s=1",
+              "evidence_class": "source-code-generated query for artwork item1, supported by recovered counter and existing item route",
+              "priority": 1,
+              "execute_if": "base viewer lacks usable payload; exact query remains distinct URL"
+            }
+          ]
+        },
+        "artwork_page": {
+          "path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body",
+          "sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+          "selected": {
+            "target": "/wrath/artwork.xml",
+            "actual_memento": "2008-05-09T12:33:33+00:00",
+            "body_sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+            "body_bytes": 11054,
+            "local_path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body"
+          },
+          "lines": [
+            {
+              "line": 22,
+              "text": "var roothost = \"/wrath/\";"
+            },
+            {
+              "line": 148,
+              "text": "var whichImageviewer = art"
+            },
+            {
+              "line": 150,
+              "text": "two artworkcounter.js references"
+            },
+            {
+              "line": 153,
+              "text": "theCommonDirectory = ./images/artwork/"
+            },
+            {
+              "line": 161,
+              "text": "screenshotsTotal = local + common"
+            },
+            {
+              "line": 168,
+              "text": "screenshotsPerPage = 9"
+            }
+          ]
+        },
+        "layout": {
+          "path": ".scratch/offline-navigation-20261015-v9/site/wrath/js/thumbnailslayout.js",
+          "sha256": "7988ff0ea5029526b50f1e21a2b3e2817cfb8288c197eda329eee6aa2ef65528",
+          "line": 4,
+          "text": "massiveReplaceString += ... background-image:url(... ss + number + -thumb.jpg) ... src=\"'+roothost+'images/layout/ssborder1.png\" ..."
+        },
+        "counter_observations": [
+          {
+            "url": "http://www.worldofwarcraft.com/wrath/images/artwork/artworkcounter.js",
+            "status": "valid_javascript_counter",
+            "count_values": [
+              12
+            ],
+            "api_names": [
+              "screenshotsCommonTotal"
+            ]
+          },
+          {
+            "url": "http://www.worldofwarcraft.com/wrath/images/artwork/en_us/artworkcounter.js",
+            "status": "valid_javascript_counter",
+            "count_values": [
+              1
+            ],
+            "api_names": [
+              "screenshotsLocTotal"
+            ]
+          }
+        ],
+        "existing_pair_manifest": {
+          "path": ".scratch/offline-navigation-20261015-v9/build-manifest.json",
+          "sha256": "0da72688ec5057650c2ef46a4634097323dc9c43eb19997afcad264b12dba3b8",
+          "records": {
+            "ss1-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss1-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss1-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/746a348ff8de603662bee88b214a8ea3c23f2a077db6d198e373a07a74cfce52.bin",
+              "source_sha256": "746a348ff8de603662bee88b214a8ea3c23f2a077db6d198e373a07a74cfce52",
+              "source_length": 16548,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402011002",
+              "requested_timestamp": "20080402011002",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss1.jpg": {
+              "route": "/wrath/images/artwork/ss1.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss1.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/b38f67882925dc37e494e8c9facecd5d85cd47e8cb339df86a7caf8c08dc7a5f.bin",
+              "source_sha256": "b38f67882925dc37e494e8c9facecd5d85cd47e8cb339df86a7caf8c08dc7a5f",
+              "source_length": 59598,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402011006",
+              "requested_timestamp": "20080402011006",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss12-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss12-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss12-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/65ed06195b604d35cc408ed02e86d5a6d65b6c3cc8e291a9d5da70a0f9a4aa9f.bin",
+              "source_sha256": "65ed06195b604d35cc408ed02e86d5a6d65b6c3cc8e291a9d5da70a0f9a4aa9f",
+              "source_length": 12359,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054212",
+              "requested_timestamp": "20080402054212",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss12.jpg": {
+              "route": "/wrath/images/artwork/ss12.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss12.jpg",
+              "source_local_path": "offline/source-entities-static-support/81f5930f21cb912294de1bf2020ce6c0e8f25da94d2f7fe47baf8274675aa787.bin",
+              "source_sha256": "81f5930f21cb912294de1bf2020ce6c0e8f25da94d2f7fe47baf8274675aa787",
+              "source_length": 50533,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054250",
+              "requested_timestamp": "20080402054250",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss3-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss3-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss3-thumb.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/4c33dbd2e153c474e3d57f5f7d26a9aea10e667317cce91573d8a28397f94581.bin",
+              "source_sha256": "4c33dbd2e153c474e3d57f5f7d26a9aea10e667317cce91573d8a28397f94581",
+              "source_length": 10954,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050123",
+              "requested_timestamp": "20080402050123",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss3.jpg": {
+              "route": "/wrath/images/artwork/ss3.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss3.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/82c6c4c0839d3843f0d93ab6e4d514872a92ba80cbb71b25e571124c2d711e9e.bin",
+              "source_sha256": "82c6c4c0839d3843f0d93ab6e4d514872a92ba80cbb71b25e571124c2d711e9e",
+              "source_length": 43646,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050114",
+              "requested_timestamp": "20080402050114",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss6-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss6-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss6-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/4c0225cd0ac5a5500b7390c9e5cec39090831f069739646d9c19928ad1f8c45f.bin",
+              "source_sha256": "4c0225cd0ac5a5500b7390c9e5cec39090831f069739646d9c19928ad1f8c45f",
+              "source_length": 15810,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050110",
+              "requested_timestamp": "20080402050110",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss6.jpg": {
+              "route": "/wrath/images/artwork/ss6.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss6.jpg",
+              "source_local_path": "offline/source-entities-static-support/eaae0879053c94ec097baccf00eec8282be5121e451728007ca19329ed2c6523.bin",
+              "source_sha256": "eaae0879053c94ec097baccf00eec8282be5121e451728007ca19329ed2c6523",
+              "source_length": 93060,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050059",
+              "requested_timestamp": "20080402050059",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss9-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss9-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss9-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/80a0cf1fa5b04ce57aa1aeeb70b3928966add2a1f062edd72d64e8a68d3d50da.bin",
+              "source_sha256": "80a0cf1fa5b04ce57aa1aeeb70b3928966add2a1f062edd72d64e8a68d3d50da",
+              "source_length": 10243,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054200",
+              "requested_timestamp": "20080402054200",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss9.jpg": {
+              "route": "/wrath/images/artwork/ss9.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss9.jpg",
+              "source_local_path": "offline/source-entities-static-support/cfb15016c77a0f324ccbcd301cac5d2a0da7ed2490984203aaecd8b160955c71.bin",
+              "source_sha256": "cfb15016c77a0f324ccbcd301cac5d2a0da7ed2490984203aaecd8b160955c71",
+              "source_length": 46605,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054223",
+              "requested_timestamp": "20080402054223",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            }
+          }
+        }
+      },
+      "gallery_number": 11,
+      "gallery_suffix": "",
+      "candidate_basis": {
+        "literal": "same-origin existing ssN.jpg mode",
+        "existing_examples": [
+          "ss1.jpg",
+          "ss3.jpg",
+          "ss6.jpg",
+          "ss9.jpg",
+          "ss12.jpg"
+        ],
+        "actual_cdx_row_required": true
+      }
+    },
+    {
+      "candidate_rank": 6,
+      "target_key": "gallery-ss10-thumb",
+      "kind": "image_thumb",
+      "conditional": false,
+      "execute_if": null,
+      "query_original_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss10-thumb.jpg",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fwrath%2Fimages%2Fartwork%2Fss10-thumb.jpg&from=20040101000000&to=20080512210044&output=json&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=1000&collapse=digest&matchType=exact",
+      "replay_selection": "latest valid status-200-or-Wayback-redirect pre-anchor capture",
+      "same_origin_policy": "same scheme/lowercase host; only default ports normalize; path/query literal",
+      "evidence": {
+        "gap": {
+          "path": "research/continuous-recovery-20261015/wrath-artwork-viewer-gap.json",
+          "sha256": "40487274d762fc4556a01e441305632c92ccddfdd1f737a40f2758b492c80b63",
+          "source_page": {
+            "path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body",
+            "sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+            "actual_memento": "2008-05-09T12:33:33+00:00",
+            "evidence": [
+              {
+                "line": 148,
+                "text": "var whichImageviewer = \"art\";"
+              }
+            ]
+          },
+          "exact_viewer_candidates": [
+            {
+              "url": "http://www.worldofwarcraft.com/wrath/art.xml",
+              "evidence_class": "source-code concatenation of whichImageviewer art and .xml",
+              "priority": 0
+            },
+            {
+              "url": "http://www.worldofwarcraft.com/wrath/art.xml?s=1",
+              "evidence_class": "source-code-generated query for artwork item1, supported by recovered counter and existing item route",
+              "priority": 1,
+              "execute_if": "base viewer lacks usable payload; exact query remains distinct URL"
+            }
+          ]
+        },
+        "artwork_page": {
+          "path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body",
+          "sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+          "selected": {
+            "target": "/wrath/artwork.xml",
+            "actual_memento": "2008-05-09T12:33:33+00:00",
+            "body_sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+            "body_bytes": 11054,
+            "local_path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body"
+          },
+          "lines": [
+            {
+              "line": 22,
+              "text": "var roothost = \"/wrath/\";"
+            },
+            {
+              "line": 148,
+              "text": "var whichImageviewer = art"
+            },
+            {
+              "line": 150,
+              "text": "two artworkcounter.js references"
+            },
+            {
+              "line": 153,
+              "text": "theCommonDirectory = ./images/artwork/"
+            },
+            {
+              "line": 161,
+              "text": "screenshotsTotal = local + common"
+            },
+            {
+              "line": 168,
+              "text": "screenshotsPerPage = 9"
+            }
+          ]
+        },
+        "layout": {
+          "path": ".scratch/offline-navigation-20261015-v9/site/wrath/js/thumbnailslayout.js",
+          "sha256": "7988ff0ea5029526b50f1e21a2b3e2817cfb8288c197eda329eee6aa2ef65528",
+          "line": 4,
+          "text": "massiveReplaceString += ... background-image:url(... ss + number + -thumb.jpg) ... src=\"'+roothost+'images/layout/ssborder1.png\" ..."
+        },
+        "counter_observations": [
+          {
+            "url": "http://www.worldofwarcraft.com/wrath/images/artwork/artworkcounter.js",
+            "status": "valid_javascript_counter",
+            "count_values": [
+              12
+            ],
+            "api_names": [
+              "screenshotsCommonTotal"
+            ]
+          },
+          {
+            "url": "http://www.worldofwarcraft.com/wrath/images/artwork/en_us/artworkcounter.js",
+            "status": "valid_javascript_counter",
+            "count_values": [
+              1
+            ],
+            "api_names": [
+              "screenshotsLocTotal"
+            ]
+          }
+        ],
+        "existing_pair_manifest": {
+          "path": ".scratch/offline-navigation-20261015-v9/build-manifest.json",
+          "sha256": "0da72688ec5057650c2ef46a4634097323dc9c43eb19997afcad264b12dba3b8",
+          "records": {
+            "ss1-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss1-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss1-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/746a348ff8de603662bee88b214a8ea3c23f2a077db6d198e373a07a74cfce52.bin",
+              "source_sha256": "746a348ff8de603662bee88b214a8ea3c23f2a077db6d198e373a07a74cfce52",
+              "source_length": 16548,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402011002",
+              "requested_timestamp": "20080402011002",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss1.jpg": {
+              "route": "/wrath/images/artwork/ss1.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss1.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/b38f67882925dc37e494e8c9facecd5d85cd47e8cb339df86a7caf8c08dc7a5f.bin",
+              "source_sha256": "b38f67882925dc37e494e8c9facecd5d85cd47e8cb339df86a7caf8c08dc7a5f",
+              "source_length": 59598,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402011006",
+              "requested_timestamp": "20080402011006",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss12-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss12-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss12-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/65ed06195b604d35cc408ed02e86d5a6d65b6c3cc8e291a9d5da70a0f9a4aa9f.bin",
+              "source_sha256": "65ed06195b604d35cc408ed02e86d5a6d65b6c3cc8e291a9d5da70a0f9a4aa9f",
+              "source_length": 12359,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054212",
+              "requested_timestamp": "20080402054212",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss12.jpg": {
+              "route": "/wrath/images/artwork/ss12.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss12.jpg",
+              "source_local_path": "offline/source-entities-static-support/81f5930f21cb912294de1bf2020ce6c0e8f25da94d2f7fe47baf8274675aa787.bin",
+              "source_sha256": "81f5930f21cb912294de1bf2020ce6c0e8f25da94d2f7fe47baf8274675aa787",
+              "source_length": 50533,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054250",
+              "requested_timestamp": "20080402054250",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss3-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss3-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss3-thumb.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/4c33dbd2e153c474e3d57f5f7d26a9aea10e667317cce91573d8a28397f94581.bin",
+              "source_sha256": "4c33dbd2e153c474e3d57f5f7d26a9aea10e667317cce91573d8a28397f94581",
+              "source_length": 10954,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050123",
+              "requested_timestamp": "20080402050123",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss3.jpg": {
+              "route": "/wrath/images/artwork/ss3.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss3.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/82c6c4c0839d3843f0d93ab6e4d514872a92ba80cbb71b25e571124c2d711e9e.bin",
+              "source_sha256": "82c6c4c0839d3843f0d93ab6e4d514872a92ba80cbb71b25e571124c2d711e9e",
+              "source_length": 43646,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050114",
+              "requested_timestamp": "20080402050114",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss6-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss6-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss6-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/4c0225cd0ac5a5500b7390c9e5cec39090831f069739646d9c19928ad1f8c45f.bin",
+              "source_sha256": "4c0225cd0ac5a5500b7390c9e5cec39090831f069739646d9c19928ad1f8c45f",
+              "source_length": 15810,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050110",
+              "requested_timestamp": "20080402050110",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss6.jpg": {
+              "route": "/wrath/images/artwork/ss6.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss6.jpg",
+              "source_local_path": "offline/source-entities-static-support/eaae0879053c94ec097baccf00eec8282be5121e451728007ca19329ed2c6523.bin",
+              "source_sha256": "eaae0879053c94ec097baccf00eec8282be5121e451728007ca19329ed2c6523",
+              "source_length": 93060,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050059",
+              "requested_timestamp": "20080402050059",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss9-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss9-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss9-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/80a0cf1fa5b04ce57aa1aeeb70b3928966add2a1f062edd72d64e8a68d3d50da.bin",
+              "source_sha256": "80a0cf1fa5b04ce57aa1aeeb70b3928966add2a1f062edd72d64e8a68d3d50da",
+              "source_length": 10243,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054200",
+              "requested_timestamp": "20080402054200",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss9.jpg": {
+              "route": "/wrath/images/artwork/ss9.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss9.jpg",
+              "source_local_path": "offline/source-entities-static-support/cfb15016c77a0f324ccbcd301cac5d2a0da7ed2490984203aaecd8b160955c71.bin",
+              "source_sha256": "cfb15016c77a0f324ccbcd301cac5d2a0da7ed2490984203aaecd8b160955c71",
+              "source_length": 46605,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054223",
+              "requested_timestamp": "20080402054223",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            }
+          }
+        }
+      },
+      "gallery_number": 10,
+      "gallery_suffix": "-thumb",
+      "candidate_basis": {
+        "literal": "ssN-thumb.jpg",
+        "existing_examples": [
+          "ss1-thumb.jpg",
+          "ss3-thumb.jpg",
+          "ss6-thumb.jpg",
+          "ss9-thumb.jpg",
+          "ss12-thumb.jpg"
+        ],
+        "actual_cdx_row_required": true
+      }
+    },
+    {
+      "candidate_rank": 7,
+      "target_key": "gallery-ss10",
+      "kind": "image_original",
+      "conditional": false,
+      "execute_if": null,
+      "query_original_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss10.jpg",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fwrath%2Fimages%2Fartwork%2Fss10.jpg&from=20040101000000&to=20080512210044&output=json&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=1000&collapse=digest&matchType=exact",
+      "replay_selection": "latest valid status-200-or-Wayback-redirect pre-anchor capture",
+      "same_origin_policy": "same scheme/lowercase host; only default ports normalize; path/query literal",
+      "evidence": {
+        "gap": {
+          "path": "research/continuous-recovery-20261015/wrath-artwork-viewer-gap.json",
+          "sha256": "40487274d762fc4556a01e441305632c92ccddfdd1f737a40f2758b492c80b63",
+          "source_page": {
+            "path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body",
+            "sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+            "actual_memento": "2008-05-09T12:33:33+00:00",
+            "evidence": [
+              {
+                "line": 148,
+                "text": "var whichImageviewer = \"art\";"
+              }
+            ]
+          },
+          "exact_viewer_candidates": [
+            {
+              "url": "http://www.worldofwarcraft.com/wrath/art.xml",
+              "evidence_class": "source-code concatenation of whichImageviewer art and .xml",
+              "priority": 0
+            },
+            {
+              "url": "http://www.worldofwarcraft.com/wrath/art.xml?s=1",
+              "evidence_class": "source-code-generated query for artwork item1, supported by recovered counter and existing item route",
+              "priority": 1,
+              "execute_if": "base viewer lacks usable payload; exact query remains distinct URL"
+            }
+          ]
+        },
+        "artwork_page": {
+          "path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body",
+          "sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+          "selected": {
+            "target": "/wrath/artwork.xml",
+            "actual_memento": "2008-05-09T12:33:33+00:00",
+            "body_sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+            "body_bytes": 11054,
+            "local_path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body"
+          },
+          "lines": [
+            {
+              "line": 22,
+              "text": "var roothost = \"/wrath/\";"
+            },
+            {
+              "line": 148,
+              "text": "var whichImageviewer = art"
+            },
+            {
+              "line": 150,
+              "text": "two artworkcounter.js references"
+            },
+            {
+              "line": 153,
+              "text": "theCommonDirectory = ./images/artwork/"
+            },
+            {
+              "line": 161,
+              "text": "screenshotsTotal = local + common"
+            },
+            {
+              "line": 168,
+              "text": "screenshotsPerPage = 9"
+            }
+          ]
+        },
+        "layout": {
+          "path": ".scratch/offline-navigation-20261015-v9/site/wrath/js/thumbnailslayout.js",
+          "sha256": "7988ff0ea5029526b50f1e21a2b3e2817cfb8288c197eda329eee6aa2ef65528",
+          "line": 4,
+          "text": "massiveReplaceString += ... background-image:url(... ss + number + -thumb.jpg) ... src=\"'+roothost+'images/layout/ssborder1.png\" ..."
+        },
+        "counter_observations": [
+          {
+            "url": "http://www.worldofwarcraft.com/wrath/images/artwork/artworkcounter.js",
+            "status": "valid_javascript_counter",
+            "count_values": [
+              12
+            ],
+            "api_names": [
+              "screenshotsCommonTotal"
+            ]
+          },
+          {
+            "url": "http://www.worldofwarcraft.com/wrath/images/artwork/en_us/artworkcounter.js",
+            "status": "valid_javascript_counter",
+            "count_values": [
+              1
+            ],
+            "api_names": [
+              "screenshotsLocTotal"
+            ]
+          }
+        ],
+        "existing_pair_manifest": {
+          "path": ".scratch/offline-navigation-20261015-v9/build-manifest.json",
+          "sha256": "0da72688ec5057650c2ef46a4634097323dc9c43eb19997afcad264b12dba3b8",
+          "records": {
+            "ss1-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss1-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss1-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/746a348ff8de603662bee88b214a8ea3c23f2a077db6d198e373a07a74cfce52.bin",
+              "source_sha256": "746a348ff8de603662bee88b214a8ea3c23f2a077db6d198e373a07a74cfce52",
+              "source_length": 16548,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402011002",
+              "requested_timestamp": "20080402011002",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss1.jpg": {
+              "route": "/wrath/images/artwork/ss1.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss1.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/b38f67882925dc37e494e8c9facecd5d85cd47e8cb339df86a7caf8c08dc7a5f.bin",
+              "source_sha256": "b38f67882925dc37e494e8c9facecd5d85cd47e8cb339df86a7caf8c08dc7a5f",
+              "source_length": 59598,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402011006",
+              "requested_timestamp": "20080402011006",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss12-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss12-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss12-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/65ed06195b604d35cc408ed02e86d5a6d65b6c3cc8e291a9d5da70a0f9a4aa9f.bin",
+              "source_sha256": "65ed06195b604d35cc408ed02e86d5a6d65b6c3cc8e291a9d5da70a0f9a4aa9f",
+              "source_length": 12359,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054212",
+              "requested_timestamp": "20080402054212",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss12.jpg": {
+              "route": "/wrath/images/artwork/ss12.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss12.jpg",
+              "source_local_path": "offline/source-entities-static-support/81f5930f21cb912294de1bf2020ce6c0e8f25da94d2f7fe47baf8274675aa787.bin",
+              "source_sha256": "81f5930f21cb912294de1bf2020ce6c0e8f25da94d2f7fe47baf8274675aa787",
+              "source_length": 50533,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054250",
+              "requested_timestamp": "20080402054250",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss3-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss3-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss3-thumb.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/4c33dbd2e153c474e3d57f5f7d26a9aea10e667317cce91573d8a28397f94581.bin",
+              "source_sha256": "4c33dbd2e153c474e3d57f5f7d26a9aea10e667317cce91573d8a28397f94581",
+              "source_length": 10954,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050123",
+              "requested_timestamp": "20080402050123",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss3.jpg": {
+              "route": "/wrath/images/artwork/ss3.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss3.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/82c6c4c0839d3843f0d93ab6e4d514872a92ba80cbb71b25e571124c2d711e9e.bin",
+              "source_sha256": "82c6c4c0839d3843f0d93ab6e4d514872a92ba80cbb71b25e571124c2d711e9e",
+              "source_length": 43646,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050114",
+              "requested_timestamp": "20080402050114",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss6-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss6-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss6-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/4c0225cd0ac5a5500b7390c9e5cec39090831f069739646d9c19928ad1f8c45f.bin",
+              "source_sha256": "4c0225cd0ac5a5500b7390c9e5cec39090831f069739646d9c19928ad1f8c45f",
+              "source_length": 15810,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050110",
+              "requested_timestamp": "20080402050110",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss6.jpg": {
+              "route": "/wrath/images/artwork/ss6.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss6.jpg",
+              "source_local_path": "offline/source-entities-static-support/eaae0879053c94ec097baccf00eec8282be5121e451728007ca19329ed2c6523.bin",
+              "source_sha256": "eaae0879053c94ec097baccf00eec8282be5121e451728007ca19329ed2c6523",
+              "source_length": 93060,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050059",
+              "requested_timestamp": "20080402050059",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss9-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss9-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss9-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/80a0cf1fa5b04ce57aa1aeeb70b3928966add2a1f062edd72d64e8a68d3d50da.bin",
+              "source_sha256": "80a0cf1fa5b04ce57aa1aeeb70b3928966add2a1f062edd72d64e8a68d3d50da",
+              "source_length": 10243,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054200",
+              "requested_timestamp": "20080402054200",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss9.jpg": {
+              "route": "/wrath/images/artwork/ss9.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss9.jpg",
+              "source_local_path": "offline/source-entities-static-support/cfb15016c77a0f324ccbcd301cac5d2a0da7ed2490984203aaecd8b160955c71.bin",
+              "source_sha256": "cfb15016c77a0f324ccbcd301cac5d2a0da7ed2490984203aaecd8b160955c71",
+              "source_length": 46605,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054223",
+              "requested_timestamp": "20080402054223",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            }
+          }
+        }
+      },
+      "gallery_number": 10,
+      "gallery_suffix": "",
+      "candidate_basis": {
+        "literal": "same-origin existing ssN.jpg mode",
+        "existing_examples": [
+          "ss1.jpg",
+          "ss3.jpg",
+          "ss6.jpg",
+          "ss9.jpg",
+          "ss12.jpg"
+        ],
+        "actual_cdx_row_required": true
+      }
+    },
+    {
+      "candidate_rank": 8,
+      "target_key": "gallery-ss8-thumb",
+      "kind": "image_thumb",
+      "conditional": false,
+      "execute_if": null,
+      "query_original_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss8-thumb.jpg",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fwrath%2Fimages%2Fartwork%2Fss8-thumb.jpg&from=20040101000000&to=20080512210044&output=json&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=1000&collapse=digest&matchType=exact",
+      "replay_selection": "latest valid status-200-or-Wayback-redirect pre-anchor capture",
+      "same_origin_policy": "same scheme/lowercase host; only default ports normalize; path/query literal",
+      "evidence": {
+        "gap": {
+          "path": "research/continuous-recovery-20261015/wrath-artwork-viewer-gap.json",
+          "sha256": "40487274d762fc4556a01e441305632c92ccddfdd1f737a40f2758b492c80b63",
+          "source_page": {
+            "path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body",
+            "sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+            "actual_memento": "2008-05-09T12:33:33+00:00",
+            "evidence": [
+              {
+                "line": 148,
+                "text": "var whichImageviewer = \"art\";"
+              }
+            ]
+          },
+          "exact_viewer_candidates": [
+            {
+              "url": "http://www.worldofwarcraft.com/wrath/art.xml",
+              "evidence_class": "source-code concatenation of whichImageviewer art and .xml",
+              "priority": 0
+            },
+            {
+              "url": "http://www.worldofwarcraft.com/wrath/art.xml?s=1",
+              "evidence_class": "source-code-generated query for artwork item1, supported by recovered counter and existing item route",
+              "priority": 1,
+              "execute_if": "base viewer lacks usable payload; exact query remains distinct URL"
+            }
+          ]
+        },
+        "artwork_page": {
+          "path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body",
+          "sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+          "selected": {
+            "target": "/wrath/artwork.xml",
+            "actual_memento": "2008-05-09T12:33:33+00:00",
+            "body_sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+            "body_bytes": 11054,
+            "local_path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body"
+          },
+          "lines": [
+            {
+              "line": 22,
+              "text": "var roothost = \"/wrath/\";"
+            },
+            {
+              "line": 148,
+              "text": "var whichImageviewer = art"
+            },
+            {
+              "line": 150,
+              "text": "two artworkcounter.js references"
+            },
+            {
+              "line": 153,
+              "text": "theCommonDirectory = ./images/artwork/"
+            },
+            {
+              "line": 161,
+              "text": "screenshotsTotal = local + common"
+            },
+            {
+              "line": 168,
+              "text": "screenshotsPerPage = 9"
+            }
+          ]
+        },
+        "layout": {
+          "path": ".scratch/offline-navigation-20261015-v9/site/wrath/js/thumbnailslayout.js",
+          "sha256": "7988ff0ea5029526b50f1e21a2b3e2817cfb8288c197eda329eee6aa2ef65528",
+          "line": 4,
+          "text": "massiveReplaceString += ... background-image:url(... ss + number + -thumb.jpg) ... src=\"'+roothost+'images/layout/ssborder1.png\" ..."
+        },
+        "counter_observations": [
+          {
+            "url": "http://www.worldofwarcraft.com/wrath/images/artwork/artworkcounter.js",
+            "status": "valid_javascript_counter",
+            "count_values": [
+              12
+            ],
+            "api_names": [
+              "screenshotsCommonTotal"
+            ]
+          },
+          {
+            "url": "http://www.worldofwarcraft.com/wrath/images/artwork/en_us/artworkcounter.js",
+            "status": "valid_javascript_counter",
+            "count_values": [
+              1
+            ],
+            "api_names": [
+              "screenshotsLocTotal"
+            ]
+          }
+        ],
+        "existing_pair_manifest": {
+          "path": ".scratch/offline-navigation-20261015-v9/build-manifest.json",
+          "sha256": "0da72688ec5057650c2ef46a4634097323dc9c43eb19997afcad264b12dba3b8",
+          "records": {
+            "ss1-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss1-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss1-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/746a348ff8de603662bee88b214a8ea3c23f2a077db6d198e373a07a74cfce52.bin",
+              "source_sha256": "746a348ff8de603662bee88b214a8ea3c23f2a077db6d198e373a07a74cfce52",
+              "source_length": 16548,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402011002",
+              "requested_timestamp": "20080402011002",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss1.jpg": {
+              "route": "/wrath/images/artwork/ss1.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss1.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/b38f67882925dc37e494e8c9facecd5d85cd47e8cb339df86a7caf8c08dc7a5f.bin",
+              "source_sha256": "b38f67882925dc37e494e8c9facecd5d85cd47e8cb339df86a7caf8c08dc7a5f",
+              "source_length": 59598,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402011006",
+              "requested_timestamp": "20080402011006",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss12-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss12-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss12-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/65ed06195b604d35cc408ed02e86d5a6d65b6c3cc8e291a9d5da70a0f9a4aa9f.bin",
+              "source_sha256": "65ed06195b604d35cc408ed02e86d5a6d65b6c3cc8e291a9d5da70a0f9a4aa9f",
+              "source_length": 12359,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054212",
+              "requested_timestamp": "20080402054212",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss12.jpg": {
+              "route": "/wrath/images/artwork/ss12.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss12.jpg",
+              "source_local_path": "offline/source-entities-static-support/81f5930f21cb912294de1bf2020ce6c0e8f25da94d2f7fe47baf8274675aa787.bin",
+              "source_sha256": "81f5930f21cb912294de1bf2020ce6c0e8f25da94d2f7fe47baf8274675aa787",
+              "source_length": 50533,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054250",
+              "requested_timestamp": "20080402054250",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss3-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss3-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss3-thumb.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/4c33dbd2e153c474e3d57f5f7d26a9aea10e667317cce91573d8a28397f94581.bin",
+              "source_sha256": "4c33dbd2e153c474e3d57f5f7d26a9aea10e667317cce91573d8a28397f94581",
+              "source_length": 10954,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050123",
+              "requested_timestamp": "20080402050123",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss3.jpg": {
+              "route": "/wrath/images/artwork/ss3.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss3.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/82c6c4c0839d3843f0d93ab6e4d514872a92ba80cbb71b25e571124c2d711e9e.bin",
+              "source_sha256": "82c6c4c0839d3843f0d93ab6e4d514872a92ba80cbb71b25e571124c2d711e9e",
+              "source_length": 43646,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050114",
+              "requested_timestamp": "20080402050114",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss6-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss6-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss6-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/4c0225cd0ac5a5500b7390c9e5cec39090831f069739646d9c19928ad1f8c45f.bin",
+              "source_sha256": "4c0225cd0ac5a5500b7390c9e5cec39090831f069739646d9c19928ad1f8c45f",
+              "source_length": 15810,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050110",
+              "requested_timestamp": "20080402050110",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss6.jpg": {
+              "route": "/wrath/images/artwork/ss6.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss6.jpg",
+              "source_local_path": "offline/source-entities-static-support/eaae0879053c94ec097baccf00eec8282be5121e451728007ca19329ed2c6523.bin",
+              "source_sha256": "eaae0879053c94ec097baccf00eec8282be5121e451728007ca19329ed2c6523",
+              "source_length": 93060,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050059",
+              "requested_timestamp": "20080402050059",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss9-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss9-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss9-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/80a0cf1fa5b04ce57aa1aeeb70b3928966add2a1f062edd72d64e8a68d3d50da.bin",
+              "source_sha256": "80a0cf1fa5b04ce57aa1aeeb70b3928966add2a1f062edd72d64e8a68d3d50da",
+              "source_length": 10243,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054200",
+              "requested_timestamp": "20080402054200",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss9.jpg": {
+              "route": "/wrath/images/artwork/ss9.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss9.jpg",
+              "source_local_path": "offline/source-entities-static-support/cfb15016c77a0f324ccbcd301cac5d2a0da7ed2490984203aaecd8b160955c71.bin",
+              "source_sha256": "cfb15016c77a0f324ccbcd301cac5d2a0da7ed2490984203aaecd8b160955c71",
+              "source_length": 46605,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054223",
+              "requested_timestamp": "20080402054223",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            }
+          }
+        }
+      },
+      "gallery_number": 8,
+      "gallery_suffix": "-thumb",
+      "candidate_basis": {
+        "literal": "ssN-thumb.jpg",
+        "existing_examples": [
+          "ss1-thumb.jpg",
+          "ss3-thumb.jpg",
+          "ss6-thumb.jpg",
+          "ss9-thumb.jpg",
+          "ss12-thumb.jpg"
+        ],
+        "actual_cdx_row_required": true
+      }
+    },
+    {
+      "candidate_rank": 9,
+      "target_key": "gallery-ss8",
+      "kind": "image_original",
+      "conditional": false,
+      "execute_if": null,
+      "query_original_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss8.jpg",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fwrath%2Fimages%2Fartwork%2Fss8.jpg&from=20040101000000&to=20080512210044&output=json&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=1000&collapse=digest&matchType=exact",
+      "replay_selection": "latest valid status-200-or-Wayback-redirect pre-anchor capture",
+      "same_origin_policy": "same scheme/lowercase host; only default ports normalize; path/query literal",
+      "evidence": {
+        "gap": {
+          "path": "research/continuous-recovery-20261015/wrath-artwork-viewer-gap.json",
+          "sha256": "40487274d762fc4556a01e441305632c92ccddfdd1f737a40f2758b492c80b63",
+          "source_page": {
+            "path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body",
+            "sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+            "actual_memento": "2008-05-09T12:33:33+00:00",
+            "evidence": [
+              {
+                "line": 148,
+                "text": "var whichImageviewer = \"art\";"
+              }
+            ]
+          },
+          "exact_viewer_candidates": [
+            {
+              "url": "http://www.worldofwarcraft.com/wrath/art.xml",
+              "evidence_class": "source-code concatenation of whichImageviewer art and .xml",
+              "priority": 0
+            },
+            {
+              "url": "http://www.worldofwarcraft.com/wrath/art.xml?s=1",
+              "evidence_class": "source-code-generated query for artwork item1, supported by recovered counter and existing item route",
+              "priority": 1,
+              "execute_if": "base viewer lacks usable payload; exact query remains distinct URL"
+            }
+          ]
+        },
+        "artwork_page": {
+          "path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body",
+          "sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+          "selected": {
+            "target": "/wrath/artwork.xml",
+            "actual_memento": "2008-05-09T12:33:33+00:00",
+            "body_sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+            "body_bytes": 11054,
+            "local_path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body"
+          },
+          "lines": [
+            {
+              "line": 22,
+              "text": "var roothost = \"/wrath/\";"
+            },
+            {
+              "line": 148,
+              "text": "var whichImageviewer = art"
+            },
+            {
+              "line": 150,
+              "text": "two artworkcounter.js references"
+            },
+            {
+              "line": 153,
+              "text": "theCommonDirectory = ./images/artwork/"
+            },
+            {
+              "line": 161,
+              "text": "screenshotsTotal = local + common"
+            },
+            {
+              "line": 168,
+              "text": "screenshotsPerPage = 9"
+            }
+          ]
+        },
+        "layout": {
+          "path": ".scratch/offline-navigation-20261015-v9/site/wrath/js/thumbnailslayout.js",
+          "sha256": "7988ff0ea5029526b50f1e21a2b3e2817cfb8288c197eda329eee6aa2ef65528",
+          "line": 4,
+          "text": "massiveReplaceString += ... background-image:url(... ss + number + -thumb.jpg) ... src=\"'+roothost+'images/layout/ssborder1.png\" ..."
+        },
+        "counter_observations": [
+          {
+            "url": "http://www.worldofwarcraft.com/wrath/images/artwork/artworkcounter.js",
+            "status": "valid_javascript_counter",
+            "count_values": [
+              12
+            ],
+            "api_names": [
+              "screenshotsCommonTotal"
+            ]
+          },
+          {
+            "url": "http://www.worldofwarcraft.com/wrath/images/artwork/en_us/artworkcounter.js",
+            "status": "valid_javascript_counter",
+            "count_values": [
+              1
+            ],
+            "api_names": [
+              "screenshotsLocTotal"
+            ]
+          }
+        ],
+        "existing_pair_manifest": {
+          "path": ".scratch/offline-navigation-20261015-v9/build-manifest.json",
+          "sha256": "0da72688ec5057650c2ef46a4634097323dc9c43eb19997afcad264b12dba3b8",
+          "records": {
+            "ss1-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss1-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss1-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/746a348ff8de603662bee88b214a8ea3c23f2a077db6d198e373a07a74cfce52.bin",
+              "source_sha256": "746a348ff8de603662bee88b214a8ea3c23f2a077db6d198e373a07a74cfce52",
+              "source_length": 16548,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402011002",
+              "requested_timestamp": "20080402011002",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss1.jpg": {
+              "route": "/wrath/images/artwork/ss1.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss1.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/b38f67882925dc37e494e8c9facecd5d85cd47e8cb339df86a7caf8c08dc7a5f.bin",
+              "source_sha256": "b38f67882925dc37e494e8c9facecd5d85cd47e8cb339df86a7caf8c08dc7a5f",
+              "source_length": 59598,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402011006",
+              "requested_timestamp": "20080402011006",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss12-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss12-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss12-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/65ed06195b604d35cc408ed02e86d5a6d65b6c3cc8e291a9d5da70a0f9a4aa9f.bin",
+              "source_sha256": "65ed06195b604d35cc408ed02e86d5a6d65b6c3cc8e291a9d5da70a0f9a4aa9f",
+              "source_length": 12359,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054212",
+              "requested_timestamp": "20080402054212",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss12.jpg": {
+              "route": "/wrath/images/artwork/ss12.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss12.jpg",
+              "source_local_path": "offline/source-entities-static-support/81f5930f21cb912294de1bf2020ce6c0e8f25da94d2f7fe47baf8274675aa787.bin",
+              "source_sha256": "81f5930f21cb912294de1bf2020ce6c0e8f25da94d2f7fe47baf8274675aa787",
+              "source_length": 50533,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054250",
+              "requested_timestamp": "20080402054250",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss3-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss3-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss3-thumb.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/4c33dbd2e153c474e3d57f5f7d26a9aea10e667317cce91573d8a28397f94581.bin",
+              "source_sha256": "4c33dbd2e153c474e3d57f5f7d26a9aea10e667317cce91573d8a28397f94581",
+              "source_length": 10954,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050123",
+              "requested_timestamp": "20080402050123",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss3.jpg": {
+              "route": "/wrath/images/artwork/ss3.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss3.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/82c6c4c0839d3843f0d93ab6e4d514872a92ba80cbb71b25e571124c2d711e9e.bin",
+              "source_sha256": "82c6c4c0839d3843f0d93ab6e4d514872a92ba80cbb71b25e571124c2d711e9e",
+              "source_length": 43646,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050114",
+              "requested_timestamp": "20080402050114",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss6-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss6-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss6-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/4c0225cd0ac5a5500b7390c9e5cec39090831f069739646d9c19928ad1f8c45f.bin",
+              "source_sha256": "4c0225cd0ac5a5500b7390c9e5cec39090831f069739646d9c19928ad1f8c45f",
+              "source_length": 15810,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050110",
+              "requested_timestamp": "20080402050110",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss6.jpg": {
+              "route": "/wrath/images/artwork/ss6.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss6.jpg",
+              "source_local_path": "offline/source-entities-static-support/eaae0879053c94ec097baccf00eec8282be5121e451728007ca19329ed2c6523.bin",
+              "source_sha256": "eaae0879053c94ec097baccf00eec8282be5121e451728007ca19329ed2c6523",
+              "source_length": 93060,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050059",
+              "requested_timestamp": "20080402050059",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss9-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss9-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss9-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/80a0cf1fa5b04ce57aa1aeeb70b3928966add2a1f062edd72d64e8a68d3d50da.bin",
+              "source_sha256": "80a0cf1fa5b04ce57aa1aeeb70b3928966add2a1f062edd72d64e8a68d3d50da",
+              "source_length": 10243,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054200",
+              "requested_timestamp": "20080402054200",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss9.jpg": {
+              "route": "/wrath/images/artwork/ss9.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss9.jpg",
+              "source_local_path": "offline/source-entities-static-support/cfb15016c77a0f324ccbcd301cac5d2a0da7ed2490984203aaecd8b160955c71.bin",
+              "source_sha256": "cfb15016c77a0f324ccbcd301cac5d2a0da7ed2490984203aaecd8b160955c71",
+              "source_length": 46605,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054223",
+              "requested_timestamp": "20080402054223",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            }
+          }
+        }
+      },
+      "gallery_number": 8,
+      "gallery_suffix": "",
+      "candidate_basis": {
+        "literal": "same-origin existing ssN.jpg mode",
+        "existing_examples": [
+          "ss1.jpg",
+          "ss3.jpg",
+          "ss6.jpg",
+          "ss9.jpg",
+          "ss12.jpg"
+        ],
+        "actual_cdx_row_required": true
+      }
+    },
+    {
+      "candidate_rank": 10,
+      "target_key": "gallery-ss7-thumb",
+      "kind": "image_thumb",
+      "conditional": false,
+      "execute_if": null,
+      "query_original_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss7-thumb.jpg",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fwrath%2Fimages%2Fartwork%2Fss7-thumb.jpg&from=20040101000000&to=20080512210044&output=json&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=1000&collapse=digest&matchType=exact",
+      "replay_selection": "latest valid status-200-or-Wayback-redirect pre-anchor capture",
+      "same_origin_policy": "same scheme/lowercase host; only default ports normalize; path/query literal",
+      "evidence": {
+        "gap": {
+          "path": "research/continuous-recovery-20261015/wrath-artwork-viewer-gap.json",
+          "sha256": "40487274d762fc4556a01e441305632c92ccddfdd1f737a40f2758b492c80b63",
+          "source_page": {
+            "path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body",
+            "sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+            "actual_memento": "2008-05-09T12:33:33+00:00",
+            "evidence": [
+              {
+                "line": 148,
+                "text": "var whichImageviewer = \"art\";"
+              }
+            ]
+          },
+          "exact_viewer_candidates": [
+            {
+              "url": "http://www.worldofwarcraft.com/wrath/art.xml",
+              "evidence_class": "source-code concatenation of whichImageviewer art and .xml",
+              "priority": 0
+            },
+            {
+              "url": "http://www.worldofwarcraft.com/wrath/art.xml?s=1",
+              "evidence_class": "source-code-generated query for artwork item1, supported by recovered counter and existing item route",
+              "priority": 1,
+              "execute_if": "base viewer lacks usable payload; exact query remains distinct URL"
+            }
+          ]
+        },
+        "artwork_page": {
+          "path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body",
+          "sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+          "selected": {
+            "target": "/wrath/artwork.xml",
+            "actual_memento": "2008-05-09T12:33:33+00:00",
+            "body_sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+            "body_bytes": 11054,
+            "local_path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body"
+          },
+          "lines": [
+            {
+              "line": 22,
+              "text": "var roothost = \"/wrath/\";"
+            },
+            {
+              "line": 148,
+              "text": "var whichImageviewer = art"
+            },
+            {
+              "line": 150,
+              "text": "two artworkcounter.js references"
+            },
+            {
+              "line": 153,
+              "text": "theCommonDirectory = ./images/artwork/"
+            },
+            {
+              "line": 161,
+              "text": "screenshotsTotal = local + common"
+            },
+            {
+              "line": 168,
+              "text": "screenshotsPerPage = 9"
+            }
+          ]
+        },
+        "layout": {
+          "path": ".scratch/offline-navigation-20261015-v9/site/wrath/js/thumbnailslayout.js",
+          "sha256": "7988ff0ea5029526b50f1e21a2b3e2817cfb8288c197eda329eee6aa2ef65528",
+          "line": 4,
+          "text": "massiveReplaceString += ... background-image:url(... ss + number + -thumb.jpg) ... src=\"'+roothost+'images/layout/ssborder1.png\" ..."
+        },
+        "counter_observations": [
+          {
+            "url": "http://www.worldofwarcraft.com/wrath/images/artwork/artworkcounter.js",
+            "status": "valid_javascript_counter",
+            "count_values": [
+              12
+            ],
+            "api_names": [
+              "screenshotsCommonTotal"
+            ]
+          },
+          {
+            "url": "http://www.worldofwarcraft.com/wrath/images/artwork/en_us/artworkcounter.js",
+            "status": "valid_javascript_counter",
+            "count_values": [
+              1
+            ],
+            "api_names": [
+              "screenshotsLocTotal"
+            ]
+          }
+        ],
+        "existing_pair_manifest": {
+          "path": ".scratch/offline-navigation-20261015-v9/build-manifest.json",
+          "sha256": "0da72688ec5057650c2ef46a4634097323dc9c43eb19997afcad264b12dba3b8",
+          "records": {
+            "ss1-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss1-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss1-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/746a348ff8de603662bee88b214a8ea3c23f2a077db6d198e373a07a74cfce52.bin",
+              "source_sha256": "746a348ff8de603662bee88b214a8ea3c23f2a077db6d198e373a07a74cfce52",
+              "source_length": 16548,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402011002",
+              "requested_timestamp": "20080402011002",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss1.jpg": {
+              "route": "/wrath/images/artwork/ss1.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss1.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/b38f67882925dc37e494e8c9facecd5d85cd47e8cb339df86a7caf8c08dc7a5f.bin",
+              "source_sha256": "b38f67882925dc37e494e8c9facecd5d85cd47e8cb339df86a7caf8c08dc7a5f",
+              "source_length": 59598,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402011006",
+              "requested_timestamp": "20080402011006",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss12-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss12-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss12-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/65ed06195b604d35cc408ed02e86d5a6d65b6c3cc8e291a9d5da70a0f9a4aa9f.bin",
+              "source_sha256": "65ed06195b604d35cc408ed02e86d5a6d65b6c3cc8e291a9d5da70a0f9a4aa9f",
+              "source_length": 12359,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054212",
+              "requested_timestamp": "20080402054212",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss12.jpg": {
+              "route": "/wrath/images/artwork/ss12.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss12.jpg",
+              "source_local_path": "offline/source-entities-static-support/81f5930f21cb912294de1bf2020ce6c0e8f25da94d2f7fe47baf8274675aa787.bin",
+              "source_sha256": "81f5930f21cb912294de1bf2020ce6c0e8f25da94d2f7fe47baf8274675aa787",
+              "source_length": 50533,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054250",
+              "requested_timestamp": "20080402054250",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss3-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss3-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss3-thumb.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/4c33dbd2e153c474e3d57f5f7d26a9aea10e667317cce91573d8a28397f94581.bin",
+              "source_sha256": "4c33dbd2e153c474e3d57f5f7d26a9aea10e667317cce91573d8a28397f94581",
+              "source_length": 10954,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050123",
+              "requested_timestamp": "20080402050123",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss3.jpg": {
+              "route": "/wrath/images/artwork/ss3.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss3.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/82c6c4c0839d3843f0d93ab6e4d514872a92ba80cbb71b25e571124c2d711e9e.bin",
+              "source_sha256": "82c6c4c0839d3843f0d93ab6e4d514872a92ba80cbb71b25e571124c2d711e9e",
+              "source_length": 43646,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050114",
+              "requested_timestamp": "20080402050114",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss6-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss6-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss6-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/4c0225cd0ac5a5500b7390c9e5cec39090831f069739646d9c19928ad1f8c45f.bin",
+              "source_sha256": "4c0225cd0ac5a5500b7390c9e5cec39090831f069739646d9c19928ad1f8c45f",
+              "source_length": 15810,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050110",
+              "requested_timestamp": "20080402050110",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss6.jpg": {
+              "route": "/wrath/images/artwork/ss6.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss6.jpg",
+              "source_local_path": "offline/source-entities-static-support/eaae0879053c94ec097baccf00eec8282be5121e451728007ca19329ed2c6523.bin",
+              "source_sha256": "eaae0879053c94ec097baccf00eec8282be5121e451728007ca19329ed2c6523",
+              "source_length": 93060,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050059",
+              "requested_timestamp": "20080402050059",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss9-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss9-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss9-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/80a0cf1fa5b04ce57aa1aeeb70b3928966add2a1f062edd72d64e8a68d3d50da.bin",
+              "source_sha256": "80a0cf1fa5b04ce57aa1aeeb70b3928966add2a1f062edd72d64e8a68d3d50da",
+              "source_length": 10243,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054200",
+              "requested_timestamp": "20080402054200",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss9.jpg": {
+              "route": "/wrath/images/artwork/ss9.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss9.jpg",
+              "source_local_path": "offline/source-entities-static-support/cfb15016c77a0f324ccbcd301cac5d2a0da7ed2490984203aaecd8b160955c71.bin",
+              "source_sha256": "cfb15016c77a0f324ccbcd301cac5d2a0da7ed2490984203aaecd8b160955c71",
+              "source_length": 46605,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054223",
+              "requested_timestamp": "20080402054223",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            }
+          }
+        }
+      },
+      "gallery_number": 7,
+      "gallery_suffix": "-thumb",
+      "candidate_basis": {
+        "literal": "ssN-thumb.jpg",
+        "existing_examples": [
+          "ss1-thumb.jpg",
+          "ss3-thumb.jpg",
+          "ss6-thumb.jpg",
+          "ss9-thumb.jpg",
+          "ss12-thumb.jpg"
+        ],
+        "actual_cdx_row_required": true
+      }
+    },
+    {
+      "candidate_rank": 11,
+      "target_key": "gallery-ss7",
+      "kind": "image_original",
+      "conditional": false,
+      "execute_if": null,
+      "query_original_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss7.jpg",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fwrath%2Fimages%2Fartwork%2Fss7.jpg&from=20040101000000&to=20080512210044&output=json&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=1000&collapse=digest&matchType=exact",
+      "replay_selection": "latest valid status-200-or-Wayback-redirect pre-anchor capture",
+      "same_origin_policy": "same scheme/lowercase host; only default ports normalize; path/query literal",
+      "evidence": {
+        "gap": {
+          "path": "research/continuous-recovery-20261015/wrath-artwork-viewer-gap.json",
+          "sha256": "40487274d762fc4556a01e441305632c92ccddfdd1f737a40f2758b492c80b63",
+          "source_page": {
+            "path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body",
+            "sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+            "actual_memento": "2008-05-09T12:33:33+00:00",
+            "evidence": [
+              {
+                "line": 148,
+                "text": "var whichImageviewer = \"art\";"
+              }
+            ]
+          },
+          "exact_viewer_candidates": [
+            {
+              "url": "http://www.worldofwarcraft.com/wrath/art.xml",
+              "evidence_class": "source-code concatenation of whichImageviewer art and .xml",
+              "priority": 0
+            },
+            {
+              "url": "http://www.worldofwarcraft.com/wrath/art.xml?s=1",
+              "evidence_class": "source-code-generated query for artwork item1, supported by recovered counter and existing item route",
+              "priority": 1,
+              "execute_if": "base viewer lacks usable payload; exact query remains distinct URL"
+            }
+          ]
+        },
+        "artwork_page": {
+          "path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body",
+          "sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+          "selected": {
+            "target": "/wrath/artwork.xml",
+            "actual_memento": "2008-05-09T12:33:33+00:00",
+            "body_sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+            "body_bytes": 11054,
+            "local_path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body"
+          },
+          "lines": [
+            {
+              "line": 22,
+              "text": "var roothost = \"/wrath/\";"
+            },
+            {
+              "line": 148,
+              "text": "var whichImageviewer = art"
+            },
+            {
+              "line": 150,
+              "text": "two artworkcounter.js references"
+            },
+            {
+              "line": 153,
+              "text": "theCommonDirectory = ./images/artwork/"
+            },
+            {
+              "line": 161,
+              "text": "screenshotsTotal = local + common"
+            },
+            {
+              "line": 168,
+              "text": "screenshotsPerPage = 9"
+            }
+          ]
+        },
+        "layout": {
+          "path": ".scratch/offline-navigation-20261015-v9/site/wrath/js/thumbnailslayout.js",
+          "sha256": "7988ff0ea5029526b50f1e21a2b3e2817cfb8288c197eda329eee6aa2ef65528",
+          "line": 4,
+          "text": "massiveReplaceString += ... background-image:url(... ss + number + -thumb.jpg) ... src=\"'+roothost+'images/layout/ssborder1.png\" ..."
+        },
+        "counter_observations": [
+          {
+            "url": "http://www.worldofwarcraft.com/wrath/images/artwork/artworkcounter.js",
+            "status": "valid_javascript_counter",
+            "count_values": [
+              12
+            ],
+            "api_names": [
+              "screenshotsCommonTotal"
+            ]
+          },
+          {
+            "url": "http://www.worldofwarcraft.com/wrath/images/artwork/en_us/artworkcounter.js",
+            "status": "valid_javascript_counter",
+            "count_values": [
+              1
+            ],
+            "api_names": [
+              "screenshotsLocTotal"
+            ]
+          }
+        ],
+        "existing_pair_manifest": {
+          "path": ".scratch/offline-navigation-20261015-v9/build-manifest.json",
+          "sha256": "0da72688ec5057650c2ef46a4634097323dc9c43eb19997afcad264b12dba3b8",
+          "records": {
+            "ss1-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss1-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss1-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/746a348ff8de603662bee88b214a8ea3c23f2a077db6d198e373a07a74cfce52.bin",
+              "source_sha256": "746a348ff8de603662bee88b214a8ea3c23f2a077db6d198e373a07a74cfce52",
+              "source_length": 16548,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402011002",
+              "requested_timestamp": "20080402011002",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss1.jpg": {
+              "route": "/wrath/images/artwork/ss1.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss1.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/b38f67882925dc37e494e8c9facecd5d85cd47e8cb339df86a7caf8c08dc7a5f.bin",
+              "source_sha256": "b38f67882925dc37e494e8c9facecd5d85cd47e8cb339df86a7caf8c08dc7a5f",
+              "source_length": 59598,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402011006",
+              "requested_timestamp": "20080402011006",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss12-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss12-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss12-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/65ed06195b604d35cc408ed02e86d5a6d65b6c3cc8e291a9d5da70a0f9a4aa9f.bin",
+              "source_sha256": "65ed06195b604d35cc408ed02e86d5a6d65b6c3cc8e291a9d5da70a0f9a4aa9f",
+              "source_length": 12359,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054212",
+              "requested_timestamp": "20080402054212",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss12.jpg": {
+              "route": "/wrath/images/artwork/ss12.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss12.jpg",
+              "source_local_path": "offline/source-entities-static-support/81f5930f21cb912294de1bf2020ce6c0e8f25da94d2f7fe47baf8274675aa787.bin",
+              "source_sha256": "81f5930f21cb912294de1bf2020ce6c0e8f25da94d2f7fe47baf8274675aa787",
+              "source_length": 50533,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054250",
+              "requested_timestamp": "20080402054250",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss3-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss3-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss3-thumb.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/4c33dbd2e153c474e3d57f5f7d26a9aea10e667317cce91573d8a28397f94581.bin",
+              "source_sha256": "4c33dbd2e153c474e3d57f5f7d26a9aea10e667317cce91573d8a28397f94581",
+              "source_length": 10954,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050123",
+              "requested_timestamp": "20080402050123",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss3.jpg": {
+              "route": "/wrath/images/artwork/ss3.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss3.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/82c6c4c0839d3843f0d93ab6e4d514872a92ba80cbb71b25e571124c2d711e9e.bin",
+              "source_sha256": "82c6c4c0839d3843f0d93ab6e4d514872a92ba80cbb71b25e571124c2d711e9e",
+              "source_length": 43646,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050114",
+              "requested_timestamp": "20080402050114",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss6-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss6-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss6-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/4c0225cd0ac5a5500b7390c9e5cec39090831f069739646d9c19928ad1f8c45f.bin",
+              "source_sha256": "4c0225cd0ac5a5500b7390c9e5cec39090831f069739646d9c19928ad1f8c45f",
+              "source_length": 15810,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050110",
+              "requested_timestamp": "20080402050110",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss6.jpg": {
+              "route": "/wrath/images/artwork/ss6.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss6.jpg",
+              "source_local_path": "offline/source-entities-static-support/eaae0879053c94ec097baccf00eec8282be5121e451728007ca19329ed2c6523.bin",
+              "source_sha256": "eaae0879053c94ec097baccf00eec8282be5121e451728007ca19329ed2c6523",
+              "source_length": 93060,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050059",
+              "requested_timestamp": "20080402050059",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss9-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss9-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss9-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/80a0cf1fa5b04ce57aa1aeeb70b3928966add2a1f062edd72d64e8a68d3d50da.bin",
+              "source_sha256": "80a0cf1fa5b04ce57aa1aeeb70b3928966add2a1f062edd72d64e8a68d3d50da",
+              "source_length": 10243,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054200",
+              "requested_timestamp": "20080402054200",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss9.jpg": {
+              "route": "/wrath/images/artwork/ss9.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss9.jpg",
+              "source_local_path": "offline/source-entities-static-support/cfb15016c77a0f324ccbcd301cac5d2a0da7ed2490984203aaecd8b160955c71.bin",
+              "source_sha256": "cfb15016c77a0f324ccbcd301cac5d2a0da7ed2490984203aaecd8b160955c71",
+              "source_length": 46605,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054223",
+              "requested_timestamp": "20080402054223",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            }
+          }
+        }
+      },
+      "gallery_number": 7,
+      "gallery_suffix": "",
+      "candidate_basis": {
+        "literal": "same-origin existing ssN.jpg mode",
+        "existing_examples": [
+          "ss1.jpg",
+          "ss3.jpg",
+          "ss6.jpg",
+          "ss9.jpg",
+          "ss12.jpg"
+        ],
+        "actual_cdx_row_required": true
+      }
+    },
+    {
+      "candidate_rank": 12,
+      "target_key": "gallery-ss5-thumb",
+      "kind": "image_thumb",
+      "conditional": false,
+      "execute_if": null,
+      "query_original_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss5-thumb.jpg",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fwrath%2Fimages%2Fartwork%2Fss5-thumb.jpg&from=20040101000000&to=20080512210044&output=json&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=1000&collapse=digest&matchType=exact",
+      "replay_selection": "latest valid status-200-or-Wayback-redirect pre-anchor capture",
+      "same_origin_policy": "same scheme/lowercase host; only default ports normalize; path/query literal",
+      "evidence": {
+        "gap": {
+          "path": "research/continuous-recovery-20261015/wrath-artwork-viewer-gap.json",
+          "sha256": "40487274d762fc4556a01e441305632c92ccddfdd1f737a40f2758b492c80b63",
+          "source_page": {
+            "path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body",
+            "sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+            "actual_memento": "2008-05-09T12:33:33+00:00",
+            "evidence": [
+              {
+                "line": 148,
+                "text": "var whichImageviewer = \"art\";"
+              }
+            ]
+          },
+          "exact_viewer_candidates": [
+            {
+              "url": "http://www.worldofwarcraft.com/wrath/art.xml",
+              "evidence_class": "source-code concatenation of whichImageviewer art and .xml",
+              "priority": 0
+            },
+            {
+              "url": "http://www.worldofwarcraft.com/wrath/art.xml?s=1",
+              "evidence_class": "source-code-generated query for artwork item1, supported by recovered counter and existing item route",
+              "priority": 1,
+              "execute_if": "base viewer lacks usable payload; exact query remains distinct URL"
+            }
+          ]
+        },
+        "artwork_page": {
+          "path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body",
+          "sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+          "selected": {
+            "target": "/wrath/artwork.xml",
+            "actual_memento": "2008-05-09T12:33:33+00:00",
+            "body_sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+            "body_bytes": 11054,
+            "local_path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body"
+          },
+          "lines": [
+            {
+              "line": 22,
+              "text": "var roothost = \"/wrath/\";"
+            },
+            {
+              "line": 148,
+              "text": "var whichImageviewer = art"
+            },
+            {
+              "line": 150,
+              "text": "two artworkcounter.js references"
+            },
+            {
+              "line": 153,
+              "text": "theCommonDirectory = ./images/artwork/"
+            },
+            {
+              "line": 161,
+              "text": "screenshotsTotal = local + common"
+            },
+            {
+              "line": 168,
+              "text": "screenshotsPerPage = 9"
+            }
+          ]
+        },
+        "layout": {
+          "path": ".scratch/offline-navigation-20261015-v9/site/wrath/js/thumbnailslayout.js",
+          "sha256": "7988ff0ea5029526b50f1e21a2b3e2817cfb8288c197eda329eee6aa2ef65528",
+          "line": 4,
+          "text": "massiveReplaceString += ... background-image:url(... ss + number + -thumb.jpg) ... src=\"'+roothost+'images/layout/ssborder1.png\" ..."
+        },
+        "counter_observations": [
+          {
+            "url": "http://www.worldofwarcraft.com/wrath/images/artwork/artworkcounter.js",
+            "status": "valid_javascript_counter",
+            "count_values": [
+              12
+            ],
+            "api_names": [
+              "screenshotsCommonTotal"
+            ]
+          },
+          {
+            "url": "http://www.worldofwarcraft.com/wrath/images/artwork/en_us/artworkcounter.js",
+            "status": "valid_javascript_counter",
+            "count_values": [
+              1
+            ],
+            "api_names": [
+              "screenshotsLocTotal"
+            ]
+          }
+        ],
+        "existing_pair_manifest": {
+          "path": ".scratch/offline-navigation-20261015-v9/build-manifest.json",
+          "sha256": "0da72688ec5057650c2ef46a4634097323dc9c43eb19997afcad264b12dba3b8",
+          "records": {
+            "ss1-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss1-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss1-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/746a348ff8de603662bee88b214a8ea3c23f2a077db6d198e373a07a74cfce52.bin",
+              "source_sha256": "746a348ff8de603662bee88b214a8ea3c23f2a077db6d198e373a07a74cfce52",
+              "source_length": 16548,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402011002",
+              "requested_timestamp": "20080402011002",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss1.jpg": {
+              "route": "/wrath/images/artwork/ss1.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss1.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/b38f67882925dc37e494e8c9facecd5d85cd47e8cb339df86a7caf8c08dc7a5f.bin",
+              "source_sha256": "b38f67882925dc37e494e8c9facecd5d85cd47e8cb339df86a7caf8c08dc7a5f",
+              "source_length": 59598,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402011006",
+              "requested_timestamp": "20080402011006",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss12-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss12-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss12-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/65ed06195b604d35cc408ed02e86d5a6d65b6c3cc8e291a9d5da70a0f9a4aa9f.bin",
+              "source_sha256": "65ed06195b604d35cc408ed02e86d5a6d65b6c3cc8e291a9d5da70a0f9a4aa9f",
+              "source_length": 12359,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054212",
+              "requested_timestamp": "20080402054212",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss12.jpg": {
+              "route": "/wrath/images/artwork/ss12.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss12.jpg",
+              "source_local_path": "offline/source-entities-static-support/81f5930f21cb912294de1bf2020ce6c0e8f25da94d2f7fe47baf8274675aa787.bin",
+              "source_sha256": "81f5930f21cb912294de1bf2020ce6c0e8f25da94d2f7fe47baf8274675aa787",
+              "source_length": 50533,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054250",
+              "requested_timestamp": "20080402054250",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss3-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss3-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss3-thumb.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/4c33dbd2e153c474e3d57f5f7d26a9aea10e667317cce91573d8a28397f94581.bin",
+              "source_sha256": "4c33dbd2e153c474e3d57f5f7d26a9aea10e667317cce91573d8a28397f94581",
+              "source_length": 10954,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050123",
+              "requested_timestamp": "20080402050123",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss3.jpg": {
+              "route": "/wrath/images/artwork/ss3.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss3.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/82c6c4c0839d3843f0d93ab6e4d514872a92ba80cbb71b25e571124c2d711e9e.bin",
+              "source_sha256": "82c6c4c0839d3843f0d93ab6e4d514872a92ba80cbb71b25e571124c2d711e9e",
+              "source_length": 43646,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050114",
+              "requested_timestamp": "20080402050114",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss6-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss6-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss6-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/4c0225cd0ac5a5500b7390c9e5cec39090831f069739646d9c19928ad1f8c45f.bin",
+              "source_sha256": "4c0225cd0ac5a5500b7390c9e5cec39090831f069739646d9c19928ad1f8c45f",
+              "source_length": 15810,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050110",
+              "requested_timestamp": "20080402050110",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss6.jpg": {
+              "route": "/wrath/images/artwork/ss6.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss6.jpg",
+              "source_local_path": "offline/source-entities-static-support/eaae0879053c94ec097baccf00eec8282be5121e451728007ca19329ed2c6523.bin",
+              "source_sha256": "eaae0879053c94ec097baccf00eec8282be5121e451728007ca19329ed2c6523",
+              "source_length": 93060,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050059",
+              "requested_timestamp": "20080402050059",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss9-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss9-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss9-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/80a0cf1fa5b04ce57aa1aeeb70b3928966add2a1f062edd72d64e8a68d3d50da.bin",
+              "source_sha256": "80a0cf1fa5b04ce57aa1aeeb70b3928966add2a1f062edd72d64e8a68d3d50da",
+              "source_length": 10243,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054200",
+              "requested_timestamp": "20080402054200",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss9.jpg": {
+              "route": "/wrath/images/artwork/ss9.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss9.jpg",
+              "source_local_path": "offline/source-entities-static-support/cfb15016c77a0f324ccbcd301cac5d2a0da7ed2490984203aaecd8b160955c71.bin",
+              "source_sha256": "cfb15016c77a0f324ccbcd301cac5d2a0da7ed2490984203aaecd8b160955c71",
+              "source_length": 46605,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054223",
+              "requested_timestamp": "20080402054223",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            }
+          }
+        }
+      },
+      "gallery_number": 5,
+      "gallery_suffix": "-thumb",
+      "candidate_basis": {
+        "literal": "ssN-thumb.jpg",
+        "existing_examples": [
+          "ss1-thumb.jpg",
+          "ss3-thumb.jpg",
+          "ss6-thumb.jpg",
+          "ss9-thumb.jpg",
+          "ss12-thumb.jpg"
+        ],
+        "actual_cdx_row_required": true
+      }
+    },
+    {
+      "candidate_rank": 13,
+      "target_key": "gallery-ss5",
+      "kind": "image_original",
+      "conditional": false,
+      "execute_if": null,
+      "query_original_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss5.jpg",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fwrath%2Fimages%2Fartwork%2Fss5.jpg&from=20040101000000&to=20080512210044&output=json&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=1000&collapse=digest&matchType=exact",
+      "replay_selection": "latest valid status-200-or-Wayback-redirect pre-anchor capture",
+      "same_origin_policy": "same scheme/lowercase host; only default ports normalize; path/query literal",
+      "evidence": {
+        "gap": {
+          "path": "research/continuous-recovery-20261015/wrath-artwork-viewer-gap.json",
+          "sha256": "40487274d762fc4556a01e441305632c92ccddfdd1f737a40f2758b492c80b63",
+          "source_page": {
+            "path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body",
+            "sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+            "actual_memento": "2008-05-09T12:33:33+00:00",
+            "evidence": [
+              {
+                "line": 148,
+                "text": "var whichImageviewer = \"art\";"
+              }
+            ]
+          },
+          "exact_viewer_candidates": [
+            {
+              "url": "http://www.worldofwarcraft.com/wrath/art.xml",
+              "evidence_class": "source-code concatenation of whichImageviewer art and .xml",
+              "priority": 0
+            },
+            {
+              "url": "http://www.worldofwarcraft.com/wrath/art.xml?s=1",
+              "evidence_class": "source-code-generated query for artwork item1, supported by recovered counter and existing item route",
+              "priority": 1,
+              "execute_if": "base viewer lacks usable payload; exact query remains distinct URL"
+            }
+          ]
+        },
+        "artwork_page": {
+          "path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body",
+          "sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+          "selected": {
+            "target": "/wrath/artwork.xml",
+            "actual_memento": "2008-05-09T12:33:33+00:00",
+            "body_sha256": "c9f9e5ffe5ea58c7caf8c22f1e4b87b4a406c96dde364ed1f696351dda27dd85",
+            "body_bytes": 11054,
+            "local_path": "research/continuous-recovery-20261015/network-core-pages4/raw/06-wrath_artwork.xml-replay-proxy.body"
+          },
+          "lines": [
+            {
+              "line": 22,
+              "text": "var roothost = \"/wrath/\";"
+            },
+            {
+              "line": 148,
+              "text": "var whichImageviewer = art"
+            },
+            {
+              "line": 150,
+              "text": "two artworkcounter.js references"
+            },
+            {
+              "line": 153,
+              "text": "theCommonDirectory = ./images/artwork/"
+            },
+            {
+              "line": 161,
+              "text": "screenshotsTotal = local + common"
+            },
+            {
+              "line": 168,
+              "text": "screenshotsPerPage = 9"
+            }
+          ]
+        },
+        "layout": {
+          "path": ".scratch/offline-navigation-20261015-v9/site/wrath/js/thumbnailslayout.js",
+          "sha256": "7988ff0ea5029526b50f1e21a2b3e2817cfb8288c197eda329eee6aa2ef65528",
+          "line": 4,
+          "text": "massiveReplaceString += ... background-image:url(... ss + number + -thumb.jpg) ... src=\"'+roothost+'images/layout/ssborder1.png\" ..."
+        },
+        "counter_observations": [
+          {
+            "url": "http://www.worldofwarcraft.com/wrath/images/artwork/artworkcounter.js",
+            "status": "valid_javascript_counter",
+            "count_values": [
+              12
+            ],
+            "api_names": [
+              "screenshotsCommonTotal"
+            ]
+          },
+          {
+            "url": "http://www.worldofwarcraft.com/wrath/images/artwork/en_us/artworkcounter.js",
+            "status": "valid_javascript_counter",
+            "count_values": [
+              1
+            ],
+            "api_names": [
+              "screenshotsLocTotal"
+            ]
+          }
+        ],
+        "existing_pair_manifest": {
+          "path": ".scratch/offline-navigation-20261015-v9/build-manifest.json",
+          "sha256": "0da72688ec5057650c2ef46a4634097323dc9c43eb19997afcad264b12dba3b8",
+          "records": {
+            "ss1-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss1-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss1-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/746a348ff8de603662bee88b214a8ea3c23f2a077db6d198e373a07a74cfce52.bin",
+              "source_sha256": "746a348ff8de603662bee88b214a8ea3c23f2a077db6d198e373a07a74cfce52",
+              "source_length": 16548,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402011002",
+              "requested_timestamp": "20080402011002",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss1.jpg": {
+              "route": "/wrath/images/artwork/ss1.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss1.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/b38f67882925dc37e494e8c9facecd5d85cd47e8cb339df86a7caf8c08dc7a5f.bin",
+              "source_sha256": "b38f67882925dc37e494e8c9facecd5d85cd47e8cb339df86a7caf8c08dc7a5f",
+              "source_length": 59598,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402011006",
+              "requested_timestamp": "20080402011006",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss12-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss12-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss12-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/65ed06195b604d35cc408ed02e86d5a6d65b6c3cc8e291a9d5da70a0f9a4aa9f.bin",
+              "source_sha256": "65ed06195b604d35cc408ed02e86d5a6d65b6c3cc8e291a9d5da70a0f9a4aa9f",
+              "source_length": 12359,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054212",
+              "requested_timestamp": "20080402054212",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss12.jpg": {
+              "route": "/wrath/images/artwork/ss12.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss12.jpg",
+              "source_local_path": "offline/source-entities-static-support/81f5930f21cb912294de1bf2020ce6c0e8f25da94d2f7fe47baf8274675aa787.bin",
+              "source_sha256": "81f5930f21cb912294de1bf2020ce6c0e8f25da94d2f7fe47baf8274675aa787",
+              "source_length": 50533,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054250",
+              "requested_timestamp": "20080402054250",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss3-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss3-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss3-thumb.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/4c33dbd2e153c474e3d57f5f7d26a9aea10e667317cce91573d8a28397f94581.bin",
+              "source_sha256": "4c33dbd2e153c474e3d57f5f7d26a9aea10e667317cce91573d8a28397f94581",
+              "source_length": 10954,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050123",
+              "requested_timestamp": "20080402050123",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss3.jpg": {
+              "route": "/wrath/images/artwork/ss3.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss3.jpg",
+              "source_local_path": "research/site-recovery-2008/static-cdx-support/batch-006-valid-entities/82c6c4c0839d3843f0d93ab6e4d514872a92ba80cbb71b25e571124c2d711e9e.bin",
+              "source_sha256": "82c6c4c0839d3843f0d93ab6e4d514872a92ba80cbb71b25e571124c2d711e9e",
+              "source_length": 43646,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050114",
+              "requested_timestamp": "20080402050114",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss6-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss6-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss6-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/4c0225cd0ac5a5500b7390c9e5cec39090831f069739646d9c19928ad1f8c45f.bin",
+              "source_sha256": "4c0225cd0ac5a5500b7390c9e5cec39090831f069739646d9c19928ad1f8c45f",
+              "source_length": 15810,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050110",
+              "requested_timestamp": "20080402050110",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss6.jpg": {
+              "route": "/wrath/images/artwork/ss6.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss6.jpg",
+              "source_local_path": "offline/source-entities-static-support/eaae0879053c94ec097baccf00eec8282be5121e451728007ca19329ed2c6523.bin",
+              "source_sha256": "eaae0879053c94ec097baccf00eec8282be5121e451728007ca19329ed2c6523",
+              "source_length": 93060,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402050059",
+              "requested_timestamp": "20080402050059",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss9-thumb.jpg": {
+              "route": "/wrath/images/artwork/ss9-thumb.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss9-thumb.jpg",
+              "source_local_path": "offline/source-entities-static-support/80a0cf1fa5b04ce57aa1aeeb70b3928966add2a1f062edd72d64e8a68d3d50da.bin",
+              "source_sha256": "80a0cf1fa5b04ce57aa1aeeb70b3928966add2a1f062edd72d64e8a68d3d50da",
+              "source_length": 10243,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054200",
+              "requested_timestamp": "20080402054200",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            },
+            "ss9.jpg": {
+              "route": "/wrath/images/artwork/ss9.jpg",
+              "source_base_url": "http://www.worldofwarcraft.com/wrath/images/artwork/ss9.jpg",
+              "source_local_path": "offline/source-entities-static-support/cfb15016c77a0f324ccbcd301cac5d2a0da7ed2490984203aaecd8b160955c71.bin",
+              "source_sha256": "cfb15016c77a0f324ccbcd301cac5d2a0da7ed2490984203aaecd8b160955c71",
+              "source_length": 46605,
+              "source_mime": "image/jpeg",
+              "actual_timestamp": "20080402054223",
+              "requested_timestamp": "20080402054223",
+              "source_map_path": "offline/approved-static-recovery-map.json",
+              "role": "expanded_approved_page_static_dependency"
+            }
+          }
+        }
+      },
+      "gallery_number": 5,
+      "gallery_suffix": "",
+      "candidate_basis": {
+        "literal": "same-origin existing ssN.jpg mode",
+        "existing_examples": [
+          "ss1.jpg",
+          "ss3.jpg",
+          "ss6.jpg",
+          "ss9.jpg",
+          "ss12.jpg"
+        ],
+        "actual_cdx_row_required": true
+      }
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "schema": "continuous-wow-recovery-tasks/v1",
   "deadline_utc": "2026-10-15T14:44:00Z",
-  "updated_utc": "2026-10-15T09:15:57.484136+00:00",
+  "updated_utc": "2026-10-15T09:51:20.086198+00:00",
   "coordination": {
     "heartbeat_id": "wow-8",
     "heartbeat_interval_minutes": 15,
@@ -456,7 +456,7 @@
     },
     {
       "id": "LOCAL-BROWSER-V9-005",
-      "status": "running_root_29005_ready",
+      "status": "diagnostic_evidence_accepted_gallery_incomplete",
       "owner": "sidebar_local_audit",
       "goal": "Verify 12 new menu targets, PTR allowed links/aliases, Battlegroups sidebar href, Wrath gallery/images/lightbox and an existing SSOTD overlay after root final export.",
       "write_scope": "research/continuous-recovery-20261015/core-pages-integration/browser/**",
@@ -473,11 +473,21 @@
         "No production changes and no inferred runtime passes"
       ],
       "stop": "Twenty-minute bound, interface/scope change, or completed scenarios; report failures without production edits",
-      "server_ready_by": "root; final export 8467 declared files, 8328 sources and 38 overlays"
+      "server_ready_by": "root; final export 8467 declared files, 8328 sources and 38 overlays",
+      "result": {
+        "reported_checks": 18,
+        "actually_executed": 17,
+        "skipped": 1,
+        "core_routes_and_aliases": 12,
+        "gallery_complete": false,
+        "known_404_responses": 37,
+        "ssotd_fixture_scope": "old image decode, index buttons and close; two identical injected URLs, no native distinct-image navigation claim",
+        "independent_review": "research/continuous-recovery-20261015/v9-browser-independent-review.json"
+      }
     },
     {
       "id": "NET-WRATH-008",
-      "status": "running",
+      "status": "accepted_query_viewer_only_no_images",
       "owner": "wayback_recheck_batch1",
       "goal": "Acquire the exact historical art.xml viewer first, then missing first-page common artwork pairs 11/10/8/7/5/4.",
       "write_scope": "research/continuous-recovery-20261015/network-wrath8/**",
@@ -511,7 +521,83 @@
         "common2 and locale1 artwork pairs",
         "eleven untouched RSS targets",
         "RSS006 transport failures and unrequested targets"
-      ]
+      ],
+      "result": {
+        "attempts": 15,
+        "source_responses": 12,
+        "valid_html": 1,
+        "valid_images": 0,
+        "query_source": "http://www.worldofwarcraft.com/wrath/art.xml?s=1",
+        "actual_memento": "2008-02-19T07:55:09Z",
+        "valid_payload_body_bytes": 10622,
+        "total_batch_body_bytes": 11269,
+        "categories": {
+          "network_unknown": 2,
+          "cdx_empty_in_range": 10,
+          "valid_html": 1
+        },
+        "canonical_alias_approved": false,
+        "acceptance": "research/continuous-recovery-20261015/wrath8-acceptance.json"
+      }
+    },
+    {
+      "id": "LOCAL-SIDEBAR-V9-006",
+      "status": "accepted_local_v9_ledger_updated",
+      "owner": "sidebar_local_audit",
+      "goal": "Recheck every1241 menu observation against fixed v9 routes/provenance without runtime completeness claims.",
+      "write_scope": "research/continuous-recovery-20261015/v9-audit/**",
+      "network": false,
+      "result": {
+        "observations": 1241,
+        "resolved_observations": 1081,
+        "resolved_distinct_files": 460,
+        "missing_observations": 26,
+        "missing_distinct_routes": 23,
+        "recovered_observations": 14,
+        "recovered_distinct_routes": 12,
+        "prior_resolved_route_regressions": 0,
+        "acceptance": "research/continuous-recovery-20261015/v9-sidebar-acceptance.json",
+        "ledger": "research/continuous-recovery-20261015/ledger.current.json",
+        "previous_ledger": "research/continuous-recovery-20261015/ledger.v8-accepted-0725.json",
+        "metadata_correction": "delta final audit hash recalculated after ledger grouping metadata appended",
+        "normalization_note": "fresh audit preserves original /ptr/; canonical index bytes additionally read beyond historical /ptr compatibility precheck"
+      }
+    },
+    {
+      "id": "NET-MIXED-009",
+      "status": "execution_outputs_ready_pending_independent_acceptance",
+      "owner": "wayback_recheck_batch1",
+      "goal": "Pre-anchor viewer script/pixel/common4 pair, then independently marked 2008May13–2010Dec31 border and common11/10/8 pairs.",
+      "write_scope": "research/continuous-recovery-20261015/network-mixed9/**",
+      "network": true,
+      "limits": {
+        "distinct_targets": 12,
+        "declared_targets": 11,
+        "attempts": 32,
+        "seconds": 480,
+        "body_bytes": 67108864,
+        "single_body_bytes": 16777216,
+        "minimum_dispatch_interval_seconds": 1.25,
+        "disk_floor_bytes": 11005853696
+      },
+      "observed_unaccepted_summary": {
+        "attempts": 14,
+        "source_responses": 12,
+        "valid_js": 1,
+        "valid_layout_image": 1,
+        "valid_late_supplements": 0,
+        "note": "raw outputs present09:48; await worker final and independent acceptance; no recovered content-image claim"
+      },
+      "stop": "No automatic additional requests; layout files classified separately from content images"
     }
-  ]
+  ],
+  "release_state": {
+    "main_verified_commit": "7a0955563ab44f8b69ba6715278b5ccf613791a4",
+    "pages_still_v8": "7cfe6ac6a82137fc9df0673630e66c09adf03a49",
+    "local_v9_source_export_and_core_diagnostics_accepted": true,
+    "v9_published": false,
+    "root_directory_fix": "38 unit tests and18 actual-source page rewrites accepted; fresh full export/browser pending",
+    "rss4_integration": "accepted sources held for next derivative",
+    "viewer_integration": "query source accepted; generic canonical mapping withheld pending real script API review"
+  }
 }

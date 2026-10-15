@@ -1,0 +1,33 @@
+{
+  "schema": "continuous-wow-network-wrath8-config/v1",
+  "batch_id": "NET-WRATH-008",
+  "candidate_path": "research/continuous-recovery-20261015/network-wrath8/candidates.json",
+  "candidate_sha256": "72d16fc80711d3754006559e3818ab332626b2fba5bce48c07da2456ffa97ee6",
+  "transport_helper": "research/continuous-recovery-20261015/network-core-pages3/core_pages3.py",
+  "dispatch_gate_helper": "research/continuous-recovery-20261015/network-control7/control7.py",
+  "network_requests": 0,
+  "policy": {
+    "direct_first": true,
+    "proxy": "http://127.0.0.1:7890",
+    "direct_connect_timeout_seconds": 4,
+    "direct_total_timeout_seconds": 12,
+    "proxy_connect_timeout_seconds": 8,
+    "proxy_total_timeout_seconds": 20,
+    "max_distinct_targets_primary": 13,
+    "max_distinct_targets_with_fallback": 14,
+    "max_attempts": 32,
+    "window_seconds": 480,
+    "minimum_dispatch_interval_seconds": 1.25,
+    "minimum_free_bytes": 11005853696,
+    "max_total_body_bytes": 67108864,
+    "max_entity_body_bytes": 16777216,
+    "automatic_redirects": 0,
+    "manual_redirect_follow_hops": 0,
+    "stop_http_codes": [
+      429,
+      503
+    ],
+    "tls_verification": "enabled_by_curl_default",
+    "concurrent_source_requests": 1
+  }
+}

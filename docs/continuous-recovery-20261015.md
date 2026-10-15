@@ -87,6 +87,22 @@ v9 源树现已完成[独立来源验收](../research/continuous-recovery-202610
 
 `NET-WRATH-008` 因而优先精确查看页，base 无有效 HTML 才查询独立 `?s=1`；随后按 11、10、8、7、5、4 的顺序补首屏六缺项，每项缩略图和原图交错。最大 14 个不同候选、32 次尝试，保守派发间隔 1.25 秒并保存 monotonic/UTC；其余资源边界不变。第二页 common2/locale1 两对与 11 个从未请求的 RSS 留下一批，不自动扩大。
 
+### 09:50 检查点：本地 v9 与发布状态分开
+
+根代理已将主要来源、PTR 生产代码、37 项最终单元证据及 v9 source/export 验收推送并独立确认至 main `7a0955563ab44f8b69ba6715278b5ccf613791a4`。Pages 仍为已验收 v8（`7cfe6ac6a82137fc9df0673630e66c09adf03a49`），未推送 v9。
+
+[正式 v9 静态侧栏验收](../research/continuous-recovery-20261015/v9-sidebar-acceptance.json)通过：1,241 条观察身份守恒，1,081 条 resolved、54 条外部/动态、6 条业务/敏感、26 条缺路由观察，对应 23 个旧 RSS 地址。460 个不同文件声明与统筹已实读摘要及额外 PTR canonical index 实读一致；此前缺失的 14 条观察、12 个地址接通，旧 resolved 路由无回归。旧审计将 `/ptr/` 规范为 `/ptr`，本轮保留原尾斜杠并检查真实 index；两种兼容入口均有已验收文件。delta 中追加元数据前的旧 audit 摘要已改为最终真实摘要。
+
+[当前总账](../research/continuous-recovery-20261015/ledger.current.json)现明确代表 **本地未发布 v9**；此前 v8 总账逐字节保存为[独立快照](../research/continuous-recovery-20261015/ledger.v8-accepted-0725.json)。资源状态的 954 条 partial 仍是共享、重复的菜单观察，包含导航及占位引用，不是 954 张缺图。
+
+[浏览独立复核](../research/continuous-recovery-20261015/v9-browser-independent-review.json)接受诊断证据：18 个报告 check 中 17 个实际执行、1 个跳过；新核心路由和别名可达，但图库只五对来源可用，八对缺失，真实卡片点击查看页返回 404。37 个 404 全属声明的图库缺口。Howling-Fjord 正常关闭被 banner 阻挡另留原证据，最终 skip；SSOTD 旧图解码与实际按钮/index/关闭通过，但 fixture 使用两个相同 URL，没有声称原生目录切到不同图片。
+
+根代理发现 `roothost='/wrath/'` 被通用 URL 重写错误地 canonicalize 为 `.../wrath/index.html`，使共享 border 请求拼成 `index.htmlimages/...`。生产代码与真实 export fixture 已修，38 项测试以及全部 18 份实际 Wrath 来源的目录赋值改写通过；[修复验收](../research/continuous-recovery-20261015/wrath-directory-base-acceptance.json)明确尚未完成新的 full export/browser。v9 来源和导出树保持冻结，等待下一 fresh derivative，不发布当前有此问题的导出。
+
+`NET-WRATH-008` 已[独立验收](../research/continuous-recovery-20261015/wrath8-acceptance.json)：15 次尝试、12 个真实源响应、4 条 CDX，实际只取得 `art.xml?s=1` 的 2008-02-19 查看页 HTML（10,622 字节），没有取得图片。10 个 scoped CDX 空、两个传输未判定；晚期存档不能由此推定不存在。原 query 来源保留，泛化成 canonical base viewer 的映射暂缓，须核对其真实 `screeniesimplified.js` API。
+
+`NET-MIXED-009` 的 11 个声明目标由唯一网络执行者处理：pre-anchor viewer JS、pixel、此前未请求的 common4 对；独立晚期窗口 `2008-05-13–2010-12-31` 的 border 与 common11/10/8 三对。09:48 已有完成输出，未独立验收的摘要报告一个 JS、一个布局 GIF、没有晚期补充实体；仍待完整 raw/API 验收。pixel/border 是布局装饰，不算内容图。四份已验收 RSS-path HTML 及 query viewer 留下一版，未改当前 v9 或冻结 baseline。
+
 ## 取舍与后续顺序
 
 优先修复已有真实内容因地址规范化或客户端逻辑无法访问的问题；其次补取来源明确且过去因网络失败没有取得内容判定的对象；再沿历史脚本、菜单和 CDX 记录提取有证据的缺失资源。按编号生成的截图地址可以作为来源证据，不能凭猜测把实体记为已取得。若本地审计发现更高价值的缺口，下一批按证据与可恢复性调整，不为填满时间盲目重试。
