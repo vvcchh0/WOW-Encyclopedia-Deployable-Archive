@@ -62,6 +62,14 @@ _ROOT_LITERAL_RE = re.compile(
 _XML_BARE_AMP_RE = re.compile(
     r"&(?!#(?:x[0-9A-Fa-f]+|[0-9]+);|(?:amp|lt|gt|quot|apos);)"
 )
+COMPATIBILITY_ROUTE_ALIASES: dict[str, str] = {
+    "/info/basics/dailyquests.shtml": "/info/basics/dailyquests.html",
+    "/info/basics/titles.shtml": "/info/basics/titles.html",
+    "/info/basics/benice.shtml": "/info/basics/benice.html",
+    "/info/credits.shtml": "/info/credits.html",
+    "/info/info/items/armorsets/": "/info/items/armorsets/index.html",
+    "/wrath/wallpapers.xml": "/wrath//wallpapers.xml",
+}
 
 
 def utc_now() -> str:
@@ -241,7 +249,12 @@ def _overlay_relative_source(map_path: Path, local_path: str, workspace_root: Pa
     return _workspace_path(resolved, workspace_root, label=f"image overlay {label} local_path")
 
 
-def _overlay_temporal_class(actual_dt: datetime, anchor_dt: datetime) -> str:
+def _overlay_temporal_class(
+    actual_dt: datetime,
+    anchor_dt: datetime,
+    *,
+    allow_later_image_supplements: bool = False,
+) -> str:
     year_start = datetime(2008, 1, 1)
     year_end = datetime(2008, 12, 31, 23, 59, 59)
     if actual_dt < year_start:
@@ -250,6 +263,8 @@ def _overlay_temporal_class(actual_dt: datetime, anchor_dt: datetime) -> str:
         return "baseline_2008"
     if actual_dt <= year_end:
         return "late_2008"
+    if allow_later_image_supplements:
+        return "post_2008"
     raise PagesExportError(f"image supplement capture is after 2008: {actual_dt:%Y%m%d%H%M%S}")
 
 
@@ -261,6 +276,7 @@ def _load_image_overlay_maps(
     frozen_routes: set[str],
     frozen_static_paths: set[str],
     supplement: bool,
+    allow_later_image_supplements: bool = False,
 ) -> tuple[list[dict[str, Any]], int]:
     """Validate primary or explicit supplement image maps.
 
@@ -328,7 +344,11 @@ def _load_image_overlay_maps(
             if indexed_dt != actual_dt:
                 raise PagesExportError(f"{label} capture timestamp is invalid or differs: {actual!r}/{indexed!r}")
             if supplement:
-                temporal_class = _overlay_temporal_class(actual_dt, anchor_dt)
+                temporal_class = _overlay_temporal_class(
+                    actual_dt,
+                    anchor_dt,
+                    allow_later_image_supplements=allow_later_image_supplements,
+                )
                 declared_class = str(item.get("temporal_class") or "")
                 if declared_class != temporal_class:
                     raise PagesExportError(
@@ -418,6 +438,7 @@ def load_image_overlays(
         frozen_routes=frozen_routes,
         frozen_static_paths=frozen_static_paths,
         supplement=False,
+        allow_later_image_supplements=False,
     )
 
 
@@ -428,8 +449,9 @@ def load_supplement_image_overlays(
     anchor_timestamp: str,
     frozen_routes: set[str],
     frozen_static_paths: set[str],
+    allow_later_image_supplements: bool = False,
 ) -> tuple[list[dict[str, Any]], int]:
-    """Validate explicit 2008 related-site and late-capture image overlays."""
+    """Validate explicit related-site image overlays with an opt-in later-capture policy."""
 
     return _load_image_overlay_maps(
         supplement_image_source_maps,
@@ -438,6 +460,7 @@ def load_supplement_image_overlays(
         frozen_routes=frozen_routes,
         frozen_static_paths=frozen_static_paths,
         supplement=True,
+        allow_later_image_supplements=allow_later_image_supplements,
     )
 
 
@@ -528,6 +551,25 @@ class PagesLocalizer:
                     recovered = self.localize(requested, base_url=base_url, context=context, recorder=recorder)
                     recorder.add(raw, requested, "localized", recovered, context, "recovered requested URL from missing-image marker")
                     return recovered
+        if mirror.route_path(absolute).casefold() == "/__offline/missing.html":
+            requested_values = urllib.parse.parse_qs(parsed.query, keep_blank_values=True).get("requested", [])
+            requested = requested_values[-1] if requested_values else ""
+            if requested:
+                try:
+                    requested_path = mirror.route_path(requested)
+                except Exception:
+                    requested_path = ""
+                if requested_path in COMPATIBILITY_ROUTE_ALIASES:
+                    recovered = self.localize(requested, base_url=base_url, context=context, recorder=recorder)
+                    recorder.add(
+                        raw,
+                        requested,
+                        "localized",
+                        recovered,
+                        context,
+                        "recovered verified Archived News compatibility alias from missing marker",
+                    )
+                    return recovered
         # compat.js intentionally builds this query in a JavaScript string
         # prefix.  Pages has a concrete index document for it; preserve the
         # query suffix so the client page can echo the intended target.
@@ -587,9 +629,10 @@ def rewrite_root_literals(text: str, *, base_url: str, localizer: PagesLocalizer
 
 _GALLERY_ADDSHOTS_RE = re.compile(
     r"(?P<call>\baddshots\s*\(\s*)"
-    r"(?P<quote>['\"])(?P<directory>/[^'\"\r\n<>]*?/)(?P=quote)"
+    r"(?P<quote>['\"])(?P<directory>/[^'\"\r\n<>]*?/?)"
+    r"(?P=quote)"
     r"(?P<comma1>\s*,\s*)(?P<filequote>['\"])(?P<filename>ss)(?P=filequote)"
-    r"(?P<comma2>\s*,\s*)(?P<count>numShots)\b",
+    r"(?P<comma2>\s*,\s*)(?P<count>numShots|currentShotNumber)\b",
     re.I,
 )
 
@@ -679,6 +722,255 @@ def rewrite_inline_scripts(
         return match.group(1) + body + match.group(3)
 
     return script_re.sub(replace, text)
+
+
+_PVP_FLASH_ROUTE = "/pvp/flash-rewards/"
+_PVP_SUBNAV_MARKER = "<!---Subnav----->"
+_PVP_INTRO_OBJECT_RE = re.compile(
+    r"<object\b(?=[^>]*\bid\s*=\s*(?:\"intro\"|'intro'|intro)(?=\s|/?>))[^>]*>.*?</object\s*>",
+    re.I | re.S,
+)
+_PVP_SOURCE_SCRIPT_RE = re.compile(r"<script\b[^>]*>.*?</script\s*>", re.I | re.S)
+
+
+def rewrite_pvp_mini_site(
+    text: str,
+    *,
+    route: str,
+    base_path: str,
+) -> tuple[str, bool]:
+    """Derive a readable static panel for the captured 2007 PvP mini-site.
+
+    The source route is an exact, known Flash mini-site page.  Its navigation
+    and related-link blocks are generated by obsolete scripts, while the
+    central panel is an ``intro.swf`` object.  Replace only when the complete
+    source signature is present; an incomplete or unrelated page is returned
+    byte-for-byte unchanged so a future capture cannot be blanked accidentally.
+    """
+
+    if route != _PVP_FLASH_ROUTE:
+        return text, False
+
+    marker_start = text.find(_PVP_SUBNAV_MARKER)
+    if marker_start < 0:
+        return text, False
+    marker_end = marker_start + len(_PVP_SUBNAV_MARKER)
+    center_match = re.search(r"<center\b[^>]*>", text[marker_end:], re.I)
+    if center_match is None:
+        return text, False
+    center_start = marker_end + center_match.start()
+
+    object_matches = [match for match in _PVP_INTRO_OBJECT_RE.finditer(text) if match.start() >= center_start]
+    if len(object_matches) != 1:
+        return text, False
+    intro_object = object_matches[0]
+    object_text = intro_object.group(0)
+    if not re.search(r"<embed\b", object_text, re.I):
+        return text, False
+    if not re.search(r"intro\.swf", object_text, re.I):
+        return text, False
+
+    # These signatures identify the preserved static frame around the Flash
+    # object.  They keep the transform route-specific if a future source only
+    # happens to reuse the old marker or object id.
+    required_signatures = (
+        "World of Warcraft PvP Mini Site",
+        "ss-border-top-bg.gif",
+        "ss-border-left.gif",
+    )
+    if any(signature.casefold() not in text.casefold() for signature in required_signatures):
+        return text, False
+    script_open_count = len(re.findall(r"<script\b", text, re.I))
+    script_close_count = len(re.findall(r"</script\s*>", text, re.I))
+    if script_open_count == 0 or script_open_count != script_close_count:
+        return text, False
+
+    prefix = base_path if base_path.startswith("/") else "/" + base_path
+    if not prefix.endswith("/"):
+        prefix += "/"
+    home_href = html.escape(prefix, quote=True)
+    guide_href = html.escape(prefix + "info/index.html", quote=True)
+    navigation = (
+        '\n<nav class="offline-pvp-mini-nav" aria-label="Archive navigation" '
+        'style="margin:12px auto; padding:8px 12px; text-align:center; '
+        'background:#111; border:1px solid #8a6a21; color:#fff; font:14px Arial,sans-serif;">'
+        f'<a href="{home_href}" style="color:#e9c46a;">Archive home</a>'
+        '<span aria-hidden="true"> | </span>'
+        f'<a href="{guide_href}" style="color:#e9c46a;">Game Guide</a>'
+        "</nav>\n"
+    )
+    static_panel = (
+        '\n<section class="offline-pvp-mini-panel" data-archive-flash-unavailable="true" '
+        'aria-labelledby="offline-pvp-mini-title" '
+        'style="box-sizing:border-box; min-height:220px; margin:24px auto; padding:36px 28px; '
+        'max-width:900px; background:#111; border:2px solid #c9a44a; color:#fff; '
+        'font:16px Arial,sans-serif; text-align:center;">'
+        '<h2 id="offline-pvp-mini-title" style="margin:0 0 18px; color:#e9c46a; '
+        'font-size:28px;">2007 PvP Mini Site</h2>'
+        '<p style="margin:0; line-height:1.6;">The original interactive panel depended on Flash; '
+        '<code>intro.swf</code> has not been recovered.</p>'
+        "</section>\n"
+    )
+
+    # Remove the obsolete sub-navigation block through the next center tag,
+    # retaining that center tag and everything that follows as the static
+    # frame.  Then replace only the confirmed intro object and its embed.
+    derived = text[:marker_start] + navigation + text[center_start:]
+    # Re-find the object after the bounded prefix replacement instead of
+    # relying on arithmetic over the removed block's length.
+    rewritten_object = next(
+        (match for match in _PVP_INTRO_OBJECT_RE.finditer(derived) if match.start() >= derived.find("<center", marker_start)),
+        None,
+    )
+    if rewritten_object is None:
+        # This is defensive only; all guards above matched the same source.
+        return text, False
+    derived = derived[:rewritten_object.start()] + static_panel + derived[rewritten_object.end():]
+    # The old page's remaining scripts generate the related mail links and
+    # depend on the deleted menu globals.  Runtime injection happens later in
+    # the exporter, so remove only these source script elements now.
+    derived = _PVP_SOURCE_SCRIPT_RE.sub("", derived)
+    if re.search(r"mailto:", derived, re.I):
+        return text, False
+    return derived, True
+
+
+_NAVTREE_COMMUNITY_PARENT_RE = re.compile(
+    r'(?m)^(?P<prefix>\s*Menu1_6\s*=\s*new\s+Array\([^\r\n]*?,\s*["\']/community/["\']\s*,\s*["\']{2}\s*,\s*)'
+    r'(?P<count>10|11)(?P<suffix>\s*,)'
+)
+_NAVTREE_FAN_SITES_RE = re.compile(
+    r'(?m)^(?P<indent>\s*)Menu1_6_10(?P<rest>\s*=\s*new\s+Array\(\s*bulletImg\s*\+\s*["\']Fan Sites["\']\s*\+\s*underLine\s*,)'
+)
+
+
+def rewrite_navtree_community_ids(text: str) -> tuple[str, bool]:
+    """Expose both Community fan links in the derived navtree script.
+
+    The frozen source declares eleven Community children but uses
+    ``Menu1_6_10`` for both Fan Wallpapers and Fan Sites.  Runtime JavaScript
+    therefore overwrites the first value.  Keep the source bytes untouched and
+    repair only the derived script: parent count 10 -> 11 and the later Fan
+    Sites declaration 10 -> 11.  Already-derived text is accepted unchanged
+    so an export pass is idempotent.
+    """
+
+    parent_matches = list(_NAVTREE_COMMUNITY_PARENT_RE.finditer(text))
+    fan_sites_matches = list(_NAVTREE_FAN_SITES_RE.finditer(text))
+    if len(parent_matches) > 1 or len(fan_sites_matches) > 1:
+        raise PagesExportError("ambiguous Community navtree repair targets")
+    changed = False
+    if parent_matches:
+        match = parent_matches[0]
+        if match.group("count") == "10":
+            start, end = match.span("count")
+            text = text[:start] + "11" + text[end:]
+            changed = True
+    if fan_sites_matches:
+        match = fan_sites_matches[0]
+        start, end = match.span(0)
+        prefix_end = match.start("rest")
+        text = text[:start] + match.group("indent") + "Menu1_6_11" + text[prefix_end:]
+        changed = True
+    return text, changed
+
+
+def ssotd_current_shot_number(text: str, actual_timestamp: str) -> int:
+    """Derive the SSOTD index from this page's recorded UTC capture time."""
+
+    start_match = re.search(r"\bstartDate\s*=\s*(\d+)\s*;", text)
+    if not start_match:
+        raise PagesExportError("SSOTD startDate is missing")
+    start_date = int(start_match.group(1))
+    if start_date != 12671:
+        raise PagesExportError(f"unexpected SSOTD startDate: {start_date}")
+    try:
+        capture = datetime.strptime(str(actual_timestamp), "%Y%m%d%H%M%S").replace(tzinfo=timezone.utc)
+    except ValueError as exc:
+        raise PagesExportError(f"invalid SSOTD actual capture timestamp: {actual_timestamp!r}") from exc
+    return int(capture.timestamp() // 86400) - start_date
+
+
+_SSOTD_HEAD_CLOCK_RE = re.compile(
+    r"(?ms)^(?P<indent>[ \t]*)function\s+checkRequestHeader\s*\(\s*\)\s*\{.*?"
+    r"^[ \t]*xmlTimeVerification\.send\s*\(\s*null\s*\)\s*;[ \t]*\r?$"
+)
+
+
+def rewrite_ssotd_clock(text: str, *, actual_timestamp: str) -> tuple[str, bool, int]:
+    """Replace only SSOTD's live HEAD clock with its recorded capture clock.
+
+    The original ``addshots`` call remains in place immediately after the
+    derived number, so gallery pagination and hash deep links continue to use
+    the historical JavaScript unchanged.
+    """
+
+    shot_number = ssotd_current_shot_number(text, actual_timestamp)
+    match = _SSOTD_HEAD_CLOCK_RE.search(text)
+    if not match:
+        if "xmlTimeVerification" not in text and re.search(r"\bcurrentShotNumber\s*=\s*\d+", text):
+            return text, False, shot_number
+        raise PagesExportError("SSOTD HEAD clock block is missing or ambiguous")
+    newline = "\r\n" if "\r\n" in text else "\n"
+    replacement = (
+        f"{match.group('indent')}currentShotNumber = {shot_number};{newline}"
+        f"{match.group('indent')}addshots(\"/downloads/ssotd/images/screens\",\"ss\",currentShotNumber);"
+    )
+    rewritten = text[: match.start()] + replacement + text[match.end() :]
+    if "xmlTimeVerification" in rewritten or re.search(r"\.open\s*\(\s*[\"']HEAD", rewritten, re.I):
+        raise PagesExportError("SSOTD derived page still contains a live HEAD clock")
+    return rewritten, True, shot_number
+
+
+_SSOTD_THUMB_ASSIGNMENT_RE = re.compile(
+    r"(?m)^(?P<indent>[ \t]*)thumbnail\s*=\s*shotList\[n\]\.replace\(\s*[\"']\.jpg[\"']\s*,\s*[\"']-thumb\.jpg[\"']\s*\)\s*;?\s*$",
+)
+
+
+def ssotd_thumbnail_fallbacks(
+    route_to_static: dict[str, str],
+    *,
+    base_path: str,
+) -> dict[str, str]:
+    """Return full-image static URLs whose verified thumbnail is absent."""
+
+    fallbacks: dict[str, str] = {}
+    for route, target in sorted(route_to_static.items()):
+        if not re.fullmatch(r"/downloads/ssotd/images/screens/ss\d+\.jpg", route):
+            continue
+        thumb_route = route[:-4] + "-thumb.jpg"
+        if thumb_route not in route_to_static:
+            full_static = target if target.startswith(base_path) else static_url(base_path, route.lstrip("/"))
+            fallbacks[full_static] = full_static
+    return fallbacks
+
+
+def rewrite_ssotd_thumbnail_fallback(
+    text: str,
+    *,
+    route_to_static: dict[str, str],
+    base_path: str,
+) -> tuple[str, bool, dict[str, str]]:
+    """Use a verified full image only when its SSOTD thumbnail is absent."""
+
+    fallbacks = ssotd_thumbnail_fallbacks(route_to_static, base_path=base_path)
+    marker = "__WOW_SSOTD_THUMB_FALLBACK"
+    if marker in text:
+        return text, False, fallbacks
+    if not fallbacks:
+        return text, False, fallbacks
+    match = _SSOTD_THUMB_ASSIGNMENT_RE.search(text)
+    if not match:
+        raise PagesExportError("SSOTD thumbnail assignment is missing or has an unexpected shape")
+    indent = match.group("indent")
+    mapping = json.dumps(fallbacks, ensure_ascii=True, sort_keys=True, separators=(",", ":"))
+    declaration = f"var {marker} = {mapping};"
+    replacement = (
+        f"{indent}{declaration}\n"
+        f"{indent}thumbnail = {marker}[shotList[n]] || shotList[n].replace(\".jpg\",\"-thumb.jpg\");"
+    )
+    rewritten = text[: match.start()] + replacement + text[match.end() :]
+    return rewritten, True, fallbacks
 
 
 def rewrite_iframe_fallbacks(text: str, *, base_url: str, localizer: PagesLocalizer, recorder: Any) -> str:
@@ -1705,7 +1997,12 @@ def generated_related_images_index(base_path: str, overlays: list[dict[str, Any]
         original_url = str(overlay["original_url"])
         capture_date = datetime.strptime(str(overlay["actual_timestamp"]), "%Y%m%d%H%M%S")
         captured = capture_date.strftime("%Y-%m-%d %H:%M:%S UTC")
-        temporal_label = {"baseline_2008": "2008 baseline", "pre_2008": "Earlier capture", "late_2008": "Later 2008 capture"}[str(overlay["temporal_class"])]
+        temporal_label = {
+            "baseline_2008": "2008 baseline",
+            "pre_2008": "Earlier capture",
+            "late_2008": "Later 2008 capture",
+            "post_2008": "Post-2008 capture",
+        }[str(overlay["temporal_class"])]
         cards.append(
             f"<article class=\"related-image-card\" data-temporal-class=\"{html.escape(str(overlay['temporal_class']), quote=True)}\">"
             f"<a href=\"{html.escape(image_url, quote=True)}\"><img loading=\"lazy\" src=\"{html.escape(image_url, quote=True)}\" alt=\"{html.escape(original_url, quote=True)}\"></a>"
@@ -1751,6 +2048,7 @@ def export_pages(
     min_free_bytes: int = DEFAULT_MIN_FREE_BYTES,
     image_source_maps: list[Path] | tuple[Path, ...] = (),
     supplement_image_source_maps: list[Path] | tuple[Path, ...] = (),
+    allow_later_image_supplements: bool = False,
 ) -> dict[str, Any]:
     source_site = source_site.resolve()
     manifest_path = manifest_path.resolve()
@@ -1802,6 +2100,7 @@ def export_pages(
         anchor_timestamp=str(manifest.get("anchor_timestamp") or ""),
         frozen_routes=overlay_routes,
         frozen_static_paths=overlay_static_paths,
+        allow_later_image_supplements=allow_later_image_supplements,
     )
     overlays = primary_overlays + supplement_overlays
     overlay_bytes = primary_overlay_bytes + supplement_overlay_bytes
@@ -1831,6 +2130,14 @@ def export_pages(
         if target_url:
             aliases[alias] = target_url
             alias_routes[alias] = target
+    compatibility_aliases: set[str] = set()
+    for alias, target in COMPATIBILITY_ROUTE_ALIASES.items():
+        target_url = route_to_static.get(target) or aliases.get(target)
+        if not target_url:
+            continue
+        aliases[alias] = target_url
+        alias_routes[alias] = target
+        compatibility_aliases.add(alias)
     # Root is always a real static jump page, rather than an implicit server
     # alias.  /index.xml remains a separate .xml.html HTML entity.
     root_target = aliases.get("/") or route_to_static.get("/index.xml") or route_to_static.get("/info/encyclopedia/index.xml")
@@ -1908,6 +2215,7 @@ def export_pages(
             kind = str(record.get("kind") or "other")
             base_url = str(record.get("source_base_url") or ("http://www.worldofwarcraft.com" + route))
             recorder = mirror.ReferenceRecorder(route, base_url)
+            derivation_notes: list[str] = []
             # A few frozen support placeholders are explicitly typed as
             # generated_placeholder but still carry text/html MIME.  Emit
             # those through the same UTF-8/CSP/banner path so every static
@@ -1915,6 +2223,26 @@ def export_pages(
             if kind in HTML_KINDS or is_html_record(record):
                 text = data.decode(mirror.charset_for(str(record.get("mime") or ""), data), errors="replace")
                 text = mirror.rewrite_html(text, base_url=base_url, localizer=localizer, recorder=recorder, source_sha=source_sha, compat_assets=[])
+                if route == _PVP_FLASH_ROUTE:
+                    text, changed = rewrite_pvp_mini_site(text, route=route, base_path=base_path)
+                    if changed:
+                        derivation_notes.append(
+                            "derived PvP mini-site repair: replaced the obsolete generated subnav and Flash intro "
+                            "with local Archive home/Game Guide links and a static 2007 panel; frozen source unchanged"
+                        )
+                        stats["pvp_mini_site_repaired"] += 1
+                if route == "/downloads/ssotd/index.html":
+                    text, changed, shot_number = rewrite_ssotd_clock(
+                        text,
+                        actual_timestamp=str(record.get("actual_timestamp") or ""),
+                    )
+                    if changed:
+                        derivation_notes.append(
+                            "SSOTD currentShotNumber derived from manifest actual_timestamp "
+                            f"{record.get('actual_timestamp')} UTC using floor(epoch_days) - startDate(12671) = {shot_number}; "
+                            "this does not verify the raw screenshot total"
+                        )
+                        stats["ssotd_clock_repaired"] += 1
                 text = rename_flash_codebase_metadata(text, recorder=recorder)
                 text = rewrite_iframe_fallbacks(text, base_url=base_url, localizer=localizer, recorder=recorder)
                 text = rewrite_inline_scripts(text, base_url=base_url, localizer=localizer, recorder=recorder)
@@ -1931,6 +2259,25 @@ def export_pages(
                 stats["css_derived"] += 1
             elif kind == "js" or (kind == "support" and source.suffix.casefold() in {".js", ".htc"}):
                 text = data.decode(mirror.charset_for(str(record.get("mime") or ""), data), errors="replace")
+                if route == "/shared/wow-com/includes-client/navtree-main.js":
+                    text, changed = rewrite_navtree_community_ids(text)
+                    if changed:
+                        derivation_notes.append(
+                            "derived Community nav repair: Menu1_6 child count 10 -> 11 and Fan Sites Menu1_6_10 -> Menu1_6_11; frozen navtree source unchanged"
+                        )
+                        stats["navtree_community_repaired"] += 1
+                if route == "/new-hp/js/ssotd-screenie.js":
+                    text, changed, fallbacks = rewrite_ssotd_thumbnail_fallback(
+                        text,
+                        route_to_static=route_to_static,
+                        base_path=base_path,
+                    )
+                    if changed:
+                        derivation_notes.append(
+                            "SSOTD thumbnail fallback uses verified full static URLs only for "
+                            f"{len(fallbacks)} shot(s) whose -thumb route is absent; no image payload is invented"
+                        )
+                        stats["ssotd_thumbnail_fallback_repaired"] += 1
                 text = mirror.rewrite_script(text, base_url=base_url, localizer=localizer, recorder=recorder)
                 text = rewrite_root_literals(text, base_url=base_url, localizer=localizer, recorder=recorder)
                 if route == "/__offline/compat.js":
@@ -1972,6 +2319,8 @@ def export_pages(
                 "transformed": bool(derived != data),
                 "reference_counts": dict(recorder.counts),
             }
+            if derivation_notes:
+                item["derivation_reason"] = "; ".join(derivation_notes)
             provenance.append(item)
 
         for overlay in overlays:
@@ -2013,9 +2362,26 @@ def export_pages(
         # request path.  Existing index files are reused rather than replaced.
         existing = {item["output_path"] for item in provenance}
         for alias, target_url in list(aliases.items()):
-            if alias in {"/", "/index.html"} or alias.endswith("/"):
+            if alias in {"/", "/index.html"} or (
+                alias.endswith("/") and alias not in compatibility_aliases
+            ):
                 continue
-            rel = alias.lstrip("/") + ".html" if not alias.casefold().endswith(".html") else alias.lstrip("/")
+            # An XML compatibility alias can point directly at the exported
+            # HTML entity.  Emitting an HTML redirect at the .xml path would
+            # make local preview servers and strict XML clients treat the
+            # alias as an XML document and may trigger MIME/nosniff failures.
+            if (
+                alias in compatibility_aliases
+                and alias.casefold().endswith(".xml")
+                and target_url.casefold().endswith(".xml.html")
+            ):
+                continue
+            if alias.endswith("/"):
+                rel = alias.lstrip("/") + "index.html"
+            elif alias in compatibility_aliases and Path(alias).suffix:
+                rel = alias.lstrip("/")
+            else:
+                rel = alias.lstrip("/") + ".html" if not alias.casefold().endswith(".html") else alias.lstrip("/")
             rel = re.sub(r"/{2,}", "/", rel)
             if not rel or rel in existing:
                 continue
@@ -2025,7 +2391,7 @@ def export_pages(
             out.write_bytes(data)
             route_lookup[alias] = static_url(base_path, rel)
             aliases[alias] = static_url(base_path, rel)
-            provenance.append({"route": alias, "static_url": aliases[alias], "output_path": rel, "source_offline_path": None, "source_manifest_sha256": None, "source_manifest_length": None, "source_sha256": None, "source_length": None, "derived_sha256": sha256_bytes(data), "derived_length": len(data), "mime": "text/html; charset=UTF-8", "kind": "generated_redirect", "role": "route_alias", "transformed": True})
+            provenance.append({"route": alias, "static_url": aliases[alias], "output_path": rel, "source_offline_path": None, "source_manifest_sha256": None, "source_manifest_length": None, "source_sha256": None, "source_length": None, "derived_sha256": sha256_bytes(data), "derived_length": len(data), "mime": "text/html; charset=UTF-8", "kind": "generated_redirect", "role": "route_alias", "transformed": True, "derivation_reason": "explicit compatibility alias for a verified Archived News internal link" if alias in compatibility_aliases else None})
             existing.add(rel)
 
         # Root jump page is deliberately generated after aliases are known.
@@ -2175,9 +2541,14 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--min-free-bytes", type=int, default=DEFAULT_MIN_FREE_BYTES)
     parser.add_argument("--image-source-map", dest="image_source_maps", action="append", type=Path, default=[])
     parser.add_argument("--supplement-image-source-map", dest="supplement_image_source_maps", action="append", type=Path, default=[])
+    parser.add_argument(
+        "--allow-later-image-supplements",
+        action="store_true",
+        help="Accept explicit supplement images captured after 2008 when their source-map class is post_2008",
+    )
     args = parser.parse_args(argv)
     try:
-        result = export_pages(output=args.output, source_site=args.site, manifest_path=args.manifest, base_path=args.base_path, max_bytes=args.max_bytes, min_free_bytes=args.min_free_bytes, image_source_maps=args.image_source_maps, supplement_image_source_maps=args.supplement_image_source_maps)
+        result = export_pages(output=args.output, source_site=args.site, manifest_path=args.manifest, base_path=args.base_path, max_bytes=args.max_bytes, min_free_bytes=args.min_free_bytes, image_source_maps=args.image_source_maps, supplement_image_source_maps=args.supplement_image_source_maps, allow_later_image_supplements=args.allow_later_image_supplements)
     except PagesExportError as exc:
         parser.error(str(exc))
     print(json.dumps(result, ensure_ascii=False, indent=2))

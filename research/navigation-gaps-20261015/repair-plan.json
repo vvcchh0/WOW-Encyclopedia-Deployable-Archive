@@ -1,0 +1,219 @@
+{
+  "schema": "navigation-repair-plan/v1",
+  "generated_at": "2026-10-15T05:13:18.715375+00:00",
+  "anchor_timestamp": "20080512210044",
+  "anchor_date": "2008-05-12",
+  "network_performed": false,
+  "preservation": [
+    "do not modify offline/site or offline/build-manifest.json in this phase",
+    "do not restore login, billing, account, submission, or social forms",
+    "do not treat ignored paths or missing CDX access as proof of no capture"
+  ],
+  "queue": [
+    {
+      "priority": "P0",
+      "action": "publish_or_route-verify-existing-content",
+      "section": "Game Guide",
+      "label": "Archived News",
+      "menu_id": "Menu1_12_1",
+      "source_path": "mirror/20080512/www.worldofwarcraft.com/shared/wow-com/includes-client/navtree.js",
+      "source_line": 647,
+      "original_url": "http://www.worldofwarcraft.com/info/archivednews.html",
+      "route": "/info/archivednews.html",
+      "current_status": "content_route",
+      "export_file": ".scratch/pages-local-maintenance-20261014-v5/info/archivednews.html",
+      "page": {
+        "exists": true,
+        "bytes": 155598,
+        "sha256": "2f1f1b7d23edf048006e552d30035e0f6b94326f4f7c63254a3da7b2a86f5363",
+        "title": "WoW -> News -> Archived News",
+        "offline_missing_refs": 69,
+        "route_rejected_refs": 0,
+        "is_placeholder": false
+      },
+      "acceptance": [
+        "HTTP 200 from the exported route",
+        "title contains Archived News",
+        "old-news links remain navigable",
+        "external and sensitive business links remain static exhibits or explicit missing links"
+      ],
+      "network_evidence": "not required for existing local content; no network performed in this phase"
+    },
+    {
+      "priority": "P0",
+      "action": "publish_or_route-verify-existing-content",
+      "section": "News",
+      "label": "Archived News",
+      "menu_id": "Menu1_1",
+      "source_path": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu3_var.js",
+      "source_line": 135,
+      "original_url": "http://www.worldofwarcraft.com/info/archivednews.html",
+      "route": "/info/archivednews.html",
+      "current_status": "content_route",
+      "export_file": ".scratch/pages-local-maintenance-20261014-v5/info/archivednews.html",
+      "page": {
+        "exists": true,
+        "bytes": 155598,
+        "sha256": "2f1f1b7d23edf048006e552d30035e0f6b94326f4f7c63254a3da7b2a86f5363",
+        "title": "WoW -> News -> Archived News",
+        "offline_missing_refs": 69,
+        "route_rejected_refs": 0,
+        "is_placeholder": false
+      },
+      "acceptance": [
+        "HTTP 200 from the exported route",
+        "title contains Archived News",
+        "old-news links remain navigable",
+        "external and sensitive business links remain static exhibits or explicit missing links"
+      ],
+      "network_evidence": "not required for existing local content; no network performed in this phase"
+    },
+    {
+      "priority": "P0",
+      "action": "publish_or_route-verify-existing-content",
+      "section": "News",
+      "label": "Archived News",
+      "menu_id": "menuNews:2",
+      "source_path": "research/site-recovery-2008/.menu.xml",
+      "source_line": 5,
+      "original_url": "http://www.worldofwarcraft.com/news/wow-news-06-2006.html",
+      "route": "/news/wow-news-06-2006.html",
+      "current_status": "content_route",
+      "export_file": ".scratch/pages-local-maintenance-20261014-v5/news/wow-news-06-2006.html",
+      "page": {
+        "exists": true,
+        "bytes": 115434,
+        "sha256": "1392568adaef6adf8c864b534ee046e94d81df578d4595ee88973d19c2cab92e",
+        "title": "WoW -> Old News -> June, 2006",
+        "offline_missing_refs": 104,
+        "route_rejected_refs": 0,
+        "is_placeholder": false
+      },
+      "acceptance": [
+        "HTTP 200 from the exported route",
+        "title contains Archived News",
+        "old-news links remain navigable",
+        "external and sensitive business links remain static exhibits or explicit missing links"
+      ],
+      "network_evidence": "not required for existing local content; no network performed in this phase"
+    },
+    {
+      "priority": "P1",
+      "action": "repair-derived-navigation-node-id",
+      "menu_id": "main_navigation:Menu1_6_10",
+      "reason": "navtree-main assigns Menu1_6_10 twice; the later Fan Sites assignment overwrites Fan Wallpapers in runtime JavaScript",
+      "evidence": [
+        {
+          "menu_id": "Menu1_6_10",
+          "label": "Fan Wallpapers",
+          "href": "/downloads/wallpapers/fan-wallpapers/",
+          "source_path": "mirror/20080512/www.worldofwarcraft.com/shared/wow-com/includes-client/navtree-main.js",
+          "source_role": "main_navigation",
+          "source_line": 270,
+          "raw_line": "Menu1_6_10=new Array(bulletImg+\"Fan Wallpapers\"+underLine,\"/downloads/wallpapers/fan-wallpapers/\",\"\",0,15,110,\"\",\"\",\"\",\"\",\"\",\"\",-1,-1,-1,\"\",\"\");"
+        },
+        {
+          "menu_id": "Menu1_6_10",
+          "label": "Fan Sites",
+          "href": "/community/fansites.html",
+          "source_path": "mirror/20080512/www.worldofwarcraft.com/shared/wow-com/includes-client/navtree-main.js",
+          "source_role": "main_navigation",
+          "source_line": 271,
+          "raw_line": "Menu1_6_10=new Array(bulletImg+\"Fan Sites\"+underLine,\"/community/fansites.html\",\"\",0,15,110,\"\",\"\",\"\",\"\",\"\",\"\",-1,-1,-1,\"\",\"\");"
+        }
+      ],
+      "acceptance": [
+        "both Fan Wallpapers and Fan Sites are reachable from the derived navigation",
+        "each target route remains covered by existing content or an explicit queued gap",
+        "frozen navtree source bytes are unchanged"
+      ]
+    },
+    {
+      "priority": "P2",
+      "route": "/burningcrusade/trial/index.html",
+      "original_url": "http://www.worldofwarcraft.com/burningcrusade/trial/index.html?referrer=WORLDOFWARCRAFT&source=wowhome&promo=1",
+      "labels": [
+        "Free Trials"
+      ],
+      "menu_sources": [
+        {
+          "menu_id": "Menu1_1_9",
+          "source_path": "mirror/20080512/www.worldofwarcraft.com/shared/wow-com/includes-client/navtree.js",
+          "source_line": 143
+        }
+      ],
+      "current_status": "missing_export_route",
+      "raw_source_candidates": [],
+      "baseline_anchor": "20080512210044",
+      "baseline_date": "2008-05-12",
+      "capture_status": "pending_network_window",
+      "actual_capture_timestamp": null,
+      "cdx_status": "not_attempted_offline",
+      "query_strategy": "exact URL, 2008-05-12 baseline window; record actual capture timestamp; if CDX is unavailable retain queued-unverified",
+      "acceptance": [
+        "source capture has a recorded actual timestamp",
+        "payload MIME/body is verified",
+        "route is represented in a derived preview and route map",
+        "source and derived SHA-256 are recorded"
+      ]
+    },
+    {
+      "priority": "P2",
+      "route": "/pvp/flash-rewards/",
+      "original_url": "http://www.worldofwarcraft.com/pvp/flash-rewards/",
+      "labels": [
+        "PvP Minisite"
+      ],
+      "menu_sources": [
+        {
+          "menu_id": "Menu1_4_6",
+          "source_path": "mirror/20080512/www.worldofwarcraft.com/shared/wow-com/includes-client/navtree-main.js",
+          "source_line": 182
+        }
+      ],
+      "current_status": "missing_export_route",
+      "raw_source_candidates": [],
+      "baseline_anchor": "20080512210044",
+      "baseline_date": "2008-05-12",
+      "capture_status": "pending_network_window",
+      "actual_capture_timestamp": null,
+      "cdx_status": "not_attempted_offline",
+      "query_strategy": "exact URL, 2008-05-12 baseline window; record actual capture timestamp; if CDX is unavailable retain queued-unverified",
+      "acceptance": [
+        "source capture has a recorded actual timestamp",
+        "payload MIME/body is verified",
+        "route is represented in a derived preview and route map",
+        "source and derived SHA-256 are recorded"
+      ]
+    },
+    {
+      "priority": "P2",
+      "route": "/wrath/wallpapers.xml",
+      "original_url": "http://www.worldofwarcraft.com/wrath/wallpapers.xml",
+      "labels": [
+        "Wallpapers"
+      ],
+      "menu_sources": [
+        {
+          "menu_id": "Menu14_2_3",
+          "source_path": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu3_var.js",
+          "source_line": 663
+        }
+      ],
+      "current_status": "missing_export_route",
+      "raw_source_candidates": [],
+      "baseline_anchor": "20080512210044",
+      "baseline_date": "2008-05-12",
+      "capture_status": "pending_network_window",
+      "actual_capture_timestamp": null,
+      "cdx_status": "not_attempted_offline",
+      "query_strategy": "exact URL, 2008-05-12 baseline window; record actual capture timestamp; if CDX is unavailable retain queued-unverified",
+      "acceptance": [
+        "source capture has a recorded actual timestamp",
+        "payload MIME/body is verified",
+        "route is represented in a derived preview and route map",
+        "source and derived SHA-256 are recorded"
+      ]
+    }
+  ]
+}

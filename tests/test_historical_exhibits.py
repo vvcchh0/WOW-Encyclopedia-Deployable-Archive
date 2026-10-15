@@ -55,6 +55,27 @@ class HistoricalExhibitTests(unittest.TestCase):
                 self.assertNotRegex(page, r"(?i)please\s+(?:enter|fill out|provide)")
                 self.assertNotRegex(page, r"https?://")
 
+    def test_trial_selector_is_a_static_exhibit_with_local_return(self) -> None:
+        page = exhibits.transform_derived_page(
+            '<html><body><script src="afftrack.js">setCookies(1)</script>'
+            '<form><input name="email"></form></body></html>',
+            "/burningcrusade/trial/index.html",
+            base_path=self.prefix,
+        )
+        self.assertIn('data-exhibit-route="/burningcrusade/trial/index.html"', page)
+        self.assertIn("2008 World of Warcraft trial selector", page)
+        self.assertIn("Burning Crusade", page)
+        self.assertIn("World of Warcraft", page)
+        self.assertIn("images/", page)
+        self.assertIn("not been recovered", page.casefold())
+        self.assertIn(self.prefix, page)
+        self.assertNotIn("afftrack.js", page.casefold())
+        self.assertNotIn("setcookies", page.casefold())
+        self.assertNotIn("signup.worldofwarcraft.com", page.casefold())
+        self.assertNotRegex(page, r"<\s*(?:form|input|select|textarea|button)\b")
+        self.assertNotRegex(page, r"<\s*img\b")
+        self.assertNotRegex(page, r"https?://")
+
     def test_p1_rewrite_does_not_touch_scripts_or_search_controls(self) -> None:
         source = '''<html><body><form id="topSearch"><input name="searchBox"></form>
 <p>Welcome to the Future Beta Sign-Up Form!</p>

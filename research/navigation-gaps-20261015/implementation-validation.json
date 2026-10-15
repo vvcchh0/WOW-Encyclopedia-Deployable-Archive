@@ -1,0 +1,95 @@
+{
+  "schema": "navigation-implementation-validation/v1",
+  "generated_at": "2026-10-15T05:30:54.5774224Z",
+  "network_performed": false,
+  "whole_site_build": false,
+  "frozen_inputs": {
+    "offline/site": "git diff clean",
+    "offline/build-manifest.json": "git diff clean"
+  },
+  "exporter_repairs": [
+    {
+      "id": "ssotd-capture-clock",
+      "status": "validated",
+      "route": "/downloads/ssotd/index.html",
+      "behavior": "Derives currentShotNumber from the route record actual_timestamp 20080512204328 UTC and startDate 12671, producing 1340; removes the live HEAD Date dependency while preserving pagination and hash behavior.",
+      "source": "tools/export_github_pages.py:788",
+      "tests": [
+        "tests/test_github_pages_export.py::GithubPagesExportTests.test_ssotd_clock_uses_recorded_capture_and_preserves_gallery_contract"
+      ]
+    },
+    {
+      "id": "community-navtree-node-ids",
+      "status": "validated",
+      "route": "/shared/wow-com/includes-client/navtree-main.js",
+      "behavior": "Derived output changes the Community parent child count from 10 to 11 and renames only the later Fan Sites node to Menu1_6_11; Fan Wallpapers remains Menu1_6_10 and frozen source bytes remain unchanged.",
+      "source": "tools/export_github_pages.py:735",
+      "tests": [
+        "tests/test_github_pages_export.py::GithubPagesExportTests.test_navtree_community_fix_is_derived_and_idempotent",
+        "tests/test_github_pages_export.py::GithubPagesExportTests.test_navtree_community_fix_runs_in_export_pipeline"
+      ]
+    },
+    {
+      "id": "archived-news-compatibility-aliases",
+      "status": "validated",
+      "routes": [
+        "/info/basics/dailyquests.shtml",
+        "/info/basics/titles.shtml",
+        "/info/basics/benice.shtml",
+        "/info/credits.shtml",
+        "/info/info/items/armorsets/"
+      ],
+      "behavior": "Only the five verified Archived News near links receive derived redirects or localizer recovery; missing targets are skipped in minimal manifests and no broad extension rewrite is enabled.",
+      "source": "tools/export_github_pages.py:65",
+      "tests": [
+        "tests/test_github_pages_export.py::GithubPagesExportTests.test_archived_news_compatibility_aliases_rewrite_only_verified_targets"
+      ]
+    },
+    {
+      "id": "ssotd-thumbnail-display-fallback",
+      "status": "validated",
+      "route": "/new-hp/js/ssotd-screenie.js",
+      "behavior": "When a verified full SSOTD route exists but its verified -thumb route is absent, the derived thumbnail assignment uses that full static URL; an existing thumbnail remains preferred and unknown shots are untouched.",
+      "source": "tools/export_github_pages.py:836",
+      "tests": [
+        "tests/test_github_pages_export.py::GithubPagesExportTests.test_ssotd_thumbnail_fallback_prefers_thumb_when_verified",
+        "tests/test_github_pages_export.py::GithubPagesExportTests.test_ssotd_thumbnail_fallback_runs_in_export_pipeline"
+      ]
+    }
+  ],
+  "later_image_supplement_policy": {
+    "status": "validated",
+    "default": "2008 cutoff remains enforced",
+    "opt_in": "--allow-later-image-supplements or allow_later_image_supplements=True",
+    "required_class": "post_2008",
+    "primary_baseline": "always remains <= anchor_timestamp",
+    "tests": [
+      "tests/test_pages_image_overlay.py::PagesImageOverlayTests.test_later_supplement_requires_explicit_opt_in_and_post_2008_class"
+    ],
+    "suite_result": "28 tests passed in 3.515s in the preceding local run"
+  },
+  "requested_test_command": {
+    "command": "python -X utf8 -m unittest discover -s tests -p 'test_github_pages_export.py'",
+    "runtime": "C:/Users/17630/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe",
+    "result": "21 tests passed in 2.538s"
+  },
+  "repair_plan_fixture_audit": {
+    "path": "research/navigation-gaps-20261015/repair-plan.json",
+    "fixture_candidate_removed": false,
+    "fixture_candidate_status": "already absent",
+    "remaining_fixture_token_matches": 0,
+    "nonempty_raw_source_candidates": 0,
+    "checked_tokens": [
+      "research/policy-runtime-recovery-20261012/fixture-site/policy/index.html",
+      "policy-runtime-recovery",
+      "fixture-site"
+    ],
+    "note": "The repair plan contains no fixture pseudo candidate or raw_source_candidates entry after cleanup verification. The known fixture is not treated as Free Trials source evidence."
+  },
+  "validation_checks": [
+    "python -X utf8 -m py_compile tools/export_github_pages.py tests/test_pages_image_overlay.py",
+    "git diff --check -- tools/export_github_pages.py tests/test_pages_image_overlay.py",
+    "git diff --quiet -- offline/site offline/build-manifest.json"
+  ],
+  "ready_for_parent_build": true
+}

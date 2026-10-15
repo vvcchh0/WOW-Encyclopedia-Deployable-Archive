@@ -1,0 +1,11 @@
+# Navigation gap v7c build receipt
+
+Verified at `2026-10-15T06:07:22.1723600Z`.
+
+The final independent source tree is [v7c site](../../.scratch/offline-navigation-20261015-v7c/site), with [v7c manifest](../../.scratch/offline-navigation-20261015-v7c/build-manifest.json) and [v7c support](../../.scratch/offline-navigation-20261015-v7c/support). It was built through `tools/offline_mirror.py build` with the frozen URL map/overlay, all existing approved maps, and [effective-source-map-v7c.json](wayback-missing/effective-source-map-v7c.json). The effective map contains the accepted 2008 Trial page and the independently verified pre-2008 PvP page. The original [source-map.json](wayback-missing/source-map.json) remains unchanged and still records the separately researched canonical Wrath page; it was excluded from v7c because the frozen double-slash target already supplies that route family.
+
+The reproduction script is [build_v7c.py](build_v7c.py); it copies the two frozen support assets into the fixed scratch support directory and invokes the same bounded `offline_mirror.py build` inputs.
+
+The build produced 8,306 records and 8,306 routes with both frozen compatibility assets (`/__offline/compat.css`, 1,371 bytes; `__offline/compat.js`, 12,554 bytes). Independent verification found zero missing output files, zero derived hash/length mismatches, and zero duplicate output paths. Trial source `20080402004057` and PvP source `20070115223911` retain their recorded source SHA-256 and byte lengths in the manifest. The frozen `/wrath//wallpapers.xml` record remains the only Wrath wallpapers page record, with capture `20080509072957`, derived SHA-256 `ad124c1a01fc6e01fc9213d296f31ab68eb2813ce74b8d796e83d6c640641b03`, and 16,971 bytes; `/wrath/wallpapers.xml` is absent from this source tree.
+
+The Trial historical exhibit and the XML compatibility alias passed the owned tests; `11 historical exhibit tests OK`, `22 exporter tests OK`, `33 total`, and the owned modules plus [build_v7c.py](build_v7c.py) passed `py_compile`. The alias now maps `/wrath/wallpapers.xml` directly to the exported `.xml.html` entity, so no `.xml` redirect file is generated. No network requests were made during the v7c build or validation. The full reproduction and validation commands are recorded in `v7c-build-receipt.json`.

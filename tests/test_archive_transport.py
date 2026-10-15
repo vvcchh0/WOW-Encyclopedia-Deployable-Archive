@@ -78,6 +78,53 @@ class ArchiveTransportTests(unittest.TestCase):
         self.assertIn("8", direct)
         self.assertIn("10", proxy)
 
+    def test_parse_headers_excludes_connect_only_and_preserves_block_count(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "connect-only.headers"
+            path.write_text(
+                "HTTP/1.1 200 Connection established\r\n"
+                "Proxy-Agent: fixture\r\n\r\n",
+                encoding="iso-8859-1",
+            )
+            headers, status, block_count = transport.parse_headers(path)
+        self.assertEqual(headers, {})
+        self.assertIsNone(status)
+        self.assertEqual(block_count, 1)
+
+    def test_parse_headers_uses_last_non_connect_source_block(self) -> None:
+        fixtures = {
+            404: (
+                "HTTP/1.1 200 Connection established\r\n\r\n"
+                "HTTP/1.1 404 Not Found\r\nContent-Type: text/html\r\n\r\n"
+            ),
+            200: (
+                "HTTP/1.1 200 Connection established\r\n\r\n"
+                "HTTP/1.1 200 OK\r\nContent-Type: image/jpeg\r\n\r\n"
+            ),
+        }
+        for expected_status, text in fixtures.items():
+            with self.subTest(expected_status=expected_status), tempfile.TemporaryDirectory() as tmp:
+                path = Path(tmp) / "response.headers"
+                path.write_text(text, encoding="iso-8859-1")
+                headers, status, block_count = transport.parse_headers(path)
+            self.assertEqual(status, expected_status)
+            self.assertEqual(block_count, 2)
+            self.assertTrue(headers)
+
+    def test_missing_or_invalid_memento_does_not_use_url_timestamp(self) -> None:
+        final_url = "https://web.archive.org/web/20080512212653id_/http://example.test/x.jpg"
+        body = _jpeg()
+        item = {
+            "actual_timestamp": "20080512212653",
+            "cdx_digest": transport.cdx_digest(body),
+            "cdx_length": len(body),
+        }
+        for headers in ({}, {"Memento-Datetime": "not-a-date"}):
+            with self.subTest(headers=headers):
+                self.assertIsNone(transport.memento_timestamp(headers, final_url))
+                validation = transport.validate_replay(item, body, headers, final_url, 0, "image/jpeg")
+                self.assertIsNone(validation["actual_timestamp"])
+
     def test_run_attempt_accepts_only_a_matching_replay(self) -> None:
         body = _jpeg()
         item = {

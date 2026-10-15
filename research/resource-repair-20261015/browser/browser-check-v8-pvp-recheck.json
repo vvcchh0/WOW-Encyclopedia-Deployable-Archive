@@ -1,0 +1,227 @@
+{
+  "schema": "wow-encyclopedia-resource-repair-browser-check/v2",
+  "checkedAt": "2026-10-15T06:34:13.016Z",
+  "baseUrl": "http://127.0.0.1:29004/WOW-Encyclopedia-Deployable-Archive/",
+  "prefix": "/WOW-Encyclopedia-Deployable-Archive/",
+  "expectedScenarioCount": 1,
+  "onlyScenario": "pvp-flash-rewards",
+  "policy": {
+    "browser": "headless Chromium",
+    "allowed": [
+      "same-origin loopback HTTP",
+      "data:",
+      "blob:",
+      "about:blank"
+    ],
+    "blockedBeforeNetwork": [
+      "non-loopback requests",
+      "non-GET/HEAD requests"
+    ],
+    "serviceWorkers": "block",
+    "externalNetwork": "forbidden"
+  },
+  "scenarios": [
+    {
+      "name": "pvp-flash-rewards",
+      "passed": true,
+      "status": 200,
+      "routeAttempts": [
+        {
+          "requestedRoute": "pvp/flash-rewards/",
+          "status": 200,
+          "finalPath": "/WOW-Encyclopedia-Deployable-Archive/pvp/flash-rewards/",
+          "title": "World of Warcraft PvP Mini Site",
+          "visibleTextLength": 350,
+          "visibleTextSample": "Unofficial historical educational preservation (not affiliated with Blizzard) • 2008-05-12 21:00:44 snapshot • no user data collection Archive home | Game Guide 2007 PvP Mini SiteThe original interactive panel depended on Flash; intro.swf has not been recovered. Related Links: Online Privacy Policy ®2004 Blizzard Entertainment. All rights reserved.",
+          "missingPage": false
+        }
+      ],
+      "finalPath": "/WOW-Encyclopedia-Deployable-Archive/pvp/flash-rewards/",
+      "sourceEvidence": {
+        "logical_url": "http://www.worldofwarcraft.com/pvp/flash-rewards/",
+        "original": "http://www.worldofwarcraft.com:80/pvp/flash-rewards/",
+        "local_path": "research/resource-repair-20261015/pvp-pre2008-control/replay/raw/proxy.body",
+        "mime": "text/html",
+        "sha256": "5b7003cd11bf514e9b73517644a295ecec6f08481229c18c6e92889db4e250f3",
+        "content_length": 20761,
+        "actual_timestamp": "20070115223911",
+        "indexed_capture_timestamp": "20070115223911",
+        "http_status": 200,
+        "content_class": "pvp_html_page",
+        "title": "World of Warcraft PvP Mini Site",
+        "temporal_class": "pre_2008",
+        "role": "pvp_pre2008_exact_cdx_replay",
+        "source_map_path": null,
+        "source_url": "http://www.worldofwarcraft.com:80/pvp/flash-rewards/",
+        "requested_url": "https://web.archive.org/web/20070115223911id_/http://www.worldofwarcraft.com:80/pvp/flash-rewards/",
+        "cdx_digest": "P5IHZI3MCNXDRAM2BVGCTXD4WXU7VXNA",
+        "cdx_length": "4806",
+        "supplement_note": "Exact pre-2008 CDX replay; public PvP page bytes only, no dynamic expansion."
+      },
+      "state": {
+        "title": "World of Warcraft PvP Mini Site",
+        "visibleTextLength": 350,
+        "visibleTextSample": "Unofficial historical educational preservation (not affiliated with Blizzard) • 2008-05-12 21:00:44 snapshot • no user data collection Archive home | Game Guide 2007 PvP Mini SiteThe original interactive panel depended on Flash; intro.swf has not been recovered. Related Links: Online Privacy Policy ®2004 Blizzard Entertainment. All rights reserved.",
+        "visibleStaticMarkers": [
+          "Related Links",
+          "Online Privacy Policy",
+          "copyright",
+          "Flash unavailable explanation",
+          "ArchiveHome link",
+          "GameGuide link"
+        ],
+        "bodyMissingMarkers": {
+          "missingRoute": false,
+          "notFound": false,
+          "uncollected": false
+        },
+        "flash": {
+          "objectCount": 0,
+          "embedCount": 0,
+          "paramCount": 0,
+          "movieRefs": [],
+          "embedRefs": [],
+          "flashReferences": [],
+          "pluginNames": [],
+          "pluginDetected": false,
+          "available": false,
+          "execution": "intentionally-static-unavailable",
+          "reason": "The repaired page intentionally presents a static unavailable notice because intro.swf was not recovered."
+        },
+        "fallback": {
+          "markerCount": 1,
+          "texts": [
+            "2007 PvP Mini SiteThe original interactive panel depended on Flash; intro.swf has not been recovered."
+          ],
+          "rects": [
+            {
+              "width": 671,
+              "height": 220,
+              "display": "block",
+              "visibility": "visible",
+              "text": "2007 PvP Mini SiteThe original interactive panel depended on Flash; intro.swf has not been recovered."
+            }
+          ],
+          "visible": true,
+          "mentionsIntroSwf": true,
+          "mentionsUnavailable": true
+        },
+        "navigation": {
+          "links": [
+            {
+              "text": "Archive home",
+              "rawHref": "/WOW-Encyclopedia-Deployable-Archive/",
+              "href": "http://127.0.0.1:29004/WOW-Encyclopedia-Deployable-Archive/",
+              "origin": "http://127.0.0.1:29004",
+              "path": "/WOW-Encyclopedia-Deployable-Archive/",
+              "status": 200,
+              "finalUrl": "http://127.0.0.1:29004/WOW-Encyclopedia-Deployable-Archive/"
+            },
+            {
+              "text": "Game Guide",
+              "rawHref": "/WOW-Encyclopedia-Deployable-Archive/info/index.html",
+              "href": "http://127.0.0.1:29004/WOW-Encyclopedia-Deployable-Archive/info/index.html",
+              "origin": "http://127.0.0.1:29004",
+              "path": "/WOW-Encyclopedia-Deployable-Archive/info/index.html",
+              "status": 200,
+              "finalUrl": "http://127.0.0.1:29004/WOW-Encyclopedia-Deployable-Archive/info/index.html"
+            }
+          ],
+          "archiveHomeLinks": [
+            {
+              "text": "Archive home",
+              "rawHref": "/WOW-Encyclopedia-Deployable-Archive/",
+              "href": "http://127.0.0.1:29004/WOW-Encyclopedia-Deployable-Archive/",
+              "origin": "http://127.0.0.1:29004",
+              "path": "/WOW-Encyclopedia-Deployable-Archive/"
+            }
+          ],
+          "gameGuideLinks": [
+            {
+              "text": "Game Guide",
+              "rawHref": "/WOW-Encyclopedia-Deployable-Archive/info/index.html",
+              "href": "http://127.0.0.1:29004/WOW-Encyclopedia-Deployable-Archive/info/index.html",
+              "origin": "http://127.0.0.1:29004",
+              "path": "/WOW-Encyclopedia-Deployable-Archive/info/index.html"
+            }
+          ],
+          "mailtoLinks": []
+        },
+        "legacyMarkup": {
+          "scriptCount": 1,
+          "scripts": [
+            {
+              "src": "http://127.0.0.1:29004/WOW-Encyclopedia-Deployable-Archive/__offline/pages_runtime.js",
+              "inline": ""
+            }
+          ],
+          "legacyScriptRefs": [],
+          "legacyInlineMarkers": [],
+          "mailtoLinks": []
+        },
+        "dependencies": {
+          "referenceCount": 42,
+          "flashReferences": [],
+          "missingReferenceCount": 4,
+          "missingReferenceRefs": [
+            "/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Fflash-rewards%2F&requested=http%3A%2F%2Fwww.blizzard.com&reason=external-or-uncollected-resource",
+            "/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Fflash-rewards%2F&requested=http%3A%2F%2Fwww.blizzard.com%2F&reason=external-or-uncollected-resource",
+            "/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Fflash-rewards%2F&requested=http%3A%2F%2Fwww.blizzard.com%2Fprivacy.shtml&reason=external-or-uncollected-resource",
+            "/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Fflash-rewards%2F&requested=http%3A%2F%2Fwww.blizzard.com%2Flegalfaq.shtml&reason=external-or-uncollected-resource"
+          ],
+          "resourceEntryCount": 37,
+          "resourceEntries": [
+            "http://127.0.0.1:29004/WOW-Encyclopedia-Deployable-Archive/__offline/pages_runtime.js",
+            "http://127.0.0.1:29004/WOW-Encyclopedia-Deployable-Archive/__offline/route-map.json",
+            "http://127.0.0.1:29004/WOW-Encyclopedia-Deployable-Archive/__offline/compat.css"
+          ],
+          "dependencyResponses": [
+            {
+              "path": "/__offline/pages_runtime.js",
+              "url": "http://127.0.0.1:29004/WOW-Encyclopedia-Deployable-Archive/__offline/pages_runtime.js",
+              "status": 200,
+              "contentType": "application/javascript; charset=utf-8"
+            },
+            {
+              "path": "/__offline/route-map.json",
+              "url": "http://127.0.0.1:29004/WOW-Encyclopedia-Deployable-Archive/__offline/route-map.json",
+              "status": 200,
+              "contentType": "application/json; charset=utf-8"
+            },
+            {
+              "path": "/__offline/compat.css",
+              "url": "http://127.0.0.1:29004/WOW-Encyclopedia-Deployable-Archive/__offline/compat.css",
+              "status": 200,
+              "contentType": "text/css; charset=utf-8"
+            }
+          ],
+          "observed404": [],
+          "requestFailures": [],
+          "blockedExternalDependencies": []
+        }
+      },
+      "requestCount": 40
+    }
+  ],
+  "imageResponses": [],
+  "imageBodies": [],
+  "externalRequests": [],
+  "nonGetRequests": [],
+  "requestFailures": [],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "observed404": [],
+  "failures": [],
+  "passed": true,
+  "counts": {
+    "scenarios": 1,
+    "passedScenarios": 1,
+    "externalRequests": 0,
+    "nonGetRequests": 0,
+    "requestFailures": 0,
+    "consoleErrors": 0,
+    "pageErrors": 0,
+    "observed404": 0,
+    "imageBodies": 0
+  }
+}

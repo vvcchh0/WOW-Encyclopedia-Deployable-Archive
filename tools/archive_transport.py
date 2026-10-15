@@ -296,23 +296,27 @@ def parse_headers(path: Path) -> tuple[dict[str, str], int | None, int]:
         lines = path.read_text(encoding="iso-8859-1", errors="replace").splitlines()
     except OSError:
         return {}, None, 0
-    blocks: list[tuple[dict[str, str], int | None]] = []
+    blocks: list[tuple[dict[str, str], int | None, bool]] = []
     current: dict[str, str] | None = None
     status: int | None = None
+    is_connect = False
     for line in lines:
-        if line.startswith("HTTP/"):
+        stripped = line.strip()
+        if stripped.startswith("HTTP/"):
             if current is not None:
-                blocks.append((current, status))
-            current, status = {}, None
-            fields = line.split()
+                blocks.append((current, status, is_connect))
+            current, status, is_connect = {}, None, False
+            fields = stripped.split()
             if len(fields) > 1 and fields[1].isdigit():
                 status = int(fields[1])
+                is_connect = "connection established" in " ".join(fields[2:]).casefold()
         elif current is not None and ":" in line:
             key, value = line.split(":", 1)
             current[key.strip()] = value.strip()
     if current is not None:
-        blocks.append((current, status))
-    return (*blocks[-1], len(blocks)) if blocks else ({}, None, 0)
+        blocks.append((current, status, is_connect))
+    source_blocks = [block for block in blocks if not block[2]]
+    return (*source_blocks[-1][:2], len(blocks)) if source_blocks else ({}, None, len(blocks))
 
 
 def header(headers: dict[str, str], name: str) -> str | None:
@@ -329,8 +333,7 @@ def memento_timestamp(headers: dict[str, str], final_url: str) -> str | None:
             return parsedate_to_datetime(value).astimezone(timezone.utc).strftime("%Y%m%d%H%M%S")
         except (TypeError, ValueError, OverflowError):
             pass
-    match = re.search(r"/web/(\d{14})", final_url)
-    return match.group(1) if match else None
+    return None
 
 
 def pillow_info(data: bytes) -> dict[str, Any]:

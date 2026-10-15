@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "created_local_date": "2026-10-15",
+  "scope": "Official US MEDIA -> Screenshots / Screenshot of the Day Wayback investigation",
+  "network_policy": {
+    "single_concurrency": true,
+    "minimum_start_interval_seconds": 1.1,
+    "source_request_budget": 25,
+    "body_budget_bytes": 67108864,
+    "per_response_limit_bytes": 8388608,
+    "deadline_seconds": 600,
+    "proxy": "http://127.0.0.1:7890",
+    "transport": "curl.exe through proxy, HTTP/1.1, no automatic redirect follow for source/CDX status",
+    "stop_conditions": [
+      "HTTP 429 or 503",
+      "five consecutive real transport/TLS failures",
+      "source request count reaches 25",
+      "aggregate response body exceeds 64 MiB",
+      "deadline reached"
+    ]
+  },
+  "local_route_evidence": {
+    "entry_relative_href": "/downloads/ssotd/index.html#latest",
+    "source_base_url": "http://www.worldofwarcraft.com/downloads/ssotd/",
+    "entry_source": [
+      "offline/site/new-hp/layout/menu.xml:55-58",
+      "offline/site/shared/wow-com/includes-client/navtree-main.js:283-286",
+      "offline/approved-pages-recovery-map.json route=/downloads/ssotd/index.html, source_base_url=http://www.worldofwarcraft.com/downloads/ssotd/"
+    ],
+    "image_path_rule": "offline/site/downloads/ssotd/index.html:63-83 and offline/site/new-hp/js/ssotd-screenie.js:432-468 construct /downloads/ssotd/images/screens/ssN.jpg and ssN-thumb.jpg.",
+    "observed_host_variants": [
+      "www.worldofwarcraft.com",
+      "www.worldofwarcraft.com:80",
+      "worldofwarcraft.com",
+      "worldofwarcraft.com:80",
+      "https://www.worldofwarcraft.com",
+      "https://worldofwarcraft.com"
+    ],
+    "variant_basis": "The canonical trailing-slash CDX rows and screens prefix rows returned these originals; no unobserved path or host variant is proposed."
+  },
+  "planned_sequence": [
+    {
+      "step": "entry_all_time",
+      "target": "http://www.worldofwarcraft.com/downloads/ssotd/",
+      "matchType": "exact",
+      "time_scope": "omit from/to first",
+      "fields": "timestamp,original,statuscode,mimetype,digest,length",
+      "pagination": "showResumeKey=true, limit=1000; inspect complete body for resume metadata",
+      "acceptance": "source HTTP status parsed after CONNECT block; body must be valid JSON before interpreting rows"
+    },
+    {
+      "step": "entry_2006_2010_control",
+      "target": "http://www.worldofwarcraft.com/downloads/ssotd/",
+      "matchType": "exact",
+      "time_scope": "from=2006,to=2010",
+      "purpose": "year-range control for the entry-page history; compare with all-time query",
+      "acceptance": "valid JSON rows; an empty result is scoped to this exact target and range"
+    },
+    {
+      "step": "entry_index_exact_control",
+      "target": "http://www.worldofwarcraft.com/downloads/ssotd/index.html",
+      "matchType": "exact",
+      "time_scope": "from=2006,to=2010",
+      "owner": "parent-query",
+      "result": "HTTP 200 valid JSON []",
+      "interpretation": "Do not generalize this empty exact result to the trailing-slash source identity."
+    },
+    {
+      "step": "screens_prefix_first_page",
+      "target": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/",
+      "matchType": "prefix",
+      "time_scope": "omit from/to",
+      "pagination": "ordinary limit=1000, showResumeKey=true; filter complete rows by 14-digit timestamp and six-field row shape",
+      "actual_result": "1000 data rows plus trailing resume metadata; first page is incomplete"
+    },
+    {
+      "step": "screens_prefix_resume_page",
+      "target": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/",
+      "matchType": "prefix",
+      "pagination": "resumeKey from the canonical first page; one follow-up page",
+      "actual_result": "1000 data rows plus another resume token; entire prefix remains incomplete",
+      "stop_reason": "window deadline and bounded image-sample requirement"
+    },
+    {
+      "step": "filtered_image_prefix",
+      "target": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/",
+      "matchType": "prefix",
+      "filters": [
+        "statuscode:200",
+        "mimetype:image/.*"
+      ],
+      "actual_result": "HTTP 200, two image rows: ss1314.jpg and ss1336.jpg",
+      "purpose": "avoid treating 301/warc/revisit rows as image payloads"
+    },
+    {
+      "step": "exact_real_image_series",
+      "target": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1314.jpg",
+      "matchType": "exact",
+      "time_scope": "omit from/to",
+      "selection_basis": "first real status-200 image row supplied by the screens prefix response",
+      "actual_result": "nine CDX rows, one status-200 image row at 20100810173046; later rows are redirects or warc/revisit",
+      "temporal_priority": "2008 was preferred, but this evidence-backed target has its valid source image at 2010; no 2008 row is invented"
+    },
+    {
+      "step": "capture_date_derived_control",
+      "targets": [
+        "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1340.jpg",
+        "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1340-thumb.jpg"
+      ],
+      "basis": "2008-05-12 page date minus frozen startDate=12671 gives 1340",
+      "actual_result": "both valid JSON []",
+      "interpretation": "capture-date-derived probe only; not an inferred total or source existence claim"
+    }
+  ],
+  "query_budget_accounting": {
+    "actual_source_requests": 18,
+    "remaining_from_25": 7,
+    "aggregate_response_body_bytes": 1183008,
+    "first_window_requests": 12,
+    "resume_and_exact_requests": 3,
+    "extended_replay_and_filtered_requests": 3,
+    "request_receipts": [
+      "research/media-screenshots-20261015/wayback-window/request-records.json",
+      "research/media-screenshots-20261015/wayback-window/request-records-reconciled.json",
+      "research/media-screenshots-20261015/wayback-window/extended-summary.json",
+      "research/media-screenshots-20261015/wayback-window/raw/"
+    ],
+    "known_receipt_gap": "The original request-records.json is preserved unchanged; request-records-reconciled.json adds raw-derived records 13-15 so all 18 request indices are available in one auditable receipt."
+  },
+  "replay_acceptance": {
+    "required": [
+      "source/Memento response status 200 after excluding CONNECT 200",
+      "image/jpeg content type",
+      "JPEG magic",
+      "Pillow decode",
+      "CDX digest match",
+      "Memento timestamp matches requested capture"
+    ],
+    "completed": [
+      {
+        "original": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1314.jpg",
+        "capture": "20100810173046",
+        "http_status": 200,
+        "bytes": 77208,
+        "dimensions": "1024x640",
+        "digest_match": true,
+        "memento_datetime": "Tue, 10 Aug 2010 17:30:46 GMT"
+      },
+      {
+        "original": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1336.jpg",
+        "capture": "20100602102329",
+        "http_status": 200,
+        "bytes": 150293,
+        "dimensions": "1200x750",
+        "digest_match": true,
+        "memento_datetime": "Wed, 02 Jun 2010 10:23:29 GMT"
+      }
+    ],
+    "raw_validation": "research/media-screenshots-20261015/wayback-window/*_replay_validation.json"
+  },
+  "failure_interpretation": {
+    "cdx_http_200_empty_body": "not an empty index; retain as unavailable/invalid JSON response",
+    "cdx_valid_json_empty_array": "empty only for that exact URL, query parameters, and time range",
+    "status_301_or_302": "redirect index evidence, not image source HTTP 200",
+    "status_warc_revisit": "capture index evidence only until replay validation",
+    "connect_200": "proxy tunnel status, not source HTTP status",
+    "timeout_or_tls_failure": "transport failure; never collapse to zero captures"
+  },
+  "future_stop_condition": "Do not issue more requests in this window. A future window may follow the second resume token or select a 2008 exact image only when a CDX row supplies that path."
+}

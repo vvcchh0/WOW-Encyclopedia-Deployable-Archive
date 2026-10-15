@@ -52,6 +52,8 @@ P1_ROUTES = frozenset(
     }
 )
 
+TRIAL_ROUTE = "/burningcrusade/trial/index.html"
+
 _HISTORICAL_ACCOUNT_TARGETS = {
     ("signup.worldofwarcraft.com", "/"): "Historical: Create Account",
     ("www.worldofwarcraft.com", "/account/"): "Historical: Manage Account",
@@ -108,6 +110,38 @@ def _local(base_path: str, route: str) -> str:
     if prefix and not prefix.endswith("/"):
         prefix += "/"
     return prefix + route.lstrip("/")
+
+
+def _render_trial_exhibit(base_path: str, route: str) -> str:
+    """Render the captured 2008 trial selector as a static local exhibit.
+
+    The source capture is intentionally kept as the original binary.  This
+    page describes the two choices shown by that capture while removing its
+    retired account target, tracking script, cookie initializer, and image
+    dependencies that were not recovered with the page.
+    """
+
+    home = _local(base_path, "/")
+    return f'''<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2008 World of Warcraft Trial Selector — Historical Exhibit</title>
+<meta name="description" content="Historical exhibit of the 2008 World of Warcraft trial selector">
+<style>{_EXHIBIT_CSS}</style></head><body>
+<main class="historical-exhibit" data-exhibit-route="{html.escape(route, quote=True)}">
+<div class="kicker">2008 archive · Historical exhibit</div>
+<h1>2008 World of Warcraft trial selector</h1>
+<p class="notice">This page preserves the captured trial selector as a static historical exhibit. The former trial service and its account destinations are retired.</p>
+<p>The capture presented two side-by-side choices for visitors who wanted to learn about a ten-day trial:</p>
+<div class="exhibit-links" aria-label="Choices shown in the 2008 capture">
+  <div class="exhibit-link"><strong>Burning Crusade</strong><br><span>The left-hand choice in the captured selector.</span></div>
+  <div class="exhibit-link"><strong>World of Warcraft</strong><br><span>The right-hand choice in the captured selector.</span></div>
+</div>
+<h2>What remains missing</h2>
+<p>The split-panel and footer artwork referenced under <code>images/</code> has not been recovered.</p>
+<p>Registration is unavailable in this historical exhibit.</p>
+<p class="return"><a href="{html.escape(home, quote=True)}">Return to the local archive home</a></p>
+</main></body></html>'''
 
 
 def _p0_shell(*, base_path: str, route: str, title: str, heading: str, intro: str, body: str) -> str:
@@ -654,11 +688,13 @@ def _disable_story_submission_scripts(text: str) -> str:
 
 
 def transform_derived_page(text: str, route: str, *, base_path: str = "") -> str:
-    """Apply P0 replacement first, then the narrow P1 historical pass."""
+    """Apply route-specific replacements, then the narrow P1 historical pass."""
 
     if is_historical_exhibit_route(route):
         return render_historical_exhibit(text, route, base_path=base_path)
     normalized_route = "/" + route.lstrip("/")
+    if normalized_route == TRIAL_ROUTE:
+        return _render_trial_exhibit(base_path, TRIAL_ROUTE)
     rewritten = transform_p1_page(
         rewrite_historical_account_links(text, base_path=base_path), route
     )

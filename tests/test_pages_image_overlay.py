@@ -211,6 +211,112 @@ class PagesImageOverlayTests(unittest.TestCase):
             with self.assertRaises(pages.PagesExportError):
                 pages.export_pages(source_site=base / "offline/site", manifest_path=manifest, output=base / "pages", workspace_root=base, min_free_bytes=0, image_source_maps=[source_map])
 
+    def test_later_supplement_requires_explicit_opt_in_and_post_2008_class(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            base, _site, manifest = self._fixture(Path(tmp))
+            source_map = self._map(
+                base,
+                [
+                    {
+                        "name": "ss1314.jpg",
+                        "logical_url": "http://www.wow-europe.com/screens/ss1314.jpg",
+                        "original": "http://www.wow-europe.com/screens/ss1314.jpg",
+                    }
+                ],
+            )
+            payload = json.loads(source_map.read_text(encoding="utf-8"))
+            payload["items"][0]["actual_timestamp"] = "20100810173046"
+            payload["items"][0]["indexed_capture_timestamp"] = "20100810173046"
+            payload["items"][0]["temporal_class"] = "post_2008"
+            source_map.write_text(json.dumps(payload), encoding="utf-8")
+
+            with self.assertRaisesRegex(pages.PagesExportError, "image supplement capture is after 2008"):
+                pages.export_pages(
+                    source_site=base / "offline/site",
+                    manifest_path=manifest,
+                    output=base / "pages-default",
+                    workspace_root=base,
+                    min_free_bytes=0,
+                    supplement_image_source_maps=[source_map],
+                )
+
+            output = base / "pages-opt-in"
+            result = pages.export_pages(
+                source_site=base / "offline/site",
+                manifest_path=manifest,
+                output=output,
+                workspace_root=base,
+                min_free_bytes=0,
+                supplement_image_source_maps=[source_map],
+                allow_later_image_supplements=True,
+            )
+            self.assertEqual(result["stats"]["supplement_image_overlay_records"], 1)
+            provenance = json.loads((output / "export-provenance.json").read_text(encoding="utf-8"))
+            overlay = next(item for item in provenance["files"] if item.get("role") == "image_overlay")
+            self.assertEqual(overlay["actual_capture_timestamp"], "20100810173046")
+            self.assertEqual(overlay["indexed_capture_timestamp"], "20100810173046")
+            self.assertEqual(overlay["temporal_class"], "post_2008")
+            self.assertNotEqual(overlay["temporal_class"], "baseline_2008")
+            related = (output / "__offline/related-images/index.html").read_text(encoding="utf-8")
+            self.assertIn('data-temporal-class="post_2008"', related)
+            self.assertIn("Post-2008 capture", related)
+
+        with tempfile.TemporaryDirectory() as tmp:
+            base, _site, manifest = self._fixture(Path(tmp))
+            source_map = self._map(
+                base,
+                [
+                    {
+                        "name": "ss1336.jpg",
+                        "logical_url": "http://www.wow-europe.com/screens/ss1336.jpg",
+                        "original": "http://www.wow-europe.com/screens/ss1336.jpg",
+                    }
+                ],
+            )
+            payload = json.loads(source_map.read_text(encoding="utf-8"))
+            payload["items"][0]["actual_timestamp"] = "20100602102329"
+            payload["items"][0]["indexed_capture_timestamp"] = "20100602102329"
+            payload["items"][0]["temporal_class"] = "late_2008"
+            source_map.write_text(json.dumps(payload), encoding="utf-8")
+            with self.assertRaisesRegex(pages.PagesExportError, "temporal_class does not match capture date"):
+                pages.export_pages(
+                    source_site=base / "offline/site",
+                    manifest_path=manifest,
+                    output=base / "pages-wrong-class",
+                    workspace_root=base,
+                    min_free_bytes=0,
+                    supplement_image_source_maps=[source_map],
+                    allow_later_image_supplements=True,
+                )
+
+        with tempfile.TemporaryDirectory() as tmp:
+            base, _site, manifest = self._fixture(Path(tmp))
+            source_map = self._map(
+                base,
+                [
+                    {
+                        "name": "primary-2010.jpg",
+                        "logical_url": "http://www.worldofwarcraft.com/screens/primary-2010.jpg",
+                        "original": "http://www.worldofwarcraft.com/screens/primary-2010.jpg",
+                    }
+                ],
+            )
+            payload = json.loads(source_map.read_text(encoding="utf-8"))
+            payload["items"][0]["actual_timestamp"] = "20100810173046"
+            payload["items"][0]["indexed_capture_timestamp"] = "20100810173046"
+            payload["items"][0]["temporal_class"] = "post_2008"
+            source_map.write_text(json.dumps(payload), encoding="utf-8")
+            with self.assertRaisesRegex(pages.PagesExportError, "outside the 2008 baseline"):
+                pages.export_pages(
+                    source_site=base / "offline/site",
+                    manifest_path=manifest,
+                    output=base / "pages-primary-2010",
+                    workspace_root=base,
+                    min_free_bytes=0,
+                    image_source_maps=[source_map],
+                    allow_later_image_supplements=True,
+                )
+
     def test_overlay_url_rejects_decoded_path_tricks(self) -> None:
         unsafe = (
             "/gallery/%5Cescape.jpg",

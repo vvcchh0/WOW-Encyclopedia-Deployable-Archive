@@ -11,6 +11,7 @@ import tempfile
 import unittest
 from unittest import mock
 from types import SimpleNamespace
+from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT / "tools") not in sys.path:
@@ -129,6 +130,477 @@ class GithubPagesExportTests(unittest.TestCase):
             self.assertIn("window.__WOWPages.mapCssImages", cascade)
             self.assertIn('String(topicsArray[topicsArray[document.title].parentString].linkString).split("/").pop()', cascade)
             self.assertEqual((site / "index.xml").read_text(encoding="utf-8").split("<meta", 1)[0], "<html><head>")
+
+    def test_navtree_community_fix_is_derived_and_idempotent(self) -> None:
+        source_path = ROOT / "mirror/20080512/www.worldofwarcraft.com/shared/wow-com/includes-client/navtree-main.js"
+        frozen = source_path.read_bytes()
+        source = frozen.decode("utf-8", errors="replace")
+        derived, changed = pages.rewrite_navtree_community_ids(source)
+        self.assertTrue(changed)
+        self.assertRegex(derived, r'Menu1_6=new Array\([^\r\n]*?,"/community/","",11,')
+        self.assertIn('Menu1_6_10=new Array(bulletImg+"Fan Wallpapers"', derived)
+        self.assertIn('Menu1_6_11=new Array(bulletImg+"Fan Sites"', derived)
+        self.assertEqual(pages.rewrite_navtree_community_ids(derived), (derived, False))
+        self.assertEqual(source_path.read_bytes(), frozen)
+
+    def test_navtree_community_fix_runs_in_export_pipeline(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            base, site, manifest = self._fixture(Path(tmp))
+            source_path = ROOT / "mirror/20080512/www.worldofwarcraft.com/shared/wow-com/includes-client/navtree-main.js"
+            frozen = source_path.read_bytes()
+            nav = site / "shared/wow-com/includes-client/navtree-main.js"
+            nav.parent.mkdir(parents=True, exist_ok=True)
+            nav.write_bytes(frozen)
+            payload = json.loads(manifest.read_text(encoding="utf-8"))
+            payload["files"].append({
+                "route": "/shared/wow-com/includes-client/navtree-main.js",
+                "output_path": "offline/site/shared/wow-com/includes-client/navtree-main.js",
+                "derived_sha256": hashlib.sha256(frozen).hexdigest(),
+                "derived_length": len(frozen),
+                "mime": "application/javascript",
+                "kind": "js",
+                "source_base_url": "http://www.worldofwarcraft.com/shared/wow-com/includes-client/navtree-main.js",
+            })
+            for route in ("/downloads/wallpapers/fan-wallpapers/index.html", "/community/fansites.html"):
+                target = site / route.lstrip("/")
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target_data = b"<html><body>fan target</body></html>"
+                target.write_bytes(target_data)
+                payload["files"].append({
+                    "route": route,
+                    "output_path": "offline/site/" + route.lstrip("/"),
+                    "derived_sha256": hashlib.sha256(target_data).hexdigest(),
+                    "derived_length": len(target_data),
+                    "mime": "text/html; charset=UTF-8",
+                    "kind": "html",
+                    "source_base_url": "http://www.worldofwarcraft.com" + route,
+                })
+                payload["origin_index"]["www.worldofwarcraft.com" + route] = route
+            payload["route_aliases"]["/downloads/wallpapers/fan-wallpapers/"] = "/downloads/wallpapers/fan-wallpapers/index.html"
+            payload["origin_index"]["www.worldofwarcraft.com/shared/wow-com/includes-client/navtree-main.js"] = "/shared/wow-com/includes-client/navtree-main.js"
+            manifest.write_text(json.dumps(payload), encoding="utf-8")
+            pages.export_pages(
+                source_site=site,
+                manifest_path=manifest,
+                output=base / "pages",
+                workspace_root=base,
+                max_bytes=500_000_000,
+                min_free_bytes=0,
+            )
+            exported = (base / "pages/shared/wow-com/includes-client/navtree-main.js").read_text(encoding="utf-8")
+            self.assertRegex(exported, r'Menu1_6=new Array\([^\r\n]*?11,')
+            self.assertIn('Menu1_6_10=new Array(bulletImg+"Fan Wallpapers"', exported)
+            self.assertIn('Menu1_6_11=new Array(bulletImg+"Fan Sites"', exported)
+            self.assertIn('/WOW-Encyclopedia-Deployable-Archive/downloads/wallpapers/fan-wallpapers/', exported)
+            self.assertIn('/WOW-Encyclopedia-Deployable-Archive/community/fansites.html', exported)
+            provenance = json.loads((base / "pages/export-provenance.json").read_text(encoding="utf-8"))
+            item = next(row for row in provenance["files"] if row.get("route") == "/shared/wow-com/includes-client/navtree-main.js")
+            self.assertIn("Menu1_6_10 -> Menu1_6_11", item["derivation_reason"])
+            self.assertEqual(nav.read_bytes(), frozen)
+
+    def test_pvp_mini_site_rewrite_matches_real_source_after_mirror(self) -> None:
+        source_path = ROOT / ".scratch/offline-navigation-20261015-v7c/site/pvp/flash-rewards"
+        if not source_path.is_file():
+            self.skipTest("v7c PvP source is not present in this checkout")
+        frozen = source_path.read_bytes()
+        source = frozen.decode("utf-8", errors="replace")
+        route = "/pvp/flash-rewards/"
+        base_url = "http://www.worldofwarcraft.com" + route
+        base_path = pages.DEFAULT_BASE_PATH
+        placeholder_routes = {
+            route_name: base_path + route_name.lstrip("/")
+            for route_name in (
+                "/__offline/missing-image.svg",
+                "/__offline/empty.js",
+                "/__offline/empty.css",
+                "/__offline/missing.html",
+            )
+        }
+        localizer = pages.PagesLocalizer(
+            route_to_static=placeholder_routes,
+            aliases={},
+            origin_index={},
+            base_path=base_path,
+        )
+        recorder = pages.mirror.ReferenceRecorder(route, base_url)
+        mirrored = pages.mirror.rewrite_html(
+            source,
+            base_url=base_url,
+            localizer=localizer,
+            recorder=recorder,
+            source_sha=hashlib.sha256(frozen).hexdigest(),
+            compat_assets=[],
+        )
+        derived, changed = pages.rewrite_pvp_mini_site(
+            mirrored,
+            route=route,
+            base_path=base_path,
+        )
+        self.assertTrue(changed)
+        self.assertIn("ss-border-top-bg.gif", derived)
+        self.assertIn("ss-border-left.gif", derived)
+        self.assertIn("offline-pvp-mini-nav", derived)
+        self.assertIn(base_path, derived)
+        self.assertIn(base_path + "info/index.html", derived)
+        self.assertIn("2007 PvP Mini Site", derived)
+        self.assertIn('data-archive-flash-unavailable="true"', derived)
+        self.assertIn("intro.swf", derived)
+        self.assertIn("has not been recovered", derived)
+        self.assertNotIn("<!---Subnav----->", derived)
+        self.assertNotIn("printSubNav2", derived)
+        self.assertNotIn("Menu1", derived)
+        self.assertNotIn("document.write", derived)
+        self.assertNotIn("mailto:", derived.casefold())
+        self.assertNotRegex(derived, r"<script\b")
+        self.assertNotRegex(derived, r"<(?:object|embed)\b")
+        self.assertNotIn("getflashplayer", derived.casefold())
+        self.assertEqual(source_path.read_bytes(), frozen)
+
+        for candidate_route, candidate in (
+            ("/other/route/", source),
+            (route, source.replace("</object>", "", 1)),
+            (route, source.replace("<!---Subnav----->", "", 1)),
+        ):
+            unchanged, candidate_changed = pages.rewrite_pvp_mini_site(
+                candidate,
+                route=candidate_route,
+                base_path=base_path,
+            )
+            self.assertFalse(candidate_changed)
+            self.assertEqual(unchanged, candidate)
+
+    def test_pvp_mini_site_rewrite_runs_in_pipeline_and_records_reason(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            base, site, manifest = self._fixture(Path(tmp))
+            source = """<html><head><title>World of Warcraft PvP Mini Site</title></head>
+<body><div id="static-frame" style="background:url('/shared/screenshots/borders/ss-border-top-bg.gif')">
+<img src="/shared/screenshots/borders/ss-border-left.gif" alt="frame">
+<!---Subnav----->
+<script>var Menu1 = []; document.write('<a href=\"mailto:old@example.test\">old</a>');</script>
+<center><table><tr><td>
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" id="intro">
+<param name="movie" value="intro.swf"><embed src="intro.swf" pluginspage="http://www.macromedia.com/go/getflashplayer"></object>
+</td></tr></table></center>
+<script>document.write('mailto:old@example.test');</script></div></body></html>""".encode("utf-8")
+            source_path = site / "pvp/flash-rewards"
+            source_path.parent.mkdir(parents=True, exist_ok=True)
+            source_path.write_bytes(source)
+            payload = json.loads(manifest.read_text(encoding="utf-8"))
+            route = "/pvp/flash-rewards/"
+            payload["files"].append({
+                "route": route,
+                "output_path": "offline/site/pvp/flash-rewards",
+                "derived_sha256": hashlib.sha256(source).hexdigest(),
+                "derived_length": len(source),
+                "mime": "text/html; charset=UTF-8",
+                "kind": "html",
+                "source_base_url": "http://www.worldofwarcraft.com" + route,
+            })
+            payload["origin_index"]["www.worldofwarcraft.com" + route] = route
+            manifest.write_text(json.dumps(payload), encoding="utf-8")
+            result = pages.export_pages(
+                source_site=site,
+                manifest_path=manifest,
+                output=base / "pages",
+                workspace_root=base,
+                max_bytes=500_000_000,
+                min_free_bytes=0,
+            )
+            exported = (base / "pages/pvp/flash-rewards/index.html").read_text(encoding="utf-8")
+            self.assertIn('id="static-frame"', exported)
+            self.assertIn(pages.DEFAULT_BASE_PATH, exported)
+            self.assertIn(pages.DEFAULT_BASE_PATH + "info/index.html", exported)
+            self.assertIn("2007 PvP Mini Site", exported)
+            self.assertIn('data-archive-flash-unavailable="true"', exported)
+            self.assertNotIn("mailto:", exported.casefold())
+            self.assertNotRegex(exported, r"<(?:object|embed)\b")
+            self.assertNotIn("getflashplayer", exported.casefold())
+            self.assertEqual(result["stats"]["pvp_mini_site_repaired"], 1)
+            provenance = json.loads((base / "pages/export-provenance.json").read_text(encoding="utf-8"))
+            item = next(row for row in provenance["files"] if row.get("route") == route)
+            self.assertIn("derived PvP mini-site repair", item["derivation_reason"])
+            self.assertEqual(source_path.read_bytes(), source)
+
+    def test_ssotd_clock_uses_recorded_capture_and_preserves_gallery_contract(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            base, site, manifest = self._fixture(Path(tmp))
+            page = site / "downloads/ssotd/index.html"
+            page.parent.mkdir(parents=True, exist_ok=True)
+            source = """<html><body><span id="pageNum"></span><div id="galleryPictures"></div>
+<script>
+startDate = 12671;
+function linkHere() { document.location.href = "#" + (currentShotNumber - nowViewing); }
+shotsPerPage = 12;
+function ThumbSize(size) { shotsPerPage = (size=="sixteen")?16:(size=="twelve")?12:9; }
+function checkRequestHeader()
+{
+    xmlServerDate = new Date(xmlTimeVerification.getResponseHeader("Date"));
+    currentShotNumber = Math.floor(Math.floor(Math.floor(Math.floor(eval(xmlServerDate.getTime())/1000)/60)/60)/24) - startDate;
+    addshots("/downloads/ssotd/images/screens","ss",currentShotNumber);
+}
+var xmlTimeVerification = new XMLHttpRequest();
+xmlTimeVerification.onreadystatechange = checkRequestHeader;
+xmlTimeVerification.open("HEAD","anachronos.xml",true);
+xmlTimeVerification.send(null);
+</script></body></html>""".replace("\n", "\r\n")
+            data = source.encode("utf-8")
+            page.write_bytes(data)
+            payload = json.loads(manifest.read_text(encoding="utf-8"))
+            payload["files"].append({
+                "route": "/downloads/ssotd/index.html",
+                "output_path": "offline/site/downloads/ssotd/index.html",
+                "derived_sha256": hashlib.sha256(data).hexdigest(),
+                "derived_length": len(data),
+                "mime": "text/html; charset=UTF-8",
+                "kind": "html",
+                "source_base_url": "http://www.worldofwarcraft.com/downloads/ssotd/",
+                "actual_timestamp": "20080512204328",
+            })
+            payload["origin_index"]["www.worldofwarcraft.com/downloads/ssotd/index.html"] = "/downloads/ssotd/index.html"
+            manifest.write_text(json.dumps(payload), encoding="utf-8")
+            pages.export_pages(
+                source_site=site,
+                manifest_path=manifest,
+                output=base / "pages",
+                workspace_root=base,
+                max_bytes=500_000_000,
+                min_free_bytes=0,
+            )
+            exported = (base / "pages/downloads/ssotd/index.html").read_text(encoding="utf-8")
+            self.assertIn("currentShotNumber = 1340;", exported)
+            self.assertIn(
+                'addshots("/WOW-Encyclopedia-Deployable-Archive/downloads/ssotd/images/screens","ss",currentShotNumber);',
+                exported,
+            )
+            self.assertNotIn("xmlTimeVerification", exported)
+            self.assertNotIn('open("HEAD"', exported)
+            self.assertIn('document.location.href = "#" + (currentShotNumber - nowViewing);', exported)
+            self.assertIn('shotsPerPage = 12;', exported)
+            self.assertIn('(size=="sixteen")?16:(size=="twelve")?12:9', exported)
+            provenance = json.loads((base / "pages/export-provenance.json").read_text(encoding="utf-8"))
+            item = next(row for row in provenance["files"] if row.get("route") == "/downloads/ssotd/index.html")
+            self.assertIn("actual_timestamp 20080512204328 UTC", item["derivation_reason"])
+            self.assertIn("does not verify the raw screenshot total", item["derivation_reason"])
+            self.assertEqual(page.read_bytes(), data)
+
+    def test_ssotd_thumbnail_fallback_prefers_thumb_when_verified(self) -> None:
+        base = pages.DEFAULT_BASE_PATH
+        full_missing_thumb = "/downloads/ssotd/images/screens/ss1314.jpg"
+        full_with_thumb = "/downloads/ssotd/images/screens/ss1336.jpg"
+        thumb_with_full = "/downloads/ssotd/images/screens/ss1336-thumb.jpg"
+        route_to_static = {
+            full_missing_thumb: base + full_missing_thumb.lstrip("/"),
+            full_with_thumb: base + full_with_thumb.lstrip("/"),
+            thumb_with_full: base + thumb_with_full.lstrip("/"),
+        }
+        source = """function printPages() {
+    thumbnail = shotList[n].replace(".jpg","-thumb.jpg");
+    document.getElementById("galleryPictures").innerHTML = thumbnail;
+}"""
+        rewritten, changed, fallbacks = pages.rewrite_ssotd_thumbnail_fallback(
+            source,
+            route_to_static=route_to_static,
+            base_path=base,
+        )
+        self.assertTrue(changed)
+        self.assertEqual(
+            fallbacks,
+            {route_to_static[full_missing_thumb]: route_to_static[full_missing_thumb]},
+        )
+        self.assertIn("__WOW_SSOTD_THUMB_FALLBACK[shotList[n]] || shotList[n].replace", rewritten)
+        self.assertIn(route_to_static[full_missing_thumb], rewritten)
+        self.assertNotIn(route_to_static[full_with_thumb], rewritten)
+        self.assertEqual(
+            pages.rewrite_ssotd_thumbnail_fallback(
+                rewritten,
+                route_to_static=route_to_static,
+                base_path=base,
+            ),
+            (rewritten, False, fallbacks),
+        )
+
+    def test_ssotd_thumbnail_fallback_runs_in_export_pipeline(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            base, site, manifest = self._fixture(Path(tmp))
+            script = site / "new-hp/js/ssotd-screenie.js"
+            script.parent.mkdir(parents=True, exist_ok=True)
+            script_data = b'function printPages(){\n    thumbnail = shotList[n].replace(".jpg","-thumb.jpg");\n}'
+            script.write_bytes(script_data)
+            payload = json.loads(manifest.read_text(encoding="utf-8"))
+            payload["files"].append({
+                "route": "/new-hp/js/ssotd-screenie.js",
+                "output_path": "offline/site/new-hp/js/ssotd-screenie.js",
+                "derived_sha256": hashlib.sha256(script_data).hexdigest(),
+                "derived_length": len(script_data),
+                "mime": "application/javascript",
+                "kind": "js",
+                "source_base_url": "http://www.worldofwarcraft.com/new-hp/js/ssotd-screenie.js",
+            })
+            full_missing_thumb = "/downloads/ssotd/images/screens/ss1314.jpg"
+            full_with_thumb = "/downloads/ssotd/images/screens/ss1336.jpg"
+            thumb_with_full = "/downloads/ssotd/images/screens/ss1336-thumb.jpg"
+            for route in (full_missing_thumb, full_with_thumb, thumb_with_full):
+                image = site / route.lstrip("/")
+                image.parent.mkdir(parents=True, exist_ok=True)
+                image_data = b"fake-jpeg-" + route.encode("ascii")
+                image.write_bytes(image_data)
+                payload["files"].append({
+                    "route": route,
+                    "output_path": "offline/site/" + route.lstrip("/"),
+                    "derived_sha256": hashlib.sha256(image_data).hexdigest(),
+                    "derived_length": len(image_data),
+                    "mime": "image/jpeg",
+                    "kind": "image",
+                    "source_base_url": "http://www.worldofwarcraft.com" + route,
+                })
+                payload["origin_index"]["www.worldofwarcraft.com" + route] = route
+            manifest.write_text(json.dumps(payload), encoding="utf-8")
+            pages.export_pages(
+                source_site=site,
+                manifest_path=manifest,
+                output=base / "pages",
+                workspace_root=base,
+                max_bytes=500_000_000,
+                min_free_bytes=0,
+            )
+            exported = (base / "pages/new-hp/js/ssotd-screenie.js").read_text(encoding="utf-8")
+            full_static = pages.DEFAULT_BASE_PATH + full_missing_thumb.lstrip("/")
+            self.assertIn(full_static, exported)
+            self.assertIn("__WOW_SSOTD_THUMB_FALLBACK[shotList[n]] ||", exported)
+            self.assertIn('shotList[n].replace(".jpg","-thumb.jpg")', exported)
+            provenance = json.loads((base / "pages/export-provenance.json").read_text(encoding="utf-8"))
+            item = next(row for row in provenance["files"] if row.get("route") == "/new-hp/js/ssotd-screenie.js")
+            self.assertIn("1 shot(s)", item["derivation_reason"])
+
+    def test_archived_news_compatibility_aliases_rewrite_only_verified_targets(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            base, site, manifest = self._fixture(Path(tmp))
+            targets = {
+                "/info/basics/dailyquests.html": "dailyquests",
+                "/info/basics/titles.html": "titles",
+                "/info/basics/benice.html": "benice",
+                "/info/credits.html": "credits",
+                "/info/items/armorsets/index.html": "armorsets",
+            }
+            payload = json.loads(manifest.read_text(encoding="utf-8"))
+            requested_routes = {
+                "/info/basics/dailyquests.shtml": "/info/basics/dailyquests.html",
+                "/info/basics/titles.shtml": "/info/basics/titles.html",
+                "/info/basics/benice.shtml": "/info/basics/benice.html",
+                "/info/credits.shtml": "/info/credits.html",
+                "/info/info/items/armorsets/": "/info/items/armorsets/index.html",
+            }
+            links = []
+            for route, label in targets.items():
+                target = site / route.lstrip("/")
+                target.parent.mkdir(parents=True, exist_ok=True)
+                data = f"<html><head><title>{label}</title></head><body>{label}</body></html>".encode("utf-8")
+                target.write_bytes(data)
+                payload["files"].append({
+                    "route": route,
+                    "output_path": "offline/site/" + route.lstrip("/"),
+                    "derived_sha256": hashlib.sha256(data).hexdigest(),
+                    "derived_length": len(data),
+                    "mime": "text/html; charset=UTF-8",
+                    "kind": "html",
+                    "source_base_url": "http://www.worldofwarcraft.com" + route,
+                })
+                payload["origin_index"]["www.worldofwarcraft.com" + route] = route
+                requested = "http://www.worldofwarcraft.com" + next(
+                    old_route for old_route, canonical in requested_routes.items() if canonical == route
+                )
+                links.append(
+                    '<a href="/__offline/missing.html?requested=' + quote(requested, safe="") + '&reason=invalid-overlay-or-uncollected-site-resource">' + label + "</a>"
+                )
+            payload["route_aliases"]["/info/items/armorsets/"] = "/info/items/armorsets/index.html"
+            archived = site / "archived.html"
+            archived_data = ("<html><body>" + "".join(links) + "</body></html>").encode("utf-8")
+            archived.write_bytes(archived_data)
+            payload["files"].append({
+                "route": "/archived.html",
+                "output_path": "offline/site/archived.html",
+                "derived_sha256": hashlib.sha256(archived_data).hexdigest(),
+                "derived_length": len(archived_data),
+                "mime": "text/html; charset=UTF-8",
+                "kind": "html",
+                "source_base_url": "http://www.worldofwarcraft.com/archived.html",
+            })
+            payload["origin_index"]["www.worldofwarcraft.com/archived.html"] = "/archived.html"
+            manifest.write_text(json.dumps(payload), encoding="utf-8")
+            pages.export_pages(
+                source_site=site,
+                manifest_path=manifest,
+                output=base / "pages",
+                workspace_root=base,
+                max_bytes=500_000_000,
+                min_free_bytes=0,
+            )
+            exported = (base / "pages/archived.html").read_text(encoding="utf-8")
+            for route in targets:
+                self.assertIn(pages.DEFAULT_BASE_PATH + route.lstrip("/"), exported, route)
+            self.assertNotIn("__offline/missing.html?requested=", exported)
+            route_map = json.loads((base / "pages/__offline/route-map.json").read_text(encoding="utf-8"))
+            for alias in (
+                "/info/basics/dailyquests.shtml",
+                "/info/basics/titles.shtml",
+                "/info/basics/benice.shtml",
+                "/info/credits.shtml",
+            ):
+                self.assertEqual(route_map["routes"][alias], pages.DEFAULT_BASE_PATH + alias.lstrip("/"))
+                self.assertTrue((base / "pages" / alias.lstrip("/")).is_file())
+            armorsets_alias = "/info/info/items/armorsets/"
+            self.assertEqual(
+                route_map["routes"][armorsets_alias],
+                pages.DEFAULT_BASE_PATH + "info/info/items/armorsets/index.html",
+            )
+            self.assertTrue((base / "pages/info/info/items/armorsets/index.html").is_file())
+
+    def test_wrath_wallpapers_alias_requires_double_slash_target(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            base, site, manifest = self._fixture(Path(tmp))
+            payload = json.loads(manifest.read_text(encoding="utf-8"))
+            route = "/wrath//wallpapers.xml"
+            target = site / "wrath/wallpapers.xml"
+            target.parent.mkdir(parents=True, exist_ok=True)
+            data = b"<html><head><title>Wrath wallpapers</title></head><body>archive</body></html>"
+            target.write_bytes(data)
+            payload["files"].append({
+                "route": route,
+                "output_path": "offline/site/wrath/wallpapers.xml",
+                "derived_sha256": hashlib.sha256(data).hexdigest(),
+                "derived_length": len(data),
+                "mime": "text/html; charset=UTF-8",
+                "kind": "html",
+                "source_base_url": "http://www.worldofwarcraft.com" + route,
+            })
+            payload["origin_index"]["www.worldofwarcraft.com" + route] = route
+            manifest.write_text(json.dumps(payload), encoding="utf-8")
+            pages.export_pages(
+                source_site=site,
+                manifest_path=manifest,
+                output=base / "pages",
+                workspace_root=base,
+                max_bytes=500_000_000,
+                min_free_bytes=0,
+            )
+            route_map = json.loads((base / "pages/__offline/route-map.json").read_text(encoding="utf-8"))
+            target_static = pages.DEFAULT_BASE_PATH + "wrath/wallpapers.xml.html"
+            self.assertEqual(route_map["routes"]["/wrath/wallpapers.xml"], target_static)
+            self.assertFalse((base / "pages/wrath/wallpapers.xml").exists())
+            self.assertTrue((base / "pages/wrath/wallpapers.xml.html").is_file())
+
+        with tempfile.TemporaryDirectory() as tmp:
+            base, site, manifest = self._fixture(Path(tmp))
+            pages.export_pages(
+                source_site=site,
+                manifest_path=manifest,
+                output=base / "pages",
+                workspace_root=base,
+                max_bytes=500_000_000,
+                min_free_bytes=0,
+            )
+            route_map = json.loads((base / "pages/__offline/route-map.json").read_text(encoding="utf-8"))
+            self.assertNotIn("/wrath/wallpapers.xml", route_map["routes"])
 
     def test_prefixed_account_menu_labels_on_real_home_and_encyclopedia_pages(self) -> None:
         base_path = pages.DEFAULT_BASE_PATH
