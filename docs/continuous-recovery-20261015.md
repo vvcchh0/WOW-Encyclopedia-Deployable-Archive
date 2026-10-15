@@ -1,12 +1,12 @@
 # 官网档案持续恢复总账（2026-10-15）
 
-本轮按历史侧边栏逐项检查，时间预算截止 2026-10-15 14:44 UTC（北京时间 22:44），有证据的工作队列耗尽或出现真实外部阻塞时可提前结束。用户已明确授权自动接续，根代理已通过应用工具启用本线程 heartbeat `wow-8`，每 15 分钟检查一次，调度截止 `2026-10-15T14:44:25Z`。当前批次继续执行；heartbeat 接收时先检查运行中的代理、任务队列和网络批次状态，不中止有效任务、不重复提交批次、不启动第二名网络执行者。本总账不创建额外后台循环或新聊天。入口是[已有恢复与验收记录](media-and-navigation-recovery-20261015.md)。当前已验收的派生版为 `.scratch/pages-resources-20261015-v8`，冻结的 `offline/site` 与 `offline/build-manifest.json` 不改写；清单 SHA256 为 `397f7dcdbc774d80c6f8c1f3dabf7933211ff182427bd2ef77c895752334f459`。
+本轮按历史侧边栏逐项检查，时间预算截止 2026-10-15 14:44 UTC（北京时间 22:44），有证据的工作队列耗尽或出现真实外部阻塞时可提前结束。用户已明确授权自动接续，根代理已通过应用工具启用本线程 heartbeat `wow-8`，每 15 分钟检查一次，调度截止 `2026-10-15T14:44:25Z`。当前批次继续执行；heartbeat 接收时先检查运行中的代理、任务队列和网络批次状态，不中止有效任务、不重复提交批次、不启动第二名网络执行者。本总账不创建额外后台循环或新聊天。入口是[已有恢复与验收记录](media-and-navigation-recovery-20261015.md)。当前已验收并发布的派生版为 `.scratch/pages-resources-20261015-v10`（Pages `77015ca477cc8794f9014f4082f1e11635f7e3dc`，14 个线上对象字节/MIME 验收通过），冻结的 `offline/site` 与 `offline/build-manifest.json` 不改写；清单 SHA256 为 `397f7dcdbc774d80c6f8c1f3dabf7933211ff182427bd2ef77c895752334f459`。
 
 ## 总账结构
 
 [初始总账](../research/continuous-recovery-20261015/ledger.initial.json)从已有多代菜单盘点生成，每条菜单观察保留独立标识、分组、名称、原始地址、菜单文件与行号。旧盘点口径为 588 条内容观察、653 条排除观察。启动时复查发现，其中 **579 条 `Legacy menu` 只是旧解析器未分组**，包含 `/news/rss-05-2008.xml` 等真实内容地址，不能据此排除。已生成[范围修正检查点](../research/continuous-recovery-20261015/ledger.scope-review.json)，将这 579 条恢复为待分类审计；原来的 588 条口径继续保留以便比较，74 条明确的结构、业务或外部观察另行记录。初始快照保留其原始状态并由修正检查点取代。
 
-每条观察分别记录页面状态、资源状态、交互状态、来源证据、关联任务与下一动作。旧盘点针对 v5 派生版，其覆盖状态保留在 `prior_inventory_status`；当前状态已按本地 v9 独立审计更新；线上发布仍为 v8，历史快照分别保存。页面可达不等于图片、Flash 或历史交互完整，补充素材的实际捕获日期单独记录。
+每条观察分别记录页面状态、资源状态、交互状态、来源证据、关联任务与下一动作。旧盘点针对 v5 派生版，其覆盖状态保留在 `prior_inventory_status`；当前 page 状态已按 v10 全菜单路由检查更新，发布版 v10 已完成线上抽样验收；资源和交互字段保留 v9 静态检查版本，历史快照分别保存。页面可达不等于图片、Flash 或历史交互完整，补充素材的实际捕获日期单独记录。
 
 07:25 UTC 已完成[独立侧栏验收](../research/continuous-recovery-20261015/sidebar-acceptance.json)并生成[当前总账](../research/continuous-recovery-20261015/ledger.current.json)。旧 `Legacy menu` 按真实源文件分组：`menu1_var.js` 的 44 条归 News，`menu3_var.js` 的 511 条归 Game Guide，晚期 XML 的 24 条归其 Account、Forums、Support 类目。保留 `prior_group` 和分组理由，不改写旧盘点。
 
@@ -140,6 +140,22 @@ A 现准备独立 `v10-integration/browser/` focused runner，等根代理 29006
 根代理[1,241 条菜单复核](../research/v10-integration/root-sidebar-check.json)守恒，1,167 条当前范围中 **1,088 条 resolved、467 个不同文件**；七个 RSS-path HTML 新路由接通，剩余 **19 条缺路由观察、16 个地址**，无旧路由回归。[当前总账](../research/continuous-recovery-20261015/ledger.current.json)的 page 字段已更新为本地未发布 v10；[旧 v9 总账](../research/continuous-recovery-20261015/ledger.v9-accepted-0950.json)先逐字节保存。资源及交互字段逐值保留 v9 并显式标记版本，954 条旧 partial 观察未被称作新 v10 全资源审计。
 
 SSOTD [纯本地方案独立审阅](../research/continuous-recovery-20261015/ssotd-next-plan-independent-review.json)核对真实第二页 cursor 与原查询参数。原候选中的 2008 入口已有 5,038 字节原始来源，2018 年 bare HTTPS 高编号重定向与基准图库相关性较弱，两者从下一批排除，旧方案保留。根代理批准的[独立优先级覆盖](../research/continuous-recovery-20261015/ssotd12-approved-plan.json)只续取最多三页真实新 key，并取 2010-12-27 `ss1057-thumb.jpg` 已见 301 的一个首跳。唯一 B 已派发 `NET-SSOTD-012`，不自动跟随、不回放新行、不接入当前 v10；仍受原请求、时间、字节、磁盘和停止边界限制。
+
+### NET012 终页与下一资源队列
+
+第二个 v10 main 检查点已由根代理推送并独立确认至 `bdba97213a8426e8b8d2220799dd35a9525e30e5`。Pages 推送与线上 14 个对象验收由根代理继续，当前没有据推送动作自动标为已发布验收。
+
+`NET-SSOTD-012` 已[独立验收](../research/continuous-recovery-20261015/ssotd12-acceptance.json)：3 次尝试、2 个真实源响应、13,258 字节正文。真实续页仅 82 条 2016–2018 索引记录，且无下一 key；因此后两页正确未请求，同一未筛选查询累计已核对 2,082 条。新增行均为 redirect/revisit 索引，没有回放或取得图片。批准的 `ss1057-thumb.jpg` 首跳为真实 2010-12-27 301，Memento、CDX SHA1 和正文一致，指向 Battle.net 通用媒体门户；没有跟随。旧 helper 默认字段顺序与本查询 `fl` 不同，执行者已仅用真实 header 离线重算 status/MIME 分布，原响应、派发日志和请求时间不改。
+
+网络执行者现 idle，没有自动下一批。A 继续纯本地检查七个新增新闻页面的资源与静态交互子集，去重正文图片候选；不改 current ledger，不将这七页检查冒充全站新资源审计。下一网络优先级待该队列独立验收，再由根代理确认具体有界范围。
+
+### v10 线上发布验收完成
+
+根代理发布的 Pages commit 为 `77015ca477cc8794f9014f4082f1e11635f7e3dc`，父版本是已接受的 v8。GitHub API 前后均确认该 commit built；[线上 14 对象验收](../research/v10-integration/root-pages-online-acceptance.json)全部 direct HTTP 200，正文长度、SHA256 与本地一致，MIME 正确，覆盖七个 RSS-path HTML、原画列表与查看页、viewer JS、pixel、路由表及旧 SSOTD 图。[发布回执](../research/v10-integration/root-pages-publication.json)另确认 main HEAD/index 在 publisher 前后不变。
+
+当前总账的 published_accepted_preview 已更新 v10，旧 v8/v9 快照不改。页面全菜单覆盖结论来自本地 467 文件检查，线上结论限定为已实际验证的 14 个对象；资源及交互字段仍显式保留旧静态检查版本，focused 浏览与缺图边界单独记录。主分支当前已确认至 `bdba97213a8426e8b8d2220799dd35a9525e30e5`，后续发布回执提交由根代理处理。
+
+`NET-SSOTD-012` 已验收结束，B idle；A 的七新闻页面资源子集输出已落盘，仍待独立验收，未据生成队列自动授权新网络或改变资源总账。
 
 ## 取舍与后续顺序
 

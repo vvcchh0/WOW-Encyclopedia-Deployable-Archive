@@ -1,0 +1,87 @@
+{
+  "schema": "continuous-wow-network-ssotd12-dispatch-log/v1",
+  "batch_id": "NET-SSOTD-012",
+  "simulation": false,
+  "policy": {
+    "minimum_dispatch_interval_seconds": 1.25,
+    "max_attempts": 32,
+    "network_window_seconds": 480,
+    "automatic_redirects": 0,
+    "manual_follow_hops": 0
+  },
+  "disk_preflight": {
+    "checked_utc": "2026-10-15T10:57:26.846710+00:00",
+    "disk_free_bytes": 37165334528,
+    "minimum_free_bytes": 11005853696
+  },
+  "dispatches": [
+    {
+      "attempt": 1,
+      "transport": "direct",
+      "target": "prefix-page-1",
+      "guard_open_utc": "2026-10-15T10:57:26.848707+00:00",
+      "dispatch_utc": "2026-10-15T10:57:26.848707+00:00",
+      "dispatch_monotonic": 28596.843,
+      "interval_since_previous_dispatch_seconds": null,
+      "guard_wait": {
+        "first_checked_utc": "2026-10-15T10:57:26.848707+00:00",
+        "opened_utc": "2026-10-15T10:57:26.848707+00:00",
+        "first_monotonic": 28596.843,
+        "opened_monotonic": 28596.843,
+        "sleeps": [],
+        "final_wall_remaining_seconds": -1.001997,
+        "final_monotonic_remaining_seconds": 0.0
+      },
+      "interval_sleeps": [],
+      "persisted_before_transport": true
+    },
+    {
+      "attempt": 2,
+      "transport": "proxy",
+      "target": "prefix-page-1",
+      "guard_open_utc": "2026-10-15T10:57:30.914892+00:00",
+      "dispatch_utc": "2026-10-15T10:57:30.914892+00:00",
+      "dispatch_monotonic": 28600.906,
+      "interval_since_previous_dispatch_seconds": 4.062999999998283,
+      "guard_wait": {
+        "first_checked_utc": "2026-10-15T10:57:30.914892+00:00",
+        "opened_utc": "2026-10-15T10:57:30.914892+00:00",
+        "first_monotonic": 28600.906,
+        "opened_monotonic": 28600.906,
+        "sleeps": [],
+        "final_wall_remaining_seconds": -5.068182,
+        "final_monotonic_remaining_seconds": 0.0
+      },
+      "interval_sleeps": [],
+      "persisted_before_transport": true
+    },
+    {
+      "attempt": 3,
+      "transport": "proxy",
+      "target": "ss1057-thumb-20101227014645",
+      "guard_open_utc": "2026-10-15T10:57:34.690660+00:00",
+      "dispatch_utc": "2026-10-15T10:57:34.690660+00:00",
+      "dispatch_monotonic": 28604.687,
+      "interval_since_previous_dispatch_seconds": 3.7810000000026776,
+      "guard_wait": {
+        "first_checked_utc": "2026-10-15T10:57:34.690660+00:00",
+        "opened_utc": "2026-10-15T10:57:34.690660+00:00",
+        "first_monotonic": 28604.687,
+        "opened_monotonic": 28604.687,
+        "sleeps": [],
+        "final_wall_remaining_seconds": -8.84395,
+        "final_monotonic_remaining_seconds": 0.0
+      },
+      "interval_sleeps": [],
+      "persisted_before_transport": true
+    }
+  ],
+  "disk_postflight": {
+    "checked_utc": "2026-10-15T10:57:36.497181+00:00",
+    "disk_free_bytes": 37165240320,
+    "attempts_count": 3,
+    "persisted_in_finally": true
+  },
+  "postflight_persisted_in_finally": true,
+  "final_attempt_count": 3
+}

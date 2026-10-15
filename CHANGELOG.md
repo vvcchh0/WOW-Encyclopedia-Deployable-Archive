@@ -9,7 +9,7 @@
 
 ## 2026-10-15
 
-- 本地 v10 接入七份旧新闻页面，修复原画查看器、卡片点击区域和资源目录地址；实际浏览与 42 项相关测试通过，准备发布。侧栏剩余缺路由地址减至 16 个，原画仍缺八组图片。[本地验收](research/v10-integration/root-final-acceptance.json)
+- 发布 v10 浏览镜像，接通旧新闻、BC 专业、PTR 历史展品及原画目录等 19 个原缺失入口，修复原画查看器和卡片点击。侧栏剩余 16 个缺失地址，原画仍缺八组图片。[发布验收](research/v10-integration/root-pages-online-acceptance.json)
 - 复查本地 v9 的全部侧栏入口，缺路由地址由 35 个减至 23 个；新补的新闻、BC、PTR 和 Battlegroups 入口可浏览。原画目录仍缺八组图片及共享边框；查看器 HTML 已取回，正在补齐并修复其依赖。线上仍为 v8。[侧栏与浏览复核](docs/continuous-recovery-20261015.md)
 - 新增 PTR 历史展品，保留捕获日期及相关档案链接；浏览版横幅注明以 2008-05-12 为重建基准。[本地镜像验收](research/continuous-recovery-20261015/root-v9-export-acceptance.json)
 - 补回 BC 专业介绍、WLK 原画入口及另外两页旧新闻，更新五个新闻月页的来源；取得两份原画计数脚本和九张竞技场、欧服页面素材，已纳入本地 v9 镜像，等待浏览验收。根据历史重定向确认 Battlegroups 旧入口可映射至已有页面。[持续恢复总账](docs/continuous-recovery-20261015.md)

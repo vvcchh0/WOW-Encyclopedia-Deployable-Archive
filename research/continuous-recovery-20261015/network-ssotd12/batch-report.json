@@ -1,0 +1,293 @@
+{
+  "schema": "continuous-wow-network-ssotd12-batch-report/v1",
+  "batch_id": "NET-SSOTD-012",
+  "mode": "executed",
+  "started_utc": "2026-10-15T10:57:26.846710+00:00",
+  "finished_utc": "2026-10-15T10:57:36.498180+00:00",
+  "request_window_finished_utc": "2026-10-15T10:57:36.498180+00:00",
+  "request_window_elapsed_seconds": 9.651,
+  "report_updated_utc": "2026-10-15T10:59:34.873297+00:00",
+  "inputs": {
+    "candidates": "research/continuous-recovery-20261015/network-ssotd12/candidates.json",
+    "candidates_sha256": "e3d03cc8d8ab659aa343193d9c333b07ba1d7c8f67f94695c1b527760f503d1d",
+    "approved_plan": {
+      "path": "research/continuous-recovery-20261015/ssotd12-approved-plan.json",
+      "sha256": "b88eaff981d420d8e22b78b9b6b461082e7ce4b5247583359c5a4db6cd1d35c0",
+      "parent_review_path": "research/continuous-recovery-20261015/ssotd-next-plan-independent-review.json",
+      "parent_review_sha256": "41fe5ece541389f383fdf59e554b047b63a914d340cee96dc9b1dcc9b1c7ff22"
+    },
+    "input_digests": {
+      "research/continuous-recovery-20261015/ssotd12-approved-plan.json": {
+        "path": "research/continuous-recovery-20261015/ssotd12-approved-plan.json",
+        "bytes": 3947,
+        "sha256": "b88eaff981d420d8e22b78b9b6b461082e7ce4b5247583359c5a4db6cd1d35c0"
+      },
+      "research/continuous-recovery-20261015/ssotd-next-plan-independent-review.json": {
+        "path": "research/continuous-recovery-20261015/ssotd-next-plan-independent-review.json",
+        "bytes": 1426,
+        "sha256": "41fe5ece541389f383fdf59e554b047b63a914d340cee96dc9b1dcc9b1c7ff22"
+      },
+      "research/continuous-recovery-20261015/ssotd-next-plan/candidate-queue.json": {
+        "path": "research/continuous-recovery-20261015/ssotd-next-plan/candidate-queue.json",
+        "bytes": 9688,
+        "sha256": "29b62cb85e40bd3eed901ed4bbd80fcfb89f3da2c026d9d50f3eca3a23717157"
+      },
+      "research/continuous-recovery-20261015/ssotd-next-plan/resume-evidence.json": {
+        "path": "research/continuous-recovery-20261015/ssotd-next-plan/resume-evidence.json",
+        "bytes": 2497,
+        "sha256": "445c27a5212f8e34732c2486f208c448834dfa98cad7ff65bb2bb0b6bf0b81a1"
+      },
+      "research/continuous-recovery-20261015/network-core-pages3/core_pages3.py": {
+        "path": "research/continuous-recovery-20261015/network-core-pages3/core_pages3.py",
+        "bytes": 68417,
+        "sha256": "a052959be96955cda42a1febb724392e90ecd00b76c40a5623cfc96aeaffdc70"
+      },
+      "research/continuous-recovery-20261015/network-control7/control7.py": {
+        "path": "research/continuous-recovery-20261015/network-control7/control7.py",
+        "bytes": 28365,
+        "sha256": "0af202be56fb208582a8a1f922d74d935c6ccf10af63b7cfee3cb3c475fa0d0a"
+      }
+    }
+  },
+  "policy": {
+    "max_prefix_pages": 3,
+    "max_operations": 4,
+    "max_attempts": 32,
+    "network_window_seconds": 480,
+    "minimum_dispatch_interval_seconds": 1.25,
+    "minimum_free_bytes": 11005853696,
+    "max_total_body_bytes": 67108864,
+    "max_entity_body_bytes": 16777216,
+    "direct_first_then_confirmed_proxy": true,
+    "automatic_redirects": 0,
+    "manual_follow_hops": 0,
+    "stop_http_codes": [
+      429,
+      503
+    ],
+    "stop_consecutive_transport_failures": 5,
+    "tls_verification": "enabled_by_curl_default",
+    "concurrent_source_requests": 1
+  },
+  "preflight": {
+    "drive": "D:",
+    "disk_free_bytes_before": 37165334528,
+    "disk_free_bytes_after": 37165240320,
+    "minimum_free_bytes": 11005853696
+  },
+  "transport": {
+    "confirmed_transport_after_first_request": "proxy",
+    "curl": "C:\\Windows\\System32\\curl.exe",
+    "accepted_helper": "research/continuous-recovery-20261015/network-core-pages3/core_pages3.py",
+    "dispatch_gate": "research/continuous-recovery-20261015/network-control7/control7.py"
+  },
+  "operation_count": 4,
+  "operations": [
+    {
+      "sequence": 1,
+      "operation": "cdx_prefix_resume_page",
+      "page_number": 1,
+      "category": "source_response",
+      "source_status": 200,
+      "attempt_count": 2,
+      "source_response_count": 1,
+      "body_bytes": 13016,
+      "body_sha256": "dde57b9c35e8d5772af785197a715e07743a7679b707b32951d0c447e4d7a37a",
+      "actual_memento": null,
+      "request_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fdownloads%2Fssotd%2Fimages%2Fscreens%2F&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&showResumeKey=true&limit=1000&resumeKey=eJwVyFsKgCAQAMCr9BtUboJYx9l8Vagbq-H1s88ZQ2lqxNGSb8iG0ddRWGo5EtoiSqFqxZUwuA7DzuU_FYCe6_mmY7mfMEhYN1BSQ2-5fyTuHJE",
+      "next_resume_key_observed": null
+    },
+    {
+      "sequence": 2,
+      "operation": "cdx_prefix_resume_page",
+      "page_number": 2,
+      "category": "not_requested",
+      "reason": "no_actual_unique_resume_key_from_immediately_previous_response",
+      "source_status": null,
+      "attempt_count": 0,
+      "source_response_count": 0,
+      "body_bytes": 0,
+      "actual_memento": null,
+      "request_url": null
+    },
+    {
+      "sequence": 3,
+      "operation": "cdx_prefix_resume_page",
+      "page_number": 3,
+      "category": "not_requested",
+      "reason": "no_actual_unique_resume_key_from_immediately_previous_response",
+      "source_status": null,
+      "attempt_count": 0,
+      "source_response_count": 0,
+      "body_bytes": 0,
+      "actual_memento": null,
+      "request_url": null
+    },
+    {
+      "sequence": 4,
+      "operation": "known_301_first_hop_probe",
+      "category": "redirect_evidence_only",
+      "reason": "manual_follow_and_automatic_redirects_disabled",
+      "source_status": 301,
+      "attempt_count": 1,
+      "source_response_count": 1,
+      "body_bytes": 242,
+      "body_sha256": "e41318d5c6fb6e03275b246814367ff081a1a7791940cb98ffc0d14c4d3746e1",
+      "actual_memento": "2010-12-27T01:46:45+00:00",
+      "request_url": "https://web.archive.org/web/20101227014645id_/http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1057-thumb.jpg"
+    }
+  ],
+  "prefix_page_count_executed": 1,
+  "prefix_pages": [
+    {
+      "operation": "cdx_prefix_resume_page",
+      "page_number": 1,
+      "request_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fdownloads%2Fssotd%2Fimages%2Fscreens%2F&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&showResumeKey=true&limit=1000&resumeKey=eJwVyFsKgCAQAMCr9BtUboJYx9l8Vagbq-H1s88ZQ2lqxNGSb8iG0ddRWGo5EtoiSqFqxZUwuA7DzuU_FYCe6_mmY7mfMEhYN1BSQ2-5fyTuHJE",
+      "resume_key_used": "eJwVyFsKgCAQAMCr9BtUboJYx9l8Vagbq-H1s88ZQ2lqxNGSb8iG0ddRWGo5EtoiSqFqxZUwuA7DzuU_FYCe6_mmY7mfMEhYN1BSQ2-5fyTuHJE",
+      "attempt_count": 2,
+      "source_response_count": 1,
+      "final_source_status": 200,
+      "final_transport_error": false,
+      "final_content_type": "application/json",
+      "body_bytes": 13016,
+      "body_sha256": "dde57b9c35e8d5772af785197a715e07743a7679b707b32951d0c447e4d7a37a",
+      "raw_body_path": "raw/02-prefix-page-1-cdx-proxy.body",
+      "parse_valid": true,
+      "parse_error": null,
+      "resume_keys": [],
+      "next_resume_key": null,
+      "row_count": 82,
+      "row_distributions": {
+        "statuscode": {
+          "-": 5,
+          "301": 34,
+          "302": 38,
+          "307": 5
+        },
+        "mimetype": {
+          "text/html": 45,
+          "text/plain": 32,
+          "warc/revisit": 5
+        },
+        "temporal_bucket": {
+          "post_anchor": 82
+        }
+      }
+    }
+  ],
+  "redirect_probe": {
+    "operation": "known_301_first_hop_probe",
+    "request_url": "https://web.archive.org/web/20101227014645id_/http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1057-thumb.jpg",
+    "expected": {
+      "original_url": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1057-thumb.jpg",
+      "requested_capture": "20101227014645",
+      "cdx_status": "301",
+      "cdx_mime": "text/html",
+      "cdx_digest": "EHJDW7RFCFWMSQBGL67RQNFHDIQOHYZG",
+      "cdx_warc_index_length": "594"
+    },
+    "category": "redirect_evidence_only",
+    "reason": "manual_follow_and_automatic_redirects_disabled",
+    "attempts": [
+      {
+        "executed": true,
+        "attempt": 3,
+        "kind": "redirect_probe",
+        "target_key": "ss1057-thumb-20101227014645",
+        "transport": "proxy",
+        "url": "https://web.archive.org/web/20101227014645id_/http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1057-thumb.jpg",
+        "started_utc": "2026-10-15T10:57:34.691649+00:00",
+        "finished_utc": "2026-10-15T10:57:36.467176+00:00",
+        "duration_ms": 1797.0,
+        "curl_exit": 0,
+        "source_status": 301,
+        "connect_status": 200,
+        "content_type": "text/html; charset=iso-8859-1",
+        "location": "https://web.archive.org/web/20101227014645id_/http://us.battle.net/wow/en/media/",
+        "retry_after": null,
+        "memento_datetime": "2010-12-27T01:46:45+00:00",
+        "redirects_requested": 0,
+        "automatic_redirects": 0,
+        "body_bytes": 242,
+        "body_sha256": "e41318d5c6fb6e03275b246814367ff081a1a7791940cb98ffc0d14c4d3746e1",
+        "transport_error": false,
+        "transport_reason": null,
+        "raw": {
+          "headers": "raw/03-ss1057-thumb-20101227014645-redirect_probe-proxy.headers.txt",
+          "body": "raw/03-ss1057-thumb-20101227014645-redirect_probe-proxy.body",
+          "stderr": "raw/03-ss1057-thumb-20101227014645-redirect_probe-proxy.stderr.txt",
+          "trace": "raw/03-ss1057-thumb-20101227014645-redirect_probe-proxy.trace.txt",
+          "metrics": "raw/03-ss1057-thumb-20101227014645-redirect_probe-proxy.metrics.txt"
+        },
+        "html": {
+          "is_html": true,
+          "markers": [],
+          "title": "301 Moved Permanently",
+          "parse_ok": true
+        },
+        "xml": {
+          "is_xml": false,
+          "parse_ok": null,
+          "root": null
+        },
+        "dispatch_utc": "2026-10-15T10:57:34.690660+00:00",
+        "dispatch_monotonic": 28604.687,
+        "dispatch_interval_seconds": 3.7810000000026776,
+        "gate_persisted_before_transport": true,
+        "local_zero_byte_body_placeholder": false,
+        "body_is_source_response": true
+      }
+    ],
+    "actual_memento": "2010-12-27T01:46:45+00:00",
+    "source_status": 301,
+    "content_type": "text/html; charset=iso-8859-1",
+    "location": "https://web.archive.org/web/20101227014645id_/http://us.battle.net/wow/en/media/",
+    "body_bytes": 242,
+    "body_sha256": "e41318d5c6fb6e03275b246814367ff081a1a7791940cb98ffc0d14c4d3746e1",
+    "raw_body_path": "raw/03-ss1057-thumb-20101227014645-redirect_probe-proxy.body",
+    "raw_headers_path": "raw/03-ss1057-thumb-20101227014645-redirect_probe-proxy.headers.txt",
+    "manual_followed": false,
+    "automatic_redirects": 0
+  },
+  "cdx_index_row_count": 82,
+  "redirect_or_revisit_index_candidate_count": 82,
+  "cdx_source_response_count": 1,
+  "redirect_probe_source_response_count": 1,
+  "source_response_count": 2,
+  "source_request_count": 3,
+  "transport_attempt_count": 3,
+  "failed_attempt_count": 1,
+  "total_body_bytes": 13258,
+  "payload_body_bytes": 0,
+  "valid_entity_count": 0,
+  "actual_memento_count": 1,
+  "dispatch_count": 3,
+  "minimum_start_interval_seconds": 3.7810000000026776,
+  "stop_reason": null,
+  "stop_detail": {},
+  "rate_limit": null,
+  "policy_checks": {
+    "attempt_cap": true,
+    "operation_cap": true,
+    "network_window_cap": true,
+    "body_cap": true,
+    "single_body_cap": true,
+    "disk_floor_before": true,
+    "disk_floor_after": true,
+    "dispatch_interval": true,
+    "serial_source_requests": true,
+    "automatic_redirects_disabled": true,
+    "manual_follow_hops_zero": true
+  },
+  "batch_policy_accepted": true,
+  "postflight": {
+    "checked_utc": "2026-10-15T10:57:36.497181+00:00",
+    "disk_free_bytes": 37165240320,
+    "attempts_count": 3,
+    "persisted_in_finally": true
+  },
+  "execution_error": null,
+  "raw_evidence_note": "Raw headers, traces, stderr and bodies stay below this batch raw directory. Zero-byte bodies from no-response attempts are local placeholders, not source response content; CONNECT 200 is excluded; CDX rows and CDX length are index evidence, never payloads.",
+  "index_evidence_path": "cdx-index-pages.json",
+  "observed_index_candidates_path": "observed-index-candidates.json"
+}

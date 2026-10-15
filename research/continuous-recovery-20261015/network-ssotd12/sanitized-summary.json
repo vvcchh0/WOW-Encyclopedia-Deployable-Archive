@@ -1,0 +1,83 @@
+{
+  "schema": "continuous-wow-network-ssotd12-sanitized-summary/v1",
+  "batch_id": "NET-SSOTD-012",
+  "mode": "executed",
+  "report_sha256": "e2eafb83c07537035853c3b78333c6dfaed52e294649e55c54d64fe1adf29ed2",
+  "started_utc": "2026-10-15T10:57:26.846710+00:00",
+  "finished_utc": "2026-10-15T10:57:36.498180+00:00",
+  "request_window_finished_utc": "2026-10-15T10:57:36.498180+00:00",
+  "report_updated_utc": "2026-10-15T10:59:34.873297+00:00",
+  "network_requests": 3,
+  "source_response_count": 2,
+  "source_request_count": 3,
+  "failed_attempt_count": 1,
+  "operation_count": 4,
+  "prefix_page_count_executed": 1,
+  "cdx_index_row_count": 82,
+  "redirect_or_revisit_index_candidate_count": 82,
+  "valid_entity_count": 0,
+  "payload_body_bytes": 0,
+  "total_body_bytes": 13258,
+  "disk_free_bytes_before": 37165334528,
+  "disk_free_bytes_after": 37165240320,
+  "dispatch_count": 3,
+  "minimum_start_interval_seconds": 3.7810000000026776,
+  "confirmed_transport": "proxy",
+  "category_counts": {
+    "not_requested": 2,
+    "prefix_page_source_200": 1,
+    "redirect_evidence_only": 1
+  },
+  "stop_reason": null,
+  "batch_policy_accepted": true,
+  "policy_checks": {
+    "attempt_cap": true,
+    "operation_cap": true,
+    "network_window_cap": true,
+    "body_cap": true,
+    "single_body_cap": true,
+    "disk_floor_before": true,
+    "disk_floor_after": true,
+    "dispatch_interval": true,
+    "serial_source_requests": true,
+    "automatic_redirects_disabled": true,
+    "manual_follow_hops_zero": true
+  },
+  "postflight": {
+    "checked_utc": "2026-10-15T10:57:36.497181+00:00",
+    "disk_free_bytes": 37165240320,
+    "attempts_count": 3,
+    "persisted_in_finally": true
+  },
+  "unrequested_operations": [
+    {
+      "sequence": 2,
+      "operation": "cdx_prefix_resume_page",
+      "page_number": 2,
+      "category": "not_requested",
+      "reason": "no_actual_unique_resume_key_from_immediately_previous_response",
+      "source_status": null,
+      "attempt_count": 0,
+      "source_response_count": 0,
+      "body_bytes": 0,
+      "actual_memento": null,
+      "request_url": null
+    },
+    {
+      "sequence": 3,
+      "operation": "cdx_prefix_resume_page",
+      "page_number": 3,
+      "category": "not_requested",
+      "reason": "no_actual_unique_resume_key_from_immediately_previous_response",
+      "source_status": null,
+      "attempt_count": 0,
+      "source_response_count": 0,
+      "body_bytes": 0,
+      "actual_memento": null,
+      "request_url": null
+    }
+  ],
+  "index_evidence_path": "cdx-index-pages.json",
+  "redirect_evidence_path": "redirect-evidence.json",
+  "raw_evidence_note": "Raw headers, traces, stderr and bodies stay below this batch raw directory. Zero-byte bodies from no-response attempts are local placeholders, not source response content; CONNECT 200 is excluded; CDX rows and CDX length are index evidence, never payloads."
+}
