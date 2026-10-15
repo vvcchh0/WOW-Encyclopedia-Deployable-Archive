@@ -1,7 +1,7 @@
 {
   "schema": "continuous-wow-recovery-tasks/v1",
   "deadline_utc": "2026-10-15T14:44:00Z",
-  "updated_utc": "2026-10-15T09:51:20.086198+00:00",
+  "updated_utc": "2026-10-15T10:32:29.921326+00:00",
   "coordination": {
     "heartbeat_id": "wow-8",
     "heartbeat_interval_minutes": 15,
@@ -537,7 +537,12 @@
           "valid_html": 1
         },
         "canonical_alias_approved": false,
-        "acceptance": "research/continuous-recovery-20261015/wrath8-acceptance.json"
+        "acceptance": "research/continuous-recovery-20261015/wrath8-acceptance.json",
+        "canonical_alias_approved_after_later_api_proof": true,
+        "later_decision_evidence": [
+          "research/continuous-recovery-20261015/mixed9-acceptance.json",
+          "research/continuous-recovery-20261015/native-viewer-acceptance.json"
+        ]
       }
     },
     {
@@ -565,7 +570,7 @@
     },
     {
       "id": "NET-MIXED-009",
-      "status": "execution_outputs_ready_pending_independent_acceptance",
+      "status": "accepted_script_and_layout_pixel_no_content_images",
       "owner": "wayback_recheck_batch1",
       "goal": "Pre-anchor viewer script/pixel/common4 pair, then independently marked 2008May13–2010Dec31 border and common11/10/8 pairs.",
       "write_scope": "research/continuous-recovery-20261015/network-mixed9/**",
@@ -586,18 +591,205 @@
         "valid_js": 1,
         "valid_layout_image": 1,
         "valid_late_supplements": 0,
-        "note": "raw outputs present09:48; await worker final and independent acceptance; no recovered content-image claim"
+        "note": "raw outputs present09:48; await worker final and independent acceptance; no recovered content-image claim",
+        "historical_note": "Reported summary before independent acceptance; retained as historical observation"
       },
-      "stop": "No automatic additional requests; layout files classified separately from content images"
+      "stop": "No automatic additional requests; layout files classified separately from content images",
+      "result": {
+        "attempts": 14,
+        "source_responses": 12,
+        "valid_js": 1,
+        "valid_layout_images": 1,
+        "valid_content_images": 0,
+        "valid_late_temporal_supplements": 0,
+        "valid_payload_body_bytes": 8475,
+        "total_batch_body_bytes": 8938,
+        "minimum_monotonic_dispatch_interval_seconds": 1.764999999999418,
+        "generic_viewer_api_proven": true,
+        "acceptance": "research/continuous-recovery-20261015/mixed9-acceptance.json"
+      }
+    },
+    {
+      "id": "NET-RSS-010",
+      "status": "accepted_three_expanded_html_eight_transport_unknown",
+      "owner": "wayback_recheck_batch1",
+      "goal": "Acquire the eleven previously untouched monthly RSS-path URLs, classify actual body format and month identity.",
+      "write_scope": "research/continuous-recovery-20261015/network-rss10/**",
+      "network": true,
+      "limits": {
+        "distinct_targets": 11,
+        "attempts": 32,
+        "seconds": 480,
+        "body_bytes": 67108864,
+        "single_body_bytes": 16777216,
+        "minimum_dispatch_interval_seconds": 1.25,
+        "disk_floor_bytes": 11005853696,
+        "concurrent_source_requests": 1,
+        "automatic_redirects": 0,
+        "manual_redirect_follow": 0
+      },
+      "stop": "Completed declared queue or original bounds; no automatic follow-up",
+      "result": {
+        "attempts": 17,
+        "source_responses": 8,
+        "failed_transport_attempts": 9,
+        "maximum_consecutive_transport_failures": 3,
+        "valid_expanded_html": 3,
+        "raw_rss_xml": 0,
+        "transport_unknown_targets": 8,
+        "valid_payload_body_bytes": 428871,
+        "total_batch_body_bytes": 438550,
+        "minimum_monotonic_dispatch_interval_seconds": 1.25,
+        "months": [
+          "2007-05",
+          "2007-01",
+          "2006-07"
+        ],
+        "source_title_anomaly": "July2006 source title says September; all34 article posted-date markers identify July2006",
+        "acceptance": "research/continuous-recovery-20261015/rss10-acceptance.json"
+      }
+    },
+    {
+      "id": "WRATH-DERIVED-FIXES-011",
+      "status": "implementation_and_42_unit_tests_accepted_frozen_pending_fresh_export_browser",
+      "owner": "sidebar_local_audit",
+      "goal": "Apply exact-route strict s parser and evidence-backed Wrath gallery card hit-area compatibility; preserve original raw JS and missing-image classifications.",
+      "write_scope": [
+        "tools/export_github_pages.py",
+        "tests/test_github_pages_export.py",
+        "research/continuous-recovery-20261015/viewer-derived-fixes/**"
+      ],
+      "network": false,
+      "acceptance": [
+        "One approved query fragment on exact screeniesimplified.js route; else fail export",
+        "Only one decoded decimal positive safe integer in 1..shotList.length is valid; all others default1",
+        "Preserve one-based omegaLightBox entry and native lists/navigation",
+        "Two source-proven gallery routes only; hide decorative placeholder only when both missing-image.svg and ssborder1.png match",
+        "Prefer PATH Node before bundled fallback"
+      ],
+      "result": {
+        "unit_tests": 42,
+        "unit_test_seconds": 5.985,
+        "production_exporter_sha256": "e6c13afe80a691bbeda46abe7f5b9b1b74bd3f28f1c4a2a08e946eedf7aa9569",
+        "production_tests_sha256": "b6035754363fce52095b8bfa061904ece2906bfb5fbc81df654b87f3d15d09b2",
+        "receipt": "research/continuous-recovery-20261015/viewer-derived-fixes/wrath-card-hitarea-011-receipt.json",
+        "source_original_images_recovered_by_fix": 0,
+        "browser_acceptance_pending": true
+      }
+    },
+    {
+      "id": "NATIVE-VIEWER-VM-012",
+      "status": "independently_accepted_twelve_native_cases",
+      "owner": "wayback_recheck_batch1",
+      "goal": "Execute complete real derived viewer definitions in isolated Node VM and call native loadCheckForShot for twelve parameter cases.",
+      "write_scope": "research/v10-integration/native-viewer-validation/**",
+      "network": false,
+      "limits": {
+        "minutes": 10,
+        "network_requests": 0,
+        "production_writes": 0
+      },
+      "acceptance": [
+        "Real8432B raw JS transformed by actual exporter; only approved query span differs",
+        "Native common12+locale1 lists, directories, one-based/zero-based entry, current/total labels and hires link verified",
+        "Invalid and encoded expression inputs fallback1 with sentinel0",
+        "No claim for browser layout, image loading or animation"
+      ],
+      "result": {
+        "native_cases": 12,
+        "raw_sha256": "43fe3ee08d5006620a34bb06dcb752e639d0c2fcbe156cdc92c1cb456d209f69",
+        "derived_sha256": "30942827950a0952102a598e39590044398d4f9b0be81f4d58ddd86e4ae9c35e",
+        "vm_results_sha256": "f0dd4f05e817887df7580514c7bd43a7c428cd3d6d0390711f1ff70139f6b573",
+        "acceptance": "research/continuous-recovery-20261015/native-viewer-acceptance.json"
+      }
+    },
+    {
+      "id": "CORE-SOURCE-V10-013",
+      "status": "running_source_built_validate_existing_awaiting_receipt",
+      "owner": "sidebar_local_audit",
+      "goal": "Build fresh v10 source mirror from frozen ten additions and all accepted v9 inputs, retaining8328 prior sources and aliases.",
+      "write_scope": [
+        "research/v10-integration/source/**",
+        ".scratch/offline-navigation-20261015-v10/**"
+      ],
+      "network": false,
+      "inputs": [
+        "research/continuous-recovery-20261015/selected-v10-final-additions.json",
+        ".scratch/offline-navigation-20261015-v9/build-manifest.json"
+      ],
+      "selection_sha256": "c73b02d2f9353402eb4b568640e1359031e25756604cbbc5f21552f0acd52a55",
+      "acceptance": [
+        "Expected8338 sources, actual receipt authoritative",
+        "Seven RSS-path HTML plus query viewer, JS, layout pixel; no late supplement or content image addition",
+        "Preserve all8328 prior sources/aliases/provenance; disclose generated support relocation with same bytes",
+        "Raw source remains original; derived strict parser applies only at root Pages export",
+        "Frozen baseline and old v9 source unchanged"
+      ],
+      "stop": "Build stable source receipt then wait for root; no Pages export or independent production changes",
+      "result": {
+        "expected_sources": 8338,
+        "new_source_records": 10,
+        "content_images_added": 0,
+        "layout_images_added": 1,
+        "image_overlays_preserved_for_root_export": 38,
+        "final_export_owner": "root",
+        "phase_observed_utc": "2026-10-15T10:32:29.921326+00:00",
+        "phase_note": "Root observed fresh v10 manifest75463144B and validate-existing PID7540 started10:29; awaiting stable worker receipt, independent source acceptance pending"
+      }
+    },
+    {
+      "id": "NET-HIRES-011",
+      "status": "running_single_fetcher_dispatch_journal_present",
+      "owner": "wayback_recheck_batch1",
+      "goal": "Acquire thirteen exact high-resolution artwork URLs proven by native dirList/hiResList templates, keeping pre-anchor and late supplements separate.",
+      "write_scope": "research/continuous-recovery-20261015/network-hires11/**",
+      "network": true,
+      "inputs": [
+        "research/continuous-recovery-20261015/mixed9-acceptance.json",
+        "research/continuous-recovery-20261015/native-viewer-acceptance.json",
+        ".scratch/offline-navigation-20261015-v9/build-manifest.json"
+      ],
+      "limits": {
+        "distinct_targets": 13,
+        "attempts": 32,
+        "seconds": 480,
+        "body_bytes": 67108864,
+        "single_body_bytes": 16777216,
+        "minimum_dispatch_interval_seconds": 1.25,
+        "disk_floor_bytes": 11005853696,
+        "concurrent_source_requests": 1,
+        "automatic_redirects": 0,
+        "manual_redirect_follow": 0
+      },
+      "candidate_rule": "Exact common ss1..12-hires.jpg and en_us/ss1-hires.jpg only. Check exact URL in existing maps/manifests before query. Prioritize1,3,6,9,12; pre-anchor first; only actual pre-anchor CDX empty permits separate20080513..20101231 supplement query.",
+      "acceptance": [
+        "Direct-first proxy fallback, persistent actual dispatch UTC/monotonic and disk checks",
+        "Source HTTP excludes CONNECT; Memento/digest/body SHA/Pillow independent",
+        "Late capture separately labeled and never substituted for original ordinary image",
+        "Do not modify frozen v10 selection or start follow-up batch"
+      ],
+      "stop": "Declared target/request/time/byte bounds,429/503, five consecutive transport failures; return idle",
+      "result": {
+        "phase_observed_utc": "2026-10-15T10:31:27.132533+00:00",
+        "phase_note": "10:29 dispatch journal/raw directory present; outcomes pending independent acceptance",
+        "frozen_v10_selection_unchanged": true
+      }
     }
   ],
   "release_state": {
-    "main_verified_commit": "7a0955563ab44f8b69ba6715278b5ccf613791a4",
+    "main_verified_commit": "8a7b30eb57632bf3353506c886d93d575b6afd27",
     "pages_still_v8": "7cfe6ac6a82137fc9df0673630e66c09adf03a49",
     "local_v9_source_export_and_core_diagnostics_accepted": true,
     "v9_published": false,
-    "root_directory_fix": "38 unit tests and18 actual-source page rewrites accepted; fresh full export/browser pending",
+    "root_directory_fix": "38 tests/18actual-source rewrites accepted; included in frozen exporter with parser/CSS42tests; fresh full export/browser pending",
     "rss4_integration": "accepted sources held for next derivative",
-    "viewer_integration": "query source accepted; generic canonical mapping withheld pending real script API review"
+    "viewer_integration": "query source and true generic API accepted; canonical mapping approved with exact-route strict parser and native12case proof",
+    "current_ledger_represents": "local_unpublished_v9",
+    "rss_integration": "seven accepted expanded HTML sources frozen in v10 additions; original RSS not recovered",
+    "v10_source_expected_count": 8338,
+    "v10_additions_map": "research/continuous-recovery-20261015/selected-v10-final-additions.json",
+    "v10_additions_sha256": "c73b02d2f9353402eb4b568640e1359031e25756604cbbc5f21552f0acd52a55",
+    "v10_source_build": "fresh manifest generated; worker validate-existing running PID7540, stable receipt and independent acceptance pending",
+    "hires_batch": "existing B sole fetcher; separate next derivative, never added to frozen v10"
   }
 }

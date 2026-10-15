@@ -6,7 +6,7 @@
 
 [初始总账](../research/continuous-recovery-20261015/ledger.initial.json)从已有多代菜单盘点生成，每条菜单观察保留独立标识、分组、名称、原始地址、菜单文件与行号。旧盘点口径为 588 条内容观察、653 条排除观察。启动时复查发现，其中 **579 条 `Legacy menu` 只是旧解析器未分组**，包含 `/news/rss-05-2008.xml` 等真实内容地址，不能据此排除。已生成[范围修正检查点](../research/continuous-recovery-20261015/ledger.scope-review.json)，将这 579 条恢复为待分类审计；原来的 588 条口径继续保留以便比较，74 条明确的结构、业务或外部观察另行记录。初始快照保留其原始状态并由修正检查点取代。
 
-每条观察分别记录页面状态、资源状态、交互状态、来源证据、关联任务与下一动作。旧盘点针对 v5 派生版，其覆盖状态保留在 `prior_inventory_status`；当前状态须核对 v8 后更新。页面可达不等于图片、Flash 或历史交互完整，补充素材的实际捕获日期单独记录。
+每条观察分别记录页面状态、资源状态、交互状态、来源证据、关联任务与下一动作。旧盘点针对 v5 派生版，其覆盖状态保留在 `prior_inventory_status`；当前状态已按本地 v9 独立审计更新；线上发布仍为 v8，历史快照分别保存。页面可达不等于图片、Flash 或历史交互完整，补充素材的实际捕获日期单独记录。
 
 07:25 UTC 已完成[独立侧栏验收](../research/continuous-recovery-20261015/sidebar-acceptance.json)并生成[当前总账](../research/continuous-recovery-20261015/ledger.current.json)。旧 `Legacy menu` 按真实源文件分组：`menu1_var.js` 的 44 条归 News，`menu3_var.js` 的 511 条归 Game Guide，晚期 XML 的 24 条归其 Account、Forums、Support 类目。保留 `prior_group` 和分组理由，不改写旧盘点。
 
@@ -102,6 +102,22 @@ v9 源树现已完成[独立来源验收](../research/continuous-recovery-202610
 `NET-WRATH-008` 已[独立验收](../research/continuous-recovery-20261015/wrath8-acceptance.json)：15 次尝试、12 个真实源响应、4 条 CDX，实际只取得 `art.xml?s=1` 的 2008-02-19 查看页 HTML（10,622 字节），没有取得图片。10 个 scoped CDX 空、两个传输未判定；晚期存档不能由此推定不存在。原 query 来源保留，泛化成 canonical base viewer 的映射暂缓，须核对其真实 `screeniesimplified.js` API。
 
 `NET-MIXED-009` 的 11 个声明目标由唯一网络执行者处理：pre-anchor viewer JS、pixel、此前未请求的 common4 对；独立晚期窗口 `2008-05-13–2010-12-31` 的 border 与 common11/10/8 三对。09:48 已有完成输出，未独立验收的摘要报告一个 JS、一个布局 GIF、没有晚期补充实体；仍待完整 raw/API 验收。pixel/border 是布局装饰，不算内容图。四份已验收 RSS-path HTML 及 query viewer 留下一版，未改当前 v9 或冻结 baseline。
+
+### 10:30 检查点：v10 来源冻结与真实 viewer API
+
+main 已由根代理推送并独立确认至 `8a7b30eb57632bf3353506c886d93d575b6afd27`。Pages 仍为 v8；当前总账仍代表本地未发布 v9，待 v10 真实导出与审计后再更新覆盖状态。
+
+`NET-MIXED-009` 已完成[独立验收](../research/continuous-recovery-20261015/mixed9-acceptance.json)：14 次尝试、12 个真实源响应，取得 8,432 字节原生 viewer JS 与 43 字节 1×1 布局 GIF；有效载荷共 8,475 字节，含 CDX 的批次总量 8,938 字节。没有新内容图或晚期补充实体。真实 JS 证明 viewer 根据查询参数构造 common 12 项、locale 1 项的通用列表，因此允许以保留 `?s=1` 原来源的方式映射 canonical viewer。原脚本的 `eval` 只在派生导出中替换，原始字节保留。
+
+`NET-RSS-010` 已完成[独立验收](../research/continuous-recovery-20261015/rss10-acceptance.json)：11 个此前未请求目标全部有实际结果分类，17 次尝试、8 个真实源响应，取得 May 2007、January 2007、July 2006 三份 expanded HTML，正文 428,871 字节；包括 CDX 的批次总量 438,550 字节。另八个目标为传输未判定，不能记作未存档。July 2006 原标题写 September，34 个正文日期均属 July，保留该原站异常；本批没有原始 RSS/XML。
+
+派生 viewer 参数修复与卡片点击区兼容修复已由单一执行者完成，42 项测试通过，生产文件摘要固定。严格参数解析只接受唯一、十进制正整数、安全整数且在 1..shotList.length 范围内的 `s`；其余回到 1，保持原 one-based viewer 入口和目录/翻页逻辑。卡片修复只用于来源明确的两个 Wrath 图库，按原 CSS 243×193 设点击区；仅带 `missing-image.svg` 和 `ssborder1.png` 双标记的装饰占位隐藏。缺失 border 原图没有恢复，内容图缺口和下载数不变。见[最终实现与测试回执](../research/continuous-recovery-20261015/viewer-derived-fixes/wrath-card-hitarea-011-receipt.json)。
+
+独立[真实完整脚本 VM 验收](../research/continuous-recovery-20261015/native-viewer-acceptance.json)执行 8,432 字节来源转换后的全部函数定义，再调用原生 `loadCheckForShot`，12 个参数样例通过。13 项列表、目录分区、当前/总数、one-based 到 zero-based 关系和 hires 链接均核对；表达式输入没有执行。仅已批准的查询片段改变，原 next/prev 函数保持相同。这是原生控制逻辑验收，浏览布局、真实图像加载与动画仍待新产物浏览。
+
+[最终 v10 新增来源表](../research/continuous-recovery-20261015/selected-v10-final-additions.json)固定 10 条：七份 RSS-path HTML、query viewer、viewer JS 和布局 GIF，SHA256 为 `c73b02d2f9353402eb4b568640e1359031e25756604cbbc5f21552f0acd52a55`。相对于 v9 的 8,328 条，预期 8,338 条来源；以实际构建回执为准，38 个旧图片补充层留给根代理最终 export 应用。A 在独立 `research/v10-integration/source/` 和 fresh v10 source 树构建，旧 v9 与冻结 baseline 不改；根代理拥有完整 source/export 验收和后续 29006 浏览启动。
+
+唯一网络执行者 B 独立执行 `NET-HIRES-011`，只查询真实 JS 模板举证的 common 1..12 与 locale 1 共 13 个精确 hires 地址。先按精确 URL 查既有索引，优先普通图已有的 1/3/6/9/12；pre-anchor CDX 确实为空时才在余量内查询单独晚期窗口。晚期素材若取得，会明确记录 temporal supplement，不替代基准原图。该批目录已有实际 dispatch journal，结果仍待验收；任何新增素材不追加入已冻结的 v10 选择表。
 
 ## 取舍与后续顺序
 

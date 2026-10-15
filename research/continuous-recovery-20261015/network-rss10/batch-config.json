@@ -1,0 +1,55 @@
+{
+  "schema": "continuous-wow-network-rss10-config/v1",
+  "batch_id": "NET-RSS-010",
+  "candidate_sha256": "9bdcc6a4d5bc6c844c87cdddcc685ec7fdedb8544572eba6b7d624d25a7e5c96",
+  "candidate_path": "research/continuous-recovery-20261015/network-rss10/candidates.json",
+  "network_requests": 0,
+  "policy": {
+    "max_targets": 11,
+    "max_attempts": 32,
+    "network_window_seconds": 480,
+    "minimum_dispatch_interval_seconds": 1.25,
+    "minimum_free_bytes": 11005853696,
+    "max_total_body_bytes": 67108864,
+    "max_entity_body_bytes": 16777216,
+    "direct_first_then_confirmed_transport": true,
+    "direct_connect_timeout_seconds": 4,
+    "direct_total_timeout_seconds": 12,
+    "proxy": "http://127.0.0.1:7890",
+    "proxy_connect_timeout_seconds": 8,
+    "proxy_total_timeout_seconds": 20,
+    "automatic_redirects": 0,
+    "manual_redirect_follow": 0,
+    "stop_http_codes": [
+      429,
+      503
+    ],
+    "tls_verification": "curl_default_verification_enabled",
+    "concurrent_source_requests": 1,
+    "cdx": {
+      "from": "20040101000000",
+      "to": "20080512210044",
+      "match_type": "exact",
+      "columns": [
+        "timestamp",
+        "original",
+        "mimetype",
+        "statuscode",
+        "digest",
+        "length"
+      ],
+      "limit": 1000,
+      "collapse": "digest",
+      "selection": "latest same-origin status-200 pre-anchor capture; redirects retained as index evidence and never followed"
+    },
+    "uri_identity": "same scheme, lower-cased host, path and query; only default ports normalize; bare/www and http/https remain separate",
+    "body_classification": "real body RSS/Atom/XML versus expanded HTML; XML extension never substitutes for body format",
+    "script_execution": false
+  },
+  "accepted_reuse": {
+    "transport": "research/continuous-recovery-20261015/network-wrath8/wrath8.py",
+    "dispatch_gate": "research/continuous-recovery-20261015/network-control7/control7.py",
+    "rss_body_helpers": "research/continuous-recovery-20261015/network-rss6/rss_batch6.py",
+    "no_accepted_outputs_modified": true
+  }
+}

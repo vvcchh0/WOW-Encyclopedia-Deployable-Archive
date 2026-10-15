@@ -617,6 +617,20 @@ def rewrite_root_literals(text: str, *, base_url: str, localizer: PagesLocalizer
         raw = match.group("url")
         if raw == "//" or raw.startswith("//") or raw.startswith(localizer.base_path):
             return match.group(0)
+        # Wrath uses roothost as a directory for resource concatenation.
+        # Its navigation alias resolves to index.html, which is not a base
+        # directory and would produce e.g. index.htmlimages/layout/....
+        before = text[max(0, match.start() - 80):match.start()]
+        if (
+            raw == "/wrath/"
+            and re.search(r"\bvar\s+roothost\s*=\s*$", before)
+            and mirror.is_primary_origin(base_url)
+            and urllib.parse.urlsplit(base_url).path.startswith("/wrath/")
+        ):
+            target = localizer.base_path + "wrath/"
+            recorder.add(raw, urllib.parse.urljoin(base_url, raw), "localized", target,
+                         "javascript-directory-base", "preserve verified Wrath resource directory")
+            return match.group("quote") + target + match.group("trailing") + match.group("quote")
         after = text[match.end() :].lstrip()
         if after.startswith("+") and not raw.casefold().startswith(("/__offline/uncollected", "/search/")):
             return match.group(0)
@@ -1738,6 +1752,83 @@ var queryTotalPages = 1;
     return text
 
 
+def rewrite_wrath_viewer_script(text: str) -> str:
+    """Replace the unsafe Wrath viewer query fragment with a strict parser.
+
+    The viewer's historical fragment used eval on everything after s=.
+    Match that exact fragment once so a source drift or duplicate occurrence
+    stops the export instead of receiving a guessed rewrite.
+    """
+
+    query_pattern = re.compile(
+        r"(?:(?:var|let|const)\s+)?checkForSpecifiedShot\s*=\s*"
+        r"window\.location\.href\.split\(\s*\x22s=\x22\s*\)\s*;\s*"
+        r"(?:(?:var|let|const)\s+)?nowViewing\s*=\s*"
+        r"\(\s*checkForSpecifiedShot\[1\]\s*\)\s*\?\s*"
+        r"eval\(\s*checkForSpecifiedShot\[1\]\s*\)\s*:\s*0\s*;",
+        re.I,
+    )
+    matches = list(query_pattern.finditer(text))
+    if len(matches) != 1:
+        raise PagesExportError(
+            "Wrath viewer script query parser expected exactly one original fragment"
+        )
+    replacement = """checkForSpecifiedShot = new URLSearchParams(window.location.search).getAll("s");
+nowViewing = 1;
+if (checkForSpecifiedShot.length === 1 && /^[0-9]+$/.test(checkForSpecifiedShot[0])) {
+	var parsedShot = Number(checkForSpecifiedShot[0]);
+	if (Number.isSafeInteger(parsedShot) &&
+		parsedShot >= 1 &&
+		typeof shotList !== "undefined" &&
+		parsedShot <= shotList.length)
+		nowViewing = parsedShot;
+}
+"""
+    return query_pattern.sub(replacement, text, count=1)
+
+
+_WRATH_CARD_HIT_AREA_ROUTES = frozenset({
+    "/wrath/artwork.xml",
+    "/wrath/screenshots.xml",
+})
+_WRATH_CARD_HIT_AREA_MARKER = 'data-archive-derived="wrath-card-hit-area-v1"'
+_WRATH_CARD_HIT_AREA_STYLE = """<style data-archive-derived="wrath-card-hit-area-v1">
+/* Derived layout fallback only: local source CSS sets .ssborder to 243x193. */
+.ssborder a {
+    display: block;
+    width: 243px;
+    height: 193px;
+}
+.ssborder img[src*="missing-image.svg"][src*="ssborder1.png"] {
+    visibility: hidden;
+}
+</style>"""
+
+
+def rewrite_wrath_card_hit_area(text: str, *, route: str) -> tuple[str, bool]:
+    """Restore the verified Wrath card hit area on the two gallery routes.
+
+    This is a derived layout fallback, not an image recovery.  The narrow
+    image selector hides only the shared decorative fallback when both source
+    fragments are present; content-image placeholders and a real border image
+    remain visible.
+    """
+
+    if route not in _WRATH_CARD_HIT_AREA_ROUTES:
+        return text, False
+    marker_count = text.count(_WRATH_CARD_HIT_AREA_MARKER)
+    if marker_count > 1:
+        raise PagesExportError("Wrath card hit-area style marker occurs more than once")
+    if marker_count == 1:
+        return text, False
+    head_matches = list(re.finditer(r"</head\s*>", text, flags=re.I))
+    if len(head_matches) != 1:
+        raise PagesExportError("Wrath card hit-area style requires exactly one closing head tag")
+    insertion = "\n" + _WRATH_CARD_HIT_AREA_STYLE + "\n"
+    match = head_matches[0]
+    return text[:match.start()] + insertion + text[match.start():], True
+
+
 def runtime_js(base_path: str, route_map: dict[str, str] | None = None) -> str:
     encoded = json.dumps(base_path)
     encoded_routes = json.dumps(route_map or {}, ensure_ascii=False, separators=(",", ":"))
@@ -1971,7 +2062,7 @@ def generated_uncollected(base_path: str, title: str = "Offline route") -> str:
     return f"""<!doctype html><html><head><meta charset="utf-8"><title>{html.escape(title)}</title>
 <meta http-equiv="Content-Security-Policy" content="{html.escape(PAGES_CSP, quote=True)}">
 <script src="{base_path}__offline/pages_runtime.js"></script></head><body>
-<div id="__offline-pages-banner" style="background:#241b0b;color:#f7e7b0;padding:6px 10px;font:12px Arial">Unofficial historical educational preservation (not affiliated with Blizzard) • 2008-05-12 21:00:44 • no user data collection</div>
+<div id="__offline-pages-banner" style="background:#241b0b;color:#f7e7b0;padding:6px 10px;font:12px Arial">Unofficial historical educational preservation (not affiliated with Blizzard) • Archive reconstruction based on 2008-05-12 • no user data collection</div>
 <main style="max-width:760px;margin:2em auto;font:16px sans-serif"><h1>{html.escape(title)}</h1>
 <p>This route was not collected in the verified archive. GitHub Pages will not fetch it from the Internet.</p>
 <dl id="details"></dl></main>
@@ -1984,7 +2075,7 @@ def generated_redirect(base_path: str, target: str) -> str:
     return f"""<!doctype html><html><head><meta charset="utf-8"><meta http-equiv="refresh" content="0; url={escaped}">
 <meta http-equiv="Content-Security-Policy" content="{html.escape(PAGES_CSP, quote=True)}">
 <script src="{base_path}__offline/pages_runtime.js"></script></head><body>
-<div id="__offline-pages-banner" style="background:#241b0b;color:#f7e7b0;padding:6px 10px;font:12px Arial">Unofficial historical educational preservation (not affiliated with Blizzard) • 2008-05-12 21:00:44 • no user data collection</div>
+<div id="__offline-pages-banner" style="background:#241b0b;color:#f7e7b0;padding:6px 10px;font:12px Arial">Unofficial historical educational preservation (not affiliated with Blizzard) • Archive reconstruction based on 2008-05-12 • no user data collection</div>
 <p>Redirecting to <a href="{escaped}">{escaped}</a>.</p></body></html>"""
 
 
@@ -2254,6 +2345,14 @@ def export_pages(
                     base_path=base_path,
                     source_metadata={"actual_timestamp": str(record.get("actual_timestamp") or "")},
                 )
+                text, changed = rewrite_wrath_card_hit_area(text, route=route)
+                if changed:
+                    derivation_notes.append(
+                        "derived Wrath card hit-area fallback on the exact artwork/screenshots route: "
+                        "243x193 anchor geometry and narrowly hidden missing decorative ssborder image; "
+                        "no image payload recovered"
+                    )
+                    stats["wrath_card_hit_area_repaired"] += 1
                 text = normalize_html_prolog(text)
                 text = inject_html_runtime(text, base_path=base_path, source_sha=source_sha)
                 derived = text.encode("utf-8")
@@ -2283,6 +2382,13 @@ def export_pages(
                             f"{len(fallbacks)} shot(s) whose -thumb route is absent; no image payload is invented"
                         )
                         stats["ssotd_thumbnail_fallback_repaired"] += 1
+                if route == "/wrath/js/screeniesimplified.js":
+                    text = rewrite_wrath_viewer_script(text)
+                    derivation_notes.append(
+                        "Wrath viewer query parser accepts one safe decimal s value "
+                        "within shotList.length; invalid or repeated values fall back to 1"
+                    )
+                    stats["wrath_viewer_query_repaired"] += 1
                 text = mirror.rewrite_script(text, base_url=base_url, localizer=localizer, recorder=recorder)
                 text = rewrite_root_literals(text, base_url=base_url, localizer=localizer, recorder=recorder)
                 if route == "/__offline/compat.js":
@@ -2475,7 +2581,7 @@ def export_pages(
         provenance.append({"route": "/.nojekyll", "static_url": static_url(base_path, ".nojekyll"), "output_path": ".nojekyll", "source_offline_path": None, "source_manifest_sha256": None, "source_manifest_length": None, "source_sha256": None, "source_length": None, "derived_sha256": sha256_bytes(nojekyll), "derived_length": 0, "mime": "application/octet-stream", "kind": "pages_metadata", "role": "github_pages_jekyll_bypass", "transformed": True})
 
         readme = ("# WOW Encyclopedia historical Pages mirror\n\n"
-                  "This is an unofficial educational preservation of the 2008-05-12 21:00:44 capture, "
+                  "This is an unofficial educational archive reconstruction based on 2008-05-12, "
                   "not affiliated with Blizzard. "
                   "It is a static GitHub Pages export under the project path; it performs no external fetching "
                   "and collects no user data. The archive retains known gaps and "

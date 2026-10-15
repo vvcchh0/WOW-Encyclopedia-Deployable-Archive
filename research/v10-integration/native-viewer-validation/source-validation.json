@@ -1,0 +1,105 @@
+{
+  "schema": "native-viewer-vm-012-provenance/v1",
+  "batch_id": "NATIVE-VIEWER-VM-012",
+  "generated_utc": "2026-10-15T10:14:26.812038+00:00",
+  "network_requests": 0,
+  "simulation": true,
+  "inputs": {
+    "mixed9_acceptance": {
+      "path": "research/continuous-recovery-20261015/mixed9-acceptance.json",
+      "sha256": "989a559c56733d34c39b806e1e1d42be6b50e337cc4dd9221423ec31da89866b",
+      "accepted": true,
+      "network_requests_by_acceptance": 0
+    },
+    "raw_viewer": {
+      "path": "research/continuous-recovery-20261015/network-mixed9/raw/03-screeniesimplified-js-replay-proxy.body",
+      "bytes": 8432,
+      "sha256": "43fe3ee08d5006620a34bb06dcb752e639d0c2fcbe156cdc92c1cb456d209f69",
+      "actual_memento": "2008-04-02T07:58:29+00:00",
+      "captured_original_url": "http://www.worldofwarcraft.com/wrath/js/screeniesimplified.js"
+    },
+    "viewer_fix_receipt": {
+      "path": "research/continuous-recovery-20261015/viewer-derived-fixes/wrath-card-hitarea-011-receipt.json",
+      "sha256": "d5d72535a6b8f5f2c47d171f9299072cb2a578a09f6243d1734b411f9e5be848",
+      "schema": "viewer-derived-fixes/wrath-card-hitarea-011",
+      "network_requests": 0,
+      "build_export_browser_run": false
+    }
+  },
+  "freeze": {
+    "receipt_implementation_files": {
+      "tools/export_github_pages.py": {
+        "path": "tools/export_github_pages.py",
+        "bytes": 129822,
+        "sha256": "e6c13afe80a691bbeda46abe7f5b9b1b74bd3f28f1c4a2a08e946eedf7aa9569"
+      },
+      "tests/test_github_pages_export.py": {
+        "path": "tests/test_github_pages_export.py",
+        "bytes": 71469,
+        "sha256": "b6035754363fce52095b8bfa061904ece2906bfb5fbc81df654b87f3d15d09b2"
+      }
+    },
+    "current_digests": {
+      "exporter": {
+        "path": "tools/export_github_pages.py",
+        "bytes": 129822,
+        "sha256": "e6c13afe80a691bbeda46abe7f5b9b1b74bd3f28f1c4a2a08e946eedf7aa9569"
+      },
+      "tests": {
+        "path": "tests/test_github_pages_export.py",
+        "bytes": 71469,
+        "sha256": "b6035754363fce52095b8bfa061904ece2906bfb5fbc81df654b87f3d15d09b2"
+      },
+      "source_css": {
+        "path": "offline/site/wrath/css/master.css",
+        "bytes": 46280,
+        "sha256": "ba8e363a034af83c4204eac9b56db69a9716fb8e1fd6fbd7e45619bd1d57ae40"
+      }
+    },
+    "match": {
+      "exporter": true,
+      "tests": true,
+      "source_css": true
+    }
+  },
+  "source_transform": {
+    "original_fragment_count": 1,
+    "original_fragment_span": [
+      831,
+      968
+    ],
+    "original_fragment_sha256": "bfbbf6c8aad0244368cf08663fc4c47f9b12fef0a7a254f6b8564ce251400678",
+    "prefix_unchanged": true,
+    "suffix_unchanged": true,
+    "original_eval_fragment_removed": true,
+    "derived_url_search_params_count": 1,
+    "derived_safe_integer_check_count": 1,
+    "derived_omega_entry_count": 1,
+    "derived_eval_count": 0,
+    "navigation_symbols_unchanged": true,
+    "navigation_symbol_hashes": {
+      "function prevScreen() {nextScreenshot();}": {
+        "original": "43c096dd3cc5881f3cb22c6468c6b923ac583a4caa3044843028edf06d8e015c",
+        "derived": "43c096dd3cc5881f3cb22c6468c6b923ac583a4caa3044843028edf06d8e015c"
+      },
+      "function nextScreen() {prevScreenshot();}": {
+        "original": "aa7dee7d48229207a141440248baf5b34fcc9cee00b474a0ce0b5e02b8e5c160",
+        "derived": "aa7dee7d48229207a141440248baf5b34fcc9cee00b474a0ce0b5e02b8e5c160"
+      },
+      "function nextScreenshot() { if(!animationLock) slideShowNextFader(); }": {
+        "original": "c1df81f8a14ef78a1ac6baee754a2231f138d88f40a201e8c6a691092d584a28",
+        "derived": "c1df81f8a14ef78a1ac6baee754a2231f138d88f40a201e8c6a691092d584a28"
+      },
+      "function prevScreenshot() { if(!animationLock) slideShowPrevFader(); }": {
+        "original": "921dc51154322b55c6b206ef2114c2a45356e6d1b6ab5658fa6c2966656523ee",
+        "derived": "921dc51154322b55c6b206ef2114c2a45356e6d1b6ab5658fa6c2966656523ee"
+      }
+    }
+  },
+  "derived": {
+    "path": "research/v10-integration/native-viewer-validation/derived-screeniesimplified.js",
+    "bytes": 8692,
+    "sha256": "30942827950a0952102a598e39590044398d4f9b0be81f4d58ddd86e4ae9c35e"
+  },
+  "scope": "real complete accepted JS converted with current exporter helper; no synthetic parser fixture; no production write"
+}

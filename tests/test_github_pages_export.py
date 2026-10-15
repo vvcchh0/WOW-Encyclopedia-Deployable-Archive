@@ -131,6 +131,45 @@ class GithubPagesExportTests(unittest.TestCase):
             self.assertIn('String(topicsArray[topicsArray[document.title].parentString].linkString).split("/").pop()', cascade)
             self.assertEqual((site / "index.xml").read_text(encoding="utf-8").split("<meta", 1)[0], "<html><head>")
 
+    def test_wrath_resource_base_remains_directory_while_navigation_uses_index(self) -> None:
+        prefix = pages.DEFAULT_BASE_PATH
+        for resource_root in ("/wrath/", prefix + "wrath/"):
+            with self.subTest(resource_root=resource_root), tempfile.TemporaryDirectory() as tmp:
+                base, site, manifest = self._fixture(Path(tmp))
+                payload = json.loads(manifest.read_text(encoding="utf-8"))
+                entries = {
+                    "wrath/index.html": (
+                        f'<html><head><title>Wrath</title></head><body><script>var roothost = "{resource_root}"; '
+                        'window.navigation = "/wrath/"; window.imageHref = roothost + "images/layout/frame.svg";'
+                        '</script></body></html>', "html", "text/html"),
+                    "wrath/images/layout/frame.svg": (
+                        '<svg xmlns="http://www.w3.org/2000/svg" width="2" height="2"></svg>', "image", "image/svg+xml"),
+                }
+                for relative, (text, kind, mime) in entries.items():
+                    data = text.encode("utf-8")
+                    target = site / relative
+                    target.parent.mkdir(parents=True, exist_ok=True)
+                    target.write_bytes(data)
+                    payload["files"].append({"route": "/" + relative,
+                        "output_path": "offline/site/" + relative,
+                        "derived_sha256": hashlib.sha256(data).hexdigest(),
+                        "derived_length": len(data), "kind": kind, "mime": mime,
+                        "source_base_url": "http://www.worldofwarcraft.com/" + relative})
+                payload["route_aliases"]["/wrath/"] = "/wrath/index.html"
+                payload["origin_index"]["www.worldofwarcraft.com/wrath/"] = "/wrath/index.html"
+                manifest.write_text(json.dumps(payload), encoding="utf-8")
+                output = base / "pages"
+                pages.export_pages(source_site=site, manifest_path=manifest, output=output,
+                                   workspace_root=base, min_free_bytes=0)
+                derived = (output / "wrath/index.html").read_text(encoding="utf-8")
+                root = re.search(r'var roothost = "([^"]+)"', derived).group(1)
+                self.assertEqual(root, prefix + "wrath/")
+                self.assertIn('window.navigation = "' + prefix + 'wrath/index.html"', derived)
+                resource = root + "images/layout/frame.svg"
+                self.assertEqual((output / resource.removeprefix(prefix)).read_text(encoding="utf-8"),
+                                 entries["wrath/images/layout/frame.svg"][0])
+                self.assertNotIn("index.htmlimages", derived)
+
     def test_ptr_export_path_uses_manifest_capture_and_generated_home(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             base, site, manifest = self._fixture(Path(tmp))
@@ -990,6 +1029,278 @@ process.stdout.write(writes[0]);
         self.assertIn("currentPage = queryCurrentPage", rewritten)
         with self.assertRaises(pages.PagesExportError):
             pages.rewrite_wrath_thumbnails_script(source.replace('query.split("s=")', 'query.split("page=")'))
+
+    def test_wrath_viewer_rewrite_is_strict_and_node_validated(self) -> None:
+        common_urls = [
+            f"http://www.worldofwarcraft.com/wrath/images/artwork/ss{index}.jpg"
+            for index in range(1, 13)
+        ]
+        shot_urls = common_urls + [
+            "http://www.worldofwarcraft.com/wrath/images/artwork/en_us/ss1.jpg"
+        ]
+        source_lines = ["var shotList = ["]
+        source_lines.extend(f'    "{url}",' for url in shot_urls)
+        source_lines.extend(
+            [
+                "];",
+                "var currentShotNumber = 1;",
+                "function nextShot() { return shotList[currentShotNumber + 1]; }",
+                "function previousShot() { return shotList[currentShotNumber - 1]; }",
+                "var openedShot = -1;",
+                "function omegaLightBox(index) { openedShot = index; }",
+                'checkForSpecifiedShot = window.location.href.split("s=");',
+                "nowViewing = (checkForSpecifiedShot[1]) ? eval(checkForSpecifiedShot[1]) : 0;",
+                "omegaLightBox(nowViewing-1);",
+            ]
+        )
+        source = chr(10).join(source_lines)
+        rewritten = pages.rewrite_wrath_viewer_script(source)
+
+        self.assertEqual(rewritten.count("URLSearchParams"), 1)
+        self.assertEqual(rewritten.count("eval("), 0)
+        self.assertIn('getAll("s")', rewritten)
+        self.assertIn("omegaLightBox(nowViewing-1);", rewritten)
+        self.assertIn(
+            "function nextShot() { return shotList[currentShotNumber + 1]; }",
+            rewritten,
+        )
+        self.assertIn(
+            "function previousShot() { return shotList[currentShotNumber - 1]; }",
+            rewritten,
+        )
+        for url in shot_urls:
+            self.assertIn(f'"{url}"', rewritten)
+
+        node_command = shutil.which("node")
+        node = Path(node_command) if node_command else Path(
+            "C:/Users/17630/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe"
+        )
+        if not node.is_file():
+            self.skipTest("bundled Node.js is unavailable for the viewer VM regression")
+        cases = [
+            {"search": "?s=1", "expected": 1},
+            {"search": "?s=3", "expected": 3},
+            {"search": "?s=13", "expected": 13},
+            {"search": "?s=%33", "expected": 3},
+            {"search": "", "expected": 1},
+            {"search": "?s=", "expected": 1},
+            {"search": "?s=0", "expected": 1},
+            {"search": "?s=-1", "expected": 1},
+            {"search": "?s=14", "expected": 1},
+            {"search": "?s=3&s=4", "expected": 1},
+            {"search": "?s=9007199254740992", "expected": 1},
+            {"search": "?s=sentinel%3D99", "expected": 1},
+        ]
+        driver = """
+const vm = require("node:vm");
+const code = CODE_PLACEHOLDER;
+const cases = CASES_PLACEHOLDER;
+const expectedList = SHOT_LIST_PLACEHOLDER;
+const results = [];
+for (const item of cases) {
+    const context = {
+        window: {
+            location: {
+                search: item.search,
+                href: "https://pages.test/wrath/art.xml" + item.search
+            }
+        },
+        URLSearchParams,
+        sentinel: 0,
+        eval: function () {
+            throw new Error("eval must not be called");
+        }
+    };
+    vm.createContext(context);
+    vm.runInContext(code, context);
+    results.push({
+        nowViewing: context.nowViewing,
+        openedShot: context.openedShot,
+        sentinel: context.sentinel,
+        shotList: context.shotList
+    });
+}
+process.stdout.write(JSON.stringify({results, expectedList}));
+""".replace("CODE_PLACEHOLDER", json.dumps(rewritten))
+        driver = driver.replace("CASES_PLACEHOLDER", json.dumps(cases))
+        driver = driver.replace("SHOT_LIST_PLACEHOLDER", json.dumps(shot_urls))
+        result = subprocess.run(
+            [str(node), "-e", driver],
+            capture_output=True,
+            text=True,
+            check=False,
+            timeout=10,
+        )
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        payload = json.loads(result.stdout)
+        self.assertEqual(payload["expectedList"], shot_urls)
+        self.assertEqual(len(payload["results"]), len(cases))
+        for case, observed in zip(cases, payload["results"]):
+            with self.subTest(search=case["search"]):
+                self.assertEqual(observed["nowViewing"], case["expected"])
+                self.assertEqual(observed["openedShot"], case["expected"] - 1)
+                self.assertEqual(observed["sentinel"], 0)
+                self.assertEqual(observed["shotList"], shot_urls)
+
+        with self.assertRaises(pages.PagesExportError):
+            pages.rewrite_wrath_viewer_script(source.replace('split("s=")', 'split("page=")'))
+        fragment = (
+            'checkForSpecifiedShot = window.location.href.split("s=");'
+            + chr(10)
+            + "nowViewing = (checkForSpecifiedShot[1]) ? "
+            + "eval(checkForSpecifiedShot[1]) : 0;"
+        )
+        with self.assertRaises(pages.PagesExportError):
+            pages.rewrite_wrath_viewer_script(source + chr(10) + fragment)
+
+    def test_wrath_viewer_rewrite_runs_only_for_exact_route(self) -> None:
+        source = (
+            'var shotList = ["common1", "common2", "common3"];'
+            'checkForSpecifiedShot = window.location.href.split("s=");'
+            "nowViewing = (checkForSpecifiedShot[1]) ? eval(checkForSpecifiedShot[1]) : 0;"
+            "function omegaLightBox(index) { return index; }"
+            "omegaLightBox(nowViewing-1);"
+        )
+        with tempfile.TemporaryDirectory() as tmp:
+            base, site, manifest = self._fixture(Path(tmp))
+            payload = json.loads(manifest.read_text(encoding="utf-8"))
+            routes = (
+                "/wrath/js/screeniesimplified.js",
+                "/wrath/js/other-viewer.js",
+            )
+            for route in routes:
+                script = site / route.lstrip("/")
+                script.parent.mkdir(parents=True, exist_ok=True)
+                data = source.encode("utf-8")
+                script.write_bytes(data)
+                payload["files"].append(
+                    {
+                        "route": route,
+                        "output_path": "offline/site/" + route.lstrip("/"),
+                        "derived_sha256": hashlib.sha256(data).hexdigest(),
+                        "derived_length": len(data),
+                        "mime": "application/javascript",
+                        "kind": "js",
+                        "source_base_url": "http://www.worldofwarcraft.com" + route,
+                    }
+                )
+                payload["origin_index"]["www.worldofwarcraft.com" + route] = route
+            manifest.write_text(json.dumps(payload), encoding="utf-8")
+            pages.export_pages(
+                source_site=site,
+                manifest_path=manifest,
+                output=base / "pages",
+                workspace_root=base,
+                max_bytes=500_000_000,
+                min_free_bytes=0,
+            )
+            exact = (base / "pages/wrath/js/screeniesimplified.js").read_text(encoding="utf-8")
+            other = (base / "pages/wrath/js/other-viewer.js").read_text(encoding="utf-8")
+            self.assertNotIn("eval(", exact)
+            self.assertIn("URLSearchParams", exact)
+            self.assertIn("eval(", other)
+            provenance = json.loads((base / "pages/export-provenance.json").read_text(encoding="utf-8"))
+            exact_record = next(
+                row for row in provenance["files"]
+                if row.get("route") == "/wrath/js/screeniesimplified.js"
+            )
+            self.assertIn("Wrath viewer query parser", exact_record["derivation_reason"])
+
+    def test_wrath_card_hit_area_fallback_is_narrow_and_idempotent(self) -> None:
+        source = """<!doctype html><html><head><title>Gallery</title></head><body>
+<div class="ssborder"><div><a href="/wrath/art.xml?s=1">
+<img src="/__offline/missing-image.svg?requested=ssborder1.png" class="png"></a></div></div>
+<div class="ssborder"><div><a href="/wrath/art.xml?s=2">
+<img src="/wrath/images/layout/ssborder1.png" class="png"></a></div></div>
+<img class="content" src="/__offline/missing-image.svg?requested=content.jpg">
+</body></html>"""
+        for route in ("/wrath/artwork.xml", "/wrath/screenshots.xml"):
+            with self.subTest(route=route):
+                derived, changed = pages.rewrite_wrath_card_hit_area(source, route=route)
+                self.assertTrue(changed)
+                self.assertEqual(derived.count(pages._WRATH_CARD_HIT_AREA_MARKER), 1)
+                self.assertIn(".ssborder a", derived)
+                self.assertIn("width: 243px;", derived)
+                self.assertIn("height: 193px;", derived)
+                self.assertIn(
+                    '.ssborder img[src*="missing-image.svg"][src*="ssborder1.png"]',
+                    derived,
+                )
+                self.assertIn(
+                    'src="/wrath/images/layout/ssborder1.png"',
+                    derived,
+                )
+                self.assertIn(
+                    'src="/__offline/missing-image.svg?requested=content.jpg"',
+                    derived,
+                )
+                repeated, repeated_changed = pages.rewrite_wrath_card_hit_area(
+                    derived, route=route
+                )
+                self.assertFalse(repeated_changed)
+                self.assertEqual(repeated, derived)
+
+        ordinary, ordinary_changed = pages.rewrite_wrath_card_hit_area(
+            source, route="/wrath/index.xml"
+        )
+        self.assertFalse(ordinary_changed)
+        self.assertEqual(ordinary, source)
+
+    def test_wrath_card_hit_area_fallback_is_exported_only_for_gallery_routes(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            base, site, manifest = self._fixture(Path(tmp))
+            payload = json.loads(manifest.read_text(encoding="utf-8"))
+            source = """<!doctype html><html><head><title>Gallery</title></head><body>
+<div class="ssborder"><div><a href="/wrath/art.xml?s=1">
+<img src="/__offline/missing-image.svg?requested=ssborder1.png"></a></div></div>
+<img src="/__offline/missing-image.svg?requested=content.jpg">
+</body></html>""".encode("utf-8")
+            routes = (
+                "/wrath/artwork.xml",
+                "/wrath/screenshots.xml",
+                "/wrath/other.xml",
+            )
+            for route in routes:
+                relative = route.lstrip("/")
+                target = site / relative
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_bytes(source)
+                payload["files"].append(
+                    {
+                        "route": route,
+                        "output_path": "offline/site/" + relative,
+                        "derived_sha256": hashlib.sha256(source).hexdigest(),
+                        "derived_length": len(source),
+                        "mime": "text/html; charset=UTF-8",
+                        "kind": "html",
+                        "source_base_url": "http://www.worldofwarcraft.com" + route,
+                    }
+                )
+            manifest.write_text(json.dumps(payload), encoding="utf-8")
+            output = base / "pages"
+            pages.export_pages(
+                source_site=site,
+                manifest_path=manifest,
+                output=output,
+                workspace_root=base,
+                max_bytes=500_000_000,
+                min_free_bytes=0,
+            )
+            provenance = json.loads(
+                (output / "export-provenance.json").read_text(encoding="utf-8")
+            )
+            for route in routes:
+                exported = (output / ("wrath/" + route.rsplit("/", 1)[-1] + ".html")).read_text(
+                    encoding="utf-8"
+                )
+                if route in {"/wrath/artwork.xml", "/wrath/screenshots.xml"}:
+                    self.assertIn(pages._WRATH_CARD_HIT_AREA_MARKER, exported)
+                    record = next(
+                        row for row in provenance["files"] if row.get("route") == route
+                    )
+                    self.assertIn("Wrath card hit-area fallback", record["derivation_reason"])
+                else:
+                    self.assertNotIn(pages._WRATH_CARD_HIT_AREA_MARKER, exported)
 
 
 if __name__ == "__main__":

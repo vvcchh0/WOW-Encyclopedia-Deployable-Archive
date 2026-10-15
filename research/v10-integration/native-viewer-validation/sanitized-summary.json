@@ -1,0 +1,293 @@
+{
+  "schema": "native-viewer-vm-012-sanitized-summary/v1",
+  "batch_id": "NATIVE-VIEWER-VM-012",
+  "simulation": true,
+  "network_requests": 0,
+  "validation_mode": "offline Node VM; native source definitions executed; no browser or archive acquisition",
+  "commands": [
+    "C:\\nvm4w\\nodejs\\node.EXE --version",
+    "C:\\nvm4w\\nodejs\\node.EXE research\\v10-integration\\native-viewer-validation\\vm_native_viewer_validation.js"
+  ],
+  "node_version": "v22.22.0",
+  "vm_window": {
+    "start_utc": "2026-10-15T10:15:34.794Z",
+    "end_utc": "2026-10-15T10:15:34.808Z"
+  },
+  "inputs": {
+    "raw_viewer": {
+      "path": "research/continuous-recovery-20261015/network-mixed9/raw/03-screeniesimplified-js-replay-proxy.body",
+      "bytes": 8432,
+      "sha256": "43fe3ee08d5006620a34bb06dcb752e639d0c2fcbe156cdc92c1cb456d209f69",
+      "actual_memento": "2008-04-02T07:58:29+00:00",
+      "captured_original_url": "http://www.worldofwarcraft.com/wrath/js/screeniesimplified.js",
+      "on_disk_sha256": "43fe3ee08d5006620a34bb06dcb752e639d0c2fcbe156cdc92c1cb456d209f69"
+    },
+    "mixed9_acceptance": {
+      "path": "research/continuous-recovery-20261015/mixed9-acceptance.json",
+      "sha256": "989a559c56733d34c39b806e1e1d42be6b50e337cc4dd9221423ec31da89866b",
+      "accepted": true,
+      "network_requests_by_acceptance": 0
+    },
+    "viewer_fix_receipt": {
+      "path": "research/continuous-recovery-20261015/viewer-derived-fixes/wrath-card-hitarea-011-receipt.json",
+      "sha256": "d5d72535a6b8f5f2c47d171f9299072cb2a578a09f6243d1734b411f9e5be848",
+      "schema": "viewer-derived-fixes/wrath-card-hitarea-011",
+      "network_requests": 0,
+      "build_export_browser_run": false
+    }
+  },
+  "freeze_hash_match": {
+    "exporter": true,
+    "tests": true,
+    "source_css": true
+  },
+  "freeze_current_digests": {
+    "exporter": {
+      "path": "tools/export_github_pages.py",
+      "bytes": 129822,
+      "sha256": "e6c13afe80a691bbeda46abe7f5b9b1b74bd3f28f1c4a2a08e946eedf7aa9569"
+    },
+    "tests": {
+      "path": "tests/test_github_pages_export.py",
+      "bytes": 71469,
+      "sha256": "b6035754363fce52095b8bfa061904ece2906bfb5fbc81df654b87f3d15d09b2"
+    },
+    "source_css": {
+      "path": "offline/site/wrath/css/master.css",
+      "bytes": 46280,
+      "sha256": "ba8e363a034af83c4204eac9b56db69a9716fb8e1fd6fbd7e45619bd1d57ae40"
+    }
+  },
+  "source_transform": {
+    "original_fragment_count": 1,
+    "original_fragment_span": [
+      831,
+      968
+    ],
+    "original_fragment_sha256": "bfbbf6c8aad0244368cf08663fc4c47f9b12fef0a7a254f6b8564ce251400678",
+    "prefix_unchanged": true,
+    "suffix_unchanged": true,
+    "original_eval_fragment_removed": true,
+    "derived_url_search_params_count": 1,
+    "derived_safe_integer_check_count": 1,
+    "derived_omega_entry_count": 1,
+    "derived_eval_count": 0,
+    "navigation_symbols_unchanged": true,
+    "navigation_symbol_hashes": {
+      "function prevScreen() {nextScreenshot();}": {
+        "original": "43c096dd3cc5881f3cb22c6468c6b923ac583a4caa3044843028edf06d8e015c",
+        "derived": "43c096dd3cc5881f3cb22c6468c6b923ac583a4caa3044843028edf06d8e015c"
+      },
+      "function nextScreen() {prevScreenshot();}": {
+        "original": "aa7dee7d48229207a141440248baf5b34fcc9cee00b474a0ce0b5e02b8e5c160",
+        "derived": "aa7dee7d48229207a141440248baf5b34fcc9cee00b474a0ce0b5e02b8e5c160"
+      },
+      "function nextScreenshot() { if(!animationLock) slideShowNextFader(); }": {
+        "original": "c1df81f8a14ef78a1ac6baee754a2231f138d88f40a201e8c6a691092d584a28",
+        "derived": "c1df81f8a14ef78a1ac6baee754a2231f138d88f40a201e8c6a691092d584a28"
+      },
+      "function prevScreenshot() { if(!animationLock) slideShowPrevFader(); }": {
+        "original": "921dc51154322b55c6b206ef2114c2a45356e6d1b6ab5658fa6c2966656523ee",
+        "derived": "921dc51154322b55c6b206ef2114c2a45356e6d1b6ab5658fa6c2966656523ee"
+      }
+    }
+  },
+  "derived": {
+    "path": "research/v10-integration/native-viewer-validation/derived-screeniesimplified.js",
+    "bytes": 8692,
+    "sha256": "30942827950a0952102a598e39590044398d4f9b0be81f4d58ddd86e4ae9c35e",
+    "recorded_sha256": "30942827950a0952102a598e39590044398d4f9b0be81f4d58ddd86e4ae9c35e"
+  },
+  "assertions": {
+    "case_count": 12,
+    "expected_case_count": 12,
+    "all_cases_passed": true,
+    "all_shot_lists_13": true,
+    "common12_locale1": true,
+    "dir_list_verified": true,
+    "hires_list_verified": true,
+    "one_based_to_zero_based_verified": true,
+    "screen_link_hires_verified": true,
+    "dcurrent_dtotal_verified": true,
+    "sentinel_never_executed": true,
+    "image_stub_no_network": true
+  },
+  "cases": [
+    {
+      "name": "one",
+      "search": "?s=1",
+      "expected_one_based": 1,
+      "expected_zero_based": 0,
+      "observed_now_viewing": 0,
+      "observed_opened_shot": 0,
+      "d_current": 1,
+      "d_total": 13,
+      "screen_link": "./images/artwork/ss1-hires.jpg",
+      "sentinel": 0,
+      "image_assignment_count": 0,
+      "passed": true
+    },
+    {
+      "name": "three",
+      "search": "?s=3",
+      "expected_one_based": 3,
+      "expected_zero_based": 2,
+      "observed_now_viewing": 2,
+      "observed_opened_shot": 2,
+      "d_current": 3,
+      "d_total": 13,
+      "screen_link": "./images/artwork/ss3-hires.jpg",
+      "sentinel": 0,
+      "image_assignment_count": 0,
+      "passed": true
+    },
+    {
+      "name": "thirteen",
+      "search": "?s=13",
+      "expected_one_based": 13,
+      "expected_zero_based": 12,
+      "observed_now_viewing": 12,
+      "observed_opened_shot": 12,
+      "d_current": 13,
+      "d_total": 13,
+      "screen_link": "./images/artwork/en_us/ss1-hires.jpg",
+      "sentinel": 0,
+      "image_assignment_count": 0,
+      "passed": true
+    },
+    {
+      "name": "encoded-three",
+      "search": "?s=%33",
+      "expected_one_based": 3,
+      "expected_zero_based": 2,
+      "observed_now_viewing": 2,
+      "observed_opened_shot": 2,
+      "d_current": 3,
+      "d_total": 13,
+      "screen_link": "./images/artwork/ss3-hires.jpg",
+      "sentinel": 0,
+      "image_assignment_count": 0,
+      "passed": true
+    },
+    {
+      "name": "missing",
+      "search": "",
+      "expected_one_based": 1,
+      "expected_zero_based": 0,
+      "observed_now_viewing": 0,
+      "observed_opened_shot": 0,
+      "d_current": 1,
+      "d_total": 13,
+      "screen_link": "./images/artwork/ss1-hires.jpg",
+      "sentinel": 0,
+      "image_assignment_count": 0,
+      "passed": true
+    },
+    {
+      "name": "empty",
+      "search": "?s=",
+      "expected_one_based": 1,
+      "expected_zero_based": 0,
+      "observed_now_viewing": 0,
+      "observed_opened_shot": 0,
+      "d_current": 1,
+      "d_total": 13,
+      "screen_link": "./images/artwork/ss1-hires.jpg",
+      "sentinel": 0,
+      "image_assignment_count": 0,
+      "passed": true
+    },
+    {
+      "name": "zero",
+      "search": "?s=0",
+      "expected_one_based": 1,
+      "expected_zero_based": 0,
+      "observed_now_viewing": 0,
+      "observed_opened_shot": 0,
+      "d_current": 1,
+      "d_total": 13,
+      "screen_link": "./images/artwork/ss1-hires.jpg",
+      "sentinel": 0,
+      "image_assignment_count": 0,
+      "passed": true
+    },
+    {
+      "name": "negative",
+      "search": "?s=-1",
+      "expected_one_based": 1,
+      "expected_zero_based": 0,
+      "observed_now_viewing": 0,
+      "observed_opened_shot": 0,
+      "d_current": 1,
+      "d_total": 13,
+      "screen_link": "./images/artwork/ss1-hires.jpg",
+      "sentinel": 0,
+      "image_assignment_count": 0,
+      "passed": true
+    },
+    {
+      "name": "fourteen",
+      "search": "?s=14",
+      "expected_one_based": 1,
+      "expected_zero_based": 0,
+      "observed_now_viewing": 0,
+      "observed_opened_shot": 0,
+      "d_current": 1,
+      "d_total": 13,
+      "screen_link": "./images/artwork/ss1-hires.jpg",
+      "sentinel": 0,
+      "image_assignment_count": 0,
+      "passed": true
+    },
+    {
+      "name": "duplicate",
+      "search": "?s=3&s=4",
+      "expected_one_based": 1,
+      "expected_zero_based": 0,
+      "observed_now_viewing": 0,
+      "observed_opened_shot": 0,
+      "d_current": 1,
+      "d_total": 13,
+      "screen_link": "./images/artwork/ss1-hires.jpg",
+      "sentinel": 0,
+      "image_assignment_count": 0,
+      "passed": true
+    },
+    {
+      "name": "unsafe-integer",
+      "search": "?s=9007199254740992",
+      "expected_one_based": 1,
+      "expected_zero_based": 0,
+      "observed_now_viewing": 0,
+      "observed_opened_shot": 0,
+      "d_current": 1,
+      "d_total": 13,
+      "screen_link": "./images/artwork/ss1-hires.jpg",
+      "sentinel": 0,
+      "image_assignment_count": 0,
+      "passed": true
+    },
+    {
+      "name": "encoded-sentinel",
+      "search": "?s=sentinel%3D99",
+      "expected_one_based": 1,
+      "expected_zero_based": 0,
+      "observed_now_viewing": 0,
+      "observed_opened_shot": 0,
+      "d_current": 1,
+      "d_total": 13,
+      "screen_link": "./images/artwork/ss1-hires.jpg",
+      "sentinel": 0,
+      "image_assignment_count": 0,
+      "passed": true
+    }
+  ],
+  "scope_not_covered": [
+    "browser layout, paint, and browser navigation",
+    "real image fetching or archive acquisition",
+    "animation timers and interactive next/previous behavior",
+    "full exporter/build/browser integration"
+  ],
+  "generated_utc": "2026-10-15T10:16:45.985357+00:00",
+  "host_platform": "Windows-11-10.0.22631-SP0"
+}

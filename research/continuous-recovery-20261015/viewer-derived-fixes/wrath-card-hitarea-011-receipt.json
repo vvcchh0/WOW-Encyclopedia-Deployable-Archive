@@ -1,0 +1,210 @@
+{
+  "schema": "viewer-derived-fixes/wrath-card-hitarea-011",
+  "generated_utc": "2026-10-15T10:10:40.465376+00:00",
+  "task": "WRATH-CARD-HITAREA-011",
+  "scope": {
+    "implementation_files": [
+      "tools/export_github_pages.py",
+      "tests/test_github_pages_export.py"
+    ],
+    "receipt_root": "research/continuous-recovery-20261015/viewer-derived-fixes",
+    "frozen_and_untouched": [
+      "offline/site",
+      "offline/build-manifest.json",
+      "tools/historical_exhibits.py",
+      "tests/test_historical_exhibits.py"
+    ],
+    "network_requests": 0,
+    "build_export_browser_run": false
+  },
+  "implementation_files": [
+    {
+      "path": "tools/export_github_pages.py",
+      "bytes": 129822,
+      "sha256": "e6c13afe80a691bbeda46abe7f5b9b1b74bd3f28f1c4a2a08e946eedf7aa9569"
+    },
+    {
+      "path": "tests/test_github_pages_export.py",
+      "bytes": 71469,
+      "sha256": "b6035754363fce52095b8bfa061904ece2906bfb5fbc81df654b87f3d15d09b2"
+    }
+  ],
+  "source_css_evidence": {
+    "path": "offline/site/wrath/css/master.css",
+    "line_start": 444,
+    "line_end": 446,
+    "bytes": 46280,
+    "sha256": "ba8e363a034af83c4204eac9b56db69a9716fb8e1fd6fbd7e45619bd1d57ae40",
+    "rules": [
+      ".ssborder {width:243px; height:193px; background-position:4px 10px; background-repeat:no-repeat;}",
+      ".ssborder div {width:243px; height:193px; background:url(\"/wrath/images/layout/ssborder2.png\") 0 0 no-repeat; text-align:center;}",
+      ".ssborder div img {margin:10px 0 0 2px;}"
+    ],
+    "interpretation": "The 243x193 dimensions are local source CSS evidence for the card hit area; they do not prove recovery of the missing decorative border payload."
+  },
+  "derived_css_contract": {
+    "exact_routes": [
+      "/wrath/artwork.xml",
+      "/wrath/screenshots.xml"
+    ],
+    "marker": "data-archive-derived=\"wrath-card-hit-area-v1\"",
+    "anchor_rule": ".ssborder a { display: block; width: 243px; height: 193px; }",
+    "decorative_fallback_rule": ".ssborder img[src*=\"missing-image.svg\"][src*=\"ssborder1.png\"] { visibility: hidden; }",
+    "ordinary_pages": "No injection outside the two exact routes.",
+    "real_border_image": "A src containing ssborder1.png without missing-image.svg is not selected and remains visible.",
+    "content_placeholder": "A missing-image.svg src without ssborder1.png is not selected and remains visible.",
+    "idempotence": "Existing marker returns unchanged output and no second style block.",
+    "asset_boundary": "No PNG was created or relabeled; this is a derived layout fallback only."
+  },
+  "focused_tests": {
+    "command": "C:\\Users\\17630\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe -X utf8 -m unittest tests.test_github_pages_export.GithubPagesExportTests.test_wrath_card_hit_area_fallback_is_narrow_and_idempotent tests.test_github_pages_export.GithubPagesExportTests.test_wrath_card_hit_area_fallback_is_exported_only_for_gallery_routes",
+    "exit_code": 0,
+    "output": "..\\n----------------------------------------------------------------------\\nRan 2 tests in 0.358s\\n\\nOK",
+    "covered": [
+      "missing decorative border selector and 243x193 anchor",
+      "real ssborder PNG remains represented and unselected",
+      "ordinary missing content placeholder remains represented and unselected",
+      "ordinary route no injection",
+      "idempotence",
+      "export branch exact route scope and derivation provenance"
+    ]
+  },
+  "joint_tests": {
+    "command": "C:\\Users\\17630\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe -X utf8 -m unittest tests.test_github_pages_export tests.test_historical_exhibits",
+    "start_utc": "2026-10-15T10:08:56.2819086Z",
+    "end_utc": "2026-10-15T10:09:02.8825115Z",
+    "exit_code": 0,
+    "tests_run": 42,
+    "duration_seconds": 5.985,
+    "output": "..........................................\\n----------------------------------------------------------------------\\nRan 42 tests in 5.985s\\n\\nOK"
+  },
+  "node_vm": {
+    "command": "Bundled Python invokes real Node VM; test runner prefers shutil.which('node') and falls back to C:\\\\Users\\\\17630\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\node\\\\bin\\\\node.exe.",
+    "node_used": "C:\\\\nvm4w\\\\nodejs\\\\node.EXE",
+    "start_utc": "2026-10-15T10:10:19.228653+00:00",
+    "end_utc": "2026-10-15T10:10:19.403653+00:00",
+    "exit_code": 0,
+    "derived_eval_count": 0,
+    "cases": [
+      {
+        "search": "?s=1",
+        "nowViewing": 1,
+        "openedShot": 0,
+        "sentinel": 0,
+        "shot_count": 13
+      },
+      {
+        "search": "?s=3",
+        "nowViewing": 3,
+        "openedShot": 2,
+        "sentinel": 0,
+        "shot_count": 13
+      },
+      {
+        "search": "?s=13",
+        "nowViewing": 13,
+        "openedShot": 12,
+        "sentinel": 0,
+        "shot_count": 13
+      },
+      {
+        "search": "?s=%33",
+        "nowViewing": 3,
+        "openedShot": 2,
+        "sentinel": 0,
+        "shot_count": 13
+      },
+      {
+        "search": "",
+        "nowViewing": 1,
+        "openedShot": 0,
+        "sentinel": 0,
+        "shot_count": 13
+      },
+      {
+        "search": "?s=",
+        "nowViewing": 1,
+        "openedShot": 0,
+        "sentinel": 0,
+        "shot_count": 13
+      },
+      {
+        "search": "?s=0",
+        "nowViewing": 1,
+        "openedShot": 0,
+        "sentinel": 0,
+        "shot_count": 13
+      },
+      {
+        "search": "?s=-1",
+        "nowViewing": 1,
+        "openedShot": 0,
+        "sentinel": 0,
+        "shot_count": 13
+      },
+      {
+        "search": "?s=14",
+        "nowViewing": 1,
+        "openedShot": 0,
+        "sentinel": 0,
+        "shot_count": 13
+      },
+      {
+        "search": "?s=3&s=4",
+        "nowViewing": 1,
+        "openedShot": 0,
+        "sentinel": 0,
+        "shot_count": 13
+      },
+      {
+        "search": "?s=9007199254740992",
+        "nowViewing": 1,
+        "openedShot": 0,
+        "sentinel": 0,
+        "shot_count": 13
+      },
+      {
+        "search": "?s=sentinel%3D99",
+        "nowViewing": 1,
+        "openedShot": 0,
+        "sentinel": 0,
+        "shot_count": 13
+      }
+    ],
+    "invariants": [
+      "Encoded decimal %33 is accepted as 3.",
+      "Missing, empty, zero, negative, out-of-range, duplicate, unsafe-integer, and encoded-expression values fall back to 1.",
+      "The malicious eval sentinel remains 0.",
+      "shotList length remains 13 and omegaLightBox receives nowViewing-1."
+    ]
+  },
+  "raw_viewer_evidence": {
+    "path": "research/continuous-recovery-20261015/network-mixed9/raw/03-screeniesimplified-js-replay-proxy.body",
+    "bytes": 8432,
+    "sha256": "43fe3ee08d5006620a34bb06dcb752e639d0c2fcbe156cdc92c1cb456d209f69",
+    "original_fragment_count": 1,
+    "raw_fragment_span": [
+      831,
+      968
+    ],
+    "derived_eval_count": 0,
+    "derived_url_search_params_count": 1,
+    "derived_omega_entry_count": 1,
+    "unchanged_prefix": true,
+    "unchanged_suffix": true,
+    "raw_load_check_for_shot_count": 1,
+    "raw_shot_list_count": 26,
+    "navigation_symbols_unchanged": [
+      "nextScreenshot",
+      "prevScreenshot",
+      "slideShowNextFader",
+      "slideShowPrevFader"
+    ],
+    "note": "The source raw body uses nextScreenshot/prevScreenshot rather than functions named nextShot/previousShot; the rewrite span check proves all bytes before and after the single query fragment remain unchanged."
+  },
+  "deviations_and_limits": [
+    "No full build, export, or browser run was performed; root owns those later.",
+    "The CSS fallback does not claim original ssborder1.png recovery and does not change resource counters or missing-content classification.",
+    "The source CSS was read from the frozen local site only; no network request was made."
+  ]
+}
