@@ -1,0 +1,3496 @@
+{
+  "schema": "wow-recovery.local-target-reconciliation.v1",
+  "task_id": "LOCAL-TARGET-RECONCILE-002",
+  "generated_utc": "2026-10-15T07:29:54.646592Z",
+  "network_performed": false,
+  "network_request_count": 0,
+  "scope": {
+    "source": "final sidebar audit missing_export_route",
+    "observations": 40,
+    "distinct_targets": 35,
+    "account_or_sensitive_excluded_in_reconciled_subset": 0,
+    "account_or_sensitive_in_final_audit_outside_subset": 6,
+    "account_or_sensitive_routes_outside_subset": [
+      "/account",
+      "/account/character-move.html",
+      "/account/character-transfer-intro.html",
+      "/account/recruit-a-friend.html",
+      "/account/resurrect-a-friend.html",
+      "/loginsupport/password.html"
+    ]
+  },
+  "target_family_counts": {
+    "news_html": 8,
+    "other": 4,
+    "rss": 23
+  },
+  "input_hashes": {
+    "research/continuous-recovery-20261015/sidebar-audit/audit.json": {
+      "sha256": "7aa379ffac4629cfe3d000c934145586b6b47c1bec928eb08deca56ac234b3a1",
+      "bytes": 10875808
+    },
+    "offline/build-manifest.json": {
+      "sha256": "397f7dcdbc774d80c6f8c1f3dabf7933211ff182427bd2ef77c895752334f459",
+      "bytes": 73067980
+    },
+    ".scratch/offline-navigation-20261015-v7c/build-manifest.json": {
+      "sha256": "f66906976031d47027be9ccff5deaac9955b6b96950cad468664e1985f7c0808",
+      "bytes": 73464634
+    },
+    ".scratch/pages-resources-20261015-v8/__offline/route-map.json": {
+      "sha256": "ebedb95ec0e9e6a9d79b2282bc97c8287a33f108a9a79de258b30770bdfa3253",
+      "bytes": 1138887
+    }
+  },
+  "frozen_manifest_sha256_expected": "397f7dcdbc774d80c6f8c1f3dabf7933211ff182427bd2ef77c895752334f459",
+  "frozen_manifest_sha256_observed": "397f7dcdbc774d80c6f8c1f3dabf7933211ff182427bd2ef77c895752334f459",
+  "conservation": {
+    "observations_expected": 40,
+    "observations_reconciled": 40,
+    "targets_expected": 35,
+    "targets_reconciled": 35,
+    "ok": true
+  },
+  "classification_counts": {
+    "route_only_candidate": 1,
+    "source_missing_candidate": 33,
+    "source_present_route_missing_candidate_alias": 1
+  },
+  "rows": [
+    {
+      "target": "/burningcrusade/townhall/professions.html",
+      "observation_count": 1,
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:587:Menu13_2_1",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu3_var.js:637",
+          "source_line": 637,
+          "label": "Professions",
+          "href": "/burningcrusade/townhall/professions.html",
+          "source_role": "legacy_menu3"
+        }
+      ],
+      "exact_original_url": "http://www.worldofwarcraft.com/burningcrusade/townhall/professions.html",
+      "route_map": {
+        "v8_route": null,
+        "v8_alias": null,
+        "v7c_route_alias": null,
+        "canonical_candidates": []
+      },
+      "classification": "source_present_route_missing_candidate_alias",
+      "source_presence": "alternate_entity",
+      "resolved_path": null,
+      "alternate_routes": [
+        {
+          "route": "/info/professions/index.html",
+          "route_map_value": "/WOW-Encyclopedia-Deployable-Archive/info/professions/index.html",
+          "alias_map_value": null,
+          "manifest": {
+            "route": "/info/professions/index.html",
+            "output_path": ".scratch/offline-navigation-20261015-v7c/site/info/professions/index.html",
+            "source_local_path": "offline/source-entities-pages-recovery/157576031575f4df9f56696ace291ffc50a16b92a7001e61bd1f5819b04bde44.bin",
+            "source_base_url": "http://www.worldofwarcraft.com/info/professions/",
+            "source_sha256": "157576031575f4df9f56696ace291ffc50a16b92a7001e61bd1f5819b04bde44",
+            "source_length": 76236,
+            "derived_sha256": "94386ae6c98833c0ca99fa0f58823db16e9b5a806e6025b4228d5bfd0df16e2a",
+            "derived_length": 85804,
+            "source_mime": "text/html;charset=UTF-8",
+            "mime": "text/html;charset=UTF-8",
+            "kind": "html",
+            "role": "site_recovery_frontier_page",
+            "source_file_check": {
+              "path": "offline/source-entities-pages-recovery/157576031575f4df9f56696ace291ffc50a16b92a7001e61bd1f5819b04bde44.bin",
+              "exists": true,
+              "length": 76236,
+              "sha256": "157576031575f4df9f56696ace291ffc50a16b92a7001e61bd1f5819b04bde44",
+              "sha256_matches_manifest": true,
+              "length_matches_manifest": true
+            },
+            "output_file_check": {
+              "path": ".scratch/offline-navigation-20261015-v7c/site/info/professions/index.html",
+              "exists": true,
+              "length": 85804,
+              "sha256": "94386ae6c98833c0ca99fa0f58823db16e9b5a806e6025b4228d5bfd0df16e2a",
+              "sha256_matches_manifest": true,
+              "length_matches_manifest": true
+            }
+          },
+          "equivalence": "candidate_only"
+        }
+      ],
+      "related_local_entities": [
+        {
+          "route": "/info/professions/index.html",
+          "output_path": ".scratch/offline-navigation-20261015-v7c/site/info/professions/index.html",
+          "source_local_path": "offline/source-entities-pages-recovery/157576031575f4df9f56696ace291ffc50a16b92a7001e61bd1f5819b04bde44.bin",
+          "source_base_url": "http://www.worldofwarcraft.com/info/professions/",
+          "source_sha256": "157576031575f4df9f56696ace291ffc50a16b92a7001e61bd1f5819b04bde44",
+          "source_length": 76236,
+          "derived_sha256": "94386ae6c98833c0ca99fa0f58823db16e9b5a806e6025b4228d5bfd0df16e2a",
+          "derived_length": 85804,
+          "source_mime": "text/html;charset=UTF-8",
+          "mime": "text/html;charset=UTF-8",
+          "kind": "html",
+          "role": "site_recovery_frontier_page",
+          "source_file_check": {
+            "path": "offline/source-entities-pages-recovery/157576031575f4df9f56696ace291ffc50a16b92a7001e61bd1f5819b04bde44.bin",
+            "exists": true,
+            "length": 76236,
+            "sha256": "157576031575f4df9f56696ace291ffc50a16b92a7001e61bd1f5819b04bde44",
+            "sha256_matches_manifest": true,
+            "length_matches_manifest": true
+          },
+          "output_file_check": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/info/professions/index.html",
+            "exists": true,
+            "length": 85804,
+            "sha256": "94386ae6c98833c0ca99fa0f58823db16e9b5a806e6025b4228d5bfd0df16e2a",
+            "sha256_matches_manifest": true,
+            "length_matches_manifest": true
+          }
+        },
+        {
+          "route": "/info/professions/alchemy.html",
+          "output_path": ".scratch/offline-navigation-20261015-v7c/site/info/professions/alchemy.html",
+          "source_local_path": "offline/source-entities-pages-recovery/413945ad44763b759c5596ce014631ab7c7399a51009d5eb7106db7afb8e3ee5.bin",
+          "source_base_url": "http://www.worldofwarcraft.com/info/professions/alchemy.html",
+          "source_sha256": "413945ad44763b759c5596ce014631ab7c7399a51009d5eb7106db7afb8e3ee5",
+          "source_length": 57240,
+          "derived_sha256": "d657bbc4c5c82fdd8bb7859fb500ad16bbc57039ab184d1b1511a254c7d11279",
+          "derived_length": 63397,
+          "source_mime": "text/html;charset=UTF-8",
+          "mime": "text/html;charset=UTF-8",
+          "kind": "html",
+          "role": "site_recovery_sidebar_page",
+          "source_file_check": {
+            "path": "offline/source-entities-pages-recovery/413945ad44763b759c5596ce014631ab7c7399a51009d5eb7106db7afb8e3ee5.bin",
+            "exists": true,
+            "length": 57240,
+            "sha256": "413945ad44763b759c5596ce014631ab7c7399a51009d5eb7106db7afb8e3ee5",
+            "sha256_matches_manifest": true,
+            "length_matches_manifest": true
+          },
+          "output_file_check": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/info/professions/alchemy.html",
+            "exists": true,
+            "length": 63397,
+            "sha256": "d657bbc4c5c82fdd8bb7859fb500ad16bbc57039ab184d1b1511a254c7d11279",
+            "sha256_matches_manifest": true,
+            "length_matches_manifest": true
+          }
+        },
+        {
+          "route": "/info/professions/blacksmithing.html",
+          "output_path": ".scratch/offline-navigation-20261015-v7c/site/info/professions/blacksmithing.html",
+          "source_local_path": "offline/source-entities-pages-recovery/882d924a9d851004fe89fb5b6a10d18fd5d33dad928d80eeb1059fb6a8517308.bin",
+          "source_base_url": "http://www.worldofwarcraft.com/info/professions/blacksmithing.html",
+          "source_sha256": "882d924a9d851004fe89fb5b6a10d18fd5d33dad928d80eeb1059fb6a8517308",
+          "source_length": 57056,
+          "derived_sha256": "152281695cf84de0af8ea997794bc7bc476a235cfe2a362121ba63adff7503a4",
+          "derived_length": 63172,
+          "source_mime": "text/html;charset=UTF-8",
+          "mime": "text/html;charset=UTF-8",
+          "kind": "html",
+          "role": "site_recovery_sidebar_page",
+          "source_file_check": {
+            "path": "offline/source-entities-pages-recovery/882d924a9d851004fe89fb5b6a10d18fd5d33dad928d80eeb1059fb6a8517308.bin",
+            "exists": true,
+            "length": 57056,
+            "sha256": "882d924a9d851004fe89fb5b6a10d18fd5d33dad928d80eeb1059fb6a8517308",
+            "sha256_matches_manifest": true,
+            "length_matches_manifest": true
+          },
+          "output_file_check": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/info/professions/blacksmithing.html",
+            "exists": true,
+            "length": 63172,
+            "sha256": "152281695cf84de0af8ea997794bc7bc476a235cfe2a362121ba63adff7503a4",
+            "sha256_matches_manifest": true,
+            "length_matches_manifest": true
+          }
+        },
+        {
+          "route": "/info/professions/enchanting.html",
+          "output_path": ".scratch/offline-navigation-20261015-v7c/site/info/professions/enchanting.html",
+          "source_local_path": "offline/source-entities-pages-recovery/b14f1c7311e7a5f5eae793313bc99185d9d827a2551fa110aadb23b713e5ded1.bin",
+          "source_base_url": "http://www.worldofwarcraft.com/info/professions/enchanting.html",
+          "source_sha256": "b14f1c7311e7a5f5eae793313bc99185d9d827a2551fa110aadb23b713e5ded1",
+          "source_length": 66573,
+          "derived_sha256": "2fbfb5f4069e550231edc6aed09da5799b0273137cb9102a6ad5158262f9c30d",
+          "derived_length": 72183,
+          "source_mime": "text/html;charset=UTF-8",
+          "mime": "text/html;charset=UTF-8",
+          "kind": "html",
+          "role": "site_recovery_sidebar_page",
+          "source_file_check": {
+            "path": "offline/source-entities-pages-recovery/b14f1c7311e7a5f5eae793313bc99185d9d827a2551fa110aadb23b713e5ded1.bin",
+            "exists": true,
+            "length": 66573,
+            "sha256": "b14f1c7311e7a5f5eae793313bc99185d9d827a2551fa110aadb23b713e5ded1",
+            "sha256_matches_manifest": true,
+            "length_matches_manifest": true
+          },
+          "output_file_check": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/info/professions/enchanting.html",
+            "exists": true,
+            "length": 72183,
+            "sha256": "2fbfb5f4069e550231edc6aed09da5799b0273137cb9102a6ad5158262f9c30d",
+            "sha256_matches_manifest": true,
+            "length_matches_manifest": true
+          }
+        }
+      ],
+      "alias_status": "candidate_alias_needs_proof",
+      "local_search_evidence": [
+        {
+          "path": "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+          "field": "records[legacy_reclassified:587:Menu13_2_1]",
+          "detail": "final audit observation"
+        },
+        {
+          "path": ".scratch/pages-resources-20261015-v8/__offline/route-map.json",
+          "field": "routes[/burningcrusade/townhall/professions.html] / aliases[/burningcrusade/townhall/professions.html]",
+          "detail": {
+            "route": null,
+            "alias": null,
+            "canonical_candidates": []
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route/source_base_url == /burningcrusade/townhall/professions.html",
+          "detail": {
+            "route_matches": 0,
+            "source_matches": 0,
+            "route_alias": null
+          }
+        },
+        {
+          "path": "mirror/20080512/url-map.json",
+          "field": "normalized source URL /burningcrusade/townhall/professions.html",
+          "detail": []
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route == /info/professions/index.html",
+          "detail": {
+            "source_local_path": "offline/source-entities-pages-recovery/157576031575f4df9f56696ace291ffc50a16b92a7001e61bd1f5819b04bde44.bin",
+            "source_sha256": "157576031575f4df9f56696ace291ffc50a16b92a7001e61bd1f5819b04bde44",
+            "source_length": 76236,
+            "output_path": ".scratch/offline-navigation-20261015-v7c/site/info/professions/index.html",
+            "source_file_check": {
+              "path": "offline/source-entities-pages-recovery/157576031575f4df9f56696ace291ffc50a16b92a7001e61bd1f5819b04bde44.bin",
+              "exists": true,
+              "length": 76236,
+              "sha256": "157576031575f4df9f56696ace291ffc50a16b92a7001e61bd1f5819b04bde44",
+              "sha256_matches_manifest": true,
+              "length_matches_manifest": true
+            },
+            "output_file_check": {
+              "path": ".scratch/offline-navigation-20261015-v7c/site/info/professions/index.html",
+              "exists": true,
+              "length": 85804,
+              "sha256": "94386ae6c98833c0ca99fa0f58823db16e9b5a806e6025b4228d5bfd0df16e2a",
+              "sha256_matches_manifest": true,
+              "length_matches_manifest": true
+            }
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/site/burningcrusade/townhall/professions.html",
+          "field": "filesystem exact target",
+          "detail": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/burningcrusade/townhall/professions.html",
+            "exists": false
+          }
+        }
+      ],
+      "network_queue_eligible": true,
+      "priority": "P1",
+      "recommended_capture_constraints": [
+        "Request the exact original URL without month/path substitution or query broadening.",
+        "Record status, redirect chain, response MIME, byte length, SHA-256, and capture timestamp.",
+        "Preserve XML versus HTML MIME/body separately; a same-month or same-label page is not an alias proof."
+      ],
+      "next_action": "The generic professions index is local, but BC Townhall source equivalence is unproven; capture the exact BC URL before aliasing."
+    },
+    {
+      "target": "/news/rss-01-2007.xml",
+      "observation_count": 1,
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:92:Menu2_2_12",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:154",
+          "source_line": 154,
+          "label": "January, 2007",
+          "href": "/news/rss-01-2007.xml ",
+          "source_role": "legacy_menu1"
+        }
+      ],
+      "exact_original_url": "http://www.worldofwarcraft.com/news/rss-01-2007.xml",
+      "route_map": {
+        "v8_route": null,
+        "v8_alias": null,
+        "v7c_route_alias": null,
+        "canonical_candidates": []
+      },
+      "classification": "source_missing_candidate",
+      "source_presence": "no_exact_entity",
+      "resolved_path": null,
+      "alternate_routes": [],
+      "related_local_entities": [],
+      "alias_status": "none_found_locally",
+      "local_search_evidence": [
+        {
+          "path": "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+          "field": "records[legacy_reclassified:92:Menu2_2_12]",
+          "detail": "final audit observation"
+        },
+        {
+          "path": ".scratch/pages-resources-20261015-v8/__offline/route-map.json",
+          "field": "routes[/news/rss-01-2007.xml] / aliases[/news/rss-01-2007.xml]",
+          "detail": {
+            "route": null,
+            "alias": null,
+            "canonical_candidates": []
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route/source_base_url == /news/rss-01-2007.xml",
+          "detail": {
+            "route_matches": 0,
+            "source_matches": 0,
+            "route_alias": null
+          }
+        },
+        {
+          "path": "mirror/20080512/url-map.json",
+          "field": "normalized source URL /news/rss-01-2007.xml",
+          "detail": []
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-01-2007.xml",
+          "field": "filesystem exact target",
+          "detail": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-01-2007.xml",
+            "exists": false
+          }
+        }
+      ],
+      "network_queue_eligible": true,
+      "priority": "P0",
+      "recommended_capture_constraints": [
+        "Request the exact original URL without month/path substitution or query broadening.",
+        "Record status, redirect chain, response MIME, byte length, SHA-256, and capture timestamp.",
+        "Preserve XML versus HTML MIME/body separately; a same-month or same-label page is not an alias proof."
+      ],
+      "next_action": "Queue exact original URL for network capture; do not infer an alias from neighboring months or expansion pages."
+    },
+    {
+      "target": "/news/rss-01-2008.xml",
+      "observation_count": 1,
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:79:Menu2_1_5",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:140",
+          "source_line": 140,
+          "label": "January, 2008",
+          "href": "/news/rss-01-2008.xml ",
+          "source_role": "legacy_menu1"
+        }
+      ],
+      "exact_original_url": "http://www.worldofwarcraft.com/news/rss-01-2008.xml",
+      "route_map": {
+        "v8_route": null,
+        "v8_alias": null,
+        "v7c_route_alias": null,
+        "canonical_candidates": []
+      },
+      "classification": "source_missing_candidate",
+      "source_presence": "no_exact_entity",
+      "resolved_path": null,
+      "alternate_routes": [],
+      "related_local_entities": [],
+      "alias_status": "none_found_locally",
+      "local_search_evidence": [
+        {
+          "path": "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+          "field": "records[legacy_reclassified:79:Menu2_1_5]",
+          "detail": "final audit observation"
+        },
+        {
+          "path": ".scratch/pages-resources-20261015-v8/__offline/route-map.json",
+          "field": "routes[/news/rss-01-2008.xml] / aliases[/news/rss-01-2008.xml]",
+          "detail": {
+            "route": null,
+            "alias": null,
+            "canonical_candidates": []
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route/source_base_url == /news/rss-01-2008.xml",
+          "detail": {
+            "route_matches": 0,
+            "source_matches": 0,
+            "route_alias": null
+          }
+        },
+        {
+          "path": "mirror/20080512/url-map.json",
+          "field": "normalized source URL /news/rss-01-2008.xml",
+          "detail": []
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-01-2008.xml",
+          "field": "filesystem exact target",
+          "detail": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-01-2008.xml",
+            "exists": false
+          }
+        }
+      ],
+      "network_queue_eligible": true,
+      "priority": "P0",
+      "recommended_capture_constraints": [
+        "Request the exact original URL without month/path substitution or query broadening.",
+        "Record status, redirect chain, response MIME, byte length, SHA-256, and capture timestamp.",
+        "Preserve XML versus HTML MIME/body separately; a same-month or same-label page is not an alias proof."
+      ],
+      "next_action": "Queue exact original URL for network capture; do not infer an alias from neighboring months or expansion pages."
+    },
+    {
+      "target": "/news/rss-02-2007.xml",
+      "observation_count": 1,
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:91:Menu2_2_11",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:153",
+          "source_line": 153,
+          "label": "February, 2007",
+          "href": "/news/rss-02-2007.xml ",
+          "source_role": "legacy_menu1"
+        }
+      ],
+      "exact_original_url": "http://www.worldofwarcraft.com/news/rss-02-2007.xml",
+      "route_map": {
+        "v8_route": null,
+        "v8_alias": null,
+        "v7c_route_alias": null,
+        "canonical_candidates": []
+      },
+      "classification": "source_missing_candidate",
+      "source_presence": "no_exact_entity",
+      "resolved_path": null,
+      "alternate_routes": [],
+      "related_local_entities": [],
+      "alias_status": "none_found_locally",
+      "local_search_evidence": [
+        {
+          "path": "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+          "field": "records[legacy_reclassified:91:Menu2_2_11]",
+          "detail": "final audit observation"
+        },
+        {
+          "path": ".scratch/pages-resources-20261015-v8/__offline/route-map.json",
+          "field": "routes[/news/rss-02-2007.xml] / aliases[/news/rss-02-2007.xml]",
+          "detail": {
+            "route": null,
+            "alias": null,
+            "canonical_candidates": []
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route/source_base_url == /news/rss-02-2007.xml",
+          "detail": {
+            "route_matches": 0,
+            "source_matches": 0,
+            "route_alias": null
+          }
+        },
+        {
+          "path": "mirror/20080512/url-map.json",
+          "field": "normalized source URL /news/rss-02-2007.xml",
+          "detail": []
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-02-2007.xml",
+          "field": "filesystem exact target",
+          "detail": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-02-2007.xml",
+            "exists": false
+          }
+        }
+      ],
+      "network_queue_eligible": false,
+      "priority": "P0",
+      "recommended_capture_constraints": [
+        "Request the exact original URL without month/path substitution or query broadening.",
+        "Record status, redirect chain, response MIME, byte length, SHA-256, and capture timestamp.",
+        "Preserve XML versus HTML MIME/body separately; a same-month or same-label page is not an alias proof."
+      ],
+      "next_action": "Queue exact original URL for network capture; do not infer an alias from neighboring months or expansion pages."
+    },
+    {
+      "target": "/news/rss-02-2008.xml",
+      "observation_count": 1,
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:78:Menu2_1_4",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:139",
+          "source_line": 139,
+          "label": "February, 2008",
+          "href": "/news/rss-02-2008.xml ",
+          "source_role": "legacy_menu1"
+        }
+      ],
+      "exact_original_url": "http://www.worldofwarcraft.com/news/rss-02-2008.xml",
+      "route_map": {
+        "v8_route": null,
+        "v8_alias": null,
+        "v7c_route_alias": null,
+        "canonical_candidates": []
+      },
+      "classification": "source_missing_candidate",
+      "source_presence": "no_exact_entity",
+      "resolved_path": null,
+      "alternate_routes": [],
+      "related_local_entities": [],
+      "alias_status": "none_found_locally",
+      "local_search_evidence": [
+        {
+          "path": "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+          "field": "records[legacy_reclassified:78:Menu2_1_4]",
+          "detail": "final audit observation"
+        },
+        {
+          "path": ".scratch/pages-resources-20261015-v8/__offline/route-map.json",
+          "field": "routes[/news/rss-02-2008.xml] / aliases[/news/rss-02-2008.xml]",
+          "detail": {
+            "route": null,
+            "alias": null,
+            "canonical_candidates": []
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route/source_base_url == /news/rss-02-2008.xml",
+          "detail": {
+            "route_matches": 0,
+            "source_matches": 0,
+            "route_alias": null
+          }
+        },
+        {
+          "path": "mirror/20080512/url-map.json",
+          "field": "normalized source URL /news/rss-02-2008.xml",
+          "detail": []
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-02-2008.xml",
+          "field": "filesystem exact target",
+          "detail": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-02-2008.xml",
+            "exists": false
+          }
+        }
+      ],
+      "network_queue_eligible": false,
+      "priority": "P0",
+      "recommended_capture_constraints": [
+        "Request the exact original URL without month/path substitution or query broadening.",
+        "Record status, redirect chain, response MIME, byte length, SHA-256, and capture timestamp.",
+        "Preserve XML versus HTML MIME/body separately; a same-month or same-label page is not an alias proof."
+      ],
+      "next_action": "Queue exact original URL for network capture; do not infer an alias from neighboring months or expansion pages."
+    },
+    {
+      "target": "/news/rss-03-2007.xml",
+      "observation_count": 1,
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:90:Menu2_2_10",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:152",
+          "source_line": 152,
+          "label": "March, 2007",
+          "href": "/news/rss-03-2007.xml ",
+          "source_role": "legacy_menu1"
+        }
+      ],
+      "exact_original_url": "http://www.worldofwarcraft.com/news/rss-03-2007.xml",
+      "route_map": {
+        "v8_route": null,
+        "v8_alias": null,
+        "v7c_route_alias": null,
+        "canonical_candidates": []
+      },
+      "classification": "source_missing_candidate",
+      "source_presence": "no_exact_entity",
+      "resolved_path": null,
+      "alternate_routes": [],
+      "related_local_entities": [],
+      "alias_status": "none_found_locally",
+      "local_search_evidence": [
+        {
+          "path": "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+          "field": "records[legacy_reclassified:90:Menu2_2_10]",
+          "detail": "final audit observation"
+        },
+        {
+          "path": ".scratch/pages-resources-20261015-v8/__offline/route-map.json",
+          "field": "routes[/news/rss-03-2007.xml] / aliases[/news/rss-03-2007.xml]",
+          "detail": {
+            "route": null,
+            "alias": null,
+            "canonical_candidates": []
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route/source_base_url == /news/rss-03-2007.xml",
+          "detail": {
+            "route_matches": 0,
+            "source_matches": 0,
+            "route_alias": null
+          }
+        },
+        {
+          "path": "mirror/20080512/url-map.json",
+          "field": "normalized source URL /news/rss-03-2007.xml",
+          "detail": []
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-03-2007.xml",
+          "field": "filesystem exact target",
+          "detail": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-03-2007.xml",
+            "exists": false
+          }
+        }
+      ],
+      "network_queue_eligible": false,
+      "priority": "P0",
+      "recommended_capture_constraints": [
+        "Request the exact original URL without month/path substitution or query broadening.",
+        "Record status, redirect chain, response MIME, byte length, SHA-256, and capture timestamp.",
+        "Preserve XML versus HTML MIME/body separately; a same-month or same-label page is not an alias proof."
+      ],
+      "next_action": "Queue exact original URL for network capture; do not infer an alias from neighboring months or expansion pages."
+    },
+    {
+      "target": "/news/rss-03-2008.xml",
+      "observation_count": 1,
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:77:Menu2_1_3",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:138",
+          "source_line": 138,
+          "label": "March, 2008",
+          "href": "/news/rss-03-2008.xml ",
+          "source_role": "legacy_menu1"
+        }
+      ],
+      "exact_original_url": "http://www.worldofwarcraft.com/news/rss-03-2008.xml",
+      "route_map": {
+        "v8_route": null,
+        "v8_alias": null,
+        "v7c_route_alias": null,
+        "canonical_candidates": []
+      },
+      "classification": "source_missing_candidate",
+      "source_presence": "no_exact_entity",
+      "resolved_path": null,
+      "alternate_routes": [],
+      "related_local_entities": [],
+      "alias_status": "none_found_locally",
+      "local_search_evidence": [
+        {
+          "path": "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+          "field": "records[legacy_reclassified:77:Menu2_1_3]",
+          "detail": "final audit observation"
+        },
+        {
+          "path": ".scratch/pages-resources-20261015-v8/__offline/route-map.json",
+          "field": "routes[/news/rss-03-2008.xml] / aliases[/news/rss-03-2008.xml]",
+          "detail": {
+            "route": null,
+            "alias": null,
+            "canonical_candidates": []
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route/source_base_url == /news/rss-03-2008.xml",
+          "detail": {
+            "route_matches": 0,
+            "source_matches": 0,
+            "route_alias": null
+          }
+        },
+        {
+          "path": "mirror/20080512/url-map.json",
+          "field": "normalized source URL /news/rss-03-2008.xml",
+          "detail": []
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-03-2008.xml",
+          "field": "filesystem exact target",
+          "detail": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-03-2008.xml",
+            "exists": false
+          }
+        }
+      ],
+      "network_queue_eligible": false,
+      "priority": "P0",
+      "recommended_capture_constraints": [
+        "Request the exact original URL without month/path substitution or query broadening.",
+        "Record status, redirect chain, response MIME, byte length, SHA-256, and capture timestamp.",
+        "Preserve XML versus HTML MIME/body separately; a same-month or same-label page is not an alias proof."
+      ],
+      "next_action": "Queue exact original URL for network capture; do not infer an alias from neighboring months or expansion pages."
+    },
+    {
+      "target": "/news/rss-04-2007.xml",
+      "observation_count": 1,
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:89:Menu2_2_9",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:151",
+          "source_line": 151,
+          "label": "April, 2007",
+          "href": "/news/rss-04-2007.xml ",
+          "source_role": "legacy_menu1"
+        }
+      ],
+      "exact_original_url": "http://www.worldofwarcraft.com/news/rss-04-2007.xml",
+      "route_map": {
+        "v8_route": null,
+        "v8_alias": null,
+        "v7c_route_alias": null,
+        "canonical_candidates": []
+      },
+      "classification": "source_missing_candidate",
+      "source_presence": "no_exact_entity",
+      "resolved_path": null,
+      "alternate_routes": [],
+      "related_local_entities": [],
+      "alias_status": "none_found_locally",
+      "local_search_evidence": [
+        {
+          "path": "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+          "field": "records[legacy_reclassified:89:Menu2_2_9]",
+          "detail": "final audit observation"
+        },
+        {
+          "path": ".scratch/pages-resources-20261015-v8/__offline/route-map.json",
+          "field": "routes[/news/rss-04-2007.xml] / aliases[/news/rss-04-2007.xml]",
+          "detail": {
+            "route": null,
+            "alias": null,
+            "canonical_candidates": []
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route/source_base_url == /news/rss-04-2007.xml",
+          "detail": {
+            "route_matches": 0,
+            "source_matches": 0,
+            "route_alias": null
+          }
+        },
+        {
+          "path": "mirror/20080512/url-map.json",
+          "field": "normalized source URL /news/rss-04-2007.xml",
+          "detail": []
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-04-2007.xml",
+          "field": "filesystem exact target",
+          "detail": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-04-2007.xml",
+            "exists": false
+          }
+        }
+      ],
+      "network_queue_eligible": false,
+      "priority": "P0",
+      "recommended_capture_constraints": [
+        "Request the exact original URL without month/path substitution or query broadening.",
+        "Record status, redirect chain, response MIME, byte length, SHA-256, and capture timestamp.",
+        "Preserve XML versus HTML MIME/body separately; a same-month or same-label page is not an alias proof."
+      ],
+      "next_action": "Queue exact original URL for network capture; do not infer an alias from neighboring months or expansion pages."
+    },
+    {
+      "target": "/news/rss-04-2008.xml",
+      "observation_count": 1,
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:76:Menu2_1_2",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:137",
+          "source_line": 137,
+          "label": "April, 2008",
+          "href": "/news/rss-04-2008.xml ",
+          "source_role": "legacy_menu1"
+        }
+      ],
+      "exact_original_url": "http://www.worldofwarcraft.com/news/rss-04-2008.xml",
+      "route_map": {
+        "v8_route": null,
+        "v8_alias": null,
+        "v7c_route_alias": null,
+        "canonical_candidates": []
+      },
+      "classification": "source_missing_candidate",
+      "source_presence": "no_exact_entity",
+      "resolved_path": null,
+      "alternate_routes": [],
+      "related_local_entities": [],
+      "alias_status": "none_found_locally",
+      "local_search_evidence": [
+        {
+          "path": "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+          "field": "records[legacy_reclassified:76:Menu2_1_2]",
+          "detail": "final audit observation"
+        },
+        {
+          "path": ".scratch/pages-resources-20261015-v8/__offline/route-map.json",
+          "field": "routes[/news/rss-04-2008.xml] / aliases[/news/rss-04-2008.xml]",
+          "detail": {
+            "route": null,
+            "alias": null,
+            "canonical_candidates": []
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route/source_base_url == /news/rss-04-2008.xml",
+          "detail": {
+            "route_matches": 0,
+            "source_matches": 0,
+            "route_alias": null
+          }
+        },
+        {
+          "path": "mirror/20080512/url-map.json",
+          "field": "normalized source URL /news/rss-04-2008.xml",
+          "detail": []
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-04-2008.xml",
+          "field": "filesystem exact target",
+          "detail": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-04-2008.xml",
+            "exists": false
+          }
+        }
+      ],
+      "network_queue_eligible": false,
+      "priority": "P0",
+      "recommended_capture_constraints": [
+        "Request the exact original URL without month/path substitution or query broadening.",
+        "Record status, redirect chain, response MIME, byte length, SHA-256, and capture timestamp.",
+        "Preserve XML versus HTML MIME/body separately; a same-month or same-label page is not an alias proof."
+      ],
+      "next_action": "Queue exact original URL for network capture; do not infer an alias from neighboring months or expansion pages."
+    },
+    {
+      "target": "/news/rss-05-2007.xml",
+      "observation_count": 1,
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:88:Menu2_2_8",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:150",
+          "source_line": 150,
+          "label": "May, 2007",
+          "href": "/news/rss-05-2007.xml ",
+          "source_role": "legacy_menu1"
+        }
+      ],
+      "exact_original_url": "http://www.worldofwarcraft.com/news/rss-05-2007.xml",
+      "route_map": {
+        "v8_route": null,
+        "v8_alias": null,
+        "v7c_route_alias": null,
+        "canonical_candidates": []
+      },
+      "classification": "source_missing_candidate",
+      "source_presence": "no_exact_entity",
+      "resolved_path": null,
+      "alternate_routes": [],
+      "related_local_entities": [],
+      "alias_status": "none_found_locally",
+      "local_search_evidence": [
+        {
+          "path": "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+          "field": "records[legacy_reclassified:88:Menu2_2_8]",
+          "detail": "final audit observation"
+        },
+        {
+          "path": ".scratch/pages-resources-20261015-v8/__offline/route-map.json",
+          "field": "routes[/news/rss-05-2007.xml] / aliases[/news/rss-05-2007.xml]",
+          "detail": {
+            "route": null,
+            "alias": null,
+            "canonical_candidates": []
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route/source_base_url == /news/rss-05-2007.xml",
+          "detail": {
+            "route_matches": 0,
+            "source_matches": 0,
+            "route_alias": null
+          }
+        },
+        {
+          "path": "mirror/20080512/url-map.json",
+          "field": "normalized source URL /news/rss-05-2007.xml",
+          "detail": []
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-05-2007.xml",
+          "field": "filesystem exact target",
+          "detail": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-05-2007.xml",
+            "exists": false
+          }
+        }
+      ],
+      "network_queue_eligible": false,
+      "priority": "P0",
+      "recommended_capture_constraints": [
+        "Request the exact original URL without month/path substitution or query broadening.",
+        "Record status, redirect chain, response MIME, byte length, SHA-256, and capture timestamp.",
+        "Preserve XML versus HTML MIME/body separately; a same-month or same-label page is not an alias proof."
+      ],
+      "next_action": "Queue exact original URL for network capture; do not infer an alias from neighboring months or expansion pages."
+    },
+    {
+      "target": "/news/rss-05-2008.xml",
+      "observation_count": 2,
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:74:Menu2_1",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:135",
+          "source_line": 135,
+          "label": "2008 Archive",
+          "href": "/news/rss-05-2008.xml ",
+          "source_role": "legacy_menu1"
+        },
+        {
+          "record_id": "legacy_reclassified:75:Menu2_1_1",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:136",
+          "source_line": 136,
+          "label": "May, 2008",
+          "href": "/news/rss-05-2008.xml ",
+          "source_role": "legacy_menu1"
+        }
+      ],
+      "exact_original_url": "http://www.worldofwarcraft.com/news/rss-05-2008.xml",
+      "route_map": {
+        "v8_route": null,
+        "v8_alias": null,
+        "v7c_route_alias": null,
+        "canonical_candidates": []
+      },
+      "classification": "source_missing_candidate",
+      "source_presence": "no_exact_entity",
+      "resolved_path": null,
+      "alternate_routes": [],
+      "related_local_entities": [],
+      "alias_status": "none_found_locally",
+      "local_search_evidence": [
+        {
+          "path": "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+          "field": "records[legacy_reclassified:74:Menu2_1]",
+          "detail": "final audit observation"
+        },
+        {
+          "path": ".scratch/pages-resources-20261015-v8/__offline/route-map.json",
+          "field": "routes[/news/rss-05-2008.xml] / aliases[/news/rss-05-2008.xml]",
+          "detail": {
+            "route": null,
+            "alias": null,
+            "canonical_candidates": []
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route/source_base_url == /news/rss-05-2008.xml",
+          "detail": {
+            "route_matches": 0,
+            "source_matches": 0,
+            "route_alias": null
+          }
+        },
+        {
+          "path": "mirror/20080512/url-map.json",
+          "field": "normalized source URL /news/rss-05-2008.xml",
+          "detail": []
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-05-2008.xml",
+          "field": "filesystem exact target",
+          "detail": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-05-2008.xml",
+            "exists": false
+          }
+        }
+      ],
+      "network_queue_eligible": true,
+      "priority": "P0",
+      "recommended_capture_constraints": [
+        "Request the exact original URL without month/path substitution or query broadening.",
+        "Record status, redirect chain, response MIME, byte length, SHA-256, and capture timestamp.",
+        "Preserve XML versus HTML MIME/body separately; a same-month or same-label page is not an alias proof."
+      ],
+      "next_action": "Queue exact original URL for network capture; do not infer an alias from neighboring months or expansion pages."
+    },
+    {
+      "target": "/news/rss-06-2007.xml",
+      "observation_count": 1,
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:87:Menu2_2_7",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:149",
+          "source_line": 149,
+          "label": "June, 2007",
+          "href": "/news/rss-06-2007.xml ",
+          "source_role": "legacy_menu1"
+        }
+      ],
+      "exact_original_url": "http://www.worldofwarcraft.com/news/rss-06-2007.xml",
+      "route_map": {
+        "v8_route": null,
+        "v8_alias": null,
+        "v7c_route_alias": null,
+        "canonical_candidates": []
+      },
+      "classification": "source_missing_candidate",
+      "source_presence": "no_exact_entity",
+      "resolved_path": null,
+      "alternate_routes": [],
+      "related_local_entities": [],
+      "alias_status": "none_found_locally",
+      "local_search_evidence": [
+        {
+          "path": "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+          "field": "records[legacy_reclassified:87:Menu2_2_7]",
+          "detail": "final audit observation"
+        },
+        {
+          "path": ".scratch/pages-resources-20261015-v8/__offline/route-map.json",
+          "field": "routes[/news/rss-06-2007.xml] / aliases[/news/rss-06-2007.xml]",
+          "detail": {
+            "route": null,
+            "alias": null,
+            "canonical_candidates": []
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route/source_base_url == /news/rss-06-2007.xml",
+          "detail": {
+            "route_matches": 0,
+            "source_matches": 0,
+            "route_alias": null
+          }
+        },
+        {
+          "path": "mirror/20080512/url-map.json",
+          "field": "normalized source URL /news/rss-06-2007.xml",
+          "detail": []
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-06-2007.xml",
+          "field": "filesystem exact target",
+          "detail": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-06-2007.xml",
+            "exists": false
+          }
+        }
+      ],
+      "network_queue_eligible": false,
+      "priority": "P0",
+      "recommended_capture_constraints": [
+        "Request the exact original URL without month/path substitution or query broadening.",
+        "Record status, redirect chain, response MIME, byte length, SHA-256, and capture timestamp.",
+        "Preserve XML versus HTML MIME/body separately; a same-month or same-label page is not an alias proof."
+      ],
+      "next_action": "Queue exact original URL for network capture; do not infer an alias from neighboring months or expansion pages."
+    },
+    {
+      "target": "/news/rss-07-2006.xml",
+      "observation_count": 1,
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:99:Menu2_3_6",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:162",
+          "source_line": 162,
+          "label": "July, 2006",
+          "href": "/news/rss-07-2006.xml ",
+          "source_role": "legacy_menu1"
+        }
+      ],
+      "exact_original_url": "http://www.worldofwarcraft.com/news/rss-07-2006.xml",
+      "route_map": {
+        "v8_route": null,
+        "v8_alias": null,
+        "v7c_route_alias": null,
+        "canonical_candidates": []
+      },
+      "classification": "source_missing_candidate",
+      "source_presence": "no_exact_entity",
+      "resolved_path": null,
+      "alternate_routes": [],
+      "related_local_entities": [],
+      "alias_status": "none_found_locally",
+      "local_search_evidence": [
+        {
+          "path": "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+          "field": "records[legacy_reclassified:99:Menu2_3_6]",
+          "detail": "final audit observation"
+        },
+        {
+          "path": ".scratch/pages-resources-20261015-v8/__offline/route-map.json",
+          "field": "routes[/news/rss-07-2006.xml] / aliases[/news/rss-07-2006.xml]",
+          "detail": {
+            "route": null,
+            "alias": null,
+            "canonical_candidates": []
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route/source_base_url == /news/rss-07-2006.xml",
+          "detail": {
+            "route_matches": 0,
+            "source_matches": 0,
+            "route_alias": null
+          }
+        },
+        {
+          "path": "mirror/20080512/url-map.json",
+          "field": "normalized source URL /news/rss-07-2006.xml",
+          "detail": []
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-07-2006.xml",
+          "field": "filesystem exact target",
+          "detail": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-07-2006.xml",
+            "exists": false
+          }
+        }
+      ],
+      "network_queue_eligible": true,
+      "priority": "P0",
+      "recommended_capture_constraints": [
+        "Request the exact original URL without month/path substitution or query broadening.",
+        "Record status, redirect chain, response MIME, byte length, SHA-256, and capture timestamp.",
+        "Preserve XML versus HTML MIME/body separately; a same-month or same-label page is not an alias proof."
+      ],
+      "next_action": "Queue exact original URL for network capture; do not infer an alias from neighboring months or expansion pages."
+    },
+    {
+      "target": "/news/rss-07-2007.xml",
+      "observation_count": 1,
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:86:Menu2_2_6",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:148",
+          "source_line": 148,
+          "label": "July, 2007",
+          "href": "/news/rss-07-2007.xml ",
+          "source_role": "legacy_menu1"
+        }
+      ],
+      "exact_original_url": "http://www.worldofwarcraft.com/news/rss-07-2007.xml",
+      "route_map": {
+        "v8_route": null,
+        "v8_alias": null,
+        "v7c_route_alias": null,
+        "canonical_candidates": []
+      },
+      "classification": "source_missing_candidate",
+      "source_presence": "no_exact_entity",
+      "resolved_path": null,
+      "alternate_routes": [],
+      "related_local_entities": [],
+      "alias_status": "none_found_locally",
+      "local_search_evidence": [
+        {
+          "path": "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+          "field": "records[legacy_reclassified:86:Menu2_2_6]",
+          "detail": "final audit observation"
+        },
+        {
+          "path": ".scratch/pages-resources-20261015-v8/__offline/route-map.json",
+          "field": "routes[/news/rss-07-2007.xml] / aliases[/news/rss-07-2007.xml]",
+          "detail": {
+            "route": null,
+            "alias": null,
+            "canonical_candidates": []
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route/source_base_url == /news/rss-07-2007.xml",
+          "detail": {
+            "route_matches": 0,
+            "source_matches": 0,
+            "route_alias": null
+          }
+        },
+        {
+          "path": "mirror/20080512/url-map.json",
+          "field": "normalized source URL /news/rss-07-2007.xml",
+          "detail": []
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-07-2007.xml",
+          "field": "filesystem exact target",
+          "detail": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-07-2007.xml",
+            "exists": false
+          }
+        }
+      ],
+      "network_queue_eligible": false,
+      "priority": "P0",
+      "recommended_capture_constraints": [
+        "Request the exact original URL without month/path substitution or query broadening.",
+        "Record status, redirect chain, response MIME, byte length, SHA-256, and capture timestamp.",
+        "Preserve XML versus HTML MIME/body separately; a same-month or same-label page is not an alias proof."
+      ],
+      "next_action": "Queue exact original URL for network capture; do not infer an alias from neighboring months or expansion pages."
+    },
+    {
+      "target": "/news/rss-08-2006.xml",
+      "observation_count": 1,
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:98:Menu2_3_5",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:161",
+          "source_line": 161,
+          "label": "August, 2006",
+          "href": "/news/rss-08-2006.xml ",
+          "source_role": "legacy_menu1"
+        }
+      ],
+      "exact_original_url": "http://www.worldofwarcraft.com/news/rss-08-2006.xml",
+      "route_map": {
+        "v8_route": null,
+        "v8_alias": null,
+        "v7c_route_alias": null,
+        "canonical_candidates": []
+      },
+      "classification": "source_missing_candidate",
+      "source_presence": "no_exact_entity",
+      "resolved_path": null,
+      "alternate_routes": [],
+      "related_local_entities": [],
+      "alias_status": "none_found_locally",
+      "local_search_evidence": [
+        {
+          "path": "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+          "field": "records[legacy_reclassified:98:Menu2_3_5]",
+          "detail": "final audit observation"
+        },
+        {
+          "path": ".scratch/pages-resources-20261015-v8/__offline/route-map.json",
+          "field": "routes[/news/rss-08-2006.xml] / aliases[/news/rss-08-2006.xml]",
+          "detail": {
+            "route": null,
+            "alias": null,
+            "canonical_candidates": []
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route/source_base_url == /news/rss-08-2006.xml",
+          "detail": {
+            "route_matches": 0,
+            "source_matches": 0,
+            "route_alias": null
+          }
+        },
+        {
+          "path": "mirror/20080512/url-map.json",
+          "field": "normalized source URL /news/rss-08-2006.xml",
+          "detail": []
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-08-2006.xml",
+          "field": "filesystem exact target",
+          "detail": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-08-2006.xml",
+            "exists": false
+          }
+        }
+      ],
+      "network_queue_eligible": false,
+      "priority": "P0",
+      "recommended_capture_constraints": [
+        "Request the exact original URL without month/path substitution or query broadening.",
+        "Record status, redirect chain, response MIME, byte length, SHA-256, and capture timestamp.",
+        "Preserve XML versus HTML MIME/body separately; a same-month or same-label page is not an alias proof."
+      ],
+      "next_action": "Queue exact original URL for network capture; do not infer an alias from neighboring months or expansion pages."
+    },
+    {
+      "target": "/news/rss-08-2007.xml",
+      "observation_count": 1,
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:85:Menu2_2_5",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:147",
+          "source_line": 147,
+          "label": "August, 2007",
+          "href": "/news/rss-08-2007.xml ",
+          "source_role": "legacy_menu1"
+        }
+      ],
+      "exact_original_url": "http://www.worldofwarcraft.com/news/rss-08-2007.xml",
+      "route_map": {
+        "v8_route": null,
+        "v8_alias": null,
+        "v7c_route_alias": null,
+        "canonical_candidates": []
+      },
+      "classification": "source_missing_candidate",
+      "source_presence": "no_exact_entity",
+      "resolved_path": null,
+      "alternate_routes": [],
+      "related_local_entities": [],
+      "alias_status": "none_found_locally",
+      "local_search_evidence": [
+        {
+          "path": "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+          "field": "records[legacy_reclassified:85:Menu2_2_5]",
+          "detail": "final audit observation"
+        },
+        {
+          "path": ".scratch/pages-resources-20261015-v8/__offline/route-map.json",
+          "field": "routes[/news/rss-08-2007.xml] / aliases[/news/rss-08-2007.xml]",
+          "detail": {
+            "route": null,
+            "alias": null,
+            "canonical_candidates": []
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route/source_base_url == /news/rss-08-2007.xml",
+          "detail": {
+            "route_matches": 0,
+            "source_matches": 0,
+            "route_alias": null
+          }
+        },
+        {
+          "path": "mirror/20080512/url-map.json",
+          "field": "normalized source URL /news/rss-08-2007.xml",
+          "detail": []
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-08-2007.xml",
+          "field": "filesystem exact target",
+          "detail": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-08-2007.xml",
+            "exists": false
+          }
+        }
+      ],
+      "network_queue_eligible": false,
+      "priority": "P0",
+      "recommended_capture_constraints": [
+        "Request the exact original URL without month/path substitution or query broadening.",
+        "Record status, redirect chain, response MIME, byte length, SHA-256, and capture timestamp.",
+        "Preserve XML versus HTML MIME/body separately; a same-month or same-label page is not an alias proof."
+      ],
+      "next_action": "Queue exact original URL for network capture; do not infer an alias from neighboring months or expansion pages."
+    },
+    {
+      "target": "/news/rss-09-2006.xml",
+      "observation_count": 1,
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:97:Menu2_3_4",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:160",
+          "source_line": 160,
+          "label": "September, 2006",
+          "href": "/news/rss-09-2006.xml ",
+          "source_role": "legacy_menu1"
+        }
+      ],
+      "exact_original_url": "http://www.worldofwarcraft.com/news/rss-09-2006.xml",
+      "route_map": {
+        "v8_route": null,
+        "v8_alias": null,
+        "v7c_route_alias": null,
+        "canonical_candidates": []
+      },
+      "classification": "source_missing_candidate",
+      "source_presence": "no_exact_entity",
+      "resolved_path": null,
+      "alternate_routes": [],
+      "related_local_entities": [],
+      "alias_status": "none_found_locally",
+      "local_search_evidence": [
+        {
+          "path": "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+          "field": "records[legacy_reclassified:97:Menu2_3_4]",
+          "detail": "final audit observation"
+        },
+        {
+          "path": ".scratch/pages-resources-20261015-v8/__offline/route-map.json",
+          "field": "routes[/news/rss-09-2006.xml] / aliases[/news/rss-09-2006.xml]",
+          "detail": {
+            "route": null,
+            "alias": null,
+            "canonical_candidates": []
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route/source_base_url == /news/rss-09-2006.xml",
+          "detail": {
+            "route_matches": 0,
+            "source_matches": 0,
+            "route_alias": null
+          }
+        },
+        {
+          "path": "mirror/20080512/url-map.json",
+          "field": "normalized source URL /news/rss-09-2006.xml",
+          "detail": []
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-09-2006.xml",
+          "field": "filesystem exact target",
+          "detail": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-09-2006.xml",
+            "exists": false
+          }
+        }
+      ],
+      "network_queue_eligible": false,
+      "priority": "P0",
+      "recommended_capture_constraints": [
+        "Request the exact original URL without month/path substitution or query broadening.",
+        "Record status, redirect chain, response MIME, byte length, SHA-256, and capture timestamp.",
+        "Preserve XML versus HTML MIME/body separately; a same-month or same-label page is not an alias proof."
+      ],
+      "next_action": "Queue exact original URL for network capture; do not infer an alias from neighboring months or expansion pages."
+    },
+    {
+      "target": "/news/rss-09-2007.xml",
+      "observation_count": 1,
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:84:Menu2_2_4",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:146",
+          "source_line": 146,
+          "label": "September, 2007",
+          "href": "/news/rss-09-2007.xml ",
+          "source_role": "legacy_menu1"
+        }
+      ],
+      "exact_original_url": "http://www.worldofwarcraft.com/news/rss-09-2007.xml",
+      "route_map": {
+        "v8_route": null,
+        "v8_alias": null,
+        "v7c_route_alias": null,
+        "canonical_candidates": []
+      },
+      "classification": "source_missing_candidate",
+      "source_presence": "no_exact_entity",
+      "resolved_path": null,
+      "alternate_routes": [],
+      "related_local_entities": [],
+      "alias_status": "none_found_locally",
+      "local_search_evidence": [
+        {
+          "path": "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+          "field": "records[legacy_reclassified:84:Menu2_2_4]",
+          "detail": "final audit observation"
+        },
+        {
+          "path": ".scratch/pages-resources-20261015-v8/__offline/route-map.json",
+          "field": "routes[/news/rss-09-2007.xml] / aliases[/news/rss-09-2007.xml]",
+          "detail": {
+            "route": null,
+            "alias": null,
+            "canonical_candidates": []
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route/source_base_url == /news/rss-09-2007.xml",
+          "detail": {
+            "route_matches": 0,
+            "source_matches": 0,
+            "route_alias": null
+          }
+        },
+        {
+          "path": "mirror/20080512/url-map.json",
+          "field": "normalized source URL /news/rss-09-2007.xml",
+          "detail": []
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-09-2007.xml",
+          "field": "filesystem exact target",
+          "detail": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-09-2007.xml",
+            "exists": false
+          }
+        }
+      ],
+      "network_queue_eligible": false,
+      "priority": "P0",
+      "recommended_capture_constraints": [
+        "Request the exact original URL without month/path substitution or query broadening.",
+        "Record status, redirect chain, response MIME, byte length, SHA-256, and capture timestamp.",
+        "Preserve XML versus HTML MIME/body separately; a same-month or same-label page is not an alias proof."
+      ],
+      "next_action": "Queue exact original URL for network capture; do not infer an alias from neighboring months or expansion pages."
+    },
+    {
+      "target": "/news/rss-10-2006.xml",
+      "observation_count": 1,
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:96:Menu2_3_3",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:159",
+          "source_line": 159,
+          "label": "October, 2006",
+          "href": "/news/rss-10-2006.xml ",
+          "source_role": "legacy_menu1"
+        }
+      ],
+      "exact_original_url": "http://www.worldofwarcraft.com/news/rss-10-2006.xml",
+      "route_map": {
+        "v8_route": null,
+        "v8_alias": null,
+        "v7c_route_alias": null,
+        "canonical_candidates": []
+      },
+      "classification": "source_missing_candidate",
+      "source_presence": "no_exact_entity",
+      "resolved_path": null,
+      "alternate_routes": [],
+      "related_local_entities": [],
+      "alias_status": "none_found_locally",
+      "local_search_evidence": [
+        {
+          "path": "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+          "field": "records[legacy_reclassified:96:Menu2_3_3]",
+          "detail": "final audit observation"
+        },
+        {
+          "path": ".scratch/pages-resources-20261015-v8/__offline/route-map.json",
+          "field": "routes[/news/rss-10-2006.xml] / aliases[/news/rss-10-2006.xml]",
+          "detail": {
+            "route": null,
+            "alias": null,
+            "canonical_candidates": []
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route/source_base_url == /news/rss-10-2006.xml",
+          "detail": {
+            "route_matches": 0,
+            "source_matches": 0,
+            "route_alias": null
+          }
+        },
+        {
+          "path": "mirror/20080512/url-map.json",
+          "field": "normalized source URL /news/rss-10-2006.xml",
+          "detail": []
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-10-2006.xml",
+          "field": "filesystem exact target",
+          "detail": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-10-2006.xml",
+            "exists": false
+          }
+        }
+      ],
+      "network_queue_eligible": false,
+      "priority": "P0",
+      "recommended_capture_constraints": [
+        "Request the exact original URL without month/path substitution or query broadening.",
+        "Record status, redirect chain, response MIME, byte length, SHA-256, and capture timestamp.",
+        "Preserve XML versus HTML MIME/body separately; a same-month or same-label page is not an alias proof."
+      ],
+      "next_action": "Queue exact original URL for network capture; do not infer an alias from neighboring months or expansion pages."
+    },
+    {
+      "target": "/news/rss-10-2007.xml",
+      "observation_count": 1,
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:83:Menu2_2_3",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:145",
+          "source_line": 145,
+          "label": "October, 2007",
+          "href": "/news/rss-10-2007.xml ",
+          "source_role": "legacy_menu1"
+        }
+      ],
+      "exact_original_url": "http://www.worldofwarcraft.com/news/rss-10-2007.xml",
+      "route_map": {
+        "v8_route": null,
+        "v8_alias": null,
+        "v7c_route_alias": null,
+        "canonical_candidates": []
+      },
+      "classification": "source_missing_candidate",
+      "source_presence": "no_exact_entity",
+      "resolved_path": null,
+      "alternate_routes": [],
+      "related_local_entities": [],
+      "alias_status": "none_found_locally",
+      "local_search_evidence": [
+        {
+          "path": "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+          "field": "records[legacy_reclassified:83:Menu2_2_3]",
+          "detail": "final audit observation"
+        },
+        {
+          "path": ".scratch/pages-resources-20261015-v8/__offline/route-map.json",
+          "field": "routes[/news/rss-10-2007.xml] / aliases[/news/rss-10-2007.xml]",
+          "detail": {
+            "route": null,
+            "alias": null,
+            "canonical_candidates": []
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route/source_base_url == /news/rss-10-2007.xml",
+          "detail": {
+            "route_matches": 0,
+            "source_matches": 0,
+            "route_alias": null
+          }
+        },
+        {
+          "path": "mirror/20080512/url-map.json",
+          "field": "normalized source URL /news/rss-10-2007.xml",
+          "detail": []
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-10-2007.xml",
+          "field": "filesystem exact target",
+          "detail": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-10-2007.xml",
+            "exists": false
+          }
+        }
+      ],
+      "network_queue_eligible": false,
+      "priority": "P0",
+      "recommended_capture_constraints": [
+        "Request the exact original URL without month/path substitution or query broadening.",
+        "Record status, redirect chain, response MIME, byte length, SHA-256, and capture timestamp.",
+        "Preserve XML versus HTML MIME/body separately; a same-month or same-label page is not an alias proof."
+      ],
+      "next_action": "Queue exact original URL for network capture; do not infer an alias from neighboring months or expansion pages."
+    },
+    {
+      "target": "/news/rss-11-2006.xml",
+      "observation_count": 1,
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:95:Menu2_3_2",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:158",
+          "source_line": 158,
+          "label": "November, 2006",
+          "href": "/news/rss-11-2006.xml ",
+          "source_role": "legacy_menu1"
+        }
+      ],
+      "exact_original_url": "http://www.worldofwarcraft.com/news/rss-11-2006.xml",
+      "route_map": {
+        "v8_route": null,
+        "v8_alias": null,
+        "v7c_route_alias": null,
+        "canonical_candidates": []
+      },
+      "classification": "source_missing_candidate",
+      "source_presence": "no_exact_entity",
+      "resolved_path": null,
+      "alternate_routes": [],
+      "related_local_entities": [],
+      "alias_status": "none_found_locally",
+      "local_search_evidence": [
+        {
+          "path": "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+          "field": "records[legacy_reclassified:95:Menu2_3_2]",
+          "detail": "final audit observation"
+        },
+        {
+          "path": ".scratch/pages-resources-20261015-v8/__offline/route-map.json",
+          "field": "routes[/news/rss-11-2006.xml] / aliases[/news/rss-11-2006.xml]",
+          "detail": {
+            "route": null,
+            "alias": null,
+            "canonical_candidates": []
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route/source_base_url == /news/rss-11-2006.xml",
+          "detail": {
+            "route_matches": 0,
+            "source_matches": 0,
+            "route_alias": null
+          }
+        },
+        {
+          "path": "mirror/20080512/url-map.json",
+          "field": "normalized source URL /news/rss-11-2006.xml",
+          "detail": []
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-11-2006.xml",
+          "field": "filesystem exact target",
+          "detail": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-11-2006.xml",
+            "exists": false
+          }
+        }
+      ],
+      "network_queue_eligible": false,
+      "priority": "P0",
+      "recommended_capture_constraints": [
+        "Request the exact original URL without month/path substitution or query broadening.",
+        "Record status, redirect chain, response MIME, byte length, SHA-256, and capture timestamp.",
+        "Preserve XML versus HTML MIME/body separately; a same-month or same-label page is not an alias proof."
+      ],
+      "next_action": "Queue exact original URL for network capture; do not infer an alias from neighboring months or expansion pages."
+    },
+    {
+      "target": "/news/rss-11-2007.xml",
+      "observation_count": 1,
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:82:Menu2_2_2",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:144",
+          "source_line": 144,
+          "label": "November, 2007",
+          "href": "/news/rss-11-2007.xml ",
+          "source_role": "legacy_menu1"
+        }
+      ],
+      "exact_original_url": "http://www.worldofwarcraft.com/news/rss-11-2007.xml",
+      "route_map": {
+        "v8_route": null,
+        "v8_alias": null,
+        "v7c_route_alias": null,
+        "canonical_candidates": []
+      },
+      "classification": "source_missing_candidate",
+      "source_presence": "no_exact_entity",
+      "resolved_path": null,
+      "alternate_routes": [],
+      "related_local_entities": [],
+      "alias_status": "none_found_locally",
+      "local_search_evidence": [
+        {
+          "path": "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+          "field": "records[legacy_reclassified:82:Menu2_2_2]",
+          "detail": "final audit observation"
+        },
+        {
+          "path": ".scratch/pages-resources-20261015-v8/__offline/route-map.json",
+          "field": "routes[/news/rss-11-2007.xml] / aliases[/news/rss-11-2007.xml]",
+          "detail": {
+            "route": null,
+            "alias": null,
+            "canonical_candidates": []
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route/source_base_url == /news/rss-11-2007.xml",
+          "detail": {
+            "route_matches": 0,
+            "source_matches": 0,
+            "route_alias": null
+          }
+        },
+        {
+          "path": "mirror/20080512/url-map.json",
+          "field": "normalized source URL /news/rss-11-2007.xml",
+          "detail": []
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-11-2007.xml",
+          "field": "filesystem exact target",
+          "detail": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-11-2007.xml",
+            "exists": false
+          }
+        }
+      ],
+      "network_queue_eligible": false,
+      "priority": "P0",
+      "recommended_capture_constraints": [
+        "Request the exact original URL without month/path substitution or query broadening.",
+        "Record status, redirect chain, response MIME, byte length, SHA-256, and capture timestamp.",
+        "Preserve XML versus HTML MIME/body separately; a same-month or same-label page is not an alias proof."
+      ],
+      "next_action": "Queue exact original URL for network capture; do not infer an alias from neighboring months or expansion pages."
+    },
+    {
+      "target": "/news/rss-12-2006.xml",
+      "observation_count": 2,
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:93:Menu2_3",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:156",
+          "source_line": 156,
+          "label": "2006 Archive",
+          "href": "/news/rss-12-2006.xml ",
+          "source_role": "legacy_menu1"
+        },
+        {
+          "record_id": "legacy_reclassified:94:Menu2_3_1",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:157",
+          "source_line": 157,
+          "label": "December, 2006",
+          "href": "/news/rss-12-2006.xml ",
+          "source_role": "legacy_menu1"
+        }
+      ],
+      "exact_original_url": "http://www.worldofwarcraft.com/news/rss-12-2006.xml",
+      "route_map": {
+        "v8_route": null,
+        "v8_alias": null,
+        "v7c_route_alias": null,
+        "canonical_candidates": []
+      },
+      "classification": "source_missing_candidate",
+      "source_presence": "no_exact_entity",
+      "resolved_path": null,
+      "alternate_routes": [],
+      "related_local_entities": [],
+      "alias_status": "none_found_locally",
+      "local_search_evidence": [
+        {
+          "path": "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+          "field": "records[legacy_reclassified:93:Menu2_3]",
+          "detail": "final audit observation"
+        },
+        {
+          "path": ".scratch/pages-resources-20261015-v8/__offline/route-map.json",
+          "field": "routes[/news/rss-12-2006.xml] / aliases[/news/rss-12-2006.xml]",
+          "detail": {
+            "route": null,
+            "alias": null,
+            "canonical_candidates": []
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route/source_base_url == /news/rss-12-2006.xml",
+          "detail": {
+            "route_matches": 0,
+            "source_matches": 0,
+            "route_alias": null
+          }
+        },
+        {
+          "path": "mirror/20080512/url-map.json",
+          "field": "normalized source URL /news/rss-12-2006.xml",
+          "detail": []
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-12-2006.xml",
+          "field": "filesystem exact target",
+          "detail": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-12-2006.xml",
+            "exists": false
+          }
+        }
+      ],
+      "network_queue_eligible": true,
+      "priority": "P0",
+      "recommended_capture_constraints": [
+        "Request the exact original URL without month/path substitution or query broadening.",
+        "Record status, redirect chain, response MIME, byte length, SHA-256, and capture timestamp.",
+        "Preserve XML versus HTML MIME/body separately; a same-month or same-label page is not an alias proof."
+      ],
+      "next_action": "Queue exact original URL for network capture; do not infer an alias from neighboring months or expansion pages."
+    },
+    {
+      "target": "/news/rss-12-2007.xml",
+      "observation_count": 2,
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:80:Menu2_2",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:142",
+          "source_line": 142,
+          "label": "2007 Archive",
+          "href": "/news/rss-12-2007.xml ",
+          "source_role": "legacy_menu1"
+        },
+        {
+          "record_id": "legacy_reclassified:81:Menu2_2_1",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:143",
+          "source_line": 143,
+          "label": "December, 2007",
+          "href": "/news/rss-12-2007.xml ",
+          "source_role": "legacy_menu1"
+        }
+      ],
+      "exact_original_url": "http://www.worldofwarcraft.com/news/rss-12-2007.xml",
+      "route_map": {
+        "v8_route": null,
+        "v8_alias": null,
+        "v7c_route_alias": null,
+        "canonical_candidates": []
+      },
+      "classification": "source_missing_candidate",
+      "source_presence": "no_exact_entity",
+      "resolved_path": null,
+      "alternate_routes": [],
+      "related_local_entities": [],
+      "alias_status": "none_found_locally",
+      "local_search_evidence": [
+        {
+          "path": "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+          "field": "records[legacy_reclassified:80:Menu2_2]",
+          "detail": "final audit observation"
+        },
+        {
+          "path": ".scratch/pages-resources-20261015-v8/__offline/route-map.json",
+          "field": "routes[/news/rss-12-2007.xml] / aliases[/news/rss-12-2007.xml]",
+          "detail": {
+            "route": null,
+            "alias": null,
+            "canonical_candidates": []
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route/source_base_url == /news/rss-12-2007.xml",
+          "detail": {
+            "route_matches": 0,
+            "source_matches": 0,
+            "route_alias": null
+          }
+        },
+        {
+          "path": "mirror/20080512/url-map.json",
+          "field": "normalized source URL /news/rss-12-2007.xml",
+          "detail": []
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-12-2007.xml",
+          "field": "filesystem exact target",
+          "detail": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/news/rss-12-2007.xml",
+            "exists": false
+          }
+        }
+      ],
+      "network_queue_eligible": true,
+      "priority": "P0",
+      "recommended_capture_constraints": [
+        "Request the exact original URL without month/path substitution or query broadening.",
+        "Record status, redirect chain, response MIME, byte length, SHA-256, and capture timestamp.",
+        "Preserve XML versus HTML MIME/body separately; a same-month or same-label page is not an alias proof."
+      ],
+      "next_action": "Queue exact original URL for network capture; do not infer an alias from neighboring months or expansion pages."
+    },
+    {
+      "target": "/news/wow-news-06-2005.html",
+      "observation_count": 1,
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:113:Menu2_4_7",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:177",
+          "source_line": 177,
+          "label": "June, 2005",
+          "href": "/news/wow-news-06-2005.html ",
+          "source_role": "legacy_menu1"
+        }
+      ],
+      "exact_original_url": "http://www.worldofwarcraft.com/news/wow-news-06-2005.html",
+      "route_map": {
+        "v8_route": null,
+        "v8_alias": null,
+        "v7c_route_alias": null,
+        "canonical_candidates": []
+      },
+      "classification": "source_missing_candidate",
+      "source_presence": "no_exact_entity",
+      "resolved_path": null,
+      "alternate_routes": [],
+      "related_local_entities": [],
+      "alias_status": "none_found_locally",
+      "local_search_evidence": [
+        {
+          "path": "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+          "field": "records[legacy_reclassified:113:Menu2_4_7]",
+          "detail": "final audit observation"
+        },
+        {
+          "path": ".scratch/pages-resources-20261015-v8/__offline/route-map.json",
+          "field": "routes[/news/wow-news-06-2005.html] / aliases[/news/wow-news-06-2005.html]",
+          "detail": {
+            "route": null,
+            "alias": null,
+            "canonical_candidates": []
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route/source_base_url == /news/wow-news-06-2005.html",
+          "detail": {
+            "route_matches": 0,
+            "source_matches": 0,
+            "route_alias": null
+          }
+        },
+        {
+          "path": "mirror/20080512/url-map.json",
+          "field": "normalized source URL /news/wow-news-06-2005.html",
+          "detail": []
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/site/news/wow-news-06-2005.html",
+          "field": "filesystem exact target",
+          "detail": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/news/wow-news-06-2005.html",
+            "exists": false
+          }
+        }
+      ],
+      "network_queue_eligible": true,
+      "priority": "P0",
+      "recommended_capture_constraints": [
+        "Request the exact original URL without month/path substitution or query broadening.",
+        "Record status, redirect chain, response MIME, byte length, SHA-256, and capture timestamp.",
+        "Preserve XML versus HTML MIME/body separately; a same-month or same-label page is not an alias proof."
+      ],
+      "next_action": "Queue exact original URL for network capture; do not infer an alias from neighboring months or expansion pages."
+    },
+    {
+      "target": "/news/wow-news-07-2005.html",
+      "observation_count": 1,
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:112:Menu2_4_6",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:176",
+          "source_line": 176,
+          "label": "July, 2005",
+          "href": "/news/wow-news-07-2005.html ",
+          "source_role": "legacy_menu1"
+        }
+      ],
+      "exact_original_url": "http://www.worldofwarcraft.com/news/wow-news-07-2005.html",
+      "route_map": {
+        "v8_route": null,
+        "v8_alias": null,
+        "v7c_route_alias": null,
+        "canonical_candidates": []
+      },
+      "classification": "source_missing_candidate",
+      "source_presence": "no_exact_entity",
+      "resolved_path": null,
+      "alternate_routes": [],
+      "related_local_entities": [],
+      "alias_status": "none_found_locally",
+      "local_search_evidence": [
+        {
+          "path": "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+          "field": "records[legacy_reclassified:112:Menu2_4_6]",
+          "detail": "final audit observation"
+        },
+        {
+          "path": ".scratch/pages-resources-20261015-v8/__offline/route-map.json",
+          "field": "routes[/news/wow-news-07-2005.html] / aliases[/news/wow-news-07-2005.html]",
+          "detail": {
+            "route": null,
+            "alias": null,
+            "canonical_candidates": []
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route/source_base_url == /news/wow-news-07-2005.html",
+          "detail": {
+            "route_matches": 0,
+            "source_matches": 0,
+            "route_alias": null
+          }
+        },
+        {
+          "path": "mirror/20080512/url-map.json",
+          "field": "normalized source URL /news/wow-news-07-2005.html",
+          "detail": []
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/site/news/wow-news-07-2005.html",
+          "field": "filesystem exact target",
+          "detail": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/news/wow-news-07-2005.html",
+            "exists": false
+          }
+        }
+      ],
+      "network_queue_eligible": false,
+      "priority": "P0",
+      "recommended_capture_constraints": [
+        "Request the exact original URL without month/path substitution or query broadening.",
+        "Record status, redirect chain, response MIME, byte length, SHA-256, and capture timestamp.",
+        "Preserve XML versus HTML MIME/body separately; a same-month or same-label page is not an alias proof."
+      ],
+      "next_action": "Queue exact original URL for network capture; do not infer an alias from neighboring months or expansion pages."
+    },
+    {
+      "target": "/news/wow-news-08-2005.html",
+      "observation_count": 1,
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:111:Menu2_4_5",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:175",
+          "source_line": 175,
+          "label": "August, 2005",
+          "href": "/news/wow-news-08-2005.html ",
+          "source_role": "legacy_menu1"
+        }
+      ],
+      "exact_original_url": "http://www.worldofwarcraft.com/news/wow-news-08-2005.html",
+      "route_map": {
+        "v8_route": null,
+        "v8_alias": null,
+        "v7c_route_alias": null,
+        "canonical_candidates": []
+      },
+      "classification": "source_missing_candidate",
+      "source_presence": "no_exact_entity",
+      "resolved_path": null,
+      "alternate_routes": [],
+      "related_local_entities": [],
+      "alias_status": "none_found_locally",
+      "local_search_evidence": [
+        {
+          "path": "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+          "field": "records[legacy_reclassified:111:Menu2_4_5]",
+          "detail": "final audit observation"
+        },
+        {
+          "path": ".scratch/pages-resources-20261015-v8/__offline/route-map.json",
+          "field": "routes[/news/wow-news-08-2005.html] / aliases[/news/wow-news-08-2005.html]",
+          "detail": {
+            "route": null,
+            "alias": null,
+            "canonical_candidates": []
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route/source_base_url == /news/wow-news-08-2005.html",
+          "detail": {
+            "route_matches": 0,
+            "source_matches": 0,
+            "route_alias": null
+          }
+        },
+        {
+          "path": "mirror/20080512/url-map.json",
+          "field": "normalized source URL /news/wow-news-08-2005.html",
+          "detail": []
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/site/news/wow-news-08-2005.html",
+          "field": "filesystem exact target",
+          "detail": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/news/wow-news-08-2005.html",
+            "exists": false
+          }
+        }
+      ],
+      "network_queue_eligible": false,
+      "priority": "P0",
+      "recommended_capture_constraints": [
+        "Request the exact original URL without month/path substitution or query broadening.",
+        "Record status, redirect chain, response MIME, byte length, SHA-256, and capture timestamp.",
+        "Preserve XML versus HTML MIME/body separately; a same-month or same-label page is not an alias proof."
+      ],
+      "next_action": "Queue exact original URL for network capture; do not infer an alias from neighboring months or expansion pages."
+    },
+    {
+      "target": "/news/wow-news-09-2005.html",
+      "observation_count": 1,
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:110:Menu2_4_4",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:174",
+          "source_line": 174,
+          "label": "September, 2005",
+          "href": "/news/wow-news-09-2005.html ",
+          "source_role": "legacy_menu1"
+        }
+      ],
+      "exact_original_url": "http://www.worldofwarcraft.com/news/wow-news-09-2005.html",
+      "route_map": {
+        "v8_route": null,
+        "v8_alias": null,
+        "v7c_route_alias": null,
+        "canonical_candidates": []
+      },
+      "classification": "source_missing_candidate",
+      "source_presence": "no_exact_entity",
+      "resolved_path": null,
+      "alternate_routes": [],
+      "related_local_entities": [],
+      "alias_status": "none_found_locally",
+      "local_search_evidence": [
+        {
+          "path": "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+          "field": "records[legacy_reclassified:110:Menu2_4_4]",
+          "detail": "final audit observation"
+        },
+        {
+          "path": ".scratch/pages-resources-20261015-v8/__offline/route-map.json",
+          "field": "routes[/news/wow-news-09-2005.html] / aliases[/news/wow-news-09-2005.html]",
+          "detail": {
+            "route": null,
+            "alias": null,
+            "canonical_candidates": []
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route/source_base_url == /news/wow-news-09-2005.html",
+          "detail": {
+            "route_matches": 0,
+            "source_matches": 0,
+            "route_alias": null
+          }
+        },
+        {
+          "path": "mirror/20080512/url-map.json",
+          "field": "normalized source URL /news/wow-news-09-2005.html",
+          "detail": []
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/site/news/wow-news-09-2005.html",
+          "field": "filesystem exact target",
+          "detail": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/news/wow-news-09-2005.html",
+            "exists": false
+          }
+        }
+      ],
+      "network_queue_eligible": false,
+      "priority": "P0",
+      "recommended_capture_constraints": [
+        "Request the exact original URL without month/path substitution or query broadening.",
+        "Record status, redirect chain, response MIME, byte length, SHA-256, and capture timestamp.",
+        "Preserve XML versus HTML MIME/body separately; a same-month or same-label page is not an alias proof."
+      ],
+      "next_action": "Queue exact original URL for network capture; do not infer an alias from neighboring months or expansion pages."
+    },
+    {
+      "target": "/news/wow-news-10-2005.html",
+      "observation_count": 1,
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:109:Menu2_4_3",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:173",
+          "source_line": 173,
+          "label": "October, 2005",
+          "href": "/news/wow-news-10-2005.html ",
+          "source_role": "legacy_menu1"
+        }
+      ],
+      "exact_original_url": "http://www.worldofwarcraft.com/news/wow-news-10-2005.html",
+      "route_map": {
+        "v8_route": null,
+        "v8_alias": null,
+        "v7c_route_alias": null,
+        "canonical_candidates": []
+      },
+      "classification": "source_missing_candidate",
+      "source_presence": "no_exact_entity",
+      "resolved_path": null,
+      "alternate_routes": [],
+      "related_local_entities": [],
+      "alias_status": "none_found_locally",
+      "local_search_evidence": [
+        {
+          "path": "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+          "field": "records[legacy_reclassified:109:Menu2_4_3]",
+          "detail": "final audit observation"
+        },
+        {
+          "path": ".scratch/pages-resources-20261015-v8/__offline/route-map.json",
+          "field": "routes[/news/wow-news-10-2005.html] / aliases[/news/wow-news-10-2005.html]",
+          "detail": {
+            "route": null,
+            "alias": null,
+            "canonical_candidates": []
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route/source_base_url == /news/wow-news-10-2005.html",
+          "detail": {
+            "route_matches": 0,
+            "source_matches": 0,
+            "route_alias": null
+          }
+        },
+        {
+          "path": "mirror/20080512/url-map.json",
+          "field": "normalized source URL /news/wow-news-10-2005.html",
+          "detail": []
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/site/news/wow-news-10-2005.html",
+          "field": "filesystem exact target",
+          "detail": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/news/wow-news-10-2005.html",
+            "exists": false
+          }
+        }
+      ],
+      "network_queue_eligible": false,
+      "priority": "P0",
+      "recommended_capture_constraints": [
+        "Request the exact original URL without month/path substitution or query broadening.",
+        "Record status, redirect chain, response MIME, byte length, SHA-256, and capture timestamp.",
+        "Preserve XML versus HTML MIME/body separately; a same-month or same-label page is not an alias proof."
+      ],
+      "next_action": "Queue exact original URL for network capture; do not infer an alias from neighboring months or expansion pages."
+    },
+    {
+      "target": "/news/wow-news-11-2005.html",
+      "observation_count": 1,
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:108:Menu2_4_2",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:172",
+          "source_line": 172,
+          "label": "November, 2005",
+          "href": "/news/wow-news-11-2005.html ",
+          "source_role": "legacy_menu1"
+        }
+      ],
+      "exact_original_url": "http://www.worldofwarcraft.com/news/wow-news-11-2005.html",
+      "route_map": {
+        "v8_route": null,
+        "v8_alias": null,
+        "v7c_route_alias": null,
+        "canonical_candidates": []
+      },
+      "classification": "source_missing_candidate",
+      "source_presence": "no_exact_entity",
+      "resolved_path": null,
+      "alternate_routes": [],
+      "related_local_entities": [],
+      "alias_status": "none_found_locally",
+      "local_search_evidence": [
+        {
+          "path": "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+          "field": "records[legacy_reclassified:108:Menu2_4_2]",
+          "detail": "final audit observation"
+        },
+        {
+          "path": ".scratch/pages-resources-20261015-v8/__offline/route-map.json",
+          "field": "routes[/news/wow-news-11-2005.html] / aliases[/news/wow-news-11-2005.html]",
+          "detail": {
+            "route": null,
+            "alias": null,
+            "canonical_candidates": []
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route/source_base_url == /news/wow-news-11-2005.html",
+          "detail": {
+            "route_matches": 0,
+            "source_matches": 0,
+            "route_alias": null
+          }
+        },
+        {
+          "path": "mirror/20080512/url-map.json",
+          "field": "normalized source URL /news/wow-news-11-2005.html",
+          "detail": []
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/site/news/wow-news-11-2005.html",
+          "field": "filesystem exact target",
+          "detail": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/news/wow-news-11-2005.html",
+            "exists": false
+          }
+        }
+      ],
+      "network_queue_eligible": false,
+      "priority": "P0",
+      "recommended_capture_constraints": [
+        "Request the exact original URL without month/path substitution or query broadening.",
+        "Record status, redirect chain, response MIME, byte length, SHA-256, and capture timestamp.",
+        "Preserve XML versus HTML MIME/body separately; a same-month or same-label page is not an alias proof."
+      ],
+      "next_action": "Queue exact original URL for network capture; do not infer an alias from neighboring months or expansion pages."
+    },
+    {
+      "target": "/news/wow-news2004.html",
+      "observation_count": 1,
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:115:Menu2_5",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:180",
+          "source_line": 180,
+          "label": "2004 Archive",
+          "href": "/news/wow-news2004.html ",
+          "source_role": "legacy_menu1"
+        }
+      ],
+      "exact_original_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+      "route_map": {
+        "v8_route": null,
+        "v8_alias": null,
+        "v7c_route_alias": null,
+        "canonical_candidates": []
+      },
+      "classification": "source_missing_candidate",
+      "source_presence": "no_exact_entity",
+      "resolved_path": null,
+      "alternate_routes": [],
+      "related_local_entities": [],
+      "alias_status": "none_found_locally",
+      "local_search_evidence": [
+        {
+          "path": "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+          "field": "records[legacy_reclassified:115:Menu2_5]",
+          "detail": "final audit observation"
+        },
+        {
+          "path": ".scratch/pages-resources-20261015-v8/__offline/route-map.json",
+          "field": "routes[/news/wow-news2004.html] / aliases[/news/wow-news2004.html]",
+          "detail": {
+            "route": null,
+            "alias": null,
+            "canonical_candidates": []
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route/source_base_url == /news/wow-news2004.html",
+          "detail": {
+            "route_matches": 0,
+            "source_matches": 0,
+            "route_alias": null
+          }
+        },
+        {
+          "path": "mirror/20080512/url-map.json",
+          "field": "normalized source URL /news/wow-news2004.html",
+          "detail": []
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/site/news/wow-news2004.html",
+          "field": "filesystem exact target",
+          "detail": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/news/wow-news2004.html",
+            "exists": false
+          }
+        }
+      ],
+      "network_queue_eligible": true,
+      "priority": "P0",
+      "recommended_capture_constraints": [
+        "Request the exact original URL without month/path substitution or query broadening.",
+        "Record status, redirect chain, response MIME, byte length, SHA-256, and capture timestamp.",
+        "Preserve XML versus HTML MIME/body separately; a same-month or same-label page is not an alias proof."
+      ],
+      "next_action": "Queue exact original URL for network capture; do not infer an alias from neighboring months or expansion pages."
+    },
+    {
+      "target": "/news/wow-news2005.html",
+      "observation_count": 2,
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:106:Menu2_4",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:170",
+          "source_line": 170,
+          "label": "2005 Archive",
+          "href": "/news/wow-news2005.html ",
+          "source_role": "legacy_menu1"
+        },
+        {
+          "record_id": "legacy_reclassified:114:Menu2_4_8",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu1_var.js:178",
+          "source_line": 178,
+          "label": "Jan - May, 2005",
+          "href": "/news/wow-news2005.html ",
+          "source_role": "legacy_menu1"
+        }
+      ],
+      "exact_original_url": "http://www.worldofwarcraft.com/news/wow-news2005.html",
+      "route_map": {
+        "v8_route": null,
+        "v8_alias": null,
+        "v7c_route_alias": null,
+        "canonical_candidates": []
+      },
+      "classification": "source_missing_candidate",
+      "source_presence": "no_exact_entity",
+      "resolved_path": null,
+      "alternate_routes": [],
+      "related_local_entities": [],
+      "alias_status": "none_found_locally",
+      "local_search_evidence": [
+        {
+          "path": "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+          "field": "records[legacy_reclassified:106:Menu2_4]",
+          "detail": "final audit observation"
+        },
+        {
+          "path": ".scratch/pages-resources-20261015-v8/__offline/route-map.json",
+          "field": "routes[/news/wow-news2005.html] / aliases[/news/wow-news2005.html]",
+          "detail": {
+            "route": null,
+            "alias": null,
+            "canonical_candidates": []
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route/source_base_url == /news/wow-news2005.html",
+          "detail": {
+            "route_matches": 0,
+            "source_matches": 0,
+            "route_alias": null
+          }
+        },
+        {
+          "path": "mirror/20080512/url-map.json",
+          "field": "normalized source URL /news/wow-news2005.html",
+          "detail": []
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/site/news/wow-news2005.html",
+          "field": "filesystem exact target",
+          "detail": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/news/wow-news2005.html",
+            "exists": false
+          }
+        }
+      ],
+      "network_queue_eligible": true,
+      "priority": "P0",
+      "recommended_capture_constraints": [
+        "Request the exact original URL without month/path substitution or query broadening.",
+        "Record status, redirect chain, response MIME, byte length, SHA-256, and capture timestamp.",
+        "Preserve XML versus HTML MIME/body separately; a same-month or same-label page is not an alias proof."
+      ],
+      "next_action": "Queue exact original URL for network capture; do not infer an alias from neighboring months or expansion pages."
+    },
+    {
+      "target": "/ptr",
+      "observation_count": 2,
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:608:Menu15_1",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu3_var.js:668",
+          "source_line": 668,
+          "label": "Public Test Realm",
+          "href": "/ptr/",
+          "source_role": "legacy_menu3"
+        },
+        {
+          "record_id": "legacy_reclassified:638:menuAccount:10",
+          "source_menu": "research/site-recovery-2008/.menu.xml:20",
+          "source_line": 20,
+          "label": "Public Test Realm",
+          "href": "/ptr/",
+          "source_role": "late_menu_xml"
+        }
+      ],
+      "exact_original_url": "http://www.worldofwarcraft.com/ptr",
+      "route_map": {
+        "v8_route": null,
+        "v8_alias": null,
+        "v7c_route_alias": null,
+        "canonical_candidates": []
+      },
+      "classification": "source_missing_candidate",
+      "source_presence": "related_entity_only",
+      "resolved_path": null,
+      "alternate_routes": [
+        {
+          "route": "/info/faq/ptr.html",
+          "route_map_value": "/WOW-Encyclopedia-Deployable-Archive/info/faq/ptr.html",
+          "alias_map_value": null,
+          "manifest": {
+            "route": "/info/faq/ptr.html",
+            "output_path": ".scratch/offline-navigation-20261015-v7c/site/info/faq/ptr.html",
+            "source_local_path": "offline/source-entities-pages-recovery/a28b162a704f68167f59fc109d89b82c8c7020aeba53126d020bb335fd707222.bin",
+            "source_base_url": "https://www.worldofwarcraft.com/info/faq/ptr.html",
+            "source_sha256": "a28b162a704f68167f59fc109d89b82c8c7020aeba53126d020bb335fd707222",
+            "source_length": 39835,
+            "derived_sha256": "bf636711fcca01c51d3d67f7041f58aaf2b1f0c517a7f39df2bc617cc12eea6c",
+            "derived_length": 46611,
+            "source_mime": "text/html;charset=UTF-8",
+            "mime": "text/html;charset=UTF-8",
+            "kind": "html",
+            "role": "site_recovery_sidebar_page",
+            "source_file_check": {
+              "path": "offline/source-entities-pages-recovery/a28b162a704f68167f59fc109d89b82c8c7020aeba53126d020bb335fd707222.bin",
+              "exists": true,
+              "length": 39835,
+              "sha256": "a28b162a704f68167f59fc109d89b82c8c7020aeba53126d020bb335fd707222",
+              "sha256_matches_manifest": true,
+              "length_matches_manifest": true
+            },
+            "output_file_check": {
+              "path": ".scratch/offline-navigation-20261015-v7c/site/info/faq/ptr.html",
+              "exists": true,
+              "length": 46611,
+              "sha256": "bf636711fcca01c51d3d67f7041f58aaf2b1f0c517a7f39df2bc617cc12eea6c",
+              "sha256_matches_manifest": true,
+              "length_matches_manifest": true
+            }
+          },
+          "equivalence": "candidate_only"
+        },
+        {
+          "route": "/contests/ptr-contest/index.html",
+          "route_map_value": "/WOW-Encyclopedia-Deployable-Archive/contests/ptr-contest/index.html",
+          "alias_map_value": null,
+          "manifest": {
+            "route": "/contests/ptr-contest/index.html",
+            "output_path": ".scratch/offline-navigation-20261015-v7c/site/contests/ptr-contest/index.html",
+            "source_local_path": "offline/source-entities-pages-recovery/c5808861634fbeb5bbfc419f982b795e020a164a00ed340aa46e06ae2bdd87ad.bin",
+            "source_base_url": "https://www.worldofwarcraft.com/contests/ptr-contest/",
+            "source_sha256": "c5808861634fbeb5bbfc419f982b795e020a164a00ed340aa46e06ae2bdd87ad",
+            "source_length": 35749,
+            "derived_sha256": "df74d52dfcb937b9856ad5c996bf5ce7283bb5174403d2961121f30b78de12ed",
+            "derived_length": 42251,
+            "source_mime": "text/html;charset=UTF-8",
+            "mime": "text/html;charset=UTF-8",
+            "kind": "html",
+            "role": "frontier_incremental_page_2008",
+            "source_file_check": {
+              "path": "offline/source-entities-pages-recovery/c5808861634fbeb5bbfc419f982b795e020a164a00ed340aa46e06ae2bdd87ad.bin",
+              "exists": true,
+              "length": 35749,
+              "sha256": "c5808861634fbeb5bbfc419f982b795e020a164a00ed340aa46e06ae2bdd87ad",
+              "sha256_matches_manifest": true,
+              "length_matches_manifest": true
+            },
+            "output_file_check": {
+              "path": ".scratch/offline-navigation-20261015-v7c/site/contests/ptr-contest/index.html",
+              "exists": true,
+              "length": 42251,
+              "sha256": "df74d52dfcb937b9856ad5c996bf5ce7283bb5174403d2961121f30b78de12ed",
+              "sha256_matches_manifest": true,
+              "length_matches_manifest": true
+            }
+          },
+          "equivalence": "candidate_only"
+        }
+      ],
+      "related_local_entities": [
+        {
+          "route": "/contests/ptr-contest/index.html",
+          "output_path": ".scratch/offline-navigation-20261015-v7c/site/contests/ptr-contest/index.html",
+          "source_local_path": "offline/source-entities-pages-recovery/c5808861634fbeb5bbfc419f982b795e020a164a00ed340aa46e06ae2bdd87ad.bin",
+          "source_base_url": "https://www.worldofwarcraft.com/contests/ptr-contest/",
+          "source_sha256": "c5808861634fbeb5bbfc419f982b795e020a164a00ed340aa46e06ae2bdd87ad",
+          "source_length": 35749,
+          "derived_sha256": "df74d52dfcb937b9856ad5c996bf5ce7283bb5174403d2961121f30b78de12ed",
+          "derived_length": 42251,
+          "source_mime": "text/html;charset=UTF-8",
+          "mime": "text/html;charset=UTF-8",
+          "kind": "html",
+          "role": "frontier_incremental_page_2008",
+          "source_file_check": {
+            "path": "offline/source-entities-pages-recovery/c5808861634fbeb5bbfc419f982b795e020a164a00ed340aa46e06ae2bdd87ad.bin",
+            "exists": true,
+            "length": 35749,
+            "sha256": "c5808861634fbeb5bbfc419f982b795e020a164a00ed340aa46e06ae2bdd87ad",
+            "sha256_matches_manifest": true,
+            "length_matches_manifest": true
+          },
+          "output_file_check": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/contests/ptr-contest/index.html",
+            "exists": true,
+            "length": 42251,
+            "sha256": "df74d52dfcb937b9856ad5c996bf5ce7283bb5174403d2961121f30b78de12ed",
+            "sha256_matches_manifest": true,
+            "length_matches_manifest": true
+          }
+        },
+        {
+          "route": "/contests/ptr-contest/rules-25.html",
+          "output_path": ".scratch/offline-navigation-20261015-v7c/site/contests/ptr-contest/rules-25.html",
+          "source_local_path": "offline/source-entities-pages-recovery/9454bc6f0b06ebf3b8fcb17b5eaf314ef32d748430c60a2a1b408ba3a015b05a.bin",
+          "source_base_url": "https://www.worldofwarcraft.com/contests/ptr-contest/rules-25.html",
+          "source_sha256": "9454bc6f0b06ebf3b8fcb17b5eaf314ef32d748430c60a2a1b408ba3a015b05a",
+          "source_length": 37589,
+          "derived_sha256": "68d1bf9ee060f8f2c66728372c15340f7fb0718e31287553a474261f8d587a3e",
+          "derived_length": 44316,
+          "source_mime": "text/html;charset=UTF-8",
+          "mime": "text/html;charset=UTF-8",
+          "kind": "html",
+          "role": "frontier_full_local_page_2008",
+          "source_file_check": {
+            "path": "offline/source-entities-pages-recovery/9454bc6f0b06ebf3b8fcb17b5eaf314ef32d748430c60a2a1b408ba3a015b05a.bin",
+            "exists": true,
+            "length": 37589,
+            "sha256": "9454bc6f0b06ebf3b8fcb17b5eaf314ef32d748430c60a2a1b408ba3a015b05a",
+            "sha256_matches_manifest": true,
+            "length_matches_manifest": true
+          },
+          "output_file_check": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/contests/ptr-contest/rules-25.html",
+            "exists": true,
+            "length": 44316,
+            "sha256": "68d1bf9ee060f8f2c66728372c15340f7fb0718e31287553a474261f8d587a3e",
+            "sha256_matches_manifest": true,
+            "length_matches_manifest": true
+          }
+        },
+        {
+          "route": "/contests/ptr-contest/rules-50.html",
+          "output_path": ".scratch/offline-navigation-20261015-v7c/site/contests/ptr-contest/rules-50.html",
+          "source_local_path": "offline/source-entities-pages-recovery/dbfbb17792f024bd3fc805dc2dd7c5ea545261e7da8e9300af8ac568bcdb0bec.bin",
+          "source_base_url": "https://www.worldofwarcraft.com/contests/ptr-contest/rules-50.html",
+          "source_sha256": "dbfbb17792f024bd3fc805dc2dd7c5ea545261e7da8e9300af8ac568bcdb0bec",
+          "source_length": 37888,
+          "derived_sha256": "3638f1d8723ec872e3bff52e5b32dfa163bcca0426830ce6c701f82e6c746ab2",
+          "derived_length": 44615,
+          "source_mime": "text/html;charset=UTF-8",
+          "mime": "text/html;charset=UTF-8",
+          "kind": "html",
+          "role": "frontier_full_local_page_2008",
+          "source_file_check": {
+            "path": "offline/source-entities-pages-recovery/dbfbb17792f024bd3fc805dc2dd7c5ea545261e7da8e9300af8ac568bcdb0bec.bin",
+            "exists": true,
+            "length": 37888,
+            "sha256": "dbfbb17792f024bd3fc805dc2dd7c5ea545261e7da8e9300af8ac568bcdb0bec",
+            "sha256_matches_manifest": true,
+            "length_matches_manifest": true
+          },
+          "output_file_check": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/contests/ptr-contest/rules-50.html",
+            "exists": true,
+            "length": 44615,
+            "sha256": "3638f1d8723ec872e3bff52e5b32dfa163bcca0426830ce6c701f82e6c746ab2",
+            "sha256_matches_manifest": true,
+            "length_matches_manifest": true
+          }
+        },
+        {
+          "route": "/contests/ptr-contest/rules-warsong.html",
+          "output_path": ".scratch/offline-navigation-20261015-v7c/site/contests/ptr-contest/rules-warsong.html",
+          "source_local_path": "offline/source-entities-pages-recovery/673116f67d72a1275b117daed9cdcac6d075745d23501aa8ed79e76939c67f3a.bin",
+          "source_base_url": "https://www.worldofwarcraft.com/contests/ptr-contest/rules-warsong.html",
+          "source_sha256": "673116f67d72a1275b117daed9cdcac6d075745d23501aa8ed79e76939c67f3a",
+          "source_length": 38559,
+          "derived_sha256": "2d7dc0118ffc273ae0ddbc2b3af4118d134b0145e2e133bab34340be086c2b60",
+          "derived_length": 45456,
+          "source_mime": "text/html;charset=UTF-8",
+          "mime": "text/html;charset=UTF-8",
+          "kind": "html",
+          "role": "frontier_full_local_page_2008",
+          "source_file_check": {
+            "path": "offline/source-entities-pages-recovery/673116f67d72a1275b117daed9cdcac6d075745d23501aa8ed79e76939c67f3a.bin",
+            "exists": true,
+            "length": 38559,
+            "sha256": "673116f67d72a1275b117daed9cdcac6d075745d23501aa8ed79e76939c67f3a",
+            "sha256_matches_manifest": true,
+            "length_matches_manifest": true
+          },
+          "output_file_check": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/contests/ptr-contest/rules-warsong.html",
+            "exists": true,
+            "length": 45456,
+            "sha256": "2d7dc0118ffc273ae0ddbc2b3af4118d134b0145e2e133bab34340be086c2b60",
+            "sha256_matches_manifest": true,
+            "length_matches_manifest": true
+          }
+        }
+      ],
+      "alias_status": "none_found_locally",
+      "local_search_evidence": [
+        {
+          "path": "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+          "field": "records[legacy_reclassified:608:Menu15_1]",
+          "detail": "final audit observation"
+        },
+        {
+          "path": ".scratch/pages-resources-20261015-v8/__offline/route-map.json",
+          "field": "routes[/ptr] / aliases[/ptr]",
+          "detail": {
+            "route": null,
+            "alias": null,
+            "canonical_candidates": []
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route/source_base_url == /ptr",
+          "detail": {
+            "route_matches": 0,
+            "source_matches": 0,
+            "route_alias": null
+          }
+        },
+        {
+          "path": "mirror/20080512/url-map.json",
+          "field": "normalized source URL /ptr",
+          "detail": []
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route == /info/faq/ptr.html",
+          "detail": {
+            "source_local_path": "offline/source-entities-pages-recovery/a28b162a704f68167f59fc109d89b82c8c7020aeba53126d020bb335fd707222.bin",
+            "source_sha256": "a28b162a704f68167f59fc109d89b82c8c7020aeba53126d020bb335fd707222",
+            "source_length": 39835,
+            "output_path": ".scratch/offline-navigation-20261015-v7c/site/info/faq/ptr.html",
+            "source_file_check": {
+              "path": "offline/source-entities-pages-recovery/a28b162a704f68167f59fc109d89b82c8c7020aeba53126d020bb335fd707222.bin",
+              "exists": true,
+              "length": 39835,
+              "sha256": "a28b162a704f68167f59fc109d89b82c8c7020aeba53126d020bb335fd707222",
+              "sha256_matches_manifest": true,
+              "length_matches_manifest": true
+            },
+            "output_file_check": {
+              "path": ".scratch/offline-navigation-20261015-v7c/site/info/faq/ptr.html",
+              "exists": true,
+              "length": 46611,
+              "sha256": "bf636711fcca01c51d3d67f7041f58aaf2b1f0c517a7f39df2bc617cc12eea6c",
+              "sha256_matches_manifest": true,
+              "length_matches_manifest": true
+            }
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route == /contests/ptr-contest/index.html",
+          "detail": {
+            "source_local_path": "offline/source-entities-pages-recovery/c5808861634fbeb5bbfc419f982b795e020a164a00ed340aa46e06ae2bdd87ad.bin",
+            "source_sha256": "c5808861634fbeb5bbfc419f982b795e020a164a00ed340aa46e06ae2bdd87ad",
+            "source_length": 35749,
+            "output_path": ".scratch/offline-navigation-20261015-v7c/site/contests/ptr-contest/index.html",
+            "source_file_check": {
+              "path": "offline/source-entities-pages-recovery/c5808861634fbeb5bbfc419f982b795e020a164a00ed340aa46e06ae2bdd87ad.bin",
+              "exists": true,
+              "length": 35749,
+              "sha256": "c5808861634fbeb5bbfc419f982b795e020a164a00ed340aa46e06ae2bdd87ad",
+              "sha256_matches_manifest": true,
+              "length_matches_manifest": true
+            },
+            "output_file_check": {
+              "path": ".scratch/offline-navigation-20261015-v7c/site/contests/ptr-contest/index.html",
+              "exists": true,
+              "length": 42251,
+              "sha256": "df74d52dfcb937b9856ad5c996bf5ce7283bb5174403d2961121f30b78de12ed",
+              "sha256_matches_manifest": true,
+              "length_matches_manifest": true
+            }
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/site/ptr",
+          "field": "filesystem exact target",
+          "detail": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/ptr",
+            "exists": false
+          }
+        }
+      ],
+      "network_queue_eligible": true,
+      "priority": "P1",
+      "recommended_capture_constraints": [
+        "Request the exact original URL without month/path substitution or query broadening.",
+        "Record status, redirect chain, response MIME, byte length, SHA-256, and capture timestamp.",
+        "Preserve XML versus HTML MIME/body separately; a same-month or same-label page is not an alias proof."
+      ],
+      "next_action": "PTR-related FAQ/contest entities are local but are not proof of a /ptr landing page; capture exact /ptr or document redirect."
+    },
+    {
+      "target": "/pvp/battlegrounds/battlegroups.html",
+      "observation_count": 1,
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:500:Menu10_6_8",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu3_var.js:545",
+          "source_line": 545,
+          "label": "Cross-Realm BGs",
+          "href": "/pvp/battlegrounds/battlegroups.html",
+          "source_role": "legacy_menu3"
+        }
+      ],
+      "exact_original_url": "http://www.worldofwarcraft.com/pvp/battlegrounds/battlegroups.html",
+      "route_map": {
+        "v8_route": null,
+        "v8_alias": null,
+        "v7c_route_alias": null,
+        "canonical_candidates": [
+          {
+            "key": "/pvp/battlegrounds/battlegroups",
+            "v8_route": "/WOW-Encyclopedia-Deployable-Archive/pvp/battlegrounds/battlegroups.html",
+            "v8_alias": "/WOW-Encyclopedia-Deployable-Archive/pvp/battlegrounds/battlegroups.html",
+            "v7c_route_alias": "/pvp/battlegrounds/battlegroups/index.html"
+          }
+        ]
+      },
+      "classification": "route_only_candidate",
+      "source_presence": "alternate_entity",
+      "resolved_path": null,
+      "alternate_routes": [
+        {
+          "route": "/pvp/battlegrounds/battlegroups/index.html",
+          "route_map_value": "/WOW-Encyclopedia-Deployable-Archive/pvp/battlegrounds/battlegroups/index.html",
+          "alias_map_value": null,
+          "manifest": {
+            "route": "/pvp/battlegrounds/battlegroups/index.html",
+            "output_path": ".scratch/offline-navigation-20261015-v7c/site/pvp/battlegrounds/battlegroups/index.html",
+            "source_local_path": "offline/source-entities-pages-recovery/0a3a79b7eaf56ca3cd0982c32a945f71ee1732cac386b3b2bb419ccd4fa06ecf.bin",
+            "source_base_url": "http://www.worldofwarcraft.com/pvp/battlegrounds/battlegroups/",
+            "source_sha256": "0a3a79b7eaf56ca3cd0982c32a945f71ee1732cac386b3b2bb419ccd4fa06ecf",
+            "source_length": 26271,
+            "derived_sha256": "12d0250f70586c71ffc7d85941567c0397d9141d45f0d34294032dcbfcb4c117",
+            "derived_length": 27154,
+            "source_mime": "text/html;charset=UTF-8",
+            "mime": "text/html;charset=UTF-8",
+            "kind": "html",
+            "role": "site_recovery_sidebar_page",
+            "source_file_check": {
+              "path": "offline/source-entities-pages-recovery/0a3a79b7eaf56ca3cd0982c32a945f71ee1732cac386b3b2bb419ccd4fa06ecf.bin",
+              "exists": true,
+              "length": 26271,
+              "sha256": "0a3a79b7eaf56ca3cd0982c32a945f71ee1732cac386b3b2bb419ccd4fa06ecf",
+              "sha256_matches_manifest": true,
+              "length_matches_manifest": true
+            },
+            "output_file_check": {
+              "path": ".scratch/offline-navigation-20261015-v7c/site/pvp/battlegrounds/battlegroups/index.html",
+              "exists": true,
+              "length": 27154,
+              "sha256": "12d0250f70586c71ffc7d85941567c0397d9141d45f0d34294032dcbfcb4c117",
+              "sha256_matches_manifest": true,
+              "length_matches_manifest": true
+            }
+          },
+          "equivalence": "candidate_only"
+        }
+      ],
+      "related_local_entities": [
+        {
+          "route": "/pvp/battlegrounds/battlegroups/index.html",
+          "output_path": ".scratch/offline-navigation-20261015-v7c/site/pvp/battlegrounds/battlegroups/index.html",
+          "source_local_path": "offline/source-entities-pages-recovery/0a3a79b7eaf56ca3cd0982c32a945f71ee1732cac386b3b2bb419ccd4fa06ecf.bin",
+          "source_base_url": "http://www.worldofwarcraft.com/pvp/battlegrounds/battlegroups/",
+          "source_sha256": "0a3a79b7eaf56ca3cd0982c32a945f71ee1732cac386b3b2bb419ccd4fa06ecf",
+          "source_length": 26271,
+          "derived_sha256": "12d0250f70586c71ffc7d85941567c0397d9141d45f0d34294032dcbfcb4c117",
+          "derived_length": 27154,
+          "source_mime": "text/html;charset=UTF-8",
+          "mime": "text/html;charset=UTF-8",
+          "kind": "html",
+          "role": "site_recovery_sidebar_page",
+          "source_file_check": {
+            "path": "offline/source-entities-pages-recovery/0a3a79b7eaf56ca3cd0982c32a945f71ee1732cac386b3b2bb419ccd4fa06ecf.bin",
+            "exists": true,
+            "length": 26271,
+            "sha256": "0a3a79b7eaf56ca3cd0982c32a945f71ee1732cac386b3b2bb419ccd4fa06ecf",
+            "sha256_matches_manifest": true,
+            "length_matches_manifest": true
+          },
+          "output_file_check": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/pvp/battlegrounds/battlegroups/index.html",
+            "exists": true,
+            "length": 27154,
+            "sha256": "12d0250f70586c71ffc7d85941567c0397d9141d45f0d34294032dcbfcb4c117",
+            "sha256_matches_manifest": true,
+            "length_matches_manifest": true
+          }
+        },
+        {
+          "route": "/pvp/battlegrounds/battlegroups/functions.js",
+          "output_path": ".scratch/offline-navigation-20261015-v7c/site/pvp/battlegrounds/battlegroups/functions.js",
+          "source_local_path": "offline/source-entities-resources-recovery/ace55fc2ee0b246097a29e6ae35c5f7564dab7dd0d41147fa73eadec4697b76a.bin",
+          "source_base_url": "http://www.worldofwarcraft.com/pvp/battlegrounds/battlegroups/functions.js",
+          "source_sha256": "ace55fc2ee0b246097a29e6ae35c5f7564dab7dd0d41147fa73eadec4697b76a",
+          "source_length": 7997,
+          "derived_sha256": "ace55fc2ee0b246097a29e6ae35c5f7564dab7dd0d41147fa73eadec4697b76a",
+          "derived_length": 7997,
+          "source_mime": "application/x-javascript",
+          "mime": "application/x-javascript",
+          "kind": "js",
+          "role": "expanded_approved_page_text_dependency",
+          "source_file_check": {
+            "path": "offline/source-entities-resources-recovery/ace55fc2ee0b246097a29e6ae35c5f7564dab7dd0d41147fa73eadec4697b76a.bin",
+            "exists": true,
+            "length": 7997,
+            "sha256": "ace55fc2ee0b246097a29e6ae35c5f7564dab7dd0d41147fa73eadec4697b76a",
+            "sha256_matches_manifest": true,
+            "length_matches_manifest": true
+          },
+          "output_file_check": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/pvp/battlegrounds/battlegroups/functions.js",
+            "exists": true,
+            "length": 7997,
+            "sha256": "ace55fc2ee0b246097a29e6ae35c5f7564dab7dd0d41147fa73eadec4697b76a",
+            "sha256_matches_manifest": true,
+            "length_matches_manifest": true
+          }
+        },
+        {
+          "route": "/pvp/battlegrounds/battlegroups/images/borders/header-bg.gif",
+          "output_path": ".scratch/offline-navigation-20261015-v7c/site/pvp/battlegrounds/battlegroups/images/borders/header-bg.gif",
+          "source_local_path": "offline/source-entities-resources-recovery/49711342b4b729d8f9fe4e44306143e7cab36951c1829d10ccc660e2b0a26da5.bin",
+          "source_base_url": "http://www.worldofwarcraft.com/pvp/battlegrounds/battlegroups/images/borders/header-bg.gif",
+          "source_sha256": "49711342b4b729d8f9fe4e44306143e7cab36951c1829d10ccc660e2b0a26da5",
+          "source_length": 2195,
+          "derived_sha256": "49711342b4b729d8f9fe4e44306143e7cab36951c1829d10ccc660e2b0a26da5",
+          "derived_length": 2195,
+          "source_mime": "image/gif",
+          "mime": "image/gif",
+          "kind": "image",
+          "role": "expanded_approved_page_static_dependency",
+          "source_file_check": {
+            "path": "offline/source-entities-resources-recovery/49711342b4b729d8f9fe4e44306143e7cab36951c1829d10ccc660e2b0a26da5.bin",
+            "exists": true,
+            "length": 2195,
+            "sha256": "49711342b4b729d8f9fe4e44306143e7cab36951c1829d10ccc660e2b0a26da5",
+            "sha256_matches_manifest": true,
+            "length_matches_manifest": true
+          },
+          "output_file_check": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/pvp/battlegrounds/battlegroups/images/borders/header-bg.gif",
+            "exists": true,
+            "length": 2195,
+            "sha256": "49711342b4b729d8f9fe4e44306143e7cab36951c1829d10ccc660e2b0a26da5",
+            "sha256_matches_manifest": true,
+            "length_matches_manifest": true
+          }
+        },
+        {
+          "route": "/pvp/battlegrounds/battlegroups/images/borders/header-left.gif",
+          "output_path": ".scratch/offline-navigation-20261015-v7c/site/pvp/battlegrounds/battlegroups/images/borders/header-left.gif",
+          "source_local_path": "offline/source-entities-resources-recovery/d45946e065b554aec19555d00d9634549a82c02a34e555a367cae4aa3d0a5260.bin",
+          "source_base_url": "http://www.worldofwarcraft.com/pvp/battlegrounds/battlegroups/images/borders/header-left.gif",
+          "source_sha256": "d45946e065b554aec19555d00d9634549a82c02a34e555a367cae4aa3d0a5260",
+          "source_length": 417,
+          "derived_sha256": "d45946e065b554aec19555d00d9634549a82c02a34e555a367cae4aa3d0a5260",
+          "derived_length": 417,
+          "source_mime": "image/gif",
+          "mime": "image/gif",
+          "kind": "image",
+          "role": "expanded_approved_page_static_dependency",
+          "source_file_check": {
+            "path": "offline/source-entities-resources-recovery/d45946e065b554aec19555d00d9634549a82c02a34e555a367cae4aa3d0a5260.bin",
+            "exists": true,
+            "length": 417,
+            "sha256": "d45946e065b554aec19555d00d9634549a82c02a34e555a367cae4aa3d0a5260",
+            "sha256_matches_manifest": true,
+            "length_matches_manifest": true
+          },
+          "output_file_check": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/pvp/battlegrounds/battlegroups/images/borders/header-left.gif",
+            "exists": true,
+            "length": 417,
+            "sha256": "d45946e065b554aec19555d00d9634549a82c02a34e555a367cae4aa3d0a5260",
+            "sha256_matches_manifest": true,
+            "length_matches_manifest": true
+          }
+        }
+      ],
+      "alias_status": "canonical_output_present_legacy_equivalence_review",
+      "local_search_evidence": [
+        {
+          "path": "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+          "field": "records[legacy_reclassified:500:Menu10_6_8]",
+          "detail": "final audit observation"
+        },
+        {
+          "path": ".scratch/pages-resources-20261015-v8/__offline/route-map.json",
+          "field": "routes[/pvp/battlegrounds/battlegroups.html] / aliases[/pvp/battlegrounds/battlegroups.html]",
+          "detail": {
+            "route": null,
+            "alias": null,
+            "canonical_candidates": [
+              {
+                "key": "/pvp/battlegrounds/battlegroups",
+                "v8_route": "/WOW-Encyclopedia-Deployable-Archive/pvp/battlegrounds/battlegroups.html",
+                "v8_alias": "/WOW-Encyclopedia-Deployable-Archive/pvp/battlegrounds/battlegroups.html",
+                "v7c_route_alias": "/pvp/battlegrounds/battlegroups/index.html"
+              }
+            ]
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route/source_base_url == /pvp/battlegrounds/battlegroups.html",
+          "detail": {
+            "route_matches": 0,
+            "source_matches": 0,
+            "route_alias": null
+          }
+        },
+        {
+          "path": "mirror/20080512/url-map.json",
+          "field": "normalized source URL /pvp/battlegrounds/battlegroups.html",
+          "detail": []
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route == /pvp/battlegrounds/battlegroups/index.html",
+          "detail": {
+            "source_local_path": "offline/source-entities-pages-recovery/0a3a79b7eaf56ca3cd0982c32a945f71ee1732cac386b3b2bb419ccd4fa06ecf.bin",
+            "source_sha256": "0a3a79b7eaf56ca3cd0982c32a945f71ee1732cac386b3b2bb419ccd4fa06ecf",
+            "source_length": 26271,
+            "output_path": ".scratch/offline-navigation-20261015-v7c/site/pvp/battlegrounds/battlegroups/index.html",
+            "source_file_check": {
+              "path": "offline/source-entities-pages-recovery/0a3a79b7eaf56ca3cd0982c32a945f71ee1732cac386b3b2bb419ccd4fa06ecf.bin",
+              "exists": true,
+              "length": 26271,
+              "sha256": "0a3a79b7eaf56ca3cd0982c32a945f71ee1732cac386b3b2bb419ccd4fa06ecf",
+              "sha256_matches_manifest": true,
+              "length_matches_manifest": true
+            },
+            "output_file_check": {
+              "path": ".scratch/offline-navigation-20261015-v7c/site/pvp/battlegrounds/battlegroups/index.html",
+              "exists": true,
+              "length": 27154,
+              "sha256": "12d0250f70586c71ffc7d85941567c0397d9141d45f0d34294032dcbfcb4c117",
+              "sha256_matches_manifest": true,
+              "length_matches_manifest": true
+            }
+          }
+        },
+        {
+          "path": "mirror/20080512/www.worldofwarcraft.com/shared/wow-com/includes-client/navtree.js",
+          "line": 536,
+          "text": "Menu1_9_6_3=new Array(bulletImg+\"Battlegroups\"+underLine,\"/pvp/battlegrounds/battlegroups/index.html\",menuBg,0,15,125,\"\",\"\",\"\",\"\",\"\",\"\",-1,-1,-1,\"\",\"\");"
+        },
+        {
+          "path": "mirror/20080512/www.worldofwarcraft.com/shared/wow-com/includes-client/navtree.js",
+          "field": "line 536",
+          "detail": "newer navtree records /pvp/battlegrounds/battlegroups/index.html"
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/site/pvp/battlegrounds/battlegroups.html",
+          "field": "filesystem exact target",
+          "detail": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/pvp/battlegrounds/battlegroups.html",
+            "exists": false
+          }
+        }
+      ],
+      "network_queue_eligible": false,
+      "priority": "P1",
+      "recommended_capture_constraints": [
+        "Request the exact original URL without month/path substitution or query broadening.",
+        "Record status, redirect chain, response MIME, byte length, SHA-256, and capture timestamp.",
+        "Preserve XML versus HTML MIME/body separately; a same-month or same-label page is not an alias proof."
+      ],
+      "next_action": "Existing local battlegroups entity is at the index route; verify old .html equivalence before adding a compatibility alias."
+    },
+    {
+      "target": "/wrath/artwork.xml",
+      "observation_count": 1,
+      "source_menu": [
+        {
+          "record_id": "legacy_reclassified:605:Menu14_2_2",
+          "source_menu": "mirror/20080512/www.worldofwarcraft.com/new-hp/js/menu3_var.js:662",
+          "source_line": 662,
+          "label": "Artwork",
+          "href": "/wrath/artwork.xml",
+          "source_role": "legacy_menu3"
+        }
+      ],
+      "exact_original_url": "http://www.worldofwarcraft.com/wrath/artwork.xml",
+      "route_map": {
+        "v8_route": null,
+        "v8_alias": null,
+        "v7c_route_alias": null,
+        "canonical_candidates": []
+      },
+      "classification": "source_missing_candidate",
+      "source_presence": "related_entity_only",
+      "resolved_path": null,
+      "alternate_routes": [
+        {
+          "route": "/burningcrusade/artwork.html",
+          "route_map_value": "/WOW-Encyclopedia-Deployable-Archive/burningcrusade/artwork.html",
+          "alias_map_value": null,
+          "manifest": {
+            "route": "/burningcrusade/artwork.html",
+            "output_path": ".scratch/offline-navigation-20261015-v7c/site/burningcrusade/artwork.html",
+            "source_local_path": "offline/source-entities-pages-recovery/1ce337baba8e11369098993d2f002e23085ccf5a2b9613c504c02f65f1b7bf27.bin",
+            "source_base_url": "https://www.worldofwarcraft.com/burningcrusade/artwork.html",
+            "source_sha256": "1ce337baba8e11369098993d2f002e23085ccf5a2b9613c504c02f65f1b7bf27",
+            "source_length": 8562,
+            "derived_sha256": "ce4d93913010e503bb61314e695c86761efe912e93864e85153c81d3c1f3eab6",
+            "derived_length": 9651,
+            "source_mime": "text/html;charset=UTF-8",
+            "mime": "text/html;charset=UTF-8",
+            "kind": "html",
+            "role": "site_recovery_frontier_page",
+            "source_file_check": {
+              "path": "offline/source-entities-pages-recovery/1ce337baba8e11369098993d2f002e23085ccf5a2b9613c504c02f65f1b7bf27.bin",
+              "exists": true,
+              "length": 8562,
+              "sha256": "1ce337baba8e11369098993d2f002e23085ccf5a2b9613c504c02f65f1b7bf27",
+              "sha256_matches_manifest": true,
+              "length_matches_manifest": true
+            },
+            "output_file_check": {
+              "path": ".scratch/offline-navigation-20261015-v7c/site/burningcrusade/artwork.html",
+              "exists": true,
+              "length": 9651,
+              "sha256": "ce4d93913010e503bb61314e695c86761efe912e93864e85153c81d3c1f3eab6",
+              "sha256_matches_manifest": true,
+              "length_matches_manifest": true
+            }
+          },
+          "equivalence": "candidate_only"
+        }
+      ],
+      "related_local_entities": [
+        {
+          "route": "/burningcrusade/artwork.html",
+          "output_path": ".scratch/offline-navigation-20261015-v7c/site/burningcrusade/artwork.html",
+          "source_local_path": "offline/source-entities-pages-recovery/1ce337baba8e11369098993d2f002e23085ccf5a2b9613c504c02f65f1b7bf27.bin",
+          "source_base_url": "https://www.worldofwarcraft.com/burningcrusade/artwork.html",
+          "source_sha256": "1ce337baba8e11369098993d2f002e23085ccf5a2b9613c504c02f65f1b7bf27",
+          "source_length": 8562,
+          "derived_sha256": "ce4d93913010e503bb61314e695c86761efe912e93864e85153c81d3c1f3eab6",
+          "derived_length": 9651,
+          "source_mime": "text/html;charset=UTF-8",
+          "mime": "text/html;charset=UTF-8",
+          "kind": "html",
+          "role": "site_recovery_frontier_page",
+          "source_file_check": {
+            "path": "offline/source-entities-pages-recovery/1ce337baba8e11369098993d2f002e23085ccf5a2b9613c504c02f65f1b7bf27.bin",
+            "exists": true,
+            "length": 8562,
+            "sha256": "1ce337baba8e11369098993d2f002e23085ccf5a2b9613c504c02f65f1b7bf27",
+            "sha256_matches_manifest": true,
+            "length_matches_manifest": true
+          },
+          "output_file_check": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/burningcrusade/artwork.html",
+            "exists": true,
+            "length": 9651,
+            "sha256": "ce4d93913010e503bb61314e695c86761efe912e93864e85153c81d3c1f3eab6",
+            "sha256_matches_manifest": true,
+            "length_matches_manifest": true
+          }
+        },
+        {
+          "route": "/burningcrusade/images/header_artwork.gif",
+          "output_path": ".scratch/offline-navigation-20261015-v7c/site/burningcrusade/images/header_artwork.gif",
+          "source_local_path": "offline/source-entities-resources-recovery/2dd04fc1d0ba694b7163a90547ceedcd42be17a3c445056f6707e24d5e6e2bcb.bin",
+          "source_base_url": "http://www.worldofwarcraft.com/burningcrusade/images/header_artwork.gif",
+          "source_sha256": "2dd04fc1d0ba694b7163a90547ceedcd42be17a3c445056f6707e24d5e6e2bcb",
+          "source_length": 1848,
+          "derived_sha256": "2dd04fc1d0ba694b7163a90547ceedcd42be17a3c445056f6707e24d5e6e2bcb",
+          "derived_length": 1848,
+          "source_mime": "image/gif",
+          "mime": "image/gif",
+          "kind": "image",
+          "role": "expanded_approved_page_static_dependency",
+          "source_file_check": {
+            "path": "offline/source-entities-resources-recovery/2dd04fc1d0ba694b7163a90547ceedcd42be17a3c445056f6707e24d5e6e2bcb.bin",
+            "exists": true,
+            "length": 1848,
+            "sha256": "2dd04fc1d0ba694b7163a90547ceedcd42be17a3c445056f6707e24d5e6e2bcb",
+            "sha256_matches_manifest": true,
+            "length_matches_manifest": true
+          },
+          "output_file_check": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/burningcrusade/images/header_artwork.gif",
+            "exists": true,
+            "length": 1848,
+            "sha256": "2dd04fc1d0ba694b7163a90547ceedcd42be17a3c445056f6707e24d5e6e2bcb",
+            "sha256_matches_manifest": true,
+            "length_matches_manifest": true
+          }
+        },
+        {
+          "route": "/burningcrusade/includes/flash/embed_artwork.js",
+          "output_path": ".scratch/offline-navigation-20261015-v7c/site/burningcrusade/includes/flash/embed_artwork.js",
+          "source_local_path": "offline/source-entities-resources-recovery/4ea8809789f306614aa002706cafeb03e920628caffc06b239460fefde05c13f.bin",
+          "source_base_url": "http://www.worldofwarcraft.com/burningcrusade/includes/flash/embed_artwork.js",
+          "source_sha256": "4ea8809789f306614aa002706cafeb03e920628caffc06b239460fefde05c13f",
+          "source_length": 978,
+          "derived_sha256": "a9eed7426b64ceb5a4b0558e6472beff3758f90d896bf458347da102f5ba0fa1",
+          "derived_length": 1352,
+          "source_mime": "application/x-javascript",
+          "mime": "application/x-javascript",
+          "kind": "js",
+          "role": "browser_observed_runtime_dependency",
+          "source_file_check": {
+            "path": "offline/source-entities-resources-recovery/4ea8809789f306614aa002706cafeb03e920628caffc06b239460fefde05c13f.bin",
+            "exists": true,
+            "length": 978,
+            "sha256": "4ea8809789f306614aa002706cafeb03e920628caffc06b239460fefde05c13f",
+            "sha256_matches_manifest": true,
+            "length_matches_manifest": true
+          },
+          "output_file_check": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/burningcrusade/includes/flash/embed_artwork.js",
+            "exists": true,
+            "length": 1352,
+            "sha256": "a9eed7426b64ceb5a4b0558e6472beff3758f90d896bf458347da102f5ba0fa1",
+            "sha256_matches_manifest": true,
+            "length_matches_manifest": true
+          }
+        },
+        {
+          "route": "/burningcrusade/swf/artwork.swf",
+          "output_path": ".scratch/offline-navigation-20261015-v7c/site/burningcrusade/swf/artwork.swf",
+          "source_local_path": "offline/source-entities-resources-recovery/0512ca2d94ecd06633629b2d6168f3ec025fc5469c8e5a25f622b4468c925a14.bin",
+          "source_base_url": "http://www.worldofwarcraft.com/burningcrusade/swf/artwork.swf",
+          "source_sha256": "0512ca2d94ecd06633629b2d6168f3ec025fc5469c8e5a25f622b4468c925a14",
+          "source_length": 16597,
+          "derived_sha256": "0512ca2d94ecd06633629b2d6168f3ec025fc5469c8e5a25f622b4468c925a14",
+          "derived_length": 16597,
+          "source_mime": "application/x-shockwave-flash",
+          "mime": "application/x-shockwave-flash",
+          "kind": "flash",
+          "role": "text_closure_dependency",
+          "source_file_check": {
+            "path": "offline/source-entities-resources-recovery/0512ca2d94ecd06633629b2d6168f3ec025fc5469c8e5a25f622b4468c925a14.bin",
+            "exists": true,
+            "length": 16597,
+            "sha256": "0512ca2d94ecd06633629b2d6168f3ec025fc5469c8e5a25f622b4468c925a14",
+            "sha256_matches_manifest": true,
+            "length_matches_manifest": true
+          },
+          "output_file_check": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/burningcrusade/swf/artwork.swf",
+            "exists": true,
+            "length": 16597,
+            "sha256": "0512ca2d94ecd06633629b2d6168f3ec025fc5469c8e5a25f622b4468c925a14",
+            "sha256_matches_manifest": true,
+            "length_matches_manifest": true
+          }
+        }
+      ],
+      "alias_status": "none_found_locally",
+      "local_search_evidence": [
+        {
+          "path": "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+          "field": "records[legacy_reclassified:605:Menu14_2_2]",
+          "detail": "final audit observation"
+        },
+        {
+          "path": ".scratch/pages-resources-20261015-v8/__offline/route-map.json",
+          "field": "routes[/wrath/artwork.xml] / aliases[/wrath/artwork.xml]",
+          "detail": {
+            "route": null,
+            "alias": null,
+            "canonical_candidates": []
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route/source_base_url == /wrath/artwork.xml",
+          "detail": {
+            "route_matches": 0,
+            "source_matches": 0,
+            "route_alias": null
+          }
+        },
+        {
+          "path": "mirror/20080512/url-map.json",
+          "field": "normalized source URL /wrath/artwork.xml",
+          "detail": []
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+          "field": "files[].route == /burningcrusade/artwork.html",
+          "detail": {
+            "source_local_path": "offline/source-entities-pages-recovery/1ce337baba8e11369098993d2f002e23085ccf5a2b9613c504c02f65f1b7bf27.bin",
+            "source_sha256": "1ce337baba8e11369098993d2f002e23085ccf5a2b9613c504c02f65f1b7bf27",
+            "source_length": 8562,
+            "output_path": ".scratch/offline-navigation-20261015-v7c/site/burningcrusade/artwork.html",
+            "source_file_check": {
+              "path": "offline/source-entities-pages-recovery/1ce337baba8e11369098993d2f002e23085ccf5a2b9613c504c02f65f1b7bf27.bin",
+              "exists": true,
+              "length": 8562,
+              "sha256": "1ce337baba8e11369098993d2f002e23085ccf5a2b9613c504c02f65f1b7bf27",
+              "sha256_matches_manifest": true,
+              "length_matches_manifest": true
+            },
+            "output_file_check": {
+              "path": ".scratch/offline-navigation-20261015-v7c/site/burningcrusade/artwork.html",
+              "exists": true,
+              "length": 9651,
+              "sha256": "ce4d93913010e503bb61314e695c86761efe912e93864e85153c81d3c1f3eab6",
+              "sha256_matches_manifest": true,
+              "length_matches_manifest": true
+            }
+          }
+        },
+        {
+          "path": ".scratch/offline-navigation-20261015-v7c/site/wrath/artwork.xml",
+          "field": "filesystem exact target",
+          "detail": {
+            "path": ".scratch/offline-navigation-20261015-v7c/site/wrath/artwork.xml",
+            "exists": false
+          }
+        }
+      ],
+      "network_queue_eligible": true,
+      "priority": "P1",
+      "recommended_capture_constraints": [
+        "Request the exact original URL without month/path substitution or query broadening.",
+        "Record status, redirect chain, response MIME, byte length, SHA-256, and capture timestamp.",
+        "Preserve XML versus HTML MIME/body separately; a same-month or same-label page is not an alias proof."
+      ],
+      "next_action": "Related Burning Crusade artwork and Wrath static art assets do not prove the Wrath XML page; capture the exact URL."
+    }
+  ],
+  "production_edit_suggestions": [
+    {
+      "file": "offline/approved-route-alias-overlay.json",
+      "suggestion": "After proof only, add compatibility aliases for old battlegroups/professions paths; do not hand-edit generated route-map.json."
+    },
+    {
+      "file": "offline/approved-pages-recovery-map.json",
+      "suggestion": "For any captured news/PTR/artwork page, add an evidence-backed source record with exact original URL, timestamp, MIME, length, and SHA-256."
+    },
+    {
+      "file": "offline/approved-pages-temporal-supplement-map.json",
+      "suggestion": "Use only when a later/alternate timestamp is explicitly accepted; preserve original target and capture provenance."
+    },
+    {
+      "file": ".scratch/offline-navigation-20261015-v9/build-manifest.json",
+      "suggestion": "Generate a new derived staging manifest after review; keep frozen offline/build-manifest.json unchanged."
+    }
+  ]
+}
