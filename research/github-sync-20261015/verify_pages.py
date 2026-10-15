@@ -1,0 +1,94 @@
+"""Bounded direct-first byte verification of the published v8 archive."""
+import hashlib
+import json
+import pathlib
+import subprocess
+import tempfile
+from datetime import datetime, timezone
+
+ROOT = pathlib.Path(__file__).resolve().parents[2]
+OUT = pathlib.Path(__file__).resolve().parent
+SITE = ROOT / '.scratch/pages-resources-20261015-v8'
+BASE = 'https://vvcchh0.github.io/WOW-Encyclopedia-Deployable-Archive/'
+EXPECTED_COMMIT = '7cfe6ac6a82137fc9df0673630e66c09adf03a49'
+PATHS = [
+    'index.html', 'downloads/ssotd/index.html',
+    'new-hp/js/ssotd-screenie.js',
+    'downloads/ssotd/images/screens/ss1314.jpg',
+    'downloads/ssotd/images/screens/ss1336.jpg',
+    'info/archivednews.html', 'info/basics/dailyquests.shtml',
+    'info/basics/benice.shtml', 'wrath/wallpapers.xml.html',
+    'burningcrusade/trial/index.html', 'pvp/flash-rewards/index.html',
+    '__offline/route-map.json',
+]
+
+def stamp():
+    return datetime.now(timezone.utc).isoformat()
+
+def sha(data):
+    return hashlib.sha256(data).hexdigest()
+
+def build_state():
+    result = subprocess.run([
+        'gh', 'api',
+        'repos/vvcchh0/WOW-Encyclopedia-Deployable-Archive/pages/builds/latest'
+    ], capture_output=True, text=True, timeout=45, check=True)
+    data = json.loads(result.stdout)
+    return {k: data.get(k) for k in ['status', 'commit', 'updated_at', 'error']}
+
+def main():
+    report = {'schema': 'wow-pages-publication-acceptance/v1',
+              'started_utc': stamp(), 'base_url': BASE,
+              'expected_pages_commit': EXPECTED_COMMIT,
+              'local_site': str(SITE.relative_to(ROOT)),
+              'policy': {'direct_first': True, 'tls_verification': True,
+                         'redirects': False, 'per_attempt_timeout_seconds': 25,
+                         'maximum_attempts': 24},
+              'build_before': build_state(), 'objects': []}
+    if (report['build_before']['status'] != 'built' or
+            report['build_before']['commit'] != EXPECTED_COMMIT):
+        raise RuntimeError('Expected Pages build has not completed')
+    for relative in PATHS:
+        local = (SITE / relative).read_bytes()
+        obj = {'path': relative, 'local_bytes': len(local),
+               'local_sha256': sha(local), 'attempts': [], 'accepted': False}
+        for transport in ['direct', 'proxy']:
+            with tempfile.TemporaryDirectory(prefix='pages-check-', dir=OUT) as tmp:
+                body = pathlib.Path(tmp) / 'body'
+                cmd = ['curl.exe', '--silent', '--show-error', '--max-time', '25',
+                       '--connect-timeout', '8', '--max-filesize', '16777216',
+                       '--output', str(body), '--write-out',
+                       '%{http_code}\n%{content_type}', BASE + relative]
+                cmd[1:1] = (['--noproxy', '*'] if transport == 'direct' else
+                            ['--noproxy', '', '--proxy', 'http://127.0.0.1:7890'])
+                started = stamp()
+                result = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
+                fields = result.stdout.splitlines()
+                status = int(fields[0]) if fields and fields[0].isdigit() else None
+                payload = body.read_bytes() if body.exists() else b''
+                attempt = {'transport': transport, 'started_utc': started,
+                           'finished_utc': stamp(), 'curl_exit': result.returncode,
+                           'http_status': status,
+                           'content_type': fields[1] if len(fields) > 1 else None,
+                           'bytes': len(payload), 'sha256': sha(payload),
+                           'matches_local': payload == local}
+                obj['attempts'].append(attempt)
+                if result.returncode == 0 and status == 200:
+                    obj['accepted'] = payload == local
+                    break
+                if status in (429, 503):
+                    break
+        report['objects'].append(obj)
+        print(json.dumps({'path': relative, 'accepted': obj['accepted']}, ensure_ascii=False), flush=True)
+    report['build_after'] = build_state()
+    report['finished_utc'] = stamp()
+    report['accepted_objects'] = sum(x['accepted'] for x in report['objects'])
+    report['accepted'] = (report['accepted_objects'] == len(PATHS) and
+                          report['build_after']['status'] == 'built' and
+                          report['build_after']['commit'] == EXPECTED_COMMIT)
+    (OUT / 'pages-acceptance.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    print(json.dumps({'accepted': report['accepted'], 'objects': report['accepted_objects']}))
+    return 0 if report['accepted'] else 1
+
+if __name__ == '__main__':
+    raise SystemExit(main())

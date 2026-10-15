@@ -1,0 +1,59 @@
+{
+  "schema": "continuous-wow-recovery-tasks/v1",
+  "deadline_utc": "2026-10-15T14:44:00Z",
+  "coordination": {
+    "heartbeat_id": "wow-8",
+    "heartbeat_interval_minutes": 15,
+    "heartbeat_until_utc": "2026-10-15T14:44:25Z",
+    "configured_by": "root agent via app tool after explicit user authorization",
+    "resume_rule": "Inspect live agents and latest receipts before dispatch; preserve active batches and permit only one network worker."
+  },
+  "tasks": [
+    {
+      "id": "LOCAL-SIDEBAR-001",
+      "status": "running",
+      "owner": "sidebar_local_audit",
+      "goal": "Audit all sidebar menu observations against the accepted v8 derivative and extract evidence-backed dependency gaps.",
+      "write_scope": "research/continuous-recovery-20261015/sidebar-audit/**",
+      "inputs": ["research/navigation-gaps-20261015/inventory.json", ".scratch/pages-resources-20261015-v8/__offline/route-map.json"],
+      "network": false,
+      "acceptance": ["Count conservation for 588 in-scope observations and 653 excluded observations", "Every reported gap has a local evidence pointer", "Current page, resources and interaction states are separate", "No production or frozen-baseline modifications"],
+      "stop": "25 minute batch; report infrastructure failure or required interface/scope change"
+    },
+    {
+      "id": "NET-KARAZHAN-001",
+      "status": "bounded_batch_stopped_accepted",
+      "owner": "wayback_recheck_batch1",
+      "goal": "Recheck the first 30 unique Karazhan targets whose previous attempt ended before a source HTTP response.",
+      "write_scope": "research/continuous-recovery-20261015/wayback-karazhan-batch1/**",
+      "inputs": ["research/karazhan-recheck-20261015/batch-report.final.json"],
+      "network": true,
+      "limits": {"source_requests": 32, "seconds": 480, "body_bytes": 67108864, "single_body_bytes": 16777216, "minimum_interval_seconds": 1.2, "disk_floor_bytes": 11005853696, "concurrent_source_requests": 1},
+      "acceptance": ["Actual source status excludes CONNECT 200", "Capture time comes only from valid Memento", "Payload byte length, SHA256, MIME and image decode are independently recorded", "All candidates have classified results or explicit not-requested reasons", "Only sanitized receipts are suitable for public tracking"],
+      "stop": "429 or 503; five consecutive transport/TLS failures; deadline or any resource limit",
+      "result": {
+        "request_window_finished_utc": "2026-10-15T06:59:35.213520+00:00",
+        "source_request_count": 26,
+        "source_response_count": 14,
+        "targets": {"not_archived": 14, "transport_error": 11, "not_requested": 5},
+        "valid_images": 0,
+        "body_bytes": 65932,
+        "stop_reason": "five_consecutive_tls_or_transport_failures",
+        "acceptance": "research/continuous-recovery-20261015/network-batch1-acceptance.json"
+      }
+    },
+    {
+      "id": "NET-CONTROL-002",
+      "status": "cooldown_pending",
+      "owner": "wayback_recheck_batch1 (idle until explicit followup)",
+      "goal": "After at least fifteen minutes of cooldown, test one previously decoded JPEG control before choosing any new recovery batch.",
+      "not_before_utc": "2026-10-15T07:14:35.213520+00:00",
+      "write_scope": "research/continuous-recovery-20261015/network-control2/**",
+      "inputs": ["research/tls-poll-20261015/summary.json"],
+      "network": true,
+      "limits": {"control_targets": 1, "source_requests": 2, "direct_then_proxy": true, "automatic_redirects": 0},
+      "acceptance": ["Expected 3347 bytes, JPEG 150x110, SHA256 45936113efa432f3c8188445ae255108c2af3d06fecf902202f0611068a74a11", "Source HTTP status excludes CONNECT", "Actual Memento is independent of requested timestamp"],
+      "stop": "Control failure; any limit or 429/503. Do not rerun the thirty-target batch after a failed control."
+    }
+  ]
+}

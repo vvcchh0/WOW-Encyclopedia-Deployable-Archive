@@ -1,0 +1,2899 @@
+{
+  "schema": "wayback-karazhan-batch1-20261015.v1",
+  "started_utc": "2026-10-15T06:53:28.880215+00:00",
+  "finished_utc": "2026-10-15T06:59:35.213520+00:00",
+  "request_window_finished_utc": "2026-10-15T06:59:35.213520+00:00",
+  "report_updated_utc": "2026-10-15T07:03:51.917024+00:00",
+  "inputs": {
+    "batch_report": "research/karazhan-recheck-20261015/batch-report.final.json",
+    "batch_report_sha256": "31368c5ecda7a7aefb99a7736c8a7b0c58ecb04ee484897259011eada910a05a",
+    "tls_doc": "docs/karazhan-tls-recheck-20261015.md",
+    "tls_doc_sha256": "9089af2e0e51d2590c214e8c30fbd7b7e2e4f12d0e3efc1d0843b3d52b3bbd5e",
+    "candidates": "research/continuous-recovery-20261015/wayback-karazhan-batch1/candidates.json"
+  },
+  "policy": {
+    "direct_first_only_for_first_target": true,
+    "direct_connect_timeout_seconds": 4,
+    "direct_total_timeout_seconds": 12,
+    "proxy": "127.0.0.1:7890",
+    "tls_verification": "enabled_by_curl_default",
+    "interval_seconds_minimum": 1.2,
+    "max_source_requests": 32,
+    "window_seconds": 480,
+    "max_total_body_bytes": 67108864,
+    "max_entity_body_bytes": 16777216,
+    "max_wayback_redirect_hops": 1,
+    "stop_http_codes": [
+      429,
+      503
+    ]
+  },
+  "preflight": {
+    "drive": "D:",
+    "free_bytes_before": 31536787456,
+    "minimum_free_bytes": 11005853696,
+    "free_bytes_after": 31517470720
+  },
+  "transport": {
+    "confirmed_transport_after_first_target": "proxy",
+    "proxy_endpoint": "http://127.0.0.1:7890",
+    "curl": "C:\\Windows\\System32\\curl.exe"
+  },
+  "target_count": 30,
+  "unique_target_count": 30,
+  "category_counts": {
+    "not_archived": 14,
+    "transport_error": 11,
+    "not_requested": 5
+  },
+  "completed_count": 25,
+  "unrequested_count": 5,
+  "source_request_count": 26,
+  "transport_attempt_count": 26,
+  "failed_attempt_count": 12,
+  "source_response_count": 14,
+  "transport_unknown_count": 11,
+  "total_body_bytes": 65932,
+  "consecutive_transport_failure_streak_at_stop": 5,
+  "stop_reason": "five_consecutive_tls_or_transport_failures",
+  "stop_detail": {
+    "failure_streak": 5,
+    "last_source_status": null,
+    "last_curl_exit": 35
+  },
+  "rate_limit": null,
+  "results": [
+    {
+      "candidate_rank": 1,
+      "report_index": 17,
+      "target_id": "thumb-ss36",
+      "number": 36,
+      "kind": "thumb",
+      "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss36-thumb.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss36-thumb.jpg",
+      "request_hint": "20080512210044",
+      "old_target_id": "thumb-ss36",
+      "old_category": "transport_error",
+      "old_source_statuses": [
+        null
+      ],
+      "old_evidence_pointers": [
+        {
+          "kind": "body",
+          "path": "raw\\thumb-ss36.h1.body"
+        },
+        {
+          "kind": "headers",
+          "path": "raw\\thumb-ss36.h1.headers.txt"
+        },
+        {
+          "kind": "stderr",
+          "path": "raw\\thumb-ss36.h1.stderr.txt"
+        },
+        {
+          "kind": "trace",
+          "path": "raw\\thumb-ss36.h1.trace.txt"
+        }
+      ],
+      "category": "not_archived",
+      "detail": {
+        "reason": "wayback_not_archived_or_404",
+        "content_type": "text/html",
+        "source_status": 404,
+        "html": {
+          "is_html": true,
+          "markers": [
+            "wayback_machine",
+            "not_archived"
+          ]
+        },
+        "pillow": {
+          "available": true,
+          "verify": false,
+          "load": false,
+          "format": null,
+          "size": null,
+          "error": "UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x00000217E17DB7E0>"
+        },
+        "decoded_size": null
+      },
+      "attempt_count": 2,
+      "hops": [
+        {
+          "executed": true,
+          "transport": "direct",
+          "hop": 1,
+          "url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss36-thumb.jpg",
+          "curl_exit": 28,
+          "duration_ms": 4140.0,
+          "source_status": null,
+          "content_type": null,
+          "location": null,
+          "retry_after": null,
+          "memento_datetime": null,
+          "body_path": "raw/thumb-ss36.direct.h1.body",
+          "headers_path": "raw/thumb-ss36.direct.h1.headers.txt",
+          "stderr_path": "raw/thumb-ss36.direct.h1.stderr.txt",
+          "trace_path": "raw/thumb-ss36.direct.h1.trace.txt",
+          "body_bytes": 0,
+          "body_sha256": null,
+          "transport_error": true,
+          "transport_reason": "no_http_status",
+          "target_id": "thumb-ss36",
+          "decode": {
+            "available": true,
+            "verify": false,
+            "load": false,
+            "format": null,
+            "size": null
+          },
+          "decoded_size": null,
+          "html_markers": {
+            "is_html": false,
+            "markers": []
+          }
+        },
+        {
+          "executed": true,
+          "transport": "proxy",
+          "hop": 1,
+          "url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss36-thumb.jpg",
+          "curl_exit": 0,
+          "duration_ms": 1844.0,
+          "source_status": 404,
+          "content_type": "text/html",
+          "location": null,
+          "retry_after": null,
+          "memento_datetime": null,
+          "body_path": "raw/thumb-ss36.proxy.h1.body",
+          "headers_path": "raw/thumb-ss36.proxy.h1.headers.txt",
+          "stderr_path": "raw/thumb-ss36.proxy.h1.stderr.txt",
+          "trace_path": "raw/thumb-ss36.proxy.h1.trace.txt",
+          "body_bytes": 4712,
+          "body_sha256": "c60331940054c5a3e8c5f4a72fe2080daf5cbd5008e92edeadbf08293bf55961",
+          "transport_error": false,
+          "transport_reason": null,
+          "target_id": "thumb-ss36",
+          "decode": {
+            "available": true,
+            "verify": false,
+            "load": false,
+            "format": null,
+            "size": null,
+            "error": "UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x00000217E17DB7E0>"
+          },
+          "decoded_size": null,
+          "html_markers": {
+            "is_html": true,
+            "markers": [
+              "wayback_machine",
+              "not_archived"
+            ]
+          }
+        }
+      ],
+      "actual_memento": null,
+      "actual_memento_or_null": null,
+      "final_source_status": 404,
+      "final_content_type": "text/html",
+      "final_body_bytes": 4712,
+      "final_body_sha256": "c60331940054c5a3e8c5f4a72fe2080daf5cbd5008e92edeadbf08293bf55961",
+      "unrequested_reason": null
+    },
+    {
+      "candidate_rank": 2,
+      "report_index": 19,
+      "target_id": "thumb-ss37",
+      "number": 37,
+      "kind": "thumb",
+      "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss37-thumb.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss37-thumb.jpg",
+      "request_hint": "20080512210044",
+      "old_target_id": "thumb-ss37",
+      "old_category": "transport_error",
+      "old_source_statuses": [
+        null
+      ],
+      "old_evidence_pointers": [
+        {
+          "kind": "body",
+          "path": "raw\\thumb-ss37.h1.body"
+        },
+        {
+          "kind": "headers",
+          "path": "raw\\thumb-ss37.h1.headers.txt"
+        },
+        {
+          "kind": "stderr",
+          "path": "raw\\thumb-ss37.h1.stderr.txt"
+        },
+        {
+          "kind": "trace",
+          "path": "raw\\thumb-ss37.h1.trace.txt"
+        }
+      ],
+      "category": "not_archived",
+      "detail": {
+        "reason": "wayback_not_archived_or_404",
+        "content_type": "text/html",
+        "source_status": 404,
+        "html": {
+          "is_html": true,
+          "markers": [
+            "wayback_machine",
+            "not_archived"
+          ]
+        },
+        "pillow": {
+          "available": true,
+          "verify": false,
+          "load": false,
+          "format": null,
+          "size": null,
+          "error": "UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x00000217E17DB880>"
+        },
+        "decoded_size": null
+      },
+      "attempt_count": 1,
+      "hops": [
+        {
+          "executed": true,
+          "transport": "proxy",
+          "hop": 1,
+          "url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss37-thumb.jpg",
+          "curl_exit": 0,
+          "duration_ms": 1735.0,
+          "source_status": 404,
+          "content_type": "text/html",
+          "location": null,
+          "retry_after": null,
+          "memento_datetime": null,
+          "body_path": "raw/thumb-ss37.proxy.h1.body",
+          "headers_path": "raw/thumb-ss37.proxy.h1.headers.txt",
+          "stderr_path": "raw/thumb-ss37.proxy.h1.stderr.txt",
+          "trace_path": "raw/thumb-ss37.proxy.h1.trace.txt",
+          "body_bytes": 4712,
+          "body_sha256": "7043e8180f2bdf5ec773cb3f0031adf63b45c259fc00b270fd68bfc853cd2313",
+          "transport_error": false,
+          "transport_reason": null,
+          "target_id": "thumb-ss37",
+          "decode": {
+            "available": true,
+            "verify": false,
+            "load": false,
+            "format": null,
+            "size": null,
+            "error": "UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x00000217E17DB880>"
+          },
+          "decoded_size": null,
+          "html_markers": {
+            "is_html": true,
+            "markers": [
+              "wayback_machine",
+              "not_archived"
+            ]
+          }
+        }
+      ],
+      "actual_memento": null,
+      "actual_memento_or_null": null,
+      "final_source_status": 404,
+      "final_content_type": "text/html",
+      "final_body_bytes": 4712,
+      "final_body_sha256": "7043e8180f2bdf5ec773cb3f0031adf63b45c259fc00b270fd68bfc853cd2313",
+      "unrequested_reason": null
+    },
+    {
+      "candidate_rank": 3,
+      "report_index": 20,
+      "target_id": "full-ss38",
+      "number": 38,
+      "kind": "full",
+      "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss38.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss38.jpg",
+      "request_hint": "20080512210044",
+      "old_target_id": "full-ss38",
+      "old_category": "transport_error",
+      "old_source_statuses": [
+        null
+      ],
+      "old_evidence_pointers": [
+        {
+          "kind": "body",
+          "path": "raw\\full-ss38.h1.body"
+        },
+        {
+          "kind": "headers",
+          "path": "raw\\full-ss38.h1.headers.txt"
+        },
+        {
+          "kind": "stderr",
+          "path": "raw\\full-ss38.h1.stderr.txt"
+        },
+        {
+          "kind": "trace",
+          "path": "raw\\full-ss38.h1.trace.txt"
+        }
+      ],
+      "category": "not_archived",
+      "detail": {
+        "reason": "wayback_not_archived_or_404",
+        "content_type": "text/html",
+        "source_status": 404,
+        "html": {
+          "is_html": true,
+          "markers": [
+            "wayback_machine",
+            "not_archived"
+          ]
+        },
+        "pillow": {
+          "available": true,
+          "verify": false,
+          "load": false,
+          "format": null,
+          "size": null,
+          "error": "UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x00000217E17DB880>"
+        },
+        "decoded_size": null
+      },
+      "attempt_count": 1,
+      "hops": [
+        {
+          "executed": true,
+          "transport": "proxy",
+          "hop": 1,
+          "url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss38.jpg",
+          "curl_exit": 0,
+          "duration_ms": 2203.0,
+          "source_status": 404,
+          "content_type": "text/html",
+          "location": null,
+          "retry_after": null,
+          "memento_datetime": null,
+          "body_path": "raw/full-ss38.proxy.h1.body",
+          "headers_path": "raw/full-ss38.proxy.h1.headers.txt",
+          "stderr_path": "raw/full-ss38.proxy.h1.stderr.txt",
+          "trace_path": "raw/full-ss38.proxy.h1.trace.txt",
+          "body_bytes": 4706,
+          "body_sha256": "094105c4424851168735568f5f3a9773a4f31d30947bae9777884961a242574a",
+          "transport_error": false,
+          "transport_reason": null,
+          "target_id": "full-ss38",
+          "decode": {
+            "available": true,
+            "verify": false,
+            "load": false,
+            "format": null,
+            "size": null,
+            "error": "UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x00000217E17DB880>"
+          },
+          "decoded_size": null,
+          "html_markers": {
+            "is_html": true,
+            "markers": [
+              "wayback_machine",
+              "not_archived"
+            ]
+          }
+        }
+      ],
+      "actual_memento": null,
+      "actual_memento_or_null": null,
+      "final_source_status": 404,
+      "final_content_type": "text/html",
+      "final_body_bytes": 4706,
+      "final_body_sha256": "094105c4424851168735568f5f3a9773a4f31d30947bae9777884961a242574a",
+      "unrequested_reason": null
+    },
+    {
+      "candidate_rank": 4,
+      "report_index": 21,
+      "target_id": "thumb-ss38",
+      "number": 38,
+      "kind": "thumb",
+      "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss38-thumb.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss38-thumb.jpg",
+      "request_hint": "20080512210044",
+      "old_target_id": "thumb-ss38",
+      "old_category": "transport_error",
+      "old_source_statuses": [
+        null
+      ],
+      "old_evidence_pointers": [
+        {
+          "kind": "body",
+          "path": "raw\\thumb-ss38.h1.body"
+        },
+        {
+          "kind": "headers",
+          "path": "raw\\thumb-ss38.h1.headers.txt"
+        },
+        {
+          "kind": "stderr",
+          "path": "raw\\thumb-ss38.h1.stderr.txt"
+        },
+        {
+          "kind": "trace",
+          "path": "raw\\thumb-ss38.h1.trace.txt"
+        }
+      ],
+      "category": "not_archived",
+      "detail": {
+        "reason": "wayback_not_archived_or_404",
+        "content_type": "text/html",
+        "source_status": 404,
+        "html": {
+          "is_html": true,
+          "markers": [
+            "wayback_machine",
+            "not_archived"
+          ]
+        },
+        "pillow": {
+          "available": true,
+          "verify": false,
+          "load": false,
+          "format": null,
+          "size": null,
+          "error": "UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x00000217E17DB880>"
+        },
+        "decoded_size": null
+      },
+      "attempt_count": 1,
+      "hops": [
+        {
+          "executed": true,
+          "transport": "proxy",
+          "hop": 1,
+          "url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss38-thumb.jpg",
+          "curl_exit": 0,
+          "duration_ms": 2219.0,
+          "source_status": 404,
+          "content_type": "text/html",
+          "location": null,
+          "retry_after": null,
+          "memento_datetime": null,
+          "body_path": "raw/thumb-ss38.proxy.h1.body",
+          "headers_path": "raw/thumb-ss38.proxy.h1.headers.txt",
+          "stderr_path": "raw/thumb-ss38.proxy.h1.stderr.txt",
+          "trace_path": "raw/thumb-ss38.proxy.h1.trace.txt",
+          "body_bytes": 4712,
+          "body_sha256": "06c78a193c83f9d520094a6bd0eae9504405f5af91a1c1c741e7ba11ebaef5d6",
+          "transport_error": false,
+          "transport_reason": null,
+          "target_id": "thumb-ss38",
+          "decode": {
+            "available": true,
+            "verify": false,
+            "load": false,
+            "format": null,
+            "size": null,
+            "error": "UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x00000217E17DB880>"
+          },
+          "decoded_size": null,
+          "html_markers": {
+            "is_html": true,
+            "markers": [
+              "wayback_machine",
+              "not_archived"
+            ]
+          }
+        }
+      ],
+      "actual_memento": null,
+      "actual_memento_or_null": null,
+      "final_source_status": 404,
+      "final_content_type": "text/html",
+      "final_body_bytes": 4712,
+      "final_body_sha256": "06c78a193c83f9d520094a6bd0eae9504405f5af91a1c1c741e7ba11ebaef5d6",
+      "unrequested_reason": null
+    },
+    {
+      "candidate_rank": 5,
+      "report_index": 22,
+      "target_id": "full-ss39",
+      "number": 39,
+      "kind": "full",
+      "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss39.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss39.jpg",
+      "request_hint": "20080512210044",
+      "old_target_id": "full-ss39",
+      "old_category": "transport_error",
+      "old_source_statuses": [
+        null
+      ],
+      "old_evidence_pointers": [
+        {
+          "kind": "body",
+          "path": "raw\\full-ss39.h1.body"
+        },
+        {
+          "kind": "headers",
+          "path": "raw\\full-ss39.h1.headers.txt"
+        },
+        {
+          "kind": "stderr",
+          "path": "raw\\full-ss39.h1.stderr.txt"
+        },
+        {
+          "kind": "trace",
+          "path": "raw\\full-ss39.h1.trace.txt"
+        }
+      ],
+      "category": "not_archived",
+      "detail": {
+        "reason": "wayback_not_archived_or_404",
+        "content_type": "text/html",
+        "source_status": 404,
+        "html": {
+          "is_html": true,
+          "markers": [
+            "wayback_machine",
+            "not_archived"
+          ]
+        },
+        "pillow": {
+          "available": true,
+          "verify": false,
+          "load": false,
+          "format": null,
+          "size": null,
+          "error": "UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x00000217E17DB880>"
+        },
+        "decoded_size": null
+      },
+      "attempt_count": 1,
+      "hops": [
+        {
+          "executed": true,
+          "transport": "proxy",
+          "hop": 1,
+          "url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss39.jpg",
+          "curl_exit": 0,
+          "duration_ms": 1813.0,
+          "source_status": 404,
+          "content_type": "text/html",
+          "location": null,
+          "retry_after": null,
+          "memento_datetime": null,
+          "body_path": "raw/full-ss39.proxy.h1.body",
+          "headers_path": "raw/full-ss39.proxy.h1.headers.txt",
+          "stderr_path": "raw/full-ss39.proxy.h1.stderr.txt",
+          "trace_path": "raw/full-ss39.proxy.h1.trace.txt",
+          "body_bytes": 4706,
+          "body_sha256": "cc7e76ce190c592c17fce7ab775949529b7af1cadb40a86f02285a8dea5b2c07",
+          "transport_error": false,
+          "transport_reason": null,
+          "target_id": "full-ss39",
+          "decode": {
+            "available": true,
+            "verify": false,
+            "load": false,
+            "format": null,
+            "size": null,
+            "error": "UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x00000217E17DB880>"
+          },
+          "decoded_size": null,
+          "html_markers": {
+            "is_html": true,
+            "markers": [
+              "wayback_machine",
+              "not_archived"
+            ]
+          }
+        }
+      ],
+      "actual_memento": null,
+      "actual_memento_or_null": null,
+      "final_source_status": 404,
+      "final_content_type": "text/html",
+      "final_body_bytes": 4706,
+      "final_body_sha256": "cc7e76ce190c592c17fce7ab775949529b7af1cadb40a86f02285a8dea5b2c07",
+      "unrequested_reason": null
+    },
+    {
+      "candidate_rank": 6,
+      "report_index": 23,
+      "target_id": "thumb-ss39",
+      "number": 39,
+      "kind": "thumb",
+      "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss39-thumb.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss39-thumb.jpg",
+      "request_hint": "20080512210044",
+      "old_target_id": "thumb-ss39",
+      "old_category": "transport_error",
+      "old_source_statuses": [
+        null
+      ],
+      "old_evidence_pointers": [
+        {
+          "kind": "body",
+          "path": "raw\\thumb-ss39.h1.body"
+        },
+        {
+          "kind": "headers",
+          "path": "raw\\thumb-ss39.h1.headers.txt"
+        },
+        {
+          "kind": "stderr",
+          "path": "raw\\thumb-ss39.h1.stderr.txt"
+        },
+        {
+          "kind": "trace",
+          "path": "raw\\thumb-ss39.h1.trace.txt"
+        }
+      ],
+      "category": "not_archived",
+      "detail": {
+        "reason": "wayback_not_archived_or_404",
+        "content_type": "text/html",
+        "source_status": 404,
+        "html": {
+          "is_html": true,
+          "markers": [
+            "wayback_machine",
+            "not_archived"
+          ]
+        },
+        "pillow": {
+          "available": true,
+          "verify": false,
+          "load": false,
+          "format": null,
+          "size": null,
+          "error": "UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x00000217E17DB880>"
+        },
+        "decoded_size": null
+      },
+      "attempt_count": 1,
+      "hops": [
+        {
+          "executed": true,
+          "transport": "proxy",
+          "hop": 1,
+          "url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss39-thumb.jpg",
+          "curl_exit": 0,
+          "duration_ms": 1906.0,
+          "source_status": 404,
+          "content_type": "text/html",
+          "location": null,
+          "retry_after": null,
+          "memento_datetime": null,
+          "body_path": "raw/thumb-ss39.proxy.h1.body",
+          "headers_path": "raw/thumb-ss39.proxy.h1.headers.txt",
+          "stderr_path": "raw/thumb-ss39.proxy.h1.stderr.txt",
+          "trace_path": "raw/thumb-ss39.proxy.h1.trace.txt",
+          "body_bytes": 4712,
+          "body_sha256": "5fc6011808969619e11fdb7925ecd40221ebb7329b218eb05454160a10b8ec3b",
+          "transport_error": false,
+          "transport_reason": null,
+          "target_id": "thumb-ss39",
+          "decode": {
+            "available": true,
+            "verify": false,
+            "load": false,
+            "format": null,
+            "size": null,
+            "error": "UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x00000217E17DB880>"
+          },
+          "decoded_size": null,
+          "html_markers": {
+            "is_html": true,
+            "markers": [
+              "wayback_machine",
+              "not_archived"
+            ]
+          }
+        }
+      ],
+      "actual_memento": null,
+      "actual_memento_or_null": null,
+      "final_source_status": 404,
+      "final_content_type": "text/html",
+      "final_body_bytes": 4712,
+      "final_body_sha256": "5fc6011808969619e11fdb7925ecd40221ebb7329b218eb05454160a10b8ec3b",
+      "unrequested_reason": null
+    },
+    {
+      "candidate_rank": 7,
+      "report_index": 24,
+      "target_id": "full-ss40",
+      "number": 40,
+      "kind": "full",
+      "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss40.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss40.jpg",
+      "request_hint": "20080512210044",
+      "old_target_id": "full-ss40",
+      "old_category": "transport_error",
+      "old_source_statuses": [
+        null
+      ],
+      "old_evidence_pointers": [
+        {
+          "kind": "body",
+          "path": "raw\\full-ss40.h1.body"
+        },
+        {
+          "kind": "headers",
+          "path": "raw\\full-ss40.h1.headers.txt"
+        },
+        {
+          "kind": "stderr",
+          "path": "raw\\full-ss40.h1.stderr.txt"
+        },
+        {
+          "kind": "trace",
+          "path": "raw\\full-ss40.h1.trace.txt"
+        }
+      ],
+      "category": "not_archived",
+      "detail": {
+        "reason": "wayback_not_archived_or_404",
+        "content_type": "text/html",
+        "source_status": 404,
+        "html": {
+          "is_html": true,
+          "markers": [
+            "wayback_machine",
+            "not_archived"
+          ]
+        },
+        "pillow": {
+          "available": true,
+          "verify": false,
+          "load": false,
+          "format": null,
+          "size": null,
+          "error": "UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x00000217E17DB880>"
+        },
+        "decoded_size": null
+      },
+      "attempt_count": 1,
+      "hops": [
+        {
+          "executed": true,
+          "transport": "proxy",
+          "hop": 1,
+          "url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss40.jpg",
+          "curl_exit": 0,
+          "duration_ms": 2063.0,
+          "source_status": 404,
+          "content_type": "text/html",
+          "location": null,
+          "retry_after": null,
+          "memento_datetime": null,
+          "body_path": "raw/full-ss40.proxy.h1.body",
+          "headers_path": "raw/full-ss40.proxy.h1.headers.txt",
+          "stderr_path": "raw/full-ss40.proxy.h1.stderr.txt",
+          "trace_path": "raw/full-ss40.proxy.h1.trace.txt",
+          "body_bytes": 4706,
+          "body_sha256": "8afa07e902a6bc2f959e02ba709076cd41995ac843527bf7d48044d27a7dc503",
+          "transport_error": false,
+          "transport_reason": null,
+          "target_id": "full-ss40",
+          "decode": {
+            "available": true,
+            "verify": false,
+            "load": false,
+            "format": null,
+            "size": null,
+            "error": "UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x00000217E17DB880>"
+          },
+          "decoded_size": null,
+          "html_markers": {
+            "is_html": true,
+            "markers": [
+              "wayback_machine",
+              "not_archived"
+            ]
+          }
+        }
+      ],
+      "actual_memento": null,
+      "actual_memento_or_null": null,
+      "final_source_status": 404,
+      "final_content_type": "text/html",
+      "final_body_bytes": 4706,
+      "final_body_sha256": "8afa07e902a6bc2f959e02ba709076cd41995ac843527bf7d48044d27a7dc503",
+      "unrequested_reason": null
+    },
+    {
+      "candidate_rank": 8,
+      "report_index": 25,
+      "target_id": "thumb-ss40",
+      "number": 40,
+      "kind": "thumb",
+      "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss40-thumb.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss40-thumb.jpg",
+      "request_hint": "20080512210044",
+      "old_target_id": "thumb-ss40",
+      "old_category": "transport_error",
+      "old_source_statuses": [
+        null
+      ],
+      "old_evidence_pointers": [
+        {
+          "kind": "body",
+          "path": "raw\\thumb-ss40.h1.body"
+        },
+        {
+          "kind": "headers",
+          "path": "raw\\thumb-ss40.h1.headers.txt"
+        },
+        {
+          "kind": "stderr",
+          "path": "raw\\thumb-ss40.h1.stderr.txt"
+        },
+        {
+          "kind": "trace",
+          "path": "raw\\thumb-ss40.h1.trace.txt"
+        }
+      ],
+      "category": "not_archived",
+      "detail": {
+        "reason": "wayback_not_archived_or_404",
+        "content_type": "text/html",
+        "source_status": 404,
+        "html": {
+          "is_html": true,
+          "markers": [
+            "wayback_machine",
+            "not_archived"
+          ]
+        },
+        "pillow": {
+          "available": true,
+          "verify": false,
+          "load": false,
+          "format": null,
+          "size": null,
+          "error": "UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x00000217E17DB880>"
+        },
+        "decoded_size": null
+      },
+      "attempt_count": 1,
+      "hops": [
+        {
+          "executed": true,
+          "transport": "proxy",
+          "hop": 1,
+          "url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss40-thumb.jpg",
+          "curl_exit": 0,
+          "duration_ms": 2000.0,
+          "source_status": 404,
+          "content_type": "text/html",
+          "location": null,
+          "retry_after": null,
+          "memento_datetime": null,
+          "body_path": "raw/thumb-ss40.proxy.h1.body",
+          "headers_path": "raw/thumb-ss40.proxy.h1.headers.txt",
+          "stderr_path": "raw/thumb-ss40.proxy.h1.stderr.txt",
+          "trace_path": "raw/thumb-ss40.proxy.h1.trace.txt",
+          "body_bytes": 4712,
+          "body_sha256": "e70552a5082f718fa152aa8b9bce0e758119e8cb1e5e725aab76f00432dc7a85",
+          "transport_error": false,
+          "transport_reason": null,
+          "target_id": "thumb-ss40",
+          "decode": {
+            "available": true,
+            "verify": false,
+            "load": false,
+            "format": null,
+            "size": null,
+            "error": "UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x00000217E17DB880>"
+          },
+          "decoded_size": null,
+          "html_markers": {
+            "is_html": true,
+            "markers": [
+              "wayback_machine",
+              "not_archived"
+            ]
+          }
+        }
+      ],
+      "actual_memento": null,
+      "actual_memento_or_null": null,
+      "final_source_status": 404,
+      "final_content_type": "text/html",
+      "final_body_bytes": 4712,
+      "final_body_sha256": "e70552a5082f718fa152aa8b9bce0e758119e8cb1e5e725aab76f00432dc7a85",
+      "unrequested_reason": null
+    },
+    {
+      "candidate_rank": 9,
+      "report_index": 26,
+      "target_id": "full-ss41",
+      "number": 41,
+      "kind": "full",
+      "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss41.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss41.jpg",
+      "request_hint": "20080512210044",
+      "old_target_id": "full-ss41",
+      "old_category": "transport_error",
+      "old_source_statuses": [
+        null
+      ],
+      "old_evidence_pointers": [
+        {
+          "kind": "body",
+          "path": "raw\\full-ss41.h1.body"
+        },
+        {
+          "kind": "headers",
+          "path": "raw\\full-ss41.h1.headers.txt"
+        },
+        {
+          "kind": "stderr",
+          "path": "raw\\full-ss41.h1.stderr.txt"
+        },
+        {
+          "kind": "trace",
+          "path": "raw\\full-ss41.h1.trace.txt"
+        }
+      ],
+      "category": "not_archived",
+      "detail": {
+        "reason": "wayback_not_archived_or_404",
+        "content_type": "text/html",
+        "source_status": 404,
+        "html": {
+          "is_html": true,
+          "markers": [
+            "wayback_machine",
+            "not_archived"
+          ]
+        },
+        "pillow": {
+          "available": true,
+          "verify": false,
+          "load": false,
+          "format": null,
+          "size": null,
+          "error": "UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x00000217E17DB880>"
+        },
+        "decoded_size": null
+      },
+      "attempt_count": 1,
+      "hops": [
+        {
+          "executed": true,
+          "transport": "proxy",
+          "hop": 1,
+          "url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss41.jpg",
+          "curl_exit": 0,
+          "duration_ms": 2031.0,
+          "source_status": 404,
+          "content_type": "text/html",
+          "location": null,
+          "retry_after": null,
+          "memento_datetime": null,
+          "body_path": "raw/full-ss41.proxy.h1.body",
+          "headers_path": "raw/full-ss41.proxy.h1.headers.txt",
+          "stderr_path": "raw/full-ss41.proxy.h1.stderr.txt",
+          "trace_path": "raw/full-ss41.proxy.h1.trace.txt",
+          "body_bytes": 4706,
+          "body_sha256": "3c74854bcae90fa0c0b52a45aa2286de5f121d9573d87e82d44fe58e49c63436",
+          "transport_error": false,
+          "transport_reason": null,
+          "target_id": "full-ss41",
+          "decode": {
+            "available": true,
+            "verify": false,
+            "load": false,
+            "format": null,
+            "size": null,
+            "error": "UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x00000217E17DB880>"
+          },
+          "decoded_size": null,
+          "html_markers": {
+            "is_html": true,
+            "markers": [
+              "wayback_machine",
+              "not_archived"
+            ]
+          }
+        }
+      ],
+      "actual_memento": null,
+      "actual_memento_or_null": null,
+      "final_source_status": 404,
+      "final_content_type": "text/html",
+      "final_body_bytes": 4706,
+      "final_body_sha256": "3c74854bcae90fa0c0b52a45aa2286de5f121d9573d87e82d44fe58e49c63436",
+      "unrequested_reason": null
+    },
+    {
+      "candidate_rank": 10,
+      "report_index": 27,
+      "target_id": "thumb-ss41",
+      "number": 41,
+      "kind": "thumb",
+      "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss41-thumb.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss41-thumb.jpg",
+      "request_hint": "20080512210044",
+      "old_target_id": "thumb-ss41",
+      "old_category": "transport_error",
+      "old_source_statuses": [
+        null
+      ],
+      "old_evidence_pointers": [
+        {
+          "kind": "body",
+          "path": "raw\\thumb-ss41.h1.body"
+        },
+        {
+          "kind": "headers",
+          "path": "raw\\thumb-ss41.h1.headers.txt"
+        },
+        {
+          "kind": "stderr",
+          "path": "raw\\thumb-ss41.h1.stderr.txt"
+        },
+        {
+          "kind": "trace",
+          "path": "raw\\thumb-ss41.h1.trace.txt"
+        }
+      ],
+      "category": "not_archived",
+      "detail": {
+        "reason": "wayback_not_archived_or_404",
+        "content_type": "text/html",
+        "source_status": 404,
+        "html": {
+          "is_html": true,
+          "markers": [
+            "wayback_machine",
+            "not_archived"
+          ]
+        },
+        "pillow": {
+          "available": true,
+          "verify": false,
+          "load": false,
+          "format": null,
+          "size": null,
+          "error": "UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x00000217E17DB880>"
+        },
+        "decoded_size": null
+      },
+      "attempt_count": 1,
+      "hops": [
+        {
+          "executed": true,
+          "transport": "proxy",
+          "hop": 1,
+          "url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss41-thumb.jpg",
+          "curl_exit": 0,
+          "duration_ms": 2156.0,
+          "source_status": 404,
+          "content_type": "text/html",
+          "location": null,
+          "retry_after": null,
+          "memento_datetime": null,
+          "body_path": "raw/thumb-ss41.proxy.h1.body",
+          "headers_path": "raw/thumb-ss41.proxy.h1.headers.txt",
+          "stderr_path": "raw/thumb-ss41.proxy.h1.stderr.txt",
+          "trace_path": "raw/thumb-ss41.proxy.h1.trace.txt",
+          "body_bytes": 4712,
+          "body_sha256": "3834993afffcb051aa2515c4c29feb270c44041857db6e904e83c4ebbcf995e4",
+          "transport_error": false,
+          "transport_reason": null,
+          "target_id": "thumb-ss41",
+          "decode": {
+            "available": true,
+            "verify": false,
+            "load": false,
+            "format": null,
+            "size": null,
+            "error": "UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x00000217E17DB880>"
+          },
+          "decoded_size": null,
+          "html_markers": {
+            "is_html": true,
+            "markers": [
+              "wayback_machine",
+              "not_archived"
+            ]
+          }
+        }
+      ],
+      "actual_memento": null,
+      "actual_memento_or_null": null,
+      "final_source_status": 404,
+      "final_content_type": "text/html",
+      "final_body_bytes": 4712,
+      "final_body_sha256": "3834993afffcb051aa2515c4c29feb270c44041857db6e904e83c4ebbcf995e4",
+      "unrequested_reason": null
+    },
+    {
+      "candidate_rank": 11,
+      "report_index": 28,
+      "target_id": "full-ss42",
+      "number": 42,
+      "kind": "full",
+      "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss42.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss42.jpg",
+      "request_hint": "20080512210044",
+      "old_target_id": "full-ss42",
+      "old_category": "transport_error",
+      "old_source_statuses": [
+        null
+      ],
+      "old_evidence_pointers": [
+        {
+          "kind": "body",
+          "path": "raw\\full-ss42.h1.body"
+        },
+        {
+          "kind": "headers",
+          "path": "raw\\full-ss42.h1.headers.txt"
+        },
+        {
+          "kind": "stderr",
+          "path": "raw\\full-ss42.h1.stderr.txt"
+        },
+        {
+          "kind": "trace",
+          "path": "raw\\full-ss42.h1.trace.txt"
+        }
+      ],
+      "category": "transport_error",
+      "detail": {
+        "reason": "no_http_status",
+        "source_status": null,
+        "pillow": {
+          "available": true,
+          "verify": false,
+          "load": false,
+          "format": null,
+          "size": null
+        },
+        "decoded_size": null,
+        "html": {
+          "is_html": false,
+          "markers": []
+        }
+      },
+      "attempt_count": 1,
+      "hops": [
+        {
+          "executed": true,
+          "transport": "proxy",
+          "hop": 1,
+          "url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss42.jpg",
+          "curl_exit": 35,
+          "duration_ms": 609.0,
+          "source_status": null,
+          "content_type": null,
+          "location": null,
+          "retry_after": null,
+          "memento_datetime": null,
+          "body_path": "raw/full-ss42.proxy.h1.body",
+          "headers_path": "raw/full-ss42.proxy.h1.headers.txt",
+          "stderr_path": "raw/full-ss42.proxy.h1.stderr.txt",
+          "trace_path": "raw/full-ss42.proxy.h1.trace.txt",
+          "body_bytes": 0,
+          "body_sha256": null,
+          "transport_error": true,
+          "transport_reason": "no_http_status",
+          "target_id": "full-ss42",
+          "decode": {
+            "available": true,
+            "verify": false,
+            "load": false,
+            "format": null,
+            "size": null
+          },
+          "decoded_size": null,
+          "html_markers": {
+            "is_html": false,
+            "markers": []
+          }
+        }
+      ],
+      "actual_memento": null,
+      "actual_memento_or_null": null,
+      "final_source_status": null,
+      "final_content_type": null,
+      "final_body_bytes": 0,
+      "final_body_sha256": null,
+      "unrequested_reason": null
+    },
+    {
+      "candidate_rank": 12,
+      "report_index": 29,
+      "target_id": "thumb-ss42",
+      "number": 42,
+      "kind": "thumb",
+      "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss42-thumb.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss42-thumb.jpg",
+      "request_hint": "20080512210044",
+      "old_target_id": "thumb-ss42",
+      "old_category": "transport_error",
+      "old_source_statuses": [
+        null
+      ],
+      "old_evidence_pointers": [
+        {
+          "kind": "body",
+          "path": "raw\\thumb-ss42.h1.body"
+        },
+        {
+          "kind": "headers",
+          "path": "raw\\thumb-ss42.h1.headers.txt"
+        },
+        {
+          "kind": "stderr",
+          "path": "raw\\thumb-ss42.h1.stderr.txt"
+        },
+        {
+          "kind": "trace",
+          "path": "raw\\thumb-ss42.h1.trace.txt"
+        }
+      ],
+      "category": "transport_error",
+      "detail": {
+        "reason": "no_http_status",
+        "source_status": null,
+        "pillow": {
+          "available": true,
+          "verify": false,
+          "load": false,
+          "format": null,
+          "size": null
+        },
+        "decoded_size": null,
+        "html": {
+          "is_html": false,
+          "markers": []
+        }
+      },
+      "attempt_count": 1,
+      "hops": [
+        {
+          "executed": true,
+          "transport": "proxy",
+          "hop": 1,
+          "url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss42-thumb.jpg",
+          "curl_exit": 35,
+          "duration_ms": 750.0,
+          "source_status": null,
+          "content_type": null,
+          "location": null,
+          "retry_after": null,
+          "memento_datetime": null,
+          "body_path": "raw/thumb-ss42.proxy.h1.body",
+          "headers_path": "raw/thumb-ss42.proxy.h1.headers.txt",
+          "stderr_path": "raw/thumb-ss42.proxy.h1.stderr.txt",
+          "trace_path": "raw/thumb-ss42.proxy.h1.trace.txt",
+          "body_bytes": 0,
+          "body_sha256": null,
+          "transport_error": true,
+          "transport_reason": "no_http_status",
+          "target_id": "thumb-ss42",
+          "decode": {
+            "available": true,
+            "verify": false,
+            "load": false,
+            "format": null,
+            "size": null
+          },
+          "decoded_size": null,
+          "html_markers": {
+            "is_html": false,
+            "markers": []
+          }
+        }
+      ],
+      "actual_memento": null,
+      "actual_memento_or_null": null,
+      "final_source_status": null,
+      "final_content_type": null,
+      "final_body_bytes": 0,
+      "final_body_sha256": null,
+      "unrequested_reason": null
+    },
+    {
+      "candidate_rank": 13,
+      "report_index": 30,
+      "target_id": "full-ss43",
+      "number": 43,
+      "kind": "full",
+      "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss43.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss43.jpg",
+      "request_hint": "20080512210044",
+      "old_target_id": "full-ss43",
+      "old_category": "transport_error",
+      "old_source_statuses": [
+        null
+      ],
+      "old_evidence_pointers": [
+        {
+          "kind": "body",
+          "path": "raw\\full-ss43.h1.body"
+        },
+        {
+          "kind": "headers",
+          "path": "raw\\full-ss43.h1.headers.txt"
+        },
+        {
+          "kind": "stderr",
+          "path": "raw\\full-ss43.h1.stderr.txt"
+        },
+        {
+          "kind": "trace",
+          "path": "raw\\full-ss43.h1.trace.txt"
+        }
+      ],
+      "category": "not_archived",
+      "detail": {
+        "reason": "wayback_not_archived_or_404",
+        "content_type": "text/html",
+        "source_status": 404,
+        "html": {
+          "is_html": true,
+          "markers": [
+            "wayback_machine",
+            "not_archived"
+          ]
+        },
+        "pillow": {
+          "available": true,
+          "verify": false,
+          "load": false,
+          "format": null,
+          "size": null,
+          "error": "UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x00000217E17DB880>"
+        },
+        "decoded_size": null
+      },
+      "attempt_count": 1,
+      "hops": [
+        {
+          "executed": true,
+          "transport": "proxy",
+          "hop": 1,
+          "url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss43.jpg",
+          "curl_exit": 0,
+          "duration_ms": 2141.0,
+          "source_status": 404,
+          "content_type": "text/html",
+          "location": null,
+          "retry_after": null,
+          "memento_datetime": null,
+          "body_path": "raw/full-ss43.proxy.h1.body",
+          "headers_path": "raw/full-ss43.proxy.h1.headers.txt",
+          "stderr_path": "raw/full-ss43.proxy.h1.stderr.txt",
+          "trace_path": "raw/full-ss43.proxy.h1.trace.txt",
+          "body_bytes": 4706,
+          "body_sha256": "3fb455c3b0f6ddac599d7e78c0d6e579ea0e70269e34716449deb520f3c4a35c",
+          "transport_error": false,
+          "transport_reason": null,
+          "target_id": "full-ss43",
+          "decode": {
+            "available": true,
+            "verify": false,
+            "load": false,
+            "format": null,
+            "size": null,
+            "error": "UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x00000217E17DB880>"
+          },
+          "decoded_size": null,
+          "html_markers": {
+            "is_html": true,
+            "markers": [
+              "wayback_machine",
+              "not_archived"
+            ]
+          }
+        }
+      ],
+      "actual_memento": null,
+      "actual_memento_or_null": null,
+      "final_source_status": 404,
+      "final_content_type": "text/html",
+      "final_body_bytes": 4706,
+      "final_body_sha256": "3fb455c3b0f6ddac599d7e78c0d6e579ea0e70269e34716449deb520f3c4a35c",
+      "unrequested_reason": null
+    },
+    {
+      "candidate_rank": 14,
+      "report_index": 31,
+      "target_id": "thumb-ss43",
+      "number": 43,
+      "kind": "thumb",
+      "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss43-thumb.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss43-thumb.jpg",
+      "request_hint": "20080512210044",
+      "old_target_id": "thumb-ss43",
+      "old_category": "transport_error",
+      "old_source_statuses": [
+        null
+      ],
+      "old_evidence_pointers": [
+        {
+          "kind": "body",
+          "path": "raw\\thumb-ss43.h1.body"
+        },
+        {
+          "kind": "headers",
+          "path": "raw\\thumb-ss43.h1.headers.txt"
+        },
+        {
+          "kind": "stderr",
+          "path": "raw\\thumb-ss43.h1.stderr.txt"
+        },
+        {
+          "kind": "trace",
+          "path": "raw\\thumb-ss43.h1.trace.txt"
+        }
+      ],
+      "category": "transport_error",
+      "detail": {
+        "reason": "no_http_status",
+        "source_status": null,
+        "pillow": {
+          "available": true,
+          "verify": false,
+          "load": false,
+          "format": null,
+          "size": null
+        },
+        "decoded_size": null,
+        "html": {
+          "is_html": false,
+          "markers": []
+        }
+      },
+      "attempt_count": 1,
+      "hops": [
+        {
+          "executed": true,
+          "transport": "proxy",
+          "hop": 1,
+          "url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss43-thumb.jpg",
+          "curl_exit": 35,
+          "duration_ms": 890.0,
+          "source_status": null,
+          "content_type": null,
+          "location": null,
+          "retry_after": null,
+          "memento_datetime": null,
+          "body_path": "raw/thumb-ss43.proxy.h1.body",
+          "headers_path": "raw/thumb-ss43.proxy.h1.headers.txt",
+          "stderr_path": "raw/thumb-ss43.proxy.h1.stderr.txt",
+          "trace_path": "raw/thumb-ss43.proxy.h1.trace.txt",
+          "body_bytes": 0,
+          "body_sha256": null,
+          "transport_error": true,
+          "transport_reason": "no_http_status",
+          "target_id": "thumb-ss43",
+          "decode": {
+            "available": true,
+            "verify": false,
+            "load": false,
+            "format": null,
+            "size": null
+          },
+          "decoded_size": null,
+          "html_markers": {
+            "is_html": false,
+            "markers": []
+          }
+        }
+      ],
+      "actual_memento": null,
+      "actual_memento_or_null": null,
+      "final_source_status": null,
+      "final_content_type": null,
+      "final_body_bytes": 0,
+      "final_body_sha256": null,
+      "unrequested_reason": null
+    },
+    {
+      "candidate_rank": 15,
+      "report_index": 32,
+      "target_id": "full-ss44",
+      "number": 44,
+      "kind": "full",
+      "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss44.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss44.jpg",
+      "request_hint": "20080512210044",
+      "old_target_id": "full-ss44",
+      "old_category": "transport_error",
+      "old_source_statuses": [
+        null
+      ],
+      "old_evidence_pointers": [
+        {
+          "kind": "body",
+          "path": "raw\\full-ss44.h1.body"
+        },
+        {
+          "kind": "headers",
+          "path": "raw\\full-ss44.h1.headers.txt"
+        },
+        {
+          "kind": "stderr",
+          "path": "raw\\full-ss44.h1.stderr.txt"
+        },
+        {
+          "kind": "trace",
+          "path": "raw\\full-ss44.h1.trace.txt"
+        }
+      ],
+      "category": "transport_error",
+      "detail": {
+        "reason": "no_http_status",
+        "source_status": null,
+        "pillow": {
+          "available": true,
+          "verify": false,
+          "load": false,
+          "format": null,
+          "size": null
+        },
+        "decoded_size": null,
+        "html": {
+          "is_html": false,
+          "markers": []
+        }
+      },
+      "attempt_count": 1,
+      "hops": [
+        {
+          "executed": true,
+          "transport": "proxy",
+          "hop": 1,
+          "url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss44.jpg",
+          "curl_exit": 35,
+          "duration_ms": 704.0,
+          "source_status": null,
+          "content_type": null,
+          "location": null,
+          "retry_after": null,
+          "memento_datetime": null,
+          "body_path": "raw/full-ss44.proxy.h1.body",
+          "headers_path": "raw/full-ss44.proxy.h1.headers.txt",
+          "stderr_path": "raw/full-ss44.proxy.h1.stderr.txt",
+          "trace_path": "raw/full-ss44.proxy.h1.trace.txt",
+          "body_bytes": 0,
+          "body_sha256": null,
+          "transport_error": true,
+          "transport_reason": "no_http_status",
+          "target_id": "full-ss44",
+          "decode": {
+            "available": true,
+            "verify": false,
+            "load": false,
+            "format": null,
+            "size": null
+          },
+          "decoded_size": null,
+          "html_markers": {
+            "is_html": false,
+            "markers": []
+          }
+        }
+      ],
+      "actual_memento": null,
+      "actual_memento_or_null": null,
+      "final_source_status": null,
+      "final_content_type": null,
+      "final_body_bytes": 0,
+      "final_body_sha256": null,
+      "unrequested_reason": null
+    },
+    {
+      "candidate_rank": 16,
+      "report_index": 33,
+      "target_id": "thumb-ss44",
+      "number": 44,
+      "kind": "thumb",
+      "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss44-thumb.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss44-thumb.jpg",
+      "request_hint": "20080512210044",
+      "old_target_id": "thumb-ss44",
+      "old_category": "transport_error",
+      "old_source_statuses": [
+        null
+      ],
+      "old_evidence_pointers": [
+        {
+          "kind": "body",
+          "path": "raw\\thumb-ss44.h1.body"
+        },
+        {
+          "kind": "headers",
+          "path": "raw\\thumb-ss44.h1.headers.txt"
+        },
+        {
+          "kind": "stderr",
+          "path": "raw\\thumb-ss44.h1.stderr.txt"
+        },
+        {
+          "kind": "trace",
+          "path": "raw\\thumb-ss44.h1.trace.txt"
+        }
+      ],
+      "category": "transport_error",
+      "detail": {
+        "reason": "no_http_status",
+        "source_status": null,
+        "pillow": {
+          "available": true,
+          "verify": false,
+          "load": false,
+          "format": null,
+          "size": null
+        },
+        "decoded_size": null,
+        "html": {
+          "is_html": false,
+          "markers": []
+        }
+      },
+      "attempt_count": 1,
+      "hops": [
+        {
+          "executed": true,
+          "transport": "proxy",
+          "hop": 1,
+          "url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss44-thumb.jpg",
+          "curl_exit": 35,
+          "duration_ms": 1000.0,
+          "source_status": null,
+          "content_type": null,
+          "location": null,
+          "retry_after": null,
+          "memento_datetime": null,
+          "body_path": "raw/thumb-ss44.proxy.h1.body",
+          "headers_path": "raw/thumb-ss44.proxy.h1.headers.txt",
+          "stderr_path": "raw/thumb-ss44.proxy.h1.stderr.txt",
+          "trace_path": "raw/thumb-ss44.proxy.h1.trace.txt",
+          "body_bytes": 0,
+          "body_sha256": null,
+          "transport_error": true,
+          "transport_reason": "no_http_status",
+          "target_id": "thumb-ss44",
+          "decode": {
+            "available": true,
+            "verify": false,
+            "load": false,
+            "format": null,
+            "size": null
+          },
+          "decoded_size": null,
+          "html_markers": {
+            "is_html": false,
+            "markers": []
+          }
+        }
+      ],
+      "actual_memento": null,
+      "actual_memento_or_null": null,
+      "final_source_status": null,
+      "final_content_type": null,
+      "final_body_bytes": 0,
+      "final_body_sha256": null,
+      "unrequested_reason": null
+    },
+    {
+      "candidate_rank": 17,
+      "report_index": 34,
+      "target_id": "full-ss45",
+      "number": 45,
+      "kind": "full",
+      "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss45.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss45.jpg",
+      "request_hint": "20080512210044",
+      "old_target_id": "full-ss45",
+      "old_category": "transport_error",
+      "old_source_statuses": [
+        null
+      ],
+      "old_evidence_pointers": [
+        {
+          "kind": "body",
+          "path": "raw\\full-ss45.h1.body"
+        },
+        {
+          "kind": "headers",
+          "path": "raw\\full-ss45.h1.headers.txt"
+        },
+        {
+          "kind": "stderr",
+          "path": "raw\\full-ss45.h1.stderr.txt"
+        },
+        {
+          "kind": "trace",
+          "path": "raw\\full-ss45.h1.trace.txt"
+        }
+      ],
+      "category": "not_archived",
+      "detail": {
+        "reason": "wayback_not_archived_or_404",
+        "content_type": "text/html",
+        "source_status": 404,
+        "html": {
+          "is_html": true,
+          "markers": [
+            "wayback_machine",
+            "not_archived"
+          ]
+        },
+        "pillow": {
+          "available": true,
+          "verify": false,
+          "load": false,
+          "format": null,
+          "size": null,
+          "error": "UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x00000217E17DB880>"
+        },
+        "decoded_size": null
+      },
+      "attempt_count": 1,
+      "hops": [
+        {
+          "executed": true,
+          "transport": "proxy",
+          "hop": 1,
+          "url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss45.jpg",
+          "curl_exit": 0,
+          "duration_ms": 3140.0,
+          "source_status": 404,
+          "content_type": "text/html",
+          "location": null,
+          "retry_after": null,
+          "memento_datetime": null,
+          "body_path": "raw/full-ss45.proxy.h1.body",
+          "headers_path": "raw/full-ss45.proxy.h1.headers.txt",
+          "stderr_path": "raw/full-ss45.proxy.h1.stderr.txt",
+          "trace_path": "raw/full-ss45.proxy.h1.trace.txt",
+          "body_bytes": 4706,
+          "body_sha256": "0306cf9653812b791f2de19764e02ba155584b80d3a34f4af19f4c56d7d03761",
+          "transport_error": false,
+          "transport_reason": null,
+          "target_id": "full-ss45",
+          "decode": {
+            "available": true,
+            "verify": false,
+            "load": false,
+            "format": null,
+            "size": null,
+            "error": "UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x00000217E17DB880>"
+          },
+          "decoded_size": null,
+          "html_markers": {
+            "is_html": true,
+            "markers": [
+              "wayback_machine",
+              "not_archived"
+            ]
+          }
+        }
+      ],
+      "actual_memento": null,
+      "actual_memento_or_null": null,
+      "final_source_status": 404,
+      "final_content_type": "text/html",
+      "final_body_bytes": 4706,
+      "final_body_sha256": "0306cf9653812b791f2de19764e02ba155584b80d3a34f4af19f4c56d7d03761",
+      "unrequested_reason": null
+    },
+    {
+      "candidate_rank": 18,
+      "report_index": 35,
+      "target_id": "thumb-ss45",
+      "number": 45,
+      "kind": "thumb",
+      "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss45-thumb.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss45-thumb.jpg",
+      "request_hint": "20080512210044",
+      "old_target_id": "thumb-ss45",
+      "old_category": "transport_error",
+      "old_source_statuses": [
+        null
+      ],
+      "old_evidence_pointers": [
+        {
+          "kind": "body",
+          "path": "raw\\thumb-ss45.h1.body"
+        },
+        {
+          "kind": "headers",
+          "path": "raw\\thumb-ss45.h1.headers.txt"
+        },
+        {
+          "kind": "stderr",
+          "path": "raw\\thumb-ss45.h1.stderr.txt"
+        },
+        {
+          "kind": "trace",
+          "path": "raw\\thumb-ss45.h1.trace.txt"
+        }
+      ],
+      "category": "not_archived",
+      "detail": {
+        "reason": "wayback_not_archived_or_404",
+        "content_type": "text/html",
+        "source_status": 404,
+        "html": {
+          "is_html": true,
+          "markers": [
+            "wayback_machine",
+            "not_archived"
+          ]
+        },
+        "pillow": {
+          "available": true,
+          "verify": false,
+          "load": false,
+          "format": null,
+          "size": null,
+          "error": "UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x00000217E17DB880>"
+        },
+        "decoded_size": null
+      },
+      "attempt_count": 1,
+      "hops": [
+        {
+          "executed": true,
+          "transport": "proxy",
+          "hop": 1,
+          "url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss45-thumb.jpg",
+          "curl_exit": 0,
+          "duration_ms": 1640.0,
+          "source_status": 404,
+          "content_type": "text/html",
+          "location": null,
+          "retry_after": null,
+          "memento_datetime": null,
+          "body_path": "raw/thumb-ss45.proxy.h1.body",
+          "headers_path": "raw/thumb-ss45.proxy.h1.headers.txt",
+          "stderr_path": "raw/thumb-ss45.proxy.h1.stderr.txt",
+          "trace_path": "raw/thumb-ss45.proxy.h1.trace.txt",
+          "body_bytes": 4712,
+          "body_sha256": "311e7ef5de15ae4946e05b51c301ce5ba0a1c16d63e33a7c16eb260ef3eef162",
+          "transport_error": false,
+          "transport_reason": null,
+          "target_id": "thumb-ss45",
+          "decode": {
+            "available": true,
+            "verify": false,
+            "load": false,
+            "format": null,
+            "size": null,
+            "error": "UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x00000217E17DB880>"
+          },
+          "decoded_size": null,
+          "html_markers": {
+            "is_html": true,
+            "markers": [
+              "wayback_machine",
+              "not_archived"
+            ]
+          }
+        }
+      ],
+      "actual_memento": null,
+      "actual_memento_or_null": null,
+      "final_source_status": 404,
+      "final_content_type": "text/html",
+      "final_body_bytes": 4712,
+      "final_body_sha256": "311e7ef5de15ae4946e05b51c301ce5ba0a1c16d63e33a7c16eb260ef3eef162",
+      "unrequested_reason": null
+    },
+    {
+      "candidate_rank": 19,
+      "report_index": 36,
+      "target_id": "full-ss46",
+      "number": 46,
+      "kind": "full",
+      "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss46.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss46.jpg",
+      "request_hint": "20080512210044",
+      "old_target_id": "full-ss46",
+      "old_category": "transport_error",
+      "old_source_statuses": [
+        null
+      ],
+      "old_evidence_pointers": [
+        {
+          "kind": "body",
+          "path": "raw\\full-ss46.h1.body"
+        },
+        {
+          "kind": "headers",
+          "path": "raw\\full-ss46.h1.headers.txt"
+        },
+        {
+          "kind": "stderr",
+          "path": "raw\\full-ss46.h1.stderr.txt"
+        },
+        {
+          "kind": "trace",
+          "path": "raw\\full-ss46.h1.trace.txt"
+        }
+      ],
+      "category": "transport_error",
+      "detail": {
+        "reason": "no_http_status",
+        "source_status": null,
+        "pillow": {
+          "available": true,
+          "verify": false,
+          "load": false,
+          "format": null,
+          "size": null
+        },
+        "decoded_size": null,
+        "html": {
+          "is_html": false,
+          "markers": []
+        }
+      },
+      "attempt_count": 1,
+      "hops": [
+        {
+          "executed": true,
+          "transport": "proxy",
+          "hop": 1,
+          "url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss46.jpg",
+          "curl_exit": 35,
+          "duration_ms": 578.0,
+          "source_status": null,
+          "content_type": null,
+          "location": null,
+          "retry_after": null,
+          "memento_datetime": null,
+          "body_path": "raw/full-ss46.proxy.h1.body",
+          "headers_path": "raw/full-ss46.proxy.h1.headers.txt",
+          "stderr_path": "raw/full-ss46.proxy.h1.stderr.txt",
+          "trace_path": "raw/full-ss46.proxy.h1.trace.txt",
+          "body_bytes": 0,
+          "body_sha256": null,
+          "transport_error": true,
+          "transport_reason": "no_http_status",
+          "target_id": "full-ss46",
+          "decode": {
+            "available": true,
+            "verify": false,
+            "load": false,
+            "format": null,
+            "size": null
+          },
+          "decoded_size": null,
+          "html_markers": {
+            "is_html": false,
+            "markers": []
+          }
+        }
+      ],
+      "actual_memento": null,
+      "actual_memento_or_null": null,
+      "final_source_status": null,
+      "final_content_type": null,
+      "final_body_bytes": 0,
+      "final_body_sha256": null,
+      "unrequested_reason": null
+    },
+    {
+      "candidate_rank": 20,
+      "report_index": 37,
+      "target_id": "thumb-ss46",
+      "number": 46,
+      "kind": "thumb",
+      "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss46-thumb.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss46-thumb.jpg",
+      "request_hint": "20080512210044",
+      "old_target_id": "thumb-ss46",
+      "old_category": "transport_error",
+      "old_source_statuses": [
+        null
+      ],
+      "old_evidence_pointers": [
+        {
+          "kind": "body",
+          "path": "raw\\thumb-ss46.h1.body"
+        },
+        {
+          "kind": "headers",
+          "path": "raw\\thumb-ss46.h1.headers.txt"
+        },
+        {
+          "kind": "stderr",
+          "path": "raw\\thumb-ss46.h1.stderr.txt"
+        },
+        {
+          "kind": "trace",
+          "path": "raw\\thumb-ss46.h1.trace.txt"
+        }
+      ],
+      "category": "not_archived",
+      "detail": {
+        "reason": "wayback_not_archived_or_404",
+        "content_type": "text/html",
+        "source_status": 404,
+        "html": {
+          "is_html": true,
+          "markers": [
+            "wayback_machine",
+            "not_archived"
+          ]
+        },
+        "pillow": {
+          "available": true,
+          "verify": false,
+          "load": false,
+          "format": null,
+          "size": null,
+          "error": "UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x00000217E17DB880>"
+        },
+        "decoded_size": null
+      },
+      "attempt_count": 1,
+      "hops": [
+        {
+          "executed": true,
+          "transport": "proxy",
+          "hop": 1,
+          "url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss46-thumb.jpg",
+          "curl_exit": 0,
+          "duration_ms": 1781.0,
+          "source_status": 404,
+          "content_type": "text/html",
+          "location": null,
+          "retry_after": null,
+          "memento_datetime": null,
+          "body_path": "raw/thumb-ss46.proxy.h1.body",
+          "headers_path": "raw/thumb-ss46.proxy.h1.headers.txt",
+          "stderr_path": "raw/thumb-ss46.proxy.h1.stderr.txt",
+          "trace_path": "raw/thumb-ss46.proxy.h1.trace.txt",
+          "body_bytes": 4712,
+          "body_sha256": "04b5592d2f3025128d6e1cff18bc7c8b50e22de2aa799c571af0e0667ed61754",
+          "transport_error": false,
+          "transport_reason": null,
+          "target_id": "thumb-ss46",
+          "decode": {
+            "available": true,
+            "verify": false,
+            "load": false,
+            "format": null,
+            "size": null,
+            "error": "UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x00000217E17DB880>"
+          },
+          "decoded_size": null,
+          "html_markers": {
+            "is_html": true,
+            "markers": [
+              "wayback_machine",
+              "not_archived"
+            ]
+          }
+        }
+      ],
+      "actual_memento": null,
+      "actual_memento_or_null": null,
+      "final_source_status": 404,
+      "final_content_type": "text/html",
+      "final_body_bytes": 4712,
+      "final_body_sha256": "04b5592d2f3025128d6e1cff18bc7c8b50e22de2aa799c571af0e0667ed61754",
+      "unrequested_reason": null
+    },
+    {
+      "candidate_rank": 21,
+      "report_index": 38,
+      "target_id": "full-ss47",
+      "number": 47,
+      "kind": "full",
+      "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss47.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss47.jpg",
+      "request_hint": "20080512210044",
+      "old_target_id": "full-ss47",
+      "old_category": "transport_error",
+      "old_source_statuses": [
+        null
+      ],
+      "old_evidence_pointers": [
+        {
+          "kind": "body",
+          "path": "raw\\full-ss47.h1.body"
+        },
+        {
+          "kind": "headers",
+          "path": "raw\\full-ss47.h1.headers.txt"
+        },
+        {
+          "kind": "stderr",
+          "path": "raw\\full-ss47.h1.stderr.txt"
+        },
+        {
+          "kind": "trace",
+          "path": "raw\\full-ss47.h1.trace.txt"
+        }
+      ],
+      "category": "transport_error",
+      "detail": {
+        "reason": "no_http_status",
+        "source_status": null,
+        "pillow": {
+          "available": true,
+          "verify": false,
+          "load": false,
+          "format": null,
+          "size": null
+        },
+        "decoded_size": null,
+        "html": {
+          "is_html": false,
+          "markers": []
+        }
+      },
+      "attempt_count": 1,
+      "hops": [
+        {
+          "executed": true,
+          "transport": "proxy",
+          "hop": 1,
+          "url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss47.jpg",
+          "curl_exit": 35,
+          "duration_ms": 625.0,
+          "source_status": null,
+          "content_type": null,
+          "location": null,
+          "retry_after": null,
+          "memento_datetime": null,
+          "body_path": "raw/full-ss47.proxy.h1.body",
+          "headers_path": "raw/full-ss47.proxy.h1.headers.txt",
+          "stderr_path": "raw/full-ss47.proxy.h1.stderr.txt",
+          "trace_path": "raw/full-ss47.proxy.h1.trace.txt",
+          "body_bytes": 0,
+          "body_sha256": null,
+          "transport_error": true,
+          "transport_reason": "no_http_status",
+          "target_id": "full-ss47",
+          "decode": {
+            "available": true,
+            "verify": false,
+            "load": false,
+            "format": null,
+            "size": null
+          },
+          "decoded_size": null,
+          "html_markers": {
+            "is_html": false,
+            "markers": []
+          }
+        }
+      ],
+      "actual_memento": null,
+      "actual_memento_or_null": null,
+      "final_source_status": null,
+      "final_content_type": null,
+      "final_body_bytes": 0,
+      "final_body_sha256": null,
+      "unrequested_reason": null
+    },
+    {
+      "candidate_rank": 22,
+      "report_index": 39,
+      "target_id": "thumb-ss47",
+      "number": 47,
+      "kind": "thumb",
+      "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss47-thumb.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss47-thumb.jpg",
+      "request_hint": "20080512210044",
+      "old_target_id": "thumb-ss47",
+      "old_category": "transport_error",
+      "old_source_statuses": [
+        null
+      ],
+      "old_evidence_pointers": [
+        {
+          "kind": "body",
+          "path": "raw\\thumb-ss47.h1.body"
+        },
+        {
+          "kind": "headers",
+          "path": "raw\\thumb-ss47.h1.headers.txt"
+        },
+        {
+          "kind": "stderr",
+          "path": "raw\\thumb-ss47.h1.stderr.txt"
+        },
+        {
+          "kind": "trace",
+          "path": "raw\\thumb-ss47.h1.trace.txt"
+        }
+      ],
+      "category": "transport_error",
+      "detail": {
+        "reason": "no_http_status",
+        "source_status": null,
+        "pillow": {
+          "available": true,
+          "verify": false,
+          "load": false,
+          "format": null,
+          "size": null
+        },
+        "decoded_size": null,
+        "html": {
+          "is_html": false,
+          "markers": []
+        }
+      },
+      "attempt_count": 1,
+      "hops": [
+        {
+          "executed": true,
+          "transport": "proxy",
+          "hop": 1,
+          "url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss47-thumb.jpg",
+          "curl_exit": 35,
+          "duration_ms": 656.0,
+          "source_status": null,
+          "content_type": null,
+          "location": null,
+          "retry_after": null,
+          "memento_datetime": null,
+          "body_path": "raw/thumb-ss47.proxy.h1.body",
+          "headers_path": "raw/thumb-ss47.proxy.h1.headers.txt",
+          "stderr_path": "raw/thumb-ss47.proxy.h1.stderr.txt",
+          "trace_path": "raw/thumb-ss47.proxy.h1.trace.txt",
+          "body_bytes": 0,
+          "body_sha256": null,
+          "transport_error": true,
+          "transport_reason": "no_http_status",
+          "target_id": "thumb-ss47",
+          "decode": {
+            "available": true,
+            "verify": false,
+            "load": false,
+            "format": null,
+            "size": null
+          },
+          "decoded_size": null,
+          "html_markers": {
+            "is_html": false,
+            "markers": []
+          }
+        }
+      ],
+      "actual_memento": null,
+      "actual_memento_or_null": null,
+      "final_source_status": null,
+      "final_content_type": null,
+      "final_body_bytes": 0,
+      "final_body_sha256": null,
+      "unrequested_reason": null
+    },
+    {
+      "candidate_rank": 23,
+      "report_index": 40,
+      "target_id": "full-ss48",
+      "number": 48,
+      "kind": "full",
+      "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss48.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss48.jpg",
+      "request_hint": "20080512210044",
+      "old_target_id": "full-ss48",
+      "old_category": "transport_error",
+      "old_source_statuses": [
+        null
+      ],
+      "old_evidence_pointers": [
+        {
+          "kind": "body",
+          "path": "raw\\full-ss48.h1.body"
+        },
+        {
+          "kind": "headers",
+          "path": "raw\\full-ss48.h1.headers.txt"
+        },
+        {
+          "kind": "stderr",
+          "path": "raw\\full-ss48.h1.stderr.txt"
+        },
+        {
+          "kind": "trace",
+          "path": "raw\\full-ss48.h1.trace.txt"
+        }
+      ],
+      "category": "transport_error",
+      "detail": {
+        "reason": "no_http_status",
+        "source_status": null,
+        "pillow": {
+          "available": true,
+          "verify": false,
+          "load": false,
+          "format": null,
+          "size": null
+        },
+        "decoded_size": null,
+        "html": {
+          "is_html": false,
+          "markers": []
+        }
+      },
+      "attempt_count": 1,
+      "hops": [
+        {
+          "executed": true,
+          "transport": "proxy",
+          "hop": 1,
+          "url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss48.jpg",
+          "curl_exit": 35,
+          "duration_ms": 562.0,
+          "source_status": null,
+          "content_type": null,
+          "location": null,
+          "retry_after": null,
+          "memento_datetime": null,
+          "body_path": "raw/full-ss48.proxy.h1.body",
+          "headers_path": "raw/full-ss48.proxy.h1.headers.txt",
+          "stderr_path": "raw/full-ss48.proxy.h1.stderr.txt",
+          "trace_path": "raw/full-ss48.proxy.h1.trace.txt",
+          "body_bytes": 0,
+          "body_sha256": null,
+          "transport_error": true,
+          "transport_reason": "no_http_status",
+          "target_id": "full-ss48",
+          "decode": {
+            "available": true,
+            "verify": false,
+            "load": false,
+            "format": null,
+            "size": null
+          },
+          "decoded_size": null,
+          "html_markers": {
+            "is_html": false,
+            "markers": []
+          }
+        }
+      ],
+      "actual_memento": null,
+      "actual_memento_or_null": null,
+      "final_source_status": null,
+      "final_content_type": null,
+      "final_body_bytes": 0,
+      "final_body_sha256": null,
+      "unrequested_reason": null
+    },
+    {
+      "candidate_rank": 24,
+      "report_index": 41,
+      "target_id": "thumb-ss48",
+      "number": 48,
+      "kind": "thumb",
+      "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss48-thumb.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss48-thumb.jpg",
+      "request_hint": "20080512210044",
+      "old_target_id": "thumb-ss48",
+      "old_category": "transport_error",
+      "old_source_statuses": [
+        null
+      ],
+      "old_evidence_pointers": [
+        {
+          "kind": "body",
+          "path": "raw\\thumb-ss48.h1.body"
+        },
+        {
+          "kind": "headers",
+          "path": "raw\\thumb-ss48.h1.headers.txt"
+        },
+        {
+          "kind": "stderr",
+          "path": "raw\\thumb-ss48.h1.stderr.txt"
+        },
+        {
+          "kind": "trace",
+          "path": "raw\\thumb-ss48.h1.trace.txt"
+        }
+      ],
+      "category": "transport_error",
+      "detail": {
+        "reason": "no_http_status",
+        "source_status": null,
+        "pillow": {
+          "available": true,
+          "verify": false,
+          "load": false,
+          "format": null,
+          "size": null
+        },
+        "decoded_size": null,
+        "html": {
+          "is_html": false,
+          "markers": []
+        }
+      },
+      "attempt_count": 1,
+      "hops": [
+        {
+          "executed": true,
+          "transport": "proxy",
+          "hop": 1,
+          "url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss48-thumb.jpg",
+          "curl_exit": 35,
+          "duration_ms": 609.0,
+          "source_status": null,
+          "content_type": null,
+          "location": null,
+          "retry_after": null,
+          "memento_datetime": null,
+          "body_path": "raw/thumb-ss48.proxy.h1.body",
+          "headers_path": "raw/thumb-ss48.proxy.h1.headers.txt",
+          "stderr_path": "raw/thumb-ss48.proxy.h1.stderr.txt",
+          "trace_path": "raw/thumb-ss48.proxy.h1.trace.txt",
+          "body_bytes": 0,
+          "body_sha256": null,
+          "transport_error": true,
+          "transport_reason": "no_http_status",
+          "target_id": "thumb-ss48",
+          "decode": {
+            "available": true,
+            "verify": false,
+            "load": false,
+            "format": null,
+            "size": null
+          },
+          "decoded_size": null,
+          "html_markers": {
+            "is_html": false,
+            "markers": []
+          }
+        }
+      ],
+      "actual_memento": null,
+      "actual_memento_or_null": null,
+      "final_source_status": null,
+      "final_content_type": null,
+      "final_body_bytes": 0,
+      "final_body_sha256": null,
+      "unrequested_reason": null
+    },
+    {
+      "candidate_rank": 25,
+      "report_index": 42,
+      "target_id": "full-ss49",
+      "number": 49,
+      "kind": "full",
+      "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss49.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss49.jpg",
+      "request_hint": "20080512210044",
+      "old_target_id": "full-ss49",
+      "old_category": "transport_error",
+      "old_source_statuses": [
+        null
+      ],
+      "old_evidence_pointers": [
+        {
+          "kind": "body",
+          "path": "raw\\full-ss49.h1.body"
+        },
+        {
+          "kind": "headers",
+          "path": "raw\\full-ss49.h1.headers.txt"
+        },
+        {
+          "kind": "stderr",
+          "path": "raw\\full-ss49.h1.stderr.txt"
+        },
+        {
+          "kind": "trace",
+          "path": "raw\\full-ss49.h1.trace.txt"
+        }
+      ],
+      "category": "transport_error",
+      "detail": {
+        "reason": "no_http_status",
+        "source_status": null,
+        "pillow": {
+          "available": true,
+          "verify": false,
+          "load": false,
+          "format": null,
+          "size": null
+        },
+        "decoded_size": null,
+        "html": {
+          "is_html": false,
+          "markers": []
+        }
+      },
+      "attempt_count": 1,
+      "hops": [
+        {
+          "executed": true,
+          "transport": "proxy",
+          "hop": 1,
+          "url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss49.jpg",
+          "curl_exit": 35,
+          "duration_ms": 594.0,
+          "source_status": null,
+          "content_type": null,
+          "location": null,
+          "retry_after": null,
+          "memento_datetime": null,
+          "body_path": "raw/full-ss49.proxy.h1.body",
+          "headers_path": "raw/full-ss49.proxy.h1.headers.txt",
+          "stderr_path": "raw/full-ss49.proxy.h1.stderr.txt",
+          "trace_path": "raw/full-ss49.proxy.h1.trace.txt",
+          "body_bytes": 0,
+          "body_sha256": null,
+          "transport_error": true,
+          "transport_reason": "no_http_status",
+          "target_id": "full-ss49",
+          "decode": {
+            "available": true,
+            "verify": false,
+            "load": false,
+            "format": null,
+            "size": null
+          },
+          "decoded_size": null,
+          "html_markers": {
+            "is_html": false,
+            "markers": []
+          }
+        }
+      ],
+      "actual_memento": null,
+      "actual_memento_or_null": null,
+      "final_source_status": null,
+      "final_content_type": null,
+      "final_body_bytes": 0,
+      "final_body_sha256": null,
+      "unrequested_reason": null
+    },
+    {
+      "candidate_rank": 26,
+      "report_index": 43,
+      "target_id": "thumb-ss49",
+      "number": 49,
+      "kind": "thumb",
+      "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss49-thumb.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss49-thumb.jpg",
+      "request_hint": "20080512210044",
+      "old_target_id": "thumb-ss49",
+      "old_category": "transport_error",
+      "old_source_statuses": [
+        null
+      ],
+      "old_evidence_pointers": [
+        {
+          "kind": "body",
+          "path": "raw\\thumb-ss49.h1.body"
+        },
+        {
+          "kind": "headers",
+          "path": "raw\\thumb-ss49.h1.headers.txt"
+        },
+        {
+          "kind": "stderr",
+          "path": "raw\\thumb-ss49.h1.stderr.txt"
+        },
+        {
+          "kind": "trace",
+          "path": "raw\\thumb-ss49.h1.trace.txt"
+        }
+      ],
+      "category": "not_requested",
+      "detail": {
+        "reason": "five_consecutive_tls_or_transport_failures"
+      },
+      "attempt_count": 0,
+      "hops": [
+        {
+          "executed": false,
+          "unrequested_reason": "five_consecutive_tls_or_transport_failures",
+          "target_id": "thumb-ss49",
+          "decode": {
+            "available": true,
+            "verify": false,
+            "load": false,
+            "format": null,
+            "size": null
+          },
+          "decoded_size": null,
+          "html_markers": {
+            "is_html": false,
+            "markers": []
+          }
+        }
+      ],
+      "actual_memento": null,
+      "actual_memento_or_null": null,
+      "final_source_status": null,
+      "final_content_type": null,
+      "final_body_bytes": 0,
+      "final_body_sha256": null,
+      "unrequested_reason": "five_consecutive_tls_or_transport_failures"
+    },
+    {
+      "candidate_rank": 27,
+      "report_index": 44,
+      "target_id": "full-ss50",
+      "number": 50,
+      "kind": "full",
+      "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss50.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss50.jpg",
+      "request_hint": "20080512210044",
+      "old_target_id": "full-ss50",
+      "old_category": "transport_error",
+      "old_source_statuses": [
+        null
+      ],
+      "old_evidence_pointers": [
+        {
+          "kind": "body",
+          "path": "raw\\full-ss50.h1.body"
+        },
+        {
+          "kind": "headers",
+          "path": "raw\\full-ss50.h1.headers.txt"
+        },
+        {
+          "kind": "stderr",
+          "path": "raw\\full-ss50.h1.stderr.txt"
+        },
+        {
+          "kind": "trace",
+          "path": "raw\\full-ss50.h1.trace.txt"
+        }
+      ],
+      "category": "not_requested",
+      "detail": {
+        "reason": "five_consecutive_tls_or_transport_failures"
+      },
+      "attempt_count": 0,
+      "hops": [
+        {
+          "executed": false,
+          "unrequested_reason": "five_consecutive_tls_or_transport_failures",
+          "target_id": "full-ss50",
+          "decode": {
+            "available": true,
+            "verify": false,
+            "load": false,
+            "format": null,
+            "size": null
+          },
+          "decoded_size": null,
+          "html_markers": {
+            "is_html": false,
+            "markers": []
+          }
+        }
+      ],
+      "actual_memento": null,
+      "actual_memento_or_null": null,
+      "final_source_status": null,
+      "final_content_type": null,
+      "final_body_bytes": 0,
+      "final_body_sha256": null,
+      "unrequested_reason": "five_consecutive_tls_or_transport_failures"
+    },
+    {
+      "candidate_rank": 28,
+      "report_index": 45,
+      "target_id": "thumb-ss50",
+      "number": 50,
+      "kind": "thumb",
+      "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss50-thumb.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss50-thumb.jpg",
+      "request_hint": "20080512210044",
+      "old_target_id": "thumb-ss50",
+      "old_category": "transport_error",
+      "old_source_statuses": [
+        null
+      ],
+      "old_evidence_pointers": [
+        {
+          "kind": "body",
+          "path": "raw\\thumb-ss50.h1.body"
+        },
+        {
+          "kind": "headers",
+          "path": "raw\\thumb-ss50.h1.headers.txt"
+        },
+        {
+          "kind": "stderr",
+          "path": "raw\\thumb-ss50.h1.stderr.txt"
+        },
+        {
+          "kind": "trace",
+          "path": "raw\\thumb-ss50.h1.trace.txt"
+        }
+      ],
+      "category": "not_requested",
+      "detail": {
+        "reason": "five_consecutive_tls_or_transport_failures"
+      },
+      "attempt_count": 0,
+      "hops": [
+        {
+          "executed": false,
+          "unrequested_reason": "five_consecutive_tls_or_transport_failures",
+          "target_id": "thumb-ss50",
+          "decode": {
+            "available": true,
+            "verify": false,
+            "load": false,
+            "format": null,
+            "size": null
+          },
+          "decoded_size": null,
+          "html_markers": {
+            "is_html": false,
+            "markers": []
+          }
+        }
+      ],
+      "actual_memento": null,
+      "actual_memento_or_null": null,
+      "final_source_status": null,
+      "final_content_type": null,
+      "final_body_bytes": 0,
+      "final_body_sha256": null,
+      "unrequested_reason": "five_consecutive_tls_or_transport_failures"
+    },
+    {
+      "candidate_rank": 29,
+      "report_index": 46,
+      "target_id": "full-ss51",
+      "number": 51,
+      "kind": "full",
+      "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss51.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss51.jpg",
+      "request_hint": "20080512210044",
+      "old_target_id": "full-ss51",
+      "old_category": "transport_error",
+      "old_source_statuses": [
+        null
+      ],
+      "old_evidence_pointers": [
+        {
+          "kind": "body",
+          "path": "raw\\full-ss51.h1.body"
+        },
+        {
+          "kind": "headers",
+          "path": "raw\\full-ss51.h1.headers.txt"
+        },
+        {
+          "kind": "stderr",
+          "path": "raw\\full-ss51.h1.stderr.txt"
+        },
+        {
+          "kind": "trace",
+          "path": "raw\\full-ss51.h1.trace.txt"
+        }
+      ],
+      "category": "not_requested",
+      "detail": {
+        "reason": "five_consecutive_tls_or_transport_failures"
+      },
+      "attempt_count": 0,
+      "hops": [
+        {
+          "executed": false,
+          "unrequested_reason": "five_consecutive_tls_or_transport_failures",
+          "target_id": "full-ss51",
+          "decode": {
+            "available": true,
+            "verify": false,
+            "load": false,
+            "format": null,
+            "size": null
+          },
+          "decoded_size": null,
+          "html_markers": {
+            "is_html": false,
+            "markers": []
+          }
+        }
+      ],
+      "actual_memento": null,
+      "actual_memento_or_null": null,
+      "final_source_status": null,
+      "final_content_type": null,
+      "final_body_bytes": 0,
+      "final_body_sha256": null,
+      "unrequested_reason": "five_consecutive_tls_or_transport_failures"
+    },
+    {
+      "candidate_rank": 30,
+      "report_index": 47,
+      "target_id": "thumb-ss51",
+      "number": 51,
+      "kind": "thumb",
+      "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss51-thumb.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss51-thumb.jpg",
+      "request_hint": "20080512210044",
+      "old_target_id": "thumb-ss51",
+      "old_category": "transport_error",
+      "old_source_statuses": [
+        null
+      ],
+      "old_evidence_pointers": [
+        {
+          "kind": "body",
+          "path": "raw\\thumb-ss51.h1.body"
+        },
+        {
+          "kind": "headers",
+          "path": "raw\\thumb-ss51.h1.headers.txt"
+        },
+        {
+          "kind": "stderr",
+          "path": "raw\\thumb-ss51.h1.stderr.txt"
+        },
+        {
+          "kind": "trace",
+          "path": "raw\\thumb-ss51.h1.trace.txt"
+        }
+      ],
+      "category": "not_requested",
+      "detail": {
+        "reason": "five_consecutive_tls_or_transport_failures"
+      },
+      "attempt_count": 0,
+      "hops": [
+        {
+          "executed": false,
+          "unrequested_reason": "five_consecutive_tls_or_transport_failures",
+          "target_id": "thumb-ss51",
+          "decode": {
+            "available": true,
+            "verify": false,
+            "load": false,
+            "format": null,
+            "size": null
+          },
+          "decoded_size": null,
+          "html_markers": {
+            "is_html": false,
+            "markers": []
+          }
+        }
+      ],
+      "actual_memento": null,
+      "actual_memento_or_null": null,
+      "final_source_status": null,
+      "final_content_type": null,
+      "final_body_bytes": 0,
+      "final_body_sha256": null,
+      "unrequested_reason": "five_consecutive_tls_or_transport_failures"
+    }
+  ],
+  "source_mapping_suggestions": [],
+  "raw_evidence_note": "For transport attempts where curl created no output file, the offline augment step created a zero-byte local raw/*.body placeholder. These files are local evidence placeholders and are not source response bodies."
+}
