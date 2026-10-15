@@ -1,0 +1,146 @@
+{
+  "schema": "continuous-wow-asset-batch5-plan/v1",
+  "mode": "exact_cdx_then_one_200_replay_per_target",
+  "prepared_utc": "2026-10-15T08:32:09.767732+00:00",
+  "input_candidates": "research/continuous-recovery-20261015/asset-batch5-candidates.json",
+  "input_candidates_sha256": "71d084172c775ddae8063e622ae45c1fc2e8b72283030c6dc31d9110abfdcf0a",
+  "asset_queue_sha256": "c802a019642f07d6462ff94afbf2c527e91f499ea21cbf028ef1c5dacc27ca59",
+  "accepted_dedup": "research/continuous-recovery-20261015/resource-dedup-acceptance.json",
+  "accepted_dedup_sha256": "63cddc7ec45cc586d837625ad13edade655f2a8d4db72bffb86ae9e8302ddadd",
+  "accepted_dedup_report_sha256": "d098d3147217243fa65085c3e5bd03a7ab0bf3e780a645d7554d211ddeefeba7",
+  "targets": [
+    {
+      "rank": 1,
+      "url": "http://www.worldofwarcraft.com/wrath/images/artwork/artworkcounter.js",
+      "kind": "javascript_counter",
+      "priority": 0,
+      "action": "exact_cdx_then_latest_preanchor_valid_200_replay"
+    },
+    {
+      "rank": 2,
+      "url": "http://www.worldofwarcraft.com/wrath/images/artwork/en_us/artworkcounter.js",
+      "kind": "javascript_counter",
+      "priority": 0,
+      "action": "exact_cdx_then_latest_preanchor_valid_200_replay"
+    },
+    {
+      "rank": 3,
+      "url": "http://www.worldofwarcraft.com/insider/11/images/arena/bladesedgemap.jpg",
+      "kind": "image",
+      "priority": 1,
+      "action": "exact_cdx_then_latest_preanchor_valid_200_replay"
+    },
+    {
+      "rank": 4,
+      "url": "http://www.worldofwarcraft.com/insider/11/images/arena/float.gif",
+      "kind": "image",
+      "priority": 1,
+      "action": "exact_cdx_then_latest_preanchor_valid_200_replay"
+    },
+    {
+      "rank": 5,
+      "url": "http://www.worldofwarcraft.com/insider/11/images/arena/lordaeronmap.gif",
+      "kind": "image",
+      "priority": 1,
+      "action": "exact_cdx_then_latest_preanchor_valid_200_replay"
+    },
+    {
+      "rank": 6,
+      "url": "http://www.worldofwarcraft.com/insider/11/images/arena/nagrandmap.jpg",
+      "kind": "image",
+      "priority": 1,
+      "action": "exact_cdx_then_latest_preanchor_valid_200_replay"
+    },
+    {
+      "rank": 7,
+      "url": "http://armory.wow-europe.com/images/icons/class/2.png",
+      "kind": "image",
+      "priority": 2,
+      "action": "exact_cdx_then_latest_preanchor_valid_200_replay"
+    },
+    {
+      "rank": 8,
+      "url": "http://armory.wow-europe.com/images/icons/race/5-0.png",
+      "kind": "image",
+      "priority": 2,
+      "action": "exact_cdx_then_latest_preanchor_valid_200_replay"
+    },
+    {
+      "rank": 9,
+      "url": "http://armory.wow-europe.com/images/icons/class/1.png",
+      "kind": "image",
+      "priority": 2,
+      "action": "exact_cdx_then_latest_preanchor_valid_200_replay"
+    },
+    {
+      "rank": 10,
+      "url": "http://armory.wow-europe.com/images/icons/class/5.png",
+      "kind": "image",
+      "priority": 2,
+      "action": "exact_cdx_then_latest_preanchor_valid_200_replay"
+    },
+    {
+      "rank": 11,
+      "url": "http://armory.wow-europe.com/images/icons/class/7.png",
+      "kind": "image",
+      "priority": 2,
+      "action": "exact_cdx_then_latest_preanchor_valid_200_replay"
+    },
+    {
+      "rank": 12,
+      "url": "http://armory.wow-europe.com/images/icons/class/9.png",
+      "kind": "image",
+      "priority": 2,
+      "action": "exact_cdx_then_latest_preanchor_valid_200_replay"
+    },
+    {
+      "rank": 13,
+      "url": "http://armory.wow-europe.com/images/icons/class/4.png",
+      "kind": "image",
+      "priority": 2,
+      "action": "exact_cdx_then_latest_preanchor_valid_200_replay"
+    },
+    {
+      "rank": 14,
+      "url": "http://armory.wow-europe.com/images/icons/class/8.png",
+      "kind": "image",
+      "priority": 2,
+      "action": "exact_cdx_then_latest_preanchor_valid_200_replay"
+    },
+    {
+      "rank": 15,
+      "url": "http://armory.wow-europe.com/images/icons/race/10-1.png",
+      "kind": "image",
+      "priority": 2,
+      "action": "exact_cdx_then_latest_preanchor_valid_200_replay"
+    }
+  ],
+  "policy": {
+    "max_targets": 15,
+    "max_attempts": 32,
+    "window_seconds": 480,
+    "minimum_start_interval_seconds": 1.2,
+    "minimum_free_bytes": 11005853696,
+    "max_total_body_bytes": 67108864,
+    "max_entity_body_bytes": 16777216,
+    "direct_first_then_confirmed_transport": true,
+    "direct_connect_timeout_seconds": 4,
+    "direct_total_timeout_seconds": 12,
+    "proxy": "http://127.0.0.1:7890",
+    "proxy_connect_timeout_seconds": 8,
+    "proxy_total_timeout_seconds": 20,
+    "automatic_redirects": 0,
+    "manual_wayback_redirect_hops": 1,
+    "stop_http_codes": [
+      429,
+      503
+    ],
+    "tls_verification": "curl_default_verification_enabled",
+    "uri_policy": "same scheme and lower-cased host; only default port equivalence; exact path/query",
+    "cdx_policy": "exact matchType=exact, 2004-01-01 through 2008-05-12 anchor; one latest preanchor status-200 replay",
+    "counter_policy": "static text observation only; no JavaScript execution or derived script",
+    "image_policy": "Pillow verify plus load; format, dimensions, MIME, body SHA-256 and CDX base32-SHA1 independently recorded"
+  },
+  "network_requests": 0,
+  "ready": true
+}

@@ -53,6 +53,26 @@
 
 本地执行者同步准备 `CORE-PAGES-INTEGRATION-004`：新 v9 派生源树保留全部此前 8,306 个来源记录和 38 个图片补充层，等待下一批改进来源表再完整构建。PTR 原始 2006 年页面包含角色复制与下载入口，派生版须成为静态历史展品；标题中性、日期来自所选来源，不复活账号、复制、下载动作或脚本。根代理负责最终源选择、浏览验收与发布。
 
+`NET-CORE-PAGES-004` 已完成[独立验收](../research/continuous-recovery-20261015/core-pages4-acceptance.json)：15 次尝试、14 个真实源响应，9 份有效 HTML 的正文合计 592,852 字节，含一次新 CDX 查询的批次总量为 603,399 字节。新增四个不同来源目标（June News、2005 年年页、BC professions、Wrath artwork），并把五个已保存月页升级为更近基准日期的 2008 年捕获；旧来源完整保留。
+
+[合并选择表](../research/continuous-recovery-20261015/selected-core-pages-source-map.json)当前含 **11 个不同页面来源**：8 个新闻 HTML、BC professions、Wrath artwork 与 PTR。2004 年年页沿用前批最新合格捕获；PTR 的 2008 年记录只有到 test 子域及登录页的重定向，因此保留真实的 2006 年 HTML，派生展品不启用该动作链。所有选择按有时区的实际 Memento 比较并归一到 UTC。
+
+旧 Battlegroups 首跳有真实 302、匹配捕获的 Memento 和到目录入口的历史 Location；第二跳没有 Memento，只作为 Wayback 调度记录。根代理对照已有目录别名、真实 index 正文及导航证据，批准[旧 `.html` 到既有 index 的兼容别名](../research/continuous-recovery-20261015/battlegroups-alias-decision.json)。仅在 v9 派生清单加别名，不替换来源，也不计作新增恢复实体。
+
+### 资源队列与图库依赖
+
+四页资源去重现已[独立验收](../research/continuous-recovery-20261015/resource-dedup-acceptance.json)：623 次占位文字出现对应 217 个不同 URL，分别为 102 个静态资源、113 个导航或页脚地址，以及两个仅用于脚本条件判断的 URL（四次出现）。232 次 `b.gif` 引用有真实 1×1 标签尺寸，属于共享布局 spacer。旧 HTML 的八处 `td background` 引用补齐了属性元数据。首次失败检查快照留在本地；未观察的布局损坏与未取得的原始资源没有记为已验证。
+
+精确查找五份既有来源表和 v7c 清单，未发现可直接复用的本地实体；这只是声明范围内的查找结论。主[静态资源队列](../research/continuous-recovery-20261015/local-resource-dedup/network-asset-queue.json)优先正文图和图标，不按 spacer 的重复次数提升优先级。
+
+新 Wrath artwork HTML 的[文字依赖检查](../research/continuous-recovery-20261015/wrath-artwork-dependencies.json)发现两个缺失的图库计数脚本：`/wrath/images/artwork/artworkcounter.js` 与 `/wrath/images/artwork/en_us/artworkcounter.js`。根代理同时确认 47 个 artwork 图片路由以及图库布局、函数脚本已存在；两个计数脚本可能阻断已有素材的展示。`NET-ASSETS-005` 因而先精确查询这两个脚本，再处理四个 Arena 图和九个 EU 图标。脚本只取回并离线检查，不执行；没有原脚本时不能编造计数或声称恢复了原始图库脚本。
+
+`NET-ASSETS-005` 已完成[独立验收](../research/continuous-recovery-20261015/assets5-acceptance.json)：27 次尝试、23 个真实源 HTTP 响应，取得 **2 份真实计数脚本与 9 张图片**。有效载荷合计 50,010 字节，含 CDX 的批次总量 52,398 字节。脚本原文字面赋值分别为 `screenshotsCommonTotal = 12;` 与 `screenshotsLocTotal = 1;`，仅静态核对，未执行。九张图片均独立通过 Pillow verify 和 load，实际 Memento、正文 SHA256 与 CDX SHA1 均一致。另一个 Arena 图的本次精确范围 CDX 为空；三个图标的查询在传输阶段失败，继续保留未判定状态。
+
+[已验收静态来源表](../research/continuous-recovery-20261015/selected-static-source-map.json)已交 v9 builder；六个 armory 图标保留其原始 foreign origin 与 `_origins/armory.wow-europe.com/` 命名空间，不按同名文件跨站替换。核心页面与本批静态资源若全部为不同新增记录，来源数预期为 8,328，38 个原补充层保留，最终以实际构建和根代理浏览验收为准。下载和静态脚本检查尚不等于图库运行通过。
+
+`NET-RSS-006` 复用唯一网络执行者，从已验收的 23 个 RSS 目标按年月倒序选择最新 12 个精确来源，另存 `network-rss6/` 候选与回执。按正文判断 raw RSS/XML、扩展 HTML 或重定向，不因 `.xml` 扩展重用 XSL，也不把 RSS 和同月新闻 HTML 等价。其余 11 个 RSS 留待本批结果后另行安排。
+
 ## 取舍与后续顺序
 
 优先修复已有真实内容因地址规范化或客户端逻辑无法访问的问题；其次补取来源明确且过去因网络失败没有取得内容判定的对象；再沿历史脚本、菜单和 CDX 记录提取有证据的缺失资源。按编号生成的截图地址可以作为来源证据，不能凭猜测把实体记为已取得。若本地审计发现更高价值的缺口，下一批按证据与可恢复性调整，不为填满时间盲目重试。

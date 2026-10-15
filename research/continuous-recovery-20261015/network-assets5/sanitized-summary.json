@@ -1,0 +1,549 @@
+{
+  "schema": "continuous-wow-asset-batch5-summary/v1",
+  "report_sha256": "89168f8f5c2a95e6c1dce1bc887de886f68d2a5d0efedbad71ea9da4f7fe6c2d",
+  "inputs": {
+    "candidate_path": "research/continuous-recovery-20261015/asset-batch5-candidates.json",
+    "candidate_sha256": "71d084172c775ddae8063e622ae45c1fc2e8b72283030c6dc31d9110abfdcf0a",
+    "asset_queue_path": "research/continuous-recovery-20261015/local-resource-dedup/network-asset-queue.json",
+    "asset_queue_sha256": "c802a019642f07d6462ff94afbf2c527e91f499ea21cbf028ef1c5dacc27ca59",
+    "accepted_dedup_path": "research/continuous-recovery-20261015/resource-dedup-acceptance.json",
+    "accepted_dedup_sha256": "63cddc7ec45cc586d837625ad13edade655f2a8d4db72bffb86ae9e8302ddadd",
+    "accepted_dedup_report_sha256": "d098d3147217243fa65085c3e5bd03a7ab0bf3e780a645d7554d211ddeefeba7"
+  },
+  "request_window_started_utc": "2026-10-15T08:32:09.773735+00:00",
+  "request_window_finished_utc": "2026-10-15T08:33:53.424743+00:00",
+  "report_updated_utc": "2026-10-15T08:33:53.424743+00:00",
+  "network_requests": 27,
+  "source_response_count": 23,
+  "category_counts": {
+    "valid_javascript_counter": 2,
+    "valid_image": 9,
+    "cdx_empty_in_range": 1,
+    "transport_error": 3
+  },
+  "valid_entity_count": 11,
+  "counter_count_observations": [
+    {
+      "url": "http://www.worldofwarcraft.com/wrath/images/artwork/artworkcounter.js",
+      "status": "valid_javascript_counter",
+      "count_observed": true,
+      "count_values": [
+        12
+      ],
+      "api_names": [
+        "screenshotsCommonTotal"
+      ]
+    },
+    {
+      "url": "http://www.worldofwarcraft.com/wrath/images/artwork/en_us/artworkcounter.js",
+      "status": "valid_javascript_counter",
+      "count_observed": true,
+      "count_values": [
+        1
+      ],
+      "api_names": [
+        "screenshotsLocTotal"
+      ]
+    }
+  ],
+  "targets": [
+    {
+      "rank": 1,
+      "url": "http://www.worldofwarcraft.com/wrath/images/artwork/artworkcounter.js",
+      "kind": "javascript_counter",
+      "category": "valid_javascript_counter",
+      "capture_timestamp": "20080402024808",
+      "captured_original": "http://www.worldofwarcraft.com/wrath/images/artwork/artworkcounter.js",
+      "source_status": 200,
+      "actual_memento": "2008-04-02T02:48:08+00:00",
+      "body_bytes": 28,
+      "body_sha256": "427df621632f3df6acb97c0b8131f99f70e607b88f075b4fc66a91977d136620",
+      "validation": {
+        "body_bytes": 28,
+        "body_sha256": "427df621632f3df6acb97c0b8131f99f70e607b88f075b4fc66a91977d136620",
+        "cdx_digest_expected": "UG6B27UTXKTPNZOVDVXZSEBBJ3QLVQD6",
+        "cdx_digest_calculated": "UG6B27UTXKTPNZOVDVXZSEBBJ3QLVQD6",
+        "cdx_digest_match": true,
+        "cdx_length": 351,
+        "memento_datetime": "2008-04-02T02:48:08+00:00",
+        "content_type": "application/x-javascript",
+        "source_status": 200,
+        "raw_body_path": "raw/03-http_www.worldofwarcraft.com_wrath_images_artwork_artworkcounter.js-replay-proxy.body",
+        "raw_headers_path": "raw/03-http_www.worldofwarcraft.com_wrath_images_artwork_artworkcounter.js-replay-proxy.headers.txt",
+        "decode": {
+          "encoding": "utf-8",
+          "mime": "application/x-javascript",
+          "bytes_decoded": 28,
+          "meaningful_non_html_script": true,
+          "html_or_archive_markers": [],
+          "count_assignments": [
+            {
+              "name": "screenshotsCommonTotal",
+              "value": 12,
+              "snippet": "screenshotsCommonTotal = 12;"
+            }
+          ],
+          "function_signatures": [],
+          "count_values": [
+            12
+          ],
+          "count_observed": true,
+          "allowed_or_script_mime": true
+        },
+        "valid": true,
+        "reason": "valid_script"
+      },
+      "reason": "valid_script"
+    },
+    {
+      "rank": 2,
+      "url": "http://www.worldofwarcraft.com/wrath/images/artwork/en_us/artworkcounter.js",
+      "kind": "javascript_counter",
+      "category": "valid_javascript_counter",
+      "capture_timestamp": "20080402024820",
+      "captured_original": "http://www.worldofwarcraft.com/wrath/images/artwork/en_us/artworkcounter.js",
+      "source_status": 200,
+      "actual_memento": "2008-04-02T02:48:20+00:00",
+      "body_bytes": 24,
+      "body_sha256": "d20af77708a2fc924e3940574bf574e65bb14eed3e8e63906fc79e62167a15ba",
+      "validation": {
+        "body_bytes": 24,
+        "body_sha256": "d20af77708a2fc924e3940574bf574e65bb14eed3e8e63906fc79e62167a15ba",
+        "cdx_digest_expected": "FVL6HVRCEXGWTTV65XRT3LLW3JXTV2HD",
+        "cdx_digest_calculated": "FVL6HVRCEXGWTTV65XRT3LLW3JXTV2HD",
+        "cdx_digest_match": true,
+        "cdx_length": 351,
+        "memento_datetime": "2008-04-02T02:48:20+00:00",
+        "content_type": "application/x-javascript",
+        "source_status": 200,
+        "raw_body_path": "raw/05-http_www.worldofwarcraft.com_wrath_images_artwork_en_us_artworkcounter.js-replay-proxy.body",
+        "raw_headers_path": "raw/05-http_www.worldofwarcraft.com_wrath_images_artwork_en_us_artworkcounter.js-replay-proxy.headers.txt",
+        "decode": {
+          "encoding": "utf-8",
+          "mime": "application/x-javascript",
+          "bytes_decoded": 24,
+          "meaningful_non_html_script": true,
+          "html_or_archive_markers": [],
+          "count_assignments": [
+            {
+              "name": "screenshotsLocTotal",
+              "value": 1,
+              "snippet": "screenshotsLocTotal = 1;"
+            }
+          ],
+          "function_signatures": [],
+          "count_values": [
+            1
+          ],
+          "count_observed": true,
+          "allowed_or_script_mime": true
+        },
+        "valid": true,
+        "reason": "valid_script"
+      },
+      "reason": "valid_script"
+    },
+    {
+      "rank": 3,
+      "url": "http://www.worldofwarcraft.com/insider/11/images/arena/bladesedgemap.jpg",
+      "kind": "image",
+      "category": "valid_image",
+      "capture_timestamp": "20080402014105",
+      "captured_original": "http://www.worldofwarcraft.com/insider/11/images/arena/bladesedgemap.jpg",
+      "source_status": 200,
+      "actual_memento": "2008-04-02T01:41:05+00:00",
+      "body_bytes": 11366,
+      "body_sha256": "ff7f2239b8c42b42d8e8965dbb9cbaef76d6444d4e113fda8c552eea583240fd",
+      "validation": {
+        "body_bytes": 11366,
+        "body_sha256": "ff7f2239b8c42b42d8e8965dbb9cbaef76d6444d4e113fda8c552eea583240fd",
+        "cdx_digest_expected": "YOXXCL4PDDVJ6MXAYIFYHJ6Z4K6SIYCA",
+        "cdx_digest_calculated": "YOXXCL4PDDVJ6MXAYIFYHJ6Z4K6SIYCA",
+        "cdx_digest_match": true,
+        "cdx_length": 11626,
+        "memento_datetime": "2008-04-02T01:41:05+00:00",
+        "content_type": "image/jpeg",
+        "source_status": 200,
+        "raw_body_path": "raw/07-http_www.worldofwarcraft.com_insider_11_images_arena_bladesedgemap.jpg-replay-proxy.body",
+        "raw_headers_path": "raw/07-http_www.worldofwarcraft.com_insider_11_images_arena_bladesedgemap.jpg-replay-proxy.headers.txt",
+        "decode": {
+          "library": "Pillow",
+          "verify": "passed",
+          "load": "passed",
+          "format": "JPEG",
+          "width": 227,
+          "height": 169,
+          "mode": "RGB",
+          "error": null
+        },
+        "valid": true,
+        "reason": "valid_image"
+      },
+      "reason": "valid_image"
+    },
+    {
+      "rank": 4,
+      "url": "http://www.worldofwarcraft.com/insider/11/images/arena/float.gif",
+      "kind": "image",
+      "category": "valid_image",
+      "capture_timestamp": "20080402013957",
+      "captured_original": "http://www.worldofwarcraft.com/insider/11/images/arena/float.gif",
+      "source_status": 200,
+      "actual_memento": "2008-04-02T01:39:57+00:00",
+      "body_bytes": 16394,
+      "body_sha256": "fc98e24b29d243ffd0ec003b86ed913c6946408ed541f3118f0f2e50834e46eb",
+      "validation": {
+        "body_bytes": 16394,
+        "body_sha256": "fc98e24b29d243ffd0ec003b86ed913c6946408ed541f3118f0f2e50834e46eb",
+        "cdx_digest_expected": "NHBZZYYQ66SFVUYNTNX5MRK2YLKR76D5",
+        "cdx_digest_calculated": "NHBZZYYQ66SFVUYNTNX5MRK2YLKR76D5",
+        "cdx_digest_match": true,
+        "cdx_length": 16627,
+        "memento_datetime": "2008-04-02T01:39:57+00:00",
+        "content_type": "image/gif",
+        "source_status": 200,
+        "raw_body_path": "raw/09-http_www.worldofwarcraft.com_insider_11_images_arena_float.gif-replay-proxy.body",
+        "raw_headers_path": "raw/09-http_www.worldofwarcraft.com_insider_11_images_arena_float.gif-replay-proxy.headers.txt",
+        "decode": {
+          "library": "Pillow",
+          "verify": "passed",
+          "load": "passed",
+          "format": "GIF",
+          "width": 271,
+          "height": 190,
+          "mode": "P",
+          "error": null
+        },
+        "valid": true,
+        "reason": "valid_image"
+      },
+      "reason": "valid_image"
+    },
+    {
+      "rank": 5,
+      "url": "http://www.worldofwarcraft.com/insider/11/images/arena/lordaeronmap.gif",
+      "kind": "image",
+      "category": "cdx_empty_in_range",
+      "capture_timestamp": null,
+      "captured_original": null,
+      "source_status": null,
+      "actual_memento": null,
+      "body_bytes": 0,
+      "body_sha256": null,
+      "validation": null,
+      "reason": "no_capture_rows_in_query_range"
+    },
+    {
+      "rank": 6,
+      "url": "http://www.worldofwarcraft.com/insider/11/images/arena/nagrandmap.jpg",
+      "kind": "image",
+      "category": "valid_image",
+      "capture_timestamp": "20080402014001",
+      "captured_original": "http://www.worldofwarcraft.com/insider/11/images/arena/nagrandmap.jpg",
+      "source_status": 200,
+      "actual_memento": "2008-04-02T01:40:01+00:00",
+      "body_bytes": 15951,
+      "body_sha256": "801282a439f86c73116a8dea236433f6057b30ef3eba53a5df984d94dc02c9f6",
+      "validation": {
+        "body_bytes": 15951,
+        "body_sha256": "801282a439f86c73116a8dea236433f6057b30ef3eba53a5df984d94dc02c9f6",
+        "cdx_digest_expected": "BCFMTOJWMGQH6NYSCXUUQMARYGVI2FLU",
+        "cdx_digest_calculated": "BCFMTOJWMGQH6NYSCXUUQMARYGVI2FLU",
+        "cdx_digest_match": true,
+        "cdx_length": 16242,
+        "memento_datetime": "2008-04-02T01:40:01+00:00",
+        "content_type": "image/jpeg",
+        "source_status": 200,
+        "raw_body_path": "raw/12-http_www.worldofwarcraft.com_insider_11_images_arena_nagrandmap.jpg-replay-proxy.body",
+        "raw_headers_path": "raw/12-http_www.worldofwarcraft.com_insider_11_images_arena_nagrandmap.jpg-replay-proxy.headers.txt",
+        "decode": {
+          "library": "Pillow",
+          "verify": "passed",
+          "load": "passed",
+          "format": "JPEG",
+          "width": 224,
+          "height": 194,
+          "mode": "RGB",
+          "error": null
+        },
+        "valid": true,
+        "reason": "valid_image"
+      },
+      "reason": "valid_image"
+    },
+    {
+      "rank": 7,
+      "url": "http://armory.wow-europe.com/images/icons/class/2.png",
+      "kind": "image",
+      "category": "valid_image",
+      "capture_timestamp": "20070313200001",
+      "captured_original": "http://armory.wow-europe.com:80/images/icons/class/2.png",
+      "source_status": 200,
+      "actual_memento": "2007-03-13T20:00:01+00:00",
+      "body_bytes": 1054,
+      "body_sha256": "63cea5cc9b6bc380be4591bbe682510b1e46323155e1290fd22d68674e6249de",
+      "validation": {
+        "body_bytes": 1054,
+        "body_sha256": "63cea5cc9b6bc380be4591bbe682510b1e46323155e1290fd22d68674e6249de",
+        "cdx_digest_expected": "QDATHZQ4V2B2QUXXNR3WNZ7AXCZ6RLDO",
+        "cdx_digest_calculated": "QDATHZQ4V2B2QUXXNR3WNZ7AXCZ6RLDO",
+        "cdx_digest_match": true,
+        "cdx_length": 1413,
+        "memento_datetime": "2007-03-13T20:00:01+00:00",
+        "content_type": "image/png",
+        "source_status": 200,
+        "raw_body_path": "raw/14-http_armory.wow-europe.com_images_icons_class_2.png-replay-proxy.body",
+        "raw_headers_path": "raw/14-http_armory.wow-europe.com_images_icons_class_2.png-replay-proxy.headers.txt",
+        "decode": {
+          "library": "Pillow",
+          "verify": "passed",
+          "load": "passed",
+          "format": "PNG",
+          "width": 21,
+          "height": 21,
+          "mode": "RGBA",
+          "error": null
+        },
+        "valid": true,
+        "reason": "valid_image"
+      },
+      "reason": "valid_image"
+    },
+    {
+      "rank": 8,
+      "url": "http://armory.wow-europe.com/images/icons/race/5-0.png",
+      "kind": "image",
+      "category": "valid_image",
+      "capture_timestamp": "20070313200020",
+      "captured_original": "http://armory.wow-europe.com:80/images/icons/race/5-0.png",
+      "source_status": 200,
+      "actual_memento": "2007-03-13T20:00:20+00:00",
+      "body_bytes": 1052,
+      "body_sha256": "0f2433066ca4b6e61244c212e1c94407fc52bfad9cb406908c7b8e9f8d6958ee",
+      "validation": {
+        "body_bytes": 1052,
+        "body_sha256": "0f2433066ca4b6e61244c212e1c94407fc52bfad9cb406908c7b8e9f8d6958ee",
+        "cdx_digest_expected": "QIOHWTVQ3WC2S5SQYPYAG7CVDFCEJ3U3",
+        "cdx_digest_calculated": "QIOHWTVQ3WC2S5SQYPYAG7CVDFCEJ3U3",
+        "cdx_digest_match": true,
+        "cdx_length": 1413,
+        "memento_datetime": "2007-03-13T20:00:20+00:00",
+        "content_type": "image/png",
+        "source_status": 200,
+        "raw_body_path": "raw/16-http_armory.wow-europe.com_images_icons_race_5-0.png-replay-proxy.body",
+        "raw_headers_path": "raw/16-http_armory.wow-europe.com_images_icons_race_5-0.png-replay-proxy.headers.txt",
+        "decode": {
+          "library": "Pillow",
+          "verify": "passed",
+          "load": "passed",
+          "format": "PNG",
+          "width": 21,
+          "height": 21,
+          "mode": "RGBA",
+          "error": null
+        },
+        "valid": true,
+        "reason": "valid_image"
+      },
+      "reason": "valid_image"
+    },
+    {
+      "rank": 9,
+      "url": "http://armory.wow-europe.com/images/icons/class/1.png",
+      "kind": "image",
+      "category": "valid_image",
+      "capture_timestamp": "20070313195950",
+      "captured_original": "http://armory.wow-europe.com:80/images/icons/class/1.png",
+      "source_status": 200,
+      "actual_memento": "2007-03-13T19:59:50+00:00",
+      "body_bytes": 971,
+      "body_sha256": "531c1d0582fa806b01d00673433e41de17e7141425c90bafa0068143456e91ce",
+      "validation": {
+        "body_bytes": 971,
+        "body_sha256": "531c1d0582fa806b01d00673433e41de17e7141425c90bafa0068143456e91ce",
+        "cdx_digest_expected": "TQBMKTKPDZ33XOZKSXFY6S7TGVCQE4RR",
+        "cdx_digest_calculated": "TQBMKTKPDZ33XOZKSXFY6S7TGVCQE4RR",
+        "cdx_digest_match": true,
+        "cdx_length": 1328,
+        "memento_datetime": "2007-03-13T19:59:50+00:00",
+        "content_type": "image/png",
+        "source_status": 200,
+        "raw_body_path": "raw/18-http_armory.wow-europe.com_images_icons_class_1.png-replay-proxy.body",
+        "raw_headers_path": "raw/18-http_armory.wow-europe.com_images_icons_class_1.png-replay-proxy.headers.txt",
+        "decode": {
+          "library": "Pillow",
+          "verify": "passed",
+          "load": "passed",
+          "format": "PNG",
+          "width": 21,
+          "height": 21,
+          "mode": "RGBA",
+          "error": null
+        },
+        "valid": true,
+        "reason": "valid_image"
+      },
+      "reason": "valid_image"
+    },
+    {
+      "rank": 10,
+      "url": "http://armory.wow-europe.com/images/icons/class/5.png",
+      "kind": "image",
+      "category": "transport_error",
+      "capture_timestamp": null,
+      "captured_original": null,
+      "source_status": null,
+      "actual_memento": null,
+      "body_bytes": 0,
+      "body_sha256": null,
+      "validation": null,
+      "reason": "no_http_status"
+    },
+    {
+      "rank": 11,
+      "url": "http://armory.wow-europe.com/images/icons/class/7.png",
+      "kind": "image",
+      "category": "valid_image",
+      "capture_timestamp": "20080402081053",
+      "captured_original": "http://armory.wow-europe.com/images/icons/class/7.png",
+      "source_status": 200,
+      "actual_memento": "2008-04-02T08:10:53+00:00",
+      "body_bytes": 1011,
+      "body_sha256": "98393dea9bece753aade913a395ab7a509110d88e1fb7a18a025080abe2fcb72",
+      "validation": {
+        "body_bytes": 1011,
+        "body_sha256": "98393dea9bece753aade913a395ab7a509110d88e1fb7a18a025080abe2fcb72",
+        "cdx_digest_expected": "DZEENFK2ONJX7FQR2WD6ROISJLSM66BQ",
+        "cdx_digest_calculated": "DZEENFK2ONJX7FQR2WD6ROISJLSM66BQ",
+        "cdx_digest_match": true,
+        "cdx_length": 1358,
+        "memento_datetime": "2008-04-02T08:10:53+00:00",
+        "content_type": "image/png",
+        "source_status": 200,
+        "raw_body_path": "raw/21-http_armory.wow-europe.com_images_icons_class_7.png-replay-proxy.body",
+        "raw_headers_path": "raw/21-http_armory.wow-europe.com_images_icons_class_7.png-replay-proxy.headers.txt",
+        "decode": {
+          "library": "Pillow",
+          "verify": "passed",
+          "load": "passed",
+          "format": "PNG",
+          "width": 21,
+          "height": 21,
+          "mode": "RGBA",
+          "error": null
+        },
+        "valid": true,
+        "reason": "valid_image"
+      },
+      "reason": "valid_image"
+    },
+    {
+      "rank": 12,
+      "url": "http://armory.wow-europe.com/images/icons/class/9.png",
+      "kind": "image",
+      "category": "valid_image",
+      "capture_timestamp": "20070810182234",
+      "captured_original": "http://armory.wow-europe.com/images/icons/class/9.png",
+      "source_status": 200,
+      "actual_memento": "2007-08-10T18:22:34+00:00",
+      "body_bytes": 1174,
+      "body_sha256": "054933764a7f3f572199e2016e43898b4f16d3b3c159bf404197bfbcc61ae68e",
+      "validation": {
+        "body_bytes": 1174,
+        "body_sha256": "054933764a7f3f572199e2016e43898b4f16d3b3c159bf404197bfbcc61ae68e",
+        "cdx_digest_expected": "2FN74R3QLZL5C5B77FIU6ISSO6DA3A3V",
+        "cdx_digest_calculated": "2FN74R3QLZL5C5B77FIU6ISSO6DA3A3V",
+        "cdx_digest_match": true,
+        "cdx_length": 1525,
+        "memento_datetime": "2007-08-10T18:22:34+00:00",
+        "content_type": "image/png",
+        "source_status": 200,
+        "raw_body_path": "raw/23-http_armory.wow-europe.com_images_icons_class_9.png-replay-proxy.body",
+        "raw_headers_path": "raw/23-http_armory.wow-europe.com_images_icons_class_9.png-replay-proxy.headers.txt",
+        "decode": {
+          "library": "Pillow",
+          "verify": "passed",
+          "load": "passed",
+          "format": "PNG",
+          "width": 21,
+          "height": 21,
+          "mode": "RGBA",
+          "error": null
+        },
+        "valid": true,
+        "reason": "valid_image"
+      },
+      "reason": "valid_image"
+    },
+    {
+      "rank": 13,
+      "url": "http://armory.wow-europe.com/images/icons/class/4.png",
+      "kind": "image",
+      "category": "transport_error",
+      "capture_timestamp": null,
+      "captured_original": null,
+      "source_status": null,
+      "actual_memento": null,
+      "body_bytes": 0,
+      "body_sha256": null,
+      "validation": null,
+      "reason": "no_http_status"
+    },
+    {
+      "rank": 14,
+      "url": "http://armory.wow-europe.com/images/icons/class/8.png",
+      "kind": "image",
+      "category": "valid_image",
+      "capture_timestamp": "20070313200100",
+      "captured_original": "http://armory.wow-europe.com:80/images/icons/class/8.png",
+      "source_status": 200,
+      "actual_memento": "2007-03-13T20:01:00+00:00",
+      "body_bytes": 985,
+      "body_sha256": "6eb8a260bf7cff92e7a33102354e4c997778fd6b3a5b2ea392e279f38f068af0",
+      "validation": {
+        "body_bytes": 985,
+        "body_sha256": "6eb8a260bf7cff92e7a33102354e4c997778fd6b3a5b2ea392e279f38f068af0",
+        "cdx_digest_expected": "FT5VKZN6KLW2Z72CZ6IIYVZRDEPN2DSY",
+        "cdx_digest_calculated": "FT5VKZN6KLW2Z72CZ6IIYVZRDEPN2DSY",
+        "cdx_digest_match": true,
+        "cdx_length": 1345,
+        "memento_datetime": "2007-03-13T20:01:00+00:00",
+        "content_type": "image/png",
+        "source_status": 200,
+        "raw_body_path": "raw/26-http_armory.wow-europe.com_images_icons_class_8.png-replay-proxy.body",
+        "raw_headers_path": "raw/26-http_armory.wow-europe.com_images_icons_class_8.png-replay-proxy.headers.txt",
+        "decode": {
+          "library": "Pillow",
+          "verify": "passed",
+          "load": "passed",
+          "format": "PNG",
+          "width": 21,
+          "height": 21,
+          "mode": "RGBA",
+          "error": null
+        },
+        "valid": true,
+        "reason": "valid_image"
+      },
+      "reason": "valid_image"
+    },
+    {
+      "rank": 15,
+      "url": "http://armory.wow-europe.com/images/icons/race/10-1.png",
+      "kind": "image",
+      "category": "transport_error",
+      "capture_timestamp": null,
+      "captured_original": null,
+      "source_status": null,
+      "actual_memento": null,
+      "body_bytes": 0,
+      "body_sha256": null,
+      "validation": null,
+      "reason": "no_http_status"
+    }
+  ],
+  "asset_source_map_entries": 11,
+  "redirect_evidence_count": 0,
+  "raw_local_only": true,
+  "no_entity_copied_into_mirror": true
+}

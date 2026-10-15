@@ -1,0 +1,2074 @@
+{
+  "schema": "wow-recovery.local-salvage-proposals.v1",
+  "task_id": "LOCAL-RESOURCE-DEDUP-003",
+  "generated_utc": "2026-10-15T08:15:06.045628Z",
+  "network_performed": false,
+  "network_request_count": 0,
+  "salvage_status": "no_exact_url_local_salvage_found",
+  "lookup_scope": {
+    "approved_maps": [
+      "offline/approved-static-recovery-map.json",
+      "offline/approved-static-temporal-supplement-map.json",
+      "offline/approved-static-pre2008-supplement-map.json",
+      "offline/approved-pages-recovery-map.json",
+      "offline/approved-pages-temporal-supplement-map.json"
+    ],
+    "manifest": ".scratch/offline-navigation-20261015-v7c/build-manifest.json",
+    "comparison": "exact canonical origin+URL only; scheme/host case and default port normalization only",
+    "excluded": [
+      "basename-only search",
+      "cross-host/path substitution",
+      "whole-workspace raw scan",
+      "network"
+    ]
+  },
+  "summary": {
+    "pages": 4,
+    "unique_literal_urls": 217,
+    "exact_local_verified_urls": 0,
+    "exact_map_records_unverified": 0,
+    "network_candidates": 217,
+    "asset_network_candidates": 102,
+    "navigation_or_footer_unique_urls": 113,
+    "script_condition_unique_urls": 2,
+    "script_condition_occurrences": 4
+  },
+  "page_proposals": [
+    {
+      "proposal_id": "page-salvage-zandalar_quests",
+      "page_key": "zandalar_quests",
+      "route": "/info/basics/factions/zandalar/quests.html",
+      "derived_path": ".scratch/pages-resources-20261015-v8/info/basics/factions/zandalar/quests.html",
+      "literal_unique_urls": 34,
+      "page_body_candidates": 0,
+      "shared_template_candidates": 2,
+      "exact_local_verified_urls": [],
+      "exact_map_unverified_urls": [],
+      "recommendation": "No exact local payload can be salvaged from the approved maps/v7c manifest for this page; use the bounded exact-URL queue, then add approved entities by exact origin and URL."
+    },
+    {
+      "proposal_id": "page-salvage-eu_regionals",
+      "page_key": "eu_regionals",
+      "route": "/community/tournaments/euregionals/index.html",
+      "derived_path": ".scratch/pages-resources-20261015-v8/community/tournaments/euregionals/index.html",
+      "literal_unique_urls": 175,
+      "page_body_candidates": 24,
+      "shared_template_candidates": 53,
+      "exact_local_verified_urls": [],
+      "exact_map_unverified_urls": [],
+      "recommendation": "No exact local payload can be salvaged from the approved maps/v7c manifest for this page; use the bounded exact-URL queue, then add approved entities by exact origin and URL."
+    },
+    {
+      "proposal_id": "page-salvage-insider11_arena",
+      "page_key": "insider11_arena",
+      "route": "/insider/11/arena.xml",
+      "derived_path": ".scratch/pages-resources-20261015-v8/insider/11/arena.xml.html",
+      "literal_unique_urls": 54,
+      "page_body_candidates": 5,
+      "shared_template_candidates": 19,
+      "exact_local_verified_urls": [],
+      "exact_map_unverified_urls": [],
+      "recommendation": "No exact local payload can be salvaged from the approved maps/v7c manifest for this page; use the bounded exact-URL queue, then add approved entities by exact origin and URL."
+    },
+    {
+      "proposal_id": "page-salvage-high_level_options",
+      "page_key": "high_level_options",
+      "route": "/info/basics/highleveloptions.html",
+      "derived_path": ".scratch/pages-resources-20261015-v8/info/basics/highleveloptions.html",
+      "literal_unique_urls": 41,
+      "page_body_candidates": 0,
+      "shared_template_candidates": 3,
+      "exact_local_verified_urls": [],
+      "exact_map_unverified_urls": [],
+      "recommendation": "No exact local payload can be salvaged from the approved maps/v7c manifest for this page; use the bounded exact-URL queue, then add approved entities by exact origin and URL."
+    }
+  ],
+  "shared_resource_proposals": [
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://armory.wow-europe.com/images/arena-badge-bg.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 375,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": "min-height: 75px; } .arenaHeader, .arenaBody { position: relative; left: -10px; } .team-members { padding: 0 0 0 4px; } .arenaTeam-name,.arenaTeam-data { padding: 0 0 0 90; width: 60%; float: left; } .arenaTeam-badge { float: right; width: 150px; height: 200px; background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Farena-badge-bg.gif&reason=external-or-uncollected-resource\") no-repeat 4px 16px; position: relative; margin: 0 0 -20px 0; } .arenaBadge-icon { width: 149px; height: 82px; background-position:48px 11px; background-repeat:no-repeat; background-image: none; position: absolute; bottom:14px; right:-4px; } .arenaBadge-icon img { width:149px; height:82px;} .teamSide0 { backgr"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://armory.wow-europe.com/images/data-head.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 329,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": "cted-resource\") no-repeat; right: -10px; } tr.masthead p, tr.masthead b, tr.data0 p, tr.data0 b, tr.data1 p, tr.data1 b, tr.data2 p, tr.data2 b,tr.data3 p, tr.data3 b { margin: 0; padding: 0; position: absolute; top: 0; height: 27px; width: 30px; } tr.masthead td { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Fdata-head.gif&reason=external-or-uncollected-resource\") repeat-x 0 0; font-weight: bold; height: 27px; font-size: 12px; color: white; } /* Images */ .border-topleft {background:url(\"/WOW-Encyclopedia-Deployable-Archive/shared/wow-com/images/borders/gold-thin/top-left.gif\") top left no-repeat; width:3px; height:2px;} .border-topright {background:url(\"/WOW-Encyclopedia-D"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://armory.wow-europe.com/images/data-head0.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 326,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": "2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Fmh-bg2.gif&reason=external-or-uncollected-resource\") repeat; border: 1px solid #914d02; border-top: 1px solid white; margin: 1px 1px 0 1px; text-decoration: none; } tr.masthead p { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Fdata-head0.gif&reason=external-or-uncollected-resource\") no-repeat; left: -10px; } tr.masthead b { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Fdata-head1.gif&reason=external-o"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://armory.wow-europe.com/images/data-head1.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 327,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": "e.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Fdata-head0.gif&reason=external-or-uncollected-resource\") no-repeat; left: -10px; } tr.masthead b { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Fdata-head1.gif&reason=external-or-uncollected-resource\") no-repeat; right: -10px; } tr.masthead p, tr.masthead b, tr.data0 p, tr.data0 b, tr.data1 p, tr.data1 b, tr.data2 p, tr.data2 b,tr.data3 p, tr.data3 b { margin: 0; padding: 0; position: absolute; top: 0; height: 27px; width: 30px; } tr.masthead td { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/mis"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://armory.wow-europe.com/images/data0.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 399,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": "2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Ftr.png&reason=external-or-uncollected-resource\") repeat-y 0 0; } tr span { position: relative; z-index: 25; } .list h1 { padding: 10px 10px 0 7px; } tr.data0 td { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Fdata0.gif&reason=external-or-uncollected-resource\") repeat-x 0 0; } tr.data1 td { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Fdata1.gif&reason=external-or-uncollected-resour"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://armory.wow-europe.com/images/data1.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 400,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": "offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Fdata0.gif&reason=external-or-uncollected-resource\") repeat-x 0 0; } tr.data1 td { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Fdata1.gif&reason=external-or-uncollected-resource\") repeat-x 0 0; } tr.data2 td { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Fdata2.gif&reason=external-or-uncollected-resour"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://armory.wow-europe.com/images/data2.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 401,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": "offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Fdata1.gif&reason=external-or-uncollected-resource\") repeat-x 0 0; } tr.data2 td { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Fdata2.gif&reason=external-or-uncollected-resource\") repeat-x 0 0; } tr.data3 td { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Fdata3.gif&reason=external-or-uncollected-resour"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://armory.wow-europe.com/images/data3.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 402,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": "offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Fdata2.gif&reason=external-or-uncollected-resource\") repeat-x 0 0; } tr.data3 td { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Fdata3.gif&reason=external-or-uncollected-resource\") repeat-x 0 0; } tr.data0:hover td, tr.data1:hover td, tr.data3:hover td, a.data1:hover td, a.data0:hover td, a.data3:hover { background-position: 0 -27px; } tr.data3:hover td a, tr.data3:hover td span { color: black !important; } tr.data3:hover td a:hover { color: #b00700 !important; } #big-results tr.data0:hover td"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://armory.wow-europe.com/images/icons/battlegroup.png",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 393,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": "%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Ficons%2Frealm.png&reason=external-or-uncollected-resource\") no-repeat 0 0; display: block; height: 26px; width: 26px; float: left !important; } .arenaRealm-info a.battlegroup-icon { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Ficons%2Fbattlegroup.png&reason=external-or-uncollected-resource\") no-repeat 0 0; display: block; height: 26px; width: 26px; float: left !important; } .arenaTeam-name em { width: 100%; height: 1px; font-size: 1px; margin-top: 0px; background: #c9a641; border-bottom: 1px solid #fbe4a1; display: block;} table.data-table p { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__o"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://armory.wow-europe.com/images/icons/icon-guildmaster.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 354,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": " white !important;} table.dataRepop span { visibility: hidden; } table.data-table div { position: relative; z-index:13; height: 27px; width: 1px; } table.data-table a strong { position: relative; z-index: 20; font-size: 12px; font-weight: bold; } h4.gm, strong.gm { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Ficons%2Ficon-guildmaster.gif&reason=external-or-uncollected-resource\") no-repeat 0 0; padding: 0 0 0 23px; } table.data-table a, table.data-table a:active, table.data-table a:visited { color: #005ba1; text-decoration: none; white-space: nowrap; } table.data-table a:hover { color: #b00700; text-decoration: underline; } a.standing-link { z-index: 105899; position: absolute; top:60px; ri"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://armory.wow-europe.com/images/icons/realm.png",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 392,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": "rgin-top: -4px; display: table; } .arenaRealm-info a, .arenaRealm-info a:active,.arenaRealm-info a:visited { font-size: 11px; font-weight: bold;} .arenaRealm-info p { margin: 0; padding:4px 10px 0 6px; height: 26px; float: left; } .arenaRealm-info a.realm-icon { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Ficons%2Frealm.png&reason=external-or-uncollected-resource\") no-repeat 0 0; display: block; height: 26px; width: 26px; float: left !important; } .arenaRealm-info a.battlegroup-icon { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=h"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://armory.wow-europe.com/images/mh-bg.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 323,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": ".com%2Fimages%2Ftip-bot1.gif&reason=external-or-uncollected-resource\") repeat-x; } tr.masthead a, tr.masthead a:active, tr.masthead a:visited { display:block; height: 20px; padding: 4px 0 0 3px; white-space: nowrap; color: white !important; border: none; background: #a54f00 url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Fmh-bg.gif&reason=external-or-uncollected-resource\") repeat; border: 1px solid #914d02; margin: 1px 1px 0 1px; text-decoration: none; } tr.masthead a:hover { border-top: 1px solid white; text-decoration: none; background: #a54f00 url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournam"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://armory.wow-europe.com/images/mh-bg2.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 2,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 324,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": "ed=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Fmh-bg.gif&reason=external-or-uncollected-resource\") repeat; border: 1px solid #914d02; margin: 1px 1px 0 1px; text-decoration: none; } tr.masthead a:hover { border-top: 1px solid white; text-decoration: none; background: #a54f00 url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Fmh-bg2.gif&reason=external-or-uncollected-resource\") repeat; } tr.masthead a.mastSort { display:block; height: 20px; padding: 4px 0 0 3px; white-space: nowrap; color: white !important; border: none; background: #a54f00 url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feure"
+        },
+        {
+          "page_key": "eu_regionals",
+          "line": 325,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": "ml&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Fmh-bg2.gif&reason=external-or-uncollected-resource\") repeat; } tr.masthead a.mastSort { display:block; height: 20px; padding: 4px 0 0 3px; white-space: nowrap; color: white !important; border: none; background: #a54f00 url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Fmh-bg2.gif&reason=external-or-uncollected-resource\") repeat; border: 1px solid #914d02; border-top: 1px solid white; margin: 1px 1px 0 1px; text-decoration: none; } tr.masthead p { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&req"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://armory.wow-europe.com/images/parch-bevel-top.jpg",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 368,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": "osition: absolute; top: 14px; left: 5px; } .team-icon-flash { position: absolute; top: 14px; left: 5px; } strong.noicon { padding: 0 0 0 23px; } /* Arena */ /*_______________________________________________________________*/ .arenaTeam-wrapper, .arenaTeam-right { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Fparch-bevel-top.jpg&reason=external-or-uncollected-resource\") repeat-x 0 0; position: relative; } .arenaTeam-wrapper { top: -10px; left: -10px; } .arenaTeam-right { right: -20px; } .arenaHeader { min-height: 75px; } .arenaHeader, .arenaBody { position: relative; left: -10px; } .team-members { padding: 0 0 0 4px; } .arenaTeam-name,.arenaTeam-data { padding: 0 0 0 90; "
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://armory.wow-europe.com/images/teamside-alliance.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 378,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": "n: 0 0 -20px 0; } .arenaBadge-icon { width: 149px; height: 82px; background-position:48px 11px; background-repeat:no-repeat; background-image: none; position: absolute; bottom:14px; right:-4px; } .arenaBadge-icon img { width:149px; height:82px;} .teamSide0 { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Fteamside-alliance.gif&reason=external-or-uncollected-resource\") no-repeat 4px 0; width: 150px; height: 51px; margin: 13px 0 0 0;} .teamSide1 { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fima"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://armory.wow-europe.com/images/teamside-default.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 380,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": "aft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Fteamside-horde.gif&reason=external-or-uncollected-resource\") no-repeat 4px 0; width: 150px; height: 51px; margin: 13px 0 0 0;} .teamSide-1 { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Fteamside-default.gif&reason=external-or-uncollected-resource\") no-repeat 4px 0; width: 150px; height: 51px; margin: 13px 0 0 0;} .teamRank { position: relative; left: 4px; top: -7px; text-align: center; font: 18px Georgia, \"Times New Roman\", Times, serif; color: #b29c62; } .teamRank span { font-size: 11px; font-weight: bold; } .teamRank p { padding: 0; margin:0; line-"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://armory.wow-europe.com/images/teamside-horde.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 379,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": ".com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Fteamside-alliance.gif&reason=external-or-uncollected-resource\") no-repeat 4px 0; width: 150px; height: 51px; margin: 13px 0 0 0;} .teamSide1 { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Fteamside-horde.gif&reason=external-or-uncollected-resource\") no-repeat 4px 0; width: 150px; height: 51px; margin: 13px 0 0 0;} .teamSide-1 { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fima"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://armory.wow-europe.com/images/tip-bg1.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 316,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": "offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Ftip-right.gif&reason=external-or-uncollected-resource\") repeat-y; } td.tip-bg { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Ftip-bg1.gif&reason=external-or-uncollected-resource\") repeat; } td.tip-bot-left { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Ftip-bot-left.gif&reason=external-or-uncollected-"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://armory.wow-europe.com/images/tip-bot-left.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 317,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": "ffline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Ftip-bg1.gif&reason=external-or-uncollected-resource\") repeat; } td.tip-bot-left { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Ftip-bot-left.gif&reason=external-or-uncollected-resource\") no-repeat; } td.tip-bot-right { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Ftip-bot-right.gif&reason=external-or-uncolle"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://armory.wow-europe.com/images/tip-bot-right.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 318,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": "ssing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Ftip-bot-left.gif&reason=external-or-uncollected-resource\") no-repeat; } td.tip-bot-right { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Ftip-bot-right.gif&reason=external-or-uncollected-resource\") no-repeat; } td.tip-bot { width: auto; background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Ftip-bot1.gif&reason=external-or-unco"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://armory.wow-europe.com/images/tip-bot1.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 319,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": "ge.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Ftip-bot-right.gif&reason=external-or-uncollected-resource\") no-repeat; } td.tip-bot { width: auto; background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Ftip-bot1.gif&reason=external-or-uncollected-resource\") repeat-x; } tr.masthead a, tr.masthead a:active, tr.masthead a:visited { display:block; height: 20px; padding: 4px 0 0 3px; white-space: nowrap; color: white !important; border: none; background: #a54f00 url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft."
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://armory.wow-europe.com/images/tip-left.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 314,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": "ffline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Ftip-top1.gif&reason=external-or-uncollected-resource\") repeat-x; } td.tip-left { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Ftip-left.gif&reason=external-or-uncollected-resource\") repeat-y; } td.tip-right { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Ftip-right.gif&reason=external-or-uncollected-res"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://armory.wow-europe.com/images/tip-right.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 315,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": "fline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Ftip-left.gif&reason=external-or-uncollected-resource\") repeat-y; } td.tip-right { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Ftip-right.gif&reason=external-or-uncollected-resource\") repeat-y; } td.tip-bg { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Ftip-bg1.gif&reason=external-or-uncollected-resource"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://armory.wow-europe.com/images/tip-top-left.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 311,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": "e td { padding: 0; } td.tip-top-left, td.tip-top, td.tip-top-right, td.tip-bot-left, td.tip-bot, td.tip-bot-right { height: 13px; } td.tip-top-left, td.tip-top-right, td.tip-left, td.tip-right, td.tip-bot-left, td.tip-bot-right { width: 13px; } td.tip-top-left { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Ftip-top-left.gif&reason=external-or-uncollected-resource\") no-repeat; } td.tip-top-right { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Ftip-top-right.gif&reason=external-or-uncolle"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://armory.wow-europe.com/images/tip-top-right.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 312,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": "ssing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Ftip-top-left.gif&reason=external-or-uncollected-resource\") no-repeat; } td.tip-top-right { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Ftip-top-right.gif&reason=external-or-uncollected-resource\") no-repeat; } td.tip-top { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Ftip-top1.gif&reason=external-or-uncollected-resou"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://armory.wow-europe.com/images/tip-top1.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 313,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": "e/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Ftip-top-right.gif&reason=external-or-uncollected-resource\") no-repeat; } td.tip-top { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Ftip-top1.gif&reason=external-or-uncollected-resource\") repeat-x; } td.tip-left { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Ftip-left.gif&reason=external-or-uncollected-resou"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://armory.wow-europe.com/images/tl.png",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 395,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": "rce\") no-repeat 0 0; display: block; height: 26px; width: 26px; float: left !important; } .arenaTeam-name em { width: 100%; height: 1px; font-size: 1px; margin-top: 0px; background: #c9a641; border-bottom: 1px solid #fbe4a1; display: block;} table.data-table p { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Ftl.png&reason=external-or-uncollected-resource\") repeat-y 0 0; } table.data-table b { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Ftr.png&reason=external-or-uncollected-r"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://armory.wow-europe.com/images/tr.png",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 396,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": "ne/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Ftl.png&reason=external-or-uncollected-resource\") repeat-y 0 0; } table.data-table b { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Farmory.wow-europe.com%2Fimages%2Ftr.png&reason=external-or-uncollected-resource\") repeat-y 0 0; } tr span { position: relative; z-index: 25; } .list h1 { padding: 10px 10px 0 7px; } tr.data0 td { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=htt"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://blizzard.co.uk/battlenet/tournaments/season4/images/icon_h.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 1606,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fblizzard.co.uk%2Fbattlenet%2Ftournaments%2Fseason4%2Fimages%2Ficon_h.gif&amp;reason=external-or-uncollected-resource\" border=\"0\" />"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://blizzard.co.uk/battlenet/tournaments/season4/images/icon_n.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 2,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 1617,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fblizzard.co.uk%2Fbattlenet%2Ftournaments%2Fseason4%2Fimages%2Ficon_n.gif&amp;reason=external-or-uncollected-resource\" border=\"0\" />"
+        },
+        {
+          "page_key": "eu_regionals",
+          "line": 1628,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fblizzard.co.uk%2Fbattlenet%2Ftournaments%2Fseason4%2Fimages%2Ficon_n.gif&amp;reason=external-or-uncollected-resource\" border=\"0\" />"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://blizzard.co.uk/battlenet/tournaments/season4/images/icon_o.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 3,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 1595,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fblizzard.co.uk%2Fbattlenet%2Ftournaments%2Fseason4%2Fimages%2Ficon_o.gif&amp;reason=external-or-uncollected-resource\" border=\"0\" />"
+        },
+        {
+          "page_key": "eu_regionals",
+          "line": 1650,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fblizzard.co.uk%2Fbattlenet%2Ftournaments%2Fseason4%2Fimages%2Ficon_o.gif&amp;reason=external-or-uncollected-resource\" border=\"0\" />"
+        },
+        {
+          "page_key": "eu_regionals",
+          "line": 1672,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fblizzard.co.uk%2Fbattlenet%2Ftournaments%2Fseason4%2Fimages%2Ficon_o.gif&amp;reason=external-or-uncollected-resource\" border=\"0\" />"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://blizzard.co.uk/battlenet/tournaments/season4/images/icon_u.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 2,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 1639,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fblizzard.co.uk%2Fbattlenet%2Ftournaments%2Fseason4%2Fimages%2Ficon_u.gif&amp;reason=external-or-uncollected-resource\" border=\"0\" />"
+        },
+        {
+          "page_key": "eu_regionals",
+          "line": 1661,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fblizzard.co.uk%2Fbattlenet%2Ftournaments%2Fseason4%2Fimages%2Ficon_u.gif&amp;reason=external-or-uncollected-resource\" border=\"0\" />"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "layout_spacer",
+      "exact_url": "http://imgs.worldofwarcraft.co.kr/images/b.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 232,
+      "page_coverage": [
+        "high_level_options",
+        "zandalar_quests"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "zandalar_quests",
+          "line": 701,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fzandalar%2Fquests.html&amp;requested=http%3A%2F%2Fimgs.worldofwarcraft.co.kr%2Fimages%2Fb.gif&amp;reason=external-or-uncollected-resource\" width=\"1\" height=\"1\">"
+        },
+        {
+          "page_key": "zandalar_quests",
+          "line": 705,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fzandalar%2Fquests.html&amp;requested=http%3A%2F%2Fimgs.worldofwarcraft.co.kr%2Fimages%2Fb.gif&amp;reason=external-or-uncollected-resource\" width=\"1\" height=\"1\">"
+        },
+        {
+          "page_key": "zandalar_quests",
+          "line": 756,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fzandalar%2Fquests.html&amp;requested=http%3A%2F%2Fimgs.worldofwarcraft.co.kr%2Fimages%2Fb.gif&amp;reason=external-or-uncollected-resource\" width=\"1\" height=\"1\">"
+        },
+        {
+          "page_key": "zandalar_quests",
+          "line": 760,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fzandalar%2Fquests.html&amp;requested=http%3A%2F%2Fimgs.worldofwarcraft.co.kr%2Fimages%2Fb.gif&amp;reason=external-or-uncollected-resource\" width=\"1\" height=\"1\">"
+        },
+        {
+          "page_key": "zandalar_quests",
+          "line": 784,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fzandalar%2Fquests.html&amp;requested=http%3A%2F%2Fimgs.worldofwarcraft.co.kr%2Fimages%2Fb.gif&amp;reason=external-or-uncollected-resource\" width=\"1\" height=\"1\">"
+        },
+        {
+          "page_key": "zandalar_quests",
+          "line": 788,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fzandalar%2Fquests.html&amp;requested=http%3A%2F%2Fimgs.worldofwarcraft.co.kr%2Fimages%2Fb.gif&amp;reason=external-or-uncollected-resource\" width=\"1\" height=\"1\">"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": "Proposal only: if the exact 1x1 spacer causes observed layout damage, add a derived-layer transparent 1x1 fallback matching the recorded markup; do not call the original entity recovered and do not edit production here."
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.battle.net/war3/images/ladder-revise/rankingborder-bot-right.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 4,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 1694,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fwww.battle.net%2Fwar3%2Fimages%2Fladder-revise%2Frankingborder-bot-right.gif&amp;reason=external-or-uncollected-resource\" height=\"12\" width=\"16\">"
+        },
+        {
+          "page_key": "eu_regionals",
+          "line": 1696,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fwww.battle.net%2Fwar3%2Fimages%2Fladder-revise%2Frankingborder-bot-right.gif&amp;reason=external-or-uncollected-resource\" height=\"12\" width=\"16\">"
+        },
+        {
+          "page_key": "eu_regionals",
+          "line": 2469,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fwww.battle.net%2Fwar3%2Fimages%2Fladder-revise%2Frankingborder-bot-right.gif&amp;reason=external-or-uncollected-resource\" height=\"12\" width=\"16\">"
+        },
+        {
+          "page_key": "eu_regionals",
+          "line": 2471,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fwww.battle.net%2Fwar3%2Fimages%2Fladder-revise%2Frankingborder-bot-right.gif&amp;reason=external-or-uncollected-resource\" height=\"12\" width=\"16\">"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.battle.net/war3/images/ladder-revise/rankingborder-bot.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 2,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 1690,
+          "tag": "td",
+          "attribute": "background",
+          "context_kind": "markup",
+          "context": "<td background=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fwww.battle.net%2Fwar3%2Fimages%2Fladder-revise%2Frankingborder-bot.gif&amp;reason=external-or-uncollected-resource\">"
+        },
+        {
+          "page_key": "eu_regionals",
+          "line": 2465,
+          "tag": "td",
+          "attribute": "background",
+          "context_kind": "markup",
+          "context": "<td background=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fwww.battle.net%2Fwar3%2Fimages%2Fladder-revise%2Frankingborder-bot.gif&amp;reason=external-or-uncollected-resource\">"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.battle.net/war3/images/ladder-revise/rankingborder-left-bot.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 2,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 1573,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fwww.battle.net%2Fwar3%2Fimages%2Fladder-revise%2Frankingborder-left-bot.gif&amp;reason=external-or-uncollected-resource\" height=\"10\" width=\"10\" border=\"0\">"
+        },
+        {
+          "page_key": "eu_regionals",
+          "line": 1775,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fwww.battle.net%2Fwar3%2Fimages%2Fladder-revise%2Frankingborder-left-bot.gif&amp;reason=external-or-uncollected-resource\" height=\"10\" width=\"10\" border=\"0\">"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.battle.net/war3/images/ladder-revise/rankingborder-left.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 2,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 1572,
+          "tag": "td",
+          "attribute": "background",
+          "context_kind": "markup",
+          "context": "<td background=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fwww.battle.net%2Fwar3%2Fimages%2Fladder-revise%2Frankingborder-left.gif&amp;reason=external-or-uncollected-resource\" valign=\"bottom\" width=\"10\">"
+        },
+        {
+          "page_key": "eu_regionals",
+          "line": 1774,
+          "tag": "td",
+          "attribute": "background",
+          "context_kind": "markup",
+          "context": "<td background=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fwww.battle.net%2Fwar3%2Fimages%2Fladder-revise%2Frankingborder-left.gif&amp;reason=external-or-uncollected-resource\" valign=\"bottom\" width=\"10\">"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.battle.net/war3/images/ladder-revise/rankingborder-right-bot.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 2,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 1682,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fwww.battle.net%2Fwar3%2Fimages%2Fladder-revise%2Frankingborder-right-bot.gif&amp;reason=external-or-uncollected-resource\" height=\"10\" width=\"10\" border=\"0\">"
+        },
+        {
+          "page_key": "eu_regionals",
+          "line": 2456,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fwww.battle.net%2Fwar3%2Fimages%2Fladder-revise%2Frankingborder-right-bot.gif&amp;reason=external-or-uncollected-resource\" height=\"10\" width=\"10\" border=\"0\">"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.battle.net/war3/images/ladder-revise/rankingborder-right.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 2,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 1681,
+          "tag": "td",
+          "attribute": "background",
+          "context_kind": "markup",
+          "context": "<td background=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fwww.battle.net%2Fwar3%2Fimages%2Fladder-revise%2Frankingborder-right.gif&amp;reason=external-or-uncollected-resource\" valign=\"bottom\" width=\"10\">"
+        },
+        {
+          "page_key": "eu_regionals",
+          "line": 2455,
+          "tag": "td",
+          "attribute": "background",
+          "context_kind": "markup",
+          "context": "<td background=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fwww.battle.net%2Fwar3%2Fimages%2Fladder-revise%2Frankingborder-right.gif&amp;reason=external-or-uncollected-resource\" valign=\"bottom\" width=\"10\">"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.battle.net/war3/images/ladder-revise/rankingborder-top-left.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 4,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 1561,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fwww.battle.net%2Fwar3%2Fimages%2Fladder-revise%2Frankingborder-top-left.gif&amp;reason=external-or-uncollected-resource\" height=\"14\" width=\"16\">"
+        },
+        {
+          "page_key": "eu_regionals",
+          "line": 1563,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fwww.battle.net%2Fwar3%2Fimages%2Fladder-revise%2Frankingborder-top-left.gif&amp;reason=external-or-uncollected-resource\" height=\"14\" width=\"16\">"
+        },
+        {
+          "page_key": "eu_regionals",
+          "line": 1762,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fwww.battle.net%2Fwar3%2Fimages%2Fladder-revise%2Frankingborder-top-left.gif&amp;reason=external-or-uncollected-resource\" height=\"14\" width=\"16\">"
+        },
+        {
+          "page_key": "eu_regionals",
+          "line": 1764,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fwww.battle.net%2Fwar3%2Fimages%2Fladder-revise%2Frankingborder-top-left.gif&amp;reason=external-or-uncollected-resource\" height=\"14\" width=\"16\">"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.battle.net/war3/images/ladder-revise/rankingborder-top.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 2,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 1557,
+          "tag": "td",
+          "attribute": "background",
+          "context_kind": "markup",
+          "context": "<td background=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fwww.battle.net%2Fwar3%2Fimages%2Fladder-revise%2Frankingborder-top.gif&amp;reason=external-or-uncollected-resource\">"
+        },
+        {
+          "page_key": "eu_regionals",
+          "line": 1758,
+          "tag": "td",
+          "attribute": "background",
+          "context_kind": "markup",
+          "context": "<td background=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fwww.battle.net%2Fwar3%2Fimages%2Fladder-revise%2Frankingborder-top.gif&amp;reason=external-or-uncollected-resource\">"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.battle.net/war3/images/pixel.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 4,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 1562,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fwww.battle.net%2Fwar3%2Fimages%2Fpixel.gif&amp;reason=external-or-uncollected-resource\" height=\"14\" width=\"290px\">"
+        },
+        {
+          "page_key": "eu_regionals",
+          "line": 1695,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fwww.battle.net%2Fwar3%2Fimages%2Fpixel.gif&amp;reason=external-or-uncollected-resource\" height=\"12\" width=\"290px\" border=\"0\">"
+        },
+        {
+          "page_key": "eu_regionals",
+          "line": 1763,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fwww.battle.net%2Fwar3%2Fimages%2Fpixel.gif&amp;reason=external-or-uncollected-resource\" height=\"14\" width=\"590px\">"
+        },
+        {
+          "page_key": "eu_regionals",
+          "line": 2470,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fwww.battle.net%2Fwar3%2Fimages%2Fpixel.gif&amp;reason=external-or-uncollected-resource\" height=\"12\" width=\"590px\" border=\"0\">"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.blizzard.com/wwi2007/photos/coree1-040-thumb.jpg",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 2809,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Fwwi2007%2Fphotos%2Fcoree1-040-thumb.jpg&amp;reason=external-or-uncollected-resource\" border=\"0\" width=\"165\" height=\"111\" />"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.blizzard.com/wwi2007/photos/coree1-042-thumb.jpg",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 2831,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Fwwi2007%2Fphotos%2Fcoree1-042-thumb.jpg&amp;reason=external-or-uncollected-resource\" border=\"0\" width=\"165\" height=\"110\" />"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.blizzard.com/wwi2007/photos/coree1-065-thumb.jpg",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 2856,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Fwwi2007%2Fphotos%2Fcoree1-065-thumb.jpg&amp;reason=external-or-uncollected-resource\" border=\"0\" width=\"165\" height=\"110\" />"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.blizzard.com/wwi2007/photos/coree1-144-thumb.jpg",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 2879,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Fwwi2007%2Fphotos%2Fcoree1-144-thumb.jpg&amp;reason=external-or-uncollected-resource\" border=\"0\" width=\"165\" height=\"110\" />"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.blizzard.com/wwi2007/photos/coree1-169-thumb.jpg",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 2787,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Fwwi2007%2Fphotos%2Fcoree1-169-thumb.jpg&amp;reason=external-or-uncollected-resource\" border=\"0\" width=\"165\" height=\"110\" />"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.blizzard.com/wwi2007/photos/coree1-200-thumb.jpg",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 2902,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Fwwi2007%2Fphotos%2Fcoree1-200-thumb.jpg&amp;reason=external-or-uncollected-resource\" border=\"0\" width=\"165\" height=\"110\" />"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "analytics_script",
+      "exact_url": "http://www.google-analytics.com/ga.js",
+      "asset_role": "script",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "insider11_arena"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "insider11_arena",
+          "line": 1167,
+          "tag": "script",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<script src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/empty.js?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F11%2Farena.xml&amp;requested=http%3A%2F%2Fwww.google-analytics.com%2Fga.js&amp;reason=external-or-uncollected-resource\" type=\"text/javascript\">"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.worldofwarcraft.com/burningcrusade/townhall/images/story/screener-ml.jpg",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 2,
+      "page_coverage": [
+        "eu_regionals",
+        "insider11_arena"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 273,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": "hive/burningcrusade/townhall/images/story/screener-tl.jpg') no-repeat bottom left; }\\ #top div div { background: url('/WOW-Encyclopedia-Deployable-Archive/burningcrusade/townhall/images/story/screener-tr.jpg') no-repeat bottom right; height: 21px; }\\ #mid div { background: url('/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fburningcrusade%2Ftownhall%2Fimages%2Fstory%2Fscreener-ml.jpg&reason=external-or-uncollected-resource') repeat-y bottom left; }\\ #mid div div { background: url('/WOW-Encyclopedia-Deployable-Archive/burningcrusade/townhall/images/story/screener-mr.jpg') repeat-y bottom right; }\\ #bot { background: url('/WOW-Encyclopedia-Deployable-Archive/burningcrusade/townhall/images/story/screener-bbg.jpg') repeat-x bottom; }\\ "
+        },
+        {
+          "page_key": "insider11_arena",
+          "line": 619,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": "hive/burningcrusade/townhall/images/story/screener-tl.jpg') no-repeat bottom left; }\\ #top div div { background: url('/WOW-Encyclopedia-Deployable-Archive/burningcrusade/townhall/images/story/screener-tr.jpg') no-repeat bottom right; height: 21px; }\\ #mid div { background: url('/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F11%2Farena.xml&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fburningcrusade%2Ftownhall%2Fimages%2Fstory%2Fscreener-ml.jpg&reason=external-or-uncollected-resource') repeat-y bottom left; }\\ #mid div div { background: url('/WOW-Encyclopedia-Deployable-Archive/burningcrusade/townhall/images/story/screener-mr.jpg') repeat-y bottom right; }\\ #bot { background: url('/WOW-Encyclopedia-Deployable-Archive/burningcrusade/townhall/images/story/screener-bbg.jpg') repeat-x bottom; }\\ "
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.worldofwarcraft.com/community/tournaments/images/achieve-pvp-wreath.jpg",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 345,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": "/right.gif\") top left repeat-y;} .border-bot {background:url(\"/WOW-Encyclopedia-Deployable-Archive/shared/wow-com/images/borders/gold-thin/bot.gif\") top left repeat-x; height:7px;} /* warcraft III table, schedule */ .arena-team-faded { width:100%; height:160px; background:url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Fimages%2Fachieve-pvp-wreath.jpg&reason=external-or-uncollected-resource\") 50% 0 no-repeat;} .arena-team-faded h4 { color: #b09c61;} .arena-team-faded em { color: #b09c61;} table.dataRepop { position: absolute; top:-1px; left:-1px;; color: white !important;} table.dataRepop span { visibility: hidden; } table.data-table div { position: relative; z-index:13; height: 27px; width: 1px; } "
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.worldofwarcraft.com/community/tournaments/images/data0.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 413,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": "=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Fimages%2Fdata1.gif&reason=external-or-uncollected-resource\") repeat-x 0 0; } a.data0 td { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Fimages%2Fdata0.gif&reason=external-or-uncollected-resource\") repeat-x 0 0; } a.data1:hover, a.data0:hover { border: 0 !important; text-decoration: none; color: black !important; } TD.rankingOutline { border-style: solid; border-width: 1px; border-color: #464646; } TD.rankingHeader { text-align: center; color: #CBA300; font-size: 8pt; font-family: arial,helvetica,"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.worldofwarcraft.com/community/tournaments/images/data1.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 412,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": "ata2 a, #big-results .data2 span { color: inherit !important; } .data a.data1 table, .data a.data0 table { margin: 0 !important; } a.data1, a.data0 { display: block; width: 100%; color: black !important; } a.data1 span, a.data0 span { display: block; } a.data1 td { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Fimages%2Fdata1.gif&reason=external-or-uncollected-resource\") repeat-x 0 0; } a.data0 td { background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&requested=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Fimages%2Fdata0.gif&reaso"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.worldofwarcraft.com/insider/11/images/arena/bannertext.png",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "insider11_arena"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "insider11_arena",
+          "line": 646,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": "pg&reason=external-or-uncollected-resource\") top left no-repeat; padding:0; margin:0; display:block;} .bannerfloat {position:absolute; left:-18px; top:-146px; width:271px; height:190px;} .bannertext {position:absolute; width:344px; height:130px; left:10px; top:70px; background:url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F11%2Farena.xml&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F11%2Fimages%2Farena%2Fbannertext.png&reason=external-or-uncollected-resource\");} .bannertop {background-image: url(\"/WOW-Encyclopedia-Deployable-Archive/shared/wow-com/images/parchment/plain/light3/parchborder/parchborder-top.gif\"); width: 100%; padding:0; margin:0;} .bannertop table {margin:0; height:38px;} .bannertop table .bannertop-left {background:url(\"/WOW-Encyclopedia-Deployable-Archive"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.worldofwarcraft.com/insider/11/images/arena/bg.jpg",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "insider11_arena"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "insider11_arena",
+          "line": 644,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": "<style type=\"text/css\"> @import url(/WOW-Encyclopedia-Deployable-Archive/new-hp/css/blaze.css); .banner {background: url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F11%2Farena.xml&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F11%2Fimages%2Farena%2Fbg.jpg&reason=external-or-uncollected-resource\") top left no-repeat; padding:0; margin:0; display:block;} .bannerfloat {position:absolute; left:-18px; top:-146px; width:271px; height:190px;} .bannertext {position:absolute; width:344px; height:130px; left:10px; top:70px; background:url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.worldofwarcraft.com/insider/11/images/arena/bladesedge.jpg",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "insider11_arena"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "insider11_arena",
+          "line": 864,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img border=\"0\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F11%2Farena.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F11%2Fimages%2Farena%2Fbladesedge.jpg&amp;reason=external-or-uncollected-resource\" style=\"width:500px; height:278px;\">"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.worldofwarcraft.com/insider/11/images/arena/bullet.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "insider11_arena"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "insider11_arena",
+          "line": 655,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": "round:url(\"/WOW-Encyclopedia-Deployable-Archive/shared/wow-com/images/headers/dateheader/dateheader-right.gif\") top left no-repeat; width:17px; height:38px;} /* page specific styles */ .arenalist {margin-left:10px; padding-left:0px;} .arenalist li {list-style:none; background:url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F11%2Farena.xml&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F11%2Fimages%2Farena%2Fbullet.gif&reason=external-or-uncollected-resource\") 0 0 no-repeat; margin:1em 0 3em 0; padding:2px 0 0 28px;} .arenalist strong {display:block; font-family:Tahoma; font-weight:bold; font-size:16px;} .arenalist p {border:2px solid #e1c699; width:445px; _width:465; padding:10px; background:#f4dfb8;} .arenalist .screen {float:right; position:absolute; top:10px; left:468"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.worldofwarcraft.com/insider/11/images/arena/lordaeron.jpg",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "insider11_arena"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "insider11_arena",
+          "line": 733,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img border=\"0\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F11%2Farena.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F11%2Fimages%2Farena%2Flordaeron.jpg&amp;reason=external-or-uncollected-resource\" style=\"width:500px; height:278px;\">"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.worldofwarcraft.com/insider/11/images/arena/nagrand.jpg",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "insider11_arena"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "insider11_arena",
+          "line": 1018,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img border=\"0\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F11%2Farena.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F11%2Fimages%2Farena%2Fnagrand.jpg&amp;reason=external-or-uncollected-resource\" style=\"width:500px; height:278px;\">"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.worldofwarcraft.com/insider/11/images/arena/ss1-thumb.jpg",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "insider11_arena"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "insider11_arena",
+          "line": 885,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img border=\"0\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F11%2Farena.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F11%2Fimages%2Farena%2Fss1-thumb.jpg&amp;reason=external-or-uncollected-resource\" style=\"width:150px; height:113px;\">"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.worldofwarcraft.com/insider/11/images/arena/ss10-thumb.jpg",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "insider11_arena"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "insider11_arena",
+          "line": 773,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img border=\"0\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F11%2Farena.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F11%2Fimages%2Farena%2Fss10-thumb.jpg&amp;reason=external-or-uncollected-resource\" style=\"width:150px; height:113px;\">"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.worldofwarcraft.com/insider/11/images/arena/ss11-thumb.jpg",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "insider11_arena"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "insider11_arena",
+          "line": 791,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img border=\"0\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F11%2Farena.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F11%2Fimages%2Farena%2Fss11-thumb.jpg&amp;reason=external-or-uncollected-resource\" style=\"width:150px; height:113px;\">"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.worldofwarcraft.com/insider/11/images/arena/ss2-thumb.jpg",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "insider11_arena"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "insider11_arena",
+          "line": 904,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img border=\"0\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F11%2Farena.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F11%2Fimages%2Farena%2Fss2-thumb.jpg&amp;reason=external-or-uncollected-resource\" style=\"width:150px; height:113px;\">"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.worldofwarcraft.com/insider/11/images/arena/ss3-thumb.jpg",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "insider11_arena"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "insider11_arena",
+          "line": 922,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img border=\"0\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F11%2Farena.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F11%2Fimages%2Farena%2Fss3-thumb.jpg&amp;reason=external-or-uncollected-resource\" style=\"width:150px; height:113px;\">"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.worldofwarcraft.com/insider/11/images/arena/ss4-thumb.jpg",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "insider11_arena"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "insider11_arena",
+          "line": 941,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img border=\"0\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F11%2Farena.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F11%2Fimages%2Farena%2Fss4-thumb.jpg&amp;reason=external-or-uncollected-resource\" style=\"width:150px; height:113px;\">"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.worldofwarcraft.com/insider/11/images/arena/ss5-thumb.jpg",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "insider11_arena"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "insider11_arena",
+          "line": 960,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img border=\"0\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F11%2Farena.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F11%2Fimages%2Farena%2Fss5-thumb.jpg&amp;reason=external-or-uncollected-resource\" style=\"width:150px; height:113px;\">"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.worldofwarcraft.com/insider/11/images/arena/ss6-thumb.jpg",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "insider11_arena"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "insider11_arena",
+          "line": 1040,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img border=\"0\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F11%2Farena.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F11%2Fimages%2Farena%2Fss6-thumb.jpg&amp;reason=external-or-uncollected-resource\" style=\"width:150px; height:113px;\">"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.worldofwarcraft.com/insider/11/images/arena/ss7-thumb.jpg",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "insider11_arena"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "insider11_arena",
+          "line": 1057,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img border=\"0\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F11%2Farena.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F11%2Fimages%2Farena%2Fss7-thumb.jpg&amp;reason=external-or-uncollected-resource\" style=\"width:150px; height:113px;\">"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.worldofwarcraft.com/insider/11/images/arena/ss8-thumb.jpg",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "insider11_arena"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "insider11_arena",
+          "line": 1075,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img border=\"0\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F11%2Farena.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F11%2Fimages%2Farena%2Fss8-thumb.jpg&amp;reason=external-or-uncollected-resource\" style=\"width:150px; height:113px;\">"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.worldofwarcraft.com/insider/11/images/arena/ss9-thumb.jpg",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "insider11_arena"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "insider11_arena",
+          "line": 754,
+          "tag": "img",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<img border=\"0\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F11%2Farena.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F11%2Fimages%2Farena%2Fss9-thumb.jpg&amp;reason=external-or-uncollected-resource\" style=\"width:150px; height:113px;\">"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "http://www.worldofwarcraft.com/shared/wow-com/images/parchmednt/plain/light3/parchborder/parchborder-top.gif",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "eu_regionals"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "eu_regionals",
+          "line": 464,
+          "tag": "div",
+          "attribute": "style",
+          "context_kind": "markup",
+          "context": "<div style=\"background-image: url(&quot;/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fshared%2Fwow-com%2Fimages%2Fparchmednt%2Fplain%2Flight3%2Fparchborder%2Fparchborder-top.gif&amp;reason=external-or-uncollected-resource&quot;); width: 100%; margin: 0px; border: 0px solid black;\">"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "analytics_script",
+      "exact_url": "https://ssl.google-analytics.com/ga.js",
+      "asset_role": "script",
+      "resource_scope": "shared_template",
+      "reference_count": 3,
+      "page_coverage": [
+        "eu_regionals",
+        "high_level_options",
+        "zandalar_quests"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "zandalar_quests",
+          "line": 5560,
+          "tag": "script",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<script type=\"text/javascript\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/empty.js?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fzandalar%2Fquests.html&amp;requested=https%3A%2F%2Fssl.google-analytics.com%2Fga.js&amp;reason=external-or-uncollected-resource\">"
+        },
+        {
+          "page_key": "eu_regionals",
+          "line": 3001,
+          "tag": "script",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<script type=\"text/javascript\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/empty.js?source=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Fcommunity%2Ftournaments%2Feuregionals%2Findex.html&amp;requested=https%3A%2F%2Fssl.google-analytics.com%2Fga.js&amp;reason=external-or-uncollected-resource\">"
+        },
+        {
+          "page_key": "high_level_options",
+          "line": 1164,
+          "tag": "script",
+          "attribute": "src",
+          "context_kind": "markup",
+          "context": "<script type=\"text/javascript\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/empty.js?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fhighleveloptions.html&amp;requested=https%3A%2F%2Fssl.google-analytics.com%2Fga.js&amp;reason=external-or-uncollected-resource\">"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    },
+    {
+      "proposal_id": "shared-template-001",
+      "purpose": "template_border_or_chrome",
+      "exact_url": "https://www.worldofwarcraft.com/info/basics/images/arathibasin/rewards/blue-bg.png",
+      "asset_role": "image",
+      "resource_scope": "shared_template",
+      "reference_count": 1,
+      "page_coverage": [
+        "high_level_options"
+      ],
+      "local_evidence": [],
+      "purpose_evidence": [
+        {
+          "page_key": "high_level_options",
+          "line": 280,
+          "tag": "style",
+          "attribute": null,
+          "context_kind": "css",
+          "context": "ity: hidden; color: #ffffff; font-family: verdana, arial, sans-serif; font-size:8pt; font-weight:normal; padding: 4px; } .trans_div { /* This is an IE filter command. Other browsers will ignore it */ /* It goes into the trans_div class */ } .trans_div[class] { background-image:url(\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fhighleveloptions.html&requested=https%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fimages%2Farathibasin%2Frewards%2Fblue-bg.png&reason=external-or-uncollected-resource\"); } .myPurple { color: A335EE; font-weight: bold; font-size: 9pt; } .myBlue { color: 0070DD; font-weight: bold; font-size: 9pt; } .myGray { color: c9c9c9; font-size: 9pt; } .myGreen { color: 00FF00; font-size: 9pt; } .myYellow { color: ffd517; font-size: 9pt; } .m"
+        }
+      ],
+      "recommendation": "If captured, register once as a shared template/static entity and reference it from all covered pages; do not count it as page正文 recovery.",
+      "derived_layout_fallback_if_visible_damage": null
+    }
+  ],
+  "production_file_suggestions": [
+    "research/resource-repair-20261015/build_pages_v7.py (wire only approved exact entities; no edit here)",
+    "research/related-sites-20261014/integration/regional-image-source-map.json (exact-origin regional asset evidence only; no edit here)",
+    "research/media-screenshots-20261015/late-image-source-map.json (exact-origin image evidence only; no edit here)",
+    "offline/approved-static-temporal-supplement-map.json (post-anchor approved payloads only; frozen tree untouched)"
+  ]
+}

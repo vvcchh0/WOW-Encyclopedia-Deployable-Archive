@@ -1,0 +1,28 @@
+{
+  "schema": "wow-historical-route-alias-decision/v1",
+  "accepted": true,
+  "alias": "/pvp/battlegrounds/battlegroups.html",
+  "canonical_route": "/pvp/battlegrounds/battlegroups/index.html",
+  "observed_origin_redirect_target": "http://www.worldofwarcraft.com/pvp/battlegrounds/battlegroups/",
+  "redirect_status": 302,
+  "actual_memento": "2006-11-26T17:59:58Z",
+  "redirect_evidence": "research/continuous-recovery-20261015/network-core-pages4/redirect-evidence.json",
+  "batch_acceptance": "research/continuous-recovery-20261015/core-pages4-acceptance.json",
+  "existing_directory_alias": "/pvp/battlegrounds/battlegroups/",
+  "existing_directory_alias_target": "/WOW-Encyclopedia-Deployable-Archive/pvp/battlegrounds/battlegroups/index.html",
+  "existing_index_source_path": "offline/source-entities-pages-recovery/0a3a79b7eaf56ca3cd0982c32a945f71ee1732cac386b3b2bb419ccd4fa06ecf.bin",
+  "existing_index_source_sha256": "0a3a79b7eaf56ca3cd0982c32a945f71ee1732cac386b3b2bb419ccd4fa06ecf",
+  "existing_index_source_bytes": 26271,
+  "existing_index_title": "WoW -> Workshop -> Battlegroups",
+  "menu_evidence": "mirror/20080512/www.worldofwarcraft.com/shared/wow-com/includes-client/navtree.js:536",
+  "decision": "The captured origin redirect establishes the old .html address's directory destination. That exact directory already maps to a validated local index page, also named by the preserved newer menu. Add a compatibility alias in the new derivative without replacing the index source or fetching it again.",
+  "limitations": [
+    "The following Wayback dispatcher redirect is not used as an origin-equivalence claim.",
+    "No new Battlegroups HTML entity was recovered in this batch."
+  ],
+  "acceptance_after_build": [
+    "Old .html route resolves to the existing canonical index in the new route map.",
+    "Sidebar navigation opens the Battlegroups page without a rejected route.",
+    "The existing index source bytes remain unchanged."
+  ]
+}

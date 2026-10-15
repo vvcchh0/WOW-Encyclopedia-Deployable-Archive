@@ -1,7 +1,7 @@
 {
   "schema": "continuous-wow-recovery-tasks/v1",
   "deadline_utc": "2026-10-15T14:44:00Z",
-  "updated_utc": "2026-10-15T08:03:54+00:00",
+  "updated_utc": "2026-10-15T08:45:58.723247+00:00",
   "coordination": {
     "heartbeat_id": "wow-8",
     "heartbeat_interval_minutes": 15,
@@ -16,9 +16,17 @@
       "owner": "sidebar_local_audit",
       "goal": "Audit all sidebar menu observations against the accepted v8 derivative and extract evidence-backed dependency gaps.",
       "write_scope": "research/continuous-recovery-20261015/sidebar-audit/**",
-      "inputs": ["research/navigation-gaps-20261015/inventory.json", ".scratch/pages-resources-20261015-v8/__offline/route-map.json"],
+      "inputs": [
+        "research/navigation-gaps-20261015/inventory.json",
+        ".scratch/pages-resources-20261015-v8/__offline/route-map.json"
+      ],
       "network": false,
-      "acceptance": ["Count conservation for 588 in-scope observations and 653 excluded observations", "Every reported gap has a local evidence pointer", "Current page, resources and interaction states are separate", "No production or frozen-baseline modifications"],
+      "acceptance": [
+        "Count conservation for 588 in-scope observations and 653 excluded observations",
+        "Every reported gap has a local evidence pointer",
+        "Current page, resources and interaction states are separate",
+        "No production or frozen-baseline modifications"
+      ],
       "stop": "25 minute batch; report infrastructure failure or required interface/scope change",
       "result": {
         "menu_observations": 1241,
@@ -39,16 +47,36 @@
       "owner": "wayback_recheck_batch1",
       "goal": "Recheck the first 30 unique Karazhan targets whose previous attempt ended before a source HTTP response.",
       "write_scope": "research/continuous-recovery-20261015/wayback-karazhan-batch1/**",
-      "inputs": ["research/karazhan-recheck-20261015/batch-report.final.json"],
+      "inputs": [
+        "research/karazhan-recheck-20261015/batch-report.final.json"
+      ],
       "network": true,
-      "limits": {"source_requests": 32, "seconds": 480, "body_bytes": 67108864, "single_body_bytes": 16777216, "minimum_interval_seconds": 1.2, "disk_floor_bytes": 11005853696, "concurrent_source_requests": 1},
-      "acceptance": ["Actual source status excludes CONNECT 200", "Capture time comes only from valid Memento", "Payload byte length, SHA256, MIME and image decode are independently recorded", "All candidates have classified results or explicit not-requested reasons", "Only sanitized receipts are suitable for public tracking"],
+      "limits": {
+        "source_requests": 32,
+        "seconds": 480,
+        "body_bytes": 67108864,
+        "single_body_bytes": 16777216,
+        "minimum_interval_seconds": 1.2,
+        "disk_floor_bytes": 11005853696,
+        "concurrent_source_requests": 1
+      },
+      "acceptance": [
+        "Actual source status excludes CONNECT 200",
+        "Capture time comes only from valid Memento",
+        "Payload byte length, SHA256, MIME and image decode are independently recorded",
+        "All candidates have classified results or explicit not-requested reasons",
+        "Only sanitized receipts are suitable for public tracking"
+      ],
       "stop": "429 or 503; five consecutive transport/TLS failures; deadline or any resource limit",
       "result": {
         "request_window_finished_utc": "2026-10-15T06:59:35.213520+00:00",
         "source_request_count": 26,
         "source_response_count": 14,
-        "targets": {"not_archived": 14, "transport_error": 11, "not_requested": 5},
+        "targets": {
+          "not_archived": 14,
+          "transport_error": 11,
+          "not_requested": 5
+        },
         "valid_images": 0,
         "body_bytes": 65932,
         "stop_reason": "five_consecutive_tls_or_transport_failures",
@@ -62,10 +90,21 @@
       "goal": "After at least fifteen minutes of cooldown, test one previously decoded JPEG control before choosing any new recovery batch.",
       "not_before_utc": "2026-10-15T07:14:35.213520+00:00",
       "write_scope": "research/continuous-recovery-20261015/network-control2/**",
-      "inputs": ["research/tls-poll-20261015/summary.json"],
+      "inputs": [
+        "research/tls-poll-20261015/summary.json"
+      ],
       "network": true,
-      "limits": {"control_targets": 1, "source_requests": 2, "direct_then_proxy": true, "automatic_redirects": 0},
-      "acceptance": ["Expected 3347 bytes, JPEG 150x110, SHA256 45936113efa432f3c8188445ae255108c2af3d06fecf902202f0611068a74a11", "Source HTTP status excludes CONNECT", "Actual Memento is independent of requested timestamp"],
+      "limits": {
+        "control_targets": 1,
+        "source_requests": 2,
+        "direct_then_proxy": true,
+        "automatic_redirects": 0
+      },
+      "acceptance": [
+        "Expected 3347 bytes, JPEG 150x110, SHA256 45936113efa432f3c8188445ae255108c2af3d06fecf902202f0611068a74a11",
+        "Source HTTP status excludes CONNECT",
+        "Actual Memento is independent of requested timestamp"
+      ],
       "stop": "Control failure; any limit or 429/503. Do not rerun the thirty-target batch after a failed control.",
       "result": {
         "started_utc": "2026-10-15T07:15:13.812985+00:00",
@@ -83,10 +122,22 @@
       "owner": "sidebar_local_audit",
       "goal": "Reconcile all 35 distinct missing menu targets against local raw entities and prove any proposed route alias before choosing the next network batch.",
       "write_scope": "research/continuous-recovery-20261015/local-target-reconcile/**",
-      "inputs": ["research/continuous-recovery-20261015/sidebar-audit/audit.json", "offline/build-manifest.json", ".scratch/offline-navigation-20261015-v7c"],
+      "inputs": [
+        "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+        "offline/build-manifest.json",
+        ".scratch/offline-navigation-20261015-v7c"
+      ],
       "network": false,
-      "limits": {"minutes": 15, "targets": 35},
-      "acceptance": ["35 target count conservation", "Existing raw entity byte length and SHA256 are read", "News RSS and HTML monthly pages are not treated as aliases without evidence", "Each proposed network query links a source-menu line and local search evidence"],
+      "limits": {
+        "minutes": 15,
+        "targets": 35
+      },
+      "acceptance": [
+        "35 target count conservation",
+        "Existing raw entity byte length and SHA256 are read",
+        "News RSS and HTML monthly pages are not treated as aliases without evidence",
+        "Each proposed network query links a source-menu line and local search evidence"
+      ],
       "stop": "Fifteen minute batch or required interface/scope change; no broad raw-file scan or network requests",
       "result": {
         "targets": 35,
@@ -107,11 +158,29 @@
       "owner": "wayback_recheck_batch1",
       "goal": "Query exact pre-anchor captures of eight old News HTML pages first, then legacy Battlegroups, BC professions, PTR and Wrath artwork; retrieve only evidence-backed candidates within the same limits.",
       "write_scope": "research/continuous-recovery-20261015/network-core-pages3/**",
-      "inputs": ["research/continuous-recovery-20261015/local-target-reconcile/reconciliation.json", "research/continuous-recovery-20261015/local-target-reconcile-acceptance.json"],
+      "inputs": [
+        "research/continuous-recovery-20261015/local-target-reconcile/reconciliation.json",
+        "research/continuous-recovery-20261015/local-target-reconcile-acceptance.json"
+      ],
       "network": true,
       "priority_override": "Root requested eight News HTML pages and four other core pages before the twenty-three RSS targets. Preserve the already accepted RSS-first queue; generate a new candidates file for this batch.",
-      "limits": {"targets": 12, "source_requests": 32, "seconds": 480, "body_bytes": 67108864, "single_body_bytes": 16777216, "minimum_interval_seconds": 1.2, "disk_floor_bytes": 11005853696, "concurrent_source_requests": 1, "automatic_redirects": 0},
-      "acceptance": ["Exact URL identity comes from raw menu href, including PTR trailing slash", "CDX index rows and validated payloads remain separate", "Actual capture time only comes from valid Memento", "No BC or Battlegroups alias without exact source, redirect or content proof"],
+      "limits": {
+        "targets": 12,
+        "source_requests": 32,
+        "seconds": 480,
+        "body_bytes": 67108864,
+        "single_body_bytes": 16777216,
+        "minimum_interval_seconds": 1.2,
+        "disk_floor_bytes": 11005853696,
+        "concurrent_source_requests": 1,
+        "automatic_redirects": 0
+      },
+      "acceptance": [
+        "Exact URL identity comes from raw menu href, including PTR trailing slash",
+        "CDX index rows and validated payloads remain separate",
+        "Actual capture time only comes from valid Memento",
+        "No BC or Battlegroups alias without exact source, redirect or content proof"
+      ],
       "stop": "429/503, five consecutive transport failures, or any request/time/body/disk limit; no automatic retry batch",
       "result": {
         "attempts": 21,
@@ -120,7 +189,11 @@
         "validated_html_entities": 7,
         "validated_payload_body_bytes": 889708,
         "total_batch_body_bytes_including_cdx": 930077,
-        "categories": {"valid_html": 7, "indexed_candidates_not_replayed": 3, "transport_error": 2},
+        "categories": {
+          "valid_html": 7,
+          "indexed_candidates_not_replayed": 3,
+          "transport_error": 2
+        },
         "acceptance": "research/continuous-recovery-20261015/core-pages3-acceptance.json",
         "semantic_review": "research/continuous-recovery-20261015/root-content-review-0753.json",
         "correction": "Only URI default ports are normalized; bare/www and HTTP/HTTPS remain separate. Seven older validated entities are preserved."
@@ -128,39 +201,188 @@
     },
     {
       "id": "LOCAL-RESOURCE-DEDUP-003",
-      "status": "awaiting_independent_semantic_receipt_correction",
+      "status": "accepted",
       "owner": "sidebar_local_audit",
       "goal": "Deduplicate exact-origin resource gaps across Zandalar quests, EU regionals, Insider 11 arena and high-level options; identify verified local payloads and a compact future asset queue.",
       "write_scope": "research/continuous-recovery-20261015/local-resource-dedup/**",
-      "inputs": ["research/continuous-recovery-20261015/sidebar-audit/audit.json", ".scratch/pages-resources-20261015-v8/export-provenance.json", ".scratch/offline-navigation-20261015-v7c/build-manifest.json"],
+      "inputs": [
+        "research/continuous-recovery-20261015/sidebar-audit/audit.json",
+        ".scratch/pages-resources-20261015-v8/export-provenance.json",
+        ".scratch/offline-navigation-20261015-v7c/build-manifest.json"
+      ],
       "network": false,
-      "limits": {"minutes": 25, "pages": 4, "future_network_queue_urls": 16},
-      "acceptance": ["Four page identities, source evidence and SHA256", "Reference-to-unique-URL conservation with multiplicity and page coverage", "Exact-origin matching only; no basename or cross-origin substitution", "Existing local entities have real hash/length and image decode evidence", "Dynamic expressions are excluded as literal URLs"],
+      "limits": {
+        "minutes": 25,
+        "pages": 4,
+        "future_network_queue_urls": 16
+      },
+      "acceptance": [
+        "Four page identities, source evidence and SHA256",
+        "Reference-to-unique-URL conservation with multiplicity and page coverage",
+        "Exact-origin matching only; no basename or cross-origin substitution",
+        "Existing local entities have real hash/length and image decode evidence",
+        "Dynamic expressions are excluded as literal URLs"
+      ],
       "stop": "Twenty-five minute batch, unresolved page identity, or required interface/scope change; no production or network operations",
-      "provisional_result": {"pages": 4, "placeholder_text_occurrences": 623, "unique_urls": 217, "static_resource_urls": 102, "layout_spacer_occurrences": 232, "local_salvage": 0, "future_asset_queue": 16, "pending": "Separate four script-condition literal occurrences from actual navigation; original failed acceptance is retained locally."}
+      "result": {
+        "pages": 4,
+        "placeholder_text_occurrences": 623,
+        "unique_urls": 217,
+        "static_resource_urls": 102,
+        "navigation_urls": 113,
+        "non_request_script_literal_urls": 2,
+        "non_request_script_literal_occurrences": 4,
+        "layout_spacer_occurrences": 232,
+        "local_salvage": 0,
+        "future_asset_queue": 16,
+        "acceptance": "research/continuous-recovery-20261015/resource-dedup-acceptance.json",
+        "failed_checks_preserved_locally": true
+      }
     },
     {
       "id": "NET-CORE-PAGES-004",
-      "status": "running",
+      "status": "accepted",
       "owner": "wayback_recheck_batch1",
       "goal": "Replay saved exact-origin candidates for June News, BC professions, Battlegroups and Wrath, retry the failed 2005 annual query, then fetch newer eligible captures for previously accepted pages within the same caps.",
       "write_scope": "research/continuous-recovery-20261015/network-core-pages4/**",
-      "inputs": ["research/continuous-recovery-20261015/core-pages4-candidates.json", "research/continuous-recovery-20261015/core-pages3-acceptance.json"],
+      "inputs": [
+        "research/continuous-recovery-20261015/core-pages4-candidates.json",
+        "research/continuous-recovery-20261015/core-pages3-acceptance.json"
+      ],
       "network": true,
       "candidate_count": 11,
-      "limits": {"targets": 12, "attempts": 32, "seconds": 480, "body_bytes": 67108864, "single_body_bytes": 16777216, "minimum_interval_seconds": 1.2, "automatic_redirects": 0},
-      "acceptance": ["Preserve older accepted raw entities", "Skip already current identical captures", "Only default URI ports normalize, without origin or scheme aliases", "Use accepted transport helpers and a declarative candidate driver where possible", "Source validity and capture dates are independently recorded"],
-      "stop": "Same rate-limit/transport/time/body/disk stops as NET003; no automatic recovery batch after stop"
+      "limits": {
+        "targets": 12,
+        "attempts": 32,
+        "seconds": 480,
+        "body_bytes": 67108864,
+        "single_body_bytes": 16777216,
+        "minimum_interval_seconds": 1.2,
+        "automatic_redirects": 0
+      },
+      "acceptance": [
+        "Preserve older accepted raw entities",
+        "Skip already current identical captures",
+        "Only default URI ports normalize, without origin or scheme aliases",
+        "Use accepted transport helpers and a declarative candidate driver where possible",
+        "Source validity and capture dates are independently recorded"
+      ],
+      "stop": "Same rate-limit/transport/time/body/disk stops as NET003; no automatic recovery batch after stop",
+      "result": {
+        "attempts": 15,
+        "source_responses": 14,
+        "valid_html_entities": 9,
+        "new_distinct_sources": 4,
+        "upgraded_monthly_sources": 5,
+        "valid_payload_body_bytes": 592852,
+        "total_batch_body_bytes": 603399,
+        "redirect_only_targets": 2,
+        "acceptance": "research/continuous-recovery-20261015/core-pages4-acceptance.json",
+        "selected_sources": "research/continuous-recovery-20261015/selected-core-pages-source-map.json",
+        "selected_unique_source_count": 11,
+        "ptr_retained_capture": "2006-11-10T07:59:27+00:00"
+      }
     },
     {
       "id": "CORE-PAGES-INTEGRATION-004",
-      "status": "preparing_builder_waiting_net004",
+      "status": "core_and_static_sources_ready_integration_active",
       "owner": "sidebar_local_audit (directly assigned by root)",
       "goal": "Prepare a fresh v9 source builder and neutral historical PTR exhibit, then use the latest accepted pre-anchor core-page sources when NET004 is ready.",
-      "write_scope": ["research/continuous-recovery-20261015/core-pages-integration/**", ".scratch/offline-navigation-20261015-v9/**", "tools/historical_exhibits.py", "tests/test_historical_exhibits.py"],
+      "write_scope": [
+        "research/continuous-recovery-20261015/core-pages-integration/**",
+        ".scratch/offline-navigation-20261015-v9/**",
+        "tools/historical_exhibits.py",
+        "tests/test_historical_exhibits.py"
+      ],
       "network": false,
-      "acceptance": ["Preserve all prior 8306 source records and 38 image overlays", "Frozen offline/site and manifest remain unchanged", "PTR has no account-copy/download action anchors, forms or scripts", "PTR title is neutral; capture-specific date remains in accepted provenance", "Six News article bodies use the existing exporter", "Focused tests and build counts/hashes are reported"],
-      "stop": "Prepare first; defer full source build until accepted NET004 source selection is ready. Root owns final acceptance, export and deployment."
+      "acceptance": [
+        "Preserve all prior 8306 source records and 38 image overlays",
+        "Frozen offline/site and manifest remain unchanged",
+        "PTR has no account-copy/download action anchors, forms or scripts",
+        "PTR title is neutral; capture-specific date remains in accepted provenance",
+        "All eight selected News article bodies use the existing exporter",
+        "Focused tests and build counts/hashes are reported"
+      ],
+      "stop": "Root owns final acceptance, export and deployment; source selection is accepted and full v9 build is now authorized.",
+      "selected_source_map": "research/continuous-recovery-20261015/selected-core-pages-source-map.json",
+      "approved_battlegroups_alias": "research/continuous-recovery-20261015/battlegroups-alias-decision.json",
+      "exporter_owner": "root agent exclusively owns tools/export_github_pages.py; worker must not edit it",
+      "selected_static_source_map": "research/continuous-recovery-20261015/selected-static-source-map.json",
+      "expected_source_count_if_distinct": 8328,
+      "actual_build_counts_authoritative": true
+    },
+    {
+      "id": "NET-ASSETS-005",
+      "status": "accepted",
+      "owner": "wayback_recheck_batch1",
+      "goal": "Recover two exact Wrath artwork counter scripts first, then four Arena body images and nine EU class/race icons from accepted literal references.",
+      "write_scope": "research/continuous-recovery-20261015/network-assets5/**",
+      "inputs": [
+        "research/continuous-recovery-20261015/asset-batch5-candidates.json",
+        "research/continuous-recovery-20261015/resource-dedup-acceptance.json",
+        "research/continuous-recovery-20261015/wrath-artwork-dependencies.json"
+      ],
+      "network": true,
+      "candidate_count": 15,
+      "limits": {
+        "attempts": 32,
+        "seconds": 480,
+        "body_bytes": 67108864,
+        "single_body_bytes": 16777216,
+        "minimum_interval_seconds": 1.2,
+        "automatic_redirects": 0
+      },
+      "acceptance": [
+        "CDX index records and real decoded payloads separate",
+        "JavaScript content and counter API inspected without execution",
+        "Images independently verify and decode",
+        "Actual Memento, body SHA256 and CDX digest match",
+        "No spacer, analytics, navigation or script-condition URL acquisition"
+      ],
+      "stop": "Same disk/rate-limit/transport/time/body stops as prior batches; no guessed gallery count or automatic production integration",
+      "result": {
+        "attempts": 27,
+        "source_responses": 23,
+        "valid_javascript_counters": 2,
+        "valid_images": 9,
+        "valid_payload_body_bytes": 50010,
+        "total_batch_body_bytes": 52398,
+        "unrecovered": {
+          "cdx_empty_in_range": 1,
+          "transport_unknown": 3
+        },
+        "acceptance": "research/continuous-recovery-20261015/assets5-acceptance.json",
+        "selected_source_map": "research/continuous-recovery-20261015/selected-static-source-map.json"
+      }
+    },
+    {
+      "id": "NET-RSS-006",
+      "status": "dispatched",
+      "owner": "wayback_recheck_batch1",
+      "goal": "Acquire and classify the twelve newest monthly RSS targets from the accepted 23-target exact-source reconciliation.",
+      "write_scope": "research/continuous-recovery-20261015/network-rss6/**",
+      "inputs": [
+        "research/continuous-recovery-20261015/local-target-reconcile/reconciliation.json",
+        "research/continuous-recovery-20261015/local-target-reconcile-acceptance.json"
+      ],
+      "network": true,
+      "candidate_count": 12,
+      "limits": {
+        "attempts": 32,
+        "seconds": 480,
+        "body_bytes": 67108864,
+        "single_body_bytes": 16777216,
+        "minimum_interval_seconds": 1.2,
+        "disk_floor_bytes": 11005853696,
+        "automatic_redirects": 0
+      },
+      "acceptance": [
+        "Classify raw RSS/XML versus expanded HTML from actual body, independent of extension",
+        "Raw CDX row binding, source HTTP excluding CONNECT, actual Memento, hashes and MIME",
+        "Record RSS item/pubDate/month identity evidence or explicit HTML/redirect classification",
+        "Retain original accepted queue and source origins without HTML/RSS aliases"
+      ],
+      "stop": "Same disk/rate-limit/transport/time/body stops as prior batches; save and return, no automatic next batch"
     }
   ]
 }
