@@ -1302,6 +1302,124 @@ process.stdout.write(JSON.stringify({results, expectedList}));
                 else:
                     self.assertNotIn(pages._WRATH_CARD_HIT_AREA_MARKER, exported)
 
+    def test_news_toggle_anchor_rewrite_is_strict_idempotent_and_preserves_href(self) -> None:
+        source = """<!doctype html><html><head></head><body>
+<div class="hoverContainer" onclick="javascript:toggleEntry('1','')">
+<h1><a href="javascript:dummyFunction()">Title</a></h1>
+<ul><li class="news-toggle"><a href="javascript:toggleEntry('1','')"><img src="/v2/images/pixel.gif"></a></li></ul>
+</div>
+<div class="hoverContainer" onclick="toggleEntry('2','alt')">
+<ul><li class="news-toggle"><a href=" JaVaScRiPt : toggleEntry ( '2' , 'alt' ) ">Case-insensitive scheme</a></li></ul>
+</div>
+<div class="hoverContainer" onclick="javascript:toggleEntry('wrong','')">
+<ul><li class="news-toggle"><a href="javascript:toggleEntry('2','')">Wrong parent</a></li></ul>
+</div>
+<div class="hoverContainer" onclick="javascript:toggleEntry('Foo','')">
+<ul><li class="news-toggle"><a href="javascript:toggleEntry('foo','')">Case mismatch</a></li></ul>
+</div>
+<div class="hoverContainer" onclick="javascript:ToggleEntry('5','')">
+<ul><li class="news-toggle"><a href="javascript:toggleEntry('5','')">Function case mismatch</a></li></ul>
+</div>
+<div class="hoverContainer" onclick="javascript:toggleEntry('has space','')">
+<ul><li class="news-toggle"><a href="javascript:toggleEntry('has space','')">String whitespace</a></li></ul>
+</div>
+<div class="hoverContainer" onclick="javascript:toggleEntry('composite','')">
+<ul><li class="news-toggle"><a href="javascript:toggleEntry(window.id,'')">Composite expression</a></li></ul>
+</div>
+<div class="hoverContainer" onclick="toggleEntry('bare','')">
+<ul><li class="news-toggle"><a href="toggleEntry('bare','')">Bare href</a></li></ul>
+</div>
+<div class="hoverContainer" onclick="javascript:toggleEntry('3','')">
+<ul><li class="other"><a href="javascript:toggleEntry('3','')">Wrong list</a></li></ul>
+</div>
+<div class="hoverContainer" onclick="javascript:toggleEntry('4','')">
+<ul><li class="news-toggle"><a onclick="keepExisting()" href="javascript:toggleEntry('4','')">Existing handler</a></li></ul>
+</div>
+</body></html>"""
+        rewritten, changed, matched = pages.rewrite_news_toggle_anchors(source)
+        self.assertTrue(changed)
+        self.assertEqual(matched, 2)
+        self.assertEqual(rewritten.count('onclick="event.stopPropagation();"'), 2)
+        self.assertIn('href="javascript:toggleEntry(\'1\',\'\')"', rewritten)
+        self.assertIn('href=" JaVaScRiPt : toggleEntry ( \'2\' , \'alt\' ) "', rewritten)
+        self.assertIn('href="javascript:dummyFunction()"', rewritten)
+        self.assertIn('onclick="keepExisting()" href="javascript:toggleEntry(\'4\',\'\')"', rewritten)
+        self.assertIn('href="javascript:toggleEntry(\'foo\',\'\')"', rewritten)
+        self.assertIn('href="javascript:toggleEntry(\'has space\',\'\')"', rewritten)
+        self.assertIn('href="javascript:toggleEntry(window.id,\'\')"', rewritten)
+        self.assertIn('href="toggleEntry(\'bare\',\'\')"', rewritten)
+        self.assertIn('.news-toggle a[data-archive-derived="news-toggle-anchor-v1"]', rewritten)
+        self.assertIn('width: 14px;', rewritten)
+        self.assertIn('height: 11px;', rewritten)
+        self.assertNotIn('preventDefault', rewritten)
+        self.assertNotIn('eval(', rewritten)
+        plain = "<p>no news toggle or toggleEntry</p>"
+        self.assertEqual(pages.rewrite_news_toggle_anchors(plain), (plain, False, 0))
+        repeated, repeated_changed, repeated_matched = pages.rewrite_news_toggle_anchors(rewritten)
+        self.assertFalse(repeated_changed)
+        self.assertEqual(repeated_matched, 0)
+        self.assertEqual(repeated, rewritten)
+
+    def test_news_toggle_anchor_rewrite_runs_in_export_and_records_scope(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            base, site, manifest = self._fixture(Path(tmp))
+            target_route = "/news/rss-07-2007.xml"
+            other_route = "/news/other.xml"
+            target_source = """<html><head></head><body>
+<div class="hoverContainer" onclick="javascript:toggleEntry('1','')"><h1><a href="javascript:dummyFunction()">Title</a></h1>
+<ul><li class="news-toggle"><a href="javascript:toggleEntry('1','')"><img src="/v2/images/pixel.gif"></a></li></ul></div>
+</body></html>""".encode("utf-8")
+            other_source = """<html><head></head><body>
+<div class="hoverContainer" onclick="javascript:toggleEntry('2','')"><ul><li class="news-toggle"><a href="javascript:otherAction()">Other</a></li></ul></div>
+</body></html>""".encode("utf-8")
+            target_path = site / target_route.lstrip("/")
+            other_path = site / other_route.lstrip("/")
+            target_path.parent.mkdir(parents=True, exist_ok=True)
+            target_path.write_bytes(target_source)
+            other_path.write_bytes(other_source)
+            payload = json.loads(manifest.read_text(encoding="utf-8"))
+            for route, relative, data in (
+                (target_route, "offline/site/" + target_route.lstrip("/"), target_source),
+                (other_route, "offline/site/" + other_route.lstrip("/"), other_source),
+            ):
+                payload["files"].append(
+                    {
+                        "route": route,
+                        "output_path": relative,
+                        "derived_sha256": hashlib.sha256(data).hexdigest(),
+                        "derived_length": len(data),
+                        "mime": "text/html; charset=UTF-8",
+                        "kind": "html",
+                        "source_base_url": "http://www.worldofwarcraft.com" + route,
+                    }
+                )
+                payload["origin_index"]["www.worldofwarcraft.com" + route] = route
+            manifest.write_text(json.dumps(payload), encoding="utf-8")
+            output = base / "pages"
+            result = pages.export_pages(
+                source_site=site,
+                manifest_path=manifest,
+                output=output,
+                workspace_root=base,
+                max_bytes=500_000_000,
+                min_free_bytes=0,
+            )
+            target = (output / "news/rss-07-2007.xml.html").read_text(encoding="utf-8")
+            other = (output / "news/other.xml.html").read_text(encoding="utf-8")
+            self.assertEqual(result["stats"]["news_toggle_anchor_repaired"], 1)
+            self.assertEqual(target.count('onclick="event.stopPropagation();"'), 1)
+            self.assertIn('href="javascript:toggleEntry(', target)
+            self.assertIn("&#x27;1&#x27;", target)
+            self.assertIn('href="javascript:dummyFunction()"', target)
+            self.assertNotIn('data-archive-derived="news-toggle-anchor-v1"', other)
+            provenance = json.loads((output / "export-provenance.json").read_text(encoding="utf-8"))
+            target_record = next(row for row in provenance["files"] if row.get("route") == target_route)
+            other_record = next(row for row in provenance["files"] if row.get("route") == other_route)
+            self.assertIn("news-toggle anchor repair", target_record["derivation_reason"])
+            self.assertNotIn("news-toggle anchor repair", other_record.get("derivation_reason", ""))
+            self.assertEqual(target_path.read_bytes(), target_source)
+            self.assertEqual(other_path.read_bytes(), other_source)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,0 +1,35 @@
+{
+  "schema": "continuous-wow-net-control19-root-approved-plan/v1",
+  "generated_utc": "2026-10-15T13:27:25.254581+00:00",
+  "task_id": "NET-CONTROL-019",
+  "phase": "approved_pending_single_worker_dispatch",
+  "approved_by": "Root explicit CONTROL019 authorization after source13 delta acceptance",
+  "ownership": "research/continuous-recovery-20261015/network-control19/**",
+  "guard": {
+    "NET018_last_request_finished_utc": "2026-10-15T12:49:52.734290Z",
+    "cooldown_seconds": 120,
+    "not_before_utc": "2026-10-15T12:51:52.734290Z",
+    "additional_Retry_After_if_present": true
+  },
+  "replay_url": "https://web.archive.org/web/20070322234302id_/http://www.worldofwarcraft.com:80/news/newsarchive.css",
+  "expected": {
+    "source_HTTP": 200,
+    "mime": "text/css",
+    "bytes": 109,
+    "sha256": "69915a4eea19ec455a60b89c64ed661fc55d48bc3a724bdffcc91bd2d617aa7b",
+    "actual_memento": "2007-03-22T23:43:02+00:00"
+  },
+  "limits": {
+    "max_attempts": 2,
+    "max_seconds": 120,
+    "max_total_body_bytes": 16384,
+    "min_dispatch_monotonic_seconds": 1.35,
+    "disk_floor_bytes": 11005853696,
+    "CDX_queries": 0,
+    "redirects": 0
+  },
+  "transport": "Directfirst thenexisting127.0.0.1:7890proxy; verifyTLS; actualUTC/monotonicjournalbeforetransport, curltracecrosscheck, diskfinallypostflight.",
+  "stop": "429503immediately/RetryAfter; failure/cap/deadline/disk; completecontrolreturnsidle, noautomaticnextbatch.",
+  "integration": "0newresources, no source/export/Git/production/master mutations; rawheader/trace/bodylocalonly, sanitizedmetadata public.",
+  "next_batch": "NET020 proposal only; no execute authorization. Success or failure returns idle."
+}

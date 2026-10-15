@@ -1829,6 +1829,132 @@ def rewrite_wrath_card_hit_area(text: str, *, route: str) -> tuple[str, bool]:
     return text[:match.start()] + insertion + text[match.start():], True
 
 
+_NEWS_TOGGLE_ANCHOR_MARKER = 'data-archive-derived="news-toggle-anchor-v1"'
+_NEWS_TOGGLE_STYLE_MARKER = 'data-archive-derived="news-toggle-anchor-style-v1"'
+_NEWS_TOGGLE_ANCHOR_STYLE = f"""<style {_NEWS_TOGGLE_STYLE_MARKER}>
+/* Derived pointer repair only: the matched historical news toggle anchor is 14x11. */
+.news-toggle a[{_NEWS_TOGGLE_ANCHOR_MARKER}] {{
+    display: block;
+    width: 14px;
+    height: 11px;
+}}
+</style>"""
+_NEWS_TOGGLE_CALL_RE = re.compile(
+    r"^\s*(?P<prefix>(?i:javascript)\s*:\s*)?toggleEntry\s*\(\s*"
+    r"(?P<id_quote>['\"])(?P<entry_id>[A-Za-z0-9_-]+)(?P=id_quote)\s*,\s*"
+    r"(?P<alt_quote>['\"])(?P<alt>[A-Za-z0-9_-]*)(?P=alt_quote)\s*\)\s*;?\s*$",
+)
+
+
+def _normalize_news_toggle_call(
+    value: str | None,
+    *,
+    require_javascript_prefix: bool = False,
+) -> tuple[str, str] | None:
+    """Return the exact two simple toggle arguments without changing values."""
+
+    if not value:
+        return None
+    match = _NEWS_TOGGLE_CALL_RE.fullmatch(value)
+    if not match or (require_javascript_prefix and match.group("prefix") is None):
+        return None
+    return match.group("entry_id"), match.group("alt")
+
+
+def _token_has_class(token: _MarkupToken, class_name: str) -> bool:
+    values = _attrs_map(token.attrs).get("class", "")
+    return class_name.casefold() in {part.casefold() for part in re.split(r"\s+", values) if part}
+
+
+def _news_toggle_anchor_tag(token: _MarkupToken) -> str:
+    raw = token.raw
+    if token.self_closing:
+        close = re.search(r"\s*/\s*>$", raw)
+        if close is None:
+            raise PagesExportError("news toggle anchor self-closing tag has no stable end")
+        position = close.start()
+    else:
+        position = raw.rfind(">")
+        if position < 0:
+            raise PagesExportError("news toggle anchor tag has no stable end")
+    return raw[:position] + f' onclick="event.stopPropagation();" {_NEWS_TOGGLE_ANCHOR_MARKER}' + raw[position:]
+
+
+def rewrite_news_toggle_anchors(text: str) -> tuple[str, bool, int]:
+    """Give only paired historical news-toggle anchors one click owner.
+
+    The source uses the same ``toggleEntry`` call in a narrow anchor's
+    ``javascript:`` href and its nearest ``.hoverContainer`` onclick.  A
+    pointer or Enter activation of that anchor otherwise invokes both paths.
+    The derived anchor stops propagation while retaining the original href,
+    so its default historical call runs exactly once.  Non-matching anchors,
+    title links, forms, and ordinary list items are left untouched.
+    """
+
+    if "news-toggle" not in text or "toggleEntry" not in text:
+        return text, False, 0
+
+    parser = _MarkupTokenParser(text)
+    try:
+        parser.feed(text)
+        parser.close()
+    except Exception as exc:
+        raise PagesExportError("news toggle anchor tokenization failed") from exc
+
+    ancestors: list[_MarkupToken] = []
+    anchor_replacements: list[tuple[int, int, str]] = []
+    matched = 0
+    for token in parser.tokens:
+        if token.kind == "start":
+            if token.name == "a":
+                attrs = _attrs_map(token.attrs)
+                href_call = _normalize_news_toggle_call(
+                    attrs.get("href"), require_javascript_prefix=True
+                )
+                if href_call is not None and _token_has_class_any(ancestors, "li", "news-toggle"):
+                    hover = _nearest_token_with_class(ancestors, "hoverContainer")
+                    parent_call = _normalize_news_toggle_call(
+                        _attrs_map(hover.attrs).get("onclick") if hover is not None else None
+                    )
+                    existing_onclick = attrs.get("onclick")
+                    if hover is not None and parent_call == href_call and not existing_onclick:
+                        if _NEWS_TOGGLE_ANCHOR_MARKER not in token.raw:
+                            anchor_replacements.append((token.start, token.end, _news_toggle_anchor_tag(token)))
+                            matched += 1
+            if token.name not in _VOID_HTML_TAGS:
+                ancestors.append(token)
+        elif token.kind == "end":
+            for index in range(len(ancestors) - 1, -1, -1):
+                if ancestors[index].name == token.name:
+                    del ancestors[index:]
+                    break
+
+    if not anchor_replacements:
+        return text, False, 0
+
+    for start, end, replacement in reversed(anchor_replacements):
+        text = text[:start] + replacement + text[end:]
+
+    if _NEWS_TOGGLE_STYLE_MARKER not in text:
+        head_matches = list(re.finditer(r"</head\s*>", text, flags=re.I))
+        if len(head_matches) != 1:
+            raise PagesExportError("news toggle anchor style requires exactly one closing head tag")
+        match = head_matches[0]
+        text = text[:match.start()] + "\n" + _NEWS_TOGGLE_ANCHOR_STYLE + "\n" + text[match.start():]
+    return text, True, matched
+
+
+def _token_has_class_any(ancestors: list[_MarkupToken], tag: str, class_name: str) -> bool:
+    return any(token.name == tag and _token_has_class(token, class_name) for token in ancestors)
+
+
+def _nearest_token_with_class(ancestors: list[_MarkupToken], class_name: str) -> _MarkupToken | None:
+    for token in reversed(ancestors):
+        if _token_has_class(token, class_name):
+            return token
+    return None
+
+
 def runtime_js(base_path: str, route_map: dict[str, str] | None = None) -> str:
     encoded = json.dumps(base_path)
     encoded_routes = json.dumps(route_map or {}, ensure_ascii=False, separators=(",", ":"))
@@ -2353,6 +2479,14 @@ def export_pages(
                         "no image payload recovered"
                     )
                     stats["wrath_card_hit_area_repaired"] += 1
+                text, changed, toggle_count = rewrite_news_toggle_anchors(text)
+                if changed:
+                    derivation_notes.append(
+                        "derived news-toggle anchor repair: only anchors whose javascript toggleEntry href "
+                        "matches the nearest hoverContainer onclick receive stopPropagation and a 14x11 hit area; "
+                        "original href/default action preserved"
+                    )
+                    stats["news_toggle_anchor_repaired"] += toggle_count
                 text = normalize_html_prolog(text)
                 text = inject_html_runtime(text, base_path=base_path, source_sha=source_sha)
                 derived = text.encode("utf-8")
@@ -2668,3 +2802,4 @@ def main(argv: list[str] | None = None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

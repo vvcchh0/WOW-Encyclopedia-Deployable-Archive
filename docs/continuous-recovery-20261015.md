@@ -219,6 +219,16 @@ v12 已由根代理发布为 Pages `c479d9d623a30886a8ec89a8a7635bd9f7b5ef4a`，
 
 A 当前仅按根代理授权做五分钟原新闻控件诊断：分别在全新 context 点标题、可见 li 中心、窄 anchor 中心及键盘 Enter，区分真实用户可见控件与静态双 handler 迹象，不改生产或 v12。最终公开便携 Release 留到本轮最后稳定接受版本统一生成/上传，中间 ZIP 候选与旧包保留。
 
+### 13:10 v13 有界并行接入
+
+[NET018 独立验收](../research/continuous-recovery-20261015/rss18-acceptance.json)已接受 Sep2006、May2008、Dec2007 三份 expanded HTML：[选定来源](../research/continuous-recovery-20261015/selected-rss18-source-map.json)共 338,761 字节，38/11/29 个真实文章发布日期均在对应月份，Memento、正文 SHA/CDX digest、来源身份核对一致。May2008 是实际 pre-anchor 捕获的进行中月份，仅观察到 May1–8 十一条，不声称整月完整。该批 11 次尝试、五个真实源响应、12 条新 CDX 行，连续五次 TLS/transport 失败准确停止，后五目标均已尝试但没有源 HTTP，保持未知。
+
+[新闻控件独立观察](../research/continuous-recovery-20261015/news-toggle-independent-review.json)区分了真实点击区：14×11 li 中心与标题正常展开，14×1 anchor 中心及正确聚焦 anchor 的 Enter 保持折叠。首轮第四项误测标题 Enter，保留原回执后只补正确 anchor Enter，不将它混作已覆盖。根代理明确批准的[并行计划](../research/continuous-recovery-20261015/v13-approved-work-plan.json)由 A 仅在派生 HTML 匹配原 toggle anchor 与对应父 onclick，阻止重复冒泡而保留原 href/default；14×11 点击面只作用于匹配锚点，标题、普通 li 和其他 JavaScript 链接不改。原始字节和 v12 冻结树不动，尚未据计划宣称修复或运行通过。
+
+B 同时只做 fresh v13 source：以 v12 的 8,344 条为唯一守恒基线，追加三页，预期 8,347 来源、183 别名与 38 个 overlay 配方。source producer/maps guard 与 A 合法修改 exporter 的阶段分开，不把当前 exporter 变化误报为旧 v12 变更；最终 exporter 验收仍由根代理处理。两执行者均禁止整站 export、Git、发布和新 Wayback 请求。
+
+[TLS cadence 独立接受](../research/continuous-recovery-20261015/tls-cadence-acceptance.json)逐项重算三批 42 条实际请求、19 个源 HTTP 的字段/起始与派发间隔/距前次成功完成时间，仅批内比较，未纳入控制批。三批末尾均为五个 curl35/无源 HTTP；NET013 在更早失败后还恢复过 HTTP 成功，不能概括全批单向失效。新连接压力或链路节流仍是假设，没有根因结论或降频实验。
+
 ## 取舍与后续顺序
 
 优先修复已有真实内容因地址规范化或客户端逻辑无法访问的问题；其次补取来源明确且过去因网络失败没有取得内容判定的对象；再沿历史脚本、菜单和 CDX 记录提取有证据的缺失资源。按编号生成的截图地址可以作为来源证据，不能凭猜测把实体记为已取得。若本地审计发现更高价值的缺口，下一批按证据与可恢复性调整，不为填满时间盲目重试。
@@ -232,3 +242,22 @@ Karazhan 复查结束后，剩余旧 TLS 未判定项是否继续，取决于本
 每批前后检查 D 盘余量至少 11,005,853,696 字节。源 HTTP 状态排除代理 CONNECT 200；实际捕获时间只从有效 Memento 读取。正文长度、SHA256、MIME 与解码独立记录，CDX 的 WARC 索引长度不当作正文长度。失败分别记录网络未判定、未存档、错误正文、未请求。原始响应头与追踪日志仅本地留存，公开记录脱敏。
 
 接入新素材或修复后，统筹核对来源、摘要、时间与范围，根代理负责 Git、发布与最终验收。局部检查只覆盖实际运行的场景，不将静态通过或队列派发记为运行完成。
+
+
+### 13:25 UTC — v13 源与展开修复验收；收尾安排
+
+v13 的 8347 份来源、183 个别名与三份新增 expanded HTML 已独立验收；保留两旧页原始 SHA，派生层仅各一处新月页链接接通。首页 HTTPS May08 旧导航链接仅作为已批准的本地导航兼容，指向独立接受的 HTTP 来源，不增加 HTTPS 来源或资源恢复计数。false 预检保留为独立历史文件。新闻锚点修复的最终生产 SHA、44 项联合测试与真实三页 57/49/39 个匹配已核对，最终导出和实际鼠标/键盘验收由 root 接续。
+
+B 只执行已授权 CONTROL019 的同一 CSS109B 连接检查；八目标 NET020 仅准备降频提案，需 control 独立接受后 root 明确批准。其单一实验变量为实际 gate5.1s（声明最低5.0s），不是已确认的链路根因或已执行实验。Pages 与当前 page ledger 仍为已发布 v12/c479d9、线上9对象通过。
+
+操作收尾时间：14:05 UTC 后不启动新获取，14:10 后不启动新 source 版本，至少留30分钟验收最终便携 ZIP、隔离 HTTP 浏览、上传 GitHub Release/API 核验并同步文档。自动接续授权截止仍为14:44:25 UTC；只公开最终稳定接受版的新 Release，中间 v11 ZIP 仅保留本地候选。
+
+
+CONTROL019 已独立接受：两次尝试 direct curl28、proxy真实源200；CSS109B、Memento2007-03-22、正文 SHA/CDX digest 参考一致，mono间隔4.219s、UTC4.216279s，磁盘前后满足边界，无CDX/跳转/新增资源。B现idle；NET020仍仅提案。A只准备 v13 的三新月页与四种真实新闻展开交互 runner，等待 root 新预览 READY。
+
+
+### 13:45 UTC — v13 实际预览验收与唯一降频批次
+
+Root 已实际导出 v13（8347来源、8486声明文件、450个匹配新闻锚点），29009预览READY；A已收到正式执行指令，验三新月页与真实title/li/anchor pointer/Enter两次切换，不重跑图库矩阵。正式 root 最终验收和发布仍待完成，当前已发布版本保持v12。
+
+CONTROL019 accepted 后 root 明确批准 NET020：B唯一执行者按既定八exact地址，pre-anchor单CDX页和每页最多一回放，32attempt/480s旧边界；最低UTC5.0s、实际mono gate5.1s独立验收，14:05 UTC硬停止新获取，五连续传输失败/429503立即停批，无自动control或下一批。素材与冻结v13分离，是否下一版本由root依据剩余时间另行决定。

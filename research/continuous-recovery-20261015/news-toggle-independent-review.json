@@ -1,0 +1,50 @@
+{
+  "schema": "continuous-wow-news-toggle-independent-observation-review/v1",
+  "checked_utc": "2026-10-15T13:06:01.713222Z",
+  "accepted_observations": true,
+  "accepted": true,
+  "network_requests_by_review": 0,
+  "first_four_receipt": {
+    "path": "research/continuous-recovery-20261015/news-toggle-review/news-toggle-review-receipt.json",
+    "bytes": 674219,
+    "sha256": "230a26d25cb23d095bf899f6710d7d21548f28dca39cc51414674a5d26fb60ab"
+  },
+  "anchor_enter_supplement": {
+    "path": "research/continuous-recovery-20261015/news-toggle-review/news-toggle-anchor-enter-receipt.json",
+    "bytes": 142998,
+    "sha256": "c92a511a2e33a181634a7e47f9005efab521f1595e4633c60781ab1acbc69a3a"
+  },
+  "first_runner": {
+    "path": "research/continuous-recovery-20261015/news-toggle-review/news_toggle_review.js",
+    "bytes": 12251,
+    "sha256": "75f40867eecdbd9f43f99a2da1fb12a4bad335d5f9ba31dffa054192b900b2d1"
+  },
+  "supplement_runner": {
+    "path": "research/continuous-recovery-20261015/news-toggle-review/news_toggle_anchor_enter.js",
+    "bytes": 7890,
+    "sha256": "4009441d5e94b546e03bf3e1980caad1b9119a929ba53cfa6c8c82f532491a84"
+  },
+  "coverage": {
+    "first": "Titlepointer/li-center/1pxanchor-center/titleEnter, eachfreshcontext; fourthwasextratitleEnter, notrequestedanchorEnter.",
+    "supplement": "OnlymissingtoggleanchorEnter freshcontext, actualactiveElement/href/ancestorverified; original4notrerun.",
+    "total_executed_observations": 5,
+    "required_distinct_actions_covered": 4
+  },
+  "observations": {
+    "title_click": "expands",
+    "visible_li_center_14x11": "expands",
+    "toggle_anchor_center_14x1": "remainscollapsed",
+    "toggle_anchor_Enter": "remainscollapsed",
+    "title_Enter_extra": "expands"
+  },
+  "defect_scope": "Narrowtoggleanchor pointercenter/keyboardEnter fail toexpand; wholevisibleplusli andtitles work. Workerpassed/status fields mean diagnosticcompleted, notallproductactionswork.",
+  "mechanism": "Same source toggleEntry call exists inanchorjavascriptdefault andparenthoveronclick; doubleinvocation is supportedmechanismhypothesis, notinstrumentedcallcount.",
+  "derived_fix_candidate": {
+    "scope": "Onlyli.news-toggle > a withnearest.hoverContainer andexactnormalized matchingtoggleEntry call inhref andparentonclick",
+    "behavior": "Giveanchor soleclick ownership bystoppingeventpropagation while preservingdefaultsourcehref; li-outsideanchor andtitles stilluseparent. No globalhref/CSS/callback changes.",
+    "validation_needed": "Realpointertitle/li/anchor andanchorEnter eachcollapse→expand→collapse; strictnonmatchcontrol; source/raw/frozen unchanged.",
+    "authorization": "Proposalonly; rootdecidesimplementation/newversion, nofixapplied."
+  },
+  "v12_unchanged": true,
+  "errors": []
+}

@@ -1,0 +1,109 @@
+{
+  "schema": "continuous-wow-network-control19-config/v1",
+  "batch_id": "NET-CONTROL-019",
+  "prepared_utc": "2026-10-15T13:30:50.182918+00:00",
+  "network_requests": 0,
+  "not_before_utc": "2026-10-15T12:51:52.734290+00:00",
+  "guard_snapshot": {
+    "checked_utc": "2026-10-15T13:30:50.182918+00:00",
+    "checked_monotonic": 37800.171,
+    "not_before_utc": "2026-10-15T12:51:52.734290+00:00",
+    "remaining_seconds": 0.0,
+    "satisfied": true
+  },
+  "target": "http://www.worldofwarcraft.com/news/newsarchive.css",
+  "captured_original_url": "http://www.worldofwarcraft.com:80/news/newsarchive.css",
+  "replay_url": "https://web.archive.org/web/20070322234302id_/http://www.worldofwarcraft.com:80/news/newsarchive.css",
+  "expected": {
+    "source_HTTP": 200,
+    "mime": "text/css",
+    "bytes": 109,
+    "sha256": "69915a4eea19ec455a60b89c64ed661fc55d48bc3a724bdffcc91bd2d617aa7b",
+    "actual_memento": "2007-03-22T23:43:02+00:00",
+    "cdx_digest_reference": "67KDGC7ADIDSHVIZKCXTAZYR24FOAYWP"
+  },
+  "policy": {
+    "direct_first": true,
+    "proxy": "http://127.0.0.1:7890",
+    "max_attempts": 2,
+    "network_window_seconds": 120,
+    "minimum_dispatch_monotonic_seconds": 1.35,
+    "minimum_free_bytes": 11005853696,
+    "max_total_body_bytes": 16384,
+    "max_entity_body_bytes": 16384,
+    "tls_verification": "curl default verification enabled",
+    "redirects": 0,
+    "cdx_queries": 0,
+    "stop_http_codes": [
+      429,
+      503
+    ]
+  },
+  "inputs": {
+    "plan": {
+      "path": "research/continuous-recovery-20261015/control19-approved-plan.json",
+      "bytes": 1715,
+      "sha256": "8d24c522109afedb1f5370e536430be6056a2013ba020dad3632bdd4085df1c0"
+    },
+    "control17_acceptance": {
+      "path": "research/continuous-recovery-20261015/control17-acceptance.json",
+      "bytes": 1500,
+      "sha256": "4d21363fb91da834c1956df578e2593565f9871aaaf11738b348460532eea26c"
+    },
+    "control17_report": {
+      "path": "research/continuous-recovery-20261015/network-control17/control-report.json",
+      "bytes": 14134,
+      "sha256": "ce299aab4d436870a1c10ed4c5a270afb4e91468a1264ae089a20851e47b0911"
+    },
+    "control17_journal": {
+      "path": "research/continuous-recovery-20261015/network-control17/dispatch-log.json",
+      "bytes": 2574,
+      "sha256": "1d5c9bd7c945facfa21c4bffcb2008bdb8eb240273385afbf4ea139b154fa600"
+    },
+    "control17_driver": {
+      "path": "research/continuous-recovery-20261015/network-control17/control17.py",
+      "bytes": 22519,
+      "sha256": "b266d8fbd91984953b10bff5adedffafa99fd57bebc4cd5a3a4a2f34a8cd300f"
+    },
+    "control14_driver": {
+      "path": "research/continuous-recovery-20261015/network-control14/control14.py",
+      "bytes": 19317,
+      "sha256": "ceb6fbc621358f28601050aec84c4a012d9a51ba23464ce599542306649cda40"
+    },
+    "acceptance": {
+      "schema": "continuous-wow-control17-independent-acceptance/v1",
+      "checked_utc": "2026-10-15T12:43:55.805146Z",
+      "accepted": true,
+      "network_requests_by_acceptance": 0,
+      "report": {
+        "path": "research/continuous-recovery-20261015/network-control17/control-report.json",
+        "bytes": 14134,
+        "sha256": "ce299aab4d436870a1c10ed4c5a270afb4e91468a1264ae089a20851e47b0911"
+      },
+      "journal": {
+        "path": "research/continuous-recovery-20261015/network-control17/dispatch-log.json",
+        "bytes": 2574,
+        "sha256": "1d5c9bd7c945facfa21c4bffcb2008bdb8eb240273385afbf4ea139b154fa600"
+      },
+      "attempts": 2,
+      "source_HTTP_excludingCONNECT": [
+        null,
+        200
+      ],
+      "new_recovered_resources": 0,
+      "knownCSS_bytes": 109,
+      "body_sha256": "69915a4eea19ec455a60b89c64ed661fc55d48bc3a724bdffcc91bd2d617aa7b",
+      "actual_memento": "2007-03-22T23:43:02+00:00",
+      "minimum_monotonic_dispatch_seconds": 4.078000000001339,
+      "request_start_UTC_interval_seconds": 4.072323,
+      "trace_first_clock_interval_seconds": 4.05800000000454,
+      "guard_not_before_utc": "2026-10-15T12:11:30.115333+00:00",
+      "actual_guard_utc": "2026-10-15T12:40:46.987530+00:00",
+      "direct_curl28_then_proxy_validCSS": true,
+      "noCDX_or_redirect": true,
+      "connection_scope": "Oneknownobjectprovidedfreshproxyconnectionevidence aftercooldown; not blankethealthforallURLs.",
+      "further_batch": "Rootmustexplicitlyapprovenext8targetbatch; successdoesnotautomaticallyauthorizeit.",
+      "errors": []
+    }
+  }
+}

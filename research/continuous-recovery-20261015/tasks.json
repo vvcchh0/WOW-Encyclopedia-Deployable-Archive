@@ -1,13 +1,18 @@
 {
   "schema": "continuous-wow-recovery-tasks/v1",
   "deadline_utc": "2026-10-15T14:44:00Z",
-  "updated_utc": "2026-10-15T12:55:37.096833Z",
+  "updated_utc": "2026-10-15T13:38:18.725997+00:00",
   "coordination": {
     "heartbeat_id": "wow-8",
     "heartbeat_interval_minutes": 15,
     "heartbeat_until_utc": "2026-10-15T14:44:25Z",
     "configured_by": "root agent via app tool after explicit user authorization",
-    "resume_rule": "Inspect live agents and latest receipts before dispatch; preserve active batches and permit only one network worker."
+    "resume_rule": "Inspect live agents and latest receipts before dispatch; preserve active batches and permit only one network worker.",
+    "finish_schedule": {
+      "acquisition_stop_utc": "2026-10-15T14:05:00Z",
+      "source_version_stop_utc": "2026-10-15T14:10:00Z",
+      "reserve": "At least30min for final ZIP/isolated HTTP acceptance, GitHub Release upload/API verification and documentation. Conservative execution schedule; automation authorization remains through14:44:25Z."
+    }
   },
   "tasks": [
     {
@@ -1397,7 +1402,7 @@
     },
     {
       "id": "LOCAL-REMAINING-RSS13-PROPOSAL-024",
-      "status": "root_approved_as_NET018_executed_pending_independent_acceptance",
+      "status": "Historical NET018 queue executed; three sources accepted. Superseded for next acquisition by NET020 slow proposal.",
       "owner": "coordinator",
       "network": false,
       "write_scope": "research/continuous-recovery-20261015/remaining-rss13-next8-proposal.json",
@@ -1411,7 +1416,7 @@
     },
     {
       "id": "NET-RSS-018",
-      "status": "worker_completed_three_HTML_pending_independent_acceptance_fivefailstop",
+      "status": "three_expanded_HTML_independently_accepted_stopped5fail",
       "owner": "wayback_recheck_batch1",
       "network": true,
       "write_scope": "research/continuous-recovery-20261015/network-rss18/**",
@@ -1425,14 +1430,16 @@
         "valid_expanded_HTML": 3,
         "payload_bytes": 338761,
         "stop": "5consecutiveTLStransportfailures",
-        "worker_now_idle": true,
         "further_network_authorized": false,
-        "not_integrated_v12": true
+        "not_integrated_v12": true,
+        "independent_acceptance": "research/continuous-recovery-20261015/rss18-acceptance.json",
+        "selected_map": "research/continuous-recovery-20261015/selected-rss18-source-map.json",
+        "worker_idle_at_network_completion": true
       }
     },
     {
       "id": "NEWS-TOGGLE-REVIEW-025",
-      "status": "root_approved_formally_dispatched_bounded_loopback_diagnostic",
+      "status": "observations_independently_accepted_anchor_pointer_Enter_defect_scope",
       "owner": "sidebar_local_audit",
       "network": false,
       "write_scope": "research/continuous-recovery-20261015/news-toggle-review/**",
@@ -1442,7 +1449,137 @@
         "production_mutations": 0,
         "Wayback_requests": 0
       },
-      "goal": "Distinguishnative title,visibleli center,1pxanchorcenter andEnter actualprepost; staticduplicatehandlers notwholeplusdefectproof"
+      "goal": "Distinguishnative title,visibleli center,1pxanchorcenter andEnter actualprepost; staticduplicatehandlers notwholeplusdefectproof",
+      "result": {
+        "original_executed": 4,
+        "supplement_executed": 1,
+        "required_actions": 4,
+        "extra_title_Enter": true,
+        "title_and_li_center_work": true,
+        "anchor_center_and_anchor_Enter_remain_collapsed": true,
+        "acceptance": "research/continuous-recovery-20261015/news-toggle-independent-review.json"
+      }
+    },
+    {
+      "id": "TLS-CADENCE-REVIEW-026",
+      "status": "independently_accepted_42rows_withinbatch_only_no_rootcause_claim",
+      "owner": "wayback_recheck_batch1",
+      "network": false,
+      "write_scope": "research/continuous-recovery-20261015/tls-cadence-review/**",
+      "result": {
+        "rows": 42,
+        "source_HTTP": 19,
+        "acceptance": "research/continuous-recovery-20261015/tls-cadence-acceptance.json",
+        "experiment_executed": false
+      }
+    },
+    {
+      "id": "NEWS-TOGGLE-DERIVED-FIX-027",
+      "status": "44 tests independently accepted; root v13 fresh export contains450 matched anchors; actual browser verification underway.",
+      "owner": "sidebar_local_audit",
+      "network": false,
+      "write_scope": [
+        "tools/export_github_pages.py",
+        "tests/test_github_pages_export.py",
+        "research/continuous-recovery-20261015/news-toggle-derived-fixes/**"
+      ],
+      "inputs": [
+        "research/continuous-recovery-20261015/v13-approved-work-plan.json"
+      ],
+      "goal": "Exactoriginalnews-toggleanchor hrefjavascript:toggleEntry andcorrespondingparenthoveronclick samecall: addonclickevent.stopPropagation preservinghrefdefaultonce, no preventDefault/eval/navigation; matchedanchor14x11surfaceonly; title/li/otherJSunchanged.",
+      "acceptance": {
+        "path": "research/continuous-recovery-20261015/news-toggle-derived-fix-027-independent-acceptance.json",
+        "bytes": 3608,
+        "sha256": "721674c012d05099da49bd094d31c53099e5233a0bae17bbbfba5f3682a28166"
+      },
+      "stop": "Max3localrepairs thenreturnerrors; scope/semanticdoubt stop; nofullsiteexport/Git/publish/network."
+    },
+    {
+      "id": "CORE-SOURCE-V13-028",
+      "status": "8347 sources/183 aliases independently accepted; root source delta passed, export pending",
+      "owner": "wayback_recheck_batch1",
+      "network": false,
+      "write_scope": [
+        "research/v13-integration/source/**",
+        ".scratch/offline-navigation-20261015-v13/**"
+      ],
+      "inputs": [
+        "research/continuous-recovery-20261015/v13-approved-work-plan.json"
+      ],
+      "expected_sources": 8347,
+      "aliases": 183,
+      "overlay_recipes": 38,
+      "guard_scope": "Produceroffline_mirror andactualsourceinputs guarded; Aauthorizedcurrentexporterchange notv12frozenmutation. Ifoldsourcebuilderhadexporterbyteguard explicitlydocumentmovingit torootfinalexportphase.",
+      "stop": "15min/error/non3new/semanticdoubt/retention/diskfloor;noNET/export/Git/prod/ledger.",
+      "acceptance": {
+        "path": "research/continuous-recovery-20261015/v13-source-independent-acceptance.json",
+        "bytes": 6224,
+        "sha256": "d71ca1788bc2932b576549edd25fd5814cb0d229bf75081c0ba1728531aa43e6"
+      }
+    },
+    {
+      "id": "NET-CONTROL-019",
+      "status": "independently accepted known CSS; zero new resources; sole network worker idle",
+      "owner": "wayback_recheck_batch1",
+      "network": true,
+      "write_scope": [
+        "research/continuous-recovery-20261015/network-control19/**"
+      ],
+      "plan": {
+        "path": "research/continuous-recovery-20261015/control19-approved-plan.json",
+        "bytes": 1715,
+        "sha256": "8d24c522109afedb1f5370e536430be6056a2013ba020dad3632bdd4085df1c0"
+      },
+      "stop": "Same known CSS only; <=2 attempts/120s/16KiB; return idle without next batch.",
+      "acceptance": {
+        "path": "research/continuous-recovery-20261015/control19-acceptance.json",
+        "bytes": 1910,
+        "sha256": "7715d0c0b2cbc5290d1955c89ae6cfcdbb23ba54d9d18020239b5c10ae38f770"
+      }
+    },
+    {
+      "id": "LOCAL-RSS20-SLOW-PROPOSAL-029",
+      "status": "Root explicitly approved exact proposal after accepted CONTROL019; sole B dispatched, preparation/execution in owned network-rss20 directory.",
+      "owner": "coordinator",
+      "network": false,
+      "proposal": {
+        "path": "research/continuous-recovery-20261015/remaining-rss10-next8-slow-proposal.json",
+        "bytes": 15993,
+        "sha256": "9babab3c2ea34e8c0433c1a86caaf7aa7a6c3ec56bae023ad8a89be6fb1bde39"
+      }
+    },
+    {
+      "id": "NET-RSS-020",
+      "status": "Root approved and sole B dispatched; actual network receipt pending",
+      "owner": "wayback_recheck_batch1",
+      "network": true,
+      "write_scope": [
+        "research/continuous-recovery-20261015/network-rss20/**"
+      ],
+      "plan": "research/continuous-recovery-20261015/rss20-approved-plan.json",
+      "plan_sha256": "3522af754559c111f7d4f880740de423319777a851eff148da41c2c1718b4957",
+      "caps": {
+        "targets": 8,
+        "attempts": 32,
+        "seconds": 480,
+        "bytes": 67108864,
+        "entity_bytes": 16777216,
+        "mono_gate_seconds": 5.1,
+        "actual_UTC_min_seconds": 5.0,
+        "hard_cutoff_utc": "2026-10-15T14:05:00Z"
+      },
+      "stop": "5 transport failures or429/503/cap/deadline/disk, record cooldown and idle, no automatic control."
+    },
+    {
+      "id": "V13-FOCUSED-BROWSER-030",
+      "status": "A dispatched after root actual29009 READY; final receipt pending",
+      "owner": "sidebar_local_audit",
+      "network": false,
+      "write_scope": [
+        "research/v13-integration/browser/**"
+      ],
+      "base_url": "http://127.0.0.1:29009/WOW-Encyclopedia-Deployable-Archive/",
+      "scope": "Three pages38/11/29 posted dates+CSS; title/li/marked-anchor center/anchor Enter each two real activations; one PNG; no old-gallery matrix."
     }
   ],
   "release_state": {
@@ -1461,7 +1598,7 @@
     "v10_source_build": "root all8338source accepted; fresh8477export allbytes/hygiene/38overlays accepted",
     "hires_batch": "accepted completed with0images;7scoped empty/6unknown; no v10 additions drift",
     "browser_v10": "independent focused runtime accepted across first4groups plus RSS-only sevenpages; known gaps retained",
-    "ssotd_next": "NET012samequeryterminal2082rowsaccepted; noSSOTDfollowup; currentBsoleNET015separatescope",
+    "ssotd_next": "NET012 same-query terminal2082rows accepted; no SSOTD follow-up authorized or active.",
     "v10_published": true,
     "v10_publication_phase": "Accepted: APIbuilt before/after77015ca;14directHTTP200exactbytes/MIME",
     "resource_next": "Only7actualRSSrecordsnowv10static subset;1234othersv9values/versions unchanged; summarymixed full1241+separate1167scope",
@@ -1469,13 +1606,13 @@
     "pages_verified_commit": "c479d9d623a30886a8ec89a8a7635bd9f7b5ef4a",
     "v10_publication_receipt": "research/v10-integration/root-pages-publication.json",
     "v10_online_acceptance": "research/v10-integration/root-pages-online-acceptance.json",
-    "network_next": "NET018completed5failstop,pendingindependent3HTMLacceptance;B nowidle/noautocontrol",
+    "network_next": "Root explicitly approved NET020 after CONTROL019 accepted; sole B dispatched with 5.1s monotonic gate/5.0s UTC minimum and14:05 hard cutoff. No next batch/control authorized.",
     "v11_rule": "OnlyindependentlyacceptedNET013primaryentities mayappend8338v10sources; preserve38overlayrecipes; noemptychangebuild orv10mutation",
     "v11_source_build": "8341source/183aliases/fullread and8480export38overlays/rootfullhygiene accepted",
     "portable_archive": "FinalpubliclatestRelease deferreduntilthisrunlaststableacceptedversion; oldZIPs/localcandidatespreserved",
     "v11_published": true,
     "v11_browser_phase": "Independentreviewaccepted first9plusfinaltitle3imagesgroup; source/productunchanged",
-    "remaining_rss_proposal": "remaining-rss13-next8-proposal.json,Sep06savedreplay+7CDXunknowns,notexecuted",
+    "remaining_rss_proposal": "remaining-rss10-next8-slow-proposal.json: acquisition remaining10, selected8; three newly accepted NET018 sources excluded. Page ledger stays publishedv12 until root new route acceptance.",
     "v11_publication_receipt": "research/v11-integration/root-pages-publication.json",
     "v11_online_acceptance": "research/v11-integration/root-pages-online-acceptance.json",
     "v12_source_build": "8344source/183aliases/full export8483+provenance560609057B/38overlaysaccepted",
@@ -1483,6 +1620,14 @@
     "v12_published": true,
     "v12_publication_receipt": "research/v12-integration/root-pages-publication.json",
     "v12_online_acceptance": "research/v12-integration/root-pages-online-acceptance.json",
-    "toggle_review": "A5minlocal4contextdiagnosticactive,no productchange"
+    "toggle_review": "5nativeobservationsacceptedscope:visibleli/titlework,1pxanchorpointer/Enterfail; rootapprovedscopedderivedfix",
+    "v13_phase": "Fresh root export8486 sources8347 with450 derived anchor repairs, source/root sidebar accepted; root whole-export check and focused browser pending. Published page ledger remainsv12 until final/publish.",
+    "cadence_review": "42rows/19sourceHTTPaccepted withinbatch; NET13earlierfailuresrecovered; no5sexperiment/rootcauseconclusion",
+    "finish_schedule": {
+      "acquisition_stop_utc": "2026-10-15T14:05:00Z",
+      "source_version_stop_utc": "2026-10-15T14:10:00Z",
+      "reserve": "At least30min for final ZIP/isolated HTTP acceptance, GitHub Release upload/API verification and documentation. Conservative execution schedule; automation authorization remains through14:44:25Z."
+    },
+    "v13_browser": "A dispatched after root29009 READY; three new pages plus actual pointer/Enter double-toggle acceptance pending."
   }
 }

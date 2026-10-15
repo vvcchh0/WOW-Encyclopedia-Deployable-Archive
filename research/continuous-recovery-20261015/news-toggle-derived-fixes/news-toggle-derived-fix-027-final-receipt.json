@@ -1,0 +1,219 @@
+{
+  "schema": "news-toggle-derived-fixes/news-toggle-derived-fix-027-final",
+  "generated_utc": "2026-10-15T13:22:02.075Z",
+  "task": "NEWS-TOGGLE-DERIVED-FIX-027",
+  "status": "implementation_stable_pending_root_v13_export",
+  "scope": {
+    "implementation_files": [
+      "tools/export_github_pages.py",
+      "tests/test_github_pages_export.py"
+    ],
+    "receipt_root": "research/continuous-recovery-20261015/news-toggle-derived-fixes",
+    "frozen_and_untouched": [
+      "offline/site",
+      "offline/build-manifest.json",
+      ".scratch/offline-navigation-20261015-v12/site",
+      "tools/historical_exhibits.py",
+      "tests/test_historical_exhibits.py",
+      "research/continuous-recovery-20261015/news-toggle-independent-review.json"
+    ],
+    "network_requests": 0,
+    "full_export_build_browser_run": false,
+    "git_or_publication": false
+  },
+  "implementation_files": [
+    {
+      "path": "tools/export_github_pages.py",
+      "bytes": 135685,
+      "sha256": "636925a2b9721f408b7d9225d3c8e63c2bab1232b51225a8963c6f9cd443258e"
+    },
+    {
+      "path": "tests/test_github_pages_export.py",
+      "bytes": 78772,
+      "sha256": "7602f461833aeb5a1206d33b779ac4ffb7fe4d5f9236559771b72f5f35c659aa"
+    }
+  ],
+  "preliminary_receipt": {
+    "path": "research/continuous-recovery-20261015/news-toggle-derived-fixes/news-toggle-derived-fix-027-receipt.json",
+    "bytes": 8511,
+    "sha256": "c8179fcdbdcc382e4957fc115fddebbcc4ee61df31cdc02ebc7719ba3c4cb3f4",
+    "retained": true,
+    "note": "Historical preliminary receipt retained verbatim; its earlier implementation hashes and truncated CSS hash are superseded by this final receipt."
+  },
+  "accepted_observation": {
+    "path": "research/continuous-recovery-20261015/news-toggle-independent-review.json",
+    "bytes": 2818,
+    "sha256": "20bc404d9abc7ab1f92a18ece2c0171dc776bb1f533f35a2b144c6d43fa6e9dd",
+    "accepted": true,
+    "observed_scope": "Title click, visible li center, narrow toggle-anchor center, and corrected narrow toggle-anchor Enter; the anchor center and Enter remained collapsed while title and li interactions expanded."
+  },
+  "prior_browser_evidence": [
+    {
+      "path": "research/continuous-recovery-20261015/news-toggle-review/news-toggle-review-receipt.json",
+      "bytes": 674219,
+      "sha256": "230a26d25cb23d095bf899f6710d7d21548f28dca39cc51414674a5d26fb60ab"
+    },
+    {
+      "path": "research/continuous-recovery-20261015/news-toggle-review/news-toggle-anchor-enter-receipt.json",
+      "bytes": 142998,
+      "sha256": "c92a511a2e33a181634a7e47f9005efab521f1595e4633c60781ab1acbc69a3a"
+    }
+  ],
+  "source_evidence": {
+    "primary_source": {
+      "path": ".scratch/offline-navigation-20261015-v12/site/news/rss-07-2007.xml",
+      "bytes": 185016,
+      "sha256": "867f0c5003c525d116295e54fcd328845c4d41c3566206d38226b107d8283696"
+    },
+    "additional_source_files": [
+      {
+        "path": ".scratch/offline-navigation-20261015-v12/site/news/rss-06-2007.xml",
+        "bytes": 174728,
+        "sha256": "410cf53924a4226558b5736fad5b50e5b141e1db8f5514274342ea2ffadfdd2b"
+      },
+      {
+        "path": ".scratch/offline-navigation-20261015-v12/site/news/rss-04-2007.xml",
+        "bytes": 143477,
+        "sha256": "94afe06db69d0fe5198f3312808e5b1426636c067b29cd6a9fdc639ce190b532"
+      }
+    ],
+    "markup": [
+      "A real li.news-toggle contains an anchor whose href is javascript:toggleEntry('7-30-07-513','').",
+      "The nearest parent with class hoverContainer has onclick javascript:toggleEntry('7-30-07-513','').",
+      "The narrow anchor is 14px wide by 1px high in the browser; its parent li is 14px by 11px."
+    ],
+    "shared_css": {
+      "path": ".scratch/offline-navigation-20261015-v12/site/news/newsarchive.css",
+      "bytes": 109,
+      "sha256": "69915a4eea19ec455a60b89c64ed661fc55d48bc3a724bdffcc91bd2d617aa7b",
+      "hash_verified_from_path": true
+    }
+  },
+  "real_source_preview": {
+    "command": "Bundled Python in-memory call to rewrite_news_toggle_anchors on the three V12 RSS source files; PYTHONDONTWRITEBYTECODE=1; no output files written.",
+    "results": [
+      {
+        "path": ".scratch/offline-navigation-20261015-v12/site/news/rss-07-2007.xml",
+        "source_bytes": 185016,
+        "source_sha256": "867f0c5003c525d116295e54fcd328845c4d41c3566206d38226b107d8283696",
+        "matched_anchors": 57,
+        "stop_propagation_attributes": 57,
+        "changed": true
+      },
+      {
+        "path": ".scratch/offline-navigation-20261015-v12/site/news/rss-06-2007.xml",
+        "source_bytes": 174728,
+        "source_sha256": "410cf53924a4226558b5736fad5b50e5b141e1db8f5514274342ea2ffadfdd2b",
+        "matched_anchors": 49,
+        "stop_propagation_attributes": 49,
+        "changed": true
+      },
+      {
+        "path": ".scratch/offline-navigation-20261015-v12/site/news/rss-04-2007.xml",
+        "source_bytes": 143477,
+        "source_sha256": "94afe06db69d0fe5198f3312808e5b1426636c067b29cd6a9fdc639ce190b532",
+        "matched_anchors": 39,
+        "stop_propagation_attributes": 39,
+        "changed": true
+      }
+    ],
+    "interpretation": "The marker count is one greater than matched_anchors because the derived style selector also contains the anchor marker; stopPropagation attribute count equals matched anchor count."
+  },
+  "frozen_inputs": [
+    {
+      "path": "offline/build-manifest.json",
+      "bytes": 73067980,
+      "sha256": "397f7dcdbc774d80c6f8c1f3dabf7933211ff182427bd2ef77c895752334f459"
+    },
+    {
+      "path": ".scratch/offline-navigation-20261015-v12/build-manifest.json",
+      "bytes": 75469765,
+      "sha256": "590f06cf30266d0b6fc02a365d9810a564693e9dd67e3051572bfc414a570b16"
+    },
+    {
+      "path": ".scratch/pages-resources-20261015-v12/export-provenance.json",
+      "bytes": 7860722,
+      "sha256": "06bca443bad92d272de35627e2032bd04b18a72d7fba96d16b5333267f585926"
+    }
+  ],
+  "derived_contract": {
+    "matcher": "Only an anchor inside an ancestor li.news-toggle is eligible when its normalized javascript:toggleEntry(...) href equals the normalized toggleEntry(...) onclick of its nearest ancestor carrying class hoverContainer.",
+    "function_identifier": "toggleEntry is case-sensitive and must match exactly; ToggleEntry or another identifier is rejected.",
+    "javascript_scheme": "The javascript scheme spelling is case-insensitive, while the function identifier remains exact; href still must carry the javascript: prefix.",
+    "argument_shape": "Exactly two simple quoted arguments are accepted: entry id [A-Za-z0-9_-]+ and alt [A-Za-z0-9_-]*. Outer syntax whitespace is accepted; string contents, case, and tuple values are preserved. Composite expressions, extra arguments, and internal string whitespace are rejected.",
+    "parent_shape": "The nearest hoverContainer onclick may omit or include the javascript: prefix, but must use the exact toggleEntry identifier and equal argument tuple.",
+    "fast_return": "If news-toggle and toggleEntry tokens are absent, the function returns before HTML tokenization.",
+    "existing_anchor_handlers": "Anchors with an existing onclick are left unchanged; title h1 anchors, ordinary li centers, other JavaScript links, forms, and unrelated markup are not rewritten.",
+    "anchor_change": "The matched anchor receives onclick=event.stopPropagation(); and data-archive-derived=\"news-toggle-anchor-v1\"; its original href remains unchanged so the historical default action runs once.",
+    "hit_area": "A single derived style block targets only .news-toggle a[data-archive-derived=\"news-toggle-anchor-v1\"] with display:block, width:14px, and height:11px.",
+    "explicit_exclusions": [
+      "No preventDefault",
+      "No eval",
+      "No new navigation",
+      "No direct toggleEntry call",
+      "No whole-row handler or form changes",
+      "No frozen source or image payload changes"
+    ],
+    "idempotence": "A second rewrite finds the marker and returns identical text with zero new matches."
+  },
+  "focused_tests": {
+    "command": "C:\\Users\\17630\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe -X utf8 -m unittest -v tests.test_github_pages_export.GithubPagesExportTests.test_news_toggle_anchor_rewrite_is_strict_idempotent_and_preserves_href tests.test_github_pages_export.GithubPagesExportTests.test_news_toggle_anchor_rewrite_runs_in_export_and_records_scope",
+    "environment": "PYTHONDONTWRITEBYTECODE=1",
+    "final_exit_code": 0,
+    "tests_run": 2,
+    "output": "Ran 2 tests in 0.133s; OK",
+    "covered": [
+      "strict paired href/nearest parent onclick matcher",
+      "case-insensitive javascript scheme with exact case-sensitive toggleEntry negative",
+      "title dummyFunction and ordinary/nonmatching anchors remain unchanged",
+      "stopPropagation and 14x11 marker/style",
+      "idempotence",
+      "export integration and provenance derivation reason",
+      "frozen fixture source bytes remain unchanged"
+    ]
+  },
+  "joint_tests": {
+    "command": "C:\\Users\\17630\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe -X utf8 -m unittest -v tests.test_github_pages_export tests.test_historical_exhibits",
+    "environment": "PYTHONDONTWRITEBYTECODE=1",
+    "final_exit_code": 0,
+    "tests_run": 44,
+    "duration_seconds": 4.25,
+    "output": "Ran 44 tests in 4.250s; OK",
+    "suites": [
+      "tests.test_github_pages_export",
+      "tests.test_historical_exhibits"
+    ]
+  },
+  "repair_history": [
+    {
+      "attempt": 1,
+      "issue": "Focused assertion still expected the superseded all-lowercase javascript fixture after the mixed-case scheme positive was introduced.",
+      "evidence": "Final first rerun had 1 focused failure and the same single failure in the 44-test joint run; implementation output showed the expected mixed-case href and stopPropagation marker.",
+      "correction": "Updated only the expected fixture text; no matcher semantics changed.",
+      "final_status": "resolved"
+    },
+    {
+      "attempt": 2,
+      "issue": "No further implementation issue.",
+      "correction": "Final focused 2/2 and joint 44/44 passed.",
+      "final_status": "stable"
+    }
+  ],
+  "unchanged_supporting_code": [
+    {
+      "path": "tools/historical_exhibits.py",
+      "bytes": 44142,
+      "sha256": "3ad2472adbf351ad3340b4277e53e94ac25d33574f5bcdea06f067e5a5d027ac"
+    },
+    {
+      "path": "tests/test_historical_exhibits.py",
+      "bytes": 15564,
+      "sha256": "de4aeafb9598ffada5b7151be92d1aedab5afa3fef58a23a3f636b3c43c0749b"
+    }
+  ],
+  "deviations_and_limits": [
+    "No production full export, full build, browser run, network request, Git operation, or publication was performed.",
+    "Root owns the authorized v13 fresh export and real pointer/keyboard browser acceptance; this receipt records unit validation and source evidence only.",
+    "Existing unrelated __pycache__ files were left untouched; test commands used PYTHONDONTWRITEBYTECODE=1."
+  ]
+}

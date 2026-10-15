@@ -1,0 +1,49 @@
+{
+  "schema": "continuous-wow-tls-cadence-independent-acceptance/v1",
+  "checked_utc": "2026-10-15T13:06:01.731226Z",
+  "accepted": true,
+  "network_requests_by_acceptance": 0,
+  "review": {
+    "path": "research/continuous-recovery-20261015/tls-cadence-review/tls-cadence-review.json",
+    "bytes": 70190,
+    "sha256": "548011dc9dc9620863e4de0b17ff825efec470a5b6f6b6ae9122fc3141a6c718"
+  },
+  "CSV": {
+    "path": "research/continuous-recovery-20261015/tls-cadence-review/tls-cadence-review.csv",
+    "bytes": 23300,
+    "sha256": "9c8dc7cb4df0afb8a20fe74a0fafa22949dd117037af435d1cbc08095ab659b7"
+  },
+  "rows_recomputed": 42,
+  "source_HTTP_excludingCONNECT": 19,
+  "batch_observations": [
+    {
+      "batch": "NET-NEWS-ASSETS-013",
+      "attempts": 20,
+      "source_HTTP": 9,
+      "last_success_attempt": 15,
+      "earlier_curl35_before_final_success": 5,
+      "terminal_consecutive_curl35": 5
+    },
+    {
+      "batch": "NET-RSS-016",
+      "attempts": 11,
+      "source_HTTP": 5,
+      "last_success_attempt": 6,
+      "earlier_curl35_before_final_success": 0,
+      "terminal_consecutive_curl35": 5
+    },
+    {
+      "batch": "NET-RSS-018",
+      "attempts": 11,
+      "source_HTTP": 5,
+      "last_success_attempt": 6,
+      "earlier_curl35_before_final_success": 0,
+      "terminal_consecutive_curl35": 5
+    }
+  ],
+  "all_request_field_and_interval_calculations_recomputed": true,
+  "scope": "Withinbatchonly; controls014/017excluded, rawtracesnotread; nofailurephase/rootcausederivedfromcurlcodealone.",
+  "interpretation": "Repeatedterminal5curl35/noHTTP isobserved. NET013alsohasearliercurl35followedbyHTTPsuccess, so notuniformonewayfailureacrosswholebatch. Connectionpressure/linkthrottling remainsuntestedhypothesis, resource-specificabsence notestablished.",
+  "experiment": "No5s/networkexperimentauthorizedorexecuted bythisreview.",
+  "errors": []
+}
