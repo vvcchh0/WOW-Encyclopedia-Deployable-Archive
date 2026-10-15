@@ -37,6 +37,22 @@
 
 35 个地址以 2006–2008 年 RSS 月份、2005 年旧新闻月页和年页为主，另有 BC professions、PTR、Battlegroups 与 WLK artwork。`LOCAL-TARGET-RECONCILE-002` 先在本地核对它们是否已有原始实体或可证明的规范路由，输出精确网络查询队列；在这一步验收前不扩大网络批次。RSS XML 和新闻 HTML 不能仅因月份相同就互相映射。生产文件尚未修改。
 
+该轮已完成[本地核对与独立验收](../research/continuous-recovery-20261015/local-target-reconcile-acceptance.json)：35 个目标为 **23 个 RSS、8 个新闻 HTML、4 个其他页面**。33 个目标未找到精确来源；BC professions 只有通用 professions 页面，Battlegroups 只有已保存的 index 与规范路径候选，都尚无旧地址等价证明，未添加别名。验收实读 52 次声明实体的长度与摘要，并保留查找范围，未宣称所有可能档案中均不存在。
+
+根代理指定 `NET-CORE-PAGES-003` 先检查 8 个新闻 HTML，再查旧 Battlegroups、BC、PTR 与 WLK artwork。已有[RSS 优先队列](../research/continuous-recovery-20261015/local-target-reconcile/network-query-queue.json)作为验收历史保留，新批次在 `network-core-pages3/` 单独生成候选和优先级覆盖理由。CDX 记录与实际有效正文分开统计；PTR 查询保留源菜单中的尾斜杠。RSS 留待后续有界批次。
+
+并行的 `LOCAL-RESOURCE-DEDUP-003` 只做本地工作，检查 Zandalar quests、EU regionals、Insider 11 arena 与 high-level options 四个页面，将资源引用按精确来源 URL 去重，记录引用次数和覆盖页面。940 条部分缺资源菜单观察可能共享同一资源，不能当作 940 个独立缺图。现有实体须实读校验；不按文件名跨域替代，也不把动态脚本表达式当作原始资源地址。
+
+### 核心页面的实际恢复
+
+`NET-CORE-PAGES-003` 在 07:40:44–07:42:40 UTC 执行 21 次尝试，取得 18 个真实源 HTTP 响应；CDX 返回 292 条捕获索引记录，实际取回并独立验收 **7 份 HTML**：2004 年新闻、2005 年 7–11 月新闻和 PTR 入口。有效正文合计 **889,708 字节**；包括 CDX 索引正文的批次总量为 **930,077 字节**。见[逐请求独立验收](../research/continuous-recovery-20261015/core-pages3-acceptance.json)、[来源表](../research/continuous-recovery-20261015/network-core-pages3/payload-source-map.json)和[根代理正文身份检查](../research/continuous-recovery-20261015/root-content-review-0753.json)。这些实体尚未因下载自动接入或发布。
+
+首次候选判断把 URL 中显式 `:80` 当成不同地址，误将三页标为没有有效候选；离线复查确认 June News、BC professions 与旧 Battlegroups 均有捕获记录，已改为“已索引、尚未回放”。HTTP 默认端口 `:80` 与省略端口、HTTPS `:443` 与省略端口可正规化；bare host 与 `www`、HTTP 与 HTTPS 继续分开。七份已回放的原始实体、实际 Memento 和摘要保留；它们有效，但部分选中日期较早，不能宣称已选中全部默认端口变体中的最新捕获。
+
+`NET-CORE-PAGES-004` 从已保存 CDX 生成[新候选表](../research/continuous-recovery-20261015/core-pages4-candidates.json)，先处理三页漏选候选、Wrath 回放失败与 2005 年年页查询失败，再在余量内取更近基准日期的同源捕获。2004 年年页已是最新合格候选，跳过重复回放。此批继续沿单一网络执行者和原有请求边界执行。
+
+本地执行者同步准备 `CORE-PAGES-INTEGRATION-004`：新 v9 派生源树保留全部此前 8,306 个来源记录和 38 个图片补充层，等待下一批改进来源表再完整构建。PTR 原始 2006 年页面包含角色复制与下载入口，派生版须成为静态历史展品；标题中性、日期来自所选来源，不复活账号、复制、下载动作或脚本。根代理负责最终源选择、浏览验收与发布。
+
 ## 取舍与后续顺序
 
 优先修复已有真实内容因地址规范化或客户端逻辑无法访问的问题；其次补取来源明确且过去因网络失败没有取得内容判定的对象；再沿历史脚本、菜单和 CDX 记录提取有证据的缺失资源。按编号生成的截图地址可以作为来源证据，不能凭猜测把实体记为已取得。若本地审计发现更高价值的缺口，下一批按证据与可恢复性调整，不为填满时间盲目重试。

@@ -1,7 +1,7 @@
 {
   "schema": "continuous-wow-recovery-tasks/v1",
   "deadline_utc": "2026-10-15T14:44:00Z",
-  "updated_utc": "2026-10-15T07:25:11.457433+00:00",
+  "updated_utc": "2026-10-15T08:03:54+00:00",
   "coordination": {
     "heartbeat_id": "wow-8",
     "heartbeat_interval_minutes": 15,
@@ -79,7 +79,7 @@
     },
     {
       "id": "LOCAL-TARGET-RECONCILE-002",
-      "status": "running",
+      "status": "accepted",
       "owner": "sidebar_local_audit",
       "goal": "Reconcile all 35 distinct missing menu targets against local raw entities and prove any proposed route alias before choosing the next network batch.",
       "write_scope": "research/continuous-recovery-20261015/local-target-reconcile/**",
@@ -87,7 +87,80 @@
       "network": false,
       "limits": {"minutes": 15, "targets": 35},
       "acceptance": ["35 target count conservation", "Existing raw entity byte length and SHA256 are read", "News RSS and HTML monthly pages are not treated as aliases without evidence", "Each proposed network query links a source-menu line and local search evidence"],
-      "stop": "Fifteen minute batch or required interface/scope change; no broad raw-file scan or network requests"
+      "stop": "Fifteen minute batch or required interface/scope change; no broad raw-file scan or network requests",
+      "result": {
+        "targets": 35,
+        "observations": 40,
+        "rss_targets": 23,
+        "news_html_targets": 8,
+        "other_targets": 4,
+        "exact_source_missing_candidates": 33,
+        "unproven_bc_alternate": 1,
+        "unproven_battlegroups_route_candidate": 1,
+        "acceptance": "research/continuous-recovery-20261015/local-target-reconcile-acceptance.json",
+        "accepted_original_queue": "research/continuous-recovery-20261015/local-target-reconcile/network-query-queue.json"
+      }
+    },
+    {
+      "id": "NET-CORE-PAGES-003",
+      "status": "accepted",
+      "owner": "wayback_recheck_batch1",
+      "goal": "Query exact pre-anchor captures of eight old News HTML pages first, then legacy Battlegroups, BC professions, PTR and Wrath artwork; retrieve only evidence-backed candidates within the same limits.",
+      "write_scope": "research/continuous-recovery-20261015/network-core-pages3/**",
+      "inputs": ["research/continuous-recovery-20261015/local-target-reconcile/reconciliation.json", "research/continuous-recovery-20261015/local-target-reconcile-acceptance.json"],
+      "network": true,
+      "priority_override": "Root requested eight News HTML pages and four other core pages before the twenty-three RSS targets. Preserve the already accepted RSS-first queue; generate a new candidates file for this batch.",
+      "limits": {"targets": 12, "source_requests": 32, "seconds": 480, "body_bytes": 67108864, "single_body_bytes": 16777216, "minimum_interval_seconds": 1.2, "disk_floor_bytes": 11005853696, "concurrent_source_requests": 1, "automatic_redirects": 0},
+      "acceptance": ["Exact URL identity comes from raw menu href, including PTR trailing slash", "CDX index rows and validated payloads remain separate", "Actual capture time only comes from valid Memento", "No BC or Battlegroups alias without exact source, redirect or content proof"],
+      "stop": "429/503, five consecutive transport failures, or any request/time/body/disk limit; no automatic retry batch",
+      "result": {
+        "attempts": 21,
+        "source_http_responses": 18,
+        "cdx_capture_index_rows": 292,
+        "validated_html_entities": 7,
+        "validated_payload_body_bytes": 889708,
+        "total_batch_body_bytes_including_cdx": 930077,
+        "categories": {"valid_html": 7, "indexed_candidates_not_replayed": 3, "transport_error": 2},
+        "acceptance": "research/continuous-recovery-20261015/core-pages3-acceptance.json",
+        "semantic_review": "research/continuous-recovery-20261015/root-content-review-0753.json",
+        "correction": "Only URI default ports are normalized; bare/www and HTTP/HTTPS remain separate. Seven older validated entities are preserved."
+      }
+    },
+    {
+      "id": "LOCAL-RESOURCE-DEDUP-003",
+      "status": "awaiting_independent_semantic_receipt_correction",
+      "owner": "sidebar_local_audit",
+      "goal": "Deduplicate exact-origin resource gaps across Zandalar quests, EU regionals, Insider 11 arena and high-level options; identify verified local payloads and a compact future asset queue.",
+      "write_scope": "research/continuous-recovery-20261015/local-resource-dedup/**",
+      "inputs": ["research/continuous-recovery-20261015/sidebar-audit/audit.json", ".scratch/pages-resources-20261015-v8/export-provenance.json", ".scratch/offline-navigation-20261015-v7c/build-manifest.json"],
+      "network": false,
+      "limits": {"minutes": 25, "pages": 4, "future_network_queue_urls": 16},
+      "acceptance": ["Four page identities, source evidence and SHA256", "Reference-to-unique-URL conservation with multiplicity and page coverage", "Exact-origin matching only; no basename or cross-origin substitution", "Existing local entities have real hash/length and image decode evidence", "Dynamic expressions are excluded as literal URLs"],
+      "stop": "Twenty-five minute batch, unresolved page identity, or required interface/scope change; no production or network operations",
+      "provisional_result": {"pages": 4, "placeholder_text_occurrences": 623, "unique_urls": 217, "static_resource_urls": 102, "layout_spacer_occurrences": 232, "local_salvage": 0, "future_asset_queue": 16, "pending": "Separate four script-condition literal occurrences from actual navigation; original failed acceptance is retained locally."}
+    },
+    {
+      "id": "NET-CORE-PAGES-004",
+      "status": "running",
+      "owner": "wayback_recheck_batch1",
+      "goal": "Replay saved exact-origin candidates for June News, BC professions, Battlegroups and Wrath, retry the failed 2005 annual query, then fetch newer eligible captures for previously accepted pages within the same caps.",
+      "write_scope": "research/continuous-recovery-20261015/network-core-pages4/**",
+      "inputs": ["research/continuous-recovery-20261015/core-pages4-candidates.json", "research/continuous-recovery-20261015/core-pages3-acceptance.json"],
+      "network": true,
+      "candidate_count": 11,
+      "limits": {"targets": 12, "attempts": 32, "seconds": 480, "body_bytes": 67108864, "single_body_bytes": 16777216, "minimum_interval_seconds": 1.2, "automatic_redirects": 0},
+      "acceptance": ["Preserve older accepted raw entities", "Skip already current identical captures", "Only default URI ports normalize, without origin or scheme aliases", "Use accepted transport helpers and a declarative candidate driver where possible", "Source validity and capture dates are independently recorded"],
+      "stop": "Same rate-limit/transport/time/body/disk stops as NET003; no automatic recovery batch after stop"
+    },
+    {
+      "id": "CORE-PAGES-INTEGRATION-004",
+      "status": "preparing_builder_waiting_net004",
+      "owner": "sidebar_local_audit (directly assigned by root)",
+      "goal": "Prepare a fresh v9 source builder and neutral historical PTR exhibit, then use the latest accepted pre-anchor core-page sources when NET004 is ready.",
+      "write_scope": ["research/continuous-recovery-20261015/core-pages-integration/**", ".scratch/offline-navigation-20261015-v9/**", "tools/historical_exhibits.py", "tests/test_historical_exhibits.py"],
+      "network": false,
+      "acceptance": ["Preserve all prior 8306 source records and 38 image overlays", "Frozen offline/site and manifest remain unchanged", "PTR has no account-copy/download action anchors, forms or scripts", "PTR title is neutral; capture-specific date remains in accepted provenance", "Six News article bodies use the existing exporter", "Focused tests and build counts/hashes are reported"],
+      "stop": "Prepare first; defer full source build until accepted NET004 source selection is ready. Root owns final acceptance, export and deployment."
     }
   ]
 }
