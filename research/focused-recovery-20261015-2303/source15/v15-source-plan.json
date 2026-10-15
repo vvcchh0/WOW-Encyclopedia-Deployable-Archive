@@ -1,0 +1,101 @@
+{
+  "schema": "wow-recovery.core-source-v15-plan.v1",
+  "status": "prepared_pending_root_accepted_aug07_source_and_explicit_go",
+  "generated_utc": "2026-10-15T15:24:58.772454Z",
+  "network_performed": false,
+  "adapter": {
+    "path": "research/focused-recovery-20261015-2303/source15/build_source_v15.py",
+    "sha256": "ea76c8bf735ae899c56d80b6c37b931dcf6180b8bfbe46f217e5bd211b82185c"
+  },
+  "baseline": {
+    "manifest": {
+      "path": ".scratch/offline-navigation-20261015-v14/build-manifest.json",
+      "sha256": "fb4c7c2e3fd4d421c6894fe90d4bc926dbbe6bb90147dfed9d3a93a8865e54d8",
+      "source_records": 8356
+    },
+    "plan": {
+      "path": "research/v14-integration/source/v14-source-plan.json",
+      "sha256": "deeb03d8d8f2fe479d0cfeea6b386505bc30c584b15df803841d612f4edf10b1"
+    },
+    "receipt": {
+      "path": "research/v14-integration/source/v14-source-receipt.json",
+      "sha256": "5e6fdf20eef8cfb4d27c36f1d1eec47dcd336f8dee13b6ddaa4a53b62a7c045f"
+    },
+    "aliases": 183,
+    "overlay_recipes": 38
+  },
+  "selected_source": {
+    "status": "pending_root_accepted_map",
+    "path": null,
+    "entry_count": 1
+  },
+  "expected_counts": {
+    "prior_v14": 8356,
+    "new": 1,
+    "v15": 8357
+  },
+  "output": {
+    "site": ".scratch/offline-navigation-20261015-v15/site",
+    "manifest": ".scratch/offline-navigation-20261015-v15/build-manifest.json",
+    "support": ".scratch/offline-navigation-20261015-v15/support"
+  },
+  "additions_map": {
+    "path": "research/focused-recovery-20261015-2303/source15/v15-additions-source-map.json",
+    "status": "not_created_until_accepted_map"
+  },
+  "build_argv_template": [
+    "C:\\Users\\17630\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "-X",
+    "utf8",
+    "tools/offline_mirror.py",
+    "build",
+    "--url-map",
+    "mirror/20080512/url-map.json",
+    "--overlay",
+    "research/gap-review-20261011/reviewed-index-overlay.json",
+    "--site",
+    ".scratch/offline-navigation-20261015-v15/site",
+    "--manifest",
+    ".scratch/offline-navigation-20261015-v15/build-manifest.json",
+    "--support-dir",
+    ".scratch/offline-navigation-20261015-v15/support",
+    "--extra-map",
+    "offline/approved-pages-recovery-map.json",
+    "--extra-map",
+    "offline/approved-pages-temporal-supplement-map.json",
+    "--extra-map",
+    "offline/approved-static-recovery-map.json",
+    "--extra-map",
+    "offline/approved-static-temporal-supplement-map.json",
+    "--extra-map",
+    "offline/approved-static-pre2008-supplement-map.json",
+    "--extra-map",
+    "offline/approved-expansion-map.json",
+    "--extra-map",
+    "offline/approved-route-alias-overlay.json",
+    "--extra-map",
+    "offline/upstream-compatibility-map.json",
+    "--extra-map",
+    "research/navigation-gaps-20261015/wayback-missing/effective-source-map-v7c.json",
+    "--extra-map",
+    "research/continuous-recovery-20261015/core-pages-integration/core-pages-source-map.selected.json",
+    "--extra-map",
+    "research/continuous-recovery-20261015/core-pages-integration/selected-static-source-map.v9.json",
+    "--extra-map",
+    "research/continuous-recovery-20261015/core-pages-integration/battlegroups-route-alias-overlay.v9.json",
+    "--extra-map",
+    "research/v10-integration/source/v10-additions-source-map.json",
+    "--extra-map",
+    "research/v11-integration/source/v11-additions-source-map.json",
+    "--extra-map",
+    "research/v12-integration/source/v12-additions-source-map.json",
+    "--extra-map",
+    "research/v13-integration/source/v13-additions-source-map.json",
+    "--extra-map",
+    "research/v14-integration/source/v14-additions-source-map.json",
+    "--extra-map",
+    "research/focused-recovery-20261015-2303/source15/v15-additions-source-map.json"
+  ],
+  "route_policy": "Use only accepted map proposed_route/target; do not guess an Aug07 route or alias. Preserve every v14 route and alias; root owns export/ZIP/browser.",
+  "source_guard": "No production/source/raw/frozen v14 files are copied or rewritten during preparation. Build is refused without --go and one accepted selected map."
+}

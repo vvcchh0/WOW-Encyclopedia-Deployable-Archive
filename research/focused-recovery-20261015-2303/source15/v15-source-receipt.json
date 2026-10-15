@@ -1,0 +1,122 @@
+{
+  "schema": "wow-recovery.core-source-v15-receipt.v1",
+  "status": "mirror_only_pending_root_export",
+  "generated_utc": "2026-10-15T15:35:37.074321Z",
+  "network_requests": 0,
+  "source_count": {
+    "prior_v14": 8356,
+    "new": 1,
+    "v15": 8357
+  },
+  "selected_input": {
+    "path": "research/focused-recovery-20261015-2303/accepted-news-source-map.json",
+    "sha256": "999d3ef2f462c07a34b18cec81d11affd63cb7f439022d30cbd0e19a5d90ac47"
+  },
+  "additions_map": {
+    "path": "research/focused-recovery-20261015-2303/source15/v15-additions-source-map.json",
+    "sha256": "2f60148edaee6b6357efd0f7265d85b069fe9712db2c28773a87685c382f2910"
+  },
+  "baseline": {
+    "manifest": {
+      "path": ".scratch/offline-navigation-20261015-v14/build-manifest.json",
+      "sha256_before": "fb4c7c2e3fd4d421c6894fe90d4bc926dbbe6bb90147dfed9d3a93a8865e54d8",
+      "sha256_after": "fb4c7c2e3fd4d421c6894fe90d4bc926dbbe6bb90147dfed9d3a93a8865e54d8"
+    },
+    "aliases": 183,
+    "overlays_pending_root_export": 38
+  },
+  "output": {
+    "manifest": ".scratch/offline-navigation-20261015-v15/build-manifest.json",
+    "manifest_sha256": "d89557a445ec5c81ef2652c49fd8ce9c102016f11411b7fa2aa795f5112ae002",
+    "source_records": 8357
+  },
+  "build": {
+    "argv": [
+      "C:\\Users\\17630\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "-X",
+      "utf8",
+      "tools/offline_mirror.py",
+      "build",
+      "--url-map",
+      "mirror/20080512/url-map.json",
+      "--overlay",
+      "research/gap-review-20261011/reviewed-index-overlay.json",
+      "--site",
+      ".scratch/offline-navigation-20261015-v15/site",
+      "--manifest",
+      ".scratch/offline-navigation-20261015-v15/build-manifest.json",
+      "--support-dir",
+      ".scratch/offline-navigation-20261015-v15/support",
+      "--extra-map",
+      "offline/approved-pages-recovery-map.json",
+      "--extra-map",
+      "offline/approved-pages-temporal-supplement-map.json",
+      "--extra-map",
+      "offline/approved-static-recovery-map.json",
+      "--extra-map",
+      "offline/approved-static-temporal-supplement-map.json",
+      "--extra-map",
+      "offline/approved-static-pre2008-supplement-map.json",
+      "--extra-map",
+      "offline/approved-expansion-map.json",
+      "--extra-map",
+      "offline/approved-route-alias-overlay.json",
+      "--extra-map",
+      "offline/upstream-compatibility-map.json",
+      "--extra-map",
+      "research/navigation-gaps-20261015/wayback-missing/effective-source-map-v7c.json",
+      "--extra-map",
+      "research/continuous-recovery-20261015/core-pages-integration/core-pages-source-map.selected.json",
+      "--extra-map",
+      "research/continuous-recovery-20261015/core-pages-integration/selected-static-source-map.v9.json",
+      "--extra-map",
+      "research/continuous-recovery-20261015/core-pages-integration/battlegroups-route-alias-overlay.v9.json",
+      "--extra-map",
+      "research/v10-integration/source/v10-additions-source-map.json",
+      "--extra-map",
+      "research/v11-integration/source/v11-additions-source-map.json",
+      "--extra-map",
+      "research/v12-integration/source/v12-additions-source-map.json",
+      "--extra-map",
+      "research/v13-integration/source/v13-additions-source-map.json",
+      "--extra-map",
+      "research/v14-integration/source/v14-additions-source-map.json",
+      "--extra-map",
+      "research/focused-recovery-20261015-2303/source15/v15-additions-source-map.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\"site\": \".scratch/offline-navigation-20261015-v15/site\", \"manifest\": \".scratch/offline-navigation-20261015-v15/build-manifest.json\", \"stats\": {\"source_entries\": 437, \"extra_map_entries\": 8299, \"extra_map_loaded\": 7912, \"extra_map_loaded_wow_sources\": 7911, \"extra_map_skipped\": 387, \"derived_files\": 8357, \"routes\": 8357, \"transformed\": 1184, \"copied\": 7166, \"supplements\": 1033, \"placeholders\": 5, \"invalid_entries_excluded\": 0, \"compat_assets\": 2, \"upstream_compatibility_entries\": 1}}\n",
+    "stderr": ""
+  },
+  "support_path_migrations": [
+    {
+      "route": "/__offline/compat.css",
+      "v14": {
+        "path": ".scratch/offline-navigation-20261015-v14/support/compat.css",
+        "bytes": 1371,
+        "sha256": "e2acecd33938edd9e65be296ae76d923d1da9f3f22bc395a1f64b89d6194c3f2"
+      },
+      "v15": {
+        "path": ".scratch/offline-navigation-20261015-v15/support/compat.css",
+        "bytes": 1371,
+        "sha256": "e2acecd33938edd9e65be296ae76d923d1da9f3f22bc395a1f64b89d6194c3f2"
+      },
+      "content_hash_preserved": true
+    },
+    {
+      "route": "/__offline/compat.js",
+      "v14": {
+        "path": ".scratch/offline-navigation-20261015-v14/support/compat.js",
+        "bytes": 12554,
+        "sha256": "3695e5a5d6f35f384e0abb476f9093cd7df89b52baa92b430f1eef9df80a7b3a"
+      },
+      "v15": {
+        "path": ".scratch/offline-navigation-20261015-v15/support/compat.js",
+        "bytes": 12554,
+        "sha256": "3695e5a5d6f35f384e0abb476f9093cd7df89b52baa92b430f1eef9df80a7b3a"
+      },
+      "content_hash_preserved": true
+    }
+  ],
+  "report_updated_utc": "2026-10-15T15:36:53.594336Z"
+}

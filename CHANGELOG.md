@@ -9,6 +9,8 @@
 
 ## 2026-10-15
 
+- 夜间专项取回 2007 年 8 月的 50 条新闻并完成本地 v15 浏览验收，另保存两张欧服每日截图原图；Karazhan 六项图片检查仍未取得素材。线上及离线包暂保持 v14。[专项记录](docs/focused-recovery-20261015-2303.md)
+
 - 发布 [2026-10-15 浏览版离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261015)（约 503 MB，解压约 566 MB），包含当前页面与素材；更新 README 的使用入口，并保留旧版供历史对照。
 
 - 发布 v14，新增九页、350 条历史新闻；侧栏仅余 2007 年 8 月新闻待取得，图片缺口继续保留。[线上验收](research/v14-integration/root-pages-online-acceptance.json)

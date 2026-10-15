@@ -1,0 +1,31 @@
+{
+  "schema": "wow-recovery.news22-plan.v1",
+  "mode": "plan_only",
+  "batch_id": "NEWS22-AUG2007-20261015",
+  "prepared_utc": "2026-10-15T15:12:22.544745+00:00",
+  "network_requests": 0,
+  "input": {
+    "prior_target": "http://www.worldofwarcraft.com/news/rss-08-2007.xml",
+    "prior_result": "NEWS21 transport_error; no prior source HTTP status"
+  },
+  "outputs": {
+    "raw": "raw",
+    "journal": "dispatch-journal.json",
+    "report": "batch-report.json",
+    "summary": "sanitized-summary.json"
+  },
+  "disk_free_bytes": 16754921472,
+  "minimum_free_bytes": 11005853696,
+  "candidates_sha256": "18e7705aa315497e45de3047167fa572bfb4e52a066ce2ee5f919d362a86dd5f",
+  "config_sha256": "29b7cf8f104a179229953c051d1f3bdabe4d59b3c3bdf0676c6bddd65007c064",
+  "authorization_window": {
+    "start_utc": "2026-10-15T15:03:05+00:00",
+    "end_utc": "2026-10-15T15:43:05+00:00"
+  },
+  "request_sequence": [
+    "raw_replay",
+    "manual_same_origin_location_at_most_once",
+    "availability_at_most_once",
+    "scoped_cdx_at_most_once"
+  ]
+}

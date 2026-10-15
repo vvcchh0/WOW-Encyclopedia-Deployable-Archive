@@ -1,0 +1,637 @@
+{
+  "schema": "wow-recovery.gallery23-dispatch-journal.v1",
+  "batch_id": "GALLERY23-20261015",
+  "simulation": false,
+  "authorization_window": {
+    "start_utc": "2026-10-15T15:03:05+00:00",
+    "end_utc": "2026-10-15T15:35:00+00:00"
+  },
+  "policy": {
+    "max_attempts": 24,
+    "min_dispatch_monotonic_seconds": 5.1,
+    "min_request_start_utc_seconds": 5.0,
+    "disk_floor_bytes": 11005853696
+  },
+  "disk_preflight": {
+    "checked_utc": "2026-10-15T15:29:31.264462+00:00",
+    "disk_free_bytes": 16752513024,
+    "minimum_free_bytes": 11005853696
+  },
+  "dispatches": [
+    {
+      "attempt": 1,
+      "transport": "direct",
+      "target": "r1-hop0",
+      "guard_open_utc": "2026-10-15T15:29:31.266461+00:00",
+      "dispatch_utc": "2026-10-15T15:29:31.266461+00:00",
+      "dispatch_monotonic": 44921.265,
+      "interval_since_previous_dispatch_seconds": null,
+      "guard_wait": {
+        "first_checked_utc": "2026-10-15T15:29:31.266461+00:00",
+        "opened_utc": "2026-10-15T15:29:31.266461+00:00",
+        "first_monotonic": 44921.265,
+        "opened_monotonic": 44921.265,
+        "sleeps": [],
+        "final_wall_remaining_seconds": -1586.266461,
+        "final_monotonic_remaining_seconds": 0.0
+      },
+      "interval_sleeps": [],
+      "persisted_before_transport": true,
+      "request_start_utc": "2026-10-15T15:29:31.268703+00:00",
+      "finished_utc": "2026-10-15T15:29:39.368728+00:00",
+      "source_status": null,
+      "curl_exit": 28,
+      "body_bytes": 0,
+      "transport_error": true
+    },
+    {
+      "attempt": 2,
+      "transport": "proxy",
+      "target": "r1-hop0",
+      "guard_open_utc": "2026-10-15T15:29:39.388458+00:00",
+      "dispatch_utc": "2026-10-15T15:29:39.388458+00:00",
+      "dispatch_monotonic": 44929.39,
+      "interval_since_previous_dispatch_seconds": 8.125,
+      "guard_wait": {
+        "first_checked_utc": "2026-10-15T15:29:39.388458+00:00",
+        "opened_utc": "2026-10-15T15:29:39.388458+00:00",
+        "first_monotonic": 44929.39,
+        "opened_monotonic": 44929.39,
+        "sleeps": [],
+        "final_wall_remaining_seconds": -1594.388458,
+        "final_monotonic_remaining_seconds": 0.0
+      },
+      "interval_sleeps": [],
+      "persisted_before_transport": true,
+      "request_start_utc": "2026-10-15T15:29:39.390467+00:00",
+      "finished_utc": "2026-10-15T15:29:44.123840+00:00",
+      "source_status": 200,
+      "curl_exit": 0,
+      "body_bytes": 130116,
+      "transport_error": false
+    },
+    {
+      "attempt": 3,
+      "transport": "direct",
+      "target": "r2-hop0",
+      "guard_open_utc": "2026-10-15T15:29:44.502658+00:00",
+      "dispatch_utc": "2026-10-15T15:29:44.502658+00:00",
+      "dispatch_monotonic": 44934.5,
+      "interval_since_previous_dispatch_seconds": 5.110000000000582,
+      "guard_wait": {
+        "first_checked_utc": "2026-10-15T15:29:44.391423+00:00",
+        "opened_utc": "2026-10-15T15:29:44.391423+00:00",
+        "first_monotonic": 44934.39,
+        "opened_monotonic": 44934.39,
+        "sleeps": [],
+        "final_wall_remaining_seconds": -1599.391423,
+        "final_monotonic_remaining_seconds": 0.0
+      },
+      "interval_sleeps": [
+        {
+          "requested_seconds": 0.09999999999999964,
+          "started_monotonic": 44934.39,
+          "finished_monotonic": 44934.484
+        },
+        {
+          "requested_seconds": 0.01,
+          "started_monotonic": 44934.484,
+          "finished_monotonic": 44934.5
+        }
+      ],
+      "persisted_before_transport": true,
+      "request_start_utc": "2026-10-15T15:29:44.504889+00:00",
+      "finished_utc": "2026-10-15T15:29:52.749452+00:00",
+      "source_status": null,
+      "curl_exit": 28,
+      "body_bytes": 0,
+      "transport_error": true
+    },
+    {
+      "attempt": 4,
+      "transport": "proxy",
+      "target": "r2-hop0",
+      "guard_open_utc": "2026-10-15T15:29:52.755575+00:00",
+      "dispatch_utc": "2026-10-15T15:29:52.755575+00:00",
+      "dispatch_monotonic": 44942.75,
+      "interval_since_previous_dispatch_seconds": 8.25,
+      "guard_wait": {
+        "first_checked_utc": "2026-10-15T15:29:52.755575+00:00",
+        "opened_utc": "2026-10-15T15:29:52.755575+00:00",
+        "first_monotonic": 44942.75,
+        "opened_monotonic": 44942.75,
+        "sleeps": [],
+        "final_wall_remaining_seconds": -1607.755575,
+        "final_monotonic_remaining_seconds": 0.0
+      },
+      "interval_sleeps": [],
+      "persisted_before_transport": true,
+      "request_start_utc": "2026-10-15T15:29:52.758089+00:00",
+      "finished_utc": "2026-10-15T15:29:55.871732+00:00",
+      "source_status": 200,
+      "curl_exit": 0,
+      "body_bytes": 11285,
+      "transport_error": false
+    },
+    {
+      "attempt": 5,
+      "transport": "direct",
+      "target": "r3-hop0",
+      "guard_open_utc": "2026-10-15T15:29:57.858740+00:00",
+      "dispatch_utc": "2026-10-15T15:29:57.858740+00:00",
+      "dispatch_monotonic": 44947.859,
+      "interval_since_previous_dispatch_seconds": 5.10899999999674,
+      "guard_wait": {
+        "first_checked_utc": "2026-10-15T15:29:57.758525+00:00",
+        "opened_utc": "2026-10-15T15:29:57.758525+00:00",
+        "first_monotonic": 44947.75,
+        "opened_monotonic": 44947.75,
+        "sleeps": [],
+        "final_wall_remaining_seconds": -1612.758525,
+        "final_monotonic_remaining_seconds": 0.0
+      },
+      "interval_sleeps": [
+        {
+          "requested_seconds": 0.09999999999999964,
+          "started_monotonic": 44947.75,
+          "finished_monotonic": 44947.859
+        }
+      ],
+      "persisted_before_transport": true,
+      "request_start_utc": "2026-10-15T15:29:57.860902+00:00",
+      "finished_utc": "2026-10-15T15:30:05.934694+00:00",
+      "source_status": null,
+      "curl_exit": 28,
+      "body_bytes": 0,
+      "transport_error": true
+    },
+    {
+      "attempt": 6,
+      "transport": "proxy",
+      "target": "r3-hop0",
+      "guard_open_utc": "2026-10-15T15:30:05.941722+00:00",
+      "dispatch_utc": "2026-10-15T15:30:05.941722+00:00",
+      "dispatch_monotonic": 44955.937,
+      "interval_since_previous_dispatch_seconds": 8.078000000001339,
+      "guard_wait": {
+        "first_checked_utc": "2026-10-15T15:30:05.941722+00:00",
+        "opened_utc": "2026-10-15T15:30:05.941722+00:00",
+        "first_monotonic": 44955.937,
+        "opened_monotonic": 44955.937,
+        "sleeps": [],
+        "final_wall_remaining_seconds": -1620.941722,
+        "final_monotonic_remaining_seconds": 0.0
+      },
+      "interval_sleeps": [],
+      "persisted_before_transport": true,
+      "request_start_utc": "2026-10-15T15:30:05.946035+00:00",
+      "finished_utc": "2026-10-15T15:30:08.954737+00:00",
+      "source_status": 200,
+      "curl_exit": 0,
+      "body_bytes": 108840,
+      "transport_error": false
+    },
+    {
+      "attempt": 7,
+      "transport": "direct",
+      "target": "r4-hop0",
+      "guard_open_utc": "2026-10-15T15:30:11.046959+00:00",
+      "dispatch_utc": "2026-10-15T15:30:11.046959+00:00",
+      "dispatch_monotonic": 44961.046,
+      "interval_since_previous_dispatch_seconds": 5.109000000004016,
+      "guard_wait": {
+        "first_checked_utc": "2026-10-15T15:30:10.946748+00:00",
+        "opened_utc": "2026-10-15T15:30:10.946748+00:00",
+        "first_monotonic": 44960.937,
+        "opened_monotonic": 44960.937,
+        "sleeps": [],
+        "final_wall_remaining_seconds": -1625.946748,
+        "final_monotonic_remaining_seconds": 0.0
+      },
+      "interval_sleeps": [
+        {
+          "requested_seconds": 0.09999999999999964,
+          "started_monotonic": 44960.937,
+          "finished_monotonic": 44961.046
+        }
+      ],
+      "persisted_before_transport": true,
+      "request_start_utc": "2026-10-15T15:30:11.049528+00:00",
+      "finished_utc": "2026-10-15T15:30:18.378704+00:00",
+      "source_status": null,
+      "curl_exit": 7,
+      "body_bytes": 0,
+      "transport_error": true
+    },
+    {
+      "attempt": 8,
+      "transport": "proxy",
+      "target": "r4-hop0",
+      "guard_open_utc": "2026-10-15T15:30:18.383703+00:00",
+      "dispatch_utc": "2026-10-15T15:30:18.383703+00:00",
+      "dispatch_monotonic": 44968.375,
+      "interval_since_previous_dispatch_seconds": 7.3289999999979045,
+      "guard_wait": {
+        "first_checked_utc": "2026-10-15T15:30:18.383703+00:00",
+        "opened_utc": "2026-10-15T15:30:18.383703+00:00",
+        "first_monotonic": 44968.375,
+        "opened_monotonic": 44968.375,
+        "sleeps": [],
+        "final_wall_remaining_seconds": -1633.383703,
+        "final_monotonic_remaining_seconds": 0.0
+      },
+      "interval_sleeps": [],
+      "persisted_before_transport": true,
+      "request_start_utc": "2026-10-15T15:30:18.385788+00:00",
+      "finished_utc": "2026-10-15T15:30:22.570180+00:00",
+      "source_status": 200,
+      "curl_exit": 0,
+      "body_bytes": 12972,
+      "transport_error": false
+    },
+    {
+      "attempt": 9,
+      "transport": "direct",
+      "target": "r5-hop0",
+      "guard_open_utc": "2026-10-15T15:30:23.487293+00:00",
+      "dispatch_utc": "2026-10-15T15:30:23.487293+00:00",
+      "dispatch_monotonic": 44973.484,
+      "interval_since_previous_dispatch_seconds": 5.10899999999674,
+      "guard_wait": {
+        "first_checked_utc": "2026-10-15T15:30:23.386974+00:00",
+        "opened_utc": "2026-10-15T15:30:23.386974+00:00",
+        "first_monotonic": 44973.375,
+        "opened_monotonic": 44973.375,
+        "sleeps": [],
+        "final_wall_remaining_seconds": -1638.386974,
+        "final_monotonic_remaining_seconds": 0.0
+      },
+      "interval_sleeps": [
+        {
+          "requested_seconds": 0.09999999999999964,
+          "started_monotonic": 44973.375,
+          "finished_monotonic": 44973.484
+        }
+      ],
+      "persisted_before_transport": true,
+      "request_start_utc": "2026-10-15T15:30:23.490366+00:00",
+      "finished_utc": "2026-10-15T15:30:25.859274+00:00",
+      "source_status": null,
+      "curl_exit": 7,
+      "body_bytes": 0,
+      "transport_error": true
+    },
+    {
+      "attempt": 10,
+      "transport": "proxy",
+      "target": "r5-hop0",
+      "guard_open_utc": "2026-10-15T15:30:28.591346+00:00",
+      "dispatch_utc": "2026-10-15T15:30:28.591346+00:00",
+      "dispatch_monotonic": 44978.593,
+      "interval_since_previous_dispatch_seconds": 5.109000000004016,
+      "guard_wait": {
+        "first_checked_utc": "2026-10-15T15:30:28.491186+00:00",
+        "opened_utc": "2026-10-15T15:30:28.491186+00:00",
+        "first_monotonic": 44978.484,
+        "opened_monotonic": 44978.484,
+        "sleeps": [],
+        "final_wall_remaining_seconds": -1643.491186,
+        "final_monotonic_remaining_seconds": 0.0
+      },
+      "interval_sleeps": [
+        {
+          "requested_seconds": 0.09999999999999964,
+          "started_monotonic": 44978.484,
+          "finished_monotonic": 44978.593
+        }
+      ],
+      "persisted_before_transport": true,
+      "request_start_utc": "2026-10-15T15:30:28.594353+00:00",
+      "finished_utc": "2026-10-15T15:30:30.536579+00:00",
+      "source_status": 404,
+      "curl_exit": 0,
+      "body_bytes": 4706,
+      "transport_error": false
+    },
+    {
+      "attempt": 11,
+      "transport": "direct",
+      "target": "r6-hop0",
+      "guard_open_utc": "2026-10-15T15:30:33.705783+00:00",
+      "dispatch_utc": "2026-10-15T15:30:33.705783+00:00",
+      "dispatch_monotonic": 44983.703,
+      "interval_since_previous_dispatch_seconds": 5.110000000000582,
+      "guard_wait": {
+        "first_checked_utc": "2026-10-15T15:30:33.594969+00:00",
+        "opened_utc": "2026-10-15T15:30:33.594969+00:00",
+        "first_monotonic": 44983.593,
+        "opened_monotonic": 44983.593,
+        "sleeps": [],
+        "final_wall_remaining_seconds": -1648.594969,
+        "final_monotonic_remaining_seconds": 0.0
+      },
+      "interval_sleeps": [
+        {
+          "requested_seconds": 0.09999999999999964,
+          "started_monotonic": 44983.593,
+          "finished_monotonic": 44983.687
+        },
+        {
+          "requested_seconds": 0.01,
+          "started_monotonic": 44983.687,
+          "finished_monotonic": 44983.703
+        }
+      ],
+      "persisted_before_transport": true,
+      "request_start_utc": "2026-10-15T15:30:33.708862+00:00",
+      "finished_utc": "2026-10-15T15:30:41.786307+00:00",
+      "source_status": null,
+      "curl_exit": 28,
+      "body_bytes": 0,
+      "transport_error": true
+    },
+    {
+      "attempt": 12,
+      "transport": "proxy",
+      "target": "r6-hop0",
+      "guard_open_utc": "2026-10-15T15:30:41.794345+00:00",
+      "dispatch_utc": "2026-10-15T15:30:41.794345+00:00",
+      "dispatch_monotonic": 44991.796,
+      "interval_since_previous_dispatch_seconds": 8.093000000000757,
+      "guard_wait": {
+        "first_checked_utc": "2026-10-15T15:30:41.794345+00:00",
+        "opened_utc": "2026-10-15T15:30:41.794345+00:00",
+        "first_monotonic": 44991.796,
+        "opened_monotonic": 44991.796,
+        "sleeps": [],
+        "final_wall_remaining_seconds": -1656.794345,
+        "final_monotonic_remaining_seconds": 0.0
+      },
+      "interval_sleeps": [],
+      "persisted_before_transport": true,
+      "request_start_utc": "2026-10-15T15:30:41.797963+00:00",
+      "finished_utc": "2026-10-15T15:30:44.681914+00:00",
+      "source_status": 404,
+      "curl_exit": 0,
+      "body_bytes": 4712,
+      "transport_error": false
+    },
+    {
+      "attempt": 13,
+      "transport": "direct",
+      "target": "r7-hop0",
+      "guard_open_utc": "2026-10-15T15:30:46.909947+00:00",
+      "dispatch_utc": "2026-10-15T15:30:46.909947+00:00",
+      "dispatch_monotonic": 44996.906,
+      "interval_since_previous_dispatch_seconds": 5.110000000000582,
+      "guard_wait": {
+        "first_checked_utc": "2026-10-15T15:30:46.799061+00:00",
+        "opened_utc": "2026-10-15T15:30:46.799061+00:00",
+        "first_monotonic": 44996.796,
+        "opened_monotonic": 44996.796,
+        "sleeps": [],
+        "final_wall_remaining_seconds": -1661.799061,
+        "final_monotonic_remaining_seconds": 0.0
+      },
+      "interval_sleeps": [
+        {
+          "requested_seconds": 0.09999999999999964,
+          "started_monotonic": 44996.796,
+          "finished_monotonic": 44996.89
+        },
+        {
+          "requested_seconds": 0.01,
+          "started_monotonic": 44996.89,
+          "finished_monotonic": 44996.906
+        }
+      ],
+      "persisted_before_transport": true,
+      "request_start_utc": "2026-10-15T15:30:46.912408+00:00",
+      "finished_utc": "2026-10-15T15:30:54.961148+00:00",
+      "source_status": null,
+      "curl_exit": 28,
+      "body_bytes": 0,
+      "transport_error": true
+    },
+    {
+      "attempt": 14,
+      "transport": "proxy",
+      "target": "r7-hop0",
+      "guard_open_utc": "2026-10-15T15:30:54.967845+00:00",
+      "dispatch_utc": "2026-10-15T15:30:54.967845+00:00",
+      "dispatch_monotonic": 45004.968,
+      "interval_since_previous_dispatch_seconds": 8.06199999999808,
+      "guard_wait": {
+        "first_checked_utc": "2026-10-15T15:30:54.967845+00:00",
+        "opened_utc": "2026-10-15T15:30:54.967845+00:00",
+        "first_monotonic": 45004.968,
+        "opened_monotonic": 45004.968,
+        "sleeps": [],
+        "final_wall_remaining_seconds": -1669.967845,
+        "final_monotonic_remaining_seconds": 0.0
+      },
+      "interval_sleeps": [],
+      "persisted_before_transport": true,
+      "request_start_utc": "2026-10-15T15:30:54.970214+00:00",
+      "finished_utc": "2026-10-15T15:30:58.289071+00:00",
+      "source_status": 404,
+      "curl_exit": 0,
+      "body_bytes": 4706,
+      "transport_error": false
+    },
+    {
+      "attempt": 15,
+      "transport": "direct",
+      "target": "r8-hop0",
+      "guard_open_utc": "2026-10-15T15:31:00.081807+00:00",
+      "dispatch_utc": "2026-10-15T15:31:00.081807+00:00",
+      "dispatch_monotonic": 45010.078,
+      "interval_since_previous_dispatch_seconds": 5.110000000000582,
+      "guard_wait": {
+        "first_checked_utc": "2026-10-15T15:30:59.971116+00:00",
+        "opened_utc": "2026-10-15T15:30:59.971116+00:00",
+        "first_monotonic": 45009.968,
+        "opened_monotonic": 45009.968,
+        "sleeps": [],
+        "final_wall_remaining_seconds": -1674.971116,
+        "final_monotonic_remaining_seconds": 0.0
+      },
+      "interval_sleeps": [
+        {
+          "requested_seconds": 0.09999999999999964,
+          "started_monotonic": 45009.968,
+          "finished_monotonic": 45010.062
+        },
+        {
+          "requested_seconds": 0.01,
+          "started_monotonic": 45010.062,
+          "finished_monotonic": 45010.078
+        }
+      ],
+      "persisted_before_transport": true,
+      "request_start_utc": "2026-10-15T15:31:00.085851+00:00",
+      "finished_utc": "2026-10-15T15:31:08.178658+00:00",
+      "source_status": null,
+      "curl_exit": 28,
+      "body_bytes": 0,
+      "transport_error": true
+    },
+    {
+      "attempt": 16,
+      "transport": "proxy",
+      "target": "r8-hop0",
+      "guard_open_utc": "2026-10-15T15:31:08.184178+00:00",
+      "dispatch_utc": "2026-10-15T15:31:08.184178+00:00",
+      "dispatch_monotonic": 45018.171,
+      "interval_since_previous_dispatch_seconds": 8.093000000000757,
+      "guard_wait": {
+        "first_checked_utc": "2026-10-15T15:31:08.184178+00:00",
+        "opened_utc": "2026-10-15T15:31:08.184178+00:00",
+        "first_monotonic": 45018.171,
+        "opened_monotonic": 45018.171,
+        "sleeps": [],
+        "final_wall_remaining_seconds": -1683.184178,
+        "final_monotonic_remaining_seconds": 0.0
+      },
+      "interval_sleeps": [],
+      "persisted_before_transport": true,
+      "request_start_utc": "2026-10-15T15:31:08.186178+00:00",
+      "finished_utc": "2026-10-15T15:31:09.811178+00:00",
+      "source_status": 404,
+      "curl_exit": 0,
+      "body_bytes": 4712,
+      "transport_error": false
+    },
+    {
+      "attempt": 17,
+      "transport": "direct",
+      "target": "r9-hop0",
+      "guard_open_utc": "2026-10-15T15:31:13.281867+00:00",
+      "dispatch_utc": "2026-10-15T15:31:13.281867+00:00",
+      "dispatch_monotonic": 45023.281,
+      "interval_since_previous_dispatch_seconds": 5.110000000000582,
+      "guard_wait": {
+        "first_checked_utc": "2026-10-15T15:31:13.186995+00:00",
+        "opened_utc": "2026-10-15T15:31:13.186995+00:00",
+        "first_monotonic": 45023.187,
+        "opened_monotonic": 45023.187,
+        "sleeps": [],
+        "final_wall_remaining_seconds": -1688.186995,
+        "final_monotonic_remaining_seconds": 0.0
+      },
+      "interval_sleeps": [
+        {
+          "requested_seconds": 0.08400000000401597,
+          "started_monotonic": 45023.187,
+          "finished_monotonic": 45023.265
+        },
+        {
+          "requested_seconds": 0.01,
+          "started_monotonic": 45023.265,
+          "finished_monotonic": 45023.281
+        }
+      ],
+      "persisted_before_transport": true,
+      "request_start_utc": "2026-10-15T15:31:13.284959+00:00",
+      "finished_utc": "2026-10-15T15:31:21.498040+00:00",
+      "source_status": null,
+      "curl_exit": 28,
+      "body_bytes": 0,
+      "transport_error": true
+    },
+    {
+      "attempt": 18,
+      "transport": "proxy",
+      "target": "r9-hop0",
+      "guard_open_utc": "2026-10-15T15:31:21.504956+00:00",
+      "dispatch_utc": "2026-10-15T15:31:21.504956+00:00",
+      "dispatch_monotonic": 45031.5,
+      "interval_since_previous_dispatch_seconds": 8.218999999997322,
+      "guard_wait": {
+        "first_checked_utc": "2026-10-15T15:31:21.504956+00:00",
+        "opened_utc": "2026-10-15T15:31:21.504956+00:00",
+        "first_monotonic": 45031.5,
+        "opened_monotonic": 45031.5,
+        "sleeps": [],
+        "final_wall_remaining_seconds": -1696.504956,
+        "final_monotonic_remaining_seconds": 0.0
+      },
+      "interval_sleeps": [],
+      "persisted_before_transport": true,
+      "request_start_utc": "2026-10-15T15:31:21.508766+00:00",
+      "finished_utc": "2026-10-15T15:31:23.201891+00:00",
+      "source_status": 404,
+      "curl_exit": 0,
+      "body_bytes": 4706,
+      "transport_error": false
+    },
+    {
+      "attempt": 19,
+      "transport": "direct",
+      "target": "r10-hop0",
+      "guard_open_utc": "2026-10-15T15:31:26.609838+00:00",
+      "dispatch_utc": "2026-10-15T15:31:26.609838+00:00",
+      "dispatch_monotonic": 45036.609,
+      "interval_since_previous_dispatch_seconds": 5.10899999999674,
+      "guard_wait": {
+        "first_checked_utc": "2026-10-15T15:31:26.509359+00:00",
+        "opened_utc": "2026-10-15T15:31:26.509359+00:00",
+        "first_monotonic": 45036.5,
+        "opened_monotonic": 45036.5,
+        "sleeps": [],
+        "final_wall_remaining_seconds": -1701.509359,
+        "final_monotonic_remaining_seconds": 0.0
+      },
+      "interval_sleeps": [
+        {
+          "requested_seconds": 0.09999999999999964,
+          "started_monotonic": 45036.5,
+          "finished_monotonic": 45036.609
+        }
+      ],
+      "persisted_before_transport": true,
+      "request_start_utc": "2026-10-15T15:31:26.612850+00:00",
+      "finished_utc": "2026-10-15T15:31:34.688096+00:00",
+      "source_status": null,
+      "curl_exit": 28,
+      "body_bytes": 0,
+      "transport_error": true
+    },
+    {
+      "attempt": 20,
+      "transport": "proxy",
+      "target": "r10-hop0",
+      "guard_open_utc": "2026-10-15T15:31:34.694626+00:00",
+      "dispatch_utc": "2026-10-15T15:31:34.694626+00:00",
+      "dispatch_monotonic": 45044.687,
+      "interval_since_previous_dispatch_seconds": 8.078000000001339,
+      "guard_wait": {
+        "first_checked_utc": "2026-10-15T15:31:34.694626+00:00",
+        "opened_utc": "2026-10-15T15:31:34.694626+00:00",
+        "first_monotonic": 45044.687,
+        "opened_monotonic": 45044.687,
+        "sleeps": [],
+        "final_wall_remaining_seconds": -1709.694626,
+        "final_monotonic_remaining_seconds": 0.0
+      },
+      "interval_sleeps": [],
+      "persisted_before_transport": true,
+      "request_start_utc": "2026-10-15T15:31:34.697858+00:00",
+      "finished_utc": "2026-10-15T15:31:36.650854+00:00",
+      "source_status": 404,
+      "curl_exit": 0,
+      "body_bytes": 4712,
+      "transport_error": false
+    }
+  ],
+  "disk_postflight": {
+    "checked_utc": "2026-10-15T15:31:36.738950+00:00",
+    "disk_free_bytes": 16750592000,
+    "attempts_count": 20,
+    "persisted_in_finally": true
+  },
+  "postflight_persisted_in_finally": true,
+  "final_attempt_count": 20,
+  "report_written_utc": "2026-10-15T15:31:36.752120+00:00",
+  "report_sha256": "2223d1fc6da440cc59d1036e2aba59dc8254872297d4adba22e6725bf96130cf"
+}
