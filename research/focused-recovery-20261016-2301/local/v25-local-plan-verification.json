@@ -1,0 +1,63 @@
+{
+  "schema": "wow-recovery.focused-recovery-20261016-2301.v25-local-plan-verification.v1",
+  "executed_by": "/root/local_recovery_20261016",
+  "checked_utc": "2026-10-16T15:09:00Z",
+  "commands": [
+    {
+      "command": "python.exe -X utf8 -m py_compile research/focused-recovery-20261016-2301/local/check_v25_offline.py",
+      "exit_code": 0
+    },
+    {
+      "command": "python.exe -X utf8 research/focused-recovery-20261016-2301/local/check_v25_offline.py --help",
+      "exit_code": 0,
+      "effect": "argument/help path only; no receipt/site output"
+    }
+  ],
+  "artifacts": {
+    "research/focused-recovery-20261016-2301/local/v25-implementation-plan.json": {
+      "bytes": 8280,
+      "sha256": "c25b238bc5bc50c3a4bf61abded956e52603f5dcd11d8bb5c0e96fe378433ee0"
+    },
+    "research/focused-recovery-20261016-2301/local/v25-implementation-plan.md": {
+      "bytes": 2554,
+      "sha256": "0d8919014bc8cea26b9d7f9f6c53ec37fe4da1d2d34dd28ca0ae0f39d3e80c01"
+    },
+    "research/focused-recovery-20261016-2301/local/check_v25_offline.py": {
+      "bytes": 21866,
+      "sha256": "b8106479c63d1f554042b69d154d205fd7c8338d89459e9240ccc8653399da70"
+    },
+    "research/focused-recovery-20261016-2301/local/prepare_v25_inputs.py": {
+      "bytes": 11796,
+      "sha256": "2138c01afeb5012ce5af7a82be6b714a6b7dcef10f1903fd2e2481c77e68bed3"
+    },
+    "research/focused-recovery-20261016-2301/local/build_pages_v25.py": {
+      "bytes": 15437,
+      "sha256": "cbb3abe024808a0fa9f06452b20e33cbcb36fe760c2fa660434835c10173767a"
+    },
+    "research/focused-recovery-20261016-2301/local/v25-builder-preparation.json": {
+      "bytes": 2623,
+      "sha256": "61fa20276f56abd71bf146ce5f833f4617b7538e292fcc21ca0c32fe4bd86268"
+    }
+  },
+  "frozen_input_check": {
+    "v24_local_acceptance_sha256": "6ede038217c7e3a978dc82c2b6135580660546b9013e30883679cbae11c17282",
+    "v24_provenance_sha256": "0d1a392e5be8f5eae71b8ca6bf73f5473331357c6f99f9ac60e79b6d07dec3d0",
+    "source15_manifest_sha256": "d89557a445ec5c81ef2652c49fd8ce9c102016f11411b7fa2aa795f5112ae002",
+    "v25_output_exists": false,
+    "v25_partial_exists": false
+  },
+  "scope_result": {
+    "v25_created": false,
+    "export_invocations": 0,
+    "network_requests": 0,
+    "git_operations": 0,
+    "zip_or_release_operations": 0,
+    "production_files_modified": false,
+    "frozen_v24_files_modified": false
+  },
+  "not_run": [
+    "v25 checker against a site that does not yet exist",
+    "browser QA",
+    "full export"
+  ]
+}

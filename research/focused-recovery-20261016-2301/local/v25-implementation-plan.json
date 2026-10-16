@@ -1,0 +1,122 @@
+{
+  "schema": "wow-recovery.focused-recovery-20261016-2301.v25-local-plan.v1",
+  "status": "plan_only",
+  "executed_by": "/root/local_recovery_20261016",
+  "created_utc": "2026-10-16T15:01:06Z",
+  "scope": {
+    "owned_directory": "research/focused-recovery-20261016-2301/local",
+    "future_output": ".scratch/pages-resources-20261016-v25",
+    "output_created": false,
+    "network_requests": 0,
+    "export_invocations": 0,
+    "git_operations": 0
+  },
+  "frozen_v24": {
+    "local_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-v24-local-acceptance.json",
+      "sha256": "6ede038217c7e3a978dc82c2b6135580660546b9013e30883679cbae11c17282",
+      "accepted": true
+    },
+    "site": ".scratch/pages-resources-20261016-v24",
+    "provenance": {
+      "path": ".scratch/pages-resources-20261016-v24/export-provenance.json",
+      "sha256": "0d1a392e5be8f5eae71b8ca6bf73f5473331357c6f99f9ac60e79b6d07dec3d0"
+    },
+    "source_manifest_sha256": "d89557a445ec5c81ef2652c49fd8ce9c102016f11411b7fa2aa795f5112ae002",
+    "declared_files": 8637,
+    "actual_files": 8638,
+    "source_records": 8357,
+    "overlay_records": 179,
+    "primary_overlay_records": 117,
+    "supplement_overlay_records": 62,
+    "guide_preview_groups": 6,
+    "guide_preview_images": 22,
+    "guide_collection_groups": 3,
+    "guide_collection_images": 32
+  },
+  "frozen_production_interfaces": {
+    "exporter_sha256": "50bd3569f77d3d52c52ed7077726d7dc99fbee23a3a0ced076a6523198b9225d",
+    "guide_previews_sha256": "bac8334aec3e6335556912216cc5ab803186158ef602f6a82081baf046a87db1",
+    "guide_image_collections_sha256": "9d0f20679733e29c6eb789fd4a05883056e4994ccb173e1dc843d68e070dc057",
+    "export_pages_signature": "export_pages(source_site, manifest_path, output, base_path, workspace_root, max_bytes, min_free_bytes, image_source_maps, supplement_image_source_maps, allow_later_image_supplements, guide_preview_map, guide_image_collection_map)",
+    "loader_calls": [
+      "load_image_overlays(primary_maps, workspace_root, anchor_timestamp, frozen_routes, frozen_static_paths)",
+      "load_supplement_image_overlays(supplement_maps, workspace_root, anchor_timestamp, frozen_routes, frozen_static_paths, allow_later_image_supplements)",
+      "load_guide_preview_map(preview_map, workspace_root, source_site, manifest_path, manifest, route_to_static)",
+      "load_guide_image_collection_map(collection_map, workspace_root, manifest_path, manifest, overlays, route_to_static, base_path)"
+    ],
+    "render_hooks": [
+      "export_pages iterates every frozen manifest record and derives HTML/CSS/JS or copies binary bytes",
+      "guide_image_collections.insert_guide_image_section is applied to the six collection pages",
+      "export-provenance.json and route-map.json are regenerated for the complete output"
+    ]
+  },
+  "incremental_assessment": {
+    "technically_possible": true,
+    "safe_without_production_change": false,
+    "reason": "The accepted exporter has no incremental or prior-tree input. It refuses an existing output/partial, rebuilds route lookup and overlays, walks all 8357 manifest records, regenerates support routes and provenance, then atomically promotes one complete tree.",
+    "copy_then_patch_risks": [
+      "A manual copy would need to reproduce localizer route/origin indexes and all derived provenance fields.",
+      "Adding an overlay can change route-map, pages_runtime.js, related-images index, collection pages, and provenance; a partial patch could silently leave stale source_map identity or derivation notes.",
+      "A custom incremental path would require new production code or a second renderer and would consume the 40-minute QA/publish window."
+    ],
+    "recommendation": "Use one new v25 wrapper cloned from the accepted v24 builder. Keep source15, the 179 existing overlay records, preview map, and existing collection groups frozen; append only root-accepted new primary/supplement map entries and a separately named collection-map revision. Call the unchanged export_pages API once into a new v25 output after root GO.",
+    "copy_v24_tree": "Do not use as the primary build path. A byte-preserving copy can be a diagnostic comparison only; it must not be promoted or patched as a substitute for the complete exporter run."
+  },
+  "v25_input_contract": {
+    "new_sources": "Only root-accepted receipt entries with original URL, SHA-256, byte length, actual capture timestamp, and validated image payload may enter the new maps.",
+    "primary_or_supplement": "Classify each new item from its accepted temporal/origin metadata; later captures remain supplement entries and are never relabeled baseline primary.",
+    "map_rules": [
+      "New map files are distinct from v24 maps and contain no duplicate original, route, or byte identity.",
+      "The collection map is a new clone/revision of the accepted three-group map; it preserves all old 32 images and adds only accepted images tied to a real guide/gallery group.",
+      "The six preview groups remain exactly 22 images unless root explicitly accepts a separate design change.",
+      "Every new output image must bind receipt SHA/length/timestamp, map SHA, and current provenance; no guessed aliases or dynamic full/thumb substitutions."
+    ],
+    "immutability": "All v24 maps, v24 output, source15 manifest, production tools, prior acceptance receipts, and v24 ZIP remain read-only inputs."
+  },
+  "go_sequence": [
+    {
+      "step": "root_source_gate",
+      "action": "Root accepts the neighbor retry payloads and exact source map/collection-map revision; record receipt and map SHA before any v25 output is created."
+    },
+    {
+      "step": "preflight",
+      "action": "Run the v25 wrapper without --go: verify all frozen hashes, root acceptance bindings, source bytes, loader counts, disk floor, and output/partial absence.",
+      "network_requests": 0,
+      "export_invocations": 0
+    },
+    {
+      "step": "single_export",
+      "action": "After explicit root GO, call unchanged export_pages once with a new output path, v24 maps plus accepted new maps, unchanged preview map, and revised collection map. Preserve complete partial on post-promotion failure and never retry the export."
+    },
+    {
+      "step": "offline_qa",
+      "action": "Run check_v25_offline.py once against the promoted output. It must prove prior 179 overlay metadata/bytes, route conservation, source/map/receipt bindings, collection counts, preview preservation, and allowlisted changed paths."
+    },
+    {
+      "step": "root_browser_and_publish",
+      "action": "Root runs bounded browser checks for affected guide/gallery pages and old City/August/news retention, then performs publication. This local plan does not publish."
+    }
+  ],
+  "estimated_runtime_minutes": {
+    "source_gate_and_map_preflight": "2 (after the accepted receipt is available)",
+    "single_full_export": "8 (v24 historical export was approximately 8 minutes)",
+    "offline_qa": "3",
+    "bounded_browser_and_publish": "3",
+    "total_after_root_go": "16",
+    "deadline_margin": "24 minutes inside the 40-minute hard window"
+  },
+  "hard_stops": [
+    "Do not create .scratch/pages-resources-20261016-v25 before root GO and accepted new source receipts.",
+    "Stop on any existing v25 output/partial, missing input, hash drift, disk floor breach, map overlap, or loader count mismatch.",
+    "Do not retry a failed export or replace a promoted tree; retain the exact worker receipt and ask root to decide.",
+    "Do not modify production tools, source15, v24 output/maps/receipts, root-owned acceptance/status/docs, ZIP, or release state."
+  ],
+  "helper": {
+    "path": "research/focused-recovery-20261016-2301/local/check_v25_offline.py",
+    "mode": "worker-named offline checker; no export, browser, network, extraction, or publication",
+    "root": "Path(__file__).resolve().parents[3]",
+    "required_inputs": ["--site", "--root-acceptance", "--worker-receipt", "--new-source-receipt (repeatable)", "--new-map (repeatable)", "--collection-map", "--expected-primary-added", "--expected-supplement-added", "--expected-collection-images"],
+    "write_scope": "The optional checker receipt stays in this local directory. It never writes v25 site files."
+  }
+}
