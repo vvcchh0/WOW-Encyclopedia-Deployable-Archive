@@ -144,7 +144,7 @@ Menu2=new Array(bulletImg+"Archived News"+underLine,"",menuBg,5,15,140,"transpar
   Menu2_2_2=new Array(bulletImg+"November, 2007"+underLine,"/WOW-Encyclopedia-Deployable-Archive/news/rss-11-2007.xml.html ",menuBg,0,15,125,"","","","","","",-1,-1,-1,"","");
   Menu2_2_3=new Array(bulletImg+"October, 2007"+underLine,"/WOW-Encyclopedia-Deployable-Archive/news/rss-10-2007.xml.html ",menuBg,0,15,125,"","","","","","",-1,-1,-1,"","");
   Menu2_2_4=new Array(bulletImg+"September, 2007"+underLine,"/WOW-Encyclopedia-Deployable-Archive/news/rss-09-2007.xml.html ",menuBg,0,15,125,"","","","","","",-1,-1,-1,"","");
-  Menu2_2_5=new Array(bulletImg+"August, 2007"+underLine,"/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fjs%2Fmenu1_var.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-08-2007.xml&reason=external-or-uncollected-resource ",menuBg,0,15,125,"","","","","","",-1,-1,-1,"","");
+  Menu2_2_5=new Array(bulletImg+"August, 2007"+underLine,"/WOW-Encyclopedia-Deployable-Archive/news/rss-08-2007.xml.html ",menuBg,0,15,125,"","","","","","",-1,-1,-1,"","");
   Menu2_2_6=new Array(bulletImg+"July, 2007"+underLine,"/WOW-Encyclopedia-Deployable-Archive/news/rss-07-2007.xml.html ",menuBg,0,15,125,"","","","","","",-1,-1,-1,"","");
   Menu2_2_7=new Array(bulletImg+"June, 2007"+underLine,"/WOW-Encyclopedia-Deployable-Archive/news/rss-06-2007.xml.html ",menuBg,0,15,125,"","","","","","",-1,-1,-1,"","");
   Menu2_2_8=new Array(bulletImg+"May, 2007"+underLine,"/WOW-Encyclopedia-Deployable-Archive/news/rss-05-2007.xml.html ",menuBg,0,15,125,"","","","","","",-1,-1,-1,"","");
