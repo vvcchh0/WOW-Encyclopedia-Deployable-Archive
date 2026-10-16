@@ -17,21 +17,109 @@
     {
       "id": "LOCAL01",
       "owner": "/root/local_recovery_20261016",
-      "status": "in_progress",
+      "status": "accepted_scoped",
       "goal": "Reconcile latest Karazhan126 outcomes and evidence-backed remaining gallery routes; plan two EU images as related exhibits.",
       "write_scope": "research/continuous-recovery-20261016/local-audit/**",
       "network": false,
-      "minutes": 25
+      "minutes": 25,
+      "review": "Initial merge omitted intermediate Karazhan results and classified whole inventory as unrequested. Preserve preliminary and reconcile exact URLs.",
+      "result": {
+        "karazhan_archive404": 79,
+        "karazhan_transport_unknown": 47,
+        "inventory_entities": 3368,
+        "acceptance": "research/continuous-recovery-20261016/publication/root-gallery-audit-acceptance.json"
+      }
     },
     {
       "id": "NETWORK01-PLAN",
       "owner": "/root/network_recovery_20261016",
-      "status": "bounded_execution_authorized",
+      "status": "accepted",
       "goal": "Q1/Q2/Q8 exact CDX queries only, maximum6attempts/6minutes; no replays",
       "write_scope": "research/continuous-recovery-20261016/network/**",
       "network": true,
+      "minutes": 25,
+      "result": {
+        "requests": 6,
+        "source_responses": 3,
+        "recovered_images": 0,
+        "acceptance": "research/continuous-recovery-20261016/network/root-cdx01-acceptance.json"
+      }
+    },
+    {
+      "id": "NETWORK02-NEWS01",
+      "owner": "/root/network_recovery_20261016",
+      "status": "accepted",
+      "goal": "Replay three prior indexed news images, latest capture first and older fallback only when unaccepted",
+      "write_scope": "research/continuous-recovery-20261016/network/news01/**",
+      "network": true,
+      "limits": {
+        "attempts": 12,
+        "seconds": 720,
+        "body_bytes": 33554432
+      },
+      "result": {
+        "images": 3,
+        "requests_including_parser_failure": 7,
+        "acceptance": "research/continuous-recovery-20261016/publication/root-news01-acceptance.json"
+      }
+    },
+    {
+      "id": "NETWORK03-NEWS02",
+      "owner": "/root/network_recovery_20261016",
+      "status": "accepted",
+      "result": {
+        "images": 6,
+        "requests": 36,
+        "acceptance": "research/continuous-recovery-20261016/publication/root-news02-acceptance.json"
+      }
+    },
+    {
+      "id": "LOCAL02-V16",
+      "owner": "/root/local_recovery_20261016",
+      "status": "root_accepted_local",
+      "result": {
+        "new_images": 11,
+        "overlays": 49,
+        "declared_files": 8507,
+        "browser_checks": 12,
+        "acceptance": "research/continuous-recovery-20261016/publication/root-v16-local-acceptance.json"
+      }
+    },
+    {
+      "id": "NETWORK04-NEWS03-04",
+      "owner": "/root/network_recovery_20261016",
+      "status": "candidate_acquired_pending_root",
+      "result": {
+        "images": 4,
+        "batch_dirs": [
+          "network/news03",
+          "network/news04"
+        ],
+        "integration": "v17_or_later_only"
+      }
+    },
+    {
+      "id": "LOCAL03-ALLNEWS",
+      "owner": "/root/local_recovery_20261016",
+      "status": "in_progress",
+      "network": false,
+      "write_scope": "research/continuous-recovery-20261016/local-audit/all-news/**",
+      "goal": "All news missing-image dedup inventory; prioritize common initial-letter glyphs, exclude acquired candidates",
       "minutes": 25
+    },
+    {
+      "id": "NETWORK05-REGIONAL01",
+      "owner": "/root/network_recovery_20261016",
+      "status": "in_progress",
+      "network": true,
+      "write_scope": "research/continuous-recovery-20261016/network/regional01/**",
+      "goal": "Three hypothesis-labelled EU Karazhan CDX prefix queries only",
+      "limits": {
+        "attempts": 6,
+        "seconds": 480,
+        "bytes": 33554432
+      }
     }
   ],
-  "updated_utc": "2026-10-16T02:20:27.269253+00:00"
+  "updated_utc": "2026-10-16T03:21:15.570423+00:00"
 }

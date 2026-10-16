@@ -1,0 +1,132 @@
+{
+  "schema": "wow-recovery.integration.v16.loader-precheck",
+  "network_requests_performed": 0,
+  "export_started": false,
+  "assertions": {
+    "frozen_v15_stage_present": true,
+    "frozen_anchor_matches_v15": true,
+    "existing_primary_loader_19_records": true,
+    "current_or_final_primary_loader_count_valid": true,
+    "existing_supplement_map_records_19": true,
+    "eu2_map_records_2": true,
+    "supplement_loader_21_records": true,
+    "eu2_has_16_related_records_after_merge": true,
+    "news01_pending_or_validated": true,
+    "no_export_started": true,
+    "no_network_requests": true
+  },
+  "source_policy": {
+    "source_stage": ".scratch/offline-navigation-20261015-v15",
+    "source_stage_reused": true,
+    "new_source_version_created": false,
+    "manifest": {
+      "path": ".scratch/offline-navigation-20261015-v15/build-manifest.json",
+      "exists": true,
+      "sha256": "d89557a445ec5c81ef2652c49fd8ce9c102016f11411b7fa2aa795f5112ae002"
+    },
+    "anchor_timestamp": "20080512210044",
+    "source_site_exists": true,
+    "source_site_file_count": 8357
+  },
+  "loader_contract": {
+    "production_module": "tools/export_github_pages.py",
+    "primary_loader": "load_image_overlays",
+    "supplement_loader": "load_supplement_image_overlays",
+    "default_port_normalization": "mirror.origin_key/origin_namespace_host strips http:80 and https:443 for keying; logical/original URLs may retain accepted original :80 spelling",
+    "supplement_later_policy": true
+  },
+  "accepted_inputs": {
+    "existing_primary_map_count": 19,
+    "current_or_final_primary_loader_count": 28,
+    "current_or_final_primary_source_bytes": 191584,
+    "existing_supplement_map_count": 19,
+    "eu2_supplement_map_count": 2,
+    "supplement_loader_count": 21,
+    "supplement_source_bytes": 1868176,
+    "supplement_host_namespace_counts": {
+      "www.wow-europe.com": 14,
+      "wow-europe.com": 2,
+      "www.worldofwarcraft.com": 5
+    },
+    "eu2_urls": [
+      "http://www.wow-europe.com/screenoftheday/screenoftheday/10702-01.jpg",
+      "http://wow-europe.com/screenoftheday/screenoftheday/10703-14.jpg"
+    ]
+  },
+  "news_primary_overlay": {
+    "status": "provided_and_loader_validated",
+    "map": {
+      "path": "research/continuous-recovery-20261016/integration/v16-primary-news-image-source-map.json",
+      "exists": true,
+      "sha256": "b978caed7b97a06eb04a3ce6fd69ef12d3b9903eef68ff8d1de00f26e51cd04b"
+    },
+    "current_accepted_items": 9,
+    "future_final_items_max": 13,
+    "count_if_provided": 9,
+    "primary_count_if_provided": 28,
+    "primary_source_bytes_if_provided": 191584,
+    "must_be_passed_as": "image_source_maps / primary loader, not supplement_image_source_maps",
+    "pending_reason": null
+  },
+  "input_hashes": {
+    "frozen_manifest": "d89557a445ec5c81ef2652c49fd8ce9c102016f11411b7fa2aa795f5112ae002",
+    "v15_build_script": "9527cbadc167aa9edd56d609bdc14273b846c747b0d01717a1fe76c6bad4ef4d",
+    "primary_maps": [
+      {
+        "path": "research/resource-resume-20261013/round002/entity-source-map.json",
+        "exists": true,
+        "sha256": "9342b01e4f8ad683ecbceafb5d10064ea2f0eb6200d0f94f02dca3812e3cc325"
+      },
+      {
+        "path": "research/resource-resume-20261013/round003/entity-source-map.json",
+        "exists": true,
+        "sha256": "17b2d0eb4c1d52d128a19c3c98d1ea15596a380cc252cac34fbeef05b34bcc57"
+      }
+    ],
+    "existing_supplement_maps": [
+      {
+        "path": "research/related-sites-20261014/integration/regional-image-source-map.json",
+        "exists": true,
+        "sha256": "7cbad0d949749ce5fbdbdef95b65e6e95f8cd8c15546285814931c6e1b325502"
+      },
+      {
+        "path": "research/related-sites-20261014/integration/karazhan-late-source-map.json",
+        "exists": true,
+        "sha256": "f7f84beac63d63ec5a0c589dcfad3209e016cd4f9acf0f39c9b313f79cb37bb4"
+      },
+      {
+        "path": "research/media-screenshots-20261015/late-image-source-map.json",
+        "exists": true,
+        "sha256": "1bb8405e58eaf19999313c160b5db256a11559cbc70f8cfccf564f05c99cff03"
+      }
+    ],
+    "eu2_supplement_map": {
+      "path": "research/continuous-recovery-20261016/integration/v16-eu-image-source-map.json",
+      "exists": true,
+      "sha256": "2efd473a586f155743ee18cabc2885ca489e0d03dbd58bd473a7dcb825c9c1e3"
+    },
+    "legacy_eu2_proposal": {
+      "path": "research/continuous-recovery-20261016/local-audit/regional-image-supplement-map.proposal.json",
+      "exists": true,
+      "sha256": "11c6e21a2e9b5a15b3ee7c10e097465c1b3ed646c24f130d8e1ea5be10d2f3c5"
+    },
+    "legacy_news01_map": {
+      "path": "research/continuous-recovery-20261016/integration/news01-primary-image-source-map.json",
+      "exists": true,
+      "sha256": "1ea0f0c3b7bf1b5bdd198ae0eea7b4075099209b3f067e3f6b55c2dd509c6f44"
+    },
+    "production_loader": [
+      {
+        "path": "tools/export_github_pages.py",
+        "exists": true,
+        "sha256": "636925a2b9721f408b7d9225d3c8e63c2bab1232b51225a8963c6f9cd443258e"
+      },
+      {
+        "path": "tools/offline_mirror.py",
+        "exists": true,
+        "sha256": "8171683dc6b74237d3a655697c9930932fe863f8200685f16da8d4c29c1c635a"
+      }
+    ]
+  },
+  "next_action_gate": "Final nine-image NEWS map and two-image EU2 supplement map are loader-valid. Export remains gated on root GO; the frozen v15 source is reused and no source version is copied."
+}
