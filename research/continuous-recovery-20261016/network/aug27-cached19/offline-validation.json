@@ -1,0 +1,27 @@
+{
+  "schema": "wow-recovery.aug27-cached19-offline-validation.v1",
+  "batch_id": "AUG27-CACHED19",
+  "network_requests": 0,
+  "tests": {
+    "plan_and_sha_bound_cache_load": true,
+    "selected_exact_capture_is_20080402080456": true,
+    "selected_digest_is_bound": true,
+    "core_fixture_made_zero_network_requests": true,
+    "core_fixture_only_known_tail_sensitive_test_failed": true,
+    "inherited_tail_plus_four_failures_reaches_stop": true
+  },
+  "passed": 6,
+  "total": 6,
+  "all_passed": true,
+  "core_fixture": {
+    "path": "research/continuous-recovery-20261016/network/aug27-cached19/fixture-results.json",
+    "sha256": "4e13316750de71df7b1a2f968f103c979ba182c1d0489f920765f10383a6ff0f",
+    "passed": 31,
+    "total": 32,
+    "known_tail_sensitive_failure": "transport_policy_proxy_five_failures_stop"
+  },
+  "notes": [
+    "The shared fixture's proxy-five fake sequence has four attempts; with inherited tail=1 it reaches the stop boundary but does not satisfy the zero-tail-only assertion.",
+    "The bound cache is final3's actual HTTP200 complete CDX response; no new CDX request or replay was made."
+  ]
+}

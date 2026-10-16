@@ -1,0 +1,33 @@
+{
+  "schema": "wow-recovery.aug27-same-day-late11-ast-diff.v1",
+  "base_path": "research/continuous-recovery-20261016/network/reusable-image-driver-v2/reusable_image_driver.py",
+  "base_sha256": "1faae294465f5e1ad6e2925870890cdb9512bd2251090d533637245ee6a3d8e4",
+  "adapted_path": "research/continuous-recovery-20261016/network/aug27-same-day-late11/late11_image_driver.py",
+  "adapted_sha256": "f8f25ce4eca097ed1739300b9cd34b183e6de94e8e93c7d7476abd1289bbff93",
+  "changed_functions": [
+    "configure_from_plan",
+    "execute",
+    "load_and_validate_inputs",
+    "persist_accepted_payload",
+    "run_fixtures",
+    "validate_replay"
+  ],
+  "added_functions": [
+    "_filter_late_selected",
+    "_late_plan_pending",
+    "_late_timestamp_ok",
+    "_validate_late_supplement_plan"
+  ],
+  "removed_functions": [],
+  "policy_constant_change": {
+    "POLICY_TO_TS": {
+      "base": "20080512210044",
+      "adapted": "20080512235959"
+    }
+  },
+  "design": [
+    "The transport, header parser, bounded decoder, Pillow validation, curl caps, cadence, disk floor, and stop rules are copied from the accepted v2 core.",
+    "The adapter adds an exact one-target root-observation guard, late-window selection filtering, pre-anchor replay rejection, and late-supplement metadata.",
+    "The pending plan deliberately binds no failure tail; execute refuses until root issues a separately tail-bound plan after A acceptance."
+  ]
+}

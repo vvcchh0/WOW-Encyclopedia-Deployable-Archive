@@ -1,0 +1,27 @@
+{
+  "schema": "wow-recovery.aug27-same-day-late11-fixtures.v1",
+  "batch_id": "AUG27-SAME-DAY-LATE11",
+  "network_requests": 0,
+  "tests": {
+    "real_redirect_receipt_guard_loaded": true,
+    "exact_one_target_and_original_locked": true,
+    "late_selection_rejects_pre_anchor": true,
+    "pre_anchor_payload_rejected": true,
+    "same_day_late_memento_accepted_by_core": true,
+    "actual_late_memento_timestamp_preserved": true,
+    "automatic_redirects_disabled": true,
+    "pending_plan_has_no_stale_tail": true,
+    "wrong_original_guard_rejected": true
+  },
+  "passed": 9,
+  "total": 9,
+  "all_passed": true,
+  "driver_sha256": "f8f25ce4eca097ed1739300b9cd34b183e6de94e8e93c7d7476abd1289bbff93",
+  "plan_sha256": "4edbb96964fbb7c565951fbd2f743b2695a61ab3a32011e95a238c10a4d6beb9",
+  "pre_anchor_digest_fixture": "TYY2PCFPFKXET2IASTXKDPIXCO6PCHD6",
+  "notes": [
+    "Fixture uses synthetic in-memory JPEG bytes and sanitized validation fields only.",
+    "No curl process, raw header/body write, payload write, or network request occurred.",
+    "A later root-issued plan must bind the actual preceding failure tail before execute; this pending plan deliberately has no tail."
+  ]
+}

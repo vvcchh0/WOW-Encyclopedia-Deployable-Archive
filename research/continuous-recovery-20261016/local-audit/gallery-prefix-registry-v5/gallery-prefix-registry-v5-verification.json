@@ -1,0 +1,179 @@
+{
+  "schema": "gallery-prefix-registry-v5-verification",
+  "generated_utc": "2026-10-16T08:36:08.623807+00:00",
+  "network_performed": false,
+  "git_performed": false,
+  "command": "python.exe -X utf8 research/continuous-recovery-20261016/local-audit/gallery-prefix-registry-v5/build_gallery_prefix_registry_v5.py",
+  "inputs": {
+    "v4_registry": {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-prefix-registry-v4/gallery-prefix-registry-v4.json",
+      "bytes": 137214,
+      "sha256": "93b5b2e01f03aef23df221c57be67d98c2fe5100b0d5fa4fdedc1fa8cebf5037",
+      "role": "frozen v4 registry"
+    },
+    "prefix04_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix04-acceptance.json",
+      "bytes": 88497,
+      "sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2",
+      "role": "root accepted prefix04 index-only result"
+    },
+    "prefix04_plan": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix04/plan.json",
+      "bytes": 53753,
+      "sha256": "20145d4db43da3d2ace0cc378a867d27ffc2e5aa3c86ab82cd52c5eb7f8799d0",
+      "role": "prefix04 literal query plan"
+    },
+    "prefix04_execution_plan": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix04/execution-plan.json",
+      "bytes": 29770,
+      "sha256": "940cb30cd8d96e5505d90c9682f90835f32a5c8d10f4d8276b8995795ef75ed1",
+      "role": "prefix04 execution window/policy"
+    },
+    "prefix04_report": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix04/batch-report.json",
+      "bytes": 326848,
+      "sha256": "ad166e5002c2c2e9f8dcf58317b58a7a64f292de19974116f5e5501fbaa52f74",
+      "role": "prefix04 raw batch report"
+    },
+    "prefix04_source_map": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix04/source-map.json",
+      "bytes": 124205,
+      "sha256": "3dad08d85182b04f6c0305d8472b5a50811589cf19a7523baac970c27b2fe914",
+      "role": "prefix04 source-map attempt/result ledger"
+    }
+  },
+  "outputs": {
+    "registry": {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-prefix-registry-v5/gallery-prefix-registry-v5.json",
+      "bytes": 296800,
+      "sha256": "98bf027bb36bb33706ac45c4f00e7dfdd89625ef29bff695aac35cd4d14b4f76",
+      "role": "new LOCAL21 merged v5 registry"
+    },
+    "incomplete_plan": {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-followup-plans/incomplete-prefixes-full-window-v1.json",
+      "bytes": 53934,
+      "sha256": "c0f5b571a04516c497a6073348d3372889c7eb4054055a850420e947f550c973",
+      "role": "new LOCAL21 seven-incomplete follow-up plan"
+    },
+    "early_gap_plan": {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-followup-plans/early-gaps-24-v1.json",
+      "bytes": 123782,
+      "sha256": "767c9dfe7280ac6d708b5be5661b0970e67ef8ac292672c9802aeddc75218e90",
+      "role": "new LOCAL21 twenty-four early-gap follow-up plan"
+    },
+    "public_summary": {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-prefix-registry-v5/gallery-prefix-registry-v5-public-summary.json",
+      "bytes": 2044,
+      "sha256": "565c156aaef7a73862dc59220a8a07654668d5c0c0723ae00d81decce9a492ac",
+      "role": "new LOCAL21 sanitized public summary"
+    }
+  },
+  "checks": {
+    "groups": true,
+    "slots": true,
+    "entities": true,
+    "limited_complete": true,
+    "incomplete_or_unknown": true,
+    "prefix04_complete": true,
+    "prefix04_unknown": true,
+    "prefix03_excluded": true,
+    "early_gap_plan": true,
+    "early_gap_batch_1": true,
+    "early_gap_batch_2": true,
+    "entity_status_archive_404": true,
+    "entity_status_never_requested": true,
+    "entity_status_transport_unknown": true,
+    "entity_status_total": true,
+    "all_followup_prefixes_absolute_http": true,
+    "all_followups_unexecuted": true,
+    "no_payload_replay": true
+  },
+  "coverage_sets": {
+    "prefix03_full_window_excluded": [
+      "Auchindoun - Auchenai Crypts",
+      "Auchindoun - Sethekk Halls",
+      "TCG Picnic Basket",
+      "TCG Spectral Tiger",
+      "Winter's Veil"
+    ],
+    "prefix04_full_window_excluded": [
+      "Auchindoun - Mana-Tombs",
+      "Auchindoun - Shadow Labyrinth",
+      "Black War Elekk",
+      "Cenarion War Mount",
+      "Darkmoon Faire: Level 70 Elite Tauren Chieftain",
+      "Fiery Warhorse",
+      "Halaa PvP",
+      "Love is in the Air",
+      "Lunar Festival",
+      "Phoenix",
+      "Riding Turtle",
+      "Swift White Hawkstrider",
+      "Tempest Keep - The Mechanar",
+      "World PvP"
+    ],
+    "incomplete": [
+      "Amani War Bear",
+      "Coilfang Reservoir - The Steam Vaults",
+      "Flying Machine",
+      "Qiraji battle tank",
+      "Raven Mount",
+      "Tempest Keep - The Botanica",
+      "X-51 Nether-Rocket"
+    ],
+    "early_gap": [
+      "Karazhan",
+      "Zul'Aman",
+      "Magtheridon's Lair",
+      "Gruul's Lair",
+      "Serpentshrine Cavern",
+      "The Battle for Mount Hyjal - Caverns of Time",
+      "Tempest Keep - The Eye",
+      "Black Temple",
+      "Doom Lord Kazzak",
+      "Magister's Terrace",
+      "Hellfire Citadel - Hellfire Ramparts",
+      "Hellfire Citadel - The Blood Furnace",
+      "Hellfire Citadel - The Shattered Halls",
+      "Coilfang Reservoir - The Underbog",
+      "Caverns of Time - Escape from Durnholde",
+      "Caverns of Time - Opening of the Dark Portal",
+      "Tempest Keep - The Arcatraz",
+      "Warsong Gulch",
+      "Isle of Quel'Danas",
+      "Fishing",
+      "Hallow's End",
+      "Brewfest",
+      "TCG Gallery",
+      "City Attacks"
+    ],
+    "early_gap_batch_1": [
+      "Karazhan",
+      "Zul'Aman",
+      "Magtheridon's Lair",
+      "Gruul's Lair",
+      "The Battle for Mount Hyjal - Caverns of Time",
+      "Tempest Keep - The Eye",
+      "Doom Lord Kazzak",
+      "Hellfire Citadel - Hellfire Ramparts",
+      "Hellfire Citadel - The Blood Furnace",
+      "Hellfire Citadel - The Shattered Halls",
+      "Coilfang Reservoir - The Underbog",
+      "Caverns of Time - Escape from Durnholde",
+      "Caverns of Time - Opening of the Dark Portal",
+      "Tempest Keep - The Arcatraz",
+      "Warsong Gulch",
+      "Isle of Quel'Danas",
+      "Hallow's End",
+      "Brewfest",
+      "TCG Gallery",
+      "City Attacks"
+    ],
+    "early_gap_batch_2": [
+      "Serpentshrine Cavern",
+      "Black Temple",
+      "Magister's Terrace",
+      "Fishing"
+    ]
+  }
+}

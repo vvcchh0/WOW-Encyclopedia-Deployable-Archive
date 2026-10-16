@@ -1,0 +1,70 @@
+{
+  "schema": "wow-recovery.reusable-image-sanitized-summary.v1",
+  "batch_id": "AUG27-SAME-DAY-LATE11",
+  "network_requests": 3,
+  "prepared_attempts": 3,
+  "source_responses": 2,
+  "cached_cdx_reused": 0,
+  "accepted_payload_count": 1,
+  "accepted_payload_status": "pending_root",
+  "stop_reason": "completed_candidate_queue",
+  "failure_streak": 0,
+  "failure_streak_start": 0,
+  "transport_policy": "batch_after_direct_failure",
+  "direct_probe_done": true,
+  "failed_attempt_number": 1,
+  "skip_reason": "direct_source_status_none_curl_7_or_28_empty_body",
+  "report_policy": {
+    "transport_policy": "batch_after_direct_failure",
+    "batch_scope": "one execute invocation; initial_state resets the direct probe for the next batch",
+    "direct_failure_qualification": "source_status=None and curl_exit in {7,28} and body_bytes=0",
+    "direct_probe_done": true,
+    "failed_attempt_number": 1,
+    "skip_reason": "direct_source_status_none_curl_7_or_28_empty_body",
+    "proxy_only_active": true
+  },
+  "cooldown_not_before_utc": null,
+  "accepted_payloads": [
+    {
+      "target_key": "AUG27-11-late-supplement",
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com/news/images/07-08/08-22-07-2.jpg",
+      "selected_capture_timestamp": "20080512231210",
+      "actual_memento_timestamp": "20080512231210",
+      "actual_link_original": "http://www.worldofwarcraft.com/news/images/07-08/08-22-07-2.jpg",
+      "cdx_digest": "MLUKMD2MO3CNVZGT2PCCNNXF7RDKJAA4",
+      "cdx_record_length": "4895",
+      "raw_body_sha256": "52510766d8303420e6568d50e63e9fceae51a415a5dc513da4f8142ef0f17b99",
+      "raw_body_bytes": 4645,
+      "decoded_body_sha256": "52510766d8303420e6568d50e63e9fceae51a415a5dc513da4f8142ef0f17b99",
+      "decoded_body_bytes": 4645,
+      "private_decoded_payload_path": "research/continuous-recovery-20261016/network/aug27-same-day-late11/output/private-payloads/AUG27-11-late-supplement-20080512231210-MLUKMD2MO3CNVZGT2PCCNNXF7RDKJAA4.decoded",
+      "content_encoding": "identity",
+      "verification": {
+        "curl_exit": 0,
+        "http_status": 200,
+        "link_identity": "exact",
+        "actual_content_type": "image/jpeg",
+        "image_format": "JPEG",
+        "image_frame_count": 1,
+        "image_size": [
+          130,
+          100
+        ],
+        "image_mode": "RGB",
+        "image_validation": "valid",
+        "decoded_payload_sha1_base32": "MLUKMD2MO3CNVZGT2PCCNNXF7RDKJAA4"
+      },
+      "status": "pending_root",
+      "late_supplement": true,
+      "supplement_window": {
+        "from": "20080512210044",
+        "to": "20080512235959"
+      },
+      "pre_anchor_cdx_digest": "MLUKMD2MO3CNVZGT2PCCNNXF7RDKJAA4",
+      "adoption_note": "same-day late supplement; compare payload digest with pre-anchor indexed digest before any adoption"
+    }
+  ],
+  "deployment_claim": false,
+  "raw_headers_cookies_and_text": "omitted"
+}

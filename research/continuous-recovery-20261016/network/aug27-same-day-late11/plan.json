@@ -1,0 +1,269 @@
+{
+  "schema": "wow-recovery.reusable-image-plan.v1",
+  "generated_utc": "2026-10-16T08:33:22.002342Z",
+  "batch_id": "AUG27-SAME-DAY-LATE11",
+  "mode": "prepared_waiting_for_A_acceptance_no_execution_tail_bound",
+  "execution_status": "awaiting_A_root_acceptance",
+  "candidate_count": 1,
+  "candidates": [
+    {
+      "target_key": "AUG27-11-late-supplement",
+      "priority": 11,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com/news/images/07-08/08-22-07-2.jpg",
+      "literal": "http://www.worldofwarcraft.com/news/images/07-08/08-22-07-2.jpg",
+      "expected": {
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "all_gif_frames": false,
+        "reencode": false,
+        "script_execution": false
+      },
+      "source_evidence": {
+        "literal": "http://www.worldofwarcraft.com/news/images/07-08/08-22-07-2.jpg",
+        "path": ".scratch/pages-resources-20261016-v18/news/rss-08-2007.xml.html",
+        "line": 1990,
+        "sha256": "a4bd8d8b35809e45cb517d3e1ea8d32a1521141ee6d87110035a6c3bc48909de"
+      },
+      "selection": {
+        "require_complete_index": true,
+        "potential_truncation": "do_not_replay",
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "max_distinct_digest_candidates": 2,
+        "sort": "timestamp_desc_then_record_index_desc",
+        "same_digest_older_captures": "skip",
+        "unknown_metadata": "incomplete_error"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com/news/images/07-08/08-22-07-2.jpg",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "prior_local_evidence": [
+        {
+          "target_key": "AUG27-11",
+          "status": "prior_transport_unknown_preserved",
+          "records": [
+            {
+              "batch": "AUG27-01-20",
+              "label": "AUG27-11:replay:20080402080429",
+              "transport": "proxy",
+              "curl_exit": 35,
+              "source_status": null,
+              "body_bytes": 0,
+              "headers_path": "research/continuous-recovery-20261016/network/aug27-01-20/output/raw/attempt-022-proxy-headers.txt"
+            },
+            {
+              "batch": "AUG27-REMAINING15",
+              "label": "AUG27-11:replay:20080402080429",
+              "transport": "proxy",
+              "curl_exit": 35,
+              "source_status": null,
+              "body_bytes": 0,
+              "headers_path": "research/continuous-recovery-20261016/network/aug27-remaining15/output/raw/attempt-006-proxy-headers.txt"
+            }
+          ]
+        }
+      ],
+      "prior_evidence_status": "prior_transport_unknown_preserved; observed_pre_anchor_302_not_followed",
+      "cdx_mode": "fresh",
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com/news/images/07-08/08-22-07-2.jpg",
+        "from": "20000101000000",
+        "to": "20080512235959",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F07-08%2F08-22-07-2.jpg&from=20000101000000&to=20080512235959&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      },
+      "known_positive_cache_rows": [],
+      "fallback_label": null,
+      "source_page_context": {
+        "path": ".scratch/pages-resources-20261016-v18/news/rss-08-2007.xml.html",
+        "sha256": "a4bd8d8b35809e45cb517d3e1ea8d32a1521141ee6d87110035a6c3bc48909de",
+        "line": 1990,
+        "literal": "http://www.worldofwarcraft.com/news/images/07-08/08-22-07-2.jpg",
+        "context": "<a href=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-08-2007.xml&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Ffanart%2F&amp;reason=external-or-uncollected-resource\"><img border=\"0\" height=\"100\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-08-2007.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F07-08%2F08-22-07-2.jpg&amp;reason=external-or-uncollected-resource\" width=\"130\"></a>"
+      },
+      "marker_reason": "external-or-uncollected-resource",
+      "late_supplement": true,
+      "late_window": {
+        "from": "20080512210044",
+        "to": "20080512235959"
+      },
+      "pre_anchor_cdx_digest": "MLUKMD2MO3CNVZGT2PCCNNXF7RDKJAA4",
+      "late_redirect_observation": {
+        "path": "research/continuous-recovery-20261016/publication/root-aug11-redirect-observation.json",
+        "sha256": "94fe1ef2e474611f4c2d0fd02abf6ecb3986b3d6200671f37fc09d3040cae10a",
+        "observed_redirect_timestamp": "20080512231210",
+        "status": "observed_302_no_follow"
+      }
+    }
+  ],
+  "network_requests": 0,
+  "build_performed": false,
+  "git_performed": false,
+  "parent_go_required": true,
+  "query_window": {
+    "from": "20000101000000",
+    "to": "20080512235959",
+    "late_selection_from": "20080512210044",
+    "origin_rule": "preserve the exact observed HTTP original; no scheme/host alias"
+  },
+  "scope": "One exact AUG27-11 same-day late supplement candidate; fresh CDX only, no automatic redirect follow.",
+  "policy": {
+    "cdx_mode": "fresh_exact_late_window",
+    "from": "20000101000000",
+    "to": "20080512235959",
+    "limit": 500,
+    "showResumeKey": true,
+    "collapse": false,
+    "matchType": "exact",
+    "max_attempts": 6,
+    "max_originals": 20,
+    "window_seconds": 180.0,
+    "max_total_body_bytes": 16777216,
+    "max_entity_body_bytes": 8388608,
+    "min_dispatch_seconds": 5.25,
+    "min_request_start_seconds": 5.0,
+    "disk_floor_bytes": 11005853696,
+    "direct_first": true,
+    "tls_verification": true,
+    "automatic_redirects": 0,
+    "proxy": "http://127.0.0.1:7890",
+    "transport_policy": "batch_after_direct_failure",
+    "stop_http_codes": [
+      429,
+      503
+    ],
+    "stop_on_five_transport_failures": true,
+    "cooldown_seconds": 120,
+    "user_agent": "wow-recovery-reusable-image-v2-late11/20261016",
+    "no_network_before_parent_go": true
+  },
+  "previous_batch": {
+    "status": "awaiting_A_root_acceptance_and_separate_execution_plan",
+    "prior_failure_tail": null,
+    "note": "Do not reuse final3/A cached19 tail. Root must bind the actual preceding batch tail after A acceptance before GO."
+  },
+  "late_supplement_guard": {
+    "target_key": "AUG27-11-late-supplement",
+    "original": "http://www.worldofwarcraft.com/news/images/07-08/08-22-07-2.jpg",
+    "redirect_receipt_path": "research/continuous-recovery-20261016/publication/root-aug11-redirect-observation.json",
+    "redirect_receipt_sha256": "94fe1ef2e474611f4c2d0fd02abf6ecb3986b3d6200671f37fc09d3040cae10a",
+    "late_window": {
+      "from": "20080512210044",
+      "to": "20080512235959"
+    },
+    "pre_anchor_cdx_digest": "MLUKMD2MO3CNVZGT2PCCNNXF7RDKJAA4",
+    "automatic_redirects": 0,
+    "no_redirects": true,
+    "execution_gate": "requires_A_root_source_acceptance_then_separate_tail-bound_plan"
+  },
+  "control_gate": {
+    "status": "not_ready; A acceptance and separate tail binding required",
+    "execution_go_required": true
+  },
+  "source_bindings": {
+    "final3_plan": {
+      "path": "research/continuous-recovery-20261016/network/aug27-final3/plan.json",
+      "sha256": "59a880a2527360a7b8cee37c75291b6a78d04fcf418a7b0877fa62a7a067ac37",
+      "bytes": 35472,
+      "role": "root accepted exact August literal and source evidence"
+    },
+    "aug11_redirect_observation": {
+      "path": "research/continuous-recovery-20261016/publication/root-aug11-redirect-observation.json",
+      "sha256": "94fe1ef2e474611f4c2d0fd02abf6ecb3986b3d6200671f37fc09d3040cae10a",
+      "bytes": 1256,
+      "role": "root accepted 302 observation; no automatic follow"
+    },
+    "late11_driver": {
+      "path": "research/continuous-recovery-20261016/network/aug27-same-day-late11/late11_image_driver.py",
+      "sha256": "f8f25ce4eca097ed1739300b9cd34b183e6de94e8e93c7d7476abd1289bbff93",
+      "bytes": 109340,
+      "role": "dedicated late supplement driver; v2 core copied before guard adapter"
+    }
+  },
+  "input_bindings": {
+    "final3_plan": {
+      "path": "research/continuous-recovery-20261016/network/aug27-final3/plan.json",
+      "sha256": "59a880a2527360a7b8cee37c75291b6a78d04fcf418a7b0877fa62a7a067ac37"
+    },
+    "aug11_redirect_observation": {
+      "path": "research/continuous-recovery-20261016/publication/root-aug11-redirect-observation.json",
+      "sha256": "94fe1ef2e474611f4c2d0fd02abf6ecb3986b3d6200671f37fc09d3040cae10a"
+    },
+    "late11_driver": {
+      "path": "research/continuous-recovery-20261016/network/aug27-same-day-late11/late11_image_driver.py",
+      "sha256": "f8f25ce4eca097ed1739300b9cd34b183e6de94e8e93c7d7476abd1289bbff93"
+    }
+  },
+  "prepared_utc": "2026-10-16T08:33:22.002342Z",
+  "source_plan_path": "research/continuous-recovery-20261016/network/aug27-final3/plan.json",
+  "source_plan_sha256": "59a880a2527360a7b8cee37c75291b6a78d04fcf418a7b0877fa62a7a067ac37",
+  "no_network_before_parent_go": true,
+  "driver": {
+    "path": "research/continuous-recovery-20261016/network/aug27-same-day-late11/late11_image_driver.py",
+    "sha256": "f8f25ce4eca097ed1739300b9cd34b183e6de94e8e93c7d7476abd1289bbff93",
+    "transport_policy": "batch_after_direct_failure"
+  },
+  "preserved_prior_transport_unknown": [
+    {
+      "target_key": "AUG27-11",
+      "status": "prior_transport_unknown_preserved",
+      "records": [
+        {
+          "batch": "AUG27-01-20",
+          "label": "AUG27-11:replay:20080402080429",
+          "transport": "proxy",
+          "curl_exit": 35,
+          "source_status": null,
+          "body_bytes": 0,
+          "headers_path": "research/continuous-recovery-20261016/network/aug27-01-20/output/raw/attempt-022-proxy-headers.txt"
+        },
+        {
+          "batch": "AUG27-REMAINING15",
+          "label": "AUG27-11:replay:20080402080429",
+          "transport": "proxy",
+          "curl_exit": 35,
+          "source_status": null,
+          "body_bytes": 0,
+          "headers_path": "research/continuous-recovery-20261016/network/aug27-remaining15/output/raw/attempt-006-proxy-headers.txt"
+        }
+      ]
+    }
+  ],
+  "late_adoption_rule": "If a later payload is accepted, preserve actual Memento date and label late_supplement; compare its digest with the pre-anchor indexed digest before root adoption.",
+  "output_dir": "research/continuous-recovery-20261016/network/aug27-same-day-late11/output"
+}

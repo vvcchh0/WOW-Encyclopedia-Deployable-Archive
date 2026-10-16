@@ -1,0 +1,40 @@
+{
+  "schema": "wow-recovery.aug27-same-day-late11-input-bindings.v1",
+  "batch_id": "AUG27-SAME-DAY-LATE11",
+  "mode": "prepared_waiting_for_A_acceptance_no_execution_tail_bound",
+  "network_requests": 0,
+  "candidate_count": 1,
+  "plan_path": "research/continuous-recovery-20261016/network/aug27-same-day-late11/plan.json",
+  "plan_sha256": "4edbb96964fbb7c565951fbd2f743b2695a61ab3a32011e95a238c10a4d6beb9",
+  "driver_path": "research/continuous-recovery-20261016/network/aug27-same-day-late11/late11_image_driver.py",
+  "driver_sha256": "f8f25ce4eca097ed1739300b9cd34b183e6de94e8e93c7d7476abd1289bbff93",
+  "redirect_observation_path": "research/continuous-recovery-20261016/publication/root-aug11-redirect-observation.json",
+  "redirect_observation_sha256": "94fe1ef2e474611f4c2d0fd02abf6ecb3986b3d6200671f37fc09d3040cae10a",
+  "source_bindings": {
+    "final3_plan": {
+      "path": "research/continuous-recovery-20261016/network/aug27-final3/plan.json",
+      "sha256": "59a880a2527360a7b8cee37c75291b6a78d04fcf418a7b0877fa62a7a067ac37",
+      "bytes": 35472,
+      "role": "root accepted exact August literal and source evidence"
+    },
+    "aug11_redirect_observation": {
+      "path": "research/continuous-recovery-20261016/publication/root-aug11-redirect-observation.json",
+      "sha256": "94fe1ef2e474611f4c2d0fd02abf6ecb3986b3d6200671f37fc09d3040cae10a",
+      "bytes": 1256,
+      "role": "root accepted 302 observation; no automatic follow"
+    },
+    "late11_driver": {
+      "path": "research/continuous-recovery-20261016/network/aug27-same-day-late11/late11_image_driver.py",
+      "sha256": "f8f25ce4eca097ed1739300b9cd34b183e6de94e8e93c7d7476abd1289bbff93",
+      "bytes": 109340,
+      "role": "dedicated late supplement driver; v2 core copied before guard adapter"
+    }
+  },
+  "execution_status": "awaiting_A_root_acceptance",
+  "no_network_before_parent_go": true,
+  "notes": [
+    "No previous failure tail is bound in this preliminary plan; a later root-issued plan must bind the actual post-A tail.",
+    "The query upper bound is 20080512235959, while replay selection is restricted to 20080512210044..235959.",
+    "Observed 302 is retained as evidence only; automatic redirects remain disabled."
+  ]
+}

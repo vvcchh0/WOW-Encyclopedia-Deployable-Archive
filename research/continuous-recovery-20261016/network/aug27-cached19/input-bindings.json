@@ -1,0 +1,59 @@
+{
+  "schema": "wow-recovery.aug27-cached19-input-bindings.v1",
+  "batch_id": "AUG27-CACHED19",
+  "mode": "prepared_not_executed_cached_only_prior_tail1",
+  "network_requests": 0,
+  "candidate_count": 1,
+  "plan_path": "research/continuous-recovery-20261016/network/aug27-cached19/plan.json",
+  "plan_sha256": "ed12c87cebe86cc3813b0b35e3cb2d3fc09874c64d0da9dc7bd67cdd125d5f7d",
+  "driver_path": "research/continuous-recovery-20261016/network/reusable-image-driver-v2/reusable_image_driver.py",
+  "driver_sha256": "1faae294465f5e1ad6e2925870890cdb9512bd2251090d533637245ee6a3d8e4",
+  "prior_failure_tail": 1,
+  "tail_receipt_path": "research/continuous-recovery-20261016/publication/root-aug-final3-source-acceptance.json",
+  "tail_receipt_sha256": "16e4680d8d396ea94a2d4a17ffa7da918b8465ed723eb7be876c0c6144b7d56a",
+  "source_bindings": {
+    "final3_source_report": {
+      "path": "research/continuous-recovery-20261016/network/aug27-final3/output/batch-report.json",
+      "sha256": "079301d383216a6c2256d82d7e62c42ff32860c621f7ed09c3e25ac1f4dd6485",
+      "bytes": 26732,
+      "role": "root accepted AUG27-FINAL3 report; cached19 source provenance"
+    },
+    "final3_source_receipt": {
+      "path": "research/continuous-recovery-20261016/publication/root-aug-final3-source-acceptance.json",
+      "sha256": "16e4680d8d396ea94a2d4a17ffa7da918b8465ed723eb7be876c0c6144b7d56a",
+      "bytes": 1616,
+      "role": "root accepted final3 tail=1 and one accepted image"
+    },
+    "final3_cdx_body": {
+      "path": "research/continuous-recovery-20261016/network/aug27-final3/output/raw/attempt-004-proxy-body.bin",
+      "sha256": "31914e1bc233c497d233cb6d425a856871b93fa1e89b88ccc5901dcdf2b5a986",
+      "bytes": 684,
+      "role": "SHA-bound fresh HTTP200 exact CDX body for AUG27-19"
+    },
+    "final3_cdx_headers": {
+      "path": "research/continuous-recovery-20261016/network/aug27-final3/output/raw/attempt-004-proxy-headers.txt",
+      "sha256": "3d9dc70dc1bb5770b6a444f55fe2c7854bbc8cc865ee5192c1726691219cd4f3",
+      "bytes": 638,
+      "role": "SHA-bound source headers for AUG27-19 CDX"
+    },
+    "final3_plan": {
+      "path": "research/continuous-recovery-20261016/network/aug27-final3/plan.json",
+      "sha256": "59a880a2527360a7b8cee37c75291b6a78d04fcf418a7b0877fa62a7a067ac37",
+      "bytes": 35472,
+      "role": "root accepted final3 candidate/original and query"
+    },
+    "reusable_v2_driver": {
+      "path": "research/continuous-recovery-20261016/network/reusable-image-driver-v2/reusable_image_driver.py",
+      "sha256": "1faae294465f5e1ad6e2925870890cdb9512bd2251090d533637245ee6a3d8e4",
+      "bytes": 102327,
+      "role": "root accepted reusable v2 driver; shared execution core"
+    }
+  },
+  "execution_go_required": true,
+  "no_network_before_parent_go": true,
+  "notes": [
+    "The exact CDX body is the final3 fresh HTTP200 response; cached mode does not claim a new latest query.",
+    "The prior final3 AUG27-19 replay transport-unknown evidence is preserved; it is not retried by fixture mode.",
+    "This prepared plan does not create output/raw/state and does not dispatch a request."
+  ]
+}
