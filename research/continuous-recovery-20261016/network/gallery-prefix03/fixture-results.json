@@ -1,0 +1,234 @@
+{
+  "schema": "wow-recovery.gallery-prefix03-driver-v4-fixture-results.v1",
+  "mode": "offline_fixture",
+  "network_requests": 0,
+  "passed": 15,
+  "total": 15,
+  "all_passed": true,
+  "cadence": {
+    "dispatch_intervals": [
+      5.300000000000068
+    ],
+    "request_start_intervals": [
+      5.3
+    ],
+    "min_dispatch": 5.300000000000068,
+    "min_request_start": 5.3,
+    "scheduling_floor_seconds": 5.25,
+    "acceptance_floor_seconds": 5.25
+  },
+  "results": [
+    {
+      "name": "parse_header_separator_resume",
+      "passed": true,
+      "detail": {
+        "rows": 1,
+        "resume": [
+          "resume-fixture"
+        ],
+        "metadata": [
+          {
+            "record_index": 0,
+            "kind": "header"
+          },
+          {
+            "record_index": 2,
+            "kind": "separator"
+          },
+          {
+            "record_index": 3,
+            "kind": "resume_key",
+            "value": "resume-fixture"
+          }
+        ]
+      }
+    },
+    {
+      "name": "limit_500_truncation",
+      "passed": true,
+      "detail": {
+        "rows": 500,
+        "potential_truncation": true
+      }
+    },
+    {
+      "name": "resume_key_preserved_no_continuation",
+      "passed": true,
+      "detail": {
+        "resume": [
+          "resume-500"
+        ],
+        "continuation_followed": false
+      }
+    },
+    {
+      "name": "unknown_metadata_is_incomplete",
+      "passed": true,
+      "detail": {
+        "valid": false,
+        "error": "cdx_unrecognized_metadata"
+      }
+    },
+    {
+      "name": "default_port_identity",
+      "passed": true,
+      "detail": "same_origin_prefix"
+    },
+    {
+      "name": "identity_rejections",
+      "passed": true,
+      "detail": {
+        "scheme": "scheme_mismatch",
+        "host": "host_mismatch",
+        "path": "path_prefix_mismatch",
+        "query": "query_or_fragment_present"
+      }
+    },
+    {
+      "name": "direct_identity_variants_classified_separately",
+      "passed": true,
+      "detail": {
+        "count": 2,
+        "identities": [
+          "scheme_mismatch",
+          "host_mismatch"
+        ],
+        "strict_full": 1,
+        "strict_thumb": 0,
+        "payload_replay_count": 0
+      }
+    },
+    {
+      "name": "monotonic_early_sleep_rechecked",
+      "passed": true,
+      "detail": {
+        "intervals": [
+          5.300000000000068
+        ],
+        "sleep_calls": [
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.24999999999992895,
+          0.049999999999926104
+        ]
+      }
+    },
+    {
+      "name": "utc_start_rechecked_after_rounding",
+      "passed": true,
+      "detail": {
+        "intervals": [
+          5.3
+        ]
+      }
+    },
+    {
+      "name": "restart_restores_utc_to_monotonic",
+      "passed": true,
+      "detail": {
+        "restored_last": 898.0,
+        "result": {
+          "dispatch_monotonic": 903.3000000000008,
+          "dispatch_utc": "2026-10-16T04:00:10.600000Z",
+          "dispatch_interval_seconds": 5.30000000000075,
+          "request_start_interval_seconds": 5.3,
+          "sleep_calls": 17
+        }
+      }
+    },
+    {
+      "name": "remaining_byte_time_clamp",
+      "passed": true,
+      "detail": {
+        "full": {
+          "transport": "proxy",
+          "total_body_bytes_before": 0,
+          "total_body_remaining_before_bytes": 67108864,
+          "configured_entity_body_limit_bytes": 8388608,
+          "entity_body_limit_before_bytes": 8388608,
+          "window_seconds": 900.0,
+          "window_remaining_seconds": 890.0,
+          "hard_cutoff_remaining_seconds": null,
+          "baseline_connect_timeout_seconds": 8.0,
+          "baseline_max_timeout_seconds": 20.0,
+          "connect_timeout_seconds": 8.0,
+          "max_timeout_seconds": 20.0,
+          "clamp_applied": false,
+          "dispatch_allowed": true
+        },
+        "near": {
+          "transport": "proxy",
+          "total_body_bytes_before": 66060288,
+          "total_body_remaining_before_bytes": 1048576,
+          "configured_entity_body_limit_bytes": 8388608,
+          "entity_body_limit_before_bytes": 1048576,
+          "window_seconds": 900.0,
+          "window_remaining_seconds": 1.5,
+          "hard_cutoff_remaining_seconds": null,
+          "baseline_connect_timeout_seconds": 8.0,
+          "baseline_max_timeout_seconds": 20.0,
+          "connect_timeout_seconds": 1.5,
+          "max_timeout_seconds": 1.5,
+          "clamp_applied": true,
+          "dispatch_allowed": true
+        }
+      }
+    },
+    {
+      "name": "disk_floor_gate_is_per_request",
+      "passed": true,
+      "detail": {
+        "disk_floor_bytes": 11005853696,
+        "gate_location": "before each durable dispatch reservation"
+      }
+    },
+    {
+      "name": "stop_at_five_transport_failures",
+      "passed": true,
+      "detail": {
+        "threshold": 5
+      }
+    },
+    {
+      "name": "index_only_no_payload_replay",
+      "passed": true,
+      "detail": {
+        "payload_replay_count": 0
+      }
+    },
+    {
+      "name": "wave3_plan_twenty_absolute_prefixes",
+      "passed": true,
+      "detail": {
+        "candidate_count": 20,
+        "all_absolute_http": true,
+        "from": "20000101000000",
+        "max_attempts": 40,
+        "max_entity_body_bytes": 8388608
+      }
+    }
+  ]
+}

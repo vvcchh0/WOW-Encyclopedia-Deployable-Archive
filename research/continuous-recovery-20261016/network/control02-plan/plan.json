@@ -1,0 +1,72 @@
+{
+  "schema": "wow-recovery.control02-plan.v1",
+  "mode": "prepared_not_executed",
+  "batch_id": "WAYBACK-CONTROL02-20261016",
+  "prepared_utc": "2026-10-16T06:15:38.509862Z",
+  "target_key": "CONTROL02-h-gif-exact-cdx",
+  "exact_original": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/h.gif",
+  "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fsmallcaps%2Fh.gif&from=20000101000000&to=20080512210044&output=json&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=250&showResumeKey=true&matchType=exact",
+  "query_identity": {
+    "match_type": "exact",
+    "from": "20000101000000",
+    "to": "20080512210044",
+    "limit": 250,
+    "showResumeKey": true,
+    "collapse": false,
+    "output": "json",
+    "fields": ["timestamp", "original", "mimetype", "statuscode", "digest", "length"]
+  },
+  "control_only": true,
+  "no_replay": true,
+  "request_sequence": [
+    {
+      "attempt": 1,
+      "transport": "direct",
+      "purpose": "exact CDX source response"
+    },
+    {
+      "attempt": 2,
+      "transport": "proxy",
+      "purpose": "same exact CDX request fallback only if direct has no usable source response"
+    }
+  ],
+  "max_attempts": 2,
+  "window_seconds": 60.0,
+  "max_total_body_bytes": 1048576,
+  "max_entity_body_bytes": 1048576,
+  "direct_first": true,
+  "proxy": "http://127.0.0.1:7890",
+  "tls_verification": true,
+  "automatic_redirects": 0,
+  "min_dispatch_monotonic_seconds": 5.25,
+  "min_request_start_utc_seconds": 5.0,
+  "disk_floor_bytes": 11005853696,
+  "stop_http_codes": [429, 503],
+  "cooldown_seconds": 120,
+  "retry_after_policy": "honor_numeric_or_http_date_and_use_max(120)",
+  "stop_on_five_transport_failures": true,
+  "history": {
+    "historical_failure_tail": 5,
+    "current_probe_streak_start": 0,
+    "historical_tail_preserved": true,
+    "normal_retrieval_not_authorized_by_plan": true,
+    "success_gate_may_open_future_window_only": "HTTP200 + curl_exit0 + source_header_block + valid complete JSON CDX with record_count < 250"
+  },
+  "target_evidence": {
+    "exact_original_source": "research/continuous-recovery-20261016/network/control01/plan.json",
+    "control01_plan_sha256": "2d973e0bfcf61da15382e448092e2049dc2116b335ff661bc9e863960c2834e7",
+    "control01_acceptance": "research/continuous-recovery-20261016/publication/root-control01-acceptance.json",
+    "control01_acceptance_sha256": "07d2e0fe89485d213aff51c8026eccc344ea0572c160b9cdf7f8c7d5d7453555",
+    "historical_control_success_is_reference_only": true
+  },
+  "prior_batch_evidence": {
+    "news_shared10_source_acceptance": "research/continuous-recovery-20261016/publication/root-news-shared10-source-acceptance.json",
+    "news_shared10_source_acceptance_sha256": "65354d44666d68654a619efdc10bc8bd2cacab0cd085f3d729bdb6159309be4f",
+    "tail_failure_streak": 5,
+    "cooldown_already_elapsed_at_prepare": true
+  },
+  "network_requests_executed_at_prepare": 0,
+  "raw_output_policy": "If separately authorized, preserve raw headers/body/trace locally and publish only sanitized metadata; this prepared plan has no raw output."
+}
+
+

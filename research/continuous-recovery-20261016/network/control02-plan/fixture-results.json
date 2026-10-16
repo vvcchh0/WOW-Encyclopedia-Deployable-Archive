@@ -1,0 +1,25 @@
+{
+  "schema": "wow-recovery.control02-fixtures.v1",
+  "batch_id": "WAYBACK-CONTROL02-20261016",
+  "network_requests": 0,
+  "input_plan_sha256": "ce81faf9cdeaffc92038c66bcd50656ecbdf6b5a597075c9820f527cc0a4d0c9",
+  "input_bindings_sha256": "5b000a601ddef7898ef5c86591439f998f2b7542e8e59c54a4984dc30c5fd6e8",
+  "tests": {
+    "exact_query_and_identity": true,
+    "cdx_separator_resume_is_incomplete": true,
+    "connect_then_source_header_selection": true,
+    "source404_and_connect_only_rejected": true,
+    "control_caps_and_attempts": true,
+    "historical_tail_preserved_and_gate_closed": true,
+    "prepare_has_zero_network_and_no_raw": true,
+    "control01_acceptance_binding": true,
+    "exact_http_original_no_replay": true
+  },
+  "passed": 9,
+  "total": 9,
+  "all_passed": true,
+  "notes": [
+    "Fixture mode never starts curl and never writes raw response evidence.",
+    "A successful control source response would authorize only a future separately planned window."
+  ]
+}

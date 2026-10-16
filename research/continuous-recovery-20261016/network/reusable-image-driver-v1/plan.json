@@ -1,0 +1,156 @@
+{
+  "schema": "wow-recovery.reusable-image-plan.v1",
+  "batch_id": "WAYBACK-REUSABLE-IMAGE-V1-EXAMPLE-20261016",
+  "prepared_utc": "2026-10-16T06:11:42.374745Z",
+  "mode": "offline_example_only",
+  "candidate_count": 1,
+  "output_dir": "research/continuous-recovery-20261016/network/reusable-image-driver-v1/example-run",
+  "candidates": [
+    {
+      "target_key": "REUSABLE-V1-01-w-gif",
+      "priority": 1,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/w.gif",
+      "literal": "/new-hp/images/smallcaps/w.gif",
+      "expected": {
+        "mime_types": [
+          "image/gif"
+        ],
+        "pillow_formats": [
+          "GIF"
+        ],
+        "all_gif_frames": true,
+        "reencode": false,
+        "script_execution": false
+      },
+      "source_evidence": {
+        "literal": "/new-hp/images/smallcaps/w.gif",
+        "path": ".scratch/pages-resources-20261016-v17/news/rss-07-2006.xml.html",
+        "line": 659,
+        "sha256": "983e77408a12e58e3a1c3c3e43854707550fb1a41642e96b58e8929e3b1bde5b"
+      },
+      "selection": {
+        "require_complete_index": true,
+        "potential_truncation": "do_not_replay",
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "max_distinct_digest_candidates": 2,
+        "sort": "timestamp_desc_then_record_index_desc",
+        "same_digest_older_captures": "skip",
+        "unknown_metadata": "incomplete_error"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com/new-hp/images/smallcaps/w.gif",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "known_positive_cache_rows": [
+        {
+          "timestamp": "20060904210728",
+          "original": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/w.gif",
+          "statuscode": "200",
+          "digest": "JYABKK6T537MHAKIZJM4ODJ6KLRB4ZCH",
+          "length": "1576",
+          "mimetype": "image/gif"
+        }
+      ],
+      "fallback_label": "best_known_cached_not_latest",
+      "cdx_mode": "fresh",
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/w.gif",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fsmallcaps%2Fw.gif&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      }
+    }
+  ],
+  "policy": {
+    "from": "20000101000000",
+    "to": "20080512210044",
+    "limit": 500,
+    "showResumeKey": true,
+    "collapse": false,
+    "matchType": "exact",
+    "max_originals": 20,
+    "max_attempts": 100,
+    "window_seconds": 1800.0,
+    "max_total_body_bytes": 67108864,
+    "max_entity_body_bytes": 8388608,
+    "min_dispatch_seconds": 5.25,
+    "min_request_start_seconds": 5.0,
+    "disk_floor_bytes": 11005853696,
+    "direct_first": true,
+    "proxy": "http://127.0.0.1:7890",
+    "tls_verification": true,
+    "automatic_redirects": 0,
+    "stop_http_codes": [
+      429,
+      503
+    ],
+    "cooldown_seconds": 120,
+    "user_agent": "wow-recovery-reusable-image-v1/20261016",
+    "prior_failure_tail": 0
+  },
+  "previous_batch": {
+    "name": "NEWS-SHARED10",
+    "prior_failure_tail": 0,
+    "acceptance_receipt_path": "research/continuous-recovery-20261016/publication/root-news-shared10-source-acceptance.json",
+    "historical_tail_is_preserved": true,
+    "ordinary_retrieval_requires_new_control_gate": true,
+    "control_gate_receipt_path": "research/continuous-recovery-20261016/publication/root-control01-acceptance.json",
+    "control_gate_receipt_sha256": "07d2e0fe89485d213aff51c8026eccc344ea0572c160b9cdf7f8c7d5d7453555",
+    "control_gate_required": true,
+    "historical_news_tail_preserved": 5
+  },
+  "input_bindings": {
+    "news_shared10_driver": {
+      "path": "research/continuous-recovery-20261016/network/news-shared10/news_shared10_driver.py",
+      "sha256": "11266480c3e237c544c14c5f30cedc36ad84213fee763835bb2f1409d99487af",
+      "role": "frozen_transport_and_acceptance_reference"
+    },
+    "news_shared10_fixture": {
+      "path": "research/continuous-recovery-20261016/network/news-shared10/fixture-results.json",
+      "sha256": "499836c7208e1d6df69a02280ed45505491756926e3c7b69d87c7acd83952152",
+      "role": "frozen_fifteen_test_contract"
+    },
+    "news_shared10_source_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-news-shared10-source-acceptance.json",
+      "sha256": "65354d44666d68654a619efdc10bc8bd2cacab0cd085f3d729bdb6159309be4f",
+      "role": "root_accepted_prior_tail_and_payload_provenance"
+    },
+    "root_control01_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-control01-acceptance.json",
+      "sha256": "07d2e0fe89485d213aff51c8026eccc344ea0572c160b9cdf7f8c7d5d7453555",
+      "role": "fresh_control_gate_for_prior_tail_zero"
+    }
+  }
+}

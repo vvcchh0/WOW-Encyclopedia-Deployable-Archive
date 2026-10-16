@@ -1,0 +1,77 @@
+{
+  "schema": "wow-recovery.control02-input-bindings.v1",
+  "batch_id": "WAYBACK-CONTROL02-20261016",
+  "plan_path": "research/continuous-recovery-20261016/network/control02-plan/plan.json",
+  "plan_sha256": "ce81faf9cdeaffc92038c66bcd50656ecbdf6b5a597075c9820f527cc0a4d0c9",
+  "mode": "offline_prepared_not_executed",
+  "network_requests": 0,
+  "target_identity": {
+    "original": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/h.gif",
+    "identity_rule": "exact scheme/host/path/query; default port normalization only for observed Link"
+  },
+  "prior_history": {
+    "historical_failure_tail": 5,
+    "current_probe_streak": 0,
+    "historical_tail_source": "research/continuous-recovery-20261016/publication/root-news-shared10-source-acceptance.json",
+    "historical_tail_source_sha256": "65354d44666d68654a619efdc10bc8bd2cacab0cd085f3d729bdb6159309be4f"
+  },
+  "source_bindings": {
+    "control01_plan": {
+      "path": "research/continuous-recovery-20261016/network/control01/plan.json",
+      "bytes": 1738,
+      "sha256": "2d973e0bfcf61da15382e448092e2049dc2116b335ff661bc9e863960c2834e7",
+      "role": "frozen_exact_h_gif_identity_and_query_reference"
+    },
+    "control01_driver": {
+      "path": "research/continuous-recovery-20261016/network/control01/control01_driver.py",
+      "bytes": 27026,
+      "sha256": "bd8dc1b66a0987faac4bebaac06051fc6e502fa86fba8ebb967020115a55b156",
+      "role": "frozen_previous_control_implementation_reference"
+    },
+    "control01_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-control01-acceptance.json",
+      "bytes": 666,
+      "sha256": "07d2e0fe89485d213aff51c8026eccc344ea0572c160b9cdf7f8c7d5d7453555",
+      "role": "previous_source_response_success_reference_only"
+    },
+    "news_shared10_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-news-shared10-source-acceptance.json",
+      "bytes": 2006,
+      "sha256": "65354d44666d68654a619efdc10bc8bd2cacab0cd085f3d729bdb6159309be4f",
+      "role": "historical_tail5_and_two_accepted_image_provenance"
+    },
+    "news_shared10_report": {
+      "path": "research/continuous-recovery-20261016/network/news-shared10/batch-report.json",
+      "bytes": 32619,
+      "sha256": "d140ef7917ac649a61953af6f38ff77543684d4a032d93a3beb8a96408ab1496",
+      "role": "frozen_raw_execution_summary_reference"
+    },
+    "news_shared10_fixture": {
+      "path": "research/continuous-recovery-20261016/network/news-shared10/fixture-results.json",
+      "bytes": 1543,
+      "sha256": "499836c7208e1d6df69a02280ed45505491756926e3c7b69d87c7acd83952152",
+      "role": "frozen_offline_validation_reference"
+    }
+  },
+  "request_policy": {
+    "attempts": 2,
+    "transports": [
+      "direct",
+      "proxy"
+    ],
+    "replay": false,
+    "max_total_body_bytes": 1048576,
+    "max_entity_body_bytes": 1048576,
+    "window_seconds": 60.0,
+    "min_dispatch_seconds": 5.25,
+    "min_request_start_seconds": 5.0,
+    "disk_floor_bytes": 11005853696,
+    "stop_codes": [
+      429,
+      503
+    ],
+    "cooldown_seconds": 120
+  },
+  "driver_path": "research/continuous-recovery-20261016/network/control02-plan/control02_driver.py",
+  "driver_sha256": "85457ea1baa96c474e33ffc01210b4f6d96b3d6d276dc7a2b56aff3cd8376530"
+}

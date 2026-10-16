@@ -1,0 +1,1513 @@
+{
+  "schema": "wow-recovery.reusable-image-plan.v1",
+  "batch_id": "WAYBACK-NEWS-SHARED13-20261016",
+  "prepared_utc": "2026-10-16T06:41:28.132555Z",
+  "mode": "offline_prepared_until_root_GO",
+  "candidate_count": 13,
+  "output_dir": "research/continuous-recovery-20261016/network/news-shared13",
+  "scope": {
+    "description": "Exact unfinished NEWS10 candidates P/Blizz/icons/sc2 plus five root-accepted shared image literals.",
+    "excluded_already_accepted": [
+      "NEWS10-01-w-gif",
+      "NEWS10-02-i-gif"
+    ],
+    "fresh_target_count": 12,
+    "cached_target_count": 1,
+    "network_requests": 0,
+    "no_new_source_urls": true,
+    "no_pagination": true,
+    "no_scripts": true
+  },
+  "candidates": [
+    {
+      "target_key": "NEWS13-01-03-p-gif",
+      "priority": 1,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/p.gif",
+      "literal": "/new-hp/images/smallcaps/p.gif",
+      "expected": {
+        "mime_types": [
+          "image/gif"
+        ],
+        "pillow_formats": [
+          "GIF"
+        ],
+        "all_gif_frames": true,
+        "reencode": false,
+        "script_execution": false
+      },
+      "source_evidence": {
+        "literal": "/new-hp/images/smallcaps/p.gif",
+        "path": ".scratch/pages-resources-20261016-v17/news/rss-10-2006.xml.html",
+        "line": 2755,
+        "sha256": "4c1cd9188216d273e2553d70d518f2170aaeb5878b89c7ed9a6df656e50553ce",
+        "v17_missing_references": 1
+      },
+      "selection": {
+        "require_complete_index": true,
+        "potential_truncation": "do_not_replay",
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "max_distinct_digest_candidates": 2,
+        "sort": "timestamp_desc_then_record_index_desc",
+        "same_digest_older_captures": "skip",
+        "unknown_metadata": "incomplete_error"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com/new-hp/images/smallcaps/p.gif",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "known_positive_cache_rows": [
+        {
+          "timestamp": "20061126162548",
+          "original": "http://www.worldofwarcraft.com:80/new-hp/images/smallcaps/p.gif",
+          "statuscode": "200",
+          "digest": "TCYBUG2WS54HWCFU5GFHYB423CJYT6KW",
+          "length": "1587",
+          "mimetype": "image/gif"
+        }
+      ],
+      "fallback_label": "best_known_cached_not_latest",
+      "cdx_mode": "fresh",
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/p.gif",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fsmallcaps%2Fp.gif&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      }
+    },
+    {
+      "target_key": "NEWS13-02-04-blizzconlogo-jpg",
+      "priority": 2,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com/news/images/05-06/blizzconlogo.jpg",
+      "literal": "/news/images/05-06/blizzconlogo.jpg",
+      "expected": {
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "all_gif_frames": true,
+        "reencode": false,
+        "script_execution": false
+      },
+      "source_evidence": {
+        "literal": "/news/images/05-06/blizzconlogo.jpg",
+        "path": ".scratch/pages-resources-20261016-v17/news/wow-news-06-2005.html",
+        "line": 291,
+        "sha256": "7bfaf17dd73b79497b8d457236dbddff2f6bda70b1d0cd3d4df55bd3280fa7c4",
+        "v17_missing_references": 3
+      },
+      "selection": {
+        "require_complete_index": true,
+        "potential_truncation": "do_not_replay",
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "max_distinct_digest_candidates": 2,
+        "sort": "timestamp_desc_then_record_index_desc",
+        "same_digest_older_captures": "skip",
+        "unknown_metadata": "incomplete_error"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com/news/images/05-06/blizzconlogo.jpg",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "known_positive_cache_rows": [],
+      "fallback_label": "best_known_cached_not_latest",
+      "cdx_mode": "cached",
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com/news/images/05-06/blizzconlogo.jpg",
+        "from": "20060101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 250,
+        "showResumeKey": false,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F05-06%2Fblizzconlogo.jpg&from=20060101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=250&showResumeKey=false&matchType=exact",
+        "observed_complete": true,
+        "observed_record_count": 4
+      },
+      "cached_cdx": {
+        "source_report_path": "research/continuous-recovery-20261016/network/allnews01/batch-report.json",
+        "source_report_sha256": "2528c63e400255a2a4685797f0315c381d2ac22560ecbe5e19d4251976b804f4",
+        "source_target_key": "ALLNEWS01-R19",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F05-06%2Fblizzconlogo.jpg&from=20060101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=250&showResumeKey=false&matchType=exact",
+        "original": "http://www.worldofwarcraft.com/news/images/05-06/blizzconlogo.jpg",
+        "record_count": 4,
+        "potential_truncation": false,
+        "resume_keys": [],
+        "body_bytes": 672,
+        "body_sha256": "e448d86f5ae3ff3b313ba09dd298fbef25e19e00f7af09e6b3bfb9a62b119ce2",
+        "raw_body_path": "research/continuous-recovery-20261016/network/allnews01/raw/70-ALLNEWS01-R19-cdx-proxy.body",
+        "raw_headers_path": "research/continuous-recovery-20261016/network/allnews01/raw/70-ALLNEWS01-R19-cdx-proxy.headers.txt",
+        "selected": {
+          "timestamp": "20080402081015",
+          "original": "http://www.worldofwarcraft.com/news/images/05-06/blizzconlogo.jpg",
+          "mimetype": "image/jpeg",
+          "statuscode": "200",
+          "digest": "2HQXR7Q23H7W5YV7O4IXMNC7KKG4Q43D",
+          "length": "9553",
+          "urlkey": "",
+          "record_index": "3"
+        },
+        "rows": [
+          {
+            "timestamp": "20060106074531",
+            "original": "http://www.worldofwarcraft.com:80/news/images/05-06/blizzconlogo.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "2HQXR7Q23H7W5YV7O4IXMNC7KKG4Q43D",
+            "length": "9606",
+            "urlkey": "",
+            "record_index": "1"
+          },
+          {
+            "timestamp": "20060521184525",
+            "original": "http://www.worldofwarcraft.com:80/news/images/05-06/blizzconlogo.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "2HQXR7Q23H7W5YV7O4IXMNC7KKG4Q43D",
+            "length": "9614",
+            "urlkey": "",
+            "record_index": "2"
+          },
+          {
+            "timestamp": "20080402081015",
+            "original": "http://www.worldofwarcraft.com/news/images/05-06/blizzconlogo.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "2HQXR7Q23H7W5YV7O4IXMNC7KKG4Q43D",
+            "length": "9553",
+            "urlkey": "",
+            "record_index": "3"
+          },
+          {
+            "timestamp": "20080402101234",
+            "original": "https://www.worldofwarcraft.com/news/images/05-06/blizzconlogo.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "2HQXR7Q23H7W5YV7O4IXMNC7KKG4Q43D",
+            "length": "9554",
+            "urlkey": "",
+            "record_index": "4"
+          }
+        ],
+        "evidence_note": "ALLNEWS01 proxy source HTTP 200; parsed CDX record count is below its limit and has no resume key. This is complete cached index evidence only; prior replay was not accepted.",
+        "source_curl_exit": 0,
+        "raw_headers_sha256": "79d2b240a27fcd3e21ed2d06b8de648b2060bbc0999aee11e585cb2b5d583900",
+        "coverage_window": {
+          "from": "20060101000000",
+          "to": "20080512210044",
+          "coverage_complete_for_global_window": false
+        }
+      },
+      "prior_selected_capture": {
+        "timestamp": "20080402081015",
+        "original": "http://www.worldofwarcraft.com/news/images/05-06/blizzconlogo.jpg",
+        "mimetype": "image/jpeg",
+        "statuscode": "200",
+        "digest": "2HQXR7Q23H7W5YV7O4IXMNC7KKG4Q43D",
+        "length": "9553",
+        "record_index": 2,
+        "original_match_kind": "exact",
+        "statuscode_int": 200,
+        "mimetype_normalized": "image/jpeg",
+        "within_query_range": true,
+        "replay_authorized": true
+      }
+    },
+    {
+      "target_key": "NEWS13-03-05-news-community-gif",
+      "priority": 3,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com/new-hp/images/icons/news-community.gif",
+      "literal": "/new-hp/images/icons/news-community.gif",
+      "expected": {
+        "mime_types": [
+          "image/gif"
+        ],
+        "pillow_formats": [
+          "GIF"
+        ],
+        "all_gif_frames": true,
+        "reencode": false,
+        "script_execution": false
+      },
+      "source_evidence": {
+        "literal": "/new-hp/images/icons/news-community.gif",
+        "path": ".scratch/pages-resources-20261016-v17/news/rss-01-2007.xml.html",
+        "line": 778,
+        "sha256": "ef0b38472236442ac1689203133c6ef0afe9f50e867848ae653f5756099e4ff0",
+        "v17_missing_references": 30
+      },
+      "selection": {
+        "require_complete_index": true,
+        "potential_truncation": "do_not_replay",
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "max_distinct_digest_candidates": 2,
+        "sort": "timestamp_desc_then_record_index_desc",
+        "same_digest_older_captures": "skip",
+        "unknown_metadata": "incomplete_error"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com/new-hp/images/icons/news-community.gif",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "known_positive_cache_rows": [
+        {
+          "timestamp": "20070109213301",
+          "original": "http://www.worldofwarcraft.com/new-hp/images/icons/news-community.gif",
+          "statuscode": "200",
+          "digest": "EF3HF3W53XVGAOOMN6ISDDEWCEQSGDSG",
+          "length": "945",
+          "mimetype": "image/gif"
+        },
+        {
+          "timestamp": "20070322234633",
+          "original": "http://www.worldofwarcraft.com:80/new-hp/images/icons/news-community.gif",
+          "statuscode": "200",
+          "digest": "CR2RF7QQTS77CGHBP6ZE45GSX4GYS6NS",
+          "length": "924",
+          "mimetype": "image/gif"
+        },
+        {
+          "timestamp": "20070405180729",
+          "original": "http://www.worldofwarcraft.com/new-hp/images/icons/news-community.gif",
+          "statuscode": "200",
+          "digest": "EF3HF3W53XVGAOOMN6ISDDEWCEQSGDSG",
+          "length": "940",
+          "mimetype": "image/gif"
+        }
+      ],
+      "fallback_label": "best_known_cached_not_latest",
+      "cdx_mode": "fresh",
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com/new-hp/images/icons/news-community.gif",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Ficons%2Fnews-community.gif&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      }
+    },
+    {
+      "target_key": "NEWS13-04-06-news-alert-gif",
+      "priority": 4,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com/new-hp/images/icons/news-alert.gif",
+      "literal": "/new-hp/images/icons/news-alert.gif",
+      "expected": {
+        "mime_types": [
+          "image/gif"
+        ],
+        "pillow_formats": [
+          "GIF"
+        ],
+        "all_gif_frames": true,
+        "reencode": false,
+        "script_execution": false
+      },
+      "source_evidence": {
+        "literal": "/new-hp/images/icons/news-alert.gif",
+        "path": ".scratch/pages-resources-20261016-v17/news/rss-01-2007.xml.html",
+        "line": 1640,
+        "sha256": "ef0b38472236442ac1689203133c6ef0afe9f50e867848ae653f5756099e4ff0",
+        "v17_missing_references": 27
+      },
+      "selection": {
+        "require_complete_index": true,
+        "potential_truncation": "do_not_replay",
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "max_distinct_digest_candidates": 2,
+        "sort": "timestamp_desc_then_record_index_desc",
+        "same_digest_older_captures": "skip",
+        "unknown_metadata": "incomplete_error"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com/new-hp/images/icons/news-alert.gif",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "known_positive_cache_rows": [
+        {
+          "timestamp": "20061109024638",
+          "original": "http://www.worldofwarcraft.com/new-hp/images/icons/news-alert.gif",
+          "statuscode": "200",
+          "digest": "EO3Q62A3LBVVHKGRSRJ52EFRI4NZ5IVB",
+          "length": "940",
+          "mimetype": "image/gif"
+        },
+        {
+          "timestamp": "20061117044254",
+          "original": "http://www.worldofwarcraft.com/new-hp/images/icons/news-alert.gif",
+          "statuscode": "200",
+          "digest": "546Q7KPXZYXE6NKEDS3FFDE3LKGAWZHZ",
+          "length": "916",
+          "mimetype": "image/gif"
+        },
+        {
+          "timestamp": "20061122174415",
+          "original": "http://www.worldofwarcraft.com/new-hp/images/icons/news-alert.gif",
+          "statuscode": "200",
+          "digest": "EO3Q62A3LBVVHKGRSRJ52EFRI4NZ5IVB",
+          "length": "943",
+          "mimetype": "image/gif"
+        },
+        {
+          "timestamp": "20080402035200",
+          "original": "http://www.worldofwarcraft.com/new-hp/images/icons/news-alert.gif",
+          "statuscode": "200",
+          "digest": "546Q7KPXZYXE6NKEDS3FFDE3LKGAWZHZ",
+          "length": "868",
+          "mimetype": "image/gif"
+        }
+      ],
+      "fallback_label": "best_known_cached_not_latest",
+      "cdx_mode": "fresh",
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com/new-hp/images/icons/news-alert.gif",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Ficons%2Fnews-alert.gif&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      }
+    },
+    {
+      "target_key": "NEWS13-05-07-news-shop-gif",
+      "priority": 5,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com/new-hp/images/icons/news-shop.gif",
+      "literal": "/new-hp/images/icons/news-shop.gif",
+      "expected": {
+        "mime_types": [
+          "image/gif"
+        ],
+        "pillow_formats": [
+          "GIF"
+        ],
+        "all_gif_frames": true,
+        "reencode": false,
+        "script_execution": false
+      },
+      "source_evidence": {
+        "literal": "/new-hp/images/icons/news-shop.gif",
+        "path": ".scratch/pages-resources-20261016-v17/news/rss-02-2007.xml.html",
+        "line": 1505,
+        "sha256": "c250cf7b8d4aac01a276344a6e27b70755b989703555a25d373385d04ddba631",
+        "v17_missing_references": 25
+      },
+      "selection": {
+        "require_complete_index": true,
+        "potential_truncation": "do_not_replay",
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "max_distinct_digest_candidates": 2,
+        "sort": "timestamp_desc_then_record_index_desc",
+        "same_digest_older_captures": "skip",
+        "unknown_metadata": "incomplete_error"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com/new-hp/images/icons/news-shop.gif",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "known_positive_cache_rows": [
+        {
+          "timestamp": "20061117043544",
+          "original": "http://www.worldofwarcraft.com/new-hp/images/icons/news-shop.gif",
+          "statuscode": "200",
+          "digest": "LECMA44KS5XMM3V4ODAXV5VBUUSG26RW",
+          "length": "884",
+          "mimetype": "image/gif"
+        },
+        {
+          "timestamp": "20061122174414",
+          "original": "http://www.worldofwarcraft.com/new-hp/images/icons/news-shop.gif",
+          "statuscode": "200",
+          "digest": "6S5WSHEXHHRKCBXLQEKCP6FCKTSDZSQR",
+          "length": "910",
+          "mimetype": "image/gif"
+        },
+        {
+          "timestamp": "20070123071841",
+          "original": "http://www.worldofwarcraft.com:80/new-hp/images/icons/news-shop.gif",
+          "statuscode": "200",
+          "digest": "LECMA44KS5XMM3V4ODAXV5VBUUSG26RW",
+          "length": "896",
+          "mimetype": "image/gif"
+        },
+        {
+          "timestamp": "20070203204004",
+          "original": "http://www.worldofwarcraft.com/new-hp/images/icons/news-shop.gif",
+          "statuscode": "200",
+          "digest": "6S5WSHEXHHRKCBXLQEKCP6FCKTSDZSQR",
+          "length": "906",
+          "mimetype": "image/gif"
+        },
+        {
+          "timestamp": "20070322234348",
+          "original": "http://www.worldofwarcraft.com:80/new-hp/images/icons/news-shop.gif",
+          "statuscode": "200",
+          "digest": "LECMA44KS5XMM3V4ODAXV5VBUUSG26RW",
+          "length": "889",
+          "mimetype": "image/gif"
+        },
+        {
+          "timestamp": "20070405000055",
+          "original": "http://www.worldofwarcraft.com/new-hp/images/icons/news-shop.gif",
+          "statuscode": "200",
+          "digest": "6S5WSHEXHHRKCBXLQEKCP6FCKTSDZSQR",
+          "length": "901",
+          "mimetype": "image/gif"
+        },
+        {
+          "timestamp": "20070901050747",
+          "original": "http://www.worldofwarcraft.com/new-hp/images/icons/news-shop.gif",
+          "statuscode": "200",
+          "digest": "LECMA44KS5XMM3V4ODAXV5VBUUSG26RW",
+          "length": "843",
+          "mimetype": "image/gif"
+        }
+      ],
+      "fallback_label": "best_known_cached_not_latest",
+      "cdx_mode": "fresh",
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com/new-hp/images/icons/news-shop.gif",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Ficons%2Fnews-shop.gif&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      }
+    },
+    {
+      "target_key": "NEWS13-06-08-news-wrath-gif",
+      "priority": 6,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com/new-hp/images/icons/news-wrath.gif",
+      "literal": "/new-hp/images/icons/news-wrath.gif",
+      "expected": {
+        "mime_types": [
+          "image/gif"
+        ],
+        "pillow_formats": [
+          "GIF"
+        ],
+        "all_gif_frames": true,
+        "reencode": false,
+        "script_execution": false
+      },
+      "source_evidence": {
+        "literal": "/new-hp/images/icons/news-wrath.gif",
+        "path": ".scratch/pages-resources-20261016-v17/news/rss-01-2008.xml.html",
+        "line": 930,
+        "sha256": "8052f0a07d07aa60b8d83c9e6a880c5628b5806774d6d2af6c1c32adee1f6cba",
+        "v17_missing_references": 18
+      },
+      "selection": {
+        "require_complete_index": true,
+        "potential_truncation": "do_not_replay",
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "max_distinct_digest_candidates": 2,
+        "sort": "timestamp_desc_then_record_index_desc",
+        "same_digest_older_captures": "skip",
+        "unknown_metadata": "incomplete_error"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com/new-hp/images/icons/news-wrath.gif",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "known_positive_cache_rows": [
+        {
+          "timestamp": "20071031011046",
+          "original": "http://www.worldofwarcraft.com/new-hp/images/icons/news-wrath.gif",
+          "statuscode": "200",
+          "digest": "CDT4OMBCLE7KOWA7C7VMNH4LCL3HCAQI",
+          "length": "1172",
+          "mimetype": "image/gif"
+        },
+        {
+          "timestamp": "20080402000448",
+          "original": "http://www.worldofwarcraft.com/new-hp/images/icons/news-wrath.gif",
+          "statuscode": "200",
+          "digest": "XBDTN7G5SUMKIBQZRBTT2KT6ZSEJ3YVM",
+          "length": "1141",
+          "mimetype": "image/gif"
+        }
+      ],
+      "fallback_label": "best_known_cached_not_latest",
+      "cdx_mode": "fresh",
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com/new-hp/images/icons/news-wrath.gif",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Ficons%2Fnews-wrath.gif&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      }
+    },
+    {
+      "target_key": "NEWS13-07-09-news-realms-gif",
+      "priority": 7,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com/new-hp/images/icons/news-realms.gif",
+      "literal": "/new-hp/images/icons/news-realms.gif",
+      "expected": {
+        "mime_types": [
+          "image/gif"
+        ],
+        "pillow_formats": [
+          "GIF"
+        ],
+        "all_gif_frames": true,
+        "reencode": false,
+        "script_execution": false
+      },
+      "source_evidence": {
+        "literal": "/new-hp/images/icons/news-realms.gif",
+        "path": ".scratch/pages-resources-20261016-v17/news/rss-09-2006.xml.html",
+        "line": 1024,
+        "sha256": "65fe927c55b2b0cc69dcb623b53bbe90a3279882ac56a20bfb38e04357855d44",
+        "v17_missing_references": 2
+      },
+      "selection": {
+        "require_complete_index": true,
+        "potential_truncation": "do_not_replay",
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "max_distinct_digest_candidates": 2,
+        "sort": "timestamp_desc_then_record_index_desc",
+        "same_digest_older_captures": "skip",
+        "unknown_metadata": "incomplete_error"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com/new-hp/images/icons/news-realms.gif",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "known_positive_cache_rows": [
+        {
+          "timestamp": "20070123071921",
+          "original": "http://www.worldofwarcraft.com:80/new-hp/images/icons/news-realms.gif",
+          "statuscode": "200",
+          "digest": "3O7M4H2CR7NQLQGGDKDSCXF4HD55KGYD",
+          "length": "904",
+          "mimetype": "image/gif"
+        }
+      ],
+      "fallback_label": "best_known_cached_not_latest",
+      "cdx_mode": "fresh",
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com/new-hp/images/icons/news-realms.gif",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Ficons%2Fnews-realms.gif&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      }
+    },
+    {
+      "target_key": "NEWS13-08-10-news-sc2-jpg",
+      "priority": 8,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com/new-hp/images/news-sc2.jpg",
+      "literal": "/new-hp/images/news-sc2.jpg",
+      "expected": {
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "all_gif_frames": true,
+        "reencode": false,
+        "script_execution": false
+      },
+      "source_evidence": {
+        "literal": "/new-hp/images/news-sc2.jpg",
+        "path": ".scratch/pages-resources-20261016-v17/news/rss-05-2007.xml.html",
+        "line": 1832,
+        "sha256": "07bd8eadae65959eee11fccadc7319937ed660215726fdb9e046f1ae83f610d7",
+        "v17_missing_references": 1
+      },
+      "selection": {
+        "require_complete_index": true,
+        "potential_truncation": "do_not_replay",
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "max_distinct_digest_candidates": 2,
+        "sort": "timestamp_desc_then_record_index_desc",
+        "same_digest_older_captures": "skip",
+        "unknown_metadata": "incomplete_error"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com/new-hp/images/news-sc2.jpg",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "known_positive_cache_rows": [
+        {
+          "timestamp": "20070708170938",
+          "original": "http://www.worldofwarcraft.com/new-hp/images/news-sc2.jpg",
+          "statuscode": "200",
+          "digest": "3PFMEJP4JUGPVFXD4D7X7XJ6OGTAH54X",
+          "length": "17763",
+          "mimetype": "image/jpeg"
+        },
+        {
+          "timestamp": "20070801204126",
+          "original": "http://www.worldofwarcraft.com/new-hp/images/news-sc2.jpg",
+          "statuscode": "200",
+          "digest": "LPUZ5HOCXDYSMTOW45FMHNJGS7PXOMGL",
+          "length": "17717",
+          "mimetype": "image/jpeg"
+        },
+        {
+          "timestamp": "20070801211429",
+          "original": "http://www.worldofwarcraft.com/new-hp/images/news-sc2.jpg",
+          "statuscode": "200",
+          "digest": "3PFMEJP4JUGPVFXD4D7X7XJ6OGTAH54X",
+          "length": "17758",
+          "mimetype": "image/jpeg"
+        },
+        {
+          "timestamp": "20070828015911",
+          "original": "http://www.worldofwarcraft.com/new-hp/images/news-sc2.jpg",
+          "statuscode": "200",
+          "digest": "LPUZ5HOCXDYSMTOW45FMHNJGS7PXOMGL",
+          "length": "17723",
+          "mimetype": "image/jpeg"
+        },
+        {
+          "timestamp": "20071024044108",
+          "original": "http://www.worldofwarcraft.com/new-hp/images/news-sc2.jpg",
+          "statuscode": "200",
+          "digest": "3PFMEJP4JUGPVFXD4D7X7XJ6OGTAH54X",
+          "length": "17765",
+          "mimetype": "image/jpeg"
+        },
+        {
+          "timestamp": "20071126022429",
+          "original": "http://www.worldofwarcraft.com/new-hp/images/news-sc2.jpg",
+          "statuscode": "200",
+          "digest": "LPUZ5HOCXDYSMTOW45FMHNJGS7PXOMGL",
+          "length": "17723",
+          "mimetype": "image/jpeg"
+        },
+        {
+          "timestamp": "20071205054224",
+          "original": "http://www.worldofwarcraft.com/new-hp/images/news-sc2.jpg",
+          "statuscode": "200",
+          "digest": "3PFMEJP4JUGPVFXD4D7X7XJ6OGTAH54X",
+          "length": "17754",
+          "mimetype": "image/jpeg"
+        },
+        {
+          "timestamp": "20080224021005",
+          "original": "http://www.worldofwarcraft.com/new-hp/images/news-sc2.jpg",
+          "statuscode": "200",
+          "digest": "LPUZ5HOCXDYSMTOW45FMHNJGS7PXOMGL",
+          "length": "17724",
+          "mimetype": "image/jpeg"
+        }
+      ],
+      "fallback_label": "best_known_cached_not_latest",
+      "cdx_mode": "fresh",
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com/new-hp/images/news-sc2.jpg",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fnews-sc2.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      }
+    },
+    {
+      "target_key": "NEWS13-09-shared-header-quicklinks-jpg",
+      "priority": 0,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com/new-hp/images/header-quicklinks.jpg",
+      "literal": "/new-hp/images/header-quicklinks.jpg",
+      "expected": {
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "all_gif_frames": true,
+        "reencode": false,
+        "script_execution": false
+      },
+      "source_evidence": {
+        "literal": "/new-hp/images/header-quicklinks.jpg",
+        "path": "mirror/20080512/www.worldofwarcraft.com/new-hp/css/newhp_icons.css",
+        "line": 67,
+        "sha256": "6564696fb44f35761a345de8a1c5b932074efc938fd8d369fd677ead7554e3d9",
+        "source_url": "http://www.worldofwarcraft.com/new-hp/css/newhp_icons.css",
+        "source_timestamp": "20080512213942",
+        "source_context": "#container-quicklinks h3 { background: url('/new-hp/images/header-quicklinks.jpg') no-repeat 50px 5px; }",
+        "manifest_route": "/new-hp/css/newhp_icons.css",
+        "shared_trace_role": "root-literal-wave2 exact raw source line; no payload inferred"
+      },
+      "selection": {
+        "require_complete_index": true,
+        "potential_truncation": "do_not_replay",
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "max_distinct_digest_candidates": 2,
+        "sort": "timestamp_desc_then_record_index_desc",
+        "same_digest_older_captures": "skip",
+        "unknown_metadata": "incomplete_error"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com/new-hp/images/header-quicklinks.jpg",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "known_positive_cache_rows": [],
+      "fallback_label": null,
+      "cdx_mode": "fresh",
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com/new-hp/images/header-quicklinks.jpg",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fheader-quicklinks.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      }
+    },
+    {
+      "target_key": "NEWS13-10-shared-creditsGif-gif",
+      "priority": 0,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com/new-hp/images/lightbox/creditsGif.gif",
+      "literal": "/new-hp/images/lightbox/creditsGif.gif",
+      "expected": {
+        "mime_types": [
+          "image/gif"
+        ],
+        "pillow_formats": [
+          "GIF"
+        ],
+        "all_gif_frames": true,
+        "reencode": false,
+        "script_execution": false
+      },
+      "source_evidence": {
+        "literal": "/new-hp/images/lightbox/creditsGif.gif",
+        "path": "offline/source-entities-resources-recovery/132ff8f06fbf5180588a1ab8eb3f9466ec81eef02ae4e9970df31743f63fe9b9.bin",
+        "line": 24,
+        "sha256": "132ff8f06fbf5180588a1ab8eb3f9466ec81eef02ae4e9970df31743f63fe9b9",
+        "source_url": "http://www.worldofwarcraft.com/new-hp/css/ssotdstyle.css",
+        "source_timestamp": "20080512204201",
+        "source_context": ".creditStyle { position:absolute; z-index:500; cursor:pointer; top:0; left:43px; width:47px; height:33px; background:url(/new-hp/images/lightbox/creditsGif.gif) 0 top; display:block; }",
+        "manifest_route": "/new-hp/css/ssotdstyle.css",
+        "shared_trace_role": "root-literal-wave2 exact raw source line; no payload inferred"
+      },
+      "selection": {
+        "require_complete_index": true,
+        "potential_truncation": "do_not_replay",
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "max_distinct_digest_candidates": 2,
+        "sort": "timestamp_desc_then_record_index_desc",
+        "same_digest_older_captures": "skip",
+        "unknown_metadata": "incomplete_error"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com/new-hp/images/lightbox/creditsGif.gif",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "known_positive_cache_rows": [],
+      "fallback_label": null,
+      "cdx_mode": "fresh",
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com/new-hp/images/lightbox/creditsGif.gif",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Flightbox%2FcreditsGif.gif&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      }
+    },
+    {
+      "target_key": "NEWS13-11-shared-menu-gameguide-off-gif",
+      "priority": 0,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com/new-hp/images/menu/leftMenu/menu-gameguide-off.gif",
+      "literal": "/new-hp/images/menu/leftMenu/menu-gameguide-off.gif",
+      "expected": {
+        "mime_types": [
+          "image/gif"
+        ],
+        "pillow_formats": [
+          "GIF"
+        ],
+        "all_gif_frames": true,
+        "reencode": false,
+        "script_execution": false
+      },
+      "source_evidence": {
+        "literal": "/new-hp/images/menu/leftMenu/menu-gameguide-off.gif",
+        "path": "mirror/20080512/www.worldofwarcraft.com/new-hp/css/newhp_icons.css",
+        "line": 12,
+        "sha256": "6564696fb44f35761a345de8a1c5b932074efc938fd8d369fd677ead7554e3d9",
+        "source_url": "http://www.worldofwarcraft.com/new-hp/css/newhp_icons.css",
+        "source_timestamp": "20080512213942",
+        "source_context": ".leftMenu-gameGuide-off { background: url('/new-hp/images/menu/leftMenu/menu-gameguide-off.gif') no-repeat 1px 0; height: 30px; display: block; }",
+        "manifest_route": "/new-hp/css/newhp_icons.css",
+        "shared_trace_role": "root-literal-wave2 exact raw source line; no payload inferred"
+      },
+      "selection": {
+        "require_complete_index": true,
+        "potential_truncation": "do_not_replay",
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "max_distinct_digest_candidates": 2,
+        "sort": "timestamp_desc_then_record_index_desc",
+        "same_digest_older_captures": "skip",
+        "unknown_metadata": "incomplete_error"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com/new-hp/images/menu/leftMenu/menu-gameguide-off.gif",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "known_positive_cache_rows": [],
+      "fallback_label": null,
+      "cdx_mode": "fresh",
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com/new-hp/images/menu/leftMenu/menu-gameguide-off.gif",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fmenu%2FleftMenu%2Fmenu-gameguide-off.gif&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      }
+    },
+    {
+      "target_key": "NEWS13-12-shared-menu-gameguide-on-gif",
+      "priority": 0,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com/new-hp/images/menu/leftMenu/menu-gameguide-on.gif",
+      "literal": "/new-hp/images/menu/leftMenu/menu-gameguide-on.gif",
+      "expected": {
+        "mime_types": [
+          "image/gif"
+        ],
+        "pillow_formats": [
+          "GIF"
+        ],
+        "all_gif_frames": true,
+        "reencode": false,
+        "script_execution": false
+      },
+      "source_evidence": {
+        "literal": "/new-hp/images/menu/leftMenu/menu-gameguide-on.gif",
+        "path": "mirror/20080512/www.worldofwarcraft.com/new-hp/css/newhp_icons.css",
+        "line": 11,
+        "sha256": "6564696fb44f35761a345de8a1c5b932074efc938fd8d369fd677ead7554e3d9",
+        "source_url": "http://www.worldofwarcraft.com/new-hp/css/newhp_icons.css",
+        "source_timestamp": "20080512213942",
+        "source_context": ".leftMenu-gameGuide-on { background: url('/new-hp/images/menu/leftMenu/menu-gameguide-on.gif') no-repeat 1px 0; height: 30px; display: block; }",
+        "manifest_route": "/new-hp/css/newhp_icons.css",
+        "shared_trace_role": "root-literal-wave2 exact raw source line; no payload inferred"
+      },
+      "selection": {
+        "require_complete_index": true,
+        "potential_truncation": "do_not_replay",
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "max_distinct_digest_candidates": 2,
+        "sort": "timestamp_desc_then_record_index_desc",
+        "same_digest_older_captures": "skip",
+        "unknown_metadata": "incomplete_error"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com/new-hp/images/menu/leftMenu/menu-gameguide-on.gif",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "known_positive_cache_rows": [],
+      "fallback_label": null,
+      "cdx_mode": "fresh",
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com/new-hp/images/menu/leftMenu/menu-gameguide-on.gif",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fmenu%2FleftMenu%2Fmenu-gameguide-on.gif&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      }
+    },
+    {
+      "target_key": "NEWS13-13-shared-page-bg-alt3none-jpg",
+      "priority": 0,
+      "kind": "image",
+      "original": "https://www.worldofwarcraft.com/new-hp/images/page-bg-alt3none.jpg",
+      "literal": "/new-hp/images/page-bg-alt3none.jpg",
+      "expected": {
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "all_gif_frames": true,
+        "reencode": false,
+        "script_execution": false
+      },
+      "source_evidence": {
+        "literal": "/new-hp/images/page-bg-alt3none.jpg",
+        "path": "offline/source-entities-pages-recovery/8c897198a4505e8f1110bf095b4059334da170bb28f994016499711e020bcc2f.bin",
+        "line": 258,
+        "sha256": "8c897198a4505e8f1110bf095b4059334da170bb28f994016499711e020bcc2f",
+        "source_url": "https://www.worldofwarcraft.com/bcattunement/",
+        "source_timestamp": "20080402074153",
+        "source_context": "<body style=\"background:url('/new-hp/images/page-bg-alt3none.jpg') #000000 4px 0 repeat-x; color:#000000; margin:0;\">",
+        "manifest_route": "/bcattunement/index.html",
+        "shared_trace_role": "root-literal-wave2 exact raw source line; no payload inferred"
+      },
+      "selection": {
+        "require_complete_index": true,
+        "potential_truncation": "do_not_replay",
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "max_distinct_digest_candidates": 2,
+        "sort": "timestamp_desc_then_record_index_desc",
+        "same_digest_older_captures": "skip",
+        "unknown_metadata": "incomplete_error"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/https://www.worldofwarcraft.com/new-hp/images/page-bg-alt3none.jpg",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "known_positive_cache_rows": [],
+      "fallback_label": null,
+      "cdx_mode": "fresh",
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "https://www.worldofwarcraft.com/new-hp/images/page-bg-alt3none.jpg",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fpage-bg-alt3none.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      }
+    }
+  ],
+  "policy": {
+    "from": "20000101000000",
+    "to": "20080512210044",
+    "limit": 500,
+    "showResumeKey": true,
+    "collapse": false,
+    "matchType": "exact",
+    "max_originals": 20,
+    "max_attempts": 80,
+    "window_seconds": 1800.0,
+    "max_total_body_bytes": 67108864,
+    "max_entity_body_bytes": 8388608,
+    "min_dispatch_seconds": 5.25,
+    "min_request_start_seconds": 5.0,
+    "disk_floor_bytes": 11005853696,
+    "direct_first": true,
+    "proxy": "http://127.0.0.1:7890",
+    "tls_verification": true,
+    "automatic_redirects": 0,
+    "stop_http_codes": [
+      429,
+      503
+    ],
+    "cooldown_seconds": 120,
+    "user_agent": "wow-recovery-reusable-image-v1/20261016",
+    "prior_failure_tail": 0
+  },
+  "previous_batch": {
+    "name": "CONTROL02 / NEWS-SHARED10 historical tail",
+    "prior_failure_tail": 0,
+    "acceptance_receipt_path": "research/continuous-recovery-20261016/publication/root-control02-acceptance.json",
+    "historical_tail_is_preserved": true,
+    "ordinary_retrieval_requires_new_control_gate": false,
+    "control_gate_receipt_path": "research/continuous-recovery-20261016/publication/root-control02-acceptance.json",
+    "control_gate_receipt_sha256": "7c6b2bf7dfc7bff4ed37af09a7d8b5e67a7c817da5daae1076972af4007c38b3",
+    "control_gate_required": true,
+    "historical_news_tail_preserved": 5,
+    "historical_news_receipt_path": "research/continuous-recovery-20261016/publication/root-news-shared10-source-acceptance.json"
+  },
+  "input_bindings": {
+    "control02_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-control02-acceptance.json",
+      "bytes": 724,
+      "sha256": "7c6b2bf7dfc7bff4ed37af09a7d8b5e67a7c817da5daae1076972af4007c38b3",
+      "role": "new successful control gate; historical NEWS10 tail preserved"
+    },
+    "root_news_next10_plan": {
+      "path": "research/continuous-recovery-20261016/publication/root-news-next10-plan.json",
+      "bytes": 16068,
+      "sha256": "c09c1116fd8ac3dfc6c638dd2e86f0c685c6219ade6df37eea56580600b4c4e6",
+      "role": "root exact news candidates and source literals"
+    },
+    "root_literal_wave2_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-literal-wave2-acceptance.json",
+      "bytes": 3445,
+      "sha256": "2a3a5f941f76d20c40fe9b99db3243bbd26dadfc6c089e449b043fbb57828943",
+      "role": "root accepted five shared image literals"
+    },
+    "news_shared10_source_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-news-shared10-source-acceptance.json",
+      "bytes": 2006,
+      "sha256": "65354d44666d68654a619efdc10bc8bd2cacab0cd085f3d729bdb6159309be4f",
+      "role": "prior accepted W/I and preserved historical tail"
+    },
+    "news_shared10_plan": {
+      "path": "research/continuous-recovery-20261016/network/news-shared10/plan.json",
+      "bytes": 48410,
+      "sha256": "9fb28de33a45f4e07a830c4e0bc12fd2423e1e993e4dcf0bb149332f0940fde8",
+      "role": "frozen source candidate definitions"
+    },
+    "news_shared10_fixture": {
+      "path": "research/continuous-recovery-20261016/network/news-shared10/fixture-results.json",
+      "bytes": 1543,
+      "sha256": "499836c7208e1d6df69a02280ed45505491756926e3c7b69d87c7acd83952152",
+      "role": "frozen prior fixture contract"
+    },
+    "allnews01_report": {
+      "path": "research/continuous-recovery-20261016/network/allnews01/batch-report.json",
+      "bytes": 580949,
+      "sha256": "2528c63e400255a2a4685797f0315c381d2ac22560ecbe5e19d4251976b804f4",
+      "role": "source report for cached Blizzcon CDX"
+    },
+    "allnews01_blizz_cdx_body": {
+      "path": "research/continuous-recovery-20261016/network/allnews01/raw/70-ALLNEWS01-R19-cdx-proxy.body",
+      "bytes": 672,
+      "sha256": "e448d86f5ae3ff3b313ba09dd298fbef25e19e00f7af09e6b3bfb9a62b119ce2",
+      "role": "SHA-bound raw/70 cached CDX body"
+    },
+    "allnews01_blizz_cdx_headers": {
+      "path": "research/continuous-recovery-20261016/network/allnews01/raw/70-ALLNEWS01-R19-cdx-proxy.headers.txt",
+      "bytes": 638,
+      "sha256": "79d2b240a27fcd3e21ed2d06b8de648b2060bbc0999aee11e585cb2b5d583900",
+      "role": "SHA-bound raw/70 source headers"
+    },
+    "shared_trace_audit": {
+      "path": "research/continuous-recovery-20261016/local-audit/shared-five-trace/shared-five-trace-audit-v1.json",
+      "bytes": 23174,
+      "sha256": "55bba26fdd6d789ecc682860643ab07dc470ae7629d545b7a619de93c8e7af22",
+      "role": "exact source paths/lines/hashes"
+    },
+    "shared_trace_verification": {
+      "path": "research/continuous-recovery-20261016/local-audit/shared-five-trace/shared-five-trace-verification-v1.json",
+      "bytes": 3189,
+      "sha256": "4338e10607350160b1b51ac290fbfbd77354147a778fba20e7e2cfd33f60eebe",
+      "role": "verified five-trace audit"
+    },
+    "shared_trace_public_summary": {
+      "path": "research/continuous-recovery-20261016/local-audit/shared-five-trace/shared-five-trace-public-summary-v1.json",
+      "bytes": 8309,
+      "sha256": "e40a3ecdeba2836023c0ed6ae1a97392ed0f4c23bd544fdec533b856a6c42fa8",
+      "role": "public five-trace scope"
+    },
+    "shared_driver": {
+      "path": "research/continuous-recovery-20261016/network/reusable-image-driver-v1/reusable_image_driver.py",
+      "bytes": 93407,
+      "sha256": "993ca825a0cd5763c4f7781d853c3ea6b54ce8dd986729e999ccdc73e3d063e9",
+      "role": "shared bounded runner"
+    },
+    "shared_source_1": {
+      "path": "mirror/20080512/www.worldofwarcraft.com/new-hp/css/newhp_icons.css",
+      "bytes": 11378,
+      "sha256": "6564696fb44f35761a345de8a1c5b932074efc938fd8d369fd677ead7554e3d9",
+      "role": "exact raw source file for shared literal"
+    },
+    "shared_source_2": {
+      "path": "offline/source-entities-resources-recovery/132ff8f06fbf5180588a1ab8eb3f9466ec81eef02ae4e9970df31743f63fe9b9.bin",
+      "bytes": 6647,
+      "sha256": "132ff8f06fbf5180588a1ab8eb3f9466ec81eef02ae4e9970df31743f63fe9b9",
+      "role": "exact raw source file for shared literal"
+    },
+    "shared_source_3": {
+      "path": "mirror/20080512/www.worldofwarcraft.com/new-hp/css/newhp_icons.css",
+      "bytes": 11378,
+      "sha256": "6564696fb44f35761a345de8a1c5b932074efc938fd8d369fd677ead7554e3d9",
+      "role": "exact raw source file for shared literal"
+    },
+    "shared_source_4": {
+      "path": "mirror/20080512/www.worldofwarcraft.com/new-hp/css/newhp_icons.css",
+      "bytes": 11378,
+      "sha256": "6564696fb44f35761a345de8a1c5b932074efc938fd8d369fd677ead7554e3d9",
+      "role": "exact raw source file for shared literal"
+    },
+    "shared_source_5": {
+      "path": "offline/source-entities-pages-recovery/8c897198a4505e8f1110bf095b4059334da170bb28f994016499711e020bcc2f.bin",
+      "bytes": 42308,
+      "sha256": "8c897198a4505e8f1110bf095b4059334da170bb28f994016499711e020bcc2f",
+      "role": "exact raw source file for shared literal"
+    }
+  },
+  "cached_evidence_note": "Blizzcon raw/70 is a complete sub-limit exact CDX for 20060101..anchor; coverage_complete_for_global_window=false, so it is best-known cached evidence and not a 2000..anchor latest proof.",
+  "acceptance_boundary": "Successful payloads remain source data pending root acceptance; no production deployment is inferred."
+}
