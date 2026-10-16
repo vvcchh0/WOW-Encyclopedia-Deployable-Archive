@@ -1,0 +1,28 @@
+{
+  "checked_utc": "2026-10-16T10:29:41.707520+00:00",
+  "accepted": true,
+  "network_requests": 0,
+  "implementation": {
+    "path": "tools/export_github_pages.py",
+    "sha256": "2e1a4ee9ae06e3e7df6ec9a3bb6da1a16fc505168d49f8aeb6dc28082d1d1b92",
+    "helper": "_promote_partial_output",
+    "retry_winerrors": [
+      5,
+      32,
+      33
+    ],
+    "errno_fallback": false,
+    "max_attempts": 8,
+    "max_seconds": 10.0,
+    "final_promotion_failure_preserves_partial": true,
+    "pre_promotion_failure_cleans_partial": true
+  },
+  "test_sha256": "92540a5f672f1b83b50a37e2454fc2c1a6a3dbe061761834be38267b82eb7a72",
+  "root_tests": 8,
+  "root_tests_passed": 8,
+  "root_command": "python -X utf8 -m unittest -v tests.test_export_promotion tests.test_github_pages_export.GithubPagesExportTests.test_project_prefix_xml_html_and_sensitive_form",
+  "first_root_test_invocation": "Focused seven passed; incorrect inherited smoke module name failed import. Corrected command above passed all eight.",
+  "review": "Only actual Windows codes 5/32/33 retried; max8 attempts/10seconds; occupied target refused; complete partial preserved after promotion failure; earlier generation failure still cleans partial.",
+  "v21_failure_cause": "Windows directory rename denied. Empty-target probe succeeds and occupied-target probe also returns WinError5; actual v21 denial cause remains unknown. No ACL/AV/global configuration changed.",
+  "worker_receipt_sha256": "962f8b1952040ac086c3fe2aaec98ea841f2ccf0965b3a2e8a7a2e9b771862ac"
+}

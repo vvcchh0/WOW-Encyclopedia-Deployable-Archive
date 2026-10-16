@@ -1,0 +1,38 @@
+{
+  "schema": "wow-recovery.gallery-neighbors01-fixture-results.v1",
+  "generated_utc": "2026-10-16T10:39:31.394261Z",
+  "mode": "offline_composite_fixture",
+  "network_requests": 0,
+  "curl_processes_started": 0,
+  "production_plan": {
+    "path": "research/continuous-recovery-20261016/network/gallery-neighbors01/plan.json",
+    "sha256": "126ae91754aef4bb3f156e1454a24fdd0f465cc10558c740dbfe2a583e8bb03c",
+    "candidate_count": 20,
+    "unique_exact_originals": 20,
+    "source_order_preserved": true,
+    "validated_offline": true
+  },
+  "shared_v2_core_probe": {
+    "path": "research/continuous-recovery-20261016/network/gallery-neighbors01/v2-core-fixture-results.json",
+    "sha256": "9d6f884061391dffdc14e0cea5bad3332a1ea070f80680b3c650ffd7a8cc89ee",
+    "plan_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/fixture-probe/plan.json",
+    "plan_sha256": "ceedd8e6a4b70ff45be82b8ec8e9ae8c567917c645cc00c746149bc1fbe7ebc7",
+    "bindings_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/fixture-probe/input-bindings.json",
+    "bindings_sha256": "c5b5737f4159edfec4ad6ed8a451dbbb1da77dbee666101431940dc232dc141c",
+    "synthetic_original": "http://www.worldofwarcraft.com/info/events/loveisintheair/images/ss1.jpg",
+    "passed": 32,
+    "total": 32,
+    "all_passed": true
+  },
+  "production_direct_shared_fixture": {
+    "compatible": false,
+    "reason": "The frozen V2 latest/default-port fixture mutates candidates[0] by adding :80. The root-approved twenty exact originals contain HTTPS or explicit :80 literals and no bare HTTP original, so applying that fixture directly would alter identity. The synthetic probe exercises that branch without changing production candidates."
+  },
+  "composite_all_passed": true,
+  "all_passed": true,
+  "notes": [
+    "No production candidate was rewritten or dispatched.",
+    "Exact original scheme/host/default-port literals remain source-bound in plan.json.",
+    "The shared V2 driver remains frozen at its root-accepted SHA."
+  ]
+}

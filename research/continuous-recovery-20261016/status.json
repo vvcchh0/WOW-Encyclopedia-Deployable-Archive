@@ -2,16 +2,16 @@
   "schema": "continuous-wow-recovery-status/v1",
   "started_utc": "2026-10-16T02:01:49Z",
   "deadline_utc": "2026-10-16T14:01:49Z",
-  "updated_utc": "2026-10-16T10:03:22.844447+00:00",
-  "phase": "august27_sources_accepted_v21_building_news_content_queue",
+  "updated_utc": "2026-10-16T10:54:32.797763+00:00",
+  "phase": "v22_root_accepted_ready_for_publication",
   "main_start": "7d0c9e6785e6e9fc0c1e6f8d1e35eada533c7cf4",
   "published_pages": {
     "version": "v20",
     "commit": "bfc5a8dd5f8ce679085f399c4ecbb940d70f374c",
     "acceptance": "research/continuous-recovery-20261016/publication/root-v20-pages-online-acceptance.json"
   },
-  "accepted_local_site": ".scratch/pages-resources-20261016-v20",
-  "accepted_local_receipt": "research/continuous-recovery-20261016/publication/root-v20-local-acceptance.json",
+  "accepted_local_site": ".scratch/pages-resources-20261016-v22",
+  "accepted_local_receipt": "research/continuous-recovery-20261016/publication/root-v22-local-acceptance.json",
   "published_release": {
     "version": "v14",
     "tag": "archive-20080512-browser-20261015"
@@ -37,40 +37,37 @@
     "Pages v18 published; eleven online objects verified. Six galleries expose twenty-two existing guide previews."
   ],
   "current_ledger": "research/continuous-recovery-20261016/ledger.current.json",
-  "main_verified": "3c087ef24f5a2a8f7408945f494151151137cd5c",
+  "main_verified": "4f35ff0",
   "active_work": [
-    "LOCAL23 single v21 export: August27 images and current-source descriptions; then remaining news frontier",
-    "NETWORK21 NEWS-CONTENT01 plan preparation, no GO yet"
+    "Root v22 source checkpoint and Pages publication",
+    "LOCAL26 guide literal relations and gallery registry v6",
+    "NETWORK25 neighbors02 plan preparation"
   ],
-  "next_integration": "v21 three accepted August images, 18793B, including one late_2008 supplement with matching pre-anchor digest",
+  "next_integration": "v22: 19 accepted new images (3 August,10 news,6 static), plus any independently accepted gallery-neighbor originals",
   "pending_root_asset_acceptance": [],
   "code_under_review": [],
   "network_hold": {
-    "last_completed_batch": "AUG27-SAME-DAY-LATE11",
+    "last_completed_batch": "GALLERY-NEIGHBORS01",
     "failure_streak_end": 0,
-    "root_acceptance": "research/continuous-recovery-20261016/publication/root-aug-late11-source-acceptance.json",
+    "root_acceptance": "research/continuous-recovery-20261016/publication/root-gallery-neighbors01-source-acceptance.json",
     "control_required": false,
     "normal_dispatch_requires_root_go": true,
     "last_stopped_batch": "GALLERYPREFIX03",
     "last_successful_control": "CONTROL03"
   },
   "accepted_images_pending_integration": {
-    "august_news_images": 3,
-    "bytes": 18793,
-    "root_acceptances": [
-      "research/continuous-recovery-20261016/publication/root-aug-final3-source-acceptance.json",
-      "research/continuous-recovery-20261016/publication/root-aug-cached19-source-acceptance.json",
-      "research/continuous-recovery-20261016/publication/root-aug-late11-source-acceptance.json"
-    ],
-    "primary_images": 2,
-    "late_supplement_images": 1
+    "gallery_neighbor_full_images": 12,
+    "bytes": 1884756,
+    "root_acceptance": "research/continuous-recovery-20261016/publication/root-gallery-neighbors01-source-acceptance.json"
   },
   "gallery_index_coverage": {
     "groups": 50,
-    "limited_window_complete_groups": 43,
-    "incomplete_groups": 7,
+    "limited_window_complete_groups": 50,
+    "incomplete_groups": 0,
     "direct_payloads_new": 0,
-    "receipt": "research/continuous-recovery-20261016/publication/root-gallery-prefix04-acceptance.json"
+    "receipt": "research/continuous-recovery-20261016/publication/root-gallery-prefix05-acceptance.json",
+    "full_window_complete_groups": 26,
+    "earlier_window_gap_groups": 24
   },
   "next_actions": [
     {
@@ -106,12 +103,20 @@
     "news_missing_references_40_surfaces": 590,
     "static_missing_image_entities_fixed_scope": 1220,
     "static_missing_image_references_fixed_scope": 2018,
-    "news_images_downloaded_accepted_this_run": 66
+    "news_images_downloaded_accepted_this_run": 76
   },
   "gallery_followup_data": {
     "acceptance": "research/continuous-recovery-20261016/publication/root-gallery-followups-acceptance.json",
     "registry": "research/continuous-recovery-20261016/local-audit/gallery-prefix-registry-v5/gallery-prefix-registry-v5.json",
     "incomplete7": "research/continuous-recovery-20261016/local-audit/gallery-followup-plans/incomplete-prefixes-full-window-v1.json",
     "early24": "research/continuous-recovery-20261016/local-audit/gallery-followup-plans/early-gaps-24-v1.json"
-  }
+  },
+  "failed_exports": [
+    {
+      "version": "v21",
+      "receipt": "research/continuous-recovery-20261016/integration/v21-build/worker-build-v21.json",
+      "failure": "Final directory rename WinError5; exporter cleanup removed partial; no site was published."
+    }
+  ],
+  "pending_pages_site": ".scratch/pages-resources-20261016-v22"
 }

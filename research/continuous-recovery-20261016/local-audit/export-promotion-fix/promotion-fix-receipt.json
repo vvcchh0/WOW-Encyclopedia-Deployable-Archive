@@ -1,0 +1,60 @@
+{
+  "schema": "wow-recovery.local-audit.export-promotion-fix.v1",
+  "executed_by": "/root/local_recovery_20261016",
+  "network_requests": 0,
+  "full_site_export": false,
+  "source_exception": {
+    "receipt": "research/continuous-recovery-20261016/integration/v21-build/worker-build-v21.json",
+    "receipt_sha256": "7e5b96e843e4ef11f1cc8c4446a99be0920ae53b575f16431fad03ed052a6fe9",
+    "export_started": true,
+    "export_completed": false,
+    "error": "PermissionError: [WinError 5] 拒绝访问。: v21.partial -> v21",
+    "partial_files_written_before_failure": 8565,
+    "partial_exists_after_exporter_cleanup": false,
+    "output_exists_after_exporter_cleanup": false
+  },
+  "independent_probe": {
+    "receipt": "research/continuous-recovery-20261016/local-audit/export-promotion-fix/promotion-probe.json",
+    "receipt_sha256": "c1636df5329be1561527d2eec355cccb9b52464b6a37339e8a56555c27d43dee",
+    "target_absent": "Path.replace succeeded and moved the small directory",
+    "target_exists": "Path.replace raised PermissionError winerror=5; existing target marker and partial remained unchanged",
+    "scratch_cleanup": true
+  },
+  "implementation": {
+    "path": "tools/export_github_pages.py",
+    "sha256": "b2a5254b8ce0bb782d1317da0fdf44b320c7ad97e592c3c52a02b8359855b294",
+    "helper": "_promote_partial_output",
+    "retry_winerrors": [5, 32, 33],
+    "max_attempts": 8,
+    "max_seconds": 10.0,
+    "final_promotion_failure_preserves_partial": true,
+    "pre_promotion_failure_cleans_partial": true
+  },
+  "focused_tests": {
+    "path": "tests/test_export_promotion.py",
+    "sha256": "01b204026fba7ba8e9029b83ce0793bacb549bae9c9f89d7a9000ca51ffa4cdb",
+    "command": "python -X utf8 -m unittest -v tests.test_export_promotion",
+    "result": "5 tests OK",
+    "coverage": [
+      "transient Windows permission retry then success",
+      "existing target refusal without overwrite",
+      "non-transient error is not retried",
+      "retry exhaustion preserves complete partial tree",
+      "pre-promotion exporter error still cleans partial"
+    ]
+  },
+  "smoke_test": {
+    "command": "python -X utf8 -m unittest -v tests.test_github_pages_export.GithubPagesExportTests.test_project_prefix_xml_html_and_sensitive_form",
+    "result": "1 test OK"
+  },
+  "compile": {
+    "command": "python -X utf8 -m py_compile tools/export_github_pages.py tests/test_export_promotion.py research/continuous-recovery-20261016/local-audit/export-promotion-fix/promotion_probe.py",
+    "result": "PASS",
+    "probe_script_sha256": "f07cd5a7fe06f675d71e33a39ec46625bea46c9fb241e2007cc87db814f244f7"
+  },
+  "not_done": [
+    "No v21 or v22 full export was rerun",
+    "No browser or Pages publication validation was performed",
+    "A real AV/permission root cause was not inferred from the WinError 5 evidence"
+  ]
+}

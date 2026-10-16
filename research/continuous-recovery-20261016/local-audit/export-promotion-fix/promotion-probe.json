@@ -1,0 +1,35 @@
+{
+  "schema": "wow-recovery.local-audit.export-promotion-probe.v1",
+  "executed_by": "/root/local_recovery_20261016",
+  "checked_utc": "2026-10-16T10:25:10.720700+00:00",
+  "host": {
+    "os_name": "nt",
+    "platform": "win32"
+  },
+  "scratch_cleanup": true,
+  "observations": [
+    {
+      "case": "target_absent",
+      "operation": "Path.replace",
+      "result": "success",
+      "partial_exists_after": false,
+      "output_exists_after": true,
+      "output_marker": "partial"
+    },
+    {
+      "case": "target_exists",
+      "operation": "Path.replace",
+      "result": "error",
+      "partial_exists_after": true,
+      "output_exists_after": true,
+      "output_marker": "existing",
+      "error": {
+        "type": "PermissionError",
+        "errno": 13,
+        "winerror": 5,
+        "message": "[WinError 5] 拒绝访问。: 'D:\\\\WOW_Encyclopedia\\\\.scratch\\\\local24-promotion-probe-lf3_39sf\\\\existing-target.partial' -> 'D:\\\\WOW_Encyclopedia\\\\.scratch\\\\local24-promotion-probe-lf3_39sf\\\\existing-target'"
+      }
+    }
+  ],
+  "source_exception_receipt": "research/continuous-recovery-20261016/integration/v21-build/worker-build-v21.json"
+}

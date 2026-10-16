@@ -1,0 +1,77 @@
+{
+  "schema": "wow-recovery.gallery-prefix05-driver-diff.v1",
+  "prepared_utc": "2026-10-16T10:30:04.976161Z",
+  "base": {
+    "path": "research/continuous-recovery-20261016/network/gallery-prefix04/gallery_prefix_driver_v4.py",
+    "sha256": "22f45b6776944df8cdc36bab5231edc1f8eee9faf627dcb07b1af6523929af38"
+  },
+  "new": {
+    "path": "research/continuous-recovery-20261016/network/gallery-prefix05/gallery_prefix_driver_v5.py",
+    "sha256": "e592aa9aa353f0b3640c34f6a0db4dbf6163218520bd1f756c154b1848eb131c"
+  },
+  "adaptation_scope": {
+    "batch_id": "WAYBACK-GALLERYPREFIX05-20261016",
+    "candidate_count": 7,
+    "window_seconds": 900.0,
+    "max_attempts": 40,
+    "max_total_body_bytes": 16777216,
+    "max_entity_body_bytes": 8388608,
+    "source_plan": "root-approved seven-item full-window followup plan",
+    "payload_replay": false,
+    "pagination": false
+  },
+  "ast_functions_unchanged": [
+    "_FixtureClock",
+    "_RealClock",
+    "_remaining_clamp",
+    "_restart_last_dispatch",
+    "_schedule_next",
+    "canonical_query_url",
+    "cf",
+    "free_bytes",
+    "headers",
+    "iso",
+    "now",
+    "parse_cdx",
+    "parse_iso",
+    "phase",
+    "project_rows",
+    "public_attempt",
+    "read_json",
+    "rel",
+    "same_origin",
+    "sha",
+    "status",
+    "write_json"
+  ],
+  "ast_functions_changed": [
+    "execute",
+    "fixture",
+    "main",
+    "plan_for_run",
+    "request",
+    "validate_inputs"
+  ],
+  "ast_classes_added": [],
+  "ast_classes_removed": [],
+  "changed_contracts": [
+    "validate_inputs seven-target source/receipt/literal gate",
+    "fixture seven-target gate and 16MiB clamp case",
+    "plan_for_run seven-target v5 metadata",
+    "batch/output schemas, batch id, raw stem and tail metadata"
+  ],
+  "transport_core_preserved": [
+    "parse_cdx",
+    "same_origin",
+    "project_rows",
+    "phase",
+    "status",
+    "headers",
+    "canonical_query_url",
+    "_schedule_next",
+    "_remaining_clamp",
+    "_restart_last_dispatch"
+  ],
+  "offline_only": true,
+  "network_requests": 0
+}

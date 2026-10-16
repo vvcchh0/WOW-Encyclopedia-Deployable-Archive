@@ -23,6 +23,7 @@ import posixpath
 import re
 import shutil
 import sys
+import time
 import urllib.parse
 from collections import Counter
 from dataclasses import dataclass
@@ -53,6 +54,66 @@ import guide_previews  # noqa: E402
 
 class PagesExportError(RuntimeError):
     """Raised when a frozen source or safe output invariant fails."""
+
+
+_PROMOTION_RETRY_WINERRORS = frozenset({5, 32, 33})
+_PROMOTION_MAX_SECONDS = 10.0
+_PROMOTION_MAX_ATTEMPTS = 8
+
+
+def _path_exists_including_broken_link(path: Path) -> bool:
+    """Return whether a destination pathname already occupies a directory entry."""
+
+    return os.path.lexists(os.fspath(path))
+
+
+def _windows_error_code(error: OSError) -> int | None:
+    """Read a Windows sharing/permission code while remaining testable off Windows."""
+
+    winerror = getattr(error, "winerror", None)
+    return int(winerror) if winerror is not None else None
+
+
+def _promote_partial_output(
+    partial: Path,
+    output: Path,
+    *,
+    replace=None,
+    sleep=None,
+    monotonic=None,
+    max_seconds: float = _PROMOTION_MAX_SECONDS,
+) -> None:
+    """Promote a complete partial tree with bounded Windows transient retries.
+
+    The destination is checked before every attempt and is never intentionally
+    overwritten.  Only Windows permission/sharing errors are retried.  The
+    caller owns cleanup; if this helper raises, ``partial`` is deliberately
+    left in place for recovery or inspection.
+    """
+
+    replace_fn = replace or Path.replace
+    sleep_fn = sleep or time.sleep
+    monotonic_fn = monotonic or time.monotonic
+    deadline = monotonic_fn() + min(float(max_seconds), _PROMOTION_MAX_SECONDS)
+    attempts = 0
+    delays = (0.10, 0.20, 0.40, 0.80, 1.60, 3.20, 3.70)
+    while True:
+        if _path_exists_including_broken_link(output):
+            raise PagesExportError(f"refusing to overwrite existing output during promotion: {output}")
+        attempts += 1
+        try:
+            replace_fn(partial, output)
+            return
+        except OSError as exc:
+            if _windows_error_code(exc) not in _PROMOTION_RETRY_WINERRORS:
+                raise
+            now = monotonic_fn()
+            if attempts >= _PROMOTION_MAX_ATTEMPTS or now >= deadline:
+                raise
+            remaining = deadline - now
+            if remaining <= 0:
+                raise
+            sleep_fn(min(delays[min(attempts - 1, len(delays) - 1)], remaining))
 
 
 HTML_KINDS = {"html", "menu_html"}
@@ -2423,6 +2484,7 @@ def export_pages(
     provenance: list[dict[str, Any]] = []
     stats: Counter[str] = Counter()
     partial.mkdir(parents=True, exist_ok=False)
+    promotion_attempted = False
     try:
         # Copy/derive every frozen entity.  Verification is against the
         # derived bytes named by offline/build-manifest.json, not an inferred
@@ -2785,7 +2847,8 @@ def export_pages(
         free_after = shutil.disk_usage(output.parent).free
         if (max_bytes is not None and after_workspace >= max_bytes) or free_after < min_free_bytes:
             raise PagesExportError(f"budget exceeded after export: workspace={after_workspace}, free={free_after}")
-        partial.replace(output)
+        promotion_attempted = True
+        _promote_partial_output(partial, output)
         return {
             "output": str(output),
             "output_files": len(provenance),
@@ -2802,7 +2865,8 @@ def export_pages(
             },
         }
     except Exception:
-        shutil.rmtree(partial, ignore_errors=True)
+        if not promotion_attempted:
+            shutil.rmtree(partial, ignore_errors=True)
         raise
 
 

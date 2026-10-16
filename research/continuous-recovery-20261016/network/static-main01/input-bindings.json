@@ -1,0 +1,257 @@
+{
+  "batch_id": "WAYBACK-STATIC-MAIN01-20261016",
+  "candidate_scope": {
+    "cached_cdx_count": 0,
+    "candidate_count": 20,
+    "fresh_cdx_count": 20,
+    "known_bad_capture_preserved": "STATIC-MAIN01-01 SentientMortals 20080402034834 source 404 HTML; do not replay as image",
+    "network_requests": 0,
+    "no_new_source_urls": true,
+    "queue": "A-main-worldofwarcraft",
+    "source_order_ranks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ]
+  },
+  "driver_bytes": 102327,
+  "driver_path": "research/continuous-recovery-20261016/network/reusable-image-driver-v2/reusable_image_driver.py",
+  "driver_sha256": "1faae294465f5e1ad6e2925870890cdb9512bd2251090d533637245ee6a3d8e4",
+  "execution_go_required": true,
+  "fixture_mode": "offline_only_until_parent_GO",
+  "inherited_tail": {
+    "control03_gate_receipt_path": "research/continuous-recovery-20261016/publication/root-control03-acceptance.json",
+    "control03_gate_receipt_sha256": "d04cfda5d802d4a16397f310d9f6698d2f413e509dd762b38b75adaceb873e50",
+    "historical_control_tail_preserved": 5,
+    "latest_tail": 0,
+    "latest_tail_receipt_path": "research/continuous-recovery-20261016/publication/root-news-content01-source-acceptance.json",
+    "latest_tail_receipt_sha256": "70deedfbc1cd0511c82e41dbd786f81224af8386a7bd1adb73160512bd965475"
+  },
+  "no_network_before_parent_go": true,
+  "notes": [
+    "Queue A candidates retain the public-summary source order and exact HTTP/HTTPS scheme.",
+    "Each selected source_evidence path is the v20 page under .scratch/pages-resources-20261016-v20 with bound line/SHA/requested literal.",
+    "SentientMortals known 404 HTML evidence remains SHA-bound in docs/acquisition-2008.md and docs/gap-review-20261011.md; the runner accepts only image status 200 rows and payload validation.",
+    "Fixture output is under this batch and does not overwrite the shared V2 fixture."
+  ],
+  "plan_path": "research/continuous-recovery-20261016/network/static-main01/plan.json",
+  "plan_sha256": "c450356b04d20172d3c87ba179cecaa3d89463bf6f61b82a486dc9e5ee197e0e",
+  "schema": "wow-recovery.reusable-image-input-bindings.v1",
+  "source_bindings": {
+    "control03_acceptance": {
+      "bytes": 727,
+      "path": "research/continuous-recovery-20261016/publication/root-control03-acceptance.json",
+      "role": "successful control gate after the historical stop",
+      "sha256": "d04cfda5d802d4a16397f310d9f6698d2f413e509dd762b38b75adaceb873e50"
+    },
+    "known_bad_source_01": {
+      "bytes": 11214,
+      "path": "docs/acquisition-2008.md",
+      "role": "known non-image HTML capture evidence; never replay",
+      "sha256": "824dc2950b6cc01347f1065651b8afd37a767737c26f1c594a1edf7d11fd29dc"
+    },
+    "known_bad_source_02": {
+      "bytes": 8492,
+      "path": "docs/gap-review-20261011.md",
+      "role": "known non-image HTML capture evidence; never replay",
+      "sha256": "07d9bbed16e74cff0ce425a38a2d30208c3c7504423dc3a2f75ffd8297ef800c"
+    },
+    "news01_batch_report": {
+      "bytes": 120237,
+      "path": "research/continuous-recovery-20261016/network/news-content01/output/batch-report.json",
+      "role": "prior accepted NEWS-CONTENT01 report bound by receipt",
+      "sha256": "ee8746715eb535e3bb37322db7624e7a73bf9ac257f8af5c7844322f02e27b84"
+    },
+    "news01_plan": {
+      "bytes": 172191,
+      "path": "research/continuous-recovery-20261016/network/news-content01/plan.json",
+      "role": "prior exact NEWS-CONTENT01 plan bound by root acceptance",
+      "sha256": "f6e6aec690f92a96229bb8a08a1e39e87e956b9e6ec8802532156eb3a423d470"
+    },
+    "news01_source_acceptance": {
+      "bytes": 8183,
+      "path": "research/continuous-recovery-20261016/publication/root-news-content01-source-acceptance.json",
+      "role": "latest accepted NEWS-CONTENT01 source batch; tail zero",
+      "sha256": "70deedfbc1cd0511c82e41dbd786f81224af8386a7bd1adb73160512bd965475"
+    },
+    "reusable_v2_code_acceptance": {
+      "bytes": 1552,
+      "path": "research/continuous-recovery-20261016/publication/root-reusable-v2-code-acceptance.json",
+      "role": "root acceptance of frozen V2 code",
+      "sha256": "95a70052ddd53a7cf4e44c168e1caeaecd4f6bb062135186d2579a1bfc18916c"
+    },
+    "reusable_v2_driver": {
+      "bytes": 102327,
+      "path": "research/continuous-recovery-20261016/network/reusable-image-driver-v2/reusable_image_driver.py",
+      "role": "frozen reusable image V2 runner",
+      "sha256": "1faae294465f5e1ad6e2925870890cdb9512bd2251090d533637245ee6a3d8e4"
+    },
+    "v20_public_summary": {
+      "bytes": 279095,
+      "path": "research/continuous-recovery-20261016/local-audit/v20-next-assets/v20-next-assets-public-summary-v2.json",
+      "role": "root-accepted v20 Queue A/B public summary; network_requests=0",
+      "sha256": "603437cb553d545f6a17e2a1219af7c44114178370dfb3b5db7ab21ef630fc6e"
+    },
+    "v20_source_page_01": {
+      "bytes": 51384,
+      "path": ".scratch/pages-resources-20261016-v20/bcattunement/index.html",
+      "role": "root-accepted v20 current source page",
+      "sha256": "ea23f53156738370d24354f7690bf6c21363eb0e442a01bcb99f0e55532c9c20"
+    },
+    "v20_source_page_02": {
+      "bytes": 18280,
+      "path": ".scratch/pages-resources-20261016-v20/burningcrusade/townhall/collectors.html",
+      "role": "root-accepted v20 current source page",
+      "sha256": "3967e636264e9f709c454553306dd750e93c85c645d2cf375f83522990ae1178"
+    },
+    "v20_source_page_03": {
+      "bytes": 20730,
+      "path": ".scratch/pages-resources-20261016-v20/burningcrusade/townhall/lookingforgroup.html",
+      "role": "root-accepted v20 current source page",
+      "sha256": "fa8846636ebbbcd058ce784974c33502ac3838929b9e582b754a7295a77c64f2"
+    },
+    "v20_source_page_04": {
+      "bytes": 191580,
+      "path": ".scratch/pages-resources-20261016-v20/community/tournaments/euregionals/index.html",
+      "role": "root-accepted v20 current source page",
+      "sha256": "e96e432d293e2f29bfc7b0cd61aa734682848a449f0125772fb8a8c92f422b20"
+    },
+    "v20_source_page_05": {
+      "bytes": 112585,
+      "path": ".scratch/pages-resources-20261016-v20/downloads/wallpapers.html",
+      "role": "root-accepted v20 current source page",
+      "sha256": "08c65e51b134d8b050b81218cc7b9786987f8e4ce2ba32c19db1ec0e387a63d8"
+    },
+    "v20_source_page_06": {
+      "bytes": 53714,
+      "path": ".scratch/pages-resources-20261016-v20/gadgetzan/gt002/auntiefizzle.html",
+      "role": "root-accepted v20 current source page",
+      "sha256": "84d3570df4318e3cab4d46877d97e9ec81254065192a723acb196119d18a6a5d"
+    },
+    "v20_source_page_07": {
+      "bytes": 55219,
+      "path": ".scratch/pages-resources-20261016-v20/gadgetzan/gt002/index.html",
+      "role": "root-accepted v20 current source page",
+      "sha256": "38cce719f6280fc2d7e81093c6330a6fbc390c3ae76e753140ced98f3e3941ca"
+    },
+    "v20_source_page_08": {
+      "bytes": 65902,
+      "path": ".scratch/pages-resources-20261016-v20/info/basics/benice.html",
+      "role": "root-accepted v20 current source page",
+      "sha256": "c9e914ac3422a55c357547a7b5171893558ec59fb2b4bc7c08343d69848820a3"
+    },
+    "v20_source_page_09": {
+      "bytes": 77161,
+      "path": ".scratch/pages-resources-20261016-v20/info/basics/factions/aldorscryers/aldor-scryers-tokens.xml.html",
+      "role": "root-accepted v20 current source page",
+      "sha256": "48e8f1b59e1046fc408975557c422299f28314f65636549ac962174711063374"
+    },
+    "v20_source_page_10": {
+      "bytes": 82571,
+      "path": ".scratch/pages-resources-20261016-v20/info/basics/factions/aldorscryers/aldor-scryers.xml.html",
+      "role": "root-accepted v20 current source page",
+      "sha256": "af66eec4ee0eff7fde31e33f51ec105abd5df10226883dda48eacbd0ea46d142"
+    },
+    "v20_source_page_11": {
+      "bytes": 9533,
+      "path": ".scratch/pages-resources-20261016-v20/info/basics/factions/rewardstable/rewardstable.css",
+      "role": "root-accepted v20 current source page",
+      "sha256": "0183993e1705258aa80efd1c911fcbe240e4da17b2fb0e13d62f49f4d8a7cc02"
+    },
+    "v20_source_page_12": {
+      "bytes": 69938,
+      "path": ".scratch/pages-resources-20261016-v20/info/basics/guilds.html",
+      "role": "root-accepted v20 current source page",
+      "sha256": "1b8b811a915e218179a033c444719c384157f040875482f85c9c7b8a7721057c"
+    },
+    "v20_source_page_13": {
+      "bytes": 51461,
+      "path": ".scratch/pages-resources-20261016-v20/info/classes/bc-druid/spells.html",
+      "role": "root-accepted v20 current source page",
+      "sha256": "3e02f73c8e9768c785ee21337df83a1699f20b403c9d53693aee59da1268cafa"
+    },
+    "v20_source_page_14": {
+      "bytes": 51767,
+      "path": ".scratch/pages-resources-20261016-v20/info/classes/bc-hunter/spells.html",
+      "role": "root-accepted v20 current source page",
+      "sha256": "0451bc686a3e4f83e023ea17af12f541ded4fd85f562f70564c210bb5b3f5a38"
+    },
+    "v20_source_page_15": {
+      "bytes": 68177,
+      "path": ".scratch/pages-resources-20261016-v20/info/encyclopedia/315.xml.html",
+      "role": "root-accepted v20 current source page",
+      "sha256": "3f798da1aceef9f56865a9d1823bbaaf167b0b2ab0e606072e683b64744bd33e"
+    },
+    "v20_source_page_16": {
+      "bytes": 69710,
+      "path": ".scratch/pages-resources-20261016-v20/info/encyclopedia/319.xml.html",
+      "role": "root-accepted v20 current source page",
+      "sha256": "30e21867bc98c0823d17740749a11bc81b120ad7b7f8d0a69de70fd3e4e43a8b"
+    },
+    "v20_source_page_17": {
+      "bytes": 152634,
+      "path": ".scratch/pages-resources-20261016-v20/info/index.html",
+      "role": "root-accepted v20 current source page",
+      "sha256": "9442fd43591e0c7fb4adbae044617a00b74757a8542528d58e6ecea40a17a09c"
+    },
+    "v20_source_page_18": {
+      "bytes": 93984,
+      "path": ".scratch/pages-resources-20261016-v20/insider/10/silvermoon.xml.html",
+      "role": "root-accepted v20 current source page",
+      "sha256": "78a323fe601542e01db407575bca98779a78ea37255ed8e0b6f008ecb30a1d78"
+    },
+    "v20_source_page_19": {
+      "bytes": 85782,
+      "path": ".scratch/pages-resources-20261016-v20/news/wow-news-06-2005.html",
+      "role": "root-accepted v20 current source page",
+      "sha256": "41186131e7b06d540c2006b1bb1c843050ebe5fbd032b199e22995e009f772aa"
+    },
+    "v20_source_page_20": {
+      "bytes": 53415,
+      "path": ".scratch/pages-resources-20261016-v20/policy/index.html",
+      "role": "root-accepted v20 current source page",
+      "sha256": "a19a3d841237ef5164a42ab5b8359dd357300666236d4390dd4fe1431ab6219c"
+    },
+    "v20_source_page_21": {
+      "bytes": 62336,
+      "path": ".scratch/pages-resources-20261016-v20/pvp/rewards-arena-class-armor.html",
+      "role": "root-accepted v20 current source page",
+      "sha256": "e0362822bffe8383d380fbe90fe7b7a8fdce6a8b36087eec196c3f15011fb7eb"
+    },
+    "v20_source_page_22": {
+      "bytes": 61539,
+      "path": ".scratch/pages-resources-20261016-v20/pvp/rewards-arena-weapons.html",
+      "role": "root-accepted v20 current source page",
+      "sha256": "83598931d9119f737ee7de59c42ff1cfa78533d37bfd85eeb2e0c102d4dbb449"
+    },
+    "v20_source_page_23": {
+      "bytes": 63942,
+      "path": ".scratch/pages-resources-20261016-v20/pvp/rewards-class-armor.html",
+      "role": "root-accepted v20 current source page",
+      "sha256": "409c29d2bc5adb38fedade1498161f408deb69eb5af25f0da1d9a3f861719c1c"
+    },
+    "v20_source_page_24": {
+      "bytes": 64132,
+      "path": ".scratch/pages-resources-20261016-v20/pvp/rewards-general-armor.html",
+      "role": "root-accepted v20 current source page",
+      "sha256": "8d0ad75e478d25f8cddb3a145d6d858fcd6e6460ae375bb6938337de75ee2834"
+    }
+  }
+}

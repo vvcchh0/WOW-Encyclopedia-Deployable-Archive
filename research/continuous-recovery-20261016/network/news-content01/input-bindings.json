@@ -1,0 +1,138 @@
+{
+  "batch_id": "WAYBACK-NEWS-CONTENT01-20261016",
+  "candidate_scope": {
+    "blind_fallback": false,
+    "cached_cdx_count": 0,
+    "candidate_count": 20,
+    "fresh_cdx_count": 20,
+    "network_requests": 0,
+    "no_new_source_urls": true
+  },
+  "driver_bytes": 102327,
+  "driver_path": "research/continuous-recovery-20261016/network/reusable-image-driver-v2/reusable_image_driver.py",
+  "driver_sha256": "1faae294465f5e1ad6e2925870890cdb9512bd2251090d533637245ee6a3d8e4",
+  "execution_go_required": true,
+  "fixture_mode": "offline_only_until_parent_GO",
+  "inherited_tail": {
+    "control03_gate_receipt_path": "research/continuous-recovery-20261016/publication/root-control03-acceptance.json",
+    "control03_gate_receipt_sha256": "d04cfda5d802d4a16397f310d9f6698d2f413e509dd762b38b75adaceb873e50",
+    "historical_control_tail_preserved": 5,
+    "latest_tail": 0,
+    "latest_tail_receipt_path": "research/continuous-recovery-20261016/publication/root-aug-late11-source-acceptance.json",
+    "latest_tail_receipt_sha256": "e89571cd8e9bdbf916af9a013a9d459270ed07de09240aa1a015b24d01dbc874"
+  },
+  "no_network_before_parent_go": true,
+  "notes": [
+    "Every target uses its root-accepted v20 source_evidence[0] page, line, SHA, and requested original; full source evidence records remain in the plan.",
+    "All twenty queries are fresh exact CDX requests over the fixed 2000..anchor window with no prefix cache, automatic pagination, or replay fallback.",
+    "Fixture output is written under this batch directory and does not overwrite the frozen shared-driver fixture.",
+    "Latest late11 tail zero and CONTROL03 gate are both SHA-bound; historical CONTROL03 tail context remains preserved separately."
+  ],
+  "plan_path": "research/continuous-recovery-20261016/network/news-content01/plan.json",
+  "plan_sha256": "f6e6aec690f92a96229bb8a08a1e39e87e956b9e6ec8802532156eb3a423d470",
+  "schema": "wow-recovery.reusable-image-input-bindings.v1",
+  "source_bindings": {
+    "reusable_v2_code_acceptance": {
+      "bytes": 1552,
+      "path": "research/continuous-recovery-20261016/publication/root-reusable-v2-code-acceptance.json",
+      "role": "root acceptance of frozen reusable V2 code",
+      "sha256": "95a70052ddd53a7cf4e44c168e1caeaecd4f6bb062135186d2579a1bfc18916c"
+    },
+    "reusable_v2_driver": {
+      "bytes": 102327,
+      "path": "research/continuous-recovery-20261016/network/reusable-image-driver-v2/reusable_image_driver.py",
+      "role": "frozen reusable image V2 runner",
+      "sha256": "1faae294465f5e1ad6e2925870890cdb9512bd2251090d533637245ee6a3d8e4"
+    },
+    "root_aug_late11_source_acceptance": {
+      "bytes": 1917,
+      "path": "research/continuous-recovery-20261016/publication/root-aug-late11-source-acceptance.json",
+      "role": "latest accepted source batch; failure tail ended at zero",
+      "sha256": "e89571cd8e9bdbf916af9a013a9d459270ed07de09240aa1a015b24d01dbc874"
+    },
+    "root_control03_acceptance": {
+      "bytes": 727,
+      "path": "research/continuous-recovery-20261016/publication/root-control03-acceptance.json",
+      "role": "last successful control gate after the historical stop; control final streak zero",
+      "sha256": "d04cfda5d802d4a16397f310d9f6698d2f413e509dd762b38b75adaceb873e50"
+    },
+    "root_news_content20_acceptance": {
+      "bytes": 562,
+      "path": "research/continuous-recovery-20261016/publication/root-news-content20-candidates-acceptance.json",
+      "role": "root acceptance of candidate export; network_requests=0",
+      "sha256": "d5c8d87527256470cd6590eb90d523e0df69363a336fe30e5b2ed2461c7e4cc6"
+    },
+    "root_news_content20_candidates": {
+      "bytes": 70088,
+      "path": "research/continuous-recovery-20261016/local-audit/v20-news-content20/v20-news-content20-public-candidates.json",
+      "role": "root accepted twenty NEWS body-image exact candidates",
+      "sha256": "11bbeec9ddf2b7d0f14bf0e8399d81674354c35623dbbf53d7d466d5841900c4"
+    },
+    "v20_source_page_01": {
+      "bytes": 142369,
+      "path": ".scratch/pages-resources-20261016-v20/news/rss-01-2008.xml.html",
+      "role": "v20 accepted source page for NEWS body literal",
+      "sha256": "37d28417b92fe74e692241e2d578c75f7e7207d4aea4c33e7c7d8b423331cdcc"
+    },
+    "v20_source_page_02": {
+      "bytes": 202857,
+      "path": ".scratch/pages-resources-20261016-v20/news/rss-02-2008.xml.html",
+      "role": "v20 accepted source page for NEWS body literal",
+      "sha256": "0c83a77c9bf6a94e904d2f1b1e8f952fe6a7ebc2b85202e8a04cdaeb9b78dc20"
+    },
+    "v20_source_page_03": {
+      "bytes": 161769,
+      "path": ".scratch/pages-resources-20261016-v20/news/rss-03-2008.xml.html",
+      "role": "v20 accepted source page for NEWS body literal",
+      "sha256": "f93d0f2558c50955b3e237de31b58b2f625fc4e3402645ddff87ae513776156a"
+    },
+    "v20_source_page_04": {
+      "bytes": 181361,
+      "path": ".scratch/pages-resources-20261016-v20/news/rss-04-2007.xml.html",
+      "role": "v20 accepted source page for NEWS body literal",
+      "sha256": "1842668e8a50db827a260644707d77c7249307316797a1d8d557875819ea84fd"
+    },
+    "v20_source_page_05": {
+      "bytes": 88784,
+      "path": ".scratch/pages-resources-20261016-v20/news/rss-04-2008.xml.html",
+      "role": "v20 accepted source page for NEWS body literal",
+      "sha256": "320a1d076de687d77121600beca62470df14155a515be21b4abb92195b282208"
+    },
+    "v20_source_page_06": {
+      "bytes": 97411,
+      "path": ".scratch/pages-resources-20261016-v20/news/rss-05-2008.xml.html",
+      "role": "v20 accepted source page for NEWS body literal",
+      "sha256": "614356f71e41a5e13c9d0955c9074c576dfa8af15360a1d057cec77e4fa7718c"
+    },
+    "v20_source_page_07": {
+      "bytes": 238921,
+      "path": ".scratch/pages-resources-20261016-v20/news/rss-06-2007.xml.html",
+      "role": "v20 accepted source page for NEWS body literal",
+      "sha256": "fa1f75a6bd31a534f888283a87d8678ed122d68289ace71970b8e192ed8a7a39"
+    },
+    "v20_source_page_08": {
+      "bytes": 158475,
+      "path": ".scratch/pages-resources-20261016-v20/news/rss-09-2007.xml.html",
+      "role": "v20 accepted source page for NEWS body literal",
+      "sha256": "f2af8850af3bfcf893b3bcd669ee19ac307b0e8e21ce37b820eafa466c4f7440"
+    },
+    "v20_source_page_09": {
+      "bytes": 233557,
+      "path": ".scratch/pages-resources-20261016-v20/news/rss-10-2006.xml.html",
+      "role": "v20 accepted source page for NEWS body literal",
+      "sha256": "8e0173c860fcdc5779db23b320ae9365fc3e5b2ec76dcdef585cbb46c8e9f1fa"
+    },
+    "v20_source_page_10": {
+      "bytes": 454806,
+      "path": ".scratch/pages-resources-20261016-v20/news/wow-news2004.html",
+      "role": "v20 accepted source page for NEWS body literal",
+      "sha256": "25c9bd3529911674228b25c60e0eabf9d5a890e8d9a15423c3a8bff448389996"
+    },
+    "v20_source_page_11": {
+      "bytes": 206583,
+      "path": ".scratch/pages-resources-20261016-v20/news/wow-news2005.html",
+      "role": "v20 accepted source page for NEWS body literal",
+      "sha256": "f092c2eabb57d7efec15cd9b85b1ff38237503344047d8d3f2b003706e5eac29"
+    }
+  }
+}

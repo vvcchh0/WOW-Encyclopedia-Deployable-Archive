@@ -1,0 +1,103 @@
+{
+  "schema": "wow-recovery.gallery-neighbors01-input-bindings.v1",
+  "batch_id": "GALLERY-NEIGHBORS01",
+  "mode": "prepared_not_executed_pending_neighbor_plan_acceptance",
+  "network_requests": 0,
+  "plan_sha256": "126ae91754aef4bb3f156e1454a24fdd0f465cc10558c740dbfe2a583e8bb03c",
+  "driver_sha256": "1faae294465f5e1ad6e2925870890cdb9512bd2251090d533637245ee6a3d8e4",
+  "source_bindings": {
+    "neighbor_candidates": {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-neighbors/full-images20-candidates.json",
+      "sha256": "d7345075a288141d24bc7934a66cb4e1822c2cb0f89c80f7017d1fc4afaeb11c",
+      "bytes": 40655,
+      "role": "root-approved twenty exact-image candidates"
+    },
+    "neighbor_candidates_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-neighbors-candidates-acceptance.json",
+      "sha256": "477d8b770330c57c32e7f784aad8ee2a6841376ad08e52aceaee63e1951e4a53",
+      "bytes": 714,
+      "role": "root acceptance of twenty candidates"
+    },
+    "neighbor_audit": {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-neighbors/audit.json",
+      "sha256": "de7f2bf4115a437d7e40288a59d059a77a14d28c1eb2d7b51fcccf2aa156d9ef",
+      "bytes": 165066,
+      "role": "candidate audit source"
+    },
+    "prior_prefix04_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix04-acceptance.json",
+      "sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2",
+      "bytes": 88497,
+      "role": "source CDX context for neighboring rows"
+    },
+    "current_prefix05_report": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix05/batch-report.json",
+      "sha256": "8c47fca12031290ebd7da218d8ecfc959d7e4dbf6ab586170859bf9a8298d793",
+      "bytes": 82860,
+      "role": "latest completed prefix05 result, pending root source acceptance"
+    },
+    "current_prefix05_execution_plan": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix05/execution-plan.json",
+      "sha256": "6703bc3b3591ae0cc124e88379b1fda8cad0c7b37d78c6cff43f0ea19a7d404b",
+      "bytes": 17584,
+      "role": "latest prefix05 query binding"
+    },
+    "current_prefix05_source_map": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix05/source-map.json",
+      "sha256": "6c70d9830041b2c7f6b5fe6bdf656e8962d28b76819ae0db175ac1879facc09f",
+      "bytes": 43683,
+      "role": "latest prefix05 source map"
+    },
+    "root_prefix05_plan_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix05-plan-acceptance.json",
+      "sha256": "d4c3c0946b571e8769e5708e7c6692709fbdb365a178e1c667b4a1ac8bcd013c",
+      "bytes": 712,
+      "role": "root acceptance of prefix05 plan; source result acceptance still pending"
+    },
+    "control03_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-control03-acceptance.json",
+      "sha256": "d04cfda5d802d4a16397f310d9f6698d2f413e509dd762b38b75adaceb873e50",
+      "bytes": 727,
+      "role": "accepted control gate after prior gallery stop"
+    },
+    "reusable_v2_driver": {
+      "path": "research/continuous-recovery-20261016/network/reusable-image-driver-v2/reusable_image_driver.py",
+      "sha256": "1faae294465f5e1ad6e2925870890cdb9512bd2251090d533637245ee6a3d8e4",
+      "bytes": 102327,
+      "role": "frozen reusable image V2 driver"
+    },
+    "reusable_v2_code_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-reusable-v2-code-acceptance.json",
+      "sha256": "95a70052ddd53a7cf4e44c168e1caeaecd4f6bb062135186d2579a1bfc18916c",
+      "bytes": 1552,
+      "role": "root acceptance of V2 core"
+    },
+    "root_prefix05_source_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix05-acceptance.json",
+      "sha256": "199ee21c32521e287b0bc4157a8f13bbab1c6b6b7580aa36ca8220cb21eb58c9",
+      "bytes": 9557,
+      "role": "root accepted prefix05 source result and actual tail-zero receipt"
+    }
+  },
+  "network_authorized": false,
+  "required_before_dispatch": [
+    "root accepts prefix05 source result/tail0",
+    "root accepts this exact-image plan"
+  ],
+  "latest_prefix05_source_acceptance": {
+    "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix05-acceptance.json",
+    "sha256": "199ee21c32521e287b0bc4157a8f13bbab1c6b6b7580aa36ca8220cb21eb58c9",
+    "bytes": 9557,
+    "role": "root accepted prefix05 source result and actual tail-zero receipt"
+  },
+  "fixture_results": {
+    "path": "research/continuous-recovery-20261016/network/gallery-neighbors01/fixture-results.json",
+    "sha256": "71ae57a7afe35705eb475991048450acca17aadd0b1c44ebe5b5eb6a05d75356",
+    "all_passed": true
+  },
+  "v2_core_fixture": {
+    "path": "research/continuous-recovery-20261016/network/gallery-neighbors01/v2-core-fixture-results.json",
+    "sha256": "9d6f884061391dffdc14e0cea5bad3332a1ea070f80680b3c650ffd7a8cc89ee",
+    "all_passed": true
+  }
+}

@@ -90,3 +90,9 @@ UTC 13:00 后不启动新网络批次，13:10 后不启动新来源/导出版本
 - 晚间单目标适配器的传输、解码、图片及预算核心与已有 V2 一致；主代理实际执行 64 项核心检查、9 项晚间边界检查及四项参数篡改拒绝，并验证未绑定执行计划不能发起获取。[代码与计划验收](../research/continuous-recovery-20261016/publication/root-late11-code-plan-acceptance.json)
 - 图库 v5 总账及后续窗口经主代理复核：四十三组有限窗口已完整，七组待补完整窗口；二十四个早期空窗按二十和四项拆分，原动态图片探测统计保持不变。[窗口计划验收](../research/continuous-recovery-20261016/publication/root-gallery-followups-acceptance.json)
 - 新增二十项新闻正文配图队列，覆盖二十四处引用，实际来源行与未取得状态均核对；优先恢复正文图片，继续保留共享装饰素材队列。[候选验收](../research/continuous-recovery-20261016/publication/root-news-content20-candidates-acceptance.json)
+
+- 10:52 UTC：v22 完成主代理本地验收：新增十三张新闻配图及六张页面素材，8,580 个声明对象逐字节核对通过；91 项浏览检查通过，八月新闻二十七张图片全部加载。相同四十页新闻缺图引用由 590 降至 574。线上仍为 v20，准备发布。[本地验收](../research/continuous-recovery-20261016/publication/root-v22-local-acceptance.json)
+- v21 在 Windows 最终目录提升时失败且旧异常处理删除了完整 partial，失败回执保留；已修正为有界重试并保留完整 partial。v22 实际提升成功，构建助手的后置检查因继承素材改用新 clone 来源表而报错；主代理逐文件及日期核对确认仅来源表引用变化，未重复导出。[提升修复](../research/continuous-recovery-20261016/publication/root-export-promotion-fix-acceptance.json)、[v22 字节验收](../research/continuous-recovery-20261016/publication/root-v22-export-acceptance.json)
+- 七组剩余图库目录取得完整有限窗口索引，当前五十组均有完整的已查窗口，二十四组的早期窗口仍待补查。精确动态槽位探测统计保持独立，未把目录索引当作图片。[索引复核](../research/continuous-recovery-20261016/publication/root-gallery-prefix05-acceptance.json)
+- 相邻路径调查发现八十三个有效图片地址，其中三十四图已在本地，另四十九图有正索引。首批回放取回十二张情人节、春节和 World PvP 指南大图（1,884,756 字节），捕获于 2006—2008 年；保持真实来源，另作指南素材展示，未映射至原动态图库槽位。[路径审计](../research/continuous-recovery-20261016/publication/root-gallery-neighbors-candidates-acceptance.json)、[原图验收](../research/continuous-recovery-20261016/publication/root-gallery-neighbors01-source-acceptance.json)
+- MEDIA 保存索引的四十七条 revisit 再查，其八种摘要均匹配重定向或非图片记录，均在基准之后；本轮没有因此新增图片候选。[摘要分类](../research/continuous-recovery-20261016/publication/root-media-revisit-classification.json)

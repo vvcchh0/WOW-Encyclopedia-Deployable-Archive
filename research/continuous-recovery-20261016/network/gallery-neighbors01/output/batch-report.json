@@ -1,0 +1,3061 @@
+{
+  "schema": "wow-recovery.reusable-image-report.v1",
+  "batch_id": "GALLERY-NEIGHBORS01",
+  "started_utc": "2026-10-16T10:42:21.550758Z",
+  "finished_utc": "2026-10-16T10:45:35.628093Z",
+  "network_requests": 34,
+  "prepared_attempts": 34,
+  "source_responses": 25,
+  "total_body_bytes": 1892433,
+  "failure_streak": 0,
+  "failure_streak_start": 0,
+  "stop_reason": "completed_candidate_queue",
+  "cooldown_not_before_utc": null,
+  "prior_failure_tail": 0,
+  "candidate_count": 20,
+  "output_dir": "research/continuous-recovery-20261016/network/gallery-neighbors01/output",
+  "transport_policy": "batch_after_direct_failure",
+  "direct_probe_done": true,
+  "failed_attempt_number": 1,
+  "skip_reason": "direct_source_status_none_curl_7_or_28_empty_body",
+  "report_policy": {
+    "transport_policy": "batch_after_direct_failure",
+    "batch_scope": "one execute invocation; initial_state resets the direct probe for the next batch",
+    "direct_failure_qualification": "source_status=None and curl_exit in {7,28} and body_bytes=0",
+    "direct_probe_done": true,
+    "failed_attempt_number": 1,
+    "skip_reason": "direct_source_status_none_curl_7_or_28_empty_body",
+    "proxy_only_active": true
+  },
+  "cached_cdx_reused": 0,
+  "fresh_cdx_targets": 20,
+  "results": [
+    {
+      "target_key": "GALLERY-NEIGHBOR-01",
+      "status": "complete_with_replay_candidates",
+      "cdx_source": "fresh",
+      "latest_unknown": false,
+      "cdx": {
+        "status": "complete_with_replay_candidates",
+        "rows": [
+          {
+            "record_index": "1",
+            "timestamp": "20070227213852",
+            "original": "http://www.worldofwarcraft.com:80/pvp/worldpvp/images/ss1.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "3T4FZMME2VMXBWXUCTXHRKCYYTDLKAML",
+            "length": "117201",
+            "identity": "origin_variant",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": false
+          },
+          {
+            "record_index": "2",
+            "timestamp": "20080402011652",
+            "original": "http://www.worldofwarcraft.com/pvp/worldpvp/images/ss1.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "3T4FZMME2VMXBWXUCTXHRKCYYTDLKAML",
+            "length": "117136",
+            "identity": "origin_variant",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": false
+          },
+          {
+            "record_index": "3",
+            "timestamp": "20080402030650",
+            "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss1.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "3T4FZMME2VMXBWXUCTXHRKCYYTDLKAML",
+            "length": "117134",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20080402030650id_/https://www.worldofwarcraft.com/pvp/worldpvp/images/ss1.jpg"
+          }
+        ],
+        "strict_candidates": [
+          {
+            "record_index": "3",
+            "timestamp": "20080402030650",
+            "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss1.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "3T4FZMME2VMXBWXUCTXHRKCYYTDLKAML",
+            "length": "117134",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20080402030650id_/https://www.worldofwarcraft.com/pvp/worldpvp/images/ss1.jpg"
+          }
+        ],
+        "selected": [
+          {
+            "record_index": "3",
+            "timestamp": "20080402030650",
+            "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss1.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "3T4FZMME2VMXBWXUCTXHRKCYYTDLKAML",
+            "length": "117134",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20080402030650id_/https://www.worldofwarcraft.com/pvp/worldpvp/images/ss1.jpg"
+          }
+        ],
+        "identity_variant_candidates": [
+          {
+            "record_index": "1",
+            "timestamp": "20070227213852",
+            "original": "http://www.worldofwarcraft.com:80/pvp/worldpvp/images/ss1.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "3T4FZMME2VMXBWXUCTXHRKCYYTDLKAML",
+            "length": "117201",
+            "identity": "origin_variant",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": false
+          },
+          {
+            "record_index": "2",
+            "timestamp": "20080402011652",
+            "original": "http://www.worldofwarcraft.com/pvp/worldpvp/images/ss1.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "3T4FZMME2VMXBWXUCTXHRKCYYTDLKAML",
+            "length": "117136",
+            "identity": "origin_variant",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": false
+          }
+        ],
+        "reject_counts": {
+          "identity": 2
+        },
+        "row_count": 3,
+        "resume_keys": [],
+        "potential_truncation": false,
+        "replay_count": 1
+      },
+      "cached_cdx_provenance": null,
+      "fresh_cdx_transport": {
+        "curl_exit": 0,
+        "source_status": 200,
+        "transport": "proxy"
+      },
+      "replay_results": [
+        {
+          "accepted": true,
+          "reasons": [],
+          "curl_exit": 0,
+          "http_status": 200,
+          "connect_statuses": [
+            200
+          ],
+          "memento_datetime": "Wed, 02 Apr 2008 03:06:50 GMT",
+          "link_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss1.jpg",
+          "actual_memento_timestamp": "20080402030650",
+          "link_identity": "exact",
+          "actual_content_type": "image/jpeg",
+          "raw_body_bytes": 117648,
+          "raw_body_sha256": "5b65329e7ae2cf4e7aa12d521cf54d8d9dc6cd5b8e09f5b920b3a326f62a8fed",
+          "cdx_length": "117134",
+          "expected_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss1.jpg",
+          "cdx_digest": "3T4FZMME2VMXBWXUCTXHRKCYYTDLKAML",
+          "decoded_body_bytes": 117648,
+          "decoded_body_sha256": "5b65329e7ae2cf4e7aa12d521cf54d8d9dc6cd5b8e09f5b920b3a326f62a8fed",
+          "decoded_payload_sha1_base32": "3T4FZMME2VMXBWXUCTXHRKCYYTDLKAML",
+          "image_format": "JPEG",
+          "image_frame_count": 1,
+          "image_size": [
+            800,
+            611
+          ],
+          "image_mode": "RGB",
+          "image_validation": "valid",
+          "accepted_payload_metadata": {
+            "target_key": "GALLERY-NEIGHBOR-01",
+            "kind": "image",
+            "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss1.jpg",
+            "selected_capture_timestamp": "20080402030650",
+            "actual_memento_timestamp": "20080402030650",
+            "actual_link_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss1.jpg",
+            "cdx_digest": "3T4FZMME2VMXBWXUCTXHRKCYYTDLKAML",
+            "cdx_record_length": "117134",
+            "raw_body_sha256": "5b65329e7ae2cf4e7aa12d521cf54d8d9dc6cd5b8e09f5b920b3a326f62a8fed",
+            "raw_body_bytes": 117648,
+            "decoded_body_sha256": "5b65329e7ae2cf4e7aa12d521cf54d8d9dc6cd5b8e09f5b920b3a326f62a8fed",
+            "decoded_body_bytes": 117648,
+            "private_decoded_payload_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/output/private-payloads/GALLERY-NEIGHBOR-01-20080402030650-3T4FZMME2VMXBWXUCTXHRKCYYTDLKAML.decoded",
+            "content_encoding": "identity",
+            "verification": {
+              "curl_exit": 0,
+              "http_status": 200,
+              "link_identity": "exact",
+              "actual_content_type": "image/jpeg",
+              "image_format": "JPEG",
+              "image_frame_count": 1,
+              "image_size": [
+                800,
+                611
+              ],
+              "image_mode": "RGB",
+              "image_validation": "valid",
+              "decoded_payload_sha1_base32": "3T4FZMME2VMXBWXUCTXHRKCYYTDLKAML"
+            },
+            "status": "pending_root"
+          }
+        }
+      ],
+      "accepted_payloads": [
+        {
+          "target_key": "GALLERY-NEIGHBOR-01",
+          "kind": "image",
+          "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss1.jpg",
+          "selected_capture_timestamp": "20080402030650",
+          "actual_memento_timestamp": "20080402030650",
+          "actual_link_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss1.jpg",
+          "cdx_digest": "3T4FZMME2VMXBWXUCTXHRKCYYTDLKAML",
+          "cdx_record_length": "117134",
+          "raw_body_sha256": "5b65329e7ae2cf4e7aa12d521cf54d8d9dc6cd5b8e09f5b920b3a326f62a8fed",
+          "raw_body_bytes": 117648,
+          "decoded_body_sha256": "5b65329e7ae2cf4e7aa12d521cf54d8d9dc6cd5b8e09f5b920b3a326f62a8fed",
+          "decoded_body_bytes": 117648,
+          "private_decoded_payload_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/output/private-payloads/GALLERY-NEIGHBOR-01-20080402030650-3T4FZMME2VMXBWXUCTXHRKCYYTDLKAML.decoded",
+          "content_encoding": "identity",
+          "verification": {
+            "curl_exit": 0,
+            "http_status": 200,
+            "link_identity": "exact",
+            "actual_content_type": "image/jpeg",
+            "image_format": "JPEG",
+            "image_frame_count": 1,
+            "image_size": [
+              800,
+              611
+            ],
+            "image_mode": "RGB",
+            "image_validation": "valid",
+            "decoded_payload_sha1_base32": "3T4FZMME2VMXBWXUCTXHRKCYYTDLKAML"
+          },
+          "status": "pending_root"
+        }
+      ],
+      "skipped_after_accept": 0
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR-02",
+      "status": "complete_with_replay_candidates",
+      "cdx_source": "fresh",
+      "latest_unknown": false,
+      "cdx": {
+        "status": "complete_with_replay_candidates",
+        "rows": [
+          {
+            "record_index": "1",
+            "timestamp": "20060910224653",
+            "original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss1.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "RJTHUQU4ICQICHLBRX7DBNGPP6LEYROI",
+            "length": "148246",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true
+          },
+          {
+            "record_index": "2",
+            "timestamp": "20070104223456",
+            "original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss1.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "RJTHUQU4ICQICHLBRX7DBNGPP6LEYROI",
+            "length": "148246",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20070104223456id_/http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss1.jpg"
+          }
+        ],
+        "strict_candidates": [
+          {
+            "record_index": "1",
+            "timestamp": "20060910224653",
+            "original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss1.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "RJTHUQU4ICQICHLBRX7DBNGPP6LEYROI",
+            "length": "148246",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true
+          },
+          {
+            "record_index": "2",
+            "timestamp": "20070104223456",
+            "original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss1.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "RJTHUQU4ICQICHLBRX7DBNGPP6LEYROI",
+            "length": "148246",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20070104223456id_/http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss1.jpg"
+          }
+        ],
+        "selected": [
+          {
+            "record_index": "2",
+            "timestamp": "20070104223456",
+            "original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss1.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "RJTHUQU4ICQICHLBRX7DBNGPP6LEYROI",
+            "length": "148246",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20070104223456id_/http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss1.jpg"
+          }
+        ],
+        "identity_variant_candidates": [],
+        "reject_counts": {},
+        "row_count": 2,
+        "resume_keys": [],
+        "potential_truncation": false,
+        "replay_count": 1
+      },
+      "cached_cdx_provenance": null,
+      "fresh_cdx_transport": {
+        "curl_exit": 0,
+        "source_status": 200,
+        "transport": "proxy"
+      },
+      "replay_results": [
+        {
+          "accepted": true,
+          "reasons": [],
+          "curl_exit": 0,
+          "http_status": 200,
+          "connect_statuses": [
+            200
+          ],
+          "memento_datetime": "Thu, 04 Jan 2007 22:34:56 GMT",
+          "link_original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss1.jpg",
+          "actual_memento_timestamp": "20070104223456",
+          "link_identity": "exact",
+          "actual_content_type": "image/jpeg",
+          "raw_body_bytes": 147889,
+          "raw_body_sha256": "8ab09738344dc900fe438add8764942a48a3a6c79fd1a268dfe72e30205af43e",
+          "cdx_length": "148246",
+          "expected_original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss1.jpg",
+          "cdx_digest": "RJTHUQU4ICQICHLBRX7DBNGPP6LEYROI",
+          "decoded_body_bytes": 147889,
+          "decoded_body_sha256": "8ab09738344dc900fe438add8764942a48a3a6c79fd1a268dfe72e30205af43e",
+          "decoded_payload_sha1_base32": "RJTHUQU4ICQICHLBRX7DBNGPP6LEYROI",
+          "image_format": "JPEG",
+          "image_frame_count": 1,
+          "image_size": [
+            800,
+            611
+          ],
+          "image_mode": "RGB",
+          "image_validation": "valid",
+          "accepted_payload_metadata": {
+            "target_key": "GALLERY-NEIGHBOR-02",
+            "kind": "image",
+            "original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss1.jpg",
+            "selected_capture_timestamp": "20070104223456",
+            "actual_memento_timestamp": "20070104223456",
+            "actual_link_original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss1.jpg",
+            "cdx_digest": "RJTHUQU4ICQICHLBRX7DBNGPP6LEYROI",
+            "cdx_record_length": "148246",
+            "raw_body_sha256": "8ab09738344dc900fe438add8764942a48a3a6c79fd1a268dfe72e30205af43e",
+            "raw_body_bytes": 147889,
+            "decoded_body_sha256": "8ab09738344dc900fe438add8764942a48a3a6c79fd1a268dfe72e30205af43e",
+            "decoded_body_bytes": 147889,
+            "private_decoded_payload_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/output/private-payloads/GALLERY-NEIGHBOR-02-20070104223456-RJTHUQU4ICQICHLBRX7DBNGPP6LEYROI.decoded",
+            "content_encoding": "identity",
+            "verification": {
+              "curl_exit": 0,
+              "http_status": 200,
+              "link_identity": "exact",
+              "actual_content_type": "image/jpeg",
+              "image_format": "JPEG",
+              "image_frame_count": 1,
+              "image_size": [
+                800,
+                611
+              ],
+              "image_mode": "RGB",
+              "image_validation": "valid",
+              "decoded_payload_sha1_base32": "RJTHUQU4ICQICHLBRX7DBNGPP6LEYROI"
+            },
+            "status": "pending_root"
+          }
+        }
+      ],
+      "accepted_payloads": [
+        {
+          "target_key": "GALLERY-NEIGHBOR-02",
+          "kind": "image",
+          "original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss1.jpg",
+          "selected_capture_timestamp": "20070104223456",
+          "actual_memento_timestamp": "20070104223456",
+          "actual_link_original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss1.jpg",
+          "cdx_digest": "RJTHUQU4ICQICHLBRX7DBNGPP6LEYROI",
+          "cdx_record_length": "148246",
+          "raw_body_sha256": "8ab09738344dc900fe438add8764942a48a3a6c79fd1a268dfe72e30205af43e",
+          "raw_body_bytes": 147889,
+          "decoded_body_sha256": "8ab09738344dc900fe438add8764942a48a3a6c79fd1a268dfe72e30205af43e",
+          "decoded_body_bytes": 147889,
+          "private_decoded_payload_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/output/private-payloads/GALLERY-NEIGHBOR-02-20070104223456-RJTHUQU4ICQICHLBRX7DBNGPP6LEYROI.decoded",
+          "content_encoding": "identity",
+          "verification": {
+            "curl_exit": 0,
+            "http_status": 200,
+            "link_identity": "exact",
+            "actual_content_type": "image/jpeg",
+            "image_format": "JPEG",
+            "image_frame_count": 1,
+            "image_size": [
+              800,
+              611
+            ],
+            "image_mode": "RGB",
+            "image_validation": "valid",
+            "decoded_payload_sha1_base32": "RJTHUQU4ICQICHLBRX7DBNGPP6LEYROI"
+          },
+          "status": "pending_root"
+        }
+      ],
+      "skipped_after_accept": 0
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR-03",
+      "status": "complete_with_replay_candidates",
+      "cdx_source": "fresh",
+      "latest_unknown": false,
+      "cdx": {
+        "status": "complete_with_replay_candidates",
+        "rows": [
+          {
+            "record_index": "1",
+            "timestamp": "20060719032007",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss10.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "LK5OF6D6UL4NF26DFXHPP65SGR5ME2UG",
+            "length": "322973",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20060719032007id_/http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss10.jpg"
+          }
+        ],
+        "strict_candidates": [
+          {
+            "record_index": "1",
+            "timestamp": "20060719032007",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss10.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "LK5OF6D6UL4NF26DFXHPP65SGR5ME2UG",
+            "length": "322973",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20060719032007id_/http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss10.jpg"
+          }
+        ],
+        "selected": [
+          {
+            "record_index": "1",
+            "timestamp": "20060719032007",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss10.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "LK5OF6D6UL4NF26DFXHPP65SGR5ME2UG",
+            "length": "322973",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20060719032007id_/http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss10.jpg"
+          }
+        ],
+        "identity_variant_candidates": [],
+        "reject_counts": {},
+        "row_count": 1,
+        "resume_keys": [],
+        "potential_truncation": false,
+        "replay_count": 1
+      },
+      "cached_cdx_provenance": null,
+      "fresh_cdx_transport": {
+        "curl_exit": 0,
+        "source_status": 200,
+        "transport": "proxy"
+      },
+      "replay_results": [
+        {
+          "accepted": true,
+          "reasons": [],
+          "curl_exit": 0,
+          "http_status": 200,
+          "connect_statuses": [
+            200
+          ],
+          "memento_datetime": "Wed, 19 Jul 2006 03:20:07 GMT",
+          "link_original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss10.jpg",
+          "actual_memento_timestamp": "20060719032007",
+          "link_identity": "exact",
+          "actual_content_type": "image/jpeg",
+          "raw_body_bytes": 332076,
+          "raw_body_sha256": "b1ae5e06c7ea262087572d9b48c6575047f037044c8cf5dc0aafd8679f48e4c3",
+          "cdx_length": "322973",
+          "expected_original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss10.jpg",
+          "cdx_digest": "LK5OF6D6UL4NF26DFXHPP65SGR5ME2UG",
+          "decoded_body_bytes": 332076,
+          "decoded_body_sha256": "b1ae5e06c7ea262087572d9b48c6575047f037044c8cf5dc0aafd8679f48e4c3",
+          "decoded_payload_sha1_base32": "LK5OF6D6UL4NF26DFXHPP65SGR5ME2UG",
+          "image_format": "JPEG",
+          "image_frame_count": 1,
+          "image_size": [
+            756,
+            567
+          ],
+          "image_mode": "RGB",
+          "image_validation": "valid",
+          "accepted_payload_metadata": {
+            "target_key": "GALLERY-NEIGHBOR-03",
+            "kind": "image",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss10.jpg",
+            "selected_capture_timestamp": "20060719032007",
+            "actual_memento_timestamp": "20060719032007",
+            "actual_link_original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss10.jpg",
+            "cdx_digest": "LK5OF6D6UL4NF26DFXHPP65SGR5ME2UG",
+            "cdx_record_length": "322973",
+            "raw_body_sha256": "b1ae5e06c7ea262087572d9b48c6575047f037044c8cf5dc0aafd8679f48e4c3",
+            "raw_body_bytes": 332076,
+            "decoded_body_sha256": "b1ae5e06c7ea262087572d9b48c6575047f037044c8cf5dc0aafd8679f48e4c3",
+            "decoded_body_bytes": 332076,
+            "private_decoded_payload_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/output/private-payloads/GALLERY-NEIGHBOR-03-20060719032007-LK5OF6D6UL4NF26DFXHPP65SGR5ME2UG.decoded",
+            "content_encoding": "identity",
+            "verification": {
+              "curl_exit": 0,
+              "http_status": 200,
+              "link_identity": "exact",
+              "actual_content_type": "image/jpeg",
+              "image_format": "JPEG",
+              "image_frame_count": 1,
+              "image_size": [
+                756,
+                567
+              ],
+              "image_mode": "RGB",
+              "image_validation": "valid",
+              "decoded_payload_sha1_base32": "LK5OF6D6UL4NF26DFXHPP65SGR5ME2UG"
+            },
+            "status": "pending_root"
+          }
+        }
+      ],
+      "accepted_payloads": [
+        {
+          "target_key": "GALLERY-NEIGHBOR-03",
+          "kind": "image",
+          "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss10.jpg",
+          "selected_capture_timestamp": "20060719032007",
+          "actual_memento_timestamp": "20060719032007",
+          "actual_link_original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss10.jpg",
+          "cdx_digest": "LK5OF6D6UL4NF26DFXHPP65SGR5ME2UG",
+          "cdx_record_length": "322973",
+          "raw_body_sha256": "b1ae5e06c7ea262087572d9b48c6575047f037044c8cf5dc0aafd8679f48e4c3",
+          "raw_body_bytes": 332076,
+          "decoded_body_sha256": "b1ae5e06c7ea262087572d9b48c6575047f037044c8cf5dc0aafd8679f48e4c3",
+          "decoded_body_bytes": 332076,
+          "private_decoded_payload_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/output/private-payloads/GALLERY-NEIGHBOR-03-20060719032007-LK5OF6D6UL4NF26DFXHPP65SGR5ME2UG.decoded",
+          "content_encoding": "identity",
+          "verification": {
+            "curl_exit": 0,
+            "http_status": 200,
+            "link_identity": "exact",
+            "actual_content_type": "image/jpeg",
+            "image_format": "JPEG",
+            "image_frame_count": 1,
+            "image_size": [
+              756,
+              567
+            ],
+            "image_mode": "RGB",
+            "image_validation": "valid",
+            "decoded_payload_sha1_base32": "LK5OF6D6UL4NF26DFXHPP65SGR5ME2UG"
+          },
+          "status": "pending_root"
+        }
+      ],
+      "skipped_after_accept": 0
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR-04",
+      "status": "complete_with_replay_candidates",
+      "cdx_source": "fresh",
+      "latest_unknown": false,
+      "cdx": {
+        "status": "complete_with_replay_candidates",
+        "rows": [
+          {
+            "record_index": "1",
+            "timestamp": "20070227214209",
+            "original": "http://www.worldofwarcraft.com:80/pvp/worldpvp/images/ss10.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "CB2WXTBEEFIK4B5FNEAYN5F3NYR2GP3Q",
+            "length": "221541",
+            "identity": "origin_variant",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": false
+          },
+          {
+            "record_index": "2",
+            "timestamp": "20080402011624",
+            "original": "http://www.worldofwarcraft.com/pvp/worldpvp/images/ss10.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "CB2WXTBEEFIK4B5FNEAYN5F3NYR2GP3Q",
+            "length": "221479",
+            "identity": "origin_variant",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": false
+          },
+          {
+            "record_index": "3",
+            "timestamp": "20080402030847",
+            "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss10.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "CB2WXTBEEFIK4B5FNEAYN5F3NYR2GP3Q",
+            "length": "221473",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20080402030847id_/https://www.worldofwarcraft.com/pvp/worldpvp/images/ss10.jpg"
+          }
+        ],
+        "strict_candidates": [
+          {
+            "record_index": "3",
+            "timestamp": "20080402030847",
+            "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss10.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "CB2WXTBEEFIK4B5FNEAYN5F3NYR2GP3Q",
+            "length": "221473",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20080402030847id_/https://www.worldofwarcraft.com/pvp/worldpvp/images/ss10.jpg"
+          }
+        ],
+        "selected": [
+          {
+            "record_index": "3",
+            "timestamp": "20080402030847",
+            "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss10.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "CB2WXTBEEFIK4B5FNEAYN5F3NYR2GP3Q",
+            "length": "221473",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20080402030847id_/https://www.worldofwarcraft.com/pvp/worldpvp/images/ss10.jpg"
+          }
+        ],
+        "identity_variant_candidates": [
+          {
+            "record_index": "1",
+            "timestamp": "20070227214209",
+            "original": "http://www.worldofwarcraft.com:80/pvp/worldpvp/images/ss10.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "CB2WXTBEEFIK4B5FNEAYN5F3NYR2GP3Q",
+            "length": "221541",
+            "identity": "origin_variant",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": false
+          },
+          {
+            "record_index": "2",
+            "timestamp": "20080402011624",
+            "original": "http://www.worldofwarcraft.com/pvp/worldpvp/images/ss10.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "CB2WXTBEEFIK4B5FNEAYN5F3NYR2GP3Q",
+            "length": "221479",
+            "identity": "origin_variant",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": false
+          }
+        ],
+        "reject_counts": {
+          "identity": 2
+        },
+        "row_count": 3,
+        "resume_keys": [],
+        "potential_truncation": false,
+        "replay_count": 1
+      },
+      "cached_cdx_provenance": null,
+      "fresh_cdx_transport": {
+        "curl_exit": 0,
+        "source_status": 200,
+        "transport": "proxy"
+      },
+      "replay_results": [
+        {
+          "accepted": true,
+          "reasons": [],
+          "curl_exit": 0,
+          "http_status": 200,
+          "connect_statuses": [
+            200
+          ],
+          "memento_datetime": "Wed, 02 Apr 2008 03:08:47 GMT",
+          "link_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss10.jpg",
+          "actual_memento_timestamp": "20080402030847",
+          "link_identity": "exact",
+          "actual_content_type": "image/jpeg",
+          "raw_body_bytes": 221205,
+          "raw_body_sha256": "fa41ee2b56c4725426c30cb578e4fa606b7d7fd0ad62d03f127564752ab7451f",
+          "cdx_length": "221473",
+          "expected_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss10.jpg",
+          "cdx_digest": "CB2WXTBEEFIK4B5FNEAYN5F3NYR2GP3Q",
+          "decoded_body_bytes": 221205,
+          "decoded_body_sha256": "fa41ee2b56c4725426c30cb578e4fa606b7d7fd0ad62d03f127564752ab7451f",
+          "decoded_payload_sha1_base32": "CB2WXTBEEFIK4B5FNEAYN5F3NYR2GP3Q",
+          "image_format": "JPEG",
+          "image_frame_count": 1,
+          "image_size": [
+            800,
+            611
+          ],
+          "image_mode": "RGB",
+          "image_validation": "valid",
+          "accepted_payload_metadata": {
+            "target_key": "GALLERY-NEIGHBOR-04",
+            "kind": "image",
+            "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss10.jpg",
+            "selected_capture_timestamp": "20080402030847",
+            "actual_memento_timestamp": "20080402030847",
+            "actual_link_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss10.jpg",
+            "cdx_digest": "CB2WXTBEEFIK4B5FNEAYN5F3NYR2GP3Q",
+            "cdx_record_length": "221473",
+            "raw_body_sha256": "fa41ee2b56c4725426c30cb578e4fa606b7d7fd0ad62d03f127564752ab7451f",
+            "raw_body_bytes": 221205,
+            "decoded_body_sha256": "fa41ee2b56c4725426c30cb578e4fa606b7d7fd0ad62d03f127564752ab7451f",
+            "decoded_body_bytes": 221205,
+            "private_decoded_payload_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/output/private-payloads/GALLERY-NEIGHBOR-04-20080402030847-CB2WXTBEEFIK4B5FNEAYN5F3NYR2GP3Q.decoded",
+            "content_encoding": "identity",
+            "verification": {
+              "curl_exit": 0,
+              "http_status": 200,
+              "link_identity": "exact",
+              "actual_content_type": "image/jpeg",
+              "image_format": "JPEG",
+              "image_frame_count": 1,
+              "image_size": [
+                800,
+                611
+              ],
+              "image_mode": "RGB",
+              "image_validation": "valid",
+              "decoded_payload_sha1_base32": "CB2WXTBEEFIK4B5FNEAYN5F3NYR2GP3Q"
+            },
+            "status": "pending_root"
+          }
+        }
+      ],
+      "accepted_payloads": [
+        {
+          "target_key": "GALLERY-NEIGHBOR-04",
+          "kind": "image",
+          "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss10.jpg",
+          "selected_capture_timestamp": "20080402030847",
+          "actual_memento_timestamp": "20080402030847",
+          "actual_link_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss10.jpg",
+          "cdx_digest": "CB2WXTBEEFIK4B5FNEAYN5F3NYR2GP3Q",
+          "cdx_record_length": "221473",
+          "raw_body_sha256": "fa41ee2b56c4725426c30cb578e4fa606b7d7fd0ad62d03f127564752ab7451f",
+          "raw_body_bytes": 221205,
+          "decoded_body_sha256": "fa41ee2b56c4725426c30cb578e4fa606b7d7fd0ad62d03f127564752ab7451f",
+          "decoded_body_bytes": 221205,
+          "private_decoded_payload_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/output/private-payloads/GALLERY-NEIGHBOR-04-20080402030847-CB2WXTBEEFIK4B5FNEAYN5F3NYR2GP3Q.decoded",
+          "content_encoding": "identity",
+          "verification": {
+            "curl_exit": 0,
+            "http_status": 200,
+            "link_identity": "exact",
+            "actual_content_type": "image/jpeg",
+            "image_format": "JPEG",
+            "image_frame_count": 1,
+            "image_size": [
+              800,
+              611
+            ],
+            "image_mode": "RGB",
+            "image_validation": "valid",
+            "decoded_payload_sha1_base32": "CB2WXTBEEFIK4B5FNEAYN5F3NYR2GP3Q"
+          },
+          "status": "pending_root"
+        }
+      ],
+      "skipped_after_accept": 0
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR-05",
+      "status": "transport_or_http_unknown",
+      "cdx_source": "fresh",
+      "curl_exit": 35,
+      "source_status": null,
+      "latest_unknown": true,
+      "replay_count": 0
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR-06",
+      "status": "complete_with_replay_candidates",
+      "cdx_source": "fresh",
+      "latest_unknown": false,
+      "cdx": {
+        "status": "complete_with_replay_candidates",
+        "rows": [
+          {
+            "record_index": "1",
+            "timestamp": "20060529144445",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss11.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "EMLSTV5DHD6MNHJOFSVBT4T3VH2RUWTJ",
+            "length": "353555",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true
+          },
+          {
+            "record_index": "2",
+            "timestamp": "20070219065610",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss11.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "EMLSTV5DHD6MNHJOFSVBT4T3VH2RUWTJ",
+            "length": "353555",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true
+          },
+          {
+            "record_index": "3",
+            "timestamp": "20070403225614",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss11.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "EMLSTV5DHD6MNHJOFSVBT4T3VH2RUWTJ",
+            "length": "353553",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20070403225614id_/http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss11.jpg"
+          }
+        ],
+        "strict_candidates": [
+          {
+            "record_index": "1",
+            "timestamp": "20060529144445",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss11.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "EMLSTV5DHD6MNHJOFSVBT4T3VH2RUWTJ",
+            "length": "353555",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true
+          },
+          {
+            "record_index": "2",
+            "timestamp": "20070219065610",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss11.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "EMLSTV5DHD6MNHJOFSVBT4T3VH2RUWTJ",
+            "length": "353555",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true
+          },
+          {
+            "record_index": "3",
+            "timestamp": "20070403225614",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss11.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "EMLSTV5DHD6MNHJOFSVBT4T3VH2RUWTJ",
+            "length": "353553",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20070403225614id_/http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss11.jpg"
+          }
+        ],
+        "selected": [
+          {
+            "record_index": "3",
+            "timestamp": "20070403225614",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss11.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "EMLSTV5DHD6MNHJOFSVBT4T3VH2RUWTJ",
+            "length": "353553",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20070403225614id_/http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss11.jpg"
+          }
+        ],
+        "identity_variant_candidates": [],
+        "reject_counts": {},
+        "row_count": 3,
+        "resume_keys": [],
+        "potential_truncation": false,
+        "replay_count": 1
+      },
+      "cached_cdx_provenance": null,
+      "fresh_cdx_transport": {
+        "curl_exit": 0,
+        "source_status": 200,
+        "transport": "proxy"
+      },
+      "replay_results": [
+        {
+          "accepted": false,
+          "reasons": [
+            "transport_unknown"
+          ],
+          "curl_exit": 35
+        }
+      ],
+      "accepted_payloads": [],
+      "skipped_after_accept": 0
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR-07",
+      "status": "transport_or_http_unknown",
+      "cdx_source": "fresh",
+      "curl_exit": 35,
+      "source_status": null,
+      "latest_unknown": true,
+      "replay_count": 0
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR-08",
+      "status": "transport_or_http_unknown",
+      "cdx_source": "fresh",
+      "curl_exit": 35,
+      "source_status": null,
+      "latest_unknown": true,
+      "replay_count": 0
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR-09",
+      "status": "complete_with_replay_candidates",
+      "cdx_source": "fresh",
+      "latest_unknown": false,
+      "cdx": {
+        "status": "complete_with_replay_candidates",
+        "rows": [
+          {
+            "record_index": "1",
+            "timestamp": "20060719155617",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss12.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "YFEBEO3ZJ3G356LCLDLI5645NW5LDUKV",
+            "length": "299424",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true
+          },
+          {
+            "record_index": "2",
+            "timestamp": "20070219065336",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss12.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "YFEBEO3ZJ3G356LCLDLI5645NW5LDUKV",
+            "length": "299424",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20070219065336id_/http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss12.jpg"
+          }
+        ],
+        "strict_candidates": [
+          {
+            "record_index": "1",
+            "timestamp": "20060719155617",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss12.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "YFEBEO3ZJ3G356LCLDLI5645NW5LDUKV",
+            "length": "299424",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true
+          },
+          {
+            "record_index": "2",
+            "timestamp": "20070219065336",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss12.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "YFEBEO3ZJ3G356LCLDLI5645NW5LDUKV",
+            "length": "299424",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20070219065336id_/http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss12.jpg"
+          }
+        ],
+        "selected": [
+          {
+            "record_index": "2",
+            "timestamp": "20070219065336",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss12.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "YFEBEO3ZJ3G356LCLDLI5645NW5LDUKV",
+            "length": "299424",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20070219065336id_/http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss12.jpg"
+          }
+        ],
+        "identity_variant_candidates": [],
+        "reject_counts": {},
+        "row_count": 2,
+        "resume_keys": [],
+        "potential_truncation": false,
+        "replay_count": 1
+      },
+      "cached_cdx_provenance": null,
+      "fresh_cdx_transport": {
+        "curl_exit": 0,
+        "source_status": 200,
+        "transport": "proxy"
+      },
+      "replay_results": [
+        {
+          "accepted": true,
+          "reasons": [],
+          "curl_exit": 0,
+          "http_status": 200,
+          "connect_statuses": [
+            200
+          ],
+          "memento_datetime": "Mon, 19 Feb 2007 06:53:36 GMT",
+          "link_original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss12.jpg",
+          "actual_memento_timestamp": "20070219065336",
+          "link_identity": "exact",
+          "actual_content_type": "image/jpeg",
+          "raw_body_bytes": 308094,
+          "raw_body_sha256": "936496c13df4a4e10e2480bf5c953d73995ed83ac0890fcb28a1c7a098d45665",
+          "cdx_length": "299424",
+          "expected_original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss12.jpg",
+          "cdx_digest": "YFEBEO3ZJ3G356LCLDLI5645NW5LDUKV",
+          "decoded_body_bytes": 308094,
+          "decoded_body_sha256": "936496c13df4a4e10e2480bf5c953d73995ed83ac0890fcb28a1c7a098d45665",
+          "decoded_payload_sha1_base32": "YFEBEO3ZJ3G356LCLDLI5645NW5LDUKV",
+          "image_format": "JPEG",
+          "image_frame_count": 1,
+          "image_size": [
+            756,
+            567
+          ],
+          "image_mode": "RGB",
+          "image_validation": "valid",
+          "accepted_payload_metadata": {
+            "target_key": "GALLERY-NEIGHBOR-09",
+            "kind": "image",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss12.jpg",
+            "selected_capture_timestamp": "20070219065336",
+            "actual_memento_timestamp": "20070219065336",
+            "actual_link_original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss12.jpg",
+            "cdx_digest": "YFEBEO3ZJ3G356LCLDLI5645NW5LDUKV",
+            "cdx_record_length": "299424",
+            "raw_body_sha256": "936496c13df4a4e10e2480bf5c953d73995ed83ac0890fcb28a1c7a098d45665",
+            "raw_body_bytes": 308094,
+            "decoded_body_sha256": "936496c13df4a4e10e2480bf5c953d73995ed83ac0890fcb28a1c7a098d45665",
+            "decoded_body_bytes": 308094,
+            "private_decoded_payload_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/output/private-payloads/GALLERY-NEIGHBOR-09-20070219065336-YFEBEO3ZJ3G356LCLDLI5645NW5LDUKV.decoded",
+            "content_encoding": "identity",
+            "verification": {
+              "curl_exit": 0,
+              "http_status": 200,
+              "link_identity": "exact",
+              "actual_content_type": "image/jpeg",
+              "image_format": "JPEG",
+              "image_frame_count": 1,
+              "image_size": [
+                756,
+                567
+              ],
+              "image_mode": "RGB",
+              "image_validation": "valid",
+              "decoded_payload_sha1_base32": "YFEBEO3ZJ3G356LCLDLI5645NW5LDUKV"
+            },
+            "status": "pending_root"
+          }
+        }
+      ],
+      "accepted_payloads": [
+        {
+          "target_key": "GALLERY-NEIGHBOR-09",
+          "kind": "image",
+          "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss12.jpg",
+          "selected_capture_timestamp": "20070219065336",
+          "actual_memento_timestamp": "20070219065336",
+          "actual_link_original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss12.jpg",
+          "cdx_digest": "YFEBEO3ZJ3G356LCLDLI5645NW5LDUKV",
+          "cdx_record_length": "299424",
+          "raw_body_sha256": "936496c13df4a4e10e2480bf5c953d73995ed83ac0890fcb28a1c7a098d45665",
+          "raw_body_bytes": 308094,
+          "decoded_body_sha256": "936496c13df4a4e10e2480bf5c953d73995ed83ac0890fcb28a1c7a098d45665",
+          "decoded_body_bytes": 308094,
+          "private_decoded_payload_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/output/private-payloads/GALLERY-NEIGHBOR-09-20070219065336-YFEBEO3ZJ3G356LCLDLI5645NW5LDUKV.decoded",
+          "content_encoding": "identity",
+          "verification": {
+            "curl_exit": 0,
+            "http_status": 200,
+            "link_identity": "exact",
+            "actual_content_type": "image/jpeg",
+            "image_format": "JPEG",
+            "image_frame_count": 1,
+            "image_size": [
+              756,
+              567
+            ],
+            "image_mode": "RGB",
+            "image_validation": "valid",
+            "decoded_payload_sha1_base32": "YFEBEO3ZJ3G356LCLDLI5645NW5LDUKV"
+          },
+          "status": "pending_root"
+        }
+      ],
+      "skipped_after_accept": 0
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR-10",
+      "status": "complete_with_replay_candidates",
+      "cdx_source": "fresh",
+      "latest_unknown": false,
+      "cdx": {
+        "status": "complete_with_replay_candidates",
+        "rows": [
+          {
+            "record_index": "1",
+            "timestamp": "20070227214230",
+            "original": "http://www.worldofwarcraft.com:80/pvp/worldpvp/images/ss12.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "G5OYBSIZ5EO4TDAPL3KZGBU7X3HOLSDJ",
+            "length": "77907",
+            "identity": "origin_variant",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": false
+          },
+          {
+            "record_index": "2",
+            "timestamp": "20080402011533",
+            "original": "http://www.worldofwarcraft.com/pvp/worldpvp/images/ss12.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "G5OYBSIZ5EO4TDAPL3KZGBU7X3HOLSDJ",
+            "length": "77844",
+            "identity": "origin_variant",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": false
+          },
+          {
+            "record_index": "3",
+            "timestamp": "20080402030843",
+            "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss12.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "G5OYBSIZ5EO4TDAPL3KZGBU7X3HOLSDJ",
+            "length": "77842",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20080402030843id_/https://www.worldofwarcraft.com/pvp/worldpvp/images/ss12.jpg"
+          }
+        ],
+        "strict_candidates": [
+          {
+            "record_index": "3",
+            "timestamp": "20080402030843",
+            "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss12.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "G5OYBSIZ5EO4TDAPL3KZGBU7X3HOLSDJ",
+            "length": "77842",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20080402030843id_/https://www.worldofwarcraft.com/pvp/worldpvp/images/ss12.jpg"
+          }
+        ],
+        "selected": [
+          {
+            "record_index": "3",
+            "timestamp": "20080402030843",
+            "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss12.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "G5OYBSIZ5EO4TDAPL3KZGBU7X3HOLSDJ",
+            "length": "77842",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20080402030843id_/https://www.worldofwarcraft.com/pvp/worldpvp/images/ss12.jpg"
+          }
+        ],
+        "identity_variant_candidates": [
+          {
+            "record_index": "1",
+            "timestamp": "20070227214230",
+            "original": "http://www.worldofwarcraft.com:80/pvp/worldpvp/images/ss12.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "G5OYBSIZ5EO4TDAPL3KZGBU7X3HOLSDJ",
+            "length": "77907",
+            "identity": "origin_variant",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": false
+          },
+          {
+            "record_index": "2",
+            "timestamp": "20080402011533",
+            "original": "http://www.worldofwarcraft.com/pvp/worldpvp/images/ss12.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "G5OYBSIZ5EO4TDAPL3KZGBU7X3HOLSDJ",
+            "length": "77844",
+            "identity": "origin_variant",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": false
+          }
+        ],
+        "reject_counts": {
+          "identity": 2
+        },
+        "row_count": 3,
+        "resume_keys": [],
+        "potential_truncation": false,
+        "replay_count": 1
+      },
+      "cached_cdx_provenance": null,
+      "fresh_cdx_transport": {
+        "curl_exit": 0,
+        "source_status": 200,
+        "transport": "proxy"
+      },
+      "replay_results": [
+        {
+          "accepted": true,
+          "reasons": [],
+          "curl_exit": 0,
+          "http_status": 200,
+          "connect_statuses": [
+            200
+          ],
+          "memento_datetime": "Wed, 02 Apr 2008 03:08:43 GMT",
+          "link_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss12.jpg",
+          "actual_memento_timestamp": "20080402030843",
+          "link_identity": "exact",
+          "actual_content_type": "image/jpeg",
+          "raw_body_bytes": 79779,
+          "raw_body_sha256": "a034ccb6e1de53a951c03bfd56de78975fd3fe85e76ad96b250b76610793fb10",
+          "cdx_length": "77842",
+          "expected_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss12.jpg",
+          "cdx_digest": "G5OYBSIZ5EO4TDAPL3KZGBU7X3HOLSDJ",
+          "decoded_body_bytes": 79779,
+          "decoded_body_sha256": "a034ccb6e1de53a951c03bfd56de78975fd3fe85e76ad96b250b76610793fb10",
+          "decoded_payload_sha1_base32": "G5OYBSIZ5EO4TDAPL3KZGBU7X3HOLSDJ",
+          "image_format": "JPEG",
+          "image_frame_count": 1,
+          "image_size": [
+            800,
+            611
+          ],
+          "image_mode": "RGB",
+          "image_validation": "valid",
+          "accepted_payload_metadata": {
+            "target_key": "GALLERY-NEIGHBOR-10",
+            "kind": "image",
+            "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss12.jpg",
+            "selected_capture_timestamp": "20080402030843",
+            "actual_memento_timestamp": "20080402030843",
+            "actual_link_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss12.jpg",
+            "cdx_digest": "G5OYBSIZ5EO4TDAPL3KZGBU7X3HOLSDJ",
+            "cdx_record_length": "77842",
+            "raw_body_sha256": "a034ccb6e1de53a951c03bfd56de78975fd3fe85e76ad96b250b76610793fb10",
+            "raw_body_bytes": 79779,
+            "decoded_body_sha256": "a034ccb6e1de53a951c03bfd56de78975fd3fe85e76ad96b250b76610793fb10",
+            "decoded_body_bytes": 79779,
+            "private_decoded_payload_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/output/private-payloads/GALLERY-NEIGHBOR-10-20080402030843-G5OYBSIZ5EO4TDAPL3KZGBU7X3HOLSDJ.decoded",
+            "content_encoding": "identity",
+            "verification": {
+              "curl_exit": 0,
+              "http_status": 200,
+              "link_identity": "exact",
+              "actual_content_type": "image/jpeg",
+              "image_format": "JPEG",
+              "image_frame_count": 1,
+              "image_size": [
+                800,
+                611
+              ],
+              "image_mode": "RGB",
+              "image_validation": "valid",
+              "decoded_payload_sha1_base32": "G5OYBSIZ5EO4TDAPL3KZGBU7X3HOLSDJ"
+            },
+            "status": "pending_root"
+          }
+        }
+      ],
+      "accepted_payloads": [
+        {
+          "target_key": "GALLERY-NEIGHBOR-10",
+          "kind": "image",
+          "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss12.jpg",
+          "selected_capture_timestamp": "20080402030843",
+          "actual_memento_timestamp": "20080402030843",
+          "actual_link_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss12.jpg",
+          "cdx_digest": "G5OYBSIZ5EO4TDAPL3KZGBU7X3HOLSDJ",
+          "cdx_record_length": "77842",
+          "raw_body_sha256": "a034ccb6e1de53a951c03bfd56de78975fd3fe85e76ad96b250b76610793fb10",
+          "raw_body_bytes": 79779,
+          "decoded_body_sha256": "a034ccb6e1de53a951c03bfd56de78975fd3fe85e76ad96b250b76610793fb10",
+          "decoded_body_bytes": 79779,
+          "private_decoded_payload_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/output/private-payloads/GALLERY-NEIGHBOR-10-20080402030843-G5OYBSIZ5EO4TDAPL3KZGBU7X3HOLSDJ.decoded",
+          "content_encoding": "identity",
+          "verification": {
+            "curl_exit": 0,
+            "http_status": 200,
+            "link_identity": "exact",
+            "actual_content_type": "image/jpeg",
+            "image_format": "JPEG",
+            "image_frame_count": 1,
+            "image_size": [
+              800,
+              611
+            ],
+            "image_mode": "RGB",
+            "image_validation": "valid",
+            "decoded_payload_sha1_base32": "G5OYBSIZ5EO4TDAPL3KZGBU7X3HOLSDJ"
+          },
+          "status": "pending_root"
+        }
+      ],
+      "skipped_after_accept": 0
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR-11",
+      "status": "complete_with_replay_candidates",
+      "cdx_source": "fresh",
+      "latest_unknown": false,
+      "cdx": {
+        "status": "complete_with_replay_candidates",
+        "rows": [
+          {
+            "record_index": "1",
+            "timestamp": "20060903115552",
+            "original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss12.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "5FOQUBTIQKRYII4MT7OXWN52AEWA3KVT",
+            "length": "123913",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true
+          },
+          {
+            "record_index": "2",
+            "timestamp": "20070104223922",
+            "original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss12.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "5FOQUBTIQKRYII4MT7OXWN52AEWA3KVT",
+            "length": "123906",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true
+          },
+          {
+            "record_index": "3",
+            "timestamp": "20070311204222",
+            "original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss12.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "5FOQUBTIQKRYII4MT7OXWN52AEWA3KVT",
+            "length": "123904",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20070311204222id_/http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss12.jpg"
+          }
+        ],
+        "strict_candidates": [
+          {
+            "record_index": "1",
+            "timestamp": "20060903115552",
+            "original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss12.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "5FOQUBTIQKRYII4MT7OXWN52AEWA3KVT",
+            "length": "123913",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true
+          },
+          {
+            "record_index": "2",
+            "timestamp": "20070104223922",
+            "original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss12.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "5FOQUBTIQKRYII4MT7OXWN52AEWA3KVT",
+            "length": "123906",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true
+          },
+          {
+            "record_index": "3",
+            "timestamp": "20070311204222",
+            "original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss12.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "5FOQUBTIQKRYII4MT7OXWN52AEWA3KVT",
+            "length": "123904",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20070311204222id_/http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss12.jpg"
+          }
+        ],
+        "selected": [
+          {
+            "record_index": "3",
+            "timestamp": "20070311204222",
+            "original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss12.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "5FOQUBTIQKRYII4MT7OXWN52AEWA3KVT",
+            "length": "123904",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20070311204222id_/http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss12.jpg"
+          }
+        ],
+        "identity_variant_candidates": [],
+        "reject_counts": {},
+        "row_count": 3,
+        "resume_keys": [],
+        "potential_truncation": false,
+        "replay_count": 1
+      },
+      "cached_cdx_provenance": null,
+      "fresh_cdx_transport": {
+        "curl_exit": 0,
+        "source_status": 200,
+        "transport": "proxy"
+      },
+      "replay_results": [
+        {
+          "accepted": true,
+          "reasons": [],
+          "curl_exit": 0,
+          "http_status": 200,
+          "connect_statuses": [
+            200
+          ],
+          "memento_datetime": "Sun, 11 Mar 2007 20:42:22 GMT",
+          "link_original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss12.jpg",
+          "actual_memento_timestamp": "20070311204222",
+          "link_identity": "exact",
+          "actual_content_type": "image/jpeg",
+          "raw_body_bytes": 123530,
+          "raw_body_sha256": "79f081bf8dde16253af46b4b68956e01a9633c272d06abcb4f2e223540f11f6d",
+          "cdx_length": "123904",
+          "expected_original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss12.jpg",
+          "cdx_digest": "5FOQUBTIQKRYII4MT7OXWN52AEWA3KVT",
+          "decoded_body_bytes": 123530,
+          "decoded_body_sha256": "79f081bf8dde16253af46b4b68956e01a9633c272d06abcb4f2e223540f11f6d",
+          "decoded_payload_sha1_base32": "5FOQUBTIQKRYII4MT7OXWN52AEWA3KVT",
+          "image_format": "JPEG",
+          "image_frame_count": 1,
+          "image_size": [
+            800,
+            600
+          ],
+          "image_mode": "RGB",
+          "image_validation": "valid",
+          "accepted_payload_metadata": {
+            "target_key": "GALLERY-NEIGHBOR-11",
+            "kind": "image",
+            "original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss12.jpg",
+            "selected_capture_timestamp": "20070311204222",
+            "actual_memento_timestamp": "20070311204222",
+            "actual_link_original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss12.jpg",
+            "cdx_digest": "5FOQUBTIQKRYII4MT7OXWN52AEWA3KVT",
+            "cdx_record_length": "123904",
+            "raw_body_sha256": "79f081bf8dde16253af46b4b68956e01a9633c272d06abcb4f2e223540f11f6d",
+            "raw_body_bytes": 123530,
+            "decoded_body_sha256": "79f081bf8dde16253af46b4b68956e01a9633c272d06abcb4f2e223540f11f6d",
+            "decoded_body_bytes": 123530,
+            "private_decoded_payload_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/output/private-payloads/GALLERY-NEIGHBOR-11-20070311204222-5FOQUBTIQKRYII4MT7OXWN52AEWA3KVT.decoded",
+            "content_encoding": "identity",
+            "verification": {
+              "curl_exit": 0,
+              "http_status": 200,
+              "link_identity": "exact",
+              "actual_content_type": "image/jpeg",
+              "image_format": "JPEG",
+              "image_frame_count": 1,
+              "image_size": [
+                800,
+                600
+              ],
+              "image_mode": "RGB",
+              "image_validation": "valid",
+              "decoded_payload_sha1_base32": "5FOQUBTIQKRYII4MT7OXWN52AEWA3KVT"
+            },
+            "status": "pending_root"
+          }
+        }
+      ],
+      "accepted_payloads": [
+        {
+          "target_key": "GALLERY-NEIGHBOR-11",
+          "kind": "image",
+          "original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss12.jpg",
+          "selected_capture_timestamp": "20070311204222",
+          "actual_memento_timestamp": "20070311204222",
+          "actual_link_original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss12.jpg",
+          "cdx_digest": "5FOQUBTIQKRYII4MT7OXWN52AEWA3KVT",
+          "cdx_record_length": "123904",
+          "raw_body_sha256": "79f081bf8dde16253af46b4b68956e01a9633c272d06abcb4f2e223540f11f6d",
+          "raw_body_bytes": 123530,
+          "decoded_body_sha256": "79f081bf8dde16253af46b4b68956e01a9633c272d06abcb4f2e223540f11f6d",
+          "decoded_body_bytes": 123530,
+          "private_decoded_payload_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/output/private-payloads/GALLERY-NEIGHBOR-11-20070311204222-5FOQUBTIQKRYII4MT7OXWN52AEWA3KVT.decoded",
+          "content_encoding": "identity",
+          "verification": {
+            "curl_exit": 0,
+            "http_status": 200,
+            "link_identity": "exact",
+            "actual_content_type": "image/jpeg",
+            "image_format": "JPEG",
+            "image_frame_count": 1,
+            "image_size": [
+              800,
+              600
+            ],
+            "image_mode": "RGB",
+            "image_validation": "valid",
+            "decoded_payload_sha1_base32": "5FOQUBTIQKRYII4MT7OXWN52AEWA3KVT"
+          },
+          "status": "pending_root"
+        }
+      ],
+      "skipped_after_accept": 0
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR-12",
+      "status": "complete_with_replay_candidates",
+      "cdx_source": "fresh",
+      "latest_unknown": false,
+      "cdx": {
+        "status": "complete_with_replay_candidates",
+        "rows": [
+          {
+            "record_index": "1",
+            "timestamp": "20060719032018",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss13.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "SVFF6FLH5KBC6MBWUHBNNZIP6O5YHH36",
+            "length": "81627",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true
+          },
+          {
+            "record_index": "2",
+            "timestamp": "20070219065100",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss13.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "SVFF6FLH5KBC6MBWUHBNNZIP6O5YHH36",
+            "length": "81626",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true
+          },
+          {
+            "record_index": "3",
+            "timestamp": "20070227014722",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss13.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "SVFF6FLH5KBC6MBWUHBNNZIP6O5YHH36",
+            "length": "81629",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20070227014722id_/http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss13.jpg"
+          }
+        ],
+        "strict_candidates": [
+          {
+            "record_index": "1",
+            "timestamp": "20060719032018",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss13.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "SVFF6FLH5KBC6MBWUHBNNZIP6O5YHH36",
+            "length": "81627",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true
+          },
+          {
+            "record_index": "2",
+            "timestamp": "20070219065100",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss13.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "SVFF6FLH5KBC6MBWUHBNNZIP6O5YHH36",
+            "length": "81626",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true
+          },
+          {
+            "record_index": "3",
+            "timestamp": "20070227014722",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss13.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "SVFF6FLH5KBC6MBWUHBNNZIP6O5YHH36",
+            "length": "81629",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20070227014722id_/http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss13.jpg"
+          }
+        ],
+        "selected": [
+          {
+            "record_index": "3",
+            "timestamp": "20070227014722",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss13.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "SVFF6FLH5KBC6MBWUHBNNZIP6O5YHH36",
+            "length": "81629",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20070227014722id_/http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss13.jpg"
+          }
+        ],
+        "identity_variant_candidates": [],
+        "reject_counts": {},
+        "row_count": 3,
+        "resume_keys": [],
+        "potential_truncation": false,
+        "replay_count": 1
+      },
+      "cached_cdx_provenance": null,
+      "fresh_cdx_transport": {
+        "curl_exit": 0,
+        "source_status": 200,
+        "transport": "proxy"
+      },
+      "replay_results": [
+        {
+          "accepted": true,
+          "reasons": [],
+          "curl_exit": 0,
+          "http_status": 200,
+          "connect_statuses": [
+            200
+          ],
+          "memento_datetime": "Tue, 27 Feb 2007 01:47:22 GMT",
+          "link_original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss13.jpg",
+          "actual_memento_timestamp": "20070227014722",
+          "link_identity": "exact",
+          "actual_content_type": "image/jpeg",
+          "raw_body_bytes": 81588,
+          "raw_body_sha256": "b461ee4ade3d82586b8261125c6b3a2c615679c39d401ad1da0c2df4864658f5",
+          "cdx_length": "81629",
+          "expected_original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss13.jpg",
+          "cdx_digest": "SVFF6FLH5KBC6MBWUHBNNZIP6O5YHH36",
+          "decoded_body_bytes": 81588,
+          "decoded_body_sha256": "b461ee4ade3d82586b8261125c6b3a2c615679c39d401ad1da0c2df4864658f5",
+          "decoded_payload_sha1_base32": "SVFF6FLH5KBC6MBWUHBNNZIP6O5YHH36",
+          "image_format": "JPEG",
+          "image_frame_count": 1,
+          "image_size": [
+            750,
+            572
+          ],
+          "image_mode": "RGB",
+          "image_validation": "valid",
+          "accepted_payload_metadata": {
+            "target_key": "GALLERY-NEIGHBOR-12",
+            "kind": "image",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss13.jpg",
+            "selected_capture_timestamp": "20070227014722",
+            "actual_memento_timestamp": "20070227014722",
+            "actual_link_original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss13.jpg",
+            "cdx_digest": "SVFF6FLH5KBC6MBWUHBNNZIP6O5YHH36",
+            "cdx_record_length": "81629",
+            "raw_body_sha256": "b461ee4ade3d82586b8261125c6b3a2c615679c39d401ad1da0c2df4864658f5",
+            "raw_body_bytes": 81588,
+            "decoded_body_sha256": "b461ee4ade3d82586b8261125c6b3a2c615679c39d401ad1da0c2df4864658f5",
+            "decoded_body_bytes": 81588,
+            "private_decoded_payload_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/output/private-payloads/GALLERY-NEIGHBOR-12-20070227014722-SVFF6FLH5KBC6MBWUHBNNZIP6O5YHH36.decoded",
+            "content_encoding": "identity",
+            "verification": {
+              "curl_exit": 0,
+              "http_status": 200,
+              "link_identity": "exact",
+              "actual_content_type": "image/jpeg",
+              "image_format": "JPEG",
+              "image_frame_count": 1,
+              "image_size": [
+                750,
+                572
+              ],
+              "image_mode": "RGB",
+              "image_validation": "valid",
+              "decoded_payload_sha1_base32": "SVFF6FLH5KBC6MBWUHBNNZIP6O5YHH36"
+            },
+            "status": "pending_root"
+          }
+        }
+      ],
+      "accepted_payloads": [
+        {
+          "target_key": "GALLERY-NEIGHBOR-12",
+          "kind": "image",
+          "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss13.jpg",
+          "selected_capture_timestamp": "20070227014722",
+          "actual_memento_timestamp": "20070227014722",
+          "actual_link_original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss13.jpg",
+          "cdx_digest": "SVFF6FLH5KBC6MBWUHBNNZIP6O5YHH36",
+          "cdx_record_length": "81629",
+          "raw_body_sha256": "b461ee4ade3d82586b8261125c6b3a2c615679c39d401ad1da0c2df4864658f5",
+          "raw_body_bytes": 81588,
+          "decoded_body_sha256": "b461ee4ade3d82586b8261125c6b3a2c615679c39d401ad1da0c2df4864658f5",
+          "decoded_body_bytes": 81588,
+          "private_decoded_payload_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/output/private-payloads/GALLERY-NEIGHBOR-12-20070227014722-SVFF6FLH5KBC6MBWUHBNNZIP6O5YHH36.decoded",
+          "content_encoding": "identity",
+          "verification": {
+            "curl_exit": 0,
+            "http_status": 200,
+            "link_identity": "exact",
+            "actual_content_type": "image/jpeg",
+            "image_format": "JPEG",
+            "image_frame_count": 1,
+            "image_size": [
+              750,
+              572
+            ],
+            "image_mode": "RGB",
+            "image_validation": "valid",
+            "decoded_payload_sha1_base32": "SVFF6FLH5KBC6MBWUHBNNZIP6O5YHH36"
+          },
+          "status": "pending_root"
+        }
+      ],
+      "skipped_after_accept": 0
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR-13",
+      "status": "transport_or_http_unknown",
+      "cdx_source": "fresh",
+      "curl_exit": 35,
+      "source_status": null,
+      "latest_unknown": true,
+      "replay_count": 0
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR-14",
+      "status": "complete_with_replay_candidates",
+      "cdx_source": "fresh",
+      "latest_unknown": false,
+      "cdx": {
+        "status": "complete_with_replay_candidates",
+        "rows": [
+          {
+            "record_index": "1",
+            "timestamp": "20060907094759",
+            "original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss2.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "PV7NO6YCSB7VE4FMGCAKX3DYWN6RTMNJ",
+            "length": "121997",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true
+          },
+          {
+            "record_index": "2",
+            "timestamp": "20070104223503",
+            "original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss2.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "PV7NO6YCSB7VE4FMGCAKX3DYWN6RTMNJ",
+            "length": "121988",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20070104223503id_/http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss2.jpg"
+          }
+        ],
+        "strict_candidates": [
+          {
+            "record_index": "1",
+            "timestamp": "20060907094759",
+            "original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss2.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "PV7NO6YCSB7VE4FMGCAKX3DYWN6RTMNJ",
+            "length": "121997",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true
+          },
+          {
+            "record_index": "2",
+            "timestamp": "20070104223503",
+            "original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss2.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "PV7NO6YCSB7VE4FMGCAKX3DYWN6RTMNJ",
+            "length": "121988",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20070104223503id_/http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss2.jpg"
+          }
+        ],
+        "selected": [
+          {
+            "record_index": "2",
+            "timestamp": "20070104223503",
+            "original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss2.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "PV7NO6YCSB7VE4FMGCAKX3DYWN6RTMNJ",
+            "length": "121988",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20070104223503id_/http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss2.jpg"
+          }
+        ],
+        "identity_variant_candidates": [],
+        "reject_counts": {},
+        "row_count": 2,
+        "resume_keys": [],
+        "potential_truncation": false,
+        "replay_count": 1
+      },
+      "cached_cdx_provenance": null,
+      "fresh_cdx_transport": {
+        "curl_exit": 0,
+        "source_status": 200,
+        "transport": "proxy"
+      },
+      "replay_results": [
+        {
+          "accepted": true,
+          "reasons": [],
+          "curl_exit": 0,
+          "http_status": 200,
+          "connect_statuses": [
+            200
+          ],
+          "memento_datetime": "Thu, 04 Jan 2007 22:35:03 GMT",
+          "link_original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss2.jpg",
+          "actual_memento_timestamp": "20070104223503",
+          "link_identity": "exact",
+          "actual_content_type": "image/jpeg",
+          "raw_body_bytes": 121599,
+          "raw_body_sha256": "723afe21c52966b55d973d37fe07f4e6220e51dc4078eda294b85d65065f2520",
+          "cdx_length": "121988",
+          "expected_original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss2.jpg",
+          "cdx_digest": "PV7NO6YCSB7VE4FMGCAKX3DYWN6RTMNJ",
+          "decoded_body_bytes": 121599,
+          "decoded_body_sha256": "723afe21c52966b55d973d37fe07f4e6220e51dc4078eda294b85d65065f2520",
+          "decoded_payload_sha1_base32": "PV7NO6YCSB7VE4FMGCAKX3DYWN6RTMNJ",
+          "image_format": "JPEG",
+          "image_frame_count": 1,
+          "image_size": [
+            800,
+            589
+          ],
+          "image_mode": "RGB",
+          "image_validation": "valid",
+          "accepted_payload_metadata": {
+            "target_key": "GALLERY-NEIGHBOR-14",
+            "kind": "image",
+            "original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss2.jpg",
+            "selected_capture_timestamp": "20070104223503",
+            "actual_memento_timestamp": "20070104223503",
+            "actual_link_original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss2.jpg",
+            "cdx_digest": "PV7NO6YCSB7VE4FMGCAKX3DYWN6RTMNJ",
+            "cdx_record_length": "121988",
+            "raw_body_sha256": "723afe21c52966b55d973d37fe07f4e6220e51dc4078eda294b85d65065f2520",
+            "raw_body_bytes": 121599,
+            "decoded_body_sha256": "723afe21c52966b55d973d37fe07f4e6220e51dc4078eda294b85d65065f2520",
+            "decoded_body_bytes": 121599,
+            "private_decoded_payload_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/output/private-payloads/GALLERY-NEIGHBOR-14-20070104223503-PV7NO6YCSB7VE4FMGCAKX3DYWN6RTMNJ.decoded",
+            "content_encoding": "identity",
+            "verification": {
+              "curl_exit": 0,
+              "http_status": 200,
+              "link_identity": "exact",
+              "actual_content_type": "image/jpeg",
+              "image_format": "JPEG",
+              "image_frame_count": 1,
+              "image_size": [
+                800,
+                589
+              ],
+              "image_mode": "RGB",
+              "image_validation": "valid",
+              "decoded_payload_sha1_base32": "PV7NO6YCSB7VE4FMGCAKX3DYWN6RTMNJ"
+            },
+            "status": "pending_root"
+          }
+        }
+      ],
+      "accepted_payloads": [
+        {
+          "target_key": "GALLERY-NEIGHBOR-14",
+          "kind": "image",
+          "original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss2.jpg",
+          "selected_capture_timestamp": "20070104223503",
+          "actual_memento_timestamp": "20070104223503",
+          "actual_link_original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss2.jpg",
+          "cdx_digest": "PV7NO6YCSB7VE4FMGCAKX3DYWN6RTMNJ",
+          "cdx_record_length": "121988",
+          "raw_body_sha256": "723afe21c52966b55d973d37fe07f4e6220e51dc4078eda294b85d65065f2520",
+          "raw_body_bytes": 121599,
+          "decoded_body_sha256": "723afe21c52966b55d973d37fe07f4e6220e51dc4078eda294b85d65065f2520",
+          "decoded_body_bytes": 121599,
+          "private_decoded_payload_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/output/private-payloads/GALLERY-NEIGHBOR-14-20070104223503-PV7NO6YCSB7VE4FMGCAKX3DYWN6RTMNJ.decoded",
+          "content_encoding": "identity",
+          "verification": {
+            "curl_exit": 0,
+            "http_status": 200,
+            "link_identity": "exact",
+            "actual_content_type": "image/jpeg",
+            "image_format": "JPEG",
+            "image_frame_count": 1,
+            "image_size": [
+              800,
+              589
+            ],
+            "image_mode": "RGB",
+            "image_validation": "valid",
+            "decoded_payload_sha1_base32": "PV7NO6YCSB7VE4FMGCAKX3DYWN6RTMNJ"
+          },
+          "status": "pending_root"
+        }
+      ],
+      "skipped_after_accept": 0
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR-15",
+      "status": "transport_or_http_unknown",
+      "cdx_source": "fresh",
+      "curl_exit": 35,
+      "source_status": null,
+      "latest_unknown": true,
+      "replay_count": 0
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR-16",
+      "status": "transport_or_http_unknown",
+      "cdx_source": "fresh",
+      "curl_exit": 35,
+      "source_status": null,
+      "latest_unknown": true,
+      "replay_count": 0
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR-17",
+      "status": "transport_or_http_unknown",
+      "cdx_source": "fresh",
+      "curl_exit": 35,
+      "source_status": null,
+      "latest_unknown": true,
+      "replay_count": 0
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR-18",
+      "status": "complete_with_replay_candidates",
+      "cdx_source": "fresh",
+      "latest_unknown": false,
+      "cdx": {
+        "status": "complete_with_replay_candidates",
+        "rows": [
+          {
+            "record_index": "1",
+            "timestamp": "20060718133340",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss2.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "KHQZT2BSFMHH2LJOKTFBHKCGHU765HEB",
+            "length": "130235",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20060718133340id_/http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss2.jpg"
+          }
+        ],
+        "strict_candidates": [
+          {
+            "record_index": "1",
+            "timestamp": "20060718133340",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss2.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "KHQZT2BSFMHH2LJOKTFBHKCGHU765HEB",
+            "length": "130235",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20060718133340id_/http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss2.jpg"
+          }
+        ],
+        "selected": [
+          {
+            "record_index": "1",
+            "timestamp": "20060718133340",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss2.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "KHQZT2BSFMHH2LJOKTFBHKCGHU765HEB",
+            "length": "130235",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20060718133340id_/http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss2.jpg"
+          }
+        ],
+        "identity_variant_candidates": [],
+        "reject_counts": {},
+        "row_count": 1,
+        "resume_keys": [],
+        "potential_truncation": false,
+        "replay_count": 1
+      },
+      "cached_cdx_provenance": null,
+      "fresh_cdx_transport": {
+        "curl_exit": 0,
+        "source_status": 200,
+        "transport": "proxy"
+      },
+      "replay_results": [
+        {
+          "accepted": true,
+          "reasons": [],
+          "curl_exit": 0,
+          "http_status": 200,
+          "connect_statuses": [
+            200
+          ],
+          "memento_datetime": "Tue, 18 Jul 2006 13:33:40 GMT",
+          "link_original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss2.jpg",
+          "actual_memento_timestamp": "20060718133340",
+          "link_identity": "exact",
+          "actual_content_type": "image/jpeg",
+          "raw_body_bytes": 130375,
+          "raw_body_sha256": "8478505795343bf334657a1580dea50d1f61d85a60eb1c97833f53616e28f9d4",
+          "cdx_length": "130235",
+          "expected_original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss2.jpg",
+          "cdx_digest": "KHQZT2BSFMHH2LJOKTFBHKCGHU765HEB",
+          "decoded_body_bytes": 130375,
+          "decoded_body_sha256": "8478505795343bf334657a1580dea50d1f61d85a60eb1c97833f53616e28f9d4",
+          "decoded_payload_sha1_base32": "KHQZT2BSFMHH2LJOKTFBHKCGHU765HEB",
+          "image_format": "JPEG",
+          "image_frame_count": 1,
+          "image_size": [
+            756,
+            545
+          ],
+          "image_mode": "RGB",
+          "image_validation": "valid",
+          "accepted_payload_metadata": {
+            "target_key": "GALLERY-NEIGHBOR-18",
+            "kind": "image",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss2.jpg",
+            "selected_capture_timestamp": "20060718133340",
+            "actual_memento_timestamp": "20060718133340",
+            "actual_link_original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss2.jpg",
+            "cdx_digest": "KHQZT2BSFMHH2LJOKTFBHKCGHU765HEB",
+            "cdx_record_length": "130235",
+            "raw_body_sha256": "8478505795343bf334657a1580dea50d1f61d85a60eb1c97833f53616e28f9d4",
+            "raw_body_bytes": 130375,
+            "decoded_body_sha256": "8478505795343bf334657a1580dea50d1f61d85a60eb1c97833f53616e28f9d4",
+            "decoded_body_bytes": 130375,
+            "private_decoded_payload_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/output/private-payloads/GALLERY-NEIGHBOR-18-20060718133340-KHQZT2BSFMHH2LJOKTFBHKCGHU765HEB.decoded",
+            "content_encoding": "identity",
+            "verification": {
+              "curl_exit": 0,
+              "http_status": 200,
+              "link_identity": "exact",
+              "actual_content_type": "image/jpeg",
+              "image_format": "JPEG",
+              "image_frame_count": 1,
+              "image_size": [
+                756,
+                545
+              ],
+              "image_mode": "RGB",
+              "image_validation": "valid",
+              "decoded_payload_sha1_base32": "KHQZT2BSFMHH2LJOKTFBHKCGHU765HEB"
+            },
+            "status": "pending_root"
+          }
+        }
+      ],
+      "accepted_payloads": [
+        {
+          "target_key": "GALLERY-NEIGHBOR-18",
+          "kind": "image",
+          "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss2.jpg",
+          "selected_capture_timestamp": "20060718133340",
+          "actual_memento_timestamp": "20060718133340",
+          "actual_link_original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss2.jpg",
+          "cdx_digest": "KHQZT2BSFMHH2LJOKTFBHKCGHU765HEB",
+          "cdx_record_length": "130235",
+          "raw_body_sha256": "8478505795343bf334657a1580dea50d1f61d85a60eb1c97833f53616e28f9d4",
+          "raw_body_bytes": 130375,
+          "decoded_body_sha256": "8478505795343bf334657a1580dea50d1f61d85a60eb1c97833f53616e28f9d4",
+          "decoded_body_bytes": 130375,
+          "private_decoded_payload_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/output/private-payloads/GALLERY-NEIGHBOR-18-20060718133340-KHQZT2BSFMHH2LJOKTFBHKCGHU765HEB.decoded",
+          "content_encoding": "identity",
+          "verification": {
+            "curl_exit": 0,
+            "http_status": 200,
+            "link_identity": "exact",
+            "actual_content_type": "image/jpeg",
+            "image_format": "JPEG",
+            "image_frame_count": 1,
+            "image_size": [
+              756,
+              545
+            ],
+            "image_mode": "RGB",
+            "image_validation": "valid",
+            "decoded_payload_sha1_base32": "KHQZT2BSFMHH2LJOKTFBHKCGHU765HEB"
+          },
+          "status": "pending_root"
+        }
+      ],
+      "skipped_after_accept": 0
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR-19",
+      "status": "complete_with_replay_candidates",
+      "cdx_source": "fresh",
+      "latest_unknown": false,
+      "cdx": {
+        "status": "complete_with_replay_candidates",
+        "rows": [
+          {
+            "record_index": "1",
+            "timestamp": "20070227214302",
+            "original": "http://www.worldofwarcraft.com:80/pvp/worldpvp/images/ss15.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "ZEP7XYKC3XQ5UEBGWFKQMO4ZMDTMHTRR",
+            "length": "91022",
+            "identity": "origin_variant",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": false
+          },
+          {
+            "record_index": "2",
+            "timestamp": "20080402011611",
+            "original": "http://www.worldofwarcraft.com/pvp/worldpvp/images/ss15.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "ZEP7XYKC3XQ5UEBGWFKQMO4ZMDTMHTRR",
+            "length": "90962",
+            "identity": "origin_variant",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": false
+          },
+          {
+            "record_index": "3",
+            "timestamp": "20080402030735",
+            "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss15.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "ZEP7XYKC3XQ5UEBGWFKQMO4ZMDTMHTRR",
+            "length": "90957",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20080402030735id_/https://www.worldofwarcraft.com/pvp/worldpvp/images/ss15.jpg"
+          }
+        ],
+        "strict_candidates": [
+          {
+            "record_index": "3",
+            "timestamp": "20080402030735",
+            "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss15.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "ZEP7XYKC3XQ5UEBGWFKQMO4ZMDTMHTRR",
+            "length": "90957",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20080402030735id_/https://www.worldofwarcraft.com/pvp/worldpvp/images/ss15.jpg"
+          }
+        ],
+        "selected": [
+          {
+            "record_index": "3",
+            "timestamp": "20080402030735",
+            "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss15.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "ZEP7XYKC3XQ5UEBGWFKQMO4ZMDTMHTRR",
+            "length": "90957",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20080402030735id_/https://www.worldofwarcraft.com/pvp/worldpvp/images/ss15.jpg"
+          }
+        ],
+        "identity_variant_candidates": [
+          {
+            "record_index": "1",
+            "timestamp": "20070227214302",
+            "original": "http://www.worldofwarcraft.com:80/pvp/worldpvp/images/ss15.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "ZEP7XYKC3XQ5UEBGWFKQMO4ZMDTMHTRR",
+            "length": "91022",
+            "identity": "origin_variant",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": false
+          },
+          {
+            "record_index": "2",
+            "timestamp": "20080402011611",
+            "original": "http://www.worldofwarcraft.com/pvp/worldpvp/images/ss15.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "ZEP7XYKC3XQ5UEBGWFKQMO4ZMDTMHTRR",
+            "length": "90962",
+            "identity": "origin_variant",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": false
+          }
+        ],
+        "reject_counts": {
+          "identity": 2
+        },
+        "row_count": 3,
+        "resume_keys": [],
+        "potential_truncation": false,
+        "replay_count": 1
+      },
+      "cached_cdx_provenance": null,
+      "fresh_cdx_transport": {
+        "curl_exit": 0,
+        "source_status": 200,
+        "transport": "proxy"
+      },
+      "replay_results": [
+        {
+          "accepted": true,
+          "reasons": [],
+          "curl_exit": 0,
+          "http_status": 200,
+          "connect_statuses": [
+            200
+          ],
+          "memento_datetime": "Wed, 02 Apr 2008 03:07:35 GMT",
+          "link_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss15.jpg",
+          "actual_memento_timestamp": "20080402030735",
+          "link_identity": "exact",
+          "actual_content_type": "image/jpeg",
+          "raw_body_bytes": 91925,
+          "raw_body_sha256": "859253df7d5b7aa87b15eea065fb84a7e7d011ae0a5a0a0f5b2dd3a44b19572a",
+          "cdx_length": "90957",
+          "expected_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss15.jpg",
+          "cdx_digest": "ZEP7XYKC3XQ5UEBGWFKQMO4ZMDTMHTRR",
+          "decoded_body_bytes": 91925,
+          "decoded_body_sha256": "859253df7d5b7aa87b15eea065fb84a7e7d011ae0a5a0a0f5b2dd3a44b19572a",
+          "decoded_payload_sha1_base32": "ZEP7XYKC3XQ5UEBGWFKQMO4ZMDTMHTRR",
+          "image_format": "JPEG",
+          "image_frame_count": 1,
+          "image_size": [
+            800,
+            600
+          ],
+          "image_mode": "RGB",
+          "image_validation": "valid",
+          "accepted_payload_metadata": {
+            "target_key": "GALLERY-NEIGHBOR-19",
+            "kind": "image",
+            "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss15.jpg",
+            "selected_capture_timestamp": "20080402030735",
+            "actual_memento_timestamp": "20080402030735",
+            "actual_link_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss15.jpg",
+            "cdx_digest": "ZEP7XYKC3XQ5UEBGWFKQMO4ZMDTMHTRR",
+            "cdx_record_length": "90957",
+            "raw_body_sha256": "859253df7d5b7aa87b15eea065fb84a7e7d011ae0a5a0a0f5b2dd3a44b19572a",
+            "raw_body_bytes": 91925,
+            "decoded_body_sha256": "859253df7d5b7aa87b15eea065fb84a7e7d011ae0a5a0a0f5b2dd3a44b19572a",
+            "decoded_body_bytes": 91925,
+            "private_decoded_payload_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/output/private-payloads/GALLERY-NEIGHBOR-19-20080402030735-ZEP7XYKC3XQ5UEBGWFKQMO4ZMDTMHTRR.decoded",
+            "content_encoding": "identity",
+            "verification": {
+              "curl_exit": 0,
+              "http_status": 200,
+              "link_identity": "exact",
+              "actual_content_type": "image/jpeg",
+              "image_format": "JPEG",
+              "image_frame_count": 1,
+              "image_size": [
+                800,
+                600
+              ],
+              "image_mode": "RGB",
+              "image_validation": "valid",
+              "decoded_payload_sha1_base32": "ZEP7XYKC3XQ5UEBGWFKQMO4ZMDTMHTRR"
+            },
+            "status": "pending_root"
+          }
+        }
+      ],
+      "accepted_payloads": [
+        {
+          "target_key": "GALLERY-NEIGHBOR-19",
+          "kind": "image",
+          "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss15.jpg",
+          "selected_capture_timestamp": "20080402030735",
+          "actual_memento_timestamp": "20080402030735",
+          "actual_link_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss15.jpg",
+          "cdx_digest": "ZEP7XYKC3XQ5UEBGWFKQMO4ZMDTMHTRR",
+          "cdx_record_length": "90957",
+          "raw_body_sha256": "859253df7d5b7aa87b15eea065fb84a7e7d011ae0a5a0a0f5b2dd3a44b19572a",
+          "raw_body_bytes": 91925,
+          "decoded_body_sha256": "859253df7d5b7aa87b15eea065fb84a7e7d011ae0a5a0a0f5b2dd3a44b19572a",
+          "decoded_body_bytes": 91925,
+          "private_decoded_payload_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/output/private-payloads/GALLERY-NEIGHBOR-19-20080402030735-ZEP7XYKC3XQ5UEBGWFKQMO4ZMDTMHTRR.decoded",
+          "content_encoding": "identity",
+          "verification": {
+            "curl_exit": 0,
+            "http_status": 200,
+            "link_identity": "exact",
+            "actual_content_type": "image/jpeg",
+            "image_format": "JPEG",
+            "image_frame_count": 1,
+            "image_size": [
+              800,
+              600
+            ],
+            "image_mode": "RGB",
+            "image_validation": "valid",
+            "decoded_payload_sha1_base32": "ZEP7XYKC3XQ5UEBGWFKQMO4ZMDTMHTRR"
+          },
+          "status": "pending_root"
+        }
+      ],
+      "skipped_after_accept": 0
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR-20",
+      "status": "complete_with_replay_candidates",
+      "cdx_source": "fresh",
+      "latest_unknown": false,
+      "cdx": {
+        "status": "complete_with_replay_candidates",
+        "rows": [
+          {
+            "record_index": "1",
+            "timestamp": "20060910130954",
+            "original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss4.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "5636MFEAKYCHKDLK3A75QZEGJO3KA6QZ",
+            "length": "129292",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true
+          },
+          {
+            "record_index": "2",
+            "timestamp": "20070104223520",
+            "original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss4.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "5636MFEAKYCHKDLK3A75QZEGJO3KA6QZ",
+            "length": "129289",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20070104223520id_/http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss4.jpg"
+          }
+        ],
+        "strict_candidates": [
+          {
+            "record_index": "1",
+            "timestamp": "20060910130954",
+            "original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss4.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "5636MFEAKYCHKDLK3A75QZEGJO3KA6QZ",
+            "length": "129292",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true
+          },
+          {
+            "record_index": "2",
+            "timestamp": "20070104223520",
+            "original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss4.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "5636MFEAKYCHKDLK3A75QZEGJO3KA6QZ",
+            "length": "129289",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20070104223520id_/http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss4.jpg"
+          }
+        ],
+        "selected": [
+          {
+            "record_index": "2",
+            "timestamp": "20070104223520",
+            "original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss4.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "5636MFEAKYCHKDLK3A75QZEGJO3KA6QZ",
+            "length": "129289",
+            "identity": "exact",
+            "expected_mime": true,
+            "within_window": true,
+            "eligible": true,
+            "replay_url": "https://web.archive.org/web/20070104223520id_/http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss4.jpg"
+          }
+        ],
+        "identity_variant_candidates": [],
+        "reject_counts": {},
+        "row_count": 2,
+        "resume_keys": [],
+        "potential_truncation": false,
+        "replay_count": 1
+      },
+      "cached_cdx_provenance": null,
+      "fresh_cdx_transport": {
+        "curl_exit": 0,
+        "source_status": 200,
+        "transport": "proxy"
+      },
+      "replay_results": [
+        {
+          "accepted": true,
+          "reasons": [],
+          "curl_exit": 0,
+          "http_status": 200,
+          "connect_statuses": [
+            200
+          ],
+          "memento_datetime": "Thu, 04 Jan 2007 22:35:20 GMT",
+          "link_original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss4.jpg",
+          "actual_memento_timestamp": "20070104223520",
+          "link_identity": "exact",
+          "actual_content_type": "image/jpeg",
+          "raw_body_bytes": 129048,
+          "raw_body_sha256": "777b6bd602115b8c2bf0424c86547126fbdea6e3c4cabf0f046b491e077aaad9",
+          "cdx_length": "129289",
+          "expected_original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss4.jpg",
+          "cdx_digest": "5636MFEAKYCHKDLK3A75QZEGJO3KA6QZ",
+          "decoded_body_bytes": 129048,
+          "decoded_body_sha256": "777b6bd602115b8c2bf0424c86547126fbdea6e3c4cabf0f046b491e077aaad9",
+          "decoded_payload_sha1_base32": "5636MFEAKYCHKDLK3A75QZEGJO3KA6QZ",
+          "image_format": "JPEG",
+          "image_frame_count": 1,
+          "image_size": [
+            800,
+            611
+          ],
+          "image_mode": "RGB",
+          "image_validation": "valid",
+          "accepted_payload_metadata": {
+            "target_key": "GALLERY-NEIGHBOR-20",
+            "kind": "image",
+            "original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss4.jpg",
+            "selected_capture_timestamp": "20070104223520",
+            "actual_memento_timestamp": "20070104223520",
+            "actual_link_original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss4.jpg",
+            "cdx_digest": "5636MFEAKYCHKDLK3A75QZEGJO3KA6QZ",
+            "cdx_record_length": "129289",
+            "raw_body_sha256": "777b6bd602115b8c2bf0424c86547126fbdea6e3c4cabf0f046b491e077aaad9",
+            "raw_body_bytes": 129048,
+            "decoded_body_sha256": "777b6bd602115b8c2bf0424c86547126fbdea6e3c4cabf0f046b491e077aaad9",
+            "decoded_body_bytes": 129048,
+            "private_decoded_payload_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/output/private-payloads/GALLERY-NEIGHBOR-20-20070104223520-5636MFEAKYCHKDLK3A75QZEGJO3KA6QZ.decoded",
+            "content_encoding": "identity",
+            "verification": {
+              "curl_exit": 0,
+              "http_status": 200,
+              "link_identity": "exact",
+              "actual_content_type": "image/jpeg",
+              "image_format": "JPEG",
+              "image_frame_count": 1,
+              "image_size": [
+                800,
+                611
+              ],
+              "image_mode": "RGB",
+              "image_validation": "valid",
+              "decoded_payload_sha1_base32": "5636MFEAKYCHKDLK3A75QZEGJO3KA6QZ"
+            },
+            "status": "pending_root"
+          }
+        }
+      ],
+      "accepted_payloads": [
+        {
+          "target_key": "GALLERY-NEIGHBOR-20",
+          "kind": "image",
+          "original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss4.jpg",
+          "selected_capture_timestamp": "20070104223520",
+          "actual_memento_timestamp": "20070104223520",
+          "actual_link_original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss4.jpg",
+          "cdx_digest": "5636MFEAKYCHKDLK3A75QZEGJO3KA6QZ",
+          "cdx_record_length": "129289",
+          "raw_body_sha256": "777b6bd602115b8c2bf0424c86547126fbdea6e3c4cabf0f046b491e077aaad9",
+          "raw_body_bytes": 129048,
+          "decoded_body_sha256": "777b6bd602115b8c2bf0424c86547126fbdea6e3c4cabf0f046b491e077aaad9",
+          "decoded_body_bytes": 129048,
+          "private_decoded_payload_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/output/private-payloads/GALLERY-NEIGHBOR-20-20070104223520-5636MFEAKYCHKDLK3A75QZEGJO3KA6QZ.decoded",
+          "content_encoding": "identity",
+          "verification": {
+            "curl_exit": 0,
+            "http_status": 200,
+            "link_identity": "exact",
+            "actual_content_type": "image/jpeg",
+            "image_format": "JPEG",
+            "image_frame_count": 1,
+            "image_size": [
+              800,
+              611
+            ],
+            "image_mode": "RGB",
+            "image_validation": "valid",
+            "decoded_payload_sha1_base32": "5636MFEAKYCHKDLK3A75QZEGJO3KA6QZ"
+          },
+          "status": "pending_root"
+        }
+      ],
+      "skipped_after_accept": 0
+    }
+  ],
+  "accepted_payloads": [
+    {
+      "target_key": "GALLERY-NEIGHBOR-01",
+      "kind": "image",
+      "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss1.jpg",
+      "selected_capture_timestamp": "20080402030650",
+      "actual_memento_timestamp": "20080402030650",
+      "actual_link_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss1.jpg",
+      "cdx_digest": "3T4FZMME2VMXBWXUCTXHRKCYYTDLKAML",
+      "cdx_record_length": "117134",
+      "raw_body_sha256": "5b65329e7ae2cf4e7aa12d521cf54d8d9dc6cd5b8e09f5b920b3a326f62a8fed",
+      "raw_body_bytes": 117648,
+      "decoded_body_sha256": "5b65329e7ae2cf4e7aa12d521cf54d8d9dc6cd5b8e09f5b920b3a326f62a8fed",
+      "decoded_body_bytes": 117648,
+      "private_decoded_payload_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/output/private-payloads/GALLERY-NEIGHBOR-01-20080402030650-3T4FZMME2VMXBWXUCTXHRKCYYTDLKAML.decoded",
+      "content_encoding": "identity",
+      "verification": {
+        "curl_exit": 0,
+        "http_status": 200,
+        "link_identity": "exact",
+        "actual_content_type": "image/jpeg",
+        "image_format": "JPEG",
+        "image_frame_count": 1,
+        "image_size": [
+          800,
+          611
+        ],
+        "image_mode": "RGB",
+        "image_validation": "valid",
+        "decoded_payload_sha1_base32": "3T4FZMME2VMXBWXUCTXHRKCYYTDLKAML"
+      },
+      "status": "pending_root"
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR-02",
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss1.jpg",
+      "selected_capture_timestamp": "20070104223456",
+      "actual_memento_timestamp": "20070104223456",
+      "actual_link_original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss1.jpg",
+      "cdx_digest": "RJTHUQU4ICQICHLBRX7DBNGPP6LEYROI",
+      "cdx_record_length": "148246",
+      "raw_body_sha256": "8ab09738344dc900fe438add8764942a48a3a6c79fd1a268dfe72e30205af43e",
+      "raw_body_bytes": 147889,
+      "decoded_body_sha256": "8ab09738344dc900fe438add8764942a48a3a6c79fd1a268dfe72e30205af43e",
+      "decoded_body_bytes": 147889,
+      "private_decoded_payload_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/output/private-payloads/GALLERY-NEIGHBOR-02-20070104223456-RJTHUQU4ICQICHLBRX7DBNGPP6LEYROI.decoded",
+      "content_encoding": "identity",
+      "verification": {
+        "curl_exit": 0,
+        "http_status": 200,
+        "link_identity": "exact",
+        "actual_content_type": "image/jpeg",
+        "image_format": "JPEG",
+        "image_frame_count": 1,
+        "image_size": [
+          800,
+          611
+        ],
+        "image_mode": "RGB",
+        "image_validation": "valid",
+        "decoded_payload_sha1_base32": "RJTHUQU4ICQICHLBRX7DBNGPP6LEYROI"
+      },
+      "status": "pending_root"
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR-03",
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss10.jpg",
+      "selected_capture_timestamp": "20060719032007",
+      "actual_memento_timestamp": "20060719032007",
+      "actual_link_original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss10.jpg",
+      "cdx_digest": "LK5OF6D6UL4NF26DFXHPP65SGR5ME2UG",
+      "cdx_record_length": "322973",
+      "raw_body_sha256": "b1ae5e06c7ea262087572d9b48c6575047f037044c8cf5dc0aafd8679f48e4c3",
+      "raw_body_bytes": 332076,
+      "decoded_body_sha256": "b1ae5e06c7ea262087572d9b48c6575047f037044c8cf5dc0aafd8679f48e4c3",
+      "decoded_body_bytes": 332076,
+      "private_decoded_payload_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/output/private-payloads/GALLERY-NEIGHBOR-03-20060719032007-LK5OF6D6UL4NF26DFXHPP65SGR5ME2UG.decoded",
+      "content_encoding": "identity",
+      "verification": {
+        "curl_exit": 0,
+        "http_status": 200,
+        "link_identity": "exact",
+        "actual_content_type": "image/jpeg",
+        "image_format": "JPEG",
+        "image_frame_count": 1,
+        "image_size": [
+          756,
+          567
+        ],
+        "image_mode": "RGB",
+        "image_validation": "valid",
+        "decoded_payload_sha1_base32": "LK5OF6D6UL4NF26DFXHPP65SGR5ME2UG"
+      },
+      "status": "pending_root"
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR-04",
+      "kind": "image",
+      "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss10.jpg",
+      "selected_capture_timestamp": "20080402030847",
+      "actual_memento_timestamp": "20080402030847",
+      "actual_link_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss10.jpg",
+      "cdx_digest": "CB2WXTBEEFIK4B5FNEAYN5F3NYR2GP3Q",
+      "cdx_record_length": "221473",
+      "raw_body_sha256": "fa41ee2b56c4725426c30cb578e4fa606b7d7fd0ad62d03f127564752ab7451f",
+      "raw_body_bytes": 221205,
+      "decoded_body_sha256": "fa41ee2b56c4725426c30cb578e4fa606b7d7fd0ad62d03f127564752ab7451f",
+      "decoded_body_bytes": 221205,
+      "private_decoded_payload_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/output/private-payloads/GALLERY-NEIGHBOR-04-20080402030847-CB2WXTBEEFIK4B5FNEAYN5F3NYR2GP3Q.decoded",
+      "content_encoding": "identity",
+      "verification": {
+        "curl_exit": 0,
+        "http_status": 200,
+        "link_identity": "exact",
+        "actual_content_type": "image/jpeg",
+        "image_format": "JPEG",
+        "image_frame_count": 1,
+        "image_size": [
+          800,
+          611
+        ],
+        "image_mode": "RGB",
+        "image_validation": "valid",
+        "decoded_payload_sha1_base32": "CB2WXTBEEFIK4B5FNEAYN5F3NYR2GP3Q"
+      },
+      "status": "pending_root"
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR-09",
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss12.jpg",
+      "selected_capture_timestamp": "20070219065336",
+      "actual_memento_timestamp": "20070219065336",
+      "actual_link_original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss12.jpg",
+      "cdx_digest": "YFEBEO3ZJ3G356LCLDLI5645NW5LDUKV",
+      "cdx_record_length": "299424",
+      "raw_body_sha256": "936496c13df4a4e10e2480bf5c953d73995ed83ac0890fcb28a1c7a098d45665",
+      "raw_body_bytes": 308094,
+      "decoded_body_sha256": "936496c13df4a4e10e2480bf5c953d73995ed83ac0890fcb28a1c7a098d45665",
+      "decoded_body_bytes": 308094,
+      "private_decoded_payload_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/output/private-payloads/GALLERY-NEIGHBOR-09-20070219065336-YFEBEO3ZJ3G356LCLDLI5645NW5LDUKV.decoded",
+      "content_encoding": "identity",
+      "verification": {
+        "curl_exit": 0,
+        "http_status": 200,
+        "link_identity": "exact",
+        "actual_content_type": "image/jpeg",
+        "image_format": "JPEG",
+        "image_frame_count": 1,
+        "image_size": [
+          756,
+          567
+        ],
+        "image_mode": "RGB",
+        "image_validation": "valid",
+        "decoded_payload_sha1_base32": "YFEBEO3ZJ3G356LCLDLI5645NW5LDUKV"
+      },
+      "status": "pending_root"
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR-10",
+      "kind": "image",
+      "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss12.jpg",
+      "selected_capture_timestamp": "20080402030843",
+      "actual_memento_timestamp": "20080402030843",
+      "actual_link_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss12.jpg",
+      "cdx_digest": "G5OYBSIZ5EO4TDAPL3KZGBU7X3HOLSDJ",
+      "cdx_record_length": "77842",
+      "raw_body_sha256": "a034ccb6e1de53a951c03bfd56de78975fd3fe85e76ad96b250b76610793fb10",
+      "raw_body_bytes": 79779,
+      "decoded_body_sha256": "a034ccb6e1de53a951c03bfd56de78975fd3fe85e76ad96b250b76610793fb10",
+      "decoded_body_bytes": 79779,
+      "private_decoded_payload_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/output/private-payloads/GALLERY-NEIGHBOR-10-20080402030843-G5OYBSIZ5EO4TDAPL3KZGBU7X3HOLSDJ.decoded",
+      "content_encoding": "identity",
+      "verification": {
+        "curl_exit": 0,
+        "http_status": 200,
+        "link_identity": "exact",
+        "actual_content_type": "image/jpeg",
+        "image_format": "JPEG",
+        "image_frame_count": 1,
+        "image_size": [
+          800,
+          611
+        ],
+        "image_mode": "RGB",
+        "image_validation": "valid",
+        "decoded_payload_sha1_base32": "G5OYBSIZ5EO4TDAPL3KZGBU7X3HOLSDJ"
+      },
+      "status": "pending_root"
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR-11",
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss12.jpg",
+      "selected_capture_timestamp": "20070311204222",
+      "actual_memento_timestamp": "20070311204222",
+      "actual_link_original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss12.jpg",
+      "cdx_digest": "5FOQUBTIQKRYII4MT7OXWN52AEWA3KVT",
+      "cdx_record_length": "123904",
+      "raw_body_sha256": "79f081bf8dde16253af46b4b68956e01a9633c272d06abcb4f2e223540f11f6d",
+      "raw_body_bytes": 123530,
+      "decoded_body_sha256": "79f081bf8dde16253af46b4b68956e01a9633c272d06abcb4f2e223540f11f6d",
+      "decoded_body_bytes": 123530,
+      "private_decoded_payload_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/output/private-payloads/GALLERY-NEIGHBOR-11-20070311204222-5FOQUBTIQKRYII4MT7OXWN52AEWA3KVT.decoded",
+      "content_encoding": "identity",
+      "verification": {
+        "curl_exit": 0,
+        "http_status": 200,
+        "link_identity": "exact",
+        "actual_content_type": "image/jpeg",
+        "image_format": "JPEG",
+        "image_frame_count": 1,
+        "image_size": [
+          800,
+          600
+        ],
+        "image_mode": "RGB",
+        "image_validation": "valid",
+        "decoded_payload_sha1_base32": "5FOQUBTIQKRYII4MT7OXWN52AEWA3KVT"
+      },
+      "status": "pending_root"
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR-12",
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss13.jpg",
+      "selected_capture_timestamp": "20070227014722",
+      "actual_memento_timestamp": "20070227014722",
+      "actual_link_original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss13.jpg",
+      "cdx_digest": "SVFF6FLH5KBC6MBWUHBNNZIP6O5YHH36",
+      "cdx_record_length": "81629",
+      "raw_body_sha256": "b461ee4ade3d82586b8261125c6b3a2c615679c39d401ad1da0c2df4864658f5",
+      "raw_body_bytes": 81588,
+      "decoded_body_sha256": "b461ee4ade3d82586b8261125c6b3a2c615679c39d401ad1da0c2df4864658f5",
+      "decoded_body_bytes": 81588,
+      "private_decoded_payload_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/output/private-payloads/GALLERY-NEIGHBOR-12-20070227014722-SVFF6FLH5KBC6MBWUHBNNZIP6O5YHH36.decoded",
+      "content_encoding": "identity",
+      "verification": {
+        "curl_exit": 0,
+        "http_status": 200,
+        "link_identity": "exact",
+        "actual_content_type": "image/jpeg",
+        "image_format": "JPEG",
+        "image_frame_count": 1,
+        "image_size": [
+          750,
+          572
+        ],
+        "image_mode": "RGB",
+        "image_validation": "valid",
+        "decoded_payload_sha1_base32": "SVFF6FLH5KBC6MBWUHBNNZIP6O5YHH36"
+      },
+      "status": "pending_root"
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR-14",
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss2.jpg",
+      "selected_capture_timestamp": "20070104223503",
+      "actual_memento_timestamp": "20070104223503",
+      "actual_link_original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss2.jpg",
+      "cdx_digest": "PV7NO6YCSB7VE4FMGCAKX3DYWN6RTMNJ",
+      "cdx_record_length": "121988",
+      "raw_body_sha256": "723afe21c52966b55d973d37fe07f4e6220e51dc4078eda294b85d65065f2520",
+      "raw_body_bytes": 121599,
+      "decoded_body_sha256": "723afe21c52966b55d973d37fe07f4e6220e51dc4078eda294b85d65065f2520",
+      "decoded_body_bytes": 121599,
+      "private_decoded_payload_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/output/private-payloads/GALLERY-NEIGHBOR-14-20070104223503-PV7NO6YCSB7VE4FMGCAKX3DYWN6RTMNJ.decoded",
+      "content_encoding": "identity",
+      "verification": {
+        "curl_exit": 0,
+        "http_status": 200,
+        "link_identity": "exact",
+        "actual_content_type": "image/jpeg",
+        "image_format": "JPEG",
+        "image_frame_count": 1,
+        "image_size": [
+          800,
+          589
+        ],
+        "image_mode": "RGB",
+        "image_validation": "valid",
+        "decoded_payload_sha1_base32": "PV7NO6YCSB7VE4FMGCAKX3DYWN6RTMNJ"
+      },
+      "status": "pending_root"
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR-18",
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss2.jpg",
+      "selected_capture_timestamp": "20060718133340",
+      "actual_memento_timestamp": "20060718133340",
+      "actual_link_original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss2.jpg",
+      "cdx_digest": "KHQZT2BSFMHH2LJOKTFBHKCGHU765HEB",
+      "cdx_record_length": "130235",
+      "raw_body_sha256": "8478505795343bf334657a1580dea50d1f61d85a60eb1c97833f53616e28f9d4",
+      "raw_body_bytes": 130375,
+      "decoded_body_sha256": "8478505795343bf334657a1580dea50d1f61d85a60eb1c97833f53616e28f9d4",
+      "decoded_body_bytes": 130375,
+      "private_decoded_payload_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/output/private-payloads/GALLERY-NEIGHBOR-18-20060718133340-KHQZT2BSFMHH2LJOKTFBHKCGHU765HEB.decoded",
+      "content_encoding": "identity",
+      "verification": {
+        "curl_exit": 0,
+        "http_status": 200,
+        "link_identity": "exact",
+        "actual_content_type": "image/jpeg",
+        "image_format": "JPEG",
+        "image_frame_count": 1,
+        "image_size": [
+          756,
+          545
+        ],
+        "image_mode": "RGB",
+        "image_validation": "valid",
+        "decoded_payload_sha1_base32": "KHQZT2BSFMHH2LJOKTFBHKCGHU765HEB"
+      },
+      "status": "pending_root"
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR-19",
+      "kind": "image",
+      "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss15.jpg",
+      "selected_capture_timestamp": "20080402030735",
+      "actual_memento_timestamp": "20080402030735",
+      "actual_link_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss15.jpg",
+      "cdx_digest": "ZEP7XYKC3XQ5UEBGWFKQMO4ZMDTMHTRR",
+      "cdx_record_length": "90957",
+      "raw_body_sha256": "859253df7d5b7aa87b15eea065fb84a7e7d011ae0a5a0a0f5b2dd3a44b19572a",
+      "raw_body_bytes": 91925,
+      "decoded_body_sha256": "859253df7d5b7aa87b15eea065fb84a7e7d011ae0a5a0a0f5b2dd3a44b19572a",
+      "decoded_body_bytes": 91925,
+      "private_decoded_payload_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/output/private-payloads/GALLERY-NEIGHBOR-19-20080402030735-ZEP7XYKC3XQ5UEBGWFKQMO4ZMDTMHTRR.decoded",
+      "content_encoding": "identity",
+      "verification": {
+        "curl_exit": 0,
+        "http_status": 200,
+        "link_identity": "exact",
+        "actual_content_type": "image/jpeg",
+        "image_format": "JPEG",
+        "image_frame_count": 1,
+        "image_size": [
+          800,
+          600
+        ],
+        "image_mode": "RGB",
+        "image_validation": "valid",
+        "decoded_payload_sha1_base32": "ZEP7XYKC3XQ5UEBGWFKQMO4ZMDTMHTRR"
+      },
+      "status": "pending_root"
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR-20",
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss4.jpg",
+      "selected_capture_timestamp": "20070104223520",
+      "actual_memento_timestamp": "20070104223520",
+      "actual_link_original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss4.jpg",
+      "cdx_digest": "5636MFEAKYCHKDLK3A75QZEGJO3KA6QZ",
+      "cdx_record_length": "129289",
+      "raw_body_sha256": "777b6bd602115b8c2bf0424c86547126fbdea6e3c4cabf0f046b491e077aaad9",
+      "raw_body_bytes": 129048,
+      "decoded_body_sha256": "777b6bd602115b8c2bf0424c86547126fbdea6e3c4cabf0f046b491e077aaad9",
+      "decoded_body_bytes": 129048,
+      "private_decoded_payload_path": "research/continuous-recovery-20261016/network/gallery-neighbors01/output/private-payloads/GALLERY-NEIGHBOR-20-20070104223520-5636MFEAKYCHKDLK3A75QZEGJO3KA6QZ.decoded",
+      "content_encoding": "identity",
+      "verification": {
+        "curl_exit": 0,
+        "http_status": 200,
+        "link_identity": "exact",
+        "actual_content_type": "image/jpeg",
+        "image_format": "JPEG",
+        "image_frame_count": 1,
+        "image_size": [
+          800,
+          611
+        ],
+        "image_mode": "RGB",
+        "image_validation": "valid",
+        "decoded_payload_sha1_base32": "5636MFEAKYCHKDLK3A75QZEGJO3KA6QZ"
+      },
+      "status": "pending_root"
+    }
+  ],
+  "deployment_claim": false,
+  "accepted_payload_status": "pending_root"
+}
