@@ -9,6 +9,7 @@
 
 ## 2026-10-16
 
+- 发布 v16，补回九张历史新闻配图和两张欧服每日截图；线上 19 项文件核对通过。新闻及图库仍有缺图，离线包暂为 v14。[线上核对](research/continuous-recovery-20261016/publication/root-v16-pages-online-acceptance.json)
 - 发布 v15，补回 2007 年 8 月的 50 条新闻；现有侧栏的历史内容入口已接通，图库与新闻配图继续补齐。离线包暂为 v14。[线上核对](research/continuous-recovery-20261016/publication/root-pages-online-acceptance.json)
 - 启动本轮持续恢复，核对玩家图库未完成项，并调查欧服缩略图与新闻配图的可用存档。[工作记录](docs/continuous-recovery-20261016.md)
 

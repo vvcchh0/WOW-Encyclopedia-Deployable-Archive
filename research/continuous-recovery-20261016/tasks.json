@@ -76,26 +76,32 @@
     {
       "id": "LOCAL02-V16",
       "owner": "/root/local_recovery_20261016",
-      "status": "root_accepted_local",
+      "status": "published_accepted",
       "result": {
         "new_images": 11,
         "overlays": 49,
         "declared_files": 8507,
         "browser_checks": 12,
-        "acceptance": "research/continuous-recovery-20261016/publication/root-v16-local-acceptance.json"
+        "acceptance": "research/continuous-recovery-20261016/publication/root-v16-local-acceptance.json",
+        "pages_commit": "96911e7ba7eda5e27cd5c52068cdd071a21c8c08",
+        "online_acceptance": "research/continuous-recovery-20261016/publication/root-v16-pages-online-acceptance.json"
       }
     },
     {
       "id": "NETWORK04-NEWS03-04",
       "owner": "/root/network_recovery_20261016",
-      "status": "candidate_acquired_pending_root",
+      "status": "root_accepted_pending_integration",
       "result": {
         "images": 4,
         "batch_dirs": [
           "network/news03",
           "network/news04"
         ],
-        "integration": "v17_or_later_only"
+        "integration": "v17_or_later_only",
+        "acceptance": [
+          "publication/root-news03-acceptance.json",
+          "publication/root-news04-acceptance.json"
+        ]
       }
     },
     {
@@ -110,7 +116,7 @@
     {
       "id": "NETWORK05-REGIONAL01",
       "owner": "/root/network_recovery_20261016",
-      "status": "in_progress",
+      "status": "returned_pending_root",
       "network": true,
       "write_scope": "research/continuous-recovery-20261016/network/regional01/**",
       "goal": "Three hypothesis-labelled EU Karazhan CDX prefix queries only",
@@ -118,8 +124,15 @@
         "attempts": 6,
         "seconds": 480,
         "bytes": 33554432
+      },
+      "result": {
+        "requests": 6,
+        "source_responses": 3,
+        "cdx_rows": 0,
+        "new_images": 0,
+        "boundary": "three hypothesis-labelled prefixes only, not global availability"
       }
     }
   ],
-  "updated_utc": "2026-10-16T03:21:15.570423+00:00"
+  "updated_utc": "2026-10-16T03:38:09.811508+00:00"
 }
