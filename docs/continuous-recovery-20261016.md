@@ -81,3 +81,7 @@ UTC 13:00 后不启动新网络批次，13:10 后不启动新来源/导出版本
 - v20 本地整合二十四张八月新闻配图，全部 8,561 声明文件及 77 项实际浏览检查通过，四十个新闻页面的缺图引用由 614 降至 590。旧 79 份补充、原路由及六组二十二张指南预览保留。[本地验收](../research/continuous-recovery-20261016/publication/root-v20-local-acceptance.json)
 - 08:07 UTC：图库第四轮二十目标用完四十次请求，十四份完整 CDX 共 209 行，没有直接原图或配套缩略图候选；其余六项为传输未知。累计四十三个分区完成指定时间窗检查，另七个尚未完整，较早年份空窗仍另列。[索引验收](../research/continuous-recovery-20261016/publication/root-gallery-prefix04-acceptance.json)
 - v20 单次导出成功；独立回执注明两处继承的旧描述字段，实际新来源与字节均通过核对。已冻结文件保持原样，下一新派生来源表将修正说明文字。
+
+- v20 Pages 已发布，三十项线上对象均与本地一致，Pages 提交 `bfc5a8dd5f8ce679085f399c4ecbb940d70f374c`；本轮累计发布六十三张新闻图片，完整离线 Release 仍为 v14，最终稳定检查点统一打包。[线上验收](../research/continuous-recovery-20261016/publication/root-v20-pages-online-acceptance.json)
+- 八月最后三项再取得一图（6,665 字节），累计二十五个有效素材，二十四个已上线。另两项中，一项仍为 TLS 传输未知；另一项实际回放 302 指向 `20080512231210`，已保存清理后的跳转证据，准备单独核对晚间捕获与四月索引摘要。尚未跟随跳转或采用该素材。[来源验收](../research/continuous-recovery-20261016/publication/root-aug-final3-source-acceptance.json)、[跳转观察](../research/continuous-recovery-20261016/publication/root-aug11-redirect-observation.json)
+- 沿用 v18 静态范围重数当前 v20：1,104 个文本文件中有 1,220 个图片地址、2,018 处缺图引用，新闻为 590 处；动态图库目标单列。后续四十项候选分主站二十与关联静态二十。初版扫描遗漏 XML/CSS 的差异由 v2 及主代理独立重数修正，初版留本地。[队列验收](../research/continuous-recovery-20261016/publication/root-v20-asset-queues-acceptance.json)

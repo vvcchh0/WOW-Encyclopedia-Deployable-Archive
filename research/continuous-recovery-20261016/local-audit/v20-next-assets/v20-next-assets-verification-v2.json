@@ -1,0 +1,56 @@
+{
+  "schema": "wow-recovery.local-audit.v20-next-assets.verification.v2",
+  "generated_utc": "2026-10-16T08:21:41.304392Z",
+  "amendment": {
+    "supersedes_verification": "research/continuous-recovery-20261016/local-audit/v20-next-assets/v20-next-assets-verification.json",
+    "root_cause": "v1 scanned 1049 .html/.htm files; v2 scanned all 1104 frozen-scope .html/.htm/.xml/.css files. The omitted 55 files account for 59 occurrences and 54 entities.",
+    "v1_counts": {
+      "marker_occurrences": 1959,
+      "unique_entities": 1166
+    },
+    "v2_counts": {
+      "marker_occurrences": 2018,
+      "unique_entities": 1220
+    }
+  },
+  "script": "research/continuous-recovery-20261016/local-audit/v20-next-assets/prepare_v20_next_assets_v2.py",
+  "script_sha256": "30891223768382a904f73198dd6a6250cc37590f6b15c1a3646a21e2bdeb529b",
+  "private_audit": {
+    "path": "research/continuous-recovery-20261016/local-audit/v20-next-assets/v20-next-assets-private-audit-v2.json",
+    "sha256": "4b758da61a7884ece6cb42d1d6e3e81623a524026e689d3249ae394597239ca4"
+  },
+  "public_summary": {
+    "path": "research/continuous-recovery-20261016/local-audit/v20-next-assets/v20-next-assets-public-summary-v2.json",
+    "sha256": "603437cb553d545f6a17e2a1219af7c44114178370dfb3b5db7ab21ef630fc6e"
+  },
+  "input_sha256": {
+    "v18_audit": "96f0d3586b1a23a4a190f04337016c04d86ea9884ea7ec883baa8715ecab12ea",
+    "v18_bounded_data": "d1a5240970e013e15071caf8f1762e57a04c9255d260748849305c1810fc1053",
+    "v18_public_summary": "925566a5abc3f3539f4868208ec6917f889150b4e40dcda89285868ab26971ed",
+    "v18_cache_inventory": "ddb4ad50f975659148d0f595fe0967104ece15fe020f6a7044a1cec5b2ad5405",
+    "v20_provenance": "c4b741691f9ac8ad8201dfc35e6af81119c60e62afa07f08c569ec3a9e7a9f50",
+    "v20_primary_map": "2629ac0915f933202f60a912643c830aac3c66486e28f7d42c061e5f48f9dc77"
+  },
+  "checks": {
+    "network_requests": 0,
+    "export_invocations": 0,
+    "current_marker_occurrence_sum_matches": true,
+    "current_unique_entity_count": 1220,
+    "v2_scope_matches_frozen_v18": true,
+    "v2_matches_root_expected_denominator": true,
+    "queue_a_exactly_20": true,
+    "queue_b_exactly_20": true,
+    "queue_unique_40": true,
+    "queue_candidates_have_current_evidence": true,
+    "queue_candidates_have_origin": true,
+    "public_sensitive_fields_zero": true,
+    "source_sha_mismatches_zero": true,
+    "v20_provenance_sha_bound": true,
+    "v20_map_sha_bound": true
+  },
+  "uncovered": [
+    "No network requests, direct CDX lookups, replay requests, payload downloads, or v21 integration were performed.",
+    "A cache join is not an absence proof and current output markers do not prove historical validity."
+  ],
+  "accepted": true
+}
