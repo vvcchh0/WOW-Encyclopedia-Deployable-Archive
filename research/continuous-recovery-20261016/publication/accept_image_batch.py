@@ -88,6 +88,13 @@ def main():
         assert fmt in c['expected']['pillow_formats'] and frames==x['verification']['image_frame_count']
         checked.append({'original':c['original'],'actual_capture_timestamp':actual,'mime':mime,'dimensions':size,'decoded_frames':frames,'length':len(payload),'sha256':sha(payload),'cdx_digest':digest,'private_payload_path':x['private_decoded_payload_path'],'selection_evidence':selection_label,'accepted':True,'deployed':False})
     sent=[x for x in attempts if x['sent']]
+    if plan['policy'].get('transport_policy')=='batch_after_direct_failure':
+        assert sent and sent[0]['transport']=='direct'
+        trigger=next((x for x in sent if x['transport']=='direct' and x['source_status'] is None and x['curl_exit'] in (7,28) and x['body_bytes']==0),None)
+        if trigger:
+            assert state['batch_proxy_only'] and state['failed_attempt_number']==trigger['attempt']
+            assert all(x['transport']=='proxy' for x in sent if x['attempt']>trigger['attempt'])
+        else:assert not state['batch_proxy_only']
     dispatch=[y['dispatch']['dispatch_monotonic']-x['dispatch']['dispatch_monotonic'] for x,y in zip(sent,sent[1:])]
     starts=[(datetime.fromisoformat(y['started_utc'])-datetime.fromisoformat(x['started_utc'])).total_seconds() for x,y in zip(sent,sent[1:])]
     assert not dispatch or min(dispatch)>=5.25
@@ -95,6 +102,8 @@ def main():
     elapsed=(datetime.fromisoformat(report['finished_utc'])-datetime.fromisoformat(report['started_utc'])).total_seconds();assert elapsed<=plan['policy']['window_seconds']<=1800
     result={'checked_utc':datetime.now(timezone.utc).isoformat(),'accepted':True,'batch_report_sha256':sha(raw),'plan_sha256':sha(plan_path.read_bytes()),'requests':len(attempts),'source_responses':responses,'body_bytes':total,'accepted_images':checked,'image_bytes':sum(x['length'] for x in checked),'failure_streak_start':a.starting_failures,'failure_streak_end':streak,'stop_reason':report['stop_reason'],'cooldown_not_before_utc':report.get('cooldown_not_before_utc'),'minimum_dispatch_seconds':min(dispatch,default=None),'minimum_request_start_seconds':min(starts,default=None),'elapsed_seconds':elapsed,'minimum_request_disk_bytes':min(disk_values,default=None),'disk_free_after_bytes':shutil.disk_usage(R).free,'scope':'Original image sources and actual batch limits verified. No deployment is inferred.'}
     assert result['disk_free_after_bytes']>=11005853696
+    result['actual_transports']={name:sum(x['transport']==name for x in sent) for name in ('direct','proxy')}
+    result['batch_proxy_only']=state.get('batch_proxy_only',False)
     output=(R/a.output).resolve();output.relative_to(B/'publication');assert not output.exists(),'preserve existing root receipt'
     output.write_bytes((json.dumps(result,indent=2)+'\n').encode());print(json.dumps({k:v for k,v in result.items() if k!='accepted_images'}))
 if __name__=='__main__':main()

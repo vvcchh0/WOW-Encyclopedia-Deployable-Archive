@@ -69,3 +69,7 @@ UTC 13:00 后不启动新网络批次，13:10 后不启动新来源/导出版本
 - 八月新闻另整理二十七个实际配图地址，按原文顺序分为二十和七项；共享图标在上述批次处理。[来源清单验收](../research/continuous-recovery-20261016/publication/root-aug27-literal-acceptance.json)
 - 新获取器保留原传输与图片验证核心，增加可选的批内代理回退：每批先 direct，只有连接超时/无法连接且未取得源响应、响应体为空时，才在该批余下请求使用原代理；下一批重新 direct。五连失败与 429/503 的停批条件保持不变。[代码验收](../research/continuous-recovery-20261016/publication/root-reusable-v2-code-acceptance.json)
 - 07:06 UTC：第三轮图库目录调查在十五次请求后连续五次传输失败，停批冷却。五个分区取得完整索引，共三十行，没有直接原图或配套缩略图候选；其余已尝试三项为传输未知，十二项未开始。索引中的十个图片行属于已有嵌套预览及来源变体，未计为新恢复素材。[独立复核](../research/continuous-recovery-20261016/publication/root-gallery-prefix03-acceptance.json)
+
+- 07:19 UTC：CONTROL03 在一次直连超时后经代理取得完整 CDX，另行批准新获取窗口；旧停批记录保留。[控制验收](../research/continuous-recovery-20261016/publication/root-control03-acceptance.json)
+- 07:26 UTC：八月新闻首二十目标取得十二张有效配图（116,437 字节），包括角色原画、Armory 操作插图、TCG 和游戏包装图。主代理核对源响应、实际图片与完整捕获索引；余八项为传输未知，另七项未开始。[来源验收](../research/continuous-recovery-20261016/publication/root-aug20-source-acceptance.json)
+- v19 本地验收完成，新增十张共享新闻图片，消除 184 处缺图引用；相同四十个新闻页面的缺图引用由 798 降至 614。全部 8,537 声明文件及 35 项实际浏览检查通过，尚待发布。单次导出后辅助核对程序报错，原失败记录保留；独立检查确认完整输出，不重复导出。[本地验收](../research/continuous-recovery-20261016/publication/root-v19-local-acceptance.json)、[引用计数](../research/continuous-recovery-20261016/publication/root-v19-news-metrics-acceptance.json)

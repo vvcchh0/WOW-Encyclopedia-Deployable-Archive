@@ -1,0 +1,113 @@
+{
+  "schema": "wow-recovery.reusable-image-fixtures.v1",
+  "batch_id": "AUG27-01-20",
+  "network_requests": 0,
+  "input_plan_sha256": "b90ae1ca531542954ba5c926d653888bcf67f11ece43c8ba5ca795b22b4b8ee8",
+  "input_bindings_sha256": "c2ab6c3110e80126b3c8a950b6c04adfc533e0ee880114625e95c4095f7212e9",
+  "tests": {
+    "cdx_separator_and_resume_metadata": true,
+    "limit500_potential_truncation_no_replay": true,
+    "latest_exact_default_port_and_variant_classification": true,
+    "gif_jpeg_png_magic_pillow_and_all_frames": true,
+    "error_html_and_magic_rejection": true,
+    "compression_digest_memento_and_original_rejection": true,
+    "bounded_truncated_and_trailing_compression_rejected": true,
+    "connect_source_404_429_and_only_connect": true,
+    "cached_complete_cdx_reuse_and_latest_binding": true,
+    "fallback_cache_is_best_known_not_latest": true,
+    "cadence_monotonic_and_utc_floor_with_early_sleep": true,
+    "budget_disk_floor_and_failure_stop": true,
+    "unknown_metadata_is_incomplete": true,
+    "cached_sub_limit_separator_is_complete": true,
+    "nonzero_curl_exit_not_accepted": true,
+    "one_to_twenty_target_bound": true,
+    "malicious_output_path_rejected": true,
+    "malicious_original_rejected": true,
+    "cached_truncation_and_resume_rejected": true,
+    "frozen_news_shared10_fixtures_still_pass": true,
+    "hard_budget_bound_rejected": true,
+    "duplicate_target_key_rejected": true,
+    "fake_cached_metadata_rejected": true,
+    "source_binding_hash_rejected": true,
+    "prior_failure_tail_is_inherited_by_initial_state": true,
+    "real_allnews01_blizzcon_six_column_cache_accepted": true,
+    "six_column_extra_field_rejected": true,
+    "transport_policy_per_request_default_remains_direct_then_proxy": true,
+    "transport_policy_directfail_proxysuccess_next_request_proxy_only": true,
+    "transport_policy_direct_source_http_keeps_direct_next_request": true,
+    "transport_policy_initial_state_resets_direct_probe": true,
+    "transport_policy_proxy_five_failures_stop": true
+  },
+  "passed": 32,
+  "total": 32,
+  "all_passed": true,
+  "transport_policy_fixture": {
+    "tests": {
+      "per_request_default_remains_direct_then_proxy": true,
+      "directfail_proxysuccess_next_request_proxy_only": true,
+      "direct_source_http_keeps_direct_next_request": true,
+      "initial_state_resets_direct_probe": true,
+      "proxy_five_failures_stop": true
+    },
+    "all_passed": true,
+    "network_requests": 0,
+    "trace": {
+      "direct_failure_retry": [
+        "proxy"
+      ],
+      "next_request": [
+        "proxy"
+      ],
+      "direct_source_next": [
+        "direct",
+        "proxy"
+      ],
+      "proxy_failures": [
+        "proxy",
+        "proxy",
+        "proxy",
+        "proxy",
+        "proxy"
+      ]
+    },
+    "state_fields": [
+      "direct_probe_done",
+      "failed_attempt_number",
+      "skip_reason",
+      "report_policy"
+    ]
+  },
+  "positive_cached_fixture": {
+    "target_key": "NEWS10-04-blizzconlogo-jpg",
+    "source_report_path": "research/continuous-recovery-20261016/network/allnews01/batch-report.json",
+    "source_report_sha256": "2528c63e400255a2a4685797f0315c381d2ac22560ecbe5e19d4251976b804f4",
+    "raw_body_path": "research/continuous-recovery-20261016/network/allnews01/raw/70-ALLNEWS01-R19-cdx-proxy.body",
+    "raw_body_sha256": "e448d86f5ae3ff3b313ba09dd298fbef25e19e00f7af09e6b3bfb9a62b119ce2",
+    "raw_headers_path": "research/continuous-recovery-20261016/network/allnews01/raw/70-ALLNEWS01-R19-cdx-proxy.headers.txt",
+    "raw_headers_sha256": "79d2b240a27fcd3e21ed2d06b8de648b2060bbc0999aee11e585cb2b5d583900",
+    "source_curl_exit": 0,
+    "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F05-06%2Fblizzconlogo.jpg&from=20060101000000&to=20080512210044&output=json&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=250&matchType=exact",
+    "coverage_window": {
+      "from": "20060101000000",
+      "to": "20080512210044",
+      "coverage_complete_for_global_window": false
+    },
+    "record_count": 4,
+    "selected": {
+      "timestamp": "20080402081015",
+      "original": "http://www.worldofwarcraft.com/news/images/05-06/blizzconlogo.jpg",
+      "mimetype": "image/jpeg",
+      "statuscode": "200",
+      "digest": "2HQXR7Q23H7W5YV7O4IXMNC7KKG4Q43D",
+      "length": "9553",
+      "urlkey": "",
+      "record_index": "3"
+    }
+  },
+  "notes": [
+    "The first fifteen core tests are retained from the frozen NEWS-SHARED10 fixture contract.",
+    "No network request, curl process, payload write, or execute state was created by fixture mode.",
+    "Cached indexes require complete sub-limit evidence and remain latestness-limited.",
+    "The positive cached fixture is the SHA-bound ALLNEWS01 Blizzcon raw/70 response; its 2006..anchor query is not a global 2000..anchor latest proof."
+  ]
+}

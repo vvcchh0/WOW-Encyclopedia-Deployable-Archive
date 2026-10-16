@@ -1,0 +1,82 @@
+{
+  "schema": "wow-recovery.control03-input-bindings.v1",
+  "batch_id": "WAYBACK-CONTROL03-20261016",
+  "mode": "offline_prepared_not_executed",
+  "network_requests": 0,
+  "driver_path": "research/continuous-recovery-20261016/network/control03/control03_driver.py",
+  "driver_sha256": "8d016ce5fd42d836c6d46fc2077d1052628cafb36bebfe3a80e2a1c876f0a93d",
+  "plan_path": "research/continuous-recovery-20261016/network/control03/plan.json",
+  "plan_sha256": "20be83ebeeda66dc2cf20260be646d2abf48d1d29655c7fc8edb701777576add",
+  "prior_history": {
+    "current_probe_streak": 0,
+    "historical_failure_tail": 5,
+    "historical_tail_source": "research/continuous-recovery-20261016/publication/root-gallery-prefix03-acceptance.json",
+    "historical_tail_source_sha256": "1daa3a6774f0911fa7647f57b5d4bf90e8efe1aa7d2744829c00457342f959da"
+  },
+  "request_policy": {
+    "attempts": 2,
+    "window_seconds": 60.0,
+    "max_total_body_bytes": 1048576,
+    "max_entity_body_bytes": 1048576,
+    "min_dispatch_seconds": 5.25,
+    "min_request_start_seconds": 5.0,
+    "disk_floor_bytes": 11005853696,
+    "cooldown_seconds": 120,
+    "replay": false,
+    "stop_codes": [
+      429,
+      503
+    ],
+    "transports": [
+      "direct",
+      "proxy"
+    ]
+  },
+  "source_bindings": {
+    "prefix03_acceptance": {
+      "bytes": 15104,
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix03-acceptance.json",
+      "role": "accepted_gallery_prefix03_tail5_and_stop_evidence",
+      "sha256": "1daa3a6774f0911fa7647f57b5d4bf90e8efe1aa7d2744829c00457342f959da"
+    },
+    "control02_driver": {
+      "bytes": 22340,
+      "path": "research/continuous-recovery-20261016/network/control02-plan/control02_driver.py",
+      "role": "frozen_root_accepted_control_driver_reference",
+      "sha256": "85457ea1baa96c474e33ffc01210b4f6d96b3d6d276dc7a2b56aff3cd8376530"
+    },
+    "control02_plan": {
+      "bytes": 3149,
+      "path": "research/continuous-recovery-20261016/network/control02-plan/plan.json",
+      "role": "frozen_exact_h_gif_identity_and_query_reference",
+      "sha256": "ce81faf9cdeaffc92038c66bcd50656ecbdf6b5a597075c9820f527cc0a4d0c9"
+    },
+    "control02_plan_acceptance": {
+      "bytes": 414,
+      "path": "research/continuous-recovery-20261016/publication/root-control02-plan-acceptance.json",
+      "role": "frozen_control02_plan_review_reference",
+      "sha256": "d2f472adbb921d61136c32d23748c6d16fa18d8ebfaeac2ee1a6fd3b5d409ffe"
+    },
+    "control02_acceptance": {
+      "bytes": 724,
+      "path": "research/continuous-recovery-20261016/publication/root-control02-acceptance.json",
+      "role": "frozen_control02_execution_reference",
+      "sha256": "7c6b2bf7dfc7bff4ed37af09a7d8b5e67a7c817da5daae1076972af4007c38b3"
+    }
+  },
+  "target_identity": {
+    "original": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/h.gif",
+    "identity_rule": "exact scheme/host/path/query; default port normalization only for observed Link"
+  },
+  "gate": {
+    "status": "pending_root_control03_acceptance",
+    "receipt_path": null,
+    "receipt_sha256": null
+  },
+  "offline_validation": {
+    "ast_diff_path": "research/continuous-recovery-20261016/network/control03/ast-diff.json",
+    "ast_diff_sha256": "4603f9e63f9f8d227c65abec3de153fcfd7c651a27da818ec7cb9b6ac0c930ea",
+    "fixture_path": "research/continuous-recovery-20261016/network/control03/fixture-results.json",
+    "network_requests": 0
+  }
+}

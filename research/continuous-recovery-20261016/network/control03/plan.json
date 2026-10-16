@@ -1,0 +1,117 @@
+{
+  "schema": "wow-recovery.control03-plan.v1",
+  "batch_id": "WAYBACK-CONTROL03-20261016",
+  "mode": "prepared_not_executed",
+  "prepared_utc": "2026-10-16T07:14:41.862975Z",
+  "network_requests_executed_at_prepare": 0,
+  "control_only": true,
+  "no_replay": true,
+  "target_key": "CONTROL03-h-gif-exact-cdx",
+  "exact_original": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/h.gif",
+  "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fsmallcaps%2Fh.gif&from=20000101000000&to=20080512210044&output=json&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=250&showResumeKey=true&matchType=exact",
+  "query_identity": {
+    "match_type": "exact",
+    "from": "20000101000000",
+    "to": "20080512210044",
+    "limit": 250,
+    "showResumeKey": true,
+    "collapse": false,
+    "output": "json",
+    "fields": [
+      "timestamp",
+      "original",
+      "mimetype",
+      "statuscode",
+      "digest",
+      "length"
+    ]
+  },
+  "max_attempts": 2,
+  "window_seconds": 60.0,
+  "max_total_body_bytes": 1048576,
+  "max_entity_body_bytes": 1048576,
+  "min_dispatch_monotonic_seconds": 5.25,
+  "min_request_start_utc_seconds": 5.0,
+  "disk_floor_bytes": 11005853696,
+  "direct_first": true,
+  "proxy": "http://127.0.0.1:7890",
+  "tls_verification": true,
+  "automatic_redirects": 0,
+  "stop_http_codes": [
+    429,
+    503
+  ],
+  "stop_on_five_transport_failures": true,
+  "cooldown_seconds": 120,
+  "retry_after_policy": "honor_numeric_or_http_date_and_use_max(120)",
+  "history": {
+    "historical_failure_tail": 5,
+    "current_probe_streak_start": 0,
+    "historical_tail_preserved": true,
+    "normal_retrieval_not_authorized_by_plan": true,
+    "success_gate_may_open_future_window_only": "HTTP200 + curl_exit0 + source_header_block + valid complete JSON CDX with record_count < 250"
+  },
+  "prior_batch_evidence": {
+    "gallery_prefix03_acceptance": "research/continuous-recovery-20261016/publication/root-gallery-prefix03-acceptance.json",
+    "gallery_prefix03_acceptance_sha256": "1daa3a6774f0911fa7647f57b5d4bf90e8efe1aa7d2744829c00457342f959da",
+    "tail_failure_streak": 5,
+    "cooldown_already_elapsed_at_prepare": true
+  },
+  "future_gate": {
+    "status": "pending_root_control03_acceptance",
+    "receipt_path": null,
+    "receipt_sha256": null,
+    "normal_retrieval_authorized": false
+  },
+  "request_sequence": [
+    {
+      "attempt": 1,
+      "purpose": "exact CDX source response",
+      "transport": "direct"
+    },
+    {
+      "attempt": 2,
+      "purpose": "same exact CDX request fallback only if direct has no usable source response",
+      "transport": "proxy"
+    }
+  ],
+  "raw_output_policy": "If separately authorized, preserve raw headers/body/trace locally and publish only sanitized metadata; this prepared plan has no raw output.",
+  "target_evidence": {
+    "exact_original_source": "research/continuous-recovery-20261016/network/control02-plan/plan.json",
+    "control02_driver_reference": "research/continuous-recovery-20261016/network/control02-plan/control02_driver.py",
+    "gallery_prefix03_acceptance": "research/continuous-recovery-20261016/publication/root-gallery-prefix03-acceptance.json",
+    "gallery_prefix03_acceptance_sha256": "1daa3a6774f0911fa7647f57b5d4bf90e8efe1aa7d2744829c00457342f959da"
+  },
+  "source_bindings": {
+    "prefix03_acceptance": {
+      "bytes": 15104,
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix03-acceptance.json",
+      "role": "accepted_gallery_prefix03_tail5_and_stop_evidence",
+      "sha256": "1daa3a6774f0911fa7647f57b5d4bf90e8efe1aa7d2744829c00457342f959da"
+    },
+    "control02_driver": {
+      "bytes": 22340,
+      "path": "research/continuous-recovery-20261016/network/control02-plan/control02_driver.py",
+      "role": "frozen_root_accepted_control_driver_reference",
+      "sha256": "85457ea1baa96c474e33ffc01210b4f6d96b3d6d276dc7a2b56aff3cd8376530"
+    },
+    "control02_plan": {
+      "bytes": 3149,
+      "path": "research/continuous-recovery-20261016/network/control02-plan/plan.json",
+      "role": "frozen_exact_h_gif_identity_and_query_reference",
+      "sha256": "ce81faf9cdeaffc92038c66bcd50656ecbdf6b5a597075c9820f527cc0a4d0c9"
+    },
+    "control02_plan_acceptance": {
+      "bytes": 414,
+      "path": "research/continuous-recovery-20261016/publication/root-control02-plan-acceptance.json",
+      "role": "frozen_control02_plan_review_reference",
+      "sha256": "d2f472adbb921d61136c32d23748c6d16fa18d8ebfaeac2ee1a6fd3b5d409ffe"
+    },
+    "control02_acceptance": {
+      "bytes": 724,
+      "path": "research/continuous-recovery-20261016/publication/root-control02-acceptance.json",
+      "role": "frozen_control02_execution_reference",
+      "sha256": "7c6b2bf7dfc7bff4ed37af09a7d8b5e67a7c817da5daae1076972af4007c38b3"
+    }
+  }
+}

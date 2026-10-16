@@ -1,0 +1,113 @@
+{
+  "schema": "wow-recovery.aug27-remaining15-input-bindings.v1",
+  "batch_id": "AUG27-REMAINING15",
+  "mode": "prepared_not_executed_prior_tail2",
+  "network_requests": 0,
+  "candidate_count": 15,
+  "plan_path": "research/continuous-recovery-20261016/network/aug27-remaining15/plan.json",
+  "plan_sha256": "997d692cc0c04ef2febc96a7b50f6f7e5d2189777486e1891ba2d020b69acfda",
+  "driver_path": "research/continuous-recovery-20261016/network/reusable-image-driver-v2/reusable_image_driver.py",
+  "driver_sha256": "1faae294465f5e1ad6e2925870890cdb9512bd2251090d533637245ee6a3d8e4",
+  "prior_history": {
+    "prior_failure_tail": 2,
+    "tail_receipt_path": "research/continuous-recovery-20261016/publication/root-aug20-source-acceptance.json",
+    "tail_receipt_sha256": "42bf3efd4ffaadf760e67dfdc86ffa359adcbcc3c6907218f48de33f66f7c2e3",
+    "prior_batch_report_path": "research/continuous-recovery-20261016/network/aug27-01-20/output/batch-report.json",
+    "prior_batch_report_sha256": "b80740cfd88a31b89be110221eacddf92d6258797f296f7298eb416708c5e9a1"
+  },
+  "policy": {
+    "cdx_mode": "per_candidate_fresh_or_bound_cached",
+    "from": "20000101000000",
+    "to": "20080512210044",
+    "limit": 500,
+    "showResumeKey": true,
+    "collapse": false,
+    "matchType": "exact",
+    "max_attempts": 80,
+    "max_originals": 20,
+    "window_seconds": 1800.0,
+    "max_total_body_bytes": 67108864,
+    "max_entity_body_bytes": 8388608,
+    "min_dispatch_seconds": 5.25,
+    "min_request_start_seconds": 5.0,
+    "disk_floor_bytes": 11005853696,
+    "direct_first": true,
+    "tls_verification": true,
+    "automatic_redirects": 0,
+    "proxy": "http://127.0.0.1:7890",
+    "transport_policy": "batch_after_direct_failure",
+    "prior_failure_tail": 2,
+    "stop_http_codes": [
+      429,
+      503
+    ],
+    "stop_on_five_transport_failures": true,
+    "cooldown_seconds": 120,
+    "user_agent": "wow-recovery-reusable-image-v2/20261016",
+    "no_network_before_parent_go": true
+  },
+  "cached_targets": [
+    "AUG27-05",
+    "AUG27-06",
+    "AUG27-11",
+    "AUG27-12",
+    "AUG27-16"
+  ],
+  "fresh_targets": [
+    "AUG27-10",
+    "AUG27-19",
+    "AUG27-20",
+    "AUG27-21",
+    "AUG27-22",
+    "AUG27-23",
+    "AUG27-24",
+    "AUG27-25",
+    "AUG27-26",
+    "AUG27-27"
+  ],
+  "source_bindings": {
+    "source_plan_01_20": {
+      "path": "research/continuous-recovery-20261016/local-audit/august-news27/aug27-01-20-plan-v1.json",
+      "sha256": "b03919f486e9fe3faeebe4224d8b363551bbd3d8ace4b253d84c51fb5734148f",
+      "bytes": 83266,
+      "role": "frozen LOCAL16 source for remaining 01-20 literals"
+    },
+    "source_plan_21_27": {
+      "path": "research/continuous-recovery-20261016/local-audit/august-news27/aug27-21-27-plan-v1.json",
+      "sha256": "35bf869562d027edd713ddac8109217dd63f7a90177b5fd36b5f559c96a1ca2f",
+      "bytes": 30628,
+      "role": "frozen LOCAL16 source for never-requested 21-27 literals"
+    },
+    "prior_batch_report": {
+      "path": "research/continuous-recovery-20261016/network/aug27-01-20/output/batch-report.json",
+      "sha256": "b80740cfd88a31b89be110221eacddf92d6258797f296f7298eb416708c5e9a1",
+      "bytes": 143514,
+      "role": "previous AUG27-01-20 actual report and cached CDX provenance"
+    },
+    "prior_tail_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-aug20-source-acceptance.json",
+      "sha256": "42bf3efd4ffaadf760e67dfdc86ffa359adcbcc3c6907218f48de33f66f7c2e3",
+      "bytes": 9496,
+      "role": "root-accepted previous batch tail=2"
+    },
+    "aug27_literal_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-aug27-literal-acceptance.json",
+      "sha256": "8a00e49fe647f8728335f0eaee8681d8f6e4ea9f81272d4337692a1a6499bb58",
+      "bytes": 857,
+      "role": "root-accepted first-20/remaining August literal scope"
+    },
+    "reusable_v2_driver": {
+      "path": "research/continuous-recovery-20261016/network/reusable-image-driver-v2/reusable_image_driver.py",
+      "sha256": "1faae294465f5e1ad6e2925870890cdb9512bd2251090d533637245ee6a3d8e4",
+      "bytes": 102327,
+      "role": "root-accepted reusable image driver"
+    },
+    "reusable_v2_code_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-reusable-v2-code-acceptance.json",
+      "sha256": "95a70052ddd53a7cf4e44c168e1caeaecd4f6bb062135186d2579a1bfc18916c",
+      "bytes": 1552,
+      "role": "root code acceptance for transport policy"
+    }
+  },
+  "execution_go_required": true
+}

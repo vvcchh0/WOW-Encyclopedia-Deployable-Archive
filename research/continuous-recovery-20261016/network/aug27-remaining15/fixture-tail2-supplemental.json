@@ -1,0 +1,23 @@
+{
+  "schema": "wow-recovery.aug27-remaining15-tail2-fixture.v1",
+  "network_requests": 0,
+  "input_plan_sha256": "997d692cc0c04ef2febc96a7b50f6f7e5d2189777486e1891ba2d020b69acfda",
+  "input_bindings_sha256": "6d8edce0122a5d6e23e6cf14110eca08f6c141522aec41cb0db59fd8c97e58ce",
+  "load_and_validate_inputs_passed": true,
+  "inherited_prior_failure_tail": 2,
+  "proxy_failure_trace_to_global_stop": [
+    "proxy",
+    "proxy",
+    "proxy"
+  ],
+  "expected_proxy_failures_to_global_stop": 3,
+  "global_failure_streak_at_stop": 5,
+  "stop_reason": "five_consecutive_transport_failures",
+  "tests": {
+    "tail2_is_inherited": true,
+    "proxy_only_route_preserved": true,
+    "five_global_failures_stop": true
+  },
+  "all_passed": true,
+  "note": "The generic v2 fixture expects a fresh zero streak and therefore reports proxy_five_failures_stop false under this correctly inherited tail=2; this supplemental fixture validates the actual batch semantics without changing the frozen driver."
+}
