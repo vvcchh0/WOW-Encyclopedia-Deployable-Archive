@@ -99,3 +99,7 @@ UTC 13:00 后不启动新网络批次，13:10 后不启动新来源/导出版本
 
 - 10:59 UTC：v22 Pages 构建完成，提交 `af07a86cd8e24614615882774bd98648fddec937`；31 项线上对象均通过 direct 取得并与本地一致。本轮累计发布七十六张新闻配图、六张页面素材及两张欧服截图。main 来源检查点为 `a2f7c78`；离线 Release 暂为 v14，继续等待本轮稳定版本。[线上验收](../research/continuous-recovery-20261016/publication/root-v22-pages-online-acceptance.json)
 - 第二批相邻路径又取回十三图（2,323,105 字节），共二十四张数字编号大图和一张缩略图，尚未部署。另九项正索引实际含八张服装/模型视图和一张缩略图；此前“十张缩略图”的汇总字段过宽，来源 URL 与分区始终不变，已记录更正。[来源验收](../research/continuous-recovery-20261016/publication/root-gallery-neighbors02-source-acceptance.json)、[指南关系及分类更正](../research/continuous-recovery-20261016/publication/root-guide-neighbor-relations-acceptance.json)
+
+- 12:16 UTC：v23 本地验收完成，新增四十张相邻指南素材（6,901,604 字节）。情人节、春节和 World PvP 三组共三十二张大图，在六个指南/图库入口展示；另六张模型视图及两张缩略图进入素材目录。8,620 个声明文件和 632 项浏览检查通过，旧 122 项补充的来源与字节均保留。原动态图库缺口继续单列，准备发布。[本地验收](../research/continuous-recovery-20261016/publication/root-v23-local-acceptance.json)、[设计说明](guide-image-collections.md)
+- 早期图库窗口首两批取得二十份完整空索引，四项仍为传输未知；没有回放或新增原动态图库图片。此前五十组有限窗口均已完整，早期空窗继续独立补查。[第一批](../research/continuous-recovery-20261016/publication/root-gallery-early01-acceptance.json)、[第二批](../research/continuous-recovery-20261016/publication/root-gallery-early02-acceptance.json)
+- v23 首轮浏览辅助检查在折叠的旧新闻图片处超时；完整失败回执保留。后续检查先展开对应新闻，并单独记录导航造成的旧菜单 iframe 取消加载，未改动站点输出；六个新页面、三十二张大图及旧浏览行为通过复核。

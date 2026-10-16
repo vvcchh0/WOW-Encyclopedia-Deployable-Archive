@@ -9,6 +9,8 @@
 
 ## 2026-10-16
 
+- v23 本地验收完成，补回四十张指南相关素材；情人节、春节和 World PvP 新增三十二张可打开原尺寸的指南图片，原玩家图库继续查找。[本地验收](research/continuous-recovery-20261016/publication/root-v23-local-acceptance.json)
+
 - 发布 v22，补齐八月新闻的全部二十七张配图，并新增十张其他新闻配图和六张页面素材。相同四十页新闻减少十六处缺图引用。[线上核对](research/continuous-recovery-20261016/publication/root-v22-pages-online-acceptance.json)
 
 - 发布 v20，补回二十四张 2007 年 8 月新闻配图；剩余图片继续寻找。[线上核对](research/continuous-recovery-20261016/publication/root-v20-pages-online-acceptance.json)

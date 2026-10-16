@@ -1,0 +1,87 @@
+{
+  "schema": "wow-recovery.gallery-early02-ast-diff.v1",
+  "prepared_utc": "2026-10-16T12:09:49.919409+00:00",
+  "base": {
+    "path": "research/continuous-recovery-20261016/network/gallery-prefix05/gallery_prefix_driver_v5.py",
+    "sha256": "e592aa9aa353f0b3640c34f6a0db4dbf6163218520bd1f756c154b1848eb131c"
+  },
+  "new": {
+    "path": "research/continuous-recovery-20261016/network/gallery-early02/gallery_prefix_driver_v6.py",
+    "sha256": "083cdc6b61c8228d8378a76d780bb1d9f871bfbdd5dac1ff55d1c551c21060a2"
+  },
+  "adaptation_scope": [
+    "per-item source-bound query_window.to in CDX URL and row-window classification",
+    "four accepted remaining early-gap candidates",
+    "inherited prior_failure_tail=0 with five new transport failures reaching global five-stop",
+    "latest EARLY01 receipt/report/source-map bindings and new batch identifiers only"
+  ],
+  "ast_functions_unchanged": [
+    "__init__",
+    "_remaining_clamp",
+    "_restart_last_dispatch",
+    "_schedule_next",
+    "cf",
+    "check",
+    "free_bytes",
+    "headers",
+    "iso",
+    "list_item",
+    "monotonic",
+    "now",
+    "parse_cdx",
+    "parse_iso",
+    "phase",
+    "public_attempt",
+    "read_json",
+    "rel",
+    "same_origin",
+    "sha",
+    "sleep",
+    "status",
+    "write_json"
+  ],
+  "ast_functions_changed": [
+    "canonical_query_url",
+    "execute",
+    "fixture",
+    "main",
+    "plan_for_run",
+    "project_rows",
+    "request",
+    "validate_inputs"
+  ],
+  "ast_classes_unchanged": [
+    "_FixtureClock",
+    "_RealClock"
+  ],
+  "ast_classes_changed": [],
+  "transport_core_preserved": true,
+  "transport_core_functions_checked": [
+    "parse_cdx",
+    "same_origin",
+    "phase",
+    "status",
+    "headers",
+    "_schedule_next",
+    "_restart_last_dispatch",
+    "_remaining_clamp"
+  ],
+  "transport_core_functions_unchanged": [
+    "_remaining_clamp",
+    "_restart_last_dispatch",
+    "_schedule_next",
+    "headers",
+    "parse_cdx",
+    "phase",
+    "same_origin",
+    "status"
+  ],
+  "changed_contracts": [
+    "validate_inputs accepts exact four-item early-gap batch-2 selection and receipt-bound tail0",
+    "project_rows and canonical_query_url consume candidate-specific windows",
+    "execute starts failure streak at inherited tail0 and preserves global five-stop semantics",
+    "fixture checks two per-item end windows and inherited zero-tail five-failure stop"
+  ],
+  "offline_only": true,
+  "network_requests": 0
+}

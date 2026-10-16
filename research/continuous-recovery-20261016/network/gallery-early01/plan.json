@@ -1,0 +1,2641 @@
+{
+  "schema": "wow-recovery.gallery-early01-plan.v1",
+  "batch_id": "WAYBACK-GALLERYEARLY01-20261016",
+  "prepared_utc": "2026-10-16T11:48:40.403765Z",
+  "mode": "offline_prepared_until_root_GO",
+  "execution_status": "prepared_not_executed",
+  "network_authorized": false,
+  "network_requests": 0,
+  "scope": "Twenty root-approved early-gap absolute HTTP prefix CDX index queries; each candidate keeps its source-bound to value; no later complete-window repeat, pagination, payload replay, or filename expansion.",
+  "source_plan_path": "research/continuous-recovery-20261016/local-audit/gallery-followup-plans/early-gaps-24-v1.json",
+  "source_plan_sha256": "767c9dfe7280ac6d708b5be5661b0970e67ef8ac292672c9802aeddc75218e90",
+  "source_plan_selection": {
+    "followup_batch": "early_gap_batch_1_of_2_20_items",
+    "count": 20,
+    "remaining_batch_count": 4
+  },
+  "candidate_count": 20,
+  "prior_failure_tail": 2,
+  "latest_tail_value": 2,
+  "historical_gallery_tail": 5,
+  "historical_gallery_tail_preserved": 5,
+  "latest_tail_basis": {
+    "path": "research/continuous-recovery-20261016/publication/root-gallery-neighbors-other4-source-acceptance.json",
+    "sha256": "a4ae0afdbb41a3881884289776b4943c482cd6b73762304e5d58c209c33d333c",
+    "failure_streak_end": 2,
+    "role": "latest NETWORK28 accepted source receipt; inherited current tail"
+  },
+  "control_basis": "NETWORK28 tail two is inherited directly; historical CONTROL03 is not used to reset this batch to zero.",
+  "previous_batch": {
+    "status": "neighbors-other4_source_accepted_tail2",
+    "prior_failure_tail": 2,
+    "latest_tail_receipt_path": "research/continuous-recovery-20261016/publication/root-gallery-neighbors-other4-source-acceptance.json",
+    "latest_tail_receipt_sha256": "a4ae0afdbb41a3881884289776b4943c482cd6b73762304e5d58c209c33d333c",
+    "latest_tail_value": 2,
+    "latest_batch_plan_path": "research/continuous-recovery-20261016/network/gallery-neighbors-other4/plan.json",
+    "latest_batch_plan_sha256": "8e6375da9b66fa8d9503d93363a2799a712e1f64d805ca53c0f3dc9a3249fdaf",
+    "latest_batch_report_path": "research/continuous-recovery-20261016/network/gallery-neighbors-other4/output/batch-report.json",
+    "latest_batch_report_sha256": "9aa0f47f41b746343b5ab5b94949619cd2a921c77abc049978c57e7f79e17260",
+    "latest_batch_source_map_path": "research/continuous-recovery-20261016/network/gallery-neighbors-other4/output/source-map.json",
+    "latest_batch_source_map_sha256": "e1c4ec9be1cfb58148b0f1b6ae110d10cd357505d0c82d4395f5c9e2924f0aa4",
+    "historical_prefix03_acceptance_path": "research/continuous-recovery-20261016/publication/root-gallery-prefix03-acceptance.json",
+    "historical_prefix03_acceptance_sha256": "1daa3a6774f0911fa7647f57b5d4bf90e8efe1aa7d2744829c00457342f959da",
+    "note": "Inherit the NETWORK28 end tail two. The historical prefix03 tail five remains metadata only; no zero reset or CONTROL03 gate is used."
+  },
+  "policy": {
+    "from": "20000101000000",
+    "to": "per_item_source_window",
+    "limit": 500,
+    "showResumeKey": true,
+    "collapse": false,
+    "matchType": "prefix",
+    "max_attempts": 40,
+    "window_seconds": 900.0,
+    "max_total_body_bytes": 16777216,
+    "max_entity_body_bytes": 8388608,
+    "min_dispatch_seconds": 5.25,
+    "min_request_start_seconds": 5.0,
+    "disk_floor_bytes": 11005853696,
+    "direct_first": true,
+    "proxy": "http://127.0.0.1:7890",
+    "tls_verification": true,
+    "automatic_redirects": 0,
+    "stop_http_codes": [
+      429,
+      503
+    ],
+    "stop_on_five_consecutive_transport_failures": true,
+    "stop_after_new_transport_failures": 3,
+    "cooldown_seconds": 120,
+    "payload_replay": false,
+    "index_only": true,
+    "prefix_only": true,
+    "no_pagination": true,
+    "remaining_time_and_byte_clamp": true,
+    "retry_after_rule": "429/503 stop; not-before is at least 120 seconds and any Retry-After",
+    "prior_failure_tail": 2
+  },
+  "input_bindings": {
+    "early_gap_plan": {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-followup-plans/early-gaps-24-v1.json",
+      "sha256": "767c9dfe7280ac6d708b5be5661b0970e67ef8ac292672c9802aeddc75218e90",
+      "bytes": 123782,
+      "role": "root-approved 24-item early-gap source; batch-1 selects 20"
+    },
+    "root_gallery_followups_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-followups-acceptance.json",
+      "sha256": "b961a12d0a6d3125d3c7228478417d0ca18abe1e241a71a85556c2d8b48571d9",
+      "bytes": 692,
+      "role": "root acceptance of early-gap source and 20+4 split"
+    },
+    "gallery_registry_v5": {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-prefix-registry-v5/gallery-prefix-registry-v5.json",
+      "sha256": "98bf027bb36bb33706ac45c4f00e7dfdd89625ef29bff695aac35cd4d14b4f76",
+      "bytes": 296800,
+      "role": "registry referenced by the accepted early-gap source"
+    },
+    "root_gallery_neighbors_other4_source_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-neighbors-other4-source-acceptance.json",
+      "sha256": "a4ae0afdbb41a3881884289776b4943c482cd6b73762304e5d58c209c33d333c",
+      "bytes": 2442,
+      "role": "latest accepted source result with inherited tail two"
+    },
+    "gallery_neighbors_other4_batch_report": {
+      "path": "research/continuous-recovery-20261016/network/gallery-neighbors-other4/output/batch-report.json",
+      "sha256": "9aa0f47f41b746343b5ab5b94949619cd2a921c77abc049978c57e7f79e17260",
+      "bytes": 28154,
+      "role": "latest NETWORK28 report bound to the tail receipt"
+    },
+    "gallery_neighbors_other4_source_map": {
+      "path": "research/continuous-recovery-20261016/network/gallery-neighbors-other4/output/source-map.json",
+      "sha256": "e1c4ec9be1cfb58148b0f1b6ae110d10cd357505d0c82d4395f5c9e2924f0aa4",
+      "bytes": 26936,
+      "role": "latest NETWORK28 source map bound to the tail receipt"
+    },
+    "root_gallery_prefix05_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix05-acceptance.json",
+      "sha256": "199ee21c32521e287b0bc4157a8f13bbab1c6b6b7580aa36ca8220cb21eb58c9",
+      "bytes": 9557,
+      "role": "accepted V5 prefix core predecessor"
+    },
+    "gallery_prefix05_plan": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix05/plan.json",
+      "sha256": "41ea2ccce2f1b0fcb2a58dec6eb04d85792cca1d4c69e58ae049dddf1e5ac024",
+      "bytes": 26386,
+      "role": "frozen V5 predecessor plan"
+    },
+    "gallery_prefix05_driver_v5": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix05/gallery_prefix_driver_v5.py",
+      "sha256": "e592aa9aa353f0b3640c34f6a0db4dbf6163218520bd1f756c154b1848eb131c",
+      "bytes": 58840,
+      "role": "frozen V5 driver used as the adaptation base"
+    },
+    "gallery_prefix05_fixture": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix05/fixture-results.json",
+      "sha256": "51c83fa4a91fe92fce4b035bd7316209a892370d868bb08af4e11aae43cb3e75",
+      "bytes": 5879,
+      "role": "frozen V5 offline fixture baseline"
+    },
+    "historical_prefix03_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix03-acceptance.json",
+      "sha256": "1daa3a6774f0911fa7647f57b5d4bf90e8efe1aa7d2744829c00457342f959da",
+      "bytes": 15104,
+      "role": "historical gallery tail five preserved for metadata only"
+    },
+    "source_page_01": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/karazhan-gallery.html",
+      "sha256": "fc7f46d260cba6c434fd5e67d47008f207fbb8bd939a630089599d097755c199",
+      "bytes": 15124,
+      "role": "source page literal for early-gap candidate 01"
+    },
+    "source_page_02": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/zulaman-gallery.html",
+      "sha256": "342c63cd42af3b72221f03be03d3099e7f3369c9b7cc858868e7304b567033d1",
+      "bytes": 13953,
+      "role": "source page literal for early-gap candidate 02"
+    },
+    "source_page_03": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/mag-gallery.html",
+      "sha256": "e629270c70b32f72fb089388dd59473feb9ffe4fafc24a498ba26ab533d9d5fb",
+      "bytes": 5529,
+      "role": "source page literal for early-gap candidate 03"
+    },
+    "source_page_04": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/gruul-gallery.html",
+      "sha256": "06a285476e9f1fea3fd0d43784ba71a77da0c574ff44f9355f996036307a8e14",
+      "bytes": 8958,
+      "role": "source page literal for early-gap candidate 04"
+    },
+    "source_page_05": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/cot-hyjal-gallery.html",
+      "sha256": "ada17276d79e0af2e9c37054f1602a0863774784839ce230e1b4af564954ca11",
+      "bytes": 14423,
+      "role": "source page literal for early-gap candidate 05"
+    },
+    "source_page_06": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/tk-the-eye-gallery.html",
+      "sha256": "494dafb57b8e86b0a7ac22d6edcc13c3419bc6323c57e807b91466df5c9f2359",
+      "bytes": 13046,
+      "role": "source page literal for early-gap candidate 06"
+    },
+    "source_page_07": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/doom-lord-kazzak-gallery.html",
+      "sha256": "7da5d4485b91e3f6a078a598e503f5c8d484641f309c98009764bae86b735481",
+      "bytes": 6461,
+      "role": "source page literal for early-gap candidate 07"
+    },
+    "source_page_08": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/hc-hellfire-ramparts-gallery.html",
+      "sha256": "f9daebf04caa4cb415e887405148d5f616b7010cfe4c0f0f29e0ea8b440baf0a",
+      "bytes": 7869,
+      "role": "source page literal for early-gap candidate 08"
+    },
+    "source_page_09": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/hc-blood-furnace-gallery.html",
+      "sha256": "b90e841a1fda4445ac3014475cf3e8ecc1c777767a8c0fb9df5013c37b434410",
+      "bytes": 7831,
+      "role": "source page literal for early-gap candidate 09"
+    },
+    "source_page_10": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/hc-shatteredhalls-gallery.html",
+      "sha256": "4a15a752cf370338dd78256f6678a1e28899157a82f28638002d1ea7282a4584",
+      "bytes": 9516,
+      "role": "source page literal for early-gap candidate 10"
+    },
+    "source_page_11": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/cr-underbog-gallery.html",
+      "sha256": "bdeb2743ea4fdb817b95dac567a676603bc97dc2ee568ae9b0c36e1f95781b2e",
+      "bytes": 9371,
+      "role": "source page literal for early-gap candidate 11"
+    },
+    "source_page_12": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/cot-escape-gallery.html",
+      "sha256": "0e1e813933b8592035920d6010623191232db647d7a61179d4c948722941fbbf",
+      "bytes": 15296,
+      "role": "source page literal for early-gap candidate 12"
+    },
+    "source_page_13": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/cot-opening-gallery.html",
+      "sha256": "6742140f1ef508f75ba3a4eaca3cf3fcd1edb37a9d93cf62c15fbcf5749818aa",
+      "bytes": 11293,
+      "role": "source page literal for early-gap candidate 13"
+    },
+    "source_page_14": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/tk-arcatraz-gallery.html",
+      "sha256": "becc9b9bbe1f7fa2c8a6a6ed57f0c021074da4ad8dc4da5f6c8083e0ce39e468",
+      "bytes": 13384,
+      "role": "source page literal for early-gap candidate 14"
+    },
+    "source_page_15": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/pvp/battlegrounds/warsong-gulch-gallery.html",
+      "sha256": "eaef0e508fc03d23e5e60a1a02b27bfdbe9e8936ea578ff5552f274b4b8a29b2",
+      "bytes": 9192,
+      "role": "source page literal for early-gap candidate 15"
+    },
+    "source_page_16": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/regions/isle-of-queldanas-gallery.html",
+      "sha256": "4dfcca862bfea6575cb30eff8d974b49221a4356f161683fcefa70254c260468",
+      "bytes": 11926,
+      "role": "source page literal for early-gap candidate 16"
+    },
+    "source_page_17": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/events/hallowsend/gallery.html",
+      "sha256": "d19476dadeae05c4332104a9fd4e3f2f636fc0df813c25d0f7e8e3be2d2375a0",
+      "bytes": 7943,
+      "role": "source page literal for early-gap candidate 17"
+    },
+    "source_page_18": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/events/brewfest/gallery.html",
+      "sha256": "e2787105ddd7d3dec94844fc1091ad70ccafc44724123caf0ca7d5b161850088",
+      "bytes": 6788,
+      "role": "source page literal for early-gap candidate 18"
+    },
+    "source_page_19": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/items/tcg-gallery.html",
+      "sha256": "b222c401e1040e69709e6117c0d04c93b9f9a30171320beafb5746647bb2e796",
+      "bytes": 9489,
+      "role": "source page literal for early-gap candidate 19"
+    },
+    "source_page_20": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/pvp/worldpvp/cityattacks-gallery.html",
+      "sha256": "ba2a9ec91e6f73d42a34c8e2cf784e09e1966fc2e76442f51d8abdede75aaa5a",
+      "bytes": 18755,
+      "role": "source page literal for early-gap candidate 20"
+    }
+  },
+  "candidates": [
+    {
+      "registry_rank": 1,
+      "gallery": "Karazhan",
+      "category": "Raid",
+      "source_page_route": "/info/dungeons/karazhan-gallery.html",
+      "declared_slots": 63,
+      "expected_direct_entities": 126,
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/",
+      "origin": {
+        "scheme": "http",
+        "host": "www.worldofwarcraft.com",
+        "default_port": 80
+      },
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/karazhan-gallery.html",
+        "sha256": "fc7f46d260cba6c434fd5e67d47008f207fbb8bd939a630089599d097755c199",
+        "addshots_line": 126,
+        "addshots_literal": "addshots(\"/info/dungeons/images/karazhan/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/karazhan/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 63;"
+      },
+      "prior_coverage": {
+        "coverage_class": "reviewed_window_complete",
+        "coverage_status": "wave3_saved_complete_index",
+        "coverage_source": "wave3 coverage ledger",
+        "coverage_source_latest": null,
+        "prior_windows": [
+          {
+            "kind": "historical_saved_prefix",
+            "evidence_id": "KARAZHAN-2007",
+            "status": "executed_complete_prefix",
+            "window": {
+              "from": "20070101000000",
+              "to": "20071231235959"
+            },
+            "direct_entity_rows": 0,
+            "status200_image_rows": 0,
+            "nested_excluded_rows": 0,
+            "prefix_pages": 1,
+            "complete_prefix_evidence": true,
+            "report_quote": "complete_prefix_evidence=True; rows=0; direct=0; status200_image=0",
+            "evidence_paths": [
+              {
+                "path": "research/gallery-recovery-20261014/discovery-002/sanitized-summary.json",
+                "exists": true,
+                "bytes": 2595,
+                "sha256": "c398896f30fd147a6795f8176cd380f84e0d7fac4fa7bbfe0cbadc23744eb34c"
+              },
+              {
+                "path": "research/gallery-recovery-20261014/discovery-002/karazhan-2007/cdx/prefix.json",
+                "exists": true,
+                "bytes": 3,
+                "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+              },
+              {
+                "path": "research/gallery-recovery-20261014/discovery-002/karazhan-2007/cdx/pages.json",
+                "exists": true,
+                "bytes": 22,
+                "sha256": "70888f7cccf93eb23761ea0755554720fad69df0ba7e10d642dab4b937f15b2d"
+              },
+              {
+                "path": "research/gallery-recovery-20261014/discovery-002/karazhan-2007/cdx/prefix.headers.txt",
+                "exists": true,
+                "bytes": 638,
+                "sha256": "9d015c3e5a6e4c7a304a2c3d912da64ff680341d8ade477a603380d1df58f01b"
+              }
+            ]
+          },
+          {
+            "kind": "historical_saved_prefix",
+            "evidence_id": "KARAZHAN-2008",
+            "status": "executed_complete_prefix",
+            "window": {
+              "from": "20080101000000",
+              "to": "20081231235959"
+            },
+            "direct_entity_rows": 0,
+            "status200_image_rows": 15,
+            "nested_excluded_rows": 15,
+            "prefix_pages": 1,
+            "complete_prefix_evidence": true,
+            "report_quote": "complete_prefix_evidence=true; rows=20; dynamic direct ssN.jpg/ssN-thumb.jpg rows=0; three nested thumbs paths observed",
+            "evidence_paths": [
+              {
+                "path": "research/gallery-recovery-20261014/karazhan/batch-plan.json",
+                "exists": true,
+                "bytes": 3537,
+                "sha256": "3182df4e5313174d532e4240b362049e7a0ecf2ee5b913c08f05a56f8b12d881"
+              },
+              {
+                "path": "research/gallery-recovery-20261014/karazhan/sanitized-summary.json",
+                "exists": true,
+                "bytes": 649,
+                "sha256": "8f29cfa8f8520ee9e4d0c383d39917824ca21a7383a8ef8d0ad5b486d4b0074a"
+              },
+              {
+                "path": "research/gallery-recovery-20261014/karazhan/cdx/prefix.json",
+                "exists": true,
+                "bytes": 4656,
+                "sha256": "2f99109b8bf39866f46b0ec3001db46a4fbf768abe0d713a18fa4e49f03cbca8"
+              },
+              {
+                "path": "research/gallery-recovery-20261014/karazhan/cdx/prefix.headers.txt",
+                "exists": true,
+                "bytes": 637,
+                "sha256": "31b6ef11daa3864a0d2dc2ead4280b048d1c66d937fb3a8735ce13778bd3bd9b"
+              }
+            ]
+          }
+        ],
+        "prior_attempts": []
+      },
+      "followup_group": "early_gap_before_earliest_complete_window",
+      "reason": "No complete saved prefix query before earliest complete window starting 20070101000000; query only the earlier data gap.",
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20061231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "query_mode": "absolute HTTP prefix index only",
+      "payload_recovery": false,
+      "execution_status": "prepared_not_executed",
+      "network_performed_in_this_plan": false,
+      "no_filename_guess": true,
+      "earliest_complete_prior_window_start": "20070101000000",
+      "early_gap_end_exclusive": "20070101000000",
+      "early_gap_query_end": "20061231235959",
+      "followup_batch": "early_gap_batch_1_of_2_20_items",
+      "rank": 1,
+      "target_key": "GALLERY-EARLY01-01",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fkarazhan%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20061231235959&limit=500&showResumeKey=true",
+      "status": "prepared_not_executed"
+    },
+    {
+      "registry_rank": 2,
+      "gallery": "Zul'Aman",
+      "category": "Raid",
+      "source_page_route": "/info/dungeons/zulaman-gallery.html",
+      "declared_slots": 60,
+      "expected_direct_entities": 120,
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/zulaman/",
+      "origin": {
+        "scheme": "http",
+        "host": "www.worldofwarcraft.com",
+        "default_port": 80
+      },
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/zulaman-gallery.html",
+        "sha256": "342c63cd42af3b72221f03be03d3099e7f3369c9b7cc858868e7304b567033d1",
+        "addshots_line": 123,
+        "addshots_literal": "addshots(\"/info/dungeons/images/zulaman/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/zulaman/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 60;"
+      },
+      "prior_coverage": {
+        "coverage_class": "reviewed_window_complete",
+        "coverage_status": "wave3_saved_complete_index",
+        "coverage_source": "wave3 coverage ledger",
+        "coverage_source_latest": null,
+        "prior_windows": [
+          {
+            "batch_id": "WAYBACK-GALLERYPREFIX01-20261016",
+            "status": "valid_complete_index",
+            "label": "Zul'Aman",
+            "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/zulaman/",
+            "window": {
+              "from": "20060101000000",
+              "to": "20080512210044",
+              "limit": 500,
+              "showResumeKey": true,
+              "collapse": false,
+              "matchType": "prefix"
+            },
+            "direct_exact_candidates": 6,
+            "direct_variant_candidates": 0,
+            "index_rows": 6,
+            "source_responses": 1,
+            "complete_prefix_evidence": true,
+            "acceptance": {
+              "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix01-acceptance.json",
+              "sha256": "54391c95c210a07194661a732220c155693f61c69be67b96c130a61fc2296be8"
+            },
+            "batch_report": {
+              "path": "research/continuous-recovery-20261016/network/gallery-prefix01/batch-report.json",
+              "sha256": "715f67dffb984a306ca7a1de6de5c010a79523551b63f66db9a6e6a3b5560010"
+            },
+            "source_map": {
+              "path": "research/continuous-recovery-20261016/network/gallery-prefix01/source-map.json",
+              "sha256": "fd277a1bc64f192d51caf08e7415fb09d835a84aa63b355e8cce8f4cfe0538e9"
+            }
+          }
+        ],
+        "prior_attempts": [
+          {
+            "attempt": 9,
+            "rank": 5,
+            "label": "Zul'Aman",
+            "transport": "direct",
+            "curl_exit": 28,
+            "connect_status": null,
+            "source_status": null,
+            "content_type": null,
+            "body_bytes": 0,
+            "body_sha256": null,
+            "transport_error": true,
+            "transport_reason": "no_http_status",
+            "cdx_json_valid": false,
+            "cdx_parse_error": "no_200_source_response",
+            "cdx_record_count": 0,
+            "resume_keys": [],
+            "potential_truncation": false,
+            "continuation_followed": false,
+            "phase_boundary": "tcp_connect",
+            "started_utc": "2026-10-16T04:44:01.962258Z",
+            "finished_utc": "2026-10-16T04:44:06.015044Z",
+            "raw": {
+              "headers.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/09-GALLERYPREFIX01-R05-cdx-direct.headers.txt",
+              "body": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/09-GALLERYPREFIX01-R05-cdx-direct.body",
+              "stderr.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/09-GALLERYPREFIX01-R05-cdx-direct.stderr.txt",
+              "trace.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/09-GALLERYPREFIX01-R05-cdx-direct.trace.txt",
+              "metrics.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/09-GALLERYPREFIX01-R05-cdx-direct.metrics.txt"
+            },
+            "batch_id": "WAYBACK-GALLERYPREFIX01-20261016"
+          },
+          {
+            "attempt": 10,
+            "rank": 5,
+            "label": "Zul'Aman",
+            "transport": "proxy",
+            "curl_exit": 0,
+            "connect_status": 200,
+            "source_status": 200,
+            "content_type": "application/json",
+            "body_bytes": 1500,
+            "body_sha256": "2200df3465e54c02e9989541329e1f5b072526bd8e08a5b76dcfabf4c0801143",
+            "transport_error": false,
+            "transport_reason": null,
+            "cdx_json_valid": true,
+            "cdx_parse_error": null,
+            "cdx_record_count": 6,
+            "resume_keys": [],
+            "potential_truncation": false,
+            "continuation_followed": false,
+            "phase_boundary": "source_response",
+            "started_utc": "2026-10-16T04:44:07.077748Z",
+            "finished_utc": "2026-10-16T04:44:09.473493Z",
+            "raw": {
+              "headers.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/10-GALLERYPREFIX01-R05-cdx-proxy.headers.txt",
+              "body": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/10-GALLERYPREFIX01-R05-cdx-proxy.body",
+              "stderr.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/10-GALLERYPREFIX01-R05-cdx-proxy.stderr.txt",
+              "trace.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/10-GALLERYPREFIX01-R05-cdx-proxy.trace.txt",
+              "metrics.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/10-GALLERYPREFIX01-R05-cdx-proxy.metrics.txt"
+            },
+            "batch_id": "WAYBACK-GALLERYPREFIX01-20261016"
+          }
+        ]
+      },
+      "followup_group": "early_gap_before_earliest_complete_window",
+      "reason": "No complete saved prefix query before earliest complete window starting 20060101000000; query only the earlier data gap.",
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "query_mode": "absolute HTTP prefix index only",
+      "payload_recovery": false,
+      "execution_status": "prepared_not_executed",
+      "network_performed_in_this_plan": false,
+      "no_filename_guess": true,
+      "earliest_complete_prior_window_start": "20060101000000",
+      "early_gap_end_exclusive": "20060101000000",
+      "early_gap_query_end": "20051231235959",
+      "followup_batch": "early_gap_batch_1_of_2_20_items",
+      "rank": 2,
+      "target_key": "GALLERY-EARLY01-02",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fzulaman%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "status": "prepared_not_executed"
+    },
+    {
+      "registry_rank": 3,
+      "gallery": "Magtheridon's Lair",
+      "category": "Raid",
+      "source_page_route": "/info/dungeons/mag-gallery.html",
+      "declared_slots": 15,
+      "expected_direct_entities": 30,
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/mag/",
+      "origin": {
+        "scheme": "http",
+        "host": "www.worldofwarcraft.com",
+        "default_port": 80
+      },
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/mag-gallery.html",
+        "sha256": "e629270c70b32f72fb089388dd59473feb9ffe4fafc24a498ba26ab533d9d5fb",
+        "addshots_line": 78,
+        "addshots_literal": "addshots(\"/info/dungeons/images/mag/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/mag/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 15;"
+      },
+      "prior_coverage": {
+        "coverage_class": "reviewed_window_complete",
+        "coverage_status": "wave3_saved_complete_index",
+        "coverage_source": "wave3 coverage ledger",
+        "coverage_source_latest": null,
+        "prior_windows": [
+          {
+            "batch_id": "WAYBACK-GALLERYPREFIX02-20261016",
+            "status": "valid_complete_index",
+            "label": "Magtheridon's Lair",
+            "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/mag/",
+            "window": {
+              "from": "20060101000000",
+              "to": "20080512210044",
+              "limit": 500,
+              "showResumeKey": true,
+              "collapse": false,
+              "matchType": "prefix"
+            },
+            "direct_exact_candidates": 0,
+            "direct_variant_candidates": 0,
+            "image_index_rows": 0,
+            "index_rows": 5,
+            "source_responses": 5,
+            "complete_prefix_evidence": true,
+            "acceptance": {
+              "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix02-acceptance.json",
+              "sha256": "c458bc25881ffc93a217e0a7b70f70e08f25f48242e615066ee73e9ab451b0f8"
+            },
+            "batch_report": {
+              "path": "research/continuous-recovery-20261016/network/driver-v3/batch-report.json",
+              "sha256": "d24736865f0785e99ddb631e3ff6c5d3b772c66008bbb2b72dc9d2dbb934ee84"
+            },
+            "source_map": {
+              "path": "research/continuous-recovery-20261016/network/driver-v3/source-map.json",
+              "sha256": "92867caf932643819e831264d00e572ce21ada636dac9eac2de4aa9a935f8910"
+            }
+          }
+        ],
+        "prior_attempts": []
+      },
+      "followup_group": "early_gap_before_earliest_complete_window",
+      "reason": "No complete saved prefix query before earliest complete window starting 20060101000000; query only the earlier data gap.",
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "query_mode": "absolute HTTP prefix index only",
+      "payload_recovery": false,
+      "execution_status": "prepared_not_executed",
+      "network_performed_in_this_plan": false,
+      "no_filename_guess": true,
+      "earliest_complete_prior_window_start": "20060101000000",
+      "early_gap_end_exclusive": "20060101000000",
+      "early_gap_query_end": "20051231235959",
+      "followup_batch": "early_gap_batch_1_of_2_20_items",
+      "rank": 3,
+      "target_key": "GALLERY-EARLY01-03",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fmag%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "status": "prepared_not_executed"
+    },
+    {
+      "registry_rank": 4,
+      "gallery": "Gruul's Lair",
+      "category": "Raid",
+      "source_page_route": "/info/dungeons/gruul-gallery.html",
+      "declared_slots": 21,
+      "expected_direct_entities": 42,
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/gruul/",
+      "origin": {
+        "scheme": "http",
+        "host": "www.worldofwarcraft.com",
+        "default_port": 80
+      },
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/gruul-gallery.html",
+        "sha256": "06a285476e9f1fea3fd0d43784ba71a77da0c574ff44f9355f996036307a8e14",
+        "addshots_line": 84,
+        "addshots_literal": "addshots(\"/info/dungeons/images/gruul/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/gruul/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 21;"
+      },
+      "prior_coverage": {
+        "coverage_class": "reviewed_window_complete",
+        "coverage_status": "wave3_saved_complete_index",
+        "coverage_source": "wave3 coverage ledger",
+        "coverage_source_latest": null,
+        "prior_windows": [
+          {
+            "batch_id": "WAYBACK-GALLERYPREFIX02-20261016",
+            "status": "valid_complete_index",
+            "label": "Gruul's Lair",
+            "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/gruul/",
+            "window": {
+              "from": "20060101000000",
+              "to": "20080512210044",
+              "limit": 500,
+              "showResumeKey": true,
+              "collapse": false,
+              "matchType": "prefix"
+            },
+            "direct_exact_candidates": 0,
+            "direct_variant_candidates": 0,
+            "image_index_rows": 0,
+            "index_rows": 4,
+            "source_responses": 4,
+            "complete_prefix_evidence": true,
+            "acceptance": {
+              "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix02-acceptance.json",
+              "sha256": "c458bc25881ffc93a217e0a7b70f70e08f25f48242e615066ee73e9ab451b0f8"
+            },
+            "batch_report": {
+              "path": "research/continuous-recovery-20261016/network/driver-v3/batch-report.json",
+              "sha256": "d24736865f0785e99ddb631e3ff6c5d3b772c66008bbb2b72dc9d2dbb934ee84"
+            },
+            "source_map": {
+              "path": "research/continuous-recovery-20261016/network/driver-v3/source-map.json",
+              "sha256": "92867caf932643819e831264d00e572ce21ada636dac9eac2de4aa9a935f8910"
+            }
+          }
+        ],
+        "prior_attempts": []
+      },
+      "followup_group": "early_gap_before_earliest_complete_window",
+      "reason": "No complete saved prefix query before earliest complete window starting 20060101000000; query only the earlier data gap.",
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "query_mode": "absolute HTTP prefix index only",
+      "payload_recovery": false,
+      "execution_status": "prepared_not_executed",
+      "network_performed_in_this_plan": false,
+      "no_filename_guess": true,
+      "earliest_complete_prior_window_start": "20060101000000",
+      "early_gap_end_exclusive": "20060101000000",
+      "early_gap_query_end": "20051231235959",
+      "followup_batch": "early_gap_batch_1_of_2_20_items",
+      "rank": 4,
+      "target_key": "GALLERY-EARLY01-04",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fgruul%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "status": "prepared_not_executed"
+    },
+    {
+      "registry_rank": 6,
+      "gallery": "The Battle for Mount Hyjal - Caverns of Time",
+      "category": "Raid",
+      "source_page_route": "/info/dungeons/cot-hyjal-gallery.html",
+      "declared_slots": 44,
+      "expected_direct_entities": 88,
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/battle/",
+      "origin": {
+        "scheme": "http",
+        "host": "www.worldofwarcraft.com",
+        "default_port": 80
+      },
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/cot-hyjal-gallery.html",
+        "sha256": "ada17276d79e0af2e9c37054f1602a0863774784839ce230e1b4af564954ca11",
+        "addshots_line": 108,
+        "addshots_literal": "addshots(\"/info/dungeons/images/battle/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/battle/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 44;"
+      },
+      "prior_coverage": {
+        "coverage_class": "reviewed_window_complete",
+        "coverage_status": "wave3_saved_complete_index",
+        "coverage_source": "wave3 coverage ledger",
+        "coverage_source_latest": null,
+        "prior_windows": [
+          {
+            "batch_id": "WAYBACK-GALLERYPREFIX02-20261016",
+            "status": "valid_complete_index",
+            "label": "The Battle for Mount Hyjal - Caverns of Time",
+            "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/battle/",
+            "window": {
+              "from": "20060101000000",
+              "to": "20080512210044",
+              "limit": 500,
+              "showResumeKey": true,
+              "collapse": false,
+              "matchType": "prefix"
+            },
+            "direct_exact_candidates": 0,
+            "direct_variant_candidates": 0,
+            "image_index_rows": 0,
+            "index_rows": 0,
+            "source_responses": 0,
+            "complete_prefix_evidence": true,
+            "acceptance": {
+              "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix02-acceptance.json",
+              "sha256": "c458bc25881ffc93a217e0a7b70f70e08f25f48242e615066ee73e9ab451b0f8"
+            },
+            "batch_report": {
+              "path": "research/continuous-recovery-20261016/network/driver-v3/batch-report.json",
+              "sha256": "d24736865f0785e99ddb631e3ff6c5d3b772c66008bbb2b72dc9d2dbb934ee84"
+            },
+            "source_map": {
+              "path": "research/continuous-recovery-20261016/network/driver-v3/source-map.json",
+              "sha256": "92867caf932643819e831264d00e572ce21ada636dac9eac2de4aa9a935f8910"
+            }
+          }
+        ],
+        "prior_attempts": []
+      },
+      "followup_group": "early_gap_before_earliest_complete_window",
+      "reason": "No complete saved prefix query before earliest complete window starting 20060101000000; query only the earlier data gap.",
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "query_mode": "absolute HTTP prefix index only",
+      "payload_recovery": false,
+      "execution_status": "prepared_not_executed",
+      "network_performed_in_this_plan": false,
+      "no_filename_guess": true,
+      "earliest_complete_prior_window_start": "20060101000000",
+      "early_gap_end_exclusive": "20060101000000",
+      "early_gap_query_end": "20051231235959",
+      "followup_batch": "early_gap_batch_1_of_2_20_items",
+      "rank": 5,
+      "target_key": "GALLERY-EARLY01-05",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fbattle%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "status": "prepared_not_executed"
+    },
+    {
+      "registry_rank": 7,
+      "gallery": "Tempest Keep - The Eye",
+      "category": "Raid",
+      "source_page_route": "/info/dungeons/tk-the-eye-gallery.html",
+      "declared_slots": 43,
+      "expected_direct_entities": 86,
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/theeye/",
+      "origin": {
+        "scheme": "http",
+        "host": "www.worldofwarcraft.com",
+        "default_port": 80
+      },
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/tk-the-eye-gallery.html",
+        "sha256": "494dafb57b8e86b0a7ac22d6edcc13c3419bc6323c57e807b91466df5c9f2359",
+        "addshots_line": 106,
+        "addshots_literal": "addshots(\"/info/dungeons/images/theeye/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/theeye/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 43;"
+      },
+      "prior_coverage": {
+        "coverage_class": "reviewed_window_complete",
+        "coverage_status": "wave3_saved_complete_index",
+        "coverage_source": "wave3 coverage ledger",
+        "coverage_source_latest": null,
+        "prior_windows": [
+          {
+            "batch_id": "WAYBACK-GALLERYPREFIX02-20261016",
+            "status": "valid_complete_index",
+            "label": "Tempest Keep - The Eye",
+            "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/theeye/",
+            "window": {
+              "from": "20060101000000",
+              "to": "20080512210044",
+              "limit": 500,
+              "showResumeKey": true,
+              "collapse": false,
+              "matchType": "prefix"
+            },
+            "direct_exact_candidates": 0,
+            "direct_variant_candidates": 0,
+            "image_index_rows": 0,
+            "index_rows": 0,
+            "source_responses": 0,
+            "complete_prefix_evidence": true,
+            "acceptance": {
+              "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix02-acceptance.json",
+              "sha256": "c458bc25881ffc93a217e0a7b70f70e08f25f48242e615066ee73e9ab451b0f8"
+            },
+            "batch_report": {
+              "path": "research/continuous-recovery-20261016/network/driver-v3/batch-report.json",
+              "sha256": "d24736865f0785e99ddb631e3ff6c5d3b772c66008bbb2b72dc9d2dbb934ee84"
+            },
+            "source_map": {
+              "path": "research/continuous-recovery-20261016/network/driver-v3/source-map.json",
+              "sha256": "92867caf932643819e831264d00e572ce21ada636dac9eac2de4aa9a935f8910"
+            }
+          }
+        ],
+        "prior_attempts": []
+      },
+      "followup_group": "early_gap_before_earliest_complete_window",
+      "reason": "No complete saved prefix query before earliest complete window starting 20060101000000; query only the earlier data gap.",
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "query_mode": "absolute HTTP prefix index only",
+      "payload_recovery": false,
+      "execution_status": "prepared_not_executed",
+      "network_performed_in_this_plan": false,
+      "no_filename_guess": true,
+      "earliest_complete_prior_window_start": "20060101000000",
+      "early_gap_end_exclusive": "20060101000000",
+      "early_gap_query_end": "20051231235959",
+      "followup_batch": "early_gap_batch_1_of_2_20_items",
+      "rank": 6,
+      "target_key": "GALLERY-EARLY01-06",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Ftheeye%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "status": "prepared_not_executed"
+    },
+    {
+      "registry_rank": 9,
+      "gallery": "Doom Lord Kazzak",
+      "category": "Raid",
+      "source_page_route": "/info/dungeons/doom-lord-kazzak-gallery.html",
+      "declared_slots": 9,
+      "expected_direct_entities": 18,
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/doomlordkazzak/",
+      "origin": {
+        "scheme": "http",
+        "host": "www.worldofwarcraft.com",
+        "default_port": 80
+      },
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/doom-lord-kazzak-gallery.html",
+        "sha256": "7da5d4485b91e3f6a078a598e503f5c8d484641f309c98009764bae86b735481",
+        "addshots_line": 72,
+        "addshots_literal": "addshots(\"/info/dungeons/images/doomlordkazzak/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/doomlordkazzak/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 9;"
+      },
+      "prior_coverage": {
+        "coverage_class": "reviewed_window_complete",
+        "coverage_status": "wave3_saved_complete_index",
+        "coverage_source": "wave3 coverage ledger",
+        "coverage_source_latest": null,
+        "prior_windows": [
+          {
+            "batch_id": "WAYBACK-GALLERYPREFIX02-20261016",
+            "status": "valid_complete_index",
+            "label": "Doom Lord Kazzak",
+            "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/doomlordkazzak/",
+            "window": {
+              "from": "20060101000000",
+              "to": "20080512210044",
+              "limit": 500,
+              "showResumeKey": true,
+              "collapse": false,
+              "matchType": "prefix"
+            },
+            "direct_exact_candidates": 0,
+            "direct_variant_candidates": 0,
+            "image_index_rows": 0,
+            "index_rows": 3,
+            "source_responses": 3,
+            "complete_prefix_evidence": true,
+            "acceptance": {
+              "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix02-acceptance.json",
+              "sha256": "c458bc25881ffc93a217e0a7b70f70e08f25f48242e615066ee73e9ab451b0f8"
+            },
+            "batch_report": {
+              "path": "research/continuous-recovery-20261016/network/driver-v3/batch-report.json",
+              "sha256": "d24736865f0785e99ddb631e3ff6c5d3b772c66008bbb2b72dc9d2dbb934ee84"
+            },
+            "source_map": {
+              "path": "research/continuous-recovery-20261016/network/driver-v3/source-map.json",
+              "sha256": "92867caf932643819e831264d00e572ce21ada636dac9eac2de4aa9a935f8910"
+            }
+          }
+        ],
+        "prior_attempts": []
+      },
+      "followup_group": "early_gap_before_earliest_complete_window",
+      "reason": "No complete saved prefix query before earliest complete window starting 20060101000000; query only the earlier data gap.",
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "query_mode": "absolute HTTP prefix index only",
+      "payload_recovery": false,
+      "execution_status": "prepared_not_executed",
+      "network_performed_in_this_plan": false,
+      "no_filename_guess": true,
+      "earliest_complete_prior_window_start": "20060101000000",
+      "early_gap_end_exclusive": "20060101000000",
+      "early_gap_query_end": "20051231235959",
+      "followup_batch": "early_gap_batch_1_of_2_20_items",
+      "rank": 7,
+      "target_key": "GALLERY-EARLY01-07",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fdoomlordkazzak%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "status": "prepared_not_executed"
+    },
+    {
+      "registry_rank": 11,
+      "gallery": "Hellfire Citadel - Hellfire Ramparts",
+      "category": "Dungeon",
+      "source_page_route": "/info/dungeons/hc-hellfire-ramparts-gallery.html",
+      "declared_slots": 32,
+      "expected_direct_entities": 64,
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/hellfireramparts/",
+      "origin": {
+        "scheme": "http",
+        "host": "www.worldofwarcraft.com",
+        "default_port": 80
+      },
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/hc-hellfire-ramparts-gallery.html",
+        "sha256": "f9daebf04caa4cb415e887405148d5f616b7010cfe4c0f0f29e0ea8b440baf0a",
+        "addshots_line": 95,
+        "addshots_literal": "addshots(\"/info/dungeons/images/hellfireramparts/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/hellfireramparts/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 32;"
+      },
+      "prior_coverage": {
+        "coverage_class": "reviewed_window_complete",
+        "coverage_status": "wave3_saved_complete_index",
+        "coverage_source": "wave3 coverage ledger",
+        "coverage_source_latest": null,
+        "prior_windows": [
+          {
+            "batch_id": "WAYBACK-GALLERYPREFIX02-20261016",
+            "status": "valid_complete_index",
+            "label": "Hellfire Citadel - Hellfire Ramparts",
+            "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/hellfireramparts/",
+            "window": {
+              "from": "20060101000000",
+              "to": "20080512210044",
+              "limit": 500,
+              "showResumeKey": true,
+              "collapse": false,
+              "matchType": "prefix"
+            },
+            "direct_exact_candidates": 0,
+            "direct_variant_candidates": 0,
+            "image_index_rows": 0,
+            "index_rows": 0,
+            "source_responses": 0,
+            "complete_prefix_evidence": true,
+            "acceptance": {
+              "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix02-acceptance.json",
+              "sha256": "c458bc25881ffc93a217e0a7b70f70e08f25f48242e615066ee73e9ab451b0f8"
+            },
+            "batch_report": {
+              "path": "research/continuous-recovery-20261016/network/driver-v3/batch-report.json",
+              "sha256": "d24736865f0785e99ddb631e3ff6c5d3b772c66008bbb2b72dc9d2dbb934ee84"
+            },
+            "source_map": {
+              "path": "research/continuous-recovery-20261016/network/driver-v3/source-map.json",
+              "sha256": "92867caf932643819e831264d00e572ce21ada636dac9eac2de4aa9a935f8910"
+            }
+          }
+        ],
+        "prior_attempts": []
+      },
+      "followup_group": "early_gap_before_earliest_complete_window",
+      "reason": "No complete saved prefix query before earliest complete window starting 20060101000000; query only the earlier data gap.",
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "query_mode": "absolute HTTP prefix index only",
+      "payload_recovery": false,
+      "execution_status": "prepared_not_executed",
+      "network_performed_in_this_plan": false,
+      "no_filename_guess": true,
+      "earliest_complete_prior_window_start": "20060101000000",
+      "early_gap_end_exclusive": "20060101000000",
+      "early_gap_query_end": "20051231235959",
+      "followup_batch": "early_gap_batch_1_of_2_20_items",
+      "rank": 8,
+      "target_key": "GALLERY-EARLY01-08",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fhellfireramparts%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "status": "prepared_not_executed"
+    },
+    {
+      "registry_rank": 12,
+      "gallery": "Hellfire Citadel - The Blood Furnace",
+      "category": "Dungeon",
+      "source_page_route": "/info/dungeons/hc-blood-furnace-gallery.html",
+      "declared_slots": 39,
+      "expected_direct_entities": 78,
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/bloodfurnace/",
+      "origin": {
+        "scheme": "http",
+        "host": "www.worldofwarcraft.com",
+        "default_port": 80
+      },
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/hc-blood-furnace-gallery.html",
+        "sha256": "b90e841a1fda4445ac3014475cf3e8ecc1c777767a8c0fb9df5013c37b434410",
+        "addshots_line": 102,
+        "addshots_literal": "addshots(\"/info/dungeons/images/bloodfurnace/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/bloodfurnace/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 39;"
+      },
+      "prior_coverage": {
+        "coverage_class": "reviewed_window_complete",
+        "coverage_status": "wave3_saved_complete_index",
+        "coverage_source": "wave3 coverage ledger",
+        "coverage_source_latest": null,
+        "prior_windows": [
+          {
+            "batch_id": "WAYBACK-GALLERYPREFIX02-20261016",
+            "status": "valid_complete_index",
+            "label": "Hellfire Citadel - The Blood Furnace",
+            "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/bloodfurnace/",
+            "window": {
+              "from": "20060101000000",
+              "to": "20080512210044",
+              "limit": 500,
+              "showResumeKey": true,
+              "collapse": false,
+              "matchType": "prefix"
+            },
+            "direct_exact_candidates": 0,
+            "direct_variant_candidates": 0,
+            "image_index_rows": 0,
+            "index_rows": 1,
+            "source_responses": 1,
+            "complete_prefix_evidence": true,
+            "acceptance": {
+              "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix02-acceptance.json",
+              "sha256": "c458bc25881ffc93a217e0a7b70f70e08f25f48242e615066ee73e9ab451b0f8"
+            },
+            "batch_report": {
+              "path": "research/continuous-recovery-20261016/network/driver-v3/batch-report.json",
+              "sha256": "d24736865f0785e99ddb631e3ff6c5d3b772c66008bbb2b72dc9d2dbb934ee84"
+            },
+            "source_map": {
+              "path": "research/continuous-recovery-20261016/network/driver-v3/source-map.json",
+              "sha256": "92867caf932643819e831264d00e572ce21ada636dac9eac2de4aa9a935f8910"
+            }
+          }
+        ],
+        "prior_attempts": []
+      },
+      "followup_group": "early_gap_before_earliest_complete_window",
+      "reason": "No complete saved prefix query before earliest complete window starting 20060101000000; query only the earlier data gap.",
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "query_mode": "absolute HTTP prefix index only",
+      "payload_recovery": false,
+      "execution_status": "prepared_not_executed",
+      "network_performed_in_this_plan": false,
+      "no_filename_guess": true,
+      "earliest_complete_prior_window_start": "20060101000000",
+      "early_gap_end_exclusive": "20060101000000",
+      "early_gap_query_end": "20051231235959",
+      "followup_batch": "early_gap_batch_1_of_2_20_items",
+      "rank": 9,
+      "target_key": "GALLERY-EARLY01-09",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fbloodfurnace%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "status": "prepared_not_executed"
+    },
+    {
+      "registry_rank": 13,
+      "gallery": "Hellfire Citadel - The Shattered Halls",
+      "category": "Dungeon",
+      "source_page_route": "/info/dungeons/hc-shatteredhalls-gallery.html",
+      "declared_slots": 50,
+      "expected_direct_entities": 100,
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/shatteredhalls/",
+      "origin": {
+        "scheme": "http",
+        "host": "www.worldofwarcraft.com",
+        "default_port": 80
+      },
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/hc-shatteredhalls-gallery.html",
+        "sha256": "4a15a752cf370338dd78256f6678a1e28899157a82f28638002d1ea7282a4584",
+        "addshots_line": 113,
+        "addshots_literal": "addshots(\"/info/dungeons/images/shatteredhalls/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/shatteredhalls/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 50;"
+      },
+      "prior_coverage": {
+        "coverage_class": "reviewed_window_complete",
+        "coverage_status": "wave3_saved_complete_index",
+        "coverage_source": "wave3 coverage ledger",
+        "coverage_source_latest": null,
+        "prior_windows": [
+          {
+            "batch_id": "WAYBACK-GALLERYPREFIX01-20261016",
+            "status": "valid_complete_index",
+            "label": "Hellfire Citadel - The Shattered Halls",
+            "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/shatteredhalls/",
+            "window": {
+              "from": "20060101000000",
+              "to": "20080512210044",
+              "limit": 500,
+              "showResumeKey": true,
+              "collapse": false,
+              "matchType": "prefix"
+            },
+            "direct_exact_candidates": 0,
+            "direct_variant_candidates": 0,
+            "index_rows": 0,
+            "source_responses": 1,
+            "complete_prefix_evidence": true,
+            "acceptance": {
+              "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix01-acceptance.json",
+              "sha256": "54391c95c210a07194661a732220c155693f61c69be67b96c130a61fc2296be8"
+            },
+            "batch_report": {
+              "path": "research/continuous-recovery-20261016/network/gallery-prefix01/batch-report.json",
+              "sha256": "715f67dffb984a306ca7a1de6de5c010a79523551b63f66db9a6e6a3b5560010"
+            },
+            "source_map": {
+              "path": "research/continuous-recovery-20261016/network/gallery-prefix01/source-map.json",
+              "sha256": "fd277a1bc64f192d51caf08e7415fb09d835a84aa63b355e8cce8f4cfe0538e9"
+            }
+          }
+        ],
+        "prior_attempts": [
+          {
+            "attempt": 11,
+            "rank": 6,
+            "label": "Hellfire Citadel - The Shattered Halls",
+            "transport": "direct",
+            "curl_exit": 28,
+            "connect_status": null,
+            "source_status": null,
+            "content_type": null,
+            "body_bytes": 0,
+            "body_sha256": null,
+            "transport_error": true,
+            "transport_reason": "no_http_status",
+            "cdx_json_valid": false,
+            "cdx_parse_error": "no_200_source_response",
+            "cdx_record_count": 0,
+            "resume_keys": [],
+            "potential_truncation": false,
+            "continuation_followed": false,
+            "phase_boundary": "tcp_connect",
+            "started_utc": "2026-10-16T04:44:12.182751Z",
+            "finished_utc": "2026-10-16T04:44:16.223735Z",
+            "raw": {
+              "headers.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/11-GALLERYPREFIX01-R06-cdx-direct.headers.txt",
+              "body": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/11-GALLERYPREFIX01-R06-cdx-direct.body",
+              "stderr.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/11-GALLERYPREFIX01-R06-cdx-direct.stderr.txt",
+              "trace.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/11-GALLERYPREFIX01-R06-cdx-direct.trace.txt",
+              "metrics.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/11-GALLERYPREFIX01-R06-cdx-direct.metrics.txt"
+            },
+            "batch_id": "WAYBACK-GALLERYPREFIX01-20261016"
+          },
+          {
+            "attempt": 12,
+            "rank": 6,
+            "label": "Hellfire Citadel - The Shattered Halls",
+            "transport": "proxy",
+            "curl_exit": 0,
+            "connect_status": 200,
+            "source_status": 200,
+            "content_type": "application/json",
+            "body_bytes": 3,
+            "body_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+            "transport_error": false,
+            "transport_reason": null,
+            "cdx_json_valid": true,
+            "cdx_parse_error": null,
+            "cdx_record_count": 0,
+            "resume_keys": [],
+            "potential_truncation": false,
+            "continuation_followed": false,
+            "phase_boundary": "source_response",
+            "started_utc": "2026-10-16T04:44:17.291230Z",
+            "finished_utc": "2026-10-16T04:44:21.220808Z",
+            "raw": {
+              "headers.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/12-GALLERYPREFIX01-R06-cdx-proxy.headers.txt",
+              "body": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/12-GALLERYPREFIX01-R06-cdx-proxy.body",
+              "stderr.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/12-GALLERYPREFIX01-R06-cdx-proxy.stderr.txt",
+              "trace.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/12-GALLERYPREFIX01-R06-cdx-proxy.trace.txt",
+              "metrics.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/12-GALLERYPREFIX01-R06-cdx-proxy.metrics.txt"
+            },
+            "batch_id": "WAYBACK-GALLERYPREFIX01-20261016"
+          }
+        ]
+      },
+      "followup_group": "early_gap_before_earliest_complete_window",
+      "reason": "No complete saved prefix query before earliest complete window starting 20060101000000; query only the earlier data gap.",
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "query_mode": "absolute HTTP prefix index only",
+      "payload_recovery": false,
+      "execution_status": "prepared_not_executed",
+      "network_performed_in_this_plan": false,
+      "no_filename_guess": true,
+      "earliest_complete_prior_window_start": "20060101000000",
+      "early_gap_end_exclusive": "20060101000000",
+      "early_gap_query_end": "20051231235959",
+      "followup_batch": "early_gap_batch_1_of_2_20_items",
+      "rank": 10,
+      "target_key": "GALLERY-EARLY01-10",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fshatteredhalls%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "status": "prepared_not_executed"
+    },
+    {
+      "registry_rank": 14,
+      "gallery": "Coilfang Reservoir - The Underbog",
+      "category": "Dungeon",
+      "source_page_route": "/info/dungeons/cr-underbog-gallery.html",
+      "declared_slots": 40,
+      "expected_direct_entities": 80,
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/underbog/",
+      "origin": {
+        "scheme": "http",
+        "host": "www.worldofwarcraft.com",
+        "default_port": 80
+      },
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/cr-underbog-gallery.html",
+        "sha256": "bdeb2743ea4fdb817b95dac567a676603bc97dc2ee568ae9b0c36e1f95781b2e",
+        "addshots_line": 103,
+        "addshots_literal": "addshots(\"/info/dungeons/images/underbog/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/underbog/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 40;"
+      },
+      "prior_coverage": {
+        "coverage_class": "reviewed_window_complete",
+        "coverage_status": "wave3_saved_complete_index",
+        "coverage_source": "wave3 coverage ledger",
+        "coverage_source_latest": null,
+        "prior_windows": [
+          {
+            "batch_id": "WAYBACK-GALLERYPREFIX02-20261016",
+            "status": "valid_complete_index",
+            "label": "Coilfang Reservoir - The Underbog",
+            "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/underbog/",
+            "window": {
+              "from": "20060101000000",
+              "to": "20080512210044",
+              "limit": 500,
+              "showResumeKey": true,
+              "collapse": false,
+              "matchType": "prefix"
+            },
+            "direct_exact_candidates": 0,
+            "direct_variant_candidates": 0,
+            "image_index_rows": 0,
+            "index_rows": 2,
+            "source_responses": 2,
+            "complete_prefix_evidence": true,
+            "acceptance": {
+              "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix02-acceptance.json",
+              "sha256": "c458bc25881ffc93a217e0a7b70f70e08f25f48242e615066ee73e9ab451b0f8"
+            },
+            "batch_report": {
+              "path": "research/continuous-recovery-20261016/network/driver-v3/batch-report.json",
+              "sha256": "d24736865f0785e99ddb631e3ff6c5d3b772c66008bbb2b72dc9d2dbb934ee84"
+            },
+            "source_map": {
+              "path": "research/continuous-recovery-20261016/network/driver-v3/source-map.json",
+              "sha256": "92867caf932643819e831264d00e572ce21ada636dac9eac2de4aa9a935f8910"
+            }
+          }
+        ],
+        "prior_attempts": []
+      },
+      "followup_group": "early_gap_before_earliest_complete_window",
+      "reason": "No complete saved prefix query before earliest complete window starting 20060101000000; query only the earlier data gap.",
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "query_mode": "absolute HTTP prefix index only",
+      "payload_recovery": false,
+      "execution_status": "prepared_not_executed",
+      "network_performed_in_this_plan": false,
+      "no_filename_guess": true,
+      "earliest_complete_prior_window_start": "20060101000000",
+      "early_gap_end_exclusive": "20060101000000",
+      "early_gap_query_end": "20051231235959",
+      "followup_batch": "early_gap_batch_1_of_2_20_items",
+      "rank": 11,
+      "target_key": "GALLERY-EARLY01-11",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Funderbog%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "status": "prepared_not_executed"
+    },
+    {
+      "registry_rank": 15,
+      "gallery": "Caverns of Time - Escape from Durnholde",
+      "category": "Dungeon",
+      "source_page_route": "/info/dungeons/cot-escape-gallery.html",
+      "declared_slots": 38,
+      "expected_direct_entities": 76,
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/escape/",
+      "origin": {
+        "scheme": "http",
+        "host": "www.worldofwarcraft.com",
+        "default_port": 80
+      },
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/cot-escape-gallery.html",
+        "sha256": "0e1e813933b8592035920d6010623191232db647d7a61179d4c948722941fbbf",
+        "addshots_line": 101,
+        "addshots_literal": "addshots(\"/info/dungeons/images/escape/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/escape/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 38;"
+      },
+      "prior_coverage": {
+        "coverage_class": "reviewed_window_complete",
+        "coverage_status": "wave3_saved_complete_index",
+        "coverage_source": "wave3 coverage ledger",
+        "coverage_source_latest": null,
+        "prior_windows": [
+          {
+            "batch_id": "WAYBACK-GALLERYPREFIX02-20261016",
+            "status": "valid_complete_index",
+            "label": "Caverns of Time - Escape from Durnholde",
+            "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/escape/",
+            "window": {
+              "from": "20060101000000",
+              "to": "20080512210044",
+              "limit": 500,
+              "showResumeKey": true,
+              "collapse": false,
+              "matchType": "prefix"
+            },
+            "direct_exact_candidates": 0,
+            "direct_variant_candidates": 0,
+            "image_index_rows": 0,
+            "index_rows": 3,
+            "source_responses": 3,
+            "complete_prefix_evidence": true,
+            "acceptance": {
+              "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix02-acceptance.json",
+              "sha256": "c458bc25881ffc93a217e0a7b70f70e08f25f48242e615066ee73e9ab451b0f8"
+            },
+            "batch_report": {
+              "path": "research/continuous-recovery-20261016/network/driver-v3/batch-report.json",
+              "sha256": "d24736865f0785e99ddb631e3ff6c5d3b772c66008bbb2b72dc9d2dbb934ee84"
+            },
+            "source_map": {
+              "path": "research/continuous-recovery-20261016/network/driver-v3/source-map.json",
+              "sha256": "92867caf932643819e831264d00e572ce21ada636dac9eac2de4aa9a935f8910"
+            }
+          }
+        ],
+        "prior_attempts": []
+      },
+      "followup_group": "early_gap_before_earliest_complete_window",
+      "reason": "No complete saved prefix query before earliest complete window starting 20060101000000; query only the earlier data gap.",
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "query_mode": "absolute HTTP prefix index only",
+      "payload_recovery": false,
+      "execution_status": "prepared_not_executed",
+      "network_performed_in_this_plan": false,
+      "no_filename_guess": true,
+      "earliest_complete_prior_window_start": "20060101000000",
+      "early_gap_end_exclusive": "20060101000000",
+      "early_gap_query_end": "20051231235959",
+      "followup_batch": "early_gap_batch_1_of_2_20_items",
+      "rank": 12,
+      "target_key": "GALLERY-EARLY01-12",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fescape%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "status": "prepared_not_executed"
+    },
+    {
+      "registry_rank": 16,
+      "gallery": "Caverns of Time - Opening of the Dark Portal",
+      "category": "Dungeon",
+      "source_page_route": "/info/dungeons/cot-opening-gallery.html",
+      "declared_slots": 30,
+      "expected_direct_entities": 60,
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/opening/",
+      "origin": {
+        "scheme": "http",
+        "host": "www.worldofwarcraft.com",
+        "default_port": 80
+      },
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/cot-opening-gallery.html",
+        "sha256": "6742140f1ef508f75ba3a4eaca3cf3fcd1edb37a9d93cf62c15fbcf5749818aa",
+        "addshots_line": 93,
+        "addshots_literal": "addshots(\"/info/dungeons/images/opening/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/opening/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 30;"
+      },
+      "prior_coverage": {
+        "coverage_class": "reviewed_window_complete",
+        "coverage_status": "wave3_saved_complete_index",
+        "coverage_source": "wave3 coverage ledger",
+        "coverage_source_latest": null,
+        "prior_windows": [
+          {
+            "batch_id": "WAYBACK-GALLERYPREFIX02-20261016",
+            "status": "valid_complete_index",
+            "label": "Caverns of Time - Opening of the Dark Portal",
+            "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/opening/",
+            "window": {
+              "from": "20060101000000",
+              "to": "20080512210044",
+              "limit": 500,
+              "showResumeKey": true,
+              "collapse": false,
+              "matchType": "prefix"
+            },
+            "direct_exact_candidates": 0,
+            "direct_variant_candidates": 0,
+            "image_index_rows": 0,
+            "index_rows": 1,
+            "source_responses": 1,
+            "complete_prefix_evidence": true,
+            "acceptance": {
+              "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix02-acceptance.json",
+              "sha256": "c458bc25881ffc93a217e0a7b70f70e08f25f48242e615066ee73e9ab451b0f8"
+            },
+            "batch_report": {
+              "path": "research/continuous-recovery-20261016/network/driver-v3/batch-report.json",
+              "sha256": "d24736865f0785e99ddb631e3ff6c5d3b772c66008bbb2b72dc9d2dbb934ee84"
+            },
+            "source_map": {
+              "path": "research/continuous-recovery-20261016/network/driver-v3/source-map.json",
+              "sha256": "92867caf932643819e831264d00e572ce21ada636dac9eac2de4aa9a935f8910"
+            }
+          }
+        ],
+        "prior_attempts": []
+      },
+      "followup_group": "early_gap_before_earliest_complete_window",
+      "reason": "No complete saved prefix query before earliest complete window starting 20060101000000; query only the earlier data gap.",
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "query_mode": "absolute HTTP prefix index only",
+      "payload_recovery": false,
+      "execution_status": "prepared_not_executed",
+      "network_performed_in_this_plan": false,
+      "no_filename_guess": true,
+      "earliest_complete_prior_window_start": "20060101000000",
+      "early_gap_end_exclusive": "20060101000000",
+      "early_gap_query_end": "20051231235959",
+      "followup_batch": "early_gap_batch_1_of_2_20_items",
+      "rank": 13,
+      "target_key": "GALLERY-EARLY01-13",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fopening%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "status": "prepared_not_executed"
+    },
+    {
+      "registry_rank": 24,
+      "gallery": "Tempest Keep - The Arcatraz",
+      "category": "Dungeon",
+      "source_page_route": "/info/dungeons/tk-arcatraz-gallery.html",
+      "declared_slots": 49,
+      "expected_direct_entities": 98,
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/arcatraz/",
+      "origin": {
+        "scheme": "http",
+        "host": "www.worldofwarcraft.com",
+        "default_port": 80
+      },
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/tk-arcatraz-gallery.html",
+        "sha256": "becc9b9bbe1f7fa2c8a6a6ed57f0c021074da4ad8dc4da5f6c8083e0ce39e468",
+        "addshots_line": 112,
+        "addshots_literal": "addshots(\"/info/dungeons/images/arcatraz/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/arcatraz/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 49;"
+      },
+      "prior_coverage": {
+        "coverage_class": "reviewed_window_complete",
+        "coverage_status": "wave3_saved_complete_index",
+        "coverage_source": "wave3 coverage ledger",
+        "coverage_source_latest": null,
+        "prior_windows": [
+          {
+            "batch_id": "WAYBACK-GALLERYPREFIX01-20261016",
+            "status": "valid_complete_index",
+            "label": "Tempest Keep - The Arcatraz",
+            "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/arcatraz/",
+            "window": {
+              "from": "20060101000000",
+              "to": "20080512210044",
+              "limit": 500,
+              "showResumeKey": true,
+              "collapse": false,
+              "matchType": "prefix"
+            },
+            "direct_exact_candidates": 0,
+            "direct_variant_candidates": 0,
+            "index_rows": 2,
+            "source_responses": 1,
+            "complete_prefix_evidence": true,
+            "acceptance": {
+              "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix01-acceptance.json",
+              "sha256": "54391c95c210a07194661a732220c155693f61c69be67b96c130a61fc2296be8"
+            },
+            "batch_report": {
+              "path": "research/continuous-recovery-20261016/network/gallery-prefix01/batch-report.json",
+              "sha256": "715f67dffb984a306ca7a1de6de5c010a79523551b63f66db9a6e6a3b5560010"
+            },
+            "source_map": {
+              "path": "research/continuous-recovery-20261016/network/gallery-prefix01/source-map.json",
+              "sha256": "fd277a1bc64f192d51caf08e7415fb09d835a84aa63b355e8cce8f4cfe0538e9"
+            }
+          }
+        ],
+        "prior_attempts": [
+          {
+            "attempt": 13,
+            "rank": 7,
+            "label": "Tempest Keep - The Arcatraz",
+            "transport": "direct",
+            "curl_exit": 28,
+            "connect_status": null,
+            "source_status": null,
+            "content_type": null,
+            "body_bytes": 0,
+            "body_sha256": null,
+            "transport_error": true,
+            "transport_reason": "no_http_status",
+            "cdx_json_valid": false,
+            "cdx_parse_error": "no_200_source_response",
+            "cdx_record_count": 0,
+            "resume_keys": [],
+            "potential_truncation": false,
+            "continuation_followed": false,
+            "phase_boundary": "tcp_connect",
+            "started_utc": "2026-10-16T04:44:22.390631Z",
+            "finished_utc": "2026-10-16T04:44:26.434104Z",
+            "raw": {
+              "headers.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/13-GALLERYPREFIX01-R07-cdx-direct.headers.txt",
+              "body": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/13-GALLERYPREFIX01-R07-cdx-direct.body",
+              "stderr.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/13-GALLERYPREFIX01-R07-cdx-direct.stderr.txt",
+              "trace.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/13-GALLERYPREFIX01-R07-cdx-direct.trace.txt",
+              "metrics.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/13-GALLERYPREFIX01-R07-cdx-direct.metrics.txt"
+            },
+            "batch_id": "WAYBACK-GALLERYPREFIX01-20261016"
+          },
+          {
+            "attempt": 14,
+            "rank": 7,
+            "label": "Tempest Keep - The Arcatraz",
+            "transport": "proxy",
+            "curl_exit": 0,
+            "connect_status": 200,
+            "source_status": 200,
+            "content_type": "application/json",
+            "body_bytes": 473,
+            "body_sha256": "b54064a5b231eaec10d2482e563815e707dbfa4affcd050cd2b6bf62d1381131",
+            "transport_error": false,
+            "transport_reason": null,
+            "cdx_json_valid": true,
+            "cdx_parse_error": null,
+            "cdx_record_count": 2,
+            "resume_keys": [],
+            "potential_truncation": false,
+            "continuation_followed": false,
+            "phase_boundary": "source_response",
+            "started_utc": "2026-10-16T04:44:27.498515Z",
+            "finished_utc": "2026-10-16T04:44:36.252327Z",
+            "raw": {
+              "headers.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/14-GALLERYPREFIX01-R07-cdx-proxy.headers.txt",
+              "body": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/14-GALLERYPREFIX01-R07-cdx-proxy.body",
+              "stderr.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/14-GALLERYPREFIX01-R07-cdx-proxy.stderr.txt",
+              "trace.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/14-GALLERYPREFIX01-R07-cdx-proxy.trace.txt",
+              "metrics.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/14-GALLERYPREFIX01-R07-cdx-proxy.metrics.txt"
+            },
+            "batch_id": "WAYBACK-GALLERYPREFIX01-20261016"
+          }
+        ]
+      },
+      "followup_group": "early_gap_before_earliest_complete_window",
+      "reason": "No complete saved prefix query before earliest complete window starting 20060101000000; query only the earlier data gap.",
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "query_mode": "absolute HTTP prefix index only",
+      "payload_recovery": false,
+      "execution_status": "prepared_not_executed",
+      "network_performed_in_this_plan": false,
+      "no_filename_guess": true,
+      "earliest_complete_prior_window_start": "20060101000000",
+      "early_gap_end_exclusive": "20060101000000",
+      "early_gap_query_end": "20051231235959",
+      "followup_batch": "early_gap_batch_1_of_2_20_items",
+      "rank": 14,
+      "target_key": "GALLERY-EARLY01-14",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Farcatraz%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "status": "prepared_not_executed"
+    },
+    {
+      "registry_rank": 25,
+      "gallery": "Warsong Gulch",
+      "category": "PvP",
+      "source_page_route": "/pvp/battlegrounds/warsong-gulch-gallery.html",
+      "declared_slots": 29,
+      "expected_direct_entities": 58,
+      "prefix": "http://www.worldofwarcraft.com/pvp/battlegrounds/warsonggulch/",
+      "origin": {
+        "scheme": "http",
+        "host": "www.worldofwarcraft.com",
+        "default_port": 80
+      },
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/pvp/battlegrounds/warsong-gulch-gallery.html",
+        "sha256": "eaef0e508fc03d23e5e60a1a02b27bfdbe9e8936ea578ff5552f274b4b8a29b2",
+        "addshots_line": 96,
+        "addshots_literal": "addshots(\"/pvp/battlegrounds/warsonggulch/\",\"ss\",numShots);",
+        "source_directory": "/pvp/battlegrounds/warsonggulch/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 29;"
+      },
+      "prior_coverage": {
+        "coverage_class": "reviewed_window_complete",
+        "coverage_status": "wave3_saved_complete_index",
+        "coverage_source": "wave3 coverage ledger",
+        "coverage_source_latest": null,
+        "prior_windows": [
+          {
+            "batch_id": "WAYBACK-GALLERYPREFIX01-20261016",
+            "status": "valid_complete_index",
+            "label": "Warsong Gulch",
+            "prefix": "http://www.worldofwarcraft.com/pvp/battlegrounds/warsonggulch/",
+            "window": {
+              "from": "20060101000000",
+              "to": "20080512210044",
+              "limit": 500,
+              "showResumeKey": true,
+              "collapse": false,
+              "matchType": "prefix"
+            },
+            "direct_exact_candidates": 0,
+            "direct_variant_candidates": 0,
+            "index_rows": 0,
+            "source_responses": 1,
+            "complete_prefix_evidence": true,
+            "acceptance": {
+              "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix01-acceptance.json",
+              "sha256": "54391c95c210a07194661a732220c155693f61c69be67b96c130a61fc2296be8"
+            },
+            "batch_report": {
+              "path": "research/continuous-recovery-20261016/network/gallery-prefix01/batch-report.json",
+              "sha256": "715f67dffb984a306ca7a1de6de5c010a79523551b63f66db9a6e6a3b5560010"
+            },
+            "source_map": {
+              "path": "research/continuous-recovery-20261016/network/gallery-prefix01/source-map.json",
+              "sha256": "fd277a1bc64f192d51caf08e7415fb09d835a84aa63b355e8cce8f4cfe0538e9"
+            }
+          }
+        ],
+        "prior_attempts": [
+          {
+            "attempt": 3,
+            "rank": 2,
+            "label": "Warsong Gulch",
+            "transport": "direct",
+            "curl_exit": 28,
+            "connect_status": null,
+            "source_status": null,
+            "content_type": null,
+            "body_bytes": 0,
+            "body_sha256": null,
+            "transport_error": true,
+            "transport_reason": "no_http_status",
+            "cdx_json_valid": false,
+            "cdx_parse_error": "no_200_source_response",
+            "cdx_record_count": 0,
+            "resume_keys": [],
+            "potential_truncation": false,
+            "continuation_followed": false,
+            "phase_boundary": "tcp_connect",
+            "started_utc": "2026-10-16T04:43:21.453082Z",
+            "finished_utc": "2026-10-16T04:43:25.498105Z",
+            "raw": {
+              "headers.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/03-GALLERYPREFIX01-R02-cdx-direct.headers.txt",
+              "body": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/03-GALLERYPREFIX01-R02-cdx-direct.body",
+              "stderr.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/03-GALLERYPREFIX01-R02-cdx-direct.stderr.txt",
+              "trace.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/03-GALLERYPREFIX01-R02-cdx-direct.trace.txt",
+              "metrics.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/03-GALLERYPREFIX01-R02-cdx-direct.metrics.txt"
+            },
+            "batch_id": "WAYBACK-GALLERYPREFIX01-20261016"
+          },
+          {
+            "attempt": 4,
+            "rank": 2,
+            "label": "Warsong Gulch",
+            "transport": "proxy",
+            "curl_exit": 0,
+            "connect_status": 200,
+            "source_status": 200,
+            "content_type": "application/json",
+            "body_bytes": 3,
+            "body_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+            "transport_error": false,
+            "transport_reason": null,
+            "cdx_json_valid": true,
+            "cdx_parse_error": null,
+            "cdx_record_count": 0,
+            "resume_keys": [],
+            "potential_truncation": false,
+            "continuation_followed": false,
+            "phase_boundary": "source_response",
+            "started_utc": "2026-10-16T04:43:26.584834Z",
+            "finished_utc": "2026-10-16T04:43:39.428838Z",
+            "raw": {
+              "headers.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/04-GALLERYPREFIX01-R02-cdx-proxy.headers.txt",
+              "body": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/04-GALLERYPREFIX01-R02-cdx-proxy.body",
+              "stderr.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/04-GALLERYPREFIX01-R02-cdx-proxy.stderr.txt",
+              "trace.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/04-GALLERYPREFIX01-R02-cdx-proxy.trace.txt",
+              "metrics.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/04-GALLERYPREFIX01-R02-cdx-proxy.metrics.txt"
+            },
+            "batch_id": "WAYBACK-GALLERYPREFIX01-20261016"
+          }
+        ]
+      },
+      "followup_group": "early_gap_before_earliest_complete_window",
+      "reason": "No complete saved prefix query before earliest complete window starting 20060101000000; query only the earlier data gap.",
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "query_mode": "absolute HTTP prefix index only",
+      "payload_recovery": false,
+      "execution_status": "prepared_not_executed",
+      "network_performed_in_this_plan": false,
+      "no_filename_guess": true,
+      "earliest_complete_prior_window_start": "20060101000000",
+      "early_gap_end_exclusive": "20060101000000",
+      "early_gap_query_end": "20051231235959",
+      "followup_batch": "early_gap_batch_1_of_2_20_items",
+      "rank": 15,
+      "target_key": "GALLERY-EARLY01-15",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Fbattlegrounds%2Fwarsonggulch%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "status": "prepared_not_executed"
+    },
+    {
+      "registry_rank": 26,
+      "gallery": "Isle of Quel'Danas",
+      "category": "Region",
+      "source_page_route": "/info/regions/isle-of-queldanas-gallery.html",
+      "declared_slots": 49,
+      "expected_direct_entities": 98,
+      "prefix": "http://www.worldofwarcraft.com/info/regions/isleofq/",
+      "origin": {
+        "scheme": "http",
+        "host": "www.worldofwarcraft.com",
+        "default_port": 80
+      },
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/regions/isle-of-queldanas-gallery.html",
+        "sha256": "4dfcca862bfea6575cb30eff8d974b49221a4356f161683fcefa70254c260468",
+        "addshots_line": 112,
+        "addshots_literal": "addshots(\"/info/regions/isleofq/\",\"ss\",numShots);",
+        "source_directory": "/info/regions/isleofq/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 49;"
+      },
+      "prior_coverage": {
+        "coverage_class": "reviewed_window_complete",
+        "coverage_status": "wave3_saved_complete_index",
+        "coverage_source": "wave3 coverage ledger",
+        "coverage_source_latest": null,
+        "prior_windows": [
+          {
+            "batch_id": "WAYBACK-GALLERYPREFIX01-20261016",
+            "status": "valid_complete_index",
+            "label": "Isle of Quel'Danas",
+            "prefix": "http://www.worldofwarcraft.com/info/regions/isleofq/",
+            "window": {
+              "from": "20060101000000",
+              "to": "20080512210044",
+              "limit": 500,
+              "showResumeKey": true,
+              "collapse": false,
+              "matchType": "prefix"
+            },
+            "direct_exact_candidates": 0,
+            "direct_variant_candidates": 0,
+            "index_rows": 1,
+            "source_responses": 1,
+            "complete_prefix_evidence": true,
+            "acceptance": {
+              "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix01-acceptance.json",
+              "sha256": "54391c95c210a07194661a732220c155693f61c69be67b96c130a61fc2296be8"
+            },
+            "batch_report": {
+              "path": "research/continuous-recovery-20261016/network/gallery-prefix01/batch-report.json",
+              "sha256": "715f67dffb984a306ca7a1de6de5c010a79523551b63f66db9a6e6a3b5560010"
+            },
+            "source_map": {
+              "path": "research/continuous-recovery-20261016/network/gallery-prefix01/source-map.json",
+              "sha256": "fd277a1bc64f192d51caf08e7415fb09d835a84aa63b355e8cce8f4cfe0538e9"
+            }
+          }
+        ],
+        "prior_attempts": [
+          {
+            "attempt": 15,
+            "rank": 8,
+            "label": "Isle of Quel'Danas",
+            "transport": "direct",
+            "curl_exit": 28,
+            "connect_status": null,
+            "source_status": null,
+            "content_type": null,
+            "body_bytes": 0,
+            "body_sha256": null,
+            "transport_error": true,
+            "transport_reason": "no_http_status",
+            "cdx_json_valid": false,
+            "cdx_parse_error": "no_200_source_response",
+            "cdx_record_count": 0,
+            "resume_keys": [],
+            "potential_truncation": false,
+            "continuation_followed": false,
+            "phase_boundary": "tcp_connect",
+            "started_utc": "2026-10-16T04:44:36.289015Z",
+            "finished_utc": "2026-10-16T04:44:40.335409Z",
+            "raw": {
+              "headers.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/15-GALLERYPREFIX01-R08-cdx-direct.headers.txt",
+              "body": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/15-GALLERYPREFIX01-R08-cdx-direct.body",
+              "stderr.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/15-GALLERYPREFIX01-R08-cdx-direct.stderr.txt",
+              "trace.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/15-GALLERYPREFIX01-R08-cdx-direct.trace.txt",
+              "metrics.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/15-GALLERYPREFIX01-R08-cdx-direct.metrics.txt"
+            },
+            "batch_id": "WAYBACK-GALLERYPREFIX01-20261016"
+          },
+          {
+            "attempt": 16,
+            "rank": 8,
+            "label": "Isle of Quel'Danas",
+            "transport": "proxy",
+            "curl_exit": 0,
+            "connect_status": 200,
+            "source_status": 200,
+            "content_type": "application/json",
+            "body_bytes": 257,
+            "body_sha256": "c6b9fed4eaeb8c3aa272409163d8b3e8587650b2819c27829f634cb4e27d39a9",
+            "transport_error": false,
+            "transport_reason": null,
+            "cdx_json_valid": true,
+            "cdx_parse_error": null,
+            "cdx_record_count": 1,
+            "resume_keys": [],
+            "potential_truncation": false,
+            "continuation_followed": false,
+            "phase_boundary": "source_response",
+            "started_utc": "2026-10-16T04:44:41.404517Z",
+            "finished_utc": "2026-10-16T04:44:42.979989Z",
+            "raw": {
+              "headers.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/16-GALLERYPREFIX01-R08-cdx-proxy.headers.txt",
+              "body": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/16-GALLERYPREFIX01-R08-cdx-proxy.body",
+              "stderr.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/16-GALLERYPREFIX01-R08-cdx-proxy.stderr.txt",
+              "trace.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/16-GALLERYPREFIX01-R08-cdx-proxy.trace.txt",
+              "metrics.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/16-GALLERYPREFIX01-R08-cdx-proxy.metrics.txt"
+            },
+            "batch_id": "WAYBACK-GALLERYPREFIX01-20261016"
+          }
+        ]
+      },
+      "followup_group": "early_gap_before_earliest_complete_window",
+      "reason": "No complete saved prefix query before earliest complete window starting 20060101000000; query only the earlier data gap.",
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "query_mode": "absolute HTTP prefix index only",
+      "payload_recovery": false,
+      "execution_status": "prepared_not_executed",
+      "network_performed_in_this_plan": false,
+      "no_filename_guess": true,
+      "earliest_complete_prior_window_start": "20060101000000",
+      "early_gap_end_exclusive": "20060101000000",
+      "early_gap_query_end": "20051231235959",
+      "followup_batch": "early_gap_batch_1_of_2_20_items",
+      "rank": 16,
+      "target_key": "GALLERY-EARLY01-16",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fregions%2Fisleofq%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "status": "prepared_not_executed"
+    },
+    {
+      "registry_rank": 41,
+      "gallery": "Hallow's End",
+      "category": "Event",
+      "source_page_route": "/info/events/hallowsend/gallery.html",
+      "declared_slots": 65,
+      "expected_direct_entities": 130,
+      "prefix": "http://www.worldofwarcraft.com/info/events/hallowsend/images/newscreenshots/",
+      "origin": {
+        "scheme": "http",
+        "host": "www.worldofwarcraft.com",
+        "default_port": 80
+      },
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/events/hallowsend/gallery.html",
+        "sha256": "d19476dadeae05c4332104a9fd4e3f2f636fc0df813c25d0f7e8e3be2d2375a0",
+        "addshots_line": 128,
+        "addshots_literal": "addshots(\"/info/events/hallowsend/images/newscreenshots/\",\"ss\",numShots);",
+        "source_directory": "/info/events/hallowsend/images/newscreenshots/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 65;"
+      },
+      "prior_coverage": {
+        "coverage_class": "reviewed_window_complete",
+        "coverage_status": "wave3_saved_complete_index",
+        "coverage_source": "wave3 coverage ledger",
+        "coverage_source_latest": null,
+        "prior_windows": [
+          {
+            "batch_id": "WAYBACK-GALLERYPREFIX01-20261016",
+            "status": "valid_complete_index",
+            "label": "Hallow's End",
+            "prefix": "http://www.worldofwarcraft.com/info/events/hallowsend/images/newscreenshots/",
+            "window": {
+              "from": "20060101000000",
+              "to": "20080512210044",
+              "limit": 500,
+              "showResumeKey": true,
+              "collapse": false,
+              "matchType": "prefix"
+            },
+            "direct_exact_candidates": 4,
+            "direct_variant_candidates": 0,
+            "index_rows": 11,
+            "source_responses": 1,
+            "complete_prefix_evidence": true,
+            "acceptance": {
+              "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix01-acceptance.json",
+              "sha256": "54391c95c210a07194661a732220c155693f61c69be67b96c130a61fc2296be8"
+            },
+            "batch_report": {
+              "path": "research/continuous-recovery-20261016/network/gallery-prefix01/batch-report.json",
+              "sha256": "715f67dffb984a306ca7a1de6de5c010a79523551b63f66db9a6e6a3b5560010"
+            },
+            "source_map": {
+              "path": "research/continuous-recovery-20261016/network/gallery-prefix01/source-map.json",
+              "sha256": "fd277a1bc64f192d51caf08e7415fb09d835a84aa63b355e8cce8f4cfe0538e9"
+            }
+          }
+        ],
+        "prior_attempts": [
+          {
+            "attempt": 5,
+            "rank": 3,
+            "label": "Hallow's End",
+            "transport": "direct",
+            "curl_exit": 28,
+            "connect_status": null,
+            "source_status": null,
+            "content_type": null,
+            "body_bytes": 0,
+            "body_sha256": null,
+            "transport_error": true,
+            "transport_reason": "no_http_status",
+            "cdx_json_valid": false,
+            "cdx_parse_error": "no_200_source_response",
+            "cdx_record_count": 0,
+            "resume_keys": [],
+            "potential_truncation": false,
+            "continuation_followed": false,
+            "phase_boundary": "tcp_connect",
+            "started_utc": "2026-10-16T04:43:39.456860Z",
+            "finished_utc": "2026-10-16T04:43:43.502866Z",
+            "raw": {
+              "headers.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/05-GALLERYPREFIX01-R03-cdx-direct.headers.txt",
+              "body": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/05-GALLERYPREFIX01-R03-cdx-direct.body",
+              "stderr.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/05-GALLERYPREFIX01-R03-cdx-direct.stderr.txt",
+              "trace.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/05-GALLERYPREFIX01-R03-cdx-direct.trace.txt",
+              "metrics.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/05-GALLERYPREFIX01-R03-cdx-direct.metrics.txt"
+            },
+            "batch_id": "WAYBACK-GALLERYPREFIX01-20261016"
+          },
+          {
+            "attempt": 6,
+            "rank": 3,
+            "label": "Hallow's End",
+            "transport": "proxy",
+            "curl_exit": 0,
+            "connect_status": 200,
+            "source_status": 200,
+            "content_type": "application/json",
+            "body_bytes": 2936,
+            "body_sha256": "344edcf17b055c56e003a1ec12738ad86d98b610f57d6f9ffec2d1daf773a092",
+            "transport_error": false,
+            "transport_reason": null,
+            "cdx_json_valid": true,
+            "cdx_parse_error": null,
+            "cdx_record_count": 11,
+            "resume_keys": [],
+            "potential_truncation": false,
+            "continuation_followed": false,
+            "phase_boundary": "source_response",
+            "started_utc": "2026-10-16T04:43:44.566512Z",
+            "finished_utc": "2026-10-16T04:43:51.720702Z",
+            "raw": {
+              "headers.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/06-GALLERYPREFIX01-R03-cdx-proxy.headers.txt",
+              "body": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/06-GALLERYPREFIX01-R03-cdx-proxy.body",
+              "stderr.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/06-GALLERYPREFIX01-R03-cdx-proxy.stderr.txt",
+              "trace.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/06-GALLERYPREFIX01-R03-cdx-proxy.trace.txt",
+              "metrics.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/06-GALLERYPREFIX01-R03-cdx-proxy.metrics.txt"
+            },
+            "batch_id": "WAYBACK-GALLERYPREFIX01-20261016"
+          }
+        ]
+      },
+      "followup_group": "early_gap_before_earliest_complete_window",
+      "reason": "No complete saved prefix query before earliest complete window starting 20060101000000; query only the earlier data gap.",
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "query_mode": "absolute HTTP prefix index only",
+      "payload_recovery": false,
+      "execution_status": "prepared_not_executed",
+      "network_performed_in_this_plan": false,
+      "no_filename_guess": true,
+      "earliest_complete_prior_window_start": "20060101000000",
+      "early_gap_end_exclusive": "20060101000000",
+      "early_gap_query_end": "20051231235959",
+      "followup_batch": "early_gap_batch_1_of_2_20_items",
+      "rank": 17,
+      "target_key": "GALLERY-EARLY01-17",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fevents%2Fhallowsend%2Fimages%2Fnewscreenshots%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "status": "prepared_not_executed"
+    },
+    {
+      "registry_rank": 42,
+      "gallery": "Brewfest",
+      "category": "Event",
+      "source_page_route": "/info/events/brewfest/gallery.html",
+      "declared_slots": 51,
+      "expected_direct_entities": 102,
+      "prefix": "http://www.worldofwarcraft.com/info/events/brewfest/images/ss/",
+      "origin": {
+        "scheme": "http",
+        "host": "www.worldofwarcraft.com",
+        "default_port": 80
+      },
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/events/brewfest/gallery.html",
+        "sha256": "e2787105ddd7d3dec94844fc1091ad70ccafc44724123caf0ca7d5b161850088",
+        "addshots_line": 114,
+        "addshots_literal": "addshots(\"/info/events/brewfest/images/ss/\",\"ss\",numShots);",
+        "source_directory": "/info/events/brewfest/images/ss/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 51;"
+      },
+      "prior_coverage": {
+        "coverage_class": "reviewed_window_complete",
+        "coverage_status": "wave3_saved_complete_index",
+        "coverage_source": "wave3 coverage ledger",
+        "coverage_source_latest": null,
+        "prior_windows": [
+          {
+            "batch_id": "WAYBACK-GALLERYPREFIX01-20261016",
+            "status": "valid_complete_index",
+            "label": "Brewfest",
+            "prefix": "http://www.worldofwarcraft.com/info/events/brewfest/images/ss/",
+            "window": {
+              "from": "20060101000000",
+              "to": "20080512210044",
+              "limit": 500,
+              "showResumeKey": true,
+              "collapse": false,
+              "matchType": "prefix"
+            },
+            "direct_exact_candidates": 4,
+            "direct_variant_candidates": 0,
+            "index_rows": 84,
+            "source_responses": 1,
+            "complete_prefix_evidence": true,
+            "acceptance": {
+              "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix01-acceptance.json",
+              "sha256": "54391c95c210a07194661a732220c155693f61c69be67b96c130a61fc2296be8"
+            },
+            "batch_report": {
+              "path": "research/continuous-recovery-20261016/network/gallery-prefix01/batch-report.json",
+              "sha256": "715f67dffb984a306ca7a1de6de5c010a79523551b63f66db9a6e6a3b5560010"
+            },
+            "source_map": {
+              "path": "research/continuous-recovery-20261016/network/gallery-prefix01/source-map.json",
+              "sha256": "fd277a1bc64f192d51caf08e7415fb09d835a84aa63b355e8cce8f4cfe0538e9"
+            }
+          }
+        ],
+        "prior_attempts": [
+          {
+            "attempt": 7,
+            "rank": 4,
+            "label": "Brewfest",
+            "transport": "direct",
+            "curl_exit": 28,
+            "connect_status": null,
+            "source_status": null,
+            "content_type": null,
+            "body_bytes": 0,
+            "body_sha256": null,
+            "transport_error": true,
+            "transport_reason": "no_http_status",
+            "cdx_json_valid": false,
+            "cdx_parse_error": "no_200_source_response",
+            "cdx_record_count": 0,
+            "resume_keys": [],
+            "potential_truncation": false,
+            "continuation_followed": false,
+            "phase_boundary": "tcp_connect",
+            "started_utc": "2026-10-16T04:43:51.765339Z",
+            "finished_utc": "2026-10-16T04:43:55.800150Z",
+            "raw": {
+              "headers.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/07-GALLERYPREFIX01-R04-cdx-direct.headers.txt",
+              "body": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/07-GALLERYPREFIX01-R04-cdx-direct.body",
+              "stderr.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/07-GALLERYPREFIX01-R04-cdx-direct.stderr.txt",
+              "trace.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/07-GALLERYPREFIX01-R04-cdx-direct.trace.txt",
+              "metrics.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/07-GALLERYPREFIX01-R04-cdx-direct.metrics.txt"
+            },
+            "batch_id": "WAYBACK-GALLERYPREFIX01-20261016"
+          },
+          {
+            "attempt": 8,
+            "rank": 4,
+            "label": "Brewfest",
+            "transport": "proxy",
+            "curl_exit": 0,
+            "connect_status": 200,
+            "source_status": 200,
+            "content_type": "application/json",
+            "body_bytes": 18165,
+            "body_sha256": "b9513bfe6d986411d067de17a92d8ddc1196fc27b9067bf5d3b034be48b6e5f4",
+            "transport_error": false,
+            "transport_reason": null,
+            "cdx_json_valid": true,
+            "cdx_parse_error": null,
+            "cdx_record_count": 84,
+            "resume_keys": [],
+            "potential_truncation": false,
+            "continuation_followed": false,
+            "phase_boundary": "source_response",
+            "started_utc": "2026-10-16T04:43:56.861536Z",
+            "finished_utc": "2026-10-16T04:43:58.723820Z",
+            "raw": {
+              "headers.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/08-GALLERYPREFIX01-R04-cdx-proxy.headers.txt",
+              "body": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/08-GALLERYPREFIX01-R04-cdx-proxy.body",
+              "stderr.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/08-GALLERYPREFIX01-R04-cdx-proxy.stderr.txt",
+              "trace.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/08-GALLERYPREFIX01-R04-cdx-proxy.trace.txt",
+              "metrics.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/08-GALLERYPREFIX01-R04-cdx-proxy.metrics.txt"
+            },
+            "batch_id": "WAYBACK-GALLERYPREFIX01-20261016"
+          }
+        ]
+      },
+      "followup_group": "early_gap_before_earliest_complete_window",
+      "reason": "No complete saved prefix query before earliest complete window starting 20060101000000; query only the earlier data gap.",
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "query_mode": "absolute HTTP prefix index only",
+      "payload_recovery": false,
+      "execution_status": "prepared_not_executed",
+      "network_performed_in_this_plan": false,
+      "no_filename_guess": true,
+      "earliest_complete_prior_window_start": "20060101000000",
+      "early_gap_end_exclusive": "20060101000000",
+      "early_gap_query_end": "20051231235959",
+      "followup_batch": "early_gap_batch_1_of_2_20_items",
+      "rank": 18,
+      "target_key": "GALLERY-EARLY01-18",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fevents%2Fbrewfest%2Fimages%2Fss%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "status": "prepared_not_executed"
+    },
+    {
+      "registry_rank": 45,
+      "gallery": "TCG Gallery",
+      "category": "TCG Gallery",
+      "source_page_route": "/info/items/tcg-gallery.html",
+      "declared_slots": 47,
+      "expected_direct_entities": 94,
+      "prefix": "http://www.worldofwarcraft.com/info/items/images/tcg/",
+      "origin": {
+        "scheme": "http",
+        "host": "www.worldofwarcraft.com",
+        "default_port": 80
+      },
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/items/tcg-gallery.html",
+        "sha256": "b222c401e1040e69709e6117c0d04c93b9f9a30171320beafb5746647bb2e796",
+        "addshots_line": 110,
+        "addshots_literal": "addshots(\"/info/items/images/tcg/\",\"ss\",numShots);",
+        "source_directory": "/info/items/images/tcg/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 47;"
+      },
+      "prior_coverage": {
+        "coverage_class": "reviewed_window_complete",
+        "coverage_status": "wave3_saved_complete_index",
+        "coverage_source": "wave3 coverage ledger",
+        "coverage_source_latest": null,
+        "prior_windows": [
+          {
+            "batch_id": "WAYBACK-GALLERYPREFIX01-20261016",
+            "status": "valid_complete_index",
+            "label": "TCG Gallery",
+            "prefix": "http://www.worldofwarcraft.com/info/items/images/tcg/",
+            "window": {
+              "from": "20060101000000",
+              "to": "20080512210044",
+              "limit": 500,
+              "showResumeKey": true,
+              "collapse": false,
+              "matchType": "prefix"
+            },
+            "direct_exact_candidates": 0,
+            "direct_variant_candidates": 0,
+            "index_rows": 3,
+            "source_responses": 1,
+            "complete_prefix_evidence": true,
+            "acceptance": {
+              "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix01-acceptance.json",
+              "sha256": "54391c95c210a07194661a732220c155693f61c69be67b96c130a61fc2296be8"
+            },
+            "batch_report": {
+              "path": "research/continuous-recovery-20261016/network/gallery-prefix01/batch-report.json",
+              "sha256": "715f67dffb984a306ca7a1de6de5c010a79523551b63f66db9a6e6a3b5560010"
+            },
+            "source_map": {
+              "path": "research/continuous-recovery-20261016/network/gallery-prefix01/source-map.json",
+              "sha256": "fd277a1bc64f192d51caf08e7415fb09d835a84aa63b355e8cce8f4cfe0538e9"
+            }
+          }
+        ],
+        "prior_attempts": [
+          {
+            "attempt": 17,
+            "rank": 9,
+            "label": "TCG Gallery",
+            "transport": "direct",
+            "curl_exit": 28,
+            "connect_status": null,
+            "source_status": null,
+            "content_type": null,
+            "body_bytes": 0,
+            "body_sha256": null,
+            "transport_error": true,
+            "transport_reason": "no_http_status",
+            "cdx_json_valid": false,
+            "cdx_parse_error": "no_200_source_response",
+            "cdx_record_count": 0,
+            "resume_keys": [],
+            "potential_truncation": false,
+            "continuation_followed": false,
+            "phase_boundary": "tcp_connect",
+            "started_utc": "2026-10-16T04:44:46.500637Z",
+            "finished_utc": "2026-10-16T04:44:50.547515Z",
+            "raw": {
+              "headers.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/17-GALLERYPREFIX01-R09-cdx-direct.headers.txt",
+              "body": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/17-GALLERYPREFIX01-R09-cdx-direct.body",
+              "stderr.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/17-GALLERYPREFIX01-R09-cdx-direct.stderr.txt",
+              "trace.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/17-GALLERYPREFIX01-R09-cdx-direct.trace.txt",
+              "metrics.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/17-GALLERYPREFIX01-R09-cdx-direct.metrics.txt"
+            },
+            "batch_id": "WAYBACK-GALLERYPREFIX01-20261016"
+          },
+          {
+            "attempt": 18,
+            "rank": 9,
+            "label": "TCG Gallery",
+            "transport": "proxy",
+            "curl_exit": 0,
+            "connect_status": 200,
+            "source_status": 200,
+            "content_type": "application/json",
+            "body_bytes": 622,
+            "body_sha256": "5885502d163854e9c98d7b6cf21b250b4c72b4de746be7c1482beeedb13dfdc4",
+            "transport_error": false,
+            "transport_reason": null,
+            "cdx_json_valid": true,
+            "cdx_parse_error": null,
+            "cdx_record_count": 3,
+            "resume_keys": [],
+            "potential_truncation": false,
+            "continuation_followed": false,
+            "phase_boundary": "source_response",
+            "started_utc": "2026-10-16T04:44:51.601999Z",
+            "finished_utc": "2026-10-16T04:44:56.855314Z",
+            "raw": {
+              "headers.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/18-GALLERYPREFIX01-R09-cdx-proxy.headers.txt",
+              "body": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/18-GALLERYPREFIX01-R09-cdx-proxy.body",
+              "stderr.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/18-GALLERYPREFIX01-R09-cdx-proxy.stderr.txt",
+              "trace.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/18-GALLERYPREFIX01-R09-cdx-proxy.trace.txt",
+              "metrics.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/18-GALLERYPREFIX01-R09-cdx-proxy.metrics.txt"
+            },
+            "batch_id": "WAYBACK-GALLERYPREFIX01-20261016"
+          }
+        ]
+      },
+      "followup_group": "early_gap_before_earliest_complete_window",
+      "reason": "No complete saved prefix query before earliest complete window starting 20060101000000; query only the earlier data gap.",
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "query_mode": "absolute HTTP prefix index only",
+      "payload_recovery": false,
+      "execution_status": "prepared_not_executed",
+      "network_performed_in_this_plan": false,
+      "no_filename_guess": true,
+      "earliest_complete_prior_window_start": "20060101000000",
+      "early_gap_end_exclusive": "20060101000000",
+      "early_gap_query_end": "20051231235959",
+      "followup_batch": "early_gap_batch_1_of_2_20_items",
+      "rank": 19,
+      "target_key": "GALLERY-EARLY01-19",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fitems%2Fimages%2Ftcg%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "status": "prepared_not_executed"
+    },
+    {
+      "registry_rank": 48,
+      "gallery": "City Attacks",
+      "category": "PvP",
+      "source_page_route": "/pvp/worldpvp/cityattacks-gallery.html",
+      "declared_slots": 102,
+      "expected_direct_entities": 204,
+      "prefix": "http://www.worldofwarcraft.com/pvp/worldpvp/images/city/",
+      "origin": {
+        "scheme": "http",
+        "host": "www.worldofwarcraft.com",
+        "default_port": 80
+      },
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/pvp/worldpvp/cityattacks-gallery.html",
+        "sha256": "ba2a9ec91e6f73d42a34c8e2cf784e09e1966fc2e76442f51d8abdede75aaa5a",
+        "addshots_line": 166,
+        "addshots_literal": "addshots(\"/pvp/worldpvp/images/city/\",\"ss\",numShots);",
+        "source_directory": "/pvp/worldpvp/images/city/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 102;"
+      },
+      "prior_coverage": {
+        "coverage_class": "reviewed_window_complete",
+        "coverage_status": "wave3_saved_complete_index",
+        "coverage_source": "wave3 coverage ledger",
+        "coverage_source_latest": null,
+        "prior_windows": [
+          {
+            "batch_id": "WAYBACK-GALLERYPREFIX01-20261016",
+            "status": "valid_complete_index",
+            "label": "City Attacks",
+            "prefix": "http://www.worldofwarcraft.com/pvp/worldpvp/images/city/",
+            "window": {
+              "from": "20060101000000",
+              "to": "20080512210044",
+              "limit": 500,
+              "showResumeKey": true,
+              "collapse": false,
+              "matchType": "prefix"
+            },
+            "direct_exact_candidates": 3,
+            "direct_variant_candidates": 0,
+            "index_rows": 9,
+            "source_responses": 1,
+            "complete_prefix_evidence": true,
+            "acceptance": {
+              "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix01-acceptance.json",
+              "sha256": "54391c95c210a07194661a732220c155693f61c69be67b96c130a61fc2296be8"
+            },
+            "batch_report": {
+              "path": "research/continuous-recovery-20261016/network/gallery-prefix01/batch-report.json",
+              "sha256": "715f67dffb984a306ca7a1de6de5c010a79523551b63f66db9a6e6a3b5560010"
+            },
+            "source_map": {
+              "path": "research/continuous-recovery-20261016/network/gallery-prefix01/source-map.json",
+              "sha256": "fd277a1bc64f192d51caf08e7415fb09d835a84aa63b355e8cce8f4cfe0538e9"
+            }
+          }
+        ],
+        "prior_attempts": [
+          {
+            "attempt": 1,
+            "rank": 1,
+            "label": "City Attacks",
+            "transport": "direct",
+            "curl_exit": 28,
+            "connect_status": null,
+            "source_status": null,
+            "content_type": null,
+            "body_bytes": 0,
+            "body_sha256": null,
+            "transport_error": true,
+            "transport_reason": "no_http_status",
+            "cdx_json_valid": false,
+            "cdx_parse_error": "no_200_source_response",
+            "cdx_record_count": 0,
+            "resume_keys": [],
+            "potential_truncation": false,
+            "continuation_followed": false,
+            "phase_boundary": "tcp_connect",
+            "started_utc": "2026-10-16T04:43:11.132516Z",
+            "finished_utc": "2026-10-16T04:43:15.187978Z",
+            "raw": {
+              "headers.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/01-GALLERYPREFIX01-R01-cdx-direct.headers.txt",
+              "body": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/01-GALLERYPREFIX01-R01-cdx-direct.body",
+              "stderr.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/01-GALLERYPREFIX01-R01-cdx-direct.stderr.txt",
+              "trace.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/01-GALLERYPREFIX01-R01-cdx-direct.trace.txt",
+              "metrics.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/01-GALLERYPREFIX01-R01-cdx-direct.metrics.txt"
+            },
+            "batch_id": "WAYBACK-GALLERYPREFIX01-20261016"
+          },
+          {
+            "attempt": 2,
+            "rank": 1,
+            "label": "City Attacks",
+            "transport": "proxy",
+            "curl_exit": 0,
+            "connect_status": 200,
+            "source_status": 200,
+            "content_type": "application/json",
+            "body_bytes": 1995,
+            "body_sha256": "de221639da52f6981c604262b282108758232d5af9ab4d1f07b6d66f3a0837c5",
+            "transport_error": false,
+            "transport_reason": null,
+            "cdx_json_valid": true,
+            "cdx_parse_error": null,
+            "cdx_record_count": 9,
+            "resume_keys": [],
+            "potential_truncation": false,
+            "continuation_followed": false,
+            "phase_boundary": "source_response",
+            "started_utc": "2026-10-16T04:43:16.239932Z",
+            "finished_utc": "2026-10-16T04:43:21.415432Z",
+            "raw": {
+              "headers.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/02-GALLERYPREFIX01-R01-cdx-proxy.headers.txt",
+              "body": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/02-GALLERYPREFIX01-R01-cdx-proxy.body",
+              "stderr.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/02-GALLERYPREFIX01-R01-cdx-proxy.stderr.txt",
+              "trace.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/02-GALLERYPREFIX01-R01-cdx-proxy.trace.txt",
+              "metrics.txt": "research/continuous-recovery-20261016/network/gallery-prefix01/raw/02-GALLERYPREFIX01-R01-cdx-proxy.metrics.txt"
+            },
+            "batch_id": "WAYBACK-GALLERYPREFIX01-20261016"
+          }
+        ]
+      },
+      "followup_group": "early_gap_before_earliest_complete_window",
+      "reason": "No complete saved prefix query before earliest complete window starting 20060101000000; query only the earlier data gap.",
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "query_mode": "absolute HTTP prefix index only",
+      "payload_recovery": false,
+      "execution_status": "prepared_not_executed",
+      "network_performed_in_this_plan": false,
+      "no_filename_guess": true,
+      "earliest_complete_prior_window_start": "20060101000000",
+      "early_gap_end_exclusive": "20060101000000",
+      "early_gap_query_end": "20051231235959",
+      "followup_batch": "early_gap_batch_1_of_2_20_items",
+      "rank": 20,
+      "target_key": "GALLERY-EARLY01-20",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Fworldpvp%2Fimages%2Fcity%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "status": "prepared_not_executed"
+    }
+  ],
+  "pending_root_acceptance": {
+    "required_before_dispatch": true,
+    "required_receipt": "root-gallery-early01-plan-acceptance.json",
+    "network_requests": 0
+  }
+}

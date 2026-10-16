@@ -1,0 +1,1260 @@
+{
+  "schema": "wow-recovery.reusable-image-plan.v1",
+  "generated_utc": "2026-10-16T11:04:08.273172Z",
+  "batch_id": "GALLERY-NEIGHBORS03-FIXTURE-PROBE",
+  "mode": "offline_fixture_probe",
+  "candidate_count": 9,
+  "candidates": [
+    {
+      "target_key": "GALLERY-NEIGHBOR03-01",
+      "priority": 1,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com/info/events/lunarnewyears/images/ssmdress1.jpg",
+      "literal": "http://www.worldofwarcraft.com/info/events/lunarnewyears/images/ssmdress1.jpg",
+      "filename_class": "thumbnail_or_other",
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "expected": {
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "all_gif_frames": false,
+        "reencode": false,
+        "script_execution": false
+      },
+      "source_evidence": {
+        "literal": "http://www.worldofwarcraft.com/info/events/lunarnewyears/images/ssmdress1.jpg",
+        "path": "research/continuous-recovery-20261016/network/gallery-neighbors03/fixture-probe/fixture-probe-source.txt",
+        "line": 1,
+        "sha256": "54a0981b72acd09ae3088af9abeb1aa2d1709deee4a4464ca146bc30d29fd407",
+        "candidate_index": 1,
+        "source_acceptance_path": "research/continuous-recovery-20261016/publication/root-gallery-neighbors-remaining-candidates-acceptance.json",
+        "source_acceptance_sha256": "eb5a2aadd7105df6335b4eb1c98445121a64a56179986955f28fd872148431f5",
+        "source_row_index": 36,
+        "source_result_label": "Lunar Festival",
+        "source_row": {
+          "urlkey": "com,worldofwarcraft)/info/events/lunarnewyears/images/ssmdress1.jpg",
+          "timestamp": "20060718142026",
+          "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ssmdress1.jpg",
+          "mimetype": "image/jpeg",
+          "statuscode": "200",
+          "digest": "YIVZIVEFXBY4W7WK4356QKOXSGWZ2CMM",
+          "length": "151526"
+        },
+        "origin_evidence_path": "research/continuous-recovery-20261016/publication/root-gallery-prefix04-acceptance.json",
+        "origin_evidence_sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2"
+      },
+      "source_page_context": {
+        "gallery_context": "Lunar Festival",
+        "state": "positive_index_not_local",
+        "relationship": "Indexed neighboring source path; no mapping to dynamic ss/ssN slots is inferred.",
+        "source_acceptance_row_index": 36,
+        "positive_rows": [
+          {
+            "urlkey": "com,worldofwarcraft)/info/events/lunarnewyears/images/ssmdress1.jpg",
+            "timestamp": "20060718142026",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ssmdress1.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "YIVZIVEFXBY4W7WK4356QKOXSGWZ2CMM",
+            "length": "151526"
+          }
+        ]
+      },
+      "selection": {
+        "require_complete_index": true,
+        "potential_truncation": "do_not_replay",
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "max_distinct_digest_candidates": 2,
+        "sort": "timestamp_desc_then_record_index_desc",
+        "same_digest_older_captures": "skip",
+        "unknown_metadata": "incomplete_error"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com/info/events/lunarnewyears/images/ssmdress1.jpg",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "prior_local_evidence": [
+        {
+          "status": "positive_index_not_local",
+          "source_candidates_sha256": "b9c7c9550eb65c6795803e6ada01ab55fe185d52f7dc57e7f3ddce193c64b745",
+          "source_acceptance_sha256": "eb5a2aadd7105df6335b4eb1c98445121a64a56179986955f28fd872148431f5",
+          "source_origin_evidence_sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2"
+        }
+      ],
+      "prior_evidence_status": "positive_index_not_local",
+      "cdx_mode": "fresh",
+      "known_positive_cache_rows": [],
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com/info/events/lunarnewyears/images/ssmdress1.jpg",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fevents%2Flunarnewyears%2Fimages%2Fssmdress1.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      },
+      "fallback_label": null
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR03-02",
+      "priority": 2,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ssmdress2.jpg",
+      "literal": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ssmdress2.jpg",
+      "filename_class": "thumbnail_or_other",
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "expected": {
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "all_gif_frames": false,
+        "reencode": false,
+        "script_execution": false
+      },
+      "source_evidence": {
+        "literal": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ssmdress2.jpg",
+        "path": "research/continuous-recovery-20261016/local-audit/gallery-neighbors/remaining9-candidates.json",
+        "line": 51,
+        "sha256": "b9c7c9550eb65c6795803e6ada01ab55fe185d52f7dc57e7f3ddce193c64b745",
+        "candidate_index": 2,
+        "source_acceptance_path": "research/continuous-recovery-20261016/publication/root-gallery-neighbors-remaining-candidates-acceptance.json",
+        "source_acceptance_sha256": "eb5a2aadd7105df6335b4eb1c98445121a64a56179986955f28fd872148431f5",
+        "source_row_index": 37,
+        "source_result_label": "Lunar Festival",
+        "source_row": {
+          "urlkey": "com,worldofwarcraft)/info/events/lunarnewyears/images/ssmdress2.jpg",
+          "timestamp": "20060719033330",
+          "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ssmdress2.jpg",
+          "mimetype": "image/jpeg",
+          "statuscode": "200",
+          "digest": "7MXPLI3LN7NVL6UQCUUYDZ4V3MAIWXFC",
+          "length": "154219"
+        },
+        "origin_evidence_path": "research/continuous-recovery-20261016/publication/root-gallery-prefix04-acceptance.json",
+        "origin_evidence_sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2"
+      },
+      "source_page_context": {
+        "gallery_context": "Lunar Festival",
+        "state": "positive_index_not_local",
+        "relationship": "Indexed neighboring source path; no mapping to dynamic ss/ssN slots is inferred.",
+        "source_acceptance_row_index": 37,
+        "positive_rows": [
+          {
+            "urlkey": "com,worldofwarcraft)/info/events/lunarnewyears/images/ssmdress2.jpg",
+            "timestamp": "20060719033330",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ssmdress2.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "7MXPLI3LN7NVL6UQCUUYDZ4V3MAIWXFC",
+            "length": "154219"
+          }
+        ]
+      },
+      "selection": {
+        "require_complete_index": true,
+        "potential_truncation": "do_not_replay",
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "max_distinct_digest_candidates": 2,
+        "sort": "timestamp_desc_then_record_index_desc",
+        "same_digest_older_captures": "skip",
+        "unknown_metadata": "incomplete_error"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ssmdress2.jpg",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "prior_local_evidence": [
+        {
+          "status": "positive_index_not_local",
+          "source_candidates_sha256": "b9c7c9550eb65c6795803e6ada01ab55fe185d52f7dc57e7f3ddce193c64b745",
+          "source_acceptance_sha256": "eb5a2aadd7105df6335b4eb1c98445121a64a56179986955f28fd872148431f5",
+          "source_origin_evidence_sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2"
+        }
+      ],
+      "prior_evidence_status": "positive_index_not_local",
+      "cdx_mode": "fresh",
+      "known_positive_cache_rows": [],
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ssmdress2.jpg",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Finfo%2Fevents%2Flunarnewyears%2Fimages%2Fssmdress2.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      },
+      "fallback_label": null
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR03-03",
+      "priority": 3,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ssmdress3.jpg",
+      "literal": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ssmdress3.jpg",
+      "filename_class": "thumbnail_or_other",
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "expected": {
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "all_gif_frames": false,
+        "reencode": false,
+        "script_execution": false
+      },
+      "source_evidence": {
+        "literal": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ssmdress3.jpg",
+        "path": "research/continuous-recovery-20261016/local-audit/gallery-neighbors/remaining9-candidates.json",
+        "line": 84,
+        "sha256": "b9c7c9550eb65c6795803e6ada01ab55fe185d52f7dc57e7f3ddce193c64b745",
+        "candidate_index": 3,
+        "source_acceptance_path": "research/continuous-recovery-20261016/publication/root-gallery-neighbors-remaining-candidates-acceptance.json",
+        "source_acceptance_sha256": "eb5a2aadd7105df6335b4eb1c98445121a64a56179986955f28fd872148431f5",
+        "source_row_index": 38,
+        "source_result_label": "Lunar Festival",
+        "source_row": {
+          "urlkey": "com,worldofwarcraft)/info/events/lunarnewyears/images/ssmdress3.jpg",
+          "timestamp": "20060719161114",
+          "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ssmdress3.jpg",
+          "mimetype": "image/jpeg",
+          "statuscode": "200",
+          "digest": "DFEP7KFMTOFZULLQFFV5SYBYDFE37JVR",
+          "length": "153183"
+        },
+        "origin_evidence_path": "research/continuous-recovery-20261016/publication/root-gallery-prefix04-acceptance.json",
+        "origin_evidence_sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2"
+      },
+      "source_page_context": {
+        "gallery_context": "Lunar Festival",
+        "state": "positive_index_not_local",
+        "relationship": "Indexed neighboring source path; no mapping to dynamic ss/ssN slots is inferred.",
+        "source_acceptance_row_index": 38,
+        "positive_rows": [
+          {
+            "urlkey": "com,worldofwarcraft)/info/events/lunarnewyears/images/ssmdress3.jpg",
+            "timestamp": "20060719161114",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ssmdress3.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "DFEP7KFMTOFZULLQFFV5SYBYDFE37JVR",
+            "length": "153183"
+          }
+        ]
+      },
+      "selection": {
+        "require_complete_index": true,
+        "potential_truncation": "do_not_replay",
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "max_distinct_digest_candidates": 2,
+        "sort": "timestamp_desc_then_record_index_desc",
+        "same_digest_older_captures": "skip",
+        "unknown_metadata": "incomplete_error"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ssmdress3.jpg",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "prior_local_evidence": [
+        {
+          "status": "positive_index_not_local",
+          "source_candidates_sha256": "b9c7c9550eb65c6795803e6ada01ab55fe185d52f7dc57e7f3ddce193c64b745",
+          "source_acceptance_sha256": "eb5a2aadd7105df6335b4eb1c98445121a64a56179986955f28fd872148431f5",
+          "source_origin_evidence_sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2"
+        }
+      ],
+      "prior_evidence_status": "positive_index_not_local",
+      "cdx_mode": "fresh",
+      "known_positive_cache_rows": [],
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ssmdress3.jpg",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Finfo%2Fevents%2Flunarnewyears%2Fimages%2Fssmdress3.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      },
+      "fallback_label": null
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR03-04",
+      "priority": 4,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ssmdress4.jpg",
+      "literal": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ssmdress4.jpg",
+      "filename_class": "thumbnail_or_other",
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "expected": {
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "all_gif_frames": false,
+        "reencode": false,
+        "script_execution": false
+      },
+      "source_evidence": {
+        "literal": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ssmdress4.jpg",
+        "path": "research/continuous-recovery-20261016/local-audit/gallery-neighbors/remaining9-candidates.json",
+        "line": 117,
+        "sha256": "b9c7c9550eb65c6795803e6ada01ab55fe185d52f7dc57e7f3ddce193c64b745",
+        "candidate_index": 4,
+        "source_acceptance_path": "research/continuous-recovery-20261016/publication/root-gallery-neighbors-remaining-candidates-acceptance.json",
+        "source_acceptance_sha256": "eb5a2aadd7105df6335b4eb1c98445121a64a56179986955f28fd872148431f5",
+        "source_row_index": 39,
+        "source_result_label": "Lunar Festival",
+        "source_row": {
+          "urlkey": "com,worldofwarcraft)/info/events/lunarnewyears/images/ssmdress4.jpg",
+          "timestamp": "20060718142038",
+          "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ssmdress4.jpg",
+          "mimetype": "image/jpeg",
+          "statuscode": "200",
+          "digest": "JGH7YQR3BJGU7F3S6RXCK3635WKWAVXW",
+          "length": "143967"
+        },
+        "origin_evidence_path": "research/continuous-recovery-20261016/publication/root-gallery-prefix04-acceptance.json",
+        "origin_evidence_sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2"
+      },
+      "source_page_context": {
+        "gallery_context": "Lunar Festival",
+        "state": "positive_index_not_local",
+        "relationship": "Indexed neighboring source path; no mapping to dynamic ss/ssN slots is inferred.",
+        "source_acceptance_row_index": 39,
+        "positive_rows": [
+          {
+            "urlkey": "com,worldofwarcraft)/info/events/lunarnewyears/images/ssmdress4.jpg",
+            "timestamp": "20060718142038",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ssmdress4.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "JGH7YQR3BJGU7F3S6RXCK3635WKWAVXW",
+            "length": "143967"
+          }
+        ]
+      },
+      "selection": {
+        "require_complete_index": true,
+        "potential_truncation": "do_not_replay",
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "max_distinct_digest_candidates": 2,
+        "sort": "timestamp_desc_then_record_index_desc",
+        "same_digest_older_captures": "skip",
+        "unknown_metadata": "incomplete_error"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ssmdress4.jpg",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "prior_local_evidence": [
+        {
+          "status": "positive_index_not_local",
+          "source_candidates_sha256": "b9c7c9550eb65c6795803e6ada01ab55fe185d52f7dc57e7f3ddce193c64b745",
+          "source_acceptance_sha256": "eb5a2aadd7105df6335b4eb1c98445121a64a56179986955f28fd872148431f5",
+          "source_origin_evidence_sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2"
+        }
+      ],
+      "prior_evidence_status": "positive_index_not_local",
+      "cdx_mode": "fresh",
+      "known_positive_cache_rows": [],
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ssmdress4.jpg",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Finfo%2Fevents%2Flunarnewyears%2Fimages%2Fssmdress4.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      },
+      "fallback_label": null
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR03-05",
+      "priority": 5,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress1-thumb.jpg",
+      "literal": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress1-thumb.jpg",
+      "filename_class": "thumbnail_or_other",
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "expected": {
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "all_gif_frames": false,
+        "reencode": false,
+        "script_execution": false
+      },
+      "source_evidence": {
+        "literal": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress1-thumb.jpg",
+        "path": "research/continuous-recovery-20261016/local-audit/gallery-neighbors/remaining9-candidates.json",
+        "line": 150,
+        "sha256": "b9c7c9550eb65c6795803e6ada01ab55fe185d52f7dc57e7f3ddce193c64b745",
+        "candidate_index": 5,
+        "source_acceptance_path": "research/continuous-recovery-20261016/publication/root-gallery-neighbors-remaining-candidates-acceptance.json",
+        "source_acceptance_sha256": "eb5a2aadd7105df6335b4eb1c98445121a64a56179986955f28fd872148431f5",
+        "source_row_index": 40,
+        "source_result_label": "Lunar Festival",
+        "source_row": {
+          "urlkey": "com,worldofwarcraft)/info/events/lunarnewyears/images/sswdress1-thumb.jpg",
+          "timestamp": "20060719034951",
+          "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress1-thumb.jpg",
+          "mimetype": "image/jpeg",
+          "statuscode": "200",
+          "digest": "WGVLLVSI3HKZGTA533SUOWZKJ6J55F2I",
+          "length": "13665"
+        },
+        "origin_evidence_path": "research/continuous-recovery-20261016/publication/root-gallery-prefix04-acceptance.json",
+        "origin_evidence_sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2"
+      },
+      "source_page_context": {
+        "gallery_context": "Lunar Festival",
+        "state": "positive_index_not_local",
+        "relationship": "Indexed neighboring source path; no mapping to dynamic ss/ssN slots is inferred.",
+        "source_acceptance_row_index": 40,
+        "positive_rows": [
+          {
+            "urlkey": "com,worldofwarcraft)/info/events/lunarnewyears/images/sswdress1-thumb.jpg",
+            "timestamp": "20060719034951",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress1-thumb.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "WGVLLVSI3HKZGTA533SUOWZKJ6J55F2I",
+            "length": "13665"
+          }
+        ]
+      },
+      "selection": {
+        "require_complete_index": true,
+        "potential_truncation": "do_not_replay",
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "max_distinct_digest_candidates": 2,
+        "sort": "timestamp_desc_then_record_index_desc",
+        "same_digest_older_captures": "skip",
+        "unknown_metadata": "incomplete_error"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress1-thumb.jpg",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "prior_local_evidence": [
+        {
+          "status": "positive_index_not_local",
+          "source_candidates_sha256": "b9c7c9550eb65c6795803e6ada01ab55fe185d52f7dc57e7f3ddce193c64b745",
+          "source_acceptance_sha256": "eb5a2aadd7105df6335b4eb1c98445121a64a56179986955f28fd872148431f5",
+          "source_origin_evidence_sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2"
+        }
+      ],
+      "prior_evidence_status": "positive_index_not_local",
+      "cdx_mode": "fresh",
+      "known_positive_cache_rows": [],
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress1-thumb.jpg",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Finfo%2Fevents%2Flunarnewyears%2Fimages%2Fsswdress1-thumb.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      },
+      "fallback_label": null
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR03-06",
+      "priority": 6,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress1.jpg",
+      "literal": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress1.jpg",
+      "filename_class": "thumbnail_or_other",
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "expected": {
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "all_gif_frames": false,
+        "reencode": false,
+        "script_execution": false
+      },
+      "source_evidence": {
+        "literal": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress1.jpg",
+        "path": "research/continuous-recovery-20261016/local-audit/gallery-neighbors/remaining9-candidates.json",
+        "line": 183,
+        "sha256": "b9c7c9550eb65c6795803e6ada01ab55fe185d52f7dc57e7f3ddce193c64b745",
+        "candidate_index": 6,
+        "source_acceptance_path": "research/continuous-recovery-20261016/publication/root-gallery-neighbors-remaining-candidates-acceptance.json",
+        "source_acceptance_sha256": "eb5a2aadd7105df6335b4eb1c98445121a64a56179986955f28fd872148431f5",
+        "source_row_index": 41,
+        "source_result_label": "Lunar Festival",
+        "source_row": {
+          "urlkey": "com,worldofwarcraft)/info/events/lunarnewyears/images/sswdress1.jpg",
+          "timestamp": "20060719161125",
+          "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress1.jpg",
+          "mimetype": "image/jpeg",
+          "statuscode": "200",
+          "digest": "R6MMBOZGTNS2RYMXRBJ5BJPVGIVRBCWY",
+          "length": "289204"
+        },
+        "origin_evidence_path": "research/continuous-recovery-20261016/publication/root-gallery-prefix04-acceptance.json",
+        "origin_evidence_sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2"
+      },
+      "source_page_context": {
+        "gallery_context": "Lunar Festival",
+        "state": "positive_index_not_local",
+        "relationship": "Indexed neighboring source path; no mapping to dynamic ss/ssN slots is inferred.",
+        "source_acceptance_row_index": 41,
+        "positive_rows": [
+          {
+            "urlkey": "com,worldofwarcraft)/info/events/lunarnewyears/images/sswdress1.jpg",
+            "timestamp": "20060719161125",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress1.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "R6MMBOZGTNS2RYMXRBJ5BJPVGIVRBCWY",
+            "length": "289204"
+          }
+        ]
+      },
+      "selection": {
+        "require_complete_index": true,
+        "potential_truncation": "do_not_replay",
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "max_distinct_digest_candidates": 2,
+        "sort": "timestamp_desc_then_record_index_desc",
+        "same_digest_older_captures": "skip",
+        "unknown_metadata": "incomplete_error"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress1.jpg",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "prior_local_evidence": [
+        {
+          "status": "positive_index_not_local",
+          "source_candidates_sha256": "b9c7c9550eb65c6795803e6ada01ab55fe185d52f7dc57e7f3ddce193c64b745",
+          "source_acceptance_sha256": "eb5a2aadd7105df6335b4eb1c98445121a64a56179986955f28fd872148431f5",
+          "source_origin_evidence_sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2"
+        }
+      ],
+      "prior_evidence_status": "positive_index_not_local",
+      "cdx_mode": "fresh",
+      "known_positive_cache_rows": [],
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress1.jpg",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Finfo%2Fevents%2Flunarnewyears%2Fimages%2Fsswdress1.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      },
+      "fallback_label": null
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR03-07",
+      "priority": 7,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress2.jpg",
+      "literal": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress2.jpg",
+      "filename_class": "thumbnail_or_other",
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "expected": {
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "all_gif_frames": false,
+        "reencode": false,
+        "script_execution": false
+      },
+      "source_evidence": {
+        "literal": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress2.jpg",
+        "path": "research/continuous-recovery-20261016/local-audit/gallery-neighbors/remaining9-candidates.json",
+        "line": 216,
+        "sha256": "b9c7c9550eb65c6795803e6ada01ab55fe185d52f7dc57e7f3ddce193c64b745",
+        "candidate_index": 7,
+        "source_acceptance_path": "research/continuous-recovery-20261016/publication/root-gallery-neighbors-remaining-candidates-acceptance.json",
+        "source_acceptance_sha256": "eb5a2aadd7105df6335b4eb1c98445121a64a56179986955f28fd872148431f5",
+        "source_row_index": 42,
+        "source_result_label": "Lunar Festival",
+        "source_row": {
+          "urlkey": "com,worldofwarcraft)/info/events/lunarnewyears/images/sswdress2.jpg",
+          "timestamp": "20060718142055",
+          "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress2.jpg",
+          "mimetype": "image/jpeg",
+          "statuscode": "200",
+          "digest": "25444KV2HPGVI3SLD37XHQLYTGPLQKQK",
+          "length": "291946"
+        },
+        "origin_evidence_path": "research/continuous-recovery-20261016/publication/root-gallery-prefix04-acceptance.json",
+        "origin_evidence_sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2"
+      },
+      "source_page_context": {
+        "gallery_context": "Lunar Festival",
+        "state": "positive_index_not_local",
+        "relationship": "Indexed neighboring source path; no mapping to dynamic ss/ssN slots is inferred.",
+        "source_acceptance_row_index": 42,
+        "positive_rows": [
+          {
+            "urlkey": "com,worldofwarcraft)/info/events/lunarnewyears/images/sswdress2.jpg",
+            "timestamp": "20060718142055",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress2.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "25444KV2HPGVI3SLD37XHQLYTGPLQKQK",
+            "length": "291946"
+          }
+        ]
+      },
+      "selection": {
+        "require_complete_index": true,
+        "potential_truncation": "do_not_replay",
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "max_distinct_digest_candidates": 2,
+        "sort": "timestamp_desc_then_record_index_desc",
+        "same_digest_older_captures": "skip",
+        "unknown_metadata": "incomplete_error"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress2.jpg",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "prior_local_evidence": [
+        {
+          "status": "positive_index_not_local",
+          "source_candidates_sha256": "b9c7c9550eb65c6795803e6ada01ab55fe185d52f7dc57e7f3ddce193c64b745",
+          "source_acceptance_sha256": "eb5a2aadd7105df6335b4eb1c98445121a64a56179986955f28fd872148431f5",
+          "source_origin_evidence_sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2"
+        }
+      ],
+      "prior_evidence_status": "positive_index_not_local",
+      "cdx_mode": "fresh",
+      "known_positive_cache_rows": [],
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress2.jpg",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Finfo%2Fevents%2Flunarnewyears%2Fimages%2Fsswdress2.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      },
+      "fallback_label": null
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR03-08",
+      "priority": 8,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress3.jpg",
+      "literal": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress3.jpg",
+      "filename_class": "thumbnail_or_other",
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "expected": {
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "all_gif_frames": false,
+        "reencode": false,
+        "script_execution": false
+      },
+      "source_evidence": {
+        "literal": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress3.jpg",
+        "path": "research/continuous-recovery-20261016/local-audit/gallery-neighbors/remaining9-candidates.json",
+        "line": 249,
+        "sha256": "b9c7c9550eb65c6795803e6ada01ab55fe185d52f7dc57e7f3ddce193c64b745",
+        "candidate_index": 8,
+        "source_acceptance_path": "research/continuous-recovery-20261016/publication/root-gallery-neighbors-remaining-candidates-acceptance.json",
+        "source_acceptance_sha256": "eb5a2aadd7105df6335b4eb1c98445121a64a56179986955f28fd872148431f5",
+        "source_row_index": 43,
+        "source_result_label": "Lunar Festival",
+        "source_row": {
+          "urlkey": "com,worldofwarcraft)/info/events/lunarnewyears/images/sswdress3.jpg",
+          "timestamp": "20060719033342",
+          "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress3.jpg",
+          "mimetype": "image/jpeg",
+          "statuscode": "200",
+          "digest": "BHKRPRYAI45ZRBB57JYW6HJESAYGID4M",
+          "length": "294795"
+        },
+        "origin_evidence_path": "research/continuous-recovery-20261016/publication/root-gallery-prefix04-acceptance.json",
+        "origin_evidence_sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2"
+      },
+      "source_page_context": {
+        "gallery_context": "Lunar Festival",
+        "state": "positive_index_not_local",
+        "relationship": "Indexed neighboring source path; no mapping to dynamic ss/ssN slots is inferred.",
+        "source_acceptance_row_index": 43,
+        "positive_rows": [
+          {
+            "urlkey": "com,worldofwarcraft)/info/events/lunarnewyears/images/sswdress3.jpg",
+            "timestamp": "20060719033342",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress3.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "BHKRPRYAI45ZRBB57JYW6HJESAYGID4M",
+            "length": "294795"
+          }
+        ]
+      },
+      "selection": {
+        "require_complete_index": true,
+        "potential_truncation": "do_not_replay",
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "max_distinct_digest_candidates": 2,
+        "sort": "timestamp_desc_then_record_index_desc",
+        "same_digest_older_captures": "skip",
+        "unknown_metadata": "incomplete_error"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress3.jpg",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "prior_local_evidence": [
+        {
+          "status": "positive_index_not_local",
+          "source_candidates_sha256": "b9c7c9550eb65c6795803e6ada01ab55fe185d52f7dc57e7f3ddce193c64b745",
+          "source_acceptance_sha256": "eb5a2aadd7105df6335b4eb1c98445121a64a56179986955f28fd872148431f5",
+          "source_origin_evidence_sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2"
+        }
+      ],
+      "prior_evidence_status": "positive_index_not_local",
+      "cdx_mode": "fresh",
+      "known_positive_cache_rows": [],
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress3.jpg",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Finfo%2Fevents%2Flunarnewyears%2Fimages%2Fsswdress3.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      },
+      "fallback_label": null
+    },
+    {
+      "target_key": "GALLERY-NEIGHBOR03-09",
+      "priority": 9,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress4.jpg",
+      "literal": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress4.jpg",
+      "filename_class": "thumbnail_or_other",
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "expected": {
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "all_gif_frames": false,
+        "reencode": false,
+        "script_execution": false
+      },
+      "source_evidence": {
+        "literal": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress4.jpg",
+        "path": "research/continuous-recovery-20261016/local-audit/gallery-neighbors/remaining9-candidates.json",
+        "line": 282,
+        "sha256": "b9c7c9550eb65c6795803e6ada01ab55fe185d52f7dc57e7f3ddce193c64b745",
+        "candidate_index": 9,
+        "source_acceptance_path": "research/continuous-recovery-20261016/publication/root-gallery-neighbors-remaining-candidates-acceptance.json",
+        "source_acceptance_sha256": "eb5a2aadd7105df6335b4eb1c98445121a64a56179986955f28fd872148431f5",
+        "source_row_index": 44,
+        "source_result_label": "Lunar Festival",
+        "source_row": {
+          "urlkey": "com,worldofwarcraft)/info/events/lunarnewyears/images/sswdress4.jpg",
+          "timestamp": "20060719161137",
+          "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress4.jpg",
+          "mimetype": "image/jpeg",
+          "statuscode": "200",
+          "digest": "YGGJFZ324IKOCHUDGYAZYSQX66TTGJGC",
+          "length": "291426"
+        },
+        "origin_evidence_path": "research/continuous-recovery-20261016/publication/root-gallery-prefix04-acceptance.json",
+        "origin_evidence_sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2"
+      },
+      "source_page_context": {
+        "gallery_context": "Lunar Festival",
+        "state": "positive_index_not_local",
+        "relationship": "Indexed neighboring source path; no mapping to dynamic ss/ssN slots is inferred.",
+        "source_acceptance_row_index": 44,
+        "positive_rows": [
+          {
+            "urlkey": "com,worldofwarcraft)/info/events/lunarnewyears/images/sswdress4.jpg",
+            "timestamp": "20060719161137",
+            "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress4.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "YGGJFZ324IKOCHUDGYAZYSQX66TTGJGC",
+            "length": "291426"
+          }
+        ]
+      },
+      "selection": {
+        "require_complete_index": true,
+        "potential_truncation": "do_not_replay",
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "max_distinct_digest_candidates": 2,
+        "sort": "timestamp_desc_then_record_index_desc",
+        "same_digest_older_captures": "skip",
+        "unknown_metadata": "incomplete_error"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress4.jpg",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "prior_local_evidence": [
+        {
+          "status": "positive_index_not_local",
+          "source_candidates_sha256": "b9c7c9550eb65c6795803e6ada01ab55fe185d52f7dc57e7f3ddce193c64b745",
+          "source_acceptance_sha256": "eb5a2aadd7105df6335b4eb1c98445121a64a56179986955f28fd872148431f5",
+          "source_origin_evidence_sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2"
+        }
+      ],
+      "prior_evidence_status": "positive_index_not_local",
+      "cdx_mode": "fresh",
+      "known_positive_cache_rows": [],
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress4.jpg",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%3A80%2Finfo%2Fevents%2Flunarnewyears%2Fimages%2Fsswdress4.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      },
+      "fallback_label": null
+    }
+  ],
+  "scope": "Nine root-approved remaining Lunar Festival thumbnail-or-other originals. Exact fresh CDX then exact Memento replay only; preserve original default-port identity and do not infer dynamic gallery aliases.",
+  "excluded_due_to_prior_acceptance": {
+    "count": 13,
+    "relationship": "Neighbors02 exact payloads are excluded; the separate unknown-transport full-image retry remains outside this thumbnail-only batch."
+  },
+  "output_dir": "research/continuous-recovery-20261016/network/gallery-neighbors03/fixture-probe/output",
+  "no_network_before_parent_go": true,
+  "network_authorized": false,
+  "source_plan_path": "research/continuous-recovery-20261016/local-audit/gallery-neighbors/remaining9-candidates.json",
+  "source_plan_sha256": "b9c7c9550eb65c6795803e6ada01ab55fe185d52f7dc57e7f3ddce193c64b745",
+  "source_acceptance_path": "research/continuous-recovery-20261016/publication/root-gallery-neighbors-remaining-candidates-acceptance.json",
+  "source_acceptance_sha256": "eb5a2aadd7105df6335b4eb1c98445121a64a56179986955f28fd872148431f5",
+  "driver": {
+    "path": "research/continuous-recovery-20261016/network/reusable-image-driver-v2/reusable_image_driver.py",
+    "sha256": "1faae294465f5e1ad6e2925870890cdb9512bd2251090d533637245ee6a3d8e4",
+    "acceptance_path": "research/continuous-recovery-20261016/publication/root-reusable-v2-code-acceptance.json",
+    "acceptance_sha256": "95a70052ddd53a7cf4e44c168e1caeaecd4f6bb062135186d2579a1bfc18916c",
+    "transport_policy": "batch_after_direct_failure"
+  },
+  "previous_batch": {
+    "status": "neighbors02_source_accepted_tail0",
+    "prior_failure_tail": 0,
+    "latest_tail_receipt_path": "research/continuous-recovery-20261016/publication/root-gallery-neighbors02-source-acceptance.json",
+    "latest_tail_receipt_sha256": "63d7b6e789b1e07c1851f74d5b6074cae12e28d41a8def5cc714186991b40e4f",
+    "latest_tail_value": 0,
+    "control_gate_receipt_path": "research/continuous-recovery-20261016/publication/root-control03-acceptance.json",
+    "control_gate_receipt_sha256": "d04cfda5d802d4a16397f310d9f6698d2f413e509dd762b38b75adaceb873e50",
+    "prior_batch_plan_path": "research/continuous-recovery-20261016/network/gallery-neighbors02/plan.json",
+    "prior_batch_plan_sha256": "8c687162f92c9150273177fd62bd8732cd3a7332b393625e83cfd0fb4a4afd28",
+    "prior_batch_report_path": "research/continuous-recovery-20261016/network/gallery-neighbors02/output/batch-report.json",
+    "prior_batch_report_sha256": "d0bd26ad6c80ea2480c965d1237d3243ed916647f8eaa8a9a29f99486786002d",
+    "prior_batch_source_map_path": "research/continuous-recovery-20261016/network/gallery-neighbors02/output/source-map.json",
+    "prior_batch_source_map_sha256": "955784fa16a3b55e0e830c76ee378f1b64838d7e7ae90dd8301939813c75ba4e",
+    "note": "Neighbors02 produced a root-accepted source result with end tail zero and no subsequent stop; CONTROL03 remains the prior successful control gate required by frozen V2 validation."
+  },
+  "policy": {
+    "cdx_mode": "fresh_exact_per_candidate",
+    "from": "20000101000000",
+    "to": "20080512210044",
+    "limit": 500,
+    "showResumeKey": true,
+    "collapse": false,
+    "matchType": "exact",
+    "max_attempts": 60,
+    "max_originals": 20,
+    "window_seconds": 900.0,
+    "max_total_body_bytes": 33554432,
+    "max_entity_body_bytes": 8388608,
+    "min_dispatch_seconds": 5.25,
+    "min_request_start_seconds": 5.0,
+    "disk_floor_bytes": 11005853696,
+    "direct_first": true,
+    "tls_verification": true,
+    "automatic_redirects": 0,
+    "proxy": "http://127.0.0.1:7890",
+    "transport_policy": "batch_after_direct_failure",
+    "prior_failure_tail": 0,
+    "stop_http_codes": [
+      429,
+      503
+    ],
+    "stop_on_five_transport_failures": true,
+    "cooldown_seconds": 120,
+    "user_agent": "wow-recovery-reusable-image-v2/20261016",
+    "no_payload_reencode": true,
+    "no_script_execution": true
+  },
+  "input_bindings": {
+    "remaining9_candidates": {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-neighbors/remaining9-candidates.json",
+      "sha256": "b9c7c9550eb65c6795803e6ada01ab55fe185d52f7dc57e7f3ddce193c64b745",
+      "bytes": 14406,
+      "role": "root-approved nine exact thumbnail originals"
+    },
+    "remaining_candidates_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-neighbors-remaining-candidates-acceptance.json",
+      "sha256": "eb5a2aadd7105df6335b4eb1c98445121a64a56179986955f28fd872148431f5",
+      "bytes": 770,
+      "role": "root acceptance conserving remaining20 and remaining9"
+    },
+    "prior_neighbors02_source_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-neighbors02-source-acceptance.json",
+      "sha256": "63d7b6e789b1e07c1851f74d5b6074cae12e28d41a8def5cc714186991b40e4f",
+      "bytes": 10604,
+      "role": "latest root-accepted neighbors02 source result and tail-zero receipt"
+    },
+    "prior_neighbors02_plan": {
+      "path": "research/continuous-recovery-20261016/network/gallery-neighbors02/plan.json",
+      "sha256": "8c687162f92c9150273177fd62bd8732cd3a7332b393625e83cfd0fb4a4afd28",
+      "bytes": 125450,
+      "role": "previous exact-neighbor plan"
+    },
+    "prior_neighbors02_report": {
+      "path": "research/continuous-recovery-20261016/network/gallery-neighbors02/output/batch-report.json",
+      "sha256": "d0bd26ad6c80ea2480c965d1237d3243ed916647f8eaa8a9a29f99486786002d",
+      "bytes": 149180,
+      "role": "previous completed source report"
+    },
+    "prior_neighbors02_source_map": {
+      "path": "research/continuous-recovery-20261016/network/gallery-neighbors02/output/source-map.json",
+      "sha256": "955784fa16a3b55e0e830c76ee378f1b64838d7e7ae90dd8301939813c75ba4e",
+      "bytes": 147961,
+      "role": "previous source map"
+    },
+    "control03_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-control03-acceptance.json",
+      "sha256": "d04cfda5d802d4a16397f310d9f6698d2f413e509dd762b38b75adaceb873e50",
+      "bytes": 727,
+      "role": "accepted control gate for prior tail zero"
+    },
+    "prior_prefix04_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix04-acceptance.json",
+      "sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2",
+      "bytes": 88497,
+      "role": "positive index evidence source for remaining thumbnails"
+    },
+    "reusable_v2_driver": {
+      "path": "research/continuous-recovery-20261016/network/reusable-image-driver-v2/reusable_image_driver.py",
+      "sha256": "1faae294465f5e1ad6e2925870890cdb9512bd2251090d533637245ee6a3d8e4",
+      "bytes": 102327,
+      "role": "frozen reusable image V2 driver"
+    },
+    "reusable_v2_code_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-reusable-v2-code-acceptance.json",
+      "sha256": "95a70052ddd53a7cf4e44c168e1caeaecd4f6bb062135186d2579a1bfc18916c",
+      "bytes": 1552,
+      "role": "root acceptance of frozen V2 core"
+    },
+    "fixture_probe_source": {
+      "path": "research/continuous-recovery-20261016/network/gallery-neighbors03/fixture-probe/fixture-probe-source.txt",
+      "sha256": "54a0981b72acd09ae3088af9abeb1aa2d1709deee4a4464ca146bc30d29fd407",
+      "bytes": 79,
+      "role": "synthetic bare-HTTP original for frozen default-port fixture compatibility"
+    }
+  },
+  "evidence_rule": "Only exact candidate original, HTTP200 image/jpeg CDX row, exact Memento/Link original, complete bounded image decode, Pillow JPEG validation, and CDX SHA1 digest match can produce pending_root source metadata. No dynamic gallery-slot alias is inferred.",
+  "pending_root_acceptance": {
+    "required_before_dispatch": true,
+    "note": "Offline preparation only; dispatch requires root acceptance of this exact nine-thumbnail plan and explicit GO.",
+    "required_receipts": [
+      "root-gallery-neighbors03-plan-acceptance.json"
+    ]
+  },
+  "candidate_order_note": "Candidates retain the exact order of the root-approved remaining9 file; no full-image or unknown-transport target is included."
+}

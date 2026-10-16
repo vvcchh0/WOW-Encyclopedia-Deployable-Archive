@@ -1,0 +1,29 @@
+{
+  "checked_utc": "2026-10-16T11:21:55.835226+00:00",
+  "accepted": true,
+  "network_requests": 0,
+  "bindings": [
+    {
+      "path": "tools/guide_image_collections.py",
+      "sha256": "9d0f20679733e29c6eb789fd4a05883056e4994ccb173e1dc843d68e070dc057"
+    },
+    {
+      "path": "tools/export_github_pages.py",
+      "sha256": "50bd3569f77d3d52c52ed7077726d7dc99fbee23a3a0ced076a6523198b9225d"
+    },
+    {
+      "path": "tests/test_guide_image_collections.py",
+      "sha256": "2ed12758267ca205b94f3a2d5e7cde4743e8586cb2952c001f8c7fed0d47a354"
+    },
+    {
+      "path": "research/continuous-recovery-20261016/local-audit/guide-collections-implementation/implementation-receipt-v2.json",
+      "sha256": "68782dc87f489308b086378963324a60e814ce83d97ae690bb3b8ec7917f14ee"
+    }
+  ],
+  "root_tests": 22,
+  "root_tests_passed": 22,
+  "root_review": "Production receipt compatibility fixed before integration: route=None retained and lookup scoped by receipt/original/route/SHA; original literal including :80 preserved in collection provenance. Strict three-group source map, supplement-only bytes, true capture dates and local links verified; native gallery scripts are unchanged.",
+  "fixture_boundary": "Unit fixture source bytes and routes establish loader/exporter behavior. Real source-map and browser acceptance remain required before production export/publication.",
+  "export_authorized": false,
+  "root_test_command": "python -X utf8 -m unittest -v tests.test_guide_image_collections.GuideImageCollectionTests tests.test_guide_previews.GuidePreviewTests tests.test_export_promotion.ExportPromotionTests tests.test_github_pages_export.GithubPagesExportTests.test_project_prefix_xml_html_and_sensitive_form"
+}

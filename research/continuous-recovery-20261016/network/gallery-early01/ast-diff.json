@@ -1,0 +1,87 @@
+{
+  "schema": "wow-recovery.gallery-early01-ast-diff.v1",
+  "prepared_utc": "2026-10-16T00:00:00Z",
+  "base": {
+    "path": "research/continuous-recovery-20261016/network/gallery-prefix05/gallery_prefix_driver_v5.py",
+    "sha256": "e592aa9aa353f0b3640c34f6a0db4dbf6163218520bd1f756c154b1848eb131c"
+  },
+  "new": {
+    "path": "research/continuous-recovery-20261016/network/gallery-early01/gallery_prefix_driver_v6.py",
+    "sha256": "5c0eee1c5f173f0a4b85131956f746fd0d67d43217e394768c375aecd745dda3"
+  },
+  "adaptation_scope": [
+    "per-item source-bound query_window.to in CDX URL and row-window classification",
+    "twenty accepted early-gap candidates",
+    "inherited prior_failure_tail=2 with three new transport failures reaching global five-stop",
+    "new batch/report/source-map identifiers only"
+  ],
+  "ast_functions_unchanged": [
+    "__init__",
+    "_remaining_clamp",
+    "_restart_last_dispatch",
+    "_schedule_next",
+    "cf",
+    "check",
+    "free_bytes",
+    "headers",
+    "iso",
+    "list_item",
+    "monotonic",
+    "now",
+    "parse_cdx",
+    "parse_iso",
+    "phase",
+    "public_attempt",
+    "read_json",
+    "rel",
+    "same_origin",
+    "sha",
+    "sleep",
+    "status",
+    "write_json"
+  ],
+  "ast_functions_changed": [
+    "canonical_query_url",
+    "execute",
+    "fixture",
+    "main",
+    "plan_for_run",
+    "project_rows",
+    "request",
+    "validate_inputs"
+  ],
+  "ast_classes_unchanged": [
+    "_FixtureClock",
+    "_RealClock"
+  ],
+  "ast_classes_changed": [],
+  "transport_core_preserved": true,
+  "transport_core_functions_checked": [
+    "parse_cdx",
+    "same_origin",
+    "phase",
+    "status",
+    "headers",
+    "_schedule_next",
+    "_restart_last_dispatch",
+    "_remaining_clamp"
+  ],
+  "transport_core_functions_unchanged": [
+    "_remaining_clamp",
+    "_restart_last_dispatch",
+    "_schedule_next",
+    "headers",
+    "parse_cdx",
+    "phase",
+    "same_origin",
+    "status"
+  ],
+  "changed_contracts": [
+    "validate_inputs accepts exact 20-item early-gap selection and receipt-bound tail2",
+    "project_rows and canonical_query_url consume candidate-specific windows",
+    "execute starts failure streak at inherited tail2 and preserves global five-stop semantics",
+    "fixture checks two per-item end windows and inherited three-failure stop"
+  ],
+  "offline_only": true,
+  "network_requests": 0
+}

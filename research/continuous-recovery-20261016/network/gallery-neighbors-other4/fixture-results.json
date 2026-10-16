@@ -1,0 +1,33 @@
+{
+  "schema": "wow-recovery.gallery-neighbors-other4-fixtures.v1",
+  "batch_id": "GALLERY-NEIGHBORS-OTHER4",
+  "network_requests": 0,
+  "all_passed": true,
+  "production_plan_validation": {
+    "validated": true,
+    "batch_id": "GALLERY-NEIGHBORS-OTHER4",
+    "candidate_count": 4,
+    "network_requests": 0,
+    "exact_originals_preserved": true,
+    "plan_sha256": "8e6375da9b66fa8d9503d93363a2799a712e1f64d805ca53c0f3dc9a3249fdaf"
+  },
+  "synthetic_default_port_probe": {
+    "plan_path": "research/continuous-recovery-20261016/network/gallery-neighbors-other4/fixture-probe/plan.json",
+    "plan_sha256": "29d3e528b3a4f34da1610a15df2ace2aae1ebe4dbf39593b0c22c39d2c51dec9",
+    "fixture_path": "research/continuous-recovery-20261016/network/gallery-neighbors-other4/fixture-probe/fixture-results.json",
+    "fixture_sha256": "0cd38a2c94c747a81779f0d23340749ff55fff5d8068554a30752f12591acfac",
+    "all_passed": true,
+    "passed": 32,
+    "total": 32,
+    "network_requests": 0,
+    "synthetic_original": "http://www.worldofwarcraft.com/info/events/lunarnewyears/images/sswdress1-thumb.jpg"
+  },
+  "production_candidate_count": 4,
+  "production_candidate_order_preserved": true,
+  "notes": [
+    "Production plan validation used the frozen V2 load_and_validate_inputs path and created no network request.",
+    "The frozen fixture mutates its first fixture candidate to exercise default-port identity; this production set begins with an explicit :80 original, so the fixture ran in an isolated synthetic bare-HTTP probe.",
+    "The synthetic probe is test-only and does not alter any production candidate or plan.",
+    "Cached candidates were revalidated against their SHA-bound CDX body/header/report before the fixture was run; fresh candidates remain unqueried until an explicit root GO."
+  ]
+}

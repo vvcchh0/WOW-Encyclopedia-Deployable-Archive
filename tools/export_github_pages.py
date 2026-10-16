@@ -50,6 +50,7 @@ if str(ROOT / "tools") not in sys.path:
 import offline_mirror as mirror  # noqa: E402
 import historical_exhibits  # noqa: E402
 import guide_previews  # noqa: E402
+import guide_image_collections  # noqa: E402
 
 
 class PagesExportError(RuntimeError):
@@ -2329,6 +2330,7 @@ def export_pages(
     supplement_image_source_maps: list[Path] | tuple[Path, ...] = (),
     allow_later_image_supplements: bool = False,
     guide_preview_map: Path | None = None,
+    guide_image_collection_map: Path | None = None,
 ) -> dict[str, Any]:
     source_site = source_site.resolve()
     manifest_path = manifest_path.resolve()
@@ -2414,6 +2416,20 @@ def export_pages(
             )
         except guide_previews.GuidePreviewError as exc:
             raise PagesExportError(str(exc)) from exc
+    guide_image_collection_bundle: guide_image_collections.GuideImageCollectionBundle | None = None
+    if guide_image_collection_map is not None:
+        try:
+            guide_image_collection_bundle = guide_image_collections.load_guide_image_collection_map(
+                Path(guide_image_collection_map),
+                workspace_root=workspace_root,
+                manifest_path=manifest_path,
+                manifest=manifest,
+                overlays=overlays,
+                route_to_static=route_to_static,
+                base_path=base_path,
+            )
+        except guide_image_collections.GuideImageCollectionError as exc:
+            raise PagesExportError(str(exc)) from exc
     aliases: dict[str, str] = {}
     alias_routes: dict[str, str] = {}
     for alias, target in raw_aliases.items():
@@ -2483,6 +2499,10 @@ def export_pages(
     localizer = PagesLocalizer(route_to_static=route_lookup, aliases=alias_routes, origin_index=origin_index, base_path=base_path)
     provenance: list[dict[str, Any]] = []
     stats: Counter[str] = Counter()
+    if guide_image_collection_bundle is not None:
+        # Count curated source images once even though each is rendered on its
+        # guide page and its related gallery page.
+        stats["guide_image_collection_images"] = guide_image_collection_bundle.image_count
     partial.mkdir(parents=True, exist_ok=False)
     promotion_attempted = False
     try:
@@ -2561,6 +2581,23 @@ def export_pages(
                         )
                         stats["guide_preview_gallery_pages"] += 1
                         stats["guide_preview_count"] += len(guide_group.previews)
+                if guide_image_collection_bundle is not None:
+                    guide_image_page = guide_image_collection_bundle.group_for_route(route)
+                    if guide_image_page is not None:
+                        guide_image_group, page_role = guide_image_page
+                        try:
+                            text = guide_image_collections.insert_guide_image_section(
+                                text,
+                                guide_image_group,
+                                page_role,
+                            )
+                        except guide_image_collections.GuideImageCollectionError as exc:
+                            raise PagesExportError(str(exc)) from exc
+                        derivation_notes.append(
+                            f"inserted {len(guide_image_group.images)} validated guide images on {page_role} page "
+                            f"from {guide_image_collection_bundle.map_path.as_posix()}; no native gallery aliases changed"
+                        )
+                        stats["guide_image_collection_pages"] += 1
                 text, changed = rewrite_wrath_card_hit_area(text, route=route)
                 if changed:
                     derivation_notes.append(
@@ -2841,6 +2878,8 @@ def export_pages(
         }
         if guide_preview_bundle is not None:
             provenance_payload["guide_previews"] = guide_preview_bundle.provenance()
+        if guide_image_collection_bundle is not None:
+            provenance_payload["guide_image_collections"] = guide_image_collection_bundle.provenance()
         prov_data = (json.dumps(provenance_payload, ensure_ascii=False, sort_keys=True, indent=2) + "\n").encode("utf-8")
         (partial / "export-provenance.json").write_bytes(prov_data)
         after_workspace = workspace_size(workspace_root, output)
@@ -2891,9 +2930,15 @@ def main(argv: list[str] | None = None) -> int:
         default=None,
         help="Optional strict map of accepted guide-page previews to insert on their five gallery pages",
     )
+    parser.add_argument(
+        "--guide-image-collection-map",
+        type=Path,
+        default=None,
+        help="Optional strict map of validated guide-image supplement collections for guide and gallery pages",
+    )
     args = parser.parse_args(argv)
     try:
-        result = export_pages(output=args.output, source_site=args.site, manifest_path=args.manifest, base_path=args.base_path, max_bytes=args.max_bytes, min_free_bytes=args.min_free_bytes, image_source_maps=args.image_source_maps, supplement_image_source_maps=args.supplement_image_source_maps, allow_later_image_supplements=args.allow_later_image_supplements, guide_preview_map=args.guide_preview_map)
+        result = export_pages(output=args.output, source_site=args.site, manifest_path=args.manifest, base_path=args.base_path, max_bytes=args.max_bytes, min_free_bytes=args.min_free_bytes, image_source_maps=args.image_source_maps, supplement_image_source_maps=args.supplement_image_source_maps, allow_later_image_supplements=args.allow_later_image_supplements, guide_preview_map=args.guide_preview_map, guide_image_collection_map=args.guide_image_collection_map)
     except PagesExportError as exc:
         parser.error(str(exc))
     print(json.dumps(result, ensure_ascii=False, indent=2))

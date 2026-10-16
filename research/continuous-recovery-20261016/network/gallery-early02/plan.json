@@ -1,0 +1,561 @@
+{
+  "schema": "wow-recovery.gallery-early02-plan.v1",
+  "batch_id": "WAYBACK-GALLERYEARLY02-20261016",
+  "prepared_utc": "2026-10-16T12:09:49.916701+00:00",
+  "source_plan_path": "research/continuous-recovery-20261016/local-audit/gallery-followup-plans/early-gaps-24-v1.json",
+  "source_plan_sha256": "767c9dfe7280ac6d708b5be5661b0970e67ef8ac292672c9802aeddc75218e90",
+  "source_plan_selection": {
+    "followup_batch": "early_gap_batch_2_of_2_4_items",
+    "count": 4,
+    "prior_batch_count": 20
+  },
+  "candidate_count": 4,
+  "candidate_ranks": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "scope": "exact four remaining early-gap absolute HTTP prefixes; per-item source windows; index-only; no expansion",
+  "mode": "prepared_not_executed",
+  "execution_status": "prepared_not_executed",
+  "network_authorized": false,
+  "network_requests": 0,
+  "pending_root_acceptance": true,
+  "query_window": {
+    "from": "20000101000000",
+    "to": "per_candidate_source_window",
+    "limit": 500,
+    "showResumeKey": true,
+    "collapse": false,
+    "matchType": "prefix"
+  },
+  "index_only": true,
+  "no_payload_replay": true,
+  "max_attempts": 40,
+  "window_seconds": 900.0,
+  "max_total_body_bytes": 16777216,
+  "max_entity_body_bytes": 8388608,
+  "direct_first": true,
+  "proxy": "http://127.0.0.1:7890",
+  "tls_verification": true,
+  "automatic_redirects": 0,
+  "min_dispatch_monotonic_seconds": 5.25,
+  "acceptance_dispatch_floor_seconds": 5.25,
+  "min_request_start_utc_seconds": 5.0,
+  "disk_floor_bytes": 11005853696,
+  "stop_http_codes": [
+    429,
+    503
+  ],
+  "stop_on_five_consecutive_transport_failures": true,
+  "stop_after_new_transport_failures": 5,
+  "retry_after_rule": "429/503 stop; cooldown not earlier than Retry-After and at least 120 seconds",
+  "resume_rule": "record actual response resumeKey; do not follow continuation in this batch",
+  "failure_streak_start": 0,
+  "prior_failure_tail": 0,
+  "historical_gallery_tail": 5,
+  "historical_gallery_tail_preserved": 5,
+  "latest_tail_value": 0,
+  "latest_tail_basis": {
+    "path": "research/continuous-recovery-20261016/publication/root-gallery-early01-acceptance.json",
+    "sha256": "f050ce25091b6710ead8f64ecc12dd645337facf8f9c22c0464ce8cca34b798e",
+    "failure_streak_end": 0,
+    "role": "latest root-accepted EARLY01 source receipt; inherited current tail"
+  },
+  "control_basis": "latest root-accepted EARLY01 source receipt tail end 0; no historical control reset is used",
+  "previous_batch": {
+    "batch_id": "WAYBACK-GALLERYEARLY01-20261016",
+    "latest_batch_plan_path": "research/continuous-recovery-20261016/network/gallery-early01/execution-plan.json",
+    "latest_batch_plan_sha256": "f72a6c5e217357d61ff379776045a0eb784d37f408d2b78391d7c8e0c6fb914d",
+    "latest_batch_report_path": "research/continuous-recovery-20261016/network/gallery-early01/batch-report.json",
+    "latest_batch_report_sha256": "5aa28458db0f87b98f1faeab08aafed358f1e3391110249ef5072b9fa432cac9",
+    "latest_batch_source_map_path": "research/continuous-recovery-20261016/network/gallery-early01/source-map.json",
+    "latest_batch_source_map_sha256": "aaa9614e637d6d4e1ea1a2764fd8909ffdd79f3e50ac7c4e1a9fd2c26ef1beb5",
+    "latest_root_acceptance_path": "research/continuous-recovery-20261016/publication/root-gallery-early01-acceptance.json",
+    "latest_root_acceptance_sha256": "f050ce25091b6710ead8f64ecc12dd645337facf8f9c22c0464ce8cca34b798e"
+  },
+  "input_bindings": {
+    "early_gap_plan": {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-followup-plans/early-gaps-24-v1.json",
+      "sha256": "767c9dfe7280ac6d708b5be5661b0970e67ef8ac292672c9802aeddc75218e90",
+      "bytes": 123782,
+      "role": "root-approved 24-item early-gap source; batch-2 selects remaining 4"
+    },
+    "root_gallery_followups_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-followups-acceptance.json",
+      "sha256": "b961a12d0a6d3125d3c7228478417d0ca18abe1e241a71a85556c2d8b48571d9",
+      "bytes": 692,
+      "role": "root acceptance of early-gap source and 20+4 split"
+    },
+    "gallery_registry_v5": {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-prefix-registry-v5/gallery-prefix-registry-v5.json",
+      "sha256": "98bf027bb36bb33706ac45c4f00e7dfdd89625ef29bff695aac35cd4d14b4f76",
+      "bytes": 296800,
+      "role": "registry referenced by accepted early-gap source"
+    },
+    "root_gallery_prefix05_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix05-acceptance.json",
+      "sha256": "199ee21c32521e287b0bc4157a8f13bbab1c6b6b7580aa36ca8220cb21eb58c9",
+      "bytes": 9557,
+      "role": "accepted V5 prefix core predecessor"
+    },
+    "gallery_prefix05_plan": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix05/plan.json",
+      "sha256": "41ea2ccce2f1b0fcb2a58dec6eb04d85792cca1d4c69e58ae049dddf1e5ac024",
+      "bytes": 26386,
+      "role": "frozen V5 predecessor plan"
+    },
+    "gallery_prefix05_driver_v5": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix05/gallery_prefix_driver_v5.py",
+      "sha256": "e592aa9aa353f0b3640c34f6a0db4dbf6163218520bd1f756c154b1848eb131c",
+      "bytes": 58840,
+      "role": "frozen V5 driver used as the adaptation base"
+    },
+    "gallery_prefix05_fixture": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix05/fixture-results.json",
+      "sha256": "51c83fa4a91fe92fce4b035bd7316209a892370d868bb08af4e11aae43cb3e75",
+      "bytes": 5879,
+      "role": "frozen V5 offline fixture baseline"
+    },
+    "historical_prefix03_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix03-acceptance.json",
+      "sha256": "1daa3a6774f0911fa7647f57b5d4bf90e8efe1aa7d2744829c00457342f959da",
+      "bytes": 15104,
+      "role": "historical gallery tail five preserved for metadata only"
+    },
+    "root_gallery_early01_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-early01-acceptance.json",
+      "sha256": "f050ce25091b6710ead8f64ecc12dd645337facf8f9c22c0464ce8cca34b798e",
+      "bytes": 11505,
+      "role": "latest root acceptance; EARLY01 ended with global tail zero"
+    },
+    "gallery_early01_batch_report": {
+      "path": "research/continuous-recovery-20261016/network/gallery-early01/batch-report.json",
+      "sha256": "5aa28458db0f87b98f1faeab08aafed358f1e3391110249ef5072b9fa432cac9",
+      "bytes": 188779,
+      "role": "latest EARLY01 report bound to tail-zero receipt"
+    },
+    "gallery_early01_source_map": {
+      "path": "research/continuous-recovery-20261016/network/gallery-early01/source-map.json",
+      "sha256": "aaa9614e637d6d4e1ea1a2764fd8909ffdd79f3e50ac7c4e1a9fd2c26ef1beb5",
+      "bytes": 128113,
+      "role": "latest EARLY01 index-only source map"
+    },
+    "source_page_01": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/serpentshrine-gallery.html",
+      "sha256": "f64ca255d9325cd0e137ec22c1cd59014a5b78405639031516c15c3465f2b815",
+      "bytes": 11303,
+      "role": "source page literal for EARLY02 candidate 1 (Serpentshrine Cavern)"
+    },
+    "source_page_02": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/black-temple-gallery.html",
+      "sha256": "04c728723c639d4613f77bf449cd93ae68c494b08151b76da00899984ffff4ff",
+      "bytes": 16062,
+      "role": "source page literal for EARLY02 candidate 2 (Black Temple)"
+    },
+    "source_page_03": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/magisters-terrace-gallery.html",
+      "sha256": "ec6f9e7dcbacbd46315e72595a1a3e1d93005fcd7de3ff2e7c0d8f5209b2391a",
+      "bytes": 16196,
+      "role": "source page literal for EARLY02 candidate 3 (Magister's Terrace)"
+    },
+    "source_page_04": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/professions/fishing-gallery.html",
+      "sha256": "a141a64479697c12836d1f76e87fb7f6f6612d5a77861e6f7a604d87ca3d8f49",
+      "bytes": 8755,
+      "role": "source page literal for EARLY02 candidate 4 (Fishing)"
+    }
+  },
+  "candidates": [
+    {
+      "registry_rank": 5,
+      "gallery": "Serpentshrine Cavern",
+      "category": "Raid",
+      "source_page_route": "/info/dungeons/serpentshrine-gallery.html",
+      "declared_slots": 29,
+      "expected_direct_entities": 58,
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/serpentshrine/",
+      "origin": {
+        "scheme": "http",
+        "host": "www.worldofwarcraft.com",
+        "default_port": 80
+      },
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/serpentshrine-gallery.html",
+        "sha256": "f64ca255d9325cd0e137ec22c1cd59014a5b78405639031516c15c3465f2b815",
+        "addshots_line": 92,
+        "addshots_literal": "addshots(\"/info/dungeons/images/serpentshrine/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/serpentshrine/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 29;"
+      },
+      "prior_coverage": {
+        "coverage_class": "reviewed_window_complete",
+        "coverage_status": "wave3_saved_complete_index",
+        "coverage_source": "wave3 coverage ledger",
+        "coverage_source_latest": null,
+        "prior_windows": [
+          {
+            "kind": "historical_saved_prefix",
+            "evidence_id": "NET015-SERPENTSHRINE_CAVERN",
+            "status": "executed_prefix_only_no_valid_direct_entity",
+            "window": {
+              "from": "20040101000000",
+              "to": "20080512210044"
+            },
+            "direct_entity_rows": 0,
+            "status200_image_rows": 0,
+            "nested_excluded_rows": 0,
+            "prefix_pages": 1,
+            "complete_prefix_evidence": true,
+            "report_quote": "category=cdx_rows_without_valid_200; capture_index_count=5; eligible_full_count=0; eligible_thumb_count=0; continuation_followed=False",
+            "evidence_paths": [
+              {
+                "path": "research/continuous-recovery-20261015/network-guide-prefix15/sanitized-summary.json",
+                "exists": true,
+                "bytes": 2881,
+                "sha256": "ff09a4791fac9605b46c6d7a3b5f916e7fd624381ff9e04b521ecfc06bdfa0f1"
+              },
+              {
+                "path": "research/continuous-recovery-20261015/guide-prefix15-approved-plan.json",
+                "exists": true,
+                "bytes": 7816,
+                "sha256": "479819f3cfb44bd1321bffa6e6a07c0c0ee7211a7853ae5658c7be8cbd1d2135"
+              }
+            ]
+          }
+        ],
+        "prior_attempts": []
+      },
+      "followup_group": "early_gap_before_earliest_complete_window",
+      "reason": "No complete saved prefix query before earliest complete window starting 20040101000000; query only the earlier data gap.",
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20031231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "query_mode": "absolute HTTP prefix index only",
+      "payload_recovery": false,
+      "execution_status": "prepared_not_executed",
+      "network_performed_in_this_plan": false,
+      "no_filename_guess": true,
+      "earliest_complete_prior_window_start": "20040101000000",
+      "early_gap_end_exclusive": "20040101000000",
+      "early_gap_query_end": "20031231235959",
+      "followup_batch": "early_gap_batch_2_of_2_4_items",
+      "rank": 1,
+      "target_key": "GALLERY-EARLY02-01",
+      "label": "Serpentshrine Cavern",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fserpentshrine%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20031231235959&limit=500&showResumeKey=true",
+      "status": "prepared_not_executed"
+    },
+    {
+      "registry_rank": 8,
+      "gallery": "Black Temple",
+      "category": "Raid",
+      "source_page_route": "/info/dungeons/black-temple-gallery.html",
+      "declared_slots": 48,
+      "expected_direct_entities": 96,
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/blacktemple/",
+      "origin": {
+        "scheme": "http",
+        "host": "www.worldofwarcraft.com",
+        "default_port": 80
+      },
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/black-temple-gallery.html",
+        "sha256": "04c728723c639d4613f77bf449cd93ae68c494b08151b76da00899984ffff4ff",
+        "addshots_line": 112,
+        "addshots_literal": "addshots(\"/info/dungeons/images/blacktemple/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/blacktemple/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 48;"
+      },
+      "prior_coverage": {
+        "coverage_class": "reviewed_window_complete",
+        "coverage_status": "wave3_saved_complete_index",
+        "coverage_source": "wave3 coverage ledger",
+        "coverage_source_latest": null,
+        "prior_windows": [
+          {
+            "kind": "historical_saved_prefix",
+            "evidence_id": "NET015-BLACK_TEMPLE",
+            "status": "executed_prefix_only_no_valid_direct_entity",
+            "window": {
+              "from": "20040101000000",
+              "to": "20080512210044"
+            },
+            "direct_entity_rows": 0,
+            "status200_image_rows": 0,
+            "nested_excluded_rows": 0,
+            "prefix_pages": 1,
+            "complete_prefix_evidence": true,
+            "report_quote": "category=cdx_rows_without_valid_200; capture_index_count=1; eligible_full_count=0; eligible_thumb_count=0; continuation_followed=False",
+            "evidence_paths": [
+              {
+                "path": "research/continuous-recovery-20261015/network-guide-prefix15/sanitized-summary.json",
+                "exists": true,
+                "bytes": 2881,
+                "sha256": "ff09a4791fac9605b46c6d7a3b5f916e7fd624381ff9e04b521ecfc06bdfa0f1"
+              },
+              {
+                "path": "research/continuous-recovery-20261015/guide-prefix15-approved-plan.json",
+                "exists": true,
+                "bytes": 7816,
+                "sha256": "479819f3cfb44bd1321bffa6e6a07c0c0ee7211a7853ae5658c7be8cbd1d2135"
+              }
+            ]
+          }
+        ],
+        "prior_attempts": []
+      },
+      "followup_group": "early_gap_before_earliest_complete_window",
+      "reason": "No complete saved prefix query before earliest complete window starting 20040101000000; query only the earlier data gap.",
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20031231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "query_mode": "absolute HTTP prefix index only",
+      "payload_recovery": false,
+      "execution_status": "prepared_not_executed",
+      "network_performed_in_this_plan": false,
+      "no_filename_guess": true,
+      "earliest_complete_prior_window_start": "20040101000000",
+      "early_gap_end_exclusive": "20040101000000",
+      "early_gap_query_end": "20031231235959",
+      "followup_batch": "early_gap_batch_2_of_2_4_items",
+      "rank": 2,
+      "target_key": "GALLERY-EARLY02-02",
+      "label": "Black Temple",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fblacktemple%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20031231235959&limit=500&showResumeKey=true",
+      "status": "prepared_not_executed"
+    },
+    {
+      "registry_rank": 10,
+      "gallery": "Magister's Terrace",
+      "category": "Dungeon",
+      "source_page_route": "/info/dungeons/magisters-terrace-gallery.html",
+      "declared_slots": 47,
+      "expected_direct_entities": 94,
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/magisters/",
+      "origin": {
+        "scheme": "http",
+        "host": "www.worldofwarcraft.com",
+        "default_port": 80
+      },
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/magisters-terrace-gallery.html",
+        "sha256": "ec6f9e7dcbacbd46315e72595a1a3e1d93005fcd7de3ff2e7c0d8f5209b2391a",
+        "addshots_line": 110,
+        "addshots_literal": "addshots(\"/info/dungeons/images/magisters/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/magisters/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 47;"
+      },
+      "prior_coverage": {
+        "coverage_class": "reviewed_window_complete",
+        "coverage_status": "wave3_saved_complete_index",
+        "coverage_source": "wave3 coverage ledger",
+        "coverage_source_latest": null,
+        "prior_windows": [
+          {
+            "kind": "historical_saved_prefix",
+            "evidence_id": "NET015-MAGISTER'S_TERRACE",
+            "status": "executed_prefix_only_no_valid_direct_entity",
+            "window": {
+              "from": "20040101000000",
+              "to": "20080512210044"
+            },
+            "direct_entity_rows": 0,
+            "status200_image_rows": 0,
+            "nested_excluded_rows": 0,
+            "prefix_pages": 1,
+            "complete_prefix_evidence": true,
+            "report_quote": "category=cdx_rows_without_valid_200; capture_index_count=3; eligible_full_count=0; eligible_thumb_count=0; continuation_followed=False",
+            "evidence_paths": [
+              {
+                "path": "research/continuous-recovery-20261015/network-guide-prefix15/sanitized-summary.json",
+                "exists": true,
+                "bytes": 2881,
+                "sha256": "ff09a4791fac9605b46c6d7a3b5f916e7fd624381ff9e04b521ecfc06bdfa0f1"
+              },
+              {
+                "path": "research/continuous-recovery-20261015/guide-prefix15-approved-plan.json",
+                "exists": true,
+                "bytes": 7816,
+                "sha256": "479819f3cfb44bd1321bffa6e6a07c0c0ee7211a7853ae5658c7be8cbd1d2135"
+              }
+            ]
+          }
+        ],
+        "prior_attempts": []
+      },
+      "followup_group": "early_gap_before_earliest_complete_window",
+      "reason": "No complete saved prefix query before earliest complete window starting 20040101000000; query only the earlier data gap.",
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20031231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "query_mode": "absolute HTTP prefix index only",
+      "payload_recovery": false,
+      "execution_status": "prepared_not_executed",
+      "network_performed_in_this_plan": false,
+      "no_filename_guess": true,
+      "earliest_complete_prior_window_start": "20040101000000",
+      "early_gap_end_exclusive": "20040101000000",
+      "early_gap_query_end": "20031231235959",
+      "followup_batch": "early_gap_batch_2_of_2_4_items",
+      "rank": 3,
+      "target_key": "GALLERY-EARLY02-03",
+      "label": "Magister's Terrace",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fmagisters%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20031231235959&limit=500&showResumeKey=true",
+      "status": "prepared_not_executed"
+    },
+    {
+      "registry_rank": 38,
+      "gallery": "Fishing",
+      "category": "Profession",
+      "source_page_route": "/info/professions/fishing-gallery.html",
+      "declared_slots": 66,
+      "expected_direct_entities": 132,
+      "prefix": "http://www.worldofwarcraft.com/info/professions/images/fishing/ss/",
+      "origin": {
+        "scheme": "http",
+        "host": "www.worldofwarcraft.com",
+        "default_port": 80
+      },
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/professions/fishing-gallery.html",
+        "sha256": "a141a64479697c12836d1f76e87fb7f6f6612d5a77861e6f7a604d87ca3d8f49",
+        "addshots_line": 129,
+        "addshots_literal": "addshots(\"/info/professions/images/fishing/ss/\",\"ss\",numShots);",
+        "source_directory": "/info/professions/images/fishing/ss/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 66;"
+      },
+      "prior_coverage": {
+        "coverage_class": "reviewed_window_complete",
+        "coverage_status": "wave3_saved_complete_index",
+        "coverage_source": "wave3 coverage ledger",
+        "coverage_source_latest": null,
+        "prior_windows": [
+          {
+            "kind": "historical_saved_prefix",
+            "evidence_id": "FISHING-2008",
+            "status": "executed_complete_prefix",
+            "window": {
+              "from": "20080101000000",
+              "to": "20081231235959"
+            },
+            "direct_entity_rows": 0,
+            "status200_image_rows": 56,
+            "nested_excluded_rows": 56,
+            "prefix_pages": 1,
+            "complete_prefix_evidence": true,
+            "report_quote": "complete_prefix_evidence=True; rows=63; direct=0; status200_image=56",
+            "evidence_paths": [
+              {
+                "path": "research/gallery-recovery-20261014/discovery-002/sanitized-summary.json",
+                "exists": true,
+                "bytes": 2595,
+                "sha256": "c398896f30fd147a6795f8176cd380f84e0d7fac4fa7bbfe0cbadc23744eb34c"
+              },
+              {
+                "path": "research/gallery-recovery-20261014/discovery-002/fishing-2008/cdx/prefix.json",
+                "exists": true,
+                "bytes": 14854,
+                "sha256": "e67aafb69b1fa459674eb71146f6db3fe3584f624506693ee58c6a032b31249d"
+              },
+              {
+                "path": "research/gallery-recovery-20261014/discovery-002/fishing-2008/cdx/pages.json",
+                "exists": true,
+                "bytes": 22,
+                "sha256": "70888f7cccf93eb23761ea0755554720fad69df0ba7e10d642dab4b937f15b2d"
+              },
+              {
+                "path": "research/gallery-recovery-20261014/discovery-002/fishing-2008/cdx/prefix.headers.txt",
+                "exists": true,
+                "bytes": 637,
+                "sha256": "2a7e60317674a2b5981fa03aaccda0748175100b120199838567fe4b37409407"
+              }
+            ]
+          }
+        ],
+        "prior_attempts": []
+      },
+      "followup_group": "early_gap_before_earliest_complete_window",
+      "reason": "No complete saved prefix query before earliest complete window starting 20080101000000; query only the earlier data gap.",
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20071231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "query_mode": "absolute HTTP prefix index only",
+      "payload_recovery": false,
+      "execution_status": "prepared_not_executed",
+      "network_performed_in_this_plan": false,
+      "no_filename_guess": true,
+      "earliest_complete_prior_window_start": "20080101000000",
+      "early_gap_end_exclusive": "20080101000000",
+      "early_gap_query_end": "20071231235959",
+      "followup_batch": "early_gap_batch_2_of_2_4_items",
+      "rank": 4,
+      "target_key": "GALLERY-EARLY02-04",
+      "label": "Fishing",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fprofessions%2Fimages%2Ffishing%2Fss%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20071231235959&limit=500&showResumeKey=true",
+      "status": "prepared_not_executed"
+    }
+  ],
+  "policy": {
+    "from": "20000101000000",
+    "to": "per_item_source_window",
+    "limit": 500,
+    "showResumeKey": true,
+    "collapse": false,
+    "matchType": "prefix",
+    "max_attempts": 40,
+    "window_seconds": 900.0,
+    "max_total_body_bytes": 16777216,
+    "max_entity_body_bytes": 8388608,
+    "min_dispatch_seconds": 5.25,
+    "min_request_start_seconds": 5.0,
+    "disk_floor_bytes": 11005853696,
+    "direct_first": true,
+    "proxy": "http://127.0.0.1:7890",
+    "tls_verification": true,
+    "automatic_redirects": 0,
+    "stop_http_codes": [
+      429,
+      503
+    ],
+    "stop_on_five_consecutive_transport_failures": true,
+    "stop_after_new_transport_failures": 5,
+    "cooldown_seconds": 120,
+    "payload_replay": false,
+    "index_only": true,
+    "prefix_only": true,
+    "no_pagination": true,
+    "remaining_time_and_byte_clamp": true,
+    "retry_after_rule": "429/503 stop; not-before is at least 120 seconds and any Retry-After",
+    "prior_failure_tail": 0
+  }
+}

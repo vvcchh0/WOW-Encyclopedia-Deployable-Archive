@@ -1,0 +1,783 @@
+{
+  "schema": "wow-recovery.gallery-early01-execution-plan.v1",
+  "batch_id": "WAYBACK-GALLERYEARLY01-20261016",
+  "mode": "go_executed",
+  "prepared_utc": "2026-10-16T12:03:08.019281Z",
+  "source_plan_path": "research/continuous-recovery-20261016/network/gallery-early01/plan.json",
+  "source_plan_sha256": "9635c052fd91b6ad769689a152c8ac0d4da5364ed9b78bae3fdef49911658e68",
+  "candidate_count": 20,
+  "candidate_ranks": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "scope": "exact twenty absolute HTTP prefixes from the root-approved early-gap batch; per-item source query windows; no expansion",
+  "query_window": {
+    "from": "20000101000000",
+    "to": "per_candidate_source_window",
+    "limit": 500,
+    "showResumeKey": true,
+    "collapse": false,
+    "matchType": "prefix"
+  },
+  "index_only": true,
+  "no_payload_replay": true,
+  "max_attempts": 40,
+  "window_seconds": 900.0,
+  "max_total_body_bytes": 16777216,
+  "max_entity_body_bytes": 8388608,
+  "direct_first": true,
+  "proxy": "http://127.0.0.1:7890",
+  "tls_verification": true,
+  "automatic_redirects": 0,
+  "min_dispatch_monotonic_seconds": 5.25,
+  "acceptance_dispatch_floor_seconds": 5.25,
+  "min_request_start_utc_seconds": 5.0,
+  "disk_floor_bytes": 11005853696,
+  "stop_http_codes": [
+    429,
+    503
+  ],
+  "stop_on_five_consecutive_transport_failures": true,
+  "stop_after_new_transport_failures": 3,
+  "retry_after_rule": "429/503 stop immediately; cooldown not earlier than Retry-After and at least 120 seconds",
+  "resume_rule": "record actual response resumeKey; do not follow continuation in this batch",
+  "failure_streak_start": 2,
+  "prior_failure_tail": 2,
+  "historical_gallery_tail": 5,
+  "historical_gallery_tail_preserved": 5,
+  "latest_tail_value": 2,
+  "control_basis": "latest root-accepted NETWORK28 other4 source receipt tail end 2; CONTROL03 is historical and is not used to reset this batch",
+  "input_bindings": {
+    "early_gap_plan": {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-followup-plans/early-gaps-24-v1.json",
+      "sha256": "767c9dfe7280ac6d708b5be5661b0970e67ef8ac292672c9802aeddc75218e90",
+      "bytes": 123782,
+      "role": "root-approved 24-item early-gap source; batch-1 selects 20"
+    },
+    "root_gallery_followups_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-followups-acceptance.json",
+      "sha256": "b961a12d0a6d3125d3c7228478417d0ca18abe1e241a71a85556c2d8b48571d9",
+      "bytes": 692,
+      "role": "root acceptance of early-gap source and 20+4 split"
+    },
+    "gallery_registry_v5": {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-prefix-registry-v5/gallery-prefix-registry-v5.json",
+      "sha256": "98bf027bb36bb33706ac45c4f00e7dfdd89625ef29bff695aac35cd4d14b4f76",
+      "bytes": 296800,
+      "role": "registry referenced by the accepted early-gap source"
+    },
+    "root_gallery_neighbors_other4_source_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-neighbors-other4-source-acceptance.json",
+      "sha256": "a4ae0afdbb41a3881884289776b4943c482cd6b73762304e5d58c209c33d333c",
+      "bytes": 2442,
+      "role": "latest accepted source result with inherited tail two"
+    },
+    "gallery_neighbors_other4_batch_report": {
+      "path": "research/continuous-recovery-20261016/network/gallery-neighbors-other4/output/batch-report.json",
+      "sha256": "9aa0f47f41b746343b5ab5b94949619cd2a921c77abc049978c57e7f79e17260",
+      "bytes": 28154,
+      "role": "latest NETWORK28 report bound to the tail receipt"
+    },
+    "gallery_neighbors_other4_source_map": {
+      "path": "research/continuous-recovery-20261016/network/gallery-neighbors-other4/output/source-map.json",
+      "sha256": "e1c4ec9be1cfb58148b0f1b6ae110d10cd357505d0c82d4395f5c9e2924f0aa4",
+      "bytes": 26936,
+      "role": "latest NETWORK28 source map bound to the tail receipt"
+    },
+    "root_gallery_prefix05_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix05-acceptance.json",
+      "sha256": "199ee21c32521e287b0bc4157a8f13bbab1c6b6b7580aa36ca8220cb21eb58c9",
+      "bytes": 9557,
+      "role": "accepted V5 prefix core predecessor"
+    },
+    "gallery_prefix05_plan": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix05/plan.json",
+      "sha256": "41ea2ccce2f1b0fcb2a58dec6eb04d85792cca1d4c69e58ae049dddf1e5ac024",
+      "bytes": 26386,
+      "role": "frozen V5 predecessor plan"
+    },
+    "gallery_prefix05_driver_v5": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix05/gallery_prefix_driver_v5.py",
+      "sha256": "e592aa9aa353f0b3640c34f6a0db4dbf6163218520bd1f756c154b1848eb131c",
+      "bytes": 58840,
+      "role": "frozen V5 driver used as the adaptation base"
+    },
+    "gallery_prefix05_fixture": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix05/fixture-results.json",
+      "sha256": "51c83fa4a91fe92fce4b035bd7316209a892370d868bb08af4e11aae43cb3e75",
+      "bytes": 5879,
+      "role": "frozen V5 offline fixture baseline"
+    },
+    "historical_prefix03_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix03-acceptance.json",
+      "sha256": "1daa3a6774f0911fa7647f57b5d4bf90e8efe1aa7d2744829c00457342f959da",
+      "bytes": 15104,
+      "role": "historical gallery tail five preserved for metadata only"
+    },
+    "source_page_01": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/karazhan-gallery.html",
+      "sha256": "fc7f46d260cba6c434fd5e67d47008f207fbb8bd939a630089599d097755c199",
+      "bytes": 15124,
+      "role": "source page literal for early-gap candidate 01"
+    },
+    "source_page_02": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/zulaman-gallery.html",
+      "sha256": "342c63cd42af3b72221f03be03d3099e7f3369c9b7cc858868e7304b567033d1",
+      "bytes": 13953,
+      "role": "source page literal for early-gap candidate 02"
+    },
+    "source_page_03": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/mag-gallery.html",
+      "sha256": "e629270c70b32f72fb089388dd59473feb9ffe4fafc24a498ba26ab533d9d5fb",
+      "bytes": 5529,
+      "role": "source page literal for early-gap candidate 03"
+    },
+    "source_page_04": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/gruul-gallery.html",
+      "sha256": "06a285476e9f1fea3fd0d43784ba71a77da0c574ff44f9355f996036307a8e14",
+      "bytes": 8958,
+      "role": "source page literal for early-gap candidate 04"
+    },
+    "source_page_05": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/cot-hyjal-gallery.html",
+      "sha256": "ada17276d79e0af2e9c37054f1602a0863774784839ce230e1b4af564954ca11",
+      "bytes": 14423,
+      "role": "source page literal for early-gap candidate 05"
+    },
+    "source_page_06": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/tk-the-eye-gallery.html",
+      "sha256": "494dafb57b8e86b0a7ac22d6edcc13c3419bc6323c57e807b91466df5c9f2359",
+      "bytes": 13046,
+      "role": "source page literal for early-gap candidate 06"
+    },
+    "source_page_07": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/doom-lord-kazzak-gallery.html",
+      "sha256": "7da5d4485b91e3f6a078a598e503f5c8d484641f309c98009764bae86b735481",
+      "bytes": 6461,
+      "role": "source page literal for early-gap candidate 07"
+    },
+    "source_page_08": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/hc-hellfire-ramparts-gallery.html",
+      "sha256": "f9daebf04caa4cb415e887405148d5f616b7010cfe4c0f0f29e0ea8b440baf0a",
+      "bytes": 7869,
+      "role": "source page literal for early-gap candidate 08"
+    },
+    "source_page_09": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/hc-blood-furnace-gallery.html",
+      "sha256": "b90e841a1fda4445ac3014475cf3e8ecc1c777767a8c0fb9df5013c37b434410",
+      "bytes": 7831,
+      "role": "source page literal for early-gap candidate 09"
+    },
+    "source_page_10": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/hc-shatteredhalls-gallery.html",
+      "sha256": "4a15a752cf370338dd78256f6678a1e28899157a82f28638002d1ea7282a4584",
+      "bytes": 9516,
+      "role": "source page literal for early-gap candidate 10"
+    },
+    "source_page_11": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/cr-underbog-gallery.html",
+      "sha256": "bdeb2743ea4fdb817b95dac567a676603bc97dc2ee568ae9b0c36e1f95781b2e",
+      "bytes": 9371,
+      "role": "source page literal for early-gap candidate 11"
+    },
+    "source_page_12": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/cot-escape-gallery.html",
+      "sha256": "0e1e813933b8592035920d6010623191232db647d7a61179d4c948722941fbbf",
+      "bytes": 15296,
+      "role": "source page literal for early-gap candidate 12"
+    },
+    "source_page_13": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/cot-opening-gallery.html",
+      "sha256": "6742140f1ef508f75ba3a4eaca3cf3fcd1edb37a9d93cf62c15fbcf5749818aa",
+      "bytes": 11293,
+      "role": "source page literal for early-gap candidate 13"
+    },
+    "source_page_14": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/tk-arcatraz-gallery.html",
+      "sha256": "becc9b9bbe1f7fa2c8a6a6ed57f0c021074da4ad8dc4da5f6c8083e0ce39e468",
+      "bytes": 13384,
+      "role": "source page literal for early-gap candidate 14"
+    },
+    "source_page_15": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/pvp/battlegrounds/warsong-gulch-gallery.html",
+      "sha256": "eaef0e508fc03d23e5e60a1a02b27bfdbe9e8936ea578ff5552f274b4b8a29b2",
+      "bytes": 9192,
+      "role": "source page literal for early-gap candidate 15"
+    },
+    "source_page_16": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/regions/isle-of-queldanas-gallery.html",
+      "sha256": "4dfcca862bfea6575cb30eff8d974b49221a4356f161683fcefa70254c260468",
+      "bytes": 11926,
+      "role": "source page literal for early-gap candidate 16"
+    },
+    "source_page_17": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/events/hallowsend/gallery.html",
+      "sha256": "d19476dadeae05c4332104a9fd4e3f2f636fc0df813c25d0f7e8e3be2d2375a0",
+      "bytes": 7943,
+      "role": "source page literal for early-gap candidate 17"
+    },
+    "source_page_18": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/events/brewfest/gallery.html",
+      "sha256": "e2787105ddd7d3dec94844fc1091ad70ccafc44724123caf0ca7d5b161850088",
+      "bytes": 6788,
+      "role": "source page literal for early-gap candidate 18"
+    },
+    "source_page_19": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/items/tcg-gallery.html",
+      "sha256": "b222c401e1040e69709e6117c0d04c93b9f9a30171320beafb5746647bb2e796",
+      "bytes": 9489,
+      "role": "source page literal for early-gap candidate 19"
+    },
+    "source_page_20": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/pvp/worldpvp/cityattacks-gallery.html",
+      "sha256": "ba2a9ec91e6f73d42a34c8e2cf784e09e1966fc2e76442f51d8abdede75aaa5a",
+      "bytes": 18755,
+      "role": "source page literal for early-gap candidate 20"
+    }
+  },
+  "fixture": {
+    "path": "research/continuous-recovery-20261016/network/gallery-early01/fixture-results.json",
+    "sha256": "e86256801e648a89cc13585333b19c36e21a2c85d0a049375544786422b9af61",
+    "all_passed": true
+  },
+  "candidates": [
+    {
+      "rank": 1,
+      "target_key": "GALLERY-EARLY01-01",
+      "label": "Karazhan",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/",
+      "declared_slots": 63,
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20061231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fkarazhan%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20061231235959&limit=500&showResumeKey=true",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/karazhan-gallery.html",
+        "sha256": "fc7f46d260cba6c434fd5e67d47008f207fbb8bd939a630089599d097755c199",
+        "addshots_line": 126,
+        "addshots_literal": "addshots(\"/info/dungeons/images/karazhan/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/karazhan/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 63;"
+      }
+    },
+    {
+      "rank": 2,
+      "target_key": "GALLERY-EARLY01-02",
+      "label": "Zul'Aman",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/zulaman/",
+      "declared_slots": 60,
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fzulaman%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/zulaman-gallery.html",
+        "sha256": "342c63cd42af3b72221f03be03d3099e7f3369c9b7cc858868e7304b567033d1",
+        "addshots_line": 123,
+        "addshots_literal": "addshots(\"/info/dungeons/images/zulaman/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/zulaman/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 60;"
+      }
+    },
+    {
+      "rank": 3,
+      "target_key": "GALLERY-EARLY01-03",
+      "label": "Magtheridon's Lair",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/mag/",
+      "declared_slots": 15,
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fmag%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/mag-gallery.html",
+        "sha256": "e629270c70b32f72fb089388dd59473feb9ffe4fafc24a498ba26ab533d9d5fb",
+        "addshots_line": 78,
+        "addshots_literal": "addshots(\"/info/dungeons/images/mag/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/mag/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 15;"
+      }
+    },
+    {
+      "rank": 4,
+      "target_key": "GALLERY-EARLY01-04",
+      "label": "Gruul's Lair",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/gruul/",
+      "declared_slots": 21,
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fgruul%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/gruul-gallery.html",
+        "sha256": "06a285476e9f1fea3fd0d43784ba71a77da0c574ff44f9355f996036307a8e14",
+        "addshots_line": 84,
+        "addshots_literal": "addshots(\"/info/dungeons/images/gruul/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/gruul/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 21;"
+      }
+    },
+    {
+      "rank": 5,
+      "target_key": "GALLERY-EARLY01-05",
+      "label": "The Battle for Mount Hyjal - Caverns of Time",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/battle/",
+      "declared_slots": 44,
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fbattle%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/cot-hyjal-gallery.html",
+        "sha256": "ada17276d79e0af2e9c37054f1602a0863774784839ce230e1b4af564954ca11",
+        "addshots_line": 108,
+        "addshots_literal": "addshots(\"/info/dungeons/images/battle/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/battle/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 44;"
+      }
+    },
+    {
+      "rank": 6,
+      "target_key": "GALLERY-EARLY01-06",
+      "label": "Tempest Keep - The Eye",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/theeye/",
+      "declared_slots": 43,
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Ftheeye%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/tk-the-eye-gallery.html",
+        "sha256": "494dafb57b8e86b0a7ac22d6edcc13c3419bc6323c57e807b91466df5c9f2359",
+        "addshots_line": 106,
+        "addshots_literal": "addshots(\"/info/dungeons/images/theeye/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/theeye/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 43;"
+      }
+    },
+    {
+      "rank": 7,
+      "target_key": "GALLERY-EARLY01-07",
+      "label": "Doom Lord Kazzak",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/doomlordkazzak/",
+      "declared_slots": 9,
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fdoomlordkazzak%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/doom-lord-kazzak-gallery.html",
+        "sha256": "7da5d4485b91e3f6a078a598e503f5c8d484641f309c98009764bae86b735481",
+        "addshots_line": 72,
+        "addshots_literal": "addshots(\"/info/dungeons/images/doomlordkazzak/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/doomlordkazzak/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 9;"
+      }
+    },
+    {
+      "rank": 8,
+      "target_key": "GALLERY-EARLY01-08",
+      "label": "Hellfire Citadel - Hellfire Ramparts",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/hellfireramparts/",
+      "declared_slots": 32,
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fhellfireramparts%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/hc-hellfire-ramparts-gallery.html",
+        "sha256": "f9daebf04caa4cb415e887405148d5f616b7010cfe4c0f0f29e0ea8b440baf0a",
+        "addshots_line": 95,
+        "addshots_literal": "addshots(\"/info/dungeons/images/hellfireramparts/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/hellfireramparts/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 32;"
+      }
+    },
+    {
+      "rank": 9,
+      "target_key": "GALLERY-EARLY01-09",
+      "label": "Hellfire Citadel - The Blood Furnace",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/bloodfurnace/",
+      "declared_slots": 39,
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fbloodfurnace%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/hc-blood-furnace-gallery.html",
+        "sha256": "b90e841a1fda4445ac3014475cf3e8ecc1c777767a8c0fb9df5013c37b434410",
+        "addshots_line": 102,
+        "addshots_literal": "addshots(\"/info/dungeons/images/bloodfurnace/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/bloodfurnace/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 39;"
+      }
+    },
+    {
+      "rank": 10,
+      "target_key": "GALLERY-EARLY01-10",
+      "label": "Hellfire Citadel - The Shattered Halls",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/shatteredhalls/",
+      "declared_slots": 50,
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fshatteredhalls%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/hc-shatteredhalls-gallery.html",
+        "sha256": "4a15a752cf370338dd78256f6678a1e28899157a82f28638002d1ea7282a4584",
+        "addshots_line": 113,
+        "addshots_literal": "addshots(\"/info/dungeons/images/shatteredhalls/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/shatteredhalls/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 50;"
+      }
+    },
+    {
+      "rank": 11,
+      "target_key": "GALLERY-EARLY01-11",
+      "label": "Coilfang Reservoir - The Underbog",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/underbog/",
+      "declared_slots": 40,
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Funderbog%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/cr-underbog-gallery.html",
+        "sha256": "bdeb2743ea4fdb817b95dac567a676603bc97dc2ee568ae9b0c36e1f95781b2e",
+        "addshots_line": 103,
+        "addshots_literal": "addshots(\"/info/dungeons/images/underbog/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/underbog/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 40;"
+      }
+    },
+    {
+      "rank": 12,
+      "target_key": "GALLERY-EARLY01-12",
+      "label": "Caverns of Time - Escape from Durnholde",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/escape/",
+      "declared_slots": 38,
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fescape%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/cot-escape-gallery.html",
+        "sha256": "0e1e813933b8592035920d6010623191232db647d7a61179d4c948722941fbbf",
+        "addshots_line": 101,
+        "addshots_literal": "addshots(\"/info/dungeons/images/escape/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/escape/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 38;"
+      }
+    },
+    {
+      "rank": 13,
+      "target_key": "GALLERY-EARLY01-13",
+      "label": "Caverns of Time - Opening of the Dark Portal",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/opening/",
+      "declared_slots": 30,
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fopening%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/cot-opening-gallery.html",
+        "sha256": "6742140f1ef508f75ba3a4eaca3cf3fcd1edb37a9d93cf62c15fbcf5749818aa",
+        "addshots_line": 93,
+        "addshots_literal": "addshots(\"/info/dungeons/images/opening/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/opening/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 30;"
+      }
+    },
+    {
+      "rank": 14,
+      "target_key": "GALLERY-EARLY01-14",
+      "label": "Tempest Keep - The Arcatraz",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/arcatraz/",
+      "declared_slots": 49,
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Farcatraz%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/tk-arcatraz-gallery.html",
+        "sha256": "becc9b9bbe1f7fa2c8a6a6ed57f0c021074da4ad8dc4da5f6c8083e0ce39e468",
+        "addshots_line": 112,
+        "addshots_literal": "addshots(\"/info/dungeons/images/arcatraz/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/arcatraz/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 49;"
+      }
+    },
+    {
+      "rank": 15,
+      "target_key": "GALLERY-EARLY01-15",
+      "label": "Warsong Gulch",
+      "prefix": "http://www.worldofwarcraft.com/pvp/battlegrounds/warsonggulch/",
+      "declared_slots": 29,
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Fbattlegrounds%2Fwarsonggulch%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/pvp/battlegrounds/warsong-gulch-gallery.html",
+        "sha256": "eaef0e508fc03d23e5e60a1a02b27bfdbe9e8936ea578ff5552f274b4b8a29b2",
+        "addshots_line": 96,
+        "addshots_literal": "addshots(\"/pvp/battlegrounds/warsonggulch/\",\"ss\",numShots);",
+        "source_directory": "/pvp/battlegrounds/warsonggulch/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 29;"
+      }
+    },
+    {
+      "rank": 16,
+      "target_key": "GALLERY-EARLY01-16",
+      "label": "Isle of Quel'Danas",
+      "prefix": "http://www.worldofwarcraft.com/info/regions/isleofq/",
+      "declared_slots": 49,
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fregions%2Fisleofq%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/regions/isle-of-queldanas-gallery.html",
+        "sha256": "4dfcca862bfea6575cb30eff8d974b49221a4356f161683fcefa70254c260468",
+        "addshots_line": 112,
+        "addshots_literal": "addshots(\"/info/regions/isleofq/\",\"ss\",numShots);",
+        "source_directory": "/info/regions/isleofq/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 49;"
+      }
+    },
+    {
+      "rank": 17,
+      "target_key": "GALLERY-EARLY01-17",
+      "label": "Hallow's End",
+      "prefix": "http://www.worldofwarcraft.com/info/events/hallowsend/images/newscreenshots/",
+      "declared_slots": 65,
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fevents%2Fhallowsend%2Fimages%2Fnewscreenshots%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/events/hallowsend/gallery.html",
+        "sha256": "d19476dadeae05c4332104a9fd4e3f2f636fc0df813c25d0f7e8e3be2d2375a0",
+        "addshots_line": 128,
+        "addshots_literal": "addshots(\"/info/events/hallowsend/images/newscreenshots/\",\"ss\",numShots);",
+        "source_directory": "/info/events/hallowsend/images/newscreenshots/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 65;"
+      }
+    },
+    {
+      "rank": 18,
+      "target_key": "GALLERY-EARLY01-18",
+      "label": "Brewfest",
+      "prefix": "http://www.worldofwarcraft.com/info/events/brewfest/images/ss/",
+      "declared_slots": 51,
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fevents%2Fbrewfest%2Fimages%2Fss%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/events/brewfest/gallery.html",
+        "sha256": "e2787105ddd7d3dec94844fc1091ad70ccafc44724123caf0ca7d5b161850088",
+        "addshots_line": 114,
+        "addshots_literal": "addshots(\"/info/events/brewfest/images/ss/\",\"ss\",numShots);",
+        "source_directory": "/info/events/brewfest/images/ss/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 51;"
+      }
+    },
+    {
+      "rank": 19,
+      "target_key": "GALLERY-EARLY01-19",
+      "label": "TCG Gallery",
+      "prefix": "http://www.worldofwarcraft.com/info/items/images/tcg/",
+      "declared_slots": 47,
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fitems%2Fimages%2Ftcg%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/items/tcg-gallery.html",
+        "sha256": "b222c401e1040e69709e6117c0d04c93b9f9a30171320beafb5746647bb2e796",
+        "addshots_line": 110,
+        "addshots_literal": "addshots(\"/info/items/images/tcg/\",\"ss\",numShots);",
+        "source_directory": "/info/items/images/tcg/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 47;"
+      }
+    },
+    {
+      "rank": 20,
+      "target_key": "GALLERY-EARLY01-20",
+      "label": "City Attacks",
+      "prefix": "http://www.worldofwarcraft.com/pvp/worldpvp/images/city/",
+      "declared_slots": 102,
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Fworldpvp%2Fimages%2Fcity%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/pvp/worldpvp/cityattacks-gallery.html",
+        "sha256": "ba2a9ec91e6f73d42a34c8e2cf784e09e1966fc2e76442f51d8abdede75aaa5a",
+        "addshots_line": 166,
+        "addshots_literal": "addshots(\"/pvp/worldpvp/images/city/\",\"ss\",numShots);",
+        "source_directory": "/pvp/worldpvp/images/city/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 102;"
+      }
+    }
+  ]
+}

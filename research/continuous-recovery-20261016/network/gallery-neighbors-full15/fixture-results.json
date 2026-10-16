@@ -1,0 +1,33 @@
+{
+  "schema": "wow-recovery.gallery-neighbors-full15-fixtures.v1",
+  "batch_id": "GALLERY-NEIGHBORS-FULL15",
+  "network_requests": 0,
+  "all_passed": true,
+  "production_plan_validation": {
+    "validated": true,
+    "batch_id": "GALLERY-NEIGHBORS-FULL15",
+    "candidate_count": 15,
+    "network_requests": 0,
+    "exact_originals_preserved": true,
+    "plan_sha256": "46cc4c2416c3909a599eb9631198c496f70a062b98d28aa4195896d8f842e5cf"
+  },
+  "synthetic_default_port_probe": {
+    "plan_path": "research/continuous-recovery-20261016/network/gallery-neighbors-full15/fixture-probe/plan.json",
+    "plan_sha256": "eba02cb26443279a7c0a4a5e64b4f43a317140b35218b581836ec55191e2beae",
+    "fixture_path": "research/continuous-recovery-20261016/network/gallery-neighbors-full15/fixture-probe/fixture-results.json",
+    "fixture_sha256": "db8a60bd1530efe676120911f96ea7c3d52809975fae17d379194cd9a95874ba",
+    "all_passed": true,
+    "passed": 32,
+    "total": 32,
+    "network_requests": 0,
+    "synthetic_original": "http://www.worldofwarcraft.com/info/events/loveisintheair/images/ss10.jpg"
+  },
+  "production_candidate_count": 15,
+  "production_candidate_order_preserved": true,
+  "notes": [
+    "Production plan validation used the frozen V2 load_and_validate_inputs path and created no network request.",
+    "The frozen fixture mutates its first fixture candidate to exercise default-port identity; this production set begins with an explicit :80 original, so the fixture ran in an isolated synthetic bare-HTTP probe.",
+    "The synthetic probe is test-only and does not alter any production candidate or plan.",
+    "Cached candidates were revalidated against their SHA-bound CDX body/header/report before the fixture was run."
+  ]
+}
