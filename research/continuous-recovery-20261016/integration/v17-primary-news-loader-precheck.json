@@ -1,0 +1,130 @@
+{
+  "schema": "wow-recovery.integration.v17-primary-news-loader-precheck.v1",
+  "network_requests_performed": 0,
+  "export_started": false,
+  "source_manifest": {
+    "path": ".scratch/offline-navigation-20261015-v15/build-manifest.json",
+    "sha256": "d89557a445ec5c81ef2652c49fd8ce9c102016f11411b7fa2aa795f5112ae002",
+    "anchor_timestamp": "20080512210044"
+  },
+  "copy_receipt": {
+    "path": "research/continuous-recovery-20261016/integration/v17-primary-news-copy-receipt.json",
+    "sha256": "ea72edea7e065fb8452ddc06da3fce70d4684e133da5679dbe9ea91dbe1c49da",
+    "accepted_count": 20,
+    "total_image_bytes": 100831
+  },
+  "map_inputs": [
+    {
+      "path": "research/continuous-recovery-20261016/integration/v16-primary-news-image-source-map.json",
+      "sha256": "b978caed7b97a06eb04a3ce6fd69ef12d3b9903eef68ff8d1de00f26e51cd04b",
+      "item_count": 9
+    },
+    {
+      "path": "research/continuous-recovery-20261016/integration/v17-primary-news-image-source-map.json",
+      "sha256": "f4866b36d664535283baf1e5a90db0b93eea82ad81b34281cc2b94805566ca9d",
+      "item_count": 20
+    }
+  ],
+  "loader_results": [
+    {
+      "case": "v17-new-only",
+      "map_paths": [
+        "research/continuous-recovery-20261016/integration/v17-primary-news-image-source-map.json"
+      ],
+      "map_sha256": [
+        "f4866b36d664535283baf1e5a90db0b93eea82ad81b34281cc2b94805566ca9d"
+      ],
+      "entry_count": 20,
+      "bytes": 100831,
+      "routes": [
+        "/new-hp/images/smallcaps/h.gif",
+        "/new-hp/images/smallcaps/a.gif",
+        "/new-hp/images/smallcaps/t.gif",
+        "/new-hp/images/smallcaps/d.gif",
+        "/new-hp/images/smallcaps/b.gif",
+        "/new-hp/images/smallcaps/o.gif",
+        "/new-hp/images/smallcaps/c.gif",
+        "/new-hp/images/smallcaps/e.gif",
+        "/new-hp/images/smallcaps/f.gif",
+        "/new-hp/images/smallcaps/s.gif",
+        "/new-hp/images/smallcaps/g.gif",
+        "/new-hp/images/smallcaps/j.gif",
+        "/new-hp/images/smallcaps/n.gif",
+        "/new-hp/images/smallcaps/v.gif",
+        "/news/images/07-02/ipod.jpg",
+        "/news/images/04-11/stressedorc.jpg",
+        "/news/images/07-01/1-18-07-4.gif",
+        "/news/images/07-01/1-25-07-1.jpg",
+        "/news/images/06-07/thumb-rogue.jpg",
+        "/news/images/07-01/1-25-07-2.jpg"
+      ],
+      "all_source_sha256_length_checked": true,
+      "pillow_decode_checked": true
+    },
+    {
+      "case": "v16-plus-v17",
+      "map_paths": [
+        "research/continuous-recovery-20261016/integration/v16-primary-news-image-source-map.json",
+        "research/continuous-recovery-20261016/integration/v17-primary-news-image-source-map.json"
+      ],
+      "map_sha256": [
+        "b978caed7b97a06eb04a3ce6fd69ef12d3b9903eef68ff8d1de00f26e51cd04b",
+        "f4866b36d664535283baf1e5a90db0b93eea82ad81b34281cc2b94805566ca9d"
+      ],
+      "entry_count": 29,
+      "bytes": 167634,
+      "routes": [
+        "/news/images/06-07/7-13-06-1.jpg",
+        "/news/images/06-07/7-27-06-1.jpg",
+        "/news/images/06-07/7-27-06-3.jpg",
+        "/news/images/06-07/7-13-06-2.jpg",
+        "/news/images/06-07/7-13-06-3.jpg",
+        "/news/images/06-07/7-27-06-2.jpg",
+        "/news/images/07-01/1-18-07-1.jpg",
+        "/news/images/07-01/1-18-07-2.jpg",
+        "/news/images/07-01/1-18-07-3.jpg",
+        "/new-hp/images/smallcaps/h.gif",
+        "/new-hp/images/smallcaps/a.gif",
+        "/new-hp/images/smallcaps/t.gif",
+        "/new-hp/images/smallcaps/d.gif",
+        "/new-hp/images/smallcaps/b.gif",
+        "/new-hp/images/smallcaps/o.gif",
+        "/new-hp/images/smallcaps/c.gif",
+        "/new-hp/images/smallcaps/e.gif",
+        "/new-hp/images/smallcaps/f.gif",
+        "/new-hp/images/smallcaps/s.gif",
+        "/new-hp/images/smallcaps/g.gif",
+        "/new-hp/images/smallcaps/j.gif",
+        "/new-hp/images/smallcaps/n.gif",
+        "/new-hp/images/smallcaps/v.gif",
+        "/news/images/07-02/ipod.jpg",
+        "/news/images/04-11/stressedorc.jpg",
+        "/news/images/07-01/1-18-07-4.gif",
+        "/news/images/07-01/1-25-07-1.jpg",
+        "/news/images/06-07/thumb-rogue.jpg",
+        "/news/images/07-01/1-25-07-2.jpg"
+      ],
+      "all_source_sha256_length_checked": true,
+      "pillow_decode_checked": true
+    }
+  ],
+  "route_collision_check": {
+    "new_v17_route_count": 20,
+    "v16_export_provenance_image_overlay_route_count": 49,
+    "intersection_count": 0,
+    "intersection_routes": []
+  },
+  "projected_v17_build_inputs": {
+    "v16_existing_primary_overlay_count": 28,
+    "v17_new_primary_overlay_count": 20,
+    "projected_primary_overlay_count": 48,
+    "v16_retained_supplement_overlay_count": 21,
+    "projected_total_overlay_count": 69,
+    "note": "The loader precheck here covers the independent 20-entry map and the 9-entry v16 NEWS map (29 map entries). The other 19 retained v16 primary overlays remain bound to the frozen v16 build inputs and are not copied or rewritten here."
+  },
+  "commands": [
+    "python -X utf8 -c load_image_overlays(v17-new-only)",
+    "python -X utf8 -c load_image_overlays(v16-plus-v17)"
+  ],
+  "validation": "passed"
+}

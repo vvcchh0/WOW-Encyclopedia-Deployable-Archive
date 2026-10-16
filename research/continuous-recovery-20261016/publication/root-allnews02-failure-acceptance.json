@@ -1,0 +1,65 @@
+{
+  "checked_utc": "2026-10-16T04:27:41.101836+00:00",
+  "accepted": true,
+  "scope": "Failure classification, actual zero bodies/responses, stop and cooldown verified; no asset accepted.",
+  "requests": 5,
+  "source_responses": 0,
+  "new_images": 0,
+  "trailing_transfer_failures": 5,
+  "cooldown": {
+    "required": true,
+    "seconds": 120,
+    "applied": true,
+    "started_utc": "2026-10-16T04:09:32.452061+00:00",
+    "finished_utc": "2026-10-16T04:11:32.454971+00:00"
+  },
+  "attempts": [
+    {
+      "target": "ALLNEWS02-W",
+      "kind": "cdx",
+      "transport": "direct",
+      "curl_exit": 28,
+      "actual_non_connect_http_responses": 0,
+      "header_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "target": "ALLNEWS02-W",
+      "kind": "cdx",
+      "transport": "proxy",
+      "curl_exit": 35,
+      "actual_non_connect_http_responses": 0,
+      "header_sha256": "740bef911ac83dfbf56518dca67ac95f2e8c134f201f6546acd8c23bf477f052"
+    },
+    {
+      "target": "ALLNEWS02-P",
+      "kind": "cdx",
+      "transport": "direct",
+      "curl_exit": 28,
+      "actual_non_connect_http_responses": 0,
+      "header_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "target": "ALLNEWS02-P",
+      "kind": "cdx",
+      "transport": "proxy",
+      "curl_exit": 35,
+      "actual_non_connect_http_responses": 0,
+      "header_sha256": "740bef911ac83dfbf56518dca67ac95f2e8c134f201f6546acd8c23bf477f052"
+    },
+    {
+      "target": "ALLNEWS02-I",
+      "kind": "replay",
+      "transport": "direct",
+      "curl_exit": 28,
+      "actual_non_connect_http_responses": 0,
+      "header_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "batch_report_sha256": "c6a1bcadafb15094987347306640f953a1593a1f7e419a39a28df78e57b2f039",
+  "not_attempted": [
+    "Blizzcon replay",
+    "I proxy replay"
+  ],
+  "network_hold_until_utc": "2026-10-16T04:30:00Z",
+  "next_gate": "Separate two-attempt connectivity control after cooldown; successful source response required before a new normal batch."
+}

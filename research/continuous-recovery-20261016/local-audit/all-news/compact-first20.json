@@ -1,0 +1,977 @@
+{
+  "schema": "all-news-local-audit-compact-first20/v1",
+  "network_performed": false,
+  "source_audit": "all-news-audit.json",
+  "source_audit_sha256": "cf591d25061a43b2205305c185c86345818ef19cf0bf85d5edf0935182ad269d",
+  "input_hashes": [
+    {
+      "path": ".scratch/offline-navigation-20261015-v15/build-manifest.json",
+      "sha256": "d89557a445ec5c81ef2652c49fd8ce9c102016f11411b7fa2aa795f5112ae002",
+      "bytes": 75650378
+    },
+    {
+      "path": ".scratch/pages-resources-20261016-v16/export-provenance.json",
+      "sha256": "853214cc4324c2e15c96858cbfbe0fad67a93293121a9a3ffb86b7969e14daec",
+      "bytes": 7894242
+    },
+    {
+      "path": "research/continuous-recovery-20261016/network/news03/source-map.json",
+      "sha256": "df67fc07d3819b603961a6bb63dfa9204ee1dc7a3b165a4f760d8527af82c012",
+      "bytes": 2586
+    },
+    {
+      "path": "research/continuous-recovery-20261016/network/news04/source-map.json",
+      "sha256": "6a42174c71f0119ddccd103e425266af00b7dcfac19f7ff0044e57598c6b1eee",
+      "bytes": 2580
+    },
+    {
+      "path": "research/continuous-recovery-20261016/network/news01/remaining-unknown-cdx-plan.json",
+      "sha256": "da7d5630dad4e9cd477276923df3356f94a18d2a897c508ba9154fa1a95319bc",
+      "bytes": 20925
+    },
+    {
+      "path": "research/continuous-recovery-20261016/integration/v16-primary-news-image-source-map.json",
+      "sha256": "b978caed7b97a06eb04a3ce6fd69ef12d3b9903eef68ff8d1de00f26e51cd04b",
+      "bytes": 12013
+    },
+    {
+      "path": "research/continuous-recovery-20261016/integration/v16-eu-image-source-map.json",
+      "sha256": "2efd473a586f155743ee18cabc2885ca489e0d03dbd58bd473a7dcb825c9c1e3",
+      "bytes": 4333
+    },
+    {
+      "path": "research/resource-resume-20261013/round002/entity-source-map.json",
+      "sha256": "9342b01e4f8ad683ecbceafb5d10064ea2f0eb6200d0f94f02dca3812e3cc325",
+      "bytes": 1014
+    },
+    {
+      "path": "research/resource-resume-20261013/round003/entity-source-map.json",
+      "sha256": "17b2d0eb4c1d52d128a19c3c98d1ea15596a380cc252cac34fbeef05b34bcc57",
+      "bytes": 14749
+    },
+    {
+      "path": "research/related-sites-20261014/integration/regional-image-source-map.json",
+      "sha256": "7cbad0d949749ce5fbdbdef95b65e6e95f8cd8c15546285814931c6e1b325502",
+      "bytes": 18296
+    },
+    {
+      "path": "research/related-sites-20261014/integration/karazhan-late-source-map.json",
+      "sha256": "f7f84beac63d63ec5a0c589dcfad3209e016cd4f9acf0f39c9b313f79cb37bb4",
+      "bytes": 4907
+    },
+    {
+      "path": "research/media-screenshots-20261015/late-image-source-map.json",
+      "sha256": "1bb8405e58eaf19999313c160b5db256a11559cbc70f8cfccf564f05c99cff03",
+      "bytes": 3234
+    }
+  ],
+  "marker_layer_stats": {
+    "v15_identity_count": 440,
+    "v16_identity_count": 636,
+    "intersection_identity_count": 431,
+    "v15_only_identity_count": 9,
+    "v16_only_identity_count": 205
+  },
+  "marker_count_explanation": {
+    "v15_504": "504 is the count of decoded image missing-image markers in frozen v15 source pages; it is a source-layer occurrence count.",
+    "v16_954": "954 is the count of decoded image missing-image markers in transformed v16 output pages; exporter-localized/uncollected references create additional output-layer occurrences.",
+    "not_a_regression": "These counts are different layers, not a before/after payload regression. Identity overlap and v15-only/v16-only sets are recorded above."
+  },
+  "page_scope": {
+    "v15": {
+      "news_route_count": 234,
+      "news_page_like_route_count": 38,
+      "news_non_page_route_count": 196,
+      "news_page_like_outside_audit": [],
+      "audit_news_page_like_missing_from_manifest": []
+    },
+    "v16": {
+      "news_route_count": 243,
+      "news_page_like_route_count": 38,
+      "news_non_page_route_count": 205,
+      "news_page_like_outside_audit": [],
+      "audit_news_page_like_missing_from_manifest": []
+    },
+    "audit_total_page_count": 40,
+    "audit_news_page_count": 38,
+    "audit_special_current_archived_count": 2
+  },
+  "items": [
+    {
+      "rank": 1,
+      "raw_url": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/w.gif",
+      "canonical_key": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/w.gif",
+      "status_from_audit": "uncovered_local_evidence",
+      "v16_marker_count": 69,
+      "v15_marker_count": 12,
+      "reference_count_priority_layer": 69,
+      "page_count": 6,
+      "page_routes": [
+        "/news/rss-07-2006.xml",
+        "/news/rss-08-2006.xml",
+        "/news/rss-09-2006.xml",
+        "/news/rss-10-2006.xml",
+        "/news/rss-11-2006.xml",
+        "/news/rss-12-2006.xml"
+      ],
+      "content_body_evidence": true,
+      "v16_exact_original_or_logical_matches": [],
+      "v16_route_matches_path_only": [],
+      "v15_exact_source_base_matches": [],
+      "v15_route_matches_path_only": [],
+      "v15_actual_files": [],
+      "v16_actual_files": [],
+      "payload_match_result": "no_v15_or_v16_provenance_record_and_no_local_payload",
+      "evidence_locations": [
+        {
+          "layer": "v16_output",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/rss-07-2006.xml",
+          "source_path": ".scratch/pages-resources-20261016-v16/news/rss-07-2006.xml.html",
+          "line": 659,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/rss-07-2006.xml",
+          "marker_reason": "external-or-uncollected-resource",
+          "context": "<img align=\"left\" height=\"32\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-07-2006.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fsmallcaps%2Fw.gif&amp;reason=external-or-uncollected-resource\" style=\"padding-right: 3px;\" width=\"32\">e've changed the"
+        },
+        {
+          "layer": "v16_output",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/rss-07-2006.xml",
+          "source_path": ".scratch/pages-resources-20261016-v16/news/rss-07-2006.xml.html",
+          "line": 847,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/rss-07-2006.xml",
+          "marker_reason": "external-or-uncollected-resource",
+          "context": "<img align=\"left\" height=\"32\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-07-2006.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fsmallcaps%2Fw.gif&amp;reason=external-or-uncollected-resource\" style=\"padding-right: 3px;\" width=\"32\">ith the dangers"
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "raw_url": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/h.gif",
+      "canonical_key": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/h.gif",
+      "status_from_audit": "uncovered_local_evidence",
+      "v16_marker_count": 52,
+      "v15_marker_count": 6,
+      "reference_count_priority_layer": 52,
+      "page_count": 6,
+      "page_routes": [
+        "/news/rss-07-2006.xml",
+        "/news/rss-08-2006.xml",
+        "/news/rss-09-2006.xml",
+        "/news/rss-10-2006.xml",
+        "/news/rss-11-2006.xml",
+        "/news/rss-12-2006.xml"
+      ],
+      "content_body_evidence": true,
+      "v16_exact_original_or_logical_matches": [],
+      "v16_route_matches_path_only": [],
+      "v15_exact_source_base_matches": [],
+      "v15_route_matches_path_only": [],
+      "v15_actual_files": [],
+      "v16_actual_files": [],
+      "payload_match_result": "no_v15_or_v16_provenance_record_and_no_local_payload",
+      "evidence_locations": [
+        {
+          "layer": "v16_output",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/rss-07-2006.xml",
+          "source_path": ".scratch/pages-resources-20261016-v16/news/rss-07-2006.xml.html",
+          "line": 1590,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/rss-07-2006.xml",
+          "marker_reason": "external-or-uncollected-resource",
+          "context": "<img align=\"left\" height=\"32\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-07-2006.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fsmallcaps%2Fh.gif&amp;reason=external-or-uncollected-resource\" style=\"padding-right: 3px;\" width=\"32\">ere is the"
+        },
+        {
+          "layer": "v16_output",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/rss-07-2006.xml",
+          "source_path": ".scratch/pages-resources-20261016-v16/news/rss-07-2006.xml.html",
+          "line": 1671,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/rss-07-2006.xml",
+          "marker_reason": "external-or-uncollected-resource",
+          "context": "<img align=\"left\" height=\"32\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-07-2006.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fsmallcaps%2Fh.gif&amp;reason=external-or-uncollected-resource\" style=\"padding-right: 3px;\" width=\"32\">ere is the"
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "raw_url": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/a.gif",
+      "canonical_key": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/a.gif",
+      "status_from_audit": "uncovered_local_evidence",
+      "v16_marker_count": 30,
+      "v15_marker_count": 7,
+      "reference_count_priority_layer": 30,
+      "page_count": 13,
+      "page_routes": [
+        "/news/rss-01-2007.xml",
+        "/news/rss-02-2007.xml",
+        "/news/rss-02-2008.xml",
+        "/news/rss-03-2007.xml",
+        "/news/rss-04-2007.xml",
+        "/news/rss-05-2007.xml",
+        "/news/rss-07-2006.xml",
+        "/news/rss-08-2006.xml",
+        "/news/rss-09-2006.xml",
+        "/news/rss-10-2006.xml",
+        "/news/rss-11-2006.xml",
+        "/news/rss-12-2006.xml",
+        "/news/rss-12-2007.xml"
+      ],
+      "content_body_evidence": true,
+      "v16_exact_original_or_logical_matches": [],
+      "v16_route_matches_path_only": [],
+      "v15_exact_source_base_matches": [],
+      "v15_route_matches_path_only": [],
+      "v15_actual_files": [],
+      "v16_actual_files": [],
+      "payload_match_result": "no_v15_or_v16_provenance_record_and_no_local_payload",
+      "evidence_locations": [
+        {
+          "layer": "v16_output",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/rss-01-2007.xml",
+          "source_path": ".scratch/pages-resources-20261016-v16/news/rss-01-2007.xml.html",
+          "line": 730,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/rss-01-2007.xml",
+          "marker_reason": "external-or-uncollected-resource",
+          "context": "<img align=\"left\" height=\"32\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-01-2007.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fsmallcaps%2Fa.gif&amp;reason=external-or-uncollected-resource\" style=\"padding-right: 3px;\" width=\"32\">nd the comic contest winner for January, 2007, is..."
+        },
+        {
+          "layer": "v16_output",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/rss-02-2007.xml",
+          "source_path": ".scratch/pages-resources-20261016-v16/news/rss-02-2007.xml.html",
+          "line": 658,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/rss-02-2007.xml",
+          "marker_reason": "external-or-uncollected-resource",
+          "context": "<img align=\"left\" height=\"32\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-02-2007.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fsmallcaps%2Fa.gif&amp;reason=external-or-uncollected-resource\" style=\"padding-right: 3px;\" width=\"32\">nd the comic contest winner for February, 2007, is..."
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "raw_url": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/t.gif",
+      "canonical_key": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/t.gif",
+      "status_from_audit": "uncovered_local_evidence",
+      "v16_marker_count": 29,
+      "v15_marker_count": 5,
+      "reference_count_priority_layer": 29,
+      "page_count": 6,
+      "page_routes": [
+        "/news/rss-07-2006.xml",
+        "/news/rss-08-2006.xml",
+        "/news/rss-09-2006.xml",
+        "/news/rss-10-2006.xml",
+        "/news/rss-11-2006.xml",
+        "/news/rss-12-2006.xml"
+      ],
+      "content_body_evidence": true,
+      "v16_exact_original_or_logical_matches": [],
+      "v16_route_matches_path_only": [],
+      "v15_exact_source_base_matches": [],
+      "v15_route_matches_path_only": [],
+      "v15_actual_files": [],
+      "v16_actual_files": [],
+      "payload_match_result": "no_v15_or_v16_provenance_record_and_no_local_payload",
+      "evidence_locations": [
+        {
+          "layer": "v16_output",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/rss-07-2006.xml",
+          "source_path": ".scratch/pages-resources-20261016-v16/news/rss-07-2006.xml.html",
+          "line": 1116,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/rss-07-2006.xml",
+          "marker_reason": "external-or-uncollected-resource",
+          "context": "<img align=\"left\" height=\"32\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-07-2006.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fsmallcaps%2Ft.gif&amp;reason=external-or-uncollected-resource\" style=\"padding-right: 3px;\" width=\"32\">he next patch for World of"
+        },
+        {
+          "layer": "v16_output",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/rss-07-2006.xml",
+          "source_path": ".scratch/pages-resources-20261016-v16/news/rss-07-2006.xml.html",
+          "line": 1969,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/rss-07-2006.xml",
+          "marker_reason": "external-or-uncollected-resource",
+          "context": "<img align=\"left\" height=\"32\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-07-2006.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fsmallcaps%2Ft.gif&amp;reason=external-or-uncollected-resource\" style=\"padding-right: 3px;\" width=\"32\">he public test realms are live! Players can now try out some of the changes and additions coming in World of Warcraft's"
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "raw_url": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/d.gif",
+      "canonical_key": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/d.gif",
+      "status_from_audit": "uncovered_local_evidence",
+      "v16_marker_count": 8,
+      "v15_marker_count": 0,
+      "reference_count_priority_layer": 8,
+      "page_count": 4,
+      "page_routes": [
+        "/news/rss-09-2006.xml",
+        "/news/rss-10-2006.xml",
+        "/news/rss-11-2006.xml",
+        "/news/rss-12-2006.xml"
+      ],
+      "content_body_evidence": true,
+      "v16_exact_original_or_logical_matches": [],
+      "v16_route_matches_path_only": [],
+      "v15_exact_source_base_matches": [],
+      "v15_route_matches_path_only": [],
+      "v15_actual_files": [],
+      "v16_actual_files": [],
+      "payload_match_result": "no_v15_or_v16_provenance_record_and_no_local_payload",
+      "evidence_locations": [
+        {
+          "layer": "v16_output",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/rss-09-2006.xml",
+          "source_path": ".scratch/pages-resources-20261016-v16/news/rss-09-2006.xml.html",
+          "line": 1693,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/rss-09-2006.xml",
+          "marker_reason": "external-or-uncollected-resource",
+          "context": "<img align=\"left\" height=\"32\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-09-2006.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fsmallcaps%2Fd.gif&amp;reason=external-or-uncollected-resource\" style=\"padding-right: 3px;\" width=\"32\">ue to some corruption of data uncovered"
+        },
+        {
+          "layer": "v16_output",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/rss-09-2006.xml",
+          "source_path": ".scratch/pages-resources-20261016-v16/news/rss-09-2006.xml.html",
+          "line": 2993,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/rss-09-2006.xml",
+          "marker_reason": "external-or-uncollected-resource",
+          "context": "<img align=\"left\" height=\"32\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-09-2006.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fsmallcaps%2Fd.gif&amp;reason=external-or-uncollected-resource\" style=\"padding-right: 3px;\" width=\"32\">ramatic events and changes are casting"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "raw_url": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/i.gif",
+      "canonical_key": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/i.gif",
+      "status_from_audit": "uncovered_local_evidence",
+      "v16_marker_count": 8,
+      "v15_marker_count": 0,
+      "reference_count_priority_layer": 8,
+      "page_count": 4,
+      "page_routes": [
+        "/news/rss-09-2006.xml",
+        "/news/rss-10-2006.xml",
+        "/news/rss-11-2006.xml",
+        "/news/rss-12-2006.xml"
+      ],
+      "content_body_evidence": true,
+      "v16_exact_original_or_logical_matches": [],
+      "v16_route_matches_path_only": [],
+      "v15_exact_source_base_matches": [],
+      "v15_route_matches_path_only": [],
+      "v15_actual_files": [],
+      "v16_actual_files": [],
+      "payload_match_result": "no_v15_or_v16_provenance_record_and_no_local_payload",
+      "evidence_locations": [
+        {
+          "layer": "v16_output",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/rss-09-2006.xml",
+          "source_path": ".scratch/pages-resources-20261016-v16/news/rss-09-2006.xml.html",
+          "line": 1535,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/rss-09-2006.xml",
+          "marker_reason": "external-or-uncollected-resource",
+          "context": "<img align=\"left\" height=\"32\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-09-2006.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fsmallcaps%2Fi.gif&amp;reason=external-or-uncollected-resource\" style=\"padding-right: 3px;\" width=\"32\">n this"
+        },
+        {
+          "layer": "v16_output",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/rss-09-2006.xml",
+          "source_path": ".scratch/pages-resources-20261016-v16/news/rss-09-2006.xml.html",
+          "line": 3468,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/rss-09-2006.xml",
+          "marker_reason": "external-or-uncollected-resource",
+          "context": "<img align=\"left\" height=\"32\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-09-2006.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fsmallcaps%2Fi.gif&amp;reason=external-or-uncollected-resource\" style=\"padding-right: 3px;\" width=\"32\">f you enjoy orchestral arrangements of video"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "raw_url": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/b.gif",
+      "canonical_key": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/b.gif",
+      "status_from_audit": "uncovered_local_evidence",
+      "v16_marker_count": 5,
+      "v15_marker_count": 2,
+      "reference_count_priority_layer": 5,
+      "page_count": 4,
+      "page_routes": [
+        "/news/rss-07-2006.xml",
+        "/news/rss-09-2006.xml",
+        "/news/rss-10-2006.xml",
+        "/news/rss-11-2006.xml"
+      ],
+      "content_body_evidence": true,
+      "v16_exact_original_or_logical_matches": [],
+      "v16_route_matches_path_only": [],
+      "v15_exact_source_base_matches": [],
+      "v15_route_matches_path_only": [],
+      "v15_actual_files": [],
+      "v16_actual_files": [],
+      "payload_match_result": "no_v15_or_v16_provenance_record_and_no_local_payload",
+      "evidence_locations": [
+        {
+          "layer": "v16_output",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/rss-07-2006.xml",
+          "source_path": ".scratch/pages-resources-20261016-v16/news/rss-07-2006.xml.html",
+          "line": 776,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/rss-07-2006.xml",
+          "marker_reason": "external-or-uncollected-resource",
+          "context": "<img align=\"left\" height=\"32\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-07-2006.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fsmallcaps%2Fb.gif&amp;reason=external-or-uncollected-resource\" style=\"padding-right: 3px;\" width=\"32\">lizzard Entertainment is proud to announce the first annual Blizzard Art Contest! We're looking for talented artists to create"
+        },
+        {
+          "layer": "v16_output",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/rss-07-2006.xml",
+          "source_path": ".scratch/pages-resources-20261016-v16/news/rss-07-2006.xml.html",
+          "line": 2998,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/rss-07-2006.xml",
+          "marker_reason": "external-or-uncollected-resource",
+          "context": "<a href=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-07-2006.xml&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Fcontests%2Fartcontest2006%2F&amp;reason=external-or-uncollected-resource\"><img align=\"right\" border=\"0\" height=\"86\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-07-2006.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "raw_url": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/o.gif",
+      "canonical_key": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/o.gif",
+      "status_from_audit": "uncovered_local_evidence",
+      "v16_marker_count": 5,
+      "v15_marker_count": 1,
+      "reference_count_priority_layer": 5,
+      "page_count": 4,
+      "page_routes": [
+        "/news/rss-07-2006.xml",
+        "/news/rss-09-2006.xml",
+        "/news/rss-10-2006.xml",
+        "/news/rss-12-2006.xml"
+      ],
+      "content_body_evidence": true,
+      "v16_exact_original_or_logical_matches": [],
+      "v16_route_matches_path_only": [],
+      "v15_exact_source_base_matches": [],
+      "v15_route_matches_path_only": [],
+      "v15_actual_files": [],
+      "v16_actual_files": [],
+      "payload_match_result": "no_v15_or_v16_provenance_record_and_no_local_payload",
+      "evidence_locations": [
+        {
+          "layer": "v16_output",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/rss-07-2006.xml",
+          "source_path": ".scratch/pages-resources-20261016-v16/news/rss-07-2006.xml.html",
+          "line": 1894,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/rss-07-2006.xml",
+          "marker_reason": "external-or-uncollected-resource",
+          "context": "<img align=\"left\" height=\"32\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-07-2006.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fsmallcaps%2Fo.gif&amp;reason=external-or-uncollected-resource\" style=\"padding-right: 3px;\" width=\"32\">ne of"
+        },
+        {
+          "layer": "v16_output",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/rss-09-2006.xml",
+          "source_path": ".scratch/pages-resources-20261016-v16/news/rss-09-2006.xml.html",
+          "line": 1713,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/rss-09-2006.xml",
+          "marker_reason": "external-or-uncollected-resource",
+          "context": "<img align=\"left\" height=\"32\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-09-2006.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fsmallcaps%2Fo.gif&amp;reason=external-or-uncollected-resource\" style=\"padding-right: 3px;\" width=\"32\">ur database engineers have made great progress and are creating a new server to house the forums. After this has been completed, it will still be necessary to"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "raw_url": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/c.gif",
+      "canonical_key": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/c.gif",
+      "status_from_audit": "uncovered_local_evidence",
+      "v16_marker_count": 3,
+      "v15_marker_count": 0,
+      "reference_count_priority_layer": 3,
+      "page_count": 2,
+      "page_routes": [
+        "/news/rss-08-2006.xml",
+        "/news/rss-11-2006.xml"
+      ],
+      "content_body_evidence": true,
+      "v16_exact_original_or_logical_matches": [],
+      "v16_route_matches_path_only": [],
+      "v15_exact_source_base_matches": [],
+      "v15_route_matches_path_only": [],
+      "v15_actual_files": [],
+      "v16_actual_files": [],
+      "payload_match_result": "no_v15_or_v16_provenance_record_and_no_local_payload",
+      "evidence_locations": [
+        {
+          "layer": "v16_output",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/rss-08-2006.xml",
+          "source_path": ".scratch/pages-resources-20261016-v16/news/rss-08-2006.xml.html",
+          "line": 1511,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/rss-08-2006.xml",
+          "marker_reason": "external-or-uncollected-resource",
+          "context": "<img align=\"left\" height=\"32\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-08-2006.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fsmallcaps%2Fc.gif&amp;reason=external-or-uncollected-resource\" style=\"padding-right: 3px;\" width=\"32\">urious about flying mounts in <a href=\"/WOW-Encyclopedia-Deployable-Archive/burningcrusade/index.html\">"
+        },
+        {
+          "layer": "v16_output",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/rss-08-2006.xml",
+          "source_path": ".scratch/pages-resources-20261016-v16/news/rss-08-2006.xml.html",
+          "line": 2627,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/rss-08-2006.xml",
+          "marker_reason": "external-or-uncollected-resource",
+          "context": "<img align=\"left\" height=\"32\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-08-2006.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fsmallcaps%2Fc.gif&amp;reason=external-or-uncollected-resource\" style=\"padding-right: 3px;\" width=\"32\">heck"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "raw_url": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/e.gif",
+      "canonical_key": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/e.gif",
+      "status_from_audit": "uncovered_local_evidence",
+      "v16_marker_count": 2,
+      "v15_marker_count": 0,
+      "reference_count_priority_layer": 2,
+      "page_count": 2,
+      "page_routes": [
+        "/news/rss-09-2006.xml",
+        "/news/rss-11-2006.xml"
+      ],
+      "content_body_evidence": true,
+      "v16_exact_original_or_logical_matches": [],
+      "v16_route_matches_path_only": [],
+      "v15_exact_source_base_matches": [],
+      "v15_route_matches_path_only": [],
+      "v15_actual_files": [],
+      "v16_actual_files": [],
+      "payload_match_result": "no_v15_or_v16_provenance_record_and_no_local_payload",
+      "evidence_locations": [
+        {
+          "layer": "v16_output",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/rss-09-2006.xml",
+          "source_path": ".scratch/pages-resources-20261016-v16/news/rss-09-2006.xml.html",
+          "line": 2385,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/rss-09-2006.xml",
+          "marker_reason": "external-or-uncollected-resource",
+          "context": "<img align=\"left\" height=\"32\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-09-2006.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fsmallcaps%2Fe.gif&amp;reason=external-or-uncollected-resource\" style=\"padding-right: 3px;\" width=\"32\"><a href=\"/WOW-Encyclopedia-Deployable-Archive/contests/dell/index.xml.html\"><img align=\"right\" border=\"0\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/"
+        },
+        {
+          "layer": "v16_output",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/rss-11-2006.xml",
+          "source_path": ".scratch/pages-resources-20261016-v16/news/rss-11-2006.xml.html",
+          "line": 1873,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/rss-11-2006.xml",
+          "marker_reason": "external-or-uncollected-resource",
+          "context": "<img align=\"left\" height=\"32\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-11-2006.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fsmallcaps%2Fe.gif&amp;reason=external-or-uncollected-resource\" style=\"padding-right: 3px;\" width=\"32\">ach day during the week of November 20, we'll be giving away a 1 GB NVIDIA&reg; GeForce&reg; 7950 graphics card and $100.00 JINX gift certificate, in conjunct"
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "raw_url": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/f.gif",
+      "canonical_key": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/f.gif",
+      "status_from_audit": "uncovered_local_evidence",
+      "v16_marker_count": 2,
+      "v15_marker_count": 0,
+      "reference_count_priority_layer": 2,
+      "page_count": 2,
+      "page_routes": [
+        "/news/rss-08-2006.xml",
+        "/news/rss-11-2006.xml"
+      ],
+      "content_body_evidence": true,
+      "v16_exact_original_or_logical_matches": [],
+      "v16_route_matches_path_only": [],
+      "v15_exact_source_base_matches": [],
+      "v15_route_matches_path_only": [],
+      "v15_actual_files": [],
+      "v16_actual_files": [],
+      "payload_match_result": "no_v15_or_v16_provenance_record_and_no_local_payload",
+      "evidence_locations": [
+        {
+          "layer": "v16_output",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/rss-08-2006.xml",
+          "source_path": ".scratch/pages-resources-20261016-v16/news/rss-08-2006.xml.html",
+          "line": 1582,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/rss-08-2006.xml",
+          "marker_reason": "external-or-uncollected-resource",
+          "context": "<img align=\"left\" height=\"32\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-08-2006.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fsmallcaps%2Ff.gif&amp;reason=external-or-uncollected-resource\" style=\"padding-right: 3px;\" width=\"32\">or years, tensions between the Alliance"
+        },
+        {
+          "layer": "v16_output",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/rss-11-2006.xml",
+          "source_path": ".scratch/pages-resources-20261016-v16/news/rss-11-2006.xml.html",
+          "line": 2255,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/rss-11-2006.xml",
+          "marker_reason": "external-or-uncollected-resource",
+          "context": "<a name=\"bccontest\"></a><img align=\"left\" height=\"32\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-11-2006.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fsmallcaps%2Ff.gif&amp;reason=external-or-uncollected-resource\" style=\"padding-right: 3px;\" width=\"32\">rom Saturday, November 18, 2006, 9:00 AM Pacific Time (PT) to Monday, November 20, 2006 at 12:01 AM PT, players who log in to The Burn"
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "raw_url": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/s.gif",
+      "canonical_key": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/s.gif",
+      "status_from_audit": "uncovered_local_evidence",
+      "v16_marker_count": 2,
+      "v15_marker_count": 0,
+      "reference_count_priority_layer": 2,
+      "page_count": 2,
+      "page_routes": [
+        "/news/rss-08-2006.xml",
+        "/news/rss-11-2006.xml"
+      ],
+      "content_body_evidence": true,
+      "v16_exact_original_or_logical_matches": [],
+      "v16_route_matches_path_only": [],
+      "v15_exact_source_base_matches": [],
+      "v15_route_matches_path_only": [],
+      "v15_actual_files": [],
+      "v16_actual_files": [],
+      "payload_match_result": "no_v15_or_v16_provenance_record_and_no_local_payload",
+      "evidence_locations": [
+        {
+          "layer": "v16_output",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/rss-08-2006.xml",
+          "source_path": ".scratch/pages-resources-20261016-v16/news/rss-08-2006.xml.html",
+          "line": 2883,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/rss-08-2006.xml",
+          "marker_reason": "external-or-uncollected-resource",
+          "context": "<img align=\"left\" height=\"32\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-08-2006.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fsmallcaps%2Fs.gif&amp;reason=external-or-uncollected-resource\" style=\"padding-right: 3px;\" width=\"32\">ince the world was young, the bronze"
+        },
+        {
+          "layer": "v16_output",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/rss-11-2006.xml",
+          "source_path": ".scratch/pages-resources-20261016-v16/news/rss-11-2006.xml.html",
+          "line": 4083,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/rss-11-2006.xml",
+          "marker_reason": "external-or-uncollected-resource",
+          "context": "<img align=\"left\" height=\"32\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-11-2006.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fsmallcaps%2Fs.gif&amp;reason=external-or-uncollected-resource\" style=\"padding-right: 3px;\" width=\"32\">"
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "raw_url": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/g.gif",
+      "canonical_key": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/g.gif",
+      "status_from_audit": "uncovered_local_evidence",
+      "v16_marker_count": 1,
+      "v15_marker_count": 0,
+      "reference_count_priority_layer": 1,
+      "page_count": 1,
+      "page_routes": [
+        "/news/rss-09-2006.xml"
+      ],
+      "content_body_evidence": true,
+      "v16_exact_original_or_logical_matches": [],
+      "v16_route_matches_path_only": [],
+      "v15_exact_source_base_matches": [],
+      "v15_route_matches_path_only": [],
+      "v15_actual_files": [],
+      "v16_actual_files": [],
+      "payload_match_result": "no_v15_or_v16_provenance_record_and_no_local_payload",
+      "evidence_locations": [
+        {
+          "layer": "v16_output",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/rss-09-2006.xml",
+          "source_path": ".scratch/pages-resources-20261016-v16/news/rss-09-2006.xml.html",
+          "line": 2850,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/rss-09-2006.xml",
+          "marker_reason": "external-or-uncollected-resource",
+          "context": "<img align=\"left\" height=\"32\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-09-2006.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fsmallcaps%2Fg.gif&amp;reason=external-or-uncollected-resource\" style=\"padding-right: 3px;\" width=\"32\">ameSpot has posted a news piece detailing"
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "raw_url": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/j.gif",
+      "canonical_key": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/j.gif",
+      "status_from_audit": "uncovered_local_evidence",
+      "v16_marker_count": 1,
+      "v15_marker_count": 0,
+      "reference_count_priority_layer": 1,
+      "page_count": 1,
+      "page_routes": [
+        "/news/rss-09-2006.xml"
+      ],
+      "content_body_evidence": true,
+      "v16_exact_original_or_logical_matches": [],
+      "v16_route_matches_path_only": [],
+      "v15_exact_source_base_matches": [],
+      "v15_route_matches_path_only": [],
+      "v15_actual_files": [],
+      "v16_actual_files": [],
+      "payload_match_result": "no_v15_or_v16_provenance_record_and_no_local_payload",
+      "evidence_locations": [
+        {
+          "layer": "v16_output",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/rss-09-2006.xml",
+          "source_path": ".scratch/pages-resources-20261016-v16/news/rss-09-2006.xml.html",
+          "line": 2768,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/rss-09-2006.xml",
+          "marker_reason": "external-or-uncollected-resource",
+          "context": "<img align=\"left\" height=\"32\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-09-2006.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fsmallcaps%2Fj.gif&amp;reason=external-or-uncollected-resource\" style=\"padding-right: 3px;\" width=\"32\">!NX, maker of fine apparel for gamers, has"
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "raw_url": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/n.gif",
+      "canonical_key": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/n.gif",
+      "status_from_audit": "uncovered_local_evidence",
+      "v16_marker_count": 1,
+      "v15_marker_count": 1,
+      "reference_count_priority_layer": 1,
+      "page_count": 1,
+      "page_routes": [
+        "/news/rss-07-2006.xml"
+      ],
+      "content_body_evidence": true,
+      "v16_exact_original_or_logical_matches": [],
+      "v16_route_matches_path_only": [],
+      "v15_exact_source_base_matches": [],
+      "v15_route_matches_path_only": [],
+      "v15_actual_files": [],
+      "v16_actual_files": [],
+      "payload_match_result": "no_v15_or_v16_provenance_record_and_no_local_payload",
+      "evidence_locations": [
+        {
+          "layer": "v16_output",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/rss-07-2006.xml",
+          "source_path": ".scratch/pages-resources-20261016-v16/news/rss-07-2006.xml.html",
+          "line": 2850,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/rss-07-2006.xml",
+          "marker_reason": "external-or-uncollected-resource",
+          "context": "<a href=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-07-2006.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fclasses%2Frogues2%2Ftalents.html&amp;reason=invalid-overlay-or-uncollected-site-resource\"><img align=\"right\" border=\"0\" height=\"66\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-07-2006.xml&amp;requested=http%3A%2F%2Fwww."
+        },
+        {
+          "layer": "v15_source",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/rss-07-2006.xml",
+          "source_path": ".scratch/offline-navigation-20261015-v15/site/news/rss-07-2006.xml",
+          "line": 2836,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/rss-07-2006.xml",
+          "marker_reason": "invalid-overlay-or-uncollected-site-resource",
+          "context": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-07-2006.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fclasses%2Frogues2%2Ftalents.html&amp;reason=invalid-overlay-or-uncollected-site-resource\"><img align=\"right\" border=\"0\" height=\"66\" src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-07-2006.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F06-07%2Fthumb-rogue.jpg&amp;reason"
+        }
+      ]
+    },
+    {
+      "rank": 16,
+      "raw_url": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/p.gif",
+      "canonical_key": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/p.gif",
+      "status_from_audit": "uncovered_local_evidence",
+      "v16_marker_count": 1,
+      "v15_marker_count": 0,
+      "reference_count_priority_layer": 1,
+      "page_count": 1,
+      "page_routes": [
+        "/news/rss-10-2006.xml"
+      ],
+      "content_body_evidence": true,
+      "v16_exact_original_or_logical_matches": [],
+      "v16_route_matches_path_only": [],
+      "v15_exact_source_base_matches": [],
+      "v15_route_matches_path_only": [],
+      "v15_actual_files": [],
+      "v16_actual_files": [],
+      "payload_match_result": "no_v15_or_v16_provenance_record_and_no_local_payload",
+      "evidence_locations": [
+        {
+          "layer": "v16_output",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/rss-10-2006.xml",
+          "source_path": ".scratch/pages-resources-20261016-v16/news/rss-10-2006.xml.html",
+          "line": 2755,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/rss-10-2006.xml",
+          "marker_reason": "external-or-uncollected-resource",
+          "context": "<img align=\"left\" height=\"32\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-10-2006.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fsmallcaps%2Fp.gif&amp;reason=external-or-uncollected-resource\" style=\"padding-right: 3px;\" width=\"32\">art of being in a stalwart band of adventurers is assembling that stalwart band in the first place. In the upcoming expansion, a new tool for finding a hearty"
+        }
+      ]
+    },
+    {
+      "rank": 17,
+      "raw_url": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/v.gif",
+      "canonical_key": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/v.gif",
+      "status_from_audit": "uncovered_local_evidence",
+      "v16_marker_count": 1,
+      "v15_marker_count": 1,
+      "reference_count_priority_layer": 1,
+      "page_count": 1,
+      "page_routes": [
+        "/news/rss-07-2006.xml"
+      ],
+      "content_body_evidence": true,
+      "v16_exact_original_or_logical_matches": [],
+      "v16_route_matches_path_only": [],
+      "v15_exact_source_base_matches": [],
+      "v15_route_matches_path_only": [],
+      "v15_actual_files": [],
+      "v16_actual_files": [],
+      "payload_match_result": "no_v15_or_v16_provenance_record_and_no_local_payload",
+      "evidence_locations": [
+        {
+          "layer": "v16_output",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/rss-07-2006.xml",
+          "source_path": ".scratch/pages-resources-20261016-v16/news/rss-07-2006.xml.html",
+          "line": 2761,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/rss-07-2006.xml",
+          "marker_reason": "external-or-uncollected-resource",
+          "context": "<img align=\"left\" height=\"32\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-07-2006.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fsmallcaps%2Fv.gif&amp;reason=external-or-uncollected-resource\" style=\"padding-right: 3px;\" width=\"32\">ideo"
+        },
+        {
+          "layer": "v15_source",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/rss-07-2006.xml",
+          "source_path": ".scratch/offline-navigation-20261015-v15/site/news/rss-07-2006.xml",
+          "line": 2747,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/rss-07-2006.xml",
+          "marker_reason": "invalid-overlay-or-uncollected-site-resource",
+          "context": "<img align=\"left\" height=\"32\" src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-07-2006.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fsmallcaps%2Fv.gif&amp;reason=invalid-overlay-or-uncollected-site-resource\" style=\"padding-right: 3px;\" width=\"32\">ideo"
+        }
+      ]
+    },
+    {
+      "rank": 18,
+      "raw_url": "http://www.worldofwarcraft.com/news/images/07-02/ipod.jpg",
+      "canonical_key": "http://www.worldofwarcraft.com/news/images/07-02/ipod.jpg",
+      "status_from_audit": "uncovered_local_evidence",
+      "v16_marker_count": 8,
+      "v15_marker_count": 0,
+      "reference_count_priority_layer": 8,
+      "page_count": 2,
+      "page_routes": [
+        "/news/rss-02-2007.xml",
+        "/news/rss-03-2007.xml"
+      ],
+      "content_body_evidence": true,
+      "v16_exact_original_or_logical_matches": [],
+      "v16_route_matches_path_only": [],
+      "v15_exact_source_base_matches": [],
+      "v15_route_matches_path_only": [],
+      "v15_actual_files": [],
+      "v16_actual_files": [],
+      "payload_match_result": "no_v15_or_v16_provenance_record_and_no_local_payload",
+      "evidence_locations": [
+        {
+          "layer": "v16_output",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/rss-02-2007.xml",
+          "source_path": ".scratch/pages-resources-20261016-v16/news/rss-02-2007.xml.html",
+          "line": 667,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/rss-02-2007.xml",
+          "marker_reason": "external-or-uncollected-resource",
+          "context": "<a href=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-02-2007.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fcommunity%2Fsubmission%2Fcomic-intro.html&amp;reason=external-or-uncollected-resource\"><img border=\"0\" height=\"191\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-02-2007.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fn"
+        },
+        {
+          "layer": "v16_output",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/rss-03-2007.xml",
+          "source_path": ".scratch/pages-resources-20261016-v16/news/rss-03-2007.xml.html",
+          "line": 667,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/rss-03-2007.xml",
+          "marker_reason": "external-or-uncollected-resource",
+          "context": "<a href=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-03-2007.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fcommunity%2Fsubmission%2Fcomic-intro.html&amp;reason=external-or-uncollected-resource\"><img border=\"0\" height=\"191\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-03-2007.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fn"
+        }
+      ]
+    },
+    {
+      "rank": 19,
+      "raw_url": "http://www.worldofwarcraft.com/news/images/05-06/blizzconlogo.jpg",
+      "canonical_key": "http://www.worldofwarcraft.com/news/images/05-06/blizzconlogo.jpg",
+      "status_from_audit": "uncovered_local_evidence",
+      "v16_marker_count": 3,
+      "v15_marker_count": 3,
+      "reference_count_priority_layer": 3,
+      "page_count": 3,
+      "page_routes": [
+        "/news/wow-news-06-2005.html",
+        "/news/wow-news-07-2005.html",
+        "/news/wow-news-08-2005.html"
+      ],
+      "content_body_evidence": true,
+      "v16_exact_original_or_logical_matches": [],
+      "v16_route_matches_path_only": [],
+      "v15_exact_source_base_matches": [],
+      "v15_route_matches_path_only": [],
+      "v15_actual_files": [],
+      "v16_actual_files": [],
+      "payload_match_result": "no_v15_or_v16_provenance_record_and_no_local_payload",
+      "evidence_locations": [
+        {
+          "layer": "v16_output",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/wow-news-06-2005.html",
+          "source_path": ".scratch/pages-resources-20261016-v16/news/wow-news-06-2005.html",
+          "line": 291,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/wow-news-06-2005.html",
+          "marker_reason": "external-or-uncollected-resource",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news-06-2005.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F05-06%2Fblizzconlogo.jpg&amp;reason=external-or-uncollected-resource\" width=\"185\" height=\"110\" align=\"right\">"
+        },
+        {
+          "layer": "v16_output",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/wow-news-07-2005.html",
+          "source_path": ".scratch/pages-resources-20261016-v16/news/wow-news-07-2005.html",
+          "line": 661,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/wow-news-07-2005.html",
+          "marker_reason": "external-or-uncollected-resource",
+          "context": "<a href=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news-07-2005.html&amp;requested=http%3A%2F%2Fwww.blizzcon.com&amp;reason=external-or-uncollected-resource\"><img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news-07-2005.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F05-06%2Fblizzconlogo.jpg&amp;reason=external-or-"
+        }
+      ]
+    },
+    {
+      "rank": 20,
+      "raw_url": "http://www.worldofwarcraft.com/news/images/04-11/stressedorc.jpg",
+      "canonical_key": "http://www.worldofwarcraft.com/news/images/04-11/stressedorc.jpg",
+      "status_from_audit": "uncovered_local_evidence",
+      "v16_marker_count": 2,
+      "v15_marker_count": 2,
+      "reference_count_priority_layer": 2,
+      "page_count": 1,
+      "page_routes": [
+        "/news/wow-news2004.html"
+      ],
+      "content_body_evidence": true,
+      "v16_exact_original_or_logical_matches": [],
+      "v16_route_matches_path_only": [],
+      "v15_exact_source_base_matches": [],
+      "v15_route_matches_path_only": [],
+      "v15_actual_files": [],
+      "v16_actual_files": [],
+      "payload_match_result": "no_v15_or_v16_provenance_record_and_no_local_payload",
+      "evidence_locations": [
+        {
+          "layer": "v16_output",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/wow-news2004.html",
+          "source_path": ".scratch/pages-resources-20261016-v16/news/wow-news2004.html",
+          "line": 1218,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+          "marker_reason": "external-or-uncollected-resource",
+          "context": "<a href=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fsignup.worldofwarcraft.com&amp;reason=invalid-overlay-or-uncollected-site-resource\"><img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-11%2Fstressedorc.jpg&amp;reason"
+        },
+        {
+          "layer": "v16_output",
+          "evidence_kind": "missing_image_marker",
+          "page_route": "/news/wow-news2004.html",
+          "source_path": ".scratch/pages-resources-20261016-v16/news/wow-news2004.html",
+          "line": 1282,
+          "marker_source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+          "marker_reason": "external-or-uncollected-resource",
+          "context": "<img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-11%2Fstressedorc.jpg&amp;reason=external-or-uncollected-resource\" width=\"194\" height=\"212\" align=\"right\" border=\"0\">"
+        }
+      ]
+    }
+  ]
+}

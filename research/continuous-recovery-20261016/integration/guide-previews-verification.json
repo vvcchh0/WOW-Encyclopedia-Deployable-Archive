@@ -1,0 +1,89 @@
+{
+  "schema": "wow-recovery.guide-previews-verification.v1",
+  "network_performed": false,
+  "build_performed": false,
+  "scope": "Optional guide-preview map and exporter loader/render only; no frozen source/site bytes or dynamic gallery script changes.",
+  "inputs": {
+    "source_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-nested-preview-acceptance.json",
+      "sha256": "c578c81670b00c0a1ff257cd84e7e25169d25d54592ee77449fde1aae6a37a5f",
+      "accepted_count": 19
+    },
+    "source_audit": {
+      "path": "research/continuous-recovery-20261016/local-audit/regional-discovery/nested-preview-audit-v4.json",
+      "sha256": "9d35e2b2f9e60b850ee9a4344137e3d3eed779c26bcaf8adbd8459391e5c38fc"
+    },
+    "source_manifest": {
+      "path": ".scratch/offline-navigation-20261015-v15/build-manifest.json",
+      "sha256": "d89557a445ec5c81ef2652c49fd8ce9c102016f11411b7fa2aa795f5112ae002",
+      "anchor_timestamp": "20080512210044"
+    },
+    "guide_gallery_js": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+      "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c"
+    },
+    "curated_map": {
+      "path": "research/continuous-recovery-20261016/integration/guide-previews-source-map.json",
+      "sha256": "cf0da5fec45993684676d94d1cc09fad3f5a421dabbb18b56861000daa6248b2"
+    }
+  },
+  "loader_real_v15": {
+    "result": "passed",
+    "group_count": 5,
+    "preview_count": 19,
+    "groups": {
+      "fishing": 4,
+      "hallows-end": 4,
+      "brewfest": 4,
+      "winters-veil": 4,
+      "zulaman": 3
+    },
+    "parent_href_and_img_route_checked": true,
+    "manifest_sha_length_capture_checked": true,
+    "actual_capture_at_or_before_anchor_checked": true,
+    "parent_validation_policy": "root-relative or same-origin absolute with default port; rejects cross-origin, scheme/port mismatch, and query-bearing absolute URLs while ignoring unrelated anchors"
+  },
+  "focused_tests": {
+    "command": "python -X utf8 -m unittest -v tests.test_guide_previews",
+    "result": "6 tests OK",
+    "coverage": [
+      "five fixed gallery/guide groups",
+      "XML guide to .xml.html local link",
+      "no-map unchanged behavior",
+      "bad SHA/date/missing route/parent-link rejection",
+      "no full or thumbnail aliases and no dynamic gallery replacement",
+      "deterministic repeated export and section rendering",
+      "cross-origin same-path href/img and same-origin session-query parent rejection",
+      "map builder rejects pre-existing output and output/input path collision"
+    ]
+  },
+  "existing_export_tests": {
+    "command": "python -X utf8 -m unittest -v tests.test_github_pages_export tests.test_pages_image_overlay tests.test_related_image_overlay",
+    "result": "42 tests OK"
+  },
+  "implementation_sha256": {
+    "tools/guide_previews.py": "7281dd7f56b1f54da8c13088f2b5bd89f90aa73c11a5f8a326a03ac1187bd2a3",
+    "tools/export_github_pages.py": "c16647890b488f534aa7945f3333ca38a6583b8ca6dad6ce70e40a06d3685de9",
+    "tests/test_guide_previews.py": "a761ebc1a0e301f494a39273c7d05717c198a804f848575801c60227eb11c561"
+  },
+  "commands": [
+    "python -X utf8 -m py_compile tools/guide_previews.py tools/export_github_pages.py tests/test_guide_previews.py (passed)",
+    "python -X utf8 -m unittest -v tests.test_guide_previews (6 tests OK)",
+    "python -X utf8 -m unittest -v tests.test_github_pages_export tests.test_pages_image_overlay tests.test_related_image_overlay (42 tests OK)",
+    "real-v15 load_guide_preview_map read-only check (5 groups, 19 previews; passed)"
+  ],
+  "ui_contract": {
+    "title": "Preserved guide previews",
+    "notice": "These previews survive in the original guide pages. Full-size gallery images are still incomplete.",
+    "per_gallery_section_count": 1,
+    "local_original_preview_clicks": true,
+    "view_original_guide_link": true,
+    "historical_screenshot_numbers_displayed": false,
+    "dynamic_full_or_thumb_aliases_created": false,
+    "addshots_pagination_hash_credit_list_modified": false
+  },
+  "unchanged_adjacent_tools_sha256": {
+    "tools/offline_mirror.py": "8171683dc6b74237d3a655697c9930932fe863f8200685f16da8d4c29c1c635a",
+    "tools/historical_exhibits.py": "3ad2472adbf351ad3340b4277e53e94ac25d33574f5bcdea06f067e5a5d027ac"
+  }
+}

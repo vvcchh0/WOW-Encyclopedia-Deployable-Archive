@@ -107,16 +107,22 @@
     {
       "id": "LOCAL03-ALLNEWS",
       "owner": "/root/local_recovery_20261016",
-      "status": "in_progress",
+      "status": "accepted_first20_scoped",
       "network": false,
       "write_scope": "research/continuous-recovery-20261016/local-audit/all-news/**",
       "goal": "All news missing-image dedup inventory; prioritize common initial-letter glyphs, exclude acquired candidates",
-      "minutes": 25
+      "minutes": 25,
+      "result": {
+        "queue_originals": 20,
+        "missing_occurrences": 233,
+        "acceptance": "research/continuous-recovery-20261016/publication/root-allnews-first20-acceptance.json",
+        "boundary": "40news surfaces covered; source/output marker counts are different layers, not regression counters"
+      }
     },
     {
       "id": "NETWORK05-REGIONAL01",
       "owner": "/root/network_recovery_20261016",
-      "status": "returned_pending_root",
+      "status": "root_accepted_scoped",
       "network": true,
       "write_scope": "research/continuous-recovery-20261016/network/regional01/**",
       "goal": "Three hypothesis-labelled EU Karazhan CDX prefix queries only",
@@ -130,9 +136,64 @@
         "source_responses": 3,
         "cdx_rows": 0,
         "new_images": 0,
-        "boundary": "three hypothesis-labelled prefixes only, not global availability"
+        "boundary": "three hypothesis-labelled prefixes only, not global availability",
+        "acceptance": "research/continuous-recovery-20261016/publication/root-regional01-acceptance.json"
       }
+    },
+    {
+      "id": "LOCAL04-GUIDEPREVIEWS",
+      "owner": "/root/local_recovery_20261016",
+      "status": "root_accepted_local",
+      "network": false,
+      "goal": "Optional local section exposes nineteen existing preview images on five exact galleries; no full-image aliases.",
+      "write_scope": "tools/guide_previews.py; scoped exporter hooks; tests/test_guide_previews.py; integration guide-preview map and receipts",
+      "result": {
+        "source_tests": 48,
+        "browser_checks": 91,
+        "gallery_pages": 5,
+        "existing_previews": 19,
+        "acceptance": "publication/root-v17-local-acceptance.json"
+      }
+    },
+    {
+      "id": "NETWORK06-ALLNEWS01",
+      "owner": "/root/network_recovery_20261016",
+      "status": "root_accepted_integrated_local_v17",
+      "network": true,
+      "goal": "Twenty root-accepted missing-image references, exact CDX then latest valid preanchor replay, no truncated index replay.",
+      "limits": {
+        "originals": 20,
+        "attempts": 80,
+        "seconds": 1800,
+        "body_bytes": 134217728
+      },
+      "write_scope": "research/continuous-recovery-20261016/network/allnews01/**",
+      "result": {
+        "images": 16,
+        "requests": 76,
+        "image_bytes": 59954,
+        "acceptance": "publication/root-allnews01-acceptance.json"
+      }
+    },
+    {
+      "id": "NETWORK07-ALLNEWS02",
+      "owner": "/root/network_recovery_20261016",
+      "status": "stopped_root_classified",
+      "result": {
+        "requests": 5,
+        "images": 0,
+        "source_responses": 0,
+        "tail_failures": 5,
+        "acceptance": "publication/root-allnews02-failure-acceptance.json"
+      }
+    },
+    {
+      "id": "LOCAL05-NEWS-REGISTRY",
+      "owner": "/root/local_recovery_20261016",
+      "status": "in_progress",
+      "network": false,
+      "write_scope": "local-audit/v17-news/**; local-audit/gallery-prefix-registry/**"
     }
   ],
-  "updated_utc": "2026-10-16T03:38:09.811508+00:00"
+  "updated_utc": "2026-10-16T04:29:33.241681+00:00"
 }

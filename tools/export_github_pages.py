@@ -48,6 +48,7 @@ if str(ROOT / "tools") not in sys.path:
     sys.path.insert(0, str(ROOT / "tools"))
 import offline_mirror as mirror  # noqa: E402
 import historical_exhibits  # noqa: E402
+import guide_previews  # noqa: E402
 
 
 class PagesExportError(RuntimeError):
@@ -2266,6 +2267,7 @@ def export_pages(
     image_source_maps: list[Path] | tuple[Path, ...] = (),
     supplement_image_source_maps: list[Path] | tuple[Path, ...] = (),
     allow_later_image_supplements: bool = False,
+    guide_preview_map: Path | None = None,
 ) -> dict[str, Any]:
     source_site = source_site.resolve()
     manifest_path = manifest_path.resolve()
@@ -2338,6 +2340,19 @@ def export_pages(
     related_images_route = "/__offline/related-images/index.html"
     if related_image_overlays:
         route_to_static[related_images_route] = static_url(base_path, related_images_route.lstrip("/"))
+    guide_preview_bundle: guide_previews.GuidePreviewBundle | None = None
+    if guide_preview_map is not None:
+        try:
+            guide_preview_bundle = guide_previews.load_guide_preview_map(
+                Path(guide_preview_map),
+                workspace_root=workspace_root,
+                source_site=source_site,
+                manifest_path=manifest_path,
+                manifest=manifest,
+                route_to_static=route_to_static,
+            )
+        except guide_previews.GuidePreviewError as exc:
+            raise PagesExportError(str(exc)) from exc
     aliases: dict[str, str] = {}
     alias_routes: dict[str, str] = {}
     for alias, target in raw_aliases.items():
@@ -2471,6 +2486,19 @@ def export_pages(
                     base_path=base_path,
                     source_metadata={"actual_timestamp": str(record.get("actual_timestamp") or "")},
                 )
+                if guide_preview_bundle is not None:
+                    guide_group = guide_preview_bundle.group_for_gallery(route)
+                    if guide_group is not None:
+                        try:
+                            text = guide_previews.insert_gallery_section(text, guide_group)
+                        except guide_previews.GuidePreviewError as exc:
+                            raise PagesExportError(str(exc)) from exc
+                        derivation_notes.append(
+                            f"inserted {len(guide_group.previews)} accepted guide previews before gallery body "
+                            f"from {guide_preview_bundle.map_path.as_posix()}; no dynamic gallery aliases changed"
+                        )
+                        stats["guide_preview_gallery_pages"] += 1
+                        stats["guide_preview_count"] += len(guide_group.previews)
                 text, changed = rewrite_wrath_card_hit_area(text, route=route)
                 if changed:
                     derivation_notes.append(
@@ -2749,6 +2777,8 @@ def export_pages(
             },
             "security": {"external_fetches": False, "project_prefix": base_path, "source_unchanged": True, "path_traversal_rejected": True},
         }
+        if guide_preview_bundle is not None:
+            provenance_payload["guide_previews"] = guide_preview_bundle.provenance()
         prov_data = (json.dumps(provenance_payload, ensure_ascii=False, sort_keys=True, indent=2) + "\n").encode("utf-8")
         (partial / "export-provenance.json").write_bytes(prov_data)
         after_workspace = workspace_size(workspace_root, output)
@@ -2791,9 +2821,15 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="Accept explicit supplement images captured after 2008 when their source-map class is post_2008",
     )
+    parser.add_argument(
+        "--guide-preview-map",
+        type=Path,
+        default=None,
+        help="Optional strict map of accepted guide-page previews to insert on their five gallery pages",
+    )
     args = parser.parse_args(argv)
     try:
-        result = export_pages(output=args.output, source_site=args.site, manifest_path=args.manifest, base_path=args.base_path, max_bytes=args.max_bytes, min_free_bytes=args.min_free_bytes, image_source_maps=args.image_source_maps, supplement_image_source_maps=args.supplement_image_source_maps, allow_later_image_supplements=args.allow_later_image_supplements)
+        result = export_pages(output=args.output, source_site=args.site, manifest_path=args.manifest, base_path=args.base_path, max_bytes=args.max_bytes, min_free_bytes=args.min_free_bytes, image_source_maps=args.image_source_maps, supplement_image_source_maps=args.supplement_image_source_maps, allow_later_image_supplements=args.allow_later_image_supplements, guide_preview_map=args.guide_preview_map)
     except PagesExportError as exc:
         parser.error(str(exc))
     print(json.dumps(result, ensure_ascii=False, indent=2))

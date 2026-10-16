@@ -38,6 +38,9 @@ UTC 13:00 后不启动新网络批次，13:10 后不启动新来源/导出版本
 
 ## 后续取舍
 
+- v17 完成本地验收：新增二十张新闻图片（100,831 字节），并在 Fishing、Hallow's End、Brewfest、Winter's Veil、Zul'Aman 五图库展示十九张已有指南预览。全部 8,527 声明文件核对通过，旧 49 项补充保留，共 69 项图片补充；91 项浏览检查通过，已查看五组预览及新闻实际画面。[本地验收](../research/continuous-recovery-20261016/publication/root-v17-local-acceptance.json)
+- ALLNEWS01 二十目标取得十六图，含十四个首字母与两张新闻配图；原始响应核对、全部帧解码与摘要通过。ALLNEWS02 对四个传输未知项复查时连续五次连接失败，零源 HTTP 响应；停批并冷却 120 秒，下一次控制窗口安排在 04:30 UTC 之后。旧失败尾数保留，控制窗口成功后再决定是否恢复普通获取。[图片验收](../research/continuous-recovery-20261016/publication/root-allnews01-acceptance.json)、[停批复核](../research/continuous-recovery-20261016/publication/root-allnews02-failure-acceptance.json)
+
 - 03:31 UTC：v16 已推送 Pages，提交 `96911e7ba7eda5e27cd5c52068cdd071a21c8c08`；03:36 UTC 完成 19 项线上文件核对，包含九张新闻图片、两张欧服原图、两页展开新闻、来源清单、路由表、运行脚本、相关图集与百科/八月新闻保留项。[线上验收](../research/continuous-recovery-20261016/publication/root-v16-pages-online-acceptance.json)
 - NEWS03/04 的四张图片通过主代理来源与字节核验，共 40,877 字节，留待 v17 或之后整合；NEWS04 仅保留批次前后磁盘值，驱动具有逐请求检查，但没有记录逐请求余量，已在回执标出。新下载器将保留这些值。[NEWS03](../research/continuous-recovery-20261016/publication/root-news03-acceptance.json)、[NEWS04](../research/continuous-recovery-20261016/publication/root-news04-acceptance.json)
 
