@@ -9,6 +9,8 @@
 
 ## 2026-10-16
 
+- 发布 v25，补回情人节两张大图、World PvP 一张大图及春节的一张服装视图；三组指南大图增至三十五张。原有九个邻接素材缺口剩五个，离线包保持 v24。[限时修复记录](docs/focused-recovery-20261016-2301.md)
+
 - 发布 v24，再补回十七个新闻图片资源，在线版与[新版离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261016)同步（约 510 MB，解压约 575 MB）。本轮累计补回 141 个图片资源地址，图库与其他缺图的后续清单已保留。[本轮回顾](docs/recovery-summary-20261016.md) · [线上核对](research/continuous-recovery-20261016/publication/root-v24-pages-online-acceptance.json)
 
 - 发布 v23，补回四十张指南相关素材；情人节、春节和 World PvP 新增三十二张可打开原尺寸的指南图片，原玩家图库继续查找。[线上核对](research/continuous-recovery-20261016/publication/root-v23-pages-online-acceptance.json)
