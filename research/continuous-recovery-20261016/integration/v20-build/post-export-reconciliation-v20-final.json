@@ -1,0 +1,199 @@
+{
+  "schema": "wow-recovery.integration.v20.post_export_reconciliation.v1",
+  "accepted": true,
+  "reconciled_export_valid": true,
+  "executed_by": "/root/local_recovery_20261016",
+  "checked_utc": "2026-10-16T08:11:34.793484Z",
+  "meaning": "Independent post-export checks passed after the single v20 exporter invocation; this receipt does not rerun export or imply publication.",
+  "export_invocations_after_worker_success": 0,
+  "worker": {
+    "path": "research/continuous-recovery-20261016/integration/v20-build/worker-build-v20.json",
+    "sha256": "d34cf026c8f98d45ba31073adfd83d5765b95ca3c19f78704c0a7846d16f38b6",
+    "command": "python -X utf8 research/continuous-recovery-20261016/integration/v20-build/build_pages_v20.py",
+    "checked_utc_start": "2026-10-16T07:58:30.171694+00:00",
+    "checked_utc_end": "2026-10-16T08:05:48.013710+00:00",
+    "export_started": true,
+    "export_completed": true,
+    "network_requests_by_builder": 0,
+    "published": false
+  },
+  "inputs": {
+    "source15_manifest": {
+      "path": ".scratch/offline-navigation-20261015-v15/build-manifest.json",
+      "sha256": "d89557a445ec5c81ef2652c49fd8ce9c102016f11411b7fa2aa795f5112ae002"
+    },
+    "offline_manifest": {
+      "path": "offline/build-manifest.json",
+      "sha256": "397f7dcdbc774d80c6f8c1f3dabf7933211ff182427bd2ef77c895752334f459"
+    },
+    "v19_map": {
+      "path": "research/continuous-recovery-20261016/integration/v19-primary-news-source-map.json",
+      "sha256": "7587fcb84e79f90502953d12e425af8a418916b2d4a8f6d211c7f8be24cf5df7",
+      "items": 10
+    },
+    "v20_map": {
+      "path": "research/continuous-recovery-20261016/integration/v20-primary-news-source-map.json",
+      "sha256": "2629ac0915f933202f60a912643c830aac3c66486e28f7d42c061e5f48f9dc77",
+      "items": 34,
+      "new_items": 24,
+      "new_bytes": 209170
+    },
+    "v20_preparation": {
+      "path": "research/continuous-recovery-20261016/integration/v20-build/prepare-v20-inputs.json",
+      "sha256": "8a6688cdbdb55e879089589df5013fc3937bea7ad5f7e1d528a2bf70004535f0",
+      "asset_count": 24,
+      "asset_bytes": 209170
+    },
+    "root_acceptances": [
+      {
+        "path": "research/continuous-recovery-20261016/publication/root-aug20-source-acceptance.json",
+        "sha256": "42bf3efd4ffaadf760e67dfdc86ffa359adcbcc3c6907218f48de33f66f7c2e3",
+        "accepted": true,
+        "image_count": 12,
+        "image_bytes": 116437
+      },
+      {
+        "path": "research/continuous-recovery-20261016/publication/root-aug-remaining15-source-acceptance.json",
+        "sha256": "bc99dae101f2fca429faf5c88df2c8721cca3d5cc479a0ee28c6739e1699dbb6",
+        "accepted": true,
+        "image_count": 12,
+        "image_bytes": 92733
+      }
+    ],
+    "source15_unchanged": true,
+    "production_unchanged": true
+  },
+  "output": {
+    "path": ".scratch/pages-resources-20261016-v20",
+    "provenance_path": ".scratch/pages-resources-20261016-v20/export-provenance.json",
+    "provenance_sha256": "c4b741691f9ac8ad8201dfc35e6af81119c60e62afa07f08c569ec3a9e7a9f50",
+    "declared_files": 8561,
+    "actual_files_including_provenance": 8562,
+    "source_records": 8357,
+    "overlay_records": {
+      "total": 103,
+      "primary": 82,
+      "supplement": 21,
+      "new_primary": 24,
+      "new_primary_bytes": 209170
+    },
+    "retained_v19_overlay_routes": 79,
+    "retained_v19_overlay_bytes_equal": true,
+    "guide_previews": {
+      "groups": 6,
+      "cards": 22,
+      "sections": {
+        "fishing": {
+          "gallery_route": "/info/professions/fishing-gallery.html",
+          "guide_route": "/info/professions/fishing.html",
+          "preview_count": 4,
+          "section_id_count": 1,
+          "card_count": 4,
+          "route_marker_count": 4,
+          "city_no_dynamic_full_alias": true
+        },
+        "hallows-end": {
+          "gallery_route": "/info/events/hallowsend/gallery.html",
+          "guide_route": "/info/events/hallowsend/index.html",
+          "preview_count": 4,
+          "section_id_count": 1,
+          "card_count": 4,
+          "route_marker_count": 4,
+          "city_no_dynamic_full_alias": true
+        },
+        "brewfest": {
+          "gallery_route": "/info/events/brewfest/gallery.html",
+          "guide_route": "/info/events/brewfest/index.html",
+          "preview_count": 4,
+          "section_id_count": 1,
+          "card_count": 4,
+          "route_marker_count": 4,
+          "city_no_dynamic_full_alias": true
+        },
+        "winters-veil": {
+          "gallery_route": "/info/events/winterveil/gallery.html",
+          "guide_route": "/info/events/winterveil/index.html",
+          "preview_count": 4,
+          "section_id_count": 1,
+          "card_count": 4,
+          "route_marker_count": 4,
+          "city_no_dynamic_full_alias": true
+        },
+        "zulaman": {
+          "gallery_route": "/info/dungeons/zulaman-gallery.html",
+          "guide_route": "/info/dungeons/zulaman.xml",
+          "preview_count": 3,
+          "section_id_count": 1,
+          "card_count": 3,
+          "route_marker_count": 3,
+          "city_no_dynamic_full_alias": true
+        },
+        "city-attacks": {
+          "gallery_route": "/pvp/worldpvp/cityattacks-gallery.html",
+          "guide_route": "/info/basics/pvpcombat.html",
+          "preview_count": 3,
+          "section_id_count": 1,
+          "card_count": 3,
+          "route_marker_count": 3,
+          "city_no_dynamic_full_alias": true
+        }
+      },
+      "old_gallery_bytes_equal": {
+        "fishing": true,
+        "hallows-end": true,
+        "brewfest": true,
+        "winters-veil": true,
+        "zulaman": true
+      }
+    },
+    "disk_free_before_bytes": 26101309440,
+    "disk_free_after_bytes": 25522855936,
+    "disk_free_floor_bytes": 11005853696
+  },
+  "local_browser": {
+    "path": "research/continuous-recovery-20261016/integration/v20-build/browser-v20-local.json",
+    "sha256": "f245b568498c6606b6bbf2ab70eabb33314d29afa1abc7e371a490b5ff11eadf",
+    "accepted": true,
+    "pages": 4,
+    "checks": 74,
+    "requests_total": 504,
+    "external_requests_blocked": 0,
+    "august_images": 24,
+    "august_direct_byte_checks": 24,
+    "august_parent_anchor_200": true
+  },
+  "verification": {
+    "root_accepted_images": 24,
+    "local_asset_sha_length_pillow_checks": 24,
+    "map_items_preserved_plus_new": true,
+    "overlay_routes_and_output_bytes_checked": 103,
+    "guide_sections_and_preview_bytes_checked": 6,
+    "input_hashes_before_after_equal": true,
+    "network_requests": 0,
+    "published": false
+  },
+  "tracked_sha256": {
+    "research/continuous-recovery-20261016/integration/v20-build/worker-build-v20.json": "d34cf026c8f98d45ba31073adfd83d5765b95ca3c19f78704c0a7846d16f38b6",
+    "research/continuous-recovery-20261016/integration/v20-build/browser-v20-local.json": "f245b568498c6606b6bbf2ab70eabb33314d29afa1abc7e371a490b5ff11eadf",
+    "research/continuous-recovery-20261016/integration/v20-build/prepare-v20-inputs.json": "8a6688cdbdb55e879089589df5013fc3937bea7ad5f7e1d528a2bf70004535f0",
+    "research/continuous-recovery-20261016/integration/v20-primary-news-source-map.json": "2629ac0915f933202f60a912643c830aac3c66486e28f7d42c061e5f48f9dc77",
+    "research/continuous-recovery-20261016/integration/v19-primary-news-source-map.json": "7587fcb84e79f90502953d12e425af8a418916b2d4a8f6d211c7f8be24cf5df7",
+    ".scratch/pages-resources-20261016-v19/export-provenance.json": "d0359a5daeabe1854b674e3f296f37fa3d6e1417f217848b22233e45ac898631",
+    ".scratch/pages-resources-20261016-v20/export-provenance.json": "c4b741691f9ac8ad8201dfc35e6af81119c60e62afa07f08c569ec3a9e7a9f50",
+    "research/continuous-recovery-20261016/publication/root-aug20-source-acceptance.json": "42bf3efd4ffaadf760e67dfdc86ffa359adcbcc3c6907218f48de33f66f7c2e3",
+    "research/continuous-recovery-20261016/publication/root-aug-remaining15-source-acceptance.json": "bc99dae101f2fca429faf5c88df2c8721cca3d5cc479a0ee28c6739e1699dbb6",
+    ".scratch/offline-navigation-20261015-v15/build-manifest.json": "d89557a445ec5c81ef2652c49fd8ce9c102016f11411b7fa2aa795f5112ae002",
+    "offline/build-manifest.json": "397f7dcdbc774d80c6f8c1f3dabf7933211ff182427bd2ef77c895752334f459",
+    "build_pages_v20.py": "48d3e193bd42ca8155cbc4daaebf3e8b5d98c71cf92b9af2a6240f376af4a83f",
+    "production/tools/guide_previews.py": "bac8334aec3e6335556912216cc5ab803186158ef602f6a82081baf046a87db1",
+    "production/tools/export_github_pages.py": "c16647890b488f534aa7945f3333ca38a6583b8ca6dad6ce70e40a06d3685de9"
+  },
+  "deviations": [
+    "The worker receipt retains a copied helper label existing_v18_gallery_bytes_equal; this independent receipt uses the accurate v19 retained-gallery check.",
+    "The v20 map's inherited source_relationship prose still says v19 primary image overlay preparation for the 24 accepted additions; source bytes, source maps, acceptance hashes, timestamps, and overlay routing were independently checked and are unchanged."
+  ],
+  "uncovered": [
+    "No online Pages commit, deployment, or remote browser check was performed.",
+    "No later unknown August-news assets were included."
+  ]
+}

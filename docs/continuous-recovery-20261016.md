@@ -77,3 +77,7 @@ UTC 13:00 后不启动新网络批次，13:10 后不启动新来源/导出版本
 - 07:52 UTC：v19 Pages 发布完成，二十四项线上对象均经 direct 与本地比对一致；main 已同步 `c8fd221`，Pages 提交 `e69a989b5b769b362f186cae6a9f40909a2191fd`。[线上验收](../research/continuous-recovery-20261016/publication/root-v19-pages-online-acceptance.json)
 - 八月续批二十五次请求取回十二张配图（92,733 字节），连同首批共二十四张（209,170 字节）；三个地址仍为传输未知。批内一次直连失败后转代理，最终失败尾数为零，准备 v20。[来源验收](../research/continuous-recovery-20261016/publication/root-aug-remaining15-source-acceptance.json)
 - 图库总账逐源页复核，五十分区、1,684 槽位、3,368 图片地址保持一致。二十九组有完整的有限时间窗索引，二十一组尚未完整；二十四个已查组仍留有更早年份空窗。主代理纠正三个已尝试但传输未知的目录状态，下一轮计划保留真实请求历史。[总账验收](../research/continuous-recovery-20261016/publication/root-gallery-registry-v4-acceptance.json)
+
+- v20 本地整合二十四张八月新闻配图，全部 8,561 声明文件及 77 项实际浏览检查通过，四十个新闻页面的缺图引用由 614 降至 590。旧 79 份补充、原路由及六组二十二张指南预览保留。[本地验收](../research/continuous-recovery-20261016/publication/root-v20-local-acceptance.json)
+- 08:07 UTC：图库第四轮二十目标用完四十次请求，十四份完整 CDX 共 209 行，没有直接原图或配套缩略图候选；其余六项为传输未知。累计四十三个分区完成指定时间窗检查，另七个尚未完整，较早年份空窗仍另列。[索引验收](../research/continuous-recovery-20261016/publication/root-gallery-prefix04-acceptance.json)
+- v20 单次导出成功；独立回执注明两处继承的旧描述字段，实际新来源与字节均通过核对。已冻结文件保持原样，下一新派生来源表将修正说明文字。

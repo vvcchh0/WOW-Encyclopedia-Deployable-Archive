@@ -1,0 +1,136 @@
+"""Root full-byte acceptance of v20, reusing identical accepted v19 hygiene."""
+import hashlib
+import importlib.util
+import json
+import re
+import shutil
+import sys
+from datetime import datetime, timezone
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[3]
+OUT = Path(__file__).resolve().parent
+SITE = ROOT / '.scratch/pages-resources-20261016-v20'
+PRIOR = ROOT / '.scratch/pages-resources-20261016-v19'
+RUN = ROOT / 'research/continuous-recovery-20261016'
+
+def sha(data):
+    return hashlib.sha256(data).hexdigest()
+
+def main():
+    if not SITE.is_dir():
+        raise RuntimeError('v20 is not atomically completed')
+    build = json.loads((RUN / 'integration/v20-build/worker-build-v20.json').read_bytes())
+    assert build['export_completed'] is True and not build.get('error')
+    assert not (OUT/'root-v20-export-acceptance.json').exists()
+    old_bytes = (PRIOR / 'export-provenance.json').read_bytes()
+    old_receipt = json.loads((OUT / 'root-v19-export-acceptance.json').read_bytes())
+    if sha(old_bytes) != 'd0359a5daeabe1854b674e3f296f37fa3d6e1417f217848b22233e45ac898631' or not old_receipt['accepted']:
+        raise RuntimeError('Unbound prior accepted hygiene')
+    current_bytes = (SITE / 'export-provenance.json').read_bytes()
+    provenance, old = json.loads(current_bytes), json.loads(old_bytes)
+    expected = {x['output_path']: x for x in provenance['files']}
+    previous = {x['output_path']: x for x in old['files']}
+    errors, findings, reused, changed = [], [], [], []
+    actual, total, scanned = set(), 0, 0
+    spec = importlib.util.spec_from_file_location('wow_hygiene_v20', ROOT / 'research/github-publication-20261012/full-tree-hygiene.py')
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    for path in SITE.rglob('*'):
+        if path.is_symlink():
+            errors.append({'path': str(path), 'reason': 'symlink'})
+        if not path.is_file():
+            continue
+        relative = path.relative_to(SITE).as_posix()
+        data = path.read_bytes()
+        digest = sha(data)
+        actual.add(relative)
+        total += len(data)
+        record = expected.get(relative)
+        if record:
+            if record['derived_sha256'] != digest or record['derived_length'] != len(data):
+                errors.append({'path': relative, 'reason': 'object_hash_or_length'})
+        elif relative != 'export-provenance.json':
+            errors.append({'path': relative, 'reason': 'undeclared_object'})
+        prior = previous.get(relative)
+        if prior and digest == prior['derived_sha256'] and len(data) == prior['derived_length']:
+            reused.append(relative)
+            continue
+        changed.append(relative)
+        scanned += len(data)
+        for pattern in module.PATTERNS:
+            if pattern.category in {'cookie_handling_field', 'authorization_field_without_value'}:
+                continue
+            count = len(list(pattern.regex.finditer(data)))
+            if count:
+                findings.append({'path': relative, 'category': pattern.category, 'count': count})
+        if re.search(rb'(?im)^(?:set-cookie|x-archive-orig-set-cookie|authorization|proxy-authorization):\s*\S+', data):
+            errors.append({'path': relative, 'reason': 'raw_sensitive_http_header'})
+    if actual != set(expected) | {'export-provenance.json'} or len(expected) != len(provenance['files']):
+        errors.append({'reason': 'member_set'})
+    if provenance['source_manifest_sha256'] != 'd89557a445ec5c81ef2652c49fd8ce9c102016f11411b7fa2aa795f5112ae002':
+        errors.append({'reason': 'source_manifest'})
+    preserved = []
+    current_routes = {x['route']: x for x in provenance['files']}
+    for item in old['files']:
+        if item['kind'] != 'image_overlay':
+            continue
+        new = current_routes.get(item['route'], {})
+        okay = all(new.get(k) == item.get(k) for k in ['original_url', 'derived_length', 'derived_sha256', 'source_sha256', 'actual_capture_timestamp', 'temporal_class'])
+        preserved.append({'route': item['route'], 'unchanged': okay})
+        if not okay:
+            errors.append({'route': item['route'], 'reason': 'prior_overlay_regression'})
+    old_map = json.loads((PRIOR / '__offline/route-map.json').read_bytes())
+    new_map = json.loads((SITE / '__offline/route-map.json').read_bytes())
+    mappings = {}
+    for name, values in old_map.items():
+        if isinstance(values, dict):
+            differences = [key for key, value in values.items() if new_map.get(name, {}).get(key) != value]
+            mappings[name] = {'prior_keys': len(values), 'new_keys': len(new_map.get(name, {})), 'changed_or_removed': differences}
+            if differences:
+                errors.append({'reason': 'prior_routing_changed', 'map': name})
+    for path, digest in build['input_hashes_before'].items():
+        if sha((ROOT / path).read_bytes()) != digest:
+            errors.append({'path':path,'reason':'input_binding_changed_since_export'})
+    if len(preserved) != 79:
+        errors.append({'reason':'prior_overlay_binding'})
+    source_images=[]
+    for receipt_name in ['root-aug20-source-acceptance.json','root-aug-remaining15-source-acceptance.json']:
+        source_images.extend(json.loads((OUT / receipt_name).read_bytes())['accepted_images'])
+    from urllib.parse import urlsplit
+    for image in source_images:
+        route=urlsplit(image['original']).path; item=current_routes.get(route,{})
+        if any([item.get('derived_sha256')!=image['sha256'],item.get('derived_length')!=image['length'],item.get('actual_capture_timestamp')!=image['actual_capture_timestamp'],item.get('original_url')!=image['original']]):
+            errors.append({'route':route,'reason':'new_source_image_binding'})
+    assert len(source_images)==24
+    if sha((ROOT / 'offline/build-manifest.json').read_bytes()) != '397f7dcdbc774d80c6f8c1f3dabf7933211ff182427bd2ef77c895752334f459':
+        errors.append({'reason': 'original_manifest_changed'})
+    stats = provenance['stats']
+    if stats['source_records'] != 8357 or stats['image_overlay_records'] != 103 or stats['primary_image_overlay_records'] != 82 or stats['supplement_image_overlay_records'] != 21:
+        errors.append({'reason': 'overlay_counts'})
+    if stats.get('guide_preview_gallery_pages') != 6 or stats.get('guide_preview_count') != 22:
+        errors.append({'reason': 'guide_preview_counts'})
+    guide = provenance.get('guide_previews', {})
+    if guide.get('preview_count') != 22 or guide.get('group_count') != 6:
+        errors.append({'reason': 'guide_preview_provenance'})
+    for group in guide.get('groups', []):
+        gallery = current_routes[group['gallery_route']]
+        text = (SITE / gallery['output_path']).read_text(encoding='utf-8')
+        if text.count('class="offline-guide-preview-section"') != 1 or text.count('alt="Preserved guide preview"') != group['preview_count']:
+            errors.append({'route': group['gallery_route'], 'reason': 'guide_section_conservation'})
+    if len(expected) != 8561 or len(actual) != 8562:
+        errors.append({'reason': 'v20_object_count'})
+    result = {'checked_utc': datetime.now(timezone.utc).isoformat(), 'accepted': not errors and not findings,
+        'export_provenance_sha256': sha(current_bytes), 'prior_provenance_sha256': sha(old_bytes),
+        'checked_declared_files': len(expected), 'actual_files': len(actual), 'checked_tree_bytes': total,
+        'hygiene_reused_identical_files': len(reused), 'changed_scanned_files': len(changed), 'changed_scanned_bytes': scanned,
+        'changed_paths': sorted(changed), 'prior_overlays': preserved, 'routing_conservation': mappings,
+        'stats': stats, 'errors': errors, 'publication_findings': findings, 'disk_free_bytes': shutil.disk_usage(ROOT).free, 'published': False, 'build_completed': build.get('export_completed'), 'worker_error': build.get('error')}
+    (OUT / 'root-v20-export-acceptance.json').write_bytes((json.dumps(result, ensure_ascii=False, indent=2) + '\n').encode())
+    print(json.dumps({k: result[k] for k in ['accepted', 'checked_declared_files', 'actual_files', 'checked_tree_bytes', 'changed_scanned_files', 'changed_paths', 'errors', 'publication_findings']}))
+    if not result['accepted']:
+        raise SystemExit(1)
+
+if __name__ == '__main__':
+    main()
