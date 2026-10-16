@@ -1,0 +1,1390 @@
+{
+  "schema": "wow-recovery.gallery-neighbor-guide-literals.v1",
+  "generated_utc": "2026-10-16T10:54:38.518974+00:00",
+  "network_requests": 0,
+  "payload_downloads": 0,
+  "source_manifest": {
+    "path": ".scratch/offline-navigation-20261015-v15/build-manifest.json",
+    "sha256": "d89557a445ec5c81ef2652c49fd8ce9c102016f11411b7fa2aa795f5112ae002",
+    "bytes": 75650378
+  },
+  "screenshot_js": {
+    "source": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/shared/wow-com/includes-client/screenshot.js",
+      "sha256": "df9d4a64bf36f211e4deca0baf19ef44cb6a19949dbd7143d003bec48b566451",
+      "bytes": 5757
+    },
+    "selected_literals": [
+      {
+        "line": 1,
+        "literal": "function screenshot(number, align, text) {\t"
+      },
+      {
+        "line": 16,
+        "literal": "\tdocument.write('<td><a href = \"/imageviewer.html?'+ path +','+ theDirectory +','+ number +','+ screenshotsTotal +','+ theURL +'\"><img src = \"'+ path + theDirectory + 'ss'+ number +'-thumb.jpg\" border = \"0\"></a></td>');\tdocument.write('<td background = \"/shared/wow-com/images/borders/screenshot/right.gif\"><img src = \"/shared/wow-com/images/layout/pixel.gif\"></td>');"
+      },
+      {
+        "line": 38,
+        "literal": "\tdocument.write('<a href = \"/imageviewer.html?'+ path +','+ theDirectory +','+ number +','+ screenshotsTotal +','+ theURL +'\"><img src = \"'+ path + theDirectory + 'ss'+ number +'-thumb.jpg\" border = \"0\"></a>');"
+      },
+      {
+        "line": 62,
+        "literal": "\tdocument.write('<td><a href = \"/imageviewer.html?'+ path +','+ theDirectory +','+ number +','+ screenshotsTotal +','+ theURL +'\"><img src = \"'+ path + theDirectory + 'ss'+ number +'-thumb.jpg\" border = \"0\"></a></td>');"
+      },
+      {
+        "line": 75,
+        "literal": "var theURL = document.location.href;"
+      },
+      {
+        "line": 76,
+        "literal": "var path = theURL;"
+      },
+      {
+        "line": 78,
+        "literal": "for (var i = (path.length - 1); letter != \"/\"; i--) {"
+      },
+      {
+        "line": 82,
+        "literal": "path = path.substring(0, i);"
+      },
+      {
+        "line": 85,
+        "literal": "for (var i = 0; x != 3; i++) {"
+      },
+      {
+        "line": 91,
+        "literal": "path = path.substring((i - 1), path.length) + \"/\";"
+      }
+    ],
+    "contract": {
+      "page_directory": "path is reduced to the site-root-relative directory by lines 75-91",
+      "dynamic_thumbnail": "path + theDirectory + 'ss' + number + '-thumb.jpg' (lines 16, 38, 62)",
+      "dynamic_viewer": "/imageviewer.html? + path + ',' + theDirectory + ',' + number + ',' + screenshotsTotal + ',' + theURL",
+      "guide_directory_literal": "theDirectory = \"images/\" in Love/Lunar pages"
+    }
+  },
+  "guides": [
+    {
+      "guide_id": "Love is in the Air",
+      "route": "/info/events/loveisintheair/index.html",
+      "gallery_route": "/info/events/loveisintheair/gallery.html",
+      "source": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/events/loveisintheair/index.html",
+        "sha256": "83d6a86ded23d660b4c3edccafee740c8119ff9882e58eefb186a74a8d3f9376",
+        "bytes": 65558
+      },
+      "manifest": {
+        "source_base_url": "http://www.worldofwarcraft.com/info/events/loveisintheair/",
+        "actual_timestamp": "20080511174658",
+        "derived_sha256": "83d6a86ded23d660b4c3edccafee740c8119ff9882e58eefb186a74a8d3f9376",
+        "derived_length": 65558,
+        "source_sha256": "6d1db06c652118dc0538a05ea23c9ec6642a05978b8792247686d3dacce5db46",
+        "source_length": 59305,
+        "kind": "html",
+        "role": "site_recovery_sidebar_page",
+        "transformed": true
+      },
+      "script_literal": {
+        "line": 187,
+        "literal": "<script language=\"javascript\" src=\"/shared/wow-com/includes-client/screenshot.js\"></script>"
+      },
+      "directory_literal": {
+        "line": 191,
+        "literal": "var theDirectory = \"images/\";"
+      },
+      "screenshots_total_literal": {
+        "line": 192,
+        "literal": "var screenshotsTotal = 12;"
+      },
+      "declared_screenshot_total": 12,
+      "screenshot_calls": [
+        {
+          "function": "screenshotThinBorder",
+          "number": 1,
+          "line": 769,
+          "literal": "screenshotThinBorder(\"1\",\"\", \"You smell nice!\");"
+        },
+        {
+          "function": "screenshotThinBorder",
+          "number": 12,
+          "line": 879,
+          "literal": "screenshotThinBorder(\"12\",\"\", \"&lt;/3\");"
+        },
+        {
+          "function": "screenshotThinBorder",
+          "number": 2,
+          "line": 900,
+          "literal": "screenshotThinBorder(\"2\",\"\", \"Kwee Q. Peddlefeet\");"
+        },
+        {
+          "function": "screenshotThinBorder",
+          "number": 4,
+          "line": 918,
+          "literal": "screenshotThinBorder(\"4\",\"\", \"It's a close race!<br></a><span style='color:ead3a7; text-decoration: none;'>(I demand a recount!)</span>\");"
+        },
+        {
+          "function": "screenshotThinBorder",
+          "number": 3,
+          "line": 979,
+          "literal": "screenshotThinBorder(\"3\",\"\", \"\");"
+        },
+        {
+          "function": "screenshotThinBorder",
+          "number": 5,
+          "line": 984,
+          "literal": "screenshotThinBorder(\"5\",\"\", \"\");"
+        },
+        {
+          "function": "screenshotThinBorder",
+          "number": 6,
+          "line": 989,
+          "literal": "screenshotThinBorder(\"6\",\"\", \"\");"
+        },
+        {
+          "function": "screenshotThinBorder",
+          "number": 7,
+          "line": 999,
+          "literal": "screenshotThinBorder(\"7\",\"\", \"\");"
+        },
+        {
+          "function": "screenshotThinBorder",
+          "number": 8,
+          "line": 1004,
+          "literal": "screenshotThinBorder(\"8\",\"\", \"\");"
+        },
+        {
+          "function": "screenshotThinBorder",
+          "number": 9,
+          "line": 1014,
+          "literal": "screenshotThinBorder(\"9\",\"\", \"\");"
+        },
+        {
+          "function": "screenshotThinBorder",
+          "number": 10,
+          "line": 1019,
+          "literal": "screenshotThinBorder(\"10\",\"\", \"\");"
+        },
+        {
+          "function": "screenshotThinBorder",
+          "number": 11,
+          "line": 1024,
+          "literal": "screenshotThinBorder(\"11\",\"\", \"\");"
+        }
+      ],
+      "call_number_counts": {
+        "1": 1,
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 1,
+        "7": 1,
+        "8": 1,
+        "9": 1,
+        "10": 1,
+        "11": 1,
+        "12": 1
+      },
+      "declared_numbers_without_a_source_call": [],
+      "dynamic_image_routes": [
+        {
+          "number": 1,
+          "full_route": "/info/events/loveisintheair/images/ss1.jpg",
+          "thumbnail_route": "/info/events/loveisintheair/images/ss1-thumb.jpg",
+          "full_original": "http://www.worldofwarcraft.com/info/events/loveisintheair/images/ss1.jpg",
+          "thumbnail_original": "http://www.worldofwarcraft.com/info/events/loveisintheair/images/ss1-thumb.jpg",
+          "derived_from": "screenshot.js lines 75-91 plus lines 16/38/62; page theDirectory literal",
+          "direct_html_literal": false
+        },
+        {
+          "number": 2,
+          "full_route": "/info/events/loveisintheair/images/ss2.jpg",
+          "thumbnail_route": "/info/events/loveisintheair/images/ss2-thumb.jpg",
+          "full_original": "http://www.worldofwarcraft.com/info/events/loveisintheair/images/ss2.jpg",
+          "thumbnail_original": "http://www.worldofwarcraft.com/info/events/loveisintheair/images/ss2-thumb.jpg",
+          "derived_from": "screenshot.js lines 75-91 plus lines 16/38/62; page theDirectory literal",
+          "direct_html_literal": false
+        },
+        {
+          "number": 3,
+          "full_route": "/info/events/loveisintheair/images/ss3.jpg",
+          "thumbnail_route": "/info/events/loveisintheair/images/ss3-thumb.jpg",
+          "full_original": "http://www.worldofwarcraft.com/info/events/loveisintheair/images/ss3.jpg",
+          "thumbnail_original": "http://www.worldofwarcraft.com/info/events/loveisintheair/images/ss3-thumb.jpg",
+          "derived_from": "screenshot.js lines 75-91 plus lines 16/38/62; page theDirectory literal",
+          "direct_html_literal": false
+        },
+        {
+          "number": 4,
+          "full_route": "/info/events/loveisintheair/images/ss4.jpg",
+          "thumbnail_route": "/info/events/loveisintheair/images/ss4-thumb.jpg",
+          "full_original": "http://www.worldofwarcraft.com/info/events/loveisintheair/images/ss4.jpg",
+          "thumbnail_original": "http://www.worldofwarcraft.com/info/events/loveisintheair/images/ss4-thumb.jpg",
+          "derived_from": "screenshot.js lines 75-91 plus lines 16/38/62; page theDirectory literal",
+          "direct_html_literal": false
+        },
+        {
+          "number": 5,
+          "full_route": "/info/events/loveisintheair/images/ss5.jpg",
+          "thumbnail_route": "/info/events/loveisintheair/images/ss5-thumb.jpg",
+          "full_original": "http://www.worldofwarcraft.com/info/events/loveisintheair/images/ss5.jpg",
+          "thumbnail_original": "http://www.worldofwarcraft.com/info/events/loveisintheair/images/ss5-thumb.jpg",
+          "derived_from": "screenshot.js lines 75-91 plus lines 16/38/62; page theDirectory literal",
+          "direct_html_literal": false
+        },
+        {
+          "number": 6,
+          "full_route": "/info/events/loveisintheair/images/ss6.jpg",
+          "thumbnail_route": "/info/events/loveisintheair/images/ss6-thumb.jpg",
+          "full_original": "http://www.worldofwarcraft.com/info/events/loveisintheair/images/ss6.jpg",
+          "thumbnail_original": "http://www.worldofwarcraft.com/info/events/loveisintheair/images/ss6-thumb.jpg",
+          "derived_from": "screenshot.js lines 75-91 plus lines 16/38/62; page theDirectory literal",
+          "direct_html_literal": false
+        },
+        {
+          "number": 7,
+          "full_route": "/info/events/loveisintheair/images/ss7.jpg",
+          "thumbnail_route": "/info/events/loveisintheair/images/ss7-thumb.jpg",
+          "full_original": "http://www.worldofwarcraft.com/info/events/loveisintheair/images/ss7.jpg",
+          "thumbnail_original": "http://www.worldofwarcraft.com/info/events/loveisintheair/images/ss7-thumb.jpg",
+          "derived_from": "screenshot.js lines 75-91 plus lines 16/38/62; page theDirectory literal",
+          "direct_html_literal": false
+        },
+        {
+          "number": 8,
+          "full_route": "/info/events/loveisintheair/images/ss8.jpg",
+          "thumbnail_route": "/info/events/loveisintheair/images/ss8-thumb.jpg",
+          "full_original": "http://www.worldofwarcraft.com/info/events/loveisintheair/images/ss8.jpg",
+          "thumbnail_original": "http://www.worldofwarcraft.com/info/events/loveisintheair/images/ss8-thumb.jpg",
+          "derived_from": "screenshot.js lines 75-91 plus lines 16/38/62; page theDirectory literal",
+          "direct_html_literal": false
+        },
+        {
+          "number": 9,
+          "full_route": "/info/events/loveisintheair/images/ss9.jpg",
+          "thumbnail_route": "/info/events/loveisintheair/images/ss9-thumb.jpg",
+          "full_original": "http://www.worldofwarcraft.com/info/events/loveisintheair/images/ss9.jpg",
+          "thumbnail_original": "http://www.worldofwarcraft.com/info/events/loveisintheair/images/ss9-thumb.jpg",
+          "derived_from": "screenshot.js lines 75-91 plus lines 16/38/62; page theDirectory literal",
+          "direct_html_literal": false
+        },
+        {
+          "number": 10,
+          "full_route": "/info/events/loveisintheair/images/ss10.jpg",
+          "thumbnail_route": "/info/events/loveisintheair/images/ss10-thumb.jpg",
+          "full_original": "http://www.worldofwarcraft.com/info/events/loveisintheair/images/ss10.jpg",
+          "thumbnail_original": "http://www.worldofwarcraft.com/info/events/loveisintheair/images/ss10-thumb.jpg",
+          "derived_from": "screenshot.js lines 75-91 plus lines 16/38/62; page theDirectory literal",
+          "direct_html_literal": false
+        },
+        {
+          "number": 11,
+          "full_route": "/info/events/loveisintheair/images/ss11.jpg",
+          "thumbnail_route": "/info/events/loveisintheair/images/ss11-thumb.jpg",
+          "full_original": "http://www.worldofwarcraft.com/info/events/loveisintheair/images/ss11.jpg",
+          "thumbnail_original": "http://www.worldofwarcraft.com/info/events/loveisintheair/images/ss11-thumb.jpg",
+          "derived_from": "screenshot.js lines 75-91 plus lines 16/38/62; page theDirectory literal",
+          "direct_html_literal": false
+        },
+        {
+          "number": 12,
+          "full_route": "/info/events/loveisintheair/images/ss12.jpg",
+          "thumbnail_route": "/info/events/loveisintheair/images/ss12-thumb.jpg",
+          "full_original": "http://www.worldofwarcraft.com/info/events/loveisintheair/images/ss12.jpg",
+          "thumbnail_original": "http://www.worldofwarcraft.com/info/events/loveisintheair/images/ss12-thumb.jpg",
+          "derived_from": "screenshot.js lines 75-91 plus lines 16/38/62; page theDirectory literal",
+          "direct_html_literal": false
+        }
+      ],
+      "parent_gallery_links": [
+        {
+          "line": 956,
+          "literal": "<a href=\"/info/events/loveisintheair/gallery.html\"><img src=\"/info/events/loveisintheair/images/gal02.jpg\" border=\"0\" />",
+          "href": "/info/events/loveisintheair/gallery.html",
+          "image": "/info/events/loveisintheair/images/gal02.jpg"
+        },
+        {
+          "line": 959,
+          "literal": "<a href=\"/info/events/loveisintheair/gallery.html\"><img src=\"/info/events/loveisintheair/images/gal01.jpg\" border=\"0\" />",
+          "href": "/info/events/loveisintheair/gallery.html",
+          "image": "/info/events/loveisintheair/images/gal01.jpg"
+        },
+        {
+          "line": 962,
+          "literal": "<a href=\"/info/events/loveisintheair/gallery.html\"><img src=\"/info/events/loveisintheair/images/gal03.jpg\" border=\"0\" />",
+          "href": "/info/events/loveisintheair/gallery.html",
+          "image": "/info/events/loveisintheair/images/gal03.jpg"
+        }
+      ],
+      "classification": {
+        "dynamic_images_are_guide_original_gallery_routes": true,
+        "player_submitted_gallery_links_are_separate": true,
+        "filename_or_number_is_not_proof_of_payload_or_cross_gallery_identity": true
+      }
+    },
+    {
+      "guide_id": "Lunar Festival",
+      "route": "/info/events/lunarnewyears/index.html",
+      "gallery_route": "/info/events/lunarnewyears/gallery.html",
+      "source": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/events/lunarnewyears/index.html",
+        "sha256": "db6d178344b906cf126bd0ec730563acbc4d0f5bf3c4ba60a1ffaf873ba41b9c",
+        "bytes": 58735
+      },
+      "manifest": {
+        "source_base_url": "https://www.worldofwarcraft.com/info/events/lunarnewyears/",
+        "actual_timestamp": "20080402032712",
+        "derived_sha256": "db6d178344b906cf126bd0ec730563acbc4d0f5bf3c4ba60a1ffaf873ba41b9c",
+        "derived_length": 58735,
+        "source_sha256": "cb3b02f608d9445af26d8ea8d27545288761fc0ab8b03bf74abaa46de884aa61",
+        "source_length": 52205,
+        "kind": "html",
+        "role": "site_recovery_sidebar_page",
+        "transformed": true
+      },
+      "script_literal": {
+        "line": 25,
+        "literal": "<script language=\"javascript\" src=\"/shared/wow-com/includes-client/screenshot.js\"></script>"
+      },
+      "directory_literal": {
+        "line": 29,
+        "literal": "var theDirectory = \"images/\";"
+      },
+      "screenshots_total_literal": {
+        "line": 30,
+        "literal": "var screenshotsTotal = 21;"
+      },
+      "declared_screenshot_total": 21,
+      "screenshot_calls": [
+        {
+          "function": "screenshotThinBorder",
+          "number": 11,
+          "line": 516,
+          "literal": "screenshotThinBorder(\"11\",\"right\");"
+        },
+        {
+          "function": "screenshotThinBorder",
+          "number": 2,
+          "line": 548,
+          "literal": "screenshotThinBorder(\"2\",\"right\", \"\");"
+        },
+        {
+          "function": "screenshotThinBorder",
+          "number": 3,
+          "line": 559,
+          "literal": "screenshotThinBorder(\"3\",\"right\", \"\");"
+        },
+        {
+          "function": "screenshotThinBorder",
+          "number": 4,
+          "line": 568,
+          "literal": "screenshotThinBorder(\"4\",\"right\", \"\");"
+        },
+        {
+          "function": "screenshotThinBorder",
+          "number": 5,
+          "line": 574,
+          "literal": "screenshotThinBorder(\"5\",\"right\", \"\");"
+        },
+        {
+          "function": "screenshot",
+          "number": 14,
+          "line": 626,
+          "literal": "<script language=\"javascript\">screenshot(\"14\", \"\", \"\")</script>"
+        },
+        {
+          "function": "screenshot",
+          "number": 15,
+          "line": 629,
+          "literal": "<script language=\"javascript\">screenshot(\"15\", \"\", \"\")</script>"
+        },
+        {
+          "function": "screenshot",
+          "number": 16,
+          "line": 632,
+          "literal": "<script language=\"javascript\">screenshot(\"16\", \"\", \"\")</script>"
+        },
+        {
+          "function": "screenshot",
+          "number": 17,
+          "line": 635,
+          "literal": "<script language=\"javascript\">screenshot(\"17\", \"\", \"\")</script>"
+        },
+        {
+          "function": "screenshot",
+          "number": 18,
+          "line": 650,
+          "literal": "<script language=\"javascript\">screenshot(\"18\", \"\", \"\")</script>"
+        },
+        {
+          "function": "screenshot",
+          "number": 19,
+          "line": 653,
+          "literal": "<script language=\"javascript\">screenshot(\"19\", \"\", \"\")</script>"
+        },
+        {
+          "function": "screenshot",
+          "number": 20,
+          "line": 656,
+          "literal": "<script language=\"javascript\">screenshot(\"20\", \"\", \"\")</script>"
+        },
+        {
+          "function": "screenshot",
+          "number": 21,
+          "line": 659,
+          "literal": "<script language=\"javascript\">screenshot(\"21\", \"\", \"\")</script>"
+        },
+        {
+          "function": "screenshotThinBorder",
+          "number": 8,
+          "line": 766,
+          "literal": "screenshotThinBorder(\"8\",\"right\", \"\");"
+        },
+        {
+          "function": "screenshotThinBorder",
+          "number": 9,
+          "line": 771,
+          "literal": "screenshotThinBorder(\"9\",\"right\", \"\");"
+        },
+        {
+          "function": "screenshotThinBorder",
+          "number": 10,
+          "line": 776,
+          "literal": "screenshotThinBorder(\"10\",\"right\", \"\");"
+        },
+        {
+          "function": "screenshotThinBorder",
+          "number": 11,
+          "line": 783,
+          "literal": "screenshotThinBorder(\"11\",\"right\", \"\");"
+        },
+        {
+          "function": "screenshotThinBorder",
+          "number": 12,
+          "line": 788,
+          "literal": "screenshotThinBorder(\"12\",\"right\", \"\");"
+        },
+        {
+          "function": "screenshotThinBorder",
+          "number": 13,
+          "line": 793,
+          "literal": "screenshotThinBorder(\"13\",\"right\", \"\");"
+        }
+      ],
+      "call_number_counts": {
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "8": 1,
+        "9": 1,
+        "10": 1,
+        "11": 2,
+        "12": 1,
+        "13": 1,
+        "14": 1,
+        "15": 1,
+        "16": 1,
+        "17": 1,
+        "18": 1,
+        "19": 1,
+        "20": 1,
+        "21": 1
+      },
+      "declared_numbers_without_a_source_call": [
+        1,
+        6,
+        7
+      ],
+      "dynamic_image_routes": [
+        {
+          "number": 2,
+          "full_route": "/info/events/lunarnewyears/images/ss2.jpg",
+          "thumbnail_route": "/info/events/lunarnewyears/images/ss2-thumb.jpg",
+          "full_original": "https://www.worldofwarcraft.com/info/events/lunarnewyears/images/ss2.jpg",
+          "thumbnail_original": "https://www.worldofwarcraft.com/info/events/lunarnewyears/images/ss2-thumb.jpg",
+          "derived_from": "screenshot.js lines 75-91 plus lines 16/38/62; page theDirectory literal",
+          "direct_html_literal": false
+        },
+        {
+          "number": 3,
+          "full_route": "/info/events/lunarnewyears/images/ss3.jpg",
+          "thumbnail_route": "/info/events/lunarnewyears/images/ss3-thumb.jpg",
+          "full_original": "https://www.worldofwarcraft.com/info/events/lunarnewyears/images/ss3.jpg",
+          "thumbnail_original": "https://www.worldofwarcraft.com/info/events/lunarnewyears/images/ss3-thumb.jpg",
+          "derived_from": "screenshot.js lines 75-91 plus lines 16/38/62; page theDirectory literal",
+          "direct_html_literal": false
+        },
+        {
+          "number": 4,
+          "full_route": "/info/events/lunarnewyears/images/ss4.jpg",
+          "thumbnail_route": "/info/events/lunarnewyears/images/ss4-thumb.jpg",
+          "full_original": "https://www.worldofwarcraft.com/info/events/lunarnewyears/images/ss4.jpg",
+          "thumbnail_original": "https://www.worldofwarcraft.com/info/events/lunarnewyears/images/ss4-thumb.jpg",
+          "derived_from": "screenshot.js lines 75-91 plus lines 16/38/62; page theDirectory literal",
+          "direct_html_literal": false
+        },
+        {
+          "number": 5,
+          "full_route": "/info/events/lunarnewyears/images/ss5.jpg",
+          "thumbnail_route": "/info/events/lunarnewyears/images/ss5-thumb.jpg",
+          "full_original": "https://www.worldofwarcraft.com/info/events/lunarnewyears/images/ss5.jpg",
+          "thumbnail_original": "https://www.worldofwarcraft.com/info/events/lunarnewyears/images/ss5-thumb.jpg",
+          "derived_from": "screenshot.js lines 75-91 plus lines 16/38/62; page theDirectory literal",
+          "direct_html_literal": false
+        },
+        {
+          "number": 8,
+          "full_route": "/info/events/lunarnewyears/images/ss8.jpg",
+          "thumbnail_route": "/info/events/lunarnewyears/images/ss8-thumb.jpg",
+          "full_original": "https://www.worldofwarcraft.com/info/events/lunarnewyears/images/ss8.jpg",
+          "thumbnail_original": "https://www.worldofwarcraft.com/info/events/lunarnewyears/images/ss8-thumb.jpg",
+          "derived_from": "screenshot.js lines 75-91 plus lines 16/38/62; page theDirectory literal",
+          "direct_html_literal": false
+        },
+        {
+          "number": 9,
+          "full_route": "/info/events/lunarnewyears/images/ss9.jpg",
+          "thumbnail_route": "/info/events/lunarnewyears/images/ss9-thumb.jpg",
+          "full_original": "https://www.worldofwarcraft.com/info/events/lunarnewyears/images/ss9.jpg",
+          "thumbnail_original": "https://www.worldofwarcraft.com/info/events/lunarnewyears/images/ss9-thumb.jpg",
+          "derived_from": "screenshot.js lines 75-91 plus lines 16/38/62; page theDirectory literal",
+          "direct_html_literal": false
+        },
+        {
+          "number": 10,
+          "full_route": "/info/events/lunarnewyears/images/ss10.jpg",
+          "thumbnail_route": "/info/events/lunarnewyears/images/ss10-thumb.jpg",
+          "full_original": "https://www.worldofwarcraft.com/info/events/lunarnewyears/images/ss10.jpg",
+          "thumbnail_original": "https://www.worldofwarcraft.com/info/events/lunarnewyears/images/ss10-thumb.jpg",
+          "derived_from": "screenshot.js lines 75-91 plus lines 16/38/62; page theDirectory literal",
+          "direct_html_literal": false
+        },
+        {
+          "number": 11,
+          "full_route": "/info/events/lunarnewyears/images/ss11.jpg",
+          "thumbnail_route": "/info/events/lunarnewyears/images/ss11-thumb.jpg",
+          "full_original": "https://www.worldofwarcraft.com/info/events/lunarnewyears/images/ss11.jpg",
+          "thumbnail_original": "https://www.worldofwarcraft.com/info/events/lunarnewyears/images/ss11-thumb.jpg",
+          "derived_from": "screenshot.js lines 75-91 plus lines 16/38/62; page theDirectory literal",
+          "direct_html_literal": false
+        },
+        {
+          "number": 12,
+          "full_route": "/info/events/lunarnewyears/images/ss12.jpg",
+          "thumbnail_route": "/info/events/lunarnewyears/images/ss12-thumb.jpg",
+          "full_original": "https://www.worldofwarcraft.com/info/events/lunarnewyears/images/ss12.jpg",
+          "thumbnail_original": "https://www.worldofwarcraft.com/info/events/lunarnewyears/images/ss12-thumb.jpg",
+          "derived_from": "screenshot.js lines 75-91 plus lines 16/38/62; page theDirectory literal",
+          "direct_html_literal": false
+        },
+        {
+          "number": 13,
+          "full_route": "/info/events/lunarnewyears/images/ss13.jpg",
+          "thumbnail_route": "/info/events/lunarnewyears/images/ss13-thumb.jpg",
+          "full_original": "https://www.worldofwarcraft.com/info/events/lunarnewyears/images/ss13.jpg",
+          "thumbnail_original": "https://www.worldofwarcraft.com/info/events/lunarnewyears/images/ss13-thumb.jpg",
+          "derived_from": "screenshot.js lines 75-91 plus lines 16/38/62; page theDirectory literal",
+          "direct_html_literal": false
+        },
+        {
+          "number": 14,
+          "full_route": "/info/events/lunarnewyears/images/ss14.jpg",
+          "thumbnail_route": "/info/events/lunarnewyears/images/ss14-thumb.jpg",
+          "full_original": "https://www.worldofwarcraft.com/info/events/lunarnewyears/images/ss14.jpg",
+          "thumbnail_original": "https://www.worldofwarcraft.com/info/events/lunarnewyears/images/ss14-thumb.jpg",
+          "derived_from": "screenshot.js lines 75-91 plus lines 16/38/62; page theDirectory literal",
+          "direct_html_literal": false
+        },
+        {
+          "number": 15,
+          "full_route": "/info/events/lunarnewyears/images/ss15.jpg",
+          "thumbnail_route": "/info/events/lunarnewyears/images/ss15-thumb.jpg",
+          "full_original": "https://www.worldofwarcraft.com/info/events/lunarnewyears/images/ss15.jpg",
+          "thumbnail_original": "https://www.worldofwarcraft.com/info/events/lunarnewyears/images/ss15-thumb.jpg",
+          "derived_from": "screenshot.js lines 75-91 plus lines 16/38/62; page theDirectory literal",
+          "direct_html_literal": false
+        },
+        {
+          "number": 16,
+          "full_route": "/info/events/lunarnewyears/images/ss16.jpg",
+          "thumbnail_route": "/info/events/lunarnewyears/images/ss16-thumb.jpg",
+          "full_original": "https://www.worldofwarcraft.com/info/events/lunarnewyears/images/ss16.jpg",
+          "thumbnail_original": "https://www.worldofwarcraft.com/info/events/lunarnewyears/images/ss16-thumb.jpg",
+          "derived_from": "screenshot.js lines 75-91 plus lines 16/38/62; page theDirectory literal",
+          "direct_html_literal": false
+        },
+        {
+          "number": 17,
+          "full_route": "/info/events/lunarnewyears/images/ss17.jpg",
+          "thumbnail_route": "/info/events/lunarnewyears/images/ss17-thumb.jpg",
+          "full_original": "https://www.worldofwarcraft.com/info/events/lunarnewyears/images/ss17.jpg",
+          "thumbnail_original": "https://www.worldofwarcraft.com/info/events/lunarnewyears/images/ss17-thumb.jpg",
+          "derived_from": "screenshot.js lines 75-91 plus lines 16/38/62; page theDirectory literal",
+          "direct_html_literal": false
+        },
+        {
+          "number": 18,
+          "full_route": "/info/events/lunarnewyears/images/ss18.jpg",
+          "thumbnail_route": "/info/events/lunarnewyears/images/ss18-thumb.jpg",
+          "full_original": "https://www.worldofwarcraft.com/info/events/lunarnewyears/images/ss18.jpg",
+          "thumbnail_original": "https://www.worldofwarcraft.com/info/events/lunarnewyears/images/ss18-thumb.jpg",
+          "derived_from": "screenshot.js lines 75-91 plus lines 16/38/62; page theDirectory literal",
+          "direct_html_literal": false
+        },
+        {
+          "number": 19,
+          "full_route": "/info/events/lunarnewyears/images/ss19.jpg",
+          "thumbnail_route": "/info/events/lunarnewyears/images/ss19-thumb.jpg",
+          "full_original": "https://www.worldofwarcraft.com/info/events/lunarnewyears/images/ss19.jpg",
+          "thumbnail_original": "https://www.worldofwarcraft.com/info/events/lunarnewyears/images/ss19-thumb.jpg",
+          "derived_from": "screenshot.js lines 75-91 plus lines 16/38/62; page theDirectory literal",
+          "direct_html_literal": false
+        },
+        {
+          "number": 20,
+          "full_route": "/info/events/lunarnewyears/images/ss20.jpg",
+          "thumbnail_route": "/info/events/lunarnewyears/images/ss20-thumb.jpg",
+          "full_original": "https://www.worldofwarcraft.com/info/events/lunarnewyears/images/ss20.jpg",
+          "thumbnail_original": "https://www.worldofwarcraft.com/info/events/lunarnewyears/images/ss20-thumb.jpg",
+          "derived_from": "screenshot.js lines 75-91 plus lines 16/38/62; page theDirectory literal",
+          "direct_html_literal": false
+        },
+        {
+          "number": 21,
+          "full_route": "/info/events/lunarnewyears/images/ss21.jpg",
+          "thumbnail_route": "/info/events/lunarnewyears/images/ss21-thumb.jpg",
+          "full_original": "https://www.worldofwarcraft.com/info/events/lunarnewyears/images/ss21.jpg",
+          "thumbnail_original": "https://www.worldofwarcraft.com/info/events/lunarnewyears/images/ss21-thumb.jpg",
+          "derived_from": "screenshot.js lines 75-91 plus lines 16/38/62; page theDirectory literal",
+          "direct_html_literal": false
+        }
+      ],
+      "parent_gallery_links": [
+        {
+          "line": 744,
+          "literal": "<a href=\"/info/events/lunarnewyears/gallery.html\"><img src=\"/info/events/lunarnewyears/images/ss/thumb/ss1-thumb.jpg\" border=\"0\" />",
+          "href": "/info/events/lunarnewyears/gallery.html",
+          "image": "/info/events/lunarnewyears/images/ss/thumb/ss1-thumb.jpg"
+        },
+        {
+          "line": 747,
+          "literal": "<a href=\"/info/events/lunarnewyears/gallery.html\"><img src=\"/info/events/lunarnewyears/images/ss/thumb/ss2-thumb.jpg\" border=\"0\" />",
+          "href": "/info/events/lunarnewyears/gallery.html",
+          "image": "/info/events/lunarnewyears/images/ss/thumb/ss2-thumb.jpg"
+        },
+        {
+          "line": 750,
+          "literal": "<a href=\"/info/events/lunarnewyears/gallery.html\"><img src=\"/info/events/lunarnewyears/images/ss/thumb/ss3-thumb.jpg\" border=\"0\" />",
+          "href": "/info/events/lunarnewyears/gallery.html",
+          "image": "/info/events/lunarnewyears/images/ss/thumb/ss3-thumb.jpg"
+        }
+      ],
+      "classification": {
+        "dynamic_images_are_guide_original_gallery_routes": true,
+        "player_submitted_gallery_links_are_separate": true,
+        "filename_or_number_is_not_proof_of_payload_or_cross_gallery_identity": true
+      }
+    },
+    {
+      "guide_id": "World PvP",
+      "route": "/pvp/worldpvp/index.xml",
+      "gallery_route": null,
+      "source": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/pvp/worldpvp/index.xml",
+        "sha256": "d58681bb40e67d42aa4237b435618fed84de27b31b7737f159b0781c1cad19da",
+        "bytes": 82795
+      },
+      "manifest": {
+        "source_base_url": "https://www.worldofwarcraft.com/pvp/worldpvp/index.xml",
+        "actual_timestamp": "20080402030643",
+        "derived_sha256": "d58681bb40e67d42aa4237b435618fed84de27b31b7737f159b0781c1cad19da",
+        "derived_length": 82795,
+        "source_sha256": "3342c59e6ee7370192171b769a63422779df8b06a943decfbcd2a6f555ca16d4",
+        "source_length": 75094,
+        "kind": "html",
+        "role": "site_recovery_sidebar_page",
+        "transformed": true
+      },
+      "popUpOmega_interface": {
+        "function": {
+          "line": 573,
+          "literal": "function popUpOmega (screenshot, imgWidth, imgHeight, caption) {"
+        },
+        "interpolation": {
+          "line": 615,
+          "literal": "<div id='mid'><div><div><div style='padding-left: 21px;'><img src='\" + screenshot + \"'><\\/div><\\/div><\\/div><\\/div>\\"
+        },
+        "relative_resolution": "page source /pvp/worldpvp/index.xml resolves images/ssN.jpg under /pvp/worldpvp/"
+      },
+      "screenshot_calls": [
+        {
+          "section": "Hellfire Peninsula",
+          "line": 738,
+          "literal": "<q><q><q><a href=\"javascript:popUpOmega(&#x27;images/ss1.jpg&#x27;,800,611)\"><img border=\"0\" src=\"/pvp/worldpvp/images/ss1-thumb.jpg\" style=\"width:267px; height:200px;\"></a></q></q></q>",
+          "relative_full_literal": "images/ss1.jpg",
+          "thumbnail_literal": "/pvp/worldpvp/images/ss1-thumb.jpg",
+          "resolved_full_route": "/pvp/worldpvp/images/ss1.jpg",
+          "resolved_thumbnail_route": "/pvp/worldpvp/images/ss1-thumb.jpg",
+          "resolved_full_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss1.jpg",
+          "resolved_thumbnail_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss1-thumb.jpg",
+          "guide_role": "WorldPvP guide illustration",
+          "not_halaa_gallery_native": true
+        },
+        {
+          "section": "Hellfire Peninsula",
+          "line": 853,
+          "literal": "<q><q><q><a href=\"javascript:popUpOmega(&#x27;images/ss2.jpg&#x27;,800,611)\"><img border=\"0\" src=\"/pvp/worldpvp/images/ss2-thumb.jpg\" style=\"width:180px; height:137px;\"></a></q></q></q>",
+          "relative_full_literal": "images/ss2.jpg",
+          "thumbnail_literal": "/pvp/worldpvp/images/ss2-thumb.jpg",
+          "resolved_full_route": "/pvp/worldpvp/images/ss2.jpg",
+          "resolved_thumbnail_route": "/pvp/worldpvp/images/ss2-thumb.jpg",
+          "resolved_full_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss2.jpg",
+          "resolved_thumbnail_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss2-thumb.jpg",
+          "guide_role": "WorldPvP guide illustration",
+          "not_halaa_gallery_native": true
+        },
+        {
+          "section": "Hellfire Peninsula",
+          "line": 860,
+          "literal": "<q><q><q><a href=\"javascript:popUpOmega(&#x27;images/ss3.jpg&#x27;,800,611)\"><img border=\"0\" src=\"/pvp/worldpvp/images/ss3-thumb.jpg\" style=\"width:180px; height:137px;\"></a></q></q></q>",
+          "relative_full_literal": "images/ss3.jpg",
+          "thumbnail_literal": "/pvp/worldpvp/images/ss3-thumb.jpg",
+          "resolved_full_route": "/pvp/worldpvp/images/ss3.jpg",
+          "resolved_thumbnail_route": "/pvp/worldpvp/images/ss3-thumb.jpg",
+          "resolved_full_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss3.jpg",
+          "resolved_thumbnail_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss3-thumb.jpg",
+          "guide_role": "WorldPvP guide illustration",
+          "not_halaa_gallery_native": true
+        },
+        {
+          "section": "Hellfire Peninsula",
+          "line": 867,
+          "literal": "<q><q><q><a href=\"javascript:popUpOmega(&#x27;images/ss4.jpg&#x27;,800,611)\"><img border=\"0\" src=\"/pvp/worldpvp/images/ss4-thumb.jpg\" style=\"width:180px; height:137px;\"></a></q></q></q>",
+          "relative_full_literal": "images/ss4.jpg",
+          "thumbnail_literal": "/pvp/worldpvp/images/ss4-thumb.jpg",
+          "resolved_full_route": "/pvp/worldpvp/images/ss4.jpg",
+          "resolved_thumbnail_route": "/pvp/worldpvp/images/ss4-thumb.jpg",
+          "resolved_full_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss4.jpg",
+          "resolved_thumbnail_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss4-thumb.jpg",
+          "guide_role": "WorldPvP guide illustration",
+          "not_halaa_gallery_native": true
+        },
+        {
+          "section": "Zangarmarsh",
+          "line": 930,
+          "literal": "<q><q><q><a href=\"javascript:popUpOmega(&#x27;images/ss12.jpg&#x27;,800,611)\"><img border=\"0\" src=\"/pvp/worldpvp/images/ss12-thumb.jpg\" style=\"width:267px; height:204px;\"></a></q></q></q>",
+          "relative_full_literal": "images/ss12.jpg",
+          "thumbnail_literal": "/pvp/worldpvp/images/ss12-thumb.jpg",
+          "resolved_full_route": "/pvp/worldpvp/images/ss12.jpg",
+          "resolved_thumbnail_route": "/pvp/worldpvp/images/ss12-thumb.jpg",
+          "resolved_full_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss12.jpg",
+          "resolved_thumbnail_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss12-thumb.jpg",
+          "guide_role": "WorldPvP guide illustration",
+          "not_halaa_gallery_native": true
+        },
+        {
+          "section": "Zangarmarsh",
+          "line": 938,
+          "literal": "<q><q><q><a href=\"javascript:popUpOmega(&#x27;images/ss13.jpg&#x27;,800,611)\"><img border=\"0\" src=\"/pvp/worldpvp/images/ss13-thumb.jpg\" style=\"width:267px; height:204px;\"></a></q></q></q>",
+          "relative_full_literal": "images/ss13.jpg",
+          "thumbnail_literal": "/pvp/worldpvp/images/ss13-thumb.jpg",
+          "resolved_full_route": "/pvp/worldpvp/images/ss13.jpg",
+          "resolved_thumbnail_route": "/pvp/worldpvp/images/ss13-thumb.jpg",
+          "resolved_full_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss13.jpg",
+          "resolved_thumbnail_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss13-thumb.jpg",
+          "guide_role": "WorldPvP guide illustration",
+          "not_halaa_gallery_native": true
+        },
+        {
+          "section": "Zangarmarsh",
+          "line": 998,
+          "literal": "<q><q><q><a href=\"javascript:popUpOmega(&#x27;images/ss14.jpg&#x27;,800,611)\"><img border=\"0\" src=\"/pvp/worldpvp/images/ss14-thumb.jpg\" style=\"width:200px; height:150px;\"></a></q></q></q>",
+          "relative_full_literal": "images/ss14.jpg",
+          "thumbnail_literal": "/pvp/worldpvp/images/ss14-thumb.jpg",
+          "resolved_full_route": "/pvp/worldpvp/images/ss14.jpg",
+          "resolved_thumbnail_route": "/pvp/worldpvp/images/ss14-thumb.jpg",
+          "resolved_full_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss14.jpg",
+          "resolved_thumbnail_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss14-thumb.jpg",
+          "guide_role": "WorldPvP guide illustration",
+          "not_halaa_gallery_native": true
+        },
+        {
+          "section": "Zangarmarsh",
+          "line": 1004,
+          "literal": "<q><q><q><a href=\"javascript:popUpOmega(&#x27;images/ss15.jpg&#x27;,800,600)\"><img border=\"0\" src=\"/pvp/worldpvp/images/ss15-thumb.jpg\" style=\"width:200px; height:150px;\"></a></q></q></q>",
+          "relative_full_literal": "images/ss15.jpg",
+          "thumbnail_literal": "/pvp/worldpvp/images/ss15-thumb.jpg",
+          "resolved_full_route": "/pvp/worldpvp/images/ss15.jpg",
+          "resolved_thumbnail_route": "/pvp/worldpvp/images/ss15-thumb.jpg",
+          "resolved_full_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss15.jpg",
+          "resolved_thumbnail_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss15-thumb.jpg",
+          "guide_role": "WorldPvP guide illustration",
+          "not_halaa_gallery_native": true
+        },
+        {
+          "section": "Terokkar Forest",
+          "line": 1093,
+          "literal": "<q><q><q><a href=\"javascript:popUpOmega(&#x27;images/ss16.jpg&#x27;,800,611)\"><img border=\"0\" src=\"/pvp/worldpvp/images/ss16-thumb.jpg\" style=\"width:267px; height:200px;\"></a></q></q></q>",
+          "relative_full_literal": "images/ss16.jpg",
+          "thumbnail_literal": "/pvp/worldpvp/images/ss16-thumb.jpg",
+          "resolved_full_route": "/pvp/worldpvp/images/ss16.jpg",
+          "resolved_thumbnail_route": "/pvp/worldpvp/images/ss16-thumb.jpg",
+          "resolved_full_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss16.jpg",
+          "resolved_thumbnail_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss16-thumb.jpg",
+          "guide_role": "WorldPvP guide illustration",
+          "not_halaa_gallery_native": true
+        },
+        {
+          "section": "Nagrand",
+          "line": 1198,
+          "literal": "<q><q><q><a href=\"javascript:popUpOmega(&#x27;images/ss5.jpg&#x27;,800,611)\"><img border=\"0\" src=\"/pvp/worldpvp/images/ss5-thumb.jpg\" style=\"width:300px; height:229px;\"></a></q></q></q>",
+          "relative_full_literal": "images/ss5.jpg",
+          "thumbnail_literal": "/pvp/worldpvp/images/ss5-thumb.jpg",
+          "resolved_full_route": "/pvp/worldpvp/images/ss5.jpg",
+          "resolved_thumbnail_route": "/pvp/worldpvp/images/ss5-thumb.jpg",
+          "resolved_full_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss5.jpg",
+          "resolved_thumbnail_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss5-thumb.jpg",
+          "guide_role": "WorldPvP guide illustration",
+          "not_halaa_gallery_native": true
+        },
+        {
+          "section": "Nagrand",
+          "line": 1283,
+          "literal": "<q><q><q><a href=\"javascript:popUpOmega(&#x27;images/ss6.jpg&#x27;,800,611)\"><img border=\"0\" src=\"/pvp/worldpvp/images/ss6-thumb.jpg\" style=\"width:200px; height:150px;\"></a></q></q></q>",
+          "relative_full_literal": "images/ss6.jpg",
+          "thumbnail_literal": "/pvp/worldpvp/images/ss6-thumb.jpg",
+          "resolved_full_route": "/pvp/worldpvp/images/ss6.jpg",
+          "resolved_thumbnail_route": "/pvp/worldpvp/images/ss6-thumb.jpg",
+          "resolved_full_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss6.jpg",
+          "resolved_thumbnail_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss6-thumb.jpg",
+          "guide_role": "WorldPvP guide illustration",
+          "not_halaa_gallery_native": true
+        },
+        {
+          "section": "Nagrand",
+          "line": 1289,
+          "literal": "<q><q><q><a href=\"javascript:popUpOmega(&#x27;images/ss7.jpg&#x27;,800,611)\"><img border=\"0\" src=\"/pvp/worldpvp/images/ss7-thumb.jpg\" style=\"width:200px; height:150px;\"></a></q></q></q>",
+          "relative_full_literal": "images/ss7.jpg",
+          "thumbnail_literal": "/pvp/worldpvp/images/ss7-thumb.jpg",
+          "resolved_full_route": "/pvp/worldpvp/images/ss7.jpg",
+          "resolved_thumbnail_route": "/pvp/worldpvp/images/ss7-thumb.jpg",
+          "resolved_full_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss7.jpg",
+          "resolved_thumbnail_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss7-thumb.jpg",
+          "guide_role": "WorldPvP guide illustration",
+          "not_halaa_gallery_native": true
+        },
+        {
+          "section": "Nagrand",
+          "line": 1309,
+          "literal": "<q><q><q><a href=\"javascript:popUpOmega(&#x27;images/ss8.jpg&#x27;,800,600)\"><img border=\"0\" src=\"/pvp/worldpvp/images/ss8-thumb.jpg\" style=\"width:150px; height:113px;\"></a></q></q></q>",
+          "relative_full_literal": "images/ss8.jpg",
+          "thumbnail_literal": "/pvp/worldpvp/images/ss8-thumb.jpg",
+          "resolved_full_route": "/pvp/worldpvp/images/ss8.jpg",
+          "resolved_thumbnail_route": "/pvp/worldpvp/images/ss8-thumb.jpg",
+          "resolved_full_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss8.jpg",
+          "resolved_thumbnail_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss8-thumb.jpg",
+          "guide_role": "WorldPvP guide illustration",
+          "not_halaa_gallery_native": true
+        },
+        {
+          "section": "Nagrand",
+          "line": 1327,
+          "literal": "<q><q><q><a href=\"javascript:popUpOmega(&#x27;images/ss9.jpg&#x27;,800,611)\"><img border=\"0\" src=\"/pvp/worldpvp/images/ss9-thumb.jpg\" style=\"width:180px; height:137px;\"></a></q></q></q>",
+          "relative_full_literal": "images/ss9.jpg",
+          "thumbnail_literal": "/pvp/worldpvp/images/ss9-thumb.jpg",
+          "resolved_full_route": "/pvp/worldpvp/images/ss9.jpg",
+          "resolved_thumbnail_route": "/pvp/worldpvp/images/ss9-thumb.jpg",
+          "resolved_full_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss9.jpg",
+          "resolved_thumbnail_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss9-thumb.jpg",
+          "guide_role": "WorldPvP guide illustration",
+          "not_halaa_gallery_native": true
+        },
+        {
+          "section": "Nagrand",
+          "line": 1335,
+          "literal": "<q><q><q><a href=\"javascript:popUpOmega(&#x27;images/ss10.jpg&#x27;,800,611)\"><img border=\"0\" src=\"/pvp/worldpvp/images/ss10-thumb.jpg\" style=\"width:180px; height:137px;\"></a></q></q></q>",
+          "relative_full_literal": "images/ss10.jpg",
+          "thumbnail_literal": "/pvp/worldpvp/images/ss10-thumb.jpg",
+          "resolved_full_route": "/pvp/worldpvp/images/ss10.jpg",
+          "resolved_thumbnail_route": "/pvp/worldpvp/images/ss10-thumb.jpg",
+          "resolved_full_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss10.jpg",
+          "resolved_thumbnail_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss10-thumb.jpg",
+          "guide_role": "WorldPvP guide illustration",
+          "not_halaa_gallery_native": true
+        },
+        {
+          "section": "Nagrand",
+          "line": 1343,
+          "literal": "<q><q><q><a href=\"javascript:popUpOmega(&#x27;images/ss11.jpg&#x27;,800,600)\"><img border=\"0\" src=\"/pvp/worldpvp/images/ss11-thumb.jpg\" style=\"width:180px; height:137px;\"></a></q></q></q>",
+          "relative_full_literal": "images/ss11.jpg",
+          "thumbnail_literal": "/pvp/worldpvp/images/ss11-thumb.jpg",
+          "resolved_full_route": "/pvp/worldpvp/images/ss11.jpg",
+          "resolved_thumbnail_route": "/pvp/worldpvp/images/ss11-thumb.jpg",
+          "resolved_full_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss11.jpg",
+          "resolved_thumbnail_original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss11-thumb.jpg",
+          "guide_role": "WorldPvP guide illustration",
+          "not_halaa_gallery_native": true
+        }
+      ],
+      "classification": {
+        "guide_images_are_not_halaa_gallery_native": true,
+        "same_route_overlap_requires_context_label": true,
+        "do_not_create_native_ss_aliases": true
+      }
+    }
+  ],
+  "prior_neighbor_audit": {
+    "audit_source": {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-neighbors/audit.json",
+      "sha256": "de7f2bf4115a437d7e40288a59d059a77a14d28c1eb2d7b51fcccf2aa156d9ef",
+      "bytes": 165066
+    },
+    "prefix04_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix04-acceptance.json",
+      "sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2",
+      "bytes": 88497
+    },
+    "counts": {
+      "positive_index_not_local": 49,
+      "already_local_and_published": 34
+    },
+    "filename_counts": {
+      "positive_index_not_local:full": 39,
+      "already_local_and_published:thumbnail_or_other": 34,
+      "positive_index_not_local:thumbnail_or_other": 10
+    },
+    "context_counts": {
+      "Halaa PvP": 35,
+      "Love is in the Air": 12,
+      "Lunar Festival": 33,
+      "World PvP": 3
+    },
+    "context_state_counts": {
+      "Halaa PvP": {
+        "already_local_and_published": 19,
+        "positive_index_not_local": 16
+      },
+      "Love is in the Air": {
+        "positive_index_not_local": 12
+      },
+      "Lunar Festival": {
+        "already_local_and_published": 12,
+        "positive_index_not_local": 21
+      },
+      "World PvP": {
+        "already_local_and_published": 3
+      }
+    },
+    "worldpvp_halaa_path_overlap": [
+      {
+        "context": "Halaa PvP",
+        "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss1.jpg",
+        "state": "positive_index_not_local",
+        "route": null,
+        "length": null,
+        "dimensions": null,
+        "source_evidence": {
+          "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix04-acceptance.json",
+          "sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2",
+          "result_label": "Halaa PvP",
+          "row_index": 13,
+          "row": {
+            "urlkey": "com,worldofwarcraft)/pvp/worldpvp/images/ss1.jpg",
+            "timestamp": "20080402030650",
+            "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss1.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "3T4FZMME2VMXBWXUCTXHRKCYYTDLKAML",
+            "length": "117134"
+          }
+        }
+      },
+      {
+        "context": "Halaa PvP",
+        "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss10.jpg",
+        "state": "positive_index_not_local",
+        "route": null,
+        "length": null,
+        "dimensions": null,
+        "source_evidence": {
+          "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix04-acceptance.json",
+          "sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2",
+          "result_label": "Halaa PvP",
+          "row_index": 18,
+          "row": {
+            "urlkey": "com,worldofwarcraft)/pvp/worldpvp/images/ss10.jpg",
+            "timestamp": "20080402030847",
+            "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss10.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "CB2WXTBEEFIK4B5FNEAYN5F3NYR2GP3Q",
+            "length": "221473"
+          }
+        }
+      },
+      {
+        "context": "Halaa PvP",
+        "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss11.jpg",
+        "state": "positive_index_not_local",
+        "route": null,
+        "length": null,
+        "dimensions": null,
+        "source_evidence": {
+          "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix04-acceptance.json",
+          "sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2",
+          "result_label": "Halaa PvP",
+          "row_index": 23,
+          "row": {
+            "urlkey": "com,worldofwarcraft)/pvp/worldpvp/images/ss11.jpg",
+            "timestamp": "20080402030726",
+            "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss11.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "QHVNO3HXNMDUDPGIELJ4QDQDGX2M2OTN",
+            "length": "179123"
+          }
+        }
+      },
+      {
+        "context": "Halaa PvP",
+        "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss12.jpg",
+        "state": "positive_index_not_local",
+        "route": null,
+        "length": null,
+        "dimensions": null,
+        "source_evidence": {
+          "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix04-acceptance.json",
+          "sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2",
+          "result_label": "Halaa PvP",
+          "row_index": 28,
+          "row": {
+            "urlkey": "com,worldofwarcraft)/pvp/worldpvp/images/ss12.jpg",
+            "timestamp": "20080402030843",
+            "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss12.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "G5OYBSIZ5EO4TDAPL3KZGBU7X3HOLSDJ",
+            "length": "77842"
+          }
+        }
+      },
+      {
+        "context": "Halaa PvP",
+        "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss13.jpg",
+        "state": "positive_index_not_local",
+        "route": null,
+        "length": null,
+        "dimensions": null,
+        "source_evidence": {
+          "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix04-acceptance.json",
+          "sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2",
+          "result_label": "Halaa PvP",
+          "row_index": 33,
+          "row": {
+            "urlkey": "com,worldofwarcraft)/pvp/worldpvp/images/ss13.jpg",
+            "timestamp": "20080402030748",
+            "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss13.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "Y6TLDA2KTDC24W5DVVDLGMNNSCGNNHK6",
+            "length": "58905"
+          }
+        }
+      },
+      {
+        "context": "Halaa PvP",
+        "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss14.jpg",
+        "state": "positive_index_not_local",
+        "route": null,
+        "length": null,
+        "dimensions": null,
+        "source_evidence": {
+          "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix04-acceptance.json",
+          "sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2",
+          "result_label": "Halaa PvP",
+          "row_index": 38,
+          "row": {
+            "urlkey": "com,worldofwarcraft)/pvp/worldpvp/images/ss14.jpg",
+            "timestamp": "20080402030750",
+            "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss14.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "XS3ESNZX4JOPLRDJUN3SN2RMYZONCAFI",
+            "length": "152678"
+          }
+        }
+      },
+      {
+        "context": "Halaa PvP",
+        "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss15.jpg",
+        "state": "positive_index_not_local",
+        "route": null,
+        "length": null,
+        "dimensions": null,
+        "source_evidence": {
+          "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix04-acceptance.json",
+          "sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2",
+          "result_label": "Halaa PvP",
+          "row_index": 43,
+          "row": {
+            "urlkey": "com,worldofwarcraft)/pvp/worldpvp/images/ss15.jpg",
+            "timestamp": "20080402030735",
+            "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss15.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "ZEP7XYKC3XQ5UEBGWFKQMO4ZMDTMHTRR",
+            "length": "90957"
+          }
+        }
+      },
+      {
+        "context": "Halaa PvP",
+        "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss16.jpg",
+        "state": "positive_index_not_local",
+        "route": null,
+        "length": null,
+        "dimensions": null,
+        "source_evidence": {
+          "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix04-acceptance.json",
+          "sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2",
+          "result_label": "Halaa PvP",
+          "row_index": 48,
+          "row": {
+            "urlkey": "com,worldofwarcraft)/pvp/worldpvp/images/ss16.jpg",
+            "timestamp": "20080402030720",
+            "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss16.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "5YVJW6MCA4YESSGUI5BHQRM6R6RRGIJL",
+            "length": "69692"
+          }
+        }
+      },
+      {
+        "context": "Halaa PvP",
+        "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss2.jpg",
+        "state": "positive_index_not_local",
+        "route": null,
+        "length": null,
+        "dimensions": null,
+        "source_evidence": {
+          "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix04-acceptance.json",
+          "sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2",
+          "result_label": "Halaa PvP",
+          "row_index": 53,
+          "row": {
+            "urlkey": "com,worldofwarcraft)/pvp/worldpvp/images/ss2.jpg",
+            "timestamp": "20080402030710",
+            "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss2.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "64J35QF5F664WQTNK576ZZEUZ4ECHEUT",
+            "length": "133627"
+          }
+        }
+      },
+      {
+        "context": "Halaa PvP",
+        "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss3.jpg",
+        "state": "positive_index_not_local",
+        "route": null,
+        "length": null,
+        "dimensions": null,
+        "source_evidence": {
+          "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix04-acceptance.json",
+          "sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2",
+          "result_label": "Halaa PvP",
+          "row_index": 58,
+          "row": {
+            "urlkey": "com,worldofwarcraft)/pvp/worldpvp/images/ss3.jpg",
+            "timestamp": "20080402030811",
+            "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss3.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "7C7RGDGBJQZ5G2RYWYUZEVCTDF4S237G",
+            "length": "142847"
+          }
+        }
+      },
+      {
+        "context": "Halaa PvP",
+        "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss4.jpg",
+        "state": "positive_index_not_local",
+        "route": null,
+        "length": null,
+        "dimensions": null,
+        "source_evidence": {
+          "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix04-acceptance.json",
+          "sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2",
+          "result_label": "Halaa PvP",
+          "row_index": 63,
+          "row": {
+            "urlkey": "com,worldofwarcraft)/pvp/worldpvp/images/ss4.jpg",
+            "timestamp": "20080402030721",
+            "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss4.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "5SH7UEAEUCLT6RV5XSXDZ2AEYFDVTYWD",
+            "length": "119596"
+          }
+        }
+      },
+      {
+        "context": "Halaa PvP",
+        "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss5.jpg",
+        "state": "positive_index_not_local",
+        "route": null,
+        "length": null,
+        "dimensions": null,
+        "source_evidence": {
+          "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix04-acceptance.json",
+          "sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2",
+          "result_label": "Halaa PvP",
+          "row_index": 70,
+          "row": {
+            "urlkey": "com,worldofwarcraft)/pvp/worldpvp/images/ss5.jpg",
+            "timestamp": "20080402030742",
+            "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss5.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "FLQCXW5ITENILWDNNUSZXEE2EW4LBK5Q",
+            "length": "168805"
+          }
+        }
+      },
+      {
+        "context": "Halaa PvP",
+        "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss6.jpg",
+        "state": "positive_index_not_local",
+        "route": null,
+        "length": null,
+        "dimensions": null,
+        "source_evidence": {
+          "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix04-acceptance.json",
+          "sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2",
+          "result_label": "Halaa PvP",
+          "row_index": 75,
+          "row": {
+            "urlkey": "com,worldofwarcraft)/pvp/worldpvp/images/ss6.jpg",
+            "timestamp": "20080402030716",
+            "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss6.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "PKN7QPZZTR2CB5EMUMFZBENLOX4JVPUK",
+            "length": "159934"
+          }
+        }
+      },
+      {
+        "context": "Halaa PvP",
+        "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss7.jpg",
+        "state": "positive_index_not_local",
+        "route": null,
+        "length": null,
+        "dimensions": null,
+        "source_evidence": {
+          "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix04-acceptance.json",
+          "sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2",
+          "result_label": "Halaa PvP",
+          "row_index": 80,
+          "row": {
+            "urlkey": "com,worldofwarcraft)/pvp/worldpvp/images/ss7.jpg",
+            "timestamp": "20080402030728",
+            "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss7.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "I4FIQXYXDBG5WTY2MREFHLFK6YGGNQA2",
+            "length": "173295"
+          }
+        }
+      },
+      {
+        "context": "Halaa PvP",
+        "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss8.jpg",
+        "state": "positive_index_not_local",
+        "route": null,
+        "length": null,
+        "dimensions": null,
+        "source_evidence": {
+          "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix04-acceptance.json",
+          "sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2",
+          "result_label": "Halaa PvP",
+          "row_index": 85,
+          "row": {
+            "urlkey": "com,worldofwarcraft)/pvp/worldpvp/images/ss8.jpg",
+            "timestamp": "20080402030647",
+            "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss8.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "C6XHVZA3XO3LAYAPDSKWJV4G6SSUGOL3",
+            "length": "126242"
+          }
+        }
+      },
+      {
+        "context": "Halaa PvP",
+        "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss9.jpg",
+        "state": "positive_index_not_local",
+        "route": null,
+        "length": null,
+        "dimensions": null,
+        "source_evidence": {
+          "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix04-acceptance.json",
+          "sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2",
+          "result_label": "Halaa PvP",
+          "row_index": 90,
+          "row": {
+            "urlkey": "com,worldofwarcraft)/pvp/worldpvp/images/ss9.jpg",
+            "timestamp": "20080402030833",
+            "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss9.jpg",
+            "mimetype": "image/jpeg",
+            "statuscode": "200",
+            "digest": "NR3V3D4VUE73Q34TRT5B6XHX5GKERMD4",
+            "length": "179414"
+          }
+        }
+      }
+    ],
+    "boundary": "The 34 local rows and 49 positive-index-not-local rows are prior audit facts. Index evidence is not payload recovery; WorldPvP guide context does not relabel Halaa rows as a gallery source."
+  },
+  "counts": {
+    "guides": 3,
+    "love_dynamic_unique_full": 12,
+    "lunar_dynamic_unique_full": 18,
+    "lunar_dynamic_call_occurrences": 19,
+    "lunar_declared_screenshots_total": 21,
+    "lunar_declared_numbers_without_source_call": [
+      1,
+      6,
+      7
+    ],
+    "worldpvp_guide_image_calls": 16,
+    "neighbor_audit_already_local": 34,
+    "neighbor_audit_positive_index_not_local": 49
+  },
+  "relations_for_future_ui": [
+    {
+      "gallery_route": "/info/events/loveisintheair/gallery.html",
+      "guide_route": "/info/events/loveisintheair/index.html",
+      "section_label": "Guide images",
+      "relationship": "Show only screenshot.js-derived ssN guide routes with a link back to the guide; keep gal01/gal02/gal03 player-submitted entry images separate.",
+      "native_full_or_thumb_aliases": false
+    },
+    {
+      "gallery_route": "/info/events/lunarnewyears/gallery.html",
+      "guide_route": "/info/events/lunarnewyears/index.html",
+      "section_label": "Guide images",
+      "relationship": "Keep player-submitted /images/ss/thumb/ssN-thumb.jpg entries separate from screenshot.js-derived /images/ssN.jpg and /images/ssN-thumb.jpg guide routes.",
+      "native_full_or_thumb_aliases": false
+    },
+    {
+      "gallery_route": null,
+      "guide_route": "/pvp/worldpvp/index.xml",
+      "section_label": "WorldPvP guide images",
+      "relationship": "Use the guide page's section context and literal parent links; do not relabel the overlapping /pvp/worldpvp/images/ssN.jpg paths as Halaa gallery originals.",
+      "native_full_or_thumb_aliases": false
+    }
+  ],
+  "evidence_boundary": "Guide literals prove route construction and parent context. They do not prove bytes, capture validity, or that a same-number full image exists unless a separate accepted payload record says so."
+}

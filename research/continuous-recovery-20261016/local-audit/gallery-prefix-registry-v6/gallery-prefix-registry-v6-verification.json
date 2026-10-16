@@ -1,0 +1,103 @@
+{
+  "schema": "gallery-prefix-registry-v6-verification",
+  "generated_utc": "2026-10-16T10:57:55.199012+00:00",
+  "network_performed": false,
+  "git_performed": false,
+  "command": "python.exe -X utf8 research/continuous-recovery-20261016/local-audit/gallery-prefix-registry-v6/build_gallery_prefix_registry_v6.py",
+  "inputs": {
+    "v5_registry": {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-prefix-registry-v5/gallery-prefix-registry-v5.json",
+      "bytes": 296800,
+      "sha256": "98bf027bb36bb33706ac45c4f00e7dfdd89625ef29bff695aac35cd4d14b4f76",
+      "role": "frozen v5 source registry"
+    },
+    "prefix05_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix05-acceptance.json",
+      "bytes": 9557,
+      "sha256": "199ee21c32521e287b0bc4157a8f13bbab1c6b6b7580aa36ca8220cb21eb58c9",
+      "role": "root accepted prefix05 index-only result"
+    },
+    "prefix05_plan": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix05/plan.json",
+      "bytes": 26386,
+      "sha256": "41ea2ccce2f1b0fcb2a58dec6eb04d85792cca1d4c69e58ae049dddf1e5ac024",
+      "role": "prefix05 literal query plan"
+    },
+    "prefix05_execution_plan": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix05/execution-plan.json",
+      "bytes": 17584,
+      "sha256": "6703bc3b3591ae0cc124e88379b1fda8cad0c7b37d78c6cff43f0ea19a7d404b",
+      "role": "prefix05 execution window/policy"
+    },
+    "prefix05_report": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix05/batch-report.json",
+      "bytes": 82860,
+      "sha256": "8c47fca12031290ebd7da218d8ecfc959d7e4dbf6ab586170859bf9a8298d793",
+      "role": "prefix05 raw batch report"
+    },
+    "prefix05_source_map": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix05/source-map.json",
+      "bytes": 43683,
+      "sha256": "6c70d9830041b2c7f6b5fe6bdf656e8962d28b76819ae0db175ac1879facc09f",
+      "role": "prefix05 source-map attempt/result ledger"
+    },
+    "prefix05_input_bindings": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix05/input-bindings.json",
+      "bytes": 7017,
+      "sha256": "c1014550a73fabd55cbce5d7b103bec49417d0fdce313011010cec5f0ec90b21",
+      "role": "prefix05 input bindings"
+    },
+    "prefix05_sanitized_summary": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix05/sanitized-summary.json",
+      "bytes": 1087,
+      "sha256": "0fe8338681da7778d2ff15fa301ecc89c0be2fb8e0db2daece4cd7ccb8ef1e2d",
+      "role": "prefix05 sanitized summary"
+    },
+    "prefix05_fixture": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix05/fixture-results.json",
+      "bytes": 5879,
+      "sha256": "51c83fa4a91fe92fce4b035bd7316209a892370d868bb08af4e11aae43cb3e75",
+      "role": "prefix05 offline fixture receipt"
+    },
+    "prefix05_driver": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix05/gallery_prefix_driver_v5.py",
+      "bytes": 58840,
+      "sha256": "e592aa9aa353f0b3640c34f6a0db4dbf6163218520bd1f756c154b1848eb131c",
+      "role": "prefix05 driver source"
+    }
+  },
+  "checks": {
+    "gallery_count_50": true,
+    "declared_slots_1684": true,
+    "direct_entities_3368": true,
+    "all_50_limited_window_complete": true,
+    "full_window_groups_26": true,
+    "early_gap_groups_24": true,
+    "prefix05_complete_groups_7": true,
+    "prefix05_query_window_2000_to_anchor": true,
+    "direct_status_archive_404_79": true,
+    "direct_status_transport_unknown_47": true,
+    "direct_status_never_requested_3242": true,
+    "direct_status_total_3368": true,
+    "no_payload_replay": true,
+    "fixture_all_passed": true
+  },
+  "outputs": {
+    "registry": {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-prefix-registry-v6/gallery-prefix-registry-v6.json",
+      "bytes": 356829,
+      "sha256": "73f3d1573d4cae6aa5e09e531673c7e154cf9b2d259ce0896e5c49c8fdd22620",
+      "role": "new LOCAL26 merged v6 registry"
+    },
+    "public_summary": {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-prefix-registry-v6/gallery-prefix-registry-v6-public-summary.json",
+      "bytes": 1518,
+      "sha256": "641593971258fa529e9e5e301ae627c63839490e4fd82f97cc93873eda297535",
+      "role": "new LOCAL26 sanitized public summary"
+    }
+  },
+  "notes": [
+    "This receipt is a local merge only; it did not issue network requests, replay payloads, or change frozen v5 evidence.",
+    "The seven prefix05 result rows are accepted complete index responses, including two non-dynamic image-index rows; none is promoted to a direct ssN payload."
+  ]
+}

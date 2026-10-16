@@ -9,6 +9,8 @@
 
 ## 2026-10-16
 
+- 发布 v22，补齐八月新闻的全部二十七张配图，并新增十张其他新闻配图和六张页面素材。相同四十页新闻减少十六处缺图引用。[线上核对](research/continuous-recovery-20261016/publication/root-v22-pages-online-acceptance.json)
+
 - 发布 v20，补回二十四张 2007 年 8 月新闻配图；剩余图片继续寻找。[线上核对](research/continuous-recovery-20261016/publication/root-v20-pages-online-acceptance.json)
 
 - 发布 v19，补回十张共享新闻图片，修复 184 处缺图引用。[线上核对](research/continuous-recovery-20261016/publication/root-v19-pages-online-acceptance.json)

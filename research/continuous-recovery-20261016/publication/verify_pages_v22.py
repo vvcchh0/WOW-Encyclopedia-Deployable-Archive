@@ -159,8 +159,8 @@ def run_attempt(relative: str, transport: str, timeout: float, remaining_budget:
 
 def main() -> int:
     expected_commit = load_expected_commit()
-    if len(OBJECTS) != 30 or len({item["path"] for item in OBJECTS}) != 30:
-        raise RuntimeError("verifier object list must contain exactly 30 unique paths")
+    if not 19 <= len(OBJECTS) <= 64 or len({item["path"] for item in OBJECTS}) != len(OBJECTS):
+        raise RuntimeError("verifier requires a bounded unique object list from the accepted local gate")
     before = build_state()
     if before.get("status") != "built" or (before.get("commit") or "").lower() != expected_commit:
         raise RuntimeError("expected Pages commit must finish building before object checks")

@@ -96,3 +96,6 @@ UTC 13:00 后不启动新网络批次，13:10 后不启动新来源/导出版本
 - 七组剩余图库目录取得完整有限窗口索引，当前五十组均有完整的已查窗口，二十四组的早期窗口仍待补查。精确动态槽位探测统计保持独立，未把目录索引当作图片。[索引复核](../research/continuous-recovery-20261016/publication/root-gallery-prefix05-acceptance.json)
 - 相邻路径调查发现八十三个有效图片地址，其中三十四图已在本地，另四十九图有正索引。首批回放取回十二张情人节、春节和 World PvP 指南大图（1,884,756 字节），捕获于 2006—2008 年；保持真实来源，另作指南素材展示，未映射至原动态图库槽位。[路径审计](../research/continuous-recovery-20261016/publication/root-gallery-neighbors-candidates-acceptance.json)、[原图验收](../research/continuous-recovery-20261016/publication/root-gallery-neighbors01-source-acceptance.json)
 - MEDIA 保存索引的四十七条 revisit 再查，其八种摘要均匹配重定向或非图片记录，均在基准之后；本轮没有因此新增图片候选。[摘要分类](../research/continuous-recovery-20261016/publication/root-media-revisit-classification.json)
+
+- 10:59 UTC：v22 Pages 构建完成，提交 `af07a86cd8e24614615882774bd98648fddec937`；31 项线上对象均通过 direct 取得并与本地一致。本轮累计发布七十六张新闻配图、六张页面素材及两张欧服截图。main 来源检查点为 `a2f7c78`；离线 Release 暂为 v14，继续等待本轮稳定版本。[线上验收](../research/continuous-recovery-20261016/publication/root-v22-pages-online-acceptance.json)
+- 第二批相邻路径又取回十三图（2,323,105 字节），共二十四张数字编号大图和一张缩略图，尚未部署。另九项正索引实际含八张服装/模型视图和一张缩略图；此前“十张缩略图”的汇总字段过宽，来源 URL 与分区始终不变，已记录更正。[来源验收](../research/continuous-recovery-20261016/publication/root-gallery-neighbors02-source-acceptance.json)、[指南关系及分类更正](../research/continuous-recovery-20261016/publication/root-guide-neighbor-relations-acceptance.json)
