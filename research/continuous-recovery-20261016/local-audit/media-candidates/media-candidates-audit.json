@@ -1,0 +1,1229 @@
+{
+  "schema": "wow-recovery.local-audit.media-candidates.v1",
+  "generated_utc": "2026-10-16T04:43:21.577396+00:00",
+  "network_performed_by_audit": false,
+  "scope": {
+    "source": "saved MEDIA/SSOTD CDX rows only",
+    "canonical_raw_row_count": 2082,
+    "canonical_raw_row_count_expected": 2082,
+    "deduplicated_row_count": 2076,
+    "candidate_bound": 20,
+    "dedup_identity_rule": "normalized exact original identity (default port normalization only) plus actual timestamp/status/MIME/digest/length",
+    "temporal_boundaries": {
+      "pre_2008": "timestamp < 20080101000000",
+      "baseline_le_anchor": "20080101000000 <= timestamp <= 20080512210044",
+      "late_2008": "20080512210044 < timestamp <= 20081231235959",
+      "post_2008": "timestamp > 20081231235959"
+    },
+    "index_vs_payload": "CDX rows are index evidence. A status200 image row is not called recovered unless saved payload/provenance validates it."
+  },
+  "input_hashes": [
+    {
+      "path": "research/continuous-recovery-20261016/local-audit/v2/media-gap-audit-v2.json",
+      "bytes": 85719,
+      "sha256": "3077ed3ace26e231f1b0f304968c3a61ac3f091f2539a09898942a8201bb2271"
+    },
+    {
+      "path": "research/continuous-recovery-20261015/network-ssotd12/batch-report.json",
+      "bytes": 12737,
+      "sha256": "e2eafb83c07537035853c3b78333c6dfaed52e294649e55c54d64fe1adf29ed2"
+    },
+    {
+      "path": "research/continuous-recovery-20261015/network-ssotd12/sanitized-summary.json",
+      "bytes": 2966,
+      "sha256": "679050429c2ef95f3da7804c3b7f7b491ede4e17e99231f85999d07e95923a4b"
+    },
+    {
+      "path": "research/continuous-recovery-20261015/network-ssotd12/cdx-index-pages.json",
+      "bytes": 35076,
+      "sha256": "459748f521e800195eb485ac54f2fc0f66d23441af5073f4e7f4ce183586f912"
+    },
+    {
+      "path": "research/continuous-recovery-20261015/network-ssotd12/observed-index-candidates.json",
+      "bytes": 76776,
+      "sha256": "3351e325e25a80cfd5ead485cf7c2e505dd59053c1569f757b2ab9746c0fe4da"
+    },
+    {
+      "path": "research/continuous-recovery-20261015/network-ssotd12/payload-source-map.json",
+      "bytes": 300,
+      "sha256": "b593955ca4c37074c49ce64619d22de04f47a55918eec05b7a2e92e8af3f77d4"
+    },
+    {
+      "path": "research/continuous-recovery-20261015/network-ssotd12/redirect-evidence.json",
+      "bytes": 1389,
+      "sha256": "2bd492ad8692d3fd6f1cfb2ca1c1300018f2b848a4e22555f6511fe92a59aed4"
+    },
+    {
+      "path": "research/media-screenshots-20261015/capture-ledger.json",
+      "bytes": 13202,
+      "sha256": "ae3073d6849c8208fb8a84d028d99589ae030a2fd1d79d494dfc4207515936a4"
+    },
+    {
+      "path": "research/media-screenshots-20261015/late-image-source-map.json",
+      "bytes": 3234,
+      "sha256": "1bb8405e58eaf19999313c160b5db256a11559cbc70f8cfccf564f05c99cff03"
+    },
+    {
+      "path": "research/media-screenshots-20261015/wayback-window/request-records-reconciled.json",
+      "bytes": 1898308,
+      "sha256": "cefa393a0a2fc62ba678ee67dcb7212f499f290275ab0213786180d574b219b3"
+    },
+    {
+      "path": "research/media-screenshots-20261015/wayback-window/extended-summary.json",
+      "bytes": 8682,
+      "sha256": "89fba880cea52931761062cc066f4fd53b5dcb7efd4d18970668e4a9e97e934e"
+    },
+    {
+      "path": ".scratch/offline-navigation-20261015-v15/build-manifest.json",
+      "bytes": 75650378,
+      "sha256": "d89557a445ec5c81ef2652c49fd8ce9c102016f11411b7fa2aa795f5112ae002"
+    },
+    {
+      "path": ".scratch/offline-navigation-20261015-v15/site/downloads/ssotd/index.html",
+      "bytes": 6270,
+      "sha256": "9a218b6ffd7b2a025f8b98b80f141c98ff1c7940e8a08941b839a0cba8ec9f9d"
+    },
+    {
+      "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/ssotd-screenie.js",
+      "bytes": 17051,
+      "sha256": "2f49a73f648ced88926e349dbe7c723da8fedccb9d1d7edbe68fbfe0466296e5"
+    },
+    {
+      "path": ".scratch/pages-resources-20261016-v17/export-provenance.json",
+      "bytes": 7933202,
+      "sha256": "c6769d5636846bd27314824684e919b102bace200f1ef0458d3f976477e3f47f"
+    },
+    {
+      "path": "research/continuous-recovery-20261016/publication/root-v17-input-acceptance.json",
+      "bytes": 2512,
+      "sha256": "d45384119fe8ba9578a0a11a25ce79653460f2a65562423a5ad66ebd17883429"
+    },
+    {
+      "path": "research/continuous-recovery-20261016/publication/root-v17-local-acceptance.json",
+      "bytes": 2848,
+      "sha256": "32c91b5a364093129c5b9d956437c64210744ef8b5643f5ad07b07b40c9d465b"
+    },
+    {
+      "path": "research/continuous-recovery-20261016/integration/worker-build-v17.json",
+      "bytes": 14475,
+      "sha256": "8a5676e90b490eada6f245cad8254804e2e48e66db39699e77b1f5d0834db0c7"
+    }
+  ],
+  "raw_sources": {
+    "sources": [
+      {
+        "id": "wayback_prefix_page_0",
+        "path": "research/media-screenshots-20261015/wayback-window/raw/07-ssotd_screens_prefix_rows_all.body",
+        "bytes": 157124,
+        "sha256": "0117cc0e7a4433e8cf030d63208e276ccfad8bd8bb4453c2bccf582bc5b2db46",
+        "json_list_length": 1003,
+        "header_present": true,
+        "data_rows": 1000,
+        "role": "canonical first saved prefix page; four alias query bodies were identical and are not recounted"
+      },
+      {
+        "id": "wayback_prefix_page_1",
+        "path": "research/media-screenshots-20261015/wayback-window/raw/13-ssotd_screens_prefix_resume_page1.body",
+        "bytes": 159775,
+        "sha256": "182fb66a2c13af8338769f764ef61e42252764aaa473bc48f07b468099f8dad0",
+        "json_list_length": 1003,
+        "header_present": true,
+        "data_rows": 1000,
+        "role": "saved resume page; no further resume key was requested"
+      },
+      {
+        "id": "net_ssotd_012_terminal82",
+        "path": "research/continuous-recovery-20261015/network-ssotd12/raw/02-prefix-page-1-cdx-proxy.body",
+        "bytes": 13016,
+        "sha256": "dde57b9c35e8d5772af785197a715e07743a7679b707b32951d0c447e4d7a37a",
+        "json_list_length": 83,
+        "header_present": true,
+        "data_rows": 82,
+        "role": "NET-SSOTD-012 terminal no-resume-key index-only shard"
+      }
+    ],
+    "aliases": [
+      {
+        "path": "research/media-screenshots-20261015/wayback-window/raw/08-ssotd_screens_prefix_rows_port80.body",
+        "bytes": 157124,
+        "sha256": "0117cc0e7a4433e8cf030d63208e276ccfad8bd8bb4453c2bccf582bc5b2db46",
+        "same_as_page_0": true,
+        "counted_in_2082": false
+      },
+      {
+        "path": "research/media-screenshots-20261015/wayback-window/raw/09-ssotd_screens_prefix_rows_bare_port80.body",
+        "bytes": 157124,
+        "sha256": "0117cc0e7a4433e8cf030d63208e276ccfad8bd8bb4453c2bccf582bc5b2db46",
+        "same_as_page_0": true,
+        "counted_in_2082": false
+      },
+      {
+        "path": "research/media-screenshots-20261015/wayback-window/raw/10-ssotd_screens_prefix_rows_bare.body",
+        "bytes": 157124,
+        "sha256": "0117cc0e7a4433e8cf030d63208e276ccfad8bd8bb4453c2bccf582bc5b2db46",
+        "same_as_page_0": true,
+        "counted_in_2082": false
+      }
+    ],
+    "dedup": {
+      "raw_data_rows": 2082,
+      "dedup_data_rows": 2076,
+      "duplicate_row_instances_removed": 6,
+      "dedup_key": "normalized original identity (default port only), actual timestamp, statuscode, mimetype, digest, length",
+      "duplicate_groups": [
+        {
+          "key": [
+            "http://www.worldofwarcraft.com/downloads/ssotd/images/screens?#",
+            "20080512204330",
+            "301",
+            "text/html",
+            "PUDGBCO4V6I2KYQEITCPDK7F6MSWC3GR",
+            "388"
+          ],
+          "count": 2,
+          "locations": [
+            {
+              "source_id": "wayback_prefix_page_0",
+              "body_index": 5
+            },
+            {
+              "source_id": "wayback_prefix_page_0",
+              "body_index": 6
+            }
+          ]
+        },
+        {
+          "key": [
+            "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/?#",
+            "20080512204337",
+            "404",
+            "text/html",
+            "ESCAKPP7M4OJDVRYD2BXP7KLBKPT2RNS",
+            "5768"
+          ],
+          "count": 2,
+          "locations": [
+            {
+              "source_id": "wayback_prefix_page_0",
+              "body_index": 7
+            },
+            {
+              "source_id": "wayback_prefix_page_0",
+              "body_index": 8
+            }
+          ]
+        },
+        {
+          "key": [
+            "http://www.worldofwarcraft.com/downloads/ssotd/images/screens?#",
+            "20100401001053",
+            "301",
+            "text/html",
+            "PUDGBCO4V6I2KYQEITCPDK7F6MSWC3GR",
+            "565"
+          ],
+          "count": 2,
+          "locations": [
+            {
+              "source_id": "wayback_prefix_page_0",
+              "body_index": 36
+            },
+            {
+              "source_id": "wayback_prefix_page_0",
+              "body_index": 37
+            }
+          ]
+        },
+        {
+          "key": [
+            "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1312.jpg?#",
+            "20130210132556",
+            "-",
+            "warc/revisit",
+            "EHJDW7RFCFWMSQBGL67RQNFHDIQOHYZG",
+            "524"
+          ],
+          "count": 2,
+          "locations": [
+            {
+              "source_id": "wayback_prefix_page_0",
+              "body_index": 346
+            },
+            {
+              "source_id": "wayback_prefix_page_0",
+              "body_index": 347
+            }
+          ]
+        },
+        {
+          "key": [
+            "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1314.jpg?#",
+            "20130210133525",
+            "-",
+            "warc/revisit",
+            "EHJDW7RFCFWMSQBGL67RQNFHDIQOHYZG",
+            "524"
+          ],
+          "count": 2,
+          "locations": [
+            {
+              "source_id": "wayback_prefix_page_0",
+              "body_index": 355
+            },
+            {
+              "source_id": "wayback_prefix_page_0",
+              "body_index": 356
+            }
+          ]
+        },
+        {
+          "key": [
+            "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1327.jpg?#",
+            "20110208171152",
+            "301",
+            "text/html",
+            "EHJDW7RFCFWMSQBGL67RQNFHDIQOHYZG",
+            "591"
+          ],
+          "count": 2,
+          "locations": [
+            {
+              "source_id": "wayback_prefix_page_0",
+              "body_index": 378
+            },
+            {
+              "source_id": "wayback_prefix_page_0",
+              "body_index": 379
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "row_accounting": {
+    "raw_rows": 2082,
+    "deduplicated_rows": 2076,
+    "raw_source_counts": {
+      "net_ssotd_012_terminal82": 82,
+      "wayback_prefix_page_0": 1000,
+      "wayback_prefix_page_1": 1000
+    },
+    "raw_status_counts": {
+      "-": 47,
+      "200": 43,
+      "301": 1529,
+      "302": 408,
+      "307": 34,
+      "404": 21
+    },
+    "raw_mime_counts": {
+      "image/jpeg": 2,
+      "text/html": 1772,
+      "text/plain": 261,
+      "warc/revisit": 47
+    },
+    "raw_category_counts": {
+      "archive_404": 21,
+      "redirect": 1971,
+      "revisit": 47,
+      "status200_non_image": 41,
+      "valid_status200_image_index_row": 2
+    },
+    "raw_temporal_bucket_counts": {
+      "baseline_le_anchor": 10,
+      "late_2008": 46,
+      "post_2008": 2026
+    },
+    "raw_temporal_category_counts": {
+      "baseline_le_anchor::archive_404": 4,
+      "baseline_le_anchor::redirect": 5,
+      "baseline_le_anchor::status200_non_image": 1,
+      "late_2008::archive_404": 5,
+      "late_2008::redirect": 4,
+      "late_2008::status200_non_image": 37,
+      "post_2008::archive_404": 12,
+      "post_2008::redirect": 1962,
+      "post_2008::revisit": 47,
+      "post_2008::status200_non_image": 3,
+      "post_2008::valid_status200_image_index_row": 2
+    },
+    "dedup_category_counts": {
+      "archive_404": 20,
+      "redirect": 1968,
+      "revisit": 45,
+      "status200_non_image": 41,
+      "valid_status200_image_index_row": 2
+    },
+    "dedup_temporal_bucket_counts": {
+      "baseline_le_anchor": 8,
+      "late_2008": 46,
+      "post_2008": 2022
+    },
+    "conservation": {
+      "raw_categories_sum": 2082,
+      "raw_temporal_sum": 2082,
+      "source_sum": 2082,
+      "all_equal_2082": true
+    },
+    "dedup": {
+      "raw_data_rows": 2082,
+      "dedup_data_rows": 2076,
+      "duplicate_row_instances_removed": 6,
+      "dedup_key": "normalized original identity (default port only), actual timestamp, statuscode, mimetype, digest, length",
+      "duplicate_groups": [
+        {
+          "key": [
+            "http://www.worldofwarcraft.com/downloads/ssotd/images/screens?#",
+            "20080512204330",
+            "301",
+            "text/html",
+            "PUDGBCO4V6I2KYQEITCPDK7F6MSWC3GR",
+            "388"
+          ],
+          "count": 2,
+          "locations": [
+            {
+              "source_id": "wayback_prefix_page_0",
+              "body_index": 5
+            },
+            {
+              "source_id": "wayback_prefix_page_0",
+              "body_index": 6
+            }
+          ]
+        },
+        {
+          "key": [
+            "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/?#",
+            "20080512204337",
+            "404",
+            "text/html",
+            "ESCAKPP7M4OJDVRYD2BXP7KLBKPT2RNS",
+            "5768"
+          ],
+          "count": 2,
+          "locations": [
+            {
+              "source_id": "wayback_prefix_page_0",
+              "body_index": 7
+            },
+            {
+              "source_id": "wayback_prefix_page_0",
+              "body_index": 8
+            }
+          ]
+        },
+        {
+          "key": [
+            "http://www.worldofwarcraft.com/downloads/ssotd/images/screens?#",
+            "20100401001053",
+            "301",
+            "text/html",
+            "PUDGBCO4V6I2KYQEITCPDK7F6MSWC3GR",
+            "565"
+          ],
+          "count": 2,
+          "locations": [
+            {
+              "source_id": "wayback_prefix_page_0",
+              "body_index": 36
+            },
+            {
+              "source_id": "wayback_prefix_page_0",
+              "body_index": 37
+            }
+          ]
+        },
+        {
+          "key": [
+            "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1312.jpg?#",
+            "20130210132556",
+            "-",
+            "warc/revisit",
+            "EHJDW7RFCFWMSQBGL67RQNFHDIQOHYZG",
+            "524"
+          ],
+          "count": 2,
+          "locations": [
+            {
+              "source_id": "wayback_prefix_page_0",
+              "body_index": 346
+            },
+            {
+              "source_id": "wayback_prefix_page_0",
+              "body_index": 347
+            }
+          ]
+        },
+        {
+          "key": [
+            "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1314.jpg?#",
+            "20130210133525",
+            "-",
+            "warc/revisit",
+            "EHJDW7RFCFWMSQBGL67RQNFHDIQOHYZG",
+            "524"
+          ],
+          "count": 2,
+          "locations": [
+            {
+              "source_id": "wayback_prefix_page_0",
+              "body_index": 355
+            },
+            {
+              "source_id": "wayback_prefix_page_0",
+              "body_index": 356
+            }
+          ]
+        },
+        {
+          "key": [
+            "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1327.jpg?#",
+            "20110208171152",
+            "301",
+            "text/html",
+            "EHJDW7RFCFWMSQBGL67RQNFHDIQOHYZG",
+            "591"
+          ],
+          "count": 2,
+          "locations": [
+            {
+              "source_id": "wayback_prefix_page_0",
+              "body_index": 378
+            },
+            {
+              "source_id": "wayback_prefix_page_0",
+              "body_index": 379
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "source_anchor": {
+    "anchor_timestamp": "20080512210044",
+    "source_page": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/downloads/ssotd/index.html",
+      "sha256": "9a218b6ffd7b2a025f8b98b80f141c98ff1c7940e8a08941b839a0cba8ec9f9d",
+      "source_manifest_actual_timestamp": "20080512204328",
+      "source_manifest_route": "/downloads/ssotd/index.html",
+      "startDate": 12671,
+      "derived_currentShotNumber": 1340,
+      "numeric_range": {
+        "first": 1,
+        "last": 1340
+      },
+      "range_meaning": "source page runtime range derived from saved anchor server-date entity; numeric coverage is separate from temporal class"
+    },
+    "js_rule": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/ssotd-screenie.js",
+      "sha256": "2f49a73f648ced88926e349dbe7c723da8fedccb9d1d7edbe68fbfe0466296e5",
+      "full_literal": "dir + \"/\" + filename + (i) +\".jpg\"",
+      "thumb_literal": "replace(\".jpg\",\"-thumb.jpg\")"
+    }
+  },
+  "terminal_net_ssotd_012": {
+    "batch_id": "NET-SSOTD-012",
+    "report_path": "research/continuous-recovery-20261015/network-ssotd12/batch-report.json",
+    "report_sha256": "e2eafb83c07537035853c3b78333c6dfaed52e294649e55c54d64fe1adf29ed2",
+    "new_index_rows": 82,
+    "old_plus_new_scoped_index_rows": 2082,
+    "terminal_no_resume_key": true,
+    "valid_payload_entities": 0,
+    "category_counts": {
+      "not_requested": 2,
+      "prefix_page_source_200": 1,
+      "redirect_evidence_only": 1
+    },
+    "interpretation": "82 terminal rows are post-anchor index-only evidence; no payload entity was added."
+  },
+  "existing_route_exclusion": {
+    "v15_manifest": {
+      "path": ".scratch/offline-navigation-20261015-v15/build-manifest.json",
+      "sha256": "d89557a445ec5c81ef2652c49fd8ce9c102016f11411b7fa2aa795f5112ae002",
+      "record_count": 8357,
+      "unique_route_count": 8357,
+      "source_base_url_count": 8350,
+      "ssotd_route_count": 10
+    },
+    "v17_export_provenance": {
+      "path": ".scratch/pages-resources-20261016-v17/export-provenance.json",
+      "sha256": "c6769d5636846bd27314824684e919b102bace200f1ef0458d3f976477e3f47f",
+      "record_count": 8527,
+      "unique_route_count": 8527,
+      "image_overlay_count": 69,
+      "ssotd_route_count": 12,
+      "source_records_declared": 8357
+    },
+    "v17_overlay_route_count": 69,
+    "raw_route_match_count": 10,
+    "unique_route_match_count": 2,
+    "unique_row_match_count": 10,
+    "raw_route_matches": [
+      {
+        "source_id": "wayback_prefix_page_0",
+        "body_index": 350,
+        "original": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1314.jpg",
+        "path": "/downloads/ssotd/images/screens/ss1314.jpg",
+        "row_category": "valid_status200_image_index_row",
+        "v15_route_match_count": 0,
+        "v17_route_match_count": 1,
+        "v17_overlay_match_count": 1,
+        "v17_provenance": [
+          {
+            "route": "/downloads/ssotd/images/screens/ss1314.jpg",
+            "original_url": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1314.jpg",
+            "kind": "image_overlay",
+            "role": "image_overlay",
+            "source_map": "research/media-screenshots-20261015/late-image-source-map.json",
+            "source_map_sha256": "1bb8405e58eaf19999313c160b5db256a11559cbc70f8cfccf564f05c99cff03",
+            "source_path": "research/media-screenshots-20261015/wayback-window/raw/16-replay_http_www.worldofwarcraft.com_downloads_ssotd_images_screens_ss1314.jpg.body",
+            "source_offline_path": null,
+            "source_sha256": "cef0bd37c5b34844f7d0d415a3ede71b7e674e467b3c95909e2dec0662c93fe8",
+            "source_length": 77208,
+            "derived_sha256": "cef0bd37c5b34844f7d0d415a3ede71b7e674e467b3c95909e2dec0662c93fe8",
+            "derived_length": 77208,
+            "actual_capture_timestamp": "20100810173046",
+            "temporal_class": "post_2008"
+          }
+        ]
+      },
+      {
+        "source_id": "wayback_prefix_page_0",
+        "body_index": 351,
+        "original": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1314.jpg",
+        "path": "/downloads/ssotd/images/screens/ss1314.jpg",
+        "row_category": "redirect",
+        "v15_route_match_count": 0,
+        "v17_route_match_count": 1,
+        "v17_overlay_match_count": 1,
+        "v17_provenance": [
+          {
+            "route": "/downloads/ssotd/images/screens/ss1314.jpg",
+            "original_url": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1314.jpg",
+            "kind": "image_overlay",
+            "role": "image_overlay",
+            "source_map": "research/media-screenshots-20261015/late-image-source-map.json",
+            "source_map_sha256": "1bb8405e58eaf19999313c160b5db256a11559cbc70f8cfccf564f05c99cff03",
+            "source_path": "research/media-screenshots-20261015/wayback-window/raw/16-replay_http_www.worldofwarcraft.com_downloads_ssotd_images_screens_ss1314.jpg.body",
+            "source_offline_path": null,
+            "source_sha256": "cef0bd37c5b34844f7d0d415a3ede71b7e674e467b3c95909e2dec0662c93fe8",
+            "source_length": 77208,
+            "derived_sha256": "cef0bd37c5b34844f7d0d415a3ede71b7e674e467b3c95909e2dec0662c93fe8",
+            "derived_length": 77208,
+            "actual_capture_timestamp": "20100810173046",
+            "temporal_class": "post_2008"
+          }
+        ]
+      },
+      {
+        "source_id": "wayback_prefix_page_0",
+        "body_index": 352,
+        "original": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1314.jpg",
+        "path": "/downloads/ssotd/images/screens/ss1314.jpg",
+        "row_category": "revisit",
+        "v15_route_match_count": 0,
+        "v17_route_match_count": 1,
+        "v17_overlay_match_count": 1,
+        "v17_provenance": [
+          {
+            "route": "/downloads/ssotd/images/screens/ss1314.jpg",
+            "original_url": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1314.jpg",
+            "kind": "image_overlay",
+            "role": "image_overlay",
+            "source_map": "research/media-screenshots-20261015/late-image-source-map.json",
+            "source_map_sha256": "1bb8405e58eaf19999313c160b5db256a11559cbc70f8cfccf564f05c99cff03",
+            "source_path": "research/media-screenshots-20261015/wayback-window/raw/16-replay_http_www.worldofwarcraft.com_downloads_ssotd_images_screens_ss1314.jpg.body",
+            "source_offline_path": null,
+            "source_sha256": "cef0bd37c5b34844f7d0d415a3ede71b7e674e467b3c95909e2dec0662c93fe8",
+            "source_length": 77208,
+            "derived_sha256": "cef0bd37c5b34844f7d0d415a3ede71b7e674e467b3c95909e2dec0662c93fe8",
+            "derived_length": 77208,
+            "actual_capture_timestamp": "20100810173046",
+            "temporal_class": "post_2008"
+          }
+        ]
+      },
+      {
+        "source_id": "wayback_prefix_page_0",
+        "body_index": 353,
+        "original": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1314.jpg",
+        "path": "/downloads/ssotd/images/screens/ss1314.jpg",
+        "row_category": "revisit",
+        "v15_route_match_count": 0,
+        "v17_route_match_count": 1,
+        "v17_overlay_match_count": 1,
+        "v17_provenance": [
+          {
+            "route": "/downloads/ssotd/images/screens/ss1314.jpg",
+            "original_url": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1314.jpg",
+            "kind": "image_overlay",
+            "role": "image_overlay",
+            "source_map": "research/media-screenshots-20261015/late-image-source-map.json",
+            "source_map_sha256": "1bb8405e58eaf19999313c160b5db256a11559cbc70f8cfccf564f05c99cff03",
+            "source_path": "research/media-screenshots-20261015/wayback-window/raw/16-replay_http_www.worldofwarcraft.com_downloads_ssotd_images_screens_ss1314.jpg.body",
+            "source_offline_path": null,
+            "source_sha256": "cef0bd37c5b34844f7d0d415a3ede71b7e674e467b3c95909e2dec0662c93fe8",
+            "source_length": 77208,
+            "derived_sha256": "cef0bd37c5b34844f7d0d415a3ede71b7e674e467b3c95909e2dec0662c93fe8",
+            "derived_length": 77208,
+            "actual_capture_timestamp": "20100810173046",
+            "temporal_class": "post_2008"
+          }
+        ]
+      },
+      {
+        "source_id": "wayback_prefix_page_0",
+        "body_index": 354,
+        "original": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1314.jpg",
+        "path": "/downloads/ssotd/images/screens/ss1314.jpg",
+        "row_category": "revisit",
+        "v15_route_match_count": 0,
+        "v17_route_match_count": 1,
+        "v17_overlay_match_count": 1,
+        "v17_provenance": [
+          {
+            "route": "/downloads/ssotd/images/screens/ss1314.jpg",
+            "original_url": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1314.jpg",
+            "kind": "image_overlay",
+            "role": "image_overlay",
+            "source_map": "research/media-screenshots-20261015/late-image-source-map.json",
+            "source_map_sha256": "1bb8405e58eaf19999313c160b5db256a11559cbc70f8cfccf564f05c99cff03",
+            "source_path": "research/media-screenshots-20261015/wayback-window/raw/16-replay_http_www.worldofwarcraft.com_downloads_ssotd_images_screens_ss1314.jpg.body",
+            "source_offline_path": null,
+            "source_sha256": "cef0bd37c5b34844f7d0d415a3ede71b7e674e467b3c95909e2dec0662c93fe8",
+            "source_length": 77208,
+            "derived_sha256": "cef0bd37c5b34844f7d0d415a3ede71b7e674e467b3c95909e2dec0662c93fe8",
+            "derived_length": 77208,
+            "actual_capture_timestamp": "20100810173046",
+            "temporal_class": "post_2008"
+          }
+        ]
+      },
+      {
+        "source_id": "wayback_prefix_page_0",
+        "body_index": 355,
+        "original": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1314.jpg",
+        "path": "/downloads/ssotd/images/screens/ss1314.jpg",
+        "row_category": "revisit",
+        "v15_route_match_count": 0,
+        "v17_route_match_count": 1,
+        "v17_overlay_match_count": 1,
+        "v17_provenance": [
+          {
+            "route": "/downloads/ssotd/images/screens/ss1314.jpg",
+            "original_url": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1314.jpg",
+            "kind": "image_overlay",
+            "role": "image_overlay",
+            "source_map": "research/media-screenshots-20261015/late-image-source-map.json",
+            "source_map_sha256": "1bb8405e58eaf19999313c160b5db256a11559cbc70f8cfccf564f05c99cff03",
+            "source_path": "research/media-screenshots-20261015/wayback-window/raw/16-replay_http_www.worldofwarcraft.com_downloads_ssotd_images_screens_ss1314.jpg.body",
+            "source_offline_path": null,
+            "source_sha256": "cef0bd37c5b34844f7d0d415a3ede71b7e674e467b3c95909e2dec0662c93fe8",
+            "source_length": 77208,
+            "derived_sha256": "cef0bd37c5b34844f7d0d415a3ede71b7e674e467b3c95909e2dec0662c93fe8",
+            "derived_length": 77208,
+            "actual_capture_timestamp": "20100810173046",
+            "temporal_class": "post_2008"
+          }
+        ]
+      },
+      {
+        "source_id": "wayback_prefix_page_0",
+        "body_index": 356,
+        "original": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1314.jpg",
+        "path": "/downloads/ssotd/images/screens/ss1314.jpg",
+        "row_category": "revisit",
+        "v15_route_match_count": 0,
+        "v17_route_match_count": 1,
+        "v17_overlay_match_count": 1,
+        "v17_provenance": [
+          {
+            "route": "/downloads/ssotd/images/screens/ss1314.jpg",
+            "original_url": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1314.jpg",
+            "kind": "image_overlay",
+            "role": "image_overlay",
+            "source_map": "research/media-screenshots-20261015/late-image-source-map.json",
+            "source_map_sha256": "1bb8405e58eaf19999313c160b5db256a11559cbc70f8cfccf564f05c99cff03",
+            "source_path": "research/media-screenshots-20261015/wayback-window/raw/16-replay_http_www.worldofwarcraft.com_downloads_ssotd_images_screens_ss1314.jpg.body",
+            "source_offline_path": null,
+            "source_sha256": "cef0bd37c5b34844f7d0d415a3ede71b7e674e467b3c95909e2dec0662c93fe8",
+            "source_length": 77208,
+            "derived_sha256": "cef0bd37c5b34844f7d0d415a3ede71b7e674e467b3c95909e2dec0662c93fe8",
+            "derived_length": 77208,
+            "actual_capture_timestamp": "20100810173046",
+            "temporal_class": "post_2008"
+          }
+        ]
+      },
+      {
+        "source_id": "wayback_prefix_page_0",
+        "body_index": 357,
+        "original": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1314.jpg",
+        "path": "/downloads/ssotd/images/screens/ss1314.jpg",
+        "row_category": "revisit",
+        "v15_route_match_count": 0,
+        "v17_route_match_count": 1,
+        "v17_overlay_match_count": 1,
+        "v17_provenance": [
+          {
+            "route": "/downloads/ssotd/images/screens/ss1314.jpg",
+            "original_url": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1314.jpg",
+            "kind": "image_overlay",
+            "role": "image_overlay",
+            "source_map": "research/media-screenshots-20261015/late-image-source-map.json",
+            "source_map_sha256": "1bb8405e58eaf19999313c160b5db256a11559cbc70f8cfccf564f05c99cff03",
+            "source_path": "research/media-screenshots-20261015/wayback-window/raw/16-replay_http_www.worldofwarcraft.com_downloads_ssotd_images_screens_ss1314.jpg.body",
+            "source_offline_path": null,
+            "source_sha256": "cef0bd37c5b34844f7d0d415a3ede71b7e674e467b3c95909e2dec0662c93fe8",
+            "source_length": 77208,
+            "derived_sha256": "cef0bd37c5b34844f7d0d415a3ede71b7e674e467b3c95909e2dec0662c93fe8",
+            "derived_length": 77208,
+            "actual_capture_timestamp": "20100810173046",
+            "temporal_class": "post_2008"
+          }
+        ]
+      },
+      {
+        "source_id": "wayback_prefix_page_0",
+        "body_index": 358,
+        "original": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1314.jpg",
+        "path": "/downloads/ssotd/images/screens/ss1314.jpg",
+        "row_category": "redirect",
+        "v15_route_match_count": 0,
+        "v17_route_match_count": 1,
+        "v17_overlay_match_count": 1,
+        "v17_provenance": [
+          {
+            "route": "/downloads/ssotd/images/screens/ss1314.jpg",
+            "original_url": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1314.jpg",
+            "kind": "image_overlay",
+            "role": "image_overlay",
+            "source_map": "research/media-screenshots-20261015/late-image-source-map.json",
+            "source_map_sha256": "1bb8405e58eaf19999313c160b5db256a11559cbc70f8cfccf564f05c99cff03",
+            "source_path": "research/media-screenshots-20261015/wayback-window/raw/16-replay_http_www.worldofwarcraft.com_downloads_ssotd_images_screens_ss1314.jpg.body",
+            "source_offline_path": null,
+            "source_sha256": "cef0bd37c5b34844f7d0d415a3ede71b7e674e467b3c95909e2dec0662c93fe8",
+            "source_length": 77208,
+            "derived_sha256": "cef0bd37c5b34844f7d0d415a3ede71b7e674e467b3c95909e2dec0662c93fe8",
+            "derived_length": 77208,
+            "actual_capture_timestamp": "20100810173046",
+            "temporal_class": "post_2008"
+          }
+        ]
+      },
+      {
+        "source_id": "wayback_prefix_page_0",
+        "body_index": 396,
+        "original": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1336.jpg",
+        "path": "/downloads/ssotd/images/screens/ss1336.jpg",
+        "row_category": "valid_status200_image_index_row",
+        "v15_route_match_count": 0,
+        "v17_route_match_count": 1,
+        "v17_overlay_match_count": 1,
+        "v17_provenance": [
+          {
+            "route": "/downloads/ssotd/images/screens/ss1336.jpg",
+            "original_url": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1336.jpg",
+            "kind": "image_overlay",
+            "role": "image_overlay",
+            "source_map": "research/media-screenshots-20261015/late-image-source-map.json",
+            "source_map_sha256": "1bb8405e58eaf19999313c160b5db256a11559cbc70f8cfccf564f05c99cff03",
+            "source_path": "research/media-screenshots-20261015/wayback-window/raw/17-replay_http_www.worldofwarcraft.com_downloads_ssotd_images_screens_ss1336.jpg.body",
+            "source_offline_path": null,
+            "source_sha256": "58fcb8db67bc56bf21566fbc05de0d1372a71f4ac4ef65e4eb247ab95abeb289",
+            "source_length": 150293,
+            "derived_sha256": "58fcb8db67bc56bf21566fbc05de0d1372a71f4ac4ef65e4eb247ab95abeb289",
+            "derived_length": 150293,
+            "actual_capture_timestamp": "20100602102329",
+            "temporal_class": "post_2008"
+          }
+        ]
+      }
+    ]
+  },
+  "known_accepted_late_payloads": {
+    "path": "research/media-screenshots-20261015/late-image-source-map.json",
+    "sha256": "1bb8405e58eaf19999313c160b5db256a11559cbc70f8cfccf564f05c99cff03",
+    "entry_count": 2,
+    "items": [
+      {
+        "actual_timestamp": "20100810173046",
+        "cdx_digest": "4AKYT7KIDFUKL2OD6WVGY63CXMXIHGF3",
+        "cdx_length": "77789",
+        "cdx_mime": "image/jpeg",
+        "indexed_capture_timestamp": "20100810173046",
+        "kind": "image",
+        "temporal_class": "post_2008",
+        "logical_url": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1314.jpg",
+        "original": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1314.jpg",
+        "memento_url": "https://web.archive.org/web/20100810173046id_/http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1314.jpg",
+        "local_path": "research/media-screenshots-20261015/wayback-window/raw/16-replay_http_www.worldofwarcraft.com_downloads_ssotd_images_screens_ss1314.jpg.body",
+        "metadata_path": "research/media-screenshots-20261015/wayback-window/16-http_www.worldofwarcraft.com_downloads_ssotd_images_screens_ss1314.jpg_replay_validation.json",
+        "sha256": "cef0bd37c5b34844f7d0d415a3ede71b7e674e467b3c95909e2dec0662c93fe8",
+        "length": 77208,
+        "mime": "image/jpeg",
+        "magic": "jpeg",
+        "dimensions": [
+          1024,
+          640
+        ],
+        "pillow": {
+          "available": true,
+          "format": "JPEG",
+          "size": [
+            1024,
+            640
+          ],
+          "valid": true
+        },
+        "role": "media_ssotd_late_full",
+        "selected_timestamp": "20100810173046",
+        "replay_status": 200,
+        "digest_match": true,
+        "memento_datetime": "Tue, 10 Aug 2010 17:30:46 GMT"
+      },
+      {
+        "actual_timestamp": "20100602102329",
+        "cdx_digest": "G7QSOMUMRMS3XPH4YYARXYFK76RTOBHZ",
+        "cdx_length": "150927",
+        "cdx_mime": "image/jpeg",
+        "indexed_capture_timestamp": "20100602102329",
+        "kind": "image",
+        "temporal_class": "post_2008",
+        "logical_url": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1336.jpg",
+        "original": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1336.jpg",
+        "memento_url": "https://web.archive.org/web/20100602102329id_/http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1336.jpg",
+        "local_path": "research/media-screenshots-20261015/wayback-window/raw/17-replay_http_www.worldofwarcraft.com_downloads_ssotd_images_screens_ss1336.jpg.body",
+        "metadata_path": "research/media-screenshots-20261015/wayback-window/17-http_www.worldofwarcraft.com_downloads_ssotd_images_screens_ss1336.jpg_replay_validation.json",
+        "sha256": "58fcb8db67bc56bf21566fbc05de0d1372a71f4ac4ef65e4eb247ab95abeb289",
+        "length": 150293,
+        "mime": "image/jpeg",
+        "magic": "jpeg",
+        "dimensions": [
+          1200,
+          750
+        ],
+        "pillow": {
+          "available": true,
+          "format": "JPEG",
+          "size": [
+            1200,
+            750
+          ],
+          "valid": true
+        },
+        "role": "media_ssotd_late_full",
+        "selected_timestamp": "20100602102329",
+        "replay_status": 200,
+        "digest_match": true,
+        "memento_datetime": "Wed, 02 Jun 2010 10:23:29 GMT"
+      }
+    ]
+  },
+  "prior_replay_controls": {
+    "records": [
+      {
+        "label": "ssotd_capture_date_derived_ss1340_exact",
+        "kind": "cdx_image_exact",
+        "source_status": 200,
+        "body_path": "research/media-screenshots-20261015/wayback-window/raw/11-ssotd_capture_date_derived_ss1340_exact.body",
+        "body_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "body_bytes": 3,
+        "rows_count": 0,
+        "replay_payload": null,
+        "note": "Saved control/replay evidence only; no new request made by this audit."
+      },
+      {
+        "label": "ssotd_capture_date_derived_ss1340_thumb_exact",
+        "kind": "cdx_image_exact",
+        "source_status": 200,
+        "body_path": "research/media-screenshots-20261015/wayback-window/raw/12-ssotd_capture_date_derived_ss1340_thumb_exact.body",
+        "body_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "body_bytes": 3,
+        "rows_count": 0,
+        "replay_payload": null,
+        "note": "Saved control/replay evidence only; no new request made by this audit."
+      },
+      {
+        "label": "exact_http_www.worldofwarcraft.com_downloads_ssotd_images_screens_ss1314-thumb.jpg",
+        "kind": "cdx_image_exact",
+        "source_status": 200,
+        "body_path": "research/media-screenshots-20261015/wayback-window/raw/15-exact_http_www.worldofwarcraft.com_downloads_ssotd_images_screens_ss1314-thumb.jpg.body",
+        "body_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "body_bytes": 3,
+        "rows_count": 0,
+        "replay_payload": null,
+        "note": "Saved control/replay evidence only; no new request made by this audit."
+      },
+      {
+        "label": "replay_http_www.worldofwarcraft.com_downloads_ssotd_images_screens_ss1314.jpg",
+        "kind": "memento_replay",
+        "source_status": 200,
+        "body_path": "research/media-screenshots-20261015/wayback-window/raw/16-replay_http_www.worldofwarcraft.com_downloads_ssotd_images_screens_ss1314.jpg.body",
+        "body_sha256": "cef0bd37c5b34844f7d0d415a3ede71b7e674e467b3c95909e2dec0662c93fe8",
+        "body_bytes": 77208,
+        "rows_count": 0,
+        "replay_payload": {
+          "exists": true,
+          "decoded": true,
+          "format": "JPEG",
+          "width": 1024,
+          "height": 640,
+          "error": null
+        },
+        "note": "Saved control/replay evidence only; no new request made by this audit."
+      },
+      {
+        "label": "replay_http_www.worldofwarcraft.com_downloads_ssotd_images_screens_ss1336.jpg",
+        "kind": "memento_replay",
+        "source_status": 200,
+        "body_path": "research/media-screenshots-20261015/wayback-window/raw/17-replay_http_www.worldofwarcraft.com_downloads_ssotd_images_screens_ss1336.jpg.body",
+        "body_sha256": "58fcb8db67bc56bf21566fbc05de0d1372a71f4ac4ef65e4eb247ab95abeb289",
+        "body_bytes": 150293,
+        "rows_count": 0,
+        "replay_payload": {
+          "exists": true,
+          "decoded": true,
+          "format": "JPEG",
+          "width": 1200,
+          "height": 750,
+          "error": null
+        },
+        "note": "Saved control/replay evidence only; no new request made by this audit."
+      },
+      {
+        "label": "NET-SSOTD-012 payload-source-map",
+        "path": "research/continuous-recovery-20261015/network-ssotd12/payload-source-map.json",
+        "sha256": "b593955ca4c37074c49ce64619d22de04f47a55918eec05b7a2e92e8af3f77d4",
+        "entity_count": 0,
+        "integration_held": true,
+        "note": "Terminal82 shard has no valid payload entities."
+      }
+    ],
+    "source_records_path": "research/media-screenshots-20261015/wayback-window/request-records-reconciled.json",
+    "source_records_sha256": "cefa393a0a2fc62ba678ee67dcb7212f499f290275ab0213786180d574b219b3"
+  },
+  "valid_image_rows": {
+    "raw_count": 2,
+    "deduplicated_count": 2,
+    "new_candidate_count": 0,
+    "existing_or_accepted_excluded_count": 2,
+    "excluded_rows": [
+      {
+        "original_row": {
+          "timestamp": "20100810173046",
+          "original": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1314.jpg",
+          "statuscode": "200",
+          "mimetype": "image/jpeg",
+          "digest": "4AKYT7KIDFUKL2OD6WVGY63CXMXIHGF3",
+          "length": "77789"
+        },
+        "source_evidence": {
+          "body_path": "research/media-screenshots-20261015/wayback-window/raw/07-ssotd_screens_prefix_rows_all.body",
+          "body_sha256": "0117cc0e7a4433e8cf030d63208e276ccfad8bd8bb4453c2bccf582bc5b2db46",
+          "body_index": 350,
+          "source_id": "wayback_prefix_page_0"
+        },
+        "identity": {
+          "normalized_identity": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1314.jpg?#",
+          "temporal_bucket": "post_2008",
+          "row_category": "valid_status200_image_index_row",
+          "shot": {
+            "is_dynamic_ss_entity": true,
+            "shot_number": 1314,
+            "role": "full",
+            "extension": "jpg",
+            "pair_key": "ss1314",
+            "counterpart_path": "/downloads/ssotd/images/screens/ss1314-thumb.jpg"
+          },
+          "source2008_numeric_range_covers_slot": true,
+          "counterpart_expected": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1314-thumb.jpg",
+          "counterpart_status200_image_rows_in_2082": []
+        },
+        "existing_route_provenance_match": {
+          "v17_route_matches": 1,
+          "v15_route_matches": 0,
+          "v17_overlay_route_match": true,
+          "v17_records": [
+            {
+              "route": "/downloads/ssotd/images/screens/ss1314.jpg",
+              "original_url": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1314.jpg",
+              "kind": "image_overlay",
+              "role": "image_overlay",
+              "source_map": "research/media-screenshots-20261015/late-image-source-map.json",
+              "source_map_sha256": "1bb8405e58eaf19999313c160b5db256a11559cbc70f8cfccf564f05c99cff03",
+              "source_path": "research/media-screenshots-20261015/wayback-window/raw/16-replay_http_www.worldofwarcraft.com_downloads_ssotd_images_screens_ss1314.jpg.body",
+              "source_sha256": "cef0bd37c5b34844f7d0d415a3ede71b7e674e467b3c95909e2dec0662c93fe8",
+              "source_length": 77208,
+              "derived_sha256": "cef0bd37c5b34844f7d0d415a3ede71b7e674e467b3c95909e2dec0662c93fe8",
+              "derived_length": 77208,
+              "actual_capture_timestamp": "20100810173046",
+              "temporal_class": "post_2008"
+            }
+          ]
+        },
+        "accepted_late_payload_match": {
+          "source_map_path": "research/media-screenshots-20261015/late-image-source-map.json",
+          "source_map_sha256": "1bb8405e58eaf19999313c160b5db256a11559cbc70f8cfccf564f05c99cff03",
+          "payload_exists": true,
+          "payload_path": "research/media-screenshots-20261015/wayback-window/raw/16-replay_http_www.worldofwarcraft.com_downloads_ssotd_images_screens_ss1314.jpg.body",
+          "payload_sha256": "cef0bd37c5b34844f7d0d415a3ede71b7e674e467b3c95909e2dec0662c93fe8",
+          "payload_length": 77208,
+          "source_map_entry": {
+            "actual_timestamp": "20100810173046",
+            "cdx_digest": "4AKYT7KIDFUKL2OD6WVGY63CXMXIHGF3",
+            "cdx_length": "77789",
+            "cdx_mime": "image/jpeg",
+            "indexed_capture_timestamp": "20100810173046",
+            "kind": "image",
+            "temporal_class": "post_2008",
+            "logical_url": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1314.jpg",
+            "original": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1314.jpg",
+            "memento_url": "https://web.archive.org/web/20100810173046id_/http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1314.jpg",
+            "local_path": "research/media-screenshots-20261015/wayback-window/raw/16-replay_http_www.worldofwarcraft.com_downloads_ssotd_images_screens_ss1314.jpg.body",
+            "metadata_path": "research/media-screenshots-20261015/wayback-window/16-http_www.worldofwarcraft.com_downloads_ssotd_images_screens_ss1314.jpg_replay_validation.json",
+            "sha256": "cef0bd37c5b34844f7d0d415a3ede71b7e674e467b3c95909e2dec0662c93fe8",
+            "length": 77208,
+            "mime": "image/jpeg",
+            "magic": "jpeg",
+            "dimensions": [
+              1024,
+              640
+            ],
+            "pillow": {
+              "available": true,
+              "format": "JPEG",
+              "size": [
+                1024,
+                640
+              ],
+              "valid": true
+            },
+            "role": "media_ssotd_late_full",
+            "selected_timestamp": "20100810173046",
+            "replay_status": 200,
+            "digest_match": true,
+            "memento_datetime": "Tue, 10 Aug 2010 17:30:46 GMT"
+          }
+        },
+        "exclusion_reason": "already_present_route_with_full_v17_or_v15_provenance"
+      },
+      {
+        "original_row": {
+          "timestamp": "20100602102329",
+          "original": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1336.jpg",
+          "statuscode": "200",
+          "mimetype": "image/jpeg",
+          "digest": "G7QSOMUMRMS3XPH4YYARXYFK76RTOBHZ",
+          "length": "150927"
+        },
+        "source_evidence": {
+          "body_path": "research/media-screenshots-20261015/wayback-window/raw/07-ssotd_screens_prefix_rows_all.body",
+          "body_sha256": "0117cc0e7a4433e8cf030d63208e276ccfad8bd8bb4453c2bccf582bc5b2db46",
+          "body_index": 396,
+          "source_id": "wayback_prefix_page_0"
+        },
+        "identity": {
+          "normalized_identity": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1336.jpg?#",
+          "temporal_bucket": "post_2008",
+          "row_category": "valid_status200_image_index_row",
+          "shot": {
+            "is_dynamic_ss_entity": true,
+            "shot_number": 1336,
+            "role": "full",
+            "extension": "jpg",
+            "pair_key": "ss1336",
+            "counterpart_path": "/downloads/ssotd/images/screens/ss1336-thumb.jpg"
+          },
+          "source2008_numeric_range_covers_slot": true,
+          "counterpart_expected": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1336-thumb.jpg",
+          "counterpart_status200_image_rows_in_2082": []
+        },
+        "existing_route_provenance_match": {
+          "v17_route_matches": 1,
+          "v15_route_matches": 0,
+          "v17_overlay_route_match": true,
+          "v17_records": [
+            {
+              "route": "/downloads/ssotd/images/screens/ss1336.jpg",
+              "original_url": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1336.jpg",
+              "kind": "image_overlay",
+              "role": "image_overlay",
+              "source_map": "research/media-screenshots-20261015/late-image-source-map.json",
+              "source_map_sha256": "1bb8405e58eaf19999313c160b5db256a11559cbc70f8cfccf564f05c99cff03",
+              "source_path": "research/media-screenshots-20261015/wayback-window/raw/17-replay_http_www.worldofwarcraft.com_downloads_ssotd_images_screens_ss1336.jpg.body",
+              "source_sha256": "58fcb8db67bc56bf21566fbc05de0d1372a71f4ac4ef65e4eb247ab95abeb289",
+              "source_length": 150293,
+              "derived_sha256": "58fcb8db67bc56bf21566fbc05de0d1372a71f4ac4ef65e4eb247ab95abeb289",
+              "derived_length": 150293,
+              "actual_capture_timestamp": "20100602102329",
+              "temporal_class": "post_2008"
+            }
+          ]
+        },
+        "accepted_late_payload_match": {
+          "source_map_path": "research/media-screenshots-20261015/late-image-source-map.json",
+          "source_map_sha256": "1bb8405e58eaf19999313c160b5db256a11559cbc70f8cfccf564f05c99cff03",
+          "payload_exists": true,
+          "payload_path": "research/media-screenshots-20261015/wayback-window/raw/17-replay_http_www.worldofwarcraft.com_downloads_ssotd_images_screens_ss1336.jpg.body",
+          "payload_sha256": "58fcb8db67bc56bf21566fbc05de0d1372a71f4ac4ef65e4eb247ab95abeb289",
+          "payload_length": 150293,
+          "source_map_entry": {
+            "actual_timestamp": "20100602102329",
+            "cdx_digest": "G7QSOMUMRMS3XPH4YYARXYFK76RTOBHZ",
+            "cdx_length": "150927",
+            "cdx_mime": "image/jpeg",
+            "indexed_capture_timestamp": "20100602102329",
+            "kind": "image",
+            "temporal_class": "post_2008",
+            "logical_url": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1336.jpg",
+            "original": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1336.jpg",
+            "memento_url": "https://web.archive.org/web/20100602102329id_/http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1336.jpg",
+            "local_path": "research/media-screenshots-20261015/wayback-window/raw/17-replay_http_www.worldofwarcraft.com_downloads_ssotd_images_screens_ss1336.jpg.body",
+            "metadata_path": "research/media-screenshots-20261015/wayback-window/17-http_www.worldofwarcraft.com_downloads_ssotd_images_screens_ss1336.jpg_replay_validation.json",
+            "sha256": "58fcb8db67bc56bf21566fbc05de0d1372a71f4ac4ef65e4eb247ab95abeb289",
+            "length": 150293,
+            "mime": "image/jpeg",
+            "magic": "jpeg",
+            "dimensions": [
+              1200,
+              750
+            ],
+            "pillow": {
+              "available": true,
+              "format": "JPEG",
+              "size": [
+                1200,
+                750
+              ],
+              "valid": true
+            },
+            "role": "media_ssotd_late_full",
+            "selected_timestamp": "20100602102329",
+            "replay_status": 200,
+            "digest_match": true,
+            "memento_datetime": "Wed, 02 Jun 2010 10:23:29 GMT"
+          }
+        },
+        "exclusion_reason": "already_present_route_with_full_v17_or_v15_provenance"
+      }
+    ],
+    "new_candidates": []
+  },
+  "v17_acceptance_binding": {
+    "path": "research/continuous-recovery-20261016/publication/root-v17-input-acceptance.json",
+    "sha256": "d45384119fe8ba9578a0a11a25ce79653460f2a65562423a5ad66ebd17883429",
+    "accepted": true,
+    "source_records": 8357,
+    "total_overlays": 69,
+    "guide_preview_count": 19
+  },
+  "notes": [
+    "There are no new exact-CDX-supported image candidates after route/provenance and accepted payload exclusion.",
+    "The two valid status200 image rows are ss1314.jpg and ss1336.jpg, both post_2008 payloads already present as v17 image_overlay records and in the accepted late-image source map.",
+    "No pre_2008 or baseline_le_anchor status200 image row exists in the 2082 saved rows; late_2008 rows are HTML/404/redirect evidence only.",
+    "The four alias query bodies 08/09/10 duplicate the first canonical body by SHA and are not recounted; NET-SSOTD-012 contributes the terminal 82 rows once.",
+    "No candidate URL was guessed, downloaded, replayed, or integrated by this audit."
+  ]
+}

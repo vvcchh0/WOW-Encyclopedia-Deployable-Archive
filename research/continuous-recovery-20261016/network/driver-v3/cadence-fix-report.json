@@ -1,0 +1,42 @@
+{
+  "schema": "wow-recovery.gallery-prefix02-driver-v3-cadence-fix.v1",
+  "mode": "offline_analysis",
+  "network_requests": 0,
+  "frozen_prior": {
+    "batch_id": "WAYBACK-GALLERYPREFIX01-20261016",
+    "deviation_path": "research/continuous-recovery-20261016/network/gallery-prefix01/execution-deviation.json",
+    "deviation_sha256": "a975cf6f434b943a1fe665efd0bfe6d40d7961f546f8d895348ac2f2506fd9fa",
+    "required_dispatch_seconds": 5.1,
+    "observed_min_dispatch_seconds": 5.093000000000757,
+    "violating_dispatch_sequence": [2, 8, 13, 17, 20],
+    "observed_min_request_start_seconds": 5.09612,
+    "request_start_passed": true
+  },
+  "cause": {
+    "finding": "The frozen driver calculated one sleep target at last_dispatch + 5.1 seconds and trusted the sleep return; Windows timer undershoot/rounding left dispatch timestamps below the floor.",
+    "boundary": "execution defect; no new network finding",
+    "historical_evidence_preserved": true
+  },
+  "v3_fix": {
+    "driver_path": "research/continuous-recovery-20261016/network/driver-v3/gallery_prefix_driver_v3.py",
+    "scheduling_floor_seconds": 5.25,
+    "acceptance_floor_seconds": 5.1,
+    "mechanism": "monotonic deadline loop with post-sleep re-read; UTC request-start floor retained for restart continuity",
+    "restart_rule": "map persisted dispatch_utc into the new process monotonic origin; never compare unrelated monotonic origins directly",
+    "restart_scope": "fixture timing helper only; execute does not auto-resume an interrupted progress journal and refuses raw-path overwrite",
+    "remaining_byte_time_clamp": "computed after cadence wait from total bytes and remaining window; connect/max timeout and entity body cap are reduced together",
+    "disk_rule": "recheck free space after cadence wait and persist disk_free_before_bytes with every durable dispatch reservation"
+  },
+  "fixture": {
+    "path": "research/continuous-recovery-20261016/network/driver-v3/fixture-results.json",
+    "sha256": "0edec599abfa790a5bd476bbff4525d7ffb7e30b453f28f9c10219fb77306278",
+    "passed": 14,
+    "total": 14,
+    "all_passed": true,
+    "measured_min_dispatch_seconds": 5.300000000000068,
+    "measured_min_request_start_seconds": 5.3,
+    "simulated_early_sleep_and_rounding": true,
+    "simulated_restart": true
+  },
+  "historical_receipt_policy": "The prior 5.093s deviation remains frozen and is not rewritten by this v3 artifact."
+}

@@ -242,31 +242,80 @@
     {
       "id": "NETWORK10-GALLERYPREFIX02-PLAN",
       "owner": "/root/network_recovery_20261016",
-      "status": "preparing_no_network",
+      "status": "executed_root_accepted",
       "goal": "Ten new prefixes; correct timer and preserve tail2 before next GO",
       "write_scope": "network/driver-v3/**; network/gallery-prefix02-plan/**",
-      "minutes": 20
+      "minutes": 20,
+      "result": {
+        "requests": 20,
+        "source_responses": 10,
+        "index_rows": 19,
+        "direct_candidates": 0,
+        "tail_failures": 0,
+        "acceptance": "publication/root-gallery-prefix02-acceptance.json"
+      }
     },
     {
       "id": "LOCAL06-MEDIA",
       "owner": "/root/local_recovery_20261016",
-      "status": "returned_pending_root_acceptance",
+      "status": "root_accepted_no_new_candidates",
       "network": false,
       "result": {
         "index_rows": 2082,
         "new_candidates": 0,
-        "report": "local-audit/media-candidates/media-candidates-audit.json"
+        "report": "local-audit/media-candidates/media-candidates-audit.json",
+        "acceptance": "publication/root-media-inventory-acceptance.json"
       }
     },
     {
       "id": "LOCAL07-EU-DEPENDENCIES",
       "owner": "/root/local_recovery_20261016",
-      "status": "in_progress",
+      "status": "root_accepted_literal_candidates",
       "network": false,
       "write_scope": "local-audit/eu-dependencies/**",
       "minutes": 25,
-      "goal": "Exact-origin EU first-level dependencies and navigation literals; prioritize ten missing files."
+      "goal": "Exact-origin EU first-level dependencies and navigation literals; prioritize ten missing files.",
+      "result": {
+        "candidate_count": 10,
+        "menu_iframes": 7,
+        "exact_eu_payloads_known": 0,
+        "acceptance": "publication/root-eu-dependency-candidates-acceptance.json"
+      }
+    },
+    {
+      "id": "LOCAL08-CITY-AUDIT",
+      "owner": "/root/local_recovery_20261016",
+      "status": "root_accepted",
+      "network": false,
+      "result": {
+        "existing_city_previews": 3,
+        "new_downloads": 0,
+        "acceptance": "publication/root-city-preview-acceptance.json"
+      }
+    },
+    {
+      "id": "LOCAL09-CITY-V2",
+      "owner": "/root/local_recovery_20261016",
+      "status": "in_progress",
+      "network": false,
+      "minutes": 35,
+      "write_scope": "tools/guide_previews.py; tests/test_guide_previews.py; integration/v18-guide-previews/**",
+      "goal": "Preserve strict v1 five-group/nineteen maps; add strict v2 six-group/twenty-two maps with City preview section."
+    },
+    {
+      "id": "NETWORK11-EUDEPS01-PLAN",
+      "owner": "/root/network_recovery_20261016",
+      "status": "preparing_no_network",
+      "minutes": 25,
+      "write_scope": "network/eu-deps01/**",
+      "goal": "Ten observed EU dependencies; bounded exact CDX and validated text replay only after root GO.",
+      "limits": {
+        "attempts": 80,
+        "seconds": 1800,
+        "body_bytes": 67108864,
+        "entity_bytes": 8388608
+      }
     }
   ],
-  "updated_utc": "2026-10-16T04:53:45.052518+00:00"
+  "updated_utc": "2026-10-16T05:18:06.419360+00:00"
 }

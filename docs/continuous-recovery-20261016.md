@@ -49,6 +49,11 @@ UTC 13:00 后不启动新网络批次，13:10 后不启动新来源/导出版本
 - 04:45 UTC：十个图库目录调查用完二十次请求，九个完整 CDX 响应共 116 行，Amani War Bear 仍为传输未知；未发现直接 `ssN.jpg` 或 `ssN-thumb.jpg`，未回放图片。五次调度间隔为 5.093/5.094 秒，略低于 5.1 秒要求，实际请求开始均超过五秒。保留该执行偏离，下一驱动增加单调时钟复查和裕量。[独立复核](../research/continuous-recovery-20261016/publication/root-gallery-prefix01-acceptance.json)
 - MEDIA 已保存的 2,082 行索引完成分类：仅两项有效 JPEG，均为已取得的 2010 年补充，未生成新图片候选，待主代理复核。另查欧服首页依赖与菜单路径。
 
+- 05:10 UTC：第二轮十个副本目录全部取得 CDX，合计十九行，均无有效图片记录；未回放任何图片，当前传输失败尾数为零。修正后的实际调度间隔至少 5.25 秒。[独立复核](../research/continuous-recovery-20261016/publication/root-gallery-prefix02-acceptance.json)
+- City Attacks 的三张已有预览通过原始字节、存档摘要、父链接与实际画面核对。它们在 PvP 指南中指向图库但无具体截图编号，准备作为独立指南预览加入；此前五组十九张的输入保持不变。[图片验收](../research/continuous-recovery-20261016/publication/root-city-preview-acceptance.json)
+- 欧服首页发现七个菜单 iframe，以及两份脚本和一份样式的确切引用，十项来源 literal 经主代理复核；已保存的 US 同路径文件不当作 EU 来源。新批次将先查精确索引，再核验文本回放。[候选验收](../research/continuous-recovery-20261016/publication/root-eu-dependency-candidates-acceptance.json)
+- MEDIA 的 2,082 行已由主代理重新分类，两张有效 JPEG 均匹配已有补充原图；本次没有新的可下载候选。[独立复核](../research/continuous-recovery-20261016/publication/root-media-inventory-acceptance.json)
+
 ## 后续取舍
 
 优先回放已有有效索引、此前因网络失败未取回的资源，再寻找其他存档路径。已收到真实 404 的同点不反复请求。图库审计需要将每轮回执按精确 URL 与实际请求时间合并，不能从较早的汇总推导当前状态。

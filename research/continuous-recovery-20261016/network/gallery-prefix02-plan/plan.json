@@ -1,0 +1,1753 @@
+{
+  "schema": "wow-recovery.gallery-prefix02-plan.v1",
+  "batch_id": "WAYBACK-GALLERYPREFIX02-20261016",
+  "prepared_utc": "2026-10-16T05:04:14.495401Z",
+  "mode": "offline_plan_only",
+  "network_performed": false,
+  "execution_status": "prepared",
+  "parent_go_required": true,
+  "scope": {
+    "registry_path": "research/continuous-recovery-20261016/local-audit/gallery-prefix-registry/gallery-prefix-registry.json",
+    "registry_sha256": "d356992afb97633801f69aeb9c0a9e2a3ee933acd812d7cda386ad40a9aa51da",
+    "registry_gallery_count": 50,
+    "registry_row_count": 50,
+    "source_origin": "http://www.worldofwarcraft.com",
+    "exact_identity_rule": "exact scheme/host/path; default HTTP port 80 may be equivalent; no scheme/host/path broadening"
+  },
+  "selection_rule": "Registry row order after excluding prior GALLERYPREFIX01 success rows, five historical prefix-evidence rows, and Amani transport-unknown; choose first ten remaining rows. This is a plan-only selection, not network evidence.",
+  "excluded_existing_prefixes": {
+    "gallery_prefix01_success": [
+      "City Attacks",
+      "Warsong Gulch",
+      "Hallow's End",
+      "Brewfest",
+      "Zul'Aman",
+      "Hellfire Citadel - The Shattered Halls",
+      "Tempest Keep - The Arcatraz",
+      "Isle of Quel'Danas",
+      "TCG Gallery"
+    ],
+    "historical_saved_evidence": [
+      "Karazhan",
+      "Fishing",
+      "Black Temple",
+      "Serpentshrine Cavern",
+      "Magister's Terrace"
+    ],
+    "deferred_transport_unknown": [
+      "Amani War Bear"
+    ],
+    "reason": "avoid repeat same prefix and defer unresolved transport; candidate source evidence remains local"
+  },
+  "candidate_count": 10,
+  "expected_full_count": 311,
+  "expected_thumb_count": 311,
+  "expected_direct_entities": 622,
+  "policy": {
+    "max_candidates": 10,
+    "max_attempts": 20,
+    "window_seconds": 900,
+    "max_total_body_bytes": 67108864,
+    "max_entity_body_bytes": 16777216,
+    "from": "20060101000000",
+    "to": "20080512210044",
+    "limit": 500,
+    "showResumeKey": true,
+    "collapse": false,
+    "matchType": "prefix",
+    "direct_first": true,
+    "proxy": "http://127.0.0.1:7890",
+    "tls_verification": true,
+    "automatic_redirects": 0,
+    "min_dispatch_monotonic_seconds": 5.25,
+    "acceptance_dispatch_floor_seconds": 5.1,
+    "min_request_start_utc_seconds": 5.0,
+    "disk_floor_bytes": 11005853696,
+    "stop_http_codes": [
+      429,
+      503
+    ],
+    "stop_on_five_consecutive_transport_failures": true,
+    "cooldown_seconds_after_stop": 120,
+    "retry_after_rule": "429/503 stop immediately; do not resume before max(Retry-After,120s)",
+    "remaining_byte_and_time_clamp": true,
+    "per_request_disk_floor_recorded": true,
+    "payload_replay": false,
+    "follow_resume_key": false
+  },
+  "inherited_state": {
+    "prior_batch_id": "WAYBACK-GALLERYPREFIX01-20261016",
+    "prior_batch_finished_utc": "2026-10-16T04:45:02.592009Z",
+    "prior_batch_failure_streak": 2,
+    "prior_batch_tail_preserved": 2,
+    "new_batch_streak_start": 2,
+    "historical_allnews02_tail_preserved_separately": 5
+  },
+  "input_bindings": {
+    "registry": {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-prefix-registry/gallery-prefix-registry.json",
+      "sha256": "d356992afb97633801f69aeb9c0a9e2a3ee933acd812d7cda386ad40a9aa51da",
+      "bytes": 141545,
+      "role": "50-gallery prefix registry"
+    },
+    "direct_entity_audit": {
+      "path": "research/continuous-recovery-20261016/local-audit/v2/gallery-direct-entity-audit-v2.json",
+      "sha256": "341435e62cfea8db4f1421d05c9e765e598ae4a31fb92d5702201c5308972a0a",
+      "bytes": 8659947,
+      "role": "3368 direct full/thumb entity status join"
+    },
+    "route_inventory": {
+      "path": "research/local-maintenance-20261014/gallery-route-entity-recheck.json",
+      "sha256": "845c0f032af3d43b7479266052ecb0c9866bdeb638b98565acdfffe854d1d7e5",
+      "bytes": 30423,
+      "role": "50-gallery addshots route/slot inventory"
+    },
+    "prior_gallery_prefix01_report": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix01/batch-report.json",
+      "sha256": "715f67dffb984a306ca7a1de6de5c010a79523551b63f66db9a6e6a3b5560010",
+      "bytes": 159735,
+      "role": "frozen prior prefix execution and tail=2"
+    },
+    "prior_gallery_prefix01_source_map": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix01/source-map.json",
+      "sha256": "fd277a1bc64f192d51caf08e7415fb09d835a84aa63b355e8cce8f4cfe0538e9",
+      "bytes": 60929,
+      "role": "frozen prior index-only results"
+    },
+    "prior_gallery_prefix01_deviation": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix01/execution-deviation.json",
+      "sha256": "a975cf6f434b943a1fe665efd0bfe6d40d7961f546f8d895348ac2f2506fd9fa",
+      "bytes": 1378,
+      "role": "frozen cadence deviation diagnosis"
+    }
+  },
+  "candidates": [
+    {
+      "rank": 1,
+      "registry_rank": 3,
+      "target_key": "GALLERY-PREFIX02-01",
+      "label": "Magtheridon's Lair",
+      "category": "Raid",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/mag/",
+      "source_directory": "/info/dungeons/images/mag/",
+      "identity_variants": [
+        {
+          "variant_key": "http://www.worldofwarcraft.com",
+          "base_url": "http://www.worldofwarcraft.com/info/dungeons/images/mag/",
+          "full_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/mag/ssN.jpg",
+          "thumb_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/mag/ssN-thumb.jpg",
+          "scheme": "http",
+          "host": "www.worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        },
+        {
+          "variant_key": "https://www.worldofwarcraft.com",
+          "base_url": "https://www.worldofwarcraft.com/info/dungeons/images/mag/",
+          "full_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/mag/ssN.jpg",
+          "thumb_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/mag/ssN-thumb.jpg",
+          "scheme": "https",
+          "host": "www.worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        },
+        {
+          "variant_key": "http://worldofwarcraft.com",
+          "base_url": "http://worldofwarcraft.com/info/dungeons/images/mag/",
+          "full_pattern": "http://worldofwarcraft.com/info/dungeons/images/mag/ssN.jpg",
+          "thumb_pattern": "http://worldofwarcraft.com/info/dungeons/images/mag/ssN-thumb.jpg",
+          "scheme": "http",
+          "host": "worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        },
+        {
+          "variant_key": "https://worldofwarcraft.com",
+          "base_url": "https://worldofwarcraft.com/info/dungeons/images/mag/",
+          "full_pattern": "https://worldofwarcraft.com/info/dungeons/images/mag/ssN.jpg",
+          "thumb_pattern": "https://worldofwarcraft.com/info/dungeons/images/mag/ssN-thumb.jpg",
+          "scheme": "https",
+          "host": "worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        }
+      ],
+      "filename_literal": "ss",
+      "full_pattern": "/info/dungeons/images/mag/ssN.jpg",
+      "thumb_pattern": "/info/dungeons/images/mag/ssN-thumb.jpg",
+      "declared_slots": 15,
+      "expected_full_count": 15,
+      "expected_thumb_count": 15,
+      "expected_direct_entities": 30,
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/mag-gallery.html",
+        "sha256": "e629270c70b32f72fb089388dd59473feb9ffe4fafc24a498ba26ab533d9d5fb",
+        "addshots_line": 78,
+        "addshots_literal": "addshots(\"/info/dungeons/images/mag/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/mag/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 15;"
+      },
+      "registry_reference": {
+        "path": "research/continuous-recovery-20261016/local-audit/gallery-prefix-registry/gallery-prefix-registry.json",
+        "sha256": "d356992afb97633801f69aeb9c0a9e2a3ee933acd812d7cda386ad40a9aa51da",
+        "row_number": 3,
+        "prefix_review_status": "prefix_not_executed_in_reviewed_evidence",
+        "entity_audit_status_counts": {
+          "never_requested": 30
+        }
+      },
+      "report_references": [
+        {
+          "path": "research/continuous-recovery-20261016/local-audit/v2/gallery-direct-entity-audit-v2.json",
+          "sha256": "341435e62cfea8db4f1421d05c9e765e598ae4a31fb92d5702201c5308972a0a",
+          "role": "3368 direct-entity status join"
+        },
+        {
+          "path": "research/local-maintenance-20261014/gallery-route-entity-recheck.json",
+          "sha256": "845c0f032af3d43b7479266052ecb0c9866bdeb638b98565acdfffe854d1d7e5",
+          "role": "50-gallery route/slot source inventory"
+        }
+      ],
+      "query_parameters": {
+        "url": "http://www.worldofwarcraft.com/info/dungeons/images/mag/",
+        "matchType": "prefix",
+        "output": "json",
+        "fl": "urlkey,timestamp,original,mimetype,statuscode,digest,length",
+        "from": "20060101000000",
+        "to": "20080512210044",
+        "limit": "500",
+        "showResumeKey": "true"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fmag%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "selection_reason": "first eligible unreviewed registry row after explicit prior-prefix exclusions; no Amani transport-unknown row included"
+    },
+    {
+      "rank": 2,
+      "registry_rank": 4,
+      "target_key": "GALLERY-PREFIX02-02",
+      "label": "Gruul's Lair",
+      "category": "Raid",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/gruul/",
+      "source_directory": "/info/dungeons/images/gruul/",
+      "identity_variants": [
+        {
+          "variant_key": "http://www.worldofwarcraft.com",
+          "base_url": "http://www.worldofwarcraft.com/info/dungeons/images/gruul/",
+          "full_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/gruul/ssN.jpg",
+          "thumb_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/gruul/ssN-thumb.jpg",
+          "scheme": "http",
+          "host": "www.worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        },
+        {
+          "variant_key": "https://www.worldofwarcraft.com",
+          "base_url": "https://www.worldofwarcraft.com/info/dungeons/images/gruul/",
+          "full_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/gruul/ssN.jpg",
+          "thumb_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/gruul/ssN-thumb.jpg",
+          "scheme": "https",
+          "host": "www.worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        },
+        {
+          "variant_key": "http://worldofwarcraft.com",
+          "base_url": "http://worldofwarcraft.com/info/dungeons/images/gruul/",
+          "full_pattern": "http://worldofwarcraft.com/info/dungeons/images/gruul/ssN.jpg",
+          "thumb_pattern": "http://worldofwarcraft.com/info/dungeons/images/gruul/ssN-thumb.jpg",
+          "scheme": "http",
+          "host": "worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        },
+        {
+          "variant_key": "https://worldofwarcraft.com",
+          "base_url": "https://worldofwarcraft.com/info/dungeons/images/gruul/",
+          "full_pattern": "https://worldofwarcraft.com/info/dungeons/images/gruul/ssN.jpg",
+          "thumb_pattern": "https://worldofwarcraft.com/info/dungeons/images/gruul/ssN-thumb.jpg",
+          "scheme": "https",
+          "host": "worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        }
+      ],
+      "filename_literal": "ss",
+      "full_pattern": "/info/dungeons/images/gruul/ssN.jpg",
+      "thumb_pattern": "/info/dungeons/images/gruul/ssN-thumb.jpg",
+      "declared_slots": 21,
+      "expected_full_count": 21,
+      "expected_thumb_count": 21,
+      "expected_direct_entities": 42,
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/gruul-gallery.html",
+        "sha256": "06a285476e9f1fea3fd0d43784ba71a77da0c574ff44f9355f996036307a8e14",
+        "addshots_line": 84,
+        "addshots_literal": "addshots(\"/info/dungeons/images/gruul/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/gruul/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 21;"
+      },
+      "registry_reference": {
+        "path": "research/continuous-recovery-20261016/local-audit/gallery-prefix-registry/gallery-prefix-registry.json",
+        "sha256": "d356992afb97633801f69aeb9c0a9e2a3ee933acd812d7cda386ad40a9aa51da",
+        "row_number": 4,
+        "prefix_review_status": "prefix_not_executed_in_reviewed_evidence",
+        "entity_audit_status_counts": {
+          "never_requested": 42
+        }
+      },
+      "report_references": [
+        {
+          "path": "research/continuous-recovery-20261016/local-audit/v2/gallery-direct-entity-audit-v2.json",
+          "sha256": "341435e62cfea8db4f1421d05c9e765e598ae4a31fb92d5702201c5308972a0a",
+          "role": "3368 direct-entity status join"
+        },
+        {
+          "path": "research/local-maintenance-20261014/gallery-route-entity-recheck.json",
+          "sha256": "845c0f032af3d43b7479266052ecb0c9866bdeb638b98565acdfffe854d1d7e5",
+          "role": "50-gallery route/slot source inventory"
+        }
+      ],
+      "query_parameters": {
+        "url": "http://www.worldofwarcraft.com/info/dungeons/images/gruul/",
+        "matchType": "prefix",
+        "output": "json",
+        "fl": "urlkey,timestamp,original,mimetype,statuscode,digest,length",
+        "from": "20060101000000",
+        "to": "20080512210044",
+        "limit": "500",
+        "showResumeKey": "true"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fgruul%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "selection_reason": "first eligible unreviewed registry row after explicit prior-prefix exclusions; no Amani transport-unknown row included"
+    },
+    {
+      "rank": 3,
+      "registry_rank": 6,
+      "target_key": "GALLERY-PREFIX02-03",
+      "label": "The Battle for Mount Hyjal - Caverns of Time",
+      "category": "Raid",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/battle/",
+      "source_directory": "/info/dungeons/images/battle/",
+      "identity_variants": [
+        {
+          "variant_key": "http://www.worldofwarcraft.com",
+          "base_url": "http://www.worldofwarcraft.com/info/dungeons/images/battle/",
+          "full_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/battle/ssN.jpg",
+          "thumb_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/battle/ssN-thumb.jpg",
+          "scheme": "http",
+          "host": "www.worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        },
+        {
+          "variant_key": "https://www.worldofwarcraft.com",
+          "base_url": "https://www.worldofwarcraft.com/info/dungeons/images/battle/",
+          "full_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/battle/ssN.jpg",
+          "thumb_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/battle/ssN-thumb.jpg",
+          "scheme": "https",
+          "host": "www.worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        },
+        {
+          "variant_key": "http://worldofwarcraft.com",
+          "base_url": "http://worldofwarcraft.com/info/dungeons/images/battle/",
+          "full_pattern": "http://worldofwarcraft.com/info/dungeons/images/battle/ssN.jpg",
+          "thumb_pattern": "http://worldofwarcraft.com/info/dungeons/images/battle/ssN-thumb.jpg",
+          "scheme": "http",
+          "host": "worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        },
+        {
+          "variant_key": "https://worldofwarcraft.com",
+          "base_url": "https://worldofwarcraft.com/info/dungeons/images/battle/",
+          "full_pattern": "https://worldofwarcraft.com/info/dungeons/images/battle/ssN.jpg",
+          "thumb_pattern": "https://worldofwarcraft.com/info/dungeons/images/battle/ssN-thumb.jpg",
+          "scheme": "https",
+          "host": "worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        }
+      ],
+      "filename_literal": "ss",
+      "full_pattern": "/info/dungeons/images/battle/ssN.jpg",
+      "thumb_pattern": "/info/dungeons/images/battle/ssN-thumb.jpg",
+      "declared_slots": 44,
+      "expected_full_count": 44,
+      "expected_thumb_count": 44,
+      "expected_direct_entities": 88,
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/cot-hyjal-gallery.html",
+        "sha256": "ada17276d79e0af2e9c37054f1602a0863774784839ce230e1b4af564954ca11",
+        "addshots_line": 108,
+        "addshots_literal": "addshots(\"/info/dungeons/images/battle/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/battle/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 44;"
+      },
+      "registry_reference": {
+        "path": "research/continuous-recovery-20261016/local-audit/gallery-prefix-registry/gallery-prefix-registry.json",
+        "sha256": "d356992afb97633801f69aeb9c0a9e2a3ee933acd812d7cda386ad40a9aa51da",
+        "row_number": 6,
+        "prefix_review_status": "prefix_not_executed_in_reviewed_evidence",
+        "entity_audit_status_counts": {
+          "never_requested": 88
+        }
+      },
+      "report_references": [
+        {
+          "path": "research/continuous-recovery-20261016/local-audit/v2/gallery-direct-entity-audit-v2.json",
+          "sha256": "341435e62cfea8db4f1421d05c9e765e598ae4a31fb92d5702201c5308972a0a",
+          "role": "3368 direct-entity status join"
+        },
+        {
+          "path": "research/local-maintenance-20261014/gallery-route-entity-recheck.json",
+          "sha256": "845c0f032af3d43b7479266052ecb0c9866bdeb638b98565acdfffe854d1d7e5",
+          "role": "50-gallery route/slot source inventory"
+        }
+      ],
+      "query_parameters": {
+        "url": "http://www.worldofwarcraft.com/info/dungeons/images/battle/",
+        "matchType": "prefix",
+        "output": "json",
+        "fl": "urlkey,timestamp,original,mimetype,statuscode,digest,length",
+        "from": "20060101000000",
+        "to": "20080512210044",
+        "limit": "500",
+        "showResumeKey": "true"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fbattle%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "selection_reason": "first eligible unreviewed registry row after explicit prior-prefix exclusions; no Amani transport-unknown row included"
+    },
+    {
+      "rank": 4,
+      "registry_rank": 7,
+      "target_key": "GALLERY-PREFIX02-04",
+      "label": "Tempest Keep - The Eye",
+      "category": "Raid",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/theeye/",
+      "source_directory": "/info/dungeons/images/theeye/",
+      "identity_variants": [
+        {
+          "variant_key": "http://www.worldofwarcraft.com",
+          "base_url": "http://www.worldofwarcraft.com/info/dungeons/images/theeye/",
+          "full_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/theeye/ssN.jpg",
+          "thumb_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/theeye/ssN-thumb.jpg",
+          "scheme": "http",
+          "host": "www.worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        },
+        {
+          "variant_key": "https://www.worldofwarcraft.com",
+          "base_url": "https://www.worldofwarcraft.com/info/dungeons/images/theeye/",
+          "full_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/theeye/ssN.jpg",
+          "thumb_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/theeye/ssN-thumb.jpg",
+          "scheme": "https",
+          "host": "www.worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        },
+        {
+          "variant_key": "http://worldofwarcraft.com",
+          "base_url": "http://worldofwarcraft.com/info/dungeons/images/theeye/",
+          "full_pattern": "http://worldofwarcraft.com/info/dungeons/images/theeye/ssN.jpg",
+          "thumb_pattern": "http://worldofwarcraft.com/info/dungeons/images/theeye/ssN-thumb.jpg",
+          "scheme": "http",
+          "host": "worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        },
+        {
+          "variant_key": "https://worldofwarcraft.com",
+          "base_url": "https://worldofwarcraft.com/info/dungeons/images/theeye/",
+          "full_pattern": "https://worldofwarcraft.com/info/dungeons/images/theeye/ssN.jpg",
+          "thumb_pattern": "https://worldofwarcraft.com/info/dungeons/images/theeye/ssN-thumb.jpg",
+          "scheme": "https",
+          "host": "worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        }
+      ],
+      "filename_literal": "ss",
+      "full_pattern": "/info/dungeons/images/theeye/ssN.jpg",
+      "thumb_pattern": "/info/dungeons/images/theeye/ssN-thumb.jpg",
+      "declared_slots": 43,
+      "expected_full_count": 43,
+      "expected_thumb_count": 43,
+      "expected_direct_entities": 86,
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/tk-the-eye-gallery.html",
+        "sha256": "494dafb57b8e86b0a7ac22d6edcc13c3419bc6323c57e807b91466df5c9f2359",
+        "addshots_line": 106,
+        "addshots_literal": "addshots(\"/info/dungeons/images/theeye/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/theeye/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 43;"
+      },
+      "registry_reference": {
+        "path": "research/continuous-recovery-20261016/local-audit/gallery-prefix-registry/gallery-prefix-registry.json",
+        "sha256": "d356992afb97633801f69aeb9c0a9e2a3ee933acd812d7cda386ad40a9aa51da",
+        "row_number": 7,
+        "prefix_review_status": "prefix_not_executed_in_reviewed_evidence",
+        "entity_audit_status_counts": {
+          "never_requested": 86
+        }
+      },
+      "report_references": [
+        {
+          "path": "research/continuous-recovery-20261016/local-audit/v2/gallery-direct-entity-audit-v2.json",
+          "sha256": "341435e62cfea8db4f1421d05c9e765e598ae4a31fb92d5702201c5308972a0a",
+          "role": "3368 direct-entity status join"
+        },
+        {
+          "path": "research/local-maintenance-20261014/gallery-route-entity-recheck.json",
+          "sha256": "845c0f032af3d43b7479266052ecb0c9866bdeb638b98565acdfffe854d1d7e5",
+          "role": "50-gallery route/slot source inventory"
+        }
+      ],
+      "query_parameters": {
+        "url": "http://www.worldofwarcraft.com/info/dungeons/images/theeye/",
+        "matchType": "prefix",
+        "output": "json",
+        "fl": "urlkey,timestamp,original,mimetype,statuscode,digest,length",
+        "from": "20060101000000",
+        "to": "20080512210044",
+        "limit": "500",
+        "showResumeKey": "true"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Ftheeye%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "selection_reason": "first eligible unreviewed registry row after explicit prior-prefix exclusions; no Amani transport-unknown row included"
+    },
+    {
+      "rank": 5,
+      "registry_rank": 9,
+      "target_key": "GALLERY-PREFIX02-05",
+      "label": "Doom Lord Kazzak",
+      "category": "Raid",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/doomlordkazzak/",
+      "source_directory": "/info/dungeons/images/doomlordkazzak/",
+      "identity_variants": [
+        {
+          "variant_key": "http://www.worldofwarcraft.com",
+          "base_url": "http://www.worldofwarcraft.com/info/dungeons/images/doomlordkazzak/",
+          "full_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/doomlordkazzak/ssN.jpg",
+          "thumb_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/doomlordkazzak/ssN-thumb.jpg",
+          "scheme": "http",
+          "host": "www.worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        },
+        {
+          "variant_key": "https://www.worldofwarcraft.com",
+          "base_url": "https://www.worldofwarcraft.com/info/dungeons/images/doomlordkazzak/",
+          "full_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/doomlordkazzak/ssN.jpg",
+          "thumb_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/doomlordkazzak/ssN-thumb.jpg",
+          "scheme": "https",
+          "host": "www.worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        },
+        {
+          "variant_key": "http://worldofwarcraft.com",
+          "base_url": "http://worldofwarcraft.com/info/dungeons/images/doomlordkazzak/",
+          "full_pattern": "http://worldofwarcraft.com/info/dungeons/images/doomlordkazzak/ssN.jpg",
+          "thumb_pattern": "http://worldofwarcraft.com/info/dungeons/images/doomlordkazzak/ssN-thumb.jpg",
+          "scheme": "http",
+          "host": "worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        },
+        {
+          "variant_key": "https://worldofwarcraft.com",
+          "base_url": "https://worldofwarcraft.com/info/dungeons/images/doomlordkazzak/",
+          "full_pattern": "https://worldofwarcraft.com/info/dungeons/images/doomlordkazzak/ssN.jpg",
+          "thumb_pattern": "https://worldofwarcraft.com/info/dungeons/images/doomlordkazzak/ssN-thumb.jpg",
+          "scheme": "https",
+          "host": "worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        }
+      ],
+      "filename_literal": "ss",
+      "full_pattern": "/info/dungeons/images/doomlordkazzak/ssN.jpg",
+      "thumb_pattern": "/info/dungeons/images/doomlordkazzak/ssN-thumb.jpg",
+      "declared_slots": 9,
+      "expected_full_count": 9,
+      "expected_thumb_count": 9,
+      "expected_direct_entities": 18,
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/doom-lord-kazzak-gallery.html",
+        "sha256": "7da5d4485b91e3f6a078a598e503f5c8d484641f309c98009764bae86b735481",
+        "addshots_line": 72,
+        "addshots_literal": "addshots(\"/info/dungeons/images/doomlordkazzak/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/doomlordkazzak/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 9;"
+      },
+      "registry_reference": {
+        "path": "research/continuous-recovery-20261016/local-audit/gallery-prefix-registry/gallery-prefix-registry.json",
+        "sha256": "d356992afb97633801f69aeb9c0a9e2a3ee933acd812d7cda386ad40a9aa51da",
+        "row_number": 9,
+        "prefix_review_status": "prefix_not_executed_in_reviewed_evidence",
+        "entity_audit_status_counts": {
+          "never_requested": 18
+        }
+      },
+      "report_references": [
+        {
+          "path": "research/continuous-recovery-20261016/local-audit/v2/gallery-direct-entity-audit-v2.json",
+          "sha256": "341435e62cfea8db4f1421d05c9e765e598ae4a31fb92d5702201c5308972a0a",
+          "role": "3368 direct-entity status join"
+        },
+        {
+          "path": "research/local-maintenance-20261014/gallery-route-entity-recheck.json",
+          "sha256": "845c0f032af3d43b7479266052ecb0c9866bdeb638b98565acdfffe854d1d7e5",
+          "role": "50-gallery route/slot source inventory"
+        }
+      ],
+      "query_parameters": {
+        "url": "http://www.worldofwarcraft.com/info/dungeons/images/doomlordkazzak/",
+        "matchType": "prefix",
+        "output": "json",
+        "fl": "urlkey,timestamp,original,mimetype,statuscode,digest,length",
+        "from": "20060101000000",
+        "to": "20080512210044",
+        "limit": "500",
+        "showResumeKey": "true"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fdoomlordkazzak%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "selection_reason": "first eligible unreviewed registry row after explicit prior-prefix exclusions; no Amani transport-unknown row included"
+    },
+    {
+      "rank": 6,
+      "registry_rank": 11,
+      "target_key": "GALLERY-PREFIX02-06",
+      "label": "Hellfire Citadel - Hellfire Ramparts",
+      "category": "Dungeon",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/hellfireramparts/",
+      "source_directory": "/info/dungeons/images/hellfireramparts/",
+      "identity_variants": [
+        {
+          "variant_key": "http://www.worldofwarcraft.com",
+          "base_url": "http://www.worldofwarcraft.com/info/dungeons/images/hellfireramparts/",
+          "full_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/hellfireramparts/ssN.jpg",
+          "thumb_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/hellfireramparts/ssN-thumb.jpg",
+          "scheme": "http",
+          "host": "www.worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        },
+        {
+          "variant_key": "https://www.worldofwarcraft.com",
+          "base_url": "https://www.worldofwarcraft.com/info/dungeons/images/hellfireramparts/",
+          "full_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/hellfireramparts/ssN.jpg",
+          "thumb_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/hellfireramparts/ssN-thumb.jpg",
+          "scheme": "https",
+          "host": "www.worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        },
+        {
+          "variant_key": "http://worldofwarcraft.com",
+          "base_url": "http://worldofwarcraft.com/info/dungeons/images/hellfireramparts/",
+          "full_pattern": "http://worldofwarcraft.com/info/dungeons/images/hellfireramparts/ssN.jpg",
+          "thumb_pattern": "http://worldofwarcraft.com/info/dungeons/images/hellfireramparts/ssN-thumb.jpg",
+          "scheme": "http",
+          "host": "worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        },
+        {
+          "variant_key": "https://worldofwarcraft.com",
+          "base_url": "https://worldofwarcraft.com/info/dungeons/images/hellfireramparts/",
+          "full_pattern": "https://worldofwarcraft.com/info/dungeons/images/hellfireramparts/ssN.jpg",
+          "thumb_pattern": "https://worldofwarcraft.com/info/dungeons/images/hellfireramparts/ssN-thumb.jpg",
+          "scheme": "https",
+          "host": "worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        }
+      ],
+      "filename_literal": "ss",
+      "full_pattern": "/info/dungeons/images/hellfireramparts/ssN.jpg",
+      "thumb_pattern": "/info/dungeons/images/hellfireramparts/ssN-thumb.jpg",
+      "declared_slots": 32,
+      "expected_full_count": 32,
+      "expected_thumb_count": 32,
+      "expected_direct_entities": 64,
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/hc-hellfire-ramparts-gallery.html",
+        "sha256": "f9daebf04caa4cb415e887405148d5f616b7010cfe4c0f0f29e0ea8b440baf0a",
+        "addshots_line": 95,
+        "addshots_literal": "addshots(\"/info/dungeons/images/hellfireramparts/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/hellfireramparts/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 32;"
+      },
+      "registry_reference": {
+        "path": "research/continuous-recovery-20261016/local-audit/gallery-prefix-registry/gallery-prefix-registry.json",
+        "sha256": "d356992afb97633801f69aeb9c0a9e2a3ee933acd812d7cda386ad40a9aa51da",
+        "row_number": 11,
+        "prefix_review_status": "prefix_not_executed_in_reviewed_evidence",
+        "entity_audit_status_counts": {
+          "never_requested": 64
+        }
+      },
+      "report_references": [
+        {
+          "path": "research/continuous-recovery-20261016/local-audit/v2/gallery-direct-entity-audit-v2.json",
+          "sha256": "341435e62cfea8db4f1421d05c9e765e598ae4a31fb92d5702201c5308972a0a",
+          "role": "3368 direct-entity status join"
+        },
+        {
+          "path": "research/local-maintenance-20261014/gallery-route-entity-recheck.json",
+          "sha256": "845c0f032af3d43b7479266052ecb0c9866bdeb638b98565acdfffe854d1d7e5",
+          "role": "50-gallery route/slot source inventory"
+        }
+      ],
+      "query_parameters": {
+        "url": "http://www.worldofwarcraft.com/info/dungeons/images/hellfireramparts/",
+        "matchType": "prefix",
+        "output": "json",
+        "fl": "urlkey,timestamp,original,mimetype,statuscode,digest,length",
+        "from": "20060101000000",
+        "to": "20080512210044",
+        "limit": "500",
+        "showResumeKey": "true"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fhellfireramparts%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "selection_reason": "first eligible unreviewed registry row after explicit prior-prefix exclusions; no Amani transport-unknown row included"
+    },
+    {
+      "rank": 7,
+      "registry_rank": 12,
+      "target_key": "GALLERY-PREFIX02-07",
+      "label": "Hellfire Citadel - The Blood Furnace",
+      "category": "Dungeon",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/bloodfurnace/",
+      "source_directory": "/info/dungeons/images/bloodfurnace/",
+      "identity_variants": [
+        {
+          "variant_key": "http://www.worldofwarcraft.com",
+          "base_url": "http://www.worldofwarcraft.com/info/dungeons/images/bloodfurnace/",
+          "full_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/bloodfurnace/ssN.jpg",
+          "thumb_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/bloodfurnace/ssN-thumb.jpg",
+          "scheme": "http",
+          "host": "www.worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        },
+        {
+          "variant_key": "https://www.worldofwarcraft.com",
+          "base_url": "https://www.worldofwarcraft.com/info/dungeons/images/bloodfurnace/",
+          "full_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/bloodfurnace/ssN.jpg",
+          "thumb_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/bloodfurnace/ssN-thumb.jpg",
+          "scheme": "https",
+          "host": "www.worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        },
+        {
+          "variant_key": "http://worldofwarcraft.com",
+          "base_url": "http://worldofwarcraft.com/info/dungeons/images/bloodfurnace/",
+          "full_pattern": "http://worldofwarcraft.com/info/dungeons/images/bloodfurnace/ssN.jpg",
+          "thumb_pattern": "http://worldofwarcraft.com/info/dungeons/images/bloodfurnace/ssN-thumb.jpg",
+          "scheme": "http",
+          "host": "worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        },
+        {
+          "variant_key": "https://worldofwarcraft.com",
+          "base_url": "https://worldofwarcraft.com/info/dungeons/images/bloodfurnace/",
+          "full_pattern": "https://worldofwarcraft.com/info/dungeons/images/bloodfurnace/ssN.jpg",
+          "thumb_pattern": "https://worldofwarcraft.com/info/dungeons/images/bloodfurnace/ssN-thumb.jpg",
+          "scheme": "https",
+          "host": "worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        }
+      ],
+      "filename_literal": "ss",
+      "full_pattern": "/info/dungeons/images/bloodfurnace/ssN.jpg",
+      "thumb_pattern": "/info/dungeons/images/bloodfurnace/ssN-thumb.jpg",
+      "declared_slots": 39,
+      "expected_full_count": 39,
+      "expected_thumb_count": 39,
+      "expected_direct_entities": 78,
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/hc-blood-furnace-gallery.html",
+        "sha256": "b90e841a1fda4445ac3014475cf3e8ecc1c777767a8c0fb9df5013c37b434410",
+        "addshots_line": 102,
+        "addshots_literal": "addshots(\"/info/dungeons/images/bloodfurnace/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/bloodfurnace/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 39;"
+      },
+      "registry_reference": {
+        "path": "research/continuous-recovery-20261016/local-audit/gallery-prefix-registry/gallery-prefix-registry.json",
+        "sha256": "d356992afb97633801f69aeb9c0a9e2a3ee933acd812d7cda386ad40a9aa51da",
+        "row_number": 12,
+        "prefix_review_status": "prefix_not_executed_in_reviewed_evidence",
+        "entity_audit_status_counts": {
+          "never_requested": 78
+        }
+      },
+      "report_references": [
+        {
+          "path": "research/continuous-recovery-20261016/local-audit/v2/gallery-direct-entity-audit-v2.json",
+          "sha256": "341435e62cfea8db4f1421d05c9e765e598ae4a31fb92d5702201c5308972a0a",
+          "role": "3368 direct-entity status join"
+        },
+        {
+          "path": "research/local-maintenance-20261014/gallery-route-entity-recheck.json",
+          "sha256": "845c0f032af3d43b7479266052ecb0c9866bdeb638b98565acdfffe854d1d7e5",
+          "role": "50-gallery route/slot source inventory"
+        }
+      ],
+      "query_parameters": {
+        "url": "http://www.worldofwarcraft.com/info/dungeons/images/bloodfurnace/",
+        "matchType": "prefix",
+        "output": "json",
+        "fl": "urlkey,timestamp,original,mimetype,statuscode,digest,length",
+        "from": "20060101000000",
+        "to": "20080512210044",
+        "limit": "500",
+        "showResumeKey": "true"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fbloodfurnace%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "selection_reason": "first eligible unreviewed registry row after explicit prior-prefix exclusions; no Amani transport-unknown row included"
+    },
+    {
+      "rank": 8,
+      "registry_rank": 14,
+      "target_key": "GALLERY-PREFIX02-08",
+      "label": "Coilfang Reservoir - The Underbog",
+      "category": "Dungeon",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/underbog/",
+      "source_directory": "/info/dungeons/images/underbog/",
+      "identity_variants": [
+        {
+          "variant_key": "http://www.worldofwarcraft.com",
+          "base_url": "http://www.worldofwarcraft.com/info/dungeons/images/underbog/",
+          "full_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/underbog/ssN.jpg",
+          "thumb_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/underbog/ssN-thumb.jpg",
+          "scheme": "http",
+          "host": "www.worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        },
+        {
+          "variant_key": "https://www.worldofwarcraft.com",
+          "base_url": "https://www.worldofwarcraft.com/info/dungeons/images/underbog/",
+          "full_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/underbog/ssN.jpg",
+          "thumb_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/underbog/ssN-thumb.jpg",
+          "scheme": "https",
+          "host": "www.worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        },
+        {
+          "variant_key": "http://worldofwarcraft.com",
+          "base_url": "http://worldofwarcraft.com/info/dungeons/images/underbog/",
+          "full_pattern": "http://worldofwarcraft.com/info/dungeons/images/underbog/ssN.jpg",
+          "thumb_pattern": "http://worldofwarcraft.com/info/dungeons/images/underbog/ssN-thumb.jpg",
+          "scheme": "http",
+          "host": "worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        },
+        {
+          "variant_key": "https://worldofwarcraft.com",
+          "base_url": "https://worldofwarcraft.com/info/dungeons/images/underbog/",
+          "full_pattern": "https://worldofwarcraft.com/info/dungeons/images/underbog/ssN.jpg",
+          "thumb_pattern": "https://worldofwarcraft.com/info/dungeons/images/underbog/ssN-thumb.jpg",
+          "scheme": "https",
+          "host": "worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        }
+      ],
+      "filename_literal": "ss",
+      "full_pattern": "/info/dungeons/images/underbog/ssN.jpg",
+      "thumb_pattern": "/info/dungeons/images/underbog/ssN-thumb.jpg",
+      "declared_slots": 40,
+      "expected_full_count": 40,
+      "expected_thumb_count": 40,
+      "expected_direct_entities": 80,
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/cr-underbog-gallery.html",
+        "sha256": "bdeb2743ea4fdb817b95dac567a676603bc97dc2ee568ae9b0c36e1f95781b2e",
+        "addshots_line": 103,
+        "addshots_literal": "addshots(\"/info/dungeons/images/underbog/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/underbog/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 40;"
+      },
+      "registry_reference": {
+        "path": "research/continuous-recovery-20261016/local-audit/gallery-prefix-registry/gallery-prefix-registry.json",
+        "sha256": "d356992afb97633801f69aeb9c0a9e2a3ee933acd812d7cda386ad40a9aa51da",
+        "row_number": 14,
+        "prefix_review_status": "prefix_not_executed_in_reviewed_evidence",
+        "entity_audit_status_counts": {
+          "never_requested": 80
+        }
+      },
+      "report_references": [
+        {
+          "path": "research/continuous-recovery-20261016/local-audit/v2/gallery-direct-entity-audit-v2.json",
+          "sha256": "341435e62cfea8db4f1421d05c9e765e598ae4a31fb92d5702201c5308972a0a",
+          "role": "3368 direct-entity status join"
+        },
+        {
+          "path": "research/local-maintenance-20261014/gallery-route-entity-recheck.json",
+          "sha256": "845c0f032af3d43b7479266052ecb0c9866bdeb638b98565acdfffe854d1d7e5",
+          "role": "50-gallery route/slot source inventory"
+        }
+      ],
+      "query_parameters": {
+        "url": "http://www.worldofwarcraft.com/info/dungeons/images/underbog/",
+        "matchType": "prefix",
+        "output": "json",
+        "fl": "urlkey,timestamp,original,mimetype,statuscode,digest,length",
+        "from": "20060101000000",
+        "to": "20080512210044",
+        "limit": "500",
+        "showResumeKey": "true"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Funderbog%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "selection_reason": "first eligible unreviewed registry row after explicit prior-prefix exclusions; no Amani transport-unknown row included"
+    },
+    {
+      "rank": 9,
+      "registry_rank": 15,
+      "target_key": "GALLERY-PREFIX02-09",
+      "label": "Caverns of Time - Escape from Durnholde",
+      "category": "Dungeon",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/escape/",
+      "source_directory": "/info/dungeons/images/escape/",
+      "identity_variants": [
+        {
+          "variant_key": "http://www.worldofwarcraft.com",
+          "base_url": "http://www.worldofwarcraft.com/info/dungeons/images/escape/",
+          "full_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/escape/ssN.jpg",
+          "thumb_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/escape/ssN-thumb.jpg",
+          "scheme": "http",
+          "host": "www.worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        },
+        {
+          "variant_key": "https://www.worldofwarcraft.com",
+          "base_url": "https://www.worldofwarcraft.com/info/dungeons/images/escape/",
+          "full_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/escape/ssN.jpg",
+          "thumb_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/escape/ssN-thumb.jpg",
+          "scheme": "https",
+          "host": "www.worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        },
+        {
+          "variant_key": "http://worldofwarcraft.com",
+          "base_url": "http://worldofwarcraft.com/info/dungeons/images/escape/",
+          "full_pattern": "http://worldofwarcraft.com/info/dungeons/images/escape/ssN.jpg",
+          "thumb_pattern": "http://worldofwarcraft.com/info/dungeons/images/escape/ssN-thumb.jpg",
+          "scheme": "http",
+          "host": "worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        },
+        {
+          "variant_key": "https://worldofwarcraft.com",
+          "base_url": "https://worldofwarcraft.com/info/dungeons/images/escape/",
+          "full_pattern": "https://worldofwarcraft.com/info/dungeons/images/escape/ssN.jpg",
+          "thumb_pattern": "https://worldofwarcraft.com/info/dungeons/images/escape/ssN-thumb.jpg",
+          "scheme": "https",
+          "host": "worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        }
+      ],
+      "filename_literal": "ss",
+      "full_pattern": "/info/dungeons/images/escape/ssN.jpg",
+      "thumb_pattern": "/info/dungeons/images/escape/ssN-thumb.jpg",
+      "declared_slots": 38,
+      "expected_full_count": 38,
+      "expected_thumb_count": 38,
+      "expected_direct_entities": 76,
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/cot-escape-gallery.html",
+        "sha256": "0e1e813933b8592035920d6010623191232db647d7a61179d4c948722941fbbf",
+        "addshots_line": 101,
+        "addshots_literal": "addshots(\"/info/dungeons/images/escape/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/escape/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 38;"
+      },
+      "registry_reference": {
+        "path": "research/continuous-recovery-20261016/local-audit/gallery-prefix-registry/gallery-prefix-registry.json",
+        "sha256": "d356992afb97633801f69aeb9c0a9e2a3ee933acd812d7cda386ad40a9aa51da",
+        "row_number": 15,
+        "prefix_review_status": "prefix_not_executed_in_reviewed_evidence",
+        "entity_audit_status_counts": {
+          "never_requested": 76
+        }
+      },
+      "report_references": [
+        {
+          "path": "research/continuous-recovery-20261016/local-audit/v2/gallery-direct-entity-audit-v2.json",
+          "sha256": "341435e62cfea8db4f1421d05c9e765e598ae4a31fb92d5702201c5308972a0a",
+          "role": "3368 direct-entity status join"
+        },
+        {
+          "path": "research/local-maintenance-20261014/gallery-route-entity-recheck.json",
+          "sha256": "845c0f032af3d43b7479266052ecb0c9866bdeb638b98565acdfffe854d1d7e5",
+          "role": "50-gallery route/slot source inventory"
+        }
+      ],
+      "query_parameters": {
+        "url": "http://www.worldofwarcraft.com/info/dungeons/images/escape/",
+        "matchType": "prefix",
+        "output": "json",
+        "fl": "urlkey,timestamp,original,mimetype,statuscode,digest,length",
+        "from": "20060101000000",
+        "to": "20080512210044",
+        "limit": "500",
+        "showResumeKey": "true"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fescape%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "selection_reason": "first eligible unreviewed registry row after explicit prior-prefix exclusions; no Amani transport-unknown row included"
+    },
+    {
+      "rank": 10,
+      "registry_rank": 16,
+      "target_key": "GALLERY-PREFIX02-10",
+      "label": "Caverns of Time - Opening of the Dark Portal",
+      "category": "Dungeon",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/opening/",
+      "source_directory": "/info/dungeons/images/opening/",
+      "identity_variants": [
+        {
+          "variant_key": "http://www.worldofwarcraft.com",
+          "base_url": "http://www.worldofwarcraft.com/info/dungeons/images/opening/",
+          "full_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/opening/ssN.jpg",
+          "thumb_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/opening/ssN-thumb.jpg",
+          "scheme": "http",
+          "host": "www.worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        },
+        {
+          "variant_key": "https://www.worldofwarcraft.com",
+          "base_url": "https://www.worldofwarcraft.com/info/dungeons/images/opening/",
+          "full_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/opening/ssN.jpg",
+          "thumb_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/opening/ssN-thumb.jpg",
+          "scheme": "https",
+          "host": "www.worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        },
+        {
+          "variant_key": "http://worldofwarcraft.com",
+          "base_url": "http://worldofwarcraft.com/info/dungeons/images/opening/",
+          "full_pattern": "http://worldofwarcraft.com/info/dungeons/images/opening/ssN.jpg",
+          "thumb_pattern": "http://worldofwarcraft.com/info/dungeons/images/opening/ssN-thumb.jpg",
+          "scheme": "http",
+          "host": "worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        },
+        {
+          "variant_key": "https://worldofwarcraft.com",
+          "base_url": "https://worldofwarcraft.com/info/dungeons/images/opening/",
+          "full_pattern": "https://worldofwarcraft.com/info/dungeons/images/opening/ssN.jpg",
+          "thumb_pattern": "https://worldofwarcraft.com/info/dungeons/images/opening/ssN-thumb.jpg",
+          "scheme": "https",
+          "host": "worldofwarcraft.com",
+          "identity_status": "distinct_exact_original_candidate",
+          "automatic_alias": false,
+          "replay_requires_exact_memento_and_digest": true
+        }
+      ],
+      "filename_literal": "ss",
+      "full_pattern": "/info/dungeons/images/opening/ssN.jpg",
+      "thumb_pattern": "/info/dungeons/images/opening/ssN-thumb.jpg",
+      "declared_slots": 30,
+      "expected_full_count": 30,
+      "expected_thumb_count": 30,
+      "expected_direct_entities": 60,
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/cot-opening-gallery.html",
+        "sha256": "6742140f1ef508f75ba3a4eaca3cf3fcd1edb37a9d93cf62c15fbcf5749818aa",
+        "addshots_line": 93,
+        "addshots_literal": "addshots(\"/info/dungeons/images/opening/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/opening/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 30;"
+      },
+      "registry_reference": {
+        "path": "research/continuous-recovery-20261016/local-audit/gallery-prefix-registry/gallery-prefix-registry.json",
+        "sha256": "d356992afb97633801f69aeb9c0a9e2a3ee933acd812d7cda386ad40a9aa51da",
+        "row_number": 16,
+        "prefix_review_status": "prefix_not_executed_in_reviewed_evidence",
+        "entity_audit_status_counts": {
+          "never_requested": 60
+        }
+      },
+      "report_references": [
+        {
+          "path": "research/continuous-recovery-20261016/local-audit/v2/gallery-direct-entity-audit-v2.json",
+          "sha256": "341435e62cfea8db4f1421d05c9e765e598ae4a31fb92d5702201c5308972a0a",
+          "role": "3368 direct-entity status join"
+        },
+        {
+          "path": "research/local-maintenance-20261014/gallery-route-entity-recheck.json",
+          "sha256": "845c0f032af3d43b7479266052ecb0c9866bdeb638b98565acdfffe854d1d7e5",
+          "role": "50-gallery route/slot source inventory"
+        }
+      ],
+      "query_parameters": {
+        "url": "http://www.worldofwarcraft.com/info/dungeons/images/opening/",
+        "matchType": "prefix",
+        "output": "json",
+        "fl": "urlkey,timestamp,original,mimetype,statuscode,digest,length",
+        "from": "20060101000000",
+        "to": "20080512210044",
+        "limit": "500",
+        "showResumeKey": "true"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fopening%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "selection_reason": "first eligible unreviewed registry row after explicit prior-prefix exclusions; no Amani transport-unknown row included"
+    }
+  ],
+  "identity_variants": [
+    {
+      "variant_key": "http://www.worldofwarcraft.com",
+      "base_url": "http://www.worldofwarcraft.com/info/dungeons/images/mag/",
+      "full_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/mag/ssN.jpg",
+      "thumb_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/mag/ssN-thumb.jpg",
+      "scheme": "http",
+      "host": "www.worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 1,
+      "registry_rank": 3,
+      "label": "Magtheridon's Lair"
+    },
+    {
+      "variant_key": "https://www.worldofwarcraft.com",
+      "base_url": "https://www.worldofwarcraft.com/info/dungeons/images/mag/",
+      "full_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/mag/ssN.jpg",
+      "thumb_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/mag/ssN-thumb.jpg",
+      "scheme": "https",
+      "host": "www.worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 1,
+      "registry_rank": 3,
+      "label": "Magtheridon's Lair"
+    },
+    {
+      "variant_key": "http://worldofwarcraft.com",
+      "base_url": "http://worldofwarcraft.com/info/dungeons/images/mag/",
+      "full_pattern": "http://worldofwarcraft.com/info/dungeons/images/mag/ssN.jpg",
+      "thumb_pattern": "http://worldofwarcraft.com/info/dungeons/images/mag/ssN-thumb.jpg",
+      "scheme": "http",
+      "host": "worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 1,
+      "registry_rank": 3,
+      "label": "Magtheridon's Lair"
+    },
+    {
+      "variant_key": "https://worldofwarcraft.com",
+      "base_url": "https://worldofwarcraft.com/info/dungeons/images/mag/",
+      "full_pattern": "https://worldofwarcraft.com/info/dungeons/images/mag/ssN.jpg",
+      "thumb_pattern": "https://worldofwarcraft.com/info/dungeons/images/mag/ssN-thumb.jpg",
+      "scheme": "https",
+      "host": "worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 1,
+      "registry_rank": 3,
+      "label": "Magtheridon's Lair"
+    },
+    {
+      "variant_key": "http://www.worldofwarcraft.com",
+      "base_url": "http://www.worldofwarcraft.com/info/dungeons/images/gruul/",
+      "full_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/gruul/ssN.jpg",
+      "thumb_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/gruul/ssN-thumb.jpg",
+      "scheme": "http",
+      "host": "www.worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 2,
+      "registry_rank": 4,
+      "label": "Gruul's Lair"
+    },
+    {
+      "variant_key": "https://www.worldofwarcraft.com",
+      "base_url": "https://www.worldofwarcraft.com/info/dungeons/images/gruul/",
+      "full_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/gruul/ssN.jpg",
+      "thumb_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/gruul/ssN-thumb.jpg",
+      "scheme": "https",
+      "host": "www.worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 2,
+      "registry_rank": 4,
+      "label": "Gruul's Lair"
+    },
+    {
+      "variant_key": "http://worldofwarcraft.com",
+      "base_url": "http://worldofwarcraft.com/info/dungeons/images/gruul/",
+      "full_pattern": "http://worldofwarcraft.com/info/dungeons/images/gruul/ssN.jpg",
+      "thumb_pattern": "http://worldofwarcraft.com/info/dungeons/images/gruul/ssN-thumb.jpg",
+      "scheme": "http",
+      "host": "worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 2,
+      "registry_rank": 4,
+      "label": "Gruul's Lair"
+    },
+    {
+      "variant_key": "https://worldofwarcraft.com",
+      "base_url": "https://worldofwarcraft.com/info/dungeons/images/gruul/",
+      "full_pattern": "https://worldofwarcraft.com/info/dungeons/images/gruul/ssN.jpg",
+      "thumb_pattern": "https://worldofwarcraft.com/info/dungeons/images/gruul/ssN-thumb.jpg",
+      "scheme": "https",
+      "host": "worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 2,
+      "registry_rank": 4,
+      "label": "Gruul's Lair"
+    },
+    {
+      "variant_key": "http://www.worldofwarcraft.com",
+      "base_url": "http://www.worldofwarcraft.com/info/dungeons/images/battle/",
+      "full_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/battle/ssN.jpg",
+      "thumb_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/battle/ssN-thumb.jpg",
+      "scheme": "http",
+      "host": "www.worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 3,
+      "registry_rank": 6,
+      "label": "The Battle for Mount Hyjal - Caverns of Time"
+    },
+    {
+      "variant_key": "https://www.worldofwarcraft.com",
+      "base_url": "https://www.worldofwarcraft.com/info/dungeons/images/battle/",
+      "full_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/battle/ssN.jpg",
+      "thumb_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/battle/ssN-thumb.jpg",
+      "scheme": "https",
+      "host": "www.worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 3,
+      "registry_rank": 6,
+      "label": "The Battle for Mount Hyjal - Caverns of Time"
+    },
+    {
+      "variant_key": "http://worldofwarcraft.com",
+      "base_url": "http://worldofwarcraft.com/info/dungeons/images/battle/",
+      "full_pattern": "http://worldofwarcraft.com/info/dungeons/images/battle/ssN.jpg",
+      "thumb_pattern": "http://worldofwarcraft.com/info/dungeons/images/battle/ssN-thumb.jpg",
+      "scheme": "http",
+      "host": "worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 3,
+      "registry_rank": 6,
+      "label": "The Battle for Mount Hyjal - Caverns of Time"
+    },
+    {
+      "variant_key": "https://worldofwarcraft.com",
+      "base_url": "https://worldofwarcraft.com/info/dungeons/images/battle/",
+      "full_pattern": "https://worldofwarcraft.com/info/dungeons/images/battle/ssN.jpg",
+      "thumb_pattern": "https://worldofwarcraft.com/info/dungeons/images/battle/ssN-thumb.jpg",
+      "scheme": "https",
+      "host": "worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 3,
+      "registry_rank": 6,
+      "label": "The Battle for Mount Hyjal - Caverns of Time"
+    },
+    {
+      "variant_key": "http://www.worldofwarcraft.com",
+      "base_url": "http://www.worldofwarcraft.com/info/dungeons/images/theeye/",
+      "full_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/theeye/ssN.jpg",
+      "thumb_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/theeye/ssN-thumb.jpg",
+      "scheme": "http",
+      "host": "www.worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 4,
+      "registry_rank": 7,
+      "label": "Tempest Keep - The Eye"
+    },
+    {
+      "variant_key": "https://www.worldofwarcraft.com",
+      "base_url": "https://www.worldofwarcraft.com/info/dungeons/images/theeye/",
+      "full_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/theeye/ssN.jpg",
+      "thumb_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/theeye/ssN-thumb.jpg",
+      "scheme": "https",
+      "host": "www.worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 4,
+      "registry_rank": 7,
+      "label": "Tempest Keep - The Eye"
+    },
+    {
+      "variant_key": "http://worldofwarcraft.com",
+      "base_url": "http://worldofwarcraft.com/info/dungeons/images/theeye/",
+      "full_pattern": "http://worldofwarcraft.com/info/dungeons/images/theeye/ssN.jpg",
+      "thumb_pattern": "http://worldofwarcraft.com/info/dungeons/images/theeye/ssN-thumb.jpg",
+      "scheme": "http",
+      "host": "worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 4,
+      "registry_rank": 7,
+      "label": "Tempest Keep - The Eye"
+    },
+    {
+      "variant_key": "https://worldofwarcraft.com",
+      "base_url": "https://worldofwarcraft.com/info/dungeons/images/theeye/",
+      "full_pattern": "https://worldofwarcraft.com/info/dungeons/images/theeye/ssN.jpg",
+      "thumb_pattern": "https://worldofwarcraft.com/info/dungeons/images/theeye/ssN-thumb.jpg",
+      "scheme": "https",
+      "host": "worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 4,
+      "registry_rank": 7,
+      "label": "Tempest Keep - The Eye"
+    },
+    {
+      "variant_key": "http://www.worldofwarcraft.com",
+      "base_url": "http://www.worldofwarcraft.com/info/dungeons/images/doomlordkazzak/",
+      "full_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/doomlordkazzak/ssN.jpg",
+      "thumb_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/doomlordkazzak/ssN-thumb.jpg",
+      "scheme": "http",
+      "host": "www.worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 5,
+      "registry_rank": 9,
+      "label": "Doom Lord Kazzak"
+    },
+    {
+      "variant_key": "https://www.worldofwarcraft.com",
+      "base_url": "https://www.worldofwarcraft.com/info/dungeons/images/doomlordkazzak/",
+      "full_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/doomlordkazzak/ssN.jpg",
+      "thumb_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/doomlordkazzak/ssN-thumb.jpg",
+      "scheme": "https",
+      "host": "www.worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 5,
+      "registry_rank": 9,
+      "label": "Doom Lord Kazzak"
+    },
+    {
+      "variant_key": "http://worldofwarcraft.com",
+      "base_url": "http://worldofwarcraft.com/info/dungeons/images/doomlordkazzak/",
+      "full_pattern": "http://worldofwarcraft.com/info/dungeons/images/doomlordkazzak/ssN.jpg",
+      "thumb_pattern": "http://worldofwarcraft.com/info/dungeons/images/doomlordkazzak/ssN-thumb.jpg",
+      "scheme": "http",
+      "host": "worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 5,
+      "registry_rank": 9,
+      "label": "Doom Lord Kazzak"
+    },
+    {
+      "variant_key": "https://worldofwarcraft.com",
+      "base_url": "https://worldofwarcraft.com/info/dungeons/images/doomlordkazzak/",
+      "full_pattern": "https://worldofwarcraft.com/info/dungeons/images/doomlordkazzak/ssN.jpg",
+      "thumb_pattern": "https://worldofwarcraft.com/info/dungeons/images/doomlordkazzak/ssN-thumb.jpg",
+      "scheme": "https",
+      "host": "worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 5,
+      "registry_rank": 9,
+      "label": "Doom Lord Kazzak"
+    },
+    {
+      "variant_key": "http://www.worldofwarcraft.com",
+      "base_url": "http://www.worldofwarcraft.com/info/dungeons/images/hellfireramparts/",
+      "full_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/hellfireramparts/ssN.jpg",
+      "thumb_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/hellfireramparts/ssN-thumb.jpg",
+      "scheme": "http",
+      "host": "www.worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 6,
+      "registry_rank": 11,
+      "label": "Hellfire Citadel - Hellfire Ramparts"
+    },
+    {
+      "variant_key": "https://www.worldofwarcraft.com",
+      "base_url": "https://www.worldofwarcraft.com/info/dungeons/images/hellfireramparts/",
+      "full_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/hellfireramparts/ssN.jpg",
+      "thumb_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/hellfireramparts/ssN-thumb.jpg",
+      "scheme": "https",
+      "host": "www.worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 6,
+      "registry_rank": 11,
+      "label": "Hellfire Citadel - Hellfire Ramparts"
+    },
+    {
+      "variant_key": "http://worldofwarcraft.com",
+      "base_url": "http://worldofwarcraft.com/info/dungeons/images/hellfireramparts/",
+      "full_pattern": "http://worldofwarcraft.com/info/dungeons/images/hellfireramparts/ssN.jpg",
+      "thumb_pattern": "http://worldofwarcraft.com/info/dungeons/images/hellfireramparts/ssN-thumb.jpg",
+      "scheme": "http",
+      "host": "worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 6,
+      "registry_rank": 11,
+      "label": "Hellfire Citadel - Hellfire Ramparts"
+    },
+    {
+      "variant_key": "https://worldofwarcraft.com",
+      "base_url": "https://worldofwarcraft.com/info/dungeons/images/hellfireramparts/",
+      "full_pattern": "https://worldofwarcraft.com/info/dungeons/images/hellfireramparts/ssN.jpg",
+      "thumb_pattern": "https://worldofwarcraft.com/info/dungeons/images/hellfireramparts/ssN-thumb.jpg",
+      "scheme": "https",
+      "host": "worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 6,
+      "registry_rank": 11,
+      "label": "Hellfire Citadel - Hellfire Ramparts"
+    },
+    {
+      "variant_key": "http://www.worldofwarcraft.com",
+      "base_url": "http://www.worldofwarcraft.com/info/dungeons/images/bloodfurnace/",
+      "full_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/bloodfurnace/ssN.jpg",
+      "thumb_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/bloodfurnace/ssN-thumb.jpg",
+      "scheme": "http",
+      "host": "www.worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 7,
+      "registry_rank": 12,
+      "label": "Hellfire Citadel - The Blood Furnace"
+    },
+    {
+      "variant_key": "https://www.worldofwarcraft.com",
+      "base_url": "https://www.worldofwarcraft.com/info/dungeons/images/bloodfurnace/",
+      "full_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/bloodfurnace/ssN.jpg",
+      "thumb_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/bloodfurnace/ssN-thumb.jpg",
+      "scheme": "https",
+      "host": "www.worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 7,
+      "registry_rank": 12,
+      "label": "Hellfire Citadel - The Blood Furnace"
+    },
+    {
+      "variant_key": "http://worldofwarcraft.com",
+      "base_url": "http://worldofwarcraft.com/info/dungeons/images/bloodfurnace/",
+      "full_pattern": "http://worldofwarcraft.com/info/dungeons/images/bloodfurnace/ssN.jpg",
+      "thumb_pattern": "http://worldofwarcraft.com/info/dungeons/images/bloodfurnace/ssN-thumb.jpg",
+      "scheme": "http",
+      "host": "worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 7,
+      "registry_rank": 12,
+      "label": "Hellfire Citadel - The Blood Furnace"
+    },
+    {
+      "variant_key": "https://worldofwarcraft.com",
+      "base_url": "https://worldofwarcraft.com/info/dungeons/images/bloodfurnace/",
+      "full_pattern": "https://worldofwarcraft.com/info/dungeons/images/bloodfurnace/ssN.jpg",
+      "thumb_pattern": "https://worldofwarcraft.com/info/dungeons/images/bloodfurnace/ssN-thumb.jpg",
+      "scheme": "https",
+      "host": "worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 7,
+      "registry_rank": 12,
+      "label": "Hellfire Citadel - The Blood Furnace"
+    },
+    {
+      "variant_key": "http://www.worldofwarcraft.com",
+      "base_url": "http://www.worldofwarcraft.com/info/dungeons/images/underbog/",
+      "full_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/underbog/ssN.jpg",
+      "thumb_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/underbog/ssN-thumb.jpg",
+      "scheme": "http",
+      "host": "www.worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 8,
+      "registry_rank": 14,
+      "label": "Coilfang Reservoir - The Underbog"
+    },
+    {
+      "variant_key": "https://www.worldofwarcraft.com",
+      "base_url": "https://www.worldofwarcraft.com/info/dungeons/images/underbog/",
+      "full_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/underbog/ssN.jpg",
+      "thumb_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/underbog/ssN-thumb.jpg",
+      "scheme": "https",
+      "host": "www.worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 8,
+      "registry_rank": 14,
+      "label": "Coilfang Reservoir - The Underbog"
+    },
+    {
+      "variant_key": "http://worldofwarcraft.com",
+      "base_url": "http://worldofwarcraft.com/info/dungeons/images/underbog/",
+      "full_pattern": "http://worldofwarcraft.com/info/dungeons/images/underbog/ssN.jpg",
+      "thumb_pattern": "http://worldofwarcraft.com/info/dungeons/images/underbog/ssN-thumb.jpg",
+      "scheme": "http",
+      "host": "worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 8,
+      "registry_rank": 14,
+      "label": "Coilfang Reservoir - The Underbog"
+    },
+    {
+      "variant_key": "https://worldofwarcraft.com",
+      "base_url": "https://worldofwarcraft.com/info/dungeons/images/underbog/",
+      "full_pattern": "https://worldofwarcraft.com/info/dungeons/images/underbog/ssN.jpg",
+      "thumb_pattern": "https://worldofwarcraft.com/info/dungeons/images/underbog/ssN-thumb.jpg",
+      "scheme": "https",
+      "host": "worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 8,
+      "registry_rank": 14,
+      "label": "Coilfang Reservoir - The Underbog"
+    },
+    {
+      "variant_key": "http://www.worldofwarcraft.com",
+      "base_url": "http://www.worldofwarcraft.com/info/dungeons/images/escape/",
+      "full_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/escape/ssN.jpg",
+      "thumb_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/escape/ssN-thumb.jpg",
+      "scheme": "http",
+      "host": "www.worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 9,
+      "registry_rank": 15,
+      "label": "Caverns of Time - Escape from Durnholde"
+    },
+    {
+      "variant_key": "https://www.worldofwarcraft.com",
+      "base_url": "https://www.worldofwarcraft.com/info/dungeons/images/escape/",
+      "full_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/escape/ssN.jpg",
+      "thumb_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/escape/ssN-thumb.jpg",
+      "scheme": "https",
+      "host": "www.worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 9,
+      "registry_rank": 15,
+      "label": "Caverns of Time - Escape from Durnholde"
+    },
+    {
+      "variant_key": "http://worldofwarcraft.com",
+      "base_url": "http://worldofwarcraft.com/info/dungeons/images/escape/",
+      "full_pattern": "http://worldofwarcraft.com/info/dungeons/images/escape/ssN.jpg",
+      "thumb_pattern": "http://worldofwarcraft.com/info/dungeons/images/escape/ssN-thumb.jpg",
+      "scheme": "http",
+      "host": "worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 9,
+      "registry_rank": 15,
+      "label": "Caverns of Time - Escape from Durnholde"
+    },
+    {
+      "variant_key": "https://worldofwarcraft.com",
+      "base_url": "https://worldofwarcraft.com/info/dungeons/images/escape/",
+      "full_pattern": "https://worldofwarcraft.com/info/dungeons/images/escape/ssN.jpg",
+      "thumb_pattern": "https://worldofwarcraft.com/info/dungeons/images/escape/ssN-thumb.jpg",
+      "scheme": "https",
+      "host": "worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 9,
+      "registry_rank": 15,
+      "label": "Caverns of Time - Escape from Durnholde"
+    },
+    {
+      "variant_key": "http://www.worldofwarcraft.com",
+      "base_url": "http://www.worldofwarcraft.com/info/dungeons/images/opening/",
+      "full_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/opening/ssN.jpg",
+      "thumb_pattern": "http://www.worldofwarcraft.com/info/dungeons/images/opening/ssN-thumb.jpg",
+      "scheme": "http",
+      "host": "www.worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 10,
+      "registry_rank": 16,
+      "label": "Caverns of Time - Opening of the Dark Portal"
+    },
+    {
+      "variant_key": "https://www.worldofwarcraft.com",
+      "base_url": "https://www.worldofwarcraft.com/info/dungeons/images/opening/",
+      "full_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/opening/ssN.jpg",
+      "thumb_pattern": "https://www.worldofwarcraft.com/info/dungeons/images/opening/ssN-thumb.jpg",
+      "scheme": "https",
+      "host": "www.worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 10,
+      "registry_rank": 16,
+      "label": "Caverns of Time - Opening of the Dark Portal"
+    },
+    {
+      "variant_key": "http://worldofwarcraft.com",
+      "base_url": "http://worldofwarcraft.com/info/dungeons/images/opening/",
+      "full_pattern": "http://worldofwarcraft.com/info/dungeons/images/opening/ssN.jpg",
+      "thumb_pattern": "http://worldofwarcraft.com/info/dungeons/images/opening/ssN-thumb.jpg",
+      "scheme": "http",
+      "host": "worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 10,
+      "registry_rank": 16,
+      "label": "Caverns of Time - Opening of the Dark Portal"
+    },
+    {
+      "variant_key": "https://worldofwarcraft.com",
+      "base_url": "https://worldofwarcraft.com/info/dungeons/images/opening/",
+      "full_pattern": "https://worldofwarcraft.com/info/dungeons/images/opening/ssN.jpg",
+      "thumb_pattern": "https://worldofwarcraft.com/info/dungeons/images/opening/ssN-thumb.jpg",
+      "scheme": "https",
+      "host": "worldofwarcraft.com",
+      "identity_status": "distinct_exact_original_candidate",
+      "automatic_alias": false,
+      "replay_requires_exact_memento_and_digest": true,
+      "candidate_rank": 10,
+      "registry_rank": 16,
+      "label": "Caverns of Time - Opening of the Dark Portal"
+    }
+  ],
+  "execution_boundary": {
+    "no_network_until_parent_go": true,
+    "index_only": true,
+    "no_payload_replay": true,
+    "no_pagination": true,
+    "no_auto_redirect": true,
+    "stop_after_this_batch": true,
+    "no_same_point_repeat": true
+  },
+  "identity_variant_policy": {
+    "listed_separately": true,
+    "variants": "same source path with http/https and www/bare host combinations, direct ssN.jpg and ssN-thumb.jpg patterns",
+    "automatic_alias": false,
+    "acceptance": "a variant requires its own exact Memento, original identity, CDX digest, and payload validation; prefix rows are index evidence only"
+  }
+}
