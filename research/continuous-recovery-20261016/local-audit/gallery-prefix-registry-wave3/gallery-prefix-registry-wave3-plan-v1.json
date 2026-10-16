@@ -1,0 +1,956 @@
+{
+  "schema": "wow-recovery.gallery-prefix-registry.wave3-plan.v1",
+  "generated_utc": "2026-10-16T06:18:22.019712+00:00",
+  "network_performed": false,
+  "execution_status": "not_executed",
+  "parent_go_required": true,
+  "driver_interface": {
+    "driver_path": "research/continuous-recovery-20261016/network/driver-v3/gallery_prefix_driver_v3.py",
+    "driver_sha256": "d7d86cbd86f783da76a738cd301106d91797bd022122d00a2f95670fd197929c",
+    "candidate_fields": [
+      "target_key",
+      "prefix",
+      "cdx_query_url",
+      "origin_host",
+      "source_page",
+      "declared_entity_count"
+    ],
+    "no_driver_changes": true
+  },
+  "scope": {
+    "source_gallery_count": 50,
+    "uncovered_group_count": 26,
+    "candidate_count": 20,
+    "candidate_slots": 550,
+    "candidate_entity_count": 1100,
+    "candidate_full_count": 550,
+    "candidate_thumb_count": 550,
+    "known_scope_excluded": [
+      "EU REG01 origin",
+      "nested guide previews",
+      "parent directory rows",
+      "already reviewed exact prefixes"
+    ]
+  },
+  "input_bindings": {
+    "research/continuous-recovery-20261016/local-audit/gallery-prefix-registry/gallery-prefix-registry.json": {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-prefix-registry/gallery-prefix-registry.json",
+      "bytes": 141545,
+      "sha256": "d356992afb97633801f69aeb9c0a9e2a3ee933acd812d7cda386ad40a9aa51da"
+    },
+    "research/continuous-recovery-20261016/local-audit/gallery-prefix-registry/gallery-prefix-registry-v2.json": {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-prefix-registry/gallery-prefix-registry-v2.json",
+      "bytes": 32665,
+      "sha256": "6109548c02bfdb2b0b54f171724ac6e0f695dc77319c0d84d6a5faf47f7a59f0"
+    },
+    "research/continuous-recovery-20261016/local-audit/v2/gallery-direct-entity-audit-v2.json": {
+      "path": "research/continuous-recovery-20261016/local-audit/v2/gallery-direct-entity-audit-v2.json",
+      "bytes": 8659947,
+      "sha256": "341435e62cfea8db4f1421d05c9e765e598ae4a31fb92d5702201c5308972a0a"
+    },
+    "research/local-maintenance-20261014/gallery-route-entity-recheck.json": {
+      "path": "research/local-maintenance-20261014/gallery-route-entity-recheck.json",
+      "bytes": 30423,
+      "sha256": "845c0f032af3d43b7479266052ecb0c9866bdeb638b98565acdfffe854d1d7e5"
+    },
+    "research/continuous-recovery-20261016/publication/root-gallery-prefix01-acceptance.json": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix01-acceptance.json",
+      "bytes": 10678,
+      "sha256": "54391c95c210a07194661a732220c155693f61c69be67b96c130a61fc2296be8"
+    },
+    "research/continuous-recovery-20261016/publication/root-gallery-prefix02-acceptance.json": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix02-acceptance.json",
+      "bytes": 11195,
+      "sha256": "c458bc25881ffc93a217e0a7b70f70e08f25f48242e615066ee73e9ab451b0f8"
+    },
+    "research/continuous-recovery-20261016/network/gallery-prefix01/batch-report.json": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix01/batch-report.json",
+      "bytes": 159735,
+      "sha256": "715f67dffb984a306ca7a1de6de5c010a79523551b63f66db9a6e6a3b5560010"
+    },
+    "research/continuous-recovery-20261016/network/gallery-prefix01/source-map.json": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix01/source-map.json",
+      "bytes": 60929,
+      "sha256": "fd277a1bc64f192d51caf08e7415fb09d835a84aa63b355e8cce8f4cfe0538e9"
+    },
+    "research/continuous-recovery-20261016/network/driver-v3/batch-report.json": {
+      "path": "research/continuous-recovery-20261016/network/driver-v3/batch-report.json",
+      "bytes": 96563,
+      "sha256": "d24736865f0785e99ddb631e3ff6c5d3b772c66008bbb2b72dc9d2dbb934ee84"
+    },
+    "research/continuous-recovery-20261016/network/driver-v3/source-map.json": {
+      "path": "research/continuous-recovery-20261016/network/driver-v3/source-map.json",
+      "bytes": 61834,
+      "sha256": "92867caf932643819e831264d00e572ce21ada636dac9eac2de4aa9a935f8910"
+    },
+    "research/continuous-recovery-20261016/network/driver-v3/execution-plan.json": {
+      "path": "research/continuous-recovery-20261016/network/driver-v3/execution-plan.json",
+      "bytes": 9381,
+      "sha256": "052d09af1cc46b86850f7ab29d71c82a0a82e934f9fc5749f6bd27b5820b9354"
+    },
+    "research/continuous-recovery-20261016/network/driver-v3/gallery_prefix_driver_v3.py": {
+      "path": "research/continuous-recovery-20261016/network/driver-v3/gallery_prefix_driver_v3.py",
+      "bytes": 50147,
+      "sha256": "d7d86cbd86f783da76a738cd301106d91797bd022122d00a2f95670fd197929c"
+    }
+  },
+  "query_window": {
+    "from": "20000101000000",
+    "to": "20080512210044",
+    "limit": 500,
+    "showResumeKey": true,
+    "collapse": false,
+    "matchType": "prefix"
+  },
+  "policy": {
+    "index_only": true,
+    "no_payload_replay": true,
+    "max_attempts": 40,
+    "window_seconds": 900.0,
+    "max_total_body_bytes": 67108864,
+    "max_entity_body_bytes": 16777216,
+    "direct_first": true,
+    "proxy": "http://127.0.0.1:7890",
+    "tls_verification": true,
+    "automatic_redirects": 0,
+    "min_dispatch_monotonic_seconds": 5.25,
+    "acceptance_dispatch_floor_seconds": 5.1,
+    "min_request_start_utc_seconds": 5.0,
+    "disk_floor_bytes": 11005853696,
+    "stop_http_codes": [
+      429,
+      503
+    ],
+    "stop_on_five_consecutive_transport_failures": true,
+    "retry_after_rule": "429/503 stop immediately; cooldown not earlier than Retry-After and at least 120 seconds",
+    "resume_rule": "record actual response resumeKey; do not follow continuation in this batch"
+  },
+  "candidates": [
+    {
+      "rank": 1,
+      "registry_rank": 46,
+      "target_key": "GALLERY-PREFIX03-01",
+      "label": "TCG Spectral Tiger",
+      "category": "TCG Mount",
+      "prefix": "/info/basics/mounts/spectral/",
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_scheme": "http",
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/basics/mounts/spectral-gallery.html",
+        "sha256": "4b77f13a9cff80d69025d3f49ca4aaaaf98154c5cdbc96f7def9ab44b1283661",
+        "route": "/info/basics/mounts/spectral-gallery.html",
+        "addshots_line": 110,
+        "addshots_literal": "addshots(\"/info/basics/mounts/spectral/\",\"ss\",numShots);",
+        "directory_literal": "/info/basics/mounts/spectral/",
+        "filename_literal": "ss",
+        "numShots": 47,
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 47;",
+        "origin_host": "www.worldofwarcraft.com",
+        "origin_schemes": [
+          "http"
+        ]
+      },
+      "declared_slots": 47,
+      "declared_entity_count": 94,
+      "declared_full_count": 47,
+      "declared_thumb_count": 47,
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=%2Finfo%2Fbasics%2Fmounts%2Fspectral%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "query_mode": "prefix index only",
+      "individual_image_urls_generated": false,
+      "selection_basis": "highest declared slots among 25 not-yet-reviewed groups; ties by gallery label"
+    },
+    {
+      "rank": 2,
+      "registry_rank": 47,
+      "target_key": "GALLERY-PREFIX03-02",
+      "label": "TCG Picnic Basket",
+      "category": "TCG Picnic Basket",
+      "prefix": "/info/items/images/picnic/",
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_scheme": "http",
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/items/tcg-picnic-gallery.html",
+        "sha256": "dd68cc530b40dff585b5f2083d47bb8f94cdd8179a445921a3cec1dd5ad562f5",
+        "route": "/info/items/tcg-picnic-gallery.html",
+        "addshots_line": 105,
+        "addshots_literal": "addshots(\"/info/items/images/picnic/\",\"ss\",numShots);",
+        "directory_literal": "/info/items/images/picnic/",
+        "filename_literal": "ss",
+        "numShots": 42,
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 42;",
+        "origin_host": "www.worldofwarcraft.com",
+        "origin_schemes": [
+          "http"
+        ]
+      },
+      "declared_slots": 42,
+      "declared_entity_count": 84,
+      "declared_full_count": 42,
+      "declared_thumb_count": 42,
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=%2Finfo%2Fitems%2Fimages%2Fpicnic%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "query_mode": "prefix index only",
+      "individual_image_urls_generated": false,
+      "selection_basis": "highest declared slots among 25 not-yet-reviewed groups; ties by gallery label"
+    },
+    {
+      "rank": 3,
+      "registry_rank": 20,
+      "target_key": "GALLERY-PREFIX03-03",
+      "label": "Auchindoun - Sethekk Halls",
+      "category": "Dungeon",
+      "prefix": "/info/dungeons/images/sethekhalls/",
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_scheme": "http",
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/auc-sethek-halls-gallery.html",
+        "sha256": "1b4882115cf8f68b687776ce0a032362778d833c6eb8254fb73b5278429bf2c9",
+        "route": "/info/dungeons/auc-sethek-halls-gallery.html",
+        "addshots_line": 101,
+        "addshots_literal": "addshots(\"/info/dungeons/images/sethekhalls/\",\"ss\",numShots);",
+        "directory_literal": "/info/dungeons/images/sethekhalls/",
+        "filename_literal": "ss",
+        "numShots": 38,
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 38;",
+        "origin_host": "www.worldofwarcraft.com",
+        "origin_schemes": [
+          "http"
+        ]
+      },
+      "declared_slots": 38,
+      "declared_entity_count": 76,
+      "declared_full_count": 38,
+      "declared_thumb_count": 38,
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=%2Finfo%2Fdungeons%2Fimages%2Fsethekhalls%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "query_mode": "prefix index only",
+      "individual_image_urls_generated": false,
+      "selection_basis": "highest declared slots among 25 not-yet-reviewed groups; ties by gallery label"
+    },
+    {
+      "rank": 4,
+      "registry_rank": 19,
+      "target_key": "GALLERY-PREFIX03-04",
+      "label": "Auchindoun - Auchenai Crypts",
+      "category": "Dungeon",
+      "prefix": "/info/dungeons/images/crypts/",
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_scheme": "http",
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/auc-crypts-gallery.html",
+        "sha256": "dc0ac27003c9fe8690808a8a05b202414c5e8fa77d83c4355ec0f8fb4c531a58",
+        "route": "/info/dungeons/auc-crypts-gallery.html",
+        "addshots_line": 100,
+        "addshots_literal": "addshots(\"/info/dungeons/images/crypts/\",\"ss\",numShots);",
+        "directory_literal": "/info/dungeons/images/crypts/",
+        "filename_literal": "ss",
+        "numShots": 37,
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 37;",
+        "origin_host": "www.worldofwarcraft.com",
+        "origin_schemes": [
+          "http"
+        ]
+      },
+      "declared_slots": 37,
+      "declared_entity_count": 74,
+      "declared_full_count": 37,
+      "declared_thumb_count": 37,
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=%2Finfo%2Fdungeons%2Fimages%2Fcrypts%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "query_mode": "prefix index only",
+      "individual_image_urls_generated": false,
+      "selection_basis": "highest declared slots among 25 not-yet-reviewed groups; ties by gallery label"
+    },
+    {
+      "rank": 5,
+      "registry_rank": 43,
+      "target_key": "GALLERY-PREFIX03-05",
+      "label": "Winter's Veil",
+      "category": "Event",
+      "prefix": "/info/events/winterveil/images/ss/",
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_scheme": "http",
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/events/winterveil/gallery.html",
+        "sha256": "f0ab5c1e5fdb872ef66cec25e4b623617df2231c77fd138199ca897b4e31dc1b",
+        "route": "/info/events/winterveil/gallery.html",
+        "addshots_line": 100,
+        "addshots_literal": "addshots(\"/info/events/winterveil/images/ss/\",\"ss\",numShots);",
+        "directory_literal": "/info/events/winterveil/images/ss/",
+        "filename_literal": "ss",
+        "numShots": 37,
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 37;",
+        "origin_host": "www.worldofwarcraft.com",
+        "origin_schemes": [
+          "http"
+        ]
+      },
+      "declared_slots": 37,
+      "declared_entity_count": 74,
+      "declared_full_count": 37,
+      "declared_thumb_count": 37,
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=%2Finfo%2Fevents%2Fwinterveil%2Fimages%2Fss%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "query_mode": "prefix index only",
+      "individual_image_urls_generated": false,
+      "selection_basis": "highest declared slots among 25 not-yet-reviewed groups; ties by gallery label"
+    },
+    {
+      "rank": 6,
+      "registry_rank": 39,
+      "target_key": "GALLERY-PREFIX03-06",
+      "label": "Lunar Festival",
+      "category": "Event",
+      "prefix": "/info/events/lunarnewyears/images/ss/",
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_scheme": "http",
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/events/lunarnewyears/gallery.html",
+        "sha256": "a116d1b96e48338101fc56071d36cf46240d92964146a8e243c63c74d45432b3",
+        "route": "/info/events/lunarnewyears/gallery.html",
+        "addshots_line": 98,
+        "addshots_literal": "addshots(\"/info/events/lunarnewyears/images/ss/\",\"ss\",numShots);",
+        "directory_literal": "/info/events/lunarnewyears/images/ss/",
+        "filename_literal": "ss",
+        "numShots": 35,
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 35;",
+        "origin_host": "www.worldofwarcraft.com",
+        "origin_schemes": [
+          "http"
+        ]
+      },
+      "declared_slots": 35,
+      "declared_entity_count": 70,
+      "declared_full_count": 35,
+      "declared_thumb_count": 35,
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=%2Finfo%2Fevents%2Flunarnewyears%2Fimages%2Fss%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "query_mode": "prefix index only",
+      "individual_image_urls_generated": false,
+      "selection_basis": "highest declared slots among 25 not-yet-reviewed groups; ties by gallery label"
+    },
+    {
+      "rank": 7,
+      "registry_rank": 22,
+      "target_key": "GALLERY-PREFIX03-07",
+      "label": "Tempest Keep - The Mechanar",
+      "category": "Dungeon",
+      "prefix": "/info/dungeons/images/mech/",
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_scheme": "http",
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/tk-mech-gallery.html",
+        "sha256": "11ac5bcc87d393e08d03e1628cb55e6e0fb169bbc8350fff7f14dbb7feddbb61",
+        "route": "/info/dungeons/tk-mech-gallery.html",
+        "addshots_line": 98,
+        "addshots_literal": "addshots(\"/info/dungeons/images/mech/\",\"ss\",numShots);",
+        "directory_literal": "/info/dungeons/images/mech/",
+        "filename_literal": "ss",
+        "numShots": 35,
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 35;",
+        "origin_host": "www.worldofwarcraft.com",
+        "origin_schemes": [
+          "http"
+        ]
+      },
+      "declared_slots": 35,
+      "declared_entity_count": 70,
+      "declared_full_count": 35,
+      "declared_thumb_count": 35,
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=%2Finfo%2Fdungeons%2Fimages%2Fmech%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "query_mode": "prefix index only",
+      "individual_image_urls_generated": false,
+      "selection_basis": "highest declared slots among 25 not-yet-reviewed groups; ties by gallery label"
+    },
+    {
+      "rank": 8,
+      "registry_rank": 40,
+      "target_key": "GALLERY-PREFIX03-08",
+      "label": "Love is in the Air",
+      "category": "Event",
+      "prefix": "/info/events/loveisintheair/images/ss/",
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_scheme": "http",
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/events/loveisintheair/gallery.html",
+        "sha256": "223844ba04c333b958b59f72999bcce25983d7305ac1eda63b7262e4eddb8e5d",
+        "route": "/info/events/loveisintheair/gallery.html",
+        "addshots_line": 97,
+        "addshots_literal": "addshots(\"/info/events/loveisintheair/images/ss/\",\"ss\",numShots);",
+        "directory_literal": "/info/events/loveisintheair/images/ss/",
+        "filename_literal": "ss",
+        "numShots": 34,
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 34;",
+        "origin_host": "www.worldofwarcraft.com",
+        "origin_schemes": [
+          "http"
+        ]
+      },
+      "declared_slots": 34,
+      "declared_entity_count": 68,
+      "declared_full_count": 34,
+      "declared_thumb_count": 34,
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=%2Finfo%2Fevents%2Floveisintheair%2Fimages%2Fss%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "query_mode": "prefix index only",
+      "individual_image_urls_generated": false,
+      "selection_basis": "highest declared slots among 25 not-yet-reviewed groups; ties by gallery label"
+    },
+    {
+      "rank": 9,
+      "registry_rank": 18,
+      "target_key": "GALLERY-PREFIX03-09",
+      "label": "Auchindoun - Mana-Tombs",
+      "category": "Dungeon",
+      "prefix": "/info/dungeons/images/manatombs/",
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_scheme": "http",
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/auc-mana-tombs-gallery.html",
+        "sha256": "2c5bd4471cf6391be76bbd5cd1faa81194c0795d950890f71ebab6c369e5d762",
+        "route": "/info/dungeons/auc-mana-tombs-gallery.html",
+        "addshots_line": 93,
+        "addshots_literal": "addshots(\"/info/dungeons/images/manatombs/\",\"ss\",numShots);",
+        "directory_literal": "/info/dungeons/images/manatombs/",
+        "filename_literal": "ss",
+        "numShots": 30,
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 30;",
+        "origin_host": "www.worldofwarcraft.com",
+        "origin_schemes": [
+          "http"
+        ]
+      },
+      "declared_slots": 30,
+      "declared_entity_count": 60,
+      "declared_full_count": 30,
+      "declared_thumb_count": 30,
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=%2Finfo%2Fdungeons%2Fimages%2Fmanatombs%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "query_mode": "prefix index only",
+      "individual_image_urls_generated": false,
+      "selection_basis": "highest declared slots among 25 not-yet-reviewed groups; ties by gallery label"
+    },
+    {
+      "rank": 10,
+      "registry_rank": 17,
+      "target_key": "GALLERY-PREFIX03-10",
+      "label": "Coilfang Reservoir - The Steam Vaults",
+      "category": "Dungeon",
+      "prefix": "/info/dungeons/images/steamvaults/",
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_scheme": "http",
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/cr-steamvaults-gallery.html",
+        "sha256": "55d53cb257b5f1dd9681535ac000acd70be344ed125f8583c392f8d8546bb26f",
+        "route": "/info/dungeons/cr-steamvaults-gallery.html",
+        "addshots_line": 93,
+        "addshots_literal": "addshots(\"/info/dungeons/images/steamvaults/\",\"ss\",numShots);",
+        "directory_literal": "/info/dungeons/images/steamvaults/",
+        "filename_literal": "ss",
+        "numShots": 30,
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 30;",
+        "origin_host": "www.worldofwarcraft.com",
+        "origin_schemes": [
+          "http"
+        ]
+      },
+      "declared_slots": 30,
+      "declared_entity_count": 60,
+      "declared_full_count": 30,
+      "declared_thumb_count": 30,
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=%2Finfo%2Fdungeons%2Fimages%2Fsteamvaults%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "query_mode": "prefix index only",
+      "individual_image_urls_generated": false,
+      "selection_basis": "highest declared slots among 25 not-yet-reviewed groups; ties by gallery label"
+    },
+    {
+      "rank": 11,
+      "registry_rank": 50,
+      "target_key": "GALLERY-PREFIX03-11",
+      "label": "World PvP",
+      "category": "PvP",
+      "prefix": "/pvp/worldpvp/images/worldpvp/",
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_scheme": "http",
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/pvp/worldpvp/worldpvp-gallery.html",
+        "sha256": "b0210f8658638a41da3b3745e73f7271a47d4571585c497bfa6fcf6276a140e0",
+        "route": "/pvp/worldpvp/worldpvp-gallery.html",
+        "addshots_line": 93,
+        "addshots_literal": "addshots(\"/pvp/worldpvp/images/worldpvp/\",\"ss\",numShots);",
+        "directory_literal": "/pvp/worldpvp/images/worldpvp/",
+        "filename_literal": "ss",
+        "numShots": 30,
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 30;",
+        "origin_host": "www.worldofwarcraft.com",
+        "origin_schemes": [
+          "http"
+        ]
+      },
+      "declared_slots": 30,
+      "declared_entity_count": 60,
+      "declared_full_count": 30,
+      "declared_thumb_count": 30,
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=%2Fpvp%2Fworldpvp%2Fimages%2Fworldpvp%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "query_mode": "prefix index only",
+      "individual_image_urls_generated": false,
+      "selection_basis": "highest declared slots among 25 not-yet-reviewed groups; ties by gallery label"
+    },
+    {
+      "rank": 12,
+      "registry_rank": 21,
+      "target_key": "GALLERY-PREFIX03-12",
+      "label": "Auchindoun - Shadow Labyrinth",
+      "category": "Dungeon",
+      "prefix": "/info/dungeons/images/shadowlabs/",
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_scheme": "http",
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/auc-shadow-lab-gallery.html",
+        "sha256": "d6e37841379af61e8a12dbed4899f7e159a3a7686620519c06bd067a7156a14f",
+        "route": "/info/dungeons/auc-shadow-lab-gallery.html",
+        "addshots_line": 86,
+        "addshots_literal": "addshots(\"/info/dungeons/images/shadowlabs/\",\"ss\",numShots);",
+        "directory_literal": "/info/dungeons/images/shadowlabs/",
+        "filename_literal": "ss",
+        "numShots": 23,
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 23;",
+        "origin_host": "www.worldofwarcraft.com",
+        "origin_schemes": [
+          "http"
+        ]
+      },
+      "declared_slots": 23,
+      "declared_entity_count": 46,
+      "declared_full_count": 23,
+      "declared_thumb_count": 23,
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=%2Finfo%2Fdungeons%2Fimages%2Fshadowlabs%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "query_mode": "prefix index only",
+      "individual_image_urls_generated": false,
+      "selection_basis": "highest declared slots among 25 not-yet-reviewed groups; ties by gallery label"
+    },
+    {
+      "rank": 13,
+      "registry_rank": 35,
+      "target_key": "GALLERY-PREFIX03-13",
+      "label": "Flying Machine",
+      "category": "Flying Mount",
+      "prefix": "/info/basics/mounts/flying/flyingmachine/",
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_scheme": "http",
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/basics/mounts/flyingmachine-gallery.html",
+        "sha256": "6407a0fa968c1fe5a662cbe417b4d9e7458c0aa4b99a6848d216bc049a6dc08c",
+        "route": "/info/basics/mounts/flyingmachine-gallery.html",
+        "addshots_line": 85,
+        "addshots_literal": "addshots(\"/info/basics/mounts/flying/flyingmachine/\",\"ss\",numShots);",
+        "directory_literal": "/info/basics/mounts/flying/flyingmachine/",
+        "filename_literal": "ss",
+        "numShots": 22,
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 22;",
+        "origin_host": "www.worldofwarcraft.com",
+        "origin_schemes": [
+          "http"
+        ]
+      },
+      "declared_slots": 22,
+      "declared_entity_count": 44,
+      "declared_full_count": 22,
+      "declared_thumb_count": 22,
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=%2Finfo%2Fbasics%2Fmounts%2Fflying%2Fflyingmachine%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "query_mode": "prefix index only",
+      "individual_image_urls_generated": false,
+      "selection_basis": "highest declared slots among 25 not-yet-reviewed groups; ties by gallery label"
+    },
+    {
+      "rank": 14,
+      "registry_rank": 44,
+      "target_key": "GALLERY-PREFIX03-14",
+      "label": "Darkmoon Faire: Level 70 Elite Tauren Chieftain",
+      "category": "Event",
+      "prefix": "/info/events/darkmoon/images/ss/",
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_scheme": "http",
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/events/darkmoon/gallery.html",
+        "sha256": "26258ddc13e2042a328bb1e0f7e7edbc498b2c28ec322e15efc2557d5f234965",
+        "route": "/info/events/darkmoon/gallery.html",
+        "addshots_line": 83,
+        "addshots_literal": "addshots(\"/info/events/darkmoon/images/ss/\",\"ss\",numShots);",
+        "directory_literal": "/info/events/darkmoon/images/ss/",
+        "filename_literal": "ss",
+        "numShots": 20,
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 20;",
+        "origin_host": "www.worldofwarcraft.com",
+        "origin_schemes": [
+          "http"
+        ]
+      },
+      "declared_slots": 20,
+      "declared_entity_count": 40,
+      "declared_full_count": 20,
+      "declared_thumb_count": 20,
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=%2Finfo%2Fevents%2Fdarkmoon%2Fimages%2Fss%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "query_mode": "prefix index only",
+      "individual_image_urls_generated": false,
+      "selection_basis": "highest declared slots among 25 not-yet-reviewed groups; ties by gallery label"
+    },
+    {
+      "rank": 15,
+      "registry_rank": 23,
+      "target_key": "GALLERY-PREFIX03-15",
+      "label": "Tempest Keep - The Botanica",
+      "category": "Dungeon",
+      "prefix": "/info/dungeons/images/botanica/",
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_scheme": "http",
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/tk-botanica-gallery.html",
+        "sha256": "8a253d240854520ef1e49b74ec4d571b98ebaa2dd27fd328a66ac204ce42d6d9",
+        "route": "/info/dungeons/tk-botanica-gallery.html",
+        "addshots_line": 82,
+        "addshots_literal": "addshots(\"/info/dungeons/images/botanica/\",\"ss\",numShots);",
+        "directory_literal": "/info/dungeons/images/botanica/",
+        "filename_literal": "ss",
+        "numShots": 19,
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 19;",
+        "origin_host": "www.worldofwarcraft.com",
+        "origin_schemes": [
+          "http"
+        ]
+      },
+      "declared_slots": 19,
+      "declared_entity_count": 38,
+      "declared_full_count": 19,
+      "declared_thumb_count": 19,
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=%2Finfo%2Fdungeons%2Fimages%2Fbotanica%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "query_mode": "prefix index only",
+      "individual_image_urls_generated": false,
+      "selection_basis": "highest declared slots among 25 not-yet-reviewed groups; ties by gallery label"
+    },
+    {
+      "rank": 16,
+      "registry_rank": 36,
+      "target_key": "GALLERY-PREFIX03-16",
+      "label": "Phoenix",
+      "category": "Flying Mount",
+      "prefix": "/info/basics/mounts/flying/phoenix/",
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_scheme": "http",
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/basics/mounts/phoenix-gallery.html",
+        "sha256": "29e208ff5dc763ca2f5325b82f66ff70037082c20a64366f10c49fe187a7edf9",
+        "route": "/info/basics/mounts/phoenix-gallery.html",
+        "addshots_line": 78,
+        "addshots_literal": "addshots(\"/info/basics/mounts/flying/phoenix/\",\"ss\",numShots);",
+        "directory_literal": "/info/basics/mounts/flying/phoenix/",
+        "filename_literal": "ss",
+        "numShots": 15,
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 15;",
+        "origin_host": "www.worldofwarcraft.com",
+        "origin_schemes": [
+          "http"
+        ]
+      },
+      "declared_slots": 15,
+      "declared_entity_count": 30,
+      "declared_full_count": 15,
+      "declared_thumb_count": 15,
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=%2Finfo%2Fbasics%2Fmounts%2Fflying%2Fphoenix%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "query_mode": "prefix index only",
+      "individual_image_urls_generated": false,
+      "selection_basis": "highest declared slots among 25 not-yet-reviewed groups; ties by gallery label"
+    },
+    {
+      "rank": 17,
+      "registry_rank": 29,
+      "target_key": "GALLERY-PREFIX03-17",
+      "label": "Swift White Hawkstrider",
+      "category": "Mount",
+      "prefix": "/info/basics/mounts/whitehawkstrider/",
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_scheme": "http",
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/basics/mounts/swiftwhitehawkstrider-gallery.html",
+        "sha256": "962e9ce346027a1527f0200bf89837923f06a6cf8c1aab913761dc56aaeb3f16",
+        "route": "/info/basics/mounts/swiftwhitehawkstrider-gallery.html",
+        "addshots_line": 78,
+        "addshots_literal": "addshots(\"/info/basics/mounts/whitehawkstrider/\",\"ss\",numShots);",
+        "directory_literal": "/info/basics/mounts/whitehawkstrider/",
+        "filename_literal": "ss",
+        "numShots": 15,
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 15;",
+        "origin_host": "www.worldofwarcraft.com",
+        "origin_schemes": [
+          "http"
+        ]
+      },
+      "declared_slots": 15,
+      "declared_entity_count": 30,
+      "declared_full_count": 15,
+      "declared_thumb_count": 15,
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=%2Finfo%2Fbasics%2Fmounts%2Fwhitehawkstrider%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "query_mode": "prefix index only",
+      "individual_image_urls_generated": false,
+      "selection_basis": "highest declared slots among 25 not-yet-reviewed groups; ties by gallery label"
+    },
+    {
+      "rank": 18,
+      "registry_rank": 49,
+      "target_key": "GALLERY-PREFIX03-18",
+      "label": "Halaa PvP",
+      "category": "PvP",
+      "prefix": "/pvp/worldpvp/images/ss/",
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_scheme": "http",
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/pvp/worldpvp/halaa-gallery.html",
+        "sha256": "93d1aa6e61a3013db05b06b7e4119c764b8a8a399364291900a31bd3f77702f4",
+        "route": "/pvp/worldpvp/halaa-gallery.html",
+        "addshots_line": 77,
+        "addshots_literal": "addshots(\"/pvp/worldpvp/images/ss/\",\"ss\",numShots);",
+        "directory_literal": "/pvp/worldpvp/images/ss/",
+        "filename_literal": "ss",
+        "numShots": 14,
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 14;",
+        "origin_host": "www.worldofwarcraft.com",
+        "origin_schemes": [
+          "http"
+        ]
+      },
+      "declared_slots": 14,
+      "declared_entity_count": 28,
+      "declared_full_count": 14,
+      "declared_thumb_count": 14,
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=%2Fpvp%2Fworldpvp%2Fimages%2Fss%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "query_mode": "prefix index only",
+      "individual_image_urls_generated": false,
+      "selection_basis": "highest declared slots among 25 not-yet-reviewed groups; ties by gallery label"
+    },
+    {
+      "rank": 19,
+      "registry_rank": 37,
+      "target_key": "GALLERY-PREFIX03-19",
+      "label": "X-51 Nether-Rocket",
+      "category": "Flying Mount",
+      "prefix": "/info/basics/mounts/flying/rocketmount/",
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_scheme": "http",
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/basics/mounts/rocket-mount-gallery.html",
+        "sha256": "bc6a5a3e06fe446bc066602afb2d98c48ab5eef98b79a7926570cdf23fe79fc2",
+        "route": "/info/basics/mounts/rocket-mount-gallery.html",
+        "addshots_line": 77,
+        "addshots_literal": "addshots(\"/info/basics/mounts/flying/rocketmount/\",\"ss\",numShots);",
+        "directory_literal": "/info/basics/mounts/flying/rocketmount/",
+        "filename_literal": "ss",
+        "numShots": 14,
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 14;",
+        "origin_host": "www.worldofwarcraft.com",
+        "origin_schemes": [
+          "http"
+        ]
+      },
+      "declared_slots": 14,
+      "declared_entity_count": 28,
+      "declared_full_count": 14,
+      "declared_thumb_count": 14,
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=%2Finfo%2Fbasics%2Fmounts%2Fflying%2Frocketmount%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "query_mode": "prefix index only",
+      "individual_image_urls_generated": false,
+      "selection_basis": "highest declared slots among 25 not-yet-reviewed groups; ties by gallery label"
+    },
+    {
+      "rank": 20,
+      "registry_rank": 34,
+      "target_key": "GALLERY-PREFIX03-20",
+      "label": "Cenarion War Mount",
+      "category": "Flying Mount",
+      "prefix": "/info/basics/mounts/cenarion/",
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_scheme": "http",
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/basics/mounts/cenarion-gallery.html",
+        "sha256": "0f84deb734e98f74232c23c1fd85891632bfb1f1a4e7ee445bddf29f1b7a498b",
+        "route": "/info/basics/mounts/cenarion-gallery.html",
+        "addshots_line": 76,
+        "addshots_literal": "addshots(\"/info/basics/mounts/cenarion/\",\"ss\",numShots);",
+        "directory_literal": "/info/basics/mounts/cenarion/",
+        "filename_literal": "ss",
+        "numShots": 13,
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 13;",
+        "origin_host": "www.worldofwarcraft.com",
+        "origin_schemes": [
+          "http"
+        ]
+      },
+      "declared_slots": 13,
+      "declared_entity_count": 26,
+      "declared_full_count": 13,
+      "declared_thumb_count": 13,
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=%2Finfo%2Fbasics%2Fmounts%2Fcenarion%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "query_mode": "prefix index only",
+      "individual_image_urls_generated": false,
+      "selection_basis": "highest declared slots among 25 not-yet-reviewed groups; ties by gallery label"
+    }
+  ],
+  "unselected_uncovered_groups": [
+    {
+      "gallery": "Fiery Warhorse",
+      "category": "Mount",
+      "registry_rank": 33,
+      "declared_slots": 13,
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/basics/mounts/fiery-warhorse-gallery.html",
+        "sha256": "12974837cf32317254e09f255d9eac2fa15a754af83811e1173e69cf908560d1",
+        "route": "/info/basics/mounts/fiery-warhorse-gallery.html",
+        "addshots_line": 76,
+        "addshots_literal": "addshots(\"/info/basics/mounts/fierywarhorse/\",\"ss\",numShots);",
+        "directory_literal": "/info/basics/mounts/fierywarhorse/",
+        "filename_literal": "ss",
+        "numShots": 13,
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 13;",
+        "origin_host": "www.worldofwarcraft.com",
+        "origin_schemes": [
+          "http"
+        ]
+      },
+      "reason": "lower declared slot count than selected 20"
+    },
+    {
+      "gallery": "Riding Turtle",
+      "category": "Mount",
+      "registry_rank": 28,
+      "declared_slots": 12,
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/basics/mounts/turtle-gallery.html",
+        "sha256": "23fa54e85c3a1ed4c81d5d4e8b68878f9a86b546981cea6f5f29febbbf330a98",
+        "route": "/info/basics/mounts/turtle-gallery.html",
+        "addshots_line": 75,
+        "addshots_literal": "addshots(\"/info/basics/mounts/turtle/\",\"ss\",numShots);",
+        "directory_literal": "/info/basics/mounts/turtle/",
+        "filename_literal": "ss",
+        "numShots": 12,
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 12;",
+        "origin_host": "www.worldofwarcraft.com",
+        "origin_schemes": [
+          "http"
+        ]
+      },
+      "reason": "lower declared slot count than selected 20"
+    },
+    {
+      "gallery": "Raven Mount",
+      "category": "Mount",
+      "registry_rank": 31,
+      "declared_slots": 9,
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/basics/mounts/raven-mount-gallery.html",
+        "sha256": "72688d10c5baf24266732863d6c248916da1129bbcee8b0239f76ea423febbbe",
+        "route": "/info/basics/mounts/raven-mount-gallery.html",
+        "addshots_line": 72,
+        "addshots_literal": "addshots(\"/info/basics/mounts/ravenmount/\",\"ss\",numShots);",
+        "directory_literal": "/info/basics/mounts/ravenmount/",
+        "filename_literal": "ss",
+        "numShots": 9,
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 9;",
+        "origin_host": "www.worldofwarcraft.com",
+        "origin_schemes": [
+          "http"
+        ]
+      },
+      "reason": "lower declared slot count than selected 20"
+    },
+    {
+      "gallery": "Black War Elekk",
+      "category": "Mount",
+      "registry_rank": 32,
+      "declared_slots": 6,
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/basics/mounts/black-war-elekk-gallery.html",
+        "sha256": "e1973b6fae5699c110110e0613eb338e3b08f3a6f037f8047f6eb9ca5827dd86",
+        "route": "/info/basics/mounts/black-war-elekk-gallery.html",
+        "addshots_line": 69,
+        "addshots_literal": "addshots(\"/info/basics/mounts/blackwarelekk/\",\"ss\",numShots);",
+        "directory_literal": "/info/basics/mounts/blackwarelekk/",
+        "filename_literal": "ss",
+        "numShots": 6,
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 6;",
+        "origin_host": "www.worldofwarcraft.com",
+        "origin_schemes": [
+          "http"
+        ]
+      },
+      "reason": "lower declared slot count than selected 20"
+    },
+    {
+      "gallery": "Qiraji battle tank",
+      "category": "Mount",
+      "registry_rank": 30,
+      "declared_slots": 4,
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/basics/mounts/aq-battletank-gallery.html",
+        "sha256": "7766afbbf743ffd5b198a0bb2362f25b9a8aaba022355b5c7f00fdc9fc10ff1b",
+        "route": "/info/basics/mounts/aq-battletank-gallery.html",
+        "addshots_line": 67,
+        "addshots_literal": "addshots(\"/info/basics/mounts/aqbattletank/\",\"ss\",numShots);",
+        "directory_literal": "/info/basics/mounts/aqbattletank/",
+        "filename_literal": "ss",
+        "numShots": 4,
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 4;",
+        "origin_host": "www.worldofwarcraft.com",
+        "origin_schemes": [
+          "http"
+        ]
+      },
+      "reason": "lower declared slot count than selected 20"
+    }
+  ],
+  "transport_unknown_not_new_candidate": [
+    {
+      "gallery": "Amani War Bear",
+      "registry_rank": 27,
+      "declared_slots": 24,
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/basics/mounts/bear-gallery.html",
+        "sha256": "eafe02e1e861ff71b2940a29759a941adf37de196288806951fd5e60570eec88",
+        "route": "/info/basics/mounts/bear-gallery.html",
+        "addshots_line": 87,
+        "addshots_literal": "addshots(\"/info/basics/images/mounts/bear/\",\"ss\",numShots);",
+        "directory_literal": "/info/basics/images/mounts/bear/",
+        "filename_literal": "ss",
+        "numShots": 24,
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 24;",
+        "origin_host": "www.worldofwarcraft.com",
+        "origin_schemes": [
+          "http"
+        ]
+      },
+      "reason": "prefix01 transport_unknown; do not call it complete or silently repeat it as a new prefix"
+    }
+  ],
+  "notes": [
+    "This is a not-executed plan only; parent GO is required before any network driver invocation.",
+    "Every candidate query is a saved source-page directory prefix. The plan does not enumerate individual image names.",
+    "The 2000-to-anchor window intentionally includes the pre-2006 gap left by prefix01/prefix02; no game-launch-date filtering is applied."
+  ]
+}
