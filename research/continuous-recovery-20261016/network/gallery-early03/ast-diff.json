@@ -1,0 +1,87 @@
+{
+  "schema": "wow-recovery.gallery-early03-ast-diff.v1",
+  "prepared_utc": "2026-10-16T12:22:22.413678+00:00",
+  "base": {
+    "path": "research/continuous-recovery-20261016/network/gallery-prefix05/gallery_prefix_driver_v5.py",
+    "sha256": "e592aa9aa353f0b3640c34f6a0db4dbf6163218520bd1f756c154b1848eb131c"
+  },
+  "new": {
+    "path": "research/continuous-recovery-20261016/network/gallery-early03/gallery_prefix_driver_v6.py",
+    "sha256": "0f3a237cc3239718bcf142d02e864507e20427c1e2abb69d7d0f7a28cfd66f26"
+  },
+  "adaptation_scope": [
+    "exact union of four saved transport-unknown CDX queries",
+    "latest EARLY02 tail-two binding",
+    "valid EARLY01/EARLY02 empty windows excluded",
+    "new batch identifiers only"
+  ],
+  "ast_functions_unchanged": [
+    "__init__",
+    "_remaining_clamp",
+    "_restart_last_dispatch",
+    "_schedule_next",
+    "cf",
+    "check",
+    "free_bytes",
+    "headers",
+    "iso",
+    "list_item",
+    "monotonic",
+    "now",
+    "parse_cdx",
+    "parse_iso",
+    "phase",
+    "public_attempt",
+    "read_json",
+    "rel",
+    "same_origin",
+    "sha",
+    "sleep",
+    "status",
+    "write_json"
+  ],
+  "ast_functions_changed": [
+    "canonical_query_url",
+    "execute",
+    "fixture",
+    "main",
+    "plan_for_run",
+    "project_rows",
+    "request",
+    "validate_inputs"
+  ],
+  "ast_classes_unchanged": [
+    "_FixtureClock",
+    "_RealClock"
+  ],
+  "ast_classes_changed": [],
+  "transport_core_preserved": true,
+  "transport_core_functions_checked": [
+    "parse_cdx",
+    "same_origin",
+    "phase",
+    "status",
+    "headers",
+    "_schedule_next",
+    "_restart_last_dispatch",
+    "_remaining_clamp"
+  ],
+  "transport_core_functions_unchanged": [
+    "_remaining_clamp",
+    "_restart_last_dispatch",
+    "_schedule_next",
+    "headers",
+    "parse_cdx",
+    "phase",
+    "same_origin",
+    "status"
+  ],
+  "changed_contracts": [
+    "validate_inputs accepts exact four saved transport-unknown queries and receipt-bound tail2",
+    "project_rows and canonical_query_url preserve saved per-item windows",
+    "execute starts failure streak at inherited tail2 and preserves global five-stop semantics",
+    "fixture checks saved retry union and three new failures reaching global five"
+  ],
+  "offline_only": true,
+  "network_requests": 0
+}

@@ -103,3 +103,10 @@ UTC 13:00 后不启动新网络批次，13:10 后不启动新来源/导出版本
 - 12:16 UTC：v23 本地验收完成，新增四十张相邻指南素材（6,901,604 字节）。情人节、春节和 World PvP 三组共三十二张大图，在六个指南/图库入口展示；另六张模型视图及两张缩略图进入素材目录。8,620 个声明文件和 632 项浏览检查通过，旧 122 项补充的来源与字节均保留。原动态图库缺口继续单列，准备发布。[本地验收](../research/continuous-recovery-20261016/publication/root-v23-local-acceptance.json)、[设计说明](guide-image-collections.md)
 - 早期图库窗口首两批取得二十份完整空索引，四项仍为传输未知；没有回放或新增原动态图库图片。此前五十组有限窗口均已完整，早期空窗继续独立补查。[第一批](../research/continuous-recovery-20261016/publication/root-gallery-early01-acceptance.json)、[第二批](../research/continuous-recovery-20261016/publication/root-gallery-early02-acceptance.json)
 - v23 首轮浏览辅助检查在折叠的旧新闻图片处超时；完整失败回执保留。后续检查先展开对应新闻，并单独记录导航造成的旧菜单 iframe 取消加载，未改动站点输出；六个新页面、三十二张大图及旧浏览行为通过复核。
+
+- 12:21:59 UTC：v23 Pages 构建完成，提交 `9eb16c5f7865d0e0120609f13f5a23adada7e80d`；52 项线上对象全部经 direct 与本地一致，main 来源检查点 `5de9efe0`。[线上验收](../research/continuous-recovery-20261016/publication/root-v23-pages-online-acceptance.json)
+- 五十组图库目录的查询窗口已连贯覆盖 2000 年至基准时点；二十四组较早空窗均完成，其中二十三份空索引，Fishing 的九行匹配四个已有文件。动态图片直接探测仍为 79 项真实 404、47 项传输未知、3,242 项未逐图请求，没有用索引覆盖替代图片恢复。[最终总账](../research/continuous-recovery-20261016/publication/root-gallery-registry-v7-acceptance.json)、[Fishing 复核](../research/continuous-recovery-20261016/publication/root-fishing-early-index-existing-acceptance.json)
+- 固定 1,104 个文本文件重数当前 v23：1,198 个图片地址、1,959 处静态缺图引用；新闻为 574 处。指南新增展示区改善了可浏览素材，原动态图库地址未改作替代图片。[静态重数](../research/continuous-recovery-20261016/publication/root-v23-static-metrics-acceptance.json)
+- 最后新闻专项的二十个新目标，经首查和一次有界复查取回十七个有效资源（172,648 字节），其余三项仍为传输未知。原始响应、捕获日期、摘要和所有图帧通过主代理核对，准备最终 v24；本轮停止新获取。[首查](../research/continuous-recovery-20261016/publication/root-news-content02-source-acceptance.json)、[复查](../research/continuous-recovery-20261016/publication/root-news-content03-source-acceptance.json)
+
+- 13:14 UTC：最终 v24 通过主代理验收，8,637 个声明文件、8,638 个实际文件及 107 项浏览检查通过，新增十七个新闻图片资源。固定静态范围剩余 1,181 个图片地址、1,942 处缺图引用，其中新闻 557 处；原动态图库继续单列。进入 Pages 发布与完整离线包制作。[本地验收](../research/continuous-recovery-20261016/publication/root-v24-local-acceptance.json)

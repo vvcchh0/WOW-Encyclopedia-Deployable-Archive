@@ -1,0 +1,802 @@
+{
+  "schema": "wow-recovery.gallery-early03-plan.v1",
+  "batch_id": "WAYBACK-GALLERYEARLY03-20261016",
+  "prepared_utc": "2026-10-16T12:22:22.408676+00:00",
+  "source_plan_path": "research/continuous-recovery-20261016/local-audit/gallery-followup-plans/early-gaps-24-v1.json",
+  "source_plan_sha256": "767c9dfe7280ac6d708b5be5661b0970e67ef8ac292672c9802aeddc75218e90",
+  "scope": "exact union of four previously transport-unknown saved query windows; no valid 20 empty-window repeat",
+  "mode": "prepared_not_executed",
+  "execution_status": "prepared_not_executed",
+  "network_authorized": false,
+  "network_requests": 0,
+  "pending_root_acceptance": true,
+  "candidate_count": 4,
+  "candidate_ranks": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "retry_scope": {
+    "registry_ranks": [
+      7,
+      12,
+      14,
+      38
+    ],
+    "saved_batch_ranks": {
+      "EARLY01": [
+        6,
+        9,
+        11
+      ],
+      "EARLY02": [
+        4
+      ]
+    },
+    "excluded_valid_empty_windows": {
+      "EARLY01": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        10,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "EARLY02": [
+        1,
+        2,
+        3
+      ]
+    }
+  },
+  "query_window": {
+    "from": "20000101000000",
+    "to": "per_saved_source_window",
+    "limit": 500,
+    "showResumeKey": true,
+    "collapse": false,
+    "matchType": "prefix"
+  },
+  "index_only": true,
+  "no_payload_replay": true,
+  "max_attempts": 40,
+  "window_seconds": 900.0,
+  "max_total_body_bytes": 16777216,
+  "max_entity_body_bytes": 8388608,
+  "direct_first": true,
+  "proxy": "http://127.0.0.1:7890",
+  "tls_verification": true,
+  "automatic_redirects": 0,
+  "min_dispatch_monotonic_seconds": 5.25,
+  "acceptance_dispatch_floor_seconds": 5.25,
+  "min_request_start_utc_seconds": 5.0,
+  "disk_floor_bytes": 11005853696,
+  "stop_http_codes": [
+    429,
+    503
+  ],
+  "stop_on_five_consecutive_transport_failures": true,
+  "stop_after_new_transport_failures": 3,
+  "retry_after_rule": "429/503 stop; cooldown not earlier than Retry-After and at least 120 seconds",
+  "resume_rule": "reuse exact saved query URL; record any response resumeKey; do not follow continuation",
+  "failure_streak_start": 2,
+  "prior_failure_tail": 2,
+  "historical_gallery_tail": 5,
+  "historical_gallery_tail_preserved": 5,
+  "latest_tail_value": 2,
+  "latest_tail_basis": {
+    "path": "research/continuous-recovery-20261016/publication/root-gallery-early02-acceptance.json",
+    "sha256": "b61209ba8791d6263f076469c5f9b902a33f42f5a5daad29fadb99ee8a045a29",
+    "failure_streak_end": 2,
+    "role": "latest root-accepted EARLY02 source receipt; inherited current tail"
+  },
+  "control_basis": "latest root-accepted EARLY02 source receipt tail end 2; EARLY01 unknown evidence remains bound for this retry union",
+  "previous_batch": {
+    "batch_id": "WAYBACK-GALLERYEARLY02-20261016",
+    "latest_batch_plan_path": "research/continuous-recovery-20261016/network/gallery-early02/execution-plan.json",
+    "latest_batch_plan_sha256": "93aa2e89dc77b50ff59f1c8aaa357ad7cf2d3209b31c61f4255940a5dd88648f",
+    "latest_batch_report_path": "research/continuous-recovery-20261016/network/gallery-early02/batch-report.json",
+    "latest_batch_report_sha256": "008f5c85b7fdce868a9411eb418cd36baf7c805cea26ff4ba4c99a526af6a08f",
+    "latest_batch_source_map_path": "research/continuous-recovery-20261016/network/gallery-early02/source-map.json",
+    "latest_batch_source_map_sha256": "7565fadaa0d809ba24b5967ee01e888faa1c9a881136ca83beaeed3e3e4959a0",
+    "latest_root_acceptance_path": "research/continuous-recovery-20261016/publication/root-gallery-early02-acceptance.json",
+    "latest_root_acceptance_sha256": "b61209ba8791d6263f076469c5f9b902a33f42f5a5daad29fadb99ee8a045a29",
+    "failure_streak_end": 2
+  },
+  "policy": {
+    "from": "20000101000000",
+    "to": "per_item_source_window",
+    "limit": 500,
+    "showResumeKey": true,
+    "collapse": false,
+    "matchType": "prefix",
+    "max_attempts": 40,
+    "window_seconds": 900.0,
+    "max_total_body_bytes": 16777216,
+    "max_entity_body_bytes": 8388608,
+    "min_dispatch_seconds": 5.25,
+    "min_request_start_seconds": 5.0,
+    "disk_floor_bytes": 11005853696,
+    "direct_first": true,
+    "proxy": "http://127.0.0.1:7890",
+    "tls_verification": true,
+    "automatic_redirects": 0,
+    "stop_http_codes": [
+      429,
+      503
+    ],
+    "stop_on_five_consecutive_transport_failures": true,
+    "stop_after_new_transport_failures": 3,
+    "cooldown_seconds": 120,
+    "payload_replay": false,
+    "index_only": true,
+    "prefix_only": true,
+    "no_pagination": true,
+    "remaining_time_and_byte_clamp": true,
+    "retry_after_rule": "429/503 stop; not-before is at least 120 seconds and any Retry-After",
+    "prior_failure_tail": 2
+  },
+  "input_bindings": {
+    "early_gap_plan": {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-followup-plans/early-gaps-24-v1.json",
+      "sha256": "767c9dfe7280ac6d708b5be5661b0970e67ef8ac292672c9802aeddc75218e90",
+      "bytes": 123782,
+      "role": "root-approved 24-item source; exact retry union"
+    },
+    "root_gallery_followups_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-followups-acceptance.json",
+      "sha256": "b961a12d0a6d3125d3c7228478417d0ca18abe1e241a71a85556c2d8b48571d9",
+      "bytes": 692,
+      "role": "root acceptance of 20+4 split"
+    },
+    "gallery_registry_v5": {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-prefix-registry-v5/gallery-prefix-registry-v5.json",
+      "sha256": "98bf027bb36bb33706ac45c4f00e7dfdd89625ef29bff695aac35cd4d14b4f76",
+      "bytes": 296800,
+      "role": "accepted source registry"
+    },
+    "root_gallery_prefix05_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix05-acceptance.json",
+      "sha256": "199ee21c32521e287b0bc4157a8f13bbab1c6b6b7580aa36ca8220cb21eb58c9",
+      "bytes": 9557,
+      "role": "accepted V5 predecessor"
+    },
+    "gallery_prefix05_plan": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix05/plan.json",
+      "sha256": "41ea2ccce2f1b0fcb2a58dec6eb04d85792cca1d4c69e58ae049dddf1e5ac024",
+      "bytes": 26386,
+      "role": "frozen V5 predecessor plan"
+    },
+    "gallery_prefix05_driver_v5": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix05/gallery_prefix_driver_v5.py",
+      "sha256": "e592aa9aa353f0b3640c34f6a0db4dbf6163218520bd1f756c154b1848eb131c",
+      "bytes": 58840,
+      "role": "frozen V5 predecessor driver"
+    },
+    "gallery_prefix05_fixture": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix05/fixture-results.json",
+      "sha256": "51c83fa4a91fe92fce4b035bd7316209a892370d868bb08af4e11aae43cb3e75",
+      "bytes": 5879,
+      "role": "frozen V5 fixture"
+    },
+    "historical_prefix03_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix03-acceptance.json",
+      "sha256": "1daa3a6774f0911fa7647f57b5d4bf90e8efe1aa7d2744829c00457342f959da",
+      "bytes": 15104,
+      "role": "historical tail-five metadata"
+    },
+    "root_gallery_early01_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-early01-acceptance.json",
+      "sha256": "f050ce25091b6710ead8f64ecc12dd645337facf8f9c22c0464ce8cca34b798e",
+      "bytes": 11505,
+      "role": "EARLY01 acceptance for three retry targets"
+    },
+    "gallery_early01_batch_report": {
+      "path": "research/continuous-recovery-20261016/network/gallery-early01/batch-report.json",
+      "sha256": "5aa28458db0f87b98f1faeab08aafed358f1e3391110249ef5072b9fa432cac9",
+      "bytes": 188779,
+      "role": "EARLY01 saved unknown queries"
+    },
+    "gallery_early01_source_map": {
+      "path": "research/continuous-recovery-20261016/network/gallery-early01/source-map.json",
+      "sha256": "aaa9614e637d6d4e1ea1a2764fd8909ffdd79f3e50ac7c4e1a9fd2c26ef1beb5",
+      "bytes": 128113,
+      "role": "EARLY01 saved source map"
+    },
+    "gallery_early01_execution_plan": {
+      "path": "research/continuous-recovery-20261016/network/gallery-early01/execution-plan.json",
+      "sha256": "f72a6c5e217357d61ff379776045a0eb784d37f408d2b78391d7c8e0c6fb914d",
+      "bytes": 38047,
+      "role": "EARLY01 exact query plan"
+    },
+    "root_gallery_early02_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-early02-acceptance.json",
+      "sha256": "b61209ba8791d6263f076469c5f9b902a33f42f5a5daad29fadb99ee8a045a29",
+      "bytes": 2839,
+      "role": "latest EARLY02 acceptance; inherited tail two"
+    },
+    "gallery_early02_batch_report": {
+      "path": "research/continuous-recovery-20261016/network/gallery-early02/batch-report.json",
+      "sha256": "008f5c85b7fdce868a9411eb418cd36baf7c805cea26ff4ba4c99a526af6a08f",
+      "bytes": 43814,
+      "role": "EARLY02 saved Fishing unknown query"
+    },
+    "gallery_early02_source_map": {
+      "path": "research/continuous-recovery-20261016/network/gallery-early02/source-map.json",
+      "sha256": "7565fadaa0d809ba24b5967ee01e888faa1c9a881136ca83beaeed3e3e4959a0",
+      "bytes": 25633,
+      "role": "EARLY02 saved source map"
+    },
+    "gallery_early02_execution_plan": {
+      "path": "research/continuous-recovery-20261016/network/gallery-early02/execution-plan.json",
+      "sha256": "93aa2e89dc77b50ff59f1c8aaa357ad7cf2d3209b31c61f4255940a5dd88648f",
+      "bytes": 12253,
+      "role": "EARLY02 exact query plan"
+    },
+    "source_page_01": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/tk-the-eye-gallery.html",
+      "sha256": "494dafb57b8e86b0a7ac22d6edcc13c3419bc6323c57e807b91466df5c9f2359",
+      "bytes": 13046,
+      "role": "source literal for retry target 1"
+    },
+    "source_page_02": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/hc-blood-furnace-gallery.html",
+      "sha256": "b90e841a1fda4445ac3014475cf3e8ecc1c777767a8c0fb9df5013c37b434410",
+      "bytes": 7831,
+      "role": "source literal for retry target 2"
+    },
+    "source_page_03": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/cr-underbog-gallery.html",
+      "sha256": "bdeb2743ea4fdb817b95dac567a676603bc97dc2ee568ae9b0c36e1f95781b2e",
+      "bytes": 9371,
+      "role": "source literal for retry target 3"
+    },
+    "source_page_04": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/professions/fishing-gallery.html",
+      "sha256": "a141a64479697c12836d1f76e87fb7f6f6612d5a77861e6f7a604d87ca3d8f49",
+      "bytes": 8755,
+      "role": "source literal for retry target 4"
+    }
+  },
+  "candidates": [
+    {
+      "registry_rank": 7,
+      "gallery": "Tempest Keep - The Eye",
+      "category": "Raid",
+      "source_page_route": "/info/dungeons/tk-the-eye-gallery.html",
+      "declared_slots": 43,
+      "expected_direct_entities": 86,
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/theeye/",
+      "origin": {
+        "scheme": "http",
+        "host": "www.worldofwarcraft.com",
+        "default_port": 80
+      },
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/tk-the-eye-gallery.html",
+        "sha256": "494dafb57b8e86b0a7ac22d6edcc13c3419bc6323c57e807b91466df5c9f2359",
+        "addshots_line": 106,
+        "addshots_literal": "addshots(\"/info/dungeons/images/theeye/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/theeye/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 43;"
+      },
+      "prior_coverage": {
+        "coverage_class": "reviewed_window_complete",
+        "coverage_status": "wave3_saved_complete_index",
+        "coverage_source": "wave3 coverage ledger",
+        "coverage_source_latest": null,
+        "prior_windows": [
+          {
+            "batch_id": "WAYBACK-GALLERYPREFIX02-20261016",
+            "status": "valid_complete_index",
+            "label": "Tempest Keep - The Eye",
+            "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/theeye/",
+            "window": {
+              "from": "20060101000000",
+              "to": "20080512210044",
+              "limit": 500,
+              "showResumeKey": true,
+              "collapse": false,
+              "matchType": "prefix"
+            },
+            "direct_exact_candidates": 0,
+            "direct_variant_candidates": 0,
+            "image_index_rows": 0,
+            "index_rows": 0,
+            "source_responses": 0,
+            "complete_prefix_evidence": true,
+            "acceptance": {
+              "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix02-acceptance.json",
+              "sha256": "c458bc25881ffc93a217e0a7b70f70e08f25f48242e615066ee73e9ab451b0f8"
+            },
+            "batch_report": {
+              "path": "research/continuous-recovery-20261016/network/driver-v3/batch-report.json",
+              "sha256": "d24736865f0785e99ddb631e3ff6c5d3b772c66008bbb2b72dc9d2dbb934ee84"
+            },
+            "source_map": {
+              "path": "research/continuous-recovery-20261016/network/driver-v3/source-map.json",
+              "sha256": "92867caf932643819e831264d00e572ce21ada636dac9eac2de4aa9a935f8910"
+            }
+          }
+        ],
+        "prior_attempts": []
+      },
+      "followup_group": "early_gap_before_earliest_complete_window",
+      "reason": "No complete saved prefix query before earliest complete window starting 20060101000000; query only the earlier data gap.",
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "query_mode": "absolute HTTP prefix index only",
+      "payload_recovery": false,
+      "execution_status": "prepared_not_executed",
+      "network_performed_in_this_plan": false,
+      "no_filename_guess": true,
+      "earliest_complete_prior_window_start": "20060101000000",
+      "early_gap_end_exclusive": "20060101000000",
+      "early_gap_query_end": "20051231235959",
+      "followup_batch": "early_gap_batch_1_of_2_20_items",
+      "rank": 1,
+      "target_key": "GALLERY-EARLY03-01",
+      "label": "Tempest Keep - The Eye",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Ftheeye%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "status": "prepared_not_executed",
+      "retry_source": {
+        "batch_id": "WAYBACK-GALLERYEARLY01-20261016",
+        "rank": 6,
+        "original_rank": 7,
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Ftheeye%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+        "query_window": {
+          "from": "20000101000000",
+          "to": "20051231235959",
+          "limit": 500,
+          "showResumeKey": true,
+          "collapse": false,
+          "matchType": "prefix"
+        },
+        "status": "transport_or_parse_unknown",
+        "report_sha256": "5aa28458db0f87b98f1faeab08aafed358f1e3391110249ef5072b9fa432cac9",
+        "source_map_sha256": "aaa9614e637d6d4e1ea1a2764fd8909ffdd79f3e50ac7c4e1a9fd2c26ef1beb5",
+        "execution_plan_sha256": "f72a6c5e217357d61ff379776045a0eb784d37f408d2b78391d7c8e0c6fb914d",
+        "acceptance_sha256": "f050ce25091b6710ead8f64ecc12dd645337facf8f9c22c0464ce8cca34b798e",
+        "attempt_count": 2
+      }
+    },
+    {
+      "registry_rank": 12,
+      "gallery": "Hellfire Citadel - The Blood Furnace",
+      "category": "Dungeon",
+      "source_page_route": "/info/dungeons/hc-blood-furnace-gallery.html",
+      "declared_slots": 39,
+      "expected_direct_entities": 78,
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/bloodfurnace/",
+      "origin": {
+        "scheme": "http",
+        "host": "www.worldofwarcraft.com",
+        "default_port": 80
+      },
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/hc-blood-furnace-gallery.html",
+        "sha256": "b90e841a1fda4445ac3014475cf3e8ecc1c777767a8c0fb9df5013c37b434410",
+        "addshots_line": 102,
+        "addshots_literal": "addshots(\"/info/dungeons/images/bloodfurnace/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/bloodfurnace/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 39;"
+      },
+      "prior_coverage": {
+        "coverage_class": "reviewed_window_complete",
+        "coverage_status": "wave3_saved_complete_index",
+        "coverage_source": "wave3 coverage ledger",
+        "coverage_source_latest": null,
+        "prior_windows": [
+          {
+            "batch_id": "WAYBACK-GALLERYPREFIX02-20261016",
+            "status": "valid_complete_index",
+            "label": "Hellfire Citadel - The Blood Furnace",
+            "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/bloodfurnace/",
+            "window": {
+              "from": "20060101000000",
+              "to": "20080512210044",
+              "limit": 500,
+              "showResumeKey": true,
+              "collapse": false,
+              "matchType": "prefix"
+            },
+            "direct_exact_candidates": 0,
+            "direct_variant_candidates": 0,
+            "image_index_rows": 0,
+            "index_rows": 1,
+            "source_responses": 1,
+            "complete_prefix_evidence": true,
+            "acceptance": {
+              "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix02-acceptance.json",
+              "sha256": "c458bc25881ffc93a217e0a7b70f70e08f25f48242e615066ee73e9ab451b0f8"
+            },
+            "batch_report": {
+              "path": "research/continuous-recovery-20261016/network/driver-v3/batch-report.json",
+              "sha256": "d24736865f0785e99ddb631e3ff6c5d3b772c66008bbb2b72dc9d2dbb934ee84"
+            },
+            "source_map": {
+              "path": "research/continuous-recovery-20261016/network/driver-v3/source-map.json",
+              "sha256": "92867caf932643819e831264d00e572ce21ada636dac9eac2de4aa9a935f8910"
+            }
+          }
+        ],
+        "prior_attempts": []
+      },
+      "followup_group": "early_gap_before_earliest_complete_window",
+      "reason": "No complete saved prefix query before earliest complete window starting 20060101000000; query only the earlier data gap.",
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "query_mode": "absolute HTTP prefix index only",
+      "payload_recovery": false,
+      "execution_status": "prepared_not_executed",
+      "network_performed_in_this_plan": false,
+      "no_filename_guess": true,
+      "earliest_complete_prior_window_start": "20060101000000",
+      "early_gap_end_exclusive": "20060101000000",
+      "early_gap_query_end": "20051231235959",
+      "followup_batch": "early_gap_batch_1_of_2_20_items",
+      "rank": 2,
+      "target_key": "GALLERY-EARLY03-02",
+      "label": "Hellfire Citadel - The Blood Furnace",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fbloodfurnace%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "status": "prepared_not_executed",
+      "retry_source": {
+        "batch_id": "WAYBACK-GALLERYEARLY01-20261016",
+        "rank": 9,
+        "original_rank": 12,
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fbloodfurnace%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+        "query_window": {
+          "from": "20000101000000",
+          "to": "20051231235959",
+          "limit": 500,
+          "showResumeKey": true,
+          "collapse": false,
+          "matchType": "prefix"
+        },
+        "status": "transport_or_parse_unknown",
+        "report_sha256": "5aa28458db0f87b98f1faeab08aafed358f1e3391110249ef5072b9fa432cac9",
+        "source_map_sha256": "aaa9614e637d6d4e1ea1a2764fd8909ffdd79f3e50ac7c4e1a9fd2c26ef1beb5",
+        "execution_plan_sha256": "f72a6c5e217357d61ff379776045a0eb784d37f408d2b78391d7c8e0c6fb914d",
+        "acceptance_sha256": "f050ce25091b6710ead8f64ecc12dd645337facf8f9c22c0464ce8cca34b798e",
+        "attempt_count": 2
+      }
+    },
+    {
+      "registry_rank": 14,
+      "gallery": "Coilfang Reservoir - The Underbog",
+      "category": "Dungeon",
+      "source_page_route": "/info/dungeons/cr-underbog-gallery.html",
+      "declared_slots": 40,
+      "expected_direct_entities": 80,
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/underbog/",
+      "origin": {
+        "scheme": "http",
+        "host": "www.worldofwarcraft.com",
+        "default_port": 80
+      },
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/cr-underbog-gallery.html",
+        "sha256": "bdeb2743ea4fdb817b95dac567a676603bc97dc2ee568ae9b0c36e1f95781b2e",
+        "addshots_line": 103,
+        "addshots_literal": "addshots(\"/info/dungeons/images/underbog/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/underbog/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 40;"
+      },
+      "prior_coverage": {
+        "coverage_class": "reviewed_window_complete",
+        "coverage_status": "wave3_saved_complete_index",
+        "coverage_source": "wave3 coverage ledger",
+        "coverage_source_latest": null,
+        "prior_windows": [
+          {
+            "batch_id": "WAYBACK-GALLERYPREFIX02-20261016",
+            "status": "valid_complete_index",
+            "label": "Coilfang Reservoir - The Underbog",
+            "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/underbog/",
+            "window": {
+              "from": "20060101000000",
+              "to": "20080512210044",
+              "limit": 500,
+              "showResumeKey": true,
+              "collapse": false,
+              "matchType": "prefix"
+            },
+            "direct_exact_candidates": 0,
+            "direct_variant_candidates": 0,
+            "image_index_rows": 0,
+            "index_rows": 2,
+            "source_responses": 2,
+            "complete_prefix_evidence": true,
+            "acceptance": {
+              "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix02-acceptance.json",
+              "sha256": "c458bc25881ffc93a217e0a7b70f70e08f25f48242e615066ee73e9ab451b0f8"
+            },
+            "batch_report": {
+              "path": "research/continuous-recovery-20261016/network/driver-v3/batch-report.json",
+              "sha256": "d24736865f0785e99ddb631e3ff6c5d3b772c66008bbb2b72dc9d2dbb934ee84"
+            },
+            "source_map": {
+              "path": "research/continuous-recovery-20261016/network/driver-v3/source-map.json",
+              "sha256": "92867caf932643819e831264d00e572ce21ada636dac9eac2de4aa9a935f8910"
+            }
+          }
+        ],
+        "prior_attempts": []
+      },
+      "followup_group": "early_gap_before_earliest_complete_window",
+      "reason": "No complete saved prefix query before earliest complete window starting 20060101000000; query only the earlier data gap.",
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "query_mode": "absolute HTTP prefix index only",
+      "payload_recovery": false,
+      "execution_status": "prepared_not_executed",
+      "network_performed_in_this_plan": false,
+      "no_filename_guess": true,
+      "earliest_complete_prior_window_start": "20060101000000",
+      "early_gap_end_exclusive": "20060101000000",
+      "early_gap_query_end": "20051231235959",
+      "followup_batch": "early_gap_batch_1_of_2_20_items",
+      "rank": 3,
+      "target_key": "GALLERY-EARLY03-03",
+      "label": "Coilfang Reservoir - The Underbog",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Funderbog%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "status": "prepared_not_executed",
+      "retry_source": {
+        "batch_id": "WAYBACK-GALLERYEARLY01-20261016",
+        "rank": 11,
+        "original_rank": 14,
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Funderbog%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+        "query_window": {
+          "from": "20000101000000",
+          "to": "20051231235959",
+          "limit": 500,
+          "showResumeKey": true,
+          "collapse": false,
+          "matchType": "prefix"
+        },
+        "status": "transport_or_parse_unknown",
+        "report_sha256": "5aa28458db0f87b98f1faeab08aafed358f1e3391110249ef5072b9fa432cac9",
+        "source_map_sha256": "aaa9614e637d6d4e1ea1a2764fd8909ffdd79f3e50ac7c4e1a9fd2c26ef1beb5",
+        "execution_plan_sha256": "f72a6c5e217357d61ff379776045a0eb784d37f408d2b78391d7c8e0c6fb914d",
+        "acceptance_sha256": "f050ce25091b6710ead8f64ecc12dd645337facf8f9c22c0464ce8cca34b798e",
+        "attempt_count": 2
+      }
+    },
+    {
+      "registry_rank": 38,
+      "gallery": "Fishing",
+      "category": "Profession",
+      "source_page_route": "/info/professions/fishing-gallery.html",
+      "declared_slots": 66,
+      "expected_direct_entities": 132,
+      "prefix": "http://www.worldofwarcraft.com/info/professions/images/fishing/ss/",
+      "origin": {
+        "scheme": "http",
+        "host": "www.worldofwarcraft.com",
+        "default_port": 80
+      },
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/professions/fishing-gallery.html",
+        "sha256": "a141a64479697c12836d1f76e87fb7f6f6612d5a77861e6f7a604d87ca3d8f49",
+        "addshots_line": 129,
+        "addshots_literal": "addshots(\"/info/professions/images/fishing/ss/\",\"ss\",numShots);",
+        "source_directory": "/info/professions/images/fishing/ss/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 66;"
+      },
+      "prior_coverage": {
+        "coverage_class": "reviewed_window_complete",
+        "coverage_status": "wave3_saved_complete_index",
+        "coverage_source": "wave3 coverage ledger",
+        "coverage_source_latest": null,
+        "prior_windows": [
+          {
+            "kind": "historical_saved_prefix",
+            "evidence_id": "FISHING-2008",
+            "status": "executed_complete_prefix",
+            "window": {
+              "from": "20080101000000",
+              "to": "20081231235959"
+            },
+            "direct_entity_rows": 0,
+            "status200_image_rows": 56,
+            "nested_excluded_rows": 56,
+            "prefix_pages": 1,
+            "complete_prefix_evidence": true,
+            "report_quote": "complete_prefix_evidence=True; rows=63; direct=0; status200_image=56",
+            "evidence_paths": [
+              {
+                "path": "research/gallery-recovery-20261014/discovery-002/sanitized-summary.json",
+                "exists": true,
+                "bytes": 2595,
+                "sha256": "c398896f30fd147a6795f8176cd380f84e0d7fac4fa7bbfe0cbadc23744eb34c"
+              },
+              {
+                "path": "research/gallery-recovery-20261014/discovery-002/fishing-2008/cdx/prefix.json",
+                "exists": true,
+                "bytes": 14854,
+                "sha256": "e67aafb69b1fa459674eb71146f6db3fe3584f624506693ee58c6a032b31249d"
+              },
+              {
+                "path": "research/gallery-recovery-20261014/discovery-002/fishing-2008/cdx/pages.json",
+                "exists": true,
+                "bytes": 22,
+                "sha256": "70888f7cccf93eb23761ea0755554720fad69df0ba7e10d642dab4b937f15b2d"
+              },
+              {
+                "path": "research/gallery-recovery-20261014/discovery-002/fishing-2008/cdx/prefix.headers.txt",
+                "exists": true,
+                "bytes": 637,
+                "sha256": "2a7e60317674a2b5981fa03aaccda0748175100b120199838567fe4b37409407"
+              }
+            ]
+          }
+        ],
+        "prior_attempts": []
+      },
+      "followup_group": "early_gap_before_earliest_complete_window",
+      "reason": "No complete saved prefix query before earliest complete window starting 20080101000000; query only the earlier data gap.",
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20071231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "query_mode": "absolute HTTP prefix index only",
+      "payload_recovery": false,
+      "execution_status": "prepared_not_executed",
+      "network_performed_in_this_plan": false,
+      "no_filename_guess": true,
+      "earliest_complete_prior_window_start": "20080101000000",
+      "early_gap_end_exclusive": "20080101000000",
+      "early_gap_query_end": "20071231235959",
+      "followup_batch": "early_gap_batch_2_of_2_4_items",
+      "rank": 4,
+      "target_key": "GALLERY-EARLY03-04",
+      "label": "Fishing",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fprofessions%2Fimages%2Ffishing%2Fss%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20071231235959&limit=500&showResumeKey=true",
+      "status": "prepared_not_executed",
+      "retry_source": {
+        "batch_id": "WAYBACK-GALLERYEARLY02-20261016",
+        "rank": 4,
+        "original_rank": 38,
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fprofessions%2Fimages%2Ffishing%2Fss%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20071231235959&limit=500&showResumeKey=true",
+        "query_window": {
+          "from": "20000101000000",
+          "to": "20071231235959",
+          "limit": 500,
+          "showResumeKey": true,
+          "collapse": false,
+          "matchType": "prefix"
+        },
+        "status": "transport_or_parse_unknown",
+        "report_sha256": "008f5c85b7fdce868a9411eb418cd36baf7c805cea26ff4ba4c99a526af6a08f",
+        "source_map_sha256": "7565fadaa0d809ba24b5967ee01e888faa1c9a881136ca83beaeed3e3e4959a0",
+        "execution_plan_sha256": "93aa2e89dc77b50ff59f1c8aaa357ad7cf2d3209b31c61f4255940a5dd88648f",
+        "acceptance_sha256": "b61209ba8791d6263f076469c5f9b902a33f42f5a5daad29fadb99ee8a045a29",
+        "attempt_count": 2
+      }
+    }
+  ],
+  "saved_retry_evidence": [
+    {
+      "batch_id": "WAYBACK-GALLERYEARLY01-20261016",
+      "rank": 6,
+      "original_rank": 7,
+      "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Ftheeye%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "status": "transport_or_parse_unknown",
+      "report_sha256": "5aa28458db0f87b98f1faeab08aafed358f1e3391110249ef5072b9fa432cac9",
+      "source_map_sha256": "aaa9614e637d6d4e1ea1a2764fd8909ffdd79f3e50ac7c4e1a9fd2c26ef1beb5",
+      "execution_plan_sha256": "f72a6c5e217357d61ff379776045a0eb784d37f408d2b78391d7c8e0c6fb914d",
+      "acceptance_sha256": "f050ce25091b6710ead8f64ecc12dd645337facf8f9c22c0464ce8cca34b798e",
+      "attempt_count": 2
+    },
+    {
+      "batch_id": "WAYBACK-GALLERYEARLY01-20261016",
+      "rank": 9,
+      "original_rank": 12,
+      "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fbloodfurnace%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "status": "transport_or_parse_unknown",
+      "report_sha256": "5aa28458db0f87b98f1faeab08aafed358f1e3391110249ef5072b9fa432cac9",
+      "source_map_sha256": "aaa9614e637d6d4e1ea1a2764fd8909ffdd79f3e50ac7c4e1a9fd2c26ef1beb5",
+      "execution_plan_sha256": "f72a6c5e217357d61ff379776045a0eb784d37f408d2b78391d7c8e0c6fb914d",
+      "acceptance_sha256": "f050ce25091b6710ead8f64ecc12dd645337facf8f9c22c0464ce8cca34b798e",
+      "attempt_count": 2
+    },
+    {
+      "batch_id": "WAYBACK-GALLERYEARLY01-20261016",
+      "rank": 11,
+      "original_rank": 14,
+      "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Funderbog%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20051231235959&limit=500&showResumeKey=true",
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20051231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "status": "transport_or_parse_unknown",
+      "report_sha256": "5aa28458db0f87b98f1faeab08aafed358f1e3391110249ef5072b9fa432cac9",
+      "source_map_sha256": "aaa9614e637d6d4e1ea1a2764fd8909ffdd79f3e50ac7c4e1a9fd2c26ef1beb5",
+      "execution_plan_sha256": "f72a6c5e217357d61ff379776045a0eb784d37f408d2b78391d7c8e0c6fb914d",
+      "acceptance_sha256": "f050ce25091b6710ead8f64ecc12dd645337facf8f9c22c0464ce8cca34b798e",
+      "attempt_count": 2
+    },
+    {
+      "batch_id": "WAYBACK-GALLERYEARLY02-20261016",
+      "rank": 4,
+      "original_rank": 38,
+      "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fprofessions%2Fimages%2Ffishing%2Fss%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20000101000000&to=20071231235959&limit=500&showResumeKey=true",
+      "query_window": {
+        "from": "20000101000000",
+        "to": "20071231235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "status": "transport_or_parse_unknown",
+      "report_sha256": "008f5c85b7fdce868a9411eb418cd36baf7c805cea26ff4ba4c99a526af6a08f",
+      "source_map_sha256": "7565fadaa0d809ba24b5967ee01e888faa1c9a881136ca83beaeed3e3e4959a0",
+      "execution_plan_sha256": "93aa2e89dc77b50ff59f1c8aaa357ad7cf2d3209b31c61f4255940a5dd88648f",
+      "acceptance_sha256": "b61209ba8791d6263f076469c5f9b902a33f42f5a5daad29fadb99ee8a045a29",
+      "attempt_count": 2
+    }
+  ]
+}
