@@ -1,0 +1,485 @@
+{
+  "accepted_v24_new_source_data": {
+    "classification": "source data accepted locally; deployment claim is absent",
+    "image_bytes": 172648,
+    "image_count": 17,
+    "remaining_news_missing_references": 557
+  },
+  "artifacts": {
+    "native_gallery_statuses": {
+      "bytes": 886633,
+      "classification": "clean status ledger for 3368 dynamic gallery entities",
+      "path": "native-gallery-statuses.json",
+      "sha256": "59d4bafe3708802dc36b43313cebd6d8f9e6cfe969eabfa28b67ea13b1068bf4"
+    },
+    "private_static_counter": {
+      "bytes": 10881,
+      "classification": "local-private static counter; no raw source copied",
+      "path": "private/static-missing-counter.json.gz",
+      "sha256": "7ad54a440260a280ee7e0d0655cf3e1cd817b180baa4c97eaf51ccc7fc3fc68a"
+    },
+    "script": {
+      "bytes": 29948,
+      "path": "local-audit/final-v24-pending/consolidate_v24_pending.py",
+      "role": "reproducible offline consolidation script",
+      "sha256": "72be42275ee3ba765bfc8128564f5df161f3721e73aa01bceca6b02c92b2d64f"
+    }
+  },
+  "classification_rules": [
+    "A complete CDX window is index evidence and does not imply a recovered payload.",
+    "Index absence is preserved as unknown or never_requested and is never converted to archive_404.",
+    "Neighbor originals preserve exact scheme, host, port, and path; no dynamic-gallery alias is inferred.",
+    "Native gallery status counts remain archive_404=79, transport_unknown=47, never_requested=3242.",
+    "Public artifacts contain no source HTML, raw headers, cookies, or response-body text."
+  ],
+  "file_resource_counts": {
+    "dynamic_gallery": {
+      "complete_cdx_windows": 50,
+      "native_entities": 3368,
+      "scope": "3368 JavaScript gallery entities kept separate from static files",
+      "status_counts": {
+        "archive_404": 79,
+        "never_requested": 3242,
+        "transport_unknown": 47
+      }
+    },
+    "site": {
+      "actual_files": 8638,
+      "declared_files": 8637,
+      "source_records": 8357,
+      "tree_bytes": 571220502
+    },
+    "static": {
+      "missing_image_references": 1942,
+      "news_missing_image_references": 557,
+      "news_unique_missing_image_entities": 551,
+      "placeholder_markers": 1994,
+      "scanned_files": 1104,
+      "scope": "1104 HTML/HTM/XML/CSS files excluding _origins/",
+      "unique_missing_image_entities": 1181
+    }
+  },
+  "generated_utc": "2026-10-16T13:28:15.775028Z",
+  "git_performed": false,
+  "network_requests": 0,
+  "pending_priorities": {
+    "gallery_neighbors": {
+      "acceptance_receipt_sha256": [
+        "477d8b770330c57c32e7f784aad8ee2a6841376ad08e52aceaee63e1951e4a53",
+        "eb5a2aadd7105df6335b4eb1c98445121a64a56179986955f28fd872148431f5"
+      ],
+      "accepted_payloads_subtracted": 40,
+      "accepted_subtracted_from": 49,
+      "classification": "positive_index_not_local",
+      "count": 9,
+      "items": [
+        {
+          "filename_class": "full",
+          "gallery_context": "Love is in the Air",
+          "original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss10.jpg",
+          "positive_capture_count": 2,
+          "positive_capture_timestamps": [
+            "20060910040223",
+            "20070104223905"
+          ],
+          "positive_digests": [
+            "CTCTIJRJN642JVJU5VTGPTPWTDOYWYKT"
+          ],
+          "relationship": "Indexed neighboring source path; no mapping to dynamic ss/ssN slots is inferred.",
+          "state": "positive_index_not_local"
+        },
+        {
+          "filename_class": "full",
+          "gallery_context": "Love is in the Air",
+          "original": "http://www.worldofwarcraft.com:80/info/events/loveisintheair/images/ss3.jpg",
+          "positive_capture_count": 4,
+          "positive_capture_timestamps": [
+            "20060904091146",
+            "20061111034338",
+            "20070104223511",
+            "20070311204202"
+          ],
+          "positive_digests": [
+            "34XNCKSPX57YSLSLXGAFLPKBKSJP6GNX"
+          ],
+          "relationship": "Indexed neighboring source path; no mapping to dynamic ss/ssN slots is inferred.",
+          "state": "positive_index_not_local"
+        },
+        {
+          "filename_class": "full",
+          "gallery_context": "Lunar Festival",
+          "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/ss5.jpg",
+          "positive_capture_count": 1,
+          "positive_capture_timestamps": [
+            "20060718133358"
+          ],
+          "positive_digests": [
+            "WIHZTI356R6H6IWQTMZJWZMTE5EF7T4U"
+          ],
+          "relationship": "Indexed neighboring source path; no mapping to dynamic ss/ssN slots is inferred.",
+          "state": "positive_index_not_local"
+        },
+        {
+          "filename_class": "thumbnail_or_other",
+          "gallery_context": "Lunar Festival",
+          "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress2.jpg",
+          "positive_capture_count": 1,
+          "positive_capture_timestamps": [
+            "20060718142055"
+          ],
+          "positive_digests": [
+            "25444KV2HPGVI3SLD37XHQLYTGPLQKQK"
+          ],
+          "relationship": "Indexed neighboring source path; no mapping to dynamic ss/ssN slots is inferred.",
+          "state": "positive_index_not_local"
+        },
+        {
+          "filename_class": "thumbnail_or_other",
+          "gallery_context": "Lunar Festival",
+          "original": "http://www.worldofwarcraft.com:80/info/events/lunarnewyears/images/sswdress3.jpg",
+          "positive_capture_count": 1,
+          "positive_capture_timestamps": [
+            "20060719033342"
+          ],
+          "positive_digests": [
+            "BHKRPRYAI45ZRBB57JYW6HJESAYGID4M"
+          ],
+          "relationship": "Indexed neighboring source path; no mapping to dynamic ss/ssN slots is inferred.",
+          "state": "positive_index_not_local"
+        },
+        {
+          "filename_class": "full",
+          "gallery_context": "Halaa PvP",
+          "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss11.jpg",
+          "positive_capture_count": 3,
+          "positive_capture_timestamps": [
+            "20070227214220",
+            "20080402011642",
+            "20080402030726"
+          ],
+          "positive_digests": [
+            "QHVNO3HXNMDUDPGIELJ4QDQDGX2M2OTN"
+          ],
+          "relationship": "Indexed neighboring source path; no mapping to dynamic ss/ssN slots is inferred.",
+          "state": "positive_index_not_local"
+        },
+        {
+          "filename_class": "full",
+          "gallery_context": "Halaa PvP",
+          "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss13.jpg",
+          "positive_capture_count": 3,
+          "positive_capture_timestamps": [
+            "20070227214241",
+            "20080402011645",
+            "20080402030748"
+          ],
+          "positive_digests": [
+            "Y6TLDA2KTDC24W5DVVDLGMNNSCGNNHK6"
+          ],
+          "relationship": "Indexed neighboring source path; no mapping to dynamic ss/ssN slots is inferred.",
+          "state": "positive_index_not_local"
+        },
+        {
+          "filename_class": "full",
+          "gallery_context": "Halaa PvP",
+          "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss14.jpg",
+          "positive_capture_count": 3,
+          "positive_capture_timestamps": [
+            "20070227214252",
+            "20080402011545",
+            "20080402030750"
+          ],
+          "positive_digests": [
+            "XS3ESNZX4JOPLRDJUN3SN2RMYZONCAFI"
+          ],
+          "relationship": "Indexed neighboring source path; no mapping to dynamic ss/ssN slots is inferred.",
+          "state": "positive_index_not_local"
+        },
+        {
+          "filename_class": "full",
+          "gallery_context": "Halaa PvP",
+          "original": "https://www.worldofwarcraft.com/pvp/worldpvp/images/ss3.jpg",
+          "positive_capture_count": 3,
+          "positive_capture_timestamps": [
+            "20070227214118",
+            "20080402011529",
+            "20080402030811"
+          ],
+          "positive_digests": [
+            "7C7RGDGBJQZ5G2RYWYUZEVCTDF4S237G"
+          ],
+          "relationship": "Indexed neighboring source path; no mapping to dynamic ss/ssN slots is inferred.",
+          "state": "positive_index_not_local"
+        }
+      ],
+      "queue_status": "deferred_after_acquisition_closure; no acquisition started",
+      "source_queue_sha256": [
+        "d7345075a288141d24bc7934a66cb4e1822c2cb0f89c80f7017d1fc4afaeb11c",
+        "1670d7d7af8c7a9a28477469e70f7f0f3b76303ebca927164cc222e3e01aa6cf",
+        "b9c7c9550eb65c6795803e6ada01ab55fe185d52f7dc57e7f3ddce193c64b745"
+      ]
+    },
+    "news_content01": {
+      "acceptance_receipt_sha256": "70deedfbc1cd0511c82e41dbd786f81224af8386a7bd1adb73160512bd965475",
+      "candidate_queue_path": "local-audit/v20-news-content20/v20-news-content20-public-candidates.json",
+      "candidate_queue_sha256": "11bbeec9ddf2b7d0f14bf0e8399d81674354c35623dbbf53d7d466d5841900c4",
+      "classification": "transport_or_http_unknown in older CONTENT01 queue",
+      "count": 8,
+      "queue_status": "pointer only; no acquisition started",
+      "summary_sha256": "b1d464cb6a9cb497970d55054e8025db4562fbb6cf86c2b3650a02fe30836109"
+    },
+    "news_content02_03": {
+      "classification": "transport_or_http_unknown after frozen CONTENT02/03 runs",
+      "content02_acceptance_sha256": "01b3d1be19e1bafb60247f94a1405c41b362573889179a66a6ef4970fecc9a25",
+      "content03_acceptance_sha256": "cf36c2b1bfa153f47dc42b8fcfee5e1338c5a917e57902c94b72b080b9c7dd9a",
+      "content03_plan_sha256": "fa3a1ff3257e73411d5d2d41d2de36ef54fca2627fd57919e35ac19a3bf97229",
+      "content03_report_sha256": "b49ea5d6468edc2143b1934a92094927b5b768aaf04f41a57e6a87f77678f4d4",
+      "count": 3,
+      "items": [
+        {
+          "cdx_mode": "fresh",
+          "classification": "transport_or_http_unknown",
+          "original": "http://www.worldofwarcraft.com/news/images/08-03/03-04-08.jpg",
+          "rank": 13,
+          "retry_of": {
+            "batch_id": "WAYBACK-NEWS-CONTENT02-20261016",
+            "outcome": "transport_or_http_unknown",
+            "rank": 13,
+            "target_key": "NEWS-CONTENT02-13"
+          },
+          "target_key": "NEWS-CONTENT03-13"
+        },
+        {
+          "cdx_mode": "fresh",
+          "classification": "transport_or_http_unknown",
+          "original": "http://www.worldofwarcraft.com/news/images/08-02/02-27-08-4.jpg",
+          "rank": 14,
+          "retry_of": {
+            "batch_id": "WAYBACK-NEWS-CONTENT02-20261016",
+            "outcome": "transport_or_http_unknown",
+            "rank": 14,
+            "target_key": "NEWS-CONTENT02-14"
+          },
+          "target_key": "NEWS-CONTENT03-14"
+        },
+        {
+          "cdx_mode": "fresh",
+          "classification": "transport_or_http_unknown",
+          "original": "http://www.worldofwarcraft.com/news/images/08-02/02-20-08-2.jpg",
+          "rank": 18,
+          "retry_of": {
+            "batch_id": "WAYBACK-NEWS-CONTENT02-20261016",
+            "outcome": "transport_or_http_unknown",
+            "rank": 18,
+            "target_key": "NEWS-CONTENT02-18"
+          },
+          "target_key": "NEWS-CONTENT03-18"
+        }
+      ],
+      "queue_status": "deferred_after_acquisition_closure; no retry/control started"
+    },
+    "static_and_eu": {
+      "classification": "related static/EU literal queues; pointers only",
+      "pointers": [
+        "local-audit/gallery-neighbor-guide-literals/gallery-neighbor-guide-literals-v1.json",
+        "local-audit/regional-image-supplement-map.proposal.json",
+        "local-audit/regional-image-supplement-plan.json",
+        "local-audit/regional-discovery/nested-preview-audit-v4.json",
+        "local-audit/eu-dependencies/eu-dependencies-public-candidates-v1.json",
+        "local-audit/eu-dependencies/eu-dependencies-public-summary-v1.json",
+        "local-audit/eu-navigation-wave2/eu-navigation-wave2-public-summary-v1.json"
+      ],
+      "queue_status": "no acquisition started"
+    }
+  },
+  "phase": "acquisition_closed_offline_consolidation",
+  "schema": "wow-recovery.local-audit.final-v24.pending.summary.v1",
+  "source_bindings": [
+    {
+      "bytes": 12164,
+      "path": "publication/root-v24-local-acceptance.json",
+      "role": "root accepted v24 local export",
+      "sha256": "6ede038217c7e3a978dc82c2b6135580660546b9013e30883679cbae11c17282"
+    },
+    {
+      "bytes": 6796,
+      "path": "publication/root-v24-export-acceptance.json",
+      "role": "root accepted v24 export",
+      "sha256": "9f8e660e5220994a06088ca4de249ac950df49623f28a92199062b78af4b19c5"
+    },
+    {
+      "bytes": 937,
+      "path": "publication/root-v24-static-metrics-acceptance.json",
+      "role": "root accepted static metrics",
+      "sha256": "f334d8176f8b776975394e3e9df351a0b5284858e2692e255b46df8da57f4cac"
+    },
+    {
+      "bytes": 8111632,
+      "path": ".scratch/pages-resources-20261016-v24/export-provenance.json",
+      "role": "v24 export provenance",
+      "sha256": "0d1a392e5be8f5eae71b8ca6bf73f5473331357c6f99f9ac60e79b6d07dec3d0"
+    },
+    {
+      "bytes": 418729,
+      "path": "local-audit/gallery-final-v7/gallery-prefix-registry-v7.json",
+      "role": "accepted 50 full-window CDX registry",
+      "sha256": "2579f66841bf6102d90f5dbfe819902337bff03f6e3ac7191239ae041e2d97d6"
+    },
+    {
+      "bytes": 8659947,
+      "path": "local-audit/v2/gallery-direct-entity-audit-v2.json",
+      "role": "native gallery status source",
+      "sha256": "341435e62cfea8db4f1421d05c9e765e598ae4a31fb92d5702201c5308972a0a"
+    },
+    {
+      "bytes": 714,
+      "path": "publication/root-gallery-neighbors-candidates-acceptance.json",
+      "role": "neighbor candidate acceptance",
+      "sha256": "477d8b770330c57c32e7f784aad8ee2a6841376ad08e52aceaee63e1951e4a53"
+    },
+    {
+      "bytes": 770,
+      "path": "publication/root-gallery-neighbors-remaining-candidates-acceptance.json",
+      "role": "neighbor remaining queue acceptance",
+      "sha256": "eb5a2aadd7105df6335b4eb1c98445121a64a56179986955f28fd872148431f5"
+    },
+    {
+      "bytes": 40655,
+      "path": "local-audit/gallery-neighbors/full-images20-candidates.json",
+      "role": "neighbor positive source queue",
+      "sha256": "d7345075a288141d24bc7934a66cb4e1822c2cb0f89c80f7017d1fc4afaeb11c"
+    },
+    {
+      "bytes": 38200,
+      "path": "local-audit/gallery-neighbors/remaining20-candidates.json",
+      "role": "neighbor positive source queue",
+      "sha256": "1670d7d7af8c7a9a28477469e70f7f0f3b76303ebca927164cc222e3e01aa6cf"
+    },
+    {
+      "bytes": 14406,
+      "path": "local-audit/gallery-neighbors/remaining9-candidates.json",
+      "role": "neighbor positive source queue",
+      "sha256": "b9c7c9550eb65c6795803e6ada01ab55fe185d52f7dc57e7f3ddce193c64b745"
+    },
+    {
+      "bytes": 99049,
+      "path": "integration/v23-neighbor-supplement-source-map-final40.json",
+      "role": "accepted neighbor payload map",
+      "sha256": "a41530972865b8b1d7413dd9a7d91d4555a770f0efa9848ee0ca2429ebee5030"
+    },
+    {
+      "bytes": 27407,
+      "path": "integration/v23-neighbor-supplement-catalog-map-final40.json",
+      "role": "accepted neighbor payload map",
+      "sha256": "ef5e6c9e4bdde5a08c248b35b3fd48849740e0714b3fb056100b4b6355b451b4"
+    },
+    {
+      "bytes": 8189,
+      "path": "publication/root-news-content02-source-acceptance.json",
+      "role": "CONTENT02 accepted source receipt",
+      "sha256": "01b3d1be19e1bafb60247f94a1405c41b362573889179a66a6ef4970fecc9a25"
+    },
+    {
+      "bytes": 6020,
+      "path": "publication/root-news-content03-source-acceptance.json",
+      "role": "CONTENT03 accepted source receipt",
+      "sha256": "cf36c2b1bfa153f47dc42b8fcfee5e1338c5a917e57902c94b72b080b9c7dd9a"
+    },
+    {
+      "bytes": 232475,
+      "path": "network/news-content02/plan.json",
+      "role": "CONTENT02 frozen source queue",
+      "sha256": "084807f5f8fa0df01a78eeb0d9a5952c940ebe2af25d424808434f36e08985d0"
+    },
+    {
+      "bytes": 134987,
+      "path": "network/news-content03/plan.json",
+      "role": "CONTENT03 frozen retry queue",
+      "sha256": "fa3a1ff3257e73411d5d2d41d2de36ef54fca2627fd57919e35ac19a3bf97229"
+    },
+    {
+      "bytes": 113251,
+      "path": "network/news-content02/output/batch-report.json",
+      "role": "CONTENT02 sanitized batch report",
+      "sha256": "a5912e65ac8643321b3cca2cb85794b2af73d00972175af2d27970ed5544aefc"
+    },
+    {
+      "bytes": 79691,
+      "path": "network/news-content03/output/batch-report.json",
+      "role": "CONTENT03 sanitized batch report",
+      "sha256": "b49ea5d6468edc2143b1934a92094927b5b768aaf04f41a57e6a87f77678f4d4"
+    },
+    {
+      "bytes": 3093,
+      "path": "local-audit/v23-news-frontier/v23-news-frontier-summary.json",
+      "role": "CONTENT01 unknown-count summary",
+      "sha256": "b1d464cb6a9cb497970d55054e8025db4562fbb6cf86c2b3650a02fe30836109"
+    },
+    {
+      "bytes": 8183,
+      "path": "publication/root-news-content01-source-acceptance.json",
+      "role": "CONTENT01 accepted source receipt",
+      "sha256": "70deedfbc1cd0511c82e41dbd786f81224af8386a7bd1adb73160512bd965475"
+    },
+    {
+      "bytes": 70088,
+      "path": "local-audit/v20-news-content20/v20-news-content20-public-candidates.json",
+      "role": "CONTENT01 source queue",
+      "sha256": "11bbeec9ddf2b7d0f14bf0e8399d81674354c35623dbbf53d7d466d5841900c4"
+    },
+    {
+      "bytes": 562,
+      "path": "publication/root-news-content20-candidates-acceptance.json",
+      "role": "CONTENT01 source queue acceptance",
+      "sha256": "d5c8d87527256470cd6590eb90d523e0df69363a336fe30e5b2ed2461c7e4cc6"
+    },
+    {
+      "bytes": 67013,
+      "path": "local-audit/gallery-neighbor-guide-literals/gallery-neighbor-guide-literals-v1.json",
+      "role": "static guide literal queue",
+      "sha256": "a0e76ea9fa7c9f7e4b4b5aa5f4ca3c3c0ed0e2d39f363906c8e19d18d2af026c"
+    },
+    {
+      "bytes": 2698,
+      "path": "local-audit/regional-image-supplement-map.proposal.json",
+      "role": "regional static supplement pointer",
+      "sha256": "11c6e21a2e9b5a15b3ee7c10e097465c1b3ed646c24f130d8e1ea5be10d2f3c5"
+    },
+    {
+      "bytes": 1917,
+      "path": "local-audit/regional-image-supplement-plan.json",
+      "role": "regional static supplement plan pointer",
+      "sha256": "367d0768465a42b02cfa425dde620e9f5aa9ec8dedd42b9ed6cff5c6a85d847b"
+    },
+    {
+      "bytes": 312854,
+      "path": "local-audit/regional-discovery/nested-preview-audit-v4.json",
+      "role": "regional nested preview pointer",
+      "sha256": "9d35e2b2f9e60b850ee9a4344137e3d3eed779c26bcaf8adbd8459391e5c38fc"
+    },
+    {
+      "bytes": 9343,
+      "path": "local-audit/eu-dependencies/eu-dependencies-public-candidates-v1.json",
+      "role": "EU literal queue pointer",
+      "sha256": "0f9564d3412bdb5b91ab90c9374bfb840751c4db129511dd80b36cc63e5310a2"
+    },
+    {
+      "bytes": 19026,
+      "path": "local-audit/eu-dependencies/eu-dependencies-public-summary-v1.json",
+      "role": "EU public summary pointer",
+      "sha256": "a98f1064a4d6c2d8e9fca06a8cbc1493237c25cc849c68a596a4aa6a279f9c53"
+    },
+    {
+      "bytes": 12462,
+      "path": "local-audit/eu-navigation-wave2/eu-navigation-wave2-public-summary-v1.json",
+      "role": "EU navigation queue pointer",
+      "sha256": "f8cf0cdb7cfb5c38a77c733e97b9f69d4491505d11e7badc0b4b00e0fce158cb"
+    }
+  ],
+  "source_provenance": {
+    "provenance_sha256": "0d1a392e5be8f5eae71b8ca6bf73f5473331357c6f99f9ac60e79b6d07dec3d0",
+    "root_local_acceptance_checked_utc": "2026-10-16T13:14:48.047829+00:00",
+    "root_local_acceptance_sha256": "6ede038217c7e3a978dc82c2b6135580660546b9013e30883679cbae11c17282",
+    "site": ".scratch/pages-resources-20261016-v24"
+  }
+}

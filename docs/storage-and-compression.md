@@ -69,7 +69,7 @@ SHA-256 为 `7d13b98943180e52cc024d43f73148e8450dd5f81379b95083b9ce1f57df0c9e`�
 
 ## 2026-10-16：最终浏览包（v24）
 
-本轮单次制作 v24 处理后离线包，收录最终派生页面与启动文件，正在上传 Release。此前浏览包、冻结副本与原始取证包继续保留。
+本轮单次制作 v24 处理后离线包，收录最终派生页面与启动文件，已发布至 [GitHub Releases](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261016)。此前浏览包、冻结副本与原始取证包继续保留。
 
 | 文件类别 | 解压字节 | ZIP 成员压缩字节 |
 | --- | ---: | ---: |

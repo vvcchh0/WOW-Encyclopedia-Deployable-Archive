@@ -110,3 +110,7 @@ UTC 13:00 后不启动新网络批次，13:10 后不启动新来源/导出版本
 - 最后新闻专项的二十个新目标，经首查和一次有界复查取回十七个有效资源（172,648 字节），其余三项仍为传输未知。原始响应、捕获日期、摘要和所有图帧通过主代理核对，准备最终 v24；本轮停止新获取。[首查](../research/continuous-recovery-20261016/publication/root-news-content02-source-acceptance.json)、[复查](../research/continuous-recovery-20261016/publication/root-news-content03-source-acceptance.json)
 
 - 13:14 UTC：最终 v24 通过主代理验收，8,637 个声明文件、8,638 个实际文件及 107 项浏览检查通过，新增十七个新闻图片资源。固定静态范围剩余 1,181 个图片地址、1,942 处缺图引用，其中新闻 557 处；原动态图库继续单列。进入 Pages 发布与完整离线包制作。[本地验收](../research/continuous-recovery-20261016/publication/root-v24-local-acceptance.json)
+
+- 13:24:40 UTC：v24 Pages 构建完成，提交 `031dd9c0aa2522bf990e455fd72824cc12b55e91`，32 项线上对象全部经 direct 核对一致。
+- 13:28:54 UTC：v24 处理后离线包正式发布，约 510 MB、解压约 575 MB；8,644 个成员及解压后服务器的 128 次访问检查通过，GitHub 三项资产的大小与摘要匹配本地。Release 固定于 `3e713eaef584e669d3a60ccd9d77641dbd3bf34a`，后续文档提交独立记录。[发布验收](../research/continuous-recovery-20261016/publication/root-v24-release-publication.json)
+- 本轮获取关闭，累计新增 141 个有效图片资源地址；最终后续清单将静态缺图、动态图库、九个邻接正索引及十一项新闻传输未知分列。主代理修正辅助核对中的相对路径解析，未重扫或改变站点；首次脚本留存。[累计回顾](recovery-summary-20261016.md)
