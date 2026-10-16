@@ -296,16 +296,22 @@
     {
       "id": "LOCAL09-CITY-V2",
       "owner": "/root/local_recovery_20261016",
-      "status": "in_progress",
+      "status": "root_accepted",
       "network": false,
       "minutes": 35,
       "write_scope": "tools/guide_previews.py; tests/test_guide_previews.py; integration/v18-guide-previews/**",
-      "goal": "Preserve strict v1 five-group/nineteen maps; add strict v2 six-group/twenty-two maps with City preview section."
+      "goal": "Preserve strict v1 five-group/nineteen maps; add strict v2 six-group/twenty-two maps with City preview section.",
+      "result": {
+        "map_schema": "v2",
+        "groups": 6,
+        "existing_previews": 22,
+        "acceptance": "publication/root-city-v2-code-acceptance.json"
+      }
     },
     {
       "id": "NETWORK11-EUDEPS01-PLAN",
       "owner": "/root/network_recovery_20261016",
-      "status": "preparing_no_network",
+      "status": "executed_root_accepted_private_sources",
       "minutes": 25,
       "write_scope": "network/eu-deps01/**",
       "goal": "Ten observed EU dependencies; bounded exact CDX and validated text replay only after root GO.",
@@ -314,8 +320,72 @@
         "seconds": 1800,
         "body_bytes": 67108864,
         "entity_bytes": 8388608
+      },
+      "result": {
+        "requests": 38,
+        "text_sources": 7,
+        "source_bytes": 30206,
+        "unresolved": 3,
+        "deployed": false,
+        "acceptance": "publication/root-eu-deps-source-acceptance.json"
       }
+    },
+    {
+      "id": "LOCAL10-V18-BUILD",
+      "owner": "/root/local_recovery_20261016",
+      "status": "root_accepted_publication_pending",
+      "result": {
+        "declared_files": 8527,
+        "actual_files": 8528,
+        "browser_checks": 12,
+        "focused_tests": 9,
+        "acceptance": "publication/root-v18-export-acceptance.json"
+      }
+    },
+    {
+      "id": "LOCAL11-SHARED-CACHE",
+      "owner": "/root/local_recovery_20261016",
+      "status": "returned_candidate_subset_root_accepted",
+      "result": {
+        "next_ten_references": 184,
+        "acceptance": "publication/root-news-next10-plan.json"
+      }
+    },
+    {
+      "id": "LOCAL12-LITERAL-WAVE2",
+      "owner": "/root/local_recovery_20261016",
+      "status": "root_accepted_literal_evidence",
+      "result": {
+        "eu_candidates": 10,
+        "shared_image_candidates": 5,
+        "acceptance": "publication/root-literal-wave2-acceptance.json"
+      }
+    },
+    {
+      "id": "NETWORK12-NEWS-SHARED10",
+      "owner": "/root/network_recovery_20261016",
+      "status": "stopped_root_accepted_two_sources",
+      "result": {
+        "requests": 11,
+        "images": 2,
+        "bytes": 2370,
+        "failure_streak_end": 5,
+        "acceptance": "publication/root-news-shared10-source-acceptance.json"
+      }
+    },
+    {
+      "id": "LOCAL13-V18-PUBLICATION-PREP",
+      "owner": "/root/local_recovery_20261016",
+      "status": "in_progress",
+      "network": false,
+      "write_scope": "publication new v18 combined receipt/publisher/verifier"
+    },
+    {
+      "id": "NETWORK13-REUSABLE-RUNNER",
+      "owner": "/root/network_recovery_20261016",
+      "status": "preparing_no_network",
+      "write_scope": "network/reusable-image-driver-v1/**; network/control02-plan/**"
     }
   ],
-  "updated_utc": "2026-10-16T05:18:06.419360+00:00"
+  "updated_utc": "2026-10-16T06:10:47.255757+00:00"
 }

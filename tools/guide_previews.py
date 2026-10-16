@@ -4,7 +4,8 @@
 The guide previews are existing manifest image routes.  This module never
 creates a full-image alias, changes the dynamic gallery script, or copies image
 bytes.  It only validates a curated map against the frozen manifest and
-inserts a local preview section into the five named gallery pages.
+inserts a local preview section into the fixed gallery pages for the selected
+map schema.
 """
 
 from __future__ import annotations
@@ -26,12 +27,45 @@ class GuidePreviewError(ValueError):
     """Raised when the curated guide-preview map is incomplete or unsafe."""
 
 
-EXPECTED_GROUPS: dict[str, tuple[str, str, str]] = {
+EXPECTED_GROUPS_V1: dict[str, tuple[str, str, str]] = {
     "fishing": ("Fishing", "/info/professions/fishing-gallery.html", "/info/professions/fishing.html"),
     "hallows-end": ("Hallow's End", "/info/events/hallowsend/gallery.html", "/info/events/hallowsend/index.html"),
     "brewfest": ("Brewfest", "/info/events/brewfest/gallery.html", "/info/events/brewfest/index.html"),
     "winters-veil": ("Winter's Veil", "/info/events/winterveil/gallery.html", "/info/events/winterveil/index.html"),
     "zulaman": ("Zul'Aman", "/info/dungeons/zulaman-gallery.html", "/info/dungeons/zulaman.xml"),
+}
+
+EXPECTED_GROUPS_V2: dict[str, tuple[str, str, str]] = {
+    **EXPECTED_GROUPS_V1,
+    "city-attacks": ("City Attacks", "/pvp/worldpvp/cityattacks-gallery.html", "/info/basics/pvpcombat.html"),
+}
+
+# Keep the historical public name bound to the strict v1 set.  The original
+# five-group builder and callers importing this name must not gain City
+# implicitly.
+EXPECTED_GROUPS = EXPECTED_GROUPS_V1
+
+CITY_PREVIEW_ROUTES = frozenset(
+    {
+        "/pvp/worldpvp/images/city/thumbs/thumb-1.jpg",
+        "/pvp/worldpvp/images/city/thumbs/thumb-2.jpg",
+        "/pvp/worldpvp/images/city/thumbs/thumb-3.jpg",
+    }
+)
+
+_MAP_SPECS: dict[str, dict[str, Any]] = {
+    "wow-recovery.guide-preview-source-map.v1": {
+        "groups": EXPECTED_GROUPS_V1,
+        "group_count": 5,
+        "preview_count": 19,
+        "version_label": "five",
+    },
+    "wow-recovery.guide-preview-source-map.v2": {
+        "groups": EXPECTED_GROUPS_V2,
+        "group_count": 6,
+        "preview_count": 22,
+        "version_label": "six",
+    },
 }
 
 
@@ -67,6 +101,7 @@ class GuidePreviewBundle:
     source_manifest_sha256: str
     anchor_timestamp: str
     groups: tuple[GuidePreviewGroup, ...]
+    map_schema: str = "wow-recovery.guide-preview-source-map.v1"
 
     @property
     def preview_count(self) -> int:
@@ -79,8 +114,12 @@ class GuidePreviewBundle:
         return None
 
     def provenance(self) -> dict[str, Any]:
-        return {
-            "schema": "github-pages-guide-preview-provenance/v1",
+        payload = {
+            "schema": (
+                "github-pages-guide-preview-provenance/v2"
+                if self.map_schema == "wow-recovery.guide-preview-source-map.v2"
+                else "github-pages-guide-preview-provenance/v1"
+            ),
             "source_map": self.map_path.as_posix(),
             "source_map_sha256": self.map_sha256,
             "source_acceptance": self.source_acceptance_path,
@@ -113,6 +152,9 @@ class GuidePreviewBundle:
                 for group in self.groups
             ],
         }
+        if self.map_schema != "wow-recovery.guide-preview-source-map.v1":
+            payload["source_map_schema"] = self.map_schema
+        return payload
 
 
 def _sha256(path: Path) -> str:
@@ -332,8 +374,14 @@ def load_guide_preview_map(
     if not map_path.is_file():
         raise GuidePreviewError(f"guide preview map is missing: {map_path}")
     map_payload = _read_json(map_path, label="guide preview map")
-    if map_payload.get("schema") != "wow-recovery.guide-preview-source-map.v1":
+    map_schema = str(map_payload.get("schema") or "")
+    map_spec = _MAP_SPECS.get(map_schema)
+    if map_spec is None:
         raise GuidePreviewError("guide preview map schema is unsupported")
+    expected_groups: dict[str, tuple[str, str, str]] = map_spec["groups"]
+    expected_group_count = int(map_spec["group_count"])
+    expected_preview_count = int(map_spec["preview_count"])
+    is_v2 = map_schema == "wow-recovery.guide-preview-source-map.v2"
     map_sha = _sha256(map_path)
 
     acceptance_path, acceptance_sha = _map_path(workspace_root, map_payload.get("source_acceptance"), label="source_acceptance")
@@ -341,8 +389,10 @@ def load_guide_preview_map(
     if acceptance.get("accepted") is not True or acceptance.get("network_requests") != 0:
         raise GuidePreviewError("source acceptance is not accepted local-only evidence")
     checked = acceptance.get("checked")
-    if not isinstance(checked, list) or len(checked) != 19:
-        raise GuidePreviewError("source acceptance does not contain exactly 19 accepted previews")
+    if not isinstance(checked, list) or len(checked) != expected_preview_count:
+        raise GuidePreviewError(
+            f"source acceptance does not contain exactly {expected_preview_count} accepted previews"
+        )
     accepted_by_route: dict[str, dict[str, Any]] = {}
     for index, item in enumerate(checked):
         if not isinstance(item, dict):
@@ -374,12 +424,14 @@ def load_guide_preview_map(
     if acceptance.get("audit_sha256") and str(acceptance["audit_sha256"]).casefold() != audit_sha:
         raise GuidePreviewError("source acceptance audit_sha256 does not match source audit")
     audit = _read_json(audit_path, label="source audit")
-    if audit.get("counts", {}).get("target_count") != 19:
-        raise GuidePreviewError("source audit target count is not 19")
+    if audit.get("counts", {}).get("target_count") != expected_preview_count:
+        raise GuidePreviewError(f"source audit target count is not {expected_preview_count}")
 
     raw_groups = map_payload.get("groups")
-    if not isinstance(raw_groups, list) or len(raw_groups) != len(EXPECTED_GROUPS):
-        raise GuidePreviewError("guide preview map must contain exactly five groups")
+    if not isinstance(raw_groups, list) or len(raw_groups) != expected_group_count:
+        raise GuidePreviewError(
+            f"guide preview map must contain exactly {map_spec['version_label']} groups"
+        )
     route_records = {str(item.get("route")): item for item in (manifest.get("files") or []) if isinstance(item, dict)}
     seen_ids: set[str] = set()
     seen_routes: set[str] = set()
@@ -388,10 +440,10 @@ def load_guide_preview_map(
         if not isinstance(raw_group, dict):
             raise GuidePreviewError("guide preview group is not an object")
         group_id = str(raw_group.get("group_id") or "")
-        if group_id not in EXPECTED_GROUPS or group_id in seen_ids:
+        if group_id not in expected_groups or group_id in seen_ids:
             raise GuidePreviewError(f"guide preview group identity is invalid or duplicated: {group_id!r}")
         seen_ids.add(group_id)
-        expected_label, expected_gallery, expected_guide = EXPECTED_GROUPS[group_id]
+        expected_label, expected_gallery, expected_guide = expected_groups[group_id]
         label = raw_group.get("label")
         gallery_route = _route(raw_group.get("gallery_route"), label=f"{group_id}.gallery_route")
         guide_route = _route(raw_group.get("guide_route"), label=f"{group_id}.guide_route")
@@ -424,15 +476,27 @@ def load_guide_preview_map(
             label_prefix = f"{group_id}.previews[{index}]"
             if not isinstance(raw_preview, dict):
                 raise GuidePreviewError(f"{label_prefix} is not an object")
+            if is_v2 and any(
+                field in raw_preview
+                for field in ("dynamic_full_candidate", "full_route", "slot", "slot_index", "dynamic_route")
+            ):
+                raise GuidePreviewError(
+                    f"{label_prefix} contains a dynamic/full-image candidate field"
+                )
             preview_route = _route(raw_preview.get("route"), label=f"{label_prefix}.route")
             if preview_route in seen_preview_routes or preview_route in {gallery_route, guide_route}:
                 raise GuidePreviewError(f"{label_prefix}.route is duplicated or collides")
             seen_preview_routes.add(preview_route)
-            if "/thumbs/" not in preview_route or not preview_route.casefold().endswith("-thumb.jpg"):
+            if is_v2 and group_id == "city-attacks":
+                if preview_route not in CITY_PREVIEW_ROUTES:
+                    raise GuidePreviewError(f"{label_prefix}.route is not an accepted City Attacks preview route")
+            elif "/thumbs/" not in preview_route or not preview_route.casefold().endswith("-thumb.jpg"):
                 raise GuidePreviewError(f"{label_prefix}.route is not an existing thumbnail route")
             accepted = accepted_by_route.get(preview_route)
             if accepted is None:
-                raise GuidePreviewError(f"{label_prefix}.route is not in the accepted 19")
+                raise GuidePreviewError(
+                    f"{label_prefix}.route is not in the accepted {expected_preview_count}"
+                )
             expected_sha = str(raw_preview.get("sha256") or "").casefold()
             if not re.fullmatch(r"[0-9a-f]{64}", expected_sha):
                 raise GuidePreviewError(f"{label_prefix}.sha256 is invalid")
@@ -476,9 +540,14 @@ def load_guide_preview_map(
                 raise GuidePreviewError(f"{label_prefix} route is not in the Pages route map")
             previews.append(GuidePreview(preview_route, expected_sha, expected_length, capture, static_url))
         groups.append(GuidePreviewGroup(group_id, label, gallery_route, guide_route, gallery_static, guide_static, tuple(previews)))
-    if seen_ids != set(EXPECTED_GROUPS):
-        raise GuidePreviewError("guide preview map does not contain all five fixed groups")
-    if sum(len(group.previews) for group in groups) != 19 or set(accepted_by_route) != {preview.route for group in groups for preview in group.previews}:
+    if seen_ids != set(expected_groups):
+        raise GuidePreviewError(
+            f"guide preview map does not contain all {expected_group_count} fixed groups"
+        )
+    if (
+        sum(len(group.previews) for group in groups) != expected_preview_count
+        or set(accepted_by_route) != {preview.route for group in groups for preview in group.previews}
+    ):
         raise GuidePreviewError("guide preview route conservation failed")
     return GuidePreviewBundle(
         map_path=map_path.relative_to(workspace_root),
@@ -491,6 +560,7 @@ def load_guide_preview_map(
         source_manifest_sha256=manifest_sha,
         anchor_timestamp=anchor,
         groups=tuple(groups),
+        map_schema=map_schema,
     )
 
 

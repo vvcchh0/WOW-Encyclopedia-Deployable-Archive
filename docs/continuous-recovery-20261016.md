@@ -59,3 +59,6 @@ UTC 13:00 后不启动新网络批次，13:10 后不启动新来源/导出版本
 优先回放已有有效索引、此前因网络失败未取回的资源，再寻找其他存档路径。已收到真实 404 的同点不反复请求。图库审计需要将每轮回执按精确 URL 与实际请求时间合并，不能从较早的汇总推导当前状态。
 
 图库页面使用脚本拼接原图和缩略图地址。一个待验证的解释是：部分图片请求没有随页面一起被存档，因此页面保存下来而整组图片缺失。后续比较静态页面引用的嵌套缩略图、动态图库路径和地区官网镜像的捕获记录；不会用地区站的其他截图填充美服副本图库。
+- 05:49 UTC：v18 本地验收完成，City Attacks 新展示三张已有预览；六组共二十二张，原五组页面字节保持一致。8,527 个声明文件与全部路由核对通过，十二项实际浏览检查和九项针对性测试通过。[导出验收](../research/continuous-recovery-20261016/publication/root-v18-export-acceptance.json)、[浏览验收](../research/continuous-recovery-20261016/publication/root-v18-browser-acceptance.json)
+- 欧服菜单专项取得七份有效文本来源（30,206 字节），包含五个菜单 iframe 和两份脚本；只作本地结构研究，未执行或部署原脚本。进一步核对十个真实依赖与语言入口，优先沿菜单变量脚本寻找图库导航。[来源验收](../research/continuous-recovery-20261016/publication/root-eu-deps-source-acceptance.json)、[后续引用验收](../research/continuous-recovery-20261016/publication/root-literal-wave2-acceptance.json)
+- 06:00 UTC：共享新闻批次取回 W、I 两个首字母图标，共 2,370 字节；第十一请求后达到五次连续连接失败，停批冷却，余八项目未完成。两图经源响应、存档摘要和全部图帧核对，保留给下一派生版本。[来源与停批验收](../research/continuous-recovery-20261016/publication/root-news-shared10-source-acceptance.json)

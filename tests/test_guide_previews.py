@@ -150,6 +150,120 @@ class GuidePreviewTests(unittest.TestCase):
         }
         return roots[group_id] + name + "-thumb.jpg"
 
+    def _v2_fixture(self, base: Path) -> tuple[Path, Path, Path, Path, Path]:
+        """Extend the ordinary fixture with the fixed City Attacks group."""
+
+        base, site, manifest_path, v1_map = self._fixture(base)
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        city_guide_route = "/info/basics/pvpcombat.html"
+        city_gallery_route = "/pvp/worldpvp/cityattacks-gallery.html"
+        city_routes = [
+            "/pvp/worldpvp/images/city/thumbs/thumb-1.jpg",
+            "/pvp/worldpvp/images/city/thumbs/thumb-2.jpg",
+            "/pvp/worldpvp/images/city/thumbs/thumb-3.jpg",
+        ]
+        guide_path = site / city_guide_route.lstrip("/")
+        gallery_path = site / city_gallery_route.lstrip("/")
+        guide_path.parent.mkdir(parents=True, exist_ok=True)
+        gallery_path.parent.mkdir(parents=True, exist_ok=True)
+        guide_lines = ["<html><head><title>City Attacks</title></head><body>"]
+        for route in city_routes:
+            guide_lines.append(f'<a href="{city_gallery_route}"><img src="{route}"></a>')
+        guide_lines.append("</body></html>")
+        guide_data = "\n".join(guide_lines).encode("utf-8")
+        gallery_data = (
+            '<html><head><title>City Attacks</title></head><body>'
+            '<div id="dynamic-gallery">addshots("/pvp/worldpvp/images/city/","thumb-",102);</div>'
+            "</body></html>"
+        ).encode("utf-8")
+        guide_path.write_bytes(guide_data)
+        gallery_path.write_bytes(gallery_data)
+        self._add_record(manifest, city_guide_route, city_guide_route.lstrip("/"), guide_data, "html", "text/html; charset=UTF-8")
+        self._add_record(manifest, city_gallery_route, city_gallery_route.lstrip("/"), gallery_data, "html", "text/html; charset=UTF-8")
+        city_acceptance = []
+        for index, route in enumerate(city_routes, 1):
+            image_path = site / route.lstrip("/")
+            image_path.parent.mkdir(parents=True, exist_ok=True)
+            image_path.write_bytes(JPEG_1X1)
+            capture = f"2008051210{index:02d}00"
+            self._add_record(
+                manifest,
+                route,
+                route.lstrip("/"),
+                JPEG_1X1,
+                "image",
+                "image/jpeg",
+                actual_timestamp=capture,
+                transformed=False,
+            )
+            city_acceptance.append(
+                {
+                    "route": route,
+                    "sha256": hashlib.sha256(JPEG_1X1).hexdigest(),
+                    "length": len(JPEG_1X1),
+                    "capture_from_frozen_manifest": capture,
+                    "source_link": city_gallery_route,
+                    "source_guide_route": city_guide_route,
+                    "accepted": True,
+                }
+            )
+        manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+
+        old_map_payload = json.loads(v1_map.read_text(encoding="utf-8"))
+        old_acceptance_path = base / old_map_payload["source_acceptance"]["path"]
+        old_acceptance = json.loads(old_acceptance_path.read_text(encoding="utf-8"))
+        checked = list(old_acceptance["checked"]) + city_acceptance
+        input_dir = base / "guide-inputs"
+        audit_path = input_dir / "guide-preview-22-audit.json"
+        audit_path.write_text(
+            json.dumps({"schema": "wow-recovery.guide-preview-union-audit.v1", "counts": {"target_count": 22, "groups": 6}, "items": [{"route": item["route"]} for item in checked]}),
+            encoding="utf-8",
+        )
+        acceptance_path = input_dir / "root-guide-preview-22-acceptance.json"
+        acceptance_path.write_text(
+            json.dumps(
+                {
+                    "accepted": True,
+                    "network_requests": 0,
+                    "audit_sha256": hashlib.sha256(audit_path.read_bytes()).hexdigest(),
+                    "checked": checked,
+                },
+                indent=2,
+            ),
+            encoding="utf-8",
+        )
+        map_payload = copy.deepcopy(old_map_payload)
+        map_payload["schema"] = "wow-recovery.guide-preview-source-map.v2"
+        acceptance_sha = hashlib.sha256(acceptance_path.read_bytes()).hexdigest()
+        audit_sha = hashlib.sha256(audit_path.read_bytes()).hexdigest()
+        manifest_sha = hashlib.sha256(manifest_path.read_bytes()).hexdigest()
+        map_payload["source_acceptance"] = {"path": str(acceptance_path.relative_to(base)), "sha256": acceptance_sha}
+        map_payload["source_acceptance_sha256"] = acceptance_sha
+        map_payload["source_audit"] = {"path": str(audit_path.relative_to(base)), "sha256": audit_sha}
+        map_payload["source_audit_sha256"] = audit_sha
+        map_payload["source_manifest"]["sha256"] = manifest_sha
+        map_payload["source_manifest_sha256"] = manifest_sha
+        map_payload["groups"].append(
+            {
+                "group_id": "city-attacks",
+                "label": "City Attacks",
+                "gallery_route": city_gallery_route,
+                "guide_route": city_guide_route,
+                "previews": [
+                    {
+                        "route": item["route"],
+                        "sha256": item["sha256"],
+                        "length": item["length"],
+                        "capture_timestamp": item["capture_from_frozen_manifest"],
+                    }
+                    for item in city_acceptance
+                ],
+            }
+        )
+        map_path = input_dir / "guide-previews-source-map-v2.json"
+        map_path.write_text(json.dumps(map_payload, indent=2), encoding="utf-8")
+        return base, site, manifest_path, map_path, v1_map
+
     @staticmethod
     def _add_record(manifest: dict, route: str, relative: str, data: bytes, kind: str, mime: str, *, actual_timestamp: str | None = None, transformed: bool | None = None) -> None:
         record = {
@@ -350,6 +464,72 @@ class GuidePreviewTests(unittest.TestCase):
         self.assertIn("View original guide", first)
         self.assertNotIn("/info/dungeons/images/zulaman/ss1.jpg", first)
         self.assertEqual(first.count('id="offline-preserved-guide-previews-zulaman"'), 1)
+
+    def test_v2_six_groups_render_city_without_dynamic_aliases(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            base, site, manifest, v2_map, _v1_map = self._v2_fixture(Path(tmp))
+            output = base / "v2-pages"
+            result = self._export(base, site, manifest, output, v2_map)
+            self.assertEqual(result["stats"]["guide_preview_gallery_pages"], 6)
+            self.assertEqual(result["stats"]["guide_preview_count"], 22)
+            city_page = (output / "pvp/worldpvp/cityattacks-gallery.html").read_text(encoding="utf-8")
+            self.assertEqual(city_page.count("Preserved guide previews"), 1)
+            self.assertEqual(city_page.count("View original guide"), 1)
+            for route in (
+                "/pvp/worldpvp/images/city/thumbs/thumb-1.jpg",
+                "/pvp/worldpvp/images/city/thumbs/thumb-2.jpg",
+                "/pvp/worldpvp/images/city/thumbs/thumb-3.jpg",
+            ):
+                self.assertEqual(city_page.count(f'data-guide-preview-route="{route}"'), 1)
+            self.assertIn("addshots(", city_page)
+            self.assertNotIn("/pvp/worldpvp/images/city/ss1.jpg", city_page)
+            self.assertNotIn("dynamic_full_candidate", city_page)
+            provenance = json.loads((output / "export-provenance.json").read_text(encoding="utf-8"))
+            self.assertEqual(provenance["guide_previews"]["schema"], "github-pages-guide-preview-provenance/v2")
+            self.assertEqual(provenance["guide_previews"]["source_map_schema"], "wow-recovery.guide-preview-source-map.v2")
+            self.assertEqual(provenance["guide_previews"]["group_count"], 6)
+            self.assertEqual(provenance["guide_previews"]["preview_count"], 22)
+
+    def test_v2_requires_fixed_six_groups_and_twenty_two_routes(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            base, site, manifest, v2_map, _v1_map = self._v2_fixture(Path(tmp))
+            original = json.loads(v2_map.read_text(encoding="utf-8"))
+            cases = {
+                "missing-city": lambda payload: payload["groups"].pop(),
+                "extra-group": lambda payload: payload["groups"].append(copy.deepcopy(payload["groups"][0])),
+                "twenty-one": lambda payload: payload["groups"][-1]["previews"].pop(),
+                "twenty": lambda payload: (payload["groups"][-1]["previews"].pop(), payload["groups"][-1]["previews"].pop()),
+                "city-full-alias": lambda payload: payload["groups"][-1]["previews"][0].update(route="/pvp/worldpvp/images/city/ss1.jpg"),
+                "city-dynamic-field": lambda payload: payload["groups"][-1]["previews"][0].update(dynamic_full_candidate="/pvp/worldpvp/images/city/ss1.jpg"),
+            }
+            expected = {
+                "missing-city": r"exactly six groups",
+                "extra-group": r"exactly six groups",
+                "twenty": r"route conservation",
+                "twenty-one": r"route conservation",
+                "city-full-alias": r"accepted City Attacks preview route",
+                "city-dynamic-field": r"dynamic/full-image candidate",
+            }
+            for name, mutate in cases.items():
+                with self.subTest(name=name):
+                    payload = copy.deepcopy(original)
+                    mutate(payload)
+                    bad = base / f"bad-v2-{name}.json"
+                    bad.write_text(json.dumps(payload), encoding="utf-8")
+                    with self.assertRaisesRegex(pages.PagesExportError, expected[name]):
+                        self._export(base, site, manifest, base / f"output-v2-{name}", bad)
+
+    def test_v1_map_stays_five_groups_when_v2_support_is_loaded(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            base, site, manifest, v1_map = self._fixture(Path(tmp))
+            output = base / "v1-pages"
+            result = self._export(base, site, manifest, output, v1_map)
+            self.assertEqual(result["stats"]["guide_preview_gallery_pages"], 5)
+            self.assertEqual(result["stats"]["guide_preview_count"], 19)
+            self.assertFalse((output / "pvp/worldpvp/cityattacks-gallery.html").exists())
+            provenance = json.loads((output / "export-provenance.json").read_text(encoding="utf-8"))
+            self.assertEqual(provenance["guide_previews"]["schema"], "github-pages-guide-preview-provenance/v1")
+            self.assertNotIn("source_map_schema", provenance["guide_previews"])
 
 
 if __name__ == "__main__":
