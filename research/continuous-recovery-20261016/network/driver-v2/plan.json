@@ -1,0 +1,81 @@
+{
+  "schema": "wow-recovery.allnews02-plan.v2",
+  "mode": "go_ready_offline_only",
+  "batch_id": "WAYBACK-ALLNEWS02-20261016",
+  "prepared_utc": "2026-10-16T04:08:37.256065+00:00",
+  "network_requests": 0,
+  "original_count": 4,
+  "modes": {
+    "cdx_only": 2,
+    "replay_only": 2
+  },
+  "replay": true,
+  "replay_target_count": 2,
+  "policy": {
+    "max_originals": 4,
+    "max_attempts": 12,
+    "window_seconds": 360,
+    "max_total_body_bytes": 33554432,
+    "max_entity_body_bytes": 16777216,
+    "cdx_from": "20060101000000",
+    "cdx_to": "20080512210044",
+    "cdx_limit": 250,
+    "cdx_collapse": false,
+    "cdx_match_type": "exact",
+    "direct_first": true,
+    "proxy_fallback": "http://127.0.0.1:7890",
+    "tls_verification": true,
+    "automatic_redirects": 0,
+    "min_dispatch_monotonic_seconds": 5.1,
+    "min_request_start_utc_seconds": 5.0,
+    "disk_floor_bytes": 11005853696,
+    "stop_http_codes": [
+      429,
+      503
+    ],
+    "cooldown_seconds_after_stop": 120,
+    "same_identity_rule": "exact scheme/host/path/query; only default port equivalent",
+    "eligible_mime": [
+      "image/gif",
+      "image/jpeg"
+    ],
+    "replay_mode": "replay_only queue entries reuse one saved exact CDX capture; cdx_only entries never replay",
+    "remaining_byte_and_time_clamp": true
+  },
+  "input_bindings": {
+    "driver_path": "research/continuous-recovery-20261016/network/driver-v2/allnews_driver_v2.py",
+    "driver_sha256": "9eac8626bd3090605ca4cfd58af6f9ddfd20fff4ed51443c52defe48db9b26c0",
+    "spec": "research/continuous-recovery-20261016/network/driver-v2/spec.json",
+    "queue": "research/continuous-recovery-20261016/network/driver-v2/queue.json",
+    "source_files": [
+      {
+        "path": "research/continuous-recovery-20261016/network/driver-v2/spec.json",
+        "sha256": "4825f06c892e08c212506b3ebefbffc417a3525bd560746f477cd370ca81ba72",
+        "bytes": 905
+      },
+      {
+        "path": "research/continuous-recovery-20261016/network/driver-v2/queue.json",
+        "sha256": "4bce6f3ee1581100c615bed51b395f6ce2cfa90f122cd8ea3d980228bd3f3f76",
+        "bytes": 2951
+      },
+      {
+        "path": "research/continuous-recovery-20261016/network/allnews01/batch-report.json",
+        "sha256": "2528c63e400255a2a4685797f0315c381d2ac22560ecbe5e19d4251976b804f4",
+        "bytes": 580949
+      }
+    ]
+  },
+  "preflight_sha256": "8a6db5bcf9bc9d20ae81be2aefb281df5f55abfbbb0be9a044680ef2d9eddcdc",
+  "execution_requires_parent_go": true,
+  "input_bindings_sha256": "e9f173da9bd6434d81cb6936645ca57e9ea0cab6c2306b7737434b999244e9b2",
+  "offline_provenance_roles": [
+    "root_acceptance",
+    "compact_source",
+    "saved_cdx_verification",
+    "accepted_exclusion_manifest",
+    "offline_fixture",
+    "frozen_allnews01_report",
+    "frozen_allnews01_source_map",
+    "previous_batch_tail_source"
+  ]
+}

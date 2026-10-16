@@ -1,0 +1,37 @@
+{
+  "schema": "wow-recovery.gallery-prefix01-execution-deviation.v1",
+  "batch_id": "WAYBACK-GALLERYPREFIX01-20261016",
+  "report_path": "research/continuous-recovery-20261016/network/gallery-prefix01/batch-report.json",
+  "report_sha256": "715f67dffb984a306ca7a1de6de5c010a79523551b63f66db9a6e6a3b5560010",
+  "required_dispatch_seconds": 5.1,
+  "observed_min_dispatch_seconds": 5.093000000000757,
+  "violating_dispatches": [
+    {
+      "sequence": 2,
+      "interval_seconds": 5.093000000000757
+    },
+    {
+      "sequence": 8,
+      "interval_seconds": 5.093000000000757
+    },
+    {
+      "sequence": 13,
+      "interval_seconds": 5.093999999999141
+    },
+    {
+      "sequence": 17,
+      "interval_seconds": 5.093999999999141
+    },
+    {
+      "sequence": 20,
+      "interval_seconds": 5.093999999999141
+    }
+  ],
+  "request_start_requirement_seconds": 5.0,
+  "observed_min_request_start_seconds": 5.09612,
+  "request_start_passed": true,
+  "network_requests_sent": 20,
+  "recovery_action": "none; attempt cap was exhausted and no request was repeated or added",
+  "cause_hypothesis": "dispatch guard used a sleep target without a safety margin for Windows timer undershoot; this is an execution defect, not a new network finding",
+  "raw_trace_and_dispatch_evidence": "preserved under gallery-prefix01/raw and dispatch-log.json"
+}

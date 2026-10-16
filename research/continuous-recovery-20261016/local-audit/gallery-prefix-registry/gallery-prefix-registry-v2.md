@@ -1,0 +1,35 @@
+# Gallery prefix registry v2 (offline Batch-B registration)
+
+- Schema: `wow-recovery.gallery-prefix-registry.v2`
+- Batch: `GALLERY-PREFIX-INDEX-20261016-PREP`
+- Status: `not_executed`; network requests: `0`
+- Candidate prefixes: `10`; declared entities: `1052` (`526` full + `526` thumb)
+- Plan: `research/continuous-recovery-20261016/network/gallery-prefix-plan/prefix-plan.json`; SHA-256 `70210c7259a1057847b927a0d21a3ed2ae044442fdf187ce164f500c0974faf6`
+- The accepted v1 registry is an integrity anchor only and is not edited by this artifact.
+
+## Fixed evidence boundary
+
+The exact original HTTP origin and path prefixes, `web.archive.org` CDX query host, 2006-01-01 through 2008-05-12 window, status-200 image/jpeg or image/gif selection, limit 500, resume-key rule, and no-payload-replay rule are preserved from the supplied plan. Rows and payloads are unknown until parent-approved execution.
+
+## Ten pending candidates
+
+| Rank | Candidate | Category | Prefix | Declared full/thumb | Prior local status | Source evidence | CDX query |
+|---:|---|---|---|---:|---|---|---|
+| 1 | City Attacks | PvP | `http://www.worldofwarcraft.com/pvp/worldpvp/images/city/` | 102/102 | `not_executed`; `{'never_requested': 204}` report-local | `.scratch/offline-navigation-20261015-v15/site/pvp/worldpvp/cityattacks-gallery.html:166` | `https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Fworldpvp%2Fimages%2Fcity%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true` |
+| 2 | Warsong Gulch | PvP | `http://www.worldofwarcraft.com/pvp/battlegrounds/warsonggulch/` | 29/29 | `not_executed`; `{'never_requested': 58}` report-local | `.scratch/offline-navigation-20261015-v15/site/pvp/battlegrounds/warsong-gulch-gallery.html:96` | `https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Fbattlegrounds%2Fwarsonggulch%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true` |
+| 3 | Hallow's End | Event | `http://www.worldofwarcraft.com/info/events/hallowsend/images/newscreenshots/` | 65/65 | `not_executed`; `{'never_requested': 130}` report-local | `.scratch/offline-navigation-20261015-v15/site/info/events/hallowsend/gallery.html:128` | `https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fevents%2Fhallowsend%2Fimages%2Fnewscreenshots%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true` |
+| 4 | Brewfest | Event | `http://www.worldofwarcraft.com/info/events/brewfest/images/ss/` | 51/51 | `not_executed`; `{'never_requested': 102}` report-local | `.scratch/offline-navigation-20261015-v15/site/info/events/brewfest/gallery.html:114` | `https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fevents%2Fbrewfest%2Fimages%2Fss%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true` |
+| 5 | Zul'Aman | Raid | `http://www.worldofwarcraft.com/info/dungeons/images/zulaman/` | 60/60 | `not_executed`; `{'never_requested': 120}` report-local | `.scratch/offline-navigation-20261015-v15/site/info/dungeons/zulaman-gallery.html:123` | `https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fzulaman%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true` |
+| 6 | Hellfire Citadel - The Shattered Halls | Dungeon | `http://www.worldofwarcraft.com/info/dungeons/images/shatteredhalls/` | 50/50 | `not_executed`; `{'never_requested': 100}` report-local | `.scratch/offline-navigation-20261015-v15/site/info/dungeons/hc-shatteredhalls-gallery.html:113` | `https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fshatteredhalls%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true` |
+| 7 | Tempest Keep - The Arcatraz | Dungeon | `http://www.worldofwarcraft.com/info/dungeons/images/arcatraz/` | 49/49 | `not_executed`; `{'never_requested': 98}` report-local | `.scratch/offline-navigation-20261015-v15/site/info/dungeons/tk-arcatraz-gallery.html:112` | `https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Farcatraz%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true` |
+| 8 | Isle of Quel'Danas | Region | `http://www.worldofwarcraft.com/info/regions/isleofq/` | 49/49 | `not_executed`; `{'never_requested': 98}` report-local | `.scratch/offline-navigation-20261015-v15/site/info/regions/isle-of-queldanas-gallery.html:112` | `https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fregions%2Fisleofq%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true` |
+| 9 | TCG Gallery | TCG Gallery | `http://www.worldofwarcraft.com/info/items/images/tcg/` | 47/47 | `not_executed`; `{'never_requested': 94}` report-local | `.scratch/offline-navigation-20261015-v15/site/info/items/tcg-gallery.html:110` | `https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fitems%2Fimages%2Ftcg%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true` |
+| 10 | Amani War Bear | Mount | `http://www.worldofwarcraft.com/info/basics/images/mounts/bear/` | 24/24 | `not_executed`; `{'never_requested': 48}` report-local | `.scratch/offline-navigation-20261015-v15/site/info/basics/mounts/bear-gallery.html:87` | `https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fimages%2Fmounts%2Fbear%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true` |
+
+## Exclusions
+
+Existing Karazhan, Fishing, Black Temple, Serpentshrine Cavern, and Magister's Terrace prefix evidence is excluded from this pending batch. REG01 EU rows remain separate by origin and are not mixed into the US 50-gallery entity set.
+
+## Execution gate
+
+`execution_requires_parent_go=true`. This artifact contains no CDX response rows, resume keys, payload bytes, or recovery claims.

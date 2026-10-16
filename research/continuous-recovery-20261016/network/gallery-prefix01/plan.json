@@ -1,0 +1,157 @@
+{
+  "schema": "wow-recovery.gallery-prefix01-plan.v1",
+  "batch_id": "WAYBACK-GALLERYPREFIX01-20261016",
+  "mode": "go_executed",
+  "prepared_utc": "2026-10-16T04:43:11.120515Z",
+  "source_plan_path": "research/continuous-recovery-20261016/network/gallery-prefix-plan/prefix-plan.json",
+  "source_plan_sha256": "70210c7259a1057847b927a0d21a3ed2ae044442fdf187ce164f500c0974faf6",
+  "candidate_count": 10,
+  "candidate_ranks": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "scope": "exact ten candidates from approved prefix-plan.json; no expansion",
+  "query_window": {
+    "from": "20060101000000",
+    "to": "20080512210044",
+    "limit": 500,
+    "showResumeKey": true,
+    "collapse": false,
+    "matchType": "prefix"
+  },
+  "index_only": true,
+  "no_payload_replay": true,
+  "max_attempts": 20,
+  "window_seconds": 900.0,
+  "max_total_body_bytes": 67108864,
+  "max_entity_body_bytes": 16777216,
+  "direct_first": true,
+  "proxy": "http://127.0.0.1:7890",
+  "tls_verification": true,
+  "automatic_redirects": 0,
+  "min_dispatch_monotonic_seconds": 5.1,
+  "min_request_start_utc_seconds": 5.0,
+  "disk_floor_bytes": 11005853696,
+  "stop_http_codes": [
+    429,
+    503
+  ],
+  "stop_on_five_consecutive_transport_failures": true,
+  "retry_after_rule": "429/503 stop immediately; cooldown not earlier than Retry-After and at least 120 seconds",
+  "resume_rule": "record actual response resumeKey; do not follow continuation in this batch",
+  "failure_streak_start": 0,
+  "historical_allnews02_tail": 5,
+  "control01_success_basis": "parent accepted HTTP200 valid CDX control",
+  "input_bindings": {
+    "ten_plan": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix-plan/prefix-plan.json",
+      "sha256": "70210c7259a1057847b927a0d21a3ed2ae044442fdf187ce164f500c0974faf6",
+      "bytes": 29102
+    },
+    "candidate_map": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix-plan/candidate-map.json",
+      "sha256": "62e58aec40392075a372870596460a3ed488c2095cef9f0440b9285bd881a875",
+      "bytes": 7547
+    },
+    "control_plan": {
+      "path": "research/continuous-recovery-20261016/network/control01/plan.json",
+      "sha256": "2d973e0bfcf61da15382e448092e2049dc2116b335ff661bc9e863960c2834e7",
+      "bytes": 1738
+    },
+    "control_accept": {
+      "path": "research/continuous-recovery-20261016/publication/root-control01-acceptance.json",
+      "sha256": "07d2e0fe89485d213aff51c8026eccc344ea0572c160b9cdf7f8c7d5d7453555",
+      "bytes": 666
+    },
+    "registry": {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-prefix-registry/gallery-prefix-registry-v2.json",
+      "sha256": "6109548c02bfdb2b0b54f171724ac6e0f695dc77319c0d84d6a5faf47f7a59f0",
+      "bytes": 32665
+    }
+  },
+  "fixture": {
+    "path": "research/continuous-recovery-20261016/network/gallery-prefix01/fixture-results.json",
+    "sha256": "71526902ee34b23aac9aad16a42e7bb886b06a21661d7d693bc8387f274060ad",
+    "all_passed": true
+  },
+  "candidates": [
+    {
+      "rank": 1,
+      "label": "City Attacks",
+      "category": "PvP",
+      "prefix": "http://www.worldofwarcraft.com/pvp/worldpvp/images/city/",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Fworldpvp%2Fimages%2Fcity%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true"
+    },
+    {
+      "rank": 2,
+      "label": "Warsong Gulch",
+      "category": "PvP",
+      "prefix": "http://www.worldofwarcraft.com/pvp/battlegrounds/warsonggulch/",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Fbattlegrounds%2Fwarsonggulch%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true"
+    },
+    {
+      "rank": 3,
+      "label": "Hallow's End",
+      "category": "Event",
+      "prefix": "http://www.worldofwarcraft.com/info/events/hallowsend/images/newscreenshots/",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fevents%2Fhallowsend%2Fimages%2Fnewscreenshots%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true"
+    },
+    {
+      "rank": 4,
+      "label": "Brewfest",
+      "category": "Event",
+      "prefix": "http://www.worldofwarcraft.com/info/events/brewfest/images/ss/",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fevents%2Fbrewfest%2Fimages%2Fss%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true"
+    },
+    {
+      "rank": 5,
+      "label": "Zul'Aman",
+      "category": "Raid",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/zulaman/",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fzulaman%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true"
+    },
+    {
+      "rank": 6,
+      "label": "Hellfire Citadel - The Shattered Halls",
+      "category": "Dungeon",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/shatteredhalls/",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fshatteredhalls%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true"
+    },
+    {
+      "rank": 7,
+      "label": "Tempest Keep - The Arcatraz",
+      "category": "Dungeon",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/arcatraz/",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Farcatraz%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true"
+    },
+    {
+      "rank": 8,
+      "label": "Isle of Quel'Danas",
+      "category": "Region",
+      "prefix": "http://www.worldofwarcraft.com/info/regions/isleofq/",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fregions%2Fisleofq%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true"
+    },
+    {
+      "rank": 9,
+      "label": "TCG Gallery",
+      "category": "TCG Gallery",
+      "prefix": "http://www.worldofwarcraft.com/info/items/images/tcg/",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fitems%2Fimages%2Ftcg%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true"
+    },
+    {
+      "rank": 10,
+      "label": "Amani War Bear",
+      "category": "Mount",
+      "prefix": "http://www.worldofwarcraft.com/info/basics/images/mounts/bear/",
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fimages%2Fmounts%2Fbear%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true"
+    }
+  ]
+}

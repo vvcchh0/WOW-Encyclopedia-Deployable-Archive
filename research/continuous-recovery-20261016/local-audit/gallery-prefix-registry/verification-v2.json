@@ -1,0 +1,67 @@
+{
+  "schema": "wow-recovery.gallery-prefix-registry-v2.verification.v1",
+  "generated_utc": "2026-10-16T04:32:49.220376+00:00",
+  "network_performed": false,
+  "command_scope": "offline local plan registration and static integrity verification only",
+  "artifacts": {
+    "registry": {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-prefix-registry/gallery-prefix-registry-v2.json",
+      "sha256": "6109548c02bfdb2b0b54f171724ac6e0f695dc77319c0d84d6a5faf47f7a59f0",
+      "bytes": 32665
+    },
+    "markdown": {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-prefix-registry/gallery-prefix-registry-v2.md",
+      "sha256": "199d4508baedf86e7297acb91c5829f9d3c741d5d0f611c6589dbebceedd35d0",
+      "bytes": 7016
+    },
+    "plan": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix-plan/prefix-plan.json",
+      "sha256": "70210c7259a1057847b927a0d21a3ed2ae044442fdf187ce164f500c0974faf6",
+      "bytes": 29102
+    },
+    "old_registry": {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-prefix-registry/gallery-prefix-registry.json",
+      "sha256_before": "d356992afb97633801f69aeb9c0a9e2a3ee933acd812d7cda386ad40a9aa51da",
+      "sha256_after": "d356992afb97633801f69aeb9c0a9e2a3ee933acd812d7cda386ad40a9aa51da",
+      "bytes": 141545
+    }
+  },
+  "counts": {
+    "candidate_count": 10,
+    "declared_entities": 1052,
+    "declared_full": 526,
+    "declared_thumb": 526,
+    "actual_response_rows": 0,
+    "actual_payloads": 0
+  },
+  "disk": {
+    "free_bytes": 27502358528,
+    "floor_bytes": 11005853696,
+    "above_floor": true
+  },
+  "checks": {
+    "plan_sha256_expected": true,
+    "old_registry_sha256_expected_before": true,
+    "candidate_count_10": true,
+    "ranks_exact_1_to_10": true,
+    "all_execution_status_not_executed": true,
+    "network_requests_zero": true,
+    "response_rows_zero": true,
+    "payload_replay_zero": true,
+    "payloads_unavailable": true,
+    "no_forbidden_payload_data_keys": true,
+    "aggregate_entities_1052": true,
+    "aggregate_full_526": true,
+    "aggregate_thumb_526": true,
+    "local_status_count_1052_report_local": true,
+    "prefix_status_not_executed_10": true,
+    "plan_binding_exact": true,
+    "disk_free_above_floor": true,
+    "old_registry_unchanged_after": true
+  },
+  "all_checks_pass": true,
+  "limitations": [
+    "No network request was made; all ten prefix results remain unknown until parent GO.",
+    "The plan-local never_requested values are not interpreted as a global request-history result."
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "schema": "wow-recovery.allnews02-fixture-results.v2",
+  "offline_only": true,
+  "network_requests": 0,
+  "pass_count": 8,
+  "test_count": 8,
+  "all_pass": true,
+  "results": [
+    {
+      "name": "queue_modes_and_saved_captures",
+      "status": "PASS",
+      "detail": {
+        "count": 4,
+        "modes": [
+          "cdx_only",
+          "cdx_only",
+          "replay_only",
+          "replay_only"
+        ]
+      }
+    },
+    {
+      "name": "batch_caps",
+      "status": "PASS",
+      "detail": {
+        "max_attempts": 12,
+        "window_seconds": 360,
+        "max_total_body_bytes": 33554432,
+        "max_entity_body_bytes": 16777216
+      }
+    },
+    {
+      "name": "remaining_byte_and_window_clamp",
+      "status": "PASS",
+      "detail": {
+        "total_body_remaining_before_bytes": 69,
+        "entity_body_limit_before_bytes": 69,
+        "window_remaining_seconds": 10.0,
+        "hard_cutoff_remaining_seconds": 20.0,
+        "max_timeout_seconds": 10.0
+      }
+    },
+    {
+      "name": "hard_cutoff_clamp",
+      "status": "PASS",
+      "detail": {
+        "max_timeout_seconds": 1.0,
+        "connect_timeout_seconds": 1.0
+      }
+    },
+    {
+      "name": "transport_unknown_categories",
+      "status": "PASS",
+      "detail": {
+        "cdx": "cdx_transport_unknown",
+        "replay": "replay_transport_unknown"
+      }
+    },
+    {
+      "name": "failure_streak_rebuild",
+      "status": "PASS",
+      "detail": {
+        "tail0_resume": 2,
+        "inherited": 5,
+        "explicit_success_reset": 0
+      }
+    },
+    {
+      "name": "prepare_is_offline",
+      "status": "PASS",
+      "detail": {
+        "network_requests": 0,
+        "raw_files": 0,
+        "mode": "go_ready_offline_only",
+        "replay_target_count": 2
+      }
+    },
+    {
+      "name": "prepare_binding_matches",
+      "status": "PASS",
+      "detail": {
+        "matched": true,
+        "driver_sha256": "9eac8626bd3090605ca4cfd58af6f9ddfd20fff4ed51443c52defe48db9b26c0"
+      }
+    }
+  ]
+}

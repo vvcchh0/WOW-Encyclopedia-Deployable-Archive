@@ -1,0 +1,547 @@
+{
+  "schema": "wow-recovery.allnews-transport-diagnostic.v2",
+  "mode": "offline_readonly",
+  "generated_utc": "2026-10-16T04:19:11.791410+00:00",
+  "network_requests_executed": 0,
+  "frozen_inputs": [
+    {
+      "path": "research/continuous-recovery-20261016/network/allnews01/allnews_driver.py",
+      "sha256": "9d359de3e68c6e4e1fb9f3afe001e5a08aed1eac27f6ad727865596be13176a6",
+      "bytes": 46253
+    },
+    {
+      "path": "research/continuous-recovery-20261016/network/allnews01/attempt-records.json",
+      "sha256": "b0a1f04853edf372df5717ea7938a6ead6a7431d90fd5a89fe554d9de4c67a4a",
+      "bytes": 296527
+    },
+    {
+      "path": "research/continuous-recovery-20261016/network/allnews01/config.json",
+      "sha256": "fe371cbc38e5432b1eb6ffe9fa37a7296a2860f3314d7ae7acd50d1a7e601113",
+      "bytes": 2163
+    },
+    {
+      "path": "research/continuous-recovery-20261016/network/allnews01/spec.json",
+      "sha256": "b73a3b9b065f39583ea10e650030f8de95ffdfa921835345b0b43204fc7eec20",
+      "bytes": 753
+    },
+    {
+      "path": "research/continuous-recovery-20261016/network/driver-v2/allnews_driver_v2.py",
+      "sha256": "9eac8626bd3090605ca4cfd58af6f9ddfd20fff4ed51443c52defe48db9b26c0",
+      "bytes": 53973
+    },
+    {
+      "path": "research/continuous-recovery-20261016/network/driver-v2/attempt-records.json",
+      "sha256": "b5d0f593d818a63634790b23900a35123cb4fadad43d65291e9f1e73c7820b22",
+      "bytes": 21873
+    },
+    {
+      "path": "research/continuous-recovery-20261016/network/driver-v2/batch-report.json",
+      "sha256": "c6a1bcadafb15094987347306640f953a1593a1f7e419a39a28df78e57b2f039",
+      "bytes": 55819
+    },
+    {
+      "path": "research/continuous-recovery-20261016/network/driver-v2/spec.json",
+      "sha256": "4825f06c892e08c212506b3ebefbffc417a3525bd560746f477cd370ca81ba72",
+      "bytes": 905
+    },
+    {
+      "path": "research/continuous-recovery-20261015/network-core-pages3/core_pages3.py",
+      "sha256": "a052959be96955cda42a1febb724392e90ecd00b76c40a5623cfc96aeaffdc70",
+      "bytes": 68417
+    }
+  ],
+  "selected_successful_proxy": {
+    "attempt": 4,
+    "target_key": "ALLNEWS01-R02",
+    "kind": "cdx",
+    "transport": "proxy",
+    "curl_exit": 0,
+    "connect_status": 200,
+    "source_status": 200,
+    "content_type_observed": "application/json",
+    "body_bytes": 6082,
+    "transport_error": false,
+    "transport_reason": null,
+    "duration_ms": 3078.0,
+    "phase_boundary": "source_response",
+    "phase_flags": {
+      "dns_error_observed": false,
+      "tcp_connect_failure_observed": false,
+      "proxy_connect_200_observed": true,
+      "tls_failure_observed": false,
+      "get_sent_observed": true,
+      "source_http_200_observed": true,
+      "failure_boundary": "source_response"
+    },
+    "trace_markers": [
+      "connection_attempt_logged",
+      "proxy_connect_established",
+      "tls_handshake_completed",
+      "get_request_sent",
+      "source_http_response_200"
+    ],
+    "sanitized_error_excerpt": "",
+    "clamp": null,
+    "evidence": {
+      "trace": {
+        "path": "research/continuous-recovery-20261016/network/allnews01/raw/04-ALLNEWS01-R02-cdx-proxy.trace.txt",
+        "sha256": "1dc0500209339c91b346056b128463b362bf5b3497b2188984c05411bf07e114",
+        "bytes": 24051
+      },
+      "stderr": {
+        "path": "research/continuous-recovery-20261016/network/allnews01/raw/04-ALLNEWS01-R02-cdx-proxy.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "metrics": {
+        "path": "research/continuous-recovery-20261016/network/allnews01/raw/04-ALLNEWS01-R02-cdx-proxy.metrics.txt",
+        "sha256": "74234df06346be5b8fcd66762a3d7b105d9946191845a22fc531097e7e68565c",
+        "bytes": 5
+      },
+      "header_body_content": "not read or emitted by this diagnostic"
+    }
+  },
+  "selected_failed_proxy": [
+    {
+      "attempt": 2,
+      "target_key": "ALLNEWS02-W",
+      "kind": "cdx",
+      "transport": "proxy",
+      "curl_exit": 35,
+      "connect_status": 200,
+      "source_status": null,
+      "content_type_observed": null,
+      "body_bytes": 0,
+      "transport_error": true,
+      "transport_reason": "no_http_status",
+      "duration_ms": 562.0,
+      "phase_boundary": "tls_handshake",
+      "phase_flags": {
+        "dns_error_observed": false,
+        "tcp_connect_failure_observed": false,
+        "proxy_connect_200_observed": true,
+        "tls_failure_observed": true,
+        "get_sent_observed": false,
+        "source_http_200_observed": false,
+        "failure_boundary": "tls_handshake"
+      },
+      "trace_markers": [
+        "connection_attempt_logged",
+        "proxy_connect_established",
+        "tls_handshake_failed",
+        "connection_closed"
+      ],
+      "sanitized_error_excerpt": "curl: (35) TLS handshake failed after proxy CONNECT",
+      "clamp": {
+        "transport": "proxy",
+        "total_body_bytes_before": 0,
+        "total_body_remaining_before_bytes": 33554432,
+        "configured_entity_body_limit_bytes": 16777216,
+        "entity_body_limit_before_bytes": 16777216,
+        "window_seconds": 360.0,
+        "window_remaining_seconds": 354.8899999999994,
+        "hard_cutoff_remaining_seconds": 31847.071366,
+        "baseline_connect_timeout_seconds": 8.0,
+        "baseline_max_timeout_seconds": 20.0,
+        "request_budget_seconds": 20.0,
+        "connect_timeout_seconds": 8.0,
+        "max_timeout_seconds": 20.0,
+        "clamp_applied": false,
+        "dispatch_allowed": true
+      },
+      "evidence": {
+        "trace": {
+          "path": "research/continuous-recovery-20261016/network/driver-v2/raw/02-ALLNEWS02-W-cdx-proxy.trace.txt",
+          "sha256": "d639bb33553c6d0e9c80d168f3998b8201eb7aa0bda49944c1c8e59044a66b7e",
+          "bytes": 1001
+        },
+        "stderr": {
+          "path": "research/continuous-recovery-20261016/network/driver-v2/raw/02-ALLNEWS02-W-cdx-proxy.stderr.txt",
+          "sha256": "02cc3f79b4819380d4d9ad84ccebec3ae81d452614e8cfdeccc7a80e05fedfb7",
+          "bytes": 77
+        },
+        "metrics": {
+          "path": "research/continuous-recovery-20261016/network/driver-v2/raw/02-ALLNEWS02-W-cdx-proxy.metrics.txt",
+          "sha256": "b7dd0f43efa0260d8e7ac1bc44d74b3767e392066803828e7b67dd22f9fd815a",
+          "bytes": 5
+        },
+        "header_body_content": "not read or emitted by this diagnostic"
+      }
+    },
+    {
+      "attempt": 4,
+      "target_key": "ALLNEWS02-P",
+      "kind": "cdx",
+      "transport": "proxy",
+      "curl_exit": 35,
+      "connect_status": 200,
+      "source_status": null,
+      "content_type_observed": null,
+      "body_bytes": 0,
+      "transport_error": true,
+      "transport_reason": "no_http_status",
+      "duration_ms": 563.0,
+      "phase_boundary": "tls_handshake",
+      "phase_flags": {
+        "dns_error_observed": false,
+        "tcp_connect_failure_observed": false,
+        "proxy_connect_200_observed": true,
+        "tls_failure_observed": true,
+        "get_sent_observed": false,
+        "source_http_200_observed": false,
+        "failure_boundary": "tls_handshake"
+      },
+      "trace_markers": [
+        "connection_attempt_logged",
+        "proxy_connect_established",
+        "tls_handshake_failed",
+        "connection_closed"
+      ],
+      "sanitized_error_excerpt": "curl: (35) TLS handshake failed after proxy CONNECT",
+      "clamp": {
+        "transport": "proxy",
+        "total_body_bytes_before": 0,
+        "total_body_remaining_before_bytes": 33554432,
+        "configured_entity_body_limit_bytes": 16777216,
+        "entity_body_limit_before_bytes": 16777216,
+        "window_seconds": 360.0,
+        "window_remaining_seconds": 344.67199999999866,
+        "hard_cutoff_remaining_seconds": 31836.850161,
+        "baseline_connect_timeout_seconds": 8.0,
+        "baseline_max_timeout_seconds": 20.0,
+        "request_budget_seconds": 20.0,
+        "connect_timeout_seconds": 8.0,
+        "max_timeout_seconds": 20.0,
+        "clamp_applied": false,
+        "dispatch_allowed": true
+      },
+      "evidence": {
+        "trace": {
+          "path": "research/continuous-recovery-20261016/network/driver-v2/raw/04-ALLNEWS02-P-cdx-proxy.trace.txt",
+          "sha256": "8754fb796b090a9a7989930487539cd7b335dd512b4185df678b7bf38a03415b",
+          "bytes": 1001
+        },
+        "stderr": {
+          "path": "research/continuous-recovery-20261016/network/driver-v2/raw/04-ALLNEWS02-P-cdx-proxy.stderr.txt",
+          "sha256": "02cc3f79b4819380d4d9ad84ccebec3ae81d452614e8cfdeccc7a80e05fedfb7",
+          "bytes": 77
+        },
+        "metrics": {
+          "path": "research/continuous-recovery-20261016/network/driver-v2/raw/04-ALLNEWS02-P-cdx-proxy.metrics.txt",
+          "sha256": "b7dd0f43efa0260d8e7ac1bc44d74b3767e392066803828e7b67dd22f9fd815a",
+          "bytes": 5
+        },
+        "header_body_content": "not read or emitted by this diagnostic"
+      }
+    }
+  ],
+  "selected_direct_failures": [
+    {
+      "attempt": 1,
+      "target_key": "ALLNEWS02-W",
+      "kind": "cdx",
+      "transport": "direct",
+      "curl_exit": 28,
+      "connect_status": null,
+      "source_status": null,
+      "content_type_observed": null,
+      "body_bytes": 0,
+      "transport_error": true,
+      "transport_reason": "no_http_status",
+      "duration_ms": 4063.0,
+      "phase_boundary": "tcp_connect",
+      "phase_flags": {
+        "dns_error_observed": false,
+        "tcp_connect_failure_observed": true,
+        "proxy_connect_200_observed": false,
+        "tls_failure_observed": false,
+        "get_sent_observed": false,
+        "source_http_200_observed": false,
+        "failure_boundary": "tcp_connect"
+      },
+      "trace_markers": [
+        "connection_attempt_logged",
+        "tcp_connect_failed_or_timed_out",
+        "connection_closed"
+      ],
+      "sanitized_error_excerpt": "curl: (28) connection timed out after 4011 ms",
+      "clamp": {
+        "transport": "direct",
+        "total_body_bytes_before": 0,
+        "total_body_remaining_before_bytes": 33554432,
+        "configured_entity_body_limit_bytes": 16777216,
+        "entity_body_limit_before_bytes": 16777216,
+        "window_seconds": 360.0,
+        "window_remaining_seconds": 360.0,
+        "hard_cutoff_remaining_seconds": 31852.173262,
+        "baseline_connect_timeout_seconds": 4.0,
+        "baseline_max_timeout_seconds": 12.0,
+        "request_budget_seconds": 12.0,
+        "connect_timeout_seconds": 4.0,
+        "max_timeout_seconds": 12.0,
+        "clamp_applied": false,
+        "dispatch_allowed": true
+      },
+      "evidence": {
+        "trace": {
+          "path": "research/continuous-recovery-20261016/network/driver-v2/raw/01-ALLNEWS02-W-cdx-direct.trace.txt",
+          "sha256": "54c036b5c93b5fb6a612b6c72cba5e992ca0fb4a2c95b7eede7b7e525d5471b1",
+          "bytes": 325
+        },
+        "stderr": {
+          "path": "research/continuous-recovery-20261016/network/driver-v2/raw/01-ALLNEWS02-W-cdx-direct.stderr.txt",
+          "sha256": "2b3373dd4fcadd19a641ca115c7e3c81524b7dafc24b7025bada71e529973115",
+          "bytes": 57
+        },
+        "metrics": {
+          "path": "research/continuous-recovery-20261016/network/driver-v2/raw/01-ALLNEWS02-W-cdx-direct.metrics.txt",
+          "sha256": "b7dd0f43efa0260d8e7ac1bc44d74b3767e392066803828e7b67dd22f9fd815a",
+          "bytes": 5
+        },
+        "header_body_content": "not read or emitted by this diagnostic"
+      }
+    },
+    {
+      "attempt": 3,
+      "target_key": "ALLNEWS02-P",
+      "kind": "cdx",
+      "transport": "direct",
+      "curl_exit": 28,
+      "connect_status": null,
+      "source_status": null,
+      "content_type_observed": null,
+      "body_bytes": 0,
+      "transport_error": true,
+      "transport_reason": "no_http_status",
+      "duration_ms": 4031.0,
+      "phase_boundary": "tcp_connect",
+      "phase_flags": {
+        "dns_error_observed": false,
+        "tcp_connect_failure_observed": true,
+        "proxy_connect_200_observed": false,
+        "tls_failure_observed": false,
+        "get_sent_observed": false,
+        "source_http_200_observed": false,
+        "failure_boundary": "tcp_connect"
+      },
+      "trace_markers": [
+        "connection_attempt_logged",
+        "tcp_connect_failed_or_timed_out",
+        "connection_closed"
+      ],
+      "sanitized_error_excerpt": "curl: (28) connection timed out after 4002 ms",
+      "clamp": {
+        "transport": "direct",
+        "total_body_bytes_before": 0,
+        "total_body_remaining_before_bytes": 33554432,
+        "configured_entity_body_limit_bytes": 16777216,
+        "entity_body_limit_before_bytes": 16777216,
+        "window_seconds": 360.0,
+        "window_remaining_seconds": 349.78099999999904,
+        "hard_cutoff_remaining_seconds": 31841.957157,
+        "baseline_connect_timeout_seconds": 4.0,
+        "baseline_max_timeout_seconds": 12.0,
+        "request_budget_seconds": 12.0,
+        "connect_timeout_seconds": 4.0,
+        "max_timeout_seconds": 12.0,
+        "clamp_applied": false,
+        "dispatch_allowed": true
+      },
+      "evidence": {
+        "trace": {
+          "path": "research/continuous-recovery-20261016/network/driver-v2/raw/03-ALLNEWS02-P-cdx-direct.trace.txt",
+          "sha256": "6740a61e2bc3b155ad7f520085dad13cdcd47449135f1849df54214b9b7183a6",
+          "bytes": 325
+        },
+        "stderr": {
+          "path": "research/continuous-recovery-20261016/network/driver-v2/raw/03-ALLNEWS02-P-cdx-direct.stderr.txt",
+          "sha256": "4572d3004c04a766cc0aa239a9dfc087bf4680112eb70d761c9c92631b98c8e4",
+          "bytes": 57
+        },
+        "metrics": {
+          "path": "research/continuous-recovery-20261016/network/driver-v2/raw/03-ALLNEWS02-P-cdx-direct.metrics.txt",
+          "sha256": "b7dd0f43efa0260d8e7ac1bc44d74b3767e392066803828e7b67dd22f9fd815a",
+          "bytes": 5
+        },
+        "header_body_content": "not read or emitted by this diagnostic"
+      }
+    },
+    {
+      "attempt": 5,
+      "target_key": "ALLNEWS02-I",
+      "kind": "replay",
+      "transport": "direct",
+      "curl_exit": 28,
+      "connect_status": null,
+      "source_status": null,
+      "content_type_observed": null,
+      "body_bytes": 0,
+      "transport_error": true,
+      "transport_reason": "no_http_status",
+      "duration_ms": 4047.0,
+      "phase_boundary": "tcp_connect",
+      "phase_flags": {
+        "dns_error_observed": false,
+        "tcp_connect_failure_observed": true,
+        "proxy_connect_200_observed": false,
+        "tls_failure_observed": false,
+        "get_sent_observed": false,
+        "source_http_200_observed": false,
+        "failure_boundary": "tcp_connect"
+      },
+      "trace_markers": [
+        "connection_attempt_logged",
+        "tcp_connect_failed_or_timed_out",
+        "connection_closed"
+      ],
+      "sanitized_error_excerpt": "curl: (28) connection timed out after 4004 ms",
+      "clamp": {
+        "transport": "direct",
+        "total_body_bytes_before": 0,
+        "total_body_remaining_before_bytes": 33554432,
+        "configured_entity_body_limit_bytes": 16777216,
+        "entity_body_limit_before_bytes": 16777216,
+        "window_seconds": 360.0,
+        "window_remaining_seconds": 339.5619999999999,
+        "hard_cutoff_remaining_seconds": 31831.736247,
+        "baseline_connect_timeout_seconds": 4.0,
+        "baseline_max_timeout_seconds": 12.0,
+        "request_budget_seconds": 12.0,
+        "connect_timeout_seconds": 4.0,
+        "max_timeout_seconds": 12.0,
+        "clamp_applied": false,
+        "dispatch_allowed": true
+      },
+      "evidence": {
+        "trace": {
+          "path": "research/continuous-recovery-20261016/network/driver-v2/raw/05-ALLNEWS02-I-replay-direct.trace.txt",
+          "sha256": "b81a6b62a36c7f7debf71b2a113658e46955d26973004c6b3fe3e72e39dd7cf0",
+          "bytes": 325
+        },
+        "stderr": {
+          "path": "research/continuous-recovery-20261016/network/driver-v2/raw/05-ALLNEWS02-I-replay-direct.stderr.txt",
+          "sha256": "137a5988c0d3ad04a82b9d09231a58a52b8a33507f5412ba6372448b3167ef56",
+          "bytes": 57
+        },
+        "metrics": {
+          "path": "research/continuous-recovery-20261016/network/driver-v2/raw/05-ALLNEWS02-I-replay-direct.metrics.txt",
+          "sha256": "b7dd0f43efa0260d8e7ac1bc44d74b3767e392066803828e7b67dd22f9fd815a",
+          "bytes": 5
+        },
+        "header_body_content": "not read or emitted by this diagnostic"
+      }
+    }
+  ],
+  "recomputed_allnews02": {
+    "persisted_attempt_count": 5,
+    "source_response_count": 0,
+    "transport_failure_tail": 5,
+    "reported_stop_reason": "five_consecutive_tls_or_transport_failures",
+    "reported_finished_utc": "2026-10-16T04:09:32.301888+00:00",
+    "cooldown_finished_utc": "2026-10-16T04:11:32.454971+00:00",
+    "last_attempt_finished_utc": "2026-10-16T04:09:32.301888+00:00",
+    "curl_exit_sequence": [
+      28,
+      35,
+      28,
+      35,
+      28
+    ],
+    "source_status_sequence": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  "parameter_comparison": {
+    "old_success": {
+      "policy_total_body_bytes": 134217728,
+      "policy_entity_body_bytes": 16777216,
+      "proxy_connect_timeout_seconds": 8,
+      "proxy_max_time_seconds": 20,
+      "clamp_record_present": false
+    },
+    "new_failure": {
+      "policy_total_body_bytes": 33554432,
+      "policy_entity_body_bytes": 16777216,
+      "proxy_clamp_records": [
+        {
+          "transport": "proxy",
+          "total_body_bytes_before": 0,
+          "total_body_remaining_before_bytes": 33554432,
+          "configured_entity_body_limit_bytes": 16777216,
+          "entity_body_limit_before_bytes": 16777216,
+          "window_seconds": 360.0,
+          "window_remaining_seconds": 354.8899999999994,
+          "hard_cutoff_remaining_seconds": 31847.071366,
+          "baseline_connect_timeout_seconds": 8.0,
+          "baseline_max_timeout_seconds": 20.0,
+          "request_budget_seconds": 20.0,
+          "connect_timeout_seconds": 8.0,
+          "max_timeout_seconds": 20.0,
+          "clamp_applied": false,
+          "dispatch_allowed": true
+        },
+        {
+          "transport": "proxy",
+          "total_body_bytes_before": 0,
+          "total_body_remaining_before_bytes": 33554432,
+          "configured_entity_body_limit_bytes": 16777216,
+          "entity_body_limit_before_bytes": 16777216,
+          "window_seconds": 360.0,
+          "window_remaining_seconds": 344.67199999999866,
+          "hard_cutoff_remaining_seconds": 31836.850161,
+          "baseline_connect_timeout_seconds": 8.0,
+          "baseline_max_timeout_seconds": 20.0,
+          "request_budget_seconds": 20.0,
+          "connect_timeout_seconds": 8.0,
+          "max_timeout_seconds": 20.0,
+          "clamp_applied": false,
+          "dispatch_allowed": true
+        }
+      ],
+      "all_proxy_clamps_applied": true,
+      "all_proxy_effective_connect_seconds": [
+        8.0
+      ],
+      "all_proxy_effective_max_seconds": [
+        20.0
+      ]
+    },
+    "conclusion": "ALLNEWS02 v2 did not introduce a shorter proxy timeout or byte clamp; the proxy failures reached CONNECT 200 and stopped during TLS handshake before GET/source HTTP."
+  },
+  "core_parameters": {
+    "source_path": "research/continuous-recovery-20261015/network-core-pages3/core_pages3.py",
+    "source_sha256": "a052959be96955cda42a1febb724392e90ecd00b76c40a5623cfc96aeaffdc70",
+    "values": {
+      "DIRECT_CONNECT_SECONDS": 4,
+      "DIRECT_MAX_SECONDS": 12,
+      "PROXY_CONNECT_SECONDS": 8,
+      "PROXY_MAX_SECONDS": 20,
+      "MAX_ENTITY_BODY_BYTES": 16777216
+    },
+    "command_flags": [
+      "--proxy <empty> + --noproxy * for direct",
+      "--proxy http://127.0.0.1:7890 + --noproxy <empty> for proxy",
+      "--connect-timeout <transport default/clamp>",
+      "--max-time <transport default/clamp>",
+      "--max-redirs 0",
+      "--max-filesize 16777216",
+      "--silent --show-error",
+      "--trace-time --trace-ascii",
+      "--dump-header --output --write-out http_code",
+      "--user-agent"
+    ],
+    "tls_verification": "curl default verification; no --insecure/-k in the frozen command builder",
+    "automatic_redirects": 0
+  },
+  "interpretation": {
+    "proxy_success_boundary": "CONNECT established -> TLS completed -> GET sent -> source HTTP 200",
+    "proxy_failure_boundary": "CONNECT established -> TLS handshake failed; no GET and no source HTTP status",
+    "direct_failure_boundary": "origin connection attempt logged -> curl 28 connection timeout; no connect status or source HTTP status",
+    "dns": "No DNS failure marker was observed in selected traces; direct trace logged a resolved connection target, while the proxy trace reached the local CONNECT endpoint.",
+    "remaining_unknown": "The trace cannot identify which upstream hop rejected/failed the TLS handshake; no protocol/certificate change was tested or inferred."
+  }
+}

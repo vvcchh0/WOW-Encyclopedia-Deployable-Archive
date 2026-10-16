@@ -1,0 +1,659 @@
+{
+  "schema": "wow-recovery.gallery-prefix-registry.v2",
+  "generated_utc": "2026-10-16T04:32:49.188746+00:00",
+  "network_performed": false,
+  "execution_status": "not_executed",
+  "mode": "offline_plan_only",
+  "parent_go_required": true,
+  "scope": {
+    "batch_id": "GALLERY-PREFIX-INDEX-20261016-PREP",
+    "source_gallery_count": 3368,
+    "candidate_count": 10,
+    "candidate_entity_count": 1052,
+    "candidate_full_count": 526,
+    "candidate_thumb_count": 526,
+    "source_entity_scope": "3368 direct full/thumb entities; this v2 artifact binds only the ten pending Batch-B prefixes",
+    "known_scope_excluded": [
+      "Karazhan and Fishing prefix evidence already saved in discovery-002; not repeated",
+      "Black Temple, Serpentshrine Cavern, and Magister's Terrace accepted by NET015; not repeated",
+      "REG01 EU origin is a separate www.wow-europe.com origin and is not mixed into this www.worldofwarcraft.com registry",
+      "nested guide previews, parent directory rows, and sibling guide resources are not promoted to dynamic direct entities"
+    ],
+    "status_boundary": "Candidate local_audit_status_counts are report-local states from the bound audit; never_requested is not a global request-history assertion."
+  },
+  "input_hashes": [
+    {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix-plan/prefix-plan.json",
+      "bytes": 29102,
+      "sha256": "70210c7259a1057847b927a0d21a3ed2ae044442fdf187ce164f500c0974faf6",
+      "role": "exact Batch-B ten-prefix plan"
+    },
+    {
+      "path": "research/continuous-recovery-20261016/local-audit/v2/gallery-direct-entity-audit-v2.json",
+      "sha256": "341435e62cfea8db4f1421d05c9e765e598ae4a31fb92d5702201c5308972a0a",
+      "bytes": 8659947
+    },
+    {
+      "path": "research/github-pages-20261013/gallery-inventory-20261013.json",
+      "sha256": "3862aa9990cf8ed3bc5e93b539107d44c9d8552af4aeebab9d40e510a5a0c66e",
+      "bytes": 1955545
+    },
+    {
+      "path": "research/continuous-recovery-20261015/guide-gallery-plan/guide-gallery-plan.json",
+      "sha256": "1e93a84cecb229c2fd4b795c91fa3943e85e8ad5cb71f53ad31bfce46b9279be",
+      "bytes": 128313
+    },
+    {
+      "path": "research/continuous-recovery-20261015/guide-gallery-plan-acceptance.json",
+      "sha256": "536320b2f501795880c00505122bbe99d677ad23f73a376edd5baf929dc83b68",
+      "bytes": 2517
+    },
+    {
+      "path": "research/gallery-recovery-20261014/discovery-002/sanitized-summary.json",
+      "sha256": "c398896f30fd147a6795f8176cd380f84e0d7fac4fa7bbfe0cbadc23744eb34c",
+      "bytes": 2595
+    },
+    {
+      "path": "research/continuous-recovery-20261015/guide-prefix15-acceptance.json",
+      "sha256": "d04949368cdaa7868984572c8dd03364bb96409f23b2cbb1d12a386f199b3d9b",
+      "bytes": 3625
+    },
+    {
+      "path": "research/continuous-recovery-20261016/network/driver-v2/execution-audit.json",
+      "sha256": "a7bff65de8d845bffb66feba1848567f2cf6d3bc2bfbe3fe24dda2f7845e79ed",
+      "bytes": 3553
+    },
+    {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-prefix-registry/gallery-prefix-registry.json",
+      "bytes": 141545,
+      "sha256": "d356992afb97633801f69aeb9c0a9e2a3ee933acd812d7cda386ad40a9aa51da",
+      "role": "frozen v1 registry integrity anchor; not modified"
+    }
+  ],
+  "plan_binding": {
+    "path": "research/continuous-recovery-20261016/network/gallery-prefix-plan/prefix-plan.json",
+    "sha256": "70210c7259a1057847b927a0d21a3ed2ae044442fdf187ce164f500c0974faf6",
+    "schema": "wow-recovery.gallery-prefix-index-plan.v1",
+    "batch_id": "GALLERY-PREFIX-INDEX-20261016-PREP",
+    "network_requests": 0,
+    "execution_requires_parent_go": true,
+    "candidate_count": 10,
+    "source_entity_count": 3368
+  },
+  "origin_and_window_boundary": {
+    "original_origin_host": "www.worldofwarcraft.com",
+    "original_schemes": [
+      "http"
+    ],
+    "query_host": "web.archive.org",
+    "date_window": {
+      "from": "20060101000000",
+      "to": "20080512210044"
+    },
+    "selection_boundary": "preserve each candidate's exact original http scheme, www.worldofwarcraft.com host, and path prefix; actual returned CDX rows only",
+    "valid_row_boundary": "statuscode=200 and image/jpeg or image/gif; no payload replay in this index-only batch",
+    "truncation_boundary": "if actual rows reach limit=500, preserve the actual response resumeKey and mark potential_truncation; do not claim complete/latest or replay"
+  },
+  "execution_boundary": {
+    "network_requests": 0,
+    "response_rows": 0,
+    "payloads_replayed": 0,
+    "payloads_available": false,
+    "prefix_rows_status": "unknown_until_parent_go",
+    "direct_entity_rows_status": "unknown_until_parent_go",
+    "resume_key": "none observed because no request was executed",
+    "no_network_or_payload_claim": true
+  },
+  "policy": {
+    "index_only": true,
+    "max_attempts": 20,
+    "window_seconds": 900,
+    "max_total_body_bytes": 67108864,
+    "max_entity_body_bytes": 16777216,
+    "from": "20060101000000",
+    "to": "20080512210044",
+    "limit": 500,
+    "showResumeKey": true,
+    "collapse": false,
+    "direct_first_then_process_proxy": "http://127.0.0.1:7890",
+    "min_dispatch_monotonic_seconds": 5.1,
+    "min_request_start_utc_seconds": 5.0,
+    "disk_floor_bytes": 11005853696,
+    "tls_verification": true,
+    "automatic_redirects": 0,
+    "stop_on": [
+      "429",
+      "503",
+      "five_consecutive_transport_failures",
+      "disk_floor",
+      "cap_or_deadline"
+    ],
+    "no_payload_replay": true,
+    "resume_key": "record actual response resumeKey only; no continuation in this batch"
+  },
+  "excluded_existing_prefixes": [
+    {
+      "label": "Karazhan",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/",
+      "evidence": "research/gallery-recovery-20261014/discovery-002/sanitized-summary.json",
+      "evidence_sha256": "c398896f30fd147a6795f8176cd380f84e0d7fac4fa7bbfe0cbadc23744eb34c",
+      "reason": "explicit prior Karazhan prefix evidence; do not repeat"
+    },
+    {
+      "label": "Fishing",
+      "prefix": "http://www.worldofwarcraft.com/info/professions/images/fishing/ss/",
+      "evidence": "research/gallery-recovery-20261014/discovery-002/sanitized-summary.json",
+      "evidence_sha256": "c398896f30fd147a6795f8176cd380f84e0d7fac4fa7bbfe0cbadc23744eb34c",
+      "reason": "explicit prior Fishing prefix evidence; do not repeat"
+    },
+    {
+      "label": "Black Temple",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/blacktemple/",
+      "evidence": "research/continuous-recovery-20261015/guide-prefix15-acceptance.json",
+      "evidence_sha256": "d04949368cdaa7868984572c8dd03364bb96409f23b2cbb1d12a386f199b3d9b",
+      "reason": "NET015 accepted prefix batch; do not repeat"
+    },
+    {
+      "label": "Serpentshrine Cavern",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/serpentshrine/",
+      "evidence": "research/continuous-recovery-20261015/guide-prefix15-acceptance.json",
+      "evidence_sha256": "d04949368cdaa7868984572c8dd03364bb96409f23b2cbb1d12a386f199b3d9b",
+      "reason": "NET015 accepted prefix batch; do not repeat"
+    },
+    {
+      "label": "Magister's Terrace",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/magisters/",
+      "evidence": "research/continuous-recovery-20261015/guide-prefix15-acceptance.json",
+      "evidence_sha256": "d04949368cdaa7868984572c8dd03364bb96409f23b2cbb1d12a386f199b3d9b",
+      "reason": "NET015 accepted prefix batch; do not repeat"
+    }
+  ],
+  "source_limit": "guide-gallery-plan contains only three historical NET015 groups and is context; all ten candidates are selected from the 3,368-entity audit and inventory literal directories",
+  "candidates": [
+    {
+      "rank": 1,
+      "label": "City Attacks",
+      "category": "PvP",
+      "prefix": "http://www.worldofwarcraft.com/pvp/worldpvp/images/city/",
+      "source_directory": "/pvp/worldpvp/images/city/",
+      "declared_entity_count": 204,
+      "declared_full_count": 102,
+      "declared_thumb_count": 102,
+      "full_pattern": "/pvp/worldpvp/images/city/ssN.jpg",
+      "thumb_pattern": "/pvp/worldpvp/images/city/ssN-thumb.jpg",
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/pvp/worldpvp/cityattacks-gallery.html",
+        "sha256": "ba2a9ec91e6f73d42a34c8e2cf784e09e1966fc2e76442f51d8abdede75aaa5a",
+        "line": 166,
+        "quote": "addshots(\"/pvp/worldpvp/images/city/\",\"ss\",numShots);"
+      },
+      "inventory_rows": 1,
+      "inventory_source": {
+        "num_shots": 102,
+        "addshots_source_dir": "/pvp/worldpvp/images/city/",
+        "addshots_filename": "ss",
+        "addshots_line": 166
+      },
+      "local_audit_status_counts": {
+        "never_requested": 204
+      },
+      "examples": [
+        "http://www.worldofwarcraft.com/pvp/worldpvp/images/city/ss1.jpg",
+        "http://www.worldofwarcraft.com/pvp/worldpvp/images/city/ss1-thumb.jpg",
+        "http://www.worldofwarcraft.com/pvp/worldpvp/images/city/ss2.jpg"
+      ],
+      "query_parameters": {
+        "url": "http://www.worldofwarcraft.com/pvp/worldpvp/images/city/",
+        "matchType": "prefix",
+        "output": "json",
+        "fl": "urlkey,timestamp,original,mimetype,statuscode,digest,length",
+        "from": "20060101000000",
+        "to": "20080512210044",
+        "limit": "500",
+        "showResumeKey": "true"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Fworldpvp%2Fimages%2Fcity%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "selection": "actual returned CDX rows only; exact original scheme/host/path prefix; statuscode=200; image/jpeg or image/gif; no payload replay in this index-only batch",
+      "truncation_rule": "if actual rows reach limit=500, preserve resumeKey and mark potential_truncation; do not claim complete/latest or replay"
+    },
+    {
+      "rank": 2,
+      "label": "Warsong Gulch",
+      "category": "PvP",
+      "prefix": "http://www.worldofwarcraft.com/pvp/battlegrounds/warsonggulch/",
+      "source_directory": "/pvp/battlegrounds/warsonggulch/",
+      "declared_entity_count": 58,
+      "declared_full_count": 29,
+      "declared_thumb_count": 29,
+      "full_pattern": "/pvp/battlegrounds/warsonggulch/ssN.jpg",
+      "thumb_pattern": "/pvp/battlegrounds/warsonggulch/ssN-thumb.jpg",
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/pvp/battlegrounds/warsong-gulch-gallery.html",
+        "sha256": "eaef0e508fc03d23e5e60a1a02b27bfdbe9e8936ea578ff5552f274b4b8a29b2",
+        "line": 96,
+        "quote": "addshots(\"/pvp/battlegrounds/warsonggulch/\",\"ss\",numShots);"
+      },
+      "inventory_rows": 1,
+      "inventory_source": {
+        "num_shots": 29,
+        "addshots_source_dir": "/pvp/battlegrounds/warsonggulch/",
+        "addshots_filename": "ss",
+        "addshots_line": 96
+      },
+      "local_audit_status_counts": {
+        "never_requested": 58
+      },
+      "examples": [
+        "http://www.worldofwarcraft.com/pvp/battlegrounds/warsonggulch/ss1.jpg",
+        "http://www.worldofwarcraft.com/pvp/battlegrounds/warsonggulch/ss1-thumb.jpg",
+        "http://www.worldofwarcraft.com/pvp/battlegrounds/warsonggulch/ss2.jpg"
+      ],
+      "query_parameters": {
+        "url": "http://www.worldofwarcraft.com/pvp/battlegrounds/warsonggulch/",
+        "matchType": "prefix",
+        "output": "json",
+        "fl": "urlkey,timestamp,original,mimetype,statuscode,digest,length",
+        "from": "20060101000000",
+        "to": "20080512210044",
+        "limit": "500",
+        "showResumeKey": "true"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Fbattlegrounds%2Fwarsonggulch%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "selection": "actual returned CDX rows only; exact original scheme/host/path prefix; statuscode=200; image/jpeg or image/gif; no payload replay in this index-only batch",
+      "truncation_rule": "if actual rows reach limit=500, preserve resumeKey and mark potential_truncation; do not claim complete/latest or replay"
+    },
+    {
+      "rank": 3,
+      "label": "Hallow's End",
+      "category": "Event",
+      "prefix": "http://www.worldofwarcraft.com/info/events/hallowsend/images/newscreenshots/",
+      "source_directory": "/info/events/hallowsend/images/newscreenshots/",
+      "declared_entity_count": 130,
+      "declared_full_count": 65,
+      "declared_thumb_count": 65,
+      "full_pattern": "/info/events/hallowsend/images/newscreenshots/ssN.jpg",
+      "thumb_pattern": "/info/events/hallowsend/images/newscreenshots/ssN-thumb.jpg",
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/events/hallowsend/gallery.html",
+        "sha256": "d19476dadeae05c4332104a9fd4e3f2f636fc0df813c25d0f7e8e3be2d2375a0",
+        "line": 128,
+        "quote": "addshots(\"/info/events/hallowsend/images/newscreenshots/\",\"ss\",numShots);"
+      },
+      "inventory_rows": 1,
+      "inventory_source": {
+        "num_shots": 65,
+        "addshots_source_dir": "/info/events/hallowsend/images/newscreenshots/",
+        "addshots_filename": "ss",
+        "addshots_line": 128
+      },
+      "local_audit_status_counts": {
+        "never_requested": 130
+      },
+      "examples": [
+        "http://www.worldofwarcraft.com/info/events/hallowsend/images/newscreenshots/ss1.jpg",
+        "http://www.worldofwarcraft.com/info/events/hallowsend/images/newscreenshots/ss1-thumb.jpg",
+        "http://www.worldofwarcraft.com/info/events/hallowsend/images/newscreenshots/ss2.jpg"
+      ],
+      "query_parameters": {
+        "url": "http://www.worldofwarcraft.com/info/events/hallowsend/images/newscreenshots/",
+        "matchType": "prefix",
+        "output": "json",
+        "fl": "urlkey,timestamp,original,mimetype,statuscode,digest,length",
+        "from": "20060101000000",
+        "to": "20080512210044",
+        "limit": "500",
+        "showResumeKey": "true"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fevents%2Fhallowsend%2Fimages%2Fnewscreenshots%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "selection": "actual returned CDX rows only; exact original scheme/host/path prefix; statuscode=200; image/jpeg or image/gif; no payload replay in this index-only batch",
+      "truncation_rule": "if actual rows reach limit=500, preserve resumeKey and mark potential_truncation; do not claim complete/latest or replay"
+    },
+    {
+      "rank": 4,
+      "label": "Brewfest",
+      "category": "Event",
+      "prefix": "http://www.worldofwarcraft.com/info/events/brewfest/images/ss/",
+      "source_directory": "/info/events/brewfest/images/ss/",
+      "declared_entity_count": 102,
+      "declared_full_count": 51,
+      "declared_thumb_count": 51,
+      "full_pattern": "/info/events/brewfest/images/ss/ssN.jpg",
+      "thumb_pattern": "/info/events/brewfest/images/ss/ssN-thumb.jpg",
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/events/brewfest/gallery.html",
+        "sha256": "e2787105ddd7d3dec94844fc1091ad70ccafc44724123caf0ca7d5b161850088",
+        "line": 114,
+        "quote": "addshots(\"/info/events/brewfest/images/ss/\",\"ss\",numShots);"
+      },
+      "inventory_rows": 1,
+      "inventory_source": {
+        "num_shots": 51,
+        "addshots_source_dir": "/info/events/brewfest/images/ss/",
+        "addshots_filename": "ss",
+        "addshots_line": 114
+      },
+      "local_audit_status_counts": {
+        "never_requested": 102
+      },
+      "examples": [
+        "http://www.worldofwarcraft.com/info/events/brewfest/images/ss/ss1.jpg",
+        "http://www.worldofwarcraft.com/info/events/brewfest/images/ss/ss1-thumb.jpg",
+        "http://www.worldofwarcraft.com/info/events/brewfest/images/ss/ss2.jpg"
+      ],
+      "query_parameters": {
+        "url": "http://www.worldofwarcraft.com/info/events/brewfest/images/ss/",
+        "matchType": "prefix",
+        "output": "json",
+        "fl": "urlkey,timestamp,original,mimetype,statuscode,digest,length",
+        "from": "20060101000000",
+        "to": "20080512210044",
+        "limit": "500",
+        "showResumeKey": "true"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fevents%2Fbrewfest%2Fimages%2Fss%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "selection": "actual returned CDX rows only; exact original scheme/host/path prefix; statuscode=200; image/jpeg or image/gif; no payload replay in this index-only batch",
+      "truncation_rule": "if actual rows reach limit=500, preserve resumeKey and mark potential_truncation; do not claim complete/latest or replay"
+    },
+    {
+      "rank": 5,
+      "label": "Zul'Aman",
+      "category": "Raid",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/zulaman/",
+      "source_directory": "/info/dungeons/images/zulaman/",
+      "declared_entity_count": 120,
+      "declared_full_count": 60,
+      "declared_thumb_count": 60,
+      "full_pattern": "/info/dungeons/images/zulaman/ssN.jpg",
+      "thumb_pattern": "/info/dungeons/images/zulaman/ssN-thumb.jpg",
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/zulaman-gallery.html",
+        "sha256": "342c63cd42af3b72221f03be03d3099e7f3369c9b7cc858868e7304b567033d1",
+        "line": 123,
+        "quote": "addshots(\"/info/dungeons/images/zulaman/\",\"ss\",numShots);"
+      },
+      "inventory_rows": 0,
+      "inventory_source": null,
+      "local_audit_status_counts": {
+        "never_requested": 120
+      },
+      "examples": [
+        "http://www.worldofwarcraft.com/info/dungeons/images/zulaman/ss1.jpg",
+        "http://www.worldofwarcraft.com/info/dungeons/images/zulaman/ss1-thumb.jpg",
+        "http://www.worldofwarcraft.com/info/dungeons/images/zulaman/ss2.jpg"
+      ],
+      "query_parameters": {
+        "url": "http://www.worldofwarcraft.com/info/dungeons/images/zulaman/",
+        "matchType": "prefix",
+        "output": "json",
+        "fl": "urlkey,timestamp,original,mimetype,statuscode,digest,length",
+        "from": "20060101000000",
+        "to": "20080512210044",
+        "limit": "500",
+        "showResumeKey": "true"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fzulaman%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "selection": "actual returned CDX rows only; exact original scheme/host/path prefix; statuscode=200; image/jpeg or image/gif; no payload replay in this index-only batch",
+      "truncation_rule": "if actual rows reach limit=500, preserve resumeKey and mark potential_truncation; do not claim complete/latest or replay"
+    },
+    {
+      "rank": 6,
+      "label": "Hellfire Citadel - The Shattered Halls",
+      "category": "Dungeon",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/shatteredhalls/",
+      "source_directory": "/info/dungeons/images/shatteredhalls/",
+      "declared_entity_count": 100,
+      "declared_full_count": 50,
+      "declared_thumb_count": 50,
+      "full_pattern": "/info/dungeons/images/shatteredhalls/ssN.jpg",
+      "thumb_pattern": "/info/dungeons/images/shatteredhalls/ssN-thumb.jpg",
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/hc-shatteredhalls-gallery.html",
+        "sha256": "4a15a752cf370338dd78256f6678a1e28899157a82f28638002d1ea7282a4584",
+        "line": 113,
+        "quote": "addshots(\"/info/dungeons/images/shatteredhalls/\",\"ss\",numShots);"
+      },
+      "inventory_rows": 1,
+      "inventory_source": {
+        "num_shots": 50,
+        "addshots_source_dir": "/info/dungeons/images/shatteredhalls/",
+        "addshots_filename": "ss",
+        "addshots_line": 113
+      },
+      "local_audit_status_counts": {
+        "never_requested": 100
+      },
+      "examples": [
+        "http://www.worldofwarcraft.com/info/dungeons/images/shatteredhalls/ss1.jpg",
+        "http://www.worldofwarcraft.com/info/dungeons/images/shatteredhalls/ss1-thumb.jpg",
+        "http://www.worldofwarcraft.com/info/dungeons/images/shatteredhalls/ss2.jpg"
+      ],
+      "query_parameters": {
+        "url": "http://www.worldofwarcraft.com/info/dungeons/images/shatteredhalls/",
+        "matchType": "prefix",
+        "output": "json",
+        "fl": "urlkey,timestamp,original,mimetype,statuscode,digest,length",
+        "from": "20060101000000",
+        "to": "20080512210044",
+        "limit": "500",
+        "showResumeKey": "true"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fshatteredhalls%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "selection": "actual returned CDX rows only; exact original scheme/host/path prefix; statuscode=200; image/jpeg or image/gif; no payload replay in this index-only batch",
+      "truncation_rule": "if actual rows reach limit=500, preserve resumeKey and mark potential_truncation; do not claim complete/latest or replay"
+    },
+    {
+      "rank": 7,
+      "label": "Tempest Keep - The Arcatraz",
+      "category": "Dungeon",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/arcatraz/",
+      "source_directory": "/info/dungeons/images/arcatraz/",
+      "declared_entity_count": 98,
+      "declared_full_count": 49,
+      "declared_thumb_count": 49,
+      "full_pattern": "/info/dungeons/images/arcatraz/ssN.jpg",
+      "thumb_pattern": "/info/dungeons/images/arcatraz/ssN-thumb.jpg",
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/tk-arcatraz-gallery.html",
+        "sha256": "becc9b9bbe1f7fa2c8a6a6ed57f0c021074da4ad8dc4da5f6c8083e0ce39e468",
+        "line": 112,
+        "quote": "addshots(\"/info/dungeons/images/arcatraz/\",\"ss\",numShots);"
+      },
+      "inventory_rows": 1,
+      "inventory_source": {
+        "num_shots": 49,
+        "addshots_source_dir": "/info/dungeons/images/arcatraz/",
+        "addshots_filename": "ss",
+        "addshots_line": 112
+      },
+      "local_audit_status_counts": {
+        "never_requested": 98
+      },
+      "examples": [
+        "http://www.worldofwarcraft.com/info/dungeons/images/arcatraz/ss1.jpg",
+        "http://www.worldofwarcraft.com/info/dungeons/images/arcatraz/ss1-thumb.jpg",
+        "http://www.worldofwarcraft.com/info/dungeons/images/arcatraz/ss2.jpg"
+      ],
+      "query_parameters": {
+        "url": "http://www.worldofwarcraft.com/info/dungeons/images/arcatraz/",
+        "matchType": "prefix",
+        "output": "json",
+        "fl": "urlkey,timestamp,original,mimetype,statuscode,digest,length",
+        "from": "20060101000000",
+        "to": "20080512210044",
+        "limit": "500",
+        "showResumeKey": "true"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Farcatraz%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "selection": "actual returned CDX rows only; exact original scheme/host/path prefix; statuscode=200; image/jpeg or image/gif; no payload replay in this index-only batch",
+      "truncation_rule": "if actual rows reach limit=500, preserve resumeKey and mark potential_truncation; do not claim complete/latest or replay"
+    },
+    {
+      "rank": 8,
+      "label": "Isle of Quel'Danas",
+      "category": "Region",
+      "prefix": "http://www.worldofwarcraft.com/info/regions/isleofq/",
+      "source_directory": "/info/regions/isleofq/",
+      "declared_entity_count": 98,
+      "declared_full_count": 49,
+      "declared_thumb_count": 49,
+      "full_pattern": "/info/regions/isleofq/ssN.jpg",
+      "thumb_pattern": "/info/regions/isleofq/ssN-thumb.jpg",
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/regions/isle-of-queldanas-gallery.html",
+        "sha256": "4dfcca862bfea6575cb30eff8d974b49221a4356f161683fcefa70254c260468",
+        "line": 112,
+        "quote": "addshots(\"/info/regions/isleofq/\",\"ss\",numShots);"
+      },
+      "inventory_rows": 1,
+      "inventory_source": {
+        "num_shots": 49,
+        "addshots_source_dir": "/info/regions/isleofq/",
+        "addshots_filename": "ss",
+        "addshots_line": 112
+      },
+      "local_audit_status_counts": {
+        "never_requested": 98
+      },
+      "examples": [
+        "http://www.worldofwarcraft.com/info/regions/isleofq/ss1.jpg",
+        "http://www.worldofwarcraft.com/info/regions/isleofq/ss1-thumb.jpg",
+        "http://www.worldofwarcraft.com/info/regions/isleofq/ss2.jpg"
+      ],
+      "query_parameters": {
+        "url": "http://www.worldofwarcraft.com/info/regions/isleofq/",
+        "matchType": "prefix",
+        "output": "json",
+        "fl": "urlkey,timestamp,original,mimetype,statuscode,digest,length",
+        "from": "20060101000000",
+        "to": "20080512210044",
+        "limit": "500",
+        "showResumeKey": "true"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fregions%2Fisleofq%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "selection": "actual returned CDX rows only; exact original scheme/host/path prefix; statuscode=200; image/jpeg or image/gif; no payload replay in this index-only batch",
+      "truncation_rule": "if actual rows reach limit=500, preserve resumeKey and mark potential_truncation; do not claim complete/latest or replay"
+    },
+    {
+      "rank": 9,
+      "label": "TCG Gallery",
+      "category": "TCG Gallery",
+      "prefix": "http://www.worldofwarcraft.com/info/items/images/tcg/",
+      "source_directory": "/info/items/images/tcg/",
+      "declared_entity_count": 94,
+      "declared_full_count": 47,
+      "declared_thumb_count": 47,
+      "full_pattern": "/info/items/images/tcg/ssN.jpg",
+      "thumb_pattern": "/info/items/images/tcg/ssN-thumb.jpg",
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/items/tcg-gallery.html",
+        "sha256": "b222c401e1040e69709e6117c0d04c93b9f9a30171320beafb5746647bb2e796",
+        "line": 110,
+        "quote": "addshots(\"/info/items/images/tcg/\",\"ss\",numShots);"
+      },
+      "inventory_rows": 1,
+      "inventory_source": {
+        "num_shots": 47,
+        "addshots_source_dir": "/info/items/images/tcg/",
+        "addshots_filename": "ss",
+        "addshots_line": 110
+      },
+      "local_audit_status_counts": {
+        "never_requested": 94
+      },
+      "examples": [
+        "http://www.worldofwarcraft.com/info/items/images/tcg/ss1.jpg",
+        "http://www.worldofwarcraft.com/info/items/images/tcg/ss1-thumb.jpg",
+        "http://www.worldofwarcraft.com/info/items/images/tcg/ss2.jpg"
+      ],
+      "query_parameters": {
+        "url": "http://www.worldofwarcraft.com/info/items/images/tcg/",
+        "matchType": "prefix",
+        "output": "json",
+        "fl": "urlkey,timestamp,original,mimetype,statuscode,digest,length",
+        "from": "20060101000000",
+        "to": "20080512210044",
+        "limit": "500",
+        "showResumeKey": "true"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fitems%2Fimages%2Ftcg%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "selection": "actual returned CDX rows only; exact original scheme/host/path prefix; statuscode=200; image/jpeg or image/gif; no payload replay in this index-only batch",
+      "truncation_rule": "if actual rows reach limit=500, preserve resumeKey and mark potential_truncation; do not claim complete/latest or replay"
+    },
+    {
+      "rank": 10,
+      "label": "Amani War Bear",
+      "category": "Mount",
+      "prefix": "http://www.worldofwarcraft.com/info/basics/images/mounts/bear/",
+      "source_directory": "/info/basics/images/mounts/bear/",
+      "declared_entity_count": 48,
+      "declared_full_count": 24,
+      "declared_thumb_count": 24,
+      "full_pattern": "/info/basics/images/mounts/bear/ssN.jpg",
+      "thumb_pattern": "/info/basics/images/mounts/bear/ssN-thumb.jpg",
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/basics/mounts/bear-gallery.html",
+        "sha256": "eafe02e1e861ff71b2940a29759a941adf37de196288806951fd5e60570eec88",
+        "line": 87,
+        "quote": "addshots(\"/info/basics/images/mounts/bear/\",\"ss\",numShots);"
+      },
+      "inventory_rows": 1,
+      "inventory_source": {
+        "num_shots": 24,
+        "addshots_source_dir": "/info/basics/images/mounts/bear/",
+        "addshots_filename": "ss",
+        "addshots_line": 87
+      },
+      "local_audit_status_counts": {
+        "never_requested": 48
+      },
+      "examples": [
+        "http://www.worldofwarcraft.com/info/basics/images/mounts/bear/ss1.jpg",
+        "http://www.worldofwarcraft.com/info/basics/images/mounts/bear/ss1-thumb.jpg",
+        "http://www.worldofwarcraft.com/info/basics/images/mounts/bear/ss2.jpg"
+      ],
+      "query_parameters": {
+        "url": "http://www.worldofwarcraft.com/info/basics/images/mounts/bear/",
+        "matchType": "prefix",
+        "output": "json",
+        "fl": "urlkey,timestamp,original,mimetype,statuscode,digest,length",
+        "from": "20060101000000",
+        "to": "20080512210044",
+        "limit": "500",
+        "showResumeKey": "true"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fimages%2Fmounts%2Fbear%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20060101000000&to=20080512210044&limit=500&showResumeKey=true",
+      "selection": "actual returned CDX rows only; exact original scheme/host/path prefix; statuscode=200; image/jpeg or image/gif; no payload replay in this index-only batch",
+      "truncation_rule": "if actual rows reach limit=500, preserve resumeKey and mark potential_truncation; do not claim complete/latest or replay"
+    }
+  ],
+  "stats": {
+    "candidate_count": 10,
+    "candidate_entity_count": 1052,
+    "declared_full_count": 526,
+    "declared_thumb_count": 526,
+    "category_counts": {
+      "PvP": 2,
+      "Event": 2,
+      "Raid": 1,
+      "Dungeon": 2,
+      "Region": 1,
+      "TCG Gallery": 1,
+      "Mount": 1
+    },
+    "local_audit_status_counts": {
+      "never_requested": 1052
+    },
+    "prefix_execution_status_counts": {
+      "not_executed": 10
+    },
+    "actual_response_row_count": 0,
+    "actual_direct_entity_row_count": 0,
+    "actual_payload_count": 0
+  },
+  "notes": [
+    "This is an independent v2 registration of exactly the ten candidates in the supplied Batch-B plan; the accepted v1 registry remains frozen.",
+    "All ten candidates are offline plan entries only. Their CDX rows, response status, direct entity rows, resume keys, and payloads remain unknown until a parent-approved execution.",
+    "The plan's never_requested counts are retained as prior local audit state and do not establish global request history.",
+    "The original HTTP origin, archive query host, date window, response filters, truncation rule, and no-payload-replay boundary are preserved verbatim from the plan."
+  ]
+}

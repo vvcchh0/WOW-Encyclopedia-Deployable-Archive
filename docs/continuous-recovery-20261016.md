@@ -36,13 +36,20 @@ UTC 13:00 后不启动新网络批次，13:10 后不启动新来源/导出版本
 - v16 已完成本地构建与主代理验收：沿用 source15，新增九张新闻配图和两张欧服原图，共 49 份图片补充；全部 8,507 声明文件通过逐字节核对，旧路由与 38 份补充均保留。12 项浏览检查通过，实际展开新闻后图片可见；已查看新闻和欧服图集画面。尚待发布。[本地验收](../research/continuous-recovery-20261016/publication/root-v16-local-acceptance.json)
 - 网络只读诊断区分了直连 TCP 超时与代理 CONNECT 成功后的间歇 TLS 失败。NEWS02 未见 429/503，末尾四次传输失败保留在后续冷却记录中。冷却后 NEWS03/04 又取得四图，尚待主代理验收并进入下一版本，未改变已冻结的 v16 输入。
 
-## 后续取舍
+## 追加进度
 
 - v17 完成本地验收：新增二十张新闻图片（100,831 字节），并在 Fishing、Hallow's End、Brewfest、Winter's Veil、Zul'Aman 五图库展示十九张已有指南预览。全部 8,527 声明文件核对通过，旧 49 项补充保留，共 69 项图片补充；91 项浏览检查通过，已查看五组预览及新闻实际画面。[本地验收](../research/continuous-recovery-20261016/publication/root-v17-local-acceptance.json)
 - ALLNEWS01 二十目标取得十六图，含十四个首字母与两张新闻配图；原始响应核对、全部帧解码与摘要通过。ALLNEWS02 对四个传输未知项复查时连续五次连接失败，零源 HTTP 响应；停批并冷却 120 秒，下一次控制窗口安排在 04:30 UTC 之后。旧失败尾数保留，控制窗口成功后再决定是否恢复普通获取。[图片验收](../research/continuous-recovery-20261016/publication/root-allnews01-acceptance.json)、[停批复核](../research/continuous-recovery-20261016/publication/root-allnews02-failure-acceptance.json)
 
 - 03:31 UTC：v16 已推送 Pages，提交 `96911e7ba7eda5e27cd5c52068cdd071a21c8c08`；03:36 UTC 完成 19 项线上文件核对，包含九张新闻图片、两张欧服原图、两页展开新闻、来源清单、路由表、运行脚本、相关图集与百科/八月新闻保留项。[线上验收](../research/continuous-recovery-20261016/publication/root-v16-pages-online-acceptance.json)
 - NEWS03/04 的四张图片通过主代理来源与字节核验，共 40,877 字节，留待 v17 或之后整合；NEWS04 仅保留批次前后磁盘值，驱动具有逐请求检查，但没有记录逐请求余量，已在回执标出。新下载器将保留这些值。[NEWS03](../research/continuous-recovery-20261016/publication/root-news03-acceptance.json)、[NEWS04](../research/continuous-recovery-20261016/publication/root-news04-acceptance.json)
+
+- 04:38 UTC：v17 Pages 构建完成，提交 `067f72e4cb313cfa9693f470814aa6a62bc92921`；随后 63 项线上对象与本地一致。相同四十页新闻中，缺图引用由 954 减至 798，二十个新增资源消除 156 处引用。[线上验收](../research/continuous-recovery-20261016/publication/root-v17-pages-online-acceptance.json)、[引用复核](../research/continuous-recovery-20261016/publication/root-v17-news-metrics-acceptance.json)
+- 04:34 UTC：退避后 CONTROL01 取得合法 CDX，确认代理已恢复一次有效源响应；原 ALLNEWS02 的五次失败保持在历史记录中，另行批准新窗口。[控制验收](../research/continuous-recovery-20261016/publication/root-control01-acceptance.json)
+- 04:45 UTC：十个图库目录调查用完二十次请求，九个完整 CDX 响应共 116 行，Amani War Bear 仍为传输未知；未发现直接 `ssN.jpg` 或 `ssN-thumb.jpg`，未回放图片。五次调度间隔为 5.093/5.094 秒，略低于 5.1 秒要求，实际请求开始均超过五秒。保留该执行偏离，下一驱动增加单调时钟复查和裕量。[独立复核](../research/continuous-recovery-20261016/publication/root-gallery-prefix01-acceptance.json)
+- MEDIA 已保存的 2,082 行索引完成分类：仅两项有效 JPEG，均为已取得的 2010 年补充，未生成新图片候选，待主代理复核。另查欧服首页依赖与菜单路径。
+
+## 后续取舍
 
 优先回放已有有效索引、此前因网络失败未取回的资源，再寻找其他存档路径。已收到真实 404 的同点不反复请求。图库审计需要将每轮回执按精确 URL 与实际请求时间合并，不能从较早的汇总推导当前状态。
 

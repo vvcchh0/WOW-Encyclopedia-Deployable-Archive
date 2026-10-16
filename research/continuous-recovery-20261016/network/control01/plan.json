@@ -1,0 +1,48 @@
+{
+  "schema": "wow-recovery.control01-plan.v1",
+  "mode": "go_executed",
+  "batch_id": "WAYBACK-CONTROL01-20261016",
+  "prepared_utc": "2026-10-16T04:34:15.716963Z",
+  "proposal_path": "research/continuous-recovery-20261016/network/diagnostic-20261016-v2/control-window-plan.json",
+  "proposal_sha256": "07ac8272a7742be2e423ed62608e78ea21b60d0372c04d9fbfe3b5e57a516de9",
+  "target_key": "ALLNEWS01-R02-control",
+  "exact_original": "http://www.worldofwarcraft.com/new-hp/images/smallcaps/h.gif",
+  "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnew-hp%2Fimages%2Fsmallcaps%2Fh.gif&from=20060101000000&to=20080512210044&output=json&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=250&matchType=exact",
+  "query_identity": {
+    "match_type": "exact",
+    "from": "20060101000000",
+    "to": "20080512210044",
+    "limit": 250,
+    "collapse": false,
+    "output": "json",
+    "fields": [
+      "timestamp",
+      "original",
+      "mimetype",
+      "statuscode",
+      "digest",
+      "length"
+    ]
+  },
+  "control_only": true,
+  "no_replay": true,
+  "max_attempts": 2,
+  "window_seconds": 120.0,
+  "max_total_body_bytes": 2097152,
+  "max_entity_body_bytes": 1048576,
+  "direct_first": true,
+  "proxy": "http://127.0.0.1:7890",
+  "tls_verification": true,
+  "automatic_redirects": 0,
+  "min_dispatch_monotonic_seconds": 5.1,
+  "min_request_start_utc_seconds": 5.0,
+  "disk_floor_bytes": 11005853696,
+  "stop_http_codes": [
+    429,
+    503
+  ],
+  "prior_tail": 5,
+  "probe_streak_start": 0,
+  "success_gate": "source HTTP 200 and valid JSON CDX with record_count < 250",
+  "network_requests_executed_at_prepare": 0
+}

@@ -1,0 +1,85 @@
+{
+  "schema": "wow-recovery.gallery-prefix01-fixture-results.v1",
+  "mode": "offline_fixture",
+  "network_requests": 0,
+  "passed": 8,
+  "total": 8,
+  "all_passed": true,
+  "results": [
+    {
+      "name": "parse_header_and_resume",
+      "passed": true,
+      "detail": {
+        "rows": 1,
+        "resume": [
+          "resume-fixture"
+        ]
+      }
+    },
+    {
+      "name": "limit_500_truncation",
+      "passed": true,
+      "detail": {
+        "rows": 500,
+        "potential_truncation": true
+      }
+    },
+    {
+      "name": "resume_key_preserved_no_continuation",
+      "passed": true,
+      "detail": {
+        "resume": [
+          "resume-500"
+        ],
+        "continuation_followed": false
+      }
+    },
+    {
+      "name": "default_port_identity",
+      "passed": true,
+      "detail": "same_origin_prefix"
+    },
+    {
+      "name": "identity_rejections",
+      "passed": true,
+      "detail": {
+        "scheme": "scheme_mismatch",
+        "host": "host_mismatch",
+        "path": "path_prefix_mismatch",
+        "query": "query_or_fragment_present"
+      }
+    },
+    {
+      "name": "remaining_byte_time_clamp",
+      "passed": true,
+      "detail": {
+        "normal": {
+          "entity": 16777216,
+          "max_time": 20.0,
+          "connect": 8.0,
+          "clamped": false
+        },
+        "near": {
+          "entity": 5242880,
+          "max_time": 2,
+          "connect": 2,
+          "clamped": true
+        }
+      }
+    },
+    {
+      "name": "stop_at_five_transport_failures",
+      "passed": true,
+      "detail": {
+        "threshold": 5
+      }
+    },
+    {
+      "name": "index_only_no_payload_replay",
+      "passed": true,
+      "detail": {
+        "payload_replay_count": 0
+      }
+    }
+  ]
+}

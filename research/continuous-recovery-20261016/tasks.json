@@ -90,7 +90,7 @@
     {
       "id": "NETWORK04-NEWS03-04",
       "owner": "/root/network_recovery_20261016",
-      "status": "root_accepted_pending_integration",
+      "status": "published_v17_root_accepted",
       "result": {
         "images": 4,
         "batch_dirs": [
@@ -101,7 +101,8 @@
         "acceptance": [
           "publication/root-news03-acceptance.json",
           "publication/root-news04-acceptance.json"
-        ]
+        ],
+        "online_acceptance": "research/continuous-recovery-20261016/publication/root-v17-pages-online-acceptance.json"
       }
     },
     {
@@ -143,7 +144,7 @@
     {
       "id": "LOCAL04-GUIDEPREVIEWS",
       "owner": "/root/local_recovery_20261016",
-      "status": "root_accepted_local",
+      "status": "published_v17_root_accepted",
       "network": false,
       "goal": "Optional local section exposes nineteen existing preview images on five exact galleries; no full-image aliases.",
       "write_scope": "tools/guide_previews.py; scoped exporter hooks; tests/test_guide_previews.py; integration guide-preview map and receipts",
@@ -152,13 +153,14 @@
         "browser_checks": 91,
         "gallery_pages": 5,
         "existing_previews": 19,
-        "acceptance": "publication/root-v17-local-acceptance.json"
+        "acceptance": "publication/root-v17-local-acceptance.json",
+        "online_acceptance": "research/continuous-recovery-20261016/publication/root-v17-pages-online-acceptance.json"
       }
     },
     {
       "id": "NETWORK06-ALLNEWS01",
       "owner": "/root/network_recovery_20261016",
-      "status": "root_accepted_integrated_local_v17",
+      "status": "published_v17_root_accepted",
       "network": true,
       "goal": "Twenty root-accepted missing-image references, exact CDX then latest valid preanchor replay, no truncated index replay.",
       "limits": {
@@ -172,7 +174,8 @@
         "images": 16,
         "requests": 76,
         "image_bytes": 59954,
-        "acceptance": "publication/root-allnews01-acceptance.json"
+        "acceptance": "publication/root-allnews01-acceptance.json",
+        "online_acceptance": "research/continuous-recovery-20261016/publication/root-v17-pages-online-acceptance.json"
       }
     },
     {
@@ -190,10 +193,80 @@
     {
       "id": "LOCAL05-NEWS-REGISTRY",
       "owner": "/root/local_recovery_20261016",
+      "status": "root_accepted_news_metrics_registry_prepared",
+      "network": false,
+      "write_scope": "local-audit/v17-news/**; local-audit/gallery-prefix-registry/**",
+      "result": {
+        "removed_news_references": 156,
+        "pages": 40,
+        "news_acceptance": "publication/root-v17-news-metrics-acceptance.json",
+        "registry": "local-audit/gallery-prefix-registry/gallery-prefix-registry-v2.json"
+      }
+    },
+    {
+      "id": "PUBLISH17",
+      "owner": "root",
+      "status": "published_accepted",
+      "result": {
+        "version": "v17",
+        "commit": "067f72e4cb313cfa9693f470814aa6a62bc92921",
+        "acceptance": "research/continuous-recovery-20261016/publication/root-v17-pages-online-acceptance.json",
+        "online_objects": 63
+      }
+    },
+    {
+      "id": "NETWORK08-CONTROL01",
+      "owner": "/root/network_recovery_20261016",
+      "status": "root_accepted",
+      "result": {
+        "source_responses": 1,
+        "index_rows": 42,
+        "images": 0,
+        "acceptance": "publication/root-control01-acceptance.json"
+      }
+    },
+    {
+      "id": "NETWORK09-GALLERYPREFIX01",
+      "owner": "/root/network_recovery_20261016",
+      "status": "evidence_accepted_with_timer_deviation",
+      "result": {
+        "attempts": 20,
+        "source_responses": 9,
+        "index_rows": 116,
+        "direct_gallery_candidates": 0,
+        "failure_streak_end": 2,
+        "dispatch_min_seconds": 5.093,
+        "acceptance": "publication/root-gallery-prefix01-acceptance.json"
+      }
+    },
+    {
+      "id": "NETWORK10-GALLERYPREFIX02-PLAN",
+      "owner": "/root/network_recovery_20261016",
+      "status": "preparing_no_network",
+      "goal": "Ten new prefixes; correct timer and preserve tail2 before next GO",
+      "write_scope": "network/driver-v3/**; network/gallery-prefix02-plan/**",
+      "minutes": 20
+    },
+    {
+      "id": "LOCAL06-MEDIA",
+      "owner": "/root/local_recovery_20261016",
+      "status": "returned_pending_root_acceptance",
+      "network": false,
+      "result": {
+        "index_rows": 2082,
+        "new_candidates": 0,
+        "report": "local-audit/media-candidates/media-candidates-audit.json"
+      }
+    },
+    {
+      "id": "LOCAL07-EU-DEPENDENCIES",
+      "owner": "/root/local_recovery_20261016",
       "status": "in_progress",
       "network": false,
-      "write_scope": "local-audit/v17-news/**; local-audit/gallery-prefix-registry/**"
+      "write_scope": "local-audit/eu-dependencies/**",
+      "minutes": 25,
+      "goal": "Exact-origin EU first-level dependencies and navigation literals; prioritize ten missing files."
     }
   ],
-  "updated_utc": "2026-10-16T04:29:33.241681+00:00"
+  "updated_utc": "2026-10-16T04:53:45.052518+00:00"
 }
