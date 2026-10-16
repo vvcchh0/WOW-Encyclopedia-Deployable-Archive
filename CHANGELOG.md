@@ -9,6 +9,8 @@
 
 ## 2026-10-16
 
+- 发布 v19，补回十张共享新闻图片，修复 184 处缺图引用。[线上核对](research/continuous-recovery-20261016/publication/root-v19-pages-online-acceptance.json)
+
 - 发布 v18，在 City Attacks 中加入三张已有指南预览，六个图库共展示二十二张；完整截图继续查找。[线上核对](research/continuous-recovery-20261016/publication/root-v18-pages-online-acceptance.json)
 - 发布 v17，补回二十张新闻图片，修复 156 处缺图引用；五个玩家图库新增十九张原指南预览，完整截图继续查找。线上 63 项文件核对通过，离线包暂为 v14。[线上核对](research/continuous-recovery-20261016/publication/root-v17-pages-online-acceptance.json)
 - 发布 v16，补回九张历史新闻配图和两张欧服每日截图；线上 19 项文件核对通过。新闻及图库仍有缺图，离线包暂为 v14。[线上核对](research/continuous-recovery-20261016/publication/root-v16-pages-online-acceptance.json)

@@ -159,8 +159,8 @@ def run_attempt(relative: str, transport: str, timeout: float, remaining_budget:
 
 def main() -> int:
     expected_commit = load_expected_commit()
-    if len(OBJECTS) != 11 or len({item["path"] for item in OBJECTS}) != 11:
-        raise RuntimeError("verifier object list must contain exactly 11 unique paths")
+    if len(OBJECTS) != 24 or len({item["path"] for item in OBJECTS}) != 24:
+        raise RuntimeError("verifier object list must contain exactly 24 unique paths")
     before = build_state()
     if before.get("status") != "built" or (before.get("commit") or "").lower() != expected_commit:
         raise RuntimeError("expected Pages commit must finish building before object checks")
