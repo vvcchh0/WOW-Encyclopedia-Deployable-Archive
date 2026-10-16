@@ -66,3 +66,20 @@ ZIP 共 502,662,461 字节，8,502 个成员，解压成员合计 566,455,522 �
 SHA-256 为 `7d13b98943180e52cc024d43f73148e8450dd5f81379b95083b9ce1f57df0c9e`。独立验收实读全部成员核对 CRC、SHA、长度与清单，再从带空格路径的解压副本以 Python `-I` 启动本地服务器，完成 44 次 GET / HEAD 检查；Windows 启动器未实际双击。详见[打包摘要](../research/v14-integration/portable-package-summary.json)、[独立验收](../research/v14-integration/root-portable-acceptance.json)与[Release 资产确认](../research/v14-integration/root-release-publication.json)。
 
 完整取证 ZIP 及原始响应元数据继续留本地；公开浏览包只包含派生站点、来源索引和启动文件。检查后 D 盘余量为 30,550,495,232 字节，仍高于 11,005,853,696 字节安全阈值。本轮没有清理冻结副本，也未对图片重新编码。
+
+## 2026-10-16：最终浏览包（v24）
+
+本轮单次制作 v24 处理后离线包，收录最终派生页面与启动文件，正在上传 Release。此前浏览包、冻结副本与原始取证包继续保留。
+
+| 文件类别 | 解压字节 | ZIP 成员压缩字节 |
+| --- | ---: | ---: |
+| HTML / XML / XSL | 54,567,680 | 8,664,423 |
+| JavaScript / CSS | 5,429,702 | 687,646 |
+| 图片 | 500,025,157 | 495,692,297 |
+| 其他（含来源索引与启动文件） | 14,879,092 | 3,712,873 |
+
+ZIP 510,437,875 字节，共 8,644 个成员，解压成员合计 574,901,631 字节。原始图片不重编码；DEFLATE-6 主要压缩文本及重复来源信息。
+
+SHA-256：`2507f0fe744af971854048c711f3cba24a4e43b4bd2a78b20e93deb4ef3ba4e7`。主代理独立实读全部成员，检查 CRC、SHA、长度、路径白名单；从含空格路径的解压副本以 Python `-I` 启动包内服务器，完成 128 次 GET / HEAD 检查。实际浏览使用同字节 v24 的既有验收；Windows 启动器未实际双击。
+
+[包摘要](../research/continuous-recovery-20261016/publication/v24-portable-package-summary.json) · [独立验收](../research/continuous-recovery-20261016/publication/root-v24-portable-acceptance.json)。验收后 D 盘余量 21,781,245,952 字节，安全阈值 11,005,853,696 字节。
