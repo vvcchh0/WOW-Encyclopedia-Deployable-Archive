@@ -33,7 +33,7 @@ macOS / Linux 用户在解压目录运行：
 python3 tools/serve_pages_preview.py --site site --port 0 --open-browser
 ```
 
-启动后会打开本地浏览页面。当前离线包为 v24；在线版 v32 已补回更多指南图片、文章插画和新闻配图。后续进度见[更新记录](CHANGELOG.md)。
+启动后会打开本地浏览页面。当前离线包为 v24；在线版 v33 已补回更多指南图片、文章插画和新闻配图；部分旧页面交互仍在复核。后续进度见[更新记录](CHANGELOG.md)。
 
 ## 参与协作
 
