@@ -1,0 +1,7 @@
+# v32 input proposal
+
+v32 consolidates the unexecuted v31 news49 preparation with seven root-accepted next70 public-copy batches. The new delta over v30 is 103 primary images (1734198 bytes): 49 news images (480639 bytes) and 54 next70 images (1253559 bytes). The v30 closure remains 247 primary, 89 supplement, and 336 total overlays; the planned v32 closure is 350 primary, 89 supplement, and 439 total overlays.
+
+The planned file counts are 8897 declared / 8898 actual with 8357 source records, 39 guide collection images, and 22 previews. These are preparation expectations only; root post-export static and browser checks remain authoritative. The five known real-body banner pages, retired Armory script, popup runtime, and the exact attunement compatibility mask are the allowed derived runtime/page changes. The attunement mask replaces three visible missing-image references with the existing transparent pixel and recovers no original image.
+
+The builder binds the frozen v30 map/provenance closure, the superseded unexecuted v31 news49 map, all 103 public-copy bytes, exporter `8c50b1574f24a0bd2b03492ae8fe0cb7d3c48a50a247ba70d9e1859d58672afb`, unchanged historical exhibits `35aa7e5928a6be4a07f2164708e32890aaa7257d89c6db923bf1311f950fd011`, and the popup, retired-Armory, and attunement-mask root receipts. Future popup24 resources and the source-count projection 273 are explicitly excluded. `execute_v32.py` is export-only and requires an independently accepted root input receipt plus `--go --root-export-go`; no v32 export has been executed.

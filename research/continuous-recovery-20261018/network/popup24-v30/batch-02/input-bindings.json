@@ -1,0 +1,108 @@
+{
+  "schema": "wow-recovery.reusable-image-input-bindings.v1",
+  "batch_id": "WAYBACK-CONTINUOUS-20261018-POPUP24-V30-02",
+  "plan_path": "research/continuous-recovery-20261018/network/popup24-v30/batch-02/plan.json",
+  "plan_sha256": "71072a320441b19acd3b7d4c6c70a7e288c5516f81ee915eae2753d191f62b91",
+  "driver_path": "research/continuous-recovery-20261018/network/reusable-image-driver-v3/reusable_image_driver.py",
+  "driver_sha256": "4a19422f0dd8e2f7e1ffdd088836c7ab80450afb91aeedc6cdb94fa4c6bfe955",
+  "fixture_mode": "accepted frozen V3 offline contract; popup24 source gate is separate",
+  "inherited_tail": {
+    "latest_actual_source_tail": 0,
+    "prior_failure_tail": 0,
+    "tail_receipt": "research/continuous-recovery-20261018/publication/root-popup24-batch1-source-acceptance.json",
+    "tail_receipt_sha256": "a03e9b007bb7d33520e7581043ca177852322c24ef5f38ef9ca17b6d725d2b0d",
+    "status_snapshot": "research/continuous-recovery-20261018/network/popup24-v30/batch-02/status-snapshot.json",
+    "status_snapshot_sha256": "3da94114474bffd52de07e263334c9bf94f67e7f0579a21b37baf3a18b094269",
+    "active_status_sha256_audit": "560f8a263464a7ed27e8c8d6eabef34c2e842c9bf45abb0614952604f852e75f",
+    "control_gate_receipt": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+    "control_gate_sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b"
+  },
+  "predecessor_tail_rebind_required_before_execute": false,
+  "predecessor_tail_status": "bound_to_latest_actual_source_acceptance",
+  "selected_queue_ranks": [
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "selected_originals": [
+    "http://www.worldofwarcraft.com/insider/11/images/arena/ss8.jpg",
+    "https://www.worldofwarcraft.com/insider/10/images/ss1.jpg",
+    "https://www.worldofwarcraft.com/insider/10/images/ss2.jpg",
+    "https://www.worldofwarcraft.com/insider/10/images/ss3.jpg",
+    "https://www.worldofwarcraft.com/insider/10/images/ss6.jpg",
+    "https://www.worldofwarcraft.com/insider/10/images/ss4.jpg",
+    "https://www.worldofwarcraft.com/insider/10/images/ss5.jpg",
+    "https://www.worldofwarcraft.com/insider/10/images/ss7.jpg",
+    "https://www.worldofwarcraft.com/insider/10/images/ss8.jpg",
+    "https://www.worldofwarcraft.com/insider/10/images/ss9.jpg"
+  ],
+  "source_bindings": {
+    "popup24_selected_queue": {
+      "path": "research/continuous-recovery-20261018/publication/popup24-selected-queue.json",
+      "sha256": "e3e708048aff5fce88cbb65f96fdc0ed6f08817f21598c71c0db7fff550153ad",
+      "role": "root-accepted immutable popup24 derived-URL queue"
+    },
+    "popup24_original_url_list": {
+      "path": "research/continuous-recovery-20261018/publication/popup24-original-urls.txt",
+      "sha256": "d64d8f6eddba957261d3b59fa8dac6544c05bd3c452d84abf6196967ab64d561",
+      "role": "root-accepted derived exact original URL list"
+    },
+    "status_snapshot": {
+      "path": "research/continuous-recovery-20261018/network/popup24-v30/batch-02/status-snapshot.json",
+      "sha256": "3da94114474bffd52de07e263334c9bf94f67e7f0579a21b37baf3a18b094269",
+      "role": "immutable batch-local snapshot of active status pointers"
+    },
+    "latest_actual_source_acceptance": {
+      "path": "research/continuous-recovery-20261018/publication/root-popup24-batch1-source-acceptance.json",
+      "sha256": "a03e9b007bb7d33520e7581043ca177852322c24ef5f38ef9ca17b6d725d2b0d",
+      "role": "latest accepted image-source receipt selected from recovery status"
+    },
+    "latest_control_gate": {
+      "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+      "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+      "role": "latest accepted tail-zero connectivity control gate"
+    },
+    "template_plan": {
+      "path": "research/continuous-recovery-20261018/network/next-frontier70-v29/batch-07/plan.json",
+      "sha256": "dbafd6d7e941cc1fdcfdb0dc40a0084e86e41780b83805d8348256ed87228803",
+      "role": "accepted V3-compatible plan structure"
+    },
+    "frozen_v3_driver": {
+      "path": "research/continuous-recovery-20261018/network/reusable-image-driver-v3/reusable_image_driver.py",
+      "sha256": "4a19422f0dd8e2f7e1ffdd088836c7ab80450afb91aeedc6cdb94fa4c6bfe955",
+      "role": "frozen reusable-image-v3 driver"
+    }
+  },
+  "source_contract": {
+    "kind": "popup24_actual_relative_popUpOmega_arguments",
+    "primary_source_evidence": {
+      "path": "research/continuous-recovery-20261018/publication/popup24-original-urls.txt",
+      "sha256": "d64d8f6eddba957261d3b59fa8dac6544c05bd3c452d84abf6196967ab64d561",
+      "line_field": "resolved_url_list_line",
+      "literal_field": "original",
+      "meaning": "derived resolved URL list; not archive availability evidence"
+    },
+    "resolution": "urllib.parse.urljoin(source_base_url, literal_popup_argument)",
+    "page_reference_contract": "each reference keeps its own source_page_sha256, source_page, line and literal",
+    "must_validate": [
+      "urljoin(base,literal)==original",
+      "source-page SHA and line",
+      "URL-list line exact original"
+    ],
+    "prohibitions": [
+      "no path guessing",
+      "no thumbnail alias substitution",
+      "no scheme/host normalization",
+      "no archive replay during preparation"
+    ]
+  },
+  "driver_bytes": 103121,
+  "network_requests_during_preparation": 0
+}

@@ -1,0 +1,139 @@
+{
+  "schema": "wow-recovery.popup24-v30-cache-status.v1",
+  "generated_utc": "2026-10-18T09:58:09.383595Z",
+  "network_requests": 0,
+  "raw_exact_cdx_cache_present": false,
+  "raw_exact_cdx_cache_bound": false,
+  "reason": "popup24 has only offline derived URL and source-page evidence; each target requires a fresh exact CDX 200 response before id_ replay.",
+  "fresh_exact_cdx_required": true,
+  "known_positive_fallback_available": false,
+  "fallback_policy": "none; no bound positive rows in popup24 queue",
+  "latestness": "unknown_until_fresh_exact_cdx_http_200_complete_sub_limit_no_resume",
+  "queue_source_contract": {
+    "kind": "popup24_actual_relative_popUpOmega_arguments",
+    "primary_source_evidence": {
+      "path": "research/continuous-recovery-20261018/publication/popup24-original-urls.txt",
+      "sha256": "d64d8f6eddba957261d3b59fa8dac6544c05bd3c452d84abf6196967ab64d561",
+      "line_field": "resolved_url_list_line",
+      "literal_field": "original",
+      "meaning": "derived resolved URL list; not archive availability evidence"
+    },
+    "resolution": "urllib.parse.urljoin(source_base_url, literal_popup_argument)",
+    "page_reference_contract": "each reference keeps its own source_page_sha256, source_page, line and literal",
+    "must_validate": [
+      "urljoin(base,literal)==original",
+      "source-page SHA and line",
+      "URL-list line exact original"
+    ],
+    "prohibitions": [
+      "no path guessing",
+      "no thumbnail alias substitution",
+      "no scheme/host normalization",
+      "no archive replay during preparation"
+    ]
+  },
+  "targets": [
+    {
+      "target_key": "POPUP24-V30-03-01",
+      "queue_rank": 21,
+      "original": "https://www.worldofwarcraft.com/insider/10/images/ss10.jpg",
+      "source_base_url": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+      "popup_literal_argument": "images/ss10.jpg",
+      "cdx_mode": "fresh",
+      "fresh_query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F10%2Fimages%2Fss10.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact",
+      "known_positive_cache_rows": [],
+      "replay_after_fresh_only": true,
+      "latest_unknown_on_transport_failure": true
+    },
+    {
+      "target_key": "POPUP24-V30-03-02",
+      "queue_rank": 22,
+      "original": "https://www.worldofwarcraft.com/insider/10/images/ss11.jpg",
+      "source_base_url": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+      "popup_literal_argument": "images/ss11.jpg",
+      "cdx_mode": "fresh",
+      "fresh_query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F10%2Fimages%2Fss11.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact",
+      "known_positive_cache_rows": [],
+      "replay_after_fresh_only": true,
+      "latest_unknown_on_transport_failure": true
+    },
+    {
+      "target_key": "POPUP24-V30-03-03",
+      "queue_rank": 23,
+      "original": "https://www.worldofwarcraft.com/insider/10/images/ss12.jpg",
+      "source_base_url": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+      "popup_literal_argument": "images/ss12.jpg",
+      "cdx_mode": "fresh",
+      "fresh_query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F10%2Fimages%2Fss12.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact",
+      "known_positive_cache_rows": [],
+      "replay_after_fresh_only": true,
+      "latest_unknown_on_transport_failure": true
+    },
+    {
+      "target_key": "POPUP24-V30-03-04",
+      "queue_rank": 24,
+      "original": "https://www.worldofwarcraft.com/insider/10/images/ss13.jpg",
+      "source_base_url": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+      "popup_literal_argument": "images/ss13.jpg",
+      "cdx_mode": "fresh",
+      "fresh_query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F10%2Fimages%2Fss13.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact",
+      "known_positive_cache_rows": [],
+      "replay_after_fresh_only": true,
+      "latest_unknown_on_transport_failure": true
+    }
+  ],
+  "queue_split": {
+    "full_queue_count": 24,
+    "batch_number": 3,
+    "batch_count": 3,
+    "batch_size": 10
+  },
+  "planned_request_bound": 24,
+  "planned_batch_duration_seconds": 240.0,
+  "planned_total_body_bytes": 16777216,
+  "planned_entity_body_bytes": 8388608,
+  "stop_conditions": [
+    "HTTP 429 or 503: stop batch and cool down at least 120 seconds",
+    "five consecutive transport failures: stop batch and preserve tail",
+    "disk free below 11005853696 bytes before any request/write: stop",
+    "request, body, or duration budget clamp: stop and preserve unprocessed queue rows",
+    "fresh CDX incomplete/resume-key/unknown metadata: do not replay that target"
+  ],
+  "source_bindings": {
+    "popup24_selected_queue": {
+      "path": "research/continuous-recovery-20261018/publication/popup24-selected-queue.json",
+      "sha256": "e3e708048aff5fce88cbb65f96fdc0ed6f08817f21598c71c0db7fff550153ad",
+      "role": "root-accepted immutable popup24 derived-URL queue"
+    },
+    "popup24_original_url_list": {
+      "path": "research/continuous-recovery-20261018/publication/popup24-original-urls.txt",
+      "sha256": "d64d8f6eddba957261d3b59fa8dac6544c05bd3c452d84abf6196967ab64d561",
+      "role": "root-accepted derived exact original URL list"
+    },
+    "status_snapshot": {
+      "path": "research/continuous-recovery-20261018/network/popup24-v30/batch-03/status-snapshot.json",
+      "sha256": "e3ed252d6ba633bd4cd1768de455333a471a1efa32da784395beb2de5c3e9db8",
+      "role": "immutable batch-local snapshot of active status pointers"
+    },
+    "latest_actual_source_acceptance": {
+      "path": "research/continuous-recovery-20261018/publication/root-popup24-batch2-source-acceptance.json",
+      "sha256": "72974ef8d157cf05f16458339b144d18a7d7e1b569ebaf5477420f8ac42327c4",
+      "role": "latest accepted image-source receipt selected from recovery status"
+    },
+    "latest_control_gate": {
+      "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+      "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+      "role": "latest accepted tail-zero connectivity control gate"
+    },
+    "template_plan": {
+      "path": "research/continuous-recovery-20261018/network/next-frontier70-v29/batch-07/plan.json",
+      "sha256": "dbafd6d7e941cc1fdcfdb0dc40a0084e86e41780b83805d8348256ed87228803",
+      "role": "accepted V3-compatible plan structure"
+    },
+    "frozen_v3_driver": {
+      "path": "research/continuous-recovery-20261018/network/reusable-image-driver-v3/reusable_image_driver.py",
+      "sha256": "4a19422f0dd8e2f7e1ffdd088836c7ab80450afb91aeedc6cdb94fa4c6bfe955",
+      "role": "frozen reusable-image-v3 driver"
+    }
+  }
+}

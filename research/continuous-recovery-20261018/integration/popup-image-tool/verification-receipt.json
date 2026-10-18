@@ -1,0 +1,42 @@
+{
+  "schema": "popup-image-tool-verification-v1",
+  "artifact": "historical-popUpOmega-image-viewer",
+  "checked_utc": "2026-10-18T09:29:16.9329812Z",
+  "baseline_tool_sha256": "7c3684fb777e9c21b07fe8c8a1be0418810f448e99dd582ed4c9d9c342764dea",
+  "result_tool_sha256": "b353b0f88da385321a70b35e2bb7f9bccc7cbb371f69c7d36c3cd8d2c3af543c",
+  "test_sha256": "b4dca564d1e69ba093f42e91853c131a9d7f4014971eceed6329dc3396e78199",
+  "implementation_diff_sha256": "c968c3a0bca7cc848b04892b11d000348726243f329be2c146a6f2afbd949c05",
+  "focused_log_sha256": "07d3e5b439fb34ed52054598d05b3369c2a3fd52931c0e0fcd59fb06802038a1",
+  "readme_sha256": "26142fa2420047b1b522183d7e36984b0afbb3124852dd884ccc9030505a1e46",
+  "command": "C:\\Users\\17630\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe -X utf8 -m unittest -v tests.test_popup_image_viewer",
+  "test_start_utc": "2026-10-18T09:28:51.9044665Z",
+  "test_end_utc": "2026-10-18T09:28:53.7556461Z",
+  "exit_code": 0,
+  "tests": {
+    "ran": 2,
+    "passed": 2,
+    "failed": 0,
+    "skipped": 0
+  },
+  "node_vm": {
+    "executed": true,
+    "assertions": "collected relative image, _origins image, unknown/external image local placeholder, existing missing-image placeholder, non-image and javascript fallback, noopener/noreferrer, same-origin PREFIX, late install, scheduled re-entry idempotency, exactly one popup window.open adapter call"
+  },
+  "disk_free_before_bytes": 48109936640,
+  "disk_free_after_bytes": 48109936640,
+  "network_requests": 0,
+  "export_executed": false,
+  "changed_paths": [
+    "tools/export_github_pages.py",
+    "tests/test_popup_image_viewer.py",
+    "research/continuous-recovery-20261018/integration/popup-image-tool/"
+  ],
+  "frozen_paths_touched": false,
+  "limitations": [
+    "The wrapper does not parse or evaluate javascript: values; those non-image values continue through the historical helper contract.",
+    "This task validates the runtime adapter in a Node VM; no browser publication or export was performed.",
+    "The wrapper only recognizes filename extensions listed in the task and the project missing-image.svg placeholder."
+  ],
+  "baseline_reconstruction_sha256": "7c3684fb777e9c21b07fe8c8a1be0418810f448e99dd582ed4c9d9c342764dea",
+  "baseline_reconstruction_verified": true
+}

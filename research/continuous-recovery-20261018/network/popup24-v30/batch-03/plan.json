@@ -1,0 +1,1079 @@
+{
+  "schema": "wow-recovery.reusable-image-plan.v1",
+  "batch_id": "WAYBACK-CONTINUOUS-20261018-POPUP24-V30-03",
+  "prepared_utc": "2026-10-18T09:58:09.383595Z",
+  "mode": "fresh_exact_cdx_then_id_replay_no_fallback",
+  "network_authorized": null,
+  "parent_go_required": true,
+  "candidate_count": 4,
+  "output_dir": "research/continuous-recovery-20261018/network/popup24-v30/batch-03/output",
+  "execution_order": {
+    "batch_number": 3,
+    "batch_count": 3,
+    "predecessor_batch_required": true,
+    "predecessor_tail_rebind_required_before_execute": false,
+    "predecessor_tail_status": "bound_to_latest_actual_source_acceptance",
+    "root_control_acceptance_bound": true,
+    "root_control_acceptance_required_before_execute": false
+  },
+  "selection_scope": {
+    "name": "popup24_v30_batch_03",
+    "reason": "Ten derived exact originals from the accepted popup24 queue; each relative popUpOmega argument is independently resolved against its cited source page.",
+    "queue_path": "research/continuous-recovery-20261018/publication/popup24-selected-queue.json",
+    "queue_sha256": "e3e708048aff5fce88cbb65f96fdc0ed6f08817f21598c71c0db7fff550153ad",
+    "queue_generated_utc": "2026-10-18T09:23:10.320678+00:00",
+    "queue_target_count": 24,
+    "queue_rank_range": [
+      21,
+      24
+    ],
+    "selected_queue_ranks": [
+      21,
+      22,
+      23,
+      24
+    ],
+    "original_url_list_path": "research/continuous-recovery-20261018/publication/popup24-original-urls.txt",
+    "original_url_list_sha256": "d64d8f6eddba957261d3b59fa8dac6544c05bd3c452d84abf6196967ab64d561",
+    "original_url_list_line_range": [
+      21,
+      24
+    ],
+    "network_requests_during_preparation": 0,
+    "derived_url_resolution_verified": true,
+    "split_reason": "Ten-target batches keep each window within the 24-request/240-second cap."
+  },
+  "popup24_source_contract": {
+    "kind": "popup24_actual_relative_popUpOmega_arguments",
+    "primary_source_evidence": {
+      "path": "research/continuous-recovery-20261018/publication/popup24-original-urls.txt",
+      "sha256": "d64d8f6eddba957261d3b59fa8dac6544c05bd3c452d84abf6196967ab64d561",
+      "line_field": "resolved_url_list_line",
+      "literal_field": "original",
+      "meaning": "derived resolved URL list; not archive availability evidence"
+    },
+    "resolution": "urllib.parse.urljoin(source_base_url, literal_popup_argument)",
+    "page_reference_contract": "each reference keeps its own source_page_sha256, source_page, line and literal",
+    "must_validate": [
+      "urljoin(base,literal)==original",
+      "source-page SHA and line",
+      "URL-list line exact original"
+    ],
+    "prohibitions": [
+      "no path guessing",
+      "no thumbnail alias substitution",
+      "no scheme/host normalization",
+      "no archive replay during preparation"
+    ]
+  },
+  "source_contract": {
+    "kind": "popup24_actual_relative_popUpOmega_arguments",
+    "primary_source_evidence": {
+      "path": "research/continuous-recovery-20261018/publication/popup24-original-urls.txt",
+      "sha256": "d64d8f6eddba957261d3b59fa8dac6544c05bd3c452d84abf6196967ab64d561",
+      "line_field": "resolved_url_list_line",
+      "literal_field": "original",
+      "meaning": "derived resolved URL list; not archive availability evidence"
+    },
+    "resolution": "urllib.parse.urljoin(source_base_url, literal_popup_argument)",
+    "page_reference_contract": "each reference keeps its own source_page_sha256, source_page, line and literal",
+    "must_validate": [
+      "urljoin(base,literal)==original",
+      "source-page SHA and line",
+      "URL-list line exact original"
+    ],
+    "prohibitions": [
+      "no path guessing",
+      "no thumbnail alias substitution",
+      "no scheme/host normalization",
+      "no archive replay during preparation"
+    ]
+  },
+  "candidates": [
+    {
+      "target_key": "POPUP24-V30-03-01",
+      "priority": 1,
+      "queue_rank": 21,
+      "kind": "image",
+      "original": "https://www.worldofwarcraft.com/insider/10/images/ss10.jpg",
+      "literal": "https://www.worldofwarcraft.com/insider/10/images/ss10.jpg",
+      "source_base_url": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+      "popup_literal_argument": "images/ss10.jpg",
+      "expected": {
+        "archive_query_required": true,
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "all_gif_frames": false,
+        "reencode": false,
+        "script_execution": false,
+        "query_window": {
+          "from": "20000101000000",
+          "to": "20080512210044"
+        }
+      },
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "source_evidence": {
+        "kind": "derived_resolved_url_list",
+        "path": "research/continuous-recovery-20261018/publication/popup24-original-urls.txt",
+        "line": 21,
+        "literal": "https://www.worldofwarcraft.com/insider/10/images/ss10.jpg",
+        "requested": "https://www.worldofwarcraft.com/insider/10/images/ss10.jpg",
+        "sha256": "d64d8f6eddba957261d3b59fa8dac6544c05bd3c452d84abf6196967ab64d561",
+        "bytes": 1477,
+        "source": "popup24-original-urls.txt",
+        "source_base_url": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+        "relative_popup_argument": "images/ss10.jpg",
+        "resolved_url": "https://www.worldofwarcraft.com/insider/10/images/ss10.jpg",
+        "resolution_method": "urllib.parse.urljoin",
+        "resolution_verified": true,
+        "queue_row_rank": 21,
+        "source_marker": "popup24_derived_url_list"
+      },
+      "all_references": [
+        {
+          "reference_index": 1,
+          "path": ".scratch/pages-resources-20261018-v30/insider/10/silvermoon.xml.html",
+          "line": 967,
+          "sha256": "6448093d033d8b13b78dc1f616106dacb30dd1d34222668e5560cda76d429939",
+          "source_page_sha256": "6448093d033d8b13b78dc1f616106dacb30dd1d34222668e5560cda76d429939",
+          "source_page": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+          "source_base_url": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+          "literal": "images/ss10.jpg",
+          "popup_helper": "popUpOmega",
+          "requested": "https://www.worldofwarcraft.com/insider/10/images/ss10.jpg",
+          "resolved_url": "https://www.worldofwarcraft.com/insider/10/images/ss10.jpg",
+          "resolved_matches_original": true,
+          "source_line_contains_literal": true,
+          "source_marker": "popup24_relative_popUpOmega_reference"
+        }
+      ],
+      "source_page_context": {
+        "context_kind": "popup24_actual_relative_popUpOmega_argument",
+        "queue_path": "research/continuous-recovery-20261018/publication/popup24-selected-queue.json",
+        "queue_sha256": "e3e708048aff5fce88cbb65f96fdc0ed6f08817f21598c71c0db7fff550153ad",
+        "queue_accepted": true,
+        "queue_checked_utc": "2026-10-18T09:23:10.320678+00:00",
+        "queue_rank": 21,
+        "source_base_url": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+        "literal_popup_argument": "images/ss10.jpg",
+        "resolved_original": "https://www.worldofwarcraft.com/insider/10/images/ss10.jpg",
+        "urljoin_resolution_verified": true,
+        "resolved_url_list_path": "research/continuous-recovery-20261018/publication/popup24-original-urls.txt",
+        "resolved_url_list_sha256": "d64d8f6eddba957261d3b59fa8dac6544c05bd3c452d84abf6196967ab64d561",
+        "resolved_url_list_line": 21,
+        "resolved_url_list_literal": "https://www.worldofwarcraft.com/insider/10/images/ss10.jpg",
+        "references": [
+          {
+            "reference_index": 1,
+            "path": ".scratch/pages-resources-20261018-v30/insider/10/silvermoon.xml.html",
+            "line": 967,
+            "sha256": "6448093d033d8b13b78dc1f616106dacb30dd1d34222668e5560cda76d429939",
+            "source_page_sha256": "6448093d033d8b13b78dc1f616106dacb30dd1d34222668e5560cda76d429939",
+            "source_page": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+            "source_base_url": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+            "literal": "images/ss10.jpg",
+            "popup_helper": "popUpOmega",
+            "requested": "https://www.worldofwarcraft.com/insider/10/images/ss10.jpg",
+            "resolved_url": "https://www.worldofwarcraft.com/insider/10/images/ss10.jpg",
+            "resolved_matches_original": true,
+            "source_line_contains_literal": true,
+            "source_marker": "popup24_relative_popUpOmega_reference"
+          }
+        ],
+        "all_references": [
+          {
+            "reference_index": 1,
+            "path": ".scratch/pages-resources-20261018-v30/insider/10/silvermoon.xml.html",
+            "line": 967,
+            "sha256": "6448093d033d8b13b78dc1f616106dacb30dd1d34222668e5560cda76d429939",
+            "source_page_sha256": "6448093d033d8b13b78dc1f616106dacb30dd1d34222668e5560cda76d429939",
+            "source_page": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+            "source_base_url": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+            "literal": "images/ss10.jpg",
+            "popup_helper": "popUpOmega",
+            "requested": "https://www.worldofwarcraft.com/insider/10/images/ss10.jpg",
+            "resolved_url": "https://www.worldofwarcraft.com/insider/10/images/ss10.jpg",
+            "resolved_matches_original": true,
+            "source_line_contains_literal": true,
+            "source_marker": "popup24_relative_popUpOmega_reference"
+          }
+        ],
+        "source_evidence": {
+          "kind": "derived_resolved_url_list",
+          "path": "research/continuous-recovery-20261018/publication/popup24-original-urls.txt",
+          "line": 21,
+          "literal": "https://www.worldofwarcraft.com/insider/10/images/ss10.jpg",
+          "requested": "https://www.worldofwarcraft.com/insider/10/images/ss10.jpg",
+          "sha256": "d64d8f6eddba957261d3b59fa8dac6544c05bd3c452d84abf6196967ab64d561",
+          "bytes": 1477,
+          "source": "popup24-original-urls.txt",
+          "source_base_url": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+          "relative_popup_argument": "images/ss10.jpg",
+          "resolved_url": "https://www.worldofwarcraft.com/insider/10/images/ss10.jpg",
+          "resolution_method": "urllib.parse.urljoin",
+          "resolution_verified": true,
+          "queue_row_rank": 21,
+          "source_marker": "popup24_derived_url_list"
+        },
+        "no_path_guessing": true,
+        "no_thumbnail_alias": true,
+        "popup_helper": [
+          "popUpOmega"
+        ],
+        "previous_batch_tail_receipt": "research/continuous-recovery-20261018/publication/root-popup24-batch2-source-acceptance.json",
+        "previous_batch_tail_receipt_sha256": "72974ef8d157cf05f16458339b144d18a7d7e1b569ebaf5477420f8ac42327c4",
+        "previous_batch_tail_end": 0,
+        "status_snapshot_path": "research/continuous-recovery-20261018/network/popup24-v30/batch-03/status-snapshot.json",
+        "status_snapshot_sha256": "e3ed252d6ba633bd4cd1768de455333a471a1efa32da784395beb2de5c3e9db8"
+      },
+      "selection": {
+        "max_distinct_digest_candidates": 2,
+        "potential_truncation": "do_not_replay",
+        "require_complete_index": true,
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "same_digest_older_captures": "skip",
+        "sort": "timestamp_desc_then_record_index_desc",
+        "unknown_metadata": "incomplete_error"
+      },
+      "known_positive_cache_rows": [],
+      "fallback_label": null,
+      "cdx_mode": "fresh",
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "https://www.worldofwarcraft.com/insider/10/images/ss10.jpg",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F10%2Fimages%2Fss10.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/https://www.worldofwarcraft.com/insider/10/images/ss10.jpg",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "prior_local_evidence": [
+        {
+          "state": "derived_relative_popup_argument; no archive request during preparation",
+          "source": "popup24-selected-queue",
+          "exact_entity_index_complete": false,
+          "positive_row_count": 0
+        }
+      ],
+      "prior_evidence_status": "popup24_derived_relative_argument; fresh_exact_cdx_required; no_bound_positive_fallback"
+    },
+    {
+      "target_key": "POPUP24-V30-03-02",
+      "priority": 2,
+      "queue_rank": 22,
+      "kind": "image",
+      "original": "https://www.worldofwarcraft.com/insider/10/images/ss11.jpg",
+      "literal": "https://www.worldofwarcraft.com/insider/10/images/ss11.jpg",
+      "source_base_url": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+      "popup_literal_argument": "images/ss11.jpg",
+      "expected": {
+        "archive_query_required": true,
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "all_gif_frames": false,
+        "reencode": false,
+        "script_execution": false,
+        "query_window": {
+          "from": "20000101000000",
+          "to": "20080512210044"
+        }
+      },
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "source_evidence": {
+        "kind": "derived_resolved_url_list",
+        "path": "research/continuous-recovery-20261018/publication/popup24-original-urls.txt",
+        "line": 22,
+        "literal": "https://www.worldofwarcraft.com/insider/10/images/ss11.jpg",
+        "requested": "https://www.worldofwarcraft.com/insider/10/images/ss11.jpg",
+        "sha256": "d64d8f6eddba957261d3b59fa8dac6544c05bd3c452d84abf6196967ab64d561",
+        "bytes": 1477,
+        "source": "popup24-original-urls.txt",
+        "source_base_url": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+        "relative_popup_argument": "images/ss11.jpg",
+        "resolved_url": "https://www.worldofwarcraft.com/insider/10/images/ss11.jpg",
+        "resolution_method": "urllib.parse.urljoin",
+        "resolution_verified": true,
+        "queue_row_rank": 22,
+        "source_marker": "popup24_derived_url_list"
+      },
+      "all_references": [
+        {
+          "reference_index": 1,
+          "path": ".scratch/pages-resources-20261018-v30/insider/10/silvermoon.xml.html",
+          "line": 968,
+          "sha256": "6448093d033d8b13b78dc1f616106dacb30dd1d34222668e5560cda76d429939",
+          "source_page_sha256": "6448093d033d8b13b78dc1f616106dacb30dd1d34222668e5560cda76d429939",
+          "source_page": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+          "source_base_url": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+          "literal": "images/ss11.jpg",
+          "popup_helper": "popUpOmega",
+          "requested": "https://www.worldofwarcraft.com/insider/10/images/ss11.jpg",
+          "resolved_url": "https://www.worldofwarcraft.com/insider/10/images/ss11.jpg",
+          "resolved_matches_original": true,
+          "source_line_contains_literal": true,
+          "source_marker": "popup24_relative_popUpOmega_reference"
+        }
+      ],
+      "source_page_context": {
+        "context_kind": "popup24_actual_relative_popUpOmega_argument",
+        "queue_path": "research/continuous-recovery-20261018/publication/popup24-selected-queue.json",
+        "queue_sha256": "e3e708048aff5fce88cbb65f96fdc0ed6f08817f21598c71c0db7fff550153ad",
+        "queue_accepted": true,
+        "queue_checked_utc": "2026-10-18T09:23:10.320678+00:00",
+        "queue_rank": 22,
+        "source_base_url": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+        "literal_popup_argument": "images/ss11.jpg",
+        "resolved_original": "https://www.worldofwarcraft.com/insider/10/images/ss11.jpg",
+        "urljoin_resolution_verified": true,
+        "resolved_url_list_path": "research/continuous-recovery-20261018/publication/popup24-original-urls.txt",
+        "resolved_url_list_sha256": "d64d8f6eddba957261d3b59fa8dac6544c05bd3c452d84abf6196967ab64d561",
+        "resolved_url_list_line": 22,
+        "resolved_url_list_literal": "https://www.worldofwarcraft.com/insider/10/images/ss11.jpg",
+        "references": [
+          {
+            "reference_index": 1,
+            "path": ".scratch/pages-resources-20261018-v30/insider/10/silvermoon.xml.html",
+            "line": 968,
+            "sha256": "6448093d033d8b13b78dc1f616106dacb30dd1d34222668e5560cda76d429939",
+            "source_page_sha256": "6448093d033d8b13b78dc1f616106dacb30dd1d34222668e5560cda76d429939",
+            "source_page": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+            "source_base_url": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+            "literal": "images/ss11.jpg",
+            "popup_helper": "popUpOmega",
+            "requested": "https://www.worldofwarcraft.com/insider/10/images/ss11.jpg",
+            "resolved_url": "https://www.worldofwarcraft.com/insider/10/images/ss11.jpg",
+            "resolved_matches_original": true,
+            "source_line_contains_literal": true,
+            "source_marker": "popup24_relative_popUpOmega_reference"
+          }
+        ],
+        "all_references": [
+          {
+            "reference_index": 1,
+            "path": ".scratch/pages-resources-20261018-v30/insider/10/silvermoon.xml.html",
+            "line": 968,
+            "sha256": "6448093d033d8b13b78dc1f616106dacb30dd1d34222668e5560cda76d429939",
+            "source_page_sha256": "6448093d033d8b13b78dc1f616106dacb30dd1d34222668e5560cda76d429939",
+            "source_page": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+            "source_base_url": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+            "literal": "images/ss11.jpg",
+            "popup_helper": "popUpOmega",
+            "requested": "https://www.worldofwarcraft.com/insider/10/images/ss11.jpg",
+            "resolved_url": "https://www.worldofwarcraft.com/insider/10/images/ss11.jpg",
+            "resolved_matches_original": true,
+            "source_line_contains_literal": true,
+            "source_marker": "popup24_relative_popUpOmega_reference"
+          }
+        ],
+        "source_evidence": {
+          "kind": "derived_resolved_url_list",
+          "path": "research/continuous-recovery-20261018/publication/popup24-original-urls.txt",
+          "line": 22,
+          "literal": "https://www.worldofwarcraft.com/insider/10/images/ss11.jpg",
+          "requested": "https://www.worldofwarcraft.com/insider/10/images/ss11.jpg",
+          "sha256": "d64d8f6eddba957261d3b59fa8dac6544c05bd3c452d84abf6196967ab64d561",
+          "bytes": 1477,
+          "source": "popup24-original-urls.txt",
+          "source_base_url": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+          "relative_popup_argument": "images/ss11.jpg",
+          "resolved_url": "https://www.worldofwarcraft.com/insider/10/images/ss11.jpg",
+          "resolution_method": "urllib.parse.urljoin",
+          "resolution_verified": true,
+          "queue_row_rank": 22,
+          "source_marker": "popup24_derived_url_list"
+        },
+        "no_path_guessing": true,
+        "no_thumbnail_alias": true,
+        "popup_helper": [
+          "popUpOmega"
+        ],
+        "previous_batch_tail_receipt": "research/continuous-recovery-20261018/publication/root-popup24-batch2-source-acceptance.json",
+        "previous_batch_tail_receipt_sha256": "72974ef8d157cf05f16458339b144d18a7d7e1b569ebaf5477420f8ac42327c4",
+        "previous_batch_tail_end": 0,
+        "status_snapshot_path": "research/continuous-recovery-20261018/network/popup24-v30/batch-03/status-snapshot.json",
+        "status_snapshot_sha256": "e3ed252d6ba633bd4cd1768de455333a471a1efa32da784395beb2de5c3e9db8"
+      },
+      "selection": {
+        "max_distinct_digest_candidates": 2,
+        "potential_truncation": "do_not_replay",
+        "require_complete_index": true,
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "same_digest_older_captures": "skip",
+        "sort": "timestamp_desc_then_record_index_desc",
+        "unknown_metadata": "incomplete_error"
+      },
+      "known_positive_cache_rows": [],
+      "fallback_label": null,
+      "cdx_mode": "fresh",
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "https://www.worldofwarcraft.com/insider/10/images/ss11.jpg",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F10%2Fimages%2Fss11.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/https://www.worldofwarcraft.com/insider/10/images/ss11.jpg",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "prior_local_evidence": [
+        {
+          "state": "derived_relative_popup_argument; no archive request during preparation",
+          "source": "popup24-selected-queue",
+          "exact_entity_index_complete": false,
+          "positive_row_count": 0
+        }
+      ],
+      "prior_evidence_status": "popup24_derived_relative_argument; fresh_exact_cdx_required; no_bound_positive_fallback"
+    },
+    {
+      "target_key": "POPUP24-V30-03-03",
+      "priority": 3,
+      "queue_rank": 23,
+      "kind": "image",
+      "original": "https://www.worldofwarcraft.com/insider/10/images/ss12.jpg",
+      "literal": "https://www.worldofwarcraft.com/insider/10/images/ss12.jpg",
+      "source_base_url": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+      "popup_literal_argument": "images/ss12.jpg",
+      "expected": {
+        "archive_query_required": true,
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "all_gif_frames": false,
+        "reencode": false,
+        "script_execution": false,
+        "query_window": {
+          "from": "20000101000000",
+          "to": "20080512210044"
+        }
+      },
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "source_evidence": {
+        "kind": "derived_resolved_url_list",
+        "path": "research/continuous-recovery-20261018/publication/popup24-original-urls.txt",
+        "line": 23,
+        "literal": "https://www.worldofwarcraft.com/insider/10/images/ss12.jpg",
+        "requested": "https://www.worldofwarcraft.com/insider/10/images/ss12.jpg",
+        "sha256": "d64d8f6eddba957261d3b59fa8dac6544c05bd3c452d84abf6196967ab64d561",
+        "bytes": 1477,
+        "source": "popup24-original-urls.txt",
+        "source_base_url": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+        "relative_popup_argument": "images/ss12.jpg",
+        "resolved_url": "https://www.worldofwarcraft.com/insider/10/images/ss12.jpg",
+        "resolution_method": "urllib.parse.urljoin",
+        "resolution_verified": true,
+        "queue_row_rank": 23,
+        "source_marker": "popup24_derived_url_list"
+      },
+      "all_references": [
+        {
+          "reference_index": 1,
+          "path": ".scratch/pages-resources-20261018-v30/insider/10/silvermoon.xml.html",
+          "line": 969,
+          "sha256": "6448093d033d8b13b78dc1f616106dacb30dd1d34222668e5560cda76d429939",
+          "source_page_sha256": "6448093d033d8b13b78dc1f616106dacb30dd1d34222668e5560cda76d429939",
+          "source_page": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+          "source_base_url": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+          "literal": "images/ss12.jpg",
+          "popup_helper": "popUpOmega",
+          "requested": "https://www.worldofwarcraft.com/insider/10/images/ss12.jpg",
+          "resolved_url": "https://www.worldofwarcraft.com/insider/10/images/ss12.jpg",
+          "resolved_matches_original": true,
+          "source_line_contains_literal": true,
+          "source_marker": "popup24_relative_popUpOmega_reference"
+        }
+      ],
+      "source_page_context": {
+        "context_kind": "popup24_actual_relative_popUpOmega_argument",
+        "queue_path": "research/continuous-recovery-20261018/publication/popup24-selected-queue.json",
+        "queue_sha256": "e3e708048aff5fce88cbb65f96fdc0ed6f08817f21598c71c0db7fff550153ad",
+        "queue_accepted": true,
+        "queue_checked_utc": "2026-10-18T09:23:10.320678+00:00",
+        "queue_rank": 23,
+        "source_base_url": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+        "literal_popup_argument": "images/ss12.jpg",
+        "resolved_original": "https://www.worldofwarcraft.com/insider/10/images/ss12.jpg",
+        "urljoin_resolution_verified": true,
+        "resolved_url_list_path": "research/continuous-recovery-20261018/publication/popup24-original-urls.txt",
+        "resolved_url_list_sha256": "d64d8f6eddba957261d3b59fa8dac6544c05bd3c452d84abf6196967ab64d561",
+        "resolved_url_list_line": 23,
+        "resolved_url_list_literal": "https://www.worldofwarcraft.com/insider/10/images/ss12.jpg",
+        "references": [
+          {
+            "reference_index": 1,
+            "path": ".scratch/pages-resources-20261018-v30/insider/10/silvermoon.xml.html",
+            "line": 969,
+            "sha256": "6448093d033d8b13b78dc1f616106dacb30dd1d34222668e5560cda76d429939",
+            "source_page_sha256": "6448093d033d8b13b78dc1f616106dacb30dd1d34222668e5560cda76d429939",
+            "source_page": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+            "source_base_url": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+            "literal": "images/ss12.jpg",
+            "popup_helper": "popUpOmega",
+            "requested": "https://www.worldofwarcraft.com/insider/10/images/ss12.jpg",
+            "resolved_url": "https://www.worldofwarcraft.com/insider/10/images/ss12.jpg",
+            "resolved_matches_original": true,
+            "source_line_contains_literal": true,
+            "source_marker": "popup24_relative_popUpOmega_reference"
+          }
+        ],
+        "all_references": [
+          {
+            "reference_index": 1,
+            "path": ".scratch/pages-resources-20261018-v30/insider/10/silvermoon.xml.html",
+            "line": 969,
+            "sha256": "6448093d033d8b13b78dc1f616106dacb30dd1d34222668e5560cda76d429939",
+            "source_page_sha256": "6448093d033d8b13b78dc1f616106dacb30dd1d34222668e5560cda76d429939",
+            "source_page": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+            "source_base_url": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+            "literal": "images/ss12.jpg",
+            "popup_helper": "popUpOmega",
+            "requested": "https://www.worldofwarcraft.com/insider/10/images/ss12.jpg",
+            "resolved_url": "https://www.worldofwarcraft.com/insider/10/images/ss12.jpg",
+            "resolved_matches_original": true,
+            "source_line_contains_literal": true,
+            "source_marker": "popup24_relative_popUpOmega_reference"
+          }
+        ],
+        "source_evidence": {
+          "kind": "derived_resolved_url_list",
+          "path": "research/continuous-recovery-20261018/publication/popup24-original-urls.txt",
+          "line": 23,
+          "literal": "https://www.worldofwarcraft.com/insider/10/images/ss12.jpg",
+          "requested": "https://www.worldofwarcraft.com/insider/10/images/ss12.jpg",
+          "sha256": "d64d8f6eddba957261d3b59fa8dac6544c05bd3c452d84abf6196967ab64d561",
+          "bytes": 1477,
+          "source": "popup24-original-urls.txt",
+          "source_base_url": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+          "relative_popup_argument": "images/ss12.jpg",
+          "resolved_url": "https://www.worldofwarcraft.com/insider/10/images/ss12.jpg",
+          "resolution_method": "urllib.parse.urljoin",
+          "resolution_verified": true,
+          "queue_row_rank": 23,
+          "source_marker": "popup24_derived_url_list"
+        },
+        "no_path_guessing": true,
+        "no_thumbnail_alias": true,
+        "popup_helper": [
+          "popUpOmega"
+        ],
+        "previous_batch_tail_receipt": "research/continuous-recovery-20261018/publication/root-popup24-batch2-source-acceptance.json",
+        "previous_batch_tail_receipt_sha256": "72974ef8d157cf05f16458339b144d18a7d7e1b569ebaf5477420f8ac42327c4",
+        "previous_batch_tail_end": 0,
+        "status_snapshot_path": "research/continuous-recovery-20261018/network/popup24-v30/batch-03/status-snapshot.json",
+        "status_snapshot_sha256": "e3ed252d6ba633bd4cd1768de455333a471a1efa32da784395beb2de5c3e9db8"
+      },
+      "selection": {
+        "max_distinct_digest_candidates": 2,
+        "potential_truncation": "do_not_replay",
+        "require_complete_index": true,
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "same_digest_older_captures": "skip",
+        "sort": "timestamp_desc_then_record_index_desc",
+        "unknown_metadata": "incomplete_error"
+      },
+      "known_positive_cache_rows": [],
+      "fallback_label": null,
+      "cdx_mode": "fresh",
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "https://www.worldofwarcraft.com/insider/10/images/ss12.jpg",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F10%2Fimages%2Fss12.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/https://www.worldofwarcraft.com/insider/10/images/ss12.jpg",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "prior_local_evidence": [
+        {
+          "state": "derived_relative_popup_argument; no archive request during preparation",
+          "source": "popup24-selected-queue",
+          "exact_entity_index_complete": false,
+          "positive_row_count": 0
+        }
+      ],
+      "prior_evidence_status": "popup24_derived_relative_argument; fresh_exact_cdx_required; no_bound_positive_fallback"
+    },
+    {
+      "target_key": "POPUP24-V30-03-04",
+      "priority": 4,
+      "queue_rank": 24,
+      "kind": "image",
+      "original": "https://www.worldofwarcraft.com/insider/10/images/ss13.jpg",
+      "literal": "https://www.worldofwarcraft.com/insider/10/images/ss13.jpg",
+      "source_base_url": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+      "popup_literal_argument": "images/ss13.jpg",
+      "expected": {
+        "archive_query_required": true,
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "all_gif_frames": false,
+        "reencode": false,
+        "script_execution": false,
+        "query_window": {
+          "from": "20000101000000",
+          "to": "20080512210044"
+        }
+      },
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "source_evidence": {
+        "kind": "derived_resolved_url_list",
+        "path": "research/continuous-recovery-20261018/publication/popup24-original-urls.txt",
+        "line": 24,
+        "literal": "https://www.worldofwarcraft.com/insider/10/images/ss13.jpg",
+        "requested": "https://www.worldofwarcraft.com/insider/10/images/ss13.jpg",
+        "sha256": "d64d8f6eddba957261d3b59fa8dac6544c05bd3c452d84abf6196967ab64d561",
+        "bytes": 1477,
+        "source": "popup24-original-urls.txt",
+        "source_base_url": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+        "relative_popup_argument": "images/ss13.jpg",
+        "resolved_url": "https://www.worldofwarcraft.com/insider/10/images/ss13.jpg",
+        "resolution_method": "urllib.parse.urljoin",
+        "resolution_verified": true,
+        "queue_row_rank": 24,
+        "source_marker": "popup24_derived_url_list"
+      },
+      "all_references": [
+        {
+          "reference_index": 1,
+          "path": ".scratch/pages-resources-20261018-v30/insider/10/silvermoon.xml.html",
+          "line": 1009,
+          "sha256": "6448093d033d8b13b78dc1f616106dacb30dd1d34222668e5560cda76d429939",
+          "source_page_sha256": "6448093d033d8b13b78dc1f616106dacb30dd1d34222668e5560cda76d429939",
+          "source_page": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+          "source_base_url": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+          "literal": "images/ss13.jpg",
+          "popup_helper": "popUpOmega",
+          "requested": "https://www.worldofwarcraft.com/insider/10/images/ss13.jpg",
+          "resolved_url": "https://www.worldofwarcraft.com/insider/10/images/ss13.jpg",
+          "resolved_matches_original": true,
+          "source_line_contains_literal": true,
+          "source_marker": "popup24_relative_popUpOmega_reference"
+        }
+      ],
+      "source_page_context": {
+        "context_kind": "popup24_actual_relative_popUpOmega_argument",
+        "queue_path": "research/continuous-recovery-20261018/publication/popup24-selected-queue.json",
+        "queue_sha256": "e3e708048aff5fce88cbb65f96fdc0ed6f08817f21598c71c0db7fff550153ad",
+        "queue_accepted": true,
+        "queue_checked_utc": "2026-10-18T09:23:10.320678+00:00",
+        "queue_rank": 24,
+        "source_base_url": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+        "literal_popup_argument": "images/ss13.jpg",
+        "resolved_original": "https://www.worldofwarcraft.com/insider/10/images/ss13.jpg",
+        "urljoin_resolution_verified": true,
+        "resolved_url_list_path": "research/continuous-recovery-20261018/publication/popup24-original-urls.txt",
+        "resolved_url_list_sha256": "d64d8f6eddba957261d3b59fa8dac6544c05bd3c452d84abf6196967ab64d561",
+        "resolved_url_list_line": 24,
+        "resolved_url_list_literal": "https://www.worldofwarcraft.com/insider/10/images/ss13.jpg",
+        "references": [
+          {
+            "reference_index": 1,
+            "path": ".scratch/pages-resources-20261018-v30/insider/10/silvermoon.xml.html",
+            "line": 1009,
+            "sha256": "6448093d033d8b13b78dc1f616106dacb30dd1d34222668e5560cda76d429939",
+            "source_page_sha256": "6448093d033d8b13b78dc1f616106dacb30dd1d34222668e5560cda76d429939",
+            "source_page": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+            "source_base_url": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+            "literal": "images/ss13.jpg",
+            "popup_helper": "popUpOmega",
+            "requested": "https://www.worldofwarcraft.com/insider/10/images/ss13.jpg",
+            "resolved_url": "https://www.worldofwarcraft.com/insider/10/images/ss13.jpg",
+            "resolved_matches_original": true,
+            "source_line_contains_literal": true,
+            "source_marker": "popup24_relative_popUpOmega_reference"
+          }
+        ],
+        "all_references": [
+          {
+            "reference_index": 1,
+            "path": ".scratch/pages-resources-20261018-v30/insider/10/silvermoon.xml.html",
+            "line": 1009,
+            "sha256": "6448093d033d8b13b78dc1f616106dacb30dd1d34222668e5560cda76d429939",
+            "source_page_sha256": "6448093d033d8b13b78dc1f616106dacb30dd1d34222668e5560cda76d429939",
+            "source_page": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+            "source_base_url": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+            "literal": "images/ss13.jpg",
+            "popup_helper": "popUpOmega",
+            "requested": "https://www.worldofwarcraft.com/insider/10/images/ss13.jpg",
+            "resolved_url": "https://www.worldofwarcraft.com/insider/10/images/ss13.jpg",
+            "resolved_matches_original": true,
+            "source_line_contains_literal": true,
+            "source_marker": "popup24_relative_popUpOmega_reference"
+          }
+        ],
+        "source_evidence": {
+          "kind": "derived_resolved_url_list",
+          "path": "research/continuous-recovery-20261018/publication/popup24-original-urls.txt",
+          "line": 24,
+          "literal": "https://www.worldofwarcraft.com/insider/10/images/ss13.jpg",
+          "requested": "https://www.worldofwarcraft.com/insider/10/images/ss13.jpg",
+          "sha256": "d64d8f6eddba957261d3b59fa8dac6544c05bd3c452d84abf6196967ab64d561",
+          "bytes": 1477,
+          "source": "popup24-original-urls.txt",
+          "source_base_url": "https://www.worldofwarcraft.com/insider/10/silvermoon.xml",
+          "relative_popup_argument": "images/ss13.jpg",
+          "resolved_url": "https://www.worldofwarcraft.com/insider/10/images/ss13.jpg",
+          "resolution_method": "urllib.parse.urljoin",
+          "resolution_verified": true,
+          "queue_row_rank": 24,
+          "source_marker": "popup24_derived_url_list"
+        },
+        "no_path_guessing": true,
+        "no_thumbnail_alias": true,
+        "popup_helper": [
+          "popUpOmega"
+        ],
+        "previous_batch_tail_receipt": "research/continuous-recovery-20261018/publication/root-popup24-batch2-source-acceptance.json",
+        "previous_batch_tail_receipt_sha256": "72974ef8d157cf05f16458339b144d18a7d7e1b569ebaf5477420f8ac42327c4",
+        "previous_batch_tail_end": 0,
+        "status_snapshot_path": "research/continuous-recovery-20261018/network/popup24-v30/batch-03/status-snapshot.json",
+        "status_snapshot_sha256": "e3ed252d6ba633bd4cd1768de455333a471a1efa32da784395beb2de5c3e9db8"
+      },
+      "selection": {
+        "max_distinct_digest_candidates": 2,
+        "potential_truncation": "do_not_replay",
+        "require_complete_index": true,
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "same_digest_older_captures": "skip",
+        "sort": "timestamp_desc_then_record_index_desc",
+        "unknown_metadata": "incomplete_error"
+      },
+      "known_positive_cache_rows": [],
+      "fallback_label": null,
+      "cdx_mode": "fresh",
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "https://www.worldofwarcraft.com/insider/10/images/ss13.jpg",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fwww.worldofwarcraft.com%2Finsider%2F10%2Fimages%2Fss13.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/https://www.worldofwarcraft.com/insider/10/images/ss13.jpg",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "prior_local_evidence": [
+        {
+          "state": "derived_relative_popup_argument; no archive request during preparation",
+          "source": "popup24-selected-queue",
+          "exact_entity_index_complete": false,
+          "positive_row_count": 0
+        }
+      ],
+      "prior_evidence_status": "popup24_derived_relative_argument; fresh_exact_cdx_required; no_bound_positive_fallback"
+    }
+  ],
+  "policy": {
+    "from": "20000101000000",
+    "to": "20080512210044",
+    "limit": 500,
+    "showResumeKey": true,
+    "collapse": false,
+    "matchType": "exact",
+    "max_originals": 20,
+    "max_attempts": 24,
+    "window_seconds": 240.0,
+    "max_total_body_bytes": 16777216,
+    "max_entity_body_bytes": 8388608,
+    "min_dispatch_seconds": 5.25,
+    "min_request_start_seconds": 5.0,
+    "disk_floor_bytes": 11005853696,
+    "direct_first": true,
+    "proxy": "http://127.0.0.1:7890",
+    "tls_verification": true,
+    "automatic_redirects": 0,
+    "stop_http_codes": [
+      429,
+      503
+    ],
+    "cooldown_seconds": 120,
+    "user_agent": "wow-recovery-reusable-image-v3/20261018-popup24-v30",
+    "prior_failure_tail": 0,
+    "transport_policy": "batch_after_direct_failure"
+  },
+  "previous_batch": {
+    "name": "latest_actual_source_acceptance",
+    "prior_failure_tail": 0,
+    "acceptance_receipt_path": "research/continuous-recovery-20261018/publication/root-popup24-batch2-source-acceptance.json",
+    "acceptance_receipt_sha256": "72974ef8d157cf05f16458339b144d18a7d7e1b569ebaf5477420f8ac42327c4",
+    "tail_receipt_path": "research/continuous-recovery-20261018/publication/root-popup24-batch2-source-acceptance.json",
+    "tail_receipt_sha256": "72974ef8d157cf05f16458339b144d18a7d7e1b569ebaf5477420f8ac42327c4",
+    "latest_successful_tail_end": 0,
+    "historical_tail_is_preserved": true,
+    "ordinary_retrieval_requires_new_control_gate": false,
+    "control_gate_receipt_path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+    "control_gate_receipt_sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+    "control_gate_required": true,
+    "control_gate_rebind_required_before_execute": false,
+    "root_control_acceptance_bound": true,
+    "root_control_acceptance_required_before_execute": false,
+    "parent_go_required": true
+  },
+  "input_bindings": {
+    "popup24_selected_queue": {
+      "path": "research/continuous-recovery-20261018/publication/popup24-selected-queue.json",
+      "sha256": "e3e708048aff5fce88cbb65f96fdc0ed6f08817f21598c71c0db7fff550153ad",
+      "role": "root-accepted immutable popup24 derived-URL queue"
+    },
+    "popup24_original_url_list": {
+      "path": "research/continuous-recovery-20261018/publication/popup24-original-urls.txt",
+      "sha256": "d64d8f6eddba957261d3b59fa8dac6544c05bd3c452d84abf6196967ab64d561",
+      "role": "root-accepted derived exact original URL list"
+    },
+    "status_snapshot": {
+      "path": "research/continuous-recovery-20261018/network/popup24-v30/batch-03/status-snapshot.json",
+      "sha256": "e3ed252d6ba633bd4cd1768de455333a471a1efa32da784395beb2de5c3e9db8",
+      "role": "immutable batch-local snapshot of active status pointers"
+    },
+    "latest_actual_source_acceptance": {
+      "path": "research/continuous-recovery-20261018/publication/root-popup24-batch2-source-acceptance.json",
+      "sha256": "72974ef8d157cf05f16458339b144d18a7d7e1b569ebaf5477420f8ac42327c4",
+      "role": "latest accepted image-source receipt selected from recovery status"
+    },
+    "latest_control_gate": {
+      "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+      "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+      "role": "latest accepted tail-zero connectivity control gate"
+    },
+    "template_plan": {
+      "path": "research/continuous-recovery-20261018/network/next-frontier70-v29/batch-07/plan.json",
+      "sha256": "dbafd6d7e941cc1fdcfdb0dc40a0084e86e41780b83805d8348256ed87228803",
+      "role": "accepted V3-compatible plan structure"
+    },
+    "frozen_v3_driver": {
+      "path": "research/continuous-recovery-20261018/network/reusable-image-driver-v3/reusable_image_driver.py",
+      "sha256": "4a19422f0dd8e2f7e1ffdd088836c7ab80450afb91aeedc6cdb94fa4c6bfe955",
+      "role": "frozen reusable-image-v3 driver"
+    }
+  },
+  "source_bindings": {
+    "popup24_selected_queue": {
+      "path": "research/continuous-recovery-20261018/publication/popup24-selected-queue.json",
+      "sha256": "e3e708048aff5fce88cbb65f96fdc0ed6f08817f21598c71c0db7fff550153ad",
+      "role": "root-accepted immutable popup24 derived-URL queue"
+    },
+    "popup24_original_url_list": {
+      "path": "research/continuous-recovery-20261018/publication/popup24-original-urls.txt",
+      "sha256": "d64d8f6eddba957261d3b59fa8dac6544c05bd3c452d84abf6196967ab64d561",
+      "role": "root-accepted derived exact original URL list"
+    },
+    "status_snapshot": {
+      "path": "research/continuous-recovery-20261018/network/popup24-v30/batch-03/status-snapshot.json",
+      "sha256": "e3ed252d6ba633bd4cd1768de455333a471a1efa32da784395beb2de5c3e9db8",
+      "role": "immutable batch-local snapshot of active status pointers"
+    },
+    "latest_actual_source_acceptance": {
+      "path": "research/continuous-recovery-20261018/publication/root-popup24-batch2-source-acceptance.json",
+      "sha256": "72974ef8d157cf05f16458339b144d18a7d7e1b569ebaf5477420f8ac42327c4",
+      "role": "latest accepted image-source receipt selected from recovery status"
+    },
+    "latest_control_gate": {
+      "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+      "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+      "role": "latest accepted tail-zero connectivity control gate"
+    },
+    "template_plan": {
+      "path": "research/continuous-recovery-20261018/network/next-frontier70-v29/batch-07/plan.json",
+      "sha256": "dbafd6d7e941cc1fdcfdb0dc40a0084e86e41780b83805d8348256ed87228803",
+      "role": "accepted V3-compatible plan structure"
+    },
+    "frozen_v3_driver": {
+      "path": "research/continuous-recovery-20261018/network/reusable-image-driver-v3/reusable_image_driver.py",
+      "sha256": "4a19422f0dd8e2f7e1ffdd088836c7ab80450afb91aeedc6cdb94fa4c6bfe955",
+      "role": "frozen reusable-image-v3 driver"
+    }
+  },
+  "excluded_rows": {
+    "selected_queue_ranks": [
+      21,
+      22,
+      23,
+      24
+    ],
+    "other_queue_batch_ranks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "known_positive_fallback_rows": []
+  },
+  "identity_variant_policy": {
+    "retain_in_cdx_report": true,
+    "replay_identity_variants": false,
+    "strict_identity": "exact_original_default_port_only",
+    "scheme_or_host_variants_are_not_equivalent": true
+  },
+  "execution_boundary": {
+    "no_network_authorized_by_this_artifact": true,
+    "requires_parent_GO": true,
+    "requires_new_root_control_acceptance": false,
+    "root_control_acceptance_bound": true,
+    "popup24_special_gate_required": true,
+    "preparation_network_requests": 0
+  }
+}

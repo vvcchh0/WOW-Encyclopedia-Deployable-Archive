@@ -1,0 +1,16 @@
+{
+  "accepted_for_execution": false,
+  "network_requests": 0,
+  "driver_sha256": "cd4cfdd3b92ba3b3a1c369b443ca90823d0307a05368406600aa62669700185d",
+  "plan_sha256": "3fd61ede7d270ea96280481f3df68af22c35d3588c8836171fffb8bca9c485ff",
+  "findings": [
+    "Dispatch passed full transport timeouts without clamping remaining window or absolute deadline.",
+    "Entity cap ignored remaining total body budget; total limit was checked only after a possible overshoot.",
+    "The absolute deadline was not rechecked after cadence sleep.",
+    "Partial curl failures with an HTTP source status could reset the transfer-failure tail.",
+    "TimeoutExpired could leave an unfinished attempt without a final report.",
+    "Latest source, resume gate, cooldown and exact queue membership needed dispatch-time validation.",
+    "Some fixtures tested arithmetic rather than the actual dispatch decision helpers."
+  ],
+  "next_step": "A separate v2 implementation and meaningful mocked dispatch fixtures; preserve v1 and re-review before any request."
+}

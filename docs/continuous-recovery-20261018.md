@@ -85,3 +85,28 @@ All 8,794 declared v30 objects were independently rehashed and the fixed static 
 A source-led follow-up found the archive banner inserted into a document.write string before the real body tag. An HTMLParser scan of all 1,049 HTML outputs identified five affected pages: collectors, lookingforgroup, outlandmap, story and scourgeinvasion. The exporter correction will locate actual head/body tags; a new version will retain the original scripts and put the banner in the page body. These are browser compatibility repairs, separate from downloaded image recovery.
 
 News49 is complete: 49 original images / 480,639 bytes. The next static-content batch recovered eight arena thumbnails (70,901 bytes); two other exact indexes are complete and empty. Those index outcomes do not add payload404 results to the native-player-gallery ledger. The existing 47 Karazhan transport-unknown targets have been isolated for a later bounded replay check; all 79 already observed archive404 targets are excluded.
+
+### 09:41 UTC — 指南配图、进度图与图片放大
+
+七十项静态内容清单已检查完毕，取得五十四个原始图片资源，包括银月城设计稿、玛瑟里顿战斗示意图，以及燃烧远征副本进度图的底图和八层路径图。每批由主代理核对来源、完整解码与实际图片。它们属于文章和指南配图，仍与玩家动态图库的原编号图片分开统计。本轮累计接受 256 项图片，线上已发布 120 项，余下 136 项等待下一版整合。
+
+旧 `popUpOmega` 在现代浏览器中会创建后立即关闭图片窗口。独立浏览夹具现已通过实际故事页点击：750×600 原图稳定打开，未取得的大图则打开本地缺图标记。第一次夹具检查误用了不存在的竞技场文章路径，失败记录保留；改用原页面引用的 `insider/11/arena.xml` 后八项检查通过。新工具只改变图片窗口适配，尚未代表整站导出验收。
+
+v31 已准备的输入保持冻结，但未进行导出。后续合并到 v32，统一验证历史提示框、真实 body 中的归档横幅、图片窗口及新增资源；线上仍为 v29。进度图还有一处生成后的样式引号问题，正在沿单页处理步骤定位。
+
+09:46 UTC 补充：单页十二阶段复现与 v29/v30 的文件逐字节一致；进度图属性中的引号始终正确保存为 `&quot;`。此前把 DOM 属性解码视图当作原文件字符，误判为样式序列化问题。此次没有改变生成器，后续直接验证新找回图片的实际背景与路径交互。[阶段证据](../research/continuous-recovery-20261018/integration/chart-style-diagnostic/stage-evidence.json)
+
+### 10:02 UTC — 放大图来源检查完成
+
+沿原文 `popUpOmega` 参数逐项解析的二十四个放大图链接，取得二十一个原图、2,386,986 字节：八张竞技场场景图、十三张银月城概念/建模/游戏图片。主代理逐张查看了原尺寸文件。另三个竞技场地址 `ss9.jpg`—`ss11.jpg` 在基准前为完整空索引；没有把这个结果计为原玩家图库的实际图片 404。三个批次的全部传输结束尾数为零，仍由现有代理取得，Firecrawl 请求数保持零。
+
+当前累计接受 277 个新增图片资源；v32 固定纳入此前的 256 项，放大图二十一项留待后续版本。v32 准备还包含三处透明点击层兼容修复：`#mapPixel` 与两个锁定覆盖层复用既有透明像素，原 `bcattunement/images/pixel.gif` 仍属未取得，不能把兼容替换算作原资源恢复。两个旧浏览器专用背景声明保留原状。[工具检查](../research/continuous-recovery-20261018/publication/root-attunement-mask-tool-acceptance.json)
+
+
+### 10:46 UTC — v32 本地验收完成；Karazhan 第一组复核
+
+v32 的 8,897 个声明文件全部重新核对，实际目录 8,898 个文件。相对线上 v29 新增 136 个原始图片资源、1,891,055 字节，包括更多旧新闻配图、银月城和竞技场文章配图、玛瑟里顿插画、专业材料及副本进度图。三个生产浏览检查共通过 602 项检查，无外部请求或脚本错误；主代理查看九张页面截图。进度图连线、悬停与点击锁定、十组装备页签、七种专业与二十一项配方、稳定图片窗口均已实际操作。
+
+全部 103 个本次新导入的原图经本地 HTTP 核对字节；其中 92 个普通资源在原元素中显示，玛瑟里顿 design.jpg 只出现在没有对应元素的 div.design 样式声明中，单独记为已保存而未显示。另九个路线图背景及一个红色插槽背景在专门场景中检查。早先浏览检查中的折叠新闻、动态定位器与未使用样式假设保留失败回执，修正检查方式后重测，未据此改写源页。固定静态范围现为 930 个缺图地址、1,573 处引用，新闻 387 处。原动态玩家图库继续单列，未把文章插画当作图库原图。
+
+Karazhan 原有四十七项连接未决地址已复核前十二项，全部取得实际 Wayback 404；首次直连无响应后，现有代理正常取得响应。累计为九十一项已观察 archive404、三十五项仍待复核。此 404 只描述本次回放响应，不推断原站历史状态或所有存档点均不存在。尚无原图库新图片。线上仍为 v29，v32 正在进入发布；二十一张文章放大原图已保存，留待下一版接入。

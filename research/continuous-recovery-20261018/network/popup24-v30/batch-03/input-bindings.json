@@ -1,0 +1,96 @@
+{
+  "schema": "wow-recovery.reusable-image-input-bindings.v1",
+  "batch_id": "WAYBACK-CONTINUOUS-20261018-POPUP24-V30-03",
+  "plan_path": "research/continuous-recovery-20261018/network/popup24-v30/batch-03/plan.json",
+  "plan_sha256": "8cb74cc759325daa0122c86ed520cda0242c67352a1836e83b30dce160449fea",
+  "driver_path": "research/continuous-recovery-20261018/network/reusable-image-driver-v3/reusable_image_driver.py",
+  "driver_sha256": "4a19422f0dd8e2f7e1ffdd088836c7ab80450afb91aeedc6cdb94fa4c6bfe955",
+  "fixture_mode": "accepted frozen V3 offline contract; popup24 source gate is separate",
+  "inherited_tail": {
+    "latest_actual_source_tail": 0,
+    "prior_failure_tail": 0,
+    "tail_receipt": "research/continuous-recovery-20261018/publication/root-popup24-batch2-source-acceptance.json",
+    "tail_receipt_sha256": "72974ef8d157cf05f16458339b144d18a7d7e1b569ebaf5477420f8ac42327c4",
+    "status_snapshot": "research/continuous-recovery-20261018/network/popup24-v30/batch-03/status-snapshot.json",
+    "status_snapshot_sha256": "e3ed252d6ba633bd4cd1768de455333a471a1efa32da784395beb2de5c3e9db8",
+    "active_status_sha256_audit": "f2dacc8beccd0eb552280655a19781c8420cd555e3418288988a530a4776eb83",
+    "control_gate_receipt": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+    "control_gate_sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b"
+  },
+  "predecessor_tail_rebind_required_before_execute": false,
+  "predecessor_tail_status": "bound_to_latest_actual_source_acceptance",
+  "selected_queue_ranks": [
+    21,
+    22,
+    23,
+    24
+  ],
+  "selected_originals": [
+    "https://www.worldofwarcraft.com/insider/10/images/ss10.jpg",
+    "https://www.worldofwarcraft.com/insider/10/images/ss11.jpg",
+    "https://www.worldofwarcraft.com/insider/10/images/ss12.jpg",
+    "https://www.worldofwarcraft.com/insider/10/images/ss13.jpg"
+  ],
+  "source_bindings": {
+    "popup24_selected_queue": {
+      "path": "research/continuous-recovery-20261018/publication/popup24-selected-queue.json",
+      "sha256": "e3e708048aff5fce88cbb65f96fdc0ed6f08817f21598c71c0db7fff550153ad",
+      "role": "root-accepted immutable popup24 derived-URL queue"
+    },
+    "popup24_original_url_list": {
+      "path": "research/continuous-recovery-20261018/publication/popup24-original-urls.txt",
+      "sha256": "d64d8f6eddba957261d3b59fa8dac6544c05bd3c452d84abf6196967ab64d561",
+      "role": "root-accepted derived exact original URL list"
+    },
+    "status_snapshot": {
+      "path": "research/continuous-recovery-20261018/network/popup24-v30/batch-03/status-snapshot.json",
+      "sha256": "e3ed252d6ba633bd4cd1768de455333a471a1efa32da784395beb2de5c3e9db8",
+      "role": "immutable batch-local snapshot of active status pointers"
+    },
+    "latest_actual_source_acceptance": {
+      "path": "research/continuous-recovery-20261018/publication/root-popup24-batch2-source-acceptance.json",
+      "sha256": "72974ef8d157cf05f16458339b144d18a7d7e1b569ebaf5477420f8ac42327c4",
+      "role": "latest accepted image-source receipt selected from recovery status"
+    },
+    "latest_control_gate": {
+      "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+      "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+      "role": "latest accepted tail-zero connectivity control gate"
+    },
+    "template_plan": {
+      "path": "research/continuous-recovery-20261018/network/next-frontier70-v29/batch-07/plan.json",
+      "sha256": "dbafd6d7e941cc1fdcfdb0dc40a0084e86e41780b83805d8348256ed87228803",
+      "role": "accepted V3-compatible plan structure"
+    },
+    "frozen_v3_driver": {
+      "path": "research/continuous-recovery-20261018/network/reusable-image-driver-v3/reusable_image_driver.py",
+      "sha256": "4a19422f0dd8e2f7e1ffdd088836c7ab80450afb91aeedc6cdb94fa4c6bfe955",
+      "role": "frozen reusable-image-v3 driver"
+    }
+  },
+  "source_contract": {
+    "kind": "popup24_actual_relative_popUpOmega_arguments",
+    "primary_source_evidence": {
+      "path": "research/continuous-recovery-20261018/publication/popup24-original-urls.txt",
+      "sha256": "d64d8f6eddba957261d3b59fa8dac6544c05bd3c452d84abf6196967ab64d561",
+      "line_field": "resolved_url_list_line",
+      "literal_field": "original",
+      "meaning": "derived resolved URL list; not archive availability evidence"
+    },
+    "resolution": "urllib.parse.urljoin(source_base_url, literal_popup_argument)",
+    "page_reference_contract": "each reference keeps its own source_page_sha256, source_page, line and literal",
+    "must_validate": [
+      "urljoin(base,literal)==original",
+      "source-page SHA and line",
+      "URL-list line exact original"
+    ],
+    "prohibitions": [
+      "no path guessing",
+      "no thumbnail alias substitution",
+      "no scheme/host normalization",
+      "no archive replay during preparation"
+    ]
+  },
+  "driver_bytes": 103121,
+  "network_requests_during_preparation": 0
+}

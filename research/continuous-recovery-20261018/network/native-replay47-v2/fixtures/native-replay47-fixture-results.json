@@ -1,0 +1,235 @@
+{
+  "schema": "wow-recovery.native-replay47-fixture-results.v2",
+  "plan_sha256": "31f3e2e451b3c9b7025ae44164092bfd22668caf395475652ace2a6552b1bc1d",
+  "network_requests": 0,
+  "mock_low_level_calls": 1,
+  "cases": [
+    {
+      "name": "actual404_shared_classification",
+      "passed": true,
+      "detail": {
+        "classification": "actual404",
+        "source_status": 404,
+        "transfer_failure": false,
+        "content_type": "text/html",
+        "content_encoding": "",
+        "body_bytes": 0,
+        "raw_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decoded_body_bytes": 0,
+        "decoded_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode_error": null,
+        "location": null,
+        "memento_datetime": null,
+        "image_validation": null,
+        "pending_source_index": false
+      }
+    },
+    {
+      "name": "observed302_location_no_follow",
+      "passed": true,
+      "detail": {
+        "classification": "observed_302_location",
+        "source_status": 302,
+        "transfer_failure": false,
+        "content_type": "text/html",
+        "content_encoding": "",
+        "body_bytes": 0,
+        "raw_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decoded_body_bytes": 0,
+        "decoded_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode_error": null,
+        "location": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss43-thumb.jpg",
+        "memento_datetime": null,
+        "image_validation": null,
+        "pending_source_index": false
+      }
+    },
+    {
+      "name": "http200_nonimage_shared_classification",
+      "passed": true,
+      "detail": {
+        "classification": "http_200_nonimage",
+        "source_status": 200,
+        "transfer_failure": false,
+        "content_type": "text/html",
+        "content_encoding": "",
+        "body_bytes": 20,
+        "raw_body_sha256": "3ec85d118c49f07362673b7837c60410d3f39e6fa73414a7c6fcd58094f87eb4",
+        "decoded_body_bytes": 20,
+        "decoded_body_sha256": "3ec85d118c49f07362673b7837c60410d3f39e6fa73414a7c6fcd58094f87eb4",
+        "decode_error": null,
+        "location": null,
+        "memento_datetime": null,
+        "image_validation": {
+          "format": null,
+          "frame_count": null,
+          "size": null,
+          "mode": null,
+          "error": "content_type_not_expected"
+        },
+        "pending_source_index": false
+      }
+    },
+    {
+      "name": "http200_image_pending_not_accepted",
+      "passed": true,
+      "detail": {
+        "classification": "pending_source_index",
+        "source_status": 200,
+        "transfer_failure": false,
+        "content_type": "image/jpeg",
+        "content_encoding": "",
+        "body_bytes": 634,
+        "raw_body_sha256": "7601fadbe3aca0a96dab5e42bb726cefbec0dad59225cf7b95208c4bc601546d",
+        "decoded_body_bytes": 634,
+        "decoded_body_sha256": "7601fadbe3aca0a96dab5e42bb726cefbec0dad59225cf7b95208c4bc601546d",
+        "decode_error": null,
+        "location": null,
+        "memento_datetime": null,
+        "image_validation": {
+          "format": "JPEG",
+          "frame_count": 1,
+          "size": [
+            1,
+            1
+          ],
+          "mode": "RGB"
+        },
+        "pending_source_index": true
+      }
+    },
+    {
+      "name": "partial200_curl28_counts_transfer_failure",
+      "passed": true,
+      "detail": {
+        "classification": "partial_http_200",
+        "source_status": 200,
+        "transfer_failure": true,
+        "content_type": "image/jpeg",
+        "content_encoding": "",
+        "body_bytes": 634,
+        "raw_body_sha256": "7601fadbe3aca0a96dab5e42bb726cefbec0dad59225cf7b95208c4bc601546d",
+        "decoded_body_bytes": 634,
+        "decoded_body_sha256": "7601fadbe3aca0a96dab5e42bb726cefbec0dad59225cf7b95208c4bc601546d",
+        "decode_error": null,
+        "location": null,
+        "memento_datetime": null,
+        "image_validation": {
+          "format": "JPEG",
+          "frame_count": 1,
+          "size": [
+            1,
+            1
+          ],
+          "mode": "RGB"
+        },
+        "pending_source_index": false
+      }
+    },
+    {
+      "name": "near_end_timeout_is_clamped",
+      "passed": true,
+      "detail": {
+        "allow": true,
+        "reason": null,
+        "remaining_window_seconds": 1.0,
+        "remaining_deadline_seconds": 10.0,
+        "remaining_body_bytes": 1000,
+        "cadence_wait_seconds": 0.0,
+        "timeout_seconds": 1.0,
+        "body_cap": 800,
+        "disk_free_bytes": 11005853696
+      }
+    },
+    {
+      "name": "remaining_body_cap_is_clamped",
+      "passed": true,
+      "detail": {
+        "allow": true,
+        "reason": null,
+        "remaining_window_seconds": 240,
+        "remaining_deadline_seconds": 60.0,
+        "remaining_body_bytes": 4,
+        "cadence_wait_seconds": 0.0,
+        "timeout_seconds": 20.0,
+        "body_cap": 4,
+        "disk_free_bytes": 11005853696
+      }
+    },
+    {
+      "name": "post_wait_deadline_recheck",
+      "passed": true,
+      "detail": {
+        "before": {
+          "allow": true,
+          "reason": null,
+          "remaining_window_seconds": 240,
+          "remaining_deadline_seconds": 2.0,
+          "remaining_body_bytes": 1000,
+          "cadence_wait_seconds": 5.25,
+          "timeout_seconds": 2.0,
+          "body_cap": 800,
+          "disk_free_bytes": 11005853696
+        },
+        "after": {
+          "allow": false,
+          "reason": "deadline_exceeded",
+          "remaining_window_seconds": 234.75,
+          "remaining_deadline_seconds": 0.0,
+          "remaining_body_bytes": 1000,
+          "cadence_wait_seconds": 0.0,
+          "timeout_seconds": 0.0,
+          "body_cap": 0,
+          "disk_free_bytes": 11005853696
+        }
+      }
+    },
+    {
+      "name": "inherited_tail_stops_with_cooldown",
+      "passed": true,
+      "detail": {
+        "gate": {
+          "allow": false,
+          "reason": "five_consecutive_transfer_failures",
+          "remaining_window_seconds": 240,
+          "remaining_deadline_seconds": 60.0,
+          "remaining_body_bytes": 1000,
+          "cadence_wait_seconds": 0.0,
+          "timeout_seconds": 0.0,
+          "body_cap": 0,
+          "disk_free_bytes": 11005853696
+        },
+        "cooldown": "2026-10-18T00:02:00+00:00"
+      }
+    },
+    {
+      "name": "timeout_expired_persisted_unknown_attempt",
+      "passed": true,
+      "detail": {
+        "meta": {
+          "curl_exit": 28,
+          "source_status": null,
+          "timeout_expired": true,
+          "stderr_path": "research/continuous-recovery-20261018/network/native-replay47-v2/fixtures/tmpn1hx9aam/attempt-001-direct-stderr.txt",
+          "status_path": "research/continuous-recovery-20261018/network/native-replay47-v2/fixtures/tmpn1hx9aam/attempt-001-direct-status.txt"
+        }
+      }
+    },
+    {
+      "name": "mock_dispatcher_never_networks",
+      "passed": true,
+      "detail": {
+        "calls": [
+          {
+            "url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss43-thumb.jpg",
+            "transport": "direct",
+            "body_cap": 800,
+            "timeout": 4.0,
+            "attempt_no": 1
+          }
+        ]
+      }
+    }
+  ],
+  "all_passed": true
+}

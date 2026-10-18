@@ -1,0 +1,52 @@
+{
+  "schema": "wow-recovery.news-remaining49-v28-plan-manifest.v1",
+  "generated_utc": "2026-10-18T08:43:41.225974Z",
+  "queue": {
+    "path": "research/continuous-recovery-20261018/publication/news-remaining-v28-queue.json",
+    "sha256": "27d615f52dc09d91b1ed8e799728915f3c681fc446bb691c7e06d1f48bd06fa8",
+    "role": "root-accepted immutable 49-target v28 remaining news queue"
+  },
+  "status_snapshot": {
+    "path": "research/continuous-recovery-20261018/network/news-remaining49-v28/batch-05/status-snapshot.json",
+    "sha256": "3297a78bb81413a4af4282152b4d56b0f827514b7b0df4376ace335fb611ef66",
+    "role": "immutable batch-local snapshot of active status pointers"
+  },
+  "active_status_sha256_audit": "1553c56ff17a824ff9fcf4548ca6a1462e150654eccb24a668696c09e5998c15",
+  "latest_actual_source_acceptance": {
+    "path": "research/continuous-recovery-20261018/publication/root-news49-batch4-source-acceptance.json",
+    "sha256": "65dc8a8c13ee48582bca0c65c982cfea154a0bf37464332330c79d1fc87f893d",
+    "role": "latest accepted image-source receipt selected from recovery status"
+  },
+  "latest_control_gate": {
+    "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+    "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+    "role": "latest accepted tail-zero connectivity control gate selected from recovery status"
+  },
+  "frozen_v3_driver": {
+    "path": "research/continuous-recovery-20261018/network/reusable-image-driver-v3/reusable_image_driver.py",
+    "sha256": "4a19422f0dd8e2f7e1ffdd088836c7ab80450afb91aeedc6cdb94fa4c6bfe955",
+    "role": "frozen reusable-image-v3 driver"
+  },
+  "batch_index": 5,
+  "batch_count": 5,
+  "plan": {
+    "path": "research/continuous-recovery-20261018/network/news-remaining49-v28/batch-05/plan.json",
+    "sha256": "cbe8e21666d3501e5053bc10dd6f1fc51745d928f25b341ba91e7cadf9efa928"
+  },
+  "bindings": {
+    "path": "research/continuous-recovery-20261018/network/news-remaining49-v28/batch-05/input-bindings.json",
+    "sha256": "b92f0ccb636b9a509a785ca990e0c73a124fd63254785ca678d38031d535d675"
+  },
+  "network_requests_during_preparation": 0,
+  "execution_boundary": {
+    "no_network_authorized_by_this_artifact": true,
+    "requires_parent_GO": true,
+    "requires_new_root_control_acceptance": false,
+    "root_control_acceptance_bound": true,
+    "max_attempts": 24,
+    "max_seconds": 240.0,
+    "batch_size": 10,
+    "unexecuted_batch_may_be_rebound": true,
+    "executed_batch_output_is_immutable": true
+  }
+}

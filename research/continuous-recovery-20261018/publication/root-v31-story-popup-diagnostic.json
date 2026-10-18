@@ -1,0 +1,60 @@
+{
+  "accepted": false,
+  "started_utc": "2026-10-18T09:18:02.642Z",
+  "checks": [],
+  "errors": [],
+  "external_requests": [],
+  "screenshots": [],
+  "scope": "33 original resources; five affected pages, equipment tabs, seven profession selectors and 21 recipes, socket tooltip and story illustration popup.",
+  "prior_attempt": {
+    "path": "root-v30-browser-acceptance.json",
+    "sha256": "5f9e4bb29ff117436726315af75379a1dc9354e2e8a1dfd67c73b101ea0c5f8d"
+  },
+  "test_correction": "Wait for javascript URL recipe dispatch before checking text; separately retain any actual page errors.",
+  "fixture_previous_attempt": {
+    "path": "root-v31-runtime-fixture-browser-acceptance.json",
+    "sha256": "a5642cf22e7d994aa9e1f757a4391ea226a0468bd6554bf4ec8bfcee3c9bde11"
+  },
+  "recipe_wait_correction": "Observe the actual reagent DOM update, including reselecting an already selected recipe, before asserting or holding image handles.",
+  "preload_scope_correction": "Golden Draenite is preloaded in the original page but absent from its 21 sample recipes; verify its decoded preload separately without inventing a recipe.",
+  "chapter_wait_correction": "Wait for original javascript chapter navigation before locating the chapter-specific artwork link.",
+  "popup_hit_target_correction": "The original story link contains a floated image and has an empty inline anchor box; click the visible child image, which activates the same anchor.",
+  "fixture_only": true,
+  "fixture_receipt_sha256": "6bbb0eb617f3b5598a4c68b6e2f235c7edcb8968275a048d7fee8aa5f5afbc8c",
+  "console": [],
+  "opened": [
+    {
+      "url": "about:blank"
+    }
+  ],
+  "before": {
+    "href": "javascript:popUpOmega('/WOW-Encyclopedia-Deployable-Archive/_origins/www.blizzard.com/war3x/images/screens/concept/ss01.jpg',750,600)",
+    "html": "<a href=\"javascript:popUpOmega('/WOW-Encyclopedia-Deployable-Archive/_origins/www.blizzard.com/war3x/images/screens/concept/ss01.jpg',750,600)\"><img src=\"/WOW-Encyclopedia-Deployable-Archive/burningcrusade/townhall/images/story/p5-prince.jpg\" border=\"0\" style=\"float: right; width: 202px; height: 148px; margin-right: -85px; margin-left: 5px; margin-top: -12px; position: relative;\"></a>"
+  },
+  "state": {
+    "calls": [
+      {
+        "args": [
+          "/WOW-Encyclopedia-Deployable-Archive/shared/wow-com/images/layout/pixel.gif",
+          "Screeni",
+          "width=792,height=645,left=0,top=0,menubar=no,resizable=no,scrollbars=no,statusbar=no,toolbar=no,locationbar=no"
+        ],
+        "result": true,
+        "closed": false
+      }
+    ],
+    "lastClick": {
+      "target": "IMG",
+      "href": "javascript:popUpOmega('/WOW-Encyclopedia-Deployable-Archive/_origins/www.blizzard.com/war3x/images/screens/concept/ss01.jpg',750,600)"
+    },
+    "popUpOmegaType": "function",
+    "href": "http://127.0.0.1:29032/WOW-Encyclopedia-Deployable-Archive/burningcrusade/townhall/story.html#top"
+  },
+  "pages": [
+    {
+      "url": "http://127.0.0.1:29032/WOW-Encyclopedia-Deployable-Archive/burningcrusade/townhall/story.html#top",
+      "closed": false
+    }
+  ],
+  "finished_utc": "2026-10-18T09:18:05.512Z"
+}

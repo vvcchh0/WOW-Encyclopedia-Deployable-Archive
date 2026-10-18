@@ -1450,6 +1450,127 @@ def _attrs_map(attrs: tuple[tuple[str, str | None], ...] | list[tuple[str, str |
     return result
 
 
+_ATTUNEMENT_MASK_ROUTE = "/bcattunement/index.html"
+_ATTUNEMENT_MASK_PIXEL_REQUESTED = "https://www.worldofwarcraft.com/bcattunement/images/pixel.gif"
+_ATTUNEMENT_MASK_SOURCE = "/shared/wow-com/includes/images/pixel.gif"
+
+
+def _attunement_mask_pixel_placeholder(value: str, *, base_path: str) -> bool:
+    """Recognize only the derived missing-image value for the attunement mask."""
+
+    try:
+        parsed = urllib.parse.urlsplit(html.unescape(value).strip())
+        query = urllib.parse.parse_qs(parsed.query, keep_blank_values=True)
+    except ValueError:
+        return False
+    expected_marker = f"{base_path}__offline/missing-image.svg"
+    if parsed.scheme or parsed.netloc or parsed.path != expected_marker:
+        return False
+    requested = query.get("requested", [])
+    source = query.get("source", [])
+    return requested == [_ATTUNEMENT_MASK_PIXEL_REQUESTED] and source == ["https://www.worldofwarcraft.com/bcattunement/"]
+
+
+def rewrite_attunement_mask_pixel(text: str, *, route: str, base_path: str) -> tuple[str, bool]:
+    """Mask three visible attunement placeholders with the collected pixel.
+
+    The old page uses a large missing-image SVG as the ``#mapPixel`` image.  It
+    sits above the restored chart and path controls, so the opaque placeholder
+    hides the useful map.  Two visible CSS masks use the same placeholder.  This
+    narrow source-position rewrite touches only the exact route, the real
+    ``img#mapPixel`` token, and the ``background:`` declarations inside the
+    actual ``.coverDivStyle1``/``.coverDivStyle2`` style rules.  The legacy
+    ``_background:`` declaration and every other pixel reference remain
+    byte-for-byte unchanged.
+    """
+
+    if route != _ATTUNEMENT_MASK_ROUTE:
+        return text, False
+    parser = _MarkupTokenParser(text)
+    try:
+        parser.feed(text)
+        parser.close()
+    except Exception as exc:
+        raise PagesExportError("attunement mask pixel tokenization failed") from exc
+
+    replacements: list[tuple[int, int, str]] = []
+    map_pixel_replacements = 0
+    css_replacements: dict[str, int] = {"coverDivStyle1": 0, "coverDivStyle2": 0}
+    target = base_path + _ATTUNEMENT_MASK_SOURCE.lstrip("/")
+    for token in parser.tokens:
+        if token.kind == "start" and token.name == "img":
+            attrs = _attrs_map(token.attrs)
+            if attrs.get("id", "").casefold() != "mappixel":
+                continue
+            src = attrs.get("src", "")
+            if not _attunement_mask_pixel_placeholder(src, base_path=base_path):
+                continue
+            matches = [
+                match
+                for match in _HTML_ATTRIBUTE_SPAN_RE.finditer(token.raw)
+                if match.group("name").casefold() == "src" and match.group("value") is not None
+            ]
+            if len(matches) != 1:
+                raise PagesExportError("attunement mapPixel src attribute is not uniquely addressable")
+            match = matches[0]
+            raw_value = match.group("value") or ""
+            if len(raw_value) >= 2 and raw_value[0] in "\"'" and raw_value[-1] == raw_value[0]:
+                replacement = raw_value[0] + target + raw_value[-1]
+            else:
+                replacement = target
+            replacements.append((token.start + match.start("value"), token.start + match.end("value"), replacement))
+            map_pixel_replacements += 1
+
+        if token.kind != "start" or token.name != "style":
+            continue
+        end_token = next(
+            (
+                candidate
+                for candidate in parser.tokens
+                if candidate.kind == "end" and candidate.name == "style" and candidate.start >= token.end
+            ),
+            None,
+        )
+        if end_token is None:
+            raise PagesExportError("attunement style token has no closing tag")
+        style_text = text[token.end : end_token.start]
+        for class_name in css_replacements:
+            class_pattern = re.compile(
+                rf"(?P<selector>\.{class_name}\b[^{{]*\{{)(?P<body>[^{{}}]*)(?P<close>\}})",
+                flags=re.I | re.S,
+            )
+            for class_match in class_pattern.finditer(style_text):
+                body = class_match.group("body")
+                url_matches = list(
+                    re.finditer(
+                        r"(?<![\w-])background\s*:\s*url\(\s*(?P<quote>[\"']?)(?P<value>[^)\"']+)(?P=quote)\s*\)",
+                        body,
+                        flags=re.I,
+                    )
+                )
+                for url_match in url_matches:
+                    value = url_match.group("value")
+                    if not _attunement_mask_pixel_placeholder(value, base_path=base_path):
+                        continue
+                    css_replacements[class_name] += 1
+                    replacements.append(
+                        (
+                            token.end + class_match.start("body") + url_match.start("value"),
+                            token.end + class_match.start("body") + url_match.end("value"),
+                            target,
+                        )
+                    )
+    if map_pixel_replacements > 1:
+        raise PagesExportError("attunement route contains multiple matching mapPixel placeholders")
+    if any(count > 1 for count in css_replacements.values()):
+        raise PagesExportError("attunement route contains duplicate visible CSS mask placeholders")
+    if not replacements:
+        return text, False
+    for start, end, replacement in sorted(replacements, reverse=True):
+        text = text[:start] + replacement + text[end:]
+    return text, True
+
+
 def _form_identity(attrs: tuple[tuple[str, str | None], ...]) -> set[str]:
     values: set[str] = set()
     for key in ("id", "name", "class"):
@@ -2160,6 +2281,44 @@ def runtime_js(base_path: str, route_map: dict[str, str] | None = None) -> str:
         if (target) return target + url.search + url.hash;
         return missingImage(raw);
     }}
+    function isPopupImageInput(raw) {{
+        if (typeof raw !== "string") return false;
+        var value = String(raw).trim();
+        if (!value || /^(?:javascript:|data:|blob:|about:)/i.test(value)) return false;
+        var url;
+        try {{ url = new URL(value, document.baseURI); }} catch (e) {{ return false; }}
+        var pathname = url.pathname || "";
+        if (pathname.indexOf(PREFIX) === 0) pathname = "/" + pathname.slice(PREFIX.length);
+        if (/\/__offline\/missing-image\.svg$/i.test(pathname)) return true;
+        return /(?:^|\/)[^\/?#]+\.(?:jpe?g|png|gif|webp|bmp)$/i.test(pathname);
+    }}
+    function isProjectImageUrl(value) {{
+        var url;
+        try {{ url = new URL(value, document.baseURI); }} catch (e) {{ return false; }}
+        return url.origin === window.location.origin && url.pathname.indexOf(PREFIX) === 0;
+    }}
+    function installPopupImageAdapter() {{
+        if (window.__pagesPopupImageAdapter) return true;
+        var original = window.popUpOmega;
+        if (typeof original !== "function") return false;
+        if (original.__pagesPopupImageAdapter) {{
+            window.__pagesPopupImageAdapter = true;
+            return true;
+        }}
+        var wrapped = function () {{
+            var raw = arguments.length ? arguments[0] : "";
+            if (isPopupImageInput(raw)) {{
+                var mapped = mapImage(raw);
+                if (isProjectImageUrl(mapped)) return window.open(mapped, "_blank", "noopener,noreferrer");
+                return null;
+            }}
+            return original.apply(this, arguments);
+        }};
+        wrapped.__pagesPopupImageAdapter = true;
+        window.popUpOmega = wrapped;
+        window.__pagesPopupImageAdapter = true;
+        return true;
+    }}
     function mapExistingImages() {{
         if (!document.images) return;
         for (var i = 0; i < document.images.length; i++) {{
@@ -2269,6 +2428,7 @@ def runtime_js(base_path: str, route_map: dict[str, str] | None = None) -> str:
     installMarkupAdapter();
     installStyleAdapter();
     installImageAdapter();
+    installPopupImageAdapter();
     document.addEventListener("click", function (event) {{
         var node = event.target;
         while (node && node.tagName !== "A") node = node.parentNode;
@@ -2326,13 +2486,16 @@ def runtime_js(base_path: str, route_map: dict[str, str] | None = None) -> str:
         var mapped = mapHref(current);
         if (mapped && mapped !== current) location.replace(mapped);
     }}
-    ready.then(function () {{ wrapSearchCall(); mapExistingImages(); repair404(); }});
+    ready.then(function () {{ wrapSearchCall(); mapExistingImages(); repair404(); installPopupImageAdapter(); }});
     setTimeout(wrapExactTopic, 0);
     setTimeout(wrapExactTopic, 250);
     setTimeout(wrapSearchCall, 0);
     setTimeout(wrapSearchCall, 250);
     setTimeout(wrapSearchCall, 1000);
     setTimeout(mapExistingImages, 250);
+    setTimeout(installPopupImageAdapter, 0);
+    setTimeout(installPopupImageAdapter, 250);
+    setTimeout(installPopupImageAdapter, 1000);
 }}(window, document));
 """
 
@@ -2627,6 +2790,17 @@ def export_pages(
             if kind in HTML_KINDS or is_html_record(record):
                 text = data.decode(mirror.charset_for(str(record.get("mime") or ""), data), errors="replace")
                 text = mirror.rewrite_html(text, base_url=base_url, localizer=localizer, recorder=recorder, source_sha=source_sha, compat_assets=[])
+                if route == _ATTUNEMENT_MASK_ROUTE:
+                    text, changed = rewrite_attunement_mask_pixel(text, route=route, base_path=base_path)
+                    if changed:
+                        derivation_notes.append(
+                            "derived attunement map mask repair: replaced #mapPixel plus the exact visible "
+                            ".coverDivStyle1/.coverDivStyle2 background placeholders for the original "
+                            "bcattunement/images/pixel.gif with the collected transparent shared pixel; "
+                            "legacy _background and all other pixel references remain unchanged; no original "
+                            "attunement pixel payload was recovered"
+                        )
+                        stats["attunement_mask_pixel_repaired"] += 1
                 if route == _PVP_FLASH_ROUTE:
                     text, changed = rewrite_pvp_mini_site(text, route=route, base_path=base_path)
                     if changed:
