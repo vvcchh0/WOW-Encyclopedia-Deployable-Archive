@@ -23,20 +23,7 @@ function enhancedXmlTTip(thisID)
 
 function requestHTML(thisID)
 {
-	if(portalOpen)
-	{
-		darkPortal.requestXml(thisID);
-	}
-	else if(!xmlRetrievalFrame)
-	{
-		xmlRetrievalFrame = document.createElement("iframe");
-		xmlRetrievalFrame.name = "darkPortalFrame"; //We put the FUN! in "function"
-		xmlRetrievalFrame.id = "xmlPortal";
-		xmlRetrievalFrame.style.display = "none";
-		document.getElementsByTagName("body")[0].appendChild(xmlRetrievalFrame);
-		document.domain = currentDomain;
-		xmlRetrievalFrame.src = xmlFrameTarget;
-	}
+	showTip('Historical exhibit: the retired Armory item-details service is unavailable in this archive.');
 }
 
 function openPortal()
