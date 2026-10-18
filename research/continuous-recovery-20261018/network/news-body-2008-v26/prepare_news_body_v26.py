@@ -1,10 +1,10 @@
-"""Prepare two offline 10-target plans for the v26 2008 news-body queue.
+"""Prepare the unexecuted offline 10-target plan for the v26 news-body queue.
 
 This is a small plan adapter.  It reuses the frozen reusable-image-v3 plan
 contract and does not contain an acquisition path.  It only reads the local
-queue, validates the cited source lines, and writes two independently bound
-10-target plans.  The plans remain fresh exact-CDX then id_ replay plans and
-must be reviewed before any execute invocation.
+queue, validates the cited source lines, and writes batch-02 artifacts while
+preserving the executed batch-01 artifacts byte-for-byte.  The plan remains a
+fresh exact-CDX then id_ replay plan and must be reviewed before execution.
 """
 
 from __future__ import annotations
@@ -24,8 +24,8 @@ PLAN_ROOT = NETWORK / "news-body-2008-v26"
 
 QUEUE_PATH = RECOVERY / "publication" / "news20-accepted-queue.json"
 QUEUE_ACCEPTANCE_PATH = RECOVERY / "publication" / "root-news20-queue-acceptance.json"
-LATEST_SOURCE_ACCEPTANCE_PATH = RECOVERY / "publication" / "root-news8-next-source-acceptance.json"
-LATEST_PLAN_ACCEPTANCE_PATH = RECOVERY / "publication" / "root-news8-next-plan-acceptance.json"
+LATEST_SOURCE_ACCEPTANCE_PATH = RECOVERY / "publication" / "root-news20-batch1-source-acceptance.json"
+LATEST_PLAN_ACCEPTANCE_PATH = RECOVERY / "publication" / "root-news20-batch1-plan-acceptance.json"
 CONTROL_GATE_PATH = ROOT / "research" / "continuous-recovery-20261016" / "publication" / "root-control03-acceptance.json"
 TEMPLATE_PLAN_PATH = NETWORK / "news-static-v25-next10-v1" / "plan.json"
 V3_DRIVER_PATH = NETWORK / "reusable-image-driver-v3" / "reusable_image_driver.py"
@@ -283,11 +283,11 @@ def main() -> None:
 
     latest_tail = read_json(LATEST_SOURCE_ACCEPTANCE_PATH)
     if latest_tail.get("accepted") is not True or latest_tail.get("failure_streak_end") != 0:
-        raise RuntimeError("latest NET03 source acceptance is not accepted/tail-zero")
+        raise RuntimeError("latest NEWS20 batch-01 source acceptance is not accepted/tail-zero")
     latest_tail_sha = sha256(LATEST_SOURCE_ACCEPTANCE_PATH)
     latest_plan_acceptance = read_json(LATEST_PLAN_ACCEPTANCE_PATH)
     if latest_plan_acceptance.get("accepted") is not True:
-        raise RuntimeError("latest NET03 plan acceptance is not accepted")
+        raise RuntimeError("latest NEWS20 batch-01 plan acceptance is not accepted")
 
     queue_acceptance_sha = sha256(QUEUE_ACCEPTANCE_PATH)
     latest_plan_acceptance_sha = sha256(LATEST_PLAN_ACCEPTANCE_PATH)
@@ -295,8 +295,8 @@ def main() -> None:
     template_sha = sha256(TEMPLATE_PLAN_PATH)
     driver_sha = sha256(V3_DRIVER_PATH)
     prepared_utc = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
-    tail_ref = evidence_binding(LATEST_SOURCE_ACCEPTANCE_PATH, "latest accepted NET03 source tail-zero receipt")
-    tail_plan_ref = evidence_binding(LATEST_PLAN_ACCEPTANCE_PATH, "latest accepted NET03 plan receipt")
+    tail_ref = evidence_binding(LATEST_SOURCE_ACCEPTANCE_PATH, "latest accepted NEWS20 batch-01 source tail-zero receipt")
+    tail_plan_ref = evidence_binding(LATEST_PLAN_ACCEPTANCE_PATH, "latest accepted NEWS20 batch-01 plan receipt")
     control_ref = evidence_binding(CONTROL_GATE_PATH, "frozen control03 tail-zero gate")
     queue_ref = evidence_binding(QUEUE_PATH, "offline 20-target v26 news-body queue")
     queue_acceptance_ref = evidence_binding(QUEUE_ACCEPTANCE_PATH, "root acceptance of the frozen 20-target queue")
@@ -307,6 +307,26 @@ def main() -> None:
     for batch_no, chunk in ((1, rows[:10]), (2, rows[10:20])):
         batch_dir = PLAN_ROOT / f"batch-{batch_no:02d}"
         output_dir = batch_dir / "output"
+        if batch_no == 1:
+            # Batch-01 was executed and independently source-accepted.  A
+            # rerun of this offline preparer must never rewrite its immutable
+            # plan, bindings, or output artifacts while rebinding batch-02.
+            existing_plan = batch_dir / "plan.json"
+            existing_bindings = batch_dir / "input-bindings.json"
+            if not existing_plan.is_file() or not existing_bindings.is_file() or not output_dir.is_dir():
+                raise RuntimeError("immutable batch-01 artifacts are missing; refusing to prepare batch-02")
+            plans.append({
+                "batch": 1,
+                "preserved_immutable": True,
+                "plan": rel(existing_plan),
+                "plan_sha256": sha256(existing_plan),
+                "bindings": rel(existing_bindings),
+                "bindings_sha256": sha256(existing_bindings),
+                "candidate_count": len(chunk),
+                "selected_queue_ranks": [row["rank"] for row in chunk],
+                "network_requests": 0,
+            })
+            continue
         batch_id = f"WAYBACK-CONTINUOUS-20261018-NEWS-BODY-2008-V26-{batch_no:02d}"
         candidates = [
             make_candidate(row, batch_no, local_no, queue_sha, queue, latest_tail, latest_tail_sha)
@@ -315,14 +335,14 @@ def main() -> None:
         bindings = {
             "news_queue_v26": queue_ref,
             "news_queue_v26_acceptance": queue_acceptance_ref,
-            "latest_news8_source_acceptance": tail_ref,
-            "latest_news8_plan_acceptance": tail_plan_ref,
+            "latest_news20_batch1_source_acceptance": tail_ref,
+            "latest_news20_batch1_plan_acceptance": tail_plan_ref,
             "control_gate": control_ref,
             "template_plan": template_ref,
             "frozen_v3_driver": driver_ref,
         }
         previous_batch = {
-            "name": "WAYBACK-CONTINUOUS-20261018-NEWS-STATIC-V25-NEXT10-V2",
+            "name": "WAYBACK-CONTINUOUS-20261018-NEWS-BODY-2008-V26-01",
             "prior_failure_tail": 0,
             "acceptance_receipt_path": rel(LATEST_SOURCE_ACCEPTANCE_PATH),
             "acceptance_receipt_sha256": latest_tail_sha,
@@ -345,8 +365,8 @@ def main() -> None:
                 "batch_number": batch_no,
                 "batch_count": 2,
                 "predecessor_batch_required": batch_no == 2,
-                "predecessor_tail_rebind_required_before_execute": batch_no == 2,
-                "predecessor_tail_status": "unknown_until_batch_01_actual_receipt" if batch_no == 2 else "not_applicable",
+                "predecessor_tail_rebind_required_before_execute": False,
+                "predecessor_tail_status": "bound_to_batch_01_actual_source_acceptance" if batch_no == 2 else "not_applicable",
             },
             "selection_scope": {
                 "name": f"news_priority_v26_2008_body_batch_{batch_no:02d}",
@@ -371,8 +391,8 @@ def main() -> None:
             "source_bindings": {
                 "news_queue_v26": queue_ref,
                 "news_queue_v26_acceptance": queue_acceptance_ref,
-                "latest_news8_source_acceptance": tail_ref,
-                "latest_news8_plan_acceptance": tail_plan_ref,
+                "latest_news20_batch1_source_acceptance": tail_ref,
+                "latest_news20_batch1_plan_acceptance": tail_plan_ref,
                 "control_gate": control_ref,
                 "template_plan": template_ref,
                 "v3_reference": driver_ref,
@@ -402,15 +422,15 @@ def main() -> None:
             "driver_sha256": driver_sha,
             "fixture_mode": "not duplicated; use the already accepted V3 offline contract",
             "inherited_tail": {
-                "latest_net03_tail": latest_tail["failure_streak_end"],
+                "latest_news20_batch1_tail": latest_tail["failure_streak_end"],
                 "prior_failure_tail": plan["policy"]["prior_failure_tail"],
                 "tail_receipt": rel(LATEST_SOURCE_ACCEPTANCE_PATH),
                 "tail_receipt_sha256": latest_tail_sha,
                 "control_gate_receipt": rel(CONTROL_GATE_PATH),
                 "control_gate_sha256": control_sha,
             },
-            "predecessor_tail_rebind_required_before_execute": batch_no == 2,
-            "predecessor_tail_status": "unknown_until_batch_01_actual_receipt" if batch_no == 2 else "not_applicable",
+            "predecessor_tail_rebind_required_before_execute": False,
+            "predecessor_tail_status": "bound_to_batch_01_actual_source_acceptance" if batch_no == 2 else "not_applicable",
             "selected_queue_ranks": [row["rank"] for row in chunk],
             "selected_originals": [row["original"] for row in chunk],
             "source_bindings": bindings,
@@ -515,7 +535,8 @@ def main() -> None:
             "max_attempts_per_batch": 24,
             "max_seconds_per_batch": 240.0,
             "remainder_after_budget_is_preserved": True,
-            "batch_02_requires_batch_01_actual_tail_rebind": True,
+            "batch_02_requires_batch_01_actual_tail_rebind": False,
+            "batch_02_tail_bound_to_batch_01_source_acceptance": True,
         },
     }
     split_path = PLAN_ROOT / "queue-split-manifest.json"

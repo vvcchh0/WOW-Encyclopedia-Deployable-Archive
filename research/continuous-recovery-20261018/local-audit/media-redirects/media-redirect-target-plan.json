@@ -1,0 +1,162 @@
+{
+  "schema": "wow-recovery.local-audit.media-redirect-target-plan.v1",
+  "status": "local_only_traceable_plan",
+  "generated_date": "2026-10-18",
+  "network_performed_by_this_audit": false,
+  "scope": "Saved MEDIA/SSOTD redirect, header, body, CDX, and offline source-text evidence only",
+  "anchor_timestamp": "20080512210044",
+  "evidence": [
+    {
+      "path": "research/continuous-recovery-20261015/network-ssotd12/redirect-evidence.json",
+      "sha256": "2bd492ad8692d3fd6f1cfb2ca1c1300018f2b848a4e22555f6511fe92a59aed4",
+      "lines": "16-21",
+      "role": "Accepted first-hop redirect observation"
+    },
+    {
+      "path": "research/continuous-recovery-20261015/network-ssotd12/raw/03-ss1057-thumb-20101227014645-redirect_probe-proxy.headers.txt",
+      "sha256": "4f373d6ced23df59d62d9fde4ef603d05bd85cab0c3fb26df998c285cdf34716",
+      "lines": "3-14",
+      "role": "Raw status, MIME, length, and Location header"
+    },
+    {
+      "path": "research/continuous-recovery-20261015/network-ssotd12/raw/03-ss1057-thumb-20101227014645-redirect_probe-proxy.body",
+      "sha256": "e41318d5c6fb6e03275b246814367ff081a1a7791940cb98ffc0d14c4d3746e1",
+      "lines": "3-6",
+      "role": "Raw HTML redirect body"
+    },
+    {
+      "path": "research/continuous-recovery-20261015/ssotd12-acceptance.json",
+      "sha256": "c3e35622f7d7c5bb8aad03a4d599b88c1bcb20fc5ed250845918286ad193b8a0",
+      "lines": "14, 48-52, 84",
+      "role": "Independent acceptance: zero payloads, historical portal redirect, no further network"
+    },
+    {
+      "path": "research/continuous-recovery-20261016/publication/root-media-inventory-acceptance.json",
+      "sha256": "c3b25d9da58d3a93b04b04f71727bc93701aa7bb118628b066d6bcf94203f778",
+      "lines": "6-21, 53",
+      "role": "2082-row saved MEDIA inventory and category boundary"
+    },
+    {
+      "path": "research/continuous-recovery-20261016/publication/root-media-revisit-classification.json",
+      "sha256": "c55cd5d36a898ad7ed18912e1081a8c05497f8792f42bd2386d650f38450abd7",
+      "lines": "19, 134-135",
+      "role": "47 revisit rows classified with no new image candidate"
+    },
+    {
+      "path": "research/continuous-recovery-20261016/local-audit/media-candidates/media-candidates-audit.json",
+      "sha256": "de589583dad44e1a98190a875761f4480f5aefc3e5968641bfab48129a0881e4",
+      "lines": "1212-1227",
+      "role": "No-new-candidate and no-guess boundary"
+    },
+    {
+      "path": ".scratch/offline-navigation-20261015-v15/site/downloads/ssotd/index.html",
+      "sha256": "9a218b6ffd7b2a025f8b98b80f141c98ff1c7940e8a08941b839a0cba8ec9f9d",
+      "lines": "63-83",
+      "role": "Offline source text: HEAD anachronos.xml and native SSOTD path construction"
+    },
+    {
+      "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/ssotd-screenie.js",
+      "sha256": "2f49a73f648ced88926e349dbe7c723da8fedccb9d1d7edbe68fbfe0466296e5",
+      "lines": "432-468",
+      "role": "Offline source text: ssN.jpg and -thumb.jpg derivation"
+    }
+  ],
+  "saved_inventory": {
+    "raw_rows": 2082,
+    "category_counts": {
+      "redirect": 1971,
+      "archive_404": 21,
+      "revisit": 47,
+      "status200_non_image": 41,
+      "valid_status200_image_index_row": 2
+    },
+    "new_image_candidates": 0,
+    "valid_image_rows_already_accepted": [
+      "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1314.jpg",
+      "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1336.jpg"
+    ]
+  },
+  "redirect_observations": [
+    {
+      "original": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1057-thumb.jpg",
+      "requested_capture": "20101227014645",
+      "cdx_status": "301",
+      "cdx_mime": "text/html",
+      "cdx_digest": "EHJDW7RFCFWMSQBGL67RQNFHDIQOHYZG",
+      "source_status": 301,
+      "content_type": "text/html; charset=iso-8859-1",
+      "body_bytes": 242,
+      "body_sha256": "e41318d5c6fb6e03275b246814367ff081a1a7791940cb98ffc0d14c4d3746e1",
+      "location": "https://web.archive.org/web/20101227014645id_/http://us.battle.net/wow/en/media/",
+      "location_original_target": "http://us.battle.net/wow/en/media/",
+      "manual_followed": false,
+      "automatic_redirects": 0,
+      "classification": "redirect_evidence_only",
+      "payload_recovered": false
+    }
+  ],
+  "source_text_findings": {
+    "native_ssotd_entry": {
+      "page": ".scratch/offline-navigation-20261015-v15/site/downloads/ssotd/index.html",
+      "lines": "63-83",
+      "facts": [
+        "The page derives a current screenshot number from a HEAD request to anachronos.xml.",
+        "The page calls addshots with /downloads/ssotd/images/screens and the ss prefix.",
+        "No CDN hostname is named in these lines."
+      ]
+    },
+    "native_ssotd_derivation": {
+      "page": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/ssotd-screenie.js",
+      "lines": "432-468",
+      "facts": [
+        "Full paths are constructed as /downloads/ssotd/images/screens/ssN.jpg.",
+        "Thumbnail paths are derived by replacing .jpg with -thumb.jpg.",
+        "The local source identifies a native dynamic gallery path rule, not an external CDN."
+      ]
+    },
+    "explicit_external_destination": {
+      "value": "http://us.battle.net/wow/en/media/",
+      "basis": "Historical Location header/body only",
+      "interpretation": "Generic Battle.net media portal destination; not an image URL and not a CDN claim"
+    }
+  },
+  "target_plan": [
+    {
+      "target_id": "media-redirect-ss1057-thumb-20101227014645",
+      "class": "historical_redirect_portal",
+      "exact_original": "http://www.worldofwarcraft.com/downloads/ssotd/images/screens/ss1057-thumb.jpg",
+      "next_action": "If a future network window is explicitly authorized, inspect only the exact recorded original and separately record any exact Location target; do not follow automatically.",
+      "acceptance": [
+        "Preserve the CDX row and first-hop response as redirect evidence.",
+        "Treat a later 200 response as a new capture only when its exact timestamp, MIME, magic, payload, and CDX digest agree.",
+        "Never turn the generic Battle.net portal Location into a guessed image URL or integrate it as native SSOTD content."
+      ],
+      "current_state": "known_redirect_no_payload_no_follow"
+    },
+    {
+      "target_id": "media-native-ssotd-exact-cdx-supplied",
+      "class": "native_dynamic_gallery",
+      "exact_original": "Only a path explicitly supplied by saved CDX/source evidence; no guessed ssN or thumb alias",
+      "next_action": "Use the local page rule to classify exact targets, then require an exact CDX row and replay validation before any new source map.",
+      "acceptance": [
+        "Keep full and thumbnail entities separate.",
+        "Keep native 3368-entity scope separate from static news image overlays.",
+        "A redirect, revisit, HTML, empty index, or transport failure is not an image payload."
+      ],
+      "current_state": "no_new_candidate_in_saved_2082_rows"
+    },
+    {
+      "target_id": "media-existing-ss1314-ss1336",
+      "class": "already_accepted_late_payload",
+      "exact_original": "ss1314.jpg and ss1336.jpg",
+      "next_action": "No repeat request or new map entry; preserve existing late supplement provenance.",
+      "current_state": "already_present_and_excluded"
+    }
+  ],
+  "stop_conditions": [
+    "Do not issue network requests from this local plan.",
+    "Do not follow the 301 or infer a CDN/native image route from the portal destination.",
+    "Do not reclassify the 1971 redirects, 47 revisits, 21 archive 404s, or 41 non-image rows as recovered images.",
+    "Do not modify v27 output, v26 files, native gallery maps, or exporter tools from this plan."
+  ]
+}

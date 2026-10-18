@@ -4,7 +4,7 @@
   "deadline_utc": "2026-10-18T14:55:37Z",
   "network_stop_utc": "2026-10-18T13:35:00Z",
   "export_start_stop_utc": "2026-10-18T13:50:00Z",
-  "phase": "v26_published_v27_preparing",
+  "phase": "v27_resource_checks_passed_publication_held_v28_exhibit_fix",
   "baseline_main": "d62f9fbab205d3c87b8e2be1743ed00fb8362f44",
   "baseline_pages": "bfe27c5ae88e0c407389ac14b9d5cb0e24850059",
   "baseline_version": "v25",
@@ -65,14 +65,51 @@
       "accepted_images": 10,
       "requests": 21,
       "root_source_acceptance": "publication/root-news20-batch1-source-acceptance.json"
+    },
+    {
+      "id": "NET05",
+      "plan": "network/news-body-2008-v26/batch-02/plan.json",
+      "status": "source_accepted",
+      "accepted_images": 9,
+      "requests": 20,
+      "root_source_acceptance": "publication/root-news20-batch2-source-acceptance.json",
+      "unresolved_originals": [
+        "http://www.worldofwarcraft.com/news/images/08-02/02-06-08-3.jpg"
+      ],
+      "unresolved_state": "transport_unknown"
+    },
+    {
+      "id": "CONTROL01",
+      "status": "control_accepted",
+      "requests": 2,
+      "accepted_images": 0,
+      "root_source_acceptance": "publication/root-dns-connectivity-control-acceptance.json"
+    },
+    {
+      "id": "NET06",
+      "plan": "network/news-unplanned-v26/batch-01/plan.json",
+      "status": "source_accepted",
+      "requests": 21,
+      "accepted_images": 10,
+      "root_source_acceptance": "publication/root-news-unplanned-batch1-source-acceptance.json",
+      "integration_status": "after_frozen_v27"
+    },
+    {
+      "id": "NET07",
+      "plan": "network/news-unplanned-v26/batch-02/plan.json",
+      "status": "source_accepted",
+      "requests": 21,
+      "accepted_images": 10,
+      "root_source_acceptance": "publication/root-news-unplanned-batch2-source-acceptance.json",
+      "integration_status": "for_v28"
     }
   ],
-  "accepted_images": 31,
+  "accepted_images": 60,
   "published_version": "v26",
-  "accepted_image_bytes": 1085286,
+  "accepted_image_bytes": 1437483,
   "positive_neighbor_remaining": 0,
   "latest_failure_tail": 0,
-  "latest_source_acceptance": "publication/root-news20-batch1-source-acceptance.json",
+  "latest_source_acceptance": "publication/root-news-unplanned-batch2-source-acceptance.json",
   "news_prior_pending_classification": {
     "transport_unknown": 9,
     "complete_no_eligible_capture": 2
@@ -82,14 +119,28 @@
     "complete_no_eligible_capture": 3,
     "transport_unknown": 0
   },
-  "updated_utc": "2026-10-18T05:56:34.967723+00:00",
-  "local_version_in_progress": "v26",
-  "root_input_acceptance": "publication/root-v26-input-acceptance.json",
+  "updated_utc": "2026-10-18T06:23:57.017698+00:00",
+  "local_version_in_progress": "v27",
+  "root_input_acceptance": "publication/root-v27-input-acceptance.json",
   "local_build_completed": true,
-  "local_build_provenance_sha256": "f5580948c5df72a744577e15bf9165ee7ec477c5adf4b458e5db0241acd9c332",
   "local_acceptance_complete": true,
   "published_pages_commit": "3b3f49a5485f8d236e0ae290ac63995af7c89e83",
   "published_images_this_run": 13,
-  "unpublished_accepted_images": 18,
-  "latest_main_source_commit": "74a7d70c"
+  "unpublished_accepted_images": 47,
+  "latest_main_source_commit": "74a7d70c",
+  "tool_supersessions": [
+    {
+      "path": "tools/export_github_pages.py",
+      "prior_sha256": "50bd3569f77d3d52c52ed7077726d7dc99fbee23a3a0ced076a6523198b9225d",
+      "accepted_sha256": "943f57e2f62582e2659c98766e98deeeda60c9c1d131326f6f0ad6e7fbfd4a00",
+      "acceptance": "publication/root-blizzard-origin-tool-acceptance.json"
+    }
+  ],
+  "last_image_source_acceptance": "publication/root-news-unplanned-batch2-source-acceptance.json",
+  "latest_control_gate": "publication/root-dns-connectivity-control-acceptance.json",
+  "direct_diagnostic": "DNS inconsistency and TLS reset at HTTPS-resolved address; proxy control succeeds",
+  "latest_network_acceptance": "publication/root-news-unplanned-batch2-source-acceptance.json",
+  "local_build_provenance_sha256": "271e474b80ce936c3a68b567a7c3e42c86851eb371772fa8108498613aa1f012",
+  "publication_hold": "publication/root-v27-publication-hold.json",
+  "next_version": "v28"
 }

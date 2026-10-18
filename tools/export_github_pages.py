@@ -222,7 +222,7 @@ def output_estimate(records: list[dict[str, Any]], extra_bytes: int = 0) -> int:
 
 _OVERLAY_MIMES = {"image/gif": "GIF", "image/png": "PNG", "image/jpeg": "JPEG"}
 _OVERLAY_URL_HOSTS = {"www.worldofwarcraft.com", "worldofwarcraft.com"}
-_SUPPLEMENT_OVERLAY_URL_HOSTS = _OVERLAY_URL_HOSTS | {"www.wow-europe.com", "wow-europe.com"}
+_SUPPLEMENT_OVERLAY_URL_HOSTS = _OVERLAY_URL_HOSTS | {"www.wow-europe.com", "wow-europe.com", "www.blizzard.com"}
 _OVERLAY_TIMESTAMP_RE = re.compile(r"^2008\d{10}$")
 
 

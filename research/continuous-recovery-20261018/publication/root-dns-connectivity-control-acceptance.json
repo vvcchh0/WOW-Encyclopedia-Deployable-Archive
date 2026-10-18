@@ -1,0 +1,41 @@
+{
+  "accepted": true,
+  "checked_utc": "2026-10-18T06:06:51.423610+00:00",
+  "scope": "Connectivity-only controls after DNS comparison; no new image payload, complete-index claim or deployment.",
+  "failure_streak_start": 0,
+  "failure_streak_after_direct": 1,
+  "failure_streak_end": 0,
+  "control_final_streak": 0,
+  "resume_gate_passed": true,
+  "requests": 2,
+  "control_success_finished_utc": "2026-10-18T06:05:51.693299+00:00",
+  "cooldown_not_before_utc": null,
+  "maximum_body_bytes": 131072,
+  "actual_body_bytes": 364,
+  "private_evidence_bindings": [
+    {
+      "path": "research/continuous-recovery-20261018/network/direct-dns-diagnostic/dns-queries.json",
+      "sha256": "ddff9e5287e3802f49e409dc626feeb651a3122ab93aba9a3923ca1fe85f6545"
+    },
+    {
+      "path": "research/continuous-recovery-20261018/network/direct-dns-diagnostic/doh-v2-queries.json",
+      "sha256": "dd5f26ab031eb0f970ff290dca9637335d670283c0d016a507f87ec972de86f1"
+    },
+    {
+      "path": "research/continuous-recovery-20261018/network/direct-dns-diagnostic/resolved-direct-control.json",
+      "sha256": "c77b944b12cb48bf76c36c6c3bf060d39c727165efcc13deef70f9d05f8f5830"
+    },
+    {
+      "path": "research/continuous-recovery-20261018/network/direct-dns-diagnostic/proxy-control.json",
+      "sha256": "4271f3efb5b0c6570ac769a8802c217458b107c1d73cbf56a0551f9fef26d9a4"
+    },
+    {
+      "path": "research/continuous-recovery-20261018/network/direct-dns-diagnostic/wayback-proxy-control-body.json",
+      "sha256": "8df5b33781fcf9952e3a34f9e39efe8a40be7095c2120542dcc0fe4c1b1028c9"
+    }
+  ],
+  "observed": "UDP DNS answers differ from the HTTPS resolver answer. Process-local correct-address direct TLS is reset; the same CDX query succeeds through the existing proxy. A DNS cache flush alone would not address the observed TLS reset.",
+  "settings_changed": false,
+  "tls_verification": true,
+  "accepted_images": []
+}

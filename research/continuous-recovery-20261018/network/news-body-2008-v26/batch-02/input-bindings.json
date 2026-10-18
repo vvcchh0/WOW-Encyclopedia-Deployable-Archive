@@ -1,0 +1,82 @@
+{
+  "schema": "wow-recovery.reusable-image-input-bindings.v1",
+  "batch_id": "WAYBACK-CONTINUOUS-20261018-NEWS-BODY-2008-V26-02",
+  "plan_path": "research/continuous-recovery-20261018/network/news-body-2008-v26/batch-02/plan.json",
+  "plan_sha256": "16b8e8c620a746b5df580411aeaf780fcd7695e821f53f9c554555f6636fcaef",
+  "driver_path": "research/continuous-recovery-20261018/network/reusable-image-driver-v3/reusable_image_driver.py",
+  "driver_sha256": "4a19422f0dd8e2f7e1ffdd088836c7ab80450afb91aeedc6cdb94fa4c6bfe955",
+  "fixture_mode": "not duplicated; use the already accepted V3 offline contract",
+  "inherited_tail": {
+    "latest_news20_batch1_tail": 0,
+    "prior_failure_tail": 0,
+    "tail_receipt": "research/continuous-recovery-20261018/publication/root-news20-batch1-source-acceptance.json",
+    "tail_receipt_sha256": "cc9c41ada9a7a1a820632370a5de97881416e74c09f086c5fb07faf37e14c6b7",
+    "control_gate_receipt": "research/continuous-recovery-20261016/publication/root-control03-acceptance.json",
+    "control_gate_sha256": "d04cfda5d802d4a16397f310d9f6698d2f413e509dd762b38b75adaceb873e50"
+  },
+  "predecessor_tail_rebind_required_before_execute": false,
+  "predecessor_tail_status": "bound_to_batch_01_actual_source_acceptance",
+  "selected_queue_ranks": [
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "selected_originals": [
+    "http://www.worldofwarcraft.com/news/images/08-01/01-31-08.jpg",
+    "http://www.worldofwarcraft.com/news/images/08-02/02-05-08-1.jpg",
+    "http://www.worldofwarcraft.com/news/images/08-02/02-05-08-2.jpg",
+    "http://www.worldofwarcraft.com/news/images/08-02/02-06-08-1.jpg",
+    "http://www.worldofwarcraft.com/news/images/08-02/02-06-08-2.jpg",
+    "http://www.worldofwarcraft.com/news/images/08-02/02-06-08-3.jpg",
+    "http://www.worldofwarcraft.com/news/images/08-02/02-07-08-1.jpg",
+    "http://www.worldofwarcraft.com/news/images/08-02/02-07-08-2.gif",
+    "http://www.worldofwarcraft.com/news/images/08-02/02-12-08-1.jpg",
+    "http://www.worldofwarcraft.com/news/images/08-02/02-14-08-1.jpg"
+  ],
+  "source_bindings": {
+    "news_queue_v26": {
+      "path": "research/continuous-recovery-20261018/publication/news20-accepted-queue.json",
+      "sha256": "c23f17cc607431d293825d690bd61b8dd837ebf1385f8660a84b53da1e9a5e62",
+      "role": "offline 20-target v26 news-body queue"
+    },
+    "news_queue_v26_acceptance": {
+      "path": "research/continuous-recovery-20261018/publication/root-news20-queue-acceptance.json",
+      "sha256": "72e8dbb2aeae330ae0cfc97ecb59a77fa12b37b2fd902930968bd3005c12824b",
+      "role": "root acceptance of the frozen 20-target queue"
+    },
+    "latest_news20_batch1_source_acceptance": {
+      "path": "research/continuous-recovery-20261018/publication/root-news20-batch1-source-acceptance.json",
+      "sha256": "cc9c41ada9a7a1a820632370a5de97881416e74c09f086c5fb07faf37e14c6b7",
+      "role": "latest accepted NEWS20 batch-01 source tail-zero receipt"
+    },
+    "latest_news20_batch1_plan_acceptance": {
+      "path": "research/continuous-recovery-20261018/publication/root-news20-batch1-plan-acceptance.json",
+      "sha256": "893e86f911d6d3cd5e3267f63f91e88e057f25c448a50d04c55c13f8cf83577a",
+      "role": "latest accepted NEWS20 batch-01 plan receipt"
+    },
+    "control_gate": {
+      "path": "research/continuous-recovery-20261016/publication/root-control03-acceptance.json",
+      "sha256": "d04cfda5d802d4a16397f310d9f6698d2f413e509dd762b38b75adaceb873e50",
+      "role": "frozen control03 tail-zero gate"
+    },
+    "template_plan": {
+      "path": "research/continuous-recovery-20261018/network/news-static-v25-next10-v1/plan.json",
+      "sha256": "c11c6047874d26ea7f9c4534c692a2ea7c7b436df26b4ff33eb7140e69be3eda",
+      "role": "prior accepted V3-compatible plan structure"
+    },
+    "frozen_v3_driver": {
+      "path": "research/continuous-recovery-20261018/network/reusable-image-driver-v3/reusable_image_driver.py",
+      "sha256": "4a19422f0dd8e2f7e1ffdd088836c7ab80450afb91aeedc6cdb94fa4c6bfe955",
+      "role": "frozen reusable-image-v3 driver"
+    }
+  },
+  "driver_bytes": 103121,
+  "network_requests_during_preparation": 0
+}
