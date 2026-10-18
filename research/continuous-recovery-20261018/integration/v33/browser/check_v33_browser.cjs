@@ -179,7 +179,7 @@ async function main() {
     schema: 'wow-recovery.integration.v33-browser-result.v1', accepted: false,
     started_utc: new Date().toISOString(), finished_utc: null,
     input: { path: rel(args.input), sha256: sha256File(args.input) }, root_gate: gate,
-    checks: [], errors: [], page_error_events: [], baseline_page_errors: [], inactive_image_maps: [], external_requests: [], request_failures: [], screenshots: [],
+    checks: [], errors: [], page_error_events: [], baseline_page_errors: [], inactive_image_maps: [], unresolved_original_controls: [], external_requests: [], request_failures: [], screenshots: [],
     popup_full_image_links: 0, ordinary_image_hrefs: 0, static_render_targets: 0,
     declaration_only_images: [], network_requests: 0, browser_executed: true,
   };
@@ -231,8 +231,26 @@ async function main() {
     }));
     const page = await context.newPage();
 
+    let resumedOrdinary = new Set();
+    if (input.resume_browser_evidence) {
+      const file = verifyBinding(input.resume_browser_evidence, 'prior browser checkpoint');
+      const prior = readJson(file, 'prior browser checkpoint');
+      const priorInput = readJson(path.join(ROOT, prior.input.path), 'prior browser input');
+      if (sha256File(path.join(ROOT, prior.input.path)) !== prior.input.sha256 || prior.output_provenance_sha256 !== sha256File(provenancePath)) throw new Error('prior browser checkpoint changed');
+      if (JSON.stringify(priorInput.new_originals) !== JSON.stringify(input.new_originals) || JSON.stringify(priorInput.source_references) !== JSON.stringify(input.source_references)) throw new Error('resume image/reference closure changed');
+      if (prior.popup_full_image_links !== 21 || prior.ordinary_image_hrefs !== 21 || prior.external_requests.length || prior.request_failures.length || prior.checks.some(row => !row.accepted)) throw new Error('prior browser checkpoint is not the exact accepted partial scope');
+      for (const row of prior.checks) if (['ordinary image href opens local image','ordinary image href navigates locally','historical image-map declaration has no associated image'].includes(row.name)) resumedOrdinary.add(row.original);
+      if (resumedOrdinary.size !== 21) throw new Error('prior ordinary checkpoint count differs');
+      report.checks = [...prior.checks];
+      report.popup_full_image_links = prior.popup_full_image_links;
+      report.ordinary_image_hrefs = prior.ordinary_image_hrefs;
+      report.inactive_image_maps = prior.inactive_image_maps || [];
+      report.baseline_page_errors = prior.baseline_page_errors || [];
+      report.reused_browser_result = input.resume_browser_evidence;
+    }
+
     check('new originals are distinct', items.length === Number(input.new_original_count) && new Set(items.map(item => item.original)).size === items.length, { count: items.length });
-    for (const item of items) {
+    for (const item of (input.resume_browser_evidence ? [] : items)) {
       checkDeadline(started);
       const response = await context.request.get(localUrl(item));
       const body = await response.body();
@@ -342,7 +360,7 @@ async function main() {
 
     const popupRows = Array.isArray(input.source_references?.popup_full_image_links) ? input.source_references.popup_full_image_links : [];
     const popupPages = new Map();
-    for (const row of popupRows) { if (!popupPages.has(row.page_output)) popupPages.set(row.page_output, []); popupPages.get(row.page_output).push(row); }
+    for (const row of (input.resume_browser_evidence ? [] : popupRows)) { if (!popupPages.has(row.page_output)) popupPages.set(row.page_output, []); popupPages.get(row.page_output).push(row); }
     for (const [pagePath, rows] of popupPages) {
       checkDeadline(started);
       const response = await page.goto(base + pagePath.replace(/^\/+/, ''), { waitUntil: 'networkidle' });
@@ -352,7 +370,7 @@ async function main() {
     }
 
     const ordinaryRows = Array.isArray(input.source_references?.ordinary_image_hrefs) ? input.source_references.ordinary_image_hrefs : [];
-    const ordinaryUnique = new Map(ordinaryRows.map(row => [row.original, row]));
+    const ordinaryUnique = new Map(ordinaryRows.filter(row => !resumedOrdinary.has(row.original)).map(row => [row.original, row]));
     const ordinaryPages = new Map();
     for (const row of ordinaryUnique.values()) { if (!ordinaryPages.has(row.page_output)) ordinaryPages.set(row.page_output, []); ordinaryPages.get(row.page_output).push(row); }
     for (const [pagePath, rows] of ordinaryPages) {
@@ -399,7 +417,19 @@ async function main() {
           await page.goto(base + pagePath.replace(/^\/+/, ''), { waitUntil: 'networkidle' });
           await activateNews(page, pagePath);
         } else {
-          throw new Error(`ordinary image href produced no popup or same-tab navigation: ${row.original}`);
+          const visible = await page.locator('img').evaluateAll(async (elements, value) => {
+            const matches = elements.filter(element => (element.getAttribute('src') || '').includes(value));
+            await Promise.all(matches.map(element => element.decode().catch(() => {})));
+            return matches.filter(element => { const s=getComputedStyle(element),r=element.getBoundingClientRect(); return s.display!=='none'&&s.visibility!=='hidden'&&r.width>0&&r.height>0&&element.naturalWidth>0; }).map(element => [element.naturalWidth,element.naturalHeight]);
+          }, needle);
+          const inlineWorks=visible.some(dim => JSON.stringify(dim)===JSON.stringify(item.dimensions));
+          if (!inlineWorks && (input.known_unresolved_controls || []).includes(row.original)) {
+            const gap={original:row.original,page:pagePath,visible,reason:'Original inline viewer did not reveal the image after a real click; original file bytes and dimensions are valid. Retained as an unresolved control.'};
+            report.unresolved_original_controls.push(gap);
+            report.checks.push({name:'known unresolved original viewer',accepted:false,status:'known_unresolved',...gap});
+          } else check('ordinary image href opens inline viewer', inlineWorks, { original:row.original,page:pagePath,visible });
+          await page.goto(base + pagePath.replace(/^\/+/, ''), { waitUntil:'networkidle' });
+          await activateNews(page,pagePath);
         }
         report.ordinary_image_hrefs++;
       }
