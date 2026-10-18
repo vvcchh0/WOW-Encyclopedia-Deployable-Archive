@@ -1,0 +1,133 @@
+{
+  "prepared_utc": "2026-10-18T11:29:55.478809Z",
+  "accepted": false,
+  "preparation_only": true,
+  "network_requests": 0,
+  "plans_created": 0,
+  "driver_invoked": false,
+  "initial_factory_baseline": {
+    "factory_sha256": "e9aaa67cbbc5c964a8db36008a474154a3592c634e83c4f2f23911684dab1716",
+    "receipt_copy": "research/continuous-recovery-20261018/network/navigation70-v32/preparation-receipt-initial-e9aaa.json",
+    "receipt_copy_sha256": "9e3632122fb711f9699792751ff0038f3dc68d9517af70001de13c5c5fe62427",
+    "role": "immutable pre-fix factory receipt and finding history"
+  },
+  "correction_finding": "On Windows, Path.write_text newline translation could persist CRLF while plan and status-snapshot bindings were computed from LF JSON bytes, making actual file SHA/length differ from their bindings.",
+  "correction_scope": [
+    "canonical UTF-8/LF JSON bytes for write_json, json_sha256, and bound byte lengths",
+    "resolved factory/temp/target/document paths checked before atomic rename and cleanup",
+    "recheck immutable batch target immediately before os.replace"
+  ],
+  "queue": {
+    "path": "research/continuous-recovery-20261018/publication/navigation-link-selected70.json",
+    "sha256": "6d981e640ee377cac493e69d8a6152725fffe9ff1aa1e0585035a170bebb31fc",
+    "expected_sha256": "6d981e640ee377cac493e69d8a6152725fffe9ff1aa1e0585035a170bebb31fc",
+    "target_count": 70,
+    "primary_reference_count": 81,
+    "alternate_navigation_link_count": 3,
+    "alternate_reference_count": 3,
+    "network_requests": 0
+  },
+  "current_runtime_bindings": {
+    "status": {
+      "path": "research/continuous-recovery-20261018/status.json",
+      "sha256": "4a458fa94d07a70434858efaf6052bf6e0a140deb4eea612d62b945a24a943c7",
+      "bytes": 20235,
+      "role": "current recovery status snapshot"
+    },
+    "status_sha256_audit": "4a458fa94d07a70434858efaf6052bf6e0a140deb4eea612d62b945a24a943c7",
+    "latest_source_acceptance": {
+      "path": "research/continuous-recovery-20261018/publication/root-late-thumbnails12-batch2-source-acceptance.json",
+      "sha256": "81a374a44659a81c90b7adb2d3b13de7c1ae3b261837e08effcf48d7ef6758a7",
+      "bytes": 2213,
+      "role": "freshest accepted source receipt selected from current status"
+    },
+    "latest_control_gate": {
+      "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+      "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+      "bytes": 1842,
+      "role": "current accepted CONTROL03 tail-zero gate"
+    },
+    "latest_failure_tail": 0,
+    "captured_utc": "2026-10-18T11:28:45.584053Z"
+  },
+  "frozen_driver": {
+    "path": "research/continuous-recovery-20261018/network/reusable-image-driver-v3/reusable_image_driver.py",
+    "sha256": "4a19422f0dd8e2f7e1ffdd088836c7ab80450afb91aeedc6cdb94fa4c6bfe955",
+    "expected_sha256": "4a19422f0dd8e2f7e1ffdd088836c7ab80450afb91aeedc6cdb94fa4c6bfe955"
+  },
+  "frozen_policy": {
+    "from": "20000101000000",
+    "to": "20080512210044",
+    "batch_size": 10,
+    "batch_count": 7,
+    "max_attempts": 24,
+    "window_seconds": 240.0,
+    "max_total_body_bytes": 16777216,
+    "max_entity_body_bytes": 8388608,
+    "min_dispatch_seconds": 5.25,
+    "min_request_start_seconds": 5.0,
+    "direct_attempt_budget": 4,
+    "proxy_attempt_budget": 20,
+    "tls_verification": true,
+    "automatic_redirects": 0,
+    "stop_http_codes": [
+      429,
+      503
+    ],
+    "cooldown_seconds": 120,
+    "disk_floor_bytes": 11005853696
+  },
+  "reference_factory": {
+    "path": "research/continuous-recovery-20261018/network/next-frontier70-v29/prepare_next_frontier70.py",
+    "sha256": "55be7c2cb2f0291093a397a7d54b413c1a41811d155e33f5ad841ef46a4f65a6",
+    "role": "read-only prior next-frontier70-v29 design reference"
+  },
+  "prepared_files": {
+    "prepare_navigation70.py": "abb37bc6bcc56e371e194236e825036545c535d05a05362813320ac2d46ebc9a",
+    "README.md": "ef1e2d1b5d6a8dee1f04b7167aca12e1092f012e872d72e1c0be30c1a9e7d752",
+    "test_prepare_navigation70.py": "7d2048572d352d36f668774734a905ec032fac66e41fc13122b0385322d07539"
+  },
+  "offline_validation": {
+    "command": "python -X utf8 -m unittest discover -s research/continuous-recovery-20261018/network/navigation70-v32 -p test_*.py -v",
+    "result": "11 tests passed in 0.487s; py_compile passed; actual plan/status-snapshot LF byte bindings and escaping-document cleanup fixture passed",
+    "scope": [
+      "real frozen queue SHA and 70 citations",
+      "all primary and alternate source-file SHA/line bindings",
+      "first ten ordering",
+      "duplicate/URL/batch/gate/cooldown/existing-batch refusal",
+      "driver-shaped input bindings and frozen policy",
+      "canonical LF serialization and atomic path containment"
+    ]
+  },
+  "factory_interface": {
+    "command": "python -X utf8 research/continuous-recovery-20261018/network/navigation70-v32/prepare_navigation70.py --batch-index N",
+    "allowed_batch_indices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "writes": "one new batch directory atomically under the owned folder only",
+    "execution": "no HTTP/CDX/replay/driver invocation; parent GO remains required"
+  },
+  "first_batch_originals": [
+    "http://www.worldofwarcraft.com/news/images/07-08/ss01.jpg",
+    "http://www.worldofwarcraft.com/news/images/07-08/ss02.jpg",
+    "http://www.worldofwarcraft.com/news/images/07-08/tcg01.jpg",
+    "http://www.worldofwarcraft.com/news/images/07-08/tcg02.jpg",
+    "http://www.worldofwarcraft.com/news/images/07-08/tcg03.jpg",
+    "http://www.worldofwarcraft.com/news/images/07-08/wow-bc.jpg",
+    "http://www.worldofwarcraft.com/news/images/07-07/comic-full.jpg",
+    "http://www.worldofwarcraft.com/news/images/07-11/comic1.jpg",
+    "http://www.worldofwarcraft.com/news/images/07-11/comic2.jpg",
+    "http://www.worldofwarcraft.com/info/basics/images/trade/ss01.jpg"
+  ],
+  "gaps": [
+    "No live CDX or replay plan was generated in this preparation turn.",
+    "Latest source/control bindings are read at future invocation and may change after late batch02; the exact navigation queue SHA remains a hard gate.",
+    "No image payloads were acquired or visually inspected by this factory."
+  ]
+}

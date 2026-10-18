@@ -1,0 +1,52 @@
+{
+  "schema": "wow-recovery.static40-v32-preparation-receipt.v1",
+  "prepared_utc": "2026-10-18T12:00:00Z",
+  "accepted": false,
+  "preparation_only": true,
+  "network_requests": 0,
+  "real_batches_created": 0,
+  "driver_invoked": false,
+  "queue": {
+    "path": "research/continuous-recovery-20261018/network/static40-v32/static40-source-queue.json",
+    "sha256": "8cd75a65935eb416ab12ed70fa1b2f86335939a409173df899bdb7f8d48d95f9",
+    "target_count": 40,
+    "candidate_pool_count": 41,
+    "excluded_literal_space_url": "http://www.worldofwarcraft.com/info/basics/images/small pets/icon.gif"
+  },
+  "source_bindings": {
+    "static_frontier_v32_audit": {
+      "path": "research/continuous-recovery-20261018/local-audit/static-frontier-v32/static-frontier-v32-candidates.json",
+      "sha256": "72c00aa28e7c19c86de7f877983d049662f543be48960d2879a0f566bf15657f"
+    },
+    "navigation_exclusion_correction": {
+      "path": "research/continuous-recovery-20261018/local-audit/static-frontier-v32/static-frontier-v32-navigation-exclusion-correction.json",
+      "sha256": "cc665a6ba455977f267e5f7e22b8bf4907d58a9581809b695f2fbc1b92bc564d"
+    },
+    "v32_export_provenance_sha256": "a071d47b65232f723c2e74112adab521eb124d22b57aa430437646f06f50d356",
+    "reusable_image_driver_sha256": "4a19422f0dd8e2f7e1ffdd088836c7ab80450afb91aeedc6cdb94fa4c6bfe955"
+  },
+  "prepared_files": {
+    "static40-source-queue.json": "8cd75a65935eb416ab12ed70fa1b2f86335939a409173df899bdb7f8d48d95f9",
+    "prepare_static40.py": "494abcf87d60439bffebaa74d9ab85eaf54da461f04d7d0708667597a65d15b5",
+    "test_prepare_static40.py": "9a4a0c24899bf705c11b56ce9844ab6c3aab3c7209827b3ec68c9a32e2fc075a",
+    "README.md": "4bb25132c7a5752244736404d59d794048960c49522ff2c0b18bcdf7bb7877e8"
+  },
+  "offline_validation": {
+    "command": "python -X utf8 -m unittest discover -s research/continuous-recovery-20261018/network/static40-v32 -p test_*.py -v",
+    "result": "7 tests passed in 0.518s; py_compile passed; 40 source page citations SHA/line checked; LF atomic binding and escape cleanup fixtures passed",
+    "d_free_before_bytes": 47299686400,
+    "d_free_after_bytes": 47299682304,
+    "scope": [
+      "exact forty queue identities and one literal-space exclusion",
+      "corrected navigation exclusion non-overlap",
+      "v32 source page SHA/line/literal bindings",
+      "exact CDX/replay limits and URL policy",
+      "canonical LF bytes and atomic containment"
+    ]
+  },
+  "gaps": [
+    "No CDX or replay request was made.",
+    "No real batch directory or payload output was created.",
+    "Latest source tail and CONTROL03 are rebound only when a future batch is explicitly prepared; this receipt does not authorize execution."
+  ]
+}

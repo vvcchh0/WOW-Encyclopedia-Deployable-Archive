@@ -1,0 +1,68 @@
+{
+  "schema": "wow-recovery.reusable-image-input-bindings.v1",
+  "batch_id": "WAYBACK-CONTINUOUS-20261018-TRANSFER-PENDING2-V2-01",
+  "plan_path": "research/continuous-recovery-20261018/network/transfer-pending2-v2/batch-01/plan.json",
+  "plan_sha256": "f70c0de62437858df9c5a8178edeea2511f1850de3b4f3bff5b78b5f5a67b4f5",
+  "driver_path": "research/continuous-recovery-20261018/network/reusable-image-driver-v3/reusable_image_driver.py",
+  "driver_sha256": "4a19422f0dd8e2f7e1ffdd088836c7ab80450afb91aeedc6cdb94fa4c6bfe955",
+  "selected_queue_ranks": [
+    1,
+    2
+  ],
+  "selected_originals": [
+    "http://www.worldofwarcraft.com/news/images/08-02/02-06-08-3.jpg",
+    "http://www.worldofwarcraft.com/news/images/05-02/EU2.jpg"
+  ],
+  "source_bindings": {
+    "navigation70_queue": {
+      "path": "research/continuous-recovery-20261018/network/transfer-pending2-v2/transfer-pending2-v2-queue.json",
+      "sha256": "8c6f14e2ee076649208465381751d722ccd55d3fafb7aa00243bbe79651f5786",
+      "bytes": 8465,
+      "role": "immutable two-target transfer-pending2 retry queue"
+    },
+    "source_audit": {
+      "path": "research/continuous-recovery-20261018/publication/root-news20-batch2-plan-acceptance.json",
+      "sha256": "aa3e1910c493bb760b0d8e697040e45d45f4f37d96b58ce29d1b134f95d4df05",
+      "bytes": 1573,
+      "role": "frozen prior NEWS transfer plan acceptance"
+    },
+    "source_provenance": {
+      "path": "research/continuous-recovery-20261018/publication/root-navigation70-batch4-plan-acceptance.json",
+      "sha256": "c5b5aa92db229919ef4026879719515e11f5ae287bf626f1850a831a7675ef59",
+      "bytes": 1565,
+      "role": "frozen prior NAVIGATION transfer plan acceptance"
+    },
+    "status": {
+      "path": "research/continuous-recovery-20261018/status.json",
+      "sha256": "c697c50449c3e0b76d370115bdc557893141c125a3fb6384c42004f21e19b961",
+      "bytes": 23765,
+      "role": "current recovery status snapshot"
+    },
+    "latest_source_acceptance": {
+      "path": "research/continuous-recovery-20261018/publication/root-static40-batch4-source-acceptance.json",
+      "sha256": "c5c8ad7bf1931d75fe95d3cca89687176eb982f2634bb46b4c007d7055e34cb7",
+      "bytes": 8367,
+      "role": "freshest accepted source receipt selected from current status"
+    },
+    "latest_control_gate": {
+      "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+      "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+      "bytes": 1842,
+      "role": "current accepted CONTROL03 tail-zero gate"
+    },
+    "frozen_v3_driver": {
+      "path": "research/continuous-recovery-20261018/network/reusable-image-driver-v3/reusable_image_driver.py",
+      "sha256": "4a19422f0dd8e2f7e1ffdd088836c7ab80450afb91aeedc6cdb94fa4c6bfe955",
+      "bytes": 103121,
+      "role": "frozen reusable-image-v3 driver"
+    },
+    "status_snapshot": {
+      "path": "research/continuous-recovery-20261018/network/transfer-pending2-v2/batch-01/status-snapshot.json",
+      "sha256": "afc7f41cc8ff2c00013190eac9d807f525133f68464eb3576f01e82cd7415f72",
+      "bytes": 1071,
+      "role": "atomic batch-local status snapshot"
+    }
+  },
+  "network_requests_during_preparation": 0,
+  "driver_execution": "not invoked by this factory"
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "wow-recovery.integration.v33-browser-prepare-failure.v1",
+  "command": "python.exe -X utf8 research/continuous-recovery-20261018/integration/v33/browser/prepare_v33_browser.py --prepare",
+  "checked_utc": "2026-10-18T13:22:00Z",
+  "error": "RuntimeError: v33 preparation records export activity",
+  "cause": {
+    "preflight_top_level_export_executed": null,
+    "preflight_loader_preflight_export_executed": false,
+    "input_preparation_export_executed": false,
+    "guard_before_fix_required_top_level_false": true
+  },
+  "frozen_inputs": {
+    "preflight": {
+      "path": "research/continuous-recovery-20261018/integration/v33/v33-preflight.json",
+      "sha256": "75d58a1421702181e14eff6acc1844c06d38e802e6077eed70a3ff6b5b226cdd"
+    },
+    "input_preparation": {
+      "path": "research/continuous-recovery-20261018/integration/v33/v33-input-preparation.json",
+      "sha256": "c9c7fe838c973532c66249be71d0979eb49257090f85f669b77a254f36686c59"
+    }
+  },
+  "browser_input_written": false,
+  "playwright_started": false,
+  "network_requests": 0
+}

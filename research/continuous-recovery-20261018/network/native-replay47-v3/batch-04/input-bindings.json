@@ -1,0 +1,73 @@
+{
+  "schema": "wow-recovery.native-replay47-input-bindings.v3",
+  "batch_id": "WAYBACK-CONTINUOUS-20261018-NATIVE-REPLAY47-V3-04",
+  "plan_path": "research/continuous-recovery-20261018/network/native-replay47-v3/batch-04/plan.json",
+  "plan_sha256": "c07ab1b4633e97688f4dfdeb2e25be4ffc01e2b3cc3e8f13917e1079b2d31ee1",
+  "native_driver_path": "research/continuous-recovery-20261018/network/native-replay47-v3/native_replay47_driver.py",
+  "native_driver_sha256": "84656d15036405ad6813702a4f7a0086f9d1838c2a3323d5022c84a67feb7c83",
+  "frozen_v3_driver": {
+    "path": "research/continuous-recovery-20261018/network/reusable-image-driver-v3/reusable_image_driver.py",
+    "sha256": "4a19422f0dd8e2f7e1ffdd088836c7ab80450afb91aeedc6cdb94fa4c6bfe955",
+    "role": "hash-pinned low-level transport/parser/image helpers"
+  },
+  "queue": {
+    "path": "research/continuous-recovery-20261018/publication/native-karazhan-unknown47-queue.json",
+    "sha256": "29b21d74f3253259a09be5d489291db12cf52782ce89b5a19c417817a8ea63cc",
+    "bytes": 198110,
+    "role": "accepted native replay queue"
+  },
+  "status_snapshot": {
+    "path": "research/continuous-recovery-20261018/network/native-replay47-v3/batch-04/status-snapshot.json",
+    "sha256": "79375739b489e06b25d084b3a27950e0bb10f217b7b793fdcde9aab328848990",
+    "bytes": 978,
+    "role": "immutable batch-local status pointer snapshot"
+  },
+  "latest_source_acceptance": {
+    "path": "research/continuous-recovery-20261018/publication/root-native-replay47-v3-batch3-source-acceptance.json",
+    "sha256": "ae0074225af81b5a5cdceb10103797c9cec53c96f8d732b7fe9a46828cd5e93c",
+    "bytes": 9040,
+    "role": "latest accepted native replay source receipt"
+  },
+  "latest_control_gate": {
+    "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+    "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+    "bytes": 1842,
+    "role": "latest accepted CONTROL03 tail-zero gate"
+  },
+  "selected_ranks": [
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47
+  ],
+  "selected_target_ids": [
+    "thumb-ss09",
+    "full-ss10",
+    "thumb-ss10",
+    "full-ss11",
+    "thumb-ss11",
+    "full-ss12",
+    "thumb-ss12",
+    "full-ss14",
+    "thumb-ss20",
+    "thumb-ss23",
+    "full-ss24"
+  ],
+  "fixture_path": "research/continuous-recovery-20261018/network/native-replay47-v3/fixtures/native-replay47-fixtures.json",
+  "fixture_sha256": "1165a055af262927fc562c959fbcc5f23fbc659a2afc5708f242402e522c3abd",
+  "network_requests_during_preparation": 0,
+  "execution_requires": [
+    "explicit --go",
+    "root acceptance SHA",
+    "future deadline",
+    "empty output",
+    "disk floor"
+  ]
+}

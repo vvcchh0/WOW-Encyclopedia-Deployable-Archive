@@ -1,0 +1,76 @@
+{
+  "schema": "wow-recovery.late-thumbnails12-prepared-bindings.v1",
+  "batch_id": "WAYBACK-CONTINUOUS-20261018-LATE-THUMBNAILS12-V1-02",
+  "plan_path": "research/continuous-recovery-20261018/network/late-thumbnails12-v1/batch-02/plan.json",
+  "plan_sha256": "3fdb7fc32942c82525699af5efac981dd67f221b4252905b28b1ea06172eeff2",
+  "driver_path": "research/continuous-recovery-20261018/network/late-thumbnails12-v1/reusable_image_driver.py",
+  "driver_sha256": "374bcc0f8008215d09eea6203cf71a7b2f49361120540d8e01c1628c443c0328",
+  "factory_path": "research/continuous-recovery-20261018/network/late-thumbnails12-v1/prepare_late_thumbnails12.py",
+  "factory_sha256": "64a19a7eb4abf8797eeadfa65a94e05e5b27806a66129f04e7d2eb1e61df88a2",
+  "source_bindings": {
+    "queue": {
+      "path": "research/continuous-recovery-20261018/publication/native-observed-late-thumbnails12-queue.json",
+      "sha256": "7fbe5026cce61fcf6e4b3e9028d3009b6a3c3d3e9be28c73ecbb0510283ad36e",
+      "bytes": 14024,
+      "role": "root-accepted immutable twelve-row late-thumbnail queue"
+    },
+    "url_list": {
+      "path": "research/continuous-recovery-20261018/publication/native-observed-late-thumbnails12-originals.txt",
+      "sha256": "072c3ebb6a89ee69f809aa9f1b07bac68d83bc4621a991093d03c9d17044d51a",
+      "bytes": 903,
+      "role": "root-frozen literal original URL list"
+    },
+    "status_snapshot": {
+      "path": "research/continuous-recovery-20261018/network/late-thumbnails12-v1/batch-02/status-snapshot.json",
+      "sha256": "f4a8cde3f335303413643d1b91789d1841740db1d81d57118418f9938752ea89",
+      "bytes": 1696,
+      "role": "immutable late-thumbnail status pointer snapshot"
+    },
+    "latest_source_acceptance": {
+      "path": "research/continuous-recovery-20261018/publication/root-late-thumbnails12-batch1-source-acceptance.json",
+      "sha256": "1f5efd828ae5eb79fc8752189846b83a2b13110accd21907cef11d41af3ca0cb",
+      "bytes": 2213,
+      "role": "latest accepted native replay source receipt"
+    },
+    "latest_control_gate": {
+      "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+      "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+      "bytes": 1842,
+      "role": "latest accepted CONTROL03 tail-zero gate"
+    },
+    "observed_source_receipt_chain": [
+      {
+        "path": "research/continuous-recovery-20261018/publication/root-native-replay47-v3-batch2-source-acceptance.json",
+        "sha256": "b0bac10e9a904b8f60143e28088f852cdeed27e342841565be1968cec57c7eb0",
+        "bytes": 8022,
+        "role": "root-accepted observed native redirect receipt"
+      },
+      {
+        "path": "research/continuous-recovery-20261018/publication/root-native-replay47-v3-batch3-source-acceptance.json",
+        "sha256": "ae0074225af81b5a5cdceb10103797c9cec53c96f8d732b7fe9a46828cd5e93c",
+        "bytes": 9040,
+        "role": "root-accepted observed native redirect receipt"
+      },
+      {
+        "path": "research/continuous-recovery-20261018/publication/root-native-replay47-v3-batch4-source-acceptance.json",
+        "sha256": "fc8e737c4f161a59c6d219d646cbf1bb0516b148ef39260361f86644ce6c7ed0",
+        "bytes": 8011,
+        "role": "root-accepted observed native redirect receipt"
+      }
+    ]
+  },
+  "fixture_path": "research/continuous-recovery-20261018/network/late-thumbnails12-v1/batch-02/fixture-results.json",
+  "fixture_sha256": "d2e8e47fcb8244cf452bce9073eaaf49b95ef7be6041cde04b59e4efde31a6fe",
+  "network_requests_during_preparation": 0,
+  "offline_fixture": {
+    "all_passed": false,
+    "passed": 29,
+    "total": 32,
+    "network_requests": 0,
+    "failed_tests": [
+      "latest_exact_default_port_and_variant_classification",
+      "gif_jpeg_png_magic_pillow_and_all_frames",
+      "compression_digest_memento_and_original_rejection"
+    ]
+  }
+}

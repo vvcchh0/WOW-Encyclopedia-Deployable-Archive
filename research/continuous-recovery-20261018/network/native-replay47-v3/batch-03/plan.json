@@ -1,0 +1,1642 @@
+{
+  "schema": "wow-recovery.native-replay47-probe-plan.v3",
+  "batch_id": "WAYBACK-CONTINUOUS-20261018-NATIVE-REPLAY47-V3-03",
+  "batch_index": 3,
+  "generated_utc": "2026-10-18T10:53:44.288078+00:00",
+  "queue": {
+    "path": "research/continuous-recovery-20261018/publication/native-karazhan-unknown47-queue.json",
+    "sha256": "29b21d74f3253259a09be5d489291db12cf52782ce89b5a19c417817a8ea63cc",
+    "rows": 47,
+    "accepted": true
+  },
+  "selection": {
+    "rank_start": 25,
+    "rank_end": 36,
+    "selected_ranks": [
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
+    ],
+    "selected_count": 12,
+    "queue_count": 47,
+    "scope": "frozen Karazhan transport_unknown queue ranks 25..36",
+    "excluded_scope": "all 79 actual archive404 targets, prior native replay ranks 1..12, and every non-transport_unknown row"
+  },
+  "policy": {
+    "max_attempts": 14,
+    "window_seconds": 240.0,
+    "max_total_body_bytes": 16777216,
+    "max_entity_body_bytes": 8388608,
+    "min_dispatch_seconds": 5.25,
+    "min_request_start_seconds": 5.0,
+    "disk_floor_bytes": 11005853696,
+    "direct_first": true,
+    "direct_connect_timeout_seconds": 4.0,
+    "direct_max_seconds": 4.0,
+    "proxy": "http://127.0.0.1:7890",
+    "proxy_connect_timeout_seconds": 8.0,
+    "proxy_max_seconds": 20.0,
+    "tls_verification": true,
+    "automatic_redirects": 0,
+    "stop_http_codes": [
+      429,
+      503
+    ],
+    "cooldown_seconds": 120,
+    "retry_after_honored": true,
+    "transport_policy": "batch_after_direct_failure",
+    "qualifying_direct_fallback": {
+      "curl_exit": [
+        7,
+        28
+      ],
+      "source_status": null,
+      "body_bytes": 0
+    },
+    "user_agent": "wow-recovery-native-replay47-v3/20261018",
+    "inherited_failure_tail": 0
+  },
+  "replay_contract": {
+    "no_cdx_query": true,
+    "no_url_guessing": true,
+    "recorded_request_urls_only": true,
+    "anchor_timestamp": "20080512210044",
+    "no_redirects": true,
+    "classifications": [
+      "actual404",
+      "observed_302_location",
+      "http_200_nonimage",
+      "pending_source_index",
+      "transport_unknown"
+    ],
+    "pending_source_index_requires": "separate CDX/Memento/digest review",
+    "200_image_is_not_accepted": true,
+    "raw_evidence_local_only": true
+  },
+  "source_bindings": {
+    "status_snapshot": {
+      "path": "research/continuous-recovery-20261018/network/native-replay47-v3/batch-03/status-snapshot.json",
+      "sha256": "b1b996cbf58d15eee3c8a6322a289f86c1dc221339be829cfba1f0ec1a8b1dc6",
+      "bytes": 978,
+      "role": "immutable batch-local status pointer snapshot"
+    },
+    "latest_source_acceptance": {
+      "path": "research/continuous-recovery-20261018/publication/root-native-replay47-v3-batch2-source-acceptance.json",
+      "sha256": "b0bac10e9a904b8f60143e28088f852cdeed27e342841565be1968cec57c7eb0",
+      "bytes": 8022,
+      "role": "latest accepted native replay source receipt"
+    },
+    "latest_control_gate": {
+      "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+      "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+      "bytes": 1842,
+      "role": "latest accepted CONTROL03 tail-zero gate"
+    },
+    "active_status_sha256_audit": "835f5237b8ecd5753806d4ffddc480397227b7ddb746aa16ede6897ce08d08ed"
+  },
+  "frozen_v3": {
+    "path": "research/continuous-recovery-20261018/network/reusable-image-driver-v3/reusable_image_driver.py",
+    "sha256": "4a19422f0dd8e2f7e1ffdd088836c7ab80450afb91aeedc6cdb94fa4c6bfe955"
+  },
+  "native_driver": {
+    "path": "research/continuous-recovery-20261018/network/native-replay47-v3/native_replay47_driver.py",
+    "sha256": "84656d15036405ad6813702a4f7a0086f9d1838c2a3323d5022c84a67feb7c83"
+  },
+  "fixture": {
+    "path": "research/continuous-recovery-20261018/network/native-replay47-v3/fixtures/native-replay47-fixtures.json",
+    "sha256": "1165a055af262927fc562c959fbcc5f23fbc659a2afc5708f242402e522c3abd"
+  },
+  "input_bindings_path": "research/continuous-recovery-20261018/network/native-replay47-v3/batch-03/input-bindings.json",
+  "root_plan_acceptance": {
+    "path": "research/continuous-recovery-20261018/publication/root-native-replay47-v3-batch3-plan-acceptance.json",
+    "sha256": null,
+    "accepted": false,
+    "required_before_go": true
+  },
+  "candidates": [
+    {
+      "target_key": "NATIVE-KARAZHAN47-03-25",
+      "priority": 25,
+      "queue_rank": 25,
+      "target_id": "thumb-ss03",
+      "kind": "thumb",
+      "number": 3,
+      "original": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss3-thumb.jpg",
+      "literal": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss3-thumb.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss3-thumb.jpg",
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "expected_formats": [
+        "JPEG"
+      ],
+      "expected": {
+        "archive_query_required": false,
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "reencode": false,
+        "script_execution": false
+      },
+      "source_evidence": {
+        "kind": "frozen_native_replay_queue",
+        "path": "research/continuous-recovery-20261018/publication/native-karazhan-unknown47-queue.json",
+        "sha256": "29b21d74f3253259a09be5d489291db12cf52782ce89b5a19c417817a8ea63cc",
+        "row_index": 25,
+        "target_id": "thumb-ss03",
+        "literal": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss3-thumb.jpg",
+        "requested": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss3-thumb.jpg",
+        "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss3-thumb.jpg",
+        "global_category": "transport_unknown",
+        "no_cdx_query": true,
+        "no_url_guessing": true
+      },
+      "source_page_context": {
+        "source_page": {
+          "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/karazhan-gallery.html",
+          "line": 126,
+          "sha256": "fc7f46d260cba6c434fd5e67d47008f207fbb8bd939a630089599d097755c199",
+          "bytes": 15124,
+          "literal": "\t\t\taddshots(\"/info/dungeons/images/karazhan/\",\"ss\",numShots);",
+          "quote": "addshots(\"/info/dungeons/images/karazhan/\",\"ss\",numShots);"
+        },
+        "js_rule_evidence": [
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 471,
+            "quote": "function addshots(sourceDirectory,filename,endnum)"
+          },
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 479,
+            "quote": "shotList[endnum-i] = sourceDirectory + filename + (i) +\".jpg\";"
+          },
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 486,
+            "quote": "shotList[i] = sourceDirectory + filename + (i+1) +\".jpg\";"
+          },
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 506,
+            "quote": "thumbnail = shotList[n].replace(\".jpg\",\"-thumb.jpg\");"
+          }
+        ],
+        "source_request_exists_in_old_126": true,
+        "source_history_summary": [
+          {
+            "batch": "karazhan-recheck-20261015",
+            "observed_category": "transport_error",
+            "source_status": null,
+            "request_time_utc": "2026-10-15T03:15:39.758680+00:00",
+            "request_time_kind": "batch_finished_utc"
+          }
+        ],
+        "queue_latest_observed_category": "transport_error",
+        "queue_effective_status": null,
+        "status_snapshot": {
+          "path": "research/continuous-recovery-20261018/network/native-replay47-v3/batch-03/status-snapshot.json",
+          "sha256": "b1b996cbf58d15eee3c8a6322a289f86c1dc221339be829cfba1f0ec1a8b1dc6",
+          "bytes": 978,
+          "role": "immutable batch-local status pointer snapshot"
+        },
+        "latest_source_acceptance": {
+          "path": "research/continuous-recovery-20261018/publication/root-native-replay47-v3-batch2-source-acceptance.json",
+          "sha256": "b0bac10e9a904b8f60143e28088f852cdeed27e342841565be1968cec57c7eb0",
+          "bytes": 8022,
+          "role": "latest accepted native replay source receipt"
+        },
+        "latest_control_gate": {
+          "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+          "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+          "bytes": 1842,
+          "role": "latest accepted CONTROL03 tail-zero gate"
+        },
+        "inherited_failure_tail": 0
+      },
+      "replay": {
+        "enabled": true,
+        "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss3-thumb.jpg",
+        "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss3-thumb.jpg",
+        "anchor_timestamp": "20080512210044",
+        "no_cdx_query": true,
+        "no_url_guessing": true,
+        "no_redirects": true,
+        "tls_verification": true,
+        "accept_200_image_as": "pending_source_index",
+        "do_not_follow_location": true
+      }
+    },
+    {
+      "target_key": "NATIVE-KARAZHAN47-03-26",
+      "priority": 26,
+      "queue_rank": 26,
+      "target_id": "full-ss04",
+      "kind": "full",
+      "number": 4,
+      "original": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss4.jpg",
+      "literal": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss4.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss4.jpg",
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "expected_formats": [
+        "JPEG"
+      ],
+      "expected": {
+        "archive_query_required": false,
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "reencode": false,
+        "script_execution": false
+      },
+      "source_evidence": {
+        "kind": "frozen_native_replay_queue",
+        "path": "research/continuous-recovery-20261018/publication/native-karazhan-unknown47-queue.json",
+        "sha256": "29b21d74f3253259a09be5d489291db12cf52782ce89b5a19c417817a8ea63cc",
+        "row_index": 26,
+        "target_id": "full-ss04",
+        "literal": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss4.jpg",
+        "requested": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss4.jpg",
+        "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss4.jpg",
+        "global_category": "transport_unknown",
+        "no_cdx_query": true,
+        "no_url_guessing": true
+      },
+      "source_page_context": {
+        "source_page": {
+          "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/karazhan-gallery.html",
+          "line": 126,
+          "sha256": "fc7f46d260cba6c434fd5e67d47008f207fbb8bd939a630089599d097755c199",
+          "bytes": 15124,
+          "literal": "\t\t\taddshots(\"/info/dungeons/images/karazhan/\",\"ss\",numShots);",
+          "quote": "addshots(\"/info/dungeons/images/karazhan/\",\"ss\",numShots);"
+        },
+        "js_rule_evidence": [
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 471,
+            "quote": "function addshots(sourceDirectory,filename,endnum)"
+          },
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 479,
+            "quote": "shotList[endnum-i] = sourceDirectory + filename + (i) +\".jpg\";"
+          },
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 486,
+            "quote": "shotList[i] = sourceDirectory + filename + (i+1) +\".jpg\";"
+          },
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 506,
+            "quote": "thumbnail = shotList[n].replace(\".jpg\",\"-thumb.jpg\");"
+          }
+        ],
+        "source_request_exists_in_old_126": true,
+        "source_history_summary": [
+          {
+            "batch": "karazhan-recheck-20261015",
+            "observed_category": "transport_error",
+            "source_status": null,
+            "request_time_utc": "2026-10-15T03:15:39.758680+00:00",
+            "request_time_kind": "batch_finished_utc"
+          }
+        ],
+        "queue_latest_observed_category": "transport_error",
+        "queue_effective_status": null,
+        "status_snapshot": {
+          "path": "research/continuous-recovery-20261018/network/native-replay47-v3/batch-03/status-snapshot.json",
+          "sha256": "b1b996cbf58d15eee3c8a6322a289f86c1dc221339be829cfba1f0ec1a8b1dc6",
+          "bytes": 978,
+          "role": "immutable batch-local status pointer snapshot"
+        },
+        "latest_source_acceptance": {
+          "path": "research/continuous-recovery-20261018/publication/root-native-replay47-v3-batch2-source-acceptance.json",
+          "sha256": "b0bac10e9a904b8f60143e28088f852cdeed27e342841565be1968cec57c7eb0",
+          "bytes": 8022,
+          "role": "latest accepted native replay source receipt"
+        },
+        "latest_control_gate": {
+          "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+          "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+          "bytes": 1842,
+          "role": "latest accepted CONTROL03 tail-zero gate"
+        },
+        "inherited_failure_tail": 0
+      },
+      "replay": {
+        "enabled": true,
+        "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss4.jpg",
+        "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss4.jpg",
+        "anchor_timestamp": "20080512210044",
+        "no_cdx_query": true,
+        "no_url_guessing": true,
+        "no_redirects": true,
+        "tls_verification": true,
+        "accept_200_image_as": "pending_source_index",
+        "do_not_follow_location": true
+      }
+    },
+    {
+      "target_key": "NATIVE-KARAZHAN47-03-27",
+      "priority": 27,
+      "queue_rank": 27,
+      "target_id": "thumb-ss04",
+      "kind": "thumb",
+      "number": 4,
+      "original": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss4-thumb.jpg",
+      "literal": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss4-thumb.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss4-thumb.jpg",
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "expected_formats": [
+        "JPEG"
+      ],
+      "expected": {
+        "archive_query_required": false,
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "reencode": false,
+        "script_execution": false
+      },
+      "source_evidence": {
+        "kind": "frozen_native_replay_queue",
+        "path": "research/continuous-recovery-20261018/publication/native-karazhan-unknown47-queue.json",
+        "sha256": "29b21d74f3253259a09be5d489291db12cf52782ce89b5a19c417817a8ea63cc",
+        "row_index": 27,
+        "target_id": "thumb-ss04",
+        "literal": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss4-thumb.jpg",
+        "requested": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss4-thumb.jpg",
+        "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss4-thumb.jpg",
+        "global_category": "transport_unknown",
+        "no_cdx_query": true,
+        "no_url_guessing": true
+      },
+      "source_page_context": {
+        "source_page": {
+          "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/karazhan-gallery.html",
+          "line": 126,
+          "sha256": "fc7f46d260cba6c434fd5e67d47008f207fbb8bd939a630089599d097755c199",
+          "bytes": 15124,
+          "literal": "\t\t\taddshots(\"/info/dungeons/images/karazhan/\",\"ss\",numShots);",
+          "quote": "addshots(\"/info/dungeons/images/karazhan/\",\"ss\",numShots);"
+        },
+        "js_rule_evidence": [
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 471,
+            "quote": "function addshots(sourceDirectory,filename,endnum)"
+          },
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 479,
+            "quote": "shotList[endnum-i] = sourceDirectory + filename + (i) +\".jpg\";"
+          },
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 486,
+            "quote": "shotList[i] = sourceDirectory + filename + (i+1) +\".jpg\";"
+          },
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 506,
+            "quote": "thumbnail = shotList[n].replace(\".jpg\",\"-thumb.jpg\");"
+          }
+        ],
+        "source_request_exists_in_old_126": true,
+        "source_history_summary": [
+          {
+            "batch": "karazhan-recheck-20261015",
+            "observed_category": "transport_error",
+            "source_status": null,
+            "request_time_utc": "2026-10-15T03:15:39.758680+00:00",
+            "request_time_kind": "batch_finished_utc"
+          }
+        ],
+        "queue_latest_observed_category": "transport_error",
+        "queue_effective_status": null,
+        "status_snapshot": {
+          "path": "research/continuous-recovery-20261018/network/native-replay47-v3/batch-03/status-snapshot.json",
+          "sha256": "b1b996cbf58d15eee3c8a6322a289f86c1dc221339be829cfba1f0ec1a8b1dc6",
+          "bytes": 978,
+          "role": "immutable batch-local status pointer snapshot"
+        },
+        "latest_source_acceptance": {
+          "path": "research/continuous-recovery-20261018/publication/root-native-replay47-v3-batch2-source-acceptance.json",
+          "sha256": "b0bac10e9a904b8f60143e28088f852cdeed27e342841565be1968cec57c7eb0",
+          "bytes": 8022,
+          "role": "latest accepted native replay source receipt"
+        },
+        "latest_control_gate": {
+          "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+          "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+          "bytes": 1842,
+          "role": "latest accepted CONTROL03 tail-zero gate"
+        },
+        "inherited_failure_tail": 0
+      },
+      "replay": {
+        "enabled": true,
+        "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss4-thumb.jpg",
+        "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss4-thumb.jpg",
+        "anchor_timestamp": "20080512210044",
+        "no_cdx_query": true,
+        "no_url_guessing": true,
+        "no_redirects": true,
+        "tls_verification": true,
+        "accept_200_image_as": "pending_source_index",
+        "do_not_follow_location": true
+      }
+    },
+    {
+      "target_key": "NATIVE-KARAZHAN47-03-28",
+      "priority": 28,
+      "queue_rank": 28,
+      "target_id": "full-ss05",
+      "kind": "full",
+      "number": 5,
+      "original": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss5.jpg",
+      "literal": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss5.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss5.jpg",
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "expected_formats": [
+        "JPEG"
+      ],
+      "expected": {
+        "archive_query_required": false,
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "reencode": false,
+        "script_execution": false
+      },
+      "source_evidence": {
+        "kind": "frozen_native_replay_queue",
+        "path": "research/continuous-recovery-20261018/publication/native-karazhan-unknown47-queue.json",
+        "sha256": "29b21d74f3253259a09be5d489291db12cf52782ce89b5a19c417817a8ea63cc",
+        "row_index": 28,
+        "target_id": "full-ss05",
+        "literal": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss5.jpg",
+        "requested": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss5.jpg",
+        "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss5.jpg",
+        "global_category": "transport_unknown",
+        "no_cdx_query": true,
+        "no_url_guessing": true
+      },
+      "source_page_context": {
+        "source_page": {
+          "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/karazhan-gallery.html",
+          "line": 126,
+          "sha256": "fc7f46d260cba6c434fd5e67d47008f207fbb8bd939a630089599d097755c199",
+          "bytes": 15124,
+          "literal": "\t\t\taddshots(\"/info/dungeons/images/karazhan/\",\"ss\",numShots);",
+          "quote": "addshots(\"/info/dungeons/images/karazhan/\",\"ss\",numShots);"
+        },
+        "js_rule_evidence": [
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 471,
+            "quote": "function addshots(sourceDirectory,filename,endnum)"
+          },
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 479,
+            "quote": "shotList[endnum-i] = sourceDirectory + filename + (i) +\".jpg\";"
+          },
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 486,
+            "quote": "shotList[i] = sourceDirectory + filename + (i+1) +\".jpg\";"
+          },
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 506,
+            "quote": "thumbnail = shotList[n].replace(\".jpg\",\"-thumb.jpg\");"
+          }
+        ],
+        "source_request_exists_in_old_126": true,
+        "source_history_summary": [
+          {
+            "batch": "karazhan-recheck-20261015",
+            "observed_category": "transport_error",
+            "source_status": null,
+            "request_time_utc": "2026-10-15T03:15:39.758680+00:00",
+            "request_time_kind": "batch_finished_utc"
+          }
+        ],
+        "queue_latest_observed_category": "transport_error",
+        "queue_effective_status": null,
+        "status_snapshot": {
+          "path": "research/continuous-recovery-20261018/network/native-replay47-v3/batch-03/status-snapshot.json",
+          "sha256": "b1b996cbf58d15eee3c8a6322a289f86c1dc221339be829cfba1f0ec1a8b1dc6",
+          "bytes": 978,
+          "role": "immutable batch-local status pointer snapshot"
+        },
+        "latest_source_acceptance": {
+          "path": "research/continuous-recovery-20261018/publication/root-native-replay47-v3-batch2-source-acceptance.json",
+          "sha256": "b0bac10e9a904b8f60143e28088f852cdeed27e342841565be1968cec57c7eb0",
+          "bytes": 8022,
+          "role": "latest accepted native replay source receipt"
+        },
+        "latest_control_gate": {
+          "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+          "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+          "bytes": 1842,
+          "role": "latest accepted CONTROL03 tail-zero gate"
+        },
+        "inherited_failure_tail": 0
+      },
+      "replay": {
+        "enabled": true,
+        "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss5.jpg",
+        "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss5.jpg",
+        "anchor_timestamp": "20080512210044",
+        "no_cdx_query": true,
+        "no_url_guessing": true,
+        "no_redirects": true,
+        "tls_verification": true,
+        "accept_200_image_as": "pending_source_index",
+        "do_not_follow_location": true
+      }
+    },
+    {
+      "target_key": "NATIVE-KARAZHAN47-03-29",
+      "priority": 29,
+      "queue_rank": 29,
+      "target_id": "thumb-ss05",
+      "kind": "thumb",
+      "number": 5,
+      "original": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss5-thumb.jpg",
+      "literal": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss5-thumb.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss5-thumb.jpg",
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "expected_formats": [
+        "JPEG"
+      ],
+      "expected": {
+        "archive_query_required": false,
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "reencode": false,
+        "script_execution": false
+      },
+      "source_evidence": {
+        "kind": "frozen_native_replay_queue",
+        "path": "research/continuous-recovery-20261018/publication/native-karazhan-unknown47-queue.json",
+        "sha256": "29b21d74f3253259a09be5d489291db12cf52782ce89b5a19c417817a8ea63cc",
+        "row_index": 29,
+        "target_id": "thumb-ss05",
+        "literal": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss5-thumb.jpg",
+        "requested": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss5-thumb.jpg",
+        "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss5-thumb.jpg",
+        "global_category": "transport_unknown",
+        "no_cdx_query": true,
+        "no_url_guessing": true
+      },
+      "source_page_context": {
+        "source_page": {
+          "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/karazhan-gallery.html",
+          "line": 126,
+          "sha256": "fc7f46d260cba6c434fd5e67d47008f207fbb8bd939a630089599d097755c199",
+          "bytes": 15124,
+          "literal": "\t\t\taddshots(\"/info/dungeons/images/karazhan/\",\"ss\",numShots);",
+          "quote": "addshots(\"/info/dungeons/images/karazhan/\",\"ss\",numShots);"
+        },
+        "js_rule_evidence": [
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 471,
+            "quote": "function addshots(sourceDirectory,filename,endnum)"
+          },
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 479,
+            "quote": "shotList[endnum-i] = sourceDirectory + filename + (i) +\".jpg\";"
+          },
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 486,
+            "quote": "shotList[i] = sourceDirectory + filename + (i+1) +\".jpg\";"
+          },
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 506,
+            "quote": "thumbnail = shotList[n].replace(\".jpg\",\"-thumb.jpg\");"
+          }
+        ],
+        "source_request_exists_in_old_126": true,
+        "source_history_summary": [
+          {
+            "batch": "karazhan-recheck-20261015",
+            "observed_category": "transport_error",
+            "source_status": null,
+            "request_time_utc": "2026-10-15T03:15:39.758680+00:00",
+            "request_time_kind": "batch_finished_utc"
+          }
+        ],
+        "queue_latest_observed_category": "transport_error",
+        "queue_effective_status": null,
+        "status_snapshot": {
+          "path": "research/continuous-recovery-20261018/network/native-replay47-v3/batch-03/status-snapshot.json",
+          "sha256": "b1b996cbf58d15eee3c8a6322a289f86c1dc221339be829cfba1f0ec1a8b1dc6",
+          "bytes": 978,
+          "role": "immutable batch-local status pointer snapshot"
+        },
+        "latest_source_acceptance": {
+          "path": "research/continuous-recovery-20261018/publication/root-native-replay47-v3-batch2-source-acceptance.json",
+          "sha256": "b0bac10e9a904b8f60143e28088f852cdeed27e342841565be1968cec57c7eb0",
+          "bytes": 8022,
+          "role": "latest accepted native replay source receipt"
+        },
+        "latest_control_gate": {
+          "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+          "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+          "bytes": 1842,
+          "role": "latest accepted CONTROL03 tail-zero gate"
+        },
+        "inherited_failure_tail": 0
+      },
+      "replay": {
+        "enabled": true,
+        "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss5-thumb.jpg",
+        "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss5-thumb.jpg",
+        "anchor_timestamp": "20080512210044",
+        "no_cdx_query": true,
+        "no_url_guessing": true,
+        "no_redirects": true,
+        "tls_verification": true,
+        "accept_200_image_as": "pending_source_index",
+        "do_not_follow_location": true
+      }
+    },
+    {
+      "target_key": "NATIVE-KARAZHAN47-03-30",
+      "priority": 30,
+      "queue_rank": 30,
+      "target_id": "full-ss06",
+      "kind": "full",
+      "number": 6,
+      "original": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss6.jpg",
+      "literal": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss6.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss6.jpg",
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "expected_formats": [
+        "JPEG"
+      ],
+      "expected": {
+        "archive_query_required": false,
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "reencode": false,
+        "script_execution": false
+      },
+      "source_evidence": {
+        "kind": "frozen_native_replay_queue",
+        "path": "research/continuous-recovery-20261018/publication/native-karazhan-unknown47-queue.json",
+        "sha256": "29b21d74f3253259a09be5d489291db12cf52782ce89b5a19c417817a8ea63cc",
+        "row_index": 30,
+        "target_id": "full-ss06",
+        "literal": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss6.jpg",
+        "requested": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss6.jpg",
+        "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss6.jpg",
+        "global_category": "transport_unknown",
+        "no_cdx_query": true,
+        "no_url_guessing": true
+      },
+      "source_page_context": {
+        "source_page": {
+          "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/karazhan-gallery.html",
+          "line": 126,
+          "sha256": "fc7f46d260cba6c434fd5e67d47008f207fbb8bd939a630089599d097755c199",
+          "bytes": 15124,
+          "literal": "\t\t\taddshots(\"/info/dungeons/images/karazhan/\",\"ss\",numShots);",
+          "quote": "addshots(\"/info/dungeons/images/karazhan/\",\"ss\",numShots);"
+        },
+        "js_rule_evidence": [
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 471,
+            "quote": "function addshots(sourceDirectory,filename,endnum)"
+          },
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 479,
+            "quote": "shotList[endnum-i] = sourceDirectory + filename + (i) +\".jpg\";"
+          },
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 486,
+            "quote": "shotList[i] = sourceDirectory + filename + (i+1) +\".jpg\";"
+          },
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 506,
+            "quote": "thumbnail = shotList[n].replace(\".jpg\",\"-thumb.jpg\");"
+          }
+        ],
+        "source_request_exists_in_old_126": true,
+        "source_history_summary": [
+          {
+            "batch": "karazhan-recheck-20261015",
+            "observed_category": "transport_error",
+            "source_status": null,
+            "request_time_utc": "2026-10-15T03:15:39.758680+00:00",
+            "request_time_kind": "batch_finished_utc"
+          }
+        ],
+        "queue_latest_observed_category": "transport_error",
+        "queue_effective_status": null,
+        "status_snapshot": {
+          "path": "research/continuous-recovery-20261018/network/native-replay47-v3/batch-03/status-snapshot.json",
+          "sha256": "b1b996cbf58d15eee3c8a6322a289f86c1dc221339be829cfba1f0ec1a8b1dc6",
+          "bytes": 978,
+          "role": "immutable batch-local status pointer snapshot"
+        },
+        "latest_source_acceptance": {
+          "path": "research/continuous-recovery-20261018/publication/root-native-replay47-v3-batch2-source-acceptance.json",
+          "sha256": "b0bac10e9a904b8f60143e28088f852cdeed27e342841565be1968cec57c7eb0",
+          "bytes": 8022,
+          "role": "latest accepted native replay source receipt"
+        },
+        "latest_control_gate": {
+          "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+          "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+          "bytes": 1842,
+          "role": "latest accepted CONTROL03 tail-zero gate"
+        },
+        "inherited_failure_tail": 0
+      },
+      "replay": {
+        "enabled": true,
+        "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss6.jpg",
+        "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss6.jpg",
+        "anchor_timestamp": "20080512210044",
+        "no_cdx_query": true,
+        "no_url_guessing": true,
+        "no_redirects": true,
+        "tls_verification": true,
+        "accept_200_image_as": "pending_source_index",
+        "do_not_follow_location": true
+      }
+    },
+    {
+      "target_key": "NATIVE-KARAZHAN47-03-31",
+      "priority": 31,
+      "queue_rank": 31,
+      "target_id": "thumb-ss06",
+      "kind": "thumb",
+      "number": 6,
+      "original": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss6-thumb.jpg",
+      "literal": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss6-thumb.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss6-thumb.jpg",
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "expected_formats": [
+        "JPEG"
+      ],
+      "expected": {
+        "archive_query_required": false,
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "reencode": false,
+        "script_execution": false
+      },
+      "source_evidence": {
+        "kind": "frozen_native_replay_queue",
+        "path": "research/continuous-recovery-20261018/publication/native-karazhan-unknown47-queue.json",
+        "sha256": "29b21d74f3253259a09be5d489291db12cf52782ce89b5a19c417817a8ea63cc",
+        "row_index": 31,
+        "target_id": "thumb-ss06",
+        "literal": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss6-thumb.jpg",
+        "requested": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss6-thumb.jpg",
+        "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss6-thumb.jpg",
+        "global_category": "transport_unknown",
+        "no_cdx_query": true,
+        "no_url_guessing": true
+      },
+      "source_page_context": {
+        "source_page": {
+          "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/karazhan-gallery.html",
+          "line": 126,
+          "sha256": "fc7f46d260cba6c434fd5e67d47008f207fbb8bd939a630089599d097755c199",
+          "bytes": 15124,
+          "literal": "\t\t\taddshots(\"/info/dungeons/images/karazhan/\",\"ss\",numShots);",
+          "quote": "addshots(\"/info/dungeons/images/karazhan/\",\"ss\",numShots);"
+        },
+        "js_rule_evidence": [
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 471,
+            "quote": "function addshots(sourceDirectory,filename,endnum)"
+          },
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 479,
+            "quote": "shotList[endnum-i] = sourceDirectory + filename + (i) +\".jpg\";"
+          },
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 486,
+            "quote": "shotList[i] = sourceDirectory + filename + (i+1) +\".jpg\";"
+          },
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 506,
+            "quote": "thumbnail = shotList[n].replace(\".jpg\",\"-thumb.jpg\");"
+          }
+        ],
+        "source_request_exists_in_old_126": true,
+        "source_history_summary": [
+          {
+            "batch": "karazhan-recheck-20261015",
+            "observed_category": "transport_error",
+            "source_status": null,
+            "request_time_utc": "2026-10-15T03:15:39.758680+00:00",
+            "request_time_kind": "batch_finished_utc"
+          }
+        ],
+        "queue_latest_observed_category": "transport_error",
+        "queue_effective_status": null,
+        "status_snapshot": {
+          "path": "research/continuous-recovery-20261018/network/native-replay47-v3/batch-03/status-snapshot.json",
+          "sha256": "b1b996cbf58d15eee3c8a6322a289f86c1dc221339be829cfba1f0ec1a8b1dc6",
+          "bytes": 978,
+          "role": "immutable batch-local status pointer snapshot"
+        },
+        "latest_source_acceptance": {
+          "path": "research/continuous-recovery-20261018/publication/root-native-replay47-v3-batch2-source-acceptance.json",
+          "sha256": "b0bac10e9a904b8f60143e28088f852cdeed27e342841565be1968cec57c7eb0",
+          "bytes": 8022,
+          "role": "latest accepted native replay source receipt"
+        },
+        "latest_control_gate": {
+          "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+          "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+          "bytes": 1842,
+          "role": "latest accepted CONTROL03 tail-zero gate"
+        },
+        "inherited_failure_tail": 0
+      },
+      "replay": {
+        "enabled": true,
+        "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss6-thumb.jpg",
+        "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss6-thumb.jpg",
+        "anchor_timestamp": "20080512210044",
+        "no_cdx_query": true,
+        "no_url_guessing": true,
+        "no_redirects": true,
+        "tls_verification": true,
+        "accept_200_image_as": "pending_source_index",
+        "do_not_follow_location": true
+      }
+    },
+    {
+      "target_key": "NATIVE-KARAZHAN47-03-32",
+      "priority": 32,
+      "queue_rank": 32,
+      "target_id": "full-ss07",
+      "kind": "full",
+      "number": 7,
+      "original": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss7.jpg",
+      "literal": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss7.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss7.jpg",
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "expected_formats": [
+        "JPEG"
+      ],
+      "expected": {
+        "archive_query_required": false,
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "reencode": false,
+        "script_execution": false
+      },
+      "source_evidence": {
+        "kind": "frozen_native_replay_queue",
+        "path": "research/continuous-recovery-20261018/publication/native-karazhan-unknown47-queue.json",
+        "sha256": "29b21d74f3253259a09be5d489291db12cf52782ce89b5a19c417817a8ea63cc",
+        "row_index": 32,
+        "target_id": "full-ss07",
+        "literal": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss7.jpg",
+        "requested": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss7.jpg",
+        "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss7.jpg",
+        "global_category": "transport_unknown",
+        "no_cdx_query": true,
+        "no_url_guessing": true
+      },
+      "source_page_context": {
+        "source_page": {
+          "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/karazhan-gallery.html",
+          "line": 126,
+          "sha256": "fc7f46d260cba6c434fd5e67d47008f207fbb8bd939a630089599d097755c199",
+          "bytes": 15124,
+          "literal": "\t\t\taddshots(\"/info/dungeons/images/karazhan/\",\"ss\",numShots);",
+          "quote": "addshots(\"/info/dungeons/images/karazhan/\",\"ss\",numShots);"
+        },
+        "js_rule_evidence": [
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 471,
+            "quote": "function addshots(sourceDirectory,filename,endnum)"
+          },
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 479,
+            "quote": "shotList[endnum-i] = sourceDirectory + filename + (i) +\".jpg\";"
+          },
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 486,
+            "quote": "shotList[i] = sourceDirectory + filename + (i+1) +\".jpg\";"
+          },
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 506,
+            "quote": "thumbnail = shotList[n].replace(\".jpg\",\"-thumb.jpg\");"
+          }
+        ],
+        "source_request_exists_in_old_126": true,
+        "source_history_summary": [
+          {
+            "batch": "karazhan-recheck-20261015",
+            "observed_category": "transport_error",
+            "source_status": null,
+            "request_time_utc": "2026-10-15T03:15:39.758680+00:00",
+            "request_time_kind": "batch_finished_utc"
+          }
+        ],
+        "queue_latest_observed_category": "transport_error",
+        "queue_effective_status": null,
+        "status_snapshot": {
+          "path": "research/continuous-recovery-20261018/network/native-replay47-v3/batch-03/status-snapshot.json",
+          "sha256": "b1b996cbf58d15eee3c8a6322a289f86c1dc221339be829cfba1f0ec1a8b1dc6",
+          "bytes": 978,
+          "role": "immutable batch-local status pointer snapshot"
+        },
+        "latest_source_acceptance": {
+          "path": "research/continuous-recovery-20261018/publication/root-native-replay47-v3-batch2-source-acceptance.json",
+          "sha256": "b0bac10e9a904b8f60143e28088f852cdeed27e342841565be1968cec57c7eb0",
+          "bytes": 8022,
+          "role": "latest accepted native replay source receipt"
+        },
+        "latest_control_gate": {
+          "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+          "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+          "bytes": 1842,
+          "role": "latest accepted CONTROL03 tail-zero gate"
+        },
+        "inherited_failure_tail": 0
+      },
+      "replay": {
+        "enabled": true,
+        "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss7.jpg",
+        "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss7.jpg",
+        "anchor_timestamp": "20080512210044",
+        "no_cdx_query": true,
+        "no_url_guessing": true,
+        "no_redirects": true,
+        "tls_verification": true,
+        "accept_200_image_as": "pending_source_index",
+        "do_not_follow_location": true
+      }
+    },
+    {
+      "target_key": "NATIVE-KARAZHAN47-03-33",
+      "priority": 33,
+      "queue_rank": 33,
+      "target_id": "thumb-ss07",
+      "kind": "thumb",
+      "number": 7,
+      "original": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss7-thumb.jpg",
+      "literal": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss7-thumb.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss7-thumb.jpg",
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "expected_formats": [
+        "JPEG"
+      ],
+      "expected": {
+        "archive_query_required": false,
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "reencode": false,
+        "script_execution": false
+      },
+      "source_evidence": {
+        "kind": "frozen_native_replay_queue",
+        "path": "research/continuous-recovery-20261018/publication/native-karazhan-unknown47-queue.json",
+        "sha256": "29b21d74f3253259a09be5d489291db12cf52782ce89b5a19c417817a8ea63cc",
+        "row_index": 33,
+        "target_id": "thumb-ss07",
+        "literal": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss7-thumb.jpg",
+        "requested": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss7-thumb.jpg",
+        "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss7-thumb.jpg",
+        "global_category": "transport_unknown",
+        "no_cdx_query": true,
+        "no_url_guessing": true
+      },
+      "source_page_context": {
+        "source_page": {
+          "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/karazhan-gallery.html",
+          "line": 126,
+          "sha256": "fc7f46d260cba6c434fd5e67d47008f207fbb8bd939a630089599d097755c199",
+          "bytes": 15124,
+          "literal": "\t\t\taddshots(\"/info/dungeons/images/karazhan/\",\"ss\",numShots);",
+          "quote": "addshots(\"/info/dungeons/images/karazhan/\",\"ss\",numShots);"
+        },
+        "js_rule_evidence": [
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 471,
+            "quote": "function addshots(sourceDirectory,filename,endnum)"
+          },
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 479,
+            "quote": "shotList[endnum-i] = sourceDirectory + filename + (i) +\".jpg\";"
+          },
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 486,
+            "quote": "shotList[i] = sourceDirectory + filename + (i+1) +\".jpg\";"
+          },
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 506,
+            "quote": "thumbnail = shotList[n].replace(\".jpg\",\"-thumb.jpg\");"
+          }
+        ],
+        "source_request_exists_in_old_126": true,
+        "source_history_summary": [
+          {
+            "batch": "karazhan-recheck-20261015",
+            "observed_category": "transport_error",
+            "source_status": null,
+            "request_time_utc": "2026-10-15T03:15:39.758680+00:00",
+            "request_time_kind": "batch_finished_utc"
+          }
+        ],
+        "queue_latest_observed_category": "transport_error",
+        "queue_effective_status": null,
+        "status_snapshot": {
+          "path": "research/continuous-recovery-20261018/network/native-replay47-v3/batch-03/status-snapshot.json",
+          "sha256": "b1b996cbf58d15eee3c8a6322a289f86c1dc221339be829cfba1f0ec1a8b1dc6",
+          "bytes": 978,
+          "role": "immutable batch-local status pointer snapshot"
+        },
+        "latest_source_acceptance": {
+          "path": "research/continuous-recovery-20261018/publication/root-native-replay47-v3-batch2-source-acceptance.json",
+          "sha256": "b0bac10e9a904b8f60143e28088f852cdeed27e342841565be1968cec57c7eb0",
+          "bytes": 8022,
+          "role": "latest accepted native replay source receipt"
+        },
+        "latest_control_gate": {
+          "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+          "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+          "bytes": 1842,
+          "role": "latest accepted CONTROL03 tail-zero gate"
+        },
+        "inherited_failure_tail": 0
+      },
+      "replay": {
+        "enabled": true,
+        "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss7-thumb.jpg",
+        "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss7-thumb.jpg",
+        "anchor_timestamp": "20080512210044",
+        "no_cdx_query": true,
+        "no_url_guessing": true,
+        "no_redirects": true,
+        "tls_verification": true,
+        "accept_200_image_as": "pending_source_index",
+        "do_not_follow_location": true
+      }
+    },
+    {
+      "target_key": "NATIVE-KARAZHAN47-03-34",
+      "priority": 34,
+      "queue_rank": 34,
+      "target_id": "full-ss08",
+      "kind": "full",
+      "number": 8,
+      "original": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss8.jpg",
+      "literal": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss8.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss8.jpg",
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "expected_formats": [
+        "JPEG"
+      ],
+      "expected": {
+        "archive_query_required": false,
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "reencode": false,
+        "script_execution": false
+      },
+      "source_evidence": {
+        "kind": "frozen_native_replay_queue",
+        "path": "research/continuous-recovery-20261018/publication/native-karazhan-unknown47-queue.json",
+        "sha256": "29b21d74f3253259a09be5d489291db12cf52782ce89b5a19c417817a8ea63cc",
+        "row_index": 34,
+        "target_id": "full-ss08",
+        "literal": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss8.jpg",
+        "requested": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss8.jpg",
+        "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss8.jpg",
+        "global_category": "transport_unknown",
+        "no_cdx_query": true,
+        "no_url_guessing": true
+      },
+      "source_page_context": {
+        "source_page": {
+          "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/karazhan-gallery.html",
+          "line": 126,
+          "sha256": "fc7f46d260cba6c434fd5e67d47008f207fbb8bd939a630089599d097755c199",
+          "bytes": 15124,
+          "literal": "\t\t\taddshots(\"/info/dungeons/images/karazhan/\",\"ss\",numShots);",
+          "quote": "addshots(\"/info/dungeons/images/karazhan/\",\"ss\",numShots);"
+        },
+        "js_rule_evidence": [
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 471,
+            "quote": "function addshots(sourceDirectory,filename,endnum)"
+          },
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 479,
+            "quote": "shotList[endnum-i] = sourceDirectory + filename + (i) +\".jpg\";"
+          },
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 486,
+            "quote": "shotList[i] = sourceDirectory + filename + (i+1) +\".jpg\";"
+          },
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 506,
+            "quote": "thumbnail = shotList[n].replace(\".jpg\",\"-thumb.jpg\");"
+          }
+        ],
+        "source_request_exists_in_old_126": true,
+        "source_history_summary": [
+          {
+            "batch": "karazhan-recheck-20261015",
+            "observed_category": "transport_error",
+            "source_status": null,
+            "request_time_utc": "2026-10-15T03:15:39.758680+00:00",
+            "request_time_kind": "batch_finished_utc"
+          }
+        ],
+        "queue_latest_observed_category": "transport_error",
+        "queue_effective_status": null,
+        "status_snapshot": {
+          "path": "research/continuous-recovery-20261018/network/native-replay47-v3/batch-03/status-snapshot.json",
+          "sha256": "b1b996cbf58d15eee3c8a6322a289f86c1dc221339be829cfba1f0ec1a8b1dc6",
+          "bytes": 978,
+          "role": "immutable batch-local status pointer snapshot"
+        },
+        "latest_source_acceptance": {
+          "path": "research/continuous-recovery-20261018/publication/root-native-replay47-v3-batch2-source-acceptance.json",
+          "sha256": "b0bac10e9a904b8f60143e28088f852cdeed27e342841565be1968cec57c7eb0",
+          "bytes": 8022,
+          "role": "latest accepted native replay source receipt"
+        },
+        "latest_control_gate": {
+          "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+          "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+          "bytes": 1842,
+          "role": "latest accepted CONTROL03 tail-zero gate"
+        },
+        "inherited_failure_tail": 0
+      },
+      "replay": {
+        "enabled": true,
+        "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss8.jpg",
+        "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss8.jpg",
+        "anchor_timestamp": "20080512210044",
+        "no_cdx_query": true,
+        "no_url_guessing": true,
+        "no_redirects": true,
+        "tls_verification": true,
+        "accept_200_image_as": "pending_source_index",
+        "do_not_follow_location": true
+      }
+    },
+    {
+      "target_key": "NATIVE-KARAZHAN47-03-35",
+      "priority": 35,
+      "queue_rank": 35,
+      "target_id": "thumb-ss08",
+      "kind": "thumb",
+      "number": 8,
+      "original": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss8-thumb.jpg",
+      "literal": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss8-thumb.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss8-thumb.jpg",
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "expected_formats": [
+        "JPEG"
+      ],
+      "expected": {
+        "archive_query_required": false,
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "reencode": false,
+        "script_execution": false
+      },
+      "source_evidence": {
+        "kind": "frozen_native_replay_queue",
+        "path": "research/continuous-recovery-20261018/publication/native-karazhan-unknown47-queue.json",
+        "sha256": "29b21d74f3253259a09be5d489291db12cf52782ce89b5a19c417817a8ea63cc",
+        "row_index": 35,
+        "target_id": "thumb-ss08",
+        "literal": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss8-thumb.jpg",
+        "requested": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss8-thumb.jpg",
+        "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss8-thumb.jpg",
+        "global_category": "transport_unknown",
+        "no_cdx_query": true,
+        "no_url_guessing": true
+      },
+      "source_page_context": {
+        "source_page": {
+          "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/karazhan-gallery.html",
+          "line": 126,
+          "sha256": "fc7f46d260cba6c434fd5e67d47008f207fbb8bd939a630089599d097755c199",
+          "bytes": 15124,
+          "literal": "\t\t\taddshots(\"/info/dungeons/images/karazhan/\",\"ss\",numShots);",
+          "quote": "addshots(\"/info/dungeons/images/karazhan/\",\"ss\",numShots);"
+        },
+        "js_rule_evidence": [
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 471,
+            "quote": "function addshots(sourceDirectory,filename,endnum)"
+          },
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 479,
+            "quote": "shotList[endnum-i] = sourceDirectory + filename + (i) +\".jpg\";"
+          },
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 486,
+            "quote": "shotList[i] = sourceDirectory + filename + (i+1) +\".jpg\";"
+          },
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 506,
+            "quote": "thumbnail = shotList[n].replace(\".jpg\",\"-thumb.jpg\");"
+          }
+        ],
+        "source_request_exists_in_old_126": true,
+        "source_history_summary": [
+          {
+            "batch": "karazhan-recheck-20261015",
+            "observed_category": "transport_error",
+            "source_status": null,
+            "request_time_utc": "2026-10-15T03:15:39.758680+00:00",
+            "request_time_kind": "batch_finished_utc"
+          }
+        ],
+        "queue_latest_observed_category": "transport_error",
+        "queue_effective_status": null,
+        "status_snapshot": {
+          "path": "research/continuous-recovery-20261018/network/native-replay47-v3/batch-03/status-snapshot.json",
+          "sha256": "b1b996cbf58d15eee3c8a6322a289f86c1dc221339be829cfba1f0ec1a8b1dc6",
+          "bytes": 978,
+          "role": "immutable batch-local status pointer snapshot"
+        },
+        "latest_source_acceptance": {
+          "path": "research/continuous-recovery-20261018/publication/root-native-replay47-v3-batch2-source-acceptance.json",
+          "sha256": "b0bac10e9a904b8f60143e28088f852cdeed27e342841565be1968cec57c7eb0",
+          "bytes": 8022,
+          "role": "latest accepted native replay source receipt"
+        },
+        "latest_control_gate": {
+          "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+          "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+          "bytes": 1842,
+          "role": "latest accepted CONTROL03 tail-zero gate"
+        },
+        "inherited_failure_tail": 0
+      },
+      "replay": {
+        "enabled": true,
+        "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss8-thumb.jpg",
+        "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss8-thumb.jpg",
+        "anchor_timestamp": "20080512210044",
+        "no_cdx_query": true,
+        "no_url_guessing": true,
+        "no_redirects": true,
+        "tls_verification": true,
+        "accept_200_image_as": "pending_source_index",
+        "do_not_follow_location": true
+      }
+    },
+    {
+      "target_key": "NATIVE-KARAZHAN47-03-36",
+      "priority": 36,
+      "queue_rank": 36,
+      "target_id": "full-ss09",
+      "kind": "full",
+      "number": 9,
+      "original": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss9.jpg",
+      "literal": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss9.jpg",
+      "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss9.jpg",
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "expected_formats": [
+        "JPEG"
+      ],
+      "expected": {
+        "archive_query_required": false,
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "reencode": false,
+        "script_execution": false
+      },
+      "source_evidence": {
+        "kind": "frozen_native_replay_queue",
+        "path": "research/continuous-recovery-20261018/publication/native-karazhan-unknown47-queue.json",
+        "sha256": "29b21d74f3253259a09be5d489291db12cf52782ce89b5a19c417817a8ea63cc",
+        "row_index": 36,
+        "target_id": "full-ss09",
+        "literal": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss9.jpg",
+        "requested": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss9.jpg",
+        "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss9.jpg",
+        "global_category": "transport_unknown",
+        "no_cdx_query": true,
+        "no_url_guessing": true
+      },
+      "source_page_context": {
+        "source_page": {
+          "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/karazhan-gallery.html",
+          "line": 126,
+          "sha256": "fc7f46d260cba6c434fd5e67d47008f207fbb8bd939a630089599d097755c199",
+          "bytes": 15124,
+          "literal": "\t\t\taddshots(\"/info/dungeons/images/karazhan/\",\"ss\",numShots);",
+          "quote": "addshots(\"/info/dungeons/images/karazhan/\",\"ss\",numShots);"
+        },
+        "js_rule_evidence": [
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 471,
+            "quote": "function addshots(sourceDirectory,filename,endnum)"
+          },
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 479,
+            "quote": "shotList[endnum-i] = sourceDirectory + filename + (i) +\".jpg\";"
+          },
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 486,
+            "quote": "shotList[i] = sourceDirectory + filename + (i+1) +\".jpg\";"
+          },
+          {
+            "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+            "exists": true,
+            "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+            "line": 506,
+            "quote": "thumbnail = shotList[n].replace(\".jpg\",\"-thumb.jpg\");"
+          }
+        ],
+        "source_request_exists_in_old_126": true,
+        "source_history_summary": [
+          {
+            "batch": "karazhan-recheck-20261015",
+            "observed_category": "transport_error",
+            "source_status": null,
+            "request_time_utc": "2026-10-15T03:15:39.758680+00:00",
+            "request_time_kind": "batch_finished_utc"
+          }
+        ],
+        "queue_latest_observed_category": "transport_error",
+        "queue_effective_status": null,
+        "status_snapshot": {
+          "path": "research/continuous-recovery-20261018/network/native-replay47-v3/batch-03/status-snapshot.json",
+          "sha256": "b1b996cbf58d15eee3c8a6322a289f86c1dc221339be829cfba1f0ec1a8b1dc6",
+          "bytes": 978,
+          "role": "immutable batch-local status pointer snapshot"
+        },
+        "latest_source_acceptance": {
+          "path": "research/continuous-recovery-20261018/publication/root-native-replay47-v3-batch2-source-acceptance.json",
+          "sha256": "b0bac10e9a904b8f60143e28088f852cdeed27e342841565be1968cec57c7eb0",
+          "bytes": 8022,
+          "role": "latest accepted native replay source receipt"
+        },
+        "latest_control_gate": {
+          "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+          "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+          "bytes": 1842,
+          "role": "latest accepted CONTROL03 tail-zero gate"
+        },
+        "inherited_failure_tail": 0
+      },
+      "replay": {
+        "enabled": true,
+        "request_url": "https://web.archive.org/web/20080512210044id_/http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss9.jpg",
+        "original_url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss9.jpg",
+        "anchor_timestamp": "20080512210044",
+        "no_cdx_query": true,
+        "no_url_guessing": true,
+        "no_redirects": true,
+        "tls_verification": true,
+        "accept_200_image_as": "pending_source_index",
+        "do_not_follow_location": true
+      }
+    }
+  ],
+  "candidate_count": 12,
+  "previous_batch": {
+    "latest_source_tail_receipt": {
+      "path": "research/continuous-recovery-20261018/publication/root-native-replay47-v3-batch2-source-acceptance.json",
+      "sha256": "b0bac10e9a904b8f60143e28088f852cdeed27e342841565be1968cec57c7eb0",
+      "bytes": 8022,
+      "role": "latest accepted native replay source receipt"
+    },
+    "latest_source_tail_end": 0,
+    "latest_control_gate": {
+      "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+      "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+      "bytes": 1842,
+      "role": "latest accepted CONTROL03 tail-zero gate"
+    },
+    "prior_native_replay_batch": "WAYBACK-CONTINUOUS-20261018-NATIVE-REPLAY47-V2-01",
+    "prior_native_replay_rank_scope": "1..12"
+  },
+  "execution_boundary": {
+    "network_requests_during_preparation": 0,
+    "requires_explicit_go": true,
+    "requires_root_plan_acceptance_sha": true,
+    "requires_future_deadline_utc": true,
+    "requires_empty_output": true,
+    "does_not_write_active_status": true,
+    "does_not_modify_frozen_v3": true
+  }
+}

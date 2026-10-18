@@ -1,0 +1,201 @@
+{
+  "schema": "wow-recovery.karazhan-observed-redirect-probe-fixtures.v1",
+  "plan_sha256": "142756f3982dda0ac24915ffb855c70d21367a9dffcfb1c8ac759b49a4404b08",
+  "network_requests": 0,
+  "cases": [
+    {
+      "name": "301_location_no_follow_and_sanitized",
+      "passed": true,
+      "detail": {
+        "classification": "observed_301_location",
+        "source_status": 301,
+        "transfer_failure": false,
+        "content_type": "text/html",
+        "body_bytes": 0,
+        "raw_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "location": "https://example.invalid/karazhan-redirect-target.jpg?private=fixture",
+        "location_sha256": "8bf8bdbf85ced056f7c37360bdf3443561c5f61c82f19b21847fb614b7b7d8b9",
+        "sanitized_destination": {
+          "location_sha256": "8bf8bdbf85ced056f7c37360bdf3443561c5f61c82f19b21847fb614b7b7d8b9",
+          "destination": {
+            "scheme": "https",
+            "host": "example.invalid",
+            "port": null,
+            "path": "/karazhan-redirect-target.jpg"
+          }
+        },
+        "decode_error": null,
+        "pending_source_index": false,
+        "accepted": false
+      }
+    },
+    {
+      "name": "200_image_pending_not_accepted",
+      "passed": true,
+      "detail": {
+        "classification": "pending_source_index",
+        "source_status": 200,
+        "transfer_failure": false,
+        "content_type": "image/jpeg",
+        "body_bytes": 418,
+        "raw_body_sha256": "306bac0e36d0b30a6e6d7e7eaf91476f6652c0fb61add61d7b452501ce8efa01",
+        "location": null,
+        "location_sha256": null,
+        "sanitized_destination": null,
+        "decode_error": null,
+        "pending_source_index": true,
+        "accepted": false,
+        "image_validation": {
+          "format": "JPEG",
+          "frame_count": 1,
+          "size": [
+            1,
+            1
+          ],
+          "mode": "RGB"
+        }
+      }
+    },
+    {
+      "name": "200_html_nonimage",
+      "passed": true,
+      "detail": {
+        "classification": "http_200_nonimage",
+        "source_status": 200,
+        "transfer_failure": false,
+        "content_type": "text/html",
+        "body_bytes": 20,
+        "raw_body_sha256": "3ec85d118c49f07362673b7837c60410d3f39e6fa73414a7c6fcd58094f87eb4",
+        "location": null,
+        "location_sha256": null,
+        "sanitized_destination": null,
+        "decode_error": null,
+        "pending_source_index": false,
+        "accepted": false,
+        "image_validation": {
+          "format": null,
+          "frame_count": null,
+          "size": null,
+          "mode": null,
+          "error": "content_type_not_expected"
+        }
+      }
+    },
+    {
+      "name": "404_actual",
+      "passed": true,
+      "detail": {
+        "classification": "actual404",
+        "source_status": 404,
+        "transfer_failure": false,
+        "content_type": "text/html",
+        "body_bytes": 0,
+        "raw_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "location": null,
+        "location_sha256": null,
+        "sanitized_destination": null,
+        "decode_error": null,
+        "pending_source_index": false,
+        "accepted": false
+      }
+    },
+    {
+      "name": "partial_200_transfer_failure",
+      "passed": true,
+      "detail": {
+        "classification": "partial_http_200",
+        "source_status": 200,
+        "transfer_failure": true,
+        "content_type": "image/jpeg",
+        "body_bytes": 418,
+        "raw_body_sha256": "306bac0e36d0b30a6e6d7e7eaf91476f6652c0fb61add61d7b452501ce8efa01",
+        "location": null,
+        "location_sha256": null,
+        "sanitized_destination": null,
+        "decode_error": null,
+        "pending_source_index": false,
+        "accepted": false,
+        "image_validation": {
+          "format": "JPEG",
+          "frame_count": 1,
+          "size": [
+            1,
+            1
+          ],
+          "mode": "RGB"
+        }
+      }
+    },
+    {
+      "name": "direct_empty_28_qualifies_proxy_fallback",
+      "passed": true,
+      "detail": {
+        "classification": "transport_unknown",
+        "source_status": null,
+        "transfer_failure": true,
+        "content_type": "",
+        "body_bytes": 0,
+        "raw_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "location": null,
+        "location_sha256": null,
+        "sanitized_destination": null,
+        "decode_error": null,
+        "pending_source_index": false,
+        "accepted": false
+      }
+    },
+    {
+      "name": "near_end_timeout_clamped",
+      "passed": true,
+      "detail": {
+        "allow": true,
+        "reason": null,
+        "remaining_window_seconds": 1.0,
+        "remaining_deadline_seconds": 20.0,
+        "remaining_body_bytes": 1048576,
+        "cadence_wait_seconds": 0.0,
+        "timeout_seconds": 1.0,
+        "body_cap": 1048576,
+        "disk_free_bytes": 11005853696
+      }
+    },
+    {
+      "name": "remaining_body_cap_clamped",
+      "passed": true,
+      "detail": {
+        "allow": true,
+        "reason": null,
+        "remaining_window_seconds": 50.0,
+        "remaining_deadline_seconds": 20.0,
+        "remaining_body_bytes": 3,
+        "cadence_wait_seconds": 0.0,
+        "timeout_seconds": 20.0,
+        "body_cap": 3,
+        "disk_free_bytes": 11005853696
+      }
+    },
+    {
+      "name": "disk_floor_gate",
+      "passed": true,
+      "detail": {
+        "allow": false,
+        "reason": "disk_floor_before_dispatch",
+        "remaining_window_seconds": 50.0,
+        "remaining_deadline_seconds": 20.0,
+        "remaining_body_bytes": 1048576,
+        "cadence_wait_seconds": 0.0,
+        "timeout_seconds": 0.0,
+        "body_cap": 0,
+        "disk_free_bytes": 11005853695
+      }
+    },
+    {
+      "name": "429_cooldown_floor",
+      "passed": true,
+      "detail": {
+        "cooldown": "2026-10-18T00:02:00+00:00"
+      }
+    }
+  ],
+  "all_passed": true
+}

@@ -1,0 +1,58 @@
+{
+  "schema": "wow-recovery.integration.v33-browser-fix-verification.v1",
+  "scope": "integration/v33/browser only",
+  "status": "offline_focused_validation_passed_waiting_root_review",
+  "baseline_hash_history": {
+    "prepare_v33_browser.py": "27d9ae5dcafd9c9414861d035211aa6925d596944f9272111172142d21b2019c",
+    "check_v33_browser.cjs": "1ec48301c5948a3f48634819a857f2c7b3c2944d9356469d2c57419016aeb602",
+    "test_prepare_v33_browser.py": "prior browser preparation test hash was not recorded in the initial handoff; preserved file history by additive change"
+  },
+  "current_sha256": {
+    "prepare_v33_browser.py": "72af83e475b21b1e0f549b084012574e3af71457233e9c1a03d82996a0f259d1",
+    "check_v33_browser.cjs": "44525a5befd8dabf86717c204a98f5730a607942d84164fd85a2627c48bcbda5",
+    "test_prepare_v33_browser.py": "7f438e705d0db12a30511b0369ac51bccd17dfa58c2bde7d038865b32b041201",
+    "test_v33_browser_contract.py": "8618eeae29a9dbe451a92ccc8f89c6b7f52cb1cf4e70e0432c38abc1872df12f"
+  },
+  "changes": [
+    "preparer retains frozen v32 image_overlay metadata as validated_old_originals, separate from new_originals, and derives ordinary href rows over old plus new exact origins",
+    "popup checker matches the exact first popUpOmega literal argument and resolved item target",
+    "ordinary href checker races same-tab framenavigated against popup page events and removes losing listeners; no fixed 12-second wait per ordinary link",
+    "static checker requires a visible computed CSS background whose local raster decodes, and reports declaration-only only when DOM matches are zero",
+    "hidden equipment tabs and profession selectors are activated only on their known frozen routes",
+    "news activation clicks only the first original toggle while the entry is news-collapse, then waits for news-expand"
+  ],
+  "tests": [
+    {
+      "command": "bundled-python -X utf8 -m py_compile integration/v33/browser/prepare_v33_browser.py integration/v33/browser/test_prepare_v33_browser.py integration/v33/browser/test_v33_browser_contract.py",
+      "result": "passed"
+    },
+    {
+      "command": "bundled-python -X utf8 -m unittest -v research.continuous-recovery-20261018.integration.v33.browser.test_prepare_v33_browser",
+      "result": "9 passed, 0.057s"
+    },
+    {
+      "command": "bundled-python -X utf8 -m unittest -v research.continuous-recovery-20261018.integration.v33.browser.test_v33_browser_contract",
+      "result": "4 passed, 0.413s"
+    },
+    {
+      "command": "node --check integration/v33/browser/check_v33_browser.cjs",
+      "result": "passed"
+    },
+    {
+      "command": "node integration/v33/browser/test_v33_browser_behaviors.cjs",
+      "result": "5 browser behavior tests passed"
+    }
+  ],
+  "execution_boundary": {
+    "playwright": false,
+    "network_requests": 0,
+    "export_executed": false,
+    "v33_preparation_executed": false,
+    "maps_changed": false,
+    "status_or_publication_changed": false
+  },
+  "known_limits": [
+    "No live v33 input existed in the shared checkout during this offline run, so prepare_v33_browser.py --prepare and the Playwright checker were intentionally not run.",
+    "Root must independently exercise the frozen v33 page/controls and review old-plus-new ordinary href coverage before any browser GO."
+  ]
+}

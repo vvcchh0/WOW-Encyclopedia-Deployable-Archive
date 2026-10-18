@@ -1,0 +1,187 @@
+{
+  "schema": "wow-recovery.transfer-pending2-v1.queue.v1",
+  "accepted": true,
+  "root_review_status": "pending_root_review_no_network_go",
+  "network_requests": 0,
+  "target_count": 2,
+  "source_scope": "Two exact originals whose prior bounded runs ended without accepted payloads; no same-window positive fallback is bound.",
+  "query_window": {
+    "from": "20000101000000",
+    "to": "20080512210044",
+    "matchType": "exact",
+    "fields": [
+      "urlkey",
+      "timestamp",
+      "original",
+      "mimetype",
+      "statuscode",
+      "digest",
+      "length"
+    ]
+  },
+  "source_audit": {
+    "path": "research/continuous-recovery-20261018/publication/root-news20-batch2-plan-acceptance.json",
+    "sha256": "aa3e1910c493bb760b0d8e697040e45d45f4f37d96b58ce29d1b134f95d4df05",
+    "role": "frozen prior NEWS transfer plan acceptance"
+  },
+  "source_provenance": {
+    "path": "research/continuous-recovery-20261018/publication/root-navigation70-batch4-plan-acceptance.json",
+    "sha256": "c5b5aa92db229919ef4026879719515e11f5ae287bf626f1850a831a7675ef59",
+    "role": "frozen prior NAVIGATION transfer plan acceptance"
+  },
+  "frozen_driver": {
+    "path": "research/continuous-recovery-20261018/network/reusable-image-driver-v3/reusable_image_driver.py",
+    "sha256": "4a19422f0dd8e2f7e1ffdd088836c7ab80450afb91aeedc6cdb94fa4c6bfe955",
+    "role": "accepted frozen v4a reusable image driver"
+  },
+  "policy": {
+    "max_originals": 2,
+    "max_attempts": 8,
+    "window_seconds": 100.0,
+    "max_total_body_bytes": 8388608,
+    "max_entity_body_bytes": 4194304,
+    "direct_attempt_budget": 4,
+    "proxy_attempt_budget": 20,
+    "direct_connect_seconds": 4.0,
+    "proxy_timeout_seconds": 20.0,
+    "min_dispatch_seconds": 5.25,
+    "min_request_start_seconds": 5.0,
+    "disk_floor_bytes": 11005853696,
+    "direct_first": true,
+    "proxy": "http://127.0.0.1:7890",
+    "tls_verification": true,
+    "automatic_redirects": 0,
+    "stop_http_codes": [
+      429,
+      503
+    ],
+    "cooldown_seconds": 120,
+    "transport_policy": "batch_after_direct_failure"
+  },
+  "prior_attempt_bindings": [
+    {
+      "path": "research/continuous-recovery-20261018/network/news-body-2008-v26/batch-02/plan.json",
+      "sha256": "16b8e8c620a746b5df580411aeaf780fcd7695e821f53f9c554555f6636fcaef",
+      "role": "prior NEWS plan containing exact target and citation"
+    },
+    {
+      "path": "research/continuous-recovery-20261018/publication/root-news20-batch2-source-acceptance.json",
+      "sha256": "a2f3f3015d73c9ff2a986647bcc9eb3ce4078b4f5106242637bc2d77bc730229",
+      "role": "prior NEWS source receipt; target remained unaccepted"
+    },
+    {
+      "path": "research/continuous-recovery-20261018/network/news-body-2008-v26/batch-02/output/state.json",
+      "sha256": "392e896c26ddea0c00591c1ab1a387571d1e78aec1c9ad3496547578d85c2a44",
+      "role": "prior NEWS transport attempt state"
+    },
+    {
+      "path": "research/continuous-recovery-20261018/network/news-body-2008-v26/batch-02/cache-status.json",
+      "sha256": "6be9101adf14c9f02bbb40b043f64ab843aa17e36893f733def24065917ea51d",
+      "role": "prior NEWS exact-CDX cache status"
+    },
+    {
+      "path": "research/continuous-recovery-20261018/network/navigation70-v32/batch-04/plan.json",
+      "sha256": "9bbcc8d2749d5145a1e38f7c068095da7ab4f47e7b22e4874996e691c3ff9689",
+      "role": "prior NAVIGATION plan containing exact target and citation"
+    },
+    {
+      "path": "research/continuous-recovery-20261018/publication/root-navigation70-batch4-source-acceptance.json",
+      "sha256": "fca14b88e5af3705282ffe6b8aa3a8f97e808aa17e03cb63c16d1882463024f9",
+      "role": "prior NAVIGATION source receipt; target remained unaccepted"
+    },
+    {
+      "path": "research/continuous-recovery-20261018/network/navigation70-v32/batch-04/output/state.json",
+      "sha256": "c7fd1c7a6b2ed89f447699f9cc8e5919b5a28d687bcd9ba77674b4d72bdeb3b7",
+      "role": "prior NAVIGATION transport attempt state"
+    },
+    {
+      "path": "research/continuous-recovery-20261018/network/navigation70-v32/batch-04/cache-status.json",
+      "sha256": "1d7354972b4fcc460eac155951b370e765261427ca36de425a091371a9fe357d",
+      "role": "prior NAVIGATION exact-CDX cache status"
+    }
+  ],
+  "rows": [
+    {
+      "rank": 1,
+      "target_key": "TRANSFER-PENDING2-V1-01",
+      "original": "http://www.worldofwarcraft.com/news/images/08-02/02-06-08-3.jpg",
+      "source_role": "news_body_transfer_unknown",
+      "source_pages": [
+        "news/rss-02-2008.xml.html"
+      ],
+      "references": [
+        {
+          "output_file": ".scratch/pages-resources-20261016-v25/news/rss-02-2008.xml.html",
+          "line": 3338,
+          "source_page_sha256": "63b9ac73b8d146ed735b0ed08ed187a979235a5f9a0296cae5699d8564ded81f",
+          "source_page": "http://www.worldofwarcraft.com/news/rss-02-2008.xml",
+          "reason": "external-or-uncollected-resource",
+          "page": "news/rss-02-2008.xml.html"
+        }
+      ],
+      "alternate_navigation_links": [],
+      "recent_execution_record_count": 0,
+      "prior_attempt": {
+        "state": "transport_unknown",
+        "classification": "cdx_transport_failure",
+        "old_plan": "research/continuous-recovery-20261018/network/news-body-2008-v26/batch-02/plan.json",
+        "old_plan_sha256": "16b8e8c620a746b5df580411aeaf780fcd7695e821f53f9c554555f6636fcaef",
+        "old_source_receipt": "research/continuous-recovery-20261018/publication/root-news20-batch2-source-acceptance.json",
+        "old_source_receipt_sha256": "a2f3f3015d73c9ff2a986647bcc9eb3ce4078b4f5106242637bc2d77bc730229",
+        "old_output_state": "research/continuous-recovery-20261018/network/news-body-2008-v26/batch-02/output/state.json",
+        "old_output_state_sha256": "392e896c26ddea0c00591c1ab1a387571d1e78aec1c9ad3496547578d85c2a44",
+        "old_target_attempt": 12,
+        "old_transport": "proxy",
+        "old_cdx_curl_exit": 35,
+        "old_cdx_source_status": null,
+        "old_cdx_body_bytes": 0,
+        "old_cdx_header_source_block_found": false,
+        "old_replay_attempted": false,
+        "old_result": "TLS/transport failure before a complete exact CDX response; do not classify as 404 or empty index"
+      }
+    },
+    {
+      "rank": 2,
+      "target_key": "TRANSFER-PENDING2-V1-02",
+      "original": "http://www.worldofwarcraft.com/news/images/05-02/EU2.jpg",
+      "source_role": "navigation_image_partial_transfer",
+      "source_pages": [
+        "news/wow-news2005.html"
+      ],
+      "references": [
+        {
+          "output_file": ".scratch/pages-resources-20261018-v30/news/wow-news2005.html",
+          "line": 2027,
+          "source_page_sha256": "3d4935a1d6fb6d33408cda74945a5f2584128cd574feae0f4340814c5055724e",
+          "source_page": "http://www.worldofwarcraft.com/news/wow-news2005.html",
+          "reason": "invalid-overlay-or-uncollected-site-resource",
+          "page": "news/wow-news2005.html"
+        }
+      ],
+      "alternate_navigation_links": [],
+      "recent_execution_record_count": 0,
+      "prior_attempt": {
+        "state": "transport_unknown",
+        "classification": "partial_http_200_transfer_failure",
+        "old_plan": "research/continuous-recovery-20261018/network/navigation70-v32/batch-04/plan.json",
+        "old_plan_sha256": "9bbcc8d2749d5145a1e38f7c068095da7ab4f47e7b22e4874996e691c3ff9689",
+        "old_source_receipt": "research/continuous-recovery-20261018/publication/root-navigation70-batch4-source-acceptance.json",
+        "old_source_receipt_sha256": "fca14b88e5af3705282ffe6b8aa3a8f97e808aa17e03cb63c16d1882463024f9",
+        "old_output_state": "research/continuous-recovery-20261018/network/navigation70-v32/batch-04/output/state.json",
+        "old_output_state_sha256": "c7fd1c7a6b2ed89f447699f9cc8e5919b5a28d687bcd9ba77674b4d72bdeb3b7",
+        "old_target_attempt": 7,
+        "old_transport": "proxy",
+        "old_replay_timestamp": "20080402082508",
+        "old_replay_curl_exit": 28,
+        "old_replay_source_status": 200,
+        "old_replay_body_bytes": 489580,
+        "old_replay_body_sha256": "2db0d8a6cef5b6731ef7f3980bddcbe08a95bf95aca0a29303895951a377c57c",
+        "old_replay_header_source_block_found": true,
+        "old_cdx_attempt": 6,
+        "old_cdx_body_bytes": 849,
+        "old_replay_attempted": true,
+        "old_result": "partial HTTP 200 response ended with curl 28; no complete decoded image was accepted"
+      }
+    }
+  ]
+}

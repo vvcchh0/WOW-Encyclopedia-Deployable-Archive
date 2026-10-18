@@ -1,0 +1,631 @@
+{
+  "schema": "wow-recovery.reusable-image-plan.v1",
+  "batch_id": "WAYBACK-CONTINUOUS-20261018-TRANSFER-PENDING2-V2-01",
+  "prepared_utc": "2026-10-18T12:54:05.794829Z",
+  "mode": "fresh_exact_cdx_then_id_replay_no_fallback",
+  "network_authorized": null,
+  "parent_go_required": true,
+  "candidate_count": 2,
+  "output_dir": "research/continuous-recovery-20261018/network/transfer-pending2-v2/batch-01/output",
+  "execution_order": {
+    "batch_number": 1,
+    "batch_count": 1,
+    "predecessor_batch_required": false,
+    "predecessor_tail_rebind_required_before_execute": false,
+    "predecessor_tail_status": "bound_to_current_source_acceptance",
+    "root_control_acceptance_bound": true,
+    "root_control_acceptance_required_before_execute": false
+  },
+  "selection_scope": {
+    "name": "transfer_pending2_v2_batch_01",
+    "reason": "Two exact originals retained from prior transfer failures; each citation is locally SHA-bound and no positive cache fallback is allowed.",
+    "queue_path": "research/continuous-recovery-20261018/network/transfer-pending2-v2/transfer-pending2-v2-queue.json",
+    "queue_sha256": "8c6f14e2ee076649208465381751d722ccd55d3fafb7aa00243bbe79651f5786",
+    "queue_target_count": 2,
+    "queue_rank_range": [
+      1,
+      2
+    ],
+    "selected_queue_ranks": [
+      1,
+      2
+    ],
+    "network_requests_during_preparation": 0,
+    "alternate_links_are_context_only": true
+  },
+  "candidates": [
+    {
+      "target_key": "TRANSFER-PENDING2-V2-01-01",
+      "priority": 1,
+      "queue_rank": 1,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com/news/images/08-02/02-06-08-3.jpg",
+      "literal": "http://www.worldofwarcraft.com/news/images/08-02/02-06-08-3.jpg",
+      "expected": {
+        "archive_query_required": true,
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "all_gif_frames": false,
+        "reencode": false,
+        "script_execution": false,
+        "query_window": {
+          "from": "20000101000000",
+          "to": "20080512210044"
+        }
+      },
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "source_evidence": {
+        "path": ".scratch/pages-resources-20261016-v25/news/rss-02-2008.xml.html",
+        "line": 3338,
+        "sha256": "63b9ac73b8d146ed735b0ed08ed187a979235a5f9a0296cae5699d8564ded81f",
+        "source_page_sha256": "63b9ac73b8d146ed735b0ed08ed187a979235a5f9a0296cae5699d8564ded81f",
+        "bytes": 201457,
+        "literal": "http://www.worldofwarcraft.com/news/images/08-02/02-06-08-3.jpg",
+        "match": "url_encoded",
+        "source_page": "http://www.worldofwarcraft.com/news/rss-02-2008.xml",
+        "reason": "external-or-uncollected-resource",
+        "page": "news/rss-02-2008.xml.html"
+      },
+      "all_references": [
+        {
+          "path": ".scratch/pages-resources-20261016-v25/news/rss-02-2008.xml.html",
+          "line": 3338,
+          "sha256": "63b9ac73b8d146ed735b0ed08ed187a979235a5f9a0296cae5699d8564ded81f",
+          "source_page_sha256": "63b9ac73b8d146ed735b0ed08ed187a979235a5f9a0296cae5699d8564ded81f",
+          "bytes": 201457,
+          "literal": "http://www.worldofwarcraft.com/news/images/08-02/02-06-08-3.jpg",
+          "match": "url_encoded",
+          "source_page": "http://www.worldofwarcraft.com/news/rss-02-2008.xml",
+          "reason": "external-or-uncollected-resource",
+          "page": "news/rss-02-2008.xml.html"
+        }
+      ],
+      "source_page_context": {
+        "candidate_file": "research/continuous-recovery-20261018/network/transfer-pending2-v2/transfer-pending2-v2-queue.json",
+        "candidate_file_sha256": "8c6f14e2ee076649208465381751d722ccd55d3fafb7aa00243bbe79651f5786",
+        "queue_rank": 1,
+        "source_role": "news_body_transfer_unknown",
+        "source_pages": [
+          "news/rss-02-2008.xml.html"
+        ],
+        "references": [
+          {
+            "output_file": ".scratch/pages-resources-20261016-v25/news/rss-02-2008.xml.html",
+            "line": 3338,
+            "source_page_sha256": "63b9ac73b8d146ed735b0ed08ed187a979235a5f9a0296cae5699d8564ded81f",
+            "source_page": "http://www.worldofwarcraft.com/news/rss-02-2008.xml",
+            "reason": "external-or-uncollected-resource",
+            "page": "news/rss-02-2008.xml.html"
+          }
+        ],
+        "validated_references": [
+          {
+            "path": ".scratch/pages-resources-20261016-v25/news/rss-02-2008.xml.html",
+            "line": 3338,
+            "sha256": "63b9ac73b8d146ed735b0ed08ed187a979235a5f9a0296cae5699d8564ded81f",
+            "source_page_sha256": "63b9ac73b8d146ed735b0ed08ed187a979235a5f9a0296cae5699d8564ded81f",
+            "bytes": 201457,
+            "literal": "http://www.worldofwarcraft.com/news/images/08-02/02-06-08-3.jpg",
+            "match": "url_encoded",
+            "source_page": "http://www.worldofwarcraft.com/news/rss-02-2008.xml",
+            "reason": "external-or-uncollected-resource",
+            "page": "news/rss-02-2008.xml.html"
+          }
+        ],
+        "alternate_navigation_links": [],
+        "source_page_context_note": "Alternates are retained as provenance context only; they are not same-original all_references.",
+        "original_source_context": {
+          "source_page": "http://www.worldofwarcraft.com/news/rss-02-2008.xml",
+          "reason": "external-or-uncollected-resource",
+          "page": "news/rss-02-2008.xml.html",
+          "origin_host": "www.worldofwarcraft.com",
+          "scheme": "http"
+        },
+        "current_source_receipt": {
+          "path": "research/continuous-recovery-20261018/publication/root-static40-batch4-source-acceptance.json",
+          "sha256": "c5c8ad7bf1931d75fe95d3cca89687176eb982f2634bb46b4c007d7055e34cb7",
+          "bytes": 8367,
+          "role": "freshest actual source receipt at factory invocation"
+        },
+        "current_source_receipt_sha256": "c5c8ad7bf1931d75fe95d3cca89687176eb982f2634bb46b4c007d7055e34cb7",
+        "current_failure_tail": 0,
+        "status_snapshot": {
+          "path": "research/continuous-recovery-20261018/network/transfer-pending2-v2/batch-01/status-snapshot.json",
+          "sha256": "afc7f41cc8ff2c00013190eac9d807f525133f68464eb3576f01e82cd7415f72",
+          "bytes": 1071,
+          "role": "atomic batch-local status snapshot"
+        },
+        "queue_row": {
+          "rank": 1,
+          "target_key": "TRANSFER-PENDING2-V1-01",
+          "original": "http://www.worldofwarcraft.com/news/images/08-02/02-06-08-3.jpg",
+          "source_role": "news_body_transfer_unknown",
+          "source_pages": [
+            "news/rss-02-2008.xml.html"
+          ],
+          "references": [
+            {
+              "output_file": ".scratch/pages-resources-20261016-v25/news/rss-02-2008.xml.html",
+              "line": 3338,
+              "source_page_sha256": "63b9ac73b8d146ed735b0ed08ed187a979235a5f9a0296cae5699d8564ded81f",
+              "source_page": "http://www.worldofwarcraft.com/news/rss-02-2008.xml",
+              "reason": "external-or-uncollected-resource",
+              "page": "news/rss-02-2008.xml.html"
+            }
+          ],
+          "alternate_navigation_links": [],
+          "recent_execution_record_count": 0,
+          "prior_attempt": {
+            "state": "transport_unknown",
+            "classification": "cdx_transport_failure",
+            "old_plan": "research/continuous-recovery-20261018/network/news-body-2008-v26/batch-02/plan.json",
+            "old_plan_sha256": "16b8e8c620a746b5df580411aeaf780fcd7695e821f53f9c554555f6636fcaef",
+            "old_source_receipt": "research/continuous-recovery-20261018/publication/root-news20-batch2-source-acceptance.json",
+            "old_source_receipt_sha256": "a2f3f3015d73c9ff2a986647bcc9eb3ce4078b4f5106242637bc2d77bc730229",
+            "old_output_state": "research/continuous-recovery-20261018/network/news-body-2008-v26/batch-02/output/state.json",
+            "old_output_state_sha256": "392e896c26ddea0c00591c1ab1a387571d1e78aec1c9ad3496547578d85c2a44",
+            "old_target_attempt": 12,
+            "old_transport": "proxy",
+            "old_cdx_curl_exit": 35,
+            "old_cdx_source_status": null,
+            "old_cdx_body_bytes": 0,
+            "old_cdx_header_source_block_found": false,
+            "old_replay_attempted": false,
+            "old_result": "TLS/transport failure before a complete exact CDX response; do not classify as 404 or empty index"
+          }
+        }
+      },
+      "selection": {
+        "max_distinct_digest_candidates": 2,
+        "potential_truncation": "do_not_replay",
+        "require_complete_index": true,
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "same_digest_older_captures": "skip",
+        "sort": "timestamp_desc_then_record_index_desc",
+        "unknown_metadata": "incomplete_error"
+      },
+      "known_positive_cache_rows": [],
+      "fallback_label": null,
+      "cdx_mode": "fresh",
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com/news/images/08-02/02-06-08-3.jpg",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F08-02%2F02-06-08-3.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com/news/images/08-02/02-06-08-3.jpg",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "prior_local_evidence": [
+        {
+          "state": 0,
+          "source": "transfer-pending2-v2-queue",
+          "exact_entity_index_complete": false,
+          "positive_row_count": 0
+        }
+      ],
+      "prior_evidence_status": "transfer_pending2_prior_failure_bound; fresh_exact_cdx_required; no_bound_positive_fallback"
+    },
+    {
+      "target_key": "TRANSFER-PENDING2-V2-01-02",
+      "priority": 2,
+      "queue_rank": 2,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com/news/images/05-02/EU2.jpg",
+      "literal": "http://www.worldofwarcraft.com/news/images/05-02/EU2.jpg",
+      "expected": {
+        "archive_query_required": true,
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "all_gif_frames": false,
+        "reencode": false,
+        "script_execution": false,
+        "query_window": {
+          "from": "20000101000000",
+          "to": "20080512210044"
+        }
+      },
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "source_evidence": {
+        "path": ".scratch/pages-resources-20261018-v30/news/wow-news2005.html",
+        "line": 2027,
+        "sha256": "3d4935a1d6fb6d33408cda74945a5f2584128cd574feae0f4340814c5055724e",
+        "source_page_sha256": "3d4935a1d6fb6d33408cda74945a5f2584128cd574feae0f4340814c5055724e",
+        "bytes": 206179,
+        "literal": "http://www.worldofwarcraft.com/news/images/05-02/EU2.jpg",
+        "match": "url_encoded",
+        "source_page": "http://www.worldofwarcraft.com/news/wow-news2005.html",
+        "reason": "invalid-overlay-or-uncollected-site-resource",
+        "page": "news/wow-news2005.html"
+      },
+      "all_references": [
+        {
+          "path": ".scratch/pages-resources-20261018-v30/news/wow-news2005.html",
+          "line": 2027,
+          "sha256": "3d4935a1d6fb6d33408cda74945a5f2584128cd574feae0f4340814c5055724e",
+          "source_page_sha256": "3d4935a1d6fb6d33408cda74945a5f2584128cd574feae0f4340814c5055724e",
+          "bytes": 206179,
+          "literal": "http://www.worldofwarcraft.com/news/images/05-02/EU2.jpg",
+          "match": "url_encoded",
+          "source_page": "http://www.worldofwarcraft.com/news/wow-news2005.html",
+          "reason": "invalid-overlay-or-uncollected-site-resource",
+          "page": "news/wow-news2005.html"
+        }
+      ],
+      "source_page_context": {
+        "candidate_file": "research/continuous-recovery-20261018/network/transfer-pending2-v2/transfer-pending2-v2-queue.json",
+        "candidate_file_sha256": "8c6f14e2ee076649208465381751d722ccd55d3fafb7aa00243bbe79651f5786",
+        "queue_rank": 2,
+        "source_role": "navigation_image_partial_transfer",
+        "source_pages": [
+          "news/wow-news2005.html"
+        ],
+        "references": [
+          {
+            "output_file": ".scratch/pages-resources-20261018-v30/news/wow-news2005.html",
+            "line": 2027,
+            "source_page_sha256": "3d4935a1d6fb6d33408cda74945a5f2584128cd574feae0f4340814c5055724e",
+            "source_page": "http://www.worldofwarcraft.com/news/wow-news2005.html",
+            "reason": "invalid-overlay-or-uncollected-site-resource",
+            "page": "news/wow-news2005.html"
+          }
+        ],
+        "validated_references": [
+          {
+            "path": ".scratch/pages-resources-20261018-v30/news/wow-news2005.html",
+            "line": 2027,
+            "sha256": "3d4935a1d6fb6d33408cda74945a5f2584128cd574feae0f4340814c5055724e",
+            "source_page_sha256": "3d4935a1d6fb6d33408cda74945a5f2584128cd574feae0f4340814c5055724e",
+            "bytes": 206179,
+            "literal": "http://www.worldofwarcraft.com/news/images/05-02/EU2.jpg",
+            "match": "url_encoded",
+            "source_page": "http://www.worldofwarcraft.com/news/wow-news2005.html",
+            "reason": "invalid-overlay-or-uncollected-site-resource",
+            "page": "news/wow-news2005.html"
+          }
+        ],
+        "alternate_navigation_links": [],
+        "source_page_context_note": "Alternates are retained as provenance context only; they are not same-original all_references.",
+        "original_source_context": {
+          "source_page": "http://www.worldofwarcraft.com/news/wow-news2005.html",
+          "reason": "invalid-overlay-or-uncollected-site-resource",
+          "page": "news/wow-news2005.html",
+          "origin_host": "www.worldofwarcraft.com",
+          "scheme": "http"
+        },
+        "current_source_receipt": {
+          "path": "research/continuous-recovery-20261018/publication/root-static40-batch4-source-acceptance.json",
+          "sha256": "c5c8ad7bf1931d75fe95d3cca89687176eb982f2634bb46b4c007d7055e34cb7",
+          "bytes": 8367,
+          "role": "freshest actual source receipt at factory invocation"
+        },
+        "current_source_receipt_sha256": "c5c8ad7bf1931d75fe95d3cca89687176eb982f2634bb46b4c007d7055e34cb7",
+        "current_failure_tail": 0,
+        "status_snapshot": {
+          "path": "research/continuous-recovery-20261018/network/transfer-pending2-v2/batch-01/status-snapshot.json",
+          "sha256": "afc7f41cc8ff2c00013190eac9d807f525133f68464eb3576f01e82cd7415f72",
+          "bytes": 1071,
+          "role": "atomic batch-local status snapshot"
+        },
+        "queue_row": {
+          "rank": 2,
+          "target_key": "TRANSFER-PENDING2-V1-02",
+          "original": "http://www.worldofwarcraft.com/news/images/05-02/EU2.jpg",
+          "source_role": "navigation_image_partial_transfer",
+          "source_pages": [
+            "news/wow-news2005.html"
+          ],
+          "references": [
+            {
+              "output_file": ".scratch/pages-resources-20261018-v30/news/wow-news2005.html",
+              "line": 2027,
+              "source_page_sha256": "3d4935a1d6fb6d33408cda74945a5f2584128cd574feae0f4340814c5055724e",
+              "source_page": "http://www.worldofwarcraft.com/news/wow-news2005.html",
+              "reason": "invalid-overlay-or-uncollected-site-resource",
+              "page": "news/wow-news2005.html"
+            }
+          ],
+          "alternate_navigation_links": [],
+          "recent_execution_record_count": 0,
+          "prior_attempt": {
+            "state": "transport_unknown",
+            "classification": "partial_http_200_transfer_failure",
+            "old_plan": "research/continuous-recovery-20261018/network/navigation70-v32/batch-04/plan.json",
+            "old_plan_sha256": "9bbcc8d2749d5145a1e38f7c068095da7ab4f47e7b22e4874996e691c3ff9689",
+            "old_source_receipt": "research/continuous-recovery-20261018/publication/root-navigation70-batch4-source-acceptance.json",
+            "old_source_receipt_sha256": "fca14b88e5af3705282ffe6b8aa3a8f97e808aa17e03cb63c16d1882463024f9",
+            "old_output_state": "research/continuous-recovery-20261018/network/navigation70-v32/batch-04/output/state.json",
+            "old_output_state_sha256": "c7fd1c7a6b2ed89f447699f9cc8e5919b5a28d687bcd9ba77674b4d72bdeb3b7",
+            "old_target_attempt": 7,
+            "old_transport": "proxy",
+            "old_replay_timestamp": "20080402082508",
+            "old_replay_curl_exit": 28,
+            "old_replay_source_status": 200,
+            "old_replay_body_bytes": 489580,
+            "old_replay_body_sha256": "2db0d8a6cef5b6731ef7f3980bddcbe08a95bf95aca0a29303895951a377c57c",
+            "old_replay_header_source_block_found": true,
+            "old_cdx_attempt": 6,
+            "old_cdx_body_bytes": 849,
+            "old_replay_attempted": true,
+            "old_result": "partial HTTP 200 response ended with curl 28; no complete decoded image was accepted"
+          }
+        }
+      },
+      "selection": {
+        "max_distinct_digest_candidates": 2,
+        "potential_truncation": "do_not_replay",
+        "require_complete_index": true,
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "same_digest_older_captures": "skip",
+        "sort": "timestamp_desc_then_record_index_desc",
+        "unknown_metadata": "incomplete_error"
+      },
+      "known_positive_cache_rows": [],
+      "fallback_label": null,
+      "cdx_mode": "fresh",
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com/news/images/05-02/EU2.jpg",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F05-02%2FEU2.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com/news/images/05-02/EU2.jpg",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "prior_local_evidence": [
+        {
+          "state": 0,
+          "source": "transfer-pending2-v2-queue",
+          "exact_entity_index_complete": false,
+          "positive_row_count": 0
+        }
+      ],
+      "prior_evidence_status": "transfer_pending2_prior_failure_bound; fresh_exact_cdx_required; no_bound_positive_fallback"
+    }
+  ],
+  "policy": {
+    "from": "20000101000000",
+    "to": "20080512210044",
+    "limit": 500,
+    "showResumeKey": true,
+    "collapse": false,
+    "matchType": "exact",
+    "max_originals": 20,
+    "max_attempts": 8,
+    "window_seconds": 100.0,
+    "max_total_body_bytes": 8388608,
+    "max_entity_body_bytes": 4194304,
+    "min_dispatch_seconds": 5.25,
+    "min_request_start_seconds": 5.0,
+    "disk_floor_bytes": 11005853696,
+    "direct_first": true,
+    "direct_attempt_budget": 4,
+    "proxy_attempt_budget": 20,
+    "direct_connect_seconds": 4.0,
+    "proxy_timeout_seconds": 20.0,
+    "proxy": "http://127.0.0.1:7890",
+    "tls_verification": true,
+    "automatic_redirects": 0,
+    "stop_http_codes": [
+      429,
+      503
+    ],
+    "cooldown_seconds": 120,
+    "user_agent": "wow-recovery-reusable-image-v3/20261018-transfer-pending2-v2",
+    "prior_failure_tail": 0,
+    "transport_policy": "batch_after_direct_failure",
+    "no_network_before_parent_go": true
+  },
+  "previous_batch": {
+    "name": "current_source_tail_and_CONTROL03",
+    "prior_failure_tail": 0,
+    "acceptance_receipt_path": "research/continuous-recovery-20261018/publication/root-static40-batch4-source-acceptance.json",
+    "acceptance_receipt_sha256": "c5c8ad7bf1931d75fe95d3cca89687176eb982f2634bb46b4c007d7055e34cb7",
+    "tail_receipt_path": "research/continuous-recovery-20261018/publication/root-static40-batch4-source-acceptance.json",
+    "tail_receipt_sha256": "c5c8ad7bf1931d75fe95d3cca89687176eb982f2634bb46b4c007d7055e34cb7",
+    "latest_successful_tail_end": 0,
+    "historical_tail_is_preserved": true,
+    "control_gate_receipt_path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+    "control_gate_receipt_sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+    "control_gate_required": true,
+    "root_control_acceptance_bound": true,
+    "parent_go_required": true
+  },
+  "input_bindings": {
+    "navigation70_queue": {
+      "path": "research/continuous-recovery-20261018/network/transfer-pending2-v2/transfer-pending2-v2-queue.json",
+      "sha256": "8c6f14e2ee076649208465381751d722ccd55d3fafb7aa00243bbe79651f5786",
+      "bytes": 8465,
+      "role": "immutable two-target transfer-pending2 retry queue"
+    },
+    "source_audit": {
+      "path": "research/continuous-recovery-20261018/publication/root-news20-batch2-plan-acceptance.json",
+      "sha256": "aa3e1910c493bb760b0d8e697040e45d45f4f37d96b58ce29d1b134f95d4df05",
+      "bytes": 1573,
+      "role": "frozen prior NEWS transfer plan acceptance"
+    },
+    "source_provenance": {
+      "path": "research/continuous-recovery-20261018/publication/root-navigation70-batch4-plan-acceptance.json",
+      "sha256": "c5b5aa92db229919ef4026879719515e11f5ae287bf626f1850a831a7675ef59",
+      "bytes": 1565,
+      "role": "frozen prior NAVIGATION transfer plan acceptance"
+    },
+    "status": {
+      "path": "research/continuous-recovery-20261018/status.json",
+      "sha256": "c697c50449c3e0b76d370115bdc557893141c125a3fb6384c42004f21e19b961",
+      "bytes": 23765,
+      "role": "current recovery status snapshot"
+    },
+    "latest_source_acceptance": {
+      "path": "research/continuous-recovery-20261018/publication/root-static40-batch4-source-acceptance.json",
+      "sha256": "c5c8ad7bf1931d75fe95d3cca89687176eb982f2634bb46b4c007d7055e34cb7",
+      "bytes": 8367,
+      "role": "freshest accepted source receipt selected from current status"
+    },
+    "latest_control_gate": {
+      "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+      "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+      "bytes": 1842,
+      "role": "current accepted CONTROL03 tail-zero gate"
+    },
+    "frozen_v3_driver": {
+      "path": "research/continuous-recovery-20261018/network/reusable-image-driver-v3/reusable_image_driver.py",
+      "sha256": "4a19422f0dd8e2f7e1ffdd088836c7ab80450afb91aeedc6cdb94fa4c6bfe955",
+      "bytes": 103121,
+      "role": "frozen reusable-image-v3 driver"
+    },
+    "status_snapshot": {
+      "path": "research/continuous-recovery-20261018/network/transfer-pending2-v2/batch-01/status-snapshot.json",
+      "sha256": "afc7f41cc8ff2c00013190eac9d807f525133f68464eb3576f01e82cd7415f72",
+      "bytes": 1071,
+      "role": "atomic batch-local status snapshot"
+    }
+  },
+  "source_bindings": {
+    "navigation70_queue": {
+      "path": "research/continuous-recovery-20261018/network/transfer-pending2-v2/transfer-pending2-v2-queue.json",
+      "sha256": "8c6f14e2ee076649208465381751d722ccd55d3fafb7aa00243bbe79651f5786",
+      "bytes": 8465,
+      "role": "immutable two-target transfer-pending2 retry queue"
+    },
+    "source_audit": {
+      "path": "research/continuous-recovery-20261018/publication/root-news20-batch2-plan-acceptance.json",
+      "sha256": "aa3e1910c493bb760b0d8e697040e45d45f4f37d96b58ce29d1b134f95d4df05",
+      "bytes": 1573,
+      "role": "frozen prior NEWS transfer plan acceptance"
+    },
+    "source_provenance": {
+      "path": "research/continuous-recovery-20261018/publication/root-navigation70-batch4-plan-acceptance.json",
+      "sha256": "c5b5aa92db229919ef4026879719515e11f5ae287bf626f1850a831a7675ef59",
+      "bytes": 1565,
+      "role": "frozen prior NAVIGATION transfer plan acceptance"
+    },
+    "status": {
+      "path": "research/continuous-recovery-20261018/status.json",
+      "sha256": "c697c50449c3e0b76d370115bdc557893141c125a3fb6384c42004f21e19b961",
+      "bytes": 23765,
+      "role": "current recovery status snapshot"
+    },
+    "latest_source_acceptance": {
+      "path": "research/continuous-recovery-20261018/publication/root-static40-batch4-source-acceptance.json",
+      "sha256": "c5c8ad7bf1931d75fe95d3cca89687176eb982f2634bb46b4c007d7055e34cb7",
+      "bytes": 8367,
+      "role": "freshest accepted source receipt selected from current status"
+    },
+    "latest_control_gate": {
+      "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+      "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+      "bytes": 1842,
+      "role": "current accepted CONTROL03 tail-zero gate"
+    },
+    "frozen_v3_driver": {
+      "path": "research/continuous-recovery-20261018/network/reusable-image-driver-v3/reusable_image_driver.py",
+      "sha256": "4a19422f0dd8e2f7e1ffdd088836c7ab80450afb91aeedc6cdb94fa4c6bfe955",
+      "bytes": 103121,
+      "role": "frozen reusable-image-v3 driver"
+    },
+    "status_snapshot": {
+      "path": "research/continuous-recovery-20261018/network/transfer-pending2-v2/batch-01/status-snapshot.json",
+      "sha256": "afc7f41cc8ff2c00013190eac9d807f525133f68464eb3576f01e82cd7415f72",
+      "bytes": 1071,
+      "role": "atomic batch-local status snapshot"
+    }
+  },
+  "excluded_rows": {
+    "selected_queue_ranks": [
+      1,
+      2
+    ],
+    "other_queue_batch_ranks": [],
+    "known_positive_fallback_rows": []
+  },
+  "identity_variant_policy": {
+    "retain_in_cdx_report": true,
+    "replay_identity_variants": false,
+    "strict_identity": "exact_original_default_port_only",
+    "scheme_or_host_variants_are_not_equivalent": true
+  },
+  "execution_boundary": {
+    "no_network_authorized_by_this_artifact": true,
+    "requires_parent_GO": true,
+    "requires_new_root_control_acceptance": false,
+    "root_control_acceptance_bound": true,
+    "driver_not_invoked_by_factory": true
+  }
+}

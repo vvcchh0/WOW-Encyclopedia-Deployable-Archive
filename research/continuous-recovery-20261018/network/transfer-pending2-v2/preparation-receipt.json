@@ -1,0 +1,135 @@
+{
+  "schema": "wow-recovery.transfer-pending2-v2.preparation-receipt.v1",
+  "checked_utc": "2026-10-18T12:55:34.9110240Z",
+  "accepted": true,
+  "root_review_status": "pending_root_review_no_network_go",
+  "network_requests": 0,
+  "driver_invocations": 0,
+  "plans_created": 1,
+  "output_directories_created": 0,
+  "disk_free_bytes_before_receipt": 47136690176,
+  "disk_floor_bytes": 11005853696,
+  "queue": {
+    "path": "research/continuous-recovery-20261018/network/transfer-pending2-v2/transfer-pending2-v2-queue.json",
+    "sha256": "8c6f14e2ee076649208465381751d722ccd55d3fafb7aa00243bbe79651f5786",
+    "bytes": 8465,
+    "schema": "wow-recovery.transfer-pending2-v1.queue.v1",
+    "target_count": 2,
+    "target_originals": [
+      "http://www.worldofwarcraft.com/news/images/08-02/02-06-08-3.jpg",
+      "http://www.worldofwarcraft.com/news/images/05-02/EU2.jpg"
+    ],
+    "source_audit": {
+      "path": "research/continuous-recovery-20261018/publication/root-news20-batch2-plan-acceptance.json",
+      "sha256": "aa3e1910c493bb760b0d8e697040e45d45f4f37d96b58ce29d1b134f95d4df05",
+      "role": "frozen prior NEWS transfer plan acceptance"
+    },
+    "source_provenance": {
+      "path": "research/continuous-recovery-20261018/publication/root-navigation70-batch4-plan-acceptance.json",
+      "sha256": "c5b5aa92db229919ef4026879719515e11f5ae287bf626f1850a831a7675ef59",
+      "role": "frozen prior NAVIGATION transfer plan acceptance"
+    }
+  },
+  "factory": {
+    "path": "research/continuous-recovery-20261018/network/transfer-pending2-v2/prepare_transfer_pending2_v2.py",
+    "sha256": "f68d8f49e5f7b5bbb598334824726e1cb4ede68138434ed4ebb4863583405ecc",
+    "bytes": 35735,
+    "frozen_driver_path": "research/continuous-recovery-20261018/network/reusable-image-driver-v3/reusable_image_driver.py",
+    "frozen_driver_sha256": "4a19422f0dd8e2f7e1ffdd088836c7ab80450afb91aeedc6cdb94fa4c6bfe955",
+    "cli_plan_creation": "--batch-index 1; offline preparation only; parent GO still required for driver execution"
+  },
+  "plan": {
+    "path": "research/continuous-recovery-20261018/network/transfer-pending2-v2/batch-01/plan.json",
+    "sha256": "f70c0de62437858df9c5a8178edeea2511f1850de3b4f3bff5b78b5f5a67b4f5",
+    "bytes": 28291,
+    "batch_id": "WAYBACK-CONTINUOUS-20261018-TRANSFER-PENDING2-V2-01",
+    "candidate_count": 2,
+    "selected_queue_ranks": [
+      1,
+      2
+    ],
+    "selected_originals": [
+      "http://www.worldofwarcraft.com/news/images/08-02/02-06-08-3.jpg",
+      "http://www.worldofwarcraft.com/news/images/05-02/EU2.jpg"
+    ],
+    "policy_max_originals": 20,
+    "policy_max_attempts": 8,
+    "policy_window_seconds": 100.0,
+    "policy_max_total_body_bytes": 8388608,
+    "policy_max_entity_body_bytes": 4194304
+  },
+  "bindings": {
+    "path": "research/continuous-recovery-20261018/network/transfer-pending2-v2/batch-01/input-bindings.json",
+    "sha256": "ad012b50d8cb24fc64693295603eaf257712ae99dd11f2a144fdf8cf0bb8e358",
+    "bytes": 3287,
+    "plan_sha256": "f70c0de62437858df9c5a8178edeea2511f1850de3b4f3bff5b78b5f5a67b4f5",
+    "driver_sha256": "4a19422f0dd8e2f7e1ffdd088836c7ab80450afb91aeedc6cdb94fa4c6bfe955",
+    "source_receipt": {
+      "path": "research/continuous-recovery-20261018/publication/root-static40-batch4-source-acceptance.json",
+      "sha256": "c5c8ad7bf1931d75fe95d3cca89687176eb982f2634bb46b4c007d7055e34cb7",
+      "bytes": 8367,
+      "role": "freshest accepted source receipt selected from current status"
+    },
+    "control_gate": {
+      "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+      "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+      "bytes": 1842,
+      "role": "current accepted CONTROL03 tail-zero gate"
+    },
+    "prior_failure_tail": 0,
+    "active_status_sha256": "c697c50449c3e0b76d370115bdc557893141c125a3fb6384c42004f21e19b961"
+  },
+  "batch_documents": {
+    "status_snapshot": {
+      "path": "research/continuous-recovery-20261018/network/transfer-pending2-v2/batch-01/status-snapshot.json",
+      "sha256": "afc7f41cc8ff2c00013190eac9d807f525133f68464eb3576f01e82cd7415f72",
+      "bytes": 1071,
+      "role": "immutable active-status/source/control snapshot"
+    },
+    "plan": {
+      "path": "research/continuous-recovery-20261018/network/transfer-pending2-v2/batch-01/plan.json",
+      "sha256": "f70c0de62437858df9c5a8178edeea2511f1850de3b4f3bff5b78b5f5a67b4f5",
+      "bytes": 28291,
+      "role": "offline prepared retry plan"
+    },
+    "input_bindings": {
+      "path": "research/continuous-recovery-20261018/network/transfer-pending2-v2/batch-01/input-bindings.json",
+      "sha256": "ad012b50d8cb24fc64693295603eaf257712ae99dd11f2a144fdf8cf0bb8e358",
+      "bytes": 3287,
+      "role": "immutable plan/driver/source bindings"
+    },
+    "cache_status": {
+      "path": "research/continuous-recovery-20261018/network/transfer-pending2-v2/batch-01/cache-status.json",
+      "sha256": "5f98fac38fc3f1711cd5f38e93c64dee3773c93469bcabde4ad1fb3955473022",
+      "bytes": 4773,
+      "role": "offline cache state; no exact CDX cache present"
+    },
+    "selection_manifest": {
+      "path": "research/continuous-recovery-20261018/network/transfer-pending2-v2/batch-01/selection-manifest.json",
+      "sha256": "563e1d3d69b9fad3a730b2ca86bac06d092f74b966f0811e49ef218a50a00ee0",
+      "bytes": 2872,
+      "role": "offline exact two-row selection"
+    }
+  },
+  "test_artifacts": {
+    "path": "research/continuous-recovery-20261018/network/transfer-pending2-v2/test_prepare_transfer_pending2_v2.py",
+    "sha256": "3668677ece3caa431c0d8980d1078f142fd791e8a4988a7d021cc292e4896b6f",
+    "bytes": 8304,
+    "command": "& 'C:\\Users\\17630\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe' -X utf8 -m unittest discover -s research/continuous-recovery-20261018/network/transfer-pending2-v2 -p 'test_*.py' -v",
+    "result": "7/7 passed, 0.194s; includes actual frozen driver configure/load_and_validate_inputs check",
+    "py_compile": "PASS",
+    "loader_network_requests": 0
+  },
+  "readme": {
+    "path": "research/continuous-recovery-20261018/network/transfer-pending2-v2/README.md",
+    "sha256": "93b065ad7a7db2f9c3207947a35a90759bdfc84fdb8bbf3f81e6581e0b4ec1f2",
+    "bytes": 3161,
+    "role": "v2 preparation contract and validation instructions"
+  },
+  "execution_boundary": {
+    "network_requests_during_preparation": 0,
+    "http_not_authorized_by_this_artifact": true,
+    "parent_go_required_before_driver_execution": true,
+    "v1_factory_plan_receipt_untouched": true
+  }
+}

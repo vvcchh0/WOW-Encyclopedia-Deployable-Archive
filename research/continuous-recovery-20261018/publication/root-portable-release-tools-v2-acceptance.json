@@ -1,0 +1,44 @@
+{
+  "accepted": true,
+  "checked_utc": "2026-10-18T11:49:51.534888+00:00",
+  "files": {
+    "baseline-preparation-receipt.json": {
+      "path": "research/continuous-recovery-20261018/integration/portable-release-tools-v2/baseline-preparation-receipt.json",
+      "sha256": "a33fa7a1755c1f4d2073c4836f95eacdefa7813891886380df97162c4ecd087e"
+    },
+    "check_portable.py": {
+      "path": "research/continuous-recovery-20261018/integration/portable-release-tools-v2/check_portable.py",
+      "sha256": "3d7d8c1b3531c4d9bad4bdb7236da4206746b5b508d85877039bd989f03c93d3"
+    },
+    "create_upload_release.py": {
+      "path": "research/continuous-recovery-20261018/integration/portable-release-tools-v2/create_upload_release.py",
+      "sha256": "838af1c271c7c997fe0084cc7da932ea35b94d996c1df625cddf3693b6abbe22"
+    },
+    "portable_release_common.py": {
+      "path": "research/continuous-recovery-20261018/integration/portable-release-tools-v2/portable_release_common.py",
+      "sha256": "ae5502dc04c1309fb97bd32985a30f062c639b9fd1bfc781718cfcf596e5fad9"
+    },
+    "publish_release.py": {
+      "path": "research/continuous-recovery-20261018/integration/portable-release-tools-v2/publish_release.py",
+      "sha256": "1db1631803077b9b2acac46fd30f68142a796f803b4e2bc9b0377815658c7da2"
+    },
+    "README.md": {
+      "path": "research/continuous-recovery-20261018/integration/portable-release-tools-v2/README.md",
+      "sha256": "fcc701243083ed402d31998c96a69bc21fcbaa98f16b28a1aab91920cf8cfe23"
+    },
+    "test_portable_release_tools.py": {
+      "path": "research/continuous-recovery-20261018/integration/portable-release-tools-v2/test_portable_release_tools.py",
+      "sha256": "27a44e80f38eec9c02cc97361a2aff946a874fd485aea1e6e786400598fd97f5"
+    }
+  },
+  "root_validation": [
+    "Reviewed v1 checker, creator and publisher; all 8 offline tests passed independently including actual accepted v32 receipts and smoke path existence.",
+    "v2 only changes publisher recovery dispatch to the actual remote draft flag and permits stale saved draft=true with the exact owned id/tag/target/portable SHA/three asset digests.",
+    "Both focused v2 recovery tests passed. Full main exercised with mocked GitHub reads, stale draft=true, and remote draft=false; only local git rev-parse commands occurred and no publish/upload command was called.",
+    "All unchanged helper files compared byte-for-byte against reviewed v1. v1 preserved."
+  ],
+  "network_requests": 0,
+  "archives_created": 0,
+  "github_mutations": 0,
+  "remaining_execution": "Run package producer and full member/extracted server checker on the final accepted export, then exact-main-target draft upload and publication verification before the deadline."
+}

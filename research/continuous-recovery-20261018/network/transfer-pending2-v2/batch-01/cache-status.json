@@ -1,0 +1,98 @@
+{
+  "schema": "wow-recovery.transfer-pending2-v2-cache-status.v1",
+  "generated_utc": "2026-10-18T12:54:05.794829Z",
+  "network_requests": 0,
+  "raw_exact_cdx_cache_present": false,
+  "raw_exact_cdx_cache_bound": false,
+  "fresh_exact_cdx_required": true,
+  "known_positive_fallback_available": false,
+  "fallback_policy": "none; source queue contains citations only",
+  "targets": [
+    {
+      "target_key": "TRANSFER-PENDING2-V2-01-01",
+      "queue_rank": 1,
+      "original": "http://www.worldofwarcraft.com/news/images/08-02/02-06-08-3.jpg",
+      "cdx_mode": "fresh",
+      "fresh_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F08-02%2F02-06-08-3.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact",
+      "replay_after_fresh_only": true,
+      "latest_unknown_on_transport_failure": true
+    },
+    {
+      "target_key": "TRANSFER-PENDING2-V2-01-02",
+      "queue_rank": 2,
+      "original": "http://www.worldofwarcraft.com/news/images/05-02/EU2.jpg",
+      "cdx_mode": "fresh",
+      "fresh_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F05-02%2FEU2.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact",
+      "replay_after_fresh_only": true,
+      "latest_unknown_on_transport_failure": true
+    }
+  ],
+  "queue_split": {
+    "full_queue_count": 2,
+    "batch_number": 1,
+    "batch_count": 1,
+    "batch_size": 2
+  },
+  "planned_request_bound": 8,
+  "planned_batch_duration_seconds": 100.0,
+  "planned_total_body_bytes": 8388608,
+  "planned_entity_body_bytes": 4194304,
+  "stop_conditions": [
+    "HTTP 429 or 503: stop batch and cool down at least 120 seconds",
+    "five consecutive transport failures: stop batch and preserve current tail",
+    "disk free below 11005853696 bytes before any request/write: stop",
+    "request, body, or duration budget clamp: stop and preserve unprocessed rows",
+    "fresh CDX incomplete/resume-key/unknown metadata: do not replay that target",
+    "no execution until parent issues plan GO"
+  ],
+  "source_bindings": {
+    "navigation70_queue": {
+      "path": "research/continuous-recovery-20261018/network/transfer-pending2-v2/transfer-pending2-v2-queue.json",
+      "sha256": "8c6f14e2ee076649208465381751d722ccd55d3fafb7aa00243bbe79651f5786",
+      "bytes": 8465,
+      "role": "immutable two-target transfer-pending2 retry queue"
+    },
+    "source_audit": {
+      "path": "research/continuous-recovery-20261018/publication/root-news20-batch2-plan-acceptance.json",
+      "sha256": "aa3e1910c493bb760b0d8e697040e45d45f4f37d96b58ce29d1b134f95d4df05",
+      "bytes": 1573,
+      "role": "frozen prior NEWS transfer plan acceptance"
+    },
+    "source_provenance": {
+      "path": "research/continuous-recovery-20261018/publication/root-navigation70-batch4-plan-acceptance.json",
+      "sha256": "c5b5aa92db229919ef4026879719515e11f5ae287bf626f1850a831a7675ef59",
+      "bytes": 1565,
+      "role": "frozen prior NAVIGATION transfer plan acceptance"
+    },
+    "status": {
+      "path": "research/continuous-recovery-20261018/status.json",
+      "sha256": "c697c50449c3e0b76d370115bdc557893141c125a3fb6384c42004f21e19b961",
+      "bytes": 23765,
+      "role": "current recovery status snapshot"
+    },
+    "latest_source_acceptance": {
+      "path": "research/continuous-recovery-20261018/publication/root-static40-batch4-source-acceptance.json",
+      "sha256": "c5c8ad7bf1931d75fe95d3cca89687176eb982f2634bb46b4c007d7055e34cb7",
+      "bytes": 8367,
+      "role": "freshest accepted source receipt selected from current status"
+    },
+    "latest_control_gate": {
+      "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+      "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+      "bytes": 1842,
+      "role": "current accepted CONTROL03 tail-zero gate"
+    },
+    "frozen_v3_driver": {
+      "path": "research/continuous-recovery-20261018/network/reusable-image-driver-v3/reusable_image_driver.py",
+      "sha256": "4a19422f0dd8e2f7e1ffdd088836c7ab80450afb91aeedc6cdb94fa4c6bfe955",
+      "bytes": 103121,
+      "role": "frozen reusable-image-v3 driver"
+    },
+    "status_snapshot": {
+      "path": "research/continuous-recovery-20261018/network/transfer-pending2-v2/batch-01/status-snapshot.json",
+      "sha256": "afc7f41cc8ff2c00013190eac9d807f525133f68464eb3576f01e82cd7415f72",
+      "bytes": 1071,
+      "role": "atomic batch-local status snapshot"
+    }
+  }
+}

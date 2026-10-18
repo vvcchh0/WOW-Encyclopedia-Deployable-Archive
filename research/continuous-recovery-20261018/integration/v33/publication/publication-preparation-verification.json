@@ -1,0 +1,53 @@
+{
+  "schema": "wow-recovery.integration.v33-publication-preparation-verification.v1",
+  "checked_utc": "2026-10-18T13:00:02.3671272Z",
+  "root": "D:/WOW_Encyclopedia",
+  "scope": "offline preparation helpers and focused fixtures only",
+  "files": [
+    {
+      "path": "research/continuous-recovery-20261018/integration/v33/publication/publish_v33.py",
+      "sha256": "ce9ba632fc9d37e8093523a728179164386ecdabb2f05a6c31a4a65313547c95"
+    },
+    {
+      "path": "research/continuous-recovery-20261018/integration/v33/publication/verify_pages_v33.py",
+      "sha256": "9d3f06e396b509944b5b30b73710dce00df19dc17d6dd114d78595282418b873"
+    },
+    {
+      "path": "research/continuous-recovery-20261018/integration/v33/publication/test_publish_v33.py",
+      "sha256": "2f0e5c03e1d7996973452a444657c7108bd637d3fe269b4efac7a799610d3580"
+    },
+    {
+      "path": "research/continuous-recovery-20261018/integration/v33/publication/test_verify_pages_v33.py",
+      "sha256": "a5df6f5593a32487eba9ebf6c16b8314160e604bf9d66a5936b5fe5960edff36"
+    },
+    {
+      "path": "research/continuous-recovery-20261018/integration/v33/publication/README.md",
+      "sha256": "b414334e9f616cb6bf79dc92c07dffef33902bb25abf1f4cd11c97b51bcb049e"
+    }
+  ],
+  "validation": {
+    "py_compile": {
+      "command": "codex-primary-runtime python -X utf8 -m py_compile publish_v33.py verify_pages_v33.py",
+      "status": "passed"
+    },
+    "focused_unittest": {
+      "command": "codex-primary-runtime python -X utf8 -m unittest discover -s research/continuous-recovery-20261018/integration/v33/publication -p test_*.py -v",
+      "status": "passed",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "elapsed_seconds": 0.055
+    }
+  },
+  "network_requests": 0,
+  "publish_executed": false,
+  "prepare_executed": false,
+  "online_verifier_executed": false,
+  "root_acceptance_inputs_present_at_check": false,
+  "disk_free_before_bytes": 47136710656,
+  "known_limits": [
+    "The source manifest, v33 output, root v33 acceptance receipts, and local gate were absent at this offline check.",
+    "The late --prepare gate must be run once by the owner after root freezes those inputs; it derives counts dynamically.",
+    "No Pages publication, GitHub build-state request, curl request, or online receipt was attempted."
+  ]
+}

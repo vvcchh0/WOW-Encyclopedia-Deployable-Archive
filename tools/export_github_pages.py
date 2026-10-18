@@ -133,6 +133,7 @@ COMPATIBILITY_ROUTE_ALIASES: dict[str, str] = {
     "/info/info/items/armorsets/": "/info/items/armorsets/index.html",
     "/wrath/wallpapers.xml": "/wrath//wallpapers.xml",
 }
+_NAVIGATION_RASTER_EXTENSIONS = frozenset({".gif", ".png", ".jpg", ".jpeg"})
 
 
 def utc_now() -> str:
@@ -559,11 +560,13 @@ class PagesLocalizer:
         aliases: dict[str, str],
         origin_index: dict[str, str],
         base_path: str,
+        validated_navigation_image_routes: set[str] | frozenset[str] = frozenset(),
     ) -> None:
         self.route_to_static = route_to_static
         self.aliases = aliases
         self.origin_index = origin_index
         self.base_path = base_path
+        self.validated_navigation_image_routes = frozenset(validated_navigation_image_routes)
         # ``offline_mirror.rewrite_css`` uses this explicit capability only
         # for frozen missing-image placeholders.  Its normal loopback
         # Localizer behavior remains unchanged.
@@ -571,6 +574,35 @@ class PagesLocalizer:
 
     def _static_for_route(self, route: str) -> str | None:
         return self.route_to_static.get(route) or self.aliases.get(route)
+
+    def _validated_navigation_image_target(self, requested: str) -> str | None:
+        """Resolve only an exact-origin raster route accepted by an image map."""
+
+        try:
+            parsed = urllib.parse.urlsplit(requested)
+            port = parsed.port
+        except ValueError:
+            return None
+        scheme = parsed.scheme.casefold()
+        if scheme not in {"http", "https"} or not parsed.hostname:
+            return None
+        default_port = (scheme == "http" and port == 80) or (scheme == "https" and port == 443)
+        if parsed.username is not None or parsed.password is not None or (port is not None and not default_port):
+            return None
+        if parsed.query or parsed.fragment:
+            return None
+        requested_path = mirror.route_path(requested)
+        if not requested_path.casefold().endswith(tuple(_NAVIGATION_RASTER_EXTENSIONS)):
+            return None
+        route = self.origin_index.get(mirror.origin_key(requested))
+        if route is None or route not in self.validated_navigation_image_routes:
+            return None
+        if not mirror.route_path(route).casefold().endswith(tuple(_NAVIGATION_RASTER_EXTENSIONS)):
+            return None
+        target = self._static_for_route(route)
+        if not target or not urllib.parse.urlsplit(target).path.casefold().endswith(tuple(_NAVIGATION_RASTER_EXTENSIONS)):
+            return None
+        return target
 
     def _placeholder(self, raw: str, base_url: str, context: str, reason: str) -> str:
         if context in {"image", "background", "css_url", "srcset"}:
@@ -644,6 +676,18 @@ class PagesLocalizer:
                         "recovered verified Archived News compatibility alias from missing marker",
                     )
                     return recovered
+                if context == "navigation":
+                    recovered = self._validated_navigation_image_target(requested)
+                    if recovered is not None:
+                        recorder.add(
+                            raw,
+                            requested,
+                            "localized",
+                            recovered,
+                            context,
+                            "recovered validated exact-origin raster navigation image",
+                        )
+                        return recovered
         # compat.js intentionally builds this query in a JavaScript string
         # prefix.  Pages has a concrete index document for it; preserve the
         # query suffix so the client page can echo the intended target.
@@ -2749,7 +2793,14 @@ def export_pages(
         if existing is not None and existing != route:
             raise PagesExportError(f"image overlay origin index conflicts with frozen route: {key}")
         origin_index[key] = route
-    localizer = PagesLocalizer(route_to_static=route_lookup, aliases=alias_routes, origin_index=origin_index, base_path=base_path)
+    validated_navigation_image_routes = frozenset(str(item["route"]) for item in overlays)
+    localizer = PagesLocalizer(
+        route_to_static=route_lookup,
+        aliases=alias_routes,
+        origin_index=origin_index,
+        base_path=base_path,
+        validated_navigation_image_routes=validated_navigation_image_routes,
+    )
     provenance: list[dict[str, Any]] = []
     stats: Counter[str] = Counter()
     if guide_image_collection_bundle is not None:

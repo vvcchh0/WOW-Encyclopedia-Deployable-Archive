@@ -1,0 +1,68 @@
+{
+  "schema": "wow-recovery.karazhan-observed-redirect-probe-bindings.v1",
+  "batch_id": "WAYBACK-CONTINUOUS-20261018-KARAZHAN-OBSERVED-REDIRECT-PROBE-V1-01",
+  "plan_path": "research/continuous-recovery-20261018/network/karazhan-observed-redirect-probe-v1/plan.json",
+  "plan_sha256": "142756f3982dda0ac24915ffb855c70d21367a9dffcfb1c8ac759b49a4404b08",
+  "probe_script": {
+    "path": "research/continuous-recovery-20261018/network/karazhan-observed-redirect-probe-v1/karazhan_redirect_probe.py",
+    "sha256": "ee02d8526e60aee8257f7c79f1d3710db2da62fbb756996659b9e0116168bd06",
+    "bytes": 35163,
+    "role": "bounded redirect probe; explicit GO required"
+  },
+  "prepare_script": {
+    "path": "research/continuous-recovery-20261018/network/karazhan-observed-redirect-probe-v1/prepare_karazhan_probe.py",
+    "sha256": "aaf03184ceeb321890874cd35f783d286d82716d06256981f0ea79592de7d929",
+    "bytes": 6451,
+    "role": "offline-only plan preparation script"
+  },
+  "frozen_v3": {
+    "path": "research/continuous-recovery-20261018/network/reusable-image-driver-v3/reusable_image_driver.py",
+    "sha256": "4a19422f0dd8e2f7e1ffdd088836c7ab80450afb91aeedc6cdb94fa4c6bfe955",
+    "bytes": 103121,
+    "role": "accepted frozen V3 low-level curl/header/image primitives"
+  },
+  "native_helpers": {
+    "path": "research/continuous-recovery-20261018/network/native-replay47-v2/native_replay47_driver.py",
+    "sha256": "18fae133137093651665036acbd7157eead446b4ef330a9f59889700f76ad920",
+    "bytes": 45507,
+    "role": "accepted native pure budget/classification helpers"
+  },
+  "queue": {
+    "path": "research/continuous-recovery-20261018/publication/native-observed-late-thumbnails12-queue.json",
+    "sha256": "7fbe5026cce61fcf6e4b3e9028d3009b6a3c3d3e9be28c73ecbb0510283ad36e",
+    "bytes": 14024,
+    "role": "root-frozen late-thumbnail queue; exact rank-1 source"
+  },
+  "status_snapshot": {
+    "path": "research/continuous-recovery-20261018/network/karazhan-observed-redirect-probe-v1/status-snapshot.json",
+    "sha256": "db2aba48b1c86e2f71de017da186a1e819c4b2f6443327595f610b2ebe3ad75f",
+    "bytes": 1113,
+    "role": "immutable probe status pointer snapshot"
+  },
+  "latest_source_acceptance": {
+    "path": "research/continuous-recovery-20261018/publication/root-late-thumbnails12-batch2-source-acceptance.json",
+    "sha256": "81a374a44659a81c90b7adb2d3b13de7c1ae3b261837e08effcf48d7ef6758a7",
+    "bytes": 2213,
+    "role": "latest accepted late-thumbnail source receipt"
+  },
+  "latest_control_gate": {
+    "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+    "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+    "bytes": 1842,
+    "role": "latest accepted CONTROL03 gate"
+  },
+  "fixture_inputs": {
+    "path": "research/continuous-recovery-20261018/network/karazhan-observed-redirect-probe-v1/fixture-inputs.json",
+    "sha256": "6b0a515af80e0dc7828b9f2af34a37c709f9b6e8dd8fe6ec51fbbb5ab0b62a78",
+    "bytes": 756,
+    "role": "offline synthetic probe inputs"
+  },
+  "fixture_results": {
+    "path": "research/continuous-recovery-20261018/network/karazhan-observed-redirect-probe-v1/fixture-results.json",
+    "sha256": "008f829c696a7b29eb141566eaa951be22932ed0c7df8048b171425da33f826c",
+    "bytes": 6192,
+    "role": "offline shared-gate and redirect-classification fixture result"
+  },
+  "network_requests_during_preparation": 0,
+  "output_dir_exists": false
+}
