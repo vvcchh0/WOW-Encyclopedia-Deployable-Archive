@@ -59,3 +59,7 @@ V29 input and runner gates were independently checked. The first root input rece
 V29 adds forty more news resources (318,622 bytes) to v28. All 8,761 declared files were rehashed and the 8,762-file tree matches its provenance; 263 prior overlay records are unchanged. Browser retry 2 passed 159 checks, including the original mouseover caption in the July 2007 subscriber milestone announcement. The first checks incorrectly expected that caption to start visible and overlooked alternating news CSS classes; the source and exported page bytes remained unchanged. Static news missing occurrences are now 436, all-static occurrences 1,821 across 1,066 unique addresses. Publication is queued.
 
 CONTROL03 succeeded after the recorded 503 cooldown; direct stalled before TCP and the existing TLS-verified proxy returned the known exact index in 1.924 seconds. NET16 then retrieved ten exact 21×21 Armory item PNGs. Root source, original-copy and visual checks accepted all ten (14,738 bytes). They remain associated static Armory assets pending integration; native player gallery images are still separate.
+
+### 08:03 UTC — v29 online
+
+Main source `81bd8e85` and Pages `8b038ea40c9a6ab316322fbe58734714fbbb170d` are synchronized with the accepted v29 tree. All 47 online objects passed exact byte/MIME checks, with the same built commit before and after. The run has published 120 additional image resources. The current processed offline release remains v24 until the final stable package is prepared.
