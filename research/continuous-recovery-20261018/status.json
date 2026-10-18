@@ -4,7 +4,7 @@
   "deadline_utc": "2026-10-18T14:55:37Z",
   "network_stop_utc": "2026-10-18T13:35:00Z",
   "export_start_stop_utc": "2026-10-18T13:50:00Z",
-  "phase": "static_resource_acquisition",
+  "phase": "v30_preparation_and_news49_acquisition",
   "baseline_main": "d62f9fbab205d3c87b8e2be1743ed00fb8362f44",
   "baseline_pages": "bfe27c5ae88e0c407389ac14b9d5cb0e24850059",
   "baseline_version": "v25",
@@ -209,14 +209,37 @@
       "requests": 21,
       "accepted_images": 5,
       "root_source_acceptance": "publication/root-static38-batch2-source-acceptance.json"
+    },
+    {
+      "id": "NET18",
+      "plan": "network/static-frontier38-v28/batch-03/plan.json",
+      "status": "source_accepted",
+      "requests": 21,
+      "accepted_images": 10,
+      "root_source_acceptance": "publication/root-static38-batch3-source-acceptance.json"
+    },
+    {
+      "id": "NET19",
+      "plan": "network/static-frontier38-v28/batch-04/plan.json",
+      "status": "source_accepted",
+      "requests": 17,
+      "accepted_images": 8,
+      "root_source_acceptance": "publication/root-static38-batch4-source-acceptance.json"
+    },
+    {
+      "id": "NET20",
+      "plan": "network/news-remaining49-v28/batch-01/plan.json",
+      "plan_sha256": "7dd96711d49eb53df179e842cb195a8a867a7bab62de0fe140de8f4724d51cff",
+      "status": "authorized_awaiting_execution_report",
+      "root_plan_acceptance": "publication/root-news49-batch1-plan-acceptance.json"
     }
   ],
-  "accepted_images": 135,
+  "accepted_images": 153,
   "published_version": "v29",
-  "accepted_image_bytes": 1950892,
+  "accepted_image_bytes": 2086740,
   "positive_neighbor_remaining": 0,
   "latest_failure_tail": 0,
-  "latest_source_acceptance": "publication/root-static38-batch2-source-acceptance.json",
+  "latest_source_acceptance": "publication/root-static38-batch4-source-acceptance.json",
   "news_prior_pending_classification": {
     "transport_unknown": 9,
     "complete_no_eligible_capture": 2
@@ -226,15 +249,15 @@
     "complete_no_eligible_capture": 3,
     "transport_unknown": 0
   },
-  "updated_utc": "2026-10-18T08:03:00Z",
-  "local_version_in_progress": "v29",
+  "updated_utc": "2026-10-18T08:20:00Z",
+  "local_version_in_progress": "v30",
   "root_input_acceptance": "publication/root-v29-input-retry1-acceptance.json",
-  "local_build_completed": true,
-  "local_acceptance_complete": true,
+  "local_build_completed": false,
+  "local_acceptance_complete": false,
   "published_pages_commit": "8b038ea40c9a6ab316322fbe58734714fbbb170d",
   "published_images_this_run": 120,
-  "unpublished_accepted_images": 15,
-  "latest_main_source_commit": "81bd8e85",
+  "unpublished_accepted_images": 33,
+  "latest_main_source_commit": "44bbadb5",
   "tool_supersessions": [
     {
       "path": "tools/export_github_pages.py",
@@ -253,12 +276,18 @@
       "prior_sha256": "8deeccccf9a2491ce46fa423d9a6e95c3bc922d1cbae690584d5868329e102ba",
       "accepted_sha256": "35aa7e5928a6be4a07f2164708e32890aaa7257d89c6db923bf1311f950fd011",
       "acceptance": "publication/root-historical-news-tool-retry1-acceptance.json"
+    },
+    {
+      "path": "tools/export_github_pages.py",
+      "prior_sha256": "943f57e2f62582e2659c98766e98deeeda60c9c1d131326f6f0ad6e7fbfd4a00",
+      "accepted_sha256": "18f7239eb6af00a324be18f2e00192172fb2023856a39e02dd3c694a4bafe185",
+      "acceptance": "publication/root-armory-origin-tool-acceptance.json"
     }
   ],
-  "last_image_source_acceptance": "publication/root-static38-batch2-source-acceptance.json",
+  "last_image_source_acceptance": "publication/root-static38-batch4-source-acceptance.json",
   "latest_control_gate": "publication/root-control03-source-acceptance.json",
   "direct_diagnostic": "DNS inconsistency and TLS reset at HTTPS-resolved address; proxy control succeeds",
-  "latest_network_acceptance": "publication/root-static38-batch2-source-acceptance.json",
+  "latest_network_acceptance": "publication/root-static38-batch4-source-acceptance.json",
   "local_build_provenance_sha256": "793e99ef3c55ef5d328f8f6773c15b86ca69a79e7504d1333a9c04364dca28f8",
   "publication_hold": "publication/root-v27-publication-hold.json",
   "next_version": "v30",
@@ -266,5 +295,7 @@
   "network_resume_gate_passed": true,
   "network_cooldown_not_before_utc": "2026-10-18T07:39:13.772883Z",
   "v28_online_acceptance": "publication/root-v28-pages-online-acceptance.json",
-  "v29_online_acceptance": "publication/root-v29-pages-online-acceptance.json"
+  "v29_online_acceptance": "publication/root-v29-pages-online-acceptance.json",
+  "next_static_queue": "publication/next-frontier-selected70.json",
+  "next_static_queue_sha256": "654135870971139ac04427119bcf01d4d9981af60d182f068b7da6a99187551a"
 }

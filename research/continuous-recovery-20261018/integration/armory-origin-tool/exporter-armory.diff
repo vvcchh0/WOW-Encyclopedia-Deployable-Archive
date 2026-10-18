@@ -1,0 +1,40 @@
+diff --git a/tools/export_github_pages.py b/tools/export_github_pages.py
+index e8af1eda..46e384d5 100644
+--- a/tools/export_github_pages.py
++++ b/tools/export_github_pages.py
+@@ -222,7 +222,10 @@ def output_estimate(records: list[dict[str, Any]], extra_bytes: int = 0) -> int:
+ 
+ _OVERLAY_MIMES = {"image/gif": "GIF", "image/png": "PNG", "image/jpeg": "JPEG"}
+ _OVERLAY_URL_HOSTS = {"www.worldofwarcraft.com", "worldofwarcraft.com"}
+-_SUPPLEMENT_OVERLAY_URL_HOSTS = _OVERLAY_URL_HOSTS | {"www.wow-europe.com", "wow-europe.com", "www.blizzard.com"}
++_ARMORY_SUPPLEMENT_HOSTS = {"www.wowarmory.com", "armory.wow-europe.com"}
++_SUPPLEMENT_OVERLAY_URL_HOSTS = _OVERLAY_URL_HOSTS | {
++    "www.wow-europe.com", "wow-europe.com", "www.blizzard.com", *_ARMORY_SUPPLEMENT_HOSTS,
++}
+ _OVERLAY_TIMESTAMP_RE = re.compile(r"^2008\d{10}$")
+ 
+ 
+@@ -251,7 +254,8 @@ def _overlay_url(
+     except ValueError as exc:
+         raise PagesExportError(f"image overlay {label} URL is invalid: {value!r}") from exc
+     scheme = parsed.scheme.casefold()
+-    host = (parsed.hostname or "").casefold().rstrip(".")
++    raw_host = (parsed.hostname or "").casefold()
++    host = raw_host.rstrip(".")
+     if scheme not in {"http", "https"} or host not in allowed_hosts:
+         raise PagesExportError(f"image overlay {label} URL is not an approved image origin: {value!r}")
+     default_port = (scheme == "http" and port == 80) or (scheme == "https" and port == 443)
+@@ -267,6 +271,13 @@ def _overlay_url(
+         raise PagesExportError(f"image overlay {label} URL path has dot segments or double slashes: {value!r}")
+     if any(part and part[-1] in {".", " "} for part in parts[1:]):
+         raise PagesExportError(f"image overlay {label} URL path is non-canonical: {value!r}")
++    if host in _ARMORY_SUPPLEMENT_HOSTS:
++        if raw_host != host:
++            raise PagesExportError(f"image overlay {label} Armory host is not exact: {value!r}")
++        if not decoded_path.startswith("/images/icons/"):
++            raise PagesExportError(
++                f"image overlay {label} Armory supplement path must start with /images/icons/: {value!r}"
++            )
+     return value, parsed
+ 
+ 

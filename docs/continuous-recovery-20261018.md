@@ -63,3 +63,9 @@ CONTROL03 succeeded after the recorded 503 cooldown; direct stalled before TCP a
 ### 08:03 UTC — v29 online
 
 Main source `81bd8e85` and Pages `8b038ea40c9a6ab316322fbe58734714fbbb170d` are synchronized with the accepted v29 tree. All 47 online objects passed exact byte/MIME checks, with the same built commit before and after. The run has published 120 additional image resources. The current processed offline release remains v24 until the final stable package is prepared.
+
+### 08:17 UTC — static38 acquisition complete; next content frontier reviewed
+
+NET16–19 accepted 33 of the 38 literal assets, totaling 156,857 bytes: nineteen primary-site pictures/material icons and fourteen related-origin assets (thirteen Armory icons plus one Blizzard concept image). Five additional positive Armory indexes redirected to real same-resource Wayback captures about an hour after the anchor; their exact observed locations are retained for a separate dated-supplement check. They are not accepted image payloads yet. The run now has 153 accepted images, 120 published, and 33 awaiting v30.
+
+The root reviewed the next eighty-row local content audit against older records. Three encyclopedia illustrations and an already-empty Lordaeron map interval were excluded from re-querying; three logo items and three space-containing URI probes were deferred. The resulting seventy-target queue retains 71 actual page references, with one secondary-page hash completed against the frozen v29 provenance. Original audit files remain intact. A narrow Armory icon-origin extension passed root review and nine focused tests; v30 preparation will bind its new exporter hash. All acquisition so far used direct/proxy HTTP tools, with zero Firecrawl requests.

@@ -1,0 +1,101 @@
+{
+  "schema": "wow-recovery.armory-origin-tool.verification.v1",
+  "checked_utc": "2026-10-18T08:12:22.3546135Z",
+  "network_requests": 0,
+  "export_runs": 0,
+  "old_exporter_sha256": "943f57e2f62582e2659c98766e98deeeda60c9c1d131326f6f0ad6e7fbfd4a00",
+  "new_exporter_sha256": "18f7239eb6af00a324be18f2e00192172fb2023856a39e02dd3c694a4bafe185",
+  "new_test_sha256": "1dc0ddd7ce737d322d5df8903f358eb446f976da6f1760eea3b53f98c2730c22",
+  "diff_path": "research/continuous-recovery-20261018/integration/armory-origin-tool/exporter-armory.diff",
+  "diff_sha256": "489b937dee2e02a82571292936d4b1b2e8685c70565c141c48071f407a6b953a",
+  "focused_test_results_path": "research/continuous-recovery-20261018/integration/armory-origin-tool/focused-test-results.json",
+  "focused_test_results_sha256": "2532c75ff77779ca37dc8fb2e8a5c8ae54c663b394f8e48cb208a1f1a9f4aea9",
+  "focused_test_log_path": "research/continuous-recovery-20261018/integration/armory-origin-tool/focused-test-run.txt",
+  "focused_test_log_sha256": "ab4d7b57f23758fe30ca46017c9108a3015f41499f5ff6d2f90421d1d56ce2cf",
+  "test_runs": [
+    {
+      "name": "armory",
+      "command": "C:\\Users\\17630\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe -X utf8 -m unittest discover -s tests -p test_armory_image_supplement.py -v",
+      "start_utc": "2026-10-18T08:12:01.4077469Z",
+      "end_utc": "2026-10-18T08:12:03.5017618Z",
+      "exit_code": 0
+    },
+    {
+      "name": "related",
+      "command": "C:\\Users\\17630\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe -X utf8 -m unittest discover -s tests -p test_related_image_overlay.py -v",
+      "start_utc": "2026-10-18T08:12:03.5152664Z",
+      "end_utc": "2026-10-18T08:12:04.4537524Z",
+      "exit_code": 0
+    },
+    {
+      "name": "blizzard",
+      "command": "C:\\Users\\17630\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe -X utf8 -m unittest discover -s tests -p test_blizzard_image_supplement.py -v",
+      "start_utc": "2026-10-18T08:12:04.4639905Z",
+      "end_utc": "2026-10-18T08:12:06.3835516Z",
+      "exit_code": 0
+    },
+    {
+      "name": "direct_overlay",
+      "command": "C:\\Users\\17630\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe -X utf8 -m unittest discover -s tests -p test_pages_image_overlay.py -v",
+      "start_utc": "2026-10-18T08:12:06.3935201Z",
+      "end_utc": "2026-10-18T08:12:07.8343578Z",
+      "exit_code": 0
+    }
+  ],
+  "accepted_armory_input": {
+    "source_receipts": [
+      {
+        "path": "research/continuous-recovery-20261018/publication/root-static38-batch1-source-acceptance.json",
+        "sha256": "e9eae3937a020698f5787cdb4be24d2aa79b0670361319d1af04043e9c584a51",
+        "accepted_images": 10,
+        "armory_images": 10
+      },
+      {
+        "path": "research/continuous-recovery-20261018/publication/root-static38-batch2-source-acceptance.json",
+        "sha256": "b517470ff546e41578871d16aa6eb2f7020eac63ad7b9becf92022a2388cb302",
+        "accepted_images": 5,
+        "armory_images": 3
+      }
+    ],
+    "public_copy_receipts": [
+      {
+        "path": "research/continuous-recovery-20261018/publication/root-static38-batch1-public-copy-acceptance.json",
+        "sha256": "05bd0f2642ffc83ca5527431aea212d7d4aad87716cde7d295a540cdf3392e46",
+        "armory_images": 10
+      },
+      {
+        "path": "research/continuous-recovery-20261018/publication/root-static38-batch2-public-copy-acceptance.json",
+        "sha256": "a9464cf9e7009aee811653aff71b896f03227945db41f853b9b0feaeb2a3d7bf",
+        "armory_images": 3
+      }
+    ],
+    "total_armory_images": 13,
+    "hosts": [
+      "www.wowarmory.com",
+      "armory.wow-europe.com"
+    ],
+    "bytes": "public copies were checked byte-for-byte against source acceptance SHA/length and PNG format in focused tests"
+  },
+  "scope": [
+    "supplement only",
+    "exact Armory hosts www.wowarmory.com and armory.wow-europe.com",
+    "decoded path must start with /images/icons/",
+    "primary allowlist remains unchanged",
+    "existing authority/query/fragment/MIME/extension/origin/SHA/CDX checks remain active"
+  ],
+  "limitations": [
+    "No v30 export or map/accepted-version mutation was performed.",
+    "Existing non-Armory supplement hosts remain governed by their pre-existing allowlist rules."
+  ],
+  "artifact_source": {
+    "kind": "byte-preserving-copy-of-existing-local-verification-artifacts",
+    "source_directory": "D:\\WOW_Encyclopedia\\integration\\armory-origin-tool",
+    "source_diff": "D:\\WOW_Encyclopedia\\integration\\armory-origin-tool\\exporter-armory.diff",
+    "source_test_results": "D:\\WOW_Encyclopedia\\integration\\armory-origin-tool\\focused-test-results.json",
+    "source_test_log": "D:\\WOW_Encyclopedia\\integration\\armory-origin-tool\\focused-test-run.txt",
+    "source_receipt": "D:\\WOW_Encyclopedia\\integration\\armory-origin-tool\\armory-origin-tool-verification.json",
+    "copied_utc": "2026-10-18T08:16:28.4263053Z",
+    "tests_rerun_for_relocation": false,
+    "note": "This timestamp records the bounded persistence correction. The initial capture was emitted under the repository-root integration directory; this target is the required persistent research/continuous-recovery-20261018 integration directory."
+  }
+}
