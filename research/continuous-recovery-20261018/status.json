@@ -4,7 +4,7 @@
   "deadline_utc": "2026-10-18T14:55:37Z",
   "network_stop_utc": "2026-10-18T13:35:00Z",
   "export_start_stop_utc": "2026-10-18T13:50:00Z",
-  "phase": "v30_preparation_and_news49_acquisition",
+  "phase": "v31_preparation_with_scoped_tooltip_fix",
   "baseline_main": "d62f9fbab205d3c87b8e2be1743ed00fb8362f44",
   "baseline_pages": "bfe27c5ae88e0c407389ac14b9d5cb0e24850059",
   "baseline_version": "v25",
@@ -230,16 +230,67 @@
       "id": "NET20",
       "plan": "network/news-remaining49-v28/batch-01/plan.json",
       "plan_sha256": "7dd96711d49eb53df179e842cb195a8a867a7bab62de0fe140de8f4724d51cff",
-      "status": "authorized_awaiting_execution_report",
-      "root_plan_acceptance": "publication/root-news49-batch1-plan-acceptance.json"
+      "status": "source_accepted",
+      "root_plan_acceptance": "publication/root-news49-batch1-plan-acceptance.json",
+      "requests": 21,
+      "accepted_images": 10,
+      "root_source_acceptance": "publication/root-news49-batch1-source-acceptance.json"
+    },
+    {
+      "id": "NET21",
+      "plan": "network/news-remaining49-v28/batch-02/plan.json",
+      "status": "source_accepted",
+      "requests": 21,
+      "accepted_images": 10,
+      "root_source_acceptance": "publication/root-news49-batch2-source-acceptance.json"
+    },
+    {
+      "id": "NET22",
+      "plan": "network/news-remaining49-v28/batch-03/plan.json",
+      "status": "source_accepted",
+      "requests": 21,
+      "accepted_images": 10,
+      "root_source_acceptance": "publication/root-news49-batch3-source-acceptance.json"
+    },
+    {
+      "id": "NET23",
+      "plan": "network/news-remaining49-v28/batch-04/plan.json",
+      "status": "source_accepted",
+      "requests": 21,
+      "accepted_images": 10,
+      "root_source_acceptance": "publication/root-news49-batch4-source-acceptance.json"
+    },
+    {
+      "id": "NET24",
+      "plan": "network/news-remaining49-v28/batch-05/plan.json",
+      "status": "source_accepted",
+      "requests": 19,
+      "accepted_images": 9,
+      "root_source_acceptance": "publication/root-news49-batch5-source-acceptance.json"
+    },
+    {
+      "id": "NET25",
+      "plan": "network/next-frontier70-v29/batch-01/plan.json",
+      "status": "source_accepted",
+      "requests": 19,
+      "accepted_images": 8,
+      "root_source_acceptance": "publication/root-next70-batch1-source-acceptance.json"
+    },
+    {
+      "id": "NET26",
+      "plan": "network/next-frontier70-v29/batch-02/plan.json",
+      "status": "source_accepted",
+      "requests": 18,
+      "accepted_images": 7,
+      "root_source_acceptance": "publication/root-next70-batch2-source-acceptance.json"
     }
   ],
-  "accepted_images": 153,
+  "accepted_images": 217,
   "published_version": "v29",
-  "accepted_image_bytes": 2086740,
+  "accepted_image_bytes": 2832200,
   "positive_neighbor_remaining": 0,
   "latest_failure_tail": 0,
-  "latest_source_acceptance": "publication/root-static38-batch4-source-acceptance.json",
+  "latest_source_acceptance": "publication/root-next70-batch2-source-acceptance.json",
   "news_prior_pending_classification": {
     "transport_unknown": 9,
     "complete_no_eligible_capture": 2
@@ -249,15 +300,15 @@
     "complete_no_eligible_capture": 3,
     "transport_unknown": 0
   },
-  "updated_utc": "2026-10-18T08:20:00Z",
-  "local_version_in_progress": "v30",
-  "root_input_acceptance": "publication/root-v29-input-retry1-acceptance.json",
-  "local_build_completed": false,
+  "updated_utc": "2026-10-18T08:54:30.464413+00:00",
+  "local_version_in_progress": "v31",
+  "root_input_acceptance": "publication/root-v30-input-acceptance.json",
+  "local_build_completed": true,
   "local_acceptance_complete": false,
   "published_pages_commit": "8b038ea40c9a6ab316322fbe58734714fbbb170d",
   "published_images_this_run": 120,
-  "unpublished_accepted_images": 33,
-  "latest_main_source_commit": "44bbadb5",
+  "unpublished_accepted_images": 97,
+  "latest_main_source_commit": "9a61772cb2f6eb2898764401d00346fc0ca0b657",
   "tool_supersessions": [
     {
       "path": "tools/export_github_pages.py",
@@ -282,20 +333,27 @@
       "prior_sha256": "943f57e2f62582e2659c98766e98deeeda60c9c1d131326f6f0ad6e7fbfd4a00",
       "accepted_sha256": "18f7239eb6af00a324be18f2e00192172fb2023856a39e02dd3c694a4bafe185",
       "acceptance": "publication/root-armory-origin-tool-acceptance.json"
+    },
+    {
+      "path": "tools/export_github_pages.py",
+      "prior_sha256": "18f7239eb6af00a324be18f2e00192172fb2023856a39e02dd3c694a4bafe185",
+      "accepted_sha256": "7c3684fb777e9c21b07fe8c8a1be0418810f448e99dd582ed4c9d9c342764dea",
+      "acceptance": "publication/root-retired-armory-tool-acceptance.json"
     }
   ],
-  "last_image_source_acceptance": "publication/root-static38-batch4-source-acceptance.json",
+  "last_image_source_acceptance": "publication/root-next70-batch2-source-acceptance.json",
   "latest_control_gate": "publication/root-control03-source-acceptance.json",
   "direct_diagnostic": "DNS inconsistency and TLS reset at HTTPS-resolved address; proxy control succeeds",
-  "latest_network_acceptance": "publication/root-static38-batch4-source-acceptance.json",
-  "local_build_provenance_sha256": "793e99ef3c55ef5d328f8f6773c15b86ca69a79e7504d1333a9c04364dca28f8",
-  "publication_hold": "publication/root-v27-publication-hold.json",
-  "next_version": "v30",
+  "latest_network_acceptance": "publication/root-next70-batch2-source-acceptance.json",
+  "local_build_provenance_sha256": "b04eb866bd7d21aa23ce8ad064eeb55b8b263e84147bb3755f4af7df84825d85",
+  "publication_hold": "publication/root-v30-publication-hold.json",
+  "next_version": "v31",
   "local_accepted_version": "v29",
   "network_resume_gate_passed": true,
   "network_cooldown_not_before_utc": "2026-10-18T07:39:13.772883Z",
   "v28_online_acceptance": "publication/root-v28-pages-online-acceptance.json",
   "v29_online_acceptance": "publication/root-v29-pages-online-acceptance.json",
   "next_static_queue": "publication/next-frontier-selected70.json",
-  "next_static_queue_sha256": "654135870971139ac04427119bcf01d4d9981af60d182f068b7da6a99187551a"
+  "next_static_queue_sha256": "654135870971139ac04427119bcf01d4d9981af60d182f068b7da6a99187551a",
+  "local_source_accepted_version": "v30"
 }

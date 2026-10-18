@@ -69,3 +69,19 @@ Main source `81bd8e85` and Pages `8b038ea40c9a6ab316322fbe58734714fbbb170d` are 
 NET16–19 accepted 33 of the 38 literal assets, totaling 156,857 bytes: nineteen primary-site pictures/material icons and fourteen related-origin assets (thirteen Armory icons plus one Blizzard concept image). Five additional positive Armory indexes redirected to real same-resource Wayback captures about an hour after the anchor; their exact observed locations are retained for a separate dated-supplement check. They are not accepted image payloads yet. The run now has 153 accepted images, 120 published, and 33 awaiting v30.
 
 The root reviewed the next eighty-row local content audit against older records. Three encyclopedia illustrations and an already-empty Lordaeron map interval were excluded from re-querying; three logo items and three space-containing URI probes were deferred. The resulting seventy-target queue retains 71 actual page references, with one secondary-page hash completed against the frozen v29 provenance. Original audit files remain intact. A narrow Armory icon-origin extension passed root review and nine focused tests; v30 preparation will bind its new exporter hash. All acquisition so far used direct/proxy HTTP tools, with zero Firecrawl requests.
+
+
+### 08:45 UTC — v30 inputs accepted; further news sources
+
+The next export contains 33 accepted guide/related-site images, 156,857 bytes: 19 canonical images and 14 supplements (13 Armory icons and one Blizzard illustration). Root compared the source, original public copies and final maps, then scanned actual v29 pages: 33 missing addresses occur 142 times on five pages. The manifest-only estimate of 30 references on four routes is retained as an estimate. v30 is exporting once; it is not yet published.
+
+News49 batches 1–4 added forty original illustrations, including the guild-bank GIF and two comic-cover thumbnails. Root independently checked each batch and viewed the actual images; these are reserved for a later export. Batch 5 is authorized for its final nine literal URLs. Acquisition remains direct-first with process-only proxy fallback, TLS verification and one serial Wayback worker; no Firecrawl requests.
+
+
+### 09:00 UTC — v30 browser hold and literal image links
+
+All 8,794 declared v30 objects were independently rehashed and the fixed static scope counted 1,033 missing addresses / 1,679 occurrences. The browser check exercised all 112 restored equipment references across ten tabs and six regional class-icon references, then found an obsolete Armory tooltip request assigning document.domain. v30 is preserved and held from publication. The profession selector checks also need to await their asynchronous javascript links.
+
+A source-led follow-up found the archive banner inserted into a document.write string before the real body tag. An HTMLParser scan of all 1,049 HTML outputs identified five affected pages: collectors, lookingforgroup, outlandmap, story and scourgeinvasion. The exporter correction will locate actual head/body tags; a new version will retain the original scripts and put the banner in the page body. These are browser compatibility repairs, separate from downloaded image recovery.
+
+News49 is complete: 49 original images / 480,639 bytes. The next static-content batch recovered eight arena thumbnails (70,901 bytes); two other exact indexes are complete and empty. Those index outcomes do not add payload404 results to the native-player-gallery ledger. The existing 47 Karazhan transport-unknown targets have been isolated for a later bounded replay check; all 79 already observed archive404 targets are excluded.

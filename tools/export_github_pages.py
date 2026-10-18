@@ -812,6 +812,70 @@ def rewrite_inline_scripts(
     return script_re.sub(replace, text)
 
 
+_RETIRED_ARMORY_TOOLTIP_ROUTE = "/new-hp/js/enhancedtip.js"
+_RETIRED_ARMORY_TOOLTIP_MESSAGE = (
+    "Historical exhibit: the retired Armory item-details service is unavailable in this archive."
+)
+_RETIRED_ARMORY_REQUESTHTML_RE = re.compile(
+    r"function\s+requestHTML\s*\(\s*thisID\s*\)\s*\{.*?\r?\n\}",
+    re.I | re.S,
+)
+_RETIRED_ARMORY_REQUESTHTML_GUARDS = (
+    "if(portalOpen)",
+    "darkPortal.requestXml(thisID)",
+    "xmlRetrievalFrame = document.createElement(\"iframe\")",
+    "xmlRetrievalFrame.name = \"darkPortalFrame\"",
+    "xmlRetrievalFrame.id = \"xmlPortal\"",
+    "document.domain = currentDomain",
+    "xmlRetrievalFrame.src = xmlFrameTarget",
+)
+
+
+def rewrite_retired_armory_tooltip(text: str, route: str) -> tuple[str, bool]:
+    """Replace only the retired Armory request function on its exact route.
+
+    ``enhancedXmlTTip`` still displays an already cached item node.  A missing
+    node used to create a cross-origin iframe and assign ``document.domain``;
+    the service is retired, so the request function becomes a static exhibit
+    caption.  A target-route source with a missing or duplicated complete
+    function signature fails loudly rather than receiving a broad rewrite.
+    """
+
+    if route != _RETIRED_ARMORY_TOOLTIP_ROUTE:
+        return text, False
+    signature_count = len(
+        re.findall(r"function\s+requestHTML\s*\(\s*thisID\s*\)", text, re.I)
+    )
+    if signature_count != 1:
+        raise PagesExportError(
+            f"retired Armory tooltip rewrite expected one requestHTML(thisID) signature on {route}, "
+            f"found {signature_count}"
+        )
+    matches = list(_RETIRED_ARMORY_REQUESTHTML_RE.finditer(text))
+    if len(matches) != 1:
+        raise PagesExportError(
+            f"retired Armory tooltip rewrite expected one requestHTML(thisID) function on {route}, "
+            f"found {len(matches)}"
+        )
+    match = matches[0]
+    block = match.group(0)
+    if _RETIRED_ARMORY_TOOLTIP_MESSAGE in block and "showTip(" in block:
+        return text, False
+    missing = [guard for guard in _RETIRED_ARMORY_REQUESTHTML_GUARDS if guard not in block]
+    if missing:
+        raise PagesExportError(
+            f"retired Armory tooltip source signature changed on {route}; missing guards: {', '.join(missing)}"
+        )
+    newline = "\r\n" if "\r\n" in block else "\n"
+    replacement = (
+        f"function requestHTML(thisID){newline}"
+        f"{{{newline}"
+        f"\tshowTip('{_RETIRED_ARMORY_TOOLTIP_MESSAGE}');{newline}"
+        "}"
+    )
+    return text[: match.start()] + replacement + text[match.end() :], True
+
+
 _PVP_FLASH_ROUTE = "/pvp/flash-rewards/"
 _PVP_SUBNAV_MARKER = "<!---Subnav----->"
 _PVP_INTRO_OBJECT_RE = re.compile(
@@ -1163,14 +1227,28 @@ def normalize_html_prolog(text: str) -> str:
 
 
 def inject_html_runtime(text: str, *, base_path: str, source_sha: str) -> str:
+    def first_real_start_tag(value: str, name: str) -> _MarkupToken | None:
+        """Return the first parsed start tag, excluding script/raw-text strings."""
+
+        parser = _MarkupTokenParser(value)
+        try:
+            parser.feed(value)
+            parser.close()
+        except Exception as exc:
+            raise PagesExportError("HTML tokenization failed during runtime injection") from exc
+        return next(
+            (token for token in parser.tokens if token.kind == "start" and token.name == name),
+            None,
+        )
+
     insertion = (
         f'\n<meta http-equiv="Content-Security-Policy" content="{html.escape(PAGES_CSP, quote=True)}">'
         f'\n<script src="{base_path}__offline/pages_runtime.js"></script>\n'
     )
     if not re.search(r"pages_runtime\.js", text, re.I):
-        head = re.search(r"<head\b[^>]*>", text, flags=re.I)
+        head = first_real_start_tag(text, "head")
         if head:
-            text = text[: head.end()] + insertion + text[head.end() :]
+            text = text[: head.end] + insertion + text[head.end :]
         else:
             text = "<!doctype html><html><head>" + insertion + "</head><body>" + text + "</body></html>"
     banner = (
@@ -1181,9 +1259,10 @@ def inject_html_runtime(text: str, *, base_path: str, source_sha: str) -> str:
         "no user data collection</div>"
     )
     if "__offline-pages-banner" not in text:
-        body = re.search(r"<body\b[^>]*>", text, flags=re.I)
+        # Reparse after head insertion because the source offsets have shifted.
+        body = first_real_start_tag(text, "body")
         if body:
-            text = text[: body.end()] + "\n" + banner + text[body.end() :]
+            text = text[: body.end] + "\n" + banner + text[body.end :]
         else:
             text = banner + text
     if source_sha and "offline derived from source SHA-256" not in text:
@@ -2663,6 +2742,14 @@ def export_pages(
                     stats["wrath_viewer_query_repaired"] += 1
                 text = mirror.rewrite_script(text, base_url=base_url, localizer=localizer, recorder=recorder)
                 text = rewrite_root_literals(text, base_url=base_url, localizer=localizer, recorder=recorder)
+                if route == _RETIRED_ARMORY_TOOLTIP_ROUTE:
+                    text, changed = rewrite_retired_armory_tooltip(text, route)
+                    if changed:
+                        derivation_notes.append(
+                            "derived retired Armory tooltip exhibit: replaced the exact requestHTML iframe/domain "
+                            "request with a historical static caption; cached enhancedXmlTTip nodes remain unchanged"
+                        )
+                        stats["retired_armory_tooltip_repaired"] += 1
                 if route == "/__offline/compat.js":
                     text = rewrite_compat_script(text)
                 if route == "/info/encyclopedia/scripts/cascade.js":
