@@ -1,0 +1,181 @@
+{
+  "schema": "wow-recovery.gallery-late-window-execution-plan.v1",
+  "batch_id": "WAYBACK-GALLERY-LATE-WINDOW-20261018",
+  "mode": "go_executed",
+  "prepared_utc": "2026-10-18T06:57:21.441324Z",
+  "source_plan_path": "research/continuous-recovery-20261018/network/gallery-late-window-20261018/plan.json",
+  "source_plan_sha256": "3fbd89958c7e22acb0cc7c868e05a3484d89b85318b3c679e19d0cc9aa078bfa",
+  "candidate_count": 3,
+  "candidate_ranks": [
+    1,
+    2,
+    3
+  ],
+  "scope": "exact native US gallery prefixes from the frozen v7 source-directory registry; prior complete intervals subtracted and explicit uncovered gaps queried; CDX index only, no expansion",
+  "query_window": {
+    "from": "per_candidate",
+    "target_from": "20080512210045",
+    "to": "20101207235959",
+    "limit": 500,
+    "showResumeKey": true,
+    "collapse": false,
+    "matchType": "prefix"
+  },
+  "index_only": true,
+  "no_payload_replay": true,
+  "max_attempts": 8,
+  "window_seconds": 180.0,
+  "max_total_body_bytes": 16777216,
+  "max_entity_body_bytes": 8388608,
+  "direct_first": true,
+  "proxy": "http://127.0.0.1:7890",
+  "tls_verification": true,
+  "automatic_redirects": 0,
+  "min_dispatch_monotonic_seconds": 5.25,
+  "acceptance_dispatch_floor_seconds": 5.25,
+  "min_request_start_utc_seconds": 5.0,
+  "disk_floor_bytes": 11005853696,
+  "stop_http_codes": [
+    429,
+    503
+  ],
+  "stop_on_five_consecutive_transport_failures": true,
+  "retry_after_rule": "429/503 stop immediately; cooldown not earlier than Retry-After and at least 120 seconds",
+  "resume_rule": "record actual response resumeKey; do not follow continuation in this batch; incomplete if resume remains",
+  "failure_streak_start": 0,
+  "prior_failure_tail": 0,
+  "control_basis": "latest root image-source receipt and DNS connectivity gate; tail end 0",
+  "input_bindings": {
+    "gallery_final_v7_registry": {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-final-v7/gallery-prefix-registry-v7.json",
+      "sha256": "2579f66841bf6102d90f5dbfe819902337bff03f6e3ac7191239ae041e2d97d6",
+      "bytes": 418729
+    },
+    "root_gallery_registry_v7_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-registry-v7-acceptance.json",
+      "sha256": "fc390af9cffe526d6e8cd21d5167467fe7b207cca7b851977f95381159caa319",
+      "bytes": 9458
+    },
+    "template_gallery_prefix04_driver_v4": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix04/gallery_prefix_driver_v4.py",
+      "sha256": "22f45b6776944df8cdc36bab5231edc1f8eee9faf627dcb07b1af6523929af38",
+      "bytes": 55880
+    },
+    "template_gallery_prefix04_plan": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix04/plan.json",
+      "sha256": "20145d4db43da3d2ace0cc378a867d27ffc2e5aa3c86ab82cd52c5eb7f8799d0",
+      "bytes": 53753
+    },
+    "template_gallery_prefix04_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix04-acceptance.json",
+      "sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2",
+      "bytes": 88497
+    },
+    "template_gallery_prefix04_fixture": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix04/fixture-results.json",
+      "sha256": "70a76e1633720ef117c6f4acaabec2cb02de2858db39c28e851e681c137290d0",
+      "bytes": 5873
+    },
+    "latest_image_source_acceptance": {
+      "path": "research/continuous-recovery-20261018/publication/root-news-unplanned-batch4-source-acceptance.json",
+      "sha256": "002bd50851c100209683308f343e30a748245113f8740b59e41f1f14aa3681c9",
+      "bytes": 8380
+    },
+    "latest_control_gate": {
+      "path": "research/continuous-recovery-20261018/publication/root-dns-connectivity-control-acceptance.json",
+      "sha256": "2a3890216fe5ae89e7b0edf7c989f40d90c8331e54f5f76749af2e80c377264c",
+      "bytes": 1957
+    }
+  },
+  "fixture": {
+    "path": "research/continuous-recovery-20261018/network/gallery-late-window-20261018/fixture-results.json",
+    "sha256": "b053313345daef624fc70af39f92da4394216db0f59ef677714f606c7d920b2e",
+    "all_passed": true
+  },
+  "candidates": [
+    {
+      "rank": 1,
+      "target_key": "GALLERY-LATE-WINDOW-01",
+      "gallery": "Karazhan",
+      "gallery_segment_index": 1,
+      "label": "Karazhan",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/",
+      "declared_slots": 63,
+      "query_window": {
+        "from": "20090101000000",
+        "to": "20101207235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fkarazhan%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20090101000000&to=20101207235959&limit=500&showResumeKey=true",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/karazhan-gallery.html",
+        "sha256": "fc7f46d260cba6c434fd5e67d47008f207fbb8bd939a630089599d097755c199",
+        "addshots_line": 126,
+        "addshots_literal": "addshots(\"/info/dungeons/images/karazhan/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/karazhan/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 63;"
+      }
+    },
+    {
+      "rank": 2,
+      "target_key": "GALLERY-LATE-WINDOW-02",
+      "gallery": "Zul'Aman",
+      "gallery_segment_index": 1,
+      "label": "Zul'Aman",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/zulaman/",
+      "declared_slots": 60,
+      "query_window": {
+        "from": "20080512210045",
+        "to": "20101207235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fzulaman%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/zulaman-gallery.html",
+        "sha256": "342c63cd42af3b72221f03be03d3099e7f3369c9b7cc858868e7304b567033d1",
+        "addshots_line": 123,
+        "addshots_literal": "addshots(\"/info/dungeons/images/zulaman/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/zulaman/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 60;"
+      }
+    },
+    {
+      "rank": 3,
+      "target_key": "GALLERY-LATE-WINDOW-03",
+      "gallery": "Black Temple",
+      "gallery_segment_index": 1,
+      "label": "Black Temple",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/blacktemple/",
+      "declared_slots": 48,
+      "query_window": {
+        "from": "20080512210045",
+        "to": "20101207235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fblacktemple%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/black-temple-gallery.html",
+        "sha256": "04c728723c639d4613f77bf449cd93ae68c494b08151b76da00899984ffff4ff",
+        "addshots_line": 112,
+        "addshots_literal": "addshots(\"/info/dungeons/images/blacktemple/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/blacktemple/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 48;"
+      }
+    }
+  ]
+}

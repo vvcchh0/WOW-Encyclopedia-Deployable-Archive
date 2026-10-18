@@ -32,3 +32,16 @@
 - 新一批十张新闻配图已接受，累计五十个图片资源。它们保留至后续版本，不加入正在导出的 v27。
 
 - v27 的 8,681 个对象、固定缺图统计与一百一十七项浏览检查通过。初次浏览检查将升级按钮的两条 CSS 状态引用当作两个 img，失败回执保留；修正检查类型后确认两态图片均显示，导出文件未改。主代理随后逐张查看实际浏览截图，发现旧升级公告仍含当前操作口吻的付款步骤，按此前用户要求暂停该版本发布，转入 v28 历史展品修复。v27、原始公告和图片均保留，在线仍为 v26。[发布暂缓记录](../research/continuous-recovery-20261018/publication/root-v27-publication-hold.json)
+
+- 累计取得八十项、1,611,261 字节图片资源。新四批四十项均在 v27 旧新闻 HTML 中找到精确缺图引用，其中包括四个小型界面图标；不把这些统称为游戏截图。v28 预期静态缺图为 1,106 个地址、1,861 处引用，新闻 476 处；待新导出实际复核。
+- 历史公告修复先在独立夹具通过，主代理追加源管线核对发现新 early-return 会跳过原有全页历史账号链接处理。保留初次回执和发现记录，修订为先走原流程、再只改目标公告；主代理重新运行十五项测试通过，并用 AST 确认旧流程保留。v28 尚未开始导出。[修订工具验收](../research/continuous-recovery-20261018/publication/root-historical-news-tool-retry1-acceptance.json)
+
+- 玩家图库另开晚期窗口：Karazhan 扣除已查完整的 2008 年区间，只查 2009—2010；Zul'Aman、Black Temple 查基准之后至 2010-12-07。六请求取得 Zul'Aman 的完整 63 行，均非原动态编号图片正候选；另两组代理等待首字节超时，保留未知。后续正索引控制经代理约两秒返回，实际尾数 2→3→0，未更改系统设置。[窗口验收](../research/continuous-recovery-20261018/publication/root-gallery-late-window-source-acceptance.json)
+- v28 输入准备时发生主代理过早验收与执行者收尾重生成预检的竞态。首次 GO 在导出前被检查拒绝；两份预检只差审计时间与磁盘余量，主代理恢复与原门 SHA 完全匹配的字节，保留较晚版本并复核全部绑定，随后重新授权首次实际导出。未改变 v27 或源资料。[恢复记录](../research/continuous-recovery-20261018/publication/root-v28-preparation-race-recovery.json)
+- 又取回十项六月新闻图片，累计九十项。此批留后续版本，正在导出的 v28 输入仍固定八十项本轮已接受资源。
+
+### 07:36 UTC — v28 accepted locally
+
+The full v28 output check accepted all 8,721 declared files (8,722 actual); browser retry 4 passed 268 checks with no errors or external requests. The 67 added images relative to online v26 include the four distinct Blizzard-source illustrations. The February 2007 account-upgrade announcement now describes retired services in the past tense and presents its original artwork as a static exhibit. News missing-image occurrences are 476; all static occurrences are 1,861 (1,106 unique addresses). The later forty source images, 318,622 bytes, are reserved for v29. Publication has not yet been claimed.
+
+The two gallery prefix queries that previously timed out have a root-accepted, index-only retry plan with longer first-byte waits; the completed Zul’Aman interval is excluded.

@@ -1,0 +1,44 @@
+{
+  "accepted": true,
+  "checked_utc": "2026-10-18T07:04:03.710475+00:00",
+  "scope": "Fresh known-positive exact CDX control after the late-gallery batch; index connectivity only, no image replay or complete-index claim.",
+  "failure_streak_start": 2,
+  "failure_streak_after_direct": 3,
+  "failure_streak_end": 0,
+  "control_final_streak": 0,
+  "resume_gate_passed": true,
+  "requests": 2,
+  "accepted_images": [],
+  "control_success_finished_utc": "2026-10-18T07:03:07.694599+00:00",
+  "maximum_body_bytes": 262144,
+  "actual_body_bytes": 366,
+  "private_evidence_bindings": [
+    {
+      "path": "research/continuous-recovery-20261018/network/control-after-gallery10/control-report.json",
+      "sha256": "d33b825ecb0a808ab4ffcb05fb986023dcbc2a2dcff8775ad4adefe42c2405ed"
+    },
+    {
+      "path": "research/continuous-recovery-20261018/network/control-after-gallery10/direct.headers.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "research/continuous-recovery-20261018/network/control-after-gallery10/direct.trace.txt",
+      "sha256": "05af9a80bd4058790b54220522423bb2e736e9f33f6ef3cc326f34a068408e56"
+    },
+    {
+      "path": "research/continuous-recovery-20261018/network/control-after-gallery10/proxy.body",
+      "sha256": "818c64db7bc9a0640d1be4cdcad5153de68250636a776e2fe09056b794f9f6be"
+    },
+    {
+      "path": "research/continuous-recovery-20261018/network/control-after-gallery10/proxy.headers.txt",
+      "sha256": "20d4fe5e19bd9a8d48b8e64bfb747b2c41f58fa20959d2f257d0f09782a6e719"
+    },
+    {
+      "path": "research/continuous-recovery-20261018/network/control-after-gallery10/proxy.trace.txt",
+      "sha256": "bce80f9a896d89f74a80b01d3296b847ae28f5238de26dfd99f67ef34f626347"
+    }
+  ],
+  "settings_changed": false,
+  "tls_verification": true,
+  "observed": "Direct stalls before TCP/TLS. The same known-positive exact CDX succeeds through the existing proxy in 1.975 seconds with TLS verification. The long native-gallery prefix queries had slower/no first-byte responses; they remain transport unknown rather than image-absence evidence."
+}

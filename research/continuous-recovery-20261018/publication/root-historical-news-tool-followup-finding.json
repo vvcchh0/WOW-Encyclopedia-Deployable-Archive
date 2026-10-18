@@ -1,0 +1,10 @@
+{
+  "accepted_for_export": false,
+  "checked_utc": "2026-10-18T06:45:37.182412+00:00",
+  "prior_tool_sha256": "8deeccccf9a2491ce46fa423d9a6e95c3bc922d1cbae690584d5868329e102ba",
+  "prior_acceptance": "root-historical-news-tool-acceptance.json",
+  "finding": "The new route early return bypasses the existing whole-page historical-account-link pass. The frozen source15 still has original Create Account navigation, so a fresh export would regress that historical context despite the standalone target-entry tests passing.",
+  "required_change": "Retain the existing whole-page account-link pass, then apply the new target-entry-only wording and static-artwork transformation. Add a source15-style navigation fixture and compare unrelated content to the old pipeline result.",
+  "v27_unchanged": true,
+  "v28_export_executed": false
+}

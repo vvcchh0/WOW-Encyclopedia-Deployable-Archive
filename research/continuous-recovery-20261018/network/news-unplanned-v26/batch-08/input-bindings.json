@@ -1,0 +1,80 @@
+{
+  "schema": "wow-recovery.reusable-image-input-bindings.v1",
+  "batch_id": "WAYBACK-CONTINUOUS-20261018-NEWS-UNPLANNED-V26-08",
+  "plan_path": "research/continuous-recovery-20261018/network/news-unplanned-v26/batch-08/plan.json",
+  "plan_sha256": "45955d22daece70aed24b31e34d9144ce32ebb3ef5e1cabb3b2d6ef02b431413",
+  "driver_path": "research/continuous-recovery-20261018/network/reusable-image-driver-v3/reusable_image_driver.py",
+  "driver_sha256": "4a19422f0dd8e2f7e1ffdd088836c7ab80450afb91aeedc6cdb94fa4c6bfe955",
+  "fixture_mode": "not duplicated; use the already accepted V3 offline contract",
+  "inherited_tail": {
+    "latest_actual_source_tail": 0,
+    "prior_failure_tail": 0,
+    "tail_receipt": "research/continuous-recovery-20261018/publication/root-news-unplanned-batch7-source-acceptance.json",
+    "tail_receipt_sha256": "c59e7eb8a336289e7067481b8d5362ff66016028555192817921300d61ced293",
+    "status_snapshot": "research/continuous-recovery-20261018/network/news-unplanned-v26/batch-08/status-snapshot.json",
+    "status_snapshot_sha256": "464ec285474e53d6fd82c194e82883d663b28a4710b6a29851d9b06de6a6b519",
+    "active_status_sha256_audit": "4ba2161d1e1155949b2467fa9ac991590d7510fafa105a048610c654114e77d3",
+    "control_gate_receipt": "research/continuous-recovery-20261018/publication/root-post-gallery-connectivity-control-acceptance.json",
+    "control_gate_sha256": "6776bb0a6982fd83f040503727ca89047b5aec2ec35e946bdff302d5c92ceb50"
+  },
+  "predecessor_tail_rebind_required_before_execute": false,
+  "predecessor_tail_status": "bound_to_latest_actual_source_acceptance",
+  "selected_queue_ranks": [
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80
+  ],
+  "selected_originals": [
+    "http://www.worldofwarcraft.com/news/images/07-09/09-19-07-3.jpg",
+    "http://www.worldofwarcraft.com/news/images/07-09/09-26-07-1.jpg",
+    "http://www.worldofwarcraft.com/news/images/07-09/09-26-07-2.jpg",
+    "http://www.worldofwarcraft.com/news/images/07-09/09-26-07-3.jpg",
+    "http://www.worldofwarcraft.com/news/images/07-09/09-27-07-2.jpg",
+    "http://www.worldofwarcraft.com/news/images/07-09/09-5-07-1.jpg",
+    "http://www.worldofwarcraft.com/news/images/07-09/09-5-07-2.jpg",
+    "http://www.worldofwarcraft.com/news/images/07-09/09-5-07-3.jpg",
+    "http://www.worldofwarcraft.com/news/images/07-09/09-5-07-4.jpg",
+    "http://www.worldofwarcraft.com/news/images/07-10/10-10-07-1.jpg"
+  ],
+  "source_bindings": {
+    "unplanned_news_queue_v26": {
+      "path": "research/continuous-recovery-20261018/publication/news-unplanned-v26-queue.json",
+      "sha256": "b10c3bfdf9dc9bc1aac8321c266fae6fb388ddd72851e996359e4a9db79c70d6",
+      "role": "root-frozen 80-target v26 unplanned news queue"
+    },
+    "status_snapshot": {
+      "path": "research/continuous-recovery-20261018/network/news-unplanned-v26/batch-08/status-snapshot.json",
+      "sha256": "464ec285474e53d6fd82c194e82883d663b28a4710b6a29851d9b06de6a6b519",
+      "role": "immutable batch-local snapshot of active status pointers"
+    },
+    "latest_actual_source_acceptance": {
+      "path": "research/continuous-recovery-20261018/publication/root-news-unplanned-batch7-source-acceptance.json",
+      "sha256": "c59e7eb8a336289e7067481b8d5362ff66016028555192817921300d61ced293",
+      "role": "latest accepted image-source receipt selected from recovery status"
+    },
+    "latest_control_gate": {
+      "path": "research/continuous-recovery-20261018/publication/root-post-gallery-connectivity-control-acceptance.json",
+      "sha256": "6776bb0a6982fd83f040503727ca89047b5aec2ec35e946bdff302d5c92ceb50",
+      "role": "latest accepted tail-zero connectivity control gate selected from recovery status"
+    },
+    "template_plan": {
+      "path": "research/continuous-recovery-20261018/network/news-body-2008-v26/batch-02/plan.json",
+      "sha256": "16b8e8c620a746b5df580411aeaf780fcd7695e821f53f9c554555f6636fcaef",
+      "role": "accepted V3-compatible news-body plan structure"
+    },
+    "frozen_v3_driver": {
+      "path": "research/continuous-recovery-20261018/network/reusable-image-driver-v3/reusable_image_driver.py",
+      "sha256": "4a19422f0dd8e2f7e1ffdd088836c7ab80450afb91aeedc6cdb94fa4c6bfe955",
+      "role": "frozen reusable-image-v3 driver"
+    }
+  },
+  "driver_bytes": 103121,
+  "network_requests_during_preparation": 0
+}

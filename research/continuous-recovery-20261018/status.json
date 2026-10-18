@@ -4,7 +4,7 @@
   "deadline_utc": "2026-10-18T14:55:37Z",
   "network_stop_utc": "2026-10-18T13:35:00Z",
   "export_start_stop_utc": "2026-10-18T13:50:00Z",
-  "phase": "v27_resource_checks_passed_publication_held_v28_exhibit_fix",
+  "phase": "v28_local_accepted",
   "baseline_main": "d62f9fbab205d3c87b8e2be1743ed00fb8362f44",
   "baseline_pages": "bfe27c5ae88e0c407389ac14b9d5cb0e24850059",
   "baseline_version": "v25",
@@ -102,14 +102,90 @@
       "accepted_images": 10,
       "root_source_acceptance": "publication/root-news-unplanned-batch2-source-acceptance.json",
       "integration_status": "for_v28"
+    },
+    {
+      "id": "NET08",
+      "plan": "network/news-unplanned-v26/batch-03/plan.json",
+      "status": "source_accepted",
+      "requests": 21,
+      "accepted_images": 10,
+      "root_source_acceptance": "publication/root-news-unplanned-batch3-source-acceptance.json",
+      "integration_status": "for_v28"
+    },
+    {
+      "id": "NET09",
+      "plan": "network/news-unplanned-v26/batch-04/plan.json",
+      "status": "source_accepted",
+      "requests": 21,
+      "accepted_images": 10,
+      "root_source_acceptance": "publication/root-news-unplanned-batch4-source-acceptance.json",
+      "integration_status": "for_v28"
+    },
+    {
+      "id": "NET10",
+      "plan": "network/gallery-late-window-20261018/plan.json",
+      "status": "index_source_accepted",
+      "requests": 6,
+      "accepted_images": 0,
+      "root_source_acceptance": "publication/root-gallery-late-window-source-acceptance.json",
+      "unknown_galleries": [
+        "Karazhan",
+        "Black Temple"
+      ],
+      "complete_galleries": [
+        "Zul'Aman"
+      ]
+    },
+    {
+      "id": "CONTROL02",
+      "status": "control_accepted",
+      "requests": 2,
+      "accepted_images": 0,
+      "root_source_acceptance": "publication/root-post-gallery-connectivity-control-acceptance.json"
+    },
+    {
+      "id": "NET11",
+      "plan": "network/news-unplanned-v26/batch-05/plan.json",
+      "status": "source_accepted",
+      "requests": 21,
+      "accepted_images": 10,
+      "root_source_acceptance": "publication/root-news-unplanned-batch5-source-acceptance.json",
+      "integration_status": "after_frozen_v28"
+    },
+    {
+      "id": "NET12",
+      "plan": "network/news-unplanned-v26/batch-06/plan.json",
+      "status": "source_accepted",
+      "requests": 21,
+      "accepted_images": 10,
+      "root_source_acceptance": "publication/root-news-unplanned-batch6-source-acceptance.json",
+      "integration_status": "after_frozen_v28"
+    },
+    {
+      "id": "NET13",
+      "plan": "network/news-unplanned-v26/batch-07/plan.json",
+      "status": "source_accepted",
+      "requests": 21,
+      "accepted_images": 10,
+      "root_source_acceptance": "publication/root-news-unplanned-batch7-source-acceptance.json",
+      "integration_status": "after_frozen_v28"
+    },
+    {
+      "id": "NET14",
+      "plan": "network/news-unplanned-v26/batch-08/plan.json",
+      "status": "source_accepted",
+      "requests": 21,
+      "accepted_images": 10,
+      "root_source_acceptance": "publication/root-news-unplanned-batch8-source-acceptance.json",
+      "integration_status": "for_v29"
     }
   ],
-  "accepted_images": 60,
+  "accepted_images": 120,
   "published_version": "v26",
-  "accepted_image_bytes": 1437483,
+  "accepted_image_bytes": 1929883,
   "positive_neighbor_remaining": 0,
   "latest_failure_tail": 0,
-  "latest_source_acceptance": "publication/root-news-unplanned-batch2-source-acceptance.json",
+  "latest_source_acceptance": "publication/root-news-unplanned-batch8-source-acceptance.json",
   "news_prior_pending_classification": {
     "transport_unknown": 9,
     "complete_no_eligible_capture": 2
@@ -119,28 +195,41 @@
     "complete_no_eligible_capture": 3,
     "transport_unknown": 0
   },
-  "updated_utc": "2026-10-18T06:23:57.017698+00:00",
-  "local_version_in_progress": "v27",
-  "root_input_acceptance": "publication/root-v27-input-acceptance.json",
+  "updated_utc": "2026-10-18T07:36:00Z",
+  "local_version_in_progress": "v29",
+  "root_input_acceptance": "publication/root-v28-input-acceptance.json",
   "local_build_completed": true,
   "local_acceptance_complete": true,
   "published_pages_commit": "3b3f49a5485f8d236e0ae290ac63995af7c89e83",
   "published_images_this_run": 13,
-  "unpublished_accepted_images": 47,
-  "latest_main_source_commit": "74a7d70c",
+  "unpublished_accepted_images": 107,
+  "latest_main_source_commit": "015c8954",
   "tool_supersessions": [
     {
       "path": "tools/export_github_pages.py",
       "prior_sha256": "50bd3569f77d3d52c52ed7077726d7dc99fbee23a3a0ced076a6523198b9225d",
       "accepted_sha256": "943f57e2f62582e2659c98766e98deeeda60c9c1d131326f6f0ad6e7fbfd4a00",
       "acceptance": "publication/root-blizzard-origin-tool-acceptance.json"
+    },
+    {
+      "path": "tools/historical_exhibits.py",
+      "prior_sha256": "3ad2472adbf351ad3340b4277e53e94ac25d33574f5bcdea06f067e5a5d027ac",
+      "accepted_sha256": "8deeccccf9a2491ce46fa423d9a6e95c3bc922d1cbae690584d5868329e102ba",
+      "acceptance": "publication/root-historical-news-tool-acceptance.json"
+    },
+    {
+      "path": "tools/historical_exhibits.py",
+      "prior_sha256": "8deeccccf9a2491ce46fa423d9a6e95c3bc922d1cbae690584d5868329e102ba",
+      "accepted_sha256": "35aa7e5928a6be4a07f2164708e32890aaa7257d89c6db923bf1311f950fd011",
+      "acceptance": "publication/root-historical-news-tool-retry1-acceptance.json"
     }
   ],
-  "last_image_source_acceptance": "publication/root-news-unplanned-batch2-source-acceptance.json",
-  "latest_control_gate": "publication/root-dns-connectivity-control-acceptance.json",
+  "last_image_source_acceptance": "publication/root-news-unplanned-batch8-source-acceptance.json",
+  "latest_control_gate": "publication/root-post-gallery-connectivity-control-acceptance.json",
   "direct_diagnostic": "DNS inconsistency and TLS reset at HTTPS-resolved address; proxy control succeeds",
-  "latest_network_acceptance": "publication/root-news-unplanned-batch2-source-acceptance.json",
-  "local_build_provenance_sha256": "271e474b80ce936c3a68b567a7c3e42c86851eb371772fa8108498613aa1f012",
+  "latest_network_acceptance": "publication/root-news-unplanned-batch8-source-acceptance.json",
+  "local_build_provenance_sha256": "6f42a33a67480f95b229e05611659d7ae4a562df1a3092a71f287532c936f793",
   "publication_hold": "publication/root-v27-publication-hold.json",
-  "next_version": "v28"
+  "next_version": "v29",
+  "local_accepted_version": "v28"
 }

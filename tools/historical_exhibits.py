@@ -54,6 +54,8 @@ P1_ROUTES = frozenset(
 )
 
 TRIAL_ROUTE = "/burningcrusade/trial/index.html"
+NEWS_UPGRADE_ROUTE = "/news/rss-02-2007.xml"
+NEWS_UPGRADE_ENTRY_ID = "news2-1-07-1212"
 PTR_ROUTE = "/ptr/index.html"
 PTR_ALIASES = {
     "/ptr": PTR_ROUTE,
@@ -725,6 +727,243 @@ def _apply_text_rules(text: str, rules: Iterable[_TextRule]) -> str:
     return text
 
 
+_NEWS_UPGRADE_RULES: tuple[_TextRule, ...] = (
+    _TextRule(
+        "Burning Crusade Direct Online Upgrade Now Available",
+        "Burning Crusade Direct Online Upgrade — 2007 Historical Exhibit",
+    ),
+    _TextRule(
+        "You can now buy account-upgrade keys and download the game client for World of Warcraft: The Burning Crusade directly through the account-management section of www.worldofwarcraft.com. The direct online upgrade method is the most convenient way to upgrade to The Burning Crusade and join the millions of players who are already adventuring beyond the Dark Portal.",
+        "The February 2007 notice described a former account-upgrade and game-client distribution service for World of Warcraft: The Burning Crusade; those services are retired.",
+    ),
+    _TextRule(
+        "All you need to do is:",
+        "Historical steps described in the February 2007 notice:",
+    ),
+    _TextRule(
+        "Login to the former account-management page",
+        "The notice described a former account-management sign-in step.",
+    ),
+    _TextRule(
+        'Click The Burning Crusade "Download Now" button',
+        "The notice described a Burning Crusade client-download step.",
+    ),
+    _TextRule(
+        "Enter your credit card information",
+        "The notice described a payment-information step.",
+    ),
+    _TextRule(
+        "Follow the link to download The Burning Crusade game client",
+        "The notice described a game-client distribution step.",
+    ),
+    _TextRule(
+        "That's it! If you haven't upgraded your account yet, now's your chance to take your World of Warcraft experience to the next level, whenever you want.",
+        "The notice closed with a 2007 Burning Crusade promotion; account, payment, and download operations are retired.",
+    ),
+)
+
+_NEWS_UPGRADE_LOGIN_ANCHOR = re.compile(
+    r"(?P<prefix>\bLogin\s+to\s*)<a\b[^>]*>\s*"
+    r"(?:Historical:\s*)?(?:Manage Account|Account Management)\s*</a>",
+    flags=re.I | re.S,
+)
+_NEWS_UPGRADE_EMPTY_ACTION = re.compile(
+    r"<div\b(?P<attrs>[^>]*)>\s*<a\b[^>]*>\s*</a>\s*</div>",
+    flags=re.I | re.S,
+)
+_NEWS_UPGRADE_LOCAL_IMAGE = (
+    re.compile(
+        r"<img\b[^>]*\bsrc\s*=\s*([\"'])(?P<src>[^\"']*upgradenow\.gif)[\"']",
+        flags=re.I | re.S,
+    ),
+    re.compile(
+        r"url\(\s*([\"'])(?P<src>[^\"']*upgradenow\.gif)[\"']\s*\)",
+        flags=re.I | re.S,
+    ),
+)
+_NEWS_UPGRADE_STYLE = re.compile(
+    r"<style\b[^>]*>.*?</style\s*>",
+    flags=re.I | re.S,
+)
+_NEWS_UPGRADE_CSS_RULE = re.compile(
+    r"[^{}]*\.upgradenow\b[^{}]*\{[^{}]*\}",
+    flags=re.I | re.S,
+)
+
+
+class _NewsUpgradeEntryParser(HTMLParser):
+    """Locate the balanced target news entry without rewriting its siblings."""
+
+    def __init__(self, text: str) -> None:
+        super().__init__(convert_charrefs=False)
+        self.text = text
+        self._line_starts = [0]
+        self._line_starts.extend(match.end() for match in re.finditer("\n", text))
+        self._div_depth = 0
+        self._target_depth: int | None = None
+        self.start: int | None = None
+        self.end: int | None = None
+
+    def _offset(self) -> int:
+        line, column = self.getpos()
+        return self._line_starts[line - 1] + column
+
+    def handle_starttag(
+        self, tag: str, attrs: list[tuple[str, str | None]]
+    ) -> None:
+        folded = tag.casefold()
+        if folded == "div":
+            values = {name.casefold(): value for name, value in attrs if value is not None}
+            if (
+                self._target_depth is None
+                and values.get("id") == NEWS_UPGRADE_ENTRY_ID
+            ):
+                self.start = self._offset()
+                self._target_depth = self._div_depth
+            self._div_depth += 1
+
+    def handle_startendtag(
+        self, tag: str, attrs: list[tuple[str, str | None]]
+    ) -> None:
+        # A self-closing div does not contribute to the balanced div depth.
+        return None
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag.casefold() != "div":
+            return
+        if (
+            self._target_depth is not None
+            and self.end is None
+            and self._div_depth == self._target_depth + 1
+        ):
+            close_start = self._offset()
+            close_end = self.text.find(">", close_start)
+            if close_end >= 0:
+                self.end = close_end + 1
+        self._div_depth = max(0, self._div_depth - 1)
+
+
+def _news_upgrade_entry_bounds(text: str) -> tuple[int, int] | None:
+    parser = _NewsUpgradeEntryParser(text)
+    try:
+        parser.feed(text)
+        parser.close()
+    except Exception:
+        return None
+    if parser.start is None or parser.end is None or parser.end <= parser.start:
+        return None
+    return parser.start, parser.end
+
+
+def _rewrite_news_upgrade_login_anchor(text: str) -> str:
+    """Remove only the account-management action anchor in the target notice."""
+
+    return _NEWS_UPGRADE_LOGIN_ANCHOR.sub(
+        lambda match: match.group("prefix") + "the former account-management page",
+        text,
+        count=1,
+    )
+
+
+def _news_upgrade_local_image_src(text: str) -> str | None:
+    """Return the resolver-local upgradenow GIF URL, never a remote URL."""
+
+    for pattern in _NEWS_UPGRADE_LOCAL_IMAGE:
+        match = pattern.search(text)
+        if not match:
+            continue
+        source = html.unescape(match.group("src"))
+        parsed = urllib.parse.urlsplit(source)
+        if parsed.scheme or parsed.netloc or not source.startswith("/"):
+            continue
+        if not parsed.path.casefold().endswith("/news/images/07-02/upgradenow.gif"):
+            continue
+        return source
+    return None
+
+
+def _rewrite_news_upgrade_artwork(text: str) -> str:
+    """Replace the empty upgrade action with a static two-state artwork figure."""
+
+    source = _news_upgrade_local_image_src(text)
+    if source is None:
+        return text
+    figure = (
+        '<figure class="historical-news-artwork" '
+        'data-historical-exhibit="news-upgrade-artwork" '
+        'style="box-sizing:border-box;width:100%;max-width:377px;margin:1em auto;text-align:center;">\n'
+        f'<img src="{html.escape(source, quote=True)}" width="377" height="148" '
+        'alt="Archived 2007 Burning Crusade upgrade artwork" '
+        'style="display:block;width:100%;max-width:377px;height:auto;margin:0 auto;">\n'
+        '<figcaption style="margin-top:.5em;line-height:1.4;">Historical 2007 artwork from the Burning Crusade upgrade notice. '
+        'The original two-state graphic is preserved as static exhibit artwork; '
+        'no account, payment, upgrade, or download action is available.</figcaption>\n'
+        '</figure>'
+    )
+
+    replaced = False
+
+    def replace(match: re.Match[str]) -> str:
+        nonlocal replaced
+        attrs = match.group("attrs")
+        class_match = re.search(
+            r"\bclass\s*=\s*([\"'])(?P<classes>[^\"']*)\1",
+            attrs,
+            flags=re.I | re.S,
+        )
+        if (
+            replaced
+            or not class_match
+            or "upgradenow" not in class_match.group("classes").casefold().split()
+        ):
+            return match.group(0)
+        replaced = True
+        return figure
+
+    rewritten = _NEWS_UPGRADE_EMPTY_ACTION.sub(replace, text)
+    if not replaced:
+        return text
+    # The original CSS makes the empty anchor an operational hover target. It
+    # is route-local and can be removed once the static figure is installed.
+    def remove_upgrade_rules(match: re.Match[str]) -> str:
+        block = match.group(0)
+        opening = re.match(r"<style\b[^>]*>", block, flags=re.I | re.S)
+        closing = re.search(r"</style\s*>$", block, flags=re.I | re.S)
+        if opening is None or closing is None:
+            return block
+        body_start = opening.end()
+        body_end = closing.start()
+        body = block[body_start:body_end]
+        cleaned = _NEWS_UPGRADE_CSS_RULE.sub("", body)
+        if cleaned == body:
+            return block
+        if not cleaned.strip():
+            return ""
+        return block[:body_start] + cleaned + block[body_end:]
+
+    return _NEWS_UPGRADE_STYLE.sub(remove_upgrade_rules, rewritten)
+
+
+def transform_news_upgrade_page(text: str) -> str:
+    """Turn the known February 2007 upgrade notice into a static exhibit."""
+
+    rewritten = _rewrite_news_upgrade_login_anchor(text)
+    rewritten = _apply_text_rules(rewritten, _NEWS_UPGRADE_RULES)
+    return _rewrite_news_upgrade_artwork(rewritten)
+
+
+def _transform_news_upgrade_entry(text: str) -> str:
+    """Rewrite only the balanced target entry inside the February 2007 feed."""
+
+    bounds = _news_upgrade_entry_bounds(text)
+    if bounds is None:
+        return text
+    start, end = bounds
+    entry = text[start:end]
+    entry = transform_news_upgrade_page(entry)
+    return text[:start] + entry + text[end:]
+
+
 _PROMOTION_REDEMPTION_LIST = re.compile(
     r"(?:<p\s*/?>\s*)?In order to claim your in-game item,\s*"
     r"please follow these five steps:\s*<ol\b[^>]*>.*?(?=</td\s*>)",
@@ -833,6 +1072,8 @@ def transform_derived_page(
     rewritten = transform_p1_page(
         rewrite_historical_account_links(text, base_path=base_path), route
     )
+    if normalized_route == NEWS_UPGRADE_ROUTE:
+        return _transform_news_upgrade_entry(rewritten)
     if normalized_route == "/community/stories/submit.html":
         rewritten = _disable_story_submission_scripts(rewritten)
     return rewritten

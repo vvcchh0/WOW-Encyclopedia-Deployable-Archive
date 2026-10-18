@@ -1,0 +1,32 @@
+{
+  "accepted": true,
+  "checked_utc": "2026-10-18T07:07:38.904557+00:00",
+  "scope": "Restore the exact root-approved preflight bytes after overlapping preparation and early root acceptance. The GO guard rejected before exporter execution.",
+  "original_input_acceptance": {
+    "path": "research/continuous-recovery-20261018/publication/root-v28-input-acceptance.json",
+    "sha256": "5e4cfb2e84c0c2af27a62e19d03aba3f2efcb160762ab4566ae4acd4e69c6822"
+  },
+  "restored_preflight": {
+    "path": "research/continuous-recovery-20261018/integration/v28/v28-preflight.json",
+    "sha256": "a5390b8950ff4908b692f31baf7b635e7cecef39cc7d9dd47e151d0e4d1022fa"
+  },
+  "preserved_later_preparation": {
+    "path": "research/continuous-recovery-20261018/integration/v28/v28-preflight-later-preparation-d707.json",
+    "sha256": "d7073bdb17c82e6a83fafe6c15d03a051098866f2635509acf0a02ca0c4f10f4"
+  },
+  "observed_difference_fields": [
+    "checked_utc",
+    "disk_free_bytes"
+  ],
+  "original_bytes_recovery": "Re-serialized unchanged structured fields using the previously observed checked_utc and enumerated local disk allocation counts, accepted only after exact match to the prior root-bound SHA-256. Original content was not inferred from a new source.",
+  "diagnosis": "Root accepted an in-progress preparation before the worker finished regenerating its planning receipts. The current frozen builder writes preflight only in --preflight mode; its --go path did not rewrite it.",
+  "failed_go": {
+    "export_started": false,
+    "error": "RuntimeError: root v28 map binding mismatch: research/continuous-recovery-20261018/integration/v28/v28-preflight.json"
+  },
+  "all_original_input_bindings_reverified": true,
+  "builder_sha256": "e9ba376dec05ac5443a3f2264a5c6b9321780d9921dc0a72f3fac83343d9f7e4",
+  "v27_unchanged": true,
+  "network_requests": 0,
+  "disk_free_bytes": 46870663168
+}

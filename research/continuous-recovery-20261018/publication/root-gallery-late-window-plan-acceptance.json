@@ -1,0 +1,113 @@
+{
+  "accepted": true,
+  "checked_utc": "2026-10-18T06:56:33.978474+00:00",
+  "scope": "Exact three native-gallery late gap index queries only. Karazhan complete 2008 interval excluded; no replay and no guessed filename. Per-candidate returned-row date membership checked.",
+  "bindings": [
+    {
+      "path": "research/continuous-recovery-20261018/network/gallery-late-window-20261018/plan.json",
+      "sha256": "3fbd89958c7e22acb0cc7c868e05a3484d89b85318b3c679e19d0cc9aa078bfa"
+    },
+    {
+      "path": "research/continuous-recovery-20261018/network/gallery-late-window-20261018/input-bindings.json",
+      "sha256": "7cce08bc64ed8eb1791165ef20a50f53430b0cb70a211b0c6b809bd225c5bce6"
+    },
+    {
+      "path": "research/continuous-recovery-20261018/network/gallery-late-window-20261018/gallery_late_window_driver_v1.py",
+      "sha256": "3f08af9ab0bbdc8909210b403735788d698d1dbea92ec8245cdea47c12f89e13"
+    },
+    {
+      "path": "research/continuous-recovery-20261018/network/gallery-late-window-20261018/fixture-results.json",
+      "sha256": "b053313345daef624fc70af39f92da4394216db0f59ef677714f606c7d920b2e"
+    }
+  ],
+  "root_fixture_passed": 15,
+  "root_fixture_total": 15,
+  "root_extra_boundary_checks": 1,
+  "root_tamper_rejections": [
+    "attempt_limit",
+    "out_of_window",
+    "query_mismatch",
+    "source_hash"
+  ],
+  "unchanged_prior_driver_definitions_ast": [
+    "_FixtureClock",
+    "_RealClock",
+    "_remaining_clamp",
+    "_restart_last_dispatch",
+    "_schedule_next",
+    "cf",
+    "free_bytes",
+    "headers",
+    "iso",
+    "now",
+    "parse_cdx",
+    "parse_iso",
+    "phase",
+    "public_attempt",
+    "read_json",
+    "rel",
+    "same_origin",
+    "sha",
+    "status",
+    "write_json"
+  ],
+  "candidate_windows": [
+    {
+      "gallery": "Karazhan",
+      "from": "20090101000000",
+      "to": "20101207235959",
+      "limit": 500,
+      "showResumeKey": true,
+      "collapse": false,
+      "matchType": "prefix"
+    },
+    {
+      "gallery": "Zul'Aman",
+      "from": "20080512210045",
+      "to": "20101207235959",
+      "limit": 500,
+      "showResumeKey": true,
+      "collapse": false,
+      "matchType": "prefix"
+    },
+    {
+      "gallery": "Black Temple",
+      "from": "20080512210045",
+      "to": "20101207235959",
+      "limit": 500,
+      "showResumeKey": true,
+      "collapse": false,
+      "matchType": "prefix"
+    }
+  ],
+  "policy": {
+    "from": "per_candidate",
+    "to": "20101207235959",
+    "target_from": "20080512210045",
+    "limit": 500,
+    "showResumeKey": true,
+    "collapse": false,
+    "matchType": "prefix",
+    "max_attempts": 8,
+    "window_seconds": 180.0,
+    "max_total_body_bytes": 16777216,
+    "max_entity_body_bytes": 8388608,
+    "min_dispatch_seconds": 5.25,
+    "min_request_start_seconds": 5.0,
+    "disk_floor_bytes": 11005853696,
+    "direct_first": true,
+    "proxy": "http://127.0.0.1:7890",
+    "tls_verification": true,
+    "automatic_redirects": 0,
+    "stop_http_codes": [
+      429,
+      503
+    ],
+    "cooldown_seconds": 120,
+    "stop_on_five_consecutive_transport_failures": true,
+    "resume_rule": "record resumeKey and mark incomplete; never follow it in this batch"
+  },
+  "network_requests": 0,
+  "execution_authorized_by_receipt": false,
+  "disk_free_bytes": 46899531776
+}

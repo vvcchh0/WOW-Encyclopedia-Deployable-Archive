@@ -1,0 +1,55 @@
+# v28 static frontier audit
+
+Checked `2026-10-18T07:26:43.049567Z`; network requests: `0`; v27 HTML files read: `1041`; files with markers: `209`.
+Candidate pool after news/query/accepted/complete-empty exclusions: `568`; selected: `40` (armory `20`, guide/BC/Insider `20`).
+
+The table records exact marker URL, source-page/output line, source-page SHA, and prior evidence. `plan_or_queue_only` never counts as an executed request; `complete_cdx_cache` is true only for explicit complete CDX with no truncation.
+
+|#|class|occurrences|visual role|requested URL|prior attempt|CDX complete|source page:line|
+|---:|---|---:|---|---|---|---|---|
+|1|armory|1|content_visual_candidate|`http://armory.wow-europe.com/images/tl.png`|plan_or_queue_only_no_execution_record|None|`.scratch/pages-resources-20261018-v27/community/tournaments/euregionals/index.html:395`|
+|2|armory|1|content_visual_candidate|`http://armory.wow-europe.com/images/tr.png`|plan_or_queue_only_no_execution_record|None|`.scratch/pages-resources-20261018-v27/community/tournaments/euregionals/index.html:396`|
+|3|armory|15|icon_or_small_visual_candidate|`http://www.wowarmory.com/images/icons/21x21/inv_pants_mail_15.png`|plan_or_queue_only_no_execution_record|None|`.scratch/pages-resources-20261018-v27/pvp/tournament/items.xml.html:1351`|
+|4|armory|12|icon_or_small_visual_candidate|`http://www.wowarmory.com/images/icons/21x21/inv_gauntlets_25.png`|plan_or_queue_only_no_execution_record|None|`.scratch/pages-resources-20261018-v27/pvp/tournament/items.xml.html:1339`|
+|5|armory|12|icon_or_small_visual_candidate|`http://www.wowarmory.com/images/icons/21x21/inv_pants_cloth_05.png`|plan_or_queue_only_no_execution_record|None|`.scratch/pages-resources-20261018-v27/pvp/tournament/items.xml.html:1793`|
+|6|armory|11|icon_or_small_visual_candidate|`http://www.wowarmory.com/images/icons/21x21/inv_shoulder_14.png`|plan_or_queue_only_no_execution_record|None|`.scratch/pages-resources-20261018-v27/pvp/tournament/items.xml.html:1367`|
+|7|armory|10|icon_or_small_visual_candidate|`http://www.wowarmory.com/images/icons/21x21/inv_helmet_15.png`|plan_or_queue_only_no_execution_record|None|`.scratch/pages-resources-20261018-v27/pvp/tournament/items.xml.html:1335`|
+|8|armory|9|icon_or_small_visual_candidate|`http://www.wowarmory.com/images/icons/21x21/inv_helmet_30.png`|plan_or_queue_only_no_execution_record|None|`.scratch/pages-resources-20261018-v27/pvp/tournament/items.xml.html:1789`|
+|9|armory|8|icon_or_small_visual_candidate|`http://www.wowarmory.com/images/icons/21x21/inv_chest_cloth_43.png`|plan_or_queue_only_no_execution_record|None|`.scratch/pages-resources-20261018-v27/pvp/tournament/items.xml.html:2088`|
+|10|armory|8|icon_or_small_visual_candidate|`http://www.wowarmory.com/images/icons/21x21/inv_gauntlets_28.png`|plan_or_queue_only_no_execution_record|None|`.scratch/pages-resources-20261018-v27/pvp/tournament/items.xml.html:1395`|
+|11|armory|8|icon_or_small_visual_candidate|`http://www.wowarmory.com/images/icons/21x21/inv_misc_gem_diamond_07.png`|plan_or_queue_only_no_execution_record|None|`.scratch/pages-resources-20261018-v27/pvp/tournament/items.xml.html:3010`|
+|12|armory|7|icon_or_small_visual_candidate|`http://www.wowarmory.com/images/icons/21x21/inv_belt_17.png`|plan_or_queue_only_no_execution_record|None|`.scratch/pages-resources-20261018-v27/pvp/tournament/items.xml.html:1865`|
+|13|armory|7|icon_or_small_visual_candidate|`http://www.wowarmory.com/images/icons/21x21/inv_bracer_07.png`|plan_or_queue_only_no_execution_record|None|`.scratch/pages-resources-20261018-v27/pvp/tournament/items.xml.html:1873`|
+|14|armory|7|icon_or_small_visual_candidate|`http://www.wowarmory.com/images/icons/21x21/inv_chest_chain_15.png`|plan_or_queue_only_no_execution_record|None|`.scratch/pages-resources-20261018-v27/pvp/tournament/items.xml.html:1323`|
+|15|armory|7|icon_or_small_visual_candidate|`http://www.wowarmory.com/images/icons/21x21/inv_jewelcrafting_livingruby_03.png`|plan_or_queue_only_no_execution_record|None|`.scratch/pages-resources-20261018-v27/pvp/tournament/items.xml.html:3046`|
+|16|armory|7|icon_or_small_visual_candidate|`http://www.wowarmory.com/images/icons/21x21/inv_misc_gem_diamond_06.png`|plan_or_queue_only_no_execution_record|None|`.scratch/pages-resources-20261018-v27/pvp/tournament/items.xml.html:2986`|
+|17|armory|7|icon_or_small_visual_candidate|`http://www.wowarmory.com/images/icons/21x21/inv_shoulder_29.png`|plan_or_queue_only_no_execution_record|None|`.scratch/pages-resources-20261018-v27/pvp/tournament/items.xml.html:1415`|
+|18|armory|6|icon_or_small_visual_candidate|`http://armory.wow-europe.com/images/icons/class/5.png`|prior_execution_transport_unknown|None|`.scratch/pages-resources-20261018-v27/community/tournaments/euregionals/index.html:747`|
+|19|armory|6|icon_or_small_visual_candidate|`http://www.wowarmory.com/images/icons/21x21/inv_boots_05.png`|plan_or_queue_only_no_execution_record|None|`.scratch/pages-resources-20261018-v27/pvp/tournament/items.xml.html:2180`|
+|20|armory|6|icon_or_small_visual_candidate|`http://www.wowarmory.com/images/icons/21x21/inv_boots_plate_06.png`|plan_or_queue_only_no_execution_record|None|`.scratch/pages-resources-20261018-v27/pvp/tournament/items.xml.html:1311`|
+|21|guide_bc_insider|2|content_visual_candidate|`http://www.worldofwarcraft.com/burningcrusade/townhall/images/professions/reagent11.gif`|no_matching_execution_or_cdx_record_found|None|`.scratch/pages-resources-20261018-v27/burningcrusade/townhall/professions.html:469`|
+|22|guide_bc_insider|2|content_visual_candidate|`http://www.worldofwarcraft.com/burningcrusade/townhall/images/professions/reagent16.gif`|no_matching_execution_or_cdx_record_found|None|`.scratch/pages-resources-20261018-v27/burningcrusade/townhall/professions.html:474`|
+|23|guide_bc_insider|2|content_visual_candidate|`http://www.worldofwarcraft.com/burningcrusade/townhall/images/professions/reagent30.gif`|no_matching_execution_or_cdx_record_found|None|`.scratch/pages-resources-20261018-v27/burningcrusade/townhall/professions.html:488`|
+|24|guide_bc_insider|2|content_visual_candidate|`https://www.worldofwarcraft.com/insider/12/images/12-magtheridon-magbig2.jpg`|no_matching_execution_or_cdx_record_found|None|`.scratch/pages-resources-20261018-v27/insider/12/magtheridon.xml.html:653`|
+|25|guide_bc_insider|1|content_visual_candidate|`http://www.blizzard.com/war3x/images/screens/concept/ss01.jpg`|no_matching_execution_or_cdx_record_found|None|`.scratch/pages-resources-20261018-v27/burningcrusade/townhall/story.html:304`|
+|26|guide_bc_insider|1|content_visual_candidate|`http://www.worldofwarcraft.com/burningcrusade/townhall/images/professions/blusocket.gif`|no_matching_execution_or_cdx_record_found|None|`.scratch/pages-resources-20261018-v27/burningcrusade/townhall/professions.html:352`|
+|27|guide_bc_insider|1|content_visual_candidate|`http://www.worldofwarcraft.com/burningcrusade/townhall/images/professions/reagent1.gif`|no_matching_execution_or_cdx_record_found|None|`.scratch/pages-resources-20261018-v27/burningcrusade/townhall/professions.html:459`|
+|28|guide_bc_insider|1|content_visual_candidate|`http://www.worldofwarcraft.com/burningcrusade/townhall/images/professions/reagent10.gif`|no_matching_execution_or_cdx_record_found|None|`.scratch/pages-resources-20261018-v27/burningcrusade/townhall/professions.html:468`|
+|29|guide_bc_insider|1|content_visual_candidate|`http://www.worldofwarcraft.com/burningcrusade/townhall/images/professions/reagent12.gif`|no_matching_execution_or_cdx_record_found|None|`.scratch/pages-resources-20261018-v27/burningcrusade/townhall/professions.html:470`|
+|30|guide_bc_insider|1|content_visual_candidate|`http://www.worldofwarcraft.com/burningcrusade/townhall/images/professions/reagent13.gif`|no_matching_execution_or_cdx_record_found|None|`.scratch/pages-resources-20261018-v27/burningcrusade/townhall/professions.html:471`|
+|31|guide_bc_insider|1|content_visual_candidate|`http://www.worldofwarcraft.com/burningcrusade/townhall/images/professions/reagent14.gif`|no_matching_execution_or_cdx_record_found|None|`.scratch/pages-resources-20261018-v27/burningcrusade/townhall/professions.html:472`|
+|32|guide_bc_insider|1|content_visual_candidate|`http://www.worldofwarcraft.com/burningcrusade/townhall/images/professions/reagent15.gif`|no_matching_execution_or_cdx_record_found|None|`.scratch/pages-resources-20261018-v27/burningcrusade/townhall/professions.html:473`|
+|33|guide_bc_insider|1|content_visual_candidate|`http://www.worldofwarcraft.com/burningcrusade/townhall/images/professions/reagent17.gif`|no_matching_execution_or_cdx_record_found|None|`.scratch/pages-resources-20261018-v27/burningcrusade/townhall/professions.html:475`|
+|34|guide_bc_insider|1|content_visual_candidate|`http://www.worldofwarcraft.com/burningcrusade/townhall/images/professions/reagent18.gif`|no_matching_execution_or_cdx_record_found|None|`.scratch/pages-resources-20261018-v27/burningcrusade/townhall/professions.html:476`|
+|35|guide_bc_insider|1|content_visual_candidate|`http://www.worldofwarcraft.com/burningcrusade/townhall/images/professions/reagent19.gif`|no_matching_execution_or_cdx_record_found|None|`.scratch/pages-resources-20261018-v27/burningcrusade/townhall/professions.html:477`|
+|36|guide_bc_insider|1|content_visual_candidate|`http://www.worldofwarcraft.com/burningcrusade/townhall/images/professions/reagent2.gif`|no_matching_execution_or_cdx_record_found|None|`.scratch/pages-resources-20261018-v27/burningcrusade/townhall/professions.html:460`|
+|37|guide_bc_insider|1|content_visual_candidate|`http://www.worldofwarcraft.com/burningcrusade/townhall/images/professions/reagent20.gif`|no_matching_execution_or_cdx_record_found|None|`.scratch/pages-resources-20261018-v27/burningcrusade/townhall/professions.html:478`|
+|38|guide_bc_insider|1|content_visual_candidate|`http://www.worldofwarcraft.com/burningcrusade/townhall/images/professions/reagent21.gif`|no_matching_execution_or_cdx_record_found|None|`.scratch/pages-resources-20261018-v27/burningcrusade/townhall/professions.html:479`|
+|39|guide_bc_insider|1|content_visual_candidate|`http://www.worldofwarcraft.com/burningcrusade/townhall/images/professions/reagent22.gif`|no_matching_execution_or_cdx_record_found|None|`.scratch/pages-resources-20261018-v27/burningcrusade/townhall/professions.html:480`|
+|40|guide_bc_insider|1|content_visual_candidate|`http://www.worldofwarcraft.com/burningcrusade/townhall/images/professions/reagent23.gif`|no_matching_execution_or_cdx_record_found|None|`.scratch/pages-resources-20261018-v27/burningcrusade/townhall/professions.html:481`|
+
+## Evidence boundaries
+
+- Existing receipts/plans were read locally only; this audit did not send CDX/replay/image requests.
+- Source-page SHA values hash the frozen v27 HTML source page, not the missing target image.
+- Exact complete-no-eligible-capture and already-accepted static-main rows are retained under `excluded_known_attempts` and are not re-queued.

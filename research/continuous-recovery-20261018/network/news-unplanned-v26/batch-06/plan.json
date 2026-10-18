@@ -1,0 +1,1636 @@
+{
+  "schema": "wow-recovery.reusable-image-plan.v1",
+  "batch_id": "WAYBACK-CONTINUOUS-20261018-NEWS-UNPLANNED-V26-06",
+  "prepared_utc": "2026-10-18T07:10:57.961454Z",
+  "mode": "fresh_exact_cdx_then_id_replay_no_fallback",
+  "network_authorized": null,
+  "candidate_count": 10,
+  "output_dir": "research/continuous-recovery-20261018/network/news-unplanned-v26/batch-06/output",
+  "execution_order": {
+    "batch_number": 6,
+    "batch_count": 8,
+    "predecessor_batch_required": true,
+    "predecessor_tail_rebind_required_before_execute": false,
+    "predecessor_tail_status": "bound_to_latest_actual_source_acceptance"
+  },
+  "selection_scope": {
+    "name": "news_unplanned_v26_batch_06",
+    "reason": "Ten consecutive exact originals from the root-frozen v26 unplanned news queue; v26 marker citations and prior uncovered status are preserved.",
+    "queue_path": "research/continuous-recovery-20261018/publication/news-unplanned-v26-queue.json",
+    "queue_sha256": "b10c3bfdf9dc9bc1aac8321c266fae6fb388ddd72851e996359e4a9db79c70d6",
+    "queue_generated_utc": "2026-10-18T05:59:16.505656+00:00",
+    "queue_target_count": 80,
+    "queue_rank_range": [
+      51,
+      60
+    ],
+    "selected_queue_ranks": [
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60
+    ],
+    "selected_priorities": [
+      "other-2007-news-body",
+      "other-2007-news-body",
+      "other-2007-news-body",
+      "other-2007-news-body",
+      "other-2007-news-body",
+      "other-2007-news-body",
+      "other-2007-news-body",
+      "other-2007-news-body",
+      "other-2007-news-body",
+      "other-2007-news-body"
+    ],
+    "no_complete_same_window_row_selected": true,
+    "network_requests_during_preparation": 0,
+    "split_reason": "Ten-target batches keep each window within the 24-request/240-second cap while preserving later queue ranks explicitly."
+  },
+  "candidates": [
+    {
+      "target_key": "NEWS-UNPLANNED-V26-06-01",
+      "priority": 1,
+      "queue_rank": 51,
+      "source_priority_band": "other-2007-news-body",
+      "date_bucket": null,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com/news/images/07-06/ss042b-thumb.jpg",
+      "literal": "http://www.worldofwarcraft.com/news/images/07-06/ss042b-thumb.jpg",
+      "expected": {
+        "archive_query_required": true,
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "all_gif_frames": false,
+        "reencode": false,
+        "script_execution": false,
+        "query_window": {
+          "from": "20000101000000",
+          "to": "20080512210044"
+        }
+      },
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "source_evidence": {
+        "path": ".scratch/pages-resources-20261018-v26/news/rss-06-2007.xml.html",
+        "line": 920,
+        "literal": "http://www.worldofwarcraft.com/news/images/07-06/ss042b-thumb.jpg",
+        "sha256": "de958aac3102657c08166f7e246ade4201dfba19938ef7d37d1df4af4a662f20",
+        "requested": "http://www.worldofwarcraft.com/news/images/07-06/ss042b-thumb.jpg",
+        "reason": "external-or-uncollected-resource",
+        "source_marker": "v26_marker_refs"
+      },
+      "source_page_context": {
+        "candidate_file": "research/continuous-recovery-20261018/publication/news-unplanned-v26-queue.json",
+        "candidate_file_sha256": "b10c3bfdf9dc9bc1aac8321c266fae6fb388ddd72851e996359e4a9db79c70d6",
+        "queue_accepted": true,
+        "queue_generated_utc": "2026-10-18T05:59:16.505656+00:00",
+        "static_queue_rank": 51,
+        "priority_band": "other-2007-news-body",
+        "occurrences_v26_news": 1,
+        "v26_marker_refs": [
+          {
+            "source": ".scratch/pages-resources-20261018-v26/news/rss-06-2007.xml.html:920",
+            "page": "news/rss-06-2007.xml.html",
+            "line": 920,
+            "requested": "http://www.worldofwarcraft.com/news/images/07-06/ss042b-thumb.jpg",
+            "reason": "external-or-uncollected-resource"
+          }
+        ],
+        "prior_attempt_summary": {
+          "state": "not_in_reviewed_plan_inputs",
+          "all_news_audit_status": "uncovered_local_evidence",
+          "network_requests_in_this_audit": 0,
+          "accepted_payload_in_prior_records": false,
+          "prior_news_pending_row": false
+        },
+        "cdx_state": "no_new_cdx_query_yet",
+        "previous_batch_tail_receipt": "research/continuous-recovery-20261018/publication/root-news-unplanned-batch5-source-acceptance.json",
+        "previous_batch_tail_receipt_sha256": "d4235f67bd7016347527853a9f23f963aef6848b14a72f4919af99bdc12069f0",
+        "previous_batch_tail_end": 0,
+        "status_snapshot_path": "research/continuous-recovery-20261018/network/news-unplanned-v26/batch-06/status-snapshot.json",
+        "status_snapshot_sha256": "4042b4d045d61ca239096e9a7d0558a7948828d7c5b773109d5773d8be91013f"
+      },
+      "selection": {
+        "max_distinct_digest_candidates": 2,
+        "potential_truncation": "do_not_replay",
+        "require_complete_index": true,
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "same_digest_older_captures": "skip",
+        "sort": "timestamp_desc_then_record_index_desc",
+        "unknown_metadata": "incomplete_error"
+      },
+      "known_positive_cache_rows": [],
+      "fallback_label": null,
+      "cdx_mode": "fresh",
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com/news/images/07-06/ss042b-thumb.jpg",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F07-06%2Fss042b-thumb.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com/news/images/07-06/ss042b-thumb.jpg",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "prior_local_evidence": [
+        {
+          "state": "no_new_cdx_query_yet",
+          "source": "news-unplanned-v26-queue",
+          "prior_attempt": {
+            "state": "not_in_reviewed_plan_inputs",
+            "all_news_audit_status": "uncovered_local_evidence",
+            "network_requests_in_this_audit": 0,
+            "accepted_payload_in_prior_records": false,
+            "prior_news_pending_row": false
+          },
+          "exact_entity_index_complete": false,
+          "positive_row_count": 0
+        }
+      ],
+      "prior_evidence_status": "v26_marker_refs; fresh_exact_cdx_required; no_bound_positive_fallback"
+    },
+    {
+      "target_key": "NEWS-UNPLANNED-V26-06-02",
+      "priority": 2,
+      "queue_rank": 52,
+      "source_priority_band": "other-2007-news-body",
+      "date_bucket": null,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com/news/images/07-07/07-03-07-1.jpg",
+      "literal": "http://www.worldofwarcraft.com/news/images/07-07/07-03-07-1.jpg",
+      "expected": {
+        "archive_query_required": true,
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "all_gif_frames": false,
+        "reencode": false,
+        "script_execution": false,
+        "query_window": {
+          "from": "20000101000000",
+          "to": "20080512210044"
+        }
+      },
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "source_evidence": {
+        "path": ".scratch/pages-resources-20261018-v26/news/rss-07-2007.xml.html",
+        "line": 4368,
+        "literal": "http://www.worldofwarcraft.com/news/images/07-07/07-03-07-1.jpg",
+        "sha256": "83fbf322cde589efe022d94834fea8ac109e0b64649f2f6c7447cee03423659e",
+        "requested": "http://www.worldofwarcraft.com/news/images/07-07/07-03-07-1.jpg",
+        "reason": "external-or-uncollected-resource",
+        "source_marker": "v26_marker_refs"
+      },
+      "source_page_context": {
+        "candidate_file": "research/continuous-recovery-20261018/publication/news-unplanned-v26-queue.json",
+        "candidate_file_sha256": "b10c3bfdf9dc9bc1aac8321c266fae6fb388ddd72851e996359e4a9db79c70d6",
+        "queue_accepted": true,
+        "queue_generated_utc": "2026-10-18T05:59:16.505656+00:00",
+        "static_queue_rank": 52,
+        "priority_band": "other-2007-news-body",
+        "occurrences_v26_news": 1,
+        "v26_marker_refs": [
+          {
+            "source": ".scratch/pages-resources-20261018-v26/news/rss-07-2007.xml.html:4368",
+            "page": "news/rss-07-2007.xml.html",
+            "line": 4368,
+            "requested": "http://www.worldofwarcraft.com/news/images/07-07/07-03-07-1.jpg",
+            "reason": "external-or-uncollected-resource"
+          }
+        ],
+        "prior_attempt_summary": {
+          "state": "not_in_reviewed_plan_inputs",
+          "all_news_audit_status": "uncovered_local_evidence",
+          "network_requests_in_this_audit": 0,
+          "accepted_payload_in_prior_records": false,
+          "prior_news_pending_row": false
+        },
+        "cdx_state": "no_new_cdx_query_yet",
+        "previous_batch_tail_receipt": "research/continuous-recovery-20261018/publication/root-news-unplanned-batch5-source-acceptance.json",
+        "previous_batch_tail_receipt_sha256": "d4235f67bd7016347527853a9f23f963aef6848b14a72f4919af99bdc12069f0",
+        "previous_batch_tail_end": 0,
+        "status_snapshot_path": "research/continuous-recovery-20261018/network/news-unplanned-v26/batch-06/status-snapshot.json",
+        "status_snapshot_sha256": "4042b4d045d61ca239096e9a7d0558a7948828d7c5b773109d5773d8be91013f"
+      },
+      "selection": {
+        "max_distinct_digest_candidates": 2,
+        "potential_truncation": "do_not_replay",
+        "require_complete_index": true,
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "same_digest_older_captures": "skip",
+        "sort": "timestamp_desc_then_record_index_desc",
+        "unknown_metadata": "incomplete_error"
+      },
+      "known_positive_cache_rows": [],
+      "fallback_label": null,
+      "cdx_mode": "fresh",
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com/news/images/07-07/07-03-07-1.jpg",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F07-07%2F07-03-07-1.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com/news/images/07-07/07-03-07-1.jpg",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "prior_local_evidence": [
+        {
+          "state": "no_new_cdx_query_yet",
+          "source": "news-unplanned-v26-queue",
+          "prior_attempt": {
+            "state": "not_in_reviewed_plan_inputs",
+            "all_news_audit_status": "uncovered_local_evidence",
+            "network_requests_in_this_audit": 0,
+            "accepted_payload_in_prior_records": false,
+            "prior_news_pending_row": false
+          },
+          "exact_entity_index_complete": false,
+          "positive_row_count": 0
+        }
+      ],
+      "prior_evidence_status": "v26_marker_refs; fresh_exact_cdx_required; no_bound_positive_fallback"
+    },
+    {
+      "target_key": "NEWS-UNPLANNED-V26-06-03",
+      "priority": 3,
+      "queue_rank": 53,
+      "source_priority_band": "other-2007-news-body",
+      "date_bucket": null,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com/news/images/07-07/07-03-07-2.jpg",
+      "literal": "http://www.worldofwarcraft.com/news/images/07-07/07-03-07-2.jpg",
+      "expected": {
+        "archive_query_required": true,
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "all_gif_frames": false,
+        "reencode": false,
+        "script_execution": false,
+        "query_window": {
+          "from": "20000101000000",
+          "to": "20080512210044"
+        }
+      },
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "source_evidence": {
+        "path": ".scratch/pages-resources-20261018-v26/news/rss-07-2007.xml.html",
+        "line": 4369,
+        "literal": "http://www.worldofwarcraft.com/news/images/07-07/07-03-07-2.jpg",
+        "sha256": "83fbf322cde589efe022d94834fea8ac109e0b64649f2f6c7447cee03423659e",
+        "requested": "http://www.worldofwarcraft.com/news/images/07-07/07-03-07-2.jpg",
+        "reason": "external-or-uncollected-resource",
+        "source_marker": "v26_marker_refs"
+      },
+      "source_page_context": {
+        "candidate_file": "research/continuous-recovery-20261018/publication/news-unplanned-v26-queue.json",
+        "candidate_file_sha256": "b10c3bfdf9dc9bc1aac8321c266fae6fb388ddd72851e996359e4a9db79c70d6",
+        "queue_accepted": true,
+        "queue_generated_utc": "2026-10-18T05:59:16.505656+00:00",
+        "static_queue_rank": 53,
+        "priority_band": "other-2007-news-body",
+        "occurrences_v26_news": 1,
+        "v26_marker_refs": [
+          {
+            "source": ".scratch/pages-resources-20261018-v26/news/rss-07-2007.xml.html:4369",
+            "page": "news/rss-07-2007.xml.html",
+            "line": 4369,
+            "requested": "http://www.worldofwarcraft.com/news/images/07-07/07-03-07-2.jpg",
+            "reason": "external-or-uncollected-resource"
+          }
+        ],
+        "prior_attempt_summary": {
+          "state": "not_in_reviewed_plan_inputs",
+          "all_news_audit_status": "uncovered_local_evidence",
+          "network_requests_in_this_audit": 0,
+          "accepted_payload_in_prior_records": false,
+          "prior_news_pending_row": false
+        },
+        "cdx_state": "no_new_cdx_query_yet",
+        "previous_batch_tail_receipt": "research/continuous-recovery-20261018/publication/root-news-unplanned-batch5-source-acceptance.json",
+        "previous_batch_tail_receipt_sha256": "d4235f67bd7016347527853a9f23f963aef6848b14a72f4919af99bdc12069f0",
+        "previous_batch_tail_end": 0,
+        "status_snapshot_path": "research/continuous-recovery-20261018/network/news-unplanned-v26/batch-06/status-snapshot.json",
+        "status_snapshot_sha256": "4042b4d045d61ca239096e9a7d0558a7948828d7c5b773109d5773d8be91013f"
+      },
+      "selection": {
+        "max_distinct_digest_candidates": 2,
+        "potential_truncation": "do_not_replay",
+        "require_complete_index": true,
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "same_digest_older_captures": "skip",
+        "sort": "timestamp_desc_then_record_index_desc",
+        "unknown_metadata": "incomplete_error"
+      },
+      "known_positive_cache_rows": [],
+      "fallback_label": null,
+      "cdx_mode": "fresh",
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com/news/images/07-07/07-03-07-2.jpg",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F07-07%2F07-03-07-2.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com/news/images/07-07/07-03-07-2.jpg",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "prior_local_evidence": [
+        {
+          "state": "no_new_cdx_query_yet",
+          "source": "news-unplanned-v26-queue",
+          "prior_attempt": {
+            "state": "not_in_reviewed_plan_inputs",
+            "all_news_audit_status": "uncovered_local_evidence",
+            "network_requests_in_this_audit": 0,
+            "accepted_payload_in_prior_records": false,
+            "prior_news_pending_row": false
+          },
+          "exact_entity_index_complete": false,
+          "positive_row_count": 0
+        }
+      ],
+      "prior_evidence_status": "v26_marker_refs; fresh_exact_cdx_required; no_bound_positive_fallback"
+    },
+    {
+      "target_key": "NEWS-UNPLANNED-V26-06-04",
+      "priority": 4,
+      "queue_rank": 54,
+      "source_priority_band": "other-2007-news-body",
+      "date_bucket": null,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com/news/images/07-07/07-03-07-3.jpg",
+      "literal": "http://www.worldofwarcraft.com/news/images/07-07/07-03-07-3.jpg",
+      "expected": {
+        "archive_query_required": true,
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "all_gif_frames": false,
+        "reencode": false,
+        "script_execution": false,
+        "query_window": {
+          "from": "20000101000000",
+          "to": "20080512210044"
+        }
+      },
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "source_evidence": {
+        "path": ".scratch/pages-resources-20261018-v26/news/rss-07-2007.xml.html",
+        "line": 4370,
+        "literal": "http://www.worldofwarcraft.com/news/images/07-07/07-03-07-3.jpg",
+        "sha256": "83fbf322cde589efe022d94834fea8ac109e0b64649f2f6c7447cee03423659e",
+        "requested": "http://www.worldofwarcraft.com/news/images/07-07/07-03-07-3.jpg",
+        "reason": "external-or-uncollected-resource",
+        "source_marker": "v26_marker_refs"
+      },
+      "source_page_context": {
+        "candidate_file": "research/continuous-recovery-20261018/publication/news-unplanned-v26-queue.json",
+        "candidate_file_sha256": "b10c3bfdf9dc9bc1aac8321c266fae6fb388ddd72851e996359e4a9db79c70d6",
+        "queue_accepted": true,
+        "queue_generated_utc": "2026-10-18T05:59:16.505656+00:00",
+        "static_queue_rank": 54,
+        "priority_band": "other-2007-news-body",
+        "occurrences_v26_news": 1,
+        "v26_marker_refs": [
+          {
+            "source": ".scratch/pages-resources-20261018-v26/news/rss-07-2007.xml.html:4370",
+            "page": "news/rss-07-2007.xml.html",
+            "line": 4370,
+            "requested": "http://www.worldofwarcraft.com/news/images/07-07/07-03-07-3.jpg",
+            "reason": "external-or-uncollected-resource"
+          }
+        ],
+        "prior_attempt_summary": {
+          "state": "not_in_reviewed_plan_inputs",
+          "all_news_audit_status": "uncovered_local_evidence",
+          "network_requests_in_this_audit": 0,
+          "accepted_payload_in_prior_records": false,
+          "prior_news_pending_row": false
+        },
+        "cdx_state": "no_new_cdx_query_yet",
+        "previous_batch_tail_receipt": "research/continuous-recovery-20261018/publication/root-news-unplanned-batch5-source-acceptance.json",
+        "previous_batch_tail_receipt_sha256": "d4235f67bd7016347527853a9f23f963aef6848b14a72f4919af99bdc12069f0",
+        "previous_batch_tail_end": 0,
+        "status_snapshot_path": "research/continuous-recovery-20261018/network/news-unplanned-v26/batch-06/status-snapshot.json",
+        "status_snapshot_sha256": "4042b4d045d61ca239096e9a7d0558a7948828d7c5b773109d5773d8be91013f"
+      },
+      "selection": {
+        "max_distinct_digest_candidates": 2,
+        "potential_truncation": "do_not_replay",
+        "require_complete_index": true,
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "same_digest_older_captures": "skip",
+        "sort": "timestamp_desc_then_record_index_desc",
+        "unknown_metadata": "incomplete_error"
+      },
+      "known_positive_cache_rows": [],
+      "fallback_label": null,
+      "cdx_mode": "fresh",
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com/news/images/07-07/07-03-07-3.jpg",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F07-07%2F07-03-07-3.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com/news/images/07-07/07-03-07-3.jpg",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "prior_local_evidence": [
+        {
+          "state": "no_new_cdx_query_yet",
+          "source": "news-unplanned-v26-queue",
+          "prior_attempt": {
+            "state": "not_in_reviewed_plan_inputs",
+            "all_news_audit_status": "uncovered_local_evidence",
+            "network_requests_in_this_audit": 0,
+            "accepted_payload_in_prior_records": false,
+            "prior_news_pending_row": false
+          },
+          "exact_entity_index_complete": false,
+          "positive_row_count": 0
+        }
+      ],
+      "prior_evidence_status": "v26_marker_refs; fresh_exact_cdx_required; no_bound_positive_fallback"
+    },
+    {
+      "target_key": "NEWS-UNPLANNED-V26-06-05",
+      "priority": 5,
+      "queue_rank": 55,
+      "source_priority_band": "other-2007-news-body",
+      "date_bucket": null,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com/news/images/07-07/07-12-07-1.jpg",
+      "literal": "http://www.worldofwarcraft.com/news/images/07-07/07-12-07-1.jpg",
+      "expected": {
+        "archive_query_required": true,
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "all_gif_frames": false,
+        "reencode": false,
+        "script_execution": false,
+        "query_window": {
+          "from": "20000101000000",
+          "to": "20080512210044"
+        }
+      },
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "source_evidence": {
+        "path": ".scratch/pages-resources-20261018-v26/news/rss-07-2007.xml.html",
+        "line": 3429,
+        "literal": "http://www.worldofwarcraft.com/news/images/07-07/07-12-07-1.jpg",
+        "sha256": "83fbf322cde589efe022d94834fea8ac109e0b64649f2f6c7447cee03423659e",
+        "requested": "http://www.worldofwarcraft.com/news/images/07-07/07-12-07-1.jpg",
+        "reason": "external-or-uncollected-resource",
+        "source_marker": "v26_marker_refs"
+      },
+      "source_page_context": {
+        "candidate_file": "research/continuous-recovery-20261018/publication/news-unplanned-v26-queue.json",
+        "candidate_file_sha256": "b10c3bfdf9dc9bc1aac8321c266fae6fb388ddd72851e996359e4a9db79c70d6",
+        "queue_accepted": true,
+        "queue_generated_utc": "2026-10-18T05:59:16.505656+00:00",
+        "static_queue_rank": 55,
+        "priority_band": "other-2007-news-body",
+        "occurrences_v26_news": 1,
+        "v26_marker_refs": [
+          {
+            "source": ".scratch/pages-resources-20261018-v26/news/rss-07-2007.xml.html:3429",
+            "page": "news/rss-07-2007.xml.html",
+            "line": 3429,
+            "requested": "http://www.worldofwarcraft.com/news/images/07-07/07-12-07-1.jpg",
+            "reason": "external-or-uncollected-resource"
+          }
+        ],
+        "prior_attempt_summary": {
+          "state": "not_in_reviewed_plan_inputs",
+          "all_news_audit_status": "uncovered_local_evidence",
+          "network_requests_in_this_audit": 0,
+          "accepted_payload_in_prior_records": false,
+          "prior_news_pending_row": false
+        },
+        "cdx_state": "no_new_cdx_query_yet",
+        "previous_batch_tail_receipt": "research/continuous-recovery-20261018/publication/root-news-unplanned-batch5-source-acceptance.json",
+        "previous_batch_tail_receipt_sha256": "d4235f67bd7016347527853a9f23f963aef6848b14a72f4919af99bdc12069f0",
+        "previous_batch_tail_end": 0,
+        "status_snapshot_path": "research/continuous-recovery-20261018/network/news-unplanned-v26/batch-06/status-snapshot.json",
+        "status_snapshot_sha256": "4042b4d045d61ca239096e9a7d0558a7948828d7c5b773109d5773d8be91013f"
+      },
+      "selection": {
+        "max_distinct_digest_candidates": 2,
+        "potential_truncation": "do_not_replay",
+        "require_complete_index": true,
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "same_digest_older_captures": "skip",
+        "sort": "timestamp_desc_then_record_index_desc",
+        "unknown_metadata": "incomplete_error"
+      },
+      "known_positive_cache_rows": [],
+      "fallback_label": null,
+      "cdx_mode": "fresh",
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com/news/images/07-07/07-12-07-1.jpg",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F07-07%2F07-12-07-1.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com/news/images/07-07/07-12-07-1.jpg",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "prior_local_evidence": [
+        {
+          "state": "no_new_cdx_query_yet",
+          "source": "news-unplanned-v26-queue",
+          "prior_attempt": {
+            "state": "not_in_reviewed_plan_inputs",
+            "all_news_audit_status": "uncovered_local_evidence",
+            "network_requests_in_this_audit": 0,
+            "accepted_payload_in_prior_records": false,
+            "prior_news_pending_row": false
+          },
+          "exact_entity_index_complete": false,
+          "positive_row_count": 0
+        }
+      ],
+      "prior_evidence_status": "v26_marker_refs; fresh_exact_cdx_required; no_bound_positive_fallback"
+    },
+    {
+      "target_key": "NEWS-UNPLANNED-V26-06-06",
+      "priority": 6,
+      "queue_rank": 56,
+      "source_priority_band": "other-2007-news-body",
+      "date_bucket": null,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com/news/images/07-07/07-12-07-2.jpg",
+      "literal": "http://www.worldofwarcraft.com/news/images/07-07/07-12-07-2.jpg",
+      "expected": {
+        "archive_query_required": true,
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "all_gif_frames": false,
+        "reencode": false,
+        "script_execution": false,
+        "query_window": {
+          "from": "20000101000000",
+          "to": "20080512210044"
+        }
+      },
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "source_evidence": {
+        "path": ".scratch/pages-resources-20261018-v26/news/rss-07-2007.xml.html",
+        "line": 3430,
+        "literal": "http://www.worldofwarcraft.com/news/images/07-07/07-12-07-2.jpg",
+        "sha256": "83fbf322cde589efe022d94834fea8ac109e0b64649f2f6c7447cee03423659e",
+        "requested": "http://www.worldofwarcraft.com/news/images/07-07/07-12-07-2.jpg",
+        "reason": "external-or-uncollected-resource",
+        "source_marker": "v26_marker_refs"
+      },
+      "source_page_context": {
+        "candidate_file": "research/continuous-recovery-20261018/publication/news-unplanned-v26-queue.json",
+        "candidate_file_sha256": "b10c3bfdf9dc9bc1aac8321c266fae6fb388ddd72851e996359e4a9db79c70d6",
+        "queue_accepted": true,
+        "queue_generated_utc": "2026-10-18T05:59:16.505656+00:00",
+        "static_queue_rank": 56,
+        "priority_band": "other-2007-news-body",
+        "occurrences_v26_news": 1,
+        "v26_marker_refs": [
+          {
+            "source": ".scratch/pages-resources-20261018-v26/news/rss-07-2007.xml.html:3430",
+            "page": "news/rss-07-2007.xml.html",
+            "line": 3430,
+            "requested": "http://www.worldofwarcraft.com/news/images/07-07/07-12-07-2.jpg",
+            "reason": "external-or-uncollected-resource"
+          }
+        ],
+        "prior_attempt_summary": {
+          "state": "not_in_reviewed_plan_inputs",
+          "all_news_audit_status": "uncovered_local_evidence",
+          "network_requests_in_this_audit": 0,
+          "accepted_payload_in_prior_records": false,
+          "prior_news_pending_row": false
+        },
+        "cdx_state": "no_new_cdx_query_yet",
+        "previous_batch_tail_receipt": "research/continuous-recovery-20261018/publication/root-news-unplanned-batch5-source-acceptance.json",
+        "previous_batch_tail_receipt_sha256": "d4235f67bd7016347527853a9f23f963aef6848b14a72f4919af99bdc12069f0",
+        "previous_batch_tail_end": 0,
+        "status_snapshot_path": "research/continuous-recovery-20261018/network/news-unplanned-v26/batch-06/status-snapshot.json",
+        "status_snapshot_sha256": "4042b4d045d61ca239096e9a7d0558a7948828d7c5b773109d5773d8be91013f"
+      },
+      "selection": {
+        "max_distinct_digest_candidates": 2,
+        "potential_truncation": "do_not_replay",
+        "require_complete_index": true,
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "same_digest_older_captures": "skip",
+        "sort": "timestamp_desc_then_record_index_desc",
+        "unknown_metadata": "incomplete_error"
+      },
+      "known_positive_cache_rows": [],
+      "fallback_label": null,
+      "cdx_mode": "fresh",
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com/news/images/07-07/07-12-07-2.jpg",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F07-07%2F07-12-07-2.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com/news/images/07-07/07-12-07-2.jpg",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "prior_local_evidence": [
+        {
+          "state": "no_new_cdx_query_yet",
+          "source": "news-unplanned-v26-queue",
+          "prior_attempt": {
+            "state": "not_in_reviewed_plan_inputs",
+            "all_news_audit_status": "uncovered_local_evidence",
+            "network_requests_in_this_audit": 0,
+            "accepted_payload_in_prior_records": false,
+            "prior_news_pending_row": false
+          },
+          "exact_entity_index_complete": false,
+          "positive_row_count": 0
+        }
+      ],
+      "prior_evidence_status": "v26_marker_refs; fresh_exact_cdx_required; no_bound_positive_fallback"
+    },
+    {
+      "target_key": "NEWS-UNPLANNED-V26-06-07",
+      "priority": 7,
+      "queue_rank": 57,
+      "source_priority_band": "other-2007-news-body",
+      "date_bucket": null,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com/news/images/07-07/07-12-07-3.jpg",
+      "literal": "http://www.worldofwarcraft.com/news/images/07-07/07-12-07-3.jpg",
+      "expected": {
+        "archive_query_required": true,
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "all_gif_frames": false,
+        "reencode": false,
+        "script_execution": false,
+        "query_window": {
+          "from": "20000101000000",
+          "to": "20080512210044"
+        }
+      },
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "source_evidence": {
+        "path": ".scratch/pages-resources-20261018-v26/news/rss-07-2007.xml.html",
+        "line": 3431,
+        "literal": "http://www.worldofwarcraft.com/news/images/07-07/07-12-07-3.jpg",
+        "sha256": "83fbf322cde589efe022d94834fea8ac109e0b64649f2f6c7447cee03423659e",
+        "requested": "http://www.worldofwarcraft.com/news/images/07-07/07-12-07-3.jpg",
+        "reason": "external-or-uncollected-resource",
+        "source_marker": "v26_marker_refs"
+      },
+      "source_page_context": {
+        "candidate_file": "research/continuous-recovery-20261018/publication/news-unplanned-v26-queue.json",
+        "candidate_file_sha256": "b10c3bfdf9dc9bc1aac8321c266fae6fb388ddd72851e996359e4a9db79c70d6",
+        "queue_accepted": true,
+        "queue_generated_utc": "2026-10-18T05:59:16.505656+00:00",
+        "static_queue_rank": 57,
+        "priority_band": "other-2007-news-body",
+        "occurrences_v26_news": 1,
+        "v26_marker_refs": [
+          {
+            "source": ".scratch/pages-resources-20261018-v26/news/rss-07-2007.xml.html:3431",
+            "page": "news/rss-07-2007.xml.html",
+            "line": 3431,
+            "requested": "http://www.worldofwarcraft.com/news/images/07-07/07-12-07-3.jpg",
+            "reason": "external-or-uncollected-resource"
+          }
+        ],
+        "prior_attempt_summary": {
+          "state": "not_in_reviewed_plan_inputs",
+          "all_news_audit_status": "uncovered_local_evidence",
+          "network_requests_in_this_audit": 0,
+          "accepted_payload_in_prior_records": false,
+          "prior_news_pending_row": false
+        },
+        "cdx_state": "no_new_cdx_query_yet",
+        "previous_batch_tail_receipt": "research/continuous-recovery-20261018/publication/root-news-unplanned-batch5-source-acceptance.json",
+        "previous_batch_tail_receipt_sha256": "d4235f67bd7016347527853a9f23f963aef6848b14a72f4919af99bdc12069f0",
+        "previous_batch_tail_end": 0,
+        "status_snapshot_path": "research/continuous-recovery-20261018/network/news-unplanned-v26/batch-06/status-snapshot.json",
+        "status_snapshot_sha256": "4042b4d045d61ca239096e9a7d0558a7948828d7c5b773109d5773d8be91013f"
+      },
+      "selection": {
+        "max_distinct_digest_candidates": 2,
+        "potential_truncation": "do_not_replay",
+        "require_complete_index": true,
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "same_digest_older_captures": "skip",
+        "sort": "timestamp_desc_then_record_index_desc",
+        "unknown_metadata": "incomplete_error"
+      },
+      "known_positive_cache_rows": [],
+      "fallback_label": null,
+      "cdx_mode": "fresh",
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com/news/images/07-07/07-12-07-3.jpg",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F07-07%2F07-12-07-3.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com/news/images/07-07/07-12-07-3.jpg",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "prior_local_evidence": [
+        {
+          "state": "no_new_cdx_query_yet",
+          "source": "news-unplanned-v26-queue",
+          "prior_attempt": {
+            "state": "not_in_reviewed_plan_inputs",
+            "all_news_audit_status": "uncovered_local_evidence",
+            "network_requests_in_this_audit": 0,
+            "accepted_payload_in_prior_records": false,
+            "prior_news_pending_row": false
+          },
+          "exact_entity_index_complete": false,
+          "positive_row_count": 0
+        }
+      ],
+      "prior_evidence_status": "v26_marker_refs; fresh_exact_cdx_required; no_bound_positive_fallback"
+    },
+    {
+      "target_key": "NEWS-UNPLANNED-V26-06-08",
+      "priority": 8,
+      "queue_rank": 58,
+      "source_priority_band": "other-2007-news-body",
+      "date_bucket": null,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com/news/images/07-07/07-18-07-1.jpg",
+      "literal": "http://www.worldofwarcraft.com/news/images/07-07/07-18-07-1.jpg",
+      "expected": {
+        "archive_query_required": true,
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "all_gif_frames": false,
+        "reencode": false,
+        "script_execution": false,
+        "query_window": {
+          "from": "20000101000000",
+          "to": "20080512210044"
+        }
+      },
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "source_evidence": {
+        "path": ".scratch/pages-resources-20261018-v26/news/rss-07-2007.xml.html",
+        "line": 2483,
+        "literal": "http://www.worldofwarcraft.com/news/images/07-07/07-18-07-1.jpg",
+        "sha256": "83fbf322cde589efe022d94834fea8ac109e0b64649f2f6c7447cee03423659e",
+        "requested": "http://www.worldofwarcraft.com/news/images/07-07/07-18-07-1.jpg",
+        "reason": "external-or-uncollected-resource",
+        "source_marker": "v26_marker_refs"
+      },
+      "source_page_context": {
+        "candidate_file": "research/continuous-recovery-20261018/publication/news-unplanned-v26-queue.json",
+        "candidate_file_sha256": "b10c3bfdf9dc9bc1aac8321c266fae6fb388ddd72851e996359e4a9db79c70d6",
+        "queue_accepted": true,
+        "queue_generated_utc": "2026-10-18T05:59:16.505656+00:00",
+        "static_queue_rank": 58,
+        "priority_band": "other-2007-news-body",
+        "occurrences_v26_news": 1,
+        "v26_marker_refs": [
+          {
+            "source": ".scratch/pages-resources-20261018-v26/news/rss-07-2007.xml.html:2483",
+            "page": "news/rss-07-2007.xml.html",
+            "line": 2483,
+            "requested": "http://www.worldofwarcraft.com/news/images/07-07/07-18-07-1.jpg",
+            "reason": "external-or-uncollected-resource"
+          }
+        ],
+        "prior_attempt_summary": {
+          "state": "not_in_reviewed_plan_inputs",
+          "all_news_audit_status": "uncovered_local_evidence",
+          "network_requests_in_this_audit": 0,
+          "accepted_payload_in_prior_records": false,
+          "prior_news_pending_row": false
+        },
+        "cdx_state": "no_new_cdx_query_yet",
+        "previous_batch_tail_receipt": "research/continuous-recovery-20261018/publication/root-news-unplanned-batch5-source-acceptance.json",
+        "previous_batch_tail_receipt_sha256": "d4235f67bd7016347527853a9f23f963aef6848b14a72f4919af99bdc12069f0",
+        "previous_batch_tail_end": 0,
+        "status_snapshot_path": "research/continuous-recovery-20261018/network/news-unplanned-v26/batch-06/status-snapshot.json",
+        "status_snapshot_sha256": "4042b4d045d61ca239096e9a7d0558a7948828d7c5b773109d5773d8be91013f"
+      },
+      "selection": {
+        "max_distinct_digest_candidates": 2,
+        "potential_truncation": "do_not_replay",
+        "require_complete_index": true,
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "same_digest_older_captures": "skip",
+        "sort": "timestamp_desc_then_record_index_desc",
+        "unknown_metadata": "incomplete_error"
+      },
+      "known_positive_cache_rows": [],
+      "fallback_label": null,
+      "cdx_mode": "fresh",
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com/news/images/07-07/07-18-07-1.jpg",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F07-07%2F07-18-07-1.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com/news/images/07-07/07-18-07-1.jpg",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "prior_local_evidence": [
+        {
+          "state": "no_new_cdx_query_yet",
+          "source": "news-unplanned-v26-queue",
+          "prior_attempt": {
+            "state": "not_in_reviewed_plan_inputs",
+            "all_news_audit_status": "uncovered_local_evidence",
+            "network_requests_in_this_audit": 0,
+            "accepted_payload_in_prior_records": false,
+            "prior_news_pending_row": false
+          },
+          "exact_entity_index_complete": false,
+          "positive_row_count": 0
+        }
+      ],
+      "prior_evidence_status": "v26_marker_refs; fresh_exact_cdx_required; no_bound_positive_fallback"
+    },
+    {
+      "target_key": "NEWS-UNPLANNED-V26-06-09",
+      "priority": 9,
+      "queue_rank": 59,
+      "source_priority_band": "other-2007-news-body",
+      "date_bucket": null,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com/news/images/07-07/07-18-07-2.jpg",
+      "literal": "http://www.worldofwarcraft.com/news/images/07-07/07-18-07-2.jpg",
+      "expected": {
+        "archive_query_required": true,
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "all_gif_frames": false,
+        "reencode": false,
+        "script_execution": false,
+        "query_window": {
+          "from": "20000101000000",
+          "to": "20080512210044"
+        }
+      },
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "source_evidence": {
+        "path": ".scratch/pages-resources-20261018-v26/news/rss-07-2007.xml.html",
+        "line": 2484,
+        "literal": "http://www.worldofwarcraft.com/news/images/07-07/07-18-07-2.jpg",
+        "sha256": "83fbf322cde589efe022d94834fea8ac109e0b64649f2f6c7447cee03423659e",
+        "requested": "http://www.worldofwarcraft.com/news/images/07-07/07-18-07-2.jpg",
+        "reason": "external-or-uncollected-resource",
+        "source_marker": "v26_marker_refs"
+      },
+      "source_page_context": {
+        "candidate_file": "research/continuous-recovery-20261018/publication/news-unplanned-v26-queue.json",
+        "candidate_file_sha256": "b10c3bfdf9dc9bc1aac8321c266fae6fb388ddd72851e996359e4a9db79c70d6",
+        "queue_accepted": true,
+        "queue_generated_utc": "2026-10-18T05:59:16.505656+00:00",
+        "static_queue_rank": 59,
+        "priority_band": "other-2007-news-body",
+        "occurrences_v26_news": 1,
+        "v26_marker_refs": [
+          {
+            "source": ".scratch/pages-resources-20261018-v26/news/rss-07-2007.xml.html:2484",
+            "page": "news/rss-07-2007.xml.html",
+            "line": 2484,
+            "requested": "http://www.worldofwarcraft.com/news/images/07-07/07-18-07-2.jpg",
+            "reason": "external-or-uncollected-resource"
+          }
+        ],
+        "prior_attempt_summary": {
+          "state": "not_in_reviewed_plan_inputs",
+          "all_news_audit_status": "uncovered_local_evidence",
+          "network_requests_in_this_audit": 0,
+          "accepted_payload_in_prior_records": false,
+          "prior_news_pending_row": false
+        },
+        "cdx_state": "no_new_cdx_query_yet",
+        "previous_batch_tail_receipt": "research/continuous-recovery-20261018/publication/root-news-unplanned-batch5-source-acceptance.json",
+        "previous_batch_tail_receipt_sha256": "d4235f67bd7016347527853a9f23f963aef6848b14a72f4919af99bdc12069f0",
+        "previous_batch_tail_end": 0,
+        "status_snapshot_path": "research/continuous-recovery-20261018/network/news-unplanned-v26/batch-06/status-snapshot.json",
+        "status_snapshot_sha256": "4042b4d045d61ca239096e9a7d0558a7948828d7c5b773109d5773d8be91013f"
+      },
+      "selection": {
+        "max_distinct_digest_candidates": 2,
+        "potential_truncation": "do_not_replay",
+        "require_complete_index": true,
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "same_digest_older_captures": "skip",
+        "sort": "timestamp_desc_then_record_index_desc",
+        "unknown_metadata": "incomplete_error"
+      },
+      "known_positive_cache_rows": [],
+      "fallback_label": null,
+      "cdx_mode": "fresh",
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com/news/images/07-07/07-18-07-2.jpg",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F07-07%2F07-18-07-2.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com/news/images/07-07/07-18-07-2.jpg",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "prior_local_evidence": [
+        {
+          "state": "no_new_cdx_query_yet",
+          "source": "news-unplanned-v26-queue",
+          "prior_attempt": {
+            "state": "not_in_reviewed_plan_inputs",
+            "all_news_audit_status": "uncovered_local_evidence",
+            "network_requests_in_this_audit": 0,
+            "accepted_payload_in_prior_records": false,
+            "prior_news_pending_row": false
+          },
+          "exact_entity_index_complete": false,
+          "positive_row_count": 0
+        }
+      ],
+      "prior_evidence_status": "v26_marker_refs; fresh_exact_cdx_required; no_bound_positive_fallback"
+    },
+    {
+      "target_key": "NEWS-UNPLANNED-V26-06-10",
+      "priority": 10,
+      "queue_rank": 60,
+      "source_priority_band": "other-2007-news-body",
+      "date_bucket": null,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com/news/images/07-07/07-18-07-3.jpg",
+      "literal": "http://www.worldofwarcraft.com/news/images/07-07/07-18-07-3.jpg",
+      "expected": {
+        "archive_query_required": true,
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "all_gif_frames": false,
+        "reencode": false,
+        "script_execution": false,
+        "query_window": {
+          "from": "20000101000000",
+          "to": "20080512210044"
+        }
+      },
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "source_evidence": {
+        "path": ".scratch/pages-resources-20261018-v26/news/rss-07-2007.xml.html",
+        "line": 2485,
+        "literal": "http://www.worldofwarcraft.com/news/images/07-07/07-18-07-3.jpg",
+        "sha256": "83fbf322cde589efe022d94834fea8ac109e0b64649f2f6c7447cee03423659e",
+        "requested": "http://www.worldofwarcraft.com/news/images/07-07/07-18-07-3.jpg",
+        "reason": "external-or-uncollected-resource",
+        "source_marker": "v26_marker_refs"
+      },
+      "source_page_context": {
+        "candidate_file": "research/continuous-recovery-20261018/publication/news-unplanned-v26-queue.json",
+        "candidate_file_sha256": "b10c3bfdf9dc9bc1aac8321c266fae6fb388ddd72851e996359e4a9db79c70d6",
+        "queue_accepted": true,
+        "queue_generated_utc": "2026-10-18T05:59:16.505656+00:00",
+        "static_queue_rank": 60,
+        "priority_band": "other-2007-news-body",
+        "occurrences_v26_news": 1,
+        "v26_marker_refs": [
+          {
+            "source": ".scratch/pages-resources-20261018-v26/news/rss-07-2007.xml.html:2485",
+            "page": "news/rss-07-2007.xml.html",
+            "line": 2485,
+            "requested": "http://www.worldofwarcraft.com/news/images/07-07/07-18-07-3.jpg",
+            "reason": "external-or-uncollected-resource"
+          }
+        ],
+        "prior_attempt_summary": {
+          "state": "not_in_reviewed_plan_inputs",
+          "all_news_audit_status": "uncovered_local_evidence",
+          "network_requests_in_this_audit": 0,
+          "accepted_payload_in_prior_records": false,
+          "prior_news_pending_row": false
+        },
+        "cdx_state": "no_new_cdx_query_yet",
+        "previous_batch_tail_receipt": "research/continuous-recovery-20261018/publication/root-news-unplanned-batch5-source-acceptance.json",
+        "previous_batch_tail_receipt_sha256": "d4235f67bd7016347527853a9f23f963aef6848b14a72f4919af99bdc12069f0",
+        "previous_batch_tail_end": 0,
+        "status_snapshot_path": "research/continuous-recovery-20261018/network/news-unplanned-v26/batch-06/status-snapshot.json",
+        "status_snapshot_sha256": "4042b4d045d61ca239096e9a7d0558a7948828d7c5b773109d5773d8be91013f"
+      },
+      "selection": {
+        "max_distinct_digest_candidates": 2,
+        "potential_truncation": "do_not_replay",
+        "require_complete_index": true,
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "same_digest_older_captures": "skip",
+        "sort": "timestamp_desc_then_record_index_desc",
+        "unknown_metadata": "incomplete_error"
+      },
+      "known_positive_cache_rows": [],
+      "fallback_label": null,
+      "cdx_mode": "fresh",
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com/news/images/07-07/07-18-07-3.jpg",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F07-07%2F07-18-07-3.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com/news/images/07-07/07-18-07-3.jpg",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "all_gif_frames_loaded",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "prior_local_evidence": [
+        {
+          "state": "no_new_cdx_query_yet",
+          "source": "news-unplanned-v26-queue",
+          "prior_attempt": {
+            "state": "not_in_reviewed_plan_inputs",
+            "all_news_audit_status": "uncovered_local_evidence",
+            "network_requests_in_this_audit": 0,
+            "accepted_payload_in_prior_records": false,
+            "prior_news_pending_row": false
+          },
+          "exact_entity_index_complete": false,
+          "positive_row_count": 0
+        }
+      ],
+      "prior_evidence_status": "v26_marker_refs; fresh_exact_cdx_required; no_bound_positive_fallback"
+    }
+  ],
+  "policy": {
+    "from": "20000101000000",
+    "to": "20080512210044",
+    "limit": 500,
+    "showResumeKey": true,
+    "collapse": false,
+    "matchType": "exact",
+    "max_originals": 20,
+    "max_attempts": 24,
+    "window_seconds": 240.0,
+    "max_total_body_bytes": 16777216,
+    "max_entity_body_bytes": 8388608,
+    "min_dispatch_seconds": 5.25,
+    "min_request_start_seconds": 5.0,
+    "disk_floor_bytes": 11005853696,
+    "direct_first": true,
+    "proxy": "http://127.0.0.1:7890",
+    "tls_verification": true,
+    "automatic_redirects": 0,
+    "stop_http_codes": [
+      429,
+      503
+    ],
+    "cooldown_seconds": 120,
+    "user_agent": "wow-recovery-reusable-image-v3/20261018-news-unplanned-v26",
+    "prior_failure_tail": 0,
+    "transport_policy": "batch_after_direct_failure"
+  },
+  "previous_batch": {
+    "name": "latest_actual_source_acceptance",
+    "prior_failure_tail": 0,
+    "acceptance_receipt_path": "research/continuous-recovery-20261018/publication/root-news-unplanned-batch5-source-acceptance.json",
+    "acceptance_receipt_sha256": "d4235f67bd7016347527853a9f23f963aef6848b14a72f4919af99bdc12069f0",
+    "tail_receipt_path": "research/continuous-recovery-20261018/publication/root-news-unplanned-batch5-source-acceptance.json",
+    "tail_receipt_sha256": "d4235f67bd7016347527853a9f23f963aef6848b14a72f4919af99bdc12069f0",
+    "latest_successful_tail_end": 0,
+    "historical_tail_is_preserved": true,
+    "ordinary_retrieval_requires_new_control_gate": true,
+    "control_gate_receipt_path": "research/continuous-recovery-20261018/publication/root-post-gallery-connectivity-control-acceptance.json",
+    "control_gate_receipt_sha256": "6776bb0a6982fd83f040503727ca89047b5aec2ec35e946bdff302d5c92ceb50",
+    "control_gate_required": true
+  },
+  "input_bindings": {
+    "unplanned_news_queue_v26": {
+      "path": "research/continuous-recovery-20261018/publication/news-unplanned-v26-queue.json",
+      "sha256": "b10c3bfdf9dc9bc1aac8321c266fae6fb388ddd72851e996359e4a9db79c70d6",
+      "role": "root-frozen 80-target v26 unplanned news queue"
+    },
+    "status_snapshot": {
+      "path": "research/continuous-recovery-20261018/network/news-unplanned-v26/batch-06/status-snapshot.json",
+      "sha256": "4042b4d045d61ca239096e9a7d0558a7948828d7c5b773109d5773d8be91013f",
+      "role": "immutable batch-local snapshot of active status pointers"
+    },
+    "latest_actual_source_acceptance": {
+      "path": "research/continuous-recovery-20261018/publication/root-news-unplanned-batch5-source-acceptance.json",
+      "sha256": "d4235f67bd7016347527853a9f23f963aef6848b14a72f4919af99bdc12069f0",
+      "role": "latest accepted image-source receipt selected from recovery status"
+    },
+    "latest_control_gate": {
+      "path": "research/continuous-recovery-20261018/publication/root-post-gallery-connectivity-control-acceptance.json",
+      "sha256": "6776bb0a6982fd83f040503727ca89047b5aec2ec35e946bdff302d5c92ceb50",
+      "role": "latest accepted tail-zero connectivity control gate selected from recovery status"
+    },
+    "template_plan": {
+      "path": "research/continuous-recovery-20261018/network/news-body-2008-v26/batch-02/plan.json",
+      "sha256": "16b8e8c620a746b5df580411aeaf780fcd7695e821f53f9c554555f6636fcaef",
+      "role": "accepted V3-compatible news-body plan structure"
+    },
+    "frozen_v3_driver": {
+      "path": "research/continuous-recovery-20261018/network/reusable-image-driver-v3/reusable_image_driver.py",
+      "sha256": "4a19422f0dd8e2f7e1ffdd088836c7ab80450afb91aeedc6cdb94fa4c6bfe955",
+      "role": "frozen reusable-image-v3 driver"
+    }
+  },
+  "source_bindings": {
+    "unplanned_news_queue_v26": {
+      "path": "research/continuous-recovery-20261018/publication/news-unplanned-v26-queue.json",
+      "sha256": "b10c3bfdf9dc9bc1aac8321c266fae6fb388ddd72851e996359e4a9db79c70d6",
+      "role": "root-frozen 80-target v26 unplanned news queue"
+    },
+    "status_snapshot": {
+      "path": "research/continuous-recovery-20261018/network/news-unplanned-v26/batch-06/status-snapshot.json",
+      "sha256": "4042b4d045d61ca239096e9a7d0558a7948828d7c5b773109d5773d8be91013f",
+      "role": "immutable batch-local snapshot of active status pointers"
+    },
+    "latest_actual_source_acceptance": {
+      "path": "research/continuous-recovery-20261018/publication/root-news-unplanned-batch5-source-acceptance.json",
+      "sha256": "d4235f67bd7016347527853a9f23f963aef6848b14a72f4919af99bdc12069f0",
+      "role": "latest accepted image-source receipt selected from recovery status"
+    },
+    "latest_control_gate": {
+      "path": "research/continuous-recovery-20261018/publication/root-post-gallery-connectivity-control-acceptance.json",
+      "sha256": "6776bb0a6982fd83f040503727ca89047b5aec2ec35e946bdff302d5c92ceb50",
+      "role": "latest accepted tail-zero connectivity control gate selected from recovery status"
+    },
+    "template_plan": {
+      "path": "research/continuous-recovery-20261018/network/news-body-2008-v26/batch-02/plan.json",
+      "sha256": "16b8e8c620a746b5df580411aeaf780fcd7695e821f53f9c554555f6636fcaef",
+      "role": "accepted V3-compatible news-body plan structure"
+    },
+    "frozen_v3_driver": {
+      "path": "research/continuous-recovery-20261018/network/reusable-image-driver-v3/reusable_image_driver.py",
+      "sha256": "4a19422f0dd8e2f7e1ffdd088836c7ab80450afb91aeedc6cdb94fa4c6bfe955",
+      "role": "frozen reusable-image-v3 driver"
+    }
+  },
+  "excluded_rows": {
+    "selected_queue_ranks": [
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60
+    ],
+    "other_queue_batch_ranks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80
+    ],
+    "known_positive_fallback_rows": []
+  },
+  "identity_variant_policy": {
+    "retain_in_cdx_report": true,
+    "replay_identity_variants": false,
+    "strict_identity": "exact_original_default_port_only",
+    "scheme_or_host_variants_are_not_equivalent": true
+  }
+}
