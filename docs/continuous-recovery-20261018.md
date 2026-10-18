@@ -53,3 +53,9 @@ Source commit `6cc98dc4` is on main. Pages built `abbe7e556b0f5e28feb33233260ab1
 The extended Karazhan query still had no first byte after 60 seconds; Black Temple returned 503, so NET15 stopped. The accepted receipt records a closed resume gate even though its transport-failure tail is zero. A fresh known-positive control after the recorded cooldown is required. These results do not classify missing gallery image payloads as 404.
 
 V29 input and runner gates were independently checked. The first root input receipt had a serialized preflight-hash field error; it is retained with a finding and superseded by retry1 before export. The resource maps and original bytes did not change.
+
+### 07:58 UTC — v29 locally accepted; Armory static resources retrieved
+
+V29 adds forty more news resources (318,622 bytes) to v28. All 8,761 declared files were rehashed and the 8,762-file tree matches its provenance; 263 prior overlay records are unchanged. Browser retry 2 passed 159 checks, including the original mouseover caption in the July 2007 subscriber milestone announcement. The first checks incorrectly expected that caption to start visible and overlooked alternating news CSS classes; the source and exported page bytes remained unchanged. Static news missing occurrences are now 436, all-static occurrences 1,821 across 1,066 unique addresses. Publication is queued.
+
+CONTROL03 succeeded after the recorded 503 cooldown; direct stalled before TCP and the existing TLS-verified proxy returned the known exact index in 1.924 seconds. NET16 then retrieved ten exact 21×21 Armory item PNGs. Root source, original-copy and visual checks accepted all ten (14,738 bytes). They remain associated static Armory assets pending integration; native player gallery images are still separate.
