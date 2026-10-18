@@ -1,0 +1,75 @@
+{
+  "schema": "wow-recovery.reusable-image-input-bindings.v1",
+  "batch_id": "WAYBACK-CONTINUOUS-20261018-NEWS-STATIC-V25-NEXT10-V2",
+  "plan_path": "research/continuous-recovery-20261018/network/news-static-v25-next10-v1/plan.json",
+  "plan_sha256": "c11c6047874d26ea7f9c4534c692a2ea7c7b436df26b4ff33eb7140e69be3eda",
+  "driver_path": "research/continuous-recovery-20261018/network/reusable-image-driver-v3/reusable_image_driver.py",
+  "driver_sha256": "4a19422f0dd8e2f7e1ffdd088836c7ab80450afb91aeedc6cdb94fa4c6bfe955",
+  "fixture_mode": "offline_only_until_parent_GO",
+  "inherited_tail": {
+    "news9": 0,
+    "prior_failure_tail": 0,
+    "tail_receipt": "research/continuous-recovery-20261018/publication/root-news9-source-acceptance.json",
+    "tail_receipt_sha256": "82ce2a8e2ab009275b81511aba9627e5330a6af1a0568b2beedb38d66a11a63f",
+    "control_gate_receipt": "research/continuous-recovery-20261016/publication/root-control03-acceptance.json",
+    "control_gate_sha256": "d04cfda5d802d4a16397f310d9f6698d2f413e509dd762b38b75adaceb873e50"
+  },
+  "selected_source_ranks": [
+    1,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "selected_originals": [
+    "http://www.worldofwarcraft.com/contests/07-10-pumpkin/images/news_pumpkin.jpg",
+    "http://www.worldofwarcraft.com/news/images/06-07/artcontestlogo.gif",
+    "http://www.worldofwarcraft.com/news/images/07-02/upgradenow.gif",
+    "http://www.worldofwarcraft.com/screenshots/images/thaddeus.jpg",
+    "http://www.blizzard.com/WoW/images/screens/fansitekit.jpg",
+    "http://www.blizzard.com/WoW/images/screens/transportation/ss11-thumb.jpg",
+    "http://www.blizzard.com/WoW/images/screens/transportation/ss12-thumb.jpg",
+    "http://www.blizzard.com/WoW/images/screens/transportation/ss14-thumb.jpg"
+  ],
+  "source_bindings": {
+    "v25_candidates": {
+      "path": "research/continuous-recovery-20261018/local-audit/v25-local-facts-and-candidates.json",
+      "sha256": "84cc0d930a95a63b27ede19f5dabffb1e3a96730105db933dc6798c003419318",
+      "role": "v25 static candidate population and selected actual citations"
+    },
+    "v25_candidates_notes": {
+      "path": "research/continuous-recovery-20261018/local-audit/v25-local-facts-and-candidates.md",
+      "sha256": "9d8d0abc76e4eb514a21a7db6892a15eea2c77d8c898c9e90a4798249c858226",
+      "role": "v25 candidate ranking and scope explanation"
+    },
+    "latest_news9_tail": {
+      "path": "research/continuous-recovery-20261018/publication/root-news9-source-acceptance.json",
+      "sha256": "82ce2a8e2ab009275b81511aba9627e5330a6af1a0568b2beedb38d66a11a63f",
+      "role": "latest accepted NEWS9 source tail-zero receipt"
+    },
+    "control_gate": {
+      "path": "research/continuous-recovery-20261016/publication/root-control03-acceptance.json",
+      "sha256": "d04cfda5d802d4a16397f310d9f6698d2f413e509dd762b38b75adaceb873e50",
+      "role": "frozen control03 tail-zero gate"
+    },
+    "frozen_v2_fixture": {
+      "path": "research/continuous-recovery-20261016/network/reusable-image-driver-v2/fixture-results-v2.json",
+      "sha256": "d4fcd4a1f397460db2f7867601dabfd0f520f6d3805d090ccac57f965ec24e75",
+      "role": "frozen offline fixture contract"
+    },
+    "frozen_v2_driver": {
+      "path": "research/continuous-recovery-20261016/network/reusable-image-driver-v2/reusable_image_driver.py",
+      "sha256": "1faae294465f5e1ad6e2925870890cdb9512bd2251090d533637245ee6a3d8e4",
+      "role": "accepted V2 implementation reference"
+    },
+    "old_actual_evidence_audit": {
+      "path": "research/continuous-recovery-20261018/network/news-static-v25-next10-v1/old-evidence-audit.json",
+      "sha256": "55ac4fb21bad9b469c77ef8b241a443599d9bc24a555be40358b79e8a9e81970",
+      "role": "offline old source-map/batch-report/plan audit used for revision"
+    }
+  },
+  "driver_bytes": 103121
+}

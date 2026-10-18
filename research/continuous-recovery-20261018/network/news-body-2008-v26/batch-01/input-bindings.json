@@ -1,0 +1,82 @@
+{
+  "schema": "wow-recovery.reusable-image-input-bindings.v1",
+  "batch_id": "WAYBACK-CONTINUOUS-20261018-NEWS-BODY-2008-V26-01",
+  "plan_path": "research/continuous-recovery-20261018/network/news-body-2008-v26/batch-01/plan.json",
+  "plan_sha256": "141915e51147d3d4c043729171f7e9d2111593e58b2102c75788c50ee50c5a0f",
+  "driver_path": "research/continuous-recovery-20261018/network/reusable-image-driver-v3/reusable_image_driver.py",
+  "driver_sha256": "4a19422f0dd8e2f7e1ffdd088836c7ab80450afb91aeedc6cdb94fa4c6bfe955",
+  "fixture_mode": "not duplicated; use the already accepted V3 offline contract",
+  "inherited_tail": {
+    "latest_net03_tail": 0,
+    "prior_failure_tail": 0,
+    "tail_receipt": "research/continuous-recovery-20261018/publication/root-news8-next-source-acceptance.json",
+    "tail_receipt_sha256": "4556ae3670a21f783d9f3f6efff321a3ee404c50edf5c46d56f4c0d1836eea32",
+    "control_gate_receipt": "research/continuous-recovery-20261016/publication/root-control03-acceptance.json",
+    "control_gate_sha256": "d04cfda5d802d4a16397f310d9f6698d2f413e509dd762b38b75adaceb873e50"
+  },
+  "predecessor_tail_rebind_required_before_execute": false,
+  "predecessor_tail_status": "not_applicable",
+  "selected_queue_ranks": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "selected_originals": [
+    "http://www.worldofwarcraft.com/news/images/08-01/01-02-08-1.jpg",
+    "http://www.worldofwarcraft.com/news/images/08-01/01-02-08-2.jpg",
+    "http://www.worldofwarcraft.com/news/images/08-01/01-02-08-3.jpg",
+    "http://www.worldofwarcraft.com/news/images/08-01/01-09-08-1.jpg",
+    "http://www.worldofwarcraft.com/news/images/08-01/01-09-08-2.jpg",
+    "http://www.worldofwarcraft.com/news/images/08-01/01-09-08-3.jpg",
+    "http://www.worldofwarcraft.com/news/images/08-01/01-16-08-1.jpg",
+    "http://www.worldofwarcraft.com/news/images/08-01/01-16-08-2.jpg",
+    "http://www.worldofwarcraft.com/news/images/08-01/01-16-08-3.jpg",
+    "http://www.worldofwarcraft.com/news/images/08-01/01-30-08-3.jpg"
+  ],
+  "source_bindings": {
+    "news_queue_v26": {
+      "path": "research/continuous-recovery-20261018/publication/news20-accepted-queue.json",
+      "sha256": "c23f17cc607431d293825d690bd61b8dd837ebf1385f8660a84b53da1e9a5e62",
+      "role": "offline 20-target v26 news-body queue"
+    },
+    "news_queue_v26_acceptance": {
+      "path": "research/continuous-recovery-20261018/publication/root-news20-queue-acceptance.json",
+      "sha256": "72e8dbb2aeae330ae0cfc97ecb59a77fa12b37b2fd902930968bd3005c12824b",
+      "role": "root acceptance of the frozen 20-target queue"
+    },
+    "latest_news8_source_acceptance": {
+      "path": "research/continuous-recovery-20261018/publication/root-news8-next-source-acceptance.json",
+      "sha256": "4556ae3670a21f783d9f3f6efff321a3ee404c50edf5c46d56f4c0d1836eea32",
+      "role": "latest accepted NET03 source tail-zero receipt"
+    },
+    "latest_news8_plan_acceptance": {
+      "path": "research/continuous-recovery-20261018/publication/root-news8-next-plan-acceptance.json",
+      "sha256": "2b28d64b1fc6b41aeadc9a7cc1da3055408d8bb3dddfd7a32dde34452ac62238",
+      "role": "latest accepted NET03 plan receipt"
+    },
+    "control_gate": {
+      "path": "research/continuous-recovery-20261016/publication/root-control03-acceptance.json",
+      "sha256": "d04cfda5d802d4a16397f310d9f6698d2f413e509dd762b38b75adaceb873e50",
+      "role": "frozen control03 tail-zero gate"
+    },
+    "template_plan": {
+      "path": "research/continuous-recovery-20261018/network/news-static-v25-next10-v1/plan.json",
+      "sha256": "c11c6047874d26ea7f9c4534c692a2ea7c7b436df26b4ff33eb7140e69be3eda",
+      "role": "prior accepted V3-compatible plan structure"
+    },
+    "frozen_v3_driver": {
+      "path": "research/continuous-recovery-20261018/network/reusable-image-driver-v3/reusable_image_driver.py",
+      "sha256": "4a19422f0dd8e2f7e1ffdd088836c7ab80450afb91aeedc6cdb94fa4c6bfe955",
+      "role": "frozen reusable-image-v3 driver"
+    }
+  },
+  "driver_bytes": 103121,
+  "network_requests_during_preparation": 0
+}
