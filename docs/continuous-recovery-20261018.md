@@ -45,3 +45,11 @@
 The full v28 output check accepted all 8,721 declared files (8,722 actual); browser retry 4 passed 268 checks with no errors or external requests. The 67 added images relative to online v26 include the four distinct Blizzard-source illustrations. The February 2007 account-upgrade announcement now describes retired services in the past tense and presents its original artwork as a static exhibit. News missing-image occurrences are 476; all static occurrences are 1,861 (1,106 unique addresses). The later forty source images, 318,622 bytes, are reserved for v29. Publication has not yet been claimed.
 
 The two gallery prefix queries that previously timed out have a root-accepted, index-only retry plan with longer first-byte waits; the completed Zul’Aman interval is excluded.
+
+### 07:46 UTC — v28 online
+
+Source commit `6cc98dc4` is on main. Pages built `abbe7e556b0f5e28feb33233260ab11027cf821b`; all 88 selected online objects match the accepted local bytes and MIME. The run now has 120 source images accepted, 80 published including the first v26 thirteen, and forty reserved for v29.
+
+The extended Karazhan query still had no first byte after 60 seconds; Black Temple returned 503, so NET15 stopped. The accepted receipt records a closed resume gate even though its transport-failure tail is zero. A fresh known-positive control after the recorded cooldown is required. These results do not classify missing gallery image payloads as 404.
+
+V29 input and runner gates were independently checked. The first root input receipt had a serialized preflight-hash field error; it is retained with a finding and superseded by retry1 before export. The resource maps and original bytes did not change.

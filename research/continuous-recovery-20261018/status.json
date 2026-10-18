@@ -4,7 +4,7 @@
   "deadline_utc": "2026-10-18T14:55:37Z",
   "network_stop_utc": "2026-10-18T13:35:00Z",
   "export_start_stop_utc": "2026-10-18T13:50:00Z",
-  "phase": "v28_local_accepted",
+  "phase": "v29_build_running",
   "baseline_main": "d62f9fbab205d3c87b8e2be1743ed00fb8362f44",
   "baseline_pages": "bfe27c5ae88e0c407389ac14b9d5cb0e24850059",
   "baseline_version": "v25",
@@ -178,10 +178,18 @@
       "accepted_images": 10,
       "root_source_acceptance": "publication/root-news-unplanned-batch8-source-acceptance.json",
       "integration_status": "for_v29"
+    },
+    {
+      "id": "NET15",
+      "plan": "network/gallery-late-window-retry2/plan.json",
+      "status": "stopped_503",
+      "requests": 4,
+      "accepted_images": 0,
+      "root_source_acceptance": "publication/root-gallery-retry2-source-acceptance.json"
     }
   ],
   "accepted_images": 120,
-  "published_version": "v26",
+  "published_version": "v28",
   "accepted_image_bytes": 1929883,
   "positive_neighbor_remaining": 0,
   "latest_failure_tail": 0,
@@ -195,15 +203,15 @@
     "complete_no_eligible_capture": 3,
     "transport_unknown": 0
   },
-  "updated_utc": "2026-10-18T07:36:00Z",
+  "updated_utc": "2026-10-18T07:46:00Z",
   "local_version_in_progress": "v29",
-  "root_input_acceptance": "publication/root-v28-input-acceptance.json",
-  "local_build_completed": true,
-  "local_acceptance_complete": true,
-  "published_pages_commit": "3b3f49a5485f8d236e0ae290ac63995af7c89e83",
-  "published_images_this_run": 13,
-  "unpublished_accepted_images": 107,
-  "latest_main_source_commit": "015c8954",
+  "root_input_acceptance": "publication/root-v29-input-retry1-acceptance.json",
+  "local_build_completed": false,
+  "local_acceptance_complete": false,
+  "published_pages_commit": "abbe7e556b0f5e28feb33233260ab11027cf821b",
+  "published_images_this_run": 80,
+  "unpublished_accepted_images": 40,
+  "latest_main_source_commit": "6cc98dc4",
   "tool_supersessions": [
     {
       "path": "tools/export_github_pages.py",
@@ -227,9 +235,12 @@
   "last_image_source_acceptance": "publication/root-news-unplanned-batch8-source-acceptance.json",
   "latest_control_gate": "publication/root-post-gallery-connectivity-control-acceptance.json",
   "direct_diagnostic": "DNS inconsistency and TLS reset at HTTPS-resolved address; proxy control succeeds",
-  "latest_network_acceptance": "publication/root-news-unplanned-batch8-source-acceptance.json",
+  "latest_network_acceptance": "publication/root-gallery-retry2-source-acceptance.json",
   "local_build_provenance_sha256": "6f42a33a67480f95b229e05611659d7ae4a562df1a3092a71f287532c936f793",
   "publication_hold": "publication/root-v27-publication-hold.json",
   "next_version": "v29",
-  "local_accepted_version": "v28"
+  "local_accepted_version": "v28",
+  "network_resume_gate_passed": false,
+  "network_cooldown_not_before_utc": "2026-10-18T07:39:13.772883Z",
+  "v28_online_acceptance": "publication/root-v28-pages-online-acceptance.json"
 }

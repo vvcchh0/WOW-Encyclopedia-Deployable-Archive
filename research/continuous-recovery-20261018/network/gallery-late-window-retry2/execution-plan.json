@@ -1,0 +1,166 @@
+{
+  "schema": "wow-recovery.gallery-late-window-execution-plan.v1",
+  "batch_id": "WAYBACK-GALLERY-LATE-WINDOW-RETRY2-20261018",
+  "mode": "go_executed",
+  "prepared_utc": "2026-10-18T07:35:56.660793Z",
+  "source_plan_path": "research/continuous-recovery-20261018/network/gallery-late-window-retry2/plan.json",
+  "source_plan_sha256": "3051ac1bea647313206108f2a9950d9f4f4ffd39e6ab699e2777ee14bcd20dc3",
+  "candidate_count": 2,
+  "candidate_ranks": [
+    1,
+    2
+  ],
+  "scope": "exact Karazhan and Black Temple native US gallery prefixes from the frozen v7 source-directory registry; prior complete intervals subtracted and explicit retry-2 gaps queried; CDX index only, no expansion",
+  "query_window": {
+    "from": "per_candidate",
+    "target_from": "20080512210045",
+    "to": "20101207235959",
+    "limit": 500,
+    "showResumeKey": true,
+    "collapse": false,
+    "matchType": "prefix"
+  },
+  "index_only": true,
+  "no_payload_replay": true,
+  "max_attempts": 4,
+  "window_seconds": 180.0,
+  "max_total_body_bytes": 16777216,
+  "max_entity_body_bytes": 8388608,
+  "direct_first": true,
+  "proxy": "http://127.0.0.1:7890",
+  "tls_verification": true,
+  "automatic_redirects": 0,
+  "direct_connect_timeout_seconds": 4.0,
+  "direct_max_timeout_seconds": 12.0,
+  "proxy_connect_timeout_seconds": 8.0,
+  "proxy_max_timeout_seconds": 60.0,
+  "min_dispatch_monotonic_seconds": 5.25,
+  "acceptance_dispatch_floor_seconds": 5.25,
+  "min_request_start_utc_seconds": 5.0,
+  "disk_floor_bytes": 11005853696,
+  "stop_http_codes": [
+    429,
+    503
+  ],
+  "stop_on_five_consecutive_transport_failures": true,
+  "retry_after_rule": "429/503 stop immediately; cooldown not earlier than Retry-After and at least 120 seconds",
+  "resume_rule": "record actual response resumeKey; do not follow continuation in this batch; incomplete if resume remains",
+  "failure_streak_start": 0,
+  "prior_failure_tail": 0,
+  "control_basis": "latest root image-source receipt and post-gallery connectivity gate; historical two-prefix unknown receipt bound separately; tail end 0",
+  "input_bindings": {
+    "gallery_final_v7_registry": {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-final-v7/gallery-prefix-registry-v7.json",
+      "sha256": "2579f66841bf6102d90f5dbfe819902337bff03f6e3ac7191239ae041e2d97d6",
+      "bytes": 418729
+    },
+    "root_gallery_registry_v7_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-registry-v7-acceptance.json",
+      "sha256": "fc390af9cffe526d6e8cd21d5167467fe7b207cca7b851977f95381159caa319",
+      "bytes": 9458
+    },
+    "template_gallery_prefix04_driver_v4": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix04/gallery_prefix_driver_v4.py",
+      "sha256": "22f45b6776944df8cdc36bab5231edc1f8eee9faf627dcb07b1af6523929af38",
+      "bytes": 55880
+    },
+    "template_gallery_prefix04_plan": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix04/plan.json",
+      "sha256": "20145d4db43da3d2ace0cc378a867d27ffc2e5aa3c86ab82cd52c5eb7f8799d0",
+      "bytes": 53753
+    },
+    "template_gallery_prefix04_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix04-acceptance.json",
+      "sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2",
+      "bytes": 88497
+    },
+    "template_gallery_prefix04_fixture": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix04/fixture-results.json",
+      "sha256": "70a76e1633720ef117c6f4acaabec2cb02de2858db39c28e851e681c137290d0",
+      "bytes": 5873
+    },
+    "template_gallery_late_window_v1_driver": {
+      "path": "research/continuous-recovery-20261018/network/gallery-late-window-20261018/gallery_late_window_driver_v1.py",
+      "sha256": "3f08af9ab0bbdc8909210b403735788d698d1dbea92ec8245cdea47c12f89e13",
+      "bytes": 59243
+    },
+    "previous_gallery_unknown_prefix_receipt": {
+      "path": "research/continuous-recovery-20261018/publication/root-gallery-late-window-source-acceptance.json",
+      "sha256": "040d2cfd69dc1881ad3b50f66c41fcd475014a69c0b07fc696c398f4d3c49201",
+      "bytes": 28520
+    },
+    "latest_image_source_acceptance": {
+      "path": "research/continuous-recovery-20261018/publication/root-news-unplanned-batch8-source-acceptance.json",
+      "sha256": "d61884d552cef7c8b734cad84fec56d763b5a8a7cec75a728d744120add46c9b",
+      "bytes": 8384
+    },
+    "latest_control_gate": {
+      "path": "research/continuous-recovery-20261018/publication/root-post-gallery-connectivity-control-acceptance.json",
+      "sha256": "6776bb0a6982fd83f040503727ca89047b5aec2ec35e946bdff302d5c92ceb50",
+      "bytes": 2183
+    }
+  },
+  "fixture": {
+    "path": "research/continuous-recovery-20261018/network/gallery-late-window-retry2/fixture-results.json",
+    "sha256": "870740ea2493f862708f3ab670486b8ad64b7699fae7a74c96289901310a7f38",
+    "all_passed": true
+  },
+  "candidates": [
+    {
+      "rank": 1,
+      "target_key": "GALLERY-LATE-WINDOW-01",
+      "gallery": "Karazhan",
+      "gallery_segment_index": 1,
+      "label": "Karazhan",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/",
+      "declared_slots": 63,
+      "query_window": {
+        "from": "20090101000000",
+        "to": "20101207235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fkarazhan%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20090101000000&to=20101207235959&limit=500&showResumeKey=true",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/karazhan-gallery.html",
+        "sha256": "fc7f46d260cba6c434fd5e67d47008f207fbb8bd939a630089599d097755c199",
+        "addshots_line": 126,
+        "addshots_literal": "addshots(\"/info/dungeons/images/karazhan/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/karazhan/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 63;"
+      }
+    },
+    {
+      "rank": 2,
+      "target_key": "GALLERY-LATE-WINDOW-02",
+      "gallery": "Black Temple",
+      "gallery_segment_index": 1,
+      "label": "Black Temple",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/blacktemple/",
+      "declared_slots": 48,
+      "query_window": {
+        "from": "20080512210045",
+        "to": "20101207235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fblacktemple%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/black-temple-gallery.html",
+        "sha256": "04c728723c639d4613f77bf449cd93ae68c494b08151b76da00899984ffff4ff",
+        "addshots_line": 112,
+        "addshots_literal": "addshots(\"/info/dungeons/images/blacktemple/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/blacktemple/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 48;"
+      }
+    }
+  ]
+}

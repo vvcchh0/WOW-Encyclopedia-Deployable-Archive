@@ -1,0 +1,36 @@
+{
+  "schema": "wow-recovery.gallery-late-window-retry2-driver-diff.v1",
+  "old_driver": {
+    "path": "research/continuous-recovery-20261018/network/gallery-late-window-20261018/gallery_late_window_driver_v1.py",
+    "sha256": "3f08af9ab0bbdc8909210b403735788d698d1dbea92ec8245cdea47c12f89e13",
+    "lines": 778
+  },
+  "new_driver": {
+    "path": "research/continuous-recovery-20261018/network/gallery-late-window-retry2/gallery_late_window_retry2_driver_v1.py",
+    "sha256": "9de27892413d02a253c88274fd857efc47f13ba76aa2909b6aad34161828b1d6",
+    "lines": 810
+  },
+  "text_diff": {
+    "added_lines": 24,
+    "removed_lines": 0,
+    "replace_span_lines": 22,
+    "transport_core_unchanged_by_callable_inventory": true
+  },
+  "ast": {
+    "callable_definition_count": 28,
+    "callable_definitions_equal": true,
+    "old_only": [],
+    "new_only": []
+  },
+  "intended_adaptations": [
+    "new retry-2 batch/output directory and batch id",
+    "two exact galleries only: Karazhan and Black Temple; ZulAman rejected by input gate",
+    "Karazhan query starts 20090101000000; Black Temple starts 20080512210045",
+    "MAX_ATTEMPTS=4 for at most direct+proxy per target",
+    "proxy max timeout 60 seconds; connect 8 seconds; direct connect 4 seconds/max 12 seconds",
+    "bind latest batch08 image source and post-gallery connectivity gate",
+    "bind prior accepted two-timeout gallery receipt as historical evidence only",
+    "runtime execution binding remains execution-input-bindings.json"
+  ],
+  "network_requests_during_diff": 0
+}
