@@ -1,0 +1,71 @@
+{
+  "schema": "wow-recovery.integration.v37-browser-preparation-receipt-r1.v1",
+  "status": "prepared_waiting_root_browser_go",
+  "checked_utc": "2026-10-19T11:30:05.420913Z",
+  "scope": {
+    "news_image_targets": 21,
+    "toplist_pages": 1,
+    "toplist_script_targets": 2,
+    "toplist_css_candidates": 2,
+    "native_toggle_targets": 0,
+    "external_requests_expected": 0,
+    "output_path": ".scratch/pages-resources-20261019-v37",
+    "output_actual_files": 9114
+  },
+  "bindings": {
+    "plan": {
+      "path": "research/continuous-recovery-20261019/integration/v37/v37-browser-plan-r2.json",
+      "sha256": "379d9d84c3a9c74cdd385409eaad161cfc931d54cda0d2f890839ef9e8299ea2"
+    },
+    "harness": {
+      "path": "research/continuous-recovery-20261019/integration/v37/browser/check_v37_images_toplist.cjs",
+      "sha256": "72005e048088511d0177d9bae42489a34584bc57c8e28c4e1badd13003c204fa"
+    },
+    "runner": {
+      "path": "research/continuous-recovery-20261019/integration/v37/browser/execute_v37_browser.py",
+      "sha256": "ab1c9ebb66ffa2933e62afbd4034e246279ae70f5fc35a8519e84f8124c9050e"
+    },
+    "native_input": {
+      "path": "research/continuous-recovery-20261019/integration/v37/v37-native-ui-inputs.json",
+      "sha256": "41403b12e3e0869a358fde4434e606246bed9a8f196d0cc55eccfd4f06b83263"
+    },
+    "provenance": {
+      "path": ".scratch/pages-resources-20261019-v37/export-provenance.json",
+      "sha256": "595ee130b42be7caa2bd6dba4477f163368ec823aed7830e2c844bd333b3f065"
+    },
+    "build_receipt": {
+      "path": "research/continuous-recovery-20261019/integration/v37/v37-build-receipt.json",
+      "sha256": "d80b8ac1e8aa8a14d2b73b76e1ea220cc1dd478b03ddb6501cda6d0f5d583d4e"
+    }
+  },
+  "contract": {
+    "loopback_bind": "127.0.0.1",
+    "external_requests": "abort_and_record",
+    "correct_mime": true,
+    "hidden_dom_reveal": false,
+    "actual_img_visibility_required": true,
+    "css_visibility_and_decode_required": true,
+    "native_toggle_invented": false,
+    "subprocess_timeout_seconds": 300,
+    "automatic_retry": false,
+    "planned_outputs": [
+      "research/continuous-recovery-20261019/integration/v37/browser/results/v37-browser-r1.json",
+      "research/continuous-recovery-20261019/integration/v37/browser/v37-browser-run-receipt-r1.json",
+      "research/continuous-recovery-20261019/integration/v37/browser/screenshots-r1/"
+    ]
+  },
+  "validation": {
+    "node_check": "pass",
+    "python_ast": "pass",
+    "r2_json_parse": "pass",
+    "browser_started": false,
+    "server_started": false,
+    "network_requests": 0,
+    "result_exists": false,
+    "run_receipt_exists": false
+  },
+  "disk": {
+    "free_bytes": 42021974016,
+    "floor_bytes": 11005853696
+  }
+}

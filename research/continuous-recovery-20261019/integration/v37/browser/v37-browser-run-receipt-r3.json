@@ -1,0 +1,43 @@
+{
+  "schema": "wow-recovery.integration.v37-browser-run-receipt-r3.v1",
+  "status": "failed",
+  "started_utc": "2026-10-19T11:53:35.839380Z",
+  "finished_utc": "2026-10-19T11:53:37.464379Z",
+  "elapsed_seconds": 1.625,
+  "timeout_seconds": 300,
+  "command": [
+    "C:\\Users\\17630\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "D:\\WOW_Encyclopedia\\research\\continuous-recovery-20261019\\integration\\v37\\browser\\check_v37_images_toplist_r3.cjs",
+    "--go",
+    "--root-browser-go",
+    "--input",
+    "D:\\WOW_Encyclopedia\\research\\continuous-recovery-20261019\\integration\\v37\\v37-browser-plan-r2.json",
+    "--result",
+    "D:\\WOW_Encyclopedia\\research\\continuous-recovery-20261019\\integration\\v37\\browser\\results\\v37-browser-r3.json",
+    "--screenshots",
+    "D:\\WOW_Encyclopedia\\research\\continuous-recovery-20261019\\integration\\v37\\browser\\screenshots-r3"
+  ],
+  "input": {
+    "path": "research/continuous-recovery-20261019/integration/v37/v37-browser-plan-r2.json",
+    "sha256": "379d9d84c3a9c74cdd385409eaad161cfc931d54cda0d2f890839ef9e8299ea2"
+  },
+  "harness_sha256": "cc682b32ae09a49f05fd29f364f55abf287e368160937a70dff726c217eedc36",
+  "runner_sha256": "07a63946dee41460cb2f1e1d63d3862a797e08209a080f23f68abca5418053f4",
+  "root_gate": {
+    "path": "research/continuous-recovery-20261019/publication/root-v37-browser-execute-go.json",
+    "sha256": "90856903f0d2dc191287e70522f384e0079ff627cfe3c878e95b45412bcd8287"
+  },
+  "output": {
+    "path": ".scratch/pages-resources-20261019-v37",
+    "provenance_sha256": "595ee130b42be7caa2bd6dba4477f163368ec823aed7830e2c844bd333b3f065"
+  },
+  "result": {
+    "path": "research/continuous-recovery-20261019/integration/v37/browser/results/v37-browser-r3.json",
+    "exists": false,
+    "sha256": null
+  },
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "TypeError [ERR_INVALID_ARG_TYPE]: The \"paths[0]\" argument must be of type string. Received undefined\n    at Object.resolve (node:path:199:9)\n    at inside (D:\\WOW_Encyclopedia\\research\\continuous-recovery-20261019\\integration\\v37\\browser\\check_v37_images_toplist_r3.cjs:30:52)\n    at parseArgs (D:\\WOW_Encyclopedia\\research\\continuous-recovery-20261019\\integration\\v37\\browser\\check_v37_images_toplist_r3.cjs:63:16)\n    at main (D:\\WOW_Encyclopedia\\research\\continuous-recovery-20261019\\integration\\v37\\browser\\check_v37_images_toplist_r3.cjs:364:16)\n    at Object.<anonymous> (D:\\WOW_Encyclopedia\\research\\continuous-recovery-20261019\\integration\\v37\\browser\\check_v37_images_toplist_r3.cjs:443:1)\n    at Module._compile (node:internal/modules/cjs/loader:1872:14)\n    at Object..js (node:internal/modules/cjs/loader:2003:10)\n    at Module.load (node:internal/modules/cjs/loader:1594:32)\n    at Module._load (node:internal/modules/cjs/loader:1396:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)",
+  "external_requests_expected": 0
+}

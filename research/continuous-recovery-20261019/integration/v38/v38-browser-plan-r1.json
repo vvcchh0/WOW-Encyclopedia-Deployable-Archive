@@ -1,0 +1,1167 @@
+{
+  "schema": "wow-recovery.integration.v38-browser-plan-r1.v1",
+  "status": "prepared_waiting_root_v38_browser_go",
+  "created_utc": "2026-10-19T12:26:06.171855Z",
+  "scope": {
+    "new_image_target_count": 21,
+    "new_image_reference_count": 21,
+    "css_target_count": 2,
+    "toplist_page_target_count": 1,
+    "toplist_script_target_count": 2,
+    "native_toggle_target_count": 0,
+    "output_root": ".scratch/pages-resources-20261019-v38",
+    "source_input": {
+      "path": "research/continuous-recovery-20261019/integration/v37/v37-native-ui-inputs.json",
+      "sha256": "41403b12e3e0869a358fde4434e606246bed9a8f196d0cc55eccfd4f06b83263",
+      "bytes": 51577
+    },
+    "frozen_v36_browser_baseline": {
+      "path": "research/continuous-recovery-20261019/integration/v36/browser/results/v36-browser-r2.json",
+      "sha256": "6c080800a2f6cc0ae2ee7483834c62b43ec8d6cab216a80d1c4481d266114889"
+    },
+    "frozen_v36_browser_use": "Reuse only as an additive byte/output baseline for the already covered 48 displayed targets; do not rewrite its historical false/pending outcomes as v37 acceptance."
+  },
+  "coverage": {
+    "news_static_targets": 21,
+    "news_route": "news/wow-news2004.html",
+    "news_source_pages": [
+      {
+        "path": ".scratch/offline-navigation-20261015-v15/site/news/wow-news2004.html",
+        "sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d",
+        "bytes": 427750
+      }
+    ],
+    "news_reference_policy": "All 21 exact postContainer img markers have one recorded Source15 line and no native toggle. Check actual output img src, naturalWidth/naturalHeight, complete/decode, bounding-box visibility and local response bytes; do not synthesize a toggle or reveal hidden DOM.",
+    "toplist": {
+      "route": "toplist/index.html",
+      "source_page": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/toplist/index.html",
+        "sha256": "d98878e2a7c62adcd0cc0cd9c43d786d61f696552e76de653f47dc48bb8679ec",
+        "bytes": 15792
+      },
+      "source_references": [
+        {
+          "line": 7,
+          "text": "<script src=\"/toplist/includes-client/js/prototype.js\" type=\"text/javascript\"></script>",
+          "purpose": "prototype script"
+        },
+        {
+          "line": 56,
+          "text": "<link rel=\"stylesheet\" type=\"text/css\" href=\"/toplist/includes-client/css/styles-en.css\">",
+          "purpose": "Toplist stylesheet"
+        },
+        {
+          "line": 97,
+          "text": "<script type=\"text/javascript\" src=\"/toplist/includes-client/js/logic.js\"></script>",
+          "purpose": "logic script"
+        },
+        {
+          "line": 312,
+          "text": "window.onload = init;",
+          "purpose": "real init entry"
+        },
+        {
+          "line": 313,
+          "text": "document.getElementsByTagName(\"body\")[0].className = (topList_conf_vars[0] != \"\") ? topList_conf_vars[0] : \"wide\";",
+          "purpose": "default wide assignment"
+        }
+      ],
+      "scripts": [
+        {
+          "route": "toplist/includes-client/js/prototype.js",
+          "source": {
+            "path": ".scratch/offline-navigation-20261015-v15/site/toplist/includes-client/js/prototype.js",
+            "sha256": "4efde4e87b2db7b8cb6b81f70ab4972c3cfbcd7d329d0752ad223abe67fa9120",
+            "bytes": 64868
+          },
+          "expected": "Node syntax and byte-preserving Prototype guard; no generic rewrite"
+        },
+        {
+          "route": "toplist/includes-client/js/logic.js",
+          "source": {
+            "path": ".scratch/offline-navigation-20261015-v15/site/toplist/includes-client/js/logic.js",
+            "sha256": "1c0a50ff5fd1af19663b925e502c3a3b2dab0eb905874d95966e8bf35504eabe",
+            "bytes": 47479
+          },
+          "expected": "Node syntax and five local pixel substitutions"
+        }
+      ],
+      "css_targets": [
+        {
+          "original": "http://www.worldofwarcraft.com/toplist/images/en/next-wide.gif",
+          "source_page": "toplist/includes-client/css/styles-en.css",
+          "source_page_sha256": "dcb317cc8183f2064994a13dba8133e5d41a9c73a729eed4039a5a59083ea921",
+          "references": [
+            {
+              "line": 55,
+              "selector": "body.wide a.next",
+              "source_line": "body.wide a.next { background: url(\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fincludes-client%2Fcss%2Fstyles-en.css&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fimages%2Fen%2Fnext-wide.gif&reason=invalid-overlay-or-uncollected-site-resource\") no-repeat 100% 0; }"
+            },
+            {
+              "line": 57,
+              "selector": "body.wide a.next:hover",
+              "source_line": "body.wide a.next:hover { background: url(\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fincludes-client%2Fcss%2Fstyles-en.css&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fimages%2Fen%2Fnext-wide.gif&reason=invalid-overlay-or-uncollected-site-resource\") no-repeat 100% 0; }"
+            }
+          ],
+          "status": "pending_real_visible_wide_entry"
+        },
+        {
+          "original": "http://www.worldofwarcraft.com/toplist/images/en/prev-wide.gif",
+          "source_page": "toplist/includes-client/css/styles-en.css",
+          "source_page_sha256": "dcb317cc8183f2064994a13dba8133e5d41a9c73a729eed4039a5a59083ea921",
+          "references": [
+            {
+              "line": 56,
+              "selector": "body.wide a.prev",
+              "source_line": "body.wide a.prev { background: url(\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fincludes-client%2Fcss%2Fstyles-en.css&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fimages%2Fen%2Fprev-wide.gif&reason=invalid-overlay-or-uncollected-site-resource\") no-repeat 100% 0; }"
+            },
+            {
+              "line": 58,
+              "selector": "body.wide a.prev:hover",
+              "source_line": "body.wide a.prev:hover { background: url(\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fincludes-client%2Fcss%2Fstyles-en.css&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fimages%2Fen%2Fprev-wide.gif&reason=invalid-overlay-or-uncollected-site-resource\") no-repeat 100% 0; }"
+            }
+          ],
+          "status": "pending_real_visible_wide_entry"
+        }
+      ],
+      "execution_policy": "Only count next/previous CSS backgrounds after a real body.wide Toplist entry exposes a visible matching element; do not count the commented lion-top declaration or a CSS declaration alone."
+    },
+    "toplist_checks": [
+      "Load the real Toplist page and wait for its original window.onload=init path.",
+      "Record default body class/layout and the existing navigation/ranking content; do not inject a class or call hidden controls.",
+      "Run Node syntax/runtime checks for the source-aware Prototype and logic script derivations; Prototype must remain byte-preserving and logic must have five local pixel substitutions.",
+      "Count next-wide/prev-wide only when matching body.wide a.next/a.prev elements are real, visible, and their computed background decodes locally. CSS declarations alone and the commented lion-top declaration remain pending/excluded."
+    ]
+  },
+  "targets": [
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-09/wallpaper/wallpaper.gif",
+      "served_output_path": "news/images/04-09/wallpaper/wallpaper.gif",
+      "length": 27829,
+      "mime": "image/gif",
+      "dimensions": [
+        260,
+        200
+      ],
+      "reference_count": 1,
+      "references": [
+        {
+          "original": "http://www.worldofwarcraft.com/news/images/04-09/wallpaper/wallpaper.gif",
+          "source_page": "news/wow-news2004.html",
+          "line": 2349,
+          "column": 0,
+          "source_line": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-09%2Fwallpaper%2Fwallpaper.gif&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"260\" height=\"200\" border=\"0\">",
+          "raw_reference": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-09%2Fwallpaper%2Fwallpaper.gif&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"260\" height=\"200\" border=\"0\">",
+          "match_kind": "missing_image_marker_requested_uri",
+          "reference_kind": "html_attribute",
+          "attribute": "src",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "toggle": false
+          },
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "static_news_postcontainer",
+      "derived_display": {
+        "route": "news/wow-news2004.html",
+        "rendering": "postContainer_image",
+        "interactive": false
+      },
+      "status": "pending_root_browser_go"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-10/contest-costume/costume-02.jpg",
+      "served_output_path": "news/images/04-10/contest-costume/costume-02.jpg",
+      "length": 6490,
+      "mime": "image/jpeg",
+      "dimensions": [
+        130,
+        100
+      ],
+      "reference_count": 1,
+      "references": [
+        {
+          "original": "http://www.worldofwarcraft.com/news/images/04-10/contest-costume/costume-02.jpg",
+          "source_page": "news/wow-news2004.html",
+          "line": 1402,
+          "column": 267,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fcontests%2F04-10-costume-reallife%2F04-winners.shtml&amp;reason=invalid-overlay-or-uncollected-site-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Fcontest-costume%2Fcostume-02.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\"></a>",
+          "raw_reference": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Fcontest-costume%2Fcostume-02.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\">",
+          "match_kind": "missing_image_marker_requested_uri",
+          "reference_kind": "html_attribute",
+          "attribute": "src",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "toggle": false
+          },
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "static_news_postcontainer",
+      "derived_display": {
+        "route": "news/wow-news2004.html",
+        "rendering": "postContainer_image",
+        "interactive": false
+      },
+      "status": "pending_root_browser_go"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-10/contest-costume/costume-03.jpg",
+      "served_output_path": "news/images/04-10/contest-costume/costume-03.jpg",
+      "length": 4929,
+      "mime": "image/jpeg",
+      "dimensions": [
+        130,
+        100
+      ],
+      "reference_count": 1,
+      "references": [
+        {
+          "original": "http://www.worldofwarcraft.com/news/images/04-10/contest-costume/costume-03.jpg",
+          "source_page": "news/wow-news2004.html",
+          "line": 1403,
+          "column": 267,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fcontests%2F04-10-costume-reallife%2F04-winners.shtml&amp;reason=invalid-overlay-or-uncollected-site-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Fcontest-costume%2Fcostume-03.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\"></a>",
+          "raw_reference": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Fcontest-costume%2Fcostume-03.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\">",
+          "match_kind": "missing_image_marker_requested_uri",
+          "reference_kind": "html_attribute",
+          "attribute": "src",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "toggle": false
+          },
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "static_news_postcontainer",
+      "derived_display": {
+        "route": "news/wow-news2004.html",
+        "rendering": "postContainer_image",
+        "interactive": false
+      },
+      "status": "pending_root_browser_go"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-10/contest-costume/costume-04.jpg",
+      "served_output_path": "news/images/04-10/contest-costume/costume-04.jpg",
+      "length": 5308,
+      "mime": "image/jpeg",
+      "dimensions": [
+        130,
+        100
+      ],
+      "reference_count": 1,
+      "references": [
+        {
+          "original": "http://www.worldofwarcraft.com/news/images/04-10/contest-costume/costume-04.jpg",
+          "source_page": "news/wow-news2004.html",
+          "line": 1404,
+          "column": 267,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fcontests%2F04-10-costume-reallife%2F04-winners.shtml&amp;reason=invalid-overlay-or-uncollected-site-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Fcontest-costume%2Fcostume-04.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\"></a>",
+          "raw_reference": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Fcontest-costume%2Fcostume-04.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\">",
+          "match_kind": "missing_image_marker_requested_uri",
+          "reference_kind": "html_attribute",
+          "attribute": "src",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "toggle": false
+          },
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "static_news_postcontainer",
+      "derived_display": {
+        "route": "news/wow-news2004.html",
+        "rendering": "postContainer_image",
+        "interactive": false
+      },
+      "status": "pending_root_browser_go"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-10/contest-pumpkin/pumpkin-01.jpg",
+      "served_output_path": "news/images/04-10/contest-pumpkin/pumpkin-01.jpg",
+      "length": 7096,
+      "mime": "image/jpeg",
+      "dimensions": [
+        130,
+        100
+      ],
+      "reference_count": 1,
+      "references": [
+        {
+          "original": "http://www.worldofwarcraft.com/news/images/04-10/contest-pumpkin/pumpkin-01.jpg",
+          "source_page": "news/wow-news2004.html",
+          "line": 1387,
+          "column": 258,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fcontests%2F04-10-pumpkin%2F04-winners.shtml&amp;reason=invalid-overlay-or-uncollected-site-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Fcontest-pumpkin%2Fpumpkin-01.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\"></a>",
+          "raw_reference": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Fcontest-pumpkin%2Fpumpkin-01.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\">",
+          "match_kind": "missing_image_marker_requested_uri",
+          "reference_kind": "html_attribute",
+          "attribute": "src",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "toggle": false
+          },
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "static_news_postcontainer",
+      "derived_display": {
+        "route": "news/wow-news2004.html",
+        "rendering": "postContainer_image",
+        "interactive": false
+      },
+      "status": "pending_root_browser_go"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-10/contest-pumpkin/pumpkin-02.jpg",
+      "served_output_path": "news/images/04-10/contest-pumpkin/pumpkin-02.jpg",
+      "length": 7656,
+      "mime": "image/jpeg",
+      "dimensions": [
+        130,
+        100
+      ],
+      "reference_count": 1,
+      "references": [
+        {
+          "original": "http://www.worldofwarcraft.com/news/images/04-10/contest-pumpkin/pumpkin-02.jpg",
+          "source_page": "news/wow-news2004.html",
+          "line": 1388,
+          "column": 258,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fcontests%2F04-10-pumpkin%2F04-winners.shtml&amp;reason=invalid-overlay-or-uncollected-site-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Fcontest-pumpkin%2Fpumpkin-02.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\"></a>",
+          "raw_reference": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Fcontest-pumpkin%2Fpumpkin-02.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\">",
+          "match_kind": "missing_image_marker_requested_uri",
+          "reference_kind": "html_attribute",
+          "attribute": "src",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "toggle": false
+          },
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "static_news_postcontainer",
+      "derived_display": {
+        "route": "news/wow-news2004.html",
+        "rendering": "postContainer_image",
+        "interactive": false
+      },
+      "status": "pending_root_browser_go"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-10/contest-pumpkin/pumpkin-03.jpg",
+      "served_output_path": "news/images/04-10/contest-pumpkin/pumpkin-03.jpg",
+      "length": 5600,
+      "mime": "image/jpeg",
+      "dimensions": [
+        130,
+        100
+      ],
+      "reference_count": 1,
+      "references": [
+        {
+          "original": "http://www.worldofwarcraft.com/news/images/04-10/contest-pumpkin/pumpkin-03.jpg",
+          "source_page": "news/wow-news2004.html",
+          "line": 1389,
+          "column": 258,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fcontests%2F04-10-pumpkin%2F04-winners.shtml&amp;reason=invalid-overlay-or-uncollected-site-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Fcontest-pumpkin%2Fpumpkin-03.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\"></a>",
+          "raw_reference": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Fcontest-pumpkin%2Fpumpkin-03.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\">",
+          "match_kind": "missing_image_marker_requested_uri",
+          "reference_kind": "html_attribute",
+          "attribute": "src",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "toggle": false
+          },
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "static_news_postcontainer",
+      "derived_display": {
+        "route": "news/wow-news2004.html",
+        "rendering": "postContainer_image",
+        "interactive": false
+      },
+      "status": "pending_root_browser_go"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-10/contest-pumpkin/pumpkin-04.jpg",
+      "served_output_path": "news/images/04-10/contest-pumpkin/pumpkin-04.jpg",
+      "length": 8797,
+      "mime": "image/jpeg",
+      "dimensions": [
+        130,
+        100
+      ],
+      "reference_count": 1,
+      "references": [
+        {
+          "original": "http://www.worldofwarcraft.com/news/images/04-10/contest-pumpkin/pumpkin-04.jpg",
+          "source_page": "news/wow-news2004.html",
+          "line": 1390,
+          "column": 258,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fcontests%2F04-10-pumpkin%2F04-winners.shtml&amp;reason=invalid-overlay-or-uncollected-site-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Fcontest-pumpkin%2Fpumpkin-04.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\"></a>",
+          "raw_reference": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Fcontest-pumpkin%2Fpumpkin-04.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\">",
+          "match_kind": "missing_image_marker_requested_uri",
+          "reference_kind": "html_attribute",
+          "attribute": "src",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "toggle": false
+          },
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "static_news_postcontainer",
+      "derived_display": {
+        "route": "news/wow-news2004.html",
+        "rendering": "postContainer_image",
+        "interactive": false
+      },
+      "status": "pending_root_browser_go"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-10/fanart/fanart31.jpg",
+      "served_output_path": "news/images/04-10/fanart/fanart31.jpg",
+      "length": 8100,
+      "mime": "image/jpeg",
+      "dimensions": [
+        130,
+        100
+      ],
+      "reference_count": 1,
+      "references": [
+        {
+          "original": "http://www.worldofwarcraft.com/news/images/04-10/fanart/fanart31.jpg",
+          "source_page": "news/wow-news2004.html",
+          "line": 1758,
+          "column": 215,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Ffanart%2F&amp;reason=external-or-uncollected-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Ffanart%2Ffanart31.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\"></a>",
+          "raw_reference": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Ffanart%2Ffanart31.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\">",
+          "match_kind": "missing_image_marker_requested_uri",
+          "reference_kind": "html_attribute",
+          "attribute": "src",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "toggle": false
+          },
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "static_news_postcontainer",
+      "derived_display": {
+        "route": "news/wow-news2004.html",
+        "rendering": "postContainer_image",
+        "interactive": false
+      },
+      "status": "pending_root_browser_go"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-10/fanart/fanart32.jpg",
+      "served_output_path": "news/images/04-10/fanart/fanart32.jpg",
+      "length": 8807,
+      "mime": "image/jpeg",
+      "dimensions": [
+        130,
+        100
+      ],
+      "reference_count": 1,
+      "references": [
+        {
+          "original": "http://www.worldofwarcraft.com/news/images/04-10/fanart/fanart32.jpg",
+          "source_page": "news/wow-news2004.html",
+          "line": 1759,
+          "column": 215,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Ffanart%2F&amp;reason=external-or-uncollected-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Ffanart%2Ffanart32.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\"></a>",
+          "raw_reference": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Ffanart%2Ffanart32.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\">",
+          "match_kind": "missing_image_marker_requested_uri",
+          "reference_kind": "html_attribute",
+          "attribute": "src",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "toggle": false
+          },
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "static_news_postcontainer",
+      "derived_display": {
+        "route": "news/wow-news2004.html",
+        "rendering": "postContainer_image",
+        "interactive": false
+      },
+      "status": "pending_root_browser_go"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-10/fanart/fanart33.jpg",
+      "served_output_path": "news/images/04-10/fanart/fanart33.jpg",
+      "length": 6210,
+      "mime": "image/jpeg",
+      "dimensions": [
+        130,
+        100
+      ],
+      "reference_count": 1,
+      "references": [
+        {
+          "original": "http://www.worldofwarcraft.com/news/images/04-10/fanart/fanart33.jpg",
+          "source_page": "news/wow-news2004.html",
+          "line": 1760,
+          "column": 215,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Ffanart%2F&amp;reason=external-or-uncollected-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Ffanart%2Ffanart33.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\"></a>",
+          "raw_reference": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Ffanart%2Ffanart33.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\">",
+          "match_kind": "missing_image_marker_requested_uri",
+          "reference_kind": "html_attribute",
+          "attribute": "src",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "toggle": false
+          },
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "static_news_postcontainer",
+      "derived_display": {
+        "route": "news/wow-news2004.html",
+        "rendering": "postContainer_image",
+        "interactive": false
+      },
+      "status": "pending_root_browser_go"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-10/fanart/fanart34.jpg",
+      "served_output_path": "news/images/04-10/fanart/fanart34.jpg",
+      "length": 14351,
+      "mime": "image/jpeg",
+      "dimensions": [
+        130,
+        100
+      ],
+      "reference_count": 1,
+      "references": [
+        {
+          "original": "http://www.worldofwarcraft.com/news/images/04-10/fanart/fanart34.jpg",
+          "source_page": "news/wow-news2004.html",
+          "line": 1761,
+          "column": 215,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Ffanart%2F&amp;reason=external-or-uncollected-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Ffanart%2Ffanart34.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\"></a>",
+          "raw_reference": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Ffanart%2Ffanart34.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\">",
+          "match_kind": "missing_image_marker_requested_uri",
+          "reference_kind": "html_attribute",
+          "attribute": "src",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "toggle": false
+          },
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "static_news_postcontainer",
+      "derived_display": {
+        "route": "news/wow-news2004.html",
+        "rendering": "postContainer_image",
+        "interactive": false
+      },
+      "status": "pending_root_browser_go"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-10/fanart/fanart35.jpg",
+      "served_output_path": "news/images/04-10/fanart/fanart35.jpg",
+      "length": 10043,
+      "mime": "image/jpeg",
+      "dimensions": [
+        130,
+        100
+      ],
+      "reference_count": 1,
+      "references": [
+        {
+          "original": "http://www.worldofwarcraft.com/news/images/04-10/fanart/fanart35.jpg",
+          "source_page": "news/wow-news2004.html",
+          "line": 1762,
+          "column": 215,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Ffanart%2F&amp;reason=external-or-uncollected-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Ffanart%2Ffanart35.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\"></a>",
+          "raw_reference": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Ffanart%2Ffanart35.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\">",
+          "match_kind": "missing_image_marker_requested_uri",
+          "reference_kind": "html_attribute",
+          "attribute": "src",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "toggle": false
+          },
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "static_news_postcontainer",
+      "derived_display": {
+        "route": "news/wow-news2004.html",
+        "rendering": "postContainer_image",
+        "interactive": false
+      },
+      "status": "pending_root_browser_go"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-10/fanart/fanart36.jpg",
+      "served_output_path": "news/images/04-10/fanart/fanart36.jpg",
+      "length": 7521,
+      "mime": "image/jpeg",
+      "dimensions": [
+        130,
+        100
+      ],
+      "reference_count": 1,
+      "references": [
+        {
+          "original": "http://www.worldofwarcraft.com/news/images/04-10/fanart/fanart36.jpg",
+          "source_page": "news/wow-news2004.html",
+          "line": 1575,
+          "column": 215,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Ffanart%2F&amp;reason=external-or-uncollected-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Ffanart%2Ffanart36.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\"></a>",
+          "raw_reference": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Ffanart%2Ffanart36.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\">",
+          "match_kind": "missing_image_marker_requested_uri",
+          "reference_kind": "html_attribute",
+          "attribute": "src",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "toggle": false
+          },
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "static_news_postcontainer",
+      "derived_display": {
+        "route": "news/wow-news2004.html",
+        "rendering": "postContainer_image",
+        "interactive": false
+      },
+      "status": "pending_root_browser_go"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-10/fanart/fanart37.jpg",
+      "served_output_path": "news/images/04-10/fanart/fanart37.jpg",
+      "length": 4470,
+      "mime": "image/jpeg",
+      "dimensions": [
+        130,
+        100
+      ],
+      "reference_count": 1,
+      "references": [
+        {
+          "original": "http://www.worldofwarcraft.com/news/images/04-10/fanart/fanart37.jpg",
+          "source_page": "news/wow-news2004.html",
+          "line": 1576,
+          "column": 215,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Ffanart%2F&amp;reason=external-or-uncollected-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Ffanart%2Ffanart37.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\"></a>",
+          "raw_reference": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Ffanart%2Ffanart37.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\">",
+          "match_kind": "missing_image_marker_requested_uri",
+          "reference_kind": "html_attribute",
+          "attribute": "src",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "toggle": false
+          },
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "static_news_postcontainer",
+      "derived_display": {
+        "route": "news/wow-news2004.html",
+        "rendering": "postContainer_image",
+        "interactive": false
+      },
+      "status": "pending_root_browser_go"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-10/fanart/fanart38.jpg",
+      "served_output_path": "news/images/04-10/fanart/fanart38.jpg",
+      "length": 5075,
+      "mime": "image/jpeg",
+      "dimensions": [
+        130,
+        100
+      ],
+      "reference_count": 1,
+      "references": [
+        {
+          "original": "http://www.worldofwarcraft.com/news/images/04-10/fanart/fanart38.jpg",
+          "source_page": "news/wow-news2004.html",
+          "line": 1577,
+          "column": 215,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Ffanart%2F&amp;reason=external-or-uncollected-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Ffanart%2Ffanart38.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\"></a>",
+          "raw_reference": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Ffanart%2Ffanart38.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\">",
+          "match_kind": "missing_image_marker_requested_uri",
+          "reference_kind": "html_attribute",
+          "attribute": "src",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "toggle": false
+          },
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "static_news_postcontainer",
+      "derived_display": {
+        "route": "news/wow-news2004.html",
+        "rendering": "postContainer_image",
+        "interactive": false
+      },
+      "status": "pending_root_browser_go"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-10/fanart/fanart39.jpg",
+      "served_output_path": "news/images/04-10/fanart/fanart39.jpg",
+      "length": 4523,
+      "mime": "image/jpeg",
+      "dimensions": [
+        130,
+        100
+      ],
+      "reference_count": 1,
+      "references": [
+        {
+          "original": "http://www.worldofwarcraft.com/news/images/04-10/fanart/fanart39.jpg",
+          "source_page": "news/wow-news2004.html",
+          "line": 1578,
+          "column": 215,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Ffanart%2F&amp;reason=external-or-uncollected-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Ffanart%2Ffanart39.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\"></a>",
+          "raw_reference": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Ffanart%2Ffanart39.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\">",
+          "match_kind": "missing_image_marker_requested_uri",
+          "reference_kind": "html_attribute",
+          "attribute": "src",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "toggle": false
+          },
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "static_news_postcontainer",
+      "derived_display": {
+        "route": "news/wow-news2004.html",
+        "rendering": "postContainer_image",
+        "interactive": false
+      },
+      "status": "pending_root_browser_go"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-10/fanart/fanart40.jpg",
+      "served_output_path": "news/images/04-10/fanart/fanart40.jpg",
+      "length": 6872,
+      "mime": "image/jpeg",
+      "dimensions": [
+        130,
+        100
+      ],
+      "reference_count": 1,
+      "references": [
+        {
+          "original": "http://www.worldofwarcraft.com/news/images/04-10/fanart/fanart40.jpg",
+          "source_page": "news/wow-news2004.html",
+          "line": 1579,
+          "column": 215,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Ffanart%2F&amp;reason=external-or-uncollected-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Ffanart%2Ffanart40.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\"></a>",
+          "raw_reference": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Ffanart%2Ffanart40.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\">",
+          "match_kind": "missing_image_marker_requested_uri",
+          "reference_kind": "html_attribute",
+          "attribute": "src",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "toggle": false
+          },
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "static_news_postcontainer",
+      "derived_display": {
+        "route": "news/wow-news2004.html",
+        "rendering": "postContainer_image",
+        "interactive": false
+      },
+      "status": "pending_root_browser_go"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-10/fanart/fanart41.jpg",
+      "served_output_path": "news/images/04-10/fanart/fanart41.jpg",
+      "length": 7209,
+      "mime": "image/jpeg",
+      "dimensions": [
+        130,
+        100
+      ],
+      "reference_count": 1,
+      "references": [
+        {
+          "original": "http://www.worldofwarcraft.com/news/images/04-10/fanart/fanart41.jpg",
+          "source_page": "news/wow-news2004.html",
+          "line": 1475,
+          "column": 215,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Ffanart%2F&amp;reason=external-or-uncollected-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Ffanart%2Ffanart41.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\"></a>",
+          "raw_reference": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Ffanart%2Ffanart41.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\">",
+          "match_kind": "missing_image_marker_requested_uri",
+          "reference_kind": "html_attribute",
+          "attribute": "src",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "toggle": false
+          },
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "static_news_postcontainer",
+      "derived_display": {
+        "route": "news/wow-news2004.html",
+        "rendering": "postContainer_image",
+        "interactive": false
+      },
+      "status": "pending_root_browser_go"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-10/fanart/fanart42.jpg",
+      "served_output_path": "news/images/04-10/fanart/fanart42.jpg",
+      "length": 6388,
+      "mime": "image/jpeg",
+      "dimensions": [
+        130,
+        100
+      ],
+      "reference_count": 1,
+      "references": [
+        {
+          "original": "http://www.worldofwarcraft.com/news/images/04-10/fanart/fanart42.jpg",
+          "source_page": "news/wow-news2004.html",
+          "line": 1474,
+          "column": 215,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Ffanart%2F&amp;reason=external-or-uncollected-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Ffanart%2Ffanart42.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\"></a>",
+          "raw_reference": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Ffanart%2Ffanart42.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\">",
+          "match_kind": "missing_image_marker_requested_uri",
+          "reference_kind": "html_attribute",
+          "attribute": "src",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "toggle": false
+          },
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "static_news_postcontainer",
+      "derived_display": {
+        "route": "news/wow-news2004.html",
+        "rendering": "postContainer_image",
+        "interactive": false
+      },
+      "status": "pending_root_browser_go"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-10/fanart/fanart43.jpg",
+      "served_output_path": "news/images/04-10/fanart/fanart43.jpg",
+      "length": 4129,
+      "mime": "image/jpeg",
+      "dimensions": [
+        130,
+        100
+      ],
+      "reference_count": 1,
+      "references": [
+        {
+          "original": "http://www.worldofwarcraft.com/news/images/04-10/fanart/fanart43.jpg",
+          "source_page": "news/wow-news2004.html",
+          "line": 1473,
+          "column": 215,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Ffanart%2F&amp;reason=external-or-uncollected-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Ffanart%2Ffanart43.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\"></a>",
+          "raw_reference": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-10%2Ffanart%2Ffanart43.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" border=\"0\">",
+          "match_kind": "missing_image_marker_requested_uri",
+          "reference_kind": "html_attribute",
+          "attribute": "src",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "toggle": false
+          },
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "static_news_postcontainer",
+      "derived_display": {
+        "route": "news/wow-news2004.html",
+        "rendering": "postContainer_image",
+        "interactive": false
+      },
+      "status": "pending_root_browser_go"
+    }
+  ],
+  "toplist": {
+    "route": "toplist/index.html",
+    "source_page": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/toplist/index.html",
+      "sha256": "d98878e2a7c62adcd0cc0cd9c43d786d61f696552e76de653f47dc48bb8679ec",
+      "bytes": 15792
+    },
+    "source_references": [
+      {
+        "line": 7,
+        "text": "<script src=\"/toplist/includes-client/js/prototype.js\" type=\"text/javascript\"></script>",
+        "purpose": "prototype script"
+      },
+      {
+        "line": 56,
+        "text": "<link rel=\"stylesheet\" type=\"text/css\" href=\"/toplist/includes-client/css/styles-en.css\">",
+        "purpose": "Toplist stylesheet"
+      },
+      {
+        "line": 97,
+        "text": "<script type=\"text/javascript\" src=\"/toplist/includes-client/js/logic.js\"></script>",
+        "purpose": "logic script"
+      },
+      {
+        "line": 312,
+        "text": "window.onload = init;",
+        "purpose": "real init entry"
+      },
+      {
+        "line": 313,
+        "text": "document.getElementsByTagName(\"body\")[0].className = (topList_conf_vars[0] != \"\") ? topList_conf_vars[0] : \"wide\";",
+        "purpose": "default wide assignment"
+      }
+    ],
+    "scripts": [
+      {
+        "route": "toplist/includes-client/js/prototype.js",
+        "source": {
+          "path": ".scratch/offline-navigation-20261015-v15/site/toplist/includes-client/js/prototype.js",
+          "sha256": "4efde4e87b2db7b8cb6b81f70ab4972c3cfbcd7d329d0752ad223abe67fa9120",
+          "bytes": 64868
+        },
+        "expected": "Node syntax and byte-preserving Prototype guard; no generic rewrite"
+      },
+      {
+        "route": "toplist/includes-client/js/logic.js",
+        "source": {
+          "path": ".scratch/offline-navigation-20261015-v15/site/toplist/includes-client/js/logic.js",
+          "sha256": "1c0a50ff5fd1af19663b925e502c3a3b2dab0eb905874d95966e8bf35504eabe",
+          "bytes": 47479
+        },
+        "expected": "Node syntax and five local pixel substitutions"
+      }
+    ],
+    "css_targets": [
+      {
+        "original": "http://www.worldofwarcraft.com/toplist/images/en/next-wide.gif",
+        "source_page": "toplist/includes-client/css/styles-en.css",
+        "source_page_sha256": "dcb317cc8183f2064994a13dba8133e5d41a9c73a729eed4039a5a59083ea921",
+        "references": [
+          {
+            "line": 55,
+            "selector": "body.wide a.next",
+            "source_line": "body.wide a.next { background: url(\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fincludes-client%2Fcss%2Fstyles-en.css&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fimages%2Fen%2Fnext-wide.gif&reason=invalid-overlay-or-uncollected-site-resource\") no-repeat 100% 0; }"
+          },
+          {
+            "line": 57,
+            "selector": "body.wide a.next:hover",
+            "source_line": "body.wide a.next:hover { background: url(\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fincludes-client%2Fcss%2Fstyles-en.css&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fimages%2Fen%2Fnext-wide.gif&reason=invalid-overlay-or-uncollected-site-resource\") no-repeat 100% 0; }"
+          }
+        ],
+        "status": "pending_real_visible_wide_entry"
+      },
+      {
+        "original": "http://www.worldofwarcraft.com/toplist/images/en/prev-wide.gif",
+        "source_page": "toplist/includes-client/css/styles-en.css",
+        "source_page_sha256": "dcb317cc8183f2064994a13dba8133e5d41a9c73a729eed4039a5a59083ea921",
+        "references": [
+          {
+            "line": 56,
+            "selector": "body.wide a.prev",
+            "source_line": "body.wide a.prev { background: url(\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fincludes-client%2Fcss%2Fstyles-en.css&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fimages%2Fen%2Fprev-wide.gif&reason=invalid-overlay-or-uncollected-site-resource\") no-repeat 100% 0; }"
+          },
+          {
+            "line": 58,
+            "selector": "body.wide a.prev:hover",
+            "source_line": "body.wide a.prev:hover { background: url(\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fincludes-client%2Fcss%2Fstyles-en.css&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fimages%2Fen%2Fprev-wide.gif&reason=invalid-overlay-or-uncollected-site-resource\") no-repeat 100% 0; }"
+          }
+        ],
+        "status": "pending_real_visible_wide_entry"
+      }
+    ],
+    "execution_policy": "Count only own eight-digit date keys in document.spells.data. EmptyTable rows and inherited/prototype members are not date data. If no visible body.wide next/prev DOM exists, record no_entry and do not infer from computed CSS backgrounds.",
+    "days_selector": {
+      "id": "numTablesSelect",
+      "expected_onchange": "initLayoutChange(this.value);",
+      "sequence": [
+        "1",
+        "2",
+        "1"
+      ],
+      "source_page": ".scratch/offline-navigation-20261015-v15/site/toplist/index.html",
+      "source_line": 279,
+      "source_line_text": "<select id=\"numTablesSelect\" onchange=\"initLayoutChange(this.value);\">",
+      "source_logic_path": ".scratch/offline-navigation-20261015-v15/site/toplist/includes-client/js/logic.js",
+      "source_logic_line": 850,
+      "policy": "Read and match the exact onchange attribute before selecting; use real visible selectOption only; never inject data."
+    }
+  },
+  "execution_contract": {
+    "root_go_required": true,
+    "external_requests_required": 0,
+    "intercept_external_requests": true,
+    "serve_only_output": true,
+    "correct_mime": true,
+    "do_not_show_hidden_dom": true,
+    "preserve_failed_hidden_unresolved_rows": true,
+    "subprocess_timeout_seconds": 300,
+    "bounded_batches": "At most one local browser run after root GO; no automatic retry.",
+    "screenshots": "One news static viewport and one Toplist viewport, with absolute paths in the result receipt.",
+    "output_promoted": true,
+    "output_provenance_sha256": "de6ee4348a688cf648a86bf2537fb7f8f60490721419e7f45aea6e881b590828",
+    "server_bind": "127.0.0.1 only",
+    "browser_network_policy": "0 external requests; no injected data; local output GETs only; every loopback URL/status is logged."
+  },
+  "network_requests": 0,
+  "export_executed": true,
+  "publish": false,
+  "supersedes": {
+    "path": "research/continuous-recovery-20261019/integration/v37/v37-browser-plan-r2.json",
+    "sha256": "379d9d84c3a9c74cdd385409eaad161cfc931d54cda0d2f890839ef9e8299ea2",
+    "purpose": "Frozen target/source contract copied for v38; final v38 plan remains pending actual export provenance."
+  },
+  "output_provenance": {
+    "path": ".scratch/pages-resources-20261019-v38/export-provenance.json",
+    "sha256": "de6ee4348a688cf648a86bf2537fb7f8f60490721419e7f45aea6e881b590828",
+    "bytes": 8796328,
+    "actual_files": 9114,
+    "declared_files": 9113,
+    "tree_bytes": 595689284,
+    "schema": "github-pages-export-provenance/v1"
+  },
+  "build_receipt": {
+    "path": "research/continuous-recovery-20261019/integration/v37/v37-build-receipt.json",
+    "sha256": "d80b8ac1e8aa8a14d2b73b76e1ea220cc1dd478b03ddb6501cda6d0f5d583d4e",
+    "parent_receipt_path": "research/continuous-recovery-20261019/integration/v37/v37-parent-execution-receipt.json",
+    "parent_receipt_sha256": "612e70962b3504a382ad64c7c63b9fde910180bce3fe332b7e0e46e7b11917cc"
+  },
+  "source_baseline": {
+    "v37_plan": {
+      "path": "research/continuous-recovery-20261019/integration/v37/v37-browser-plan-r2.json",
+      "sha256": "379d9d84c3a9c74cdd385409eaad161cfc931d54cda0d2f890839ef9e8299ea2"
+    },
+    "v37_harness": {
+      "path": "research/continuous-recovery-20261019/integration/v37/browser/check_v37_images_toplist_r5.cjs",
+      "sha256": "7977200c1cea648faebc22118cac107d39f2b931a0fee9d70b9580c3dc0ff0f6"
+    },
+    "v37_runner": {
+      "path": "research/continuous-recovery-20261019/integration/v37/browser/execute_v37_browser_r5.py",
+      "sha256": "36349ff7f2f2873ecfbbaaae36570855fb5213fdea2ece86af1dae8227219cc8"
+    },
+    "v37_native_ui_inputs": {
+      "path": "research/continuous-recovery-20261019/integration/v37/v37-native-ui-inputs.json",
+      "sha256": "41403b12e3e0869a358fde4434e606246bed9a8f196d0cc55eccfd4f06b83263"
+    }
+  },
+  "v38_preparation": {
+    "final_plan_rule": "Bound to the real v38 export provenance SHA; root browser GO remains required.",
+    "observations": [
+      "createServer logs every URL/status including outside BASE_PATH",
+      "console records include location",
+      "date_data_keys are own eight-digit keys only",
+      "historical missing notice and zero-date-data are explicit pending limitations",
+      "CSS no visible next/prev is no_entry",
+      "real days selector 1->2->1 is attempted only after exact source onchange match"
+    ],
+    "scope": {
+      "news_dom_images": 21,
+      "css_targets": 2,
+      "toplist_pages": 1,
+      "external_requests": 0,
+      "injected_data": 0
+    },
+    "exporter": {
+      "path": "research/continuous-recovery-20261019/integration/v38/export_v38_once.py",
+      "owner": "root",
+      "execution": "already completed outside this browser preparation"
+    }
+  }
+}

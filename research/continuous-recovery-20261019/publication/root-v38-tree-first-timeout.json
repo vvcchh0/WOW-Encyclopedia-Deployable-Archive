@@ -1,0 +1,9 @@
+{
+  "accepted": false,
+  "observed_timeout_seconds": 240,
+  "result_written": false,
+  "scope": "Original full checker stopped by real subprocess timeout. No acceptance was written. First version preserves every-directory resolution per file; r2 checks all path/link boundaries in one scandir walk and still reads every file byte/hash.",
+  "original_checker_sha256": "364dd61c9631160e0393918032fd3aef5c9d60018d7204d5d2462e725ec94a91",
+  "revised_checker_sha256": "0120230a16e3d997415955e2c5cca35c3556c0fa66fc3162ef23f25b5a0a5cc8",
+  "retry_method": "One scandir path/reparse scan plus8 bounded local read/hash workers, matching the already accepted v37 checker design; no HTTP or weakened byte checks."
+}

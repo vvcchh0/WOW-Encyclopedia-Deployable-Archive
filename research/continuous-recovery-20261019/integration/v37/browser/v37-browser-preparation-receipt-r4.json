@@ -1,0 +1,88 @@
+{
+  "schema": "wow-recovery.integration.v37-browser-preparation-receipt-r4.v1",
+  "status": "prepared_waiting_root_browser_go",
+  "checked_utc": "2026-10-19T11:57:29.230491Z",
+  "supersedes": {
+    "path": "research/continuous-recovery-20261019/integration/v37/browser/v37-browser-preparation-receipt-r3.json",
+    "sha256": "a013e880708a5bfd9c4d0109b8c1076905608e285bb659721e3ab06c4d8b07e9"
+  },
+  "preserved_failure": {
+    "path": "research/continuous-recovery-20261019/integration/v37/browser/v37-browser-run-receipt-r3.json",
+    "sha256": "7d0a1cf77624ae63b42d701cb165af6bd3d3fc4ec6bfa28a977ad529712ebcb3",
+    "reason": "r3 parseArgs used undefined BROWSER_DIR.parent before browser/server startup"
+  },
+  "scope": {
+    "news_image_targets": 21,
+    "toplist_pages": 1,
+    "toplist_script_targets": 2,
+    "toplist_css_candidates": 2,
+    "native_toggle_targets": 0,
+    "external_requests_expected": 0,
+    "output_path": ".scratch/pages-resources-20261019-v37",
+    "output_actual_files": 9114
+  },
+  "bindings": {
+    "plan": {
+      "path": "research/continuous-recovery-20261019/integration/v37/v37-browser-plan-r2.json",
+      "sha256": "379d9d84c3a9c74cdd385409eaad161cfc931d54cda0d2f890839ef9e8299ea2"
+    },
+    "harness": {
+      "path": "research/continuous-recovery-20261019/integration/v37/browser/check_v37_images_toplist_r4.cjs",
+      "sha256": "b4ade8e6e3e64f7ba92ef99a57d2a7c5354ab5800f078474f9193b2b877d8990"
+    },
+    "runner": {
+      "path": "research/continuous-recovery-20261019/integration/v37/browser/execute_v37_browser_r4.py",
+      "sha256": "4fb646aa7334cf84f0565e8fe72d29a17f07af5ba4eadcae518db2353d046b3a"
+    },
+    "readme": {
+      "path": "research/continuous-recovery-20261019/integration/v37/browser/README-r4.md",
+      "sha256": "dc5027a8069627ed30dab496d574cd63c3cbaeea4e321c86b2a9d177c0559a94"
+    },
+    "native_input": {
+      "path": "research/continuous-recovery-20261019/integration/v37/v37-native-ui-inputs.json",
+      "sha256": "41403b12e3e0869a358fde4434e606246bed9a8f196d0cc55eccfd4f06b83263"
+    },
+    "provenance": {
+      "path": ".scratch/pages-resources-20261019-v37/export-provenance.json",
+      "sha256": "595ee130b42be7caa2bd6dba4477f163368ec823aed7830e2c844bd333b3f065"
+    },
+    "build_receipt": {
+      "path": "research/continuous-recovery-20261019/integration/v37/v37-build-receipt.json",
+      "sha256": "d80b8ac1e8aa8a14d2b73b76e1ea220cc1dd478b03ddb6501cda6d0f5d583d4e"
+    },
+    "root_go_path": "research/continuous-recovery-20261019/publication/root-v37-browser-r4-execute-go.json"
+  },
+  "r4_revision": {
+    "runtime_path_fix": "BROWSER_DIR.parent -> path.dirname(BROWSER_DIR)",
+    "output_identity": "r4 result, run receipt, and screenshots-r4 paths",
+    "preflight": "--preflight validates the frozen plan and absolute input/result/screenshot containment without starting browser/server/network"
+  },
+  "validation": {
+    "node_check": "pass",
+    "python_compile": "pass",
+    "preflight": {
+      "status": "preflight_passed",
+      "input_absolute": true,
+      "input_sha256": "379d9d84c3a9c74cdd385409eaad161cfc931d54cda0d2f890839ef9e8299ea2",
+      "result_absolute": true,
+      "result_inside_browser_dir": true,
+      "screenshots_absolute": true,
+      "screenshots_inside_browser_dir": true,
+      "browser_started": false,
+      "server_started": false,
+      "network_requests": 0
+    },
+    "r1_preserved": true,
+    "r2_preserved": true,
+    "r3_preserved": true,
+    "r4_result_exists": false,
+    "r4_run_receipt_exists": false
+  },
+  "contract": {
+    "loopback_bind": "127.0.0.1",
+    "external_requests": "abort_and_record",
+    "hidden_dom_reveal": false,
+    "subprocess_timeout_seconds": 300,
+    "automatic_retry": false
+  }
+}

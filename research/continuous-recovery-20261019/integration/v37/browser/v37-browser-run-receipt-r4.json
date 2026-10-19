@@ -1,0 +1,43 @@
+{
+  "schema": "wow-recovery.integration.v37-browser-run-receipt-r4.v1",
+  "status": "failed",
+  "started_utc": "2026-10-19T11:59:21.234544Z",
+  "finished_utc": "2026-10-19T11:59:25.519212Z",
+  "elapsed_seconds": 4.297,
+  "timeout_seconds": 300,
+  "command": [
+    "C:\\Users\\17630\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "D:\\WOW_Encyclopedia\\research\\continuous-recovery-20261019\\integration\\v37\\browser\\check_v37_images_toplist_r4.cjs",
+    "--go",
+    "--root-browser-go",
+    "--input",
+    "D:\\WOW_Encyclopedia\\research\\continuous-recovery-20261019\\integration\\v37\\v37-browser-plan-r2.json",
+    "--result",
+    "D:\\WOW_Encyclopedia\\research\\continuous-recovery-20261019\\integration\\v37\\browser\\results\\v37-browser-r4.json",
+    "--screenshots",
+    "D:\\WOW_Encyclopedia\\research\\continuous-recovery-20261019\\integration\\v37\\browser\\screenshots-r4"
+  ],
+  "input": {
+    "path": "research/continuous-recovery-20261019/integration/v37/v37-browser-plan-r2.json",
+    "sha256": "379d9d84c3a9c74cdd385409eaad161cfc931d54cda0d2f890839ef9e8299ea2"
+  },
+  "harness_sha256": "b4ade8e6e3e64f7ba92ef99a57d2a7c5354ab5800f078474f9193b2b877d8990",
+  "runner_sha256": "4fb646aa7334cf84f0565e8fe72d29a17f07af5ba4eadcae518db2353d046b3a",
+  "root_gate": {
+    "path": "research/continuous-recovery-20261019/publication/root-v37-browser-r4-execute-go.json",
+    "sha256": "21419242b668382ae3ca915f78ac35476b77fe24414aec2d2ccf4942e406a021"
+  },
+  "output": {
+    "path": ".scratch/pages-resources-20261019-v37",
+    "provenance_sha256": "595ee130b42be7caa2bd6dba4477f163368ec823aed7830e2c844bd333b3f065"
+  },
+  "result": {
+    "path": "research/continuous-recovery-20261019/integration/v37/browser/results/v37-browser-r4.json",
+    "exists": false,
+    "sha256": null
+  },
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "page.evaluate: TypeError: Cannot read properties of undefined (reading 'map')\n    at eval (eval at evaluate (:311:30), <anonymous>:2:33)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at inspectNews (D:\\WOW_Encyclopedia\\research\\continuous-recovery-20261019\\integration\\v37\\browser\\check_v37_images_toplist_r4.cjs:191:26)\n    at main (D:\\WOW_Encyclopedia\\research\\continuous-recovery-20261019\\integration\\v37\\browser\\check_v37_images_toplist_r4.cjs:422:50)",
+  "external_requests_expected": 0
+}
