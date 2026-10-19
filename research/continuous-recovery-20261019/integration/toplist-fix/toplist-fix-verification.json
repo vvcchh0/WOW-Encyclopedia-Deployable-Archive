@@ -1,0 +1,100 @@
+{
+  "asserted_behavior": [
+    "real Source15 Prototype output is byte-for-byte unchanged",
+    "real Source15 logic output differs only at five escaped pixel src values",
+    "both generated scripts pass node --check",
+    "logic localizer context is image for all five calls",
+    "wrong route/hash/text and pixel-count drift are rejected",
+    "unrelated routes remain unchanged and use the existing generic path"
+  ],
+  "bounded_subprocess_wrapper": {
+    "commands": [
+      {
+        "command": "python -X utf8 -m unittest discover -s tests -p test_toplist_compat.py -v",
+        "elapsed_seconds": 1.125,
+        "result": "OK",
+        "returncode": 0,
+        "tests": 3
+      },
+      {
+        "command": "python -X utf8 -m unittest discover -s tests -p test_github_pages_export.py -v",
+        "elapsed_seconds": 5.891,
+        "result": "OK",
+        "returncode": 0,
+        "tests": 34
+      }
+    ],
+    "output": {
+      "length": 7268,
+      "path": "research/continuous-recovery-20261019/integration/toplist-fix/subprocess-test-output.txt",
+      "sha256": "961769dce1448646022a02974abfb1c358a8b9e1326afda74b8634b1a930c582"
+    },
+    "timeout_seconds": 120
+  },
+  "commands": [
+    {
+      "command": "python -X utf8 -m unittest discover -s tests -p test_toplist_compat.py -v",
+      "elapsed_seconds": 0.644,
+      "result": "OK",
+      "returncode": 0,
+      "tests": 3
+    },
+    {
+      "command": "python -X utf8 -m unittest discover -s tests -p test_github_pages_export.py -v",
+      "elapsed_seconds": 4.267,
+      "result": "OK",
+      "returncode": 0,
+      "tests": 34
+    },
+    {
+      "command": "python -X utf8 -m py_compile tools/toplist_compat.py tools/export_github_pages.py",
+      "result": "OK with existing SyntaxWarning at export_github_pages.py:2596 invalid escape sequence \\/",
+      "returncode": 0
+    }
+  ],
+  "files": [
+    {
+      "length": 3652,
+      "path": "tools/toplist_compat.py",
+      "sha256": "6a870cee675d0e974e2f0540f91475f1539df3037a57cea403a3fa7f528346b1"
+    },
+    {
+      "length": 161805,
+      "path": "tools/export_github_pages.py",
+      "sha256": "4977b233bb83a94a749221fb79d98ce988e6c0348da0ebae345ee8864aed37fa"
+    },
+    {
+      "length": 8390,
+      "path": "tests/test_toplist_compat.py",
+      "sha256": "9894b5d7fe55a4ab7cd9fed8e55d5416f94ba7a433ade3294b3696ebe0eeed90"
+    }
+  ],
+  "generated_utc": "2026-10-19T11:00:40.195012+00:00",
+  "not_done": [
+    "no full v36/v37 export",
+    "no browser rerun",
+    "no network",
+    "no publish",
+    "no commit/push"
+  ],
+  "patch": {
+    "length": 14754,
+    "path": "research/continuous-recovery-20261019/integration/toplist-fix/toplist-fix.diff",
+    "sha256": "5e4273172ad3955e63d0a5aa9656f60e8639fa4bbd1162bcfebba66b7de3356d"
+  },
+  "readme": {
+    "length": 1290,
+    "path": "research/continuous-recovery-20261019/integration/toplist-fix/README.md",
+    "sha256": "fc64d53fb825409e4af0062fa79b5ceba93a1dde682a0e5a7ddf97305bc9302f"
+  },
+  "schema": "toplist-compat-fix-verification-v1",
+  "scope": "tools/toplist_compat.py, tools/export_github_pages.py thin hook, tests/test_toplist_compat.py",
+  "source_guards": {
+    "logic_expected_count": 5,
+    "logic_literal": "src=\\\"/toplist/images/pixel.gif\\\"",
+    "logic_route": "/toplist/includes-client/js/logic.js",
+    "logic_source_sha256": "1c0a50ff5fd1af19663b925e502c3a3b2dab0eb905874d95966e8bf35504eabe",
+    "prototype_route": "/toplist/includes-client/js/prototype.js",
+    "prototype_source_sha256": "4efde4e87b2db7b8cb6b81f70ab4972c3cfbcd7d329d0752ad223abe67fa9120"
+  }
+}

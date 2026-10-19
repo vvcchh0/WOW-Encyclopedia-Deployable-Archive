@@ -1,0 +1,408 @@
+{
+  "schema": "wow-recovery.gallery-late-rest10b-post-execution-audit.v1",
+  "generated_utc": "2026-10-19T10:51:34.039Z",
+  "network_authorized": true,
+  "network_requests": 18,
+  "payload_replay_count": 0,
+  "continuation_followed": false,
+  "go": {
+    "path": "research/continuous-recovery-20261019/publication/root-gallery-late-rest10b-execute-go.json",
+    "sha256": "4626594590e314b0e8f80e19cc4387ab913b4c7e68c36f67c06bd9db5f971c07",
+    "accepted": true,
+    "root_go": true,
+    "driver_sha256": "db9370609c57715d91b98870552dbf37d86b8970ab9e0ea9abbc7ec7b91e153b",
+    "prepared_plan_sha256": "d8578ff9565f45c90defba1b7a6cb9f0d259ce3f47912bda9d73dcdb81b8588b",
+    "fixture_sha256": "19bb667c381ace7950eaa640764f6208b3468110261019e9027e0b4b8003479e"
+  },
+  "parent": {
+    "path": "research/continuous-recovery-20261019/network/gallery-late-rest10b/parent-execution-receipt.json",
+    "sha256": "14648ba8f721bd9babf3bd8495ed17b7143be366a57fad21a4aa8d3bf4c661dd",
+    "returncode": 0,
+    "timed_out": false,
+    "elapsed_seconds": 321.6560000000027,
+    "retry_count": 0,
+    "disk": {
+      "floor_bytes": 11005853696,
+      "free_before_bytes": 42058657792,
+      "free_after_bytes": 42856398848,
+      "floor_passed_before": true,
+      "floor_passed_after": true
+    }
+  },
+  "outputs": {
+    "batch-report.json": {
+      "path": "research/continuous-recovery-20261019/network/gallery-late-rest10b/batch-report.json",
+      "sha256": "3a62951482e7a6ea8835fa76928aece1210745e09b5d11d46a43ed46828033d0",
+      "bytes": 466637
+    },
+    "source-map.json": {
+      "path": "research/continuous-recovery-20261019/network/gallery-late-rest10b/source-map.json",
+      "sha256": "97807960dda9aee5660d375fbc84ae4e0c5a8f90e5144410ad243b21c194e55c",
+      "bytes": 57262
+    },
+    "sanitized-summary.json": {
+      "path": "research/continuous-recovery-20261019/network/gallery-late-rest10b/sanitized-summary.json",
+      "sha256": "ddb6846012f7882f1afb455313e3404814461bee959eab5091a838ca3574f860",
+      "bytes": 1066
+    },
+    "progress.json": {
+      "path": "research/continuous-recovery-20261019/network/gallery-late-rest10b/progress.json",
+      "sha256": "0b0dc1f7bc0238de40f094e7d2018b2f9db5e0477d95bc387180a4c8d7c33ed6",
+      "bytes": 694
+    },
+    "attempt-records.json": {
+      "path": "research/continuous-recovery-20261019/network/gallery-late-rest10b/attempt-records.json",
+      "sha256": "0a72c32186e188d7be13c4ff6ff06767aeaa70f3572a41ccce02cad88e1c46e9",
+      "bytes": 815364
+    },
+    "dispatch-log.json": {
+      "path": "research/continuous-recovery-20261019/network/gallery-late-rest10b/dispatch-log.json",
+      "sha256": "c3f4b865babc5118a6c271227970f00500b40104f71745e93ec582d0ba5604d2",
+      "bytes": 38712
+    },
+    "execution-plan.json": {
+      "path": "research/continuous-recovery-20261019/network/gallery-late-rest10b/execution-plan.json",
+      "sha256": "4c303f5ae599973d68f63b45ecf8f9e10dabcdba5dcd6b676c1c59c998bacb8c",
+      "bytes": 19015
+    },
+    "execution-input-bindings.json": {
+      "path": "research/continuous-recovery-20261019/network/gallery-late-rest10b/execution-input-bindings.json",
+      "sha256": "06554921f6fb592be2608f15fd949af90c93f05764987ee4f5e5241d2f8fcc20",
+      "bytes": 3781
+    }
+  },
+  "stop": {
+    "reason": "endpoint_status_503",
+    "prior_failure_tail": 0,
+    "failure_streak_start": 0,
+    "failure_streak_end": 0,
+    "cooldown_required_seconds": 120,
+    "cooldown_not_before_utc": "2026-10-19T10:46:35.479615Z",
+    "not_queried_ranks": [
+      10
+    ]
+  },
+  "transport": {
+    "attempts_total": 18,
+    "by_transport": {
+      "direct": 9,
+      "proxy": 9
+    },
+    "responses": {
+      "direct:None:curl28": 9,
+      "proxy:200:curl0": 8,
+      "proxy:503:curl0": 1
+    },
+    "source_responses": 9,
+    "total_body_bytes": 128636
+  },
+  "cadence": {
+    "dispatch_intervals": [
+      5.25,
+      30.390999999988708,
+      5.25,
+      36.03100000000268,
+      5.25,
+      49.78100000000268,
+      5.25,
+      32.937999999994645,
+      5.25,
+      38.5,
+      5.25,
+      27.531000000002678,
+      5.25,
+      29.047000000005937,
+      5.25,
+      23.218999999997322,
+      5.25
+    ],
+    "request_start_intervals": [
+      5.247639,
+      30.394144,
+      5.280804,
+      35.997165,
+      5.262554,
+      49.771787,
+      5.258043,
+      32.938183,
+      5.239666,
+      38.505055,
+      5.254762,
+      27.519174,
+      5.250657,
+      29.054903,
+      5.244974,
+      23.216162,
+      5.258434
+    ],
+    "min_dispatch": 5.25,
+    "min_request_start": 5.239666,
+    "scheduling_floor_seconds": 5.25,
+    "acceptance_floor_seconds": 5.25,
+    "dispatch_passed": true,
+    "start_passed": true
+  },
+  "disk": {
+    "floor_bytes": 11005853696,
+    "free_before_bytes": 42058657792,
+    "free_after_bytes": 42856398848,
+    "floor_passed_before": true,
+    "floor_passed_after": true
+  },
+  "rows": {
+    "candidate_results": 9,
+    "total_capture_rows": 507,
+    "returned_classified_rows": 507,
+    "identity_counts": {
+      "same_origin_prefix": 446,
+      "scheme_mismatch": 61
+    },
+    "scheme_counts": {
+      "http": 446,
+      "https": 61
+    },
+    "mime_counts": {
+      "text/html": 115,
+      "warc/revisit": 148,
+      "image/jpeg": 244
+    },
+    "statuscode_counts": {
+      "404": 115,
+      "-": 148,
+      "200": 244
+    },
+    "path_class_counts": {
+      "prefix_root": 131,
+      "nested_thumb": 376
+    },
+    "strict_literal_full_count": 0,
+    "strict_literal_thumb_count": 0,
+    "cross_path_count": 0,
+    "redirect_count": 0
+  },
+  "per_candidate": [
+    {
+      "rank": 1,
+      "label": "Coilfang Reservoir - The Underbog",
+      "status": "complete_within_response",
+      "attempt_count": 2,
+      "source_response_count": 1,
+      "capture_index_count": 70,
+      "row_counts": {
+        "returned_rows": 70,
+        "strict_full": 0,
+        "strict_thumb": 0,
+        "nested_preview_or_other": 62,
+        "other": 8,
+        "direct_origin_variant": 0,
+        "direct_identity_variant_candidates": 0,
+        "redirect": 0
+      },
+      "strict_full_count": 0,
+      "strict_thumb_count": 0,
+      "scheme_variant_count": 8,
+      "cross_path_count": 0,
+      "resume_keys": [],
+      "potential_truncation": false
+    },
+    {
+      "rank": 2,
+      "label": "Caverns of Time - Escape from Durnholde",
+      "status": "complete_within_response",
+      "attempt_count": 2,
+      "source_response_count": 1,
+      "capture_index_count": 50,
+      "row_counts": {
+        "returned_rows": 50,
+        "strict_full": 0,
+        "strict_thumb": 0,
+        "nested_preview_or_other": 44,
+        "other": 6,
+        "direct_origin_variant": 0,
+        "direct_identity_variant_candidates": 0,
+        "redirect": 0
+      },
+      "strict_full_count": 0,
+      "strict_thumb_count": 0,
+      "scheme_variant_count": 6,
+      "cross_path_count": 0,
+      "resume_keys": [],
+      "potential_truncation": false
+    },
+    {
+      "rank": 3,
+      "label": "Caverns of Time - Opening of the Dark Portal",
+      "status": "complete_within_response",
+      "attempt_count": 2,
+      "source_response_count": 1,
+      "capture_index_count": 68,
+      "row_counts": {
+        "returned_rows": 68,
+        "strict_full": 0,
+        "strict_thumb": 0,
+        "nested_preview_or_other": 60,
+        "other": 8,
+        "direct_origin_variant": 0,
+        "direct_identity_variant_candidates": 0,
+        "redirect": 0
+      },
+      "strict_full_count": 0,
+      "strict_thumb_count": 0,
+      "scheme_variant_count": 8,
+      "cross_path_count": 0,
+      "resume_keys": [],
+      "potential_truncation": false
+    },
+    {
+      "rank": 4,
+      "label": "Coilfang Reservoir - The Steam Vaults",
+      "status": "complete_within_response",
+      "attempt_count": 2,
+      "source_response_count": 1,
+      "capture_index_count": 67,
+      "row_counts": {
+        "returned_rows": 67,
+        "strict_full": 0,
+        "strict_thumb": 0,
+        "nested_preview_or_other": 58,
+        "other": 9,
+        "direct_origin_variant": 0,
+        "direct_identity_variant_candidates": 0,
+        "redirect": 0
+      },
+      "strict_full_count": 0,
+      "strict_thumb_count": 0,
+      "scheme_variant_count": 9,
+      "cross_path_count": 0,
+      "resume_keys": [],
+      "potential_truncation": false
+    },
+    {
+      "rank": 5,
+      "label": "Auchindoun - Mana-Tombs",
+      "status": "complete_within_response",
+      "attempt_count": 2,
+      "source_response_count": 1,
+      "capture_index_count": 50,
+      "row_counts": {
+        "returned_rows": 50,
+        "strict_full": 0,
+        "strict_thumb": 0,
+        "nested_preview_or_other": 44,
+        "other": 6,
+        "direct_origin_variant": 0,
+        "direct_identity_variant_candidates": 0,
+        "redirect": 0
+      },
+      "strict_full_count": 0,
+      "strict_thumb_count": 0,
+      "scheme_variant_count": 6,
+      "cross_path_count": 0,
+      "resume_keys": [],
+      "potential_truncation": false
+    },
+    {
+      "rank": 6,
+      "label": "Auchindoun - Auchenai Crypts",
+      "status": "complete_within_response",
+      "attempt_count": 2,
+      "source_response_count": 1,
+      "capture_index_count": 66,
+      "row_counts": {
+        "returned_rows": 66,
+        "strict_full": 0,
+        "strict_thumb": 0,
+        "nested_preview_or_other": 58,
+        "other": 8,
+        "direct_origin_variant": 0,
+        "direct_identity_variant_candidates": 0,
+        "redirect": 0
+      },
+      "strict_full_count": 0,
+      "strict_thumb_count": 0,
+      "scheme_variant_count": 8,
+      "cross_path_count": 0,
+      "resume_keys": [],
+      "potential_truncation": false
+    },
+    {
+      "rank": 7,
+      "label": "Auchindoun - Sethekk Halls",
+      "status": "complete_within_response",
+      "attempt_count": 2,
+      "source_response_count": 1,
+      "capture_index_count": 67,
+      "row_counts": {
+        "returned_rows": 67,
+        "strict_full": 0,
+        "strict_thumb": 0,
+        "nested_preview_or_other": 59,
+        "other": 8,
+        "direct_origin_variant": 0,
+        "direct_identity_variant_candidates": 0,
+        "redirect": 0
+      },
+      "strict_full_count": 0,
+      "strict_thumb_count": 0,
+      "scheme_variant_count": 8,
+      "cross_path_count": 0,
+      "resume_keys": [],
+      "potential_truncation": false
+    },
+    {
+      "rank": 8,
+      "label": "Auchindoun - Shadow Labyrinth",
+      "status": "complete_within_response",
+      "attempt_count": 2,
+      "source_response_count": 1,
+      "capture_index_count": 69,
+      "row_counts": {
+        "returned_rows": 69,
+        "strict_full": 0,
+        "strict_thumb": 0,
+        "nested_preview_or_other": 61,
+        "other": 8,
+        "direct_origin_variant": 0,
+        "direct_identity_variant_candidates": 0,
+        "redirect": 0
+      },
+      "strict_full_count": 0,
+      "strict_thumb_count": 0,
+      "scheme_variant_count": 8,
+      "cross_path_count": 0,
+      "resume_keys": [],
+      "potential_truncation": false
+    },
+    {
+      "rank": 9,
+      "label": "Tempest Keep - The Mechanar",
+      "status": "transport_or_parse_unknown",
+      "attempt_count": 2,
+      "source_response_count": 1,
+      "capture_index_count": 0,
+      "row_counts": {},
+      "strict_full_count": 0,
+      "strict_thumb_count": 0,
+      "scheme_variant_count": 0,
+      "cross_path_count": 0,
+      "resume_keys": [],
+      "potential_truncation": false
+    }
+  ],
+  "semantic_boundary": {
+    "native_full_or_thumb_rows": 0,
+    "accepted_payloads": 0,
+    "image_replays": 0,
+    "http_same_origin_rows": 446,
+    "https_scheme_mismatch_rows": 61,
+    "cross_path_rows": 0,
+    "note": "All image/jpeg rows were nested /thumbs/ previews or HTTPS scheme variants; no strict native full/thumb row was accepted. Rank 10 was not queried after endpoint 503."
+  },
+  "summary_report_hash_erratum": {
+    "sanitized_summary_embedded_report_sha256": "326f6c14c7ed6709a5f2ca289f50403ea2e06c025162eeb1c81d3598b2223650",
+    "actual_final_batch_report_sha256": "3a62951482e7a6ea8835fa76928aece1210745e09b5d11d46a43ed46828033d0",
+    "matches": false,
+    "note": "Frozen driver writes the report before adding final input-binding/script fields; actual final batch-report bytes are authoritative. No driver changes were made."
+  },
+  "raw_evidence_local_only": true
+}

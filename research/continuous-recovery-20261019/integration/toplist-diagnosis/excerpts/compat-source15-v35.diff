@@ -1,0 +1,59 @@
+--- source15/__offline/compat.js
+
++++ v35/__offline/compat.js
+
+@@ -228,5 +228,5 @@
+
+ 
+     function uncollectedSearchTarget(kind, value, intendedTarget) {
+-        return "/__offline/uncollected?kind=search&searchType=" +
++        return "/WOW-Encyclopedia-Deployable-Archive/__offline/uncollected/index.html?kind=search&searchType=" +
+             encodeURIComponent(kind) + "&query=" + encodeURIComponent(value || "") +
+             "&target=" + encodeURIComponent(intendedTarget || "");
+@@ -236,16 +236,16 @@
+
+         var escaped = encodeURIComponent(value || "");
+         if (kind === "techsupport" || kind === "ingamesupport") {
+-            return "http://us.blizzard.com/support/index.xml?gameId=11" + escaped;
++            return "/WOW-Encyclopedia-Deployable-Archive/__offline/empty.js?source=http%3A%2F%2Fwww.worldofwarcraft.com%2F__offline%2Fcompat.js&requested=http%3A%2F%2Fus.blizzard.com%2Fsupport%2Findex.xml%3FgameId%3D11&reason=external-or-uncollected-resource" + escaped;
+         }
+         if (kind === "betaforum") {
+-            return "http://beta.worldofwarcraft.com/search.html?forumId=10001&sid=1&searchText=" + escaped;
++            return "/WOW-Encyclopedia-Deployable-Archive/__offline/empty.js?source=http%3A%2F%2Fwww.worldofwarcraft.com%2F__offline%2Fcompat.js&requested=http%3A%2F%2Fbeta.worldofwarcraft.com%2Fsearch.html%3FforumId%3D10001%26sid%3D1%26searchText%3D&reason=external-or-uncollected-resource" + escaped;
+         }
+         if (kind === "site") {
+-            return "http://www.worldofwarcraft.com/search/index.xml?q=" + escaped;
++            return "/WOW-Encyclopedia-Deployable-Archive/__offline/empty.js?source=http%3A%2F%2Fwww.worldofwarcraft.com%2F__offline%2Fcompat.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fsearch%2Findex.xml%3Fq%3D&reason=external-or-uncollected-resource" + escaped;
+         }
+         if (kind === "encyclopedia") {
+-            return "http://www.worldofwarcraft.com/search/index.xml?q=" + escaped + "&restrict=Encyclopedia";
+-        }
+-        return "http://www.worldofwarcraft.com/search/index.xml?q=" + escaped;
++            return "/WOW-Encyclopedia-Deployable-Archive/__offline/empty.js?source=http%3A%2F%2Fwww.worldofwarcraft.com%2F__offline%2Fcompat.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fsearch%2Findex.xml%3Fq%3D&reason=external-or-uncollected-resource" + escaped + "&restrict=Encyclopedia";
++        }
++        return "/WOW-Encyclopedia-Deployable-Archive/__offline/empty.js?source=http%3A%2F%2Fwww.worldofwarcraft.com%2F__offline%2Fcompat.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fsearch%2Findex.xml%3Fq%3D&reason=external-or-uncollected-resource" + escaped;
+     }
+ 
+@@ -266,16 +266,16 @@
+
+             exactTopic = topicTitleTarget(value);
+             if (exactTopic) {
+-                window.location.href = exactTopic;
++                window.location.href = window.__WOWPages.mapHref(exactTopic);
+                 return false;
+             }
+-            target = "/search/index.xml?q=" + encodeURIComponent(value) + "&restrict=Encyclopedia";
++            target = "/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2F__offline%2Fcompat.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fsearch%2Findex.xml%3Fq%3D&reason=external-or-uncollected-resource" + encodeURIComponent(value) + "&restrict=Encyclopedia";
+         } else if (type === "site") {
+-            target = "/search/index.xml?q=" + encodeURIComponent(value);
++            target = "/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2F__offline%2Fcompat.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fsearch%2Findex.xml%3Fq%3D&reason=external-or-uncollected-resource" + encodeURIComponent(value);
+         } else {
+             window.location.href = uncollectedSearchTarget(type, value, target);
+             return false;
+         }
+-        if (window.location.pathname.indexOf("/search/") !== -1) {
+-            target = target.replace("/search/index.xml", "/search/searchResults.html");
++        if (window.location.pathname.indexOf("/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2F__offline%2Fcompat.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fsearch%2F&reason=external-or-uncollected-resource") !== -1) {
++            target = target.replace("/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2F__offline%2Fcompat.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fsearch%2Findex.xml&reason=external-or-uncollected-resource", "/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2F__offline%2Fcompat.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fsearch%2FsearchResults.html&reason=external-or-uncollected-resource");
+         }
+         // Search pages are not part of the bounded mirror.  Keep this

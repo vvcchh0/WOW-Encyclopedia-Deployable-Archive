@@ -1,0 +1,159 @@
+{
+  "schema": "wow-recovery.gallery-late-rest10b-offline-validation.v1",
+  "validated_utc": "2026-10-19T10:34:11.306Z",
+  "network_requests": 0,
+  "network_authorized": false,
+  "status_mutated": false,
+  "py_compile": true,
+  "ast_parse": true,
+  "commands": {
+    "compile": "python -X utf8 -m py_compile research/continuous-recovery-20261019/network/gallery-late-rest10b/gallery_late_rest10b_driver_v1.py",
+    "fixture": "python -X utf8 research/continuous-recovery-20261019/network/gallery-late-rest10b/gallery_late_rest10b_driver_v1.py --fixture",
+    "proposed_execute_after_root_go": "external Python subprocess timeout=960s wrapping research/continuous-recovery-20261019/network/gallery-late-rest10b/gallery_late_rest10b_driver_v1.py --execute; not run in this preparation"
+  },
+  "driver": {
+    "path": "research/continuous-recovery-20261019/network/gallery-late-rest10b/gallery_late_rest10b_driver_v1.py",
+    "sha256": "db9370609c57715d91b98870552dbf37d86b8970ab9e0ea9abbc7ec7b91e153b",
+    "bytes": 60804,
+    "prior_packet_driver_path": "research/continuous-recovery-20261019/network/gallery-late-rest10a/gallery_late_rest10a_driver_v1.py",
+    "prior_packet_driver_sha256": "ccd1b2b9810d274545e20f99940c1cb1a32c79c07bdb95a83408ef0c07df6541"
+  },
+  "plan": {
+    "path": "research/continuous-recovery-20261019/network/gallery-late-rest10b/plan.json",
+    "sha256": "d8578ff9565f45c90defba1b7a6cb9f0d259ce3f47912bda9d73dcdb81b8588b",
+    "bytes": 50225,
+    "schema": "wow-recovery.gallery-late-rest10b-plan.v1",
+    "prepared_utc": "2026-10-19T10:32:59.622Z"
+  },
+  "input_bindings": {
+    "path": "research/continuous-recovery-20261019/network/gallery-late-rest10b/input-bindings.json",
+    "sha256": "154c21e0083811d022a9aca939f842a87ff077fe195656cd0ecfa1c801ce33e2",
+    "bytes": 3849,
+    "entries": 11,
+    "missing": [],
+    "sha_mismatches": [],
+    "all_bound_files_match": true
+  },
+  "candidate_manifest": {
+    "path": "research/continuous-recovery-20261019/network/gallery-late-rest10b/candidate-manifest.json",
+    "sha256": "4e46440e8a4db28eb3a8e25119fa2941f78b8531087032ea9f9821d666514ad8",
+    "bytes": 45195,
+    "candidate_count": 10,
+    "network_performed": false
+  },
+  "fixture": {
+    "path": "research/continuous-recovery-20261019/network/gallery-late-rest10b/fixture-results.json",
+    "sha256": "19bb667c381ace7950eaa640764f6208b3468110261019e9027e0b4b8003479e",
+    "bytes": 10331,
+    "passed": 15,
+    "total": 15,
+    "all_passed": true,
+    "network_requests": 0
+  },
+  "diff": {
+    "patch_path": "research/continuous-recovery-20261019/network/gallery-late-rest10b/driver-diff.patch",
+    "patch_sha256": "010f8c908f4aa33f43f468cfe0f634a68bf2de49357ddb1dd42f3f238be8a5b7",
+    "patch_bytes": 10342,
+    "summary_path": "research/continuous-recovery-20261019/network/gallery-late-rest10b/driver-diff-summary.json",
+    "summary_sha256": "a33514bcc208ddd6576a3321aa17e1e8f34a459b9727a900325354a4750c2a64",
+    "summary_bytes": 8633,
+    "markdown_path": "research/continuous-recovery-20261019/network/gallery-late-rest10b/adapter-diff-summary.md",
+    "markdown_sha256": "11561761b3bfa04cdb9ed4534feb63b0abefe0dcacd1ac7e2beeb9f040656aef",
+    "markdown_bytes": 2747,
+    "changed_functions": [
+      "fixture",
+      "plan_for_run",
+      "validate_inputs"
+    ],
+    "unchanged_functions": [
+      "_remaining_clamp",
+      "_restart_last_dispatch",
+      "_schedule_next",
+      "canonical_query_url",
+      "cf",
+      "execute",
+      "free_bytes",
+      "headers",
+      "iso",
+      "main",
+      "now",
+      "parse_cdx",
+      "parse_iso",
+      "phase",
+      "project_rows",
+      "public_attempt",
+      "read_json",
+      "rel",
+      "request",
+      "same_origin",
+      "sha",
+      "status",
+      "write_json"
+    ]
+  },
+  "scope": {
+    "candidate_count": 10,
+    "target_registry_ranks": [
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "query_window": {
+      "from": "per_candidate",
+      "to": "20101207235959",
+      "target_from": "20080512210045",
+      "limit": 500,
+      "showResumeKey": true,
+      "collapse": false,
+      "matchType": "prefix"
+    },
+    "index_only": true,
+    "payload_replay": false,
+    "automatic_redirects": 0,
+    "resume_rule": "record resumeKey and mark incomplete; never follow it in this batch",
+    "prior_failure_tail": 0,
+    "latest_global_source_tail": 0
+  },
+  "caps": {
+    "max_requests": 24,
+    "max_attempts": 24,
+    "window_seconds": 900.0,
+    "max_total_body_bytes": 33554432,
+    "max_entity_body_bytes": 8388608,
+    "min_dispatch_seconds": 5.25,
+    "min_request_start_seconds": 5.0,
+    "disk_floor_bytes": 11005853696,
+    "network_deadline_utc": "2026-10-19T13:15:00Z",
+    "outer_watchdog_seconds": 960
+  },
+  "outputs": {
+    "raw_files": [],
+    "runtime_report_files": [],
+    "runtime_output_absent": [
+      "D:\\WOW_Encyclopedia\\research\\continuous-recovery-20261019\\network\\gallery-late-rest10b\\batch-report.json",
+      "D:\\WOW_Encyclopedia\\research\\continuous-recovery-20261019\\network\\gallery-late-rest10b\\source-map.json",
+      "D:\\WOW_Encyclopedia\\research\\continuous-recovery-20261019\\network\\gallery-late-rest10b\\sanitized-summary.json",
+      "D:\\WOW_Encyclopedia\\research\\continuous-recovery-20261019\\network\\gallery-late-rest10b\\progress.json",
+      "D:\\WOW_Encyclopedia\\research\\continuous-recovery-20261019\\network\\gallery-late-rest10b\\attempt-records.json",
+      "D:\\WOW_Encyclopedia\\research\\continuous-recovery-20261019\\network\\gallery-late-rest10b\\dispatch-log.json",
+      "D:\\WOW_Encyclopedia\\research\\continuous-recovery-20261019\\network\\gallery-late-rest10b\\execution-plan.json",
+      "D:\\WOW_Encyclopedia\\research\\continuous-recovery-20261019\\network\\gallery-late-rest10b\\execution-input-bindings.json",
+      "D:\\WOW_Encyclopedia\\research\\continuous-recovery-20261019\\network\\gallery-late-rest10b\\parent-execution-receipt.json"
+    ]
+  },
+  "summary_report_hash_erratum_binding": {
+    "prior_final_report_path": "research/continuous-recovery-20261019/network/gallery-late-rest10a/batch-report.json",
+    "prior_final_report_sha256": "f519963f84e5205ecd4b53b39c693a3c610096cdc78c37884a4abcc71bb01041",
+    "prior_sanitized_summary_path": "research/continuous-recovery-20261019/network/gallery-late-rest10a/sanitized-summary.json",
+    "prior_sanitized_summary_sha256": "05170f5fa91299b7928a2366387793624cd99f9c57e18ce15fde849d428642d0",
+    "note": "10a sanitized-summary embedded pre-final report SHA; 10b binds actual final batch-report bytes."
+  },
+  "overall_passed": true
+}

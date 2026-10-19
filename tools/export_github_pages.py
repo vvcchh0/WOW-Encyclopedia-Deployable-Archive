@@ -51,6 +51,7 @@ import offline_mirror as mirror  # noqa: E402
 import historical_exhibits  # noqa: E402
 import guide_previews  # noqa: E402
 import guide_image_collections  # noqa: E402
+from toplist_compat import ToplistCompatError, rewrite_toplist_script  # noqa: E402
 
 
 class PagesExportError(RuntimeError):
@@ -3013,8 +3014,32 @@ def export_pages(
                         "within shotList.length; invalid or repeated values fall back to 1"
                     )
                     stats["wrath_viewer_query_repaired"] += 1
-                text = mirror.rewrite_script(text, base_url=base_url, localizer=localizer, recorder=recorder)
-                text = rewrite_root_literals(text, base_url=base_url, localizer=localizer, recorder=recorder)
+                try:
+                    text, toplist_handled = rewrite_toplist_script(
+                        text,
+                        route,
+                        source_sha,
+                        base_url,
+                        localizer,
+                        recorder,
+                    )
+                except ToplistCompatError as exc:
+                    raise PagesExportError(str(exc)) from exc
+                if toplist_handled:
+                    if route == "/toplist/includes-client/js/prototype.js":
+                        derivation_notes.append(
+                            "derived Toplist compatibility guard preserved the exact Source15 Prototype text "
+                            "and skipped generic JavaScript URL rewrites"
+                        )
+                    else:
+                        derivation_notes.append(
+                            "derived Toplist compatibility guard replaced exactly five escaped pixel src values "
+                            "with local image URLs and skipped generic JavaScript URL rewrites"
+                        )
+                    stats["toplist_compat_repaired"] += 1
+                else:
+                    text = mirror.rewrite_script(text, base_url=base_url, localizer=localizer, recorder=recorder)
+                    text = rewrite_root_literals(text, base_url=base_url, localizer=localizer, recorder=recorder)
                 if route == "/shared/wow-com/includes-client/navtreefunctions.js":
                     text, changed = rewrite_contest_navtree_fallback(text, base_path=base_path)
                     if changed:

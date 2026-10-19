@@ -1,0 +1,65 @@
+{
+  "schema": "wow-recovery.control-after-rest10b-offline-validation.v1",
+  "network_requests": 0,
+  "go_receipt_present": false,
+  "execute_output_present": false,
+  "raw_directory_present": false,
+  "checks": [
+    {
+      "command": "python -X utf8 -m py_compile research/continuous-recovery-20261019/network/control-after-rest10b/control_after_rest10b.py research/continuous-recovery-20261019/network/control-after-rest10b/parent-execute-once.py",
+      "result": "passed"
+    },
+    {
+      "command": "python -X utf8 research/continuous-recovery-20261019/network/control-after-rest10b/control_after_rest10b.py --fixture",
+      "result": "passed",
+      "network_requests": 0,
+      "case_count": 12,
+      "all_passed": true,
+      "fixture_sha256": "f78e0d0a579cde5c34d7523b483ad02796043c83b64729d6c25ec10685a48d90"
+    },
+    {
+      "command": "offline validate_local_inputs()",
+      "result": "passed",
+      "validated": ["plan", "latest 10b final report", "root partial 503 acceptance", "known positive control", "frozen parser", "driver", "fixture", "parent wrapper"]
+    }
+  ],
+  "prepared_hashes": {
+    "plan.json": {
+      "bytes": 5160,
+      "sha256": "11a2d7506737924fd8060139d7eddb90acf38a1b960af0ee91c177e745be5b48"
+    },
+    "input-bindings.json": {
+      "bytes": 3861,
+      "sha256": "b56b4d68ad2d35a08dad6eaa5a2e0f9dec15528bef533b69acc9454ed554f23c"
+    },
+    "control_after_rest10b.py": {
+      "bytes": 22500,
+      "sha256": "93d1c9977f2ac324a4a2bfbc485bf613f07d89fea5973ed123e00842ac937a78"
+    },
+    "fixture-results.json": {
+      "bytes": 776,
+      "sha256": "f78e0d0a579cde5c34d7523b483ad02796043c83b64729d6c25ec10685a48d90"
+    },
+    "parent-execute-once.py": {
+      "bytes": 4426,
+      "sha256": "18ac808ea83e4f5b9afa4273416e0f0403226550472fbd8330b985886cfc1612"
+    }
+  },
+  "latest_10b_boundary": {
+    "final_report_sha256": "3a62951482e7a6ea8835fa76928aece1210745e09b5d11d46a43ed46828033d0",
+    "partial_source_acceptance_sha256": "73cfbbe8594357128cc658571a2681262628ca561c3d62b45eb11d1406c6059d",
+    "stop_reason": "endpoint_status_503",
+    "resume_gate_passed": false,
+    "cooldown_not_before_utc": "2026-10-19T10:46:35.479615Z",
+    "complete_targets": 8,
+    "mechanar": "source_503",
+    "botanica": "not_queried"
+  },
+  "known_control_endpoint": {
+    "original": "http://www.worldofwarcraft.com/news/images/08-02/02-14-08-2.jpg",
+    "query_mode": "exact",
+    "control_report_sha256": "7145994e5663a28a4f808fb82586ab51b2da2054da087a821cc3fee4ec540cd8",
+    "known_capture_timestamp": "20080402035201",
+    "known_digest": "TJ2TFHNGVSA64RRRP3UD2CQZCP4TTRND"
+  }
+}

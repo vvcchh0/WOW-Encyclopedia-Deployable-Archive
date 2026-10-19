@@ -1,0 +1,944 @@
+{
+  "schema": "wow-recovery.gallery-late-rest10b-plan.v1",
+  "batch_id": "WAYBACK-GALLERY-LATE-REST10B-20261019",
+  "prepared_utc": "2026-10-19T10:32:59.622Z",
+  "mode": "prepared",
+  "network_requests": 0,
+  "network_authorized_by_this_file": null,
+  "parent_go_required": true,
+  "candidate_count": 10,
+  "target_gallery_count": 10,
+  "target_galleries": [
+    "Coilfang Reservoir - The Underbog",
+    "Caverns of Time - Escape from Durnholde",
+    "Caverns of Time - Opening of the Dark Portal",
+    "Coilfang Reservoir - The Steam Vaults",
+    "Auchindoun - Mana-Tombs",
+    "Auchindoun - Auchenai Crypts",
+    "Auchindoun - Sethekk Halls",
+    "Auchindoun - Shadow Labyrinth",
+    "Tempest Keep - The Mechanar",
+    "Tempest Keep - The Botanica"
+  ],
+  "scope": "Ten exact v7 native-player gallery source-directory prefixes for the residual 20080512210045..20101207235959 window; CDX index only, no payload replay, no filename expansion, no redirect follow, no automatic continuation.",
+  "registry_path": "research/continuous-recovery-20261016/local-audit/gallery-final-v7/gallery-prefix-registry-v7.json",
+  "registry_sha256": "2579f66841bf6102d90f5dbfe819902337bff03f6e3ac7191239ae041e2d97d6",
+  "registry_acceptance_path": "research/continuous-recovery-20261016/publication/root-gallery-registry-v7-acceptance.json",
+  "registry_acceptance_sha256": "fc390af9cffe526d6e8cd21d5167467fe7b207cca7b851977f95381159caa319",
+  "query_window": {
+    "from": "per_candidate",
+    "to": "20101207235959",
+    "target_from": "20080512210045",
+    "limit": 500,
+    "showResumeKey": true,
+    "collapse": false,
+    "matchType": "prefix"
+  },
+  "index_only": true,
+  "payload_replay": false,
+  "no_filename_guess": true,
+  "policy": {
+    "from": "per_candidate",
+    "to": "20101207235959",
+    "target_from": "20080512210045",
+    "limit": 500,
+    "showResumeKey": true,
+    "collapse": false,
+    "matchType": "prefix",
+    "max_attempts": 24,
+    "max_requests": 24,
+    "window_seconds": 900.0,
+    "max_total_body_bytes": 33554432,
+    "max_entity_body_bytes": 8388608,
+    "min_dispatch_seconds": 5.25,
+    "min_request_start_seconds": 5.0,
+    "disk_floor_bytes": 11005853696,
+    "direct_connect_timeout_seconds": 4.0,
+    "direct_max_timeout_seconds": 12.0,
+    "proxy_connect_timeout_seconds": 8.0,
+    "proxy_max_timeout_seconds": 60.0,
+    "direct_first": true,
+    "proxy": "http://127.0.0.1:7890",
+    "tls_verification": true,
+    "automatic_redirects": 0,
+    "stop_http_codes": [
+      429,
+      503
+    ],
+    "cooldown_seconds": 120,
+    "stop_on_five_consecutive_transport_failures": true,
+    "resume_rule": "record resumeKey and mark incomplete; never follow it in this batch",
+    "network_deadline_utc": "2026-10-19T13:15:00Z",
+    "outer_watchdog_seconds": 960,
+    "index_only": true,
+    "no_payload_replay": true
+  },
+  "prior_failure_tail": 0,
+  "control_basis": {
+    "latest_global_source_acceptance": "research/continuous-recovery-20261019/publication/root-gallery-late-rest10a-source-acceptance.json",
+    "latest_global_source_acceptance_sha256": "f729c40546e922029c457551bd0eafc84e1665a5980b09d6211e1ed2a946ddb6",
+    "latest_global_source_tail": 0,
+    "latest_control_gate": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+    "latest_control_gate_sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+    "latest_control_tail": 0,
+    "latest_gallery_gap01_source_acceptance": "research/continuous-recovery-20261019/publication/root-gallery-late-gap01-source-acceptance.json",
+    "latest_gallery_gap01_source_acceptance_sha256": "edd438ed7ff84113031e6741515e4c6d96ca27e5021549f8e649886f08a8f949",
+    "latest_gallery_tail": 0,
+    "coverage_audit_receipt": "research/continuous-recovery-20261019/gallery-audit/late-coverage-rest/offline-audit-receipt.json",
+    "coverage_audit_receipt_sha256": "db80ae5bd73b31103fc2910bb8934247da53ce1a2702549ca3acf3bbaab578f5",
+    "note": "Global network resume is bound to accepted rest10a gallery source/tail0; gap01 remains semantic correction only and does not overwrite the newer global source. The actual final rest10a report hash is bound separately; sanitized-summary pre-final hash erratum is retained."
+  },
+  "input_bindings": {
+    "gallery_final_v7_registry": {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-final-v7/gallery-prefix-registry-v7.json",
+      "sha256": "2579f66841bf6102d90f5dbfe819902337bff03f6e3ac7191239ae041e2d97d6",
+      "bytes": 418729,
+      "role": "frozen v7 native-gallery directory registry and source-page literals"
+    },
+    "root_gallery_registry_v7_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-registry-v7-acceptance.json",
+      "sha256": "fc390af9cffe526d6e8cd21d5167467fe7b207cca7b851977f95381159caa319",
+      "bytes": 9458,
+      "role": "root accepted frozen v7 registry"
+    },
+    "latest_global_source_acceptance": {
+      "path": "research/continuous-recovery-20261019/publication/root-gallery-late-rest10a-source-acceptance.json",
+      "sha256": "f729c40546e922029c457551bd0eafc84e1665a5980b09d6211e1ed2a946ddb6",
+      "bytes": 305712,
+      "role": "latest accepted rest10a gallery index-only source/tail0; supersedes news20f as global latest",
+      "accepted": true,
+      "failure_streak_end": 0,
+      "tail": 0,
+      "source_responses": 10,
+      "accepted_image_payloads": 0
+    },
+    "latest_control_gate": {
+      "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+      "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+      "bytes": 1842,
+      "role": "latest accepted control gate/tail0"
+    },
+    "latest_gallery_gap01_source_acceptance": {
+      "path": "research/continuous-recovery-20261019/publication/root-gallery-late-gap01-source-acceptance.json",
+      "sha256": "edd438ed7ff84113031e6741515e4c6d96ca27e5021549f8e649886f08a8f949",
+      "bytes": 54138,
+      "role": "accepted gallery gap01 semantic correction/tail0; not a replacement for rest10a latest global source"
+    },
+    "late_coverage_ledger": {
+      "path": "research/continuous-recovery-20261019/gallery-audit/late-coverage-rest/late-coverage-ledger.json",
+      "sha256": "493ae27fa0ef6c6cb3f07f49ff891b7cdc15cd6f90d45c7549c79d82025c12fa",
+      "bytes": 104024,
+      "role": "zero-request 50-group late coverage ledger"
+    },
+    "late_prefix_candidates": {
+      "path": "research/continuous-recovery-20261019/network/gallery-late-rest10b/candidate-manifest.json",
+      "sha256": "4e46440e8a4db28eb3a8e25119fa2941f78b8531087032ea9f9821d666514ad8",
+      "bytes": 45195,
+      "role": "zero-request rest10b ten-prefix candidate manifest"
+    },
+    "late_coverage_receipt": {
+      "path": "research/continuous-recovery-20261019/gallery-audit/late-coverage-rest/offline-audit-receipt.json",
+      "sha256": "db80ae5bd73b31103fc2910bb8934247da53ce1a2702549ca3acf3bbaab578f5",
+      "bytes": 5434,
+      "role": "zero-request late coverage audit receipt"
+    },
+    "template_gallery_late_gap01_driver": {
+      "path": "research/continuous-recovery-20261019/network/gallery-late-gap01/gallery_late_gap01_driver_v1.py",
+      "sha256": "99e3abf059bfbb0398a0a6d225939620a836bcd5278e9fdbd1a9448043b4aae8",
+      "bytes": 62361,
+      "role": "frozen CDX-only driver template; new driver changes are packet-local"
+    },
+    "prior_gallery_late_rest10a_final_report": {
+      "path": "research/continuous-recovery-20261019/network/gallery-late-rest10a/batch-report.json",
+      "sha256": "f519963f84e5205ecd4b53b39c693a3c610096cdc78c37884a4abcc71bb01041",
+      "bytes": 601955,
+      "role": "actual final rest10a batch-report bytes; authoritative report hash for summary erratum"
+    },
+    "prior_gallery_late_rest10a_sanitized_summary": {
+      "path": "research/continuous-recovery-20261019/network/gallery-late-rest10a/sanitized-summary.json",
+      "sha256": "05170f5fa91299b7928a2366387793624cd99f9c57e18ce15fde849d428642d0",
+      "bytes": 1046,
+      "role": "rest10a sanitized summary retained with explicit pre-final report-hash erratum"
+    }
+  },
+  "candidate_source": {
+    "path": "research/continuous-recovery-20261019/network/gallery-late-rest10b/candidate-manifest.json",
+    "sha256": "4e46440e8a4db28eb3a8e25119fa2941f78b8531087032ea9f9821d666514ad8",
+    "source_ledger_path": "research/continuous-recovery-20261019/gallery-audit/late-coverage-rest/late-coverage-ledger.json",
+    "source_ledger_sha256": "493ae27fa0ef6c6cb3f07f49ff891b7cdc15cd6f90d45c7549c79d82025c12fa",
+    "network_performed": false
+  },
+  "candidates": [
+    {
+      "rank": 1,
+      "registry_rank": 14,
+      "gallery": "Coilfang Reservoir - The Underbog",
+      "category": "Dungeon",
+      "kind": "index_only_exact_source_prefix",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/underbog/",
+      "source_page_route": "/info/dungeons/cr-underbog-gallery.html",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/cr-underbog-gallery.html",
+        "sha256": "bdeb2743ea4fdb817b95dac567a676603bc97dc2ee568ae9b0c36e1f95781b2e",
+        "addshots_line": 103,
+        "addshots_literal": "addshots(\"/info/dungeons/images/underbog/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/underbog/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 40;"
+      },
+      "source_page_context": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/cr-underbog-gallery.html",
+        "sha256": "bdeb2743ea4fdb817b95dac567a676603bc97dc2ee568ae9b0c36e1f95781b2e",
+        "addshots_line": 103,
+        "addshots_literal": "addshots(\"/info/dungeons/images/underbog/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/underbog/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 40;"
+      },
+      "query_window": {
+        "from": "20080512210045",
+        "to": "20101207235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Funderbog%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Funderbog%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "declared_slots": 40,
+      "expected_direct_entities": 80,
+      "dedupe_basis": [
+        "research/continuous-recovery-20261016/local-audit/gallery-final-v7/gallery-prefix-registry-v7.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-late-window-source-acceptance.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-retry2-source-acceptance.json",
+        "research/continuous-recovery-20261019/publication/root-gallery-late-gap01-source-acceptance.json",
+        "research/continuous-recovery-20261019/publication/root-gallery-late-rest10a-source-acceptance.json",
+        "research/continuous-recovery-20261019/network/gallery-late-rest10a/batch-report.json"
+      ],
+      "why_not_already_covered": "Frozen ledger marks this exact residual late interval not_queried; prior complete groups and the executed rest10a ten-prefix set are excluded.",
+      "strict_rules": {
+        "no_filename_guess": true,
+        "no_thumbnail_alias_inference": true,
+        "no_payload_replay_in_this_draft": true,
+        "no_redirect_follow": true,
+        "no_auto_pagination": true,
+        "valid_index_and_no_resume_required_for_complete": true,
+        "scheme_and_host_identity_preserved": true
+      },
+      "target_key": "GALLERY-LATE-REST10B-01",
+      "label": "Coilfang Reservoir - The Underbog",
+      "gallery_segment_index": 1,
+      "gallery_segment_count": 1,
+      "network_result": "not_executed",
+      "payload_replay": false,
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_schemes": [
+        "http"
+      ],
+      "source_directory": "/info/dungeons/images/underbog/",
+      "late_status": "not_queried",
+      "uncovered_late_segments": [
+        {
+          "from": "20080512210045",
+          "to": "20101207235959"
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "registry_rank": 15,
+      "gallery": "Caverns of Time - Escape from Durnholde",
+      "category": "Dungeon",
+      "kind": "index_only_exact_source_prefix",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/escape/",
+      "source_page_route": "/info/dungeons/cot-escape-gallery.html",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/cot-escape-gallery.html",
+        "sha256": "0e1e813933b8592035920d6010623191232db647d7a61179d4c948722941fbbf",
+        "addshots_line": 101,
+        "addshots_literal": "addshots(\"/info/dungeons/images/escape/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/escape/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 38;"
+      },
+      "source_page_context": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/cot-escape-gallery.html",
+        "sha256": "0e1e813933b8592035920d6010623191232db647d7a61179d4c948722941fbbf",
+        "addshots_line": 101,
+        "addshots_literal": "addshots(\"/info/dungeons/images/escape/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/escape/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 38;"
+      },
+      "query_window": {
+        "from": "20080512210045",
+        "to": "20101207235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fescape%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fescape%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "declared_slots": 38,
+      "expected_direct_entities": 76,
+      "dedupe_basis": [
+        "research/continuous-recovery-20261016/local-audit/gallery-final-v7/gallery-prefix-registry-v7.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-late-window-source-acceptance.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-retry2-source-acceptance.json",
+        "research/continuous-recovery-20261019/publication/root-gallery-late-gap01-source-acceptance.json",
+        "research/continuous-recovery-20261019/publication/root-gallery-late-rest10a-source-acceptance.json",
+        "research/continuous-recovery-20261019/network/gallery-late-rest10a/batch-report.json"
+      ],
+      "why_not_already_covered": "Frozen ledger marks this exact residual late interval not_queried; prior complete groups and the executed rest10a ten-prefix set are excluded.",
+      "strict_rules": {
+        "no_filename_guess": true,
+        "no_thumbnail_alias_inference": true,
+        "no_payload_replay_in_this_draft": true,
+        "no_redirect_follow": true,
+        "no_auto_pagination": true,
+        "valid_index_and_no_resume_required_for_complete": true,
+        "scheme_and_host_identity_preserved": true
+      },
+      "target_key": "GALLERY-LATE-REST10B-02",
+      "label": "Caverns of Time - Escape from Durnholde",
+      "gallery_segment_index": 1,
+      "gallery_segment_count": 1,
+      "network_result": "not_executed",
+      "payload_replay": false,
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_schemes": [
+        "http"
+      ],
+      "source_directory": "/info/dungeons/images/escape/",
+      "late_status": "not_queried",
+      "uncovered_late_segments": [
+        {
+          "from": "20080512210045",
+          "to": "20101207235959"
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "registry_rank": 16,
+      "gallery": "Caverns of Time - Opening of the Dark Portal",
+      "category": "Dungeon",
+      "kind": "index_only_exact_source_prefix",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/opening/",
+      "source_page_route": "/info/dungeons/cot-opening-gallery.html",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/cot-opening-gallery.html",
+        "sha256": "6742140f1ef508f75ba3a4eaca3cf3fcd1edb37a9d93cf62c15fbcf5749818aa",
+        "addshots_line": 93,
+        "addshots_literal": "addshots(\"/info/dungeons/images/opening/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/opening/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 30;"
+      },
+      "source_page_context": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/cot-opening-gallery.html",
+        "sha256": "6742140f1ef508f75ba3a4eaca3cf3fcd1edb37a9d93cf62c15fbcf5749818aa",
+        "addshots_line": 93,
+        "addshots_literal": "addshots(\"/info/dungeons/images/opening/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/opening/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 30;"
+      },
+      "query_window": {
+        "from": "20080512210045",
+        "to": "20101207235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fopening%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fopening%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "declared_slots": 30,
+      "expected_direct_entities": 60,
+      "dedupe_basis": [
+        "research/continuous-recovery-20261016/local-audit/gallery-final-v7/gallery-prefix-registry-v7.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-late-window-source-acceptance.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-retry2-source-acceptance.json",
+        "research/continuous-recovery-20261019/publication/root-gallery-late-gap01-source-acceptance.json",
+        "research/continuous-recovery-20261019/publication/root-gallery-late-rest10a-source-acceptance.json",
+        "research/continuous-recovery-20261019/network/gallery-late-rest10a/batch-report.json"
+      ],
+      "why_not_already_covered": "Frozen ledger marks this exact residual late interval not_queried; prior complete groups and the executed rest10a ten-prefix set are excluded.",
+      "strict_rules": {
+        "no_filename_guess": true,
+        "no_thumbnail_alias_inference": true,
+        "no_payload_replay_in_this_draft": true,
+        "no_redirect_follow": true,
+        "no_auto_pagination": true,
+        "valid_index_and_no_resume_required_for_complete": true,
+        "scheme_and_host_identity_preserved": true
+      },
+      "target_key": "GALLERY-LATE-REST10B-03",
+      "label": "Caverns of Time - Opening of the Dark Portal",
+      "gallery_segment_index": 1,
+      "gallery_segment_count": 1,
+      "network_result": "not_executed",
+      "payload_replay": false,
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_schemes": [
+        "http"
+      ],
+      "source_directory": "/info/dungeons/images/opening/",
+      "late_status": "not_queried",
+      "uncovered_late_segments": [
+        {
+          "from": "20080512210045",
+          "to": "20101207235959"
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "registry_rank": 17,
+      "gallery": "Coilfang Reservoir - The Steam Vaults",
+      "category": "Dungeon",
+      "kind": "index_only_exact_source_prefix",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/steamvaults/",
+      "source_page_route": "/info/dungeons/cr-steamvaults-gallery.html",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/cr-steamvaults-gallery.html",
+        "sha256": "55d53cb257b5f1dd9681535ac000acd70be344ed125f8583c392f8d8546bb26f",
+        "addshots_line": 93,
+        "addshots_literal": "addshots(\"/info/dungeons/images/steamvaults/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/steamvaults/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 30;"
+      },
+      "source_page_context": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/cr-steamvaults-gallery.html",
+        "sha256": "55d53cb257b5f1dd9681535ac000acd70be344ed125f8583c392f8d8546bb26f",
+        "addshots_line": 93,
+        "addshots_literal": "addshots(\"/info/dungeons/images/steamvaults/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/steamvaults/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 30;"
+      },
+      "query_window": {
+        "from": "20080512210045",
+        "to": "20101207235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fsteamvaults%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fsteamvaults%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "declared_slots": 30,
+      "expected_direct_entities": 60,
+      "dedupe_basis": [
+        "research/continuous-recovery-20261016/local-audit/gallery-final-v7/gallery-prefix-registry-v7.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-late-window-source-acceptance.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-retry2-source-acceptance.json",
+        "research/continuous-recovery-20261019/publication/root-gallery-late-gap01-source-acceptance.json",
+        "research/continuous-recovery-20261019/publication/root-gallery-late-rest10a-source-acceptance.json",
+        "research/continuous-recovery-20261019/network/gallery-late-rest10a/batch-report.json"
+      ],
+      "why_not_already_covered": "Frozen ledger marks this exact residual late interval not_queried; prior complete groups and the executed rest10a ten-prefix set are excluded.",
+      "strict_rules": {
+        "no_filename_guess": true,
+        "no_thumbnail_alias_inference": true,
+        "no_payload_replay_in_this_draft": true,
+        "no_redirect_follow": true,
+        "no_auto_pagination": true,
+        "valid_index_and_no_resume_required_for_complete": true,
+        "scheme_and_host_identity_preserved": true
+      },
+      "target_key": "GALLERY-LATE-REST10B-04",
+      "label": "Coilfang Reservoir - The Steam Vaults",
+      "gallery_segment_index": 1,
+      "gallery_segment_count": 1,
+      "network_result": "not_executed",
+      "payload_replay": false,
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_schemes": [
+        "http"
+      ],
+      "source_directory": "/info/dungeons/images/steamvaults/",
+      "late_status": "not_queried",
+      "uncovered_late_segments": [
+        {
+          "from": "20080512210045",
+          "to": "20101207235959"
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "registry_rank": 18,
+      "gallery": "Auchindoun - Mana-Tombs",
+      "category": "Dungeon",
+      "kind": "index_only_exact_source_prefix",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/manatombs/",
+      "source_page_route": "/info/dungeons/auc-mana-tombs-gallery.html",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/auc-mana-tombs-gallery.html",
+        "sha256": "2c5bd4471cf6391be76bbd5cd1faa81194c0795d950890f71ebab6c369e5d762",
+        "addshots_line": 93,
+        "addshots_literal": "addshots(\"/info/dungeons/images/manatombs/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/manatombs/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 30;"
+      },
+      "source_page_context": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/auc-mana-tombs-gallery.html",
+        "sha256": "2c5bd4471cf6391be76bbd5cd1faa81194c0795d950890f71ebab6c369e5d762",
+        "addshots_line": 93,
+        "addshots_literal": "addshots(\"/info/dungeons/images/manatombs/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/manatombs/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 30;"
+      },
+      "query_window": {
+        "from": "20080512210045",
+        "to": "20101207235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fmanatombs%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fmanatombs%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "declared_slots": 30,
+      "expected_direct_entities": 60,
+      "dedupe_basis": [
+        "research/continuous-recovery-20261016/local-audit/gallery-final-v7/gallery-prefix-registry-v7.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-late-window-source-acceptance.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-retry2-source-acceptance.json",
+        "research/continuous-recovery-20261019/publication/root-gallery-late-gap01-source-acceptance.json",
+        "research/continuous-recovery-20261019/publication/root-gallery-late-rest10a-source-acceptance.json",
+        "research/continuous-recovery-20261019/network/gallery-late-rest10a/batch-report.json"
+      ],
+      "why_not_already_covered": "Frozen ledger marks this exact residual late interval not_queried; prior complete groups and the executed rest10a ten-prefix set are excluded.",
+      "strict_rules": {
+        "no_filename_guess": true,
+        "no_thumbnail_alias_inference": true,
+        "no_payload_replay_in_this_draft": true,
+        "no_redirect_follow": true,
+        "no_auto_pagination": true,
+        "valid_index_and_no_resume_required_for_complete": true,
+        "scheme_and_host_identity_preserved": true
+      },
+      "target_key": "GALLERY-LATE-REST10B-05",
+      "label": "Auchindoun - Mana-Tombs",
+      "gallery_segment_index": 1,
+      "gallery_segment_count": 1,
+      "network_result": "not_executed",
+      "payload_replay": false,
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_schemes": [
+        "http"
+      ],
+      "source_directory": "/info/dungeons/images/manatombs/",
+      "late_status": "not_queried",
+      "uncovered_late_segments": [
+        {
+          "from": "20080512210045",
+          "to": "20101207235959"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "registry_rank": 19,
+      "gallery": "Auchindoun - Auchenai Crypts",
+      "category": "Dungeon",
+      "kind": "index_only_exact_source_prefix",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/crypts/",
+      "source_page_route": "/info/dungeons/auc-crypts-gallery.html",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/auc-crypts-gallery.html",
+        "sha256": "dc0ac27003c9fe8690808a8a05b202414c5e8fa77d83c4355ec0f8fb4c531a58",
+        "addshots_line": 100,
+        "addshots_literal": "addshots(\"/info/dungeons/images/crypts/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/crypts/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 37;"
+      },
+      "source_page_context": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/auc-crypts-gallery.html",
+        "sha256": "dc0ac27003c9fe8690808a8a05b202414c5e8fa77d83c4355ec0f8fb4c531a58",
+        "addshots_line": 100,
+        "addshots_literal": "addshots(\"/info/dungeons/images/crypts/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/crypts/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 37;"
+      },
+      "query_window": {
+        "from": "20080512210045",
+        "to": "20101207235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fcrypts%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fcrypts%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "declared_slots": 37,
+      "expected_direct_entities": 74,
+      "dedupe_basis": [
+        "research/continuous-recovery-20261016/local-audit/gallery-final-v7/gallery-prefix-registry-v7.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-late-window-source-acceptance.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-retry2-source-acceptance.json",
+        "research/continuous-recovery-20261019/publication/root-gallery-late-gap01-source-acceptance.json",
+        "research/continuous-recovery-20261019/publication/root-gallery-late-rest10a-source-acceptance.json",
+        "research/continuous-recovery-20261019/network/gallery-late-rest10a/batch-report.json"
+      ],
+      "why_not_already_covered": "Frozen ledger marks this exact residual late interval not_queried; prior complete groups and the executed rest10a ten-prefix set are excluded.",
+      "strict_rules": {
+        "no_filename_guess": true,
+        "no_thumbnail_alias_inference": true,
+        "no_payload_replay_in_this_draft": true,
+        "no_redirect_follow": true,
+        "no_auto_pagination": true,
+        "valid_index_and_no_resume_required_for_complete": true,
+        "scheme_and_host_identity_preserved": true
+      },
+      "target_key": "GALLERY-LATE-REST10B-06",
+      "label": "Auchindoun - Auchenai Crypts",
+      "gallery_segment_index": 1,
+      "gallery_segment_count": 1,
+      "network_result": "not_executed",
+      "payload_replay": false,
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_schemes": [
+        "http"
+      ],
+      "source_directory": "/info/dungeons/images/crypts/",
+      "late_status": "not_queried",
+      "uncovered_late_segments": [
+        {
+          "from": "20080512210045",
+          "to": "20101207235959"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "registry_rank": 20,
+      "gallery": "Auchindoun - Sethekk Halls",
+      "category": "Dungeon",
+      "kind": "index_only_exact_source_prefix",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/sethekhalls/",
+      "source_page_route": "/info/dungeons/auc-sethek-halls-gallery.html",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/auc-sethek-halls-gallery.html",
+        "sha256": "1b4882115cf8f68b687776ce0a032362778d833c6eb8254fb73b5278429bf2c9",
+        "addshots_line": 101,
+        "addshots_literal": "addshots(\"/info/dungeons/images/sethekhalls/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/sethekhalls/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 38;"
+      },
+      "source_page_context": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/auc-sethek-halls-gallery.html",
+        "sha256": "1b4882115cf8f68b687776ce0a032362778d833c6eb8254fb73b5278429bf2c9",
+        "addshots_line": 101,
+        "addshots_literal": "addshots(\"/info/dungeons/images/sethekhalls/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/sethekhalls/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 38;"
+      },
+      "query_window": {
+        "from": "20080512210045",
+        "to": "20101207235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fsethekhalls%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fsethekhalls%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "declared_slots": 38,
+      "expected_direct_entities": 76,
+      "dedupe_basis": [
+        "research/continuous-recovery-20261016/local-audit/gallery-final-v7/gallery-prefix-registry-v7.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-late-window-source-acceptance.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-retry2-source-acceptance.json",
+        "research/continuous-recovery-20261019/publication/root-gallery-late-gap01-source-acceptance.json",
+        "research/continuous-recovery-20261019/publication/root-gallery-late-rest10a-source-acceptance.json",
+        "research/continuous-recovery-20261019/network/gallery-late-rest10a/batch-report.json"
+      ],
+      "why_not_already_covered": "Frozen ledger marks this exact residual late interval not_queried; prior complete groups and the executed rest10a ten-prefix set are excluded.",
+      "strict_rules": {
+        "no_filename_guess": true,
+        "no_thumbnail_alias_inference": true,
+        "no_payload_replay_in_this_draft": true,
+        "no_redirect_follow": true,
+        "no_auto_pagination": true,
+        "valid_index_and_no_resume_required_for_complete": true,
+        "scheme_and_host_identity_preserved": true
+      },
+      "target_key": "GALLERY-LATE-REST10B-07",
+      "label": "Auchindoun - Sethekk Halls",
+      "gallery_segment_index": 1,
+      "gallery_segment_count": 1,
+      "network_result": "not_executed",
+      "payload_replay": false,
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_schemes": [
+        "http"
+      ],
+      "source_directory": "/info/dungeons/images/sethekhalls/",
+      "late_status": "not_queried",
+      "uncovered_late_segments": [
+        {
+          "from": "20080512210045",
+          "to": "20101207235959"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "registry_rank": 21,
+      "gallery": "Auchindoun - Shadow Labyrinth",
+      "category": "Dungeon",
+      "kind": "index_only_exact_source_prefix",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/shadowlabs/",
+      "source_page_route": "/info/dungeons/auc-shadow-lab-gallery.html",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/auc-shadow-lab-gallery.html",
+        "sha256": "d6e37841379af61e8a12dbed4899f7e159a3a7686620519c06bd067a7156a14f",
+        "addshots_line": 86,
+        "addshots_literal": "addshots(\"/info/dungeons/images/shadowlabs/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/shadowlabs/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 23;"
+      },
+      "source_page_context": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/auc-shadow-lab-gallery.html",
+        "sha256": "d6e37841379af61e8a12dbed4899f7e159a3a7686620519c06bd067a7156a14f",
+        "addshots_line": 86,
+        "addshots_literal": "addshots(\"/info/dungeons/images/shadowlabs/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/shadowlabs/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 23;"
+      },
+      "query_window": {
+        "from": "20080512210045",
+        "to": "20101207235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fshadowlabs%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fshadowlabs%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "declared_slots": 23,
+      "expected_direct_entities": 46,
+      "dedupe_basis": [
+        "research/continuous-recovery-20261016/local-audit/gallery-final-v7/gallery-prefix-registry-v7.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-late-window-source-acceptance.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-retry2-source-acceptance.json",
+        "research/continuous-recovery-20261019/publication/root-gallery-late-gap01-source-acceptance.json",
+        "research/continuous-recovery-20261019/publication/root-gallery-late-rest10a-source-acceptance.json",
+        "research/continuous-recovery-20261019/network/gallery-late-rest10a/batch-report.json"
+      ],
+      "why_not_already_covered": "Frozen ledger marks this exact residual late interval not_queried; prior complete groups and the executed rest10a ten-prefix set are excluded.",
+      "strict_rules": {
+        "no_filename_guess": true,
+        "no_thumbnail_alias_inference": true,
+        "no_payload_replay_in_this_draft": true,
+        "no_redirect_follow": true,
+        "no_auto_pagination": true,
+        "valid_index_and_no_resume_required_for_complete": true,
+        "scheme_and_host_identity_preserved": true
+      },
+      "target_key": "GALLERY-LATE-REST10B-08",
+      "label": "Auchindoun - Shadow Labyrinth",
+      "gallery_segment_index": 1,
+      "gallery_segment_count": 1,
+      "network_result": "not_executed",
+      "payload_replay": false,
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_schemes": [
+        "http"
+      ],
+      "source_directory": "/info/dungeons/images/shadowlabs/",
+      "late_status": "not_queried",
+      "uncovered_late_segments": [
+        {
+          "from": "20080512210045",
+          "to": "20101207235959"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "registry_rank": 22,
+      "gallery": "Tempest Keep - The Mechanar",
+      "category": "Dungeon",
+      "kind": "index_only_exact_source_prefix",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/mech/",
+      "source_page_route": "/info/dungeons/tk-mech-gallery.html",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/tk-mech-gallery.html",
+        "sha256": "11ac5bcc87d393e08d03e1628cb55e6e0fb169bbc8350fff7f14dbb7feddbb61",
+        "addshots_line": 98,
+        "addshots_literal": "addshots(\"/info/dungeons/images/mech/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/mech/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 35;"
+      },
+      "source_page_context": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/tk-mech-gallery.html",
+        "sha256": "11ac5bcc87d393e08d03e1628cb55e6e0fb169bbc8350fff7f14dbb7feddbb61",
+        "addshots_line": 98,
+        "addshots_literal": "addshots(\"/info/dungeons/images/mech/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/mech/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 35;"
+      },
+      "query_window": {
+        "from": "20080512210045",
+        "to": "20101207235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fmech%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fmech%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "declared_slots": 35,
+      "expected_direct_entities": 70,
+      "dedupe_basis": [
+        "research/continuous-recovery-20261016/local-audit/gallery-final-v7/gallery-prefix-registry-v7.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-late-window-source-acceptance.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-retry2-source-acceptance.json",
+        "research/continuous-recovery-20261019/publication/root-gallery-late-gap01-source-acceptance.json",
+        "research/continuous-recovery-20261019/publication/root-gallery-late-rest10a-source-acceptance.json",
+        "research/continuous-recovery-20261019/network/gallery-late-rest10a/batch-report.json"
+      ],
+      "why_not_already_covered": "Frozen ledger marks this exact residual late interval not_queried; prior complete groups and the executed rest10a ten-prefix set are excluded.",
+      "strict_rules": {
+        "no_filename_guess": true,
+        "no_thumbnail_alias_inference": true,
+        "no_payload_replay_in_this_draft": true,
+        "no_redirect_follow": true,
+        "no_auto_pagination": true,
+        "valid_index_and_no_resume_required_for_complete": true,
+        "scheme_and_host_identity_preserved": true
+      },
+      "target_key": "GALLERY-LATE-REST10B-09",
+      "label": "Tempest Keep - The Mechanar",
+      "gallery_segment_index": 1,
+      "gallery_segment_count": 1,
+      "network_result": "not_executed",
+      "payload_replay": false,
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_schemes": [
+        "http"
+      ],
+      "source_directory": "/info/dungeons/images/mech/",
+      "late_status": "not_queried",
+      "uncovered_late_segments": [
+        {
+          "from": "20080512210045",
+          "to": "20101207235959"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "registry_rank": 23,
+      "gallery": "Tempest Keep - The Botanica",
+      "category": "Dungeon",
+      "kind": "index_only_exact_source_prefix",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/botanica/",
+      "source_page_route": "/info/dungeons/tk-botanica-gallery.html",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/tk-botanica-gallery.html",
+        "sha256": "8a253d240854520ef1e49b74ec4d571b98ebaa2dd27fd328a66ac204ce42d6d9",
+        "addshots_line": 82,
+        "addshots_literal": "addshots(\"/info/dungeons/images/botanica/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/botanica/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 19;"
+      },
+      "source_page_context": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/tk-botanica-gallery.html",
+        "sha256": "8a253d240854520ef1e49b74ec4d571b98ebaa2dd27fd328a66ac204ce42d6d9",
+        "addshots_line": 82,
+        "addshots_literal": "addshots(\"/info/dungeons/images/botanica/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/botanica/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 19;"
+      },
+      "query_window": {
+        "from": "20080512210045",
+        "to": "20101207235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fbotanica%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fbotanica%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "declared_slots": 19,
+      "expected_direct_entities": 38,
+      "dedupe_basis": [
+        "research/continuous-recovery-20261016/local-audit/gallery-final-v7/gallery-prefix-registry-v7.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-late-window-source-acceptance.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-retry2-source-acceptance.json",
+        "research/continuous-recovery-20261019/publication/root-gallery-late-gap01-source-acceptance.json",
+        "research/continuous-recovery-20261019/publication/root-gallery-late-rest10a-source-acceptance.json",
+        "research/continuous-recovery-20261019/network/gallery-late-rest10a/batch-report.json"
+      ],
+      "why_not_already_covered": "Frozen ledger marks this exact residual late interval not_queried; prior complete groups and the executed rest10a ten-prefix set are excluded.",
+      "strict_rules": {
+        "no_filename_guess": true,
+        "no_thumbnail_alias_inference": true,
+        "no_payload_replay_in_this_draft": true,
+        "no_redirect_follow": true,
+        "no_auto_pagination": true,
+        "valid_index_and_no_resume_required_for_complete": true,
+        "scheme_and_host_identity_preserved": true
+      },
+      "target_key": "GALLERY-LATE-REST10B-10",
+      "label": "Tempest Keep - The Botanica",
+      "gallery_segment_index": 1,
+      "gallery_segment_count": 1,
+      "network_result": "not_executed",
+      "payload_replay": false,
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_schemes": [
+        "http"
+      ],
+      "source_directory": "/info/dungeons/images/botanica/",
+      "late_status": "not_queried",
+      "uncovered_late_segments": [
+        {
+          "from": "20080512210045",
+          "to": "20101207235959"
+        }
+      ]
+    }
+  ],
+  "network_deadline_utc": "2026-10-19T13:15:00Z"
+}

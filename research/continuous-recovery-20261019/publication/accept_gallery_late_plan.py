@@ -25,6 +25,7 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument("--packet", required=True)
     p.add_argument("--previous-packet", required=True)
+    p.add_argument("--latest-source", help="Post-failure control receipt, when newer than the previous gallery packet")
     p.add_argument("--driver-sha", required=True)
     p.add_argument("--plan-sha", required=True)
     args = p.parse_args()
@@ -43,12 +44,20 @@ def main():
     previous = PUB / f"root-{args.previous_packet}-source-acceptance.json"
     prior = READ(previous)
     assert prior["accepted"] and prior["is_network_batch"] and prior["failure_streak_end"] == 0
+    latest = ROOT / args.latest_source if args.latest_source else previous
+    current = READ(latest)
+    assert current["accepted"] and current["failure_streak_end"] == 0
     state = READ(PUB.parent / "status.json")
-    assert state["latest_network_batch"] == args.previous_packet
     assert state["latest_failure_tail"] == 0 and not state.get("in_flight_network_batch")
+    assert state["network_resume_gate_passed"] is True
+    assert (PUB.parent / state["latest_network_acceptance"]).resolve() == latest.resolve()
+    if prior.get("endpoint_stop_status") in (429, 503) or prior.get("resume_gate_passed") is False:
+        assert latest.resolve() != previous.resolve() and current["resume_gate_passed"] is True
+        assert current["source_failure_receipt_sha256"] == SHA(previous)
+        assert datetime.fromisoformat(current["control_success_finished_utc"].replace("Z", "+00:00")) > datetime.fromisoformat(prior["last_failure_finished_utc"].replace("Z", "+00:00"))
     plan = READ(plan_path)
     row = plan["input_bindings"]["latest_global_source_acceptance"]
-    assert (ROOT / row["path"]).resolve() == previous.resolve() and row["sha256"] == SHA(previous)
+    assert (ROOT / row["path"]).resolve() == latest.resolve() and row["sha256"] == SHA(latest)
     for row in plan["input_bindings"].values():
         assert SHA(ROOT / row["path"]) == row["sha256"], row["path"]
     policy = plan["policy"]
@@ -95,7 +104,7 @@ def main():
     receipt = {"accepted": True, "root_go": True, "checked_utc": datetime.now(timezone.utc).isoformat(),
                "driver_sha256": args.driver_sha, "plan_sha256": args.plan_sha,
                "fixture_before_execution_sha256": SHA(fixture_path),
-               "latest_network_source_path": previous.relative_to(ROOT).as_posix(), "latest_network_source_sha256": SHA(previous),
+               "latest_network_source_path": latest.relative_to(ROOT).as_posix(), "latest_network_source_sha256": SHA(latest),
                "prior_failure_tail": 0, "target_count": len(candidates), "max_requests": 24,
                "max_seconds": 900, "max_body_bytes": 33554432, "outer_parent_watchdog_seconds": 960,
                "index_only": True, "payload_replays_allowed": 0, "network_deadline_utc": plan["network_deadline_utc"],

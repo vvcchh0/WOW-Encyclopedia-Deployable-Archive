@@ -1,0 +1,57 @@
+--- tools/export_github_pages.py lines 120-126 ---
+120: HTML_KINDS = {"html", "menu_html"}
+121: TEXT_KINDS = HTML_KINDS | {"css", "js", "xsl", "xml", "legacy_component", "support"}
+122: _ROOT_LITERAL_RE = re.compile(
+123:     r"(?P<quote>['\"])(?P<url>/[^'\"\s<>]+)(?P<trailing>\s*)(?P=quote)"
+124: )
+125: _XML_BARE_AMP_RE = re.compile(
+126:     r"&(?!#(?:x[0-9A-Fa-f]+|[0-9]+);|(?:amp|lt|gt|quot|apos);)"
+--- tools/export_github_pages.py lines 542-552 ---
+542: def _context_for_literal(raw: str) -> str:
+543:     lower = raw.casefold().split("?", 1)[0].split("#", 1)[0]
+544:     if re.search(r"\.(?:gif|jpe?g|png|webp|svg|swf|ico)$", lower):
+545:         return "image"
+546:     if lower.endswith(".css"):
+547:         return "stylesheet"
+548:     if lower.endswith((".js", ".mjs", ".htc")):
+549:         return "script"
+550:     return "navigation"
+551: 
+552: 
+--- tools/export_github_pages.py lines 725-760 ---
+725: def rewrite_root_literals(text: str, *, base_url: str, localizer: PagesLocalizer, recorder: Any) -> str:
+726:     """Rewrite complete root-relative JS strings without touching expressions.
+727: 
+728:     offline_mirror intentionally leaves root-relative JS strings alone for a
+729:     loopback origin.  A project Pages site has a prefix, so complete literals
+730:     must be prefixed here.  A literal followed by ``+`` is a dynamic prefix and
+731:     remains untouched to avoid changing JavaScript syntax or URL composition.
+732:     """
+733: 
+734:     def replace(match: re.Match[str]) -> str:
+735:         raw = match.group("url")
+736:         if raw == "//" or raw.startswith("//") or raw.startswith(localizer.base_path):
+737:             return match.group(0)
+738:         # Wrath uses roothost as a directory for resource concatenation.
+739:         # Its navigation alias resolves to index.html, which is not a base
+740:         # directory and would produce e.g. index.htmlimages/layout/....
+741:         before = text[max(0, match.start() - 80):match.start()]
+742:         if (
+743:             raw == "/wrath/"
+744:             and re.search(r"\bvar\s+roothost\s*=\s*$", before)
+745:             and mirror.is_primary_origin(base_url)
+746:             and urllib.parse.urlsplit(base_url).path.startswith("/wrath/")
+747:         ):
+748:             target = localizer.base_path + "wrath/"
+749:             recorder.add(raw, urllib.parse.urljoin(base_url, raw), "localized", target,
+750:                          "javascript-directory-base", "preserve verified Wrath resource directory")
+751:             return match.group("quote") + target + match.group("trailing") + match.group("quote")
+752:         after = text[match.end() :].lstrip()
+753:         if after.startswith("+") and not raw.casefold().startswith(("/__offline/uncollected", "/search/")):
+754:             return match.group(0)
+755:         local = localizer.localize(raw, base_url=base_url, context=_context_for_literal(raw), recorder=recorder)
+756:         q = match.group("quote")
+757:         return q + local.replace(q, "%22") + match.group("trailing") + q
+758: 
+759:     return _ROOT_LITERAL_RE.sub(replace, text)
+760: 

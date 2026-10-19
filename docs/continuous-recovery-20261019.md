@@ -135,3 +135,19 @@ v36 以冻结来源一次导出成功，父进程720秒、导出子进程600秒�
 浏览总门槛仍返回失败，原因是上述三项无实际入口，以及Top List的四条脚本错误。该栏目的HTML和JS与v35字节相同；尚未复跑旧版运行对照，不能把字节一致写成旧版运行已验证。图片层单独验收，v36暂不发布；下一步定位脚本原因并在后续派生版本修复。原结果、失败门槛和截图均保留，不改写成全通过。
 
 [图片层范围验收](../research/continuous-recovery-20261019/publication/root-v36-image-layer-acceptance.json) · [真实浏览记录](../research/continuous-recovery-20261019/integration/v36/browser/results/v36-browser-r2.json)
+
+### 11:03 UTC — 九十六图来源提交与两项派生脚本缺陷
+
+main检查点3ff3c706正常推送，含本轮96个已验收素材、v36冻结构建及失败门槛的原始浏览记录；没有部署v36。Top List的两个源脚本均能通过Node语法检查，旧派生工具将Prototype正则误识别为路径，又消耗logic.js内嵌HTML引号的转义，造成两条语法错误和两条后继异常。修复设计限定两份实际Source15脚本，以源摘要保护，保留Prototype文本，并仅替换logic中的五个已知像素src值；其它脚本、HTML、CSS的既有流程保持原设计。
+
+图库第二批取得八份完整索引、507行，仍无原编号图片；Mechanar请求503后立即停批，Botanica尚未请求。主代理分别验收八份CDX和末次503，记录尾数虽为零但连接恢复门槛未通过。等待冷却后的新控制回执，不用旧成功覆盖503。至此50组中21组已完成所列晚期窗口，剩余29组仍待查。
+
+[排行榜诊断](../research/continuous-recovery-20261019/integration/toplist-diagnosis/toplist-diagnosis-report.md) · [503停批与部分来源验收](../research/continuous-recovery-20261019/publication/root-gallery-late-rest10b-source-acceptance.json)
+
+### 11:14 UTC — 控制探测429，转向本地整合
+
+冷却后单次已知小CDX控制请求仍收到429：direct未获HTTP，随后TLS验证开启的进程内代理取得162字节429响应。两次实际请求间隔5.25秒，探测约7.11秒结束，未回放图片或继续查询。主代理独立核验响应字节、末次HTTP状态、源绑定和停止行为；该429成为最新网络状态，恢复门槛保持关闭。冷却至少延长至11:45 UTC，届时也须另有明确批准的新控制，不能自动恢复或变换路径绕限流。执行者转为本地关联页和50组覆盖总账整理。
+
+Top List窄修复通过34项导出回归和3项针对性测试；后者使用已复制的两个原始脚本夹具，可在新克隆中运行，未改变原字节。主代理完成实现与测试证据审阅；生产浏览仍须新版本验收。v37正准备在v36来源基础上加入已取得的21图与该修复，尚未执行导出。
+
+[最新429验收](../research/continuous-recovery-20261019/publication/root-control-after-rest10b-source-acceptance.json) · [脚本修复验收](../research/continuous-recovery-20261019/publication/root-toplist-tools-acceptance.json)

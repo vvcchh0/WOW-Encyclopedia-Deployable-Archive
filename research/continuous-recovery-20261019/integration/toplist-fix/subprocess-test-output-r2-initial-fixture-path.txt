@@ -1,0 +1,73 @@
+command: C:\Users\17630\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe -X utf8 -m unittest discover -s tests -p test_toplist_compat.py -v
+cwd: D:\WOW_Encyclopedia
+started_utc: 2026-10-19T11:04:02.551332+00:00
+ended_utc: 2026-10-19T11:04:03.113985+00:00
+elapsed_seconds: 0.562653
+timeout_seconds: 120
+timed_out: false
+returncode: 1
+
+--- stdout ---
+
+--- stderr ---
+test_actual_source15_assets_export_and_node_check (test_toplist_compat.ToplistCompatibilityTests.test_actual_source15_assets_export_and_node_check)
+The exporter branch handles both frozen files without generic rewrites. ... ERROR
+test_logic_count_guard_and_localizer_context (test_toplist_compat.ToplistCompatibilityTests.test_logic_count_guard_and_localizer_context) ... ERROR
+test_source_and_route_guards (test_toplist_compat.ToplistCompatibilityTests.test_source_and_route_guards) ... ERROR
+
+======================================================================
+ERROR: test_actual_source15_assets_export_and_node_check (test_toplist_compat.ToplistCompatibilityTests.test_actual_source15_assets_export_and_node_check)
+The exporter branch handles both frozen files without generic rewrites.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\WOW_Encyclopedia\tests\test_toplist_compat.py", line 73, in test_actual_source15_assets_export_and_node_check
+    destination.write_bytes(source.read_bytes())
+                            ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\17630\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py", line 1019, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\17630\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\WOW_Encyclopedia\\tests\\fixtures\\toplist-source15\\toplist\\includes-client\\js\\prototype.js'
+
+======================================================================
+ERROR: test_logic_count_guard_and_localizer_context (test_toplist_compat.ToplistCompatibilityTests.test_logic_count_guard_and_localizer_context)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\WOW_Encyclopedia\tests\test_toplist_compat.py", line 164, in test_logic_count_guard_and_localizer_context
+    source = self._source_text(LOGIC_ROUTE)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\WOW_Encyclopedia\tests\test_toplist_compat.py", line 43, in _source_text
+    return (SOURCE_SITE / route.lstrip("/")).read_bytes().decode("utf-8")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\17630\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py", line 1019, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\17630\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\WOW_Encyclopedia\\tests\\fixtures\\toplist-source15\\toplist\\includes-client\\js\\logic.js'
+
+======================================================================
+ERROR: test_source_and_route_guards (test_toplist_compat.ToplistCompatibilityTests.test_source_and_route_guards)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\WOW_Encyclopedia\tests\test_toplist_compat.py", line 119, in test_source_and_route_guards
+    prototype = self._source_text(PROTOTYPE_ROUTE)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\WOW_Encyclopedia\tests\test_toplist_compat.py", line 43, in _source_text
+    return (SOURCE_SITE / route.lstrip("/")).read_bytes().decode("utf-8")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\17630\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py", line 1019, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\17630\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\WOW_Encyclopedia\\tests\\fixtures\\toplist-source15\\toplist\\includes-client\\js\\prototype.js'
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.048s
+
+FAILED (errors=3)

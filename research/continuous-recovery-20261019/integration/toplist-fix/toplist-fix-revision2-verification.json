@@ -1,0 +1,81 @@
+{
+  "schema": "toplist-compat-fix-verification-v2",
+  "generated_utc": "2026-10-19T11:04:35.087340+00:00",
+  "scope": "portable Source15 fixtures and focused Toplist test path only",
+  "change": {
+    "test_path_before": ".scratch/offline-navigation-20261015-v15/site",
+    "test_path_after": "tests/fixtures/toplist-source15",
+    "fixture_layout": "flat prototype.js and logic.js files",
+    "production_tools_changed": false
+  },
+  "source": {
+    "manifest_sha256": "d89557a445ec5c81ef2652c49fd8ce9c102016f11411b7fa2aa795f5112ae002",
+    "prototype": {
+      "url": "http://www.worldofwarcraft.com/toplist/includes-client/js/prototype.js",
+      "path": "tests/fixtures/toplist-source15/prototype.js",
+      "length": 64868,
+      "sha256": "4efde4e87b2db7b8cb6b81f70ab4972c3cfbcd7d329d0752ad223abe67fa9120"
+    },
+    "logic": {
+      "url": "http://www.worldofwarcraft.com/toplist/includes-client/js/logic.js",
+      "path": "tests/fixtures/toplist-source15/logic.js",
+      "length": 47479,
+      "sha256": "1c0a50ff5fd1af19663b925e502c3a3b2dab0eb905874d95966e8bf35504eabe"
+    }
+  },
+  "files": [
+    {
+      "path": "tests/test_toplist_compat.py",
+      "length": 8605,
+      "sha256": "11151d7562c589ca2c7bc18b03eeb3050320c27b1f496045ad32a2b4c341e511"
+    },
+    {
+      "path": "tests/fixtures/toplist-source15/README.md",
+      "length": 1133,
+      "sha256": "7eda73dde51be82269a2d5e38f5bb2a5a1f16da9e3857ac95c39c32fc4971c72"
+    },
+    {
+      "path": "tools/toplist_compat.py",
+      "length": 3652,
+      "sha256": "6a870cee675d0e974e2f0540f91475f1539df3037a57cea403a3fa7f528346b1",
+      "unchanged_from_revision1": true
+    },
+    {
+      "path": "tools/export_github_pages.py",
+      "length": 161805,
+      "sha256": "4977b233bb83a94a749221fb79d98ce988e6c0348da0ebae345ee8864aed37fa",
+      "unchanged_from_revision1": true
+    }
+  ],
+  "focused_test": {
+    "command": "python -X utf8 -m unittest discover -s tests -p test_toplist_compat.py -v",
+    "cwd": "D:/WOW_Encyclopedia",
+    "started_utc": "2026-10-19T11:04:33.902539+00:00",
+    "ended_utc": "2026-10-19T11:04:35.087340+00:00",
+    "elapsed_seconds": 1.184801,
+    "timeout_seconds": 120,
+    "timed_out": false,
+    "returncode": 0,
+    "tests": 3,
+    "result": "OK",
+    "output_path": "research/continuous-recovery-20261019/integration/toplist-fix/subprocess-test-output-r2.txt",
+    "output_sha256": "047e12087bad53fd184ee897f6e6084eccb2c1f957707ff4f5600c28fca71d0b"
+  },
+  "preserved_evidence": [
+    {
+      "path": "research/continuous-recovery-20261019/integration/toplist-fix/toplist-fix-verification.json",
+      "sha256": "26f6c6d23c24ae6ba4bf18e3b234d82418fea36e1f3cf3de55083cdc90d312df"
+    },
+    {
+      "path": "research/continuous-recovery-20261019/integration/toplist-fix/subprocess-test-output-r2-initial-fixture-path.txt",
+      "sha256": "12269f64d622892ccaa47caacb393bc9d3d98a36218be0e2da262f4b57666f93"
+    }
+  ],
+  "not_done": [
+    "test_github_pages_export.py was not rerun for this revision",
+    "no export",
+    "no browser run",
+    "no network",
+    "no commit or push"
+  ]
+}
