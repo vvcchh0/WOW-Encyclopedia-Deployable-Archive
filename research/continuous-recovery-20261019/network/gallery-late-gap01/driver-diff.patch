@@ -1,0 +1,73 @@
+--- research/continuous-recovery-20261018/network/gallery-late-window-retry2/gallery_late_window_retry2_driver_v1.py
++++ research/continuous-recovery-20261019/network/gallery-late-gap01/gallery_late_gap01_driver_v1.py
+@@ -18,14 +18,14 @@
+ from urllib.parse import quote, urlsplit
+ 
+ ROOT = Path(__file__).resolve().parents[4]
+-NETWORK = ROOT / "research" / "continuous-recovery-20261018" / "network"
++NETWORK = ROOT / "research" / "continuous-recovery-20261019" / "network"
+ OUT = Path(__file__).resolve().parent
+ RAW = OUT / "raw"
+ RAW.mkdir(parents=True, exist_ok=True)
+ PLAN_PATH = OUT / "plan.json"
+ REGISTRY = ROOT / "research" / "continuous-recovery-20261016" / "local-audit" / "gallery-final-v7" / "gallery-prefix-registry-v7.json"
+-BATCH_ID = "WAYBACK-GALLERY-LATE-WINDOW-RETRY2-20261018"
+-USER_AGENT = "wow-recovery-gallery-late-window-retry2/20261018"
++BATCH_ID = "WAYBACK-GALLERY-LATE-GAP01-20261019"
++USER_AGENT = "wow-recovery-gallery-late-gap01/20261019"
+ PROXY = "http://127.0.0.1:7890"
+ FROM_TS, TO_TS, LIMIT = "20080512210045", "20101207235959", 500
+ WINDOW_SECONDS, MAX_ATTEMPTS = 180.0, 4
+@@ -35,6 +35,7 @@
+ # then recomputes persisted minima against the requested acceptance floor.
+ MIN_DISPATCH_SECONDS, MIN_REQUEST_START_SECONDS = 5.25, 5.0
+ ACCEPTANCE_DISPATCH_SECONDS = 5.25
++NETWORK_DEADLINE_UTC = datetime(2026, 10, 19, 13, 15, 0, tzinfo=timezone.utc)
+ DISK_FLOOR_BYTES = 11_005_853_696
+ STOP_HTTP_CODES = {429, 503}
+ DIRECT_CONNECT_SECONDS, DIRECT_MAX_SECONDS = 4.0, 12.0
+@@ -293,6 +294,8 @@
+         raise RuntimeError("retry-2 plan gallery set mismatch; Zul'Aman must not be retried")
+     if len({str(item.get("target_key") or "") for item in candidates}) != len(candidates):
+         raise RuntimeError("late window plan target keys are not unique")
++    if plan.get("network_deadline_utc") != iso(NETWORK_DEADLINE_UTC):
++        raise RuntimeError("network deadline mismatch")
+     expected_policy = {
+         "from": "per_candidate", "to": TO_TS, "target_from": FROM_TS, "limit": LIMIT, "showResumeKey": True,
+         "collapse": False, "matchType": "prefix", "max_attempts": MAX_ATTEMPTS,
+@@ -305,6 +308,7 @@
+         "direct_max_timeout_seconds": DIRECT_MAX_SECONDS,
+         "proxy_connect_timeout_seconds": PROXY_CONNECT_SECONDS,
+         "proxy_max_timeout_seconds": PROXY_MAX_SECONDS,
++        "network_deadline_utc": iso(NETWORK_DEADLINE_UTC),
+     }
+     if any(policy.get(key) != value for key, value in expected_policy.items()):
+         raise RuntimeError("late window policy mismatch")
+@@ -621,7 +625,7 @@
+ 
+ 
+ def plan_for_run(plan: dict[str, Any], candidates: list[dict[str, Any]], bindings: dict[str, Any], fixture_result: dict[str, Any]) -> dict[str, Any]:
+-    return {"schema": "wow-recovery.gallery-late-window-execution-plan.v1", "batch_id": BATCH_ID, "mode": "go_executed", "prepared_utc": iso(now()), "source_plan_path": rel(PLAN_PATH), "source_plan_sha256": sha(PLAN_PATH), "candidate_count": len(candidates), "candidate_ranks": [x["rank"] for x in candidates], "scope": "exact Karazhan and Black Temple native US gallery prefixes from the frozen v7 source-directory registry; prior complete intervals subtracted and explicit retry-2 gaps queried; CDX index only, no expansion", "query_window": {"from": "per_candidate", "target_from": FROM_TS, "to": TO_TS, "limit": LIMIT, "showResumeKey": True, "collapse": False, "matchType": "prefix"}, "index_only": True, "no_payload_replay": True, "max_attempts": MAX_ATTEMPTS, "window_seconds": WINDOW_SECONDS, "max_total_body_bytes": MAX_TOTAL_BODY_BYTES, "max_entity_body_bytes": MAX_ENTITY_BODY_BYTES, "direct_first": True, "proxy": PROXY, "tls_verification": True, "automatic_redirects": 0, "direct_connect_timeout_seconds": DIRECT_CONNECT_SECONDS, "direct_max_timeout_seconds": DIRECT_MAX_SECONDS, "proxy_connect_timeout_seconds": PROXY_CONNECT_SECONDS, "proxy_max_timeout_seconds": PROXY_MAX_SECONDS, "min_dispatch_monotonic_seconds": MIN_DISPATCH_SECONDS, "acceptance_dispatch_floor_seconds": ACCEPTANCE_DISPATCH_SECONDS, "min_request_start_utc_seconds": MIN_REQUEST_START_SECONDS, "disk_floor_bytes": DISK_FLOOR_BYTES, "stop_http_codes": sorted(STOP_HTTP_CODES), "stop_on_five_consecutive_transport_failures": True, "retry_after_rule": "429/503 stop immediately; cooldown not earlier than Retry-After and at least 120 seconds", "resume_rule": "record actual response resumeKey; do not follow continuation in this batch; incomplete if resume remains", "failure_streak_start": 0, "prior_failure_tail": 0, "control_basis": "latest root image-source receipt and post-gallery connectivity gate; historical two-prefix unknown receipt bound separately; tail end 0", "input_bindings": bindings, "fixture": {"path": rel(OUT / "fixture-results.json"), "sha256": sha(OUT / "fixture-results.json"), "all_passed": fixture_result["all_passed"]}, "candidates": [{"rank": x["rank"], "target_key": x.get("target_key"), "gallery": x["gallery"], "gallery_segment_index": x.get("gallery_segment_index"), "label": x["label"], "prefix": x["prefix"], "declared_slots": x.get("declared_slots"), "query_window": x["query_window"], "cdx_query_url": x["cdx_query_url"], "source_evidence": x.get("source_evidence")} for x in candidates]}
++    return {"schema": "wow-recovery.gallery-late-window-execution-plan.v1", "batch_id": BATCH_ID, "mode": "go_executed", "prepared_utc": iso(now()), "source_plan_path": rel(PLAN_PATH), "source_plan_sha256": sha(PLAN_PATH), "candidate_count": len(candidates), "candidate_ranks": [x["rank"] for x in candidates], "scope": "exact Karazhan and Black Temple native US gallery prefixes from the frozen v7 source-directory registry; prior complete intervals subtracted and explicit retry-2 gaps queried; CDX index only, no expansion", "query_window": {"from": "per_candidate", "target_from": FROM_TS, "to": TO_TS, "limit": LIMIT, "showResumeKey": True, "collapse": False, "matchType": "prefix"}, "network_deadline_utc": iso(NETWORK_DEADLINE_UTC), "index_only": True, "no_payload_replay": True, "max_attempts": MAX_ATTEMPTS, "window_seconds": WINDOW_SECONDS, "max_total_body_bytes": MAX_TOTAL_BODY_BYTES, "max_entity_body_bytes": MAX_ENTITY_BODY_BYTES, "direct_first": True, "proxy": PROXY, "tls_verification": True, "automatic_redirects": 0, "direct_connect_timeout_seconds": DIRECT_CONNECT_SECONDS, "direct_max_timeout_seconds": DIRECT_MAX_SECONDS, "proxy_connect_timeout_seconds": PROXY_CONNECT_SECONDS, "proxy_max_timeout_seconds": PROXY_MAX_SECONDS, "min_dispatch_monotonic_seconds": MIN_DISPATCH_SECONDS, "acceptance_dispatch_floor_seconds": ACCEPTANCE_DISPATCH_SECONDS, "min_request_start_utc_seconds": MIN_REQUEST_START_SECONDS, "disk_floor_bytes": DISK_FLOOR_BYTES, "stop_http_codes": sorted(STOP_HTTP_CODES), "stop_on_five_consecutive_transport_failures": True, "retry_after_rule": "429/503 stop immediately; cooldown not earlier than Retry-After and at least 120 seconds", "resume_rule": "record actual response resumeKey; do not follow continuation in this batch; incomplete if resume remains", "failure_streak_start": 0, "prior_failure_tail": 0, "control_basis": "latest root image-source receipt and post-gallery connectivity gate; historical two-prefix unknown receipt bound separately; tail end 0", "input_bindings": bindings, "fixture": {"path": rel(OUT / "fixture-results.json"), "sha256": sha(OUT / "fixture-results.json"), "all_passed": fixture_result["all_passed"]}, "candidates": [{"rank": x["rank"], "target_key": x.get("target_key"), "gallery": x["gallery"], "gallery_segment_index": x.get("gallery_segment_index"), "label": x["label"], "prefix": x["prefix"], "declared_slots": x.get("declared_slots"), "query_window": x["query_window"], "cdx_query_url": x["cdx_query_url"], "source_evidence": x.get("source_evidence")} for x in candidates]}
+ 
+ 
+ def public_attempt(row: dict[str, Any]) -> dict[str, Any]:
+@@ -638,6 +642,8 @@
+     cadence = _schedule_next(last_mono, previous_utc, last_start, _RealClock())
+     dispatch_utc, dispatch_mono = cadence["dispatch_utc"], cadence["dispatch_monotonic"]
+     elapsed = dispatch_mono - window_start
++    if dispatch_utc >= NETWORK_DEADLINE_UTC:
++        raise RuntimeError("network_deadline_before_dispatch")
+     remaining_window = WINDOW_SECONDS - max(0.0, elapsed)
+     if remaining_window <= 0:
+         raise RuntimeError("window_exhausted_before_dispatch")
+@@ -647,7 +653,8 @@
+     if free_before < DISK_FLOOR_BYTES:
+         raise RuntimeError("disk_floor_before_dispatch")
+     prior_body = int(state.get("total_body_bytes", 0))
+-    clamp = _remaining_clamp(prior_body, dispatch_mono, window_start, transport=transport)
++    deadline_remaining = max(0.0, (NETWORK_DEADLINE_UTC - dispatch_utc).total_seconds())
++    clamp = _remaining_clamp(prior_body, dispatch_mono, window_start, transport=transport, hard_remaining=deadline_remaining)
+     entity_limit = int(clamp["entity_body_limit_before_bytes"])
+     connect_time = float(clamp["connect_timeout_seconds"])
+     max_time = float(clamp["max_timeout_seconds"])

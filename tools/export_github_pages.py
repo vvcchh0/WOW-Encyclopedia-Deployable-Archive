@@ -1038,6 +1038,10 @@ _NAVTREE_COMMUNITY_PARENT_RE = re.compile(
 _NAVTREE_FAN_SITES_RE = re.compile(
     r'(?m)^(?P<indent>\s*)Menu1_6_10(?P<rest>\s*=\s*new\s+Array\(\s*bulletImg\s*\+\s*["\']Fan Sites["\']\s*\+\s*underLine\s*,)'
 )
+_CONTEST_NAVTREE_MARKER = "offline-contest-nav-fallback-v1"
+_CONTEST_NAVTREE_TREE_RE = re.compile(
+    r"(?m)^(?P<indent>[ \t]*)tree\s*\(\s*result\s*\)\s*;[ \t]*$"
+)
 
 
 def rewrite_navtree_community_ids(text: str) -> tuple[str, bool]:
@@ -1069,6 +1073,50 @@ def rewrite_navtree_community_ids(text: str) -> tuple[str, bool]:
         text = text[:start] + match.group("indent") + "Menu1_6_11" + text[prefix_end:]
         changed = True
     return text, changed
+
+
+def rewrite_contest_navtree_fallback(text: str, *, base_path: str) -> tuple[str, bool]:
+    """Repair the one archived contest page whose legacy URL is not its menu URL.
+
+    ``findNode`` compares both a stripped label and the normalized URL.  The
+    historical winners page is therefore left without ``result`` even though
+    the loaded ``Menu1_6_4`` node is the correct Contests parent.  Inject one
+    route- and node-guarded assignment immediately before the existing
+    ``tree(result)`` call.  The source menu, ``pageId``, and ``findNode`` are
+    untouched; repeated application is a no-op.
+    """
+
+    tree_matches = list(_CONTEST_NAVTREE_TREE_RE.finditer(text))
+    if len(tree_matches) > 1:
+        raise PagesExportError("ambiguous contest navtree tree(result) target")
+
+    marker_count = text.count(_CONTEST_NAVTREE_MARKER)
+    if marker_count > 1:
+        raise PagesExportError("ambiguous contest navtree fallback markers")
+    if marker_count == 1:
+        return text, False
+    if not tree_matches:
+        return text, False
+
+    expected_path = normalize_base_path(base_path) + "contests/05-05-25/winners.html"
+    path_literal = json.dumps(expected_path, ensure_ascii=True)
+    newline = "\r\n" if "\r\n" in text else "\n"
+    indent = tree_matches[0].group("indent")
+    block = newline.join(
+        (
+            f"{indent}/* {_CONTEST_NAVTREE_MARKER}: exact historical winners route only */",
+            f'{indent}if (typeof result === "undefined" &&',
+            f'{indent}    typeof document !== "undefined" && document.location &&',
+            f'{indent}    document.location.pathname === {path_literal} &&',
+            f'{indent}    typeof Menu1_6_4 !== "undefined" && Menu1_6_4 &&',
+            f'{indent}    typeof stripId === "function" && stripId(Menu1_6_4[0]) === "Contests") {{',
+            f'{indent}    result = "1_6_4";',
+            f"{indent}}}",
+            "",
+        )
+    )
+    start = tree_matches[0].start()
+    return text[:start] + block + text[start:], True
 
 
 def ssotd_current_shot_number(text: str, actual_timestamp: str) -> int:
@@ -2967,6 +3015,15 @@ def export_pages(
                     stats["wrath_viewer_query_repaired"] += 1
                 text = mirror.rewrite_script(text, base_url=base_url, localizer=localizer, recorder=recorder)
                 text = rewrite_root_literals(text, base_url=base_url, localizer=localizer, recorder=recorder)
+                if route == "/shared/wow-com/includes-client/navtreefunctions.js":
+                    text, changed = rewrite_contest_navtree_fallback(text, base_path=base_path)
+                    if changed:
+                        derivation_notes.append(
+                            "derived contest nav fallback: exact project-prefixed /contests/05-05-25/winners.html "
+                            "path may use verified Menu1_6_4 only when stripId(Menu1_6_4[0]) is Contests; "
+                            "findNode/pageId/source menu remain unchanged"
+                        )
+                        stats["contest_navtree_fallback_repaired"] += 1
                 if route == _RETIRED_ARMORY_TOOLTIP_ROUTE:
                     text, changed = rewrite_retired_armory_tooltip(text, route)
                     if changed:

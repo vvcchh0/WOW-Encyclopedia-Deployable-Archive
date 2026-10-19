@@ -1,0 +1,70 @@
+{
+  "schema": "contest-nav-verification-v1",
+  "scope": {
+    "route": "/contests/05-05-25/winners.html",
+    "script_route": "/shared/wow-com/includes-client/navtreefunctions.js",
+    "frozen_v33_output": ".scratch/pages-resources-20261018-v33",
+    "network_requests": 0,
+    "frozen_source_unchanged": true
+  },
+  "implementation": {
+    "baseline_exporter_sha256": "2a6fa4256ad0853797ae10748ef7842896614d419bdb7ad208d9b258dc8e6488",
+    "exporter_sha256": "e5b3a53381ddcf0b5037a726d328c7dd99fa5d2f8e24e047e474a3853305643a",
+    "exporter_change": "one exact tree(result) guard and one pipeline call; no source menu, pageId, or findNode rewrite",
+    "helper_marker": "offline-contest-nav-fallback-v1",
+    "helper_contract": "idempotent; rejects duplicate marker/tree targets; exact project-prefixed winners pathname; undefined result; Menu1_6_4 label Contests"
+  },
+  "tests": {
+    "command": "C:\\Program Files\\Python311\\python.exe -X utf8 -m unittest discover -s tests -p test_contest_navigation_recovery.py -v",
+    "passed": 6,
+    "failed": 0,
+    "skipped": 0,
+    "test_sha256": "6a3db4d79c6a93a7dea062d39c0e1ff07717063ed30f19c4ffdb27adf88b58b5"
+  },
+  "fixture": {
+    "prepare_command": "C:\\Program Files\\Python311\\python.exe -X utf8 research/continuous-recovery-20261019/integration/contest-nav/prepare_contest_nav_fixture.py",
+    "source_sha256": "b1f274801f63ee7bb5d8b66c3464eea131a6dce4ba8828e47eaa48e973e56a69",
+    "source_length": 12744,
+    "derived_sha256": "4158e14fbb38e12a2d3f668f29c1762c2763fb2c78730845bce6fd29f57fe493",
+    "derived_length": 13186,
+    "page_sha256": "b0b478dd5f2957c41358aef1b95c6b51aa6adc147f557d3a49a45260232012a9",
+    "page_length": 71709
+  },
+  "browser": {
+    "command": "C:\\Users\\17630\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe research/continuous-recovery-20261019/integration/contest-nav/compare_contest_nav.cjs",
+    "result_path": "research/continuous-recovery-20261019/integration/contest-nav/results/contest-nav-before-after.json",
+    "result_sha256": "0b292bb76596ad02427c4d6cc552647c43c02b7fed50e6123a13705e673437f6",
+    "before": {
+      "nav_result": null,
+      "page_errors": 4,
+      "failed_requests": 8,
+      "body_text_sha256": "76b0bccb899243eee82f4d9509a22c1c6885ffb86b5e4afff7ce3893cc255f45",
+      "body_text_length": 2232,
+      "images": 62,
+      "image_links": 40
+    },
+    "after": {
+      "nav_result": "1_6_4",
+      "menu_label": "Contests",
+      "page_errors": 0,
+      "failed_requests": 8,
+      "body_text_sha256": "c4ac509551752e2c4c1b020ffc9596bbd2ebf313e1eb2b6808a24046589565ae",
+      "body_text_length": 2574,
+      "images": 65,
+      "image_links": 42
+    },
+    "assertions": {
+      "after_restores_contests_parent": true,
+      "external_requests_zero": true,
+      "frozen_v33_output_untouched": true
+    }
+  },
+  "files": {
+    "README.md": "68a8d6e71b27bc52f8862645abc3e615b2ae8f510210dd838da602064179170b",
+    "prepare_contest_nav_fixture.py": "452c615f698bb8b1089d6f6bcc9e923533f4abb9c72a76b51fdf39d403194e57",
+    "compare_contest_nav.cjs": "939d5573580e6b574046f6b74f05cd842fd402d85994f9d81eb1ab0d75407d1f",
+    "browser-fixture-bindings.json": "59efb1d8869de76fda2551a2b83e2d6a4eab5e9080b9ec78342d885a9c7c6147",
+    "fixtures/navtreefunctions.derived.js": "4158e14fbb38e12a2d3f668f29c1762c2763fb2c78730845bce6fd29f57fe493",
+    "results/contest-nav-before-after.json": "0b292bb76596ad02427c4d6cc552647c43c02b7fed50e6123a13705e673437f6"
+  }
+}

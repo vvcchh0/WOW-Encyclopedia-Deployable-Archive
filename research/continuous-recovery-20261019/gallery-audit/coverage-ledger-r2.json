@@ -1,0 +1,284 @@
+{
+  "schema": "wow-recovery.gallery-audit-coverage-ledger-r2.v1",
+  "generated_utc": "2026-10-19T06:12:21Z",
+  "network_requests_during_audit": 0,
+  "supersedes": {
+    "path": "research/continuous-recovery-20261019/gallery-audit/coverage-ledger.json",
+    "sha256": "36633c3a9e3e7a6fd152d240727b17ad186d627afd3035214b054fc2e999b987",
+    "reason": "Corrects late-prefix and late-2013 redirect wording and adds the Karazhan late prefix gap."
+  },
+  "status_boundary": {
+    "run": "2026-10-18",
+    "last_actual_network_batch": "NET53",
+    "latest_source_acceptance": {
+      "path": "research/continuous-recovery-20261018/publication/root-transfer-pending2-v2-batch1-source-acceptance.json",
+      "sha256": "1904719e7abc54315e490aeb72697728ebe23903ccfdf3e83b375638fd41477c",
+      "failure_streak_end": 0
+    },
+    "latest_control_gate": {
+      "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+      "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+      "resume_gate_passed": true,
+      "control_final_streak": 0
+    },
+    "inherited_tail": 0,
+    "new_network_in_this_r2_audit": false
+  },
+  "later_success_receipt_search": {
+    "scope": "research/continuous-recovery-20261018/publication plus status.json; exact late-window timestamps and acceptance names",
+    "method": [
+      "Listed all publication files whose names contain gallery or late-window.",
+      "Searched publication and status for 20090101000000, 20080512210045, root-gallery-late-window, root-gallery-retry2, and transport_unknown.",
+      "Compared the two accepted source receipts with native-gallery-late-window-ledger.json."
+    ],
+    "matching_source_receipts": [
+      {
+        "path": "research/continuous-recovery-20261018/publication/root-gallery-late-window-source-acceptance.json",
+        "sha256": "040d2cfd69dc1881ad3b50f66c41fcd475014a69c0b07fc696c398f4d3c49201",
+        "requests": 6,
+        "source_responses": 1,
+        "index_rows_total": 63,
+        "accepted_images": 0,
+        "payload_replays": 0,
+        "karazhan": "invalid_index_rows_0_complete_false",
+        "black_temple": "invalid_index_rows_0_complete_false",
+        "zulaman": "complete_index_rows_63_direct_candidates_0"
+      },
+      {
+        "path": "research/continuous-recovery-20261018/publication/root-gallery-retry2-source-acceptance.json",
+        "sha256": "ce62cbee66fa03339eb0fe4a4e733d2933e1df91fef7fa79a61d4357565bb3f5",
+        "requests": 4,
+        "source_responses": 1,
+        "stop_reason": "endpoint_status_503",
+        "accepted_images": 0,
+        "payload_replays": 0,
+        "karazhan": "invalid_index_rows_0_complete_false",
+        "black_temple": "invalid_index_rows_0_complete_false"
+      }
+    ],
+    "result": "No later accepted successful receipt for either late prefix was found. Both remain transport_unknown; this is not evidence that their image payloads are 404."
+  },
+  "coverage_summary": {
+    "native_karazhan_replay_boundary": {
+      "source": "research/continuous-recovery-20261018/publication/root-native-replay47-v3-batch4-source-acceptance.json",
+      "source_sha256": "fc8e737c4f161a59c6d219d646cbf1bb0516b148ef39260361f86644ce6c7ed0",
+      "classification_totals": {
+        "archive_replay_404": 114,
+        "observed_302_location": 12,
+        "transport_unknown": 0,
+        "accepted_images": 0
+      },
+      "interpretation": "The 47 native queue entities were classified by replay. This does not close the separate late CDX prefix index gap."
+    },
+    "late_prefix_windows": [
+      {
+        "gallery": "Karazhan",
+        "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/",
+        "from": "20090101000000",
+        "to": "20101207235959",
+        "state": "transport_unknown",
+        "direct_candidates": 0,
+        "index_rows": 0,
+        "payloads": 0,
+        "reason": "Both accepted late-window attempts failed to produce a valid CDX index."
+      },
+      {
+        "gallery": "Black Temple",
+        "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/blacktemple/",
+        "from": "20080512210045",
+        "to": "20101207235959",
+        "state": "transport_unknown",
+        "direct_candidates": 0,
+        "index_rows": 0,
+        "payloads": 0,
+        "reason": "Both accepted late-window attempts failed to produce a valid CDX index."
+      },
+      {
+        "gallery": "Zul'Aman",
+        "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/zulaman/",
+        "from": "20080512210045",
+        "to": "20101207235959",
+        "state": "complete_index_no_direct_image_candidates",
+        "index_rows": 63,
+        "image_index_rows": 29,
+        "direct_candidates": 0,
+        "payloads": 0,
+        "action": "Do not repeat."
+      }
+    ]
+  },
+  "coverage_and_association_evidence": {
+    "frozen_registry": {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-final-v7/gallery-prefix-registry-v7.json",
+      "sha256": "2579f66841bf6102d90f5dbfe819902337bff03f6e3ac7191239ae041e2d97d6"
+    },
+    "gallery_source_pages": [
+      {
+        "gallery": "Karazhan",
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/karazhan-gallery.html",
+        "sha256": "fc7f46d260cba6c434fd5e67d47008f207fbb8bd939a630089599d097755c199",
+        "source_lines": {
+          "numShots": {
+            "line": 60,
+            "literal": "numShots = 63;"
+          },
+          "addshots": {
+            "line": 126,
+            "literal": "addshots(\"/info/dungeons/images/karazhan/\",\"ss\",numShots);"
+          }
+        },
+        "coverage": "The 20080101000000..20081231235959 saved Karazhan prefix already covers the three accepted nested preview captures; the 20090101000000..20101207235959 CDX prefix is still transport_unknown."
+      },
+      {
+        "gallery": "Black Temple",
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/black-temple-gallery.html",
+        "sha256": "04c728723c639d4613f77bf449cd93ae68c494b08151b76da00899984ffff4ff",
+        "source_lines": {
+          "numShots": {
+            "line": 60,
+            "literal": "numShots = 48;"
+          },
+          "addshots": {
+            "line": 112,
+            "literal": "addshots(\"/info/dungeons/images/blacktemple/\",\"ss\",numShots);"
+          }
+        },
+        "coverage": "The saved 20040101000000..20080512210044 prefix is complete but adjacent before the requested window. The 20080512210045..20101207235959 prefix remains transport_unknown."
+      },
+      {
+        "gallery": "Zul'Aman",
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/zulaman-gallery.html",
+        "sha256": "342c63cd42af3b72221f03be03d3099e7f3369c9b7cc858868e7304b567033d1",
+        "source_lines": {
+          "numShots": {
+            "line": 60,
+            "literal": "numShots = 60;"
+          },
+          "addshots": {
+            "line": 123,
+            "literal": "addshots(\"/info/dungeons/images/zulaman/\",\"ss\",numShots);"
+          }
+        },
+        "coverage": "The late-window query completed with 63 rows and 29 nested image rows but no strict direct image candidates. Do not repeat this complete window."
+      }
+    ],
+    "shared_gallery_js": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+      "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+      "lines": {
+        "full_family": "471-487",
+        "thumb_derivation": "501-507"
+      },
+      "observed_logic": [
+        "addshots concatenates sourceDirectory + filename + number + .jpg.",
+        "printPages derives a preview by replacing .jpg with -thumb.jpg."
+      ],
+      "boundary": "This is a deterministic source family rule, not an individually captured full-size URL or proof of a CDX row. No filename is added to either plan from this rule alone."
+    },
+    "mechanism_explanation_inference": {
+      "label": "inference_from_static_source_and_index_evidence",
+      "observation": "The player galleries assemble ssN.jpg and derive ssN-thumb.jpg at runtime through addshots/guidegallery-screenie.js, while the accepted guide-preview map records static thumbnail routes directly in guide-page sections.",
+      "supported_by": [
+        ".scratch/offline-navigation-20261015-v15/site/info/dungeons/karazhan-gallery.html:126",
+        ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js:471-487,501-507",
+        "research/continuous-recovery-20261016/integration/guide-previews-source-map.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-late-window-source-acceptance.json"
+      ],
+      "inference": "The difference between static guide previews and missing/unknown native gallery rows is consistent with an archive discovery gap for dynamically assembled resources.",
+      "boundary": "This explains why repeated same-point polling has low expected value, but it does not prove the historical crawler cause and does not convert an unknown prefix into 404."
+    },
+    "accepted_karazhan_related_previews": {
+      "map_path": "research/related-sites-20261014/integration/karazhan-late-source-map.json",
+      "map_sha256": "f7f84beac63d63ec5a0c589dcfad3209e016cd4f9acf0f39c9b313f79cb37bb4",
+      "items": [
+        {
+          "original": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/thumbs/ss2-thumb.jpg",
+          "capture": "20080512212653",
+          "role": "gallery_related_preview",
+          "coverage": "already in the saved 2008 Karazhan prefix"
+        },
+        {
+          "original": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/thumbs/ss3-thumb.jpg",
+          "capture": "20080512212653",
+          "role": "gallery_related_preview",
+          "coverage": "already in the saved 2008 Karazhan prefix"
+        },
+        {
+          "original": "https://www.worldofwarcraft.com/info/dungeons/images/karazhan/thumbs/ss1-thumb.jpg",
+          "capture": "20080512222305",
+          "role": "gallery_related_preview",
+          "coverage": "already in the saved 2008 Karazhan prefix; HTTPS is retained as a distinct source variant"
+        }
+      ],
+      "full_size_pairing": "No source map entry supplies a paired full-size capture. The JS family rule is recorded above but is not promoted to a new exact candidate."
+    },
+    "accepted_zulaman_guide_previews": {
+      "map_path": "research/continuous-recovery-20261016/integration/guide-previews-source-map.json",
+      "map_sha256": "cf0da5fec45993684676d94d1cc09fad3f5a421dabbb18b56861000daa6248b2",
+      "verification_path": "research/continuous-recovery-20261016/integration/guide-previews-verification.json",
+      "verification_sha256": "5dfd4db8f6db8bd6542001e7c4d068ae4ae8b228219b258ec270d3b2e79862f7",
+      "gallery_route": "/info/dungeons/zulaman-gallery.html",
+      "guide_route": "/info/dungeons/zulaman.xml",
+      "items": [
+        "/info/dungeons/images/zulaman/thumbs/ss1-thumb.jpg",
+        "/info/dungeons/images/zulaman/thumbs/ss2-thumb.jpg",
+        "/info/dungeons/images/zulaman/thumbs/ss3-thumb.jpg"
+      ],
+      "coverage": "These are accepted guide previews. The exact 2008 preview captures precede the late query start, while the late query separately returned nested rows. No full-size payload is inferred."
+    },
+    "regional_page_inventory": {
+      "page_references_path": "research/related-sites-20261014/regional-gallery/page-references.json",
+      "regional_gallery_next_map_path": "research/related-sites-20261014/regional-gallery-next/image-source-map.json",
+      "regional_gallery_next_map_sha256": "9024c45c26fe7acd606b860807c65aafe2bb30cbf7c02b7664e137ddb2ac3e7f",
+      "finding": "The saved regional page set is a wow-europe Screenshot of the Day page and contains no explicit Karazhan, Black Temple, or Zul'Aman image source. The next regional image map is empty. No region-page full-size target is available."
+    },
+    "external_credit_links": {
+      "finding": "The dungeon HTML contains external wowarmory character-credit links. They are not image URLs and no saved region-page source binds them to a dungeon screenshot; they are excluded from the query plans."
+    }
+  },
+  "late_2013_redirect_correction": {
+    "queue_path": "research/continuous-recovery-20261018/publication/native-observed-late-thumbnails12-queue.json",
+    "queue_sha256": "7fbe5026cce61fcf6e4b3e9028d3009b6a3c3d3e9be28c73ecbb0510283ad36e",
+    "summary": "The queue has twelve literal native thumbnail replay references and their 20130612 capture timestamps. The two exact-CDX batches returned six source responses each and accepted zero images.",
+    "exact_cdx_receipts": [
+      {
+        "path": "research/continuous-recovery-20261018/publication/root-late-thumbnails12-batch1-source-acceptance.json",
+        "sha256": "1f5efd828ae5eb79fc8752189846b83a2b13110accd21907cef11d41af3ca0cb"
+      },
+      {
+        "path": "research/continuous-recovery-20261018/publication/root-late-thumbnails12-batch2-source-acceptance.json",
+        "sha256": "81a374a44659a81c90b7adb2d3b13de7c1ae3b261837e08effcf48d7ef6758a7"
+      }
+    ],
+    "actual_probe": {
+      "path": "research/continuous-recovery-20261018/publication/root-karazhan-observed-redirect-probe-source-acceptance.json",
+      "sha256": "1ac75e4586d50fb7d188d630622f045c556c34b35f9138c310fb935cbe22fb04",
+      "original": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/ss1-thumb.jpg",
+      "capture": "20130612155549",
+      "observed_location": "https://web.archive.org/web/20130612155549id_/http://us.battle.net/wow/game/guide/",
+      "redirect_followed": false
+    },
+    "remaining_eleven": "The other eleven rows are CDX/queue observations only. Their Location headers were not individually replayed, so no destination is asserted for them."
+  },
+  "proposed_followups": [
+    {
+      "path": "research/continuous-recovery-20261019/gallery-audit/karazhan-late-index-only-plan-r2.json",
+      "gallery": "Karazhan",
+      "kind": "single_target_review_slice",
+      "network_requests": 0
+    },
+    {
+      "path": "research/continuous-recovery-20261019/gallery-audit/black-temple-late-index-only-plan-r2.json",
+      "gallery": "Black Temple",
+      "kind": "single_target_review_slice",
+      "network_requests": 0
+    }
+  ],
+  "explicit_exclusions": [
+    "Do not repeat the complete Zul'Aman late prefix.",
+    "Do not replay the eleven unprobed 2013 redirect rows.",
+    "Do not infer image 404 from either invalid/transport-unknown CDX response.",
+    "Do not promote the JS-generated full-size family or a thumbnail alias without a successful exact CDX row and separately reviewed payload.",
+    "Do not add guessed filenames or non-native regional/guide images."
+  ]
+}

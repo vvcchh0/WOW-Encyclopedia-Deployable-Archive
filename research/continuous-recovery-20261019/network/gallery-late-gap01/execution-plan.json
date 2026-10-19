@@ -1,0 +1,192 @@
+{
+  "schema": "wow-recovery.gallery-late-window-execution-plan.v1",
+  "batch_id": "WAYBACK-GALLERY-LATE-GAP01-20261019",
+  "mode": "go_executed",
+  "prepared_utc": "2026-10-19T06:30:23.411831Z",
+  "source_plan_path": "research/continuous-recovery-20261019/network/gallery-late-gap01/plan.json",
+  "source_plan_sha256": "4b833218fc42a000ba7eaefe1ad67d6933c1b73d250f1f5554422f74e52d657a",
+  "candidate_count": 2,
+  "candidate_ranks": [
+    1,
+    2
+  ],
+  "scope": "exact Karazhan and Black Temple native US gallery prefixes from the frozen v7 source-directory registry; prior complete intervals subtracted and explicit retry-2 gaps queried; CDX index only, no expansion",
+  "query_window": {
+    "from": "per_candidate",
+    "target_from": "20080512210045",
+    "to": "20101207235959",
+    "limit": 500,
+    "showResumeKey": true,
+    "collapse": false,
+    "matchType": "prefix"
+  },
+  "network_deadline_utc": "2026-10-19T13:15:00Z",
+  "index_only": true,
+  "no_payload_replay": true,
+  "max_attempts": 4,
+  "window_seconds": 180.0,
+  "max_total_body_bytes": 16777216,
+  "max_entity_body_bytes": 8388608,
+  "direct_first": true,
+  "proxy": "http://127.0.0.1:7890",
+  "tls_verification": true,
+  "automatic_redirects": 0,
+  "direct_connect_timeout_seconds": 4.0,
+  "direct_max_timeout_seconds": 12.0,
+  "proxy_connect_timeout_seconds": 8.0,
+  "proxy_max_timeout_seconds": 60.0,
+  "min_dispatch_monotonic_seconds": 5.25,
+  "acceptance_dispatch_floor_seconds": 5.25,
+  "min_request_start_utc_seconds": 5.0,
+  "disk_floor_bytes": 11005853696,
+  "stop_http_codes": [
+    429,
+    503
+  ],
+  "stop_on_five_consecutive_transport_failures": true,
+  "retry_after_rule": "429/503 stop immediately; cooldown not earlier than Retry-After and at least 120 seconds",
+  "resume_rule": "record actual response resumeKey; do not follow continuation in this batch; incomplete if resume remains",
+  "failure_streak_start": 0,
+  "prior_failure_tail": 0,
+  "control_basis": "latest root image-source receipt and post-gallery connectivity gate; historical two-prefix unknown receipt bound separately; tail end 0",
+  "input_bindings": {
+    "gallery_final_v7_registry": {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-final-v7/gallery-prefix-registry-v7.json",
+      "sha256": "2579f66841bf6102d90f5dbfe819902337bff03f6e3ac7191239ae041e2d97d6",
+      "bytes": 418729
+    },
+    "root_gallery_registry_v7_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-registry-v7-acceptance.json",
+      "sha256": "fc390af9cffe526d6e8cd21d5167467fe7b207cca7b851977f95381159caa319",
+      "bytes": 9458
+    },
+    "template_gallery_prefix04_driver_v4": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix04/gallery_prefix_driver_v4.py",
+      "sha256": "22f45b6776944df8cdc36bab5231edc1f8eee9faf627dcb07b1af6523929af38",
+      "bytes": 55880
+    },
+    "template_gallery_prefix04_plan": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix04/plan.json",
+      "sha256": "20145d4db43da3d2ace0cc378a867d27ffc2e5aa3c86ab82cd52c5eb7f8799d0",
+      "bytes": 53753
+    },
+    "template_gallery_prefix04_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix04-acceptance.json",
+      "sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2",
+      "bytes": 88497
+    },
+    "template_gallery_prefix04_fixture": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix04/fixture-results.json",
+      "sha256": "70a76e1633720ef117c6f4acaabec2cb02de2858db39c28e851e681c137290d0",
+      "bytes": 5873
+    },
+    "template_gallery_late_window_v1_driver": {
+      "path": "research/continuous-recovery-20261018/network/gallery-late-window-20261018/gallery_late_window_driver_v1.py",
+      "sha256": "3f08af9ab0bbdc8909210b403735788d698d1dbea92ec8245cdea47c12f89e13",
+      "bytes": 59243
+    },
+    "previous_gallery_unknown_prefix_receipt": {
+      "path": "research/continuous-recovery-20261018/publication/root-gallery-late-window-source-acceptance.json",
+      "sha256": "040d2cfd69dc1881ad3b50f66c41fcd475014a69c0b07fc696c398f4d3c49201",
+      "bytes": 28520
+    },
+    "latest_image_source_acceptance": {
+      "path": "research/continuous-recovery-20261018/publication/root-transfer-pending2-v2-batch1-source-acceptance.json",
+      "sha256": "1904719e7abc54315e490aeb72697728ebe23903ccfdf3e83b375638fd41477c",
+      "bytes": 2395
+    },
+    "latest_control_gate": {
+      "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+      "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+      "bytes": 1842
+    },
+    "historical_retry2_503_receipt": {
+      "path": "research/continuous-recovery-20261018/publication/root-gallery-retry2-source-acceptance.json",
+      "sha256": "ce62cbee66fa03339eb0fe4a4e733d2933e1df91fef7fa79a61d4357565bb3f5",
+      "bytes": 2223
+    },
+    "r2_karazhan_review_slice": {
+      "path": "research/continuous-recovery-20261019/gallery-audit/karazhan-late-index-only-plan-r2.json",
+      "sha256": "b8a29f43dc16d4c86d8d1cfcf2b025880e487ac104c257bc8729ad5756eae6b2",
+      "bytes": 5491
+    },
+    "r2_black_temple_review_slice": {
+      "path": "research/continuous-recovery-20261019/gallery-audit/black-temple-late-index-only-plan-r2.json",
+      "sha256": "585b25ed80cf6b2f4fd863252b07765f5f08872e87549f6969c76059d17ff68c",
+      "bytes": 5553
+    },
+    "packet_driver": {
+      "path": "research/continuous-recovery-20261019/network/gallery-late-gap01/gallery_late_gap01_driver_v1.py",
+      "sha256": "99e3abf059bfbb0398a0a6d225939620a836bcd5278e9fdbd1a9448043b4aae8",
+      "bytes": 62361
+    },
+    "packet_fixture": {
+      "path": "research/continuous-recovery-20261019/network/gallery-late-gap01/fixture-results.json",
+      "sha256": "870740ea2493f862708f3ab670486b8ad64b7699fae7a74c96289901310a7f38",
+      "bytes": 6405
+    }
+  },
+  "fixture": {
+    "path": "research/continuous-recovery-20261019/network/gallery-late-gap01/fixture-results.json",
+    "sha256": "870740ea2493f862708f3ab670486b8ad64b7699fae7a74c96289901310a7f38",
+    "all_passed": true
+  },
+  "candidates": [
+    {
+      "rank": 1,
+      "target_key": "GALLERY-LATE-GAP01-KARAZHAN",
+      "gallery": "Karazhan",
+      "gallery_segment_index": 1,
+      "label": "Karazhan",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/",
+      "declared_slots": 63,
+      "query_window": {
+        "from": "20090101000000",
+        "to": "20101207235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fkarazhan%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20090101000000&to=20101207235959&limit=500&showResumeKey=true",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/karazhan-gallery.html",
+        "sha256": "fc7f46d260cba6c434fd5e67d47008f207fbb8bd939a630089599d097755c199",
+        "addshots_line": 126,
+        "addshots_literal": "addshots(\"/info/dungeons/images/karazhan/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/karazhan/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 63;"
+      }
+    },
+    {
+      "rank": 2,
+      "target_key": "GALLERY-LATE-GAP01-BLACK-TEMPLE",
+      "gallery": "Black Temple",
+      "gallery_segment_index": 1,
+      "label": "Black Temple",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/blacktemple/",
+      "declared_slots": 48,
+      "query_window": {
+        "from": "20080512210045",
+        "to": "20101207235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fblacktemple%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/black-temple-gallery.html",
+        "sha256": "04c728723c639d4613f77bf449cd93ae68c494b08151b76da00899984ffff4ff",
+        "addshots_line": 112,
+        "addshots_literal": "addshots(\"/info/dungeons/images/blacktemple/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/blacktemple/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 48;"
+      }
+    }
+  ]
+}

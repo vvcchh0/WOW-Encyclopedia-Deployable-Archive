@@ -1,0 +1,377 @@
+{
+  "schema": "wow-recovery.local-audit.v33-ui-summary.v1",
+  "status": "completed_local_only_with_one_unresolved_static_target",
+  "prepared_utc": "2026-10-19",
+  "scope": "Oct18 frozen v33 continuation; no exporter/map/site changes",
+  "input": {
+    "path": "research/continuous-recovery-20261019/local-audit/browser/v33-ui-audit-input-r7.json",
+    "sha256": "a82cec51b9896e1eb363fe978a7550f18cb2eeb15d12efaea1519e917c388d35",
+    "bytes": 288958
+  },
+  "harness": {
+    "path": "research/continuous-recovery-20261019/local-audit/browser/run_v33_ui_audit.cjs",
+    "sha256": "d098c4f7fdbde797f9a70032b303a84eace27fdeb572f794b82d90785d425d06",
+    "bytes": 31657
+  },
+  "input_builder": {
+    "path": "research/continuous-recovery-20261019/local-audit/browser/make_input.py",
+    "sha256": "e35c05ea53880541b5ed08a006953a9f33ccac0eb053a06f75b023c39260b3f3",
+    "bytes": 4781
+  },
+  "screenie_diagnostic": {
+    "path": "research/continuous-recovery-20261019/local-audit/browser/results/news-screenie-diagnostic.json",
+    "sha256": "2463feafeb1b0ed71afa9111324980c0096dab784e0e2866706852018c090525",
+    "bytes": 5146,
+    "errors": 0,
+    "external_requests": 0,
+    "targets": 2,
+    "observed": "rel=screenie opens the native #redBlock/#Screenie background viewer; target image URL and natural size are available, then #Screenie2 closes it"
+  },
+  "frozen_bindings": {
+    "browser_input_r7": {
+      "path": "research/continuous-recovery-20261018/integration/v33/browser/v33-browser-input-r7.json",
+      "sha256": "a4acc39c3ab53cf79b7ae378eef334ff3151e692df2469a3da9a762d3b5b81f0"
+    },
+    "browser_result_r5": {
+      "path": "research/continuous-recovery-20261018/integration/v33/browser/results/v33-browser-result-r5.json",
+      "sha256": "8932ed5338010ff2ca21811465dfc7e5565c8289188bfadc4b23cec76a778b88"
+    },
+    "css_viewer_baseline": {
+      "path": "research/continuous-recovery-20261018/integration/v33/browser/results/tournament-viewer-baseline.json",
+      "sha256": "dac6be73d421005426646845d868f954e4b5f3b64093d7b5859be1d8f3a573bf"
+    },
+    "root_browser_acceptance": {
+      "path": "research/continuous-recovery-20261018/publication/root-v33-browser-acceptance.json",
+      "sha256": "2bbb80f2bc05b7554013694349eb9acff4af0b7f3d82642d0d340d3e30bd9cd3"
+    },
+    "v33_provenance": {
+      "path": ".scratch/pages-resources-20261018-v33/export-provenance.json",
+      "sha256": "99ac5b0a2bc7d257b2fe3c4b18a0bb74023c3c57051be3a4f4efe20258f4c8f5"
+    }
+  },
+  "frozen_output": {
+    "base_path": "/WOW-Encyclopedia-Deployable-Archive/",
+    "path": ".scratch/pages-resources-20261018-v33",
+    "provenance": {
+      "path": ".scratch/pages-resources-20261018-v33/export-provenance.json",
+      "sha256": "99ac5b0a2bc7d257b2fe3c4b18a0bb74023c3c57051be3a4f4efe20258f4c8f5"
+    }
+  },
+  "expected_continuation": {
+    "dragon_hunt": 1,
+    "ordinary_pending_including_dragon": 46,
+    "static_render_targets": 30,
+    "prior_popup_full_image_links_reused": 21
+  },
+  "coverage": {
+    "dragon_hunt_passed": 1,
+    "ordinary_passed": 45,
+    "ordinary_failed": 0,
+    "ordinary_not_visible": 0,
+    "static_passed": 29,
+    "static_not_visible": 1,
+    "static_unused_css_declaration": 0,
+    "new_ui_passed": 75,
+    "new_ui_expected": 76,
+    "new_ui_unresolved": 1
+  },
+  "final_results": [
+    {
+      "path": "research/continuous-recovery-20261019/local-audit/browser/results/dragon-hunt-ss05-retry1.json",
+      "sha256": "b75f30312740a4a4cf0f4c5faa9f48992ab6721c0f98d9702113176f582c783c",
+      "bytes": 3285,
+      "accepted": true,
+      "scope": "dragon",
+      "batch_index": 1,
+      "target_results": 1,
+      "status_counts": {
+        "passed": 1
+      },
+      "external_requests": 0,
+      "request_failures": 0,
+      "page_errors": 0,
+      "errors": [],
+      "duration_ms": 2272
+    },
+    {
+      "path": "research/continuous-recovery-20261019/local-audit/browser/results/ordinary-r1-01.json",
+      "sha256": "85434278a09491a0173b27e06fd709086d89293d84aafcf7e175596b1a4174f6",
+      "bytes": 13874,
+      "accepted": true,
+      "scope": "ordinary",
+      "batch_index": 1,
+      "target_results": 12,
+      "status_counts": {
+        "passed": 12
+      },
+      "external_requests": 0,
+      "request_failures": 0,
+      "page_errors": 0,
+      "errors": [],
+      "duration_ms": 32814
+    },
+    {
+      "path": "research/continuous-recovery-20261019/local-audit/browser/results/ordinary-r1-02-retry1.json",
+      "sha256": "70d32856182ce06e6b3b384d07245970060756db40c22b964298c49aaf986442",
+      "bytes": 19062,
+      "accepted": true,
+      "scope": "ordinary",
+      "batch_index": 2,
+      "target_results": 12,
+      "status_counts": {
+        "passed": 12
+      },
+      "external_requests": 0,
+      "request_failures": 0,
+      "page_errors": 0,
+      "errors": [],
+      "duration_ms": 27206
+    },
+    {
+      "path": "research/continuous-recovery-20261019/local-audit/browser/results/ordinary-r1-03-retry4.json",
+      "sha256": "9fce607b679267d23e4c37b546afbd123fe80ef1d012aeb27787f19c222e4950",
+      "bytes": 26785,
+      "accepted": true,
+      "scope": "ordinary",
+      "batch_index": 3,
+      "target_results": 12,
+      "status_counts": {
+        "passed": 12
+      },
+      "external_requests": 0,
+      "request_failures": 0,
+      "page_errors": 0,
+      "errors": [],
+      "duration_ms": 40982
+    },
+    {
+      "path": "research/continuous-recovery-20261019/local-audit/browser/results/ordinary-r1-04.json",
+      "sha256": "cbe91e334cf6989f451d434055817c1bf0e2e082657c42923cb9dd04e47976d6",
+      "bytes": 16894,
+      "accepted": true,
+      "scope": "ordinary",
+      "batch_index": 4,
+      "target_results": 9,
+      "status_counts": {
+        "passed": 9
+      },
+      "external_requests": 0,
+      "request_failures": 0,
+      "page_errors": 0,
+      "errors": [],
+      "duration_ms": 48545
+    },
+    {
+      "path": "research/continuous-recovery-20261019/local-audit/browser/results/static-r1-01.json",
+      "sha256": "d926a146d50647b60fb488f4839d82231f1c0e438221455d18639cb6926a3781",
+      "bytes": 25730,
+      "accepted": true,
+      "scope": "static",
+      "batch_index": 1,
+      "target_results": 12,
+      "status_counts": {
+        "passed": 12
+      },
+      "external_requests": 0,
+      "request_failures": 0,
+      "page_errors": 0,
+      "errors": [],
+      "duration_ms": 20767
+    },
+    {
+      "path": "research/continuous-recovery-20261019/local-audit/browser/results/static-r1-02.json",
+      "sha256": "6a63735230bbfffc7817fc4c0e004f38958c6dce12cd62613989e70070d9dc3f",
+      "bytes": 27286,
+      "accepted": false,
+      "scope": "static",
+      "batch_index": 2,
+      "target_results": 12,
+      "status_counts": {
+        "passed": 11,
+        "not_visible": 1
+      },
+      "external_requests": 0,
+      "request_failures": 0,
+      "page_errors": 0,
+      "errors": [],
+      "duration_ms": 19672
+    },
+    {
+      "path": "research/continuous-recovery-20261019/local-audit/browser/results/static-r1-03.json",
+      "sha256": "b6d03aae439760bf310dc21a43914bd9f4491d4129a22f2a6b15ae890d451e64",
+      "bytes": 14115,
+      "accepted": true,
+      "scope": "static",
+      "batch_index": 3,
+      "target_results": 6,
+      "status_counts": {
+        "passed": 6
+      },
+      "external_requests": 0,
+      "request_failures": 0,
+      "page_errors": 0,
+      "errors": [],
+      "duration_ms": 4518
+    }
+  ],
+  "historical_failed_attempts_preserved": [
+    {
+      "path": "research/continuous-recovery-20261019/local-audit/browser/results/dragon-hunt-ss05.json",
+      "sha256": "7cd27718d0e0b3dfccfd71a67a39c28700dbd11ad888a830e08b419ebc451acf",
+      "bytes": 1520,
+      "accepted": false,
+      "scope": "dragon",
+      "batch_index": 1,
+      "target_results": 0,
+      "status_counts": {},
+      "external_requests": 0,
+      "request_failures": 0,
+      "page_errors": 0,
+      "errors": [
+        "ReferenceError: candidates is not defined\n    at main (D:\\WOW_Encyclopedia\\research\\continuous-recovery-20261019\\local-audit\\browser\\run_v33_ui_audit.cjs:355:183)"
+      ],
+      "duration_ms": 3512
+    },
+    {
+      "path": "research/continuous-recovery-20261019/local-audit/browser/results/ordinary-01.json",
+      "sha256": "6ff3d420e7eab2bd164eb07254e2931945da8516e9e0618b094283797980e517",
+      "bytes": 13553,
+      "accepted": false,
+      "scope": "ordinary",
+      "batch_index": 1,
+      "target_results": 12,
+      "status_counts": {
+        "not_visible": 1,
+        "passed": 11
+      },
+      "external_requests": 0,
+      "request_failures": 0,
+      "page_errors": 0,
+      "errors": [],
+      "duration_ms": 33839
+    },
+    {
+      "path": "research/continuous-recovery-20261019/local-audit/browser/results/ordinary-r1-02.json",
+      "sha256": "a34ee832d713a87091c89062b022430121fa2c143836eadba89e42810b566dba",
+      "bytes": 13358,
+      "accepted": false,
+      "scope": "ordinary",
+      "batch_index": 2,
+      "target_results": 12,
+      "status_counts": {
+        "not_visible": 1,
+        "passed": 11
+      },
+      "external_requests": 0,
+      "request_failures": 0,
+      "page_errors": 0,
+      "errors": [],
+      "duration_ms": 23012
+    },
+    {
+      "path": "research/continuous-recovery-20261019/local-audit/browser/results/ordinary-r1-03.json",
+      "sha256": "5f158904f8f8bcdb7e7c9e6a53c4a90d0612027248d321a2d3e47a928645031c",
+      "bytes": 21355,
+      "accepted": false,
+      "scope": "ordinary",
+      "batch_index": 3,
+      "target_results": 12,
+      "status_counts": {
+        "passed": 7,
+        "not_visible": 5
+      },
+      "external_requests": 0,
+      "request_failures": 0,
+      "page_errors": 0,
+      "errors": [],
+      "duration_ms": 18304
+    },
+    {
+      "path": "research/continuous-recovery-20261019/local-audit/browser/results/ordinary-r1-03-retry1.json",
+      "sha256": "76e0624ae501a6f3b0cf0f00ecae1b20d8e7fe318f9988993ffad48ef3405eca",
+      "bytes": 24963,
+      "accepted": false,
+      "scope": "ordinary",
+      "batch_index": 3,
+      "target_results": 11,
+      "status_counts": {
+        "passed": 5,
+        "failed": 6
+      },
+      "external_requests": 0,
+      "request_failures": 0,
+      "page_errors": 0,
+      "errors": [
+        "locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#news7-3-07-248').locator('.news-toggle a').first()\u001b[22m\n\u001b[2m    - locator resolved to <a onclick=\"event.stopPropagation();\" data-archive-derived=\"news-toggle-anchor-v1\" href=\"javascript:toggleEntry('7-3-07-248','')\">…</a>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is not stable\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting for \"http://127.0.0.1:37920/WOW-Encyclopedia-Deployable-Archive/community/comics/2007-07.html\" navigation to finish...\u001b[22m\n\u001b[2m    - navigated to \"http://127.0.0.1:37920/WOW-Encyclopedia-Deployable-Archive/community/comics/2007-07.html\"\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m  - element was detached from the DOM, retrying\u001b[22m\n\n    at activateNews (D:\\WOW_Encyclopedia\\research\\continuous-recovery-20261019\\local-audit\\browser\\run_v33_ui_audit.cjs:238:22)\n    at async main (D:\\WOW_Encyclopedia\\research\\continuous-recovery-20261019\\local-audit\\browser\\run_v33_ui_audit.cjs:379:29)"
+      ],
+      "duration_ms": 46893
+    },
+    {
+      "path": "research/continuous-recovery-20261019/local-audit/browser/results/ordinary-r1-03-retry2.json",
+      "sha256": "09eae7b181330d8c72fc7d2049a49348bffb61b94ded42a3c01afcef012224aa",
+      "bytes": 26033,
+      "accepted": false,
+      "scope": "ordinary",
+      "batch_index": 3,
+      "target_results": 12,
+      "status_counts": {
+        "passed": 6,
+        "failed": 6
+      },
+      "external_requests": 0,
+      "request_failures": 0,
+      "page_errors": 0,
+      "errors": [],
+      "duration_ms": 37272
+    },
+    {
+      "path": "research/continuous-recovery-20261019/local-audit/browser/results/ordinary-r1-03-retry3.json",
+      "sha256": "9d58817bbfc48a19bd2e4e7389f174194554fd5ca8cad54f06ba7a7d4a92f2a3",
+      "bytes": 10998,
+      "accepted": false,
+      "scope": "ordinary",
+      "batch_index": 3,
+      "target_results": 5,
+      "status_counts": {
+        "passed": 5
+      },
+      "external_requests": 0,
+      "request_failures": 0,
+      "page_errors": 0,
+      "errors": [
+        "Error: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.\n    at assertEvaluateOptions (C:\\Users\\17630\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\playwright-core\\lib\\coreBundle.js:57427:11)\n    at _Frame.evaluate (C:\\Users\\17630\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\playwright-core\\lib\\coreBundle.js:60008:9)\n    at _Page.evaluate (C:\\Users\\17630\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\playwright-core\\lib\\coreBundle.js:61314:38)\n    at screenieFacts (D:\\WOW_Encyclopedia\\research\\continuous-recovery-20261019\\local-audit\\browser\\run_v33_ui_audit.cjs:266:70)\n    at main (D:\\WOW_Encyclopedia\\research\\continuous-recovery-20261019\\local-audit\\browser\\run_v33_ui_audit.cjs:427:36)"
+      ],
+      "duration_ms": 15696
+    }
+  ],
+  "unresolved": [
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/08-02/02-06-08-3.jpg",
+      "page_output": "news/rss-02-2008.xml.html",
+      "status": "not_visible",
+      "reason": "frozen source page after load has no matching visible image, CSS background, or declaration; source is a known transfer_unknown row and was not guessed/re-requested",
+      "result": "research/continuous-recovery-20261019/local-audit/browser/results/static-r1-02.json",
+      "source_line": 3338
+    }
+  ],
+  "network_boundary": {
+    "server": "127.0.0.1 loopback only",
+    "external_requests": 0,
+    "failed_requests": 0,
+    "page_errors": 0,
+    "no_network_acquisition": true
+  },
+  "commands": [
+    "python -X utf8 research/continuous-recovery-20261019/local-audit/browser/make_input.py",
+    "node research/continuous-recovery-20261019/local-audit/browser/run_v33_ui_audit.cjs --scope dragon --result results/dragon-hunt-ss05-retry1.json",
+    "node .../run_v33_ui_audit.cjs --scope ordinary --batch-index 1..4 --batch-size 12 --exclude-original http://www.worldofwarcraft.com/community/images/reallifeevents/dragonhunt/ss05.jpg",
+    "node .../run_v33_ui_audit.cjs --scope static --batch-index 1..3 --batch-size 12",
+    "node research/continuous-recovery-20261019/local-audit/browser/diagnose_news_toggle.cjs"
+  ],
+  "notes": [
+    "Dragon Hunt was checked by clicking the visible title toggle; no hidden DOM was forced visible.",
+    "News entries use the visible original hoverContainer toggle; child javascript:toggleEntry anchors are not used for expansion.",
+    "The local harness recognizes the legacy native Screenie background viewer as a distinct same-page outcome and closes it with its visible Close control.",
+    "The two Oct18 ordinary special rows (unused outpost map and tournament viewer gap) remain excluded because they were already separately evidenced in frozen r5; they are not counted as newly passed."
+  ]
+}

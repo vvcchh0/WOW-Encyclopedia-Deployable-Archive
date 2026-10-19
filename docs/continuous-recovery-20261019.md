@@ -43,3 +43,19 @@
 ### 06:11 UTC — v33 离线包发布
 
 main 检查点 `d45b8a89` 已正常推送；随后创建并发布 [2026-10-19 Release](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261019)。发布前后，三个 GitHub 附件的状态、大小和平台 SHA-256 均与本地一致，标签解析到同一源码提交。README 已更新下载入口。Pages 没有重复发布，仍为已验收的 v33 构建。[发布回执](../research/continuous-recovery-20261019/publication/root-v33-release-publication.json)
+
+### 06:31 UTC — 两个图库晚期缺口关闭，原编号图片暂缓
+
+唯一网络执行者按有限计划补查了两段此前因连接失败未取得的索引：Karazhan 的 2009–2010 年、Black Temple 的基准后至 2010 年。四次请求均先 direct，直连在 TCP 连接阶段超时，随后进程内代理各取得一次完整 CDX JSON。Karazhan 返回 52 行、Black Temple 返回 68 行，无续页或截断。主代理重新解析全部 120 行，包括驱动保守排除的八条 HTTPS 记录；它们仍只涉及目录和既有指南缩略图，没有原图库 `ssN.jpg` / `ssN-thumb.jpg` 的捕获。
+
+现有 50 个图库的基准前目录调查、Karazhan 126 个确切回放目标、晚期索引以及保存下来的指南页和地区页面线索已汇总。Karazhan 仍是 114 个实际回放 404、十二条晚期 301 HTML，后者仅第一条实际读取过 Location；不能把其余十一条目标写成已观察事实。Black Temple 没有找到原编号图片索引，但其 96 个地址没有逐一回放，不能计作 96 个 404。
+
+据此，将 Karazhan 与 Black Temple 原玩家图库标为“等待新证据，暂缓查询”。已有指南预览继续展示。其它图库保持各自的索引与未请求状态，不把这两组结论扩大到全体 3,368 个动态目标。新图片地址、不同关联页原引用或新的有效捕获可重新开启调查。
+
+源页用 `addshots` 动态组装原图库地址，指南预览则直接出现在页面中。这与两类资源的保存差异一致，可能是历史爬虫发现动态资源不足造成；这是机制推断，不是已证实的抓取原因。[关联页审计](../research/continuous-recovery-20261019/gallery-audit/coverage-ledger-r2.md) · [主代理来源验收与暂缓决定](../research/continuous-recovery-20261019/publication/root-gallery-late-gap01-source-acceptance.json)
+
+### 06:34 UTC — v33 计划内图片浏览覆盖补完
+
+本轮实际补查的 76 个目标全部通过：Dragon Hunt 的隐藏图片先点击原始展开控件，另外 45 个普通图片入口、30 个静态展示目标分别验证。最后一张二月新闻图片的旧清单缺少对应新闻条目的展开 ID；主代理从原页面定位 `news2-6-08-270`，点击真实控件后确认 130×100 图片显示。此次仅纠正检查输入，没有修改站点文件。
+
+结合前次 120 个新增原始文件与 21 个弹窗检查，v33 计划内的图片变化已覆盖；69 个普通目标中 68 个有实际入口，一个 Outpost map 声明没有关联图片元素，单独保留。主代理重核 133 个相关站点文件的来源摘要，所有新检查均无外部请求、失败请求或新脚本错误。比赛结果页四条旧菜单异常仍是独立待修项，不把本次图片验收称为整站全部交互验收。[浏览续查验收](../research/continuous-recovery-20261019/publication/root-v33-browser-continuation-acceptance.json)

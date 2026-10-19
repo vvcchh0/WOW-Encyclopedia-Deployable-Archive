@@ -1,0 +1,948 @@
+{
+  "schema": "wow-recovery.gallery-late-window-plan.v1",
+  "batch_id": "WAYBACK-GALLERY-LATE-GAP01-20261019",
+  "prepared_utc": "2026-10-19T06:25:57.526319Z",
+  "mode": "prepared",
+  "network_requests": 0,
+  "network_authorized_by_this_file": null,
+  "parent_go_required": true,
+  "candidate_count": 2,
+  "target_gallery_count": 2,
+  "target_galleries": [
+    "Karazhan",
+    "Black Temple"
+  ],
+  "scope": "Paired exact native US Karazhan and Black Temple late-prefix CDX index probe; only the two r2 transport-unknown gaps, no replay, no automatic pagination, no filename guessing.",
+  "registry_path": "research/continuous-recovery-20261016/local-audit/gallery-final-v7/gallery-prefix-registry-v7.json",
+  "registry_sha256": "2579f66841bf6102d90f5dbfe819902337bff03f6e3ac7191239ae041e2d97d6",
+  "registry_acceptance_path": "research/continuous-recovery-20261016/publication/root-gallery-registry-v7-acceptance.json",
+  "registry_acceptance_sha256": "fc390af9cffe526d6e8cd21d5167467fe7b207cca7b851977f95381159caa319",
+  "query_window": {
+    "from": "per_candidate",
+    "to": "20101207235959",
+    "target_from": "20080512210045",
+    "limit": 500,
+    "showResumeKey": true,
+    "collapse": false,
+    "matchType": "prefix"
+  },
+  "index_only": true,
+  "payload_replay": false,
+  "no_filename_guess": true,
+  "policy": {
+    "from": "per_candidate",
+    "to": "20101207235959",
+    "target_from": "20080512210045",
+    "limit": 500,
+    "showResumeKey": true,
+    "collapse": false,
+    "matchType": "prefix",
+    "max_attempts": 4,
+    "window_seconds": 180.0,
+    "max_total_body_bytes": 16777216,
+    "max_entity_body_bytes": 8388608,
+    "min_dispatch_seconds": 5.25,
+    "min_request_start_seconds": 5.0,
+    "disk_floor_bytes": 11005853696,
+    "direct_connect_timeout_seconds": 4.0,
+    "direct_max_timeout_seconds": 12.0,
+    "proxy_connect_timeout_seconds": 8.0,
+    "proxy_max_timeout_seconds": 60.0,
+    "direct_first": true,
+    "proxy": "http://127.0.0.1:7890",
+    "tls_verification": true,
+    "automatic_redirects": 0,
+    "stop_http_codes": [
+      429,
+      503
+    ],
+    "cooldown_seconds": 120,
+    "stop_on_five_consecutive_transport_failures": true,
+    "resume_rule": "record resumeKey and mark incomplete; never follow it in this batch",
+    "network_deadline_utc": "2026-10-19T13:15:00Z",
+    "outer_watchdog_seconds": 240
+  },
+  "prior_failure_tail": 0,
+  "control_basis": {
+    "latest_image_source_acceptance": "research/continuous-recovery-20261018/publication/root-transfer-pending2-v2-batch1-source-acceptance.json",
+    "latest_image_source_acceptance_sha256": "1904719e7abc54315e490aeb72697728ebe23903ccfdf3e83b375638fd41477c",
+    "latest_control_gate": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+    "latest_control_gate_sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+    "historical_unknown_prefix_receipt": "research/continuous-recovery-20261018/publication/root-gallery-late-window-source-acceptance.json",
+    "historical_unknown_prefix_receipt_sha256": "040d2cfd69dc1881ad3b50f66c41fcd475014a69c0b07fc696c398f4d3c49201",
+    "historical_retry2_503_receipt": "research/continuous-recovery-20261018/publication/root-gallery-retry2-source-acceptance.json",
+    "historical_retry2_503_receipt_sha256": "ce62cbee66fa03339eb0fe4a4e733d2933e1df91fef7fa79a61d4357565bb3f5",
+    "excluded_complete_gallery": "Zul'Aman",
+    "tail": 0
+  },
+  "prior_window_check": {
+    "requested_window": {
+      "from": "20080512210045",
+      "to": "20101207235959"
+    },
+    "exact_target_complete_for_any": false,
+    "overlap_exists": {
+      "Karazhan": true,
+      "Black Temple": true
+    },
+    "gap_summary": {
+      "Karazhan": {
+        "target": {
+          "from": "20080512210045",
+          "to": "20101207235959"
+        },
+        "excluded_complete_intervals": [
+          {
+            "from": "20080101000000",
+            "to": "20081231235959",
+            "relation_to_target": "overlap",
+            "clipped_to_target": {
+              "from": "20080512210045",
+              "to": "20081231235959"
+            },
+            "evidence": {
+              "kind": "historical_saved_prefix",
+              "evidence_id": "KARAZHAN-2008",
+              "batch_id": null,
+              "status": "executed_complete_prefix",
+              "prefix": null,
+              "window": {
+                "from": "20080101000000",
+                "to": "20081231235959"
+              },
+              "complete_prefix_evidence": true,
+              "source_responses": null,
+              "index_rows": null,
+              "direct_entity_rows": 0,
+              "status200_image_rows": 15,
+              "nested_excluded_rows": 15,
+              "direct_exact_candidates": null,
+              "direct_variant_candidates": null,
+              "acceptance": null,
+              "batch_report": null,
+              "source_map": null,
+              "evidence_paths": [
+                {
+                  "path": "research/gallery-recovery-20261014/karazhan/batch-plan.json",
+                  "exists": true,
+                  "bytes": 3537,
+                  "sha256": "3182df4e5313174d532e4240b362049e7a0ecf2ee5b913c08f05a56f8b12d881"
+                },
+                {
+                  "path": "research/gallery-recovery-20261014/karazhan/sanitized-summary.json",
+                  "exists": true,
+                  "bytes": 649,
+                  "sha256": "8f29cfa8f8520ee9e4d0c383d39917824ca21a7383a8ef8d0ad5b486d4b0074a"
+                },
+                {
+                  "path": "research/gallery-recovery-20261014/karazhan/cdx/prefix.json",
+                  "exists": true,
+                  "bytes": 4656,
+                  "sha256": "2f99109b8bf39866f46b0ec3001db46a4fbf768abe0d713a18fa4e49f03cbca8"
+                },
+                {
+                  "path": "research/gallery-recovery-20261014/karazhan/cdx/prefix.headers.txt",
+                  "exists": true,
+                  "bytes": 637,
+                  "sha256": "31b6ef11daa3864a0d2dc2ead4280b048d1c66d937fb3a8735ce13778bd3bd9b"
+                }
+              ],
+              "report_quote": "complete_prefix_evidence=true; rows=20; dynamic direct ssN.jpg/ssN-thumb.jpg rows=0; three nested thumbs paths observed"
+            }
+          }
+        ],
+        "uncovered_gaps": [
+          {
+            "from": "20090101000000",
+            "to": "20101207235959",
+            "excluded_prior_windows": []
+          }
+        ]
+      },
+      "Black Temple": {
+        "target": {
+          "from": "20080512210045",
+          "to": "20101207235959"
+        },
+        "excluded_complete_intervals": [
+          {
+            "from": "20040101000000",
+            "to": "20080512210044",
+            "relation_to_target": "adjacent_before_target",
+            "clipped_to_target": null,
+            "evidence": {
+              "kind": "historical_saved_prefix",
+              "evidence_id": "NET015-BLACK_TEMPLE",
+              "batch_id": null,
+              "status": "executed_prefix_only_no_valid_direct_entity",
+              "prefix": null,
+              "window": {
+                "from": "20040101000000",
+                "to": "20080512210044"
+              },
+              "complete_prefix_evidence": true,
+              "source_responses": null,
+              "index_rows": null,
+              "direct_entity_rows": 0,
+              "status200_image_rows": 0,
+              "nested_excluded_rows": 0,
+              "direct_exact_candidates": null,
+              "direct_variant_candidates": null,
+              "acceptance": null,
+              "batch_report": null,
+              "source_map": null,
+              "evidence_paths": [
+                {
+                  "path": "research/continuous-recovery-20261015/network-guide-prefix15/sanitized-summary.json",
+                  "exists": true,
+                  "bytes": 2881,
+                  "sha256": "ff09a4791fac9605b46c6d7a3b5f916e7fd624381ff9e04b521ecfc06bdfa0f1"
+                },
+                {
+                  "path": "research/continuous-recovery-20261015/guide-prefix15-approved-plan.json",
+                  "exists": true,
+                  "bytes": 7816,
+                  "sha256": "479819f3cfb44bd1321bffa6e6a07c0c0ee7211a7853ae5658c7be8cbd1d2135"
+                }
+              ],
+              "report_quote": "category=cdx_rows_without_valid_200; capture_index_count=1; eligible_full_count=0; eligible_thumb_count=0; continuation_followed=False"
+            }
+          }
+        ],
+        "uncovered_gaps": [
+          {
+            "from": "20080512210045",
+            "to": "20101207235959",
+            "excluded_prior_windows": []
+          }
+        ]
+      }
+    },
+    "evidence": {
+      "Karazhan": [
+        {
+          "kind": "historical_saved_prefix",
+          "evidence_id": "KARAZHAN-2007",
+          "batch_id": null,
+          "status": "executed_complete_prefix",
+          "prefix": null,
+          "window": {
+            "from": "20070101000000",
+            "to": "20071231235959"
+          },
+          "complete_prefix_evidence": true,
+          "source_responses": null,
+          "index_rows": null,
+          "direct_entity_rows": 0,
+          "status200_image_rows": 0,
+          "nested_excluded_rows": 0,
+          "direct_exact_candidates": null,
+          "direct_variant_candidates": null,
+          "acceptance": null,
+          "batch_report": null,
+          "source_map": null,
+          "evidence_paths": [
+            {
+              "path": "research/gallery-recovery-20261014/discovery-002/sanitized-summary.json",
+              "exists": true,
+              "bytes": 2595,
+              "sha256": "c398896f30fd147a6795f8176cd380f84e0d7fac4fa7bbfe0cbadc23744eb34c"
+            },
+            {
+              "path": "research/gallery-recovery-20261014/discovery-002/karazhan-2007/cdx/prefix.json",
+              "exists": true,
+              "bytes": 3,
+              "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+            },
+            {
+              "path": "research/gallery-recovery-20261014/discovery-002/karazhan-2007/cdx/pages.json",
+              "exists": true,
+              "bytes": 22,
+              "sha256": "70888f7cccf93eb23761ea0755554720fad69df0ba7e10d642dab4b937f15b2d"
+            },
+            {
+              "path": "research/gallery-recovery-20261014/discovery-002/karazhan-2007/cdx/prefix.headers.txt",
+              "exists": true,
+              "bytes": 638,
+              "sha256": "9d015c3e5a6e4c7a304a2c3d912da64ff680341d8ade477a603380d1df58f01b"
+            }
+          ],
+          "report_quote": "complete_prefix_evidence=True; rows=0; direct=0; status200_image=0"
+        },
+        {
+          "kind": "historical_saved_prefix",
+          "evidence_id": "KARAZHAN-2008",
+          "batch_id": null,
+          "status": "executed_complete_prefix",
+          "prefix": null,
+          "window": {
+            "from": "20080101000000",
+            "to": "20081231235959"
+          },
+          "complete_prefix_evidence": true,
+          "source_responses": null,
+          "index_rows": null,
+          "direct_entity_rows": 0,
+          "status200_image_rows": 15,
+          "nested_excluded_rows": 15,
+          "direct_exact_candidates": null,
+          "direct_variant_candidates": null,
+          "acceptance": null,
+          "batch_report": null,
+          "source_map": null,
+          "evidence_paths": [
+            {
+              "path": "research/gallery-recovery-20261014/karazhan/batch-plan.json",
+              "exists": true,
+              "bytes": 3537,
+              "sha256": "3182df4e5313174d532e4240b362049e7a0ecf2ee5b913c08f05a56f8b12d881"
+            },
+            {
+              "path": "research/gallery-recovery-20261014/karazhan/sanitized-summary.json",
+              "exists": true,
+              "bytes": 649,
+              "sha256": "8f29cfa8f8520ee9e4d0c383d39917824ca21a7383a8ef8d0ad5b486d4b0074a"
+            },
+            {
+              "path": "research/gallery-recovery-20261014/karazhan/cdx/prefix.json",
+              "exists": true,
+              "bytes": 4656,
+              "sha256": "2f99109b8bf39866f46b0ec3001db46a4fbf768abe0d713a18fa4e49f03cbca8"
+            },
+            {
+              "path": "research/gallery-recovery-20261014/karazhan/cdx/prefix.headers.txt",
+              "exists": true,
+              "bytes": 637,
+              "sha256": "31b6ef11daa3864a0d2dc2ead4280b048d1c66d937fb3a8735ce13778bd3bd9b"
+            }
+          ],
+          "report_quote": "complete_prefix_evidence=true; rows=20; dynamic direct ssN.jpg/ssN-thumb.jpg rows=0; three nested thumbs paths observed"
+        },
+        {
+          "kind": "accepted_early_gap_index",
+          "evidence_id": null,
+          "batch_id": "GALLERYEARLY01",
+          "status": "complete_empty_early_window",
+          "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/",
+          "window": {
+            "from": "20000101000000",
+            "to": "20061231235959",
+            "limit": 500,
+            "showResumeKey": true,
+            "collapse": false,
+            "matchType": "prefix"
+          },
+          "complete_prefix_evidence": null,
+          "source_responses": null,
+          "index_rows": 0,
+          "direct_entity_rows": null,
+          "status200_image_rows": null,
+          "nested_excluded_rows": null,
+          "direct_exact_candidates": 0,
+          "direct_variant_candidates": 0,
+          "acceptance": {
+            "path": "research/continuous-recovery-20261016/publication/root-gallery-early01-acceptance.json",
+            "bytes": 11505,
+            "sha256": "f050ce25091b6710ead8f64ecc12dd645337facf8f9c22c0464ce8cca34b798e",
+            "role": "root accepted GALLERYEARLY01; valid empty index window"
+          },
+          "batch_report": null,
+          "source_map": null,
+          "evidence_paths": null,
+          "report_quote": null
+        }
+      ],
+      "Black Temple": [
+        {
+          "kind": "historical_saved_prefix",
+          "evidence_id": "NET015-BLACK_TEMPLE",
+          "batch_id": null,
+          "status": "executed_prefix_only_no_valid_direct_entity",
+          "prefix": null,
+          "window": {
+            "from": "20040101000000",
+            "to": "20080512210044"
+          },
+          "complete_prefix_evidence": true,
+          "source_responses": null,
+          "index_rows": null,
+          "direct_entity_rows": 0,
+          "status200_image_rows": 0,
+          "nested_excluded_rows": 0,
+          "direct_exact_candidates": null,
+          "direct_variant_candidates": null,
+          "acceptance": null,
+          "batch_report": null,
+          "source_map": null,
+          "evidence_paths": [
+            {
+              "path": "research/continuous-recovery-20261015/network-guide-prefix15/sanitized-summary.json",
+              "exists": true,
+              "bytes": 2881,
+              "sha256": "ff09a4791fac9605b46c6d7a3b5f916e7fd624381ff9e04b521ecfc06bdfa0f1"
+            },
+            {
+              "path": "research/continuous-recovery-20261015/guide-prefix15-approved-plan.json",
+              "exists": true,
+              "bytes": 7816,
+              "sha256": "479819f3cfb44bd1321bffa6e6a07c0c0ee7211a7853ae5658c7be8cbd1d2135"
+            }
+          ],
+          "report_quote": "category=cdx_rows_without_valid_200; capture_index_count=1; eligible_full_count=0; eligible_thumb_count=0; continuation_followed=False"
+        },
+        {
+          "kind": "accepted_early_gap_index",
+          "evidence_id": null,
+          "batch_id": "GALLERYEARLY02",
+          "status": "complete_empty_early_window",
+          "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/blacktemple/",
+          "window": {
+            "from": "20000101000000",
+            "to": "20031231235959",
+            "limit": 500,
+            "showResumeKey": true,
+            "collapse": false,
+            "matchType": "prefix"
+          },
+          "complete_prefix_evidence": null,
+          "source_responses": null,
+          "index_rows": 0,
+          "direct_entity_rows": null,
+          "status200_image_rows": null,
+          "nested_excluded_rows": null,
+          "direct_exact_candidates": 0,
+          "direct_variant_candidates": 0,
+          "acceptance": {
+            "path": "research/continuous-recovery-20261016/publication/root-gallery-early02-acceptance.json",
+            "bytes": 2839,
+            "sha256": "b61209ba8791d6263f076469c5f9b902a33f42f5a5daad29fadb99ee8a045a29",
+            "role": "root accepted GALLERYEARLY02; valid empty index window"
+          },
+          "batch_report": null,
+          "source_map": null,
+          "evidence_paths": null,
+          "report_quote": null
+        }
+      ]
+    }
+  },
+  "input_bindings": {
+    "gallery_final_v7_registry": {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-final-v7/gallery-prefix-registry-v7.json",
+      "sha256": "2579f66841bf6102d90f5dbfe819902337bff03f6e3ac7191239ae041e2d97d6",
+      "bytes": 418729,
+      "role": "frozen v7 native-gallery directory registry and source-page literals"
+    },
+    "root_gallery_registry_v7_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-registry-v7-acceptance.json",
+      "sha256": "fc390af9cffe526d6e8cd21d5167467fe7b207cca7b851977f95381159caa319",
+      "bytes": 9458,
+      "role": "root accepted frozen v7 registry"
+    },
+    "template_gallery_prefix04_driver_v4": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix04/gallery_prefix_driver_v4.py",
+      "sha256": "22f45b6776944df8cdc36bab5231edc1f8eee9faf627dcb07b1af6523929af38",
+      "bytes": 55880,
+      "role": "accepted v4 index-only transport/parser template"
+    },
+    "template_gallery_prefix04_plan": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix04/plan.json",
+      "sha256": "20145d4db43da3d2ace0cc378a867d27ffc2e5aa3c86ab82cd52c5eb7f8799d0",
+      "bytes": 53753,
+      "role": "accepted v4 plan shape and cadence reference"
+    },
+    "template_gallery_prefix04_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-prefix04-acceptance.json",
+      "sha256": "535e74cdfa74815407b988e590fe4dcc8e483b535ef118c292d511fbc61195b2",
+      "bytes": 88497,
+      "role": "accepted v4 index-only execution reference"
+    },
+    "template_gallery_prefix04_fixture": {
+      "path": "research/continuous-recovery-20261016/network/gallery-prefix04/fixture-results.json",
+      "sha256": "70a76e1633720ef117c6f4acaabec2cb02de2858db39c28e851e681c137290d0",
+      "bytes": 5873,
+      "role": "accepted v4 offline fixture reference"
+    },
+    "template_gallery_late_window_v1_driver": {
+      "path": "research/continuous-recovery-20261018/network/gallery-late-window-20261018/gallery_late_window_driver_v1.py",
+      "sha256": "3f08af9ab0bbdc8909210b403735788d698d1dbea92ec8245cdea47c12f89e13",
+      "bytes": 59243,
+      "role": "accepted three-prefix late-window driver adapted without transport-core changes"
+    },
+    "previous_gallery_unknown_prefix_receipt": {
+      "path": "research/continuous-recovery-20261018/publication/root-gallery-late-window-source-acceptance.json",
+      "sha256": "040d2cfd69dc1881ad3b50f66c41fcd475014a69c0b07fc696c398f4d3c49201",
+      "bytes": 28520,
+      "role": "accepted historical two-prefix unknown receipt; not current control"
+    },
+    "latest_image_source_acceptance": {
+      "path": "research/continuous-recovery-20261018/publication/root-transfer-pending2-v2-batch1-source-acceptance.json",
+      "sha256": "1904719e7abc54315e490aeb72697728ebe23903ccfdf3e83b375638fd41477c",
+      "bytes": 2395,
+      "role": "latest accepted image-source receipt; tail zero"
+    },
+    "latest_control_gate": {
+      "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+      "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+      "bytes": 1842,
+      "role": "latest accepted connectivity control; tail zero"
+    },
+    "historical_retry2_503_receipt": {
+      "path": "research/continuous-recovery-20261018/publication/root-gallery-retry2-source-acceptance.json",
+      "sha256": "ce62cbee66fa03339eb0fe4a4e733d2933e1df91fef7fa79a61d4357565bb3f5",
+      "bytes": 2223,
+      "role": "historical 503 stop evidence; never used as current gate"
+    },
+    "r2_karazhan_review_slice": {
+      "path": "research/continuous-recovery-20261019/gallery-audit/karazhan-late-index-only-plan-r2.json",
+      "sha256": "b8a29f43dc16d4c86d8d1cfcf2b025880e487ac104c257bc8729ad5756eae6b2",
+      "bytes": 5491,
+      "role": "r2 single-target Karazhan review slice"
+    },
+    "r2_black_temple_review_slice": {
+      "path": "research/continuous-recovery-20261019/gallery-audit/black-temple-late-index-only-plan-r2.json",
+      "sha256": "585b25ed80cf6b2f4fd863252b07765f5f08872e87549f6969c76059d17ff68c",
+      "bytes": 5553,
+      "role": "r2 single-target Black Temple review slice"
+    },
+    "packet_driver": {
+      "path": "research/continuous-recovery-20261019/network/gallery-late-gap01/gallery_late_gap01_driver_v1.py",
+      "sha256": "99e3abf059bfbb0398a0a6d225939620a836bcd5278e9fdbd1a9448043b4aae8",
+      "bytes": 62361,
+      "role": "packet-local adapted driver; path/batch/UA/deadline only"
+    },
+    "packet_fixture": {
+      "path": "research/continuous-recovery-20261019/network/gallery-late-gap01/fixture-results.json",
+      "sha256": "870740ea2493f862708f3ab670486b8ad64b7699fae7a74c96289901310a7f38",
+      "bytes": 6405,
+      "role": "packet-local offline fixture; 15/15 and zero network requests"
+    }
+  },
+  "fixture": {
+    "path": "research/continuous-recovery-20261019/network/gallery-late-gap01/fixture-results.json",
+    "sha256": "870740ea2493f862708f3ab670486b8ad64b7699fae7a74c96289901310a7f38",
+    "all_passed": true
+  },
+  "driver_path": "research/continuous-recovery-20261019/network/gallery-late-gap01/gallery_late_gap01_driver_v1.py",
+  "candidates": [
+    {
+      "rank": 1,
+      "target_key": "GALLERY-LATE-GAP01-KARAZHAN",
+      "gallery_segment_index": 1,
+      "gallery_segment_count": 1,
+      "gallery": "Karazhan",
+      "registry_rank": 1,
+      "category": "Raid",
+      "source_page_route": "/info/dungeons/karazhan-gallery.html",
+      "declared_slots": 63,
+      "expected_direct_entities": 126,
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_schemes": [
+        "http"
+      ],
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/karazhan-gallery.html",
+        "sha256": "fc7f46d260cba6c434fd5e67d47008f207fbb8bd939a630089599d097755c199",
+        "addshots_line": 126,
+        "addshots_literal": "addshots(\"/info/dungeons/images/karazhan/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/karazhan/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 63;"
+      },
+      "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fkarazhan%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20090101000000&to=20101207235959&limit=500&showResumeKey=true",
+      "query_window": {
+        "from": "20090101000000",
+        "to": "20101207235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "prior_window_evidence": [
+        {
+          "kind": "historical_saved_prefix",
+          "evidence_id": "KARAZHAN-2007",
+          "batch_id": null,
+          "status": "executed_complete_prefix",
+          "prefix": null,
+          "window": {
+            "from": "20070101000000",
+            "to": "20071231235959"
+          },
+          "complete_prefix_evidence": true,
+          "source_responses": null,
+          "index_rows": null,
+          "direct_entity_rows": 0,
+          "status200_image_rows": 0,
+          "nested_excluded_rows": 0,
+          "direct_exact_candidates": null,
+          "direct_variant_candidates": null,
+          "acceptance": null,
+          "batch_report": null,
+          "source_map": null,
+          "evidence_paths": [
+            {
+              "path": "research/gallery-recovery-20261014/discovery-002/sanitized-summary.json",
+              "exists": true,
+              "bytes": 2595,
+              "sha256": "c398896f30fd147a6795f8176cd380f84e0d7fac4fa7bbfe0cbadc23744eb34c"
+            },
+            {
+              "path": "research/gallery-recovery-20261014/discovery-002/karazhan-2007/cdx/prefix.json",
+              "exists": true,
+              "bytes": 3,
+              "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+            },
+            {
+              "path": "research/gallery-recovery-20261014/discovery-002/karazhan-2007/cdx/pages.json",
+              "exists": true,
+              "bytes": 22,
+              "sha256": "70888f7cccf93eb23761ea0755554720fad69df0ba7e10d642dab4b937f15b2d"
+            },
+            {
+              "path": "research/gallery-recovery-20261014/discovery-002/karazhan-2007/cdx/prefix.headers.txt",
+              "exists": true,
+              "bytes": 638,
+              "sha256": "9d015c3e5a6e4c7a304a2c3d912da64ff680341d8ade477a603380d1df58f01b"
+            }
+          ],
+          "report_quote": "complete_prefix_evidence=True; rows=0; direct=0; status200_image=0"
+        },
+        {
+          "kind": "historical_saved_prefix",
+          "evidence_id": "KARAZHAN-2008",
+          "batch_id": null,
+          "status": "executed_complete_prefix",
+          "prefix": null,
+          "window": {
+            "from": "20080101000000",
+            "to": "20081231235959"
+          },
+          "complete_prefix_evidence": true,
+          "source_responses": null,
+          "index_rows": null,
+          "direct_entity_rows": 0,
+          "status200_image_rows": 15,
+          "nested_excluded_rows": 15,
+          "direct_exact_candidates": null,
+          "direct_variant_candidates": null,
+          "acceptance": null,
+          "batch_report": null,
+          "source_map": null,
+          "evidence_paths": [
+            {
+              "path": "research/gallery-recovery-20261014/karazhan/batch-plan.json",
+              "exists": true,
+              "bytes": 3537,
+              "sha256": "3182df4e5313174d532e4240b362049e7a0ecf2ee5b913c08f05a56f8b12d881"
+            },
+            {
+              "path": "research/gallery-recovery-20261014/karazhan/sanitized-summary.json",
+              "exists": true,
+              "bytes": 649,
+              "sha256": "8f29cfa8f8520ee9e4d0c383d39917824ca21a7383a8ef8d0ad5b486d4b0074a"
+            },
+            {
+              "path": "research/gallery-recovery-20261014/karazhan/cdx/prefix.json",
+              "exists": true,
+              "bytes": 4656,
+              "sha256": "2f99109b8bf39866f46b0ec3001db46a4fbf768abe0d713a18fa4e49f03cbca8"
+            },
+            {
+              "path": "research/gallery-recovery-20261014/karazhan/cdx/prefix.headers.txt",
+              "exists": true,
+              "bytes": 637,
+              "sha256": "31b6ef11daa3864a0d2dc2ead4280b048d1c66d937fb3a8735ce13778bd3bd9b"
+            }
+          ],
+          "report_quote": "complete_prefix_evidence=true; rows=20; dynamic direct ssN.jpg/ssN-thumb.jpg rows=0; three nested thumbs paths observed"
+        },
+        {
+          "kind": "accepted_early_gap_index",
+          "evidence_id": null,
+          "batch_id": "GALLERYEARLY01",
+          "status": "complete_empty_early_window",
+          "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/",
+          "window": {
+            "from": "20000101000000",
+            "to": "20061231235959",
+            "limit": 500,
+            "showResumeKey": true,
+            "collapse": false,
+            "matchType": "prefix"
+          },
+          "complete_prefix_evidence": null,
+          "source_responses": null,
+          "index_rows": 0,
+          "direct_entity_rows": null,
+          "status200_image_rows": null,
+          "nested_excluded_rows": null,
+          "direct_exact_candidates": 0,
+          "direct_variant_candidates": 0,
+          "acceptance": {
+            "path": "research/continuous-recovery-20261016/publication/root-gallery-early01-acceptance.json",
+            "bytes": 11505,
+            "sha256": "f050ce25091b6710ead8f64ecc12dd645337facf8f9c22c0464ce8cca34b798e",
+            "role": "root accepted GALLERYEARLY01; valid empty index window"
+          },
+          "batch_report": null,
+          "source_map": null,
+          "evidence_paths": null,
+          "report_quote": null
+        }
+      ],
+      "prior_window_exact_target_complete": false,
+      "coverage_exclusion": [
+        {
+          "from": "20080101000000",
+          "to": "20081231235959",
+          "relation_to_target": "overlap",
+          "clipped_to_target": {
+            "from": "20080512210045",
+            "to": "20081231235959"
+          },
+          "evidence": {
+            "kind": "historical_saved_prefix",
+            "evidence_id": "KARAZHAN-2008",
+            "batch_id": null,
+            "status": "executed_complete_prefix",
+            "prefix": null,
+            "window": {
+              "from": "20080101000000",
+              "to": "20081231235959"
+            },
+            "complete_prefix_evidence": true,
+            "source_responses": null,
+            "index_rows": null,
+            "direct_entity_rows": 0,
+            "status200_image_rows": 15,
+            "nested_excluded_rows": 15,
+            "direct_exact_candidates": null,
+            "direct_variant_candidates": null,
+            "acceptance": null,
+            "batch_report": null,
+            "source_map": null,
+            "evidence_paths": [
+              {
+                "path": "research/gallery-recovery-20261014/karazhan/batch-plan.json",
+                "exists": true,
+                "bytes": 3537,
+                "sha256": "3182df4e5313174d532e4240b362049e7a0ecf2ee5b913c08f05a56f8b12d881"
+              },
+              {
+                "path": "research/gallery-recovery-20261014/karazhan/sanitized-summary.json",
+                "exists": true,
+                "bytes": 649,
+                "sha256": "8f29cfa8f8520ee9e4d0c383d39917824ca21a7383a8ef8d0ad5b486d4b0074a"
+              },
+              {
+                "path": "research/gallery-recovery-20261014/karazhan/cdx/prefix.json",
+                "exists": true,
+                "bytes": 4656,
+                "sha256": "2f99109b8bf39866f46b0ec3001db46a4fbf768abe0d713a18fa4e49f03cbca8"
+              },
+              {
+                "path": "research/gallery-recovery-20261014/karazhan/cdx/prefix.headers.txt",
+                "exists": true,
+                "bytes": 637,
+                "sha256": "31b6ef11daa3864a0d2dc2ead4280b048d1c66d937fb3a8735ce13778bd3bd9b"
+              }
+            ],
+            "report_quote": "complete_prefix_evidence=true; rows=20; dynamic direct ssN.jpg/ssN-thumb.jpg rows=0; three nested thumbs paths observed"
+          }
+        }
+      ],
+      "uncovered_gap": {
+        "from": "20090101000000",
+        "to": "20101207235959",
+        "excluded_prior_windows": []
+      },
+      "status": "not_executed",
+      "index_only": true,
+      "payload_replay": false,
+      "no_filename_guess": true,
+      "r2_review_slice": {
+        "path": "research/continuous-recovery-20261019/gallery-audit/karazhan-late-index-only-plan-r2.json",
+        "sha256": "b8a29f43dc16d4c86d8d1cfcf2b025880e487ac104c257bc8729ad5756eae6b2",
+        "batch_id": "WAYBACK-GALLERY-LATE-R2-KARAZHAN-20261019-01",
+        "execution_ready_in_slice": false,
+        "reason": "source slice is intentionally single-target; paired driver packet supplies both exact candidates"
+      }
+    },
+    {
+      "rank": 2,
+      "target_key": "GALLERY-LATE-GAP01-BLACK-TEMPLE",
+      "gallery_segment_index": 1,
+      "gallery_segment_count": 1,
+      "gallery": "Black Temple",
+      "registry_rank": 8,
+      "category": "Raid",
+      "source_page_route": "/info/dungeons/black-temple-gallery.html",
+      "declared_slots": 48,
+      "expected_direct_entities": 96,
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_schemes": [
+        "http"
+      ],
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/blacktemple/",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/black-temple-gallery.html",
+        "sha256": "04c728723c639d4613f77bf449cd93ae68c494b08151b76da00899984ffff4ff",
+        "addshots_line": 112,
+        "addshots_literal": "addshots(\"/info/dungeons/images/blacktemple/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/blacktemple/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 48;"
+      },
+      "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fblacktemple%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "query_window": {
+        "from": "20080512210045",
+        "to": "20101207235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "prior_window_evidence": [
+        {
+          "kind": "historical_saved_prefix",
+          "evidence_id": "NET015-BLACK_TEMPLE",
+          "batch_id": null,
+          "status": "executed_prefix_only_no_valid_direct_entity",
+          "prefix": null,
+          "window": {
+            "from": "20040101000000",
+            "to": "20080512210044"
+          },
+          "complete_prefix_evidence": true,
+          "source_responses": null,
+          "index_rows": null,
+          "direct_entity_rows": 0,
+          "status200_image_rows": 0,
+          "nested_excluded_rows": 0,
+          "direct_exact_candidates": null,
+          "direct_variant_candidates": null,
+          "acceptance": null,
+          "batch_report": null,
+          "source_map": null,
+          "evidence_paths": [
+            {
+              "path": "research/continuous-recovery-20261015/network-guide-prefix15/sanitized-summary.json",
+              "exists": true,
+              "bytes": 2881,
+              "sha256": "ff09a4791fac9605b46c6d7a3b5f916e7fd624381ff9e04b521ecfc06bdfa0f1"
+            },
+            {
+              "path": "research/continuous-recovery-20261015/guide-prefix15-approved-plan.json",
+              "exists": true,
+              "bytes": 7816,
+              "sha256": "479819f3cfb44bd1321bffa6e6a07c0c0ee7211a7853ae5658c7be8cbd1d2135"
+            }
+          ],
+          "report_quote": "category=cdx_rows_without_valid_200; capture_index_count=1; eligible_full_count=0; eligible_thumb_count=0; continuation_followed=False"
+        },
+        {
+          "kind": "accepted_early_gap_index",
+          "evidence_id": null,
+          "batch_id": "GALLERYEARLY02",
+          "status": "complete_empty_early_window",
+          "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/blacktemple/",
+          "window": {
+            "from": "20000101000000",
+            "to": "20031231235959",
+            "limit": 500,
+            "showResumeKey": true,
+            "collapse": false,
+            "matchType": "prefix"
+          },
+          "complete_prefix_evidence": null,
+          "source_responses": null,
+          "index_rows": 0,
+          "direct_entity_rows": null,
+          "status200_image_rows": null,
+          "nested_excluded_rows": null,
+          "direct_exact_candidates": 0,
+          "direct_variant_candidates": 0,
+          "acceptance": {
+            "path": "research/continuous-recovery-20261016/publication/root-gallery-early02-acceptance.json",
+            "bytes": 2839,
+            "sha256": "b61209ba8791d6263f076469c5f9b902a33f42f5a5daad29fadb99ee8a045a29",
+            "role": "root accepted GALLERYEARLY02; valid empty index window"
+          },
+          "batch_report": null,
+          "source_map": null,
+          "evidence_paths": null,
+          "report_quote": null
+        }
+      ],
+      "prior_window_exact_target_complete": false,
+      "coverage_exclusion": [
+        {
+          "from": "20040101000000",
+          "to": "20080512210044",
+          "relation_to_target": "adjacent_before_target",
+          "clipped_to_target": null,
+          "evidence": {
+            "kind": "historical_saved_prefix",
+            "evidence_id": "NET015-BLACK_TEMPLE",
+            "batch_id": null,
+            "status": "executed_prefix_only_no_valid_direct_entity",
+            "prefix": null,
+            "window": {
+              "from": "20040101000000",
+              "to": "20080512210044"
+            },
+            "complete_prefix_evidence": true,
+            "source_responses": null,
+            "index_rows": null,
+            "direct_entity_rows": 0,
+            "status200_image_rows": 0,
+            "nested_excluded_rows": 0,
+            "direct_exact_candidates": null,
+            "direct_variant_candidates": null,
+            "acceptance": null,
+            "batch_report": null,
+            "source_map": null,
+            "evidence_paths": [
+              {
+                "path": "research/continuous-recovery-20261015/network-guide-prefix15/sanitized-summary.json",
+                "exists": true,
+                "bytes": 2881,
+                "sha256": "ff09a4791fac9605b46c6d7a3b5f916e7fd624381ff9e04b521ecfc06bdfa0f1"
+              },
+              {
+                "path": "research/continuous-recovery-20261015/guide-prefix15-approved-plan.json",
+                "exists": true,
+                "bytes": 7816,
+                "sha256": "479819f3cfb44bd1321bffa6e6a07c0c0ee7211a7853ae5658c7be8cbd1d2135"
+              }
+            ],
+            "report_quote": "category=cdx_rows_without_valid_200; capture_index_count=1; eligible_full_count=0; eligible_thumb_count=0; continuation_followed=False"
+          }
+        }
+      ],
+      "uncovered_gap": {
+        "from": "20080512210045",
+        "to": "20101207235959",
+        "excluded_prior_windows": []
+      },
+      "status": "not_executed",
+      "index_only": true,
+      "payload_replay": false,
+      "no_filename_guess": true,
+      "r2_review_slice": {
+        "path": "research/continuous-recovery-20261019/gallery-audit/black-temple-late-index-only-plan-r2.json",
+        "sha256": "585b25ed80cf6b2f4fd863252b07765f5f08872e87549f6969c76059d17ff68c",
+        "batch_id": "WAYBACK-GALLERY-LATE-R2-BLACK-TEMPLE-20261019-01",
+        "execution_ready_in_slice": false,
+        "reason": "source slice is intentionally single-target; paired driver packet supplies both exact candidates"
+      }
+    }
+  ],
+  "network_deadline_utc": "2026-10-19T13:15:00Z",
+  "outer_watchdog_seconds": 240,
+  "driver_sha256": "99e3abf059bfbb0398a0a6d225939620a836bcd5278e9fdbd1a9448043b4aae8"
+}
