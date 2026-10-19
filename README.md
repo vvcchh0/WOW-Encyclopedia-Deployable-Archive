@@ -25,7 +25,7 @@
 
 ## 本地使用
 
-安装 Python 3 后，下载 [2026-10-19 离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/download/archive-20080512-browser-20261019/WOW_Encyclopedia_20080512_browser_20261018_v33.zip)（约 533 MB，解压后约 598 MB）。Windows 用户解压后双击 `START_BROWSE.cmd`。
+安装 Python 3 后，下载 [2026-10-19 离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/download/archive-20080512-browser-20261019-v38/WOW_Encyclopedia_20080512_browser_20261019_v38.zip)（约 534 MB，解压后约 600 MB）。Windows 用户解压后双击 `START_BROWSE.cmd`。
 
 macOS / Linux 用户在解压目录运行：
 
@@ -33,7 +33,7 @@ macOS / Linux 用户在解压目录运行：
 python3 tools/serve_pages_preview.py --site site --port 0 --open-browser
 ```
 
-启动后会打开本地浏览页面。离线包为 v33；在线版已更新至 v38，本轮新增九十六个图片资源，修复比赛结果页菜单和排行榜页面。后续进度见[更新记录](CHANGELOG.md)。
+启动后会打开本地浏览页面。在线版与离线包均为 v38，本轮新增九十六个图片资源，修复比赛结果页菜单和排行榜页面。后续进度见[更新记录](CHANGELOG.md)。
 
 ## 参与协作
 

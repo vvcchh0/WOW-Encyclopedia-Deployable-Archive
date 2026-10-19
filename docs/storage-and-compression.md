@@ -111,3 +111,5 @@ ZIP 为 532,938,958 字节，解压成员合计 598,153,671 字节。文本和�
 | 其他（含来源与启动文件） | 15,814,745 | 3,828,921 |
 
 图片占ZIP成员压缩字节约97.5%，决定了包体积；文本虽然压缩明显，继续压缩图片只能节省少量空间。继续采用原图字节、分层浏览包与来源取证分开的策略，保留D盘安全余量。本轮没有批量删除历史副本或改写原图。独立检查读取全部成员，并从新解压的包启动服务器，完成137个路径的GET/HEAD。[独立包验收](../research/continuous-recovery-20261019/publication/root-v38-portable-acceptance.json)。
+
+[v38下载页](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261019-v38)已发布，旧版资产保持可用。三项Release资产在发布前后均与本地大小和SHA匹配。

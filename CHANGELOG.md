@@ -9,7 +9,7 @@
 
 ## 2026-10-19
 
-- 发布 v38：本轮累计补回九十六个图片资源，修复排行榜脚本和日期切换，旧信用卡宣传页改为历史展品。历史排行榜数据仍未取得，页面已明确说明；新版离线包已通过检查，准备发布。
+- 发布 v38：本轮累计补回九十六个图片资源，修复排行榜脚本和日期切换，旧信用卡宣传页改为历史展品。历史排行榜数据仍未取得，页面已明确说明；同步发布[v38 离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261019-v38)（约 534 MB，解压约 600 MB）。
 - 发布 [v33 离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261019)（约 533 MB，解压约 598 MB），保留对应版本供本地浏览。继续复核旧页面交互，并整理玩家图库的调查结论与剩余线索。[工作记录](docs/continuous-recovery-20261019.md)
 - 补完 v33 剩余 76 个图片入口与展示目标的浏览检查，包括 Dragon Hunt 展开和新闻内图片；比赛结果页的旧菜单错误另行修复。
 - 完成 Karazhan、Black Temple 的晚期存档缺口调查，未发现原玩家截图的新来源，暂缓这两组图库的重复查询。有新捕获或关联页线索时继续恢复。

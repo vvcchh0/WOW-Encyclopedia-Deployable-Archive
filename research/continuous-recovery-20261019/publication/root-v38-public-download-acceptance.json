@@ -1,0 +1,51 @@
+{
+  "accepted": true,
+  "checked_utc": "2026-10-19T12:59:53.791554+00:00",
+  "anonymous_requests": true,
+  "tls_verification": true,
+  "checks": [
+    {
+      "asset": "WOW_Encyclopedia_20080512_browser_20261019_v38.zip",
+      "method": "HEAD",
+      "url": "https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/download/archive-20080512-browser-20261019-v38/WOW_Encyclopedia_20080512_browser_20261019_v38.zip",
+      "attempts": [
+        {
+          "transport": "direct",
+          "accepted": false,
+          "error_type": "URLError"
+        },
+        {
+          "transport": "proxy",
+          "status": 200,
+          "content_length": 534197885,
+          "body_bytes_read": 0,
+          "final_host": "release-assets.githubusercontent.com",
+          "accepted": true
+        }
+      ],
+      "accepted": true
+    },
+    {
+      "asset": "WOW_Encyclopedia_20080512_browser_20261019_v38.zip.sha256",
+      "method": "GET",
+      "url": "https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/download/archive-20080512-browser-20261019-v38/WOW_Encyclopedia_20080512_browser_20261019_v38.zip.sha256",
+      "attempts": [
+        {
+          "transport": "direct",
+          "accepted": false,
+          "error_type": "URLError"
+        },
+        {
+          "transport": "proxy",
+          "status": 200,
+          "content_length": 117,
+          "body_bytes_read": 117,
+          "final_host": "release-assets.githubusercontent.com",
+          "accepted": true
+        }
+      ],
+      "accepted": true
+    }
+  ],
+  "scope": "Anonymous public ZIP HEAD confirms exact full length; public117B SHA sidecar GET matches its local digest. TLS and redirect-host checks enabled. Signed redirect queries/response cookies are not retained; full ZIP byte verification is the separate local/GitHub asset-digest evidence."
+}

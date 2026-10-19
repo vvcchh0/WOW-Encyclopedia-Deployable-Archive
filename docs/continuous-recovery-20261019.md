@@ -193,3 +193,17 @@ The7.047s real browser run served406local requests, all200, with0external/unknow
 main7751a187 pushed the accepted v38 scope. Pages78dac6c5 built at12:42:31Z. Independent direct-first HTTPS validation checked all87changed objects in87attempts (13,182,953response bytes); every object matched local bytes/MIME, and the exact deployment commit remained built before and after. All96current-run accepted image files are now in the published tree.
 
 The processed v38ZIP was built once in71.892s. Root independently read and checked all9,120members and extracted a fresh isolated copy, then served137paths withGET/HEAD (274requests) using packaged Python -I server. The independent42.359s check passed:534,197,885B ZIP,599,564,048B total unpacked, original image bytes preserved. No rawHTTP/source payload evidence is included. Release preparation uses a distinctv38 tag and does not replace the earlier v33 assets. Dafter root package check38,403,313,664B.
+
+### 12:57 UTC — v38 Release published
+
+[处理后v38离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261019-v38)已公开，Release417287196/tag`archive-20080512-browser-20261019-v38`精确指向main`4a169367892a05d9ca0120e544080e939fb5f13d`。上传ZIP、SHA侧车与NOTICE共三项资产，277.578s上传后逐项核对，发布前后平台大小/摘要匹配；10.125s发布过程完成。旧v33资产保持不变。
+
+本轮累计新增96个图片资源（1,233,879B），在线/离线均为v38。玩家图库的原图/缩略图未新增；Karazhan/Black Temple保留有新来源再重启的暂缓结论。50组图库晚期窗口21组完整调查、29组尚未闭合（其中Mechanar曾返回503）。21组仅停止重复同一已查时间窗，不作为21组原图全部缺失的结论。全量Source15文字检查未找到新的目标图库地址；其他页面的417个URL变体中411个已对应本地同host资源，6个韩国PVP图片引用需后续检查。下次使用[源属性纠正后的六项清单](../research/continuous-recovery-20261019/publication/next-media-aliases-source-corrected.json)，不使用正则截断的旧队列；正式请求前仍需核对既有精确URL/时间窗。
+
+Wayback在503后两次独立控制窗口仍返回429，本轮已停止获取，不再启动相同请求。可验收的本地修改、部署与处理后离线包已交付；剩余来源调查清单保留。Firecrawl调用0，没有购买套餐或修改全局网络设置。
+
+### 本轮收尾
+
+在线版和处理后离线包均为v38，README下载入口已更新。匿名下载检查验证ZIP的HEAD完整长度与117B摘要文件GET：direct未通后，经同进程代理取得200且摘要文件匹配，未再次下载534MB ZIP；签名跳转查询与Cookie未保留。完整包内容由本地全成员校验和GitHub资产digest双重核对。
+
+本轮自动接续`wow-9`已删除：当前可验收的本地修复、部署和发布均已完成，重复429后的来源获取已停批。未用满9小时预算；未解决的图库、历史统计数据和精确来源队列作为后续工作保留。后续恢复须先读取本轮总账和[最终回顾](../research/continuous-recovery-20261019/publication/root-v38-run-closeout.json)，区分来源不存在、本地尚缺、索引查询完成和传输失败；不重跑已完成的相同查询。最终文档提交后单独核对main与origin/main。
