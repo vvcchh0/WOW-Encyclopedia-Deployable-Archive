@@ -1,0 +1,218 @@
+{
+  "schema": "wow-recovery.gallery-late-rest10a-driver-diff.v1",
+  "old_driver": {
+    "path": "research/continuous-recovery-20261019/network/gallery-late-gap01/gallery_late_gap01_driver_v1.py",
+    "sha256": "99e3abf059bfbb0398a0a6d225939620a836bcd5278e9fdbd1a9448043b4aae8",
+    "bytes": 62361
+  },
+  "new_driver": {
+    "path": "research/continuous-recovery-20261019/network/gallery-late-rest10a/gallery_late_rest10a_driver_v1.py",
+    "sha256": "ccd1b2b9810d274545e20f99940c1cb1a32c79c07bdb95a83408ef0c07df6541",
+    "bytes": 60752
+  },
+  "diff_patch": {
+    "path": "research/continuous-recovery-20261019/network/gallery-late-rest10a/driver-diff.patch",
+    "sha256": "e124e6b233a6cf1bc745045778d97de8e89c9454539f537a6cb5738d7b3410f9",
+    "bytes": 37531
+  },
+  "constant_contract_changes": {
+    "targets": "2 exact source prefixes -> 10 exact v7 source prefixes",
+    "window_seconds": "180 -> 900",
+    "max_attempts": "4 -> 24",
+    "max_requests": "new explicit 24 batch cap",
+    "max_total_body_bytes": "16 MiB -> 32 MiB",
+    "max_entity_body_bytes": "unchanged 8 MiB",
+    "deadline": "old 2026-10-19T13:15:00Z retained",
+    "transport": "direct/proxy/TLS/cadence/disk/stop rules retained",
+    "scope": "index-only; no replay, no redirects, no pagination continuation retained"
+  },
+  "function_ast_comparison": [
+    {
+      "name": "_remaining_clamp",
+      "old_sha256": "c9fb4c9a6861ce7717e042c3818e459538491ab8d6d83d2bef14d7194ddbcd81",
+      "new_sha256": "c9fb4c9a6861ce7717e042c3818e459538491ab8d6d83d2bef14d7194ddbcd81",
+      "unchanged": true
+    },
+    {
+      "name": "_restart_last_dispatch",
+      "old_sha256": "ffd57f61f5d17a8284c1057c36913c0942708058d8d506e1eba69ec2eb18975f",
+      "new_sha256": "ffd57f61f5d17a8284c1057c36913c0942708058d8d506e1eba69ec2eb18975f",
+      "unchanged": true
+    },
+    {
+      "name": "_schedule_next",
+      "old_sha256": "56362ca57d8adb15c136bf334889fe181651a8bb5f1631391835777495e9242b",
+      "new_sha256": "56362ca57d8adb15c136bf334889fe181651a8bb5f1631391835777495e9242b",
+      "unchanged": true
+    },
+    {
+      "name": "canonical_query_url",
+      "old_sha256": "2e06174a71da797f661348c37485975b530c8b0b4c127bfded0db69e4d690ff1",
+      "new_sha256": "2e06174a71da797f661348c37485975b530c8b0b4c127bfded0db69e4d690ff1",
+      "unchanged": true
+    },
+    {
+      "name": "cf",
+      "old_sha256": "d48f4274d3c31e923a2c6df419c28f7b1518902c25db9ac593cc3afcae904e7f",
+      "new_sha256": "d48f4274d3c31e923a2c6df419c28f7b1518902c25db9ac593cc3afcae904e7f",
+      "unchanged": true
+    },
+    {
+      "name": "execute",
+      "old_sha256": "fd8bef9ffa03f08e24063ce70d34c923f3f9d001856a1a5e2c0f5a072ba57401",
+      "new_sha256": "2fdccdfebb0f326bc88549d6c0ec0d00a8c4ff2642b27de7d36d312a0d7c5276",
+      "unchanged": false
+    },
+    {
+      "name": "fixture",
+      "old_sha256": "cd4ad8ebec89520ee760ab30af79cccdae9dd8ee3f4f98751b8635f0ecd20a86",
+      "new_sha256": "f35697a62837b980a2c85794fa4b64dfabfaaf6a250fd8a7a674b373bdbbf63a",
+      "unchanged": false
+    },
+    {
+      "name": "free_bytes",
+      "old_sha256": "7f14c9c4bc77744187f044d753a19a78697045d8de00025b5541d7850ba4bca1",
+      "new_sha256": "7f14c9c4bc77744187f044d753a19a78697045d8de00025b5541d7850ba4bca1",
+      "unchanged": true
+    },
+    {
+      "name": "headers",
+      "old_sha256": "dbc0f0faf3b943027dd64406835ab92ce49314663bf998c33f06e7fa28a4a7a2",
+      "new_sha256": "dbc0f0faf3b943027dd64406835ab92ce49314663bf998c33f06e7fa28a4a7a2",
+      "unchanged": true
+    },
+    {
+      "name": "iso",
+      "old_sha256": "8ff62a935f8cdbfbd2e7f83f57f231f51e7a80a1431bc7ae058b89e10dcc5b94",
+      "new_sha256": "8ff62a935f8cdbfbd2e7f83f57f231f51e7a80a1431bc7ae058b89e10dcc5b94",
+      "unchanged": true
+    },
+    {
+      "name": "main",
+      "old_sha256": "557f0730a58568267c7b4f5d8f04126a126a234bc01084d488a7065e288e9b2e",
+      "new_sha256": "557f0730a58568267c7b4f5d8f04126a126a234bc01084d488a7065e288e9b2e",
+      "unchanged": true
+    },
+    {
+      "name": "now",
+      "old_sha256": "53caf2f8abcec7705657f652f053be4ea16a21102c6286fcc99ea4cf8585bd7e",
+      "new_sha256": "53caf2f8abcec7705657f652f053be4ea16a21102c6286fcc99ea4cf8585bd7e",
+      "unchanged": true
+    },
+    {
+      "name": "parse_cdx",
+      "old_sha256": "c3bf87b58186945135a80e13aa50bdea43ec2dd8ab4cc5704a61df24357c5cce",
+      "new_sha256": "c3bf87b58186945135a80e13aa50bdea43ec2dd8ab4cc5704a61df24357c5cce",
+      "unchanged": true
+    },
+    {
+      "name": "parse_iso",
+      "old_sha256": "01af09bde28d6d7e81bff9324e155cd763e7f54cd91ad11a8fc418f0faa20985",
+      "new_sha256": "01af09bde28d6d7e81bff9324e155cd763e7f54cd91ad11a8fc418f0faa20985",
+      "unchanged": true
+    },
+    {
+      "name": "phase",
+      "old_sha256": "e32d16389d7b433b97df7c4dc489eda1510b4cc4a189387a41bf951a2a8cdde1",
+      "new_sha256": "e32d16389d7b433b97df7c4dc489eda1510b4cc4a189387a41bf951a2a8cdde1",
+      "unchanged": true
+    },
+    {
+      "name": "plan_for_run",
+      "old_sha256": "f1bbbfa0f586ac2fb4968112e62b7094cf37dc83d2cbe6e0f16dcda512fc406b",
+      "new_sha256": "698f0302dee420a4f8a7d4400f75e26053027bc68ed1c367f6a03906bce994c4",
+      "unchanged": false
+    },
+    {
+      "name": "project_rows",
+      "old_sha256": "37894d9a51e3116142e6ec161073022a520d39113cc00b60658a794301081618",
+      "new_sha256": "37894d9a51e3116142e6ec161073022a520d39113cc00b60658a794301081618",
+      "unchanged": true
+    },
+    {
+      "name": "public_attempt",
+      "old_sha256": "4698ba1facb2bfa44d070821f999a2d4ad4a4b2360714e48cf999f0ad3c1aa75",
+      "new_sha256": "4698ba1facb2bfa44d070821f999a2d4ad4a4b2360714e48cf999f0ad3c1aa75",
+      "unchanged": true
+    },
+    {
+      "name": "read_json",
+      "old_sha256": "1924d1366955ffd4d13986b4ec21eb1ec2b4bf0a0a3dff1d77574d995fe2ba49",
+      "new_sha256": "1924d1366955ffd4d13986b4ec21eb1ec2b4bf0a0a3dff1d77574d995fe2ba49",
+      "unchanged": true
+    },
+    {
+      "name": "rel",
+      "old_sha256": "02f3e9c2d4435bacb81cdd842dc6ab509a6f9047857a7568b77d4e433796c5b9",
+      "new_sha256": "02f3e9c2d4435bacb81cdd842dc6ab509a6f9047857a7568b77d4e433796c5b9",
+      "unchanged": true
+    },
+    {
+      "name": "request",
+      "old_sha256": "2188d3cee48ebfbdfb4b6a97b8849ae11f1761edd98637e278be376d4b975cc0",
+      "new_sha256": "2188d3cee48ebfbdfb4b6a97b8849ae11f1761edd98637e278be376d4b975cc0",
+      "unchanged": true
+    },
+    {
+      "name": "same_origin",
+      "old_sha256": "4bb588a3f5cdf5415447a11590d2c86199a61807d5b414b7b30f7e8a3d36d66b",
+      "new_sha256": "4bb588a3f5cdf5415447a11590d2c86199a61807d5b414b7b30f7e8a3d36d66b",
+      "unchanged": true
+    },
+    {
+      "name": "sha",
+      "old_sha256": "ab85ca9d027eadb8edccc4e985752f52b94ca9d25bd31c9578882e81c388eaf6",
+      "new_sha256": "ab85ca9d027eadb8edccc4e985752f52b94ca9d25bd31c9578882e81c388eaf6",
+      "unchanged": true
+    },
+    {
+      "name": "status",
+      "old_sha256": "f0ab0e2f8adf40793f0fd6ddfcfc8cbca4442a77a94ebdd88786854cc9551bf8",
+      "new_sha256": "f0ab0e2f8adf40793f0fd6ddfcfc8cbca4442a77a94ebdd88786854cc9551bf8",
+      "unchanged": true
+    },
+    {
+      "name": "validate_inputs",
+      "old_sha256": "be38b00d852bc9da1377c3c5ab4cb16294102d3bee7111aaa6c6974ad50140f2",
+      "new_sha256": "10dff2af3b87848f96114dbc84c59e4fea218d42acd3a1688f3a7eb1e0b63876",
+      "unchanged": false
+    },
+    {
+      "name": "write_json",
+      "old_sha256": "2373ef2617fa737142c900c35a2e74abed8786e03c431b298592dbf8b956071d",
+      "new_sha256": "2373ef2617fa737142c900c35a2e74abed8786e03c431b298592dbf8b956071d",
+      "unchanged": true
+    }
+  ],
+  "changed_functions": [
+    "execute",
+    "fixture",
+    "plan_for_run",
+    "validate_inputs"
+  ],
+  "unchanged_functions": [
+    "_remaining_clamp",
+    "_restart_last_dispatch",
+    "_schedule_next",
+    "canonical_query_url",
+    "cf",
+    "free_bytes",
+    "headers",
+    "iso",
+    "main",
+    "now",
+    "parse_cdx",
+    "parse_iso",
+    "phase",
+    "project_rows",
+    "public_attempt",
+    "read_json",
+    "rel",
+    "request",
+    "same_origin",
+    "sha",
+    "status",
+    "write_json"
+  ],
+  "network_authorization": "none; preparation and fixture only"
+}

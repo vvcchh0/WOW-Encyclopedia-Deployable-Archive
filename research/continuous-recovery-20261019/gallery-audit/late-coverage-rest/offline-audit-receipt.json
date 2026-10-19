@@ -1,0 +1,127 @@
+{
+  "schema": "wow-recovery.gallery-late-coverage-rest-offline-receipt.v1",
+  "generated_utc": "2026-10-19T10:02:24.995951Z",
+  "network_performed": false,
+  "network_requests": 0,
+  "scope": "Offline audit only; no external request, CDX query, image replay, redirect follow, or status mutation.",
+  "input_bindings": [
+    {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-final-v7/gallery-prefix-registry-v7.json",
+      "sha256": "2579f66841bf6102d90f5dbfe819902337bff03f6e3ac7191239ae041e2d97d6",
+      "bytes": 418729,
+      "role": "frozen v7 50-group source-directory registry"
+    },
+    {
+      "path": "research/continuous-recovery-20261018/publication/root-gallery-late-window-source-acceptance.json",
+      "sha256": "040d2cfd69dc1881ad3b50f66c41fcd475014a69c0b07fc696c398f4d3c49201",
+      "bytes": 28520,
+      "role": "Oct18 late-window accepted receipt"
+    },
+    {
+      "path": "research/continuous-recovery-20261018/publication/root-gallery-retry2-source-acceptance.json",
+      "sha256": "ce62cbee66fa03339eb0fe4a4e733d2933e1df91fef7fa79a61d4357565bb3f5",
+      "bytes": 2223,
+      "role": "Oct18 retry2 503 receipt"
+    },
+    {
+      "path": "research/continuous-recovery-20261019/publication/root-gallery-late-gap01-source-acceptance.json",
+      "sha256": "edd438ed7ff84113031e6741515e4c6d96ca27e5021549f8e649886f08a8f949",
+      "bytes": 54138,
+      "role": "latest accepted gap01 source receipt"
+    },
+    {
+      "path": "research/continuous-recovery-20261018/publication/native-gallery-late-window-ledger.json",
+      "sha256": "138115cb887dde0c9acfd2d5af9ecd68d355a03f6f3f5b308fd3960d9cf793f0",
+      "bytes": 2269,
+      "role": "superseded semantic late-window ledger"
+    },
+    {
+      "path": "research/continuous-recovery-20261019/gallery-audit/coverage-ledger-r2.json",
+      "sha256": "2a3edbf7715c24e312c75c08c70fb24939c0b933bbc00ce3ca8b072e52d912f4",
+      "bytes": 14877,
+      "role": "superseded Oct19 r2 coverage ledger"
+    },
+    {
+      "path": "research/continuous-recovery-20261019/status.json",
+      "sha256": "a7e0b67a8d68d5466ae6246acc8ac627cb1eec49fe44f0aae5bbc1a158ca8c8b",
+      "bytes": 4342,
+      "role": "read-only status snapshot"
+    },
+    {
+      "path": ".scratch/offline-navigation-20261015-v15/site/new-hp/js/guidegallery-screenie.js",
+      "sha256": "b0e619c361c315b60eca6d05c92f38efc3eed1f773bfbdb971af6c2deb3e0a4c",
+      "bytes": 18711,
+      "role": "shared gallery JavaScript source"
+    },
+    {
+      "path": "research/continuous-recovery-20261019/publication/root-frontier-news20f-source-acceptance.json",
+      "sha256": "5c9c965737f3ef1282a85c516663a5f216b93f8fc627a7dcddb382fd6707d165",
+      "bytes": 15758,
+      "role": "latest accepted global network source/tail0 after news20f"
+    }
+  ],
+  "latest_gallery_receipt": {
+    "path": "research/continuous-recovery-20261019/publication/root-gallery-late-gap01-source-acceptance.json",
+    "sha256": "edd438ed7ff84113031e6741515e4c6d96ca27e5021549f8e649886f08a8f949",
+    "failure_streak_end": 0,
+    "tail": 0,
+    "accepted": true
+  },
+  "validation": {
+    "groups": 50,
+    "late_status_counts": {
+      "complete": 3,
+      "not_queried": 47
+    },
+    "candidate_count": 10,
+    "excluded_complete_groups": [
+      "Karazhan",
+      "Zul'Aman",
+      "Black Temple"
+    ],
+    "kara_black_temple_corrected_from_stale_unknown": true,
+    "zulaman_complete_window_not_repeated": true,
+    "source_page_evidence_present_for_all_rows": true,
+    "no_network_side_effects": true
+  },
+  "outputs": [
+    {
+      "path": "research/continuous-recovery-20261019/gallery-audit/late-coverage-rest/late-coverage-ledger.json",
+      "sha256": "493ae27fa0ef6c6cb3f07f49ff891b7cdc15cd6f90d45c7549c79d82025c12fa",
+      "bytes": 104024
+    },
+    {
+      "path": "research/continuous-recovery-20261019/gallery-audit/late-coverage-rest/late-prefix-candidates.json",
+      "sha256": "6d23d951458d7e7ed0a045f66b2c4f148bc03659b31de200d164247d93672b09",
+      "bytes": 31593
+    },
+    {
+      "path": "research/continuous-recovery-20261019/gallery-audit/late-coverage-rest/late-coverage-ledger.md",
+      "sha256": "845b04e9ca31718512afa2e0150bac79a164e537bbf9f0719d6b0deb5028d235",
+      "bytes": 14764
+    }
+  ],
+  "superseded_without_edit": [
+    {
+      "path": "research/continuous-recovery-20261019/gallery-audit/coverage-ledger-r2.json",
+      "sha256": "2a3edbf7715c24e312c75c08c70fb24939c0b933bbc00ce3ca8b072e52d912f4",
+      "reason": "retained historical r2; new ledger corrects Kara/Black Temple with gap01"
+    },
+    {
+      "path": "research/continuous-recovery-20261018/publication/native-gallery-late-window-ledger.json",
+      "sha256": "138115cb887dde0c9acfd2d5af9ecd68d355a03f6f3f5b308fd3960d9cf793f0",
+      "reason": "retained historical semantic ledger; current late receipt wins"
+    }
+  ],
+  "latest_network_source_binding": {
+    "path": "research/continuous-recovery-20261019/publication/root-frontier-news20f-source-acceptance.json",
+    "sha256": "5c9c965737f3ef1282a85c516663a5f216b93f8fc627a7dcddb382fd6707d165",
+    "bytes": 15758,
+    "role": "latest accepted global network source/tail0 after news20f",
+    "accepted": true,
+    "tail": 0,
+    "failure_streak_end": 0,
+    "source_responses": 40,
+    "accepted_images": 20
+  }
+}

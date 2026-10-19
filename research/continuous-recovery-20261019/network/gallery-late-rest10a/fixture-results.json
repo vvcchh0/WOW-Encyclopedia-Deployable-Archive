@@ -1,0 +1,268 @@
+{
+  "schema": "wow-recovery.gallery-late-rest10a-driver-v1-fixture-results.v1",
+  "mode": "offline_fixture",
+  "network_requests": 0,
+  "passed": 15,
+  "total": 15,
+  "all_passed": true,
+  "cadence": {
+    "scheduling_floor_seconds": 5.25,
+    "acceptance_floor_seconds": 5.25
+  },
+  "results": [
+    {
+      "name": "parse_header_separator_resume",
+      "passed": true,
+      "detail": {
+        "rows": 1,
+        "resume": [
+          "resume-fixture"
+        ]
+      }
+    },
+    {
+      "name": "limit_500_and_resume",
+      "passed": true,
+      "detail": {
+        "rows": 500,
+        "resume": [
+          "resume-500"
+        ],
+        "continuation_followed": false
+      }
+    },
+    {
+      "name": "unknown_metadata_incomplete",
+      "passed": true,
+      "detail": {
+        "error": "cdx_unrecognized_metadata"
+      }
+    },
+    {
+      "name": "default_port_identity",
+      "passed": true,
+      "detail": "same_origin_prefix"
+    },
+    {
+      "name": "identity_rejections",
+      "passed": true,
+      "detail": {
+        "scheme": "scheme_mismatch",
+        "host": "host_mismatch",
+        "path": "path_prefix_mismatch",
+        "query": "query_or_fragment_present"
+      }
+    },
+    {
+      "name": "identity_variants_separate",
+      "passed": true,
+      "detail": {
+        "returned_rows": 3,
+        "strict_full": 1,
+        "strict_thumb": 0,
+        "nested_preview_or_other": 0,
+        "other": 2,
+        "direct_origin_variant": 2,
+        "direct_identity_variant_candidates": 2,
+        "redirect": 0
+      }
+    },
+    {
+      "name": "cadence_rechecks_early_sleep",
+      "passed": true,
+      "detail": {
+        "dispatch": 5.300000000000068,
+        "start": 5.3
+      }
+    },
+    {
+      "name": "restart_restores_utc_cadence",
+      "passed": true,
+      "detail": {
+        "dispatch": 5.30000000000075,
+        "start": 5.3
+      }
+    },
+    {
+      "name": "remaining_32mib_and_900s_clamp",
+      "passed": true,
+      "detail": {
+        "full": {
+          "transport": "proxy",
+          "total_body_bytes_before": 0,
+          "total_body_remaining_before_bytes": 33554432,
+          "configured_entity_body_limit_bytes": 8388608,
+          "entity_body_limit_before_bytes": 8388608,
+          "window_seconds": 900.0,
+          "window_remaining_seconds": 890.0,
+          "hard_cutoff_remaining_seconds": null,
+          "baseline_connect_timeout_seconds": 8.0,
+          "baseline_max_timeout_seconds": 60.0,
+          "connect_timeout_seconds": 8.0,
+          "max_timeout_seconds": 60.0,
+          "clamp_applied": false,
+          "dispatch_allowed": true
+        },
+        "near": {
+          "transport": "proxy",
+          "total_body_bytes_before": 32505856,
+          "total_body_remaining_before_bytes": 1048576,
+          "configured_entity_body_limit_bytes": 8388608,
+          "entity_body_limit_before_bytes": 1048576,
+          "window_seconds": 900.0,
+          "window_remaining_seconds": 0.5,
+          "hard_cutoff_remaining_seconds": null,
+          "baseline_connect_timeout_seconds": 8.0,
+          "baseline_max_timeout_seconds": 60.0,
+          "connect_timeout_seconds": 0.5,
+          "max_timeout_seconds": 0.5,
+          "clamp_applied": true,
+          "dispatch_allowed": true
+        }
+      }
+    },
+    {
+      "name": "disk_floor_per_request",
+      "passed": true,
+      "detail": {
+        "disk_floor_bytes": 11005853696
+      }
+    },
+    {
+      "name": "stop_threshold_five",
+      "passed": true,
+      "detail": {
+        "threshold": 5
+      }
+    },
+    {
+      "name": "index_only_no_payload_replay",
+      "passed": true,
+      "detail": {
+        "payload_replay_count": 0,
+        "automatic_redirects": 0
+      }
+    },
+    {
+      "name": "ten_exact_source_prefixes",
+      "passed": true,
+      "detail": {
+        "count": 10,
+        "names": [
+          "Doom Lord Kazzak",
+          "Gruul's Lair",
+          "Hellfire Citadel - Hellfire Ramparts",
+          "Hellfire Citadel - The Blood Furnace",
+          "Hellfire Citadel - The Shattered Halls",
+          "Magister's Terrace",
+          "Magtheridon's Lair",
+          "Serpentshrine Cavern",
+          "Tempest Keep - The Eye",
+          "The Battle for Mount Hyjal - Caverns of Time"
+        ],
+        "unique_prefixes": 10,
+        "windows_valid": true
+      }
+    },
+    {
+      "name": "batch_caps_bound",
+      "passed": true,
+      "detail": {
+        "from": "per_candidate",
+        "to": "20101207235959",
+        "target_from": "20080512210045",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix",
+        "max_attempts": 24,
+        "max_requests": 24,
+        "window_seconds": 900.0,
+        "max_total_body_bytes": 33554432,
+        "max_entity_body_bytes": 8388608,
+        "min_dispatch_seconds": 5.25,
+        "min_request_start_seconds": 5.0,
+        "disk_floor_bytes": 11005853696,
+        "direct_connect_timeout_seconds": 4.0,
+        "direct_max_timeout_seconds": 12.0,
+        "proxy_connect_timeout_seconds": 8.0,
+        "proxy_max_timeout_seconds": 60.0,
+        "direct_first": true,
+        "proxy": "http://127.0.0.1:7890",
+        "tls_verification": true,
+        "automatic_redirects": 0,
+        "stop_http_codes": [
+          429,
+          503
+        ],
+        "cooldown_seconds": 120,
+        "stop_on_five_consecutive_transport_failures": true,
+        "resume_rule": "record resumeKey and mark incomplete; never follow it in this batch",
+        "network_deadline_utc": "2026-10-19T13:15:00Z",
+        "outer_watchdog_seconds": 960,
+        "index_only": true,
+        "no_payload_replay": true
+      }
+    },
+    {
+      "name": "newest_global_tail_bound",
+      "passed": true,
+      "detail": {
+        "gallery_final_v7_registry": {
+          "path": "research/continuous-recovery-20261016/local-audit/gallery-final-v7/gallery-prefix-registry-v7.json",
+          "sha256": "2579f66841bf6102d90f5dbfe819902337bff03f6e3ac7191239ae041e2d97d6",
+          "bytes": 418729,
+          "role": "frozen v7 native-gallery directory registry and source-page literals"
+        },
+        "root_gallery_registry_v7_acceptance": {
+          "path": "research/continuous-recovery-20261016/publication/root-gallery-registry-v7-acceptance.json",
+          "sha256": "fc390af9cffe526d6e8cd21d5167467fe7b207cca7b851977f95381159caa319",
+          "bytes": 9458,
+          "role": "root accepted frozen v7 registry"
+        },
+        "latest_global_source_acceptance": {
+          "path": "research/continuous-recovery-20261019/publication/root-frontier-news20f-source-acceptance.json",
+          "sha256": "5c9c965737f3ef1282a85c516663a5f216b93f8fc627a7dcddb382fd6707d165",
+          "bytes": 15758,
+          "role": "latest accepted global network source/tail0 after news20f"
+        },
+        "latest_control_gate": {
+          "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+          "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+          "bytes": 1842,
+          "role": "latest accepted control gate/tail0"
+        },
+        "latest_gallery_gap01_source_acceptance": {
+          "path": "research/continuous-recovery-20261019/publication/root-gallery-late-gap01-source-acceptance.json",
+          "sha256": "edd438ed7ff84113031e6741515e4c6d96ca27e5021549f8e649886f08a8f949",
+          "bytes": 54138,
+          "role": "latest accepted gallery gap01 correction/tail0"
+        },
+        "late_coverage_ledger": {
+          "path": "research/continuous-recovery-20261019/gallery-audit/late-coverage-rest/late-coverage-ledger.json",
+          "sha256": "493ae27fa0ef6c6cb3f07f49ff891b7cdc15cd6f90d45c7549c79d82025c12fa",
+          "bytes": 104024,
+          "role": "zero-request 50-group late coverage ledger"
+        },
+        "late_prefix_candidates": {
+          "path": "research/continuous-recovery-20261019/gallery-audit/late-coverage-rest/late-prefix-candidates.json",
+          "sha256": "6d23d951458d7e7ed0a045f66b2c4f148bc03659b31de200d164247d93672b09",
+          "bytes": 31593,
+          "role": "zero-request ten-prefix candidate manifest"
+        },
+        "late_coverage_receipt": {
+          "path": "research/continuous-recovery-20261019/gallery-audit/late-coverage-rest/offline-audit-receipt.json",
+          "sha256": "db80ae5bd73b31103fc2910bb8934247da53ce1a2702549ca3acf3bbaab578f5",
+          "bytes": 5434,
+          "role": "zero-request late coverage audit receipt"
+        },
+        "template_gallery_late_gap01_driver": {
+          "path": "research/continuous-recovery-20261019/network/gallery-late-gap01/gallery_late_gap01_driver_v1.py",
+          "sha256": "99e3abf059bfbb0398a0a6d225939620a836bcd5278e9fdbd1a9448043b4aae8",
+          "bytes": 62361,
+          "role": "frozen CDX-only driver template; new driver changes are packet-local"
+        }
+      }
+    }
+  ]
+}

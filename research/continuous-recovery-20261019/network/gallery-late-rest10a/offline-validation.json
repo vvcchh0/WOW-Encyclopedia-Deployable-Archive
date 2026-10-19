@@ -1,0 +1,134 @@
+{
+  "schema": "wow-recovery.gallery-late-rest10a-offline-validation.v1",
+  "validated_utc": "2026-10-19T10:12:08.020Z",
+  "network_requests": 0,
+  "network_authorized": false,
+  "status_mutated": false,
+  "py_compile": true,
+  "ast_parse": true,
+  "commands": {
+    "fixture": "python -X utf8 research/continuous-recovery-20261019/network/gallery-late-rest10a/gallery_late_rest10a_driver_v1.py --fixture",
+    "proposed_execute_after_root_go": "external Python subprocess timeout=960s wrapping gallery_late_rest10a_driver_v1.py --execute; not run in this preparation"
+  },
+  "driver": {
+    "path": "research/continuous-recovery-20261019/network/gallery-late-rest10a/gallery_late_rest10a_driver_v1.py",
+    "sha256": "ccd1b2b9810d274545e20f99940c1cb1a32c79c07bdb95a83408ef0c07df6541",
+    "bytes": 60752,
+    "template_path": "research/continuous-recovery-20261019/network/gallery-late-gap01/gallery_late_gap01_driver_v1.py",
+    "template_sha256": "99e3abf059bfbb0398a0a6d225939620a836bcd5278e9fdbd1a9448043b4aae8"
+  },
+  "plan": {
+    "path": "research/continuous-recovery-20261019/network/gallery-late-rest10a/plan.json",
+    "sha256": "f14ec21579528767d256ae6992d00a22430aa1ccaac2a19ebba86dcff23e5134",
+    "bytes": 44742,
+    "schema": "wow-recovery.gallery-late-rest10a-plan.v1",
+    "prepared_utc": "2026-10-19T10:11:18.102Z"
+  },
+  "input_bindings": {
+    "path": "research/continuous-recovery-20261019/network/gallery-late-rest10a/input-bindings.json",
+    "sha256": "3fb334dcac1df7c7e07c903b138b4f014a1894d8f9d54616223cf49482ec6431",
+    "bytes": 2898,
+    "entries": 9,
+    "missing": [],
+    "sha_mismatches": [],
+    "all_bound_files_match": true
+  },
+  "fixture": {
+    "path": "research/continuous-recovery-20261019/network/gallery-late-rest10a/fixture-results.json",
+    "sha256": "6cb8b16286c9a96d2b7e6a3ae744f768a841ca58ab4075ed736e2b62aba3fde5",
+    "bytes": 9225,
+    "passed": 15,
+    "total": 15,
+    "all_passed": true,
+    "network_requests": 0
+  },
+  "diff": {
+    "patch_path": "research/continuous-recovery-20261019/network/gallery-late-rest10a/driver-diff.patch",
+    "patch_sha256": "e124e6b233a6cf1bc745045778d97de8e89c9454539f537a6cb5738d7b3410f9",
+    "patch_bytes": 37531,
+    "summary_path": "research/continuous-recovery-20261019/network/gallery-late-rest10a/driver-diff-summary.json",
+    "summary_sha256": "87093294bc1bbb8f7ef0d619176819998ee3f41e30c6e8dfb3c38fc49bf43010",
+    "summary_bytes": 8375,
+    "markdown_path": "research/continuous-recovery-20261019/network/gallery-late-rest10a/adapter-diff-summary.md",
+    "markdown_sha256": "a6a3358705c3d5b339ea3ed6ef1e396c42e74e3b5dd454144e31cd7d6d837b1d",
+    "markdown_bytes": 5865,
+    "changed_functions": [
+      "execute",
+      "fixture",
+      "plan_for_run",
+      "validate_inputs"
+    ],
+    "unchanged_functions": [
+      "_remaining_clamp",
+      "_restart_last_dispatch",
+      "_schedule_next",
+      "canonical_query_url",
+      "cf",
+      "free_bytes",
+      "headers",
+      "iso",
+      "main",
+      "now",
+      "parse_cdx",
+      "parse_iso",
+      "phase",
+      "project_rows",
+      "public_attempt",
+      "read_json",
+      "rel",
+      "request",
+      "same_origin",
+      "sha",
+      "status",
+      "write_json"
+    ]
+  },
+  "scope": {
+    "candidate_count": 10,
+    "target_galleries": [
+      "Magtheridon's Lair",
+      "Gruul's Lair",
+      "Serpentshrine Cavern",
+      "The Battle for Mount Hyjal - Caverns of Time",
+      "Tempest Keep - The Eye",
+      "Doom Lord Kazzak",
+      "Magister's Terrace",
+      "Hellfire Citadel - Hellfire Ramparts",
+      "Hellfire Citadel - The Blood Furnace",
+      "Hellfire Citadel - The Shattered Halls"
+    ],
+    "query_window": {
+      "from": "per_candidate",
+      "to": "20101207235959",
+      "target_from": "20080512210045",
+      "limit": 500,
+      "showResumeKey": true,
+      "collapse": false,
+      "matchType": "prefix"
+    },
+    "index_only": true,
+    "payload_replay": false,
+    "automatic_redirects": 0,
+    "resume_rule": "record resumeKey and mark incomplete; never follow it in this batch",
+    "prior_failure_tail": 0,
+    "latest_global_source_tail": 0
+  },
+  "caps": {
+    "max_requests": 24,
+    "max_attempts": 24,
+    "window_seconds": 900.0,
+    "max_total_body_bytes": 33554432,
+    "max_entity_body_bytes": 8388608,
+    "min_dispatch_seconds": 5.25,
+    "min_request_start_seconds": 5.0,
+    "disk_floor_bytes": 11005853696,
+    "network_deadline_utc": "2026-10-19T13:15:00Z",
+    "outer_watchdog_seconds": 960
+  },
+  "outputs": {
+    "raw_files": [],
+    "runtime_report_files": [],
+    "output_absent": true
+  },
+  "overall_passed": true
+}

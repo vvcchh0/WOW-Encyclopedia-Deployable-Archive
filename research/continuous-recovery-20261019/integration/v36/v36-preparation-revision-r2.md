@@ -1,0 +1,3 @@
+# v36 preparation revision r2
+
+The generated proposal and runner note were corrected after the real loader preflight to state the frozen v35 baseline accurately: 483 primary + 100 supplement (583 total), then 51 new primary images for 534/100/634. The runner note now names the v35 closure. No map, source/public-copy receipt, native input, loader result, or exporter behavior changed. The preparation binding records the final builder SHA after this documentation-only correction. The runner note also records the required internal subprocess timeout as 600 seconds. The proposal baseline sentence was also corrected to 483 primary plus 100 supplement (583 total).

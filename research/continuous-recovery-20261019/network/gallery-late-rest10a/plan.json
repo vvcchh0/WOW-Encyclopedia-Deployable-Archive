@@ -1,0 +1,827 @@
+{
+  "schema": "wow-recovery.gallery-late-rest10a-plan.v1",
+  "batch_id": "WAYBACK-GALLERY-LATE-REST10A-20261019",
+  "prepared_utc": "2026-10-19T10:11:18.102Z",
+  "mode": "prepared",
+  "network_requests": 0,
+  "network_authorized_by_this_file": null,
+  "parent_go_required": true,
+  "candidate_count": 10,
+  "target_gallery_count": 10,
+  "target_galleries": [
+    "Magtheridon's Lair",
+    "Gruul's Lair",
+    "Serpentshrine Cavern",
+    "The Battle for Mount Hyjal - Caverns of Time",
+    "Tempest Keep - The Eye",
+    "Doom Lord Kazzak",
+    "Magister's Terrace",
+    "Hellfire Citadel - Hellfire Ramparts",
+    "Hellfire Citadel - The Blood Furnace",
+    "Hellfire Citadel - The Shattered Halls"
+  ],
+  "scope": "Ten exact v7 native-player gallery source-directory prefixes from the frozen first-ten late-rest draft; CDX index only after anchor+1 through 2010-12-07, no payload replay, no filename expansion, no redirect follow, no automatic continuation.",
+  "registry_path": "research/continuous-recovery-20261016/local-audit/gallery-final-v7/gallery-prefix-registry-v7.json",
+  "registry_sha256": "2579f66841bf6102d90f5dbfe819902337bff03f6e3ac7191239ae041e2d97d6",
+  "registry_acceptance_path": "research/continuous-recovery-20261016/publication/root-gallery-registry-v7-acceptance.json",
+  "registry_acceptance_sha256": "fc390af9cffe526d6e8cd21d5167467fe7b207cca7b851977f95381159caa319",
+  "query_window": {
+    "from": "per_candidate",
+    "to": "20101207235959",
+    "target_from": "20080512210045",
+    "limit": 500,
+    "showResumeKey": true,
+    "collapse": false,
+    "matchType": "prefix"
+  },
+  "index_only": true,
+  "payload_replay": false,
+  "no_filename_guess": true,
+  "policy": {
+    "from": "per_candidate",
+    "to": "20101207235959",
+    "target_from": "20080512210045",
+    "limit": 500,
+    "showResumeKey": true,
+    "collapse": false,
+    "matchType": "prefix",
+    "max_attempts": 24,
+    "max_requests": 24,
+    "window_seconds": 900.0,
+    "max_total_body_bytes": 33554432,
+    "max_entity_body_bytes": 8388608,
+    "min_dispatch_seconds": 5.25,
+    "min_request_start_seconds": 5.0,
+    "disk_floor_bytes": 11005853696,
+    "direct_connect_timeout_seconds": 4.0,
+    "direct_max_timeout_seconds": 12.0,
+    "proxy_connect_timeout_seconds": 8.0,
+    "proxy_max_timeout_seconds": 60.0,
+    "direct_first": true,
+    "proxy": "http://127.0.0.1:7890",
+    "tls_verification": true,
+    "automatic_redirects": 0,
+    "stop_http_codes": [
+      429,
+      503
+    ],
+    "cooldown_seconds": 120,
+    "stop_on_five_consecutive_transport_failures": true,
+    "resume_rule": "record resumeKey and mark incomplete; never follow it in this batch",
+    "network_deadline_utc": "2026-10-19T13:15:00Z",
+    "outer_watchdog_seconds": 960,
+    "index_only": true,
+    "no_payload_replay": true
+  },
+  "prior_failure_tail": 0,
+  "control_basis": {
+    "latest_global_source_acceptance": "research/continuous-recovery-20261019/publication/root-frontier-news20f-source-acceptance.json",
+    "latest_global_source_acceptance_sha256": "5c9c965737f3ef1282a85c516663a5f216b93f8fc627a7dcddb382fd6707d165",
+    "latest_global_source_tail": 0,
+    "latest_control_gate": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+    "latest_control_gate_sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+    "latest_control_tail": 0,
+    "latest_gallery_gap01_source_acceptance": "research/continuous-recovery-20261019/publication/root-gallery-late-gap01-source-acceptance.json",
+    "latest_gallery_gap01_source_acceptance_sha256": "edd438ed7ff84113031e6741515e4c6d96ca27e5021549f8e649886f08a8f949",
+    "latest_gallery_tail": 0,
+    "coverage_audit_receipt": "research/continuous-recovery-20261019/gallery-audit/late-coverage-rest/offline-audit-receipt.json",
+    "coverage_audit_receipt_sha256": "db80ae5bd73b31103fc2910bb8934247da53ce1a2702549ca3acf3bbaab578f5",
+    "note": "Global network resume is bound to accepted news20f; gap01 is retained for gallery semantic correction and is not used to overwrite the newer global tail."
+  },
+  "input_bindings": {
+    "gallery_final_v7_registry": {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-final-v7/gallery-prefix-registry-v7.json",
+      "sha256": "2579f66841bf6102d90f5dbfe819902337bff03f6e3ac7191239ae041e2d97d6",
+      "bytes": 418729,
+      "role": "frozen v7 native-gallery directory registry and source-page literals"
+    },
+    "root_gallery_registry_v7_acceptance": {
+      "path": "research/continuous-recovery-20261016/publication/root-gallery-registry-v7-acceptance.json",
+      "sha256": "fc390af9cffe526d6e8cd21d5167467fe7b207cca7b851977f95381159caa319",
+      "bytes": 9458,
+      "role": "root accepted frozen v7 registry"
+    },
+    "latest_global_source_acceptance": {
+      "path": "research/continuous-recovery-20261019/publication/root-frontier-news20f-source-acceptance.json",
+      "sha256": "5c9c965737f3ef1282a85c516663a5f216b93f8fc627a7dcddb382fd6707d165",
+      "bytes": 15758,
+      "role": "latest accepted global network source/tail0 after news20f"
+    },
+    "latest_control_gate": {
+      "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+      "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+      "bytes": 1842,
+      "role": "latest accepted control gate/tail0"
+    },
+    "latest_gallery_gap01_source_acceptance": {
+      "path": "research/continuous-recovery-20261019/publication/root-gallery-late-gap01-source-acceptance.json",
+      "sha256": "edd438ed7ff84113031e6741515e4c6d96ca27e5021549f8e649886f08a8f949",
+      "bytes": 54138,
+      "role": "latest accepted gallery gap01 correction/tail0"
+    },
+    "late_coverage_ledger": {
+      "path": "research/continuous-recovery-20261019/gallery-audit/late-coverage-rest/late-coverage-ledger.json",
+      "sha256": "493ae27fa0ef6c6cb3f07f49ff891b7cdc15cd6f90d45c7549c79d82025c12fa",
+      "bytes": 104024,
+      "role": "zero-request 50-group late coverage ledger"
+    },
+    "late_prefix_candidates": {
+      "path": "research/continuous-recovery-20261019/gallery-audit/late-coverage-rest/late-prefix-candidates.json",
+      "sha256": "6d23d951458d7e7ed0a045f66b2c4f148bc03659b31de200d164247d93672b09",
+      "bytes": 31593,
+      "role": "zero-request ten-prefix candidate manifest"
+    },
+    "late_coverage_receipt": {
+      "path": "research/continuous-recovery-20261019/gallery-audit/late-coverage-rest/offline-audit-receipt.json",
+      "sha256": "db80ae5bd73b31103fc2910bb8934247da53ce1a2702549ca3acf3bbaab578f5",
+      "bytes": 5434,
+      "role": "zero-request late coverage audit receipt"
+    },
+    "template_gallery_late_gap01_driver": {
+      "path": "research/continuous-recovery-20261019/network/gallery-late-gap01/gallery_late_gap01_driver_v1.py",
+      "sha256": "99e3abf059bfbb0398a0a6d225939620a836bcd5278e9fdbd1a9448043b4aae8",
+      "bytes": 62361,
+      "role": "frozen CDX-only driver template; new driver changes are packet-local"
+    }
+  },
+  "candidate_source": {
+    "path": "research/continuous-recovery-20261019/gallery-audit/late-coverage-rest/late-prefix-candidates.json",
+    "sha256": "6d23d951458d7e7ed0a045f66b2c4f148bc03659b31de200d164247d93672b09",
+    "source_ledger_path": "research/continuous-recovery-20261019/gallery-audit/late-coverage-rest/late-coverage-ledger.json",
+    "source_ledger_sha256": "493ae27fa0ef6c6cb3f07f49ff891b7cdc15cd6f90d45c7549c79d82025c12fa",
+    "network_performed": false
+  },
+  "candidates": [
+    {
+      "rank": 1,
+      "registry_rank": 3,
+      "gallery": "Magtheridon's Lair",
+      "category": "native-gallery-late-window",
+      "kind": "index_only_exact_source_prefix",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/mag/",
+      "source_page_route": "/info/dungeons/mag-gallery.html",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/mag-gallery.html",
+        "sha256": "e629270c70b32f72fb089388dd59473feb9ffe4fafc24a498ba26ab533d9d5fb",
+        "addshots_line": 78,
+        "addshots_literal": "addshots(\"/info/dungeons/images/mag/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/mag/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 15;"
+      },
+      "source_page_context": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/mag-gallery.html",
+        "sha256": "e629270c70b32f72fb089388dd59473feb9ffe4fafc24a498ba26ab533d9d5fb",
+        "addshots_line": 78,
+        "addshots_literal": "addshots(\"/info/dungeons/images/mag/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/mag/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 15;"
+      },
+      "query_window": {
+        "from": "20080512210045",
+        "to": "20101207235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fmag%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "declared_slots": 15,
+      "expected_direct_entities": 30,
+      "dedupe_basis": [
+        "research/continuous-recovery-20261016/local-audit/gallery-final-v7/gallery-prefix-registry-v7.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-late-window-source-acceptance.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-retry2-source-acceptance.json",
+        "research/continuous-recovery-20261019/publication/root-gallery-late-gap01-source-acceptance.json"
+      ],
+      "why_not_already_covered": "No accepted complete late prefix covers the residual interval; any bounded 2008 overlap is recorded but does not close the window.",
+      "strict_rules": {
+        "no_filename_guess": true,
+        "no_thumbnail_alias_inference": true,
+        "no_payload_replay_in_this_draft": true,
+        "no_redirect_follow": true,
+        "no_auto_pagination": true,
+        "valid_index_and_no_resume_required_for_complete": true,
+        "scheme_and_host_identity_preserved": true
+      },
+      "target_key": "GALLERY-LATE-REST10A-01",
+      "label": "Magtheridon's Lair",
+      "gallery_segment_index": 1,
+      "gallery_segment_count": 1,
+      "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fmag%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "network_result": "not_executed",
+      "payload_replay": false,
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_schemes": [
+        "http"
+      ]
+    },
+    {
+      "rank": 2,
+      "registry_rank": 4,
+      "gallery": "Gruul's Lair",
+      "category": "native-gallery-late-window",
+      "kind": "index_only_exact_source_prefix",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/gruul/",
+      "source_page_route": "/info/dungeons/gruul-gallery.html",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/gruul-gallery.html",
+        "sha256": "06a285476e9f1fea3fd0d43784ba71a77da0c574ff44f9355f996036307a8e14",
+        "addshots_line": 84,
+        "addshots_literal": "addshots(\"/info/dungeons/images/gruul/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/gruul/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 21;"
+      },
+      "source_page_context": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/gruul-gallery.html",
+        "sha256": "06a285476e9f1fea3fd0d43784ba71a77da0c574ff44f9355f996036307a8e14",
+        "addshots_line": 84,
+        "addshots_literal": "addshots(\"/info/dungeons/images/gruul/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/gruul/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 21;"
+      },
+      "query_window": {
+        "from": "20080512210045",
+        "to": "20101207235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fgruul%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "declared_slots": 21,
+      "expected_direct_entities": 42,
+      "dedupe_basis": [
+        "research/continuous-recovery-20261016/local-audit/gallery-final-v7/gallery-prefix-registry-v7.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-late-window-source-acceptance.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-retry2-source-acceptance.json",
+        "research/continuous-recovery-20261019/publication/root-gallery-late-gap01-source-acceptance.json"
+      ],
+      "why_not_already_covered": "No accepted complete late prefix covers the residual interval; any bounded 2008 overlap is recorded but does not close the window.",
+      "strict_rules": {
+        "no_filename_guess": true,
+        "no_thumbnail_alias_inference": true,
+        "no_payload_replay_in_this_draft": true,
+        "no_redirect_follow": true,
+        "no_auto_pagination": true,
+        "valid_index_and_no_resume_required_for_complete": true,
+        "scheme_and_host_identity_preserved": true
+      },
+      "target_key": "GALLERY-LATE-REST10A-02",
+      "label": "Gruul's Lair",
+      "gallery_segment_index": 1,
+      "gallery_segment_count": 1,
+      "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fgruul%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "network_result": "not_executed",
+      "payload_replay": false,
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_schemes": [
+        "http"
+      ]
+    },
+    {
+      "rank": 3,
+      "registry_rank": 5,
+      "gallery": "Serpentshrine Cavern",
+      "category": "native-gallery-late-window",
+      "kind": "index_only_exact_source_prefix",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/serpentshrine/",
+      "source_page_route": "/info/dungeons/serpentshrine-gallery.html",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/serpentshrine-gallery.html",
+        "sha256": "f64ca255d9325cd0e137ec22c1cd59014a5b78405639031516c15c3465f2b815",
+        "addshots_line": 92,
+        "addshots_literal": "addshots(\"/info/dungeons/images/serpentshrine/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/serpentshrine/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 29;"
+      },
+      "source_page_context": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/serpentshrine-gallery.html",
+        "sha256": "f64ca255d9325cd0e137ec22c1cd59014a5b78405639031516c15c3465f2b815",
+        "addshots_line": 92,
+        "addshots_literal": "addshots(\"/info/dungeons/images/serpentshrine/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/serpentshrine/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 29;"
+      },
+      "query_window": {
+        "from": "20080512210045",
+        "to": "20101207235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fserpentshrine%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "declared_slots": 29,
+      "expected_direct_entities": 58,
+      "dedupe_basis": [
+        "research/continuous-recovery-20261016/local-audit/gallery-final-v7/gallery-prefix-registry-v7.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-late-window-source-acceptance.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-retry2-source-acceptance.json",
+        "research/continuous-recovery-20261019/publication/root-gallery-late-gap01-source-acceptance.json"
+      ],
+      "why_not_already_covered": "No accepted complete late prefix covers the residual interval; any bounded 2008 overlap is recorded but does not close the window.",
+      "strict_rules": {
+        "no_filename_guess": true,
+        "no_thumbnail_alias_inference": true,
+        "no_payload_replay_in_this_draft": true,
+        "no_redirect_follow": true,
+        "no_auto_pagination": true,
+        "valid_index_and_no_resume_required_for_complete": true,
+        "scheme_and_host_identity_preserved": true
+      },
+      "target_key": "GALLERY-LATE-REST10A-03",
+      "label": "Serpentshrine Cavern",
+      "gallery_segment_index": 1,
+      "gallery_segment_count": 1,
+      "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fserpentshrine%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "network_result": "not_executed",
+      "payload_replay": false,
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_schemes": [
+        "http"
+      ]
+    },
+    {
+      "rank": 4,
+      "registry_rank": 6,
+      "gallery": "The Battle for Mount Hyjal - Caverns of Time",
+      "category": "native-gallery-late-window",
+      "kind": "index_only_exact_source_prefix",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/battle/",
+      "source_page_route": "/info/dungeons/cot-hyjal-gallery.html",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/cot-hyjal-gallery.html",
+        "sha256": "ada17276d79e0af2e9c37054f1602a0863774784839ce230e1b4af564954ca11",
+        "addshots_line": 108,
+        "addshots_literal": "addshots(\"/info/dungeons/images/battle/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/battle/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 44;"
+      },
+      "source_page_context": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/cot-hyjal-gallery.html",
+        "sha256": "ada17276d79e0af2e9c37054f1602a0863774784839ce230e1b4af564954ca11",
+        "addshots_line": 108,
+        "addshots_literal": "addshots(\"/info/dungeons/images/battle/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/battle/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 44;"
+      },
+      "query_window": {
+        "from": "20080512210045",
+        "to": "20101207235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fbattle%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "declared_slots": 44,
+      "expected_direct_entities": 88,
+      "dedupe_basis": [
+        "research/continuous-recovery-20261016/local-audit/gallery-final-v7/gallery-prefix-registry-v7.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-late-window-source-acceptance.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-retry2-source-acceptance.json",
+        "research/continuous-recovery-20261019/publication/root-gallery-late-gap01-source-acceptance.json"
+      ],
+      "why_not_already_covered": "No accepted complete late prefix covers the residual interval; any bounded 2008 overlap is recorded but does not close the window.",
+      "strict_rules": {
+        "no_filename_guess": true,
+        "no_thumbnail_alias_inference": true,
+        "no_payload_replay_in_this_draft": true,
+        "no_redirect_follow": true,
+        "no_auto_pagination": true,
+        "valid_index_and_no_resume_required_for_complete": true,
+        "scheme_and_host_identity_preserved": true
+      },
+      "target_key": "GALLERY-LATE-REST10A-04",
+      "label": "The Battle for Mount Hyjal - Caverns of Time",
+      "gallery_segment_index": 1,
+      "gallery_segment_count": 1,
+      "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fbattle%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "network_result": "not_executed",
+      "payload_replay": false,
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_schemes": [
+        "http"
+      ]
+    },
+    {
+      "rank": 5,
+      "registry_rank": 7,
+      "gallery": "Tempest Keep - The Eye",
+      "category": "native-gallery-late-window",
+      "kind": "index_only_exact_source_prefix",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/theeye/",
+      "source_page_route": "/info/dungeons/tk-the-eye-gallery.html",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/tk-the-eye-gallery.html",
+        "sha256": "494dafb57b8e86b0a7ac22d6edcc13c3419bc6323c57e807b91466df5c9f2359",
+        "addshots_line": 106,
+        "addshots_literal": "addshots(\"/info/dungeons/images/theeye/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/theeye/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 43;"
+      },
+      "source_page_context": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/tk-the-eye-gallery.html",
+        "sha256": "494dafb57b8e86b0a7ac22d6edcc13c3419bc6323c57e807b91466df5c9f2359",
+        "addshots_line": 106,
+        "addshots_literal": "addshots(\"/info/dungeons/images/theeye/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/theeye/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 43;"
+      },
+      "query_window": {
+        "from": "20080512210045",
+        "to": "20101207235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Ftheeye%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "declared_slots": 43,
+      "expected_direct_entities": 86,
+      "dedupe_basis": [
+        "research/continuous-recovery-20261016/local-audit/gallery-final-v7/gallery-prefix-registry-v7.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-late-window-source-acceptance.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-retry2-source-acceptance.json",
+        "research/continuous-recovery-20261019/publication/root-gallery-late-gap01-source-acceptance.json"
+      ],
+      "why_not_already_covered": "No accepted complete late prefix covers the residual interval; any bounded 2008 overlap is recorded but does not close the window.",
+      "strict_rules": {
+        "no_filename_guess": true,
+        "no_thumbnail_alias_inference": true,
+        "no_payload_replay_in_this_draft": true,
+        "no_redirect_follow": true,
+        "no_auto_pagination": true,
+        "valid_index_and_no_resume_required_for_complete": true,
+        "scheme_and_host_identity_preserved": true
+      },
+      "target_key": "GALLERY-LATE-REST10A-05",
+      "label": "Tempest Keep - The Eye",
+      "gallery_segment_index": 1,
+      "gallery_segment_count": 1,
+      "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Ftheeye%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "network_result": "not_executed",
+      "payload_replay": false,
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_schemes": [
+        "http"
+      ]
+    },
+    {
+      "rank": 6,
+      "registry_rank": 9,
+      "gallery": "Doom Lord Kazzak",
+      "category": "native-gallery-late-window",
+      "kind": "index_only_exact_source_prefix",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/doomlordkazzak/",
+      "source_page_route": "/info/dungeons/doom-lord-kazzak-gallery.html",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/doom-lord-kazzak-gallery.html",
+        "sha256": "7da5d4485b91e3f6a078a598e503f5c8d484641f309c98009764bae86b735481",
+        "addshots_line": 72,
+        "addshots_literal": "addshots(\"/info/dungeons/images/doomlordkazzak/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/doomlordkazzak/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 9;"
+      },
+      "source_page_context": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/doom-lord-kazzak-gallery.html",
+        "sha256": "7da5d4485b91e3f6a078a598e503f5c8d484641f309c98009764bae86b735481",
+        "addshots_line": 72,
+        "addshots_literal": "addshots(\"/info/dungeons/images/doomlordkazzak/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/doomlordkazzak/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 9;"
+      },
+      "query_window": {
+        "from": "20080512210045",
+        "to": "20101207235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fdoomlordkazzak%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "declared_slots": 9,
+      "expected_direct_entities": 18,
+      "dedupe_basis": [
+        "research/continuous-recovery-20261016/local-audit/gallery-final-v7/gallery-prefix-registry-v7.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-late-window-source-acceptance.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-retry2-source-acceptance.json",
+        "research/continuous-recovery-20261019/publication/root-gallery-late-gap01-source-acceptance.json"
+      ],
+      "why_not_already_covered": "No accepted complete late prefix covers the residual interval; any bounded 2008 overlap is recorded but does not close the window.",
+      "strict_rules": {
+        "no_filename_guess": true,
+        "no_thumbnail_alias_inference": true,
+        "no_payload_replay_in_this_draft": true,
+        "no_redirect_follow": true,
+        "no_auto_pagination": true,
+        "valid_index_and_no_resume_required_for_complete": true,
+        "scheme_and_host_identity_preserved": true
+      },
+      "target_key": "GALLERY-LATE-REST10A-06",
+      "label": "Doom Lord Kazzak",
+      "gallery_segment_index": 1,
+      "gallery_segment_count": 1,
+      "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fdoomlordkazzak%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "network_result": "not_executed",
+      "payload_replay": false,
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_schemes": [
+        "http"
+      ]
+    },
+    {
+      "rank": 7,
+      "registry_rank": 10,
+      "gallery": "Magister's Terrace",
+      "category": "native-gallery-late-window",
+      "kind": "index_only_exact_source_prefix",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/magisters/",
+      "source_page_route": "/info/dungeons/magisters-terrace-gallery.html",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/magisters-terrace-gallery.html",
+        "sha256": "ec6f9e7dcbacbd46315e72595a1a3e1d93005fcd7de3ff2e7c0d8f5209b2391a",
+        "addshots_line": 110,
+        "addshots_literal": "addshots(\"/info/dungeons/images/magisters/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/magisters/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 47;"
+      },
+      "source_page_context": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/magisters-terrace-gallery.html",
+        "sha256": "ec6f9e7dcbacbd46315e72595a1a3e1d93005fcd7de3ff2e7c0d8f5209b2391a",
+        "addshots_line": 110,
+        "addshots_literal": "addshots(\"/info/dungeons/images/magisters/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/magisters/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 47;"
+      },
+      "query_window": {
+        "from": "20080512210045",
+        "to": "20101207235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fmagisters%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "declared_slots": 47,
+      "expected_direct_entities": 94,
+      "dedupe_basis": [
+        "research/continuous-recovery-20261016/local-audit/gallery-final-v7/gallery-prefix-registry-v7.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-late-window-source-acceptance.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-retry2-source-acceptance.json",
+        "research/continuous-recovery-20261019/publication/root-gallery-late-gap01-source-acceptance.json"
+      ],
+      "why_not_already_covered": "No accepted complete late prefix covers the residual interval; any bounded 2008 overlap is recorded but does not close the window.",
+      "strict_rules": {
+        "no_filename_guess": true,
+        "no_thumbnail_alias_inference": true,
+        "no_payload_replay_in_this_draft": true,
+        "no_redirect_follow": true,
+        "no_auto_pagination": true,
+        "valid_index_and_no_resume_required_for_complete": true,
+        "scheme_and_host_identity_preserved": true
+      },
+      "target_key": "GALLERY-LATE-REST10A-07",
+      "label": "Magister's Terrace",
+      "gallery_segment_index": 1,
+      "gallery_segment_count": 1,
+      "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fmagisters%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "network_result": "not_executed",
+      "payload_replay": false,
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_schemes": [
+        "http"
+      ]
+    },
+    {
+      "rank": 8,
+      "registry_rank": 11,
+      "gallery": "Hellfire Citadel - Hellfire Ramparts",
+      "category": "native-gallery-late-window",
+      "kind": "index_only_exact_source_prefix",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/hellfireramparts/",
+      "source_page_route": "/info/dungeons/hc-hellfire-ramparts-gallery.html",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/hc-hellfire-ramparts-gallery.html",
+        "sha256": "f9daebf04caa4cb415e887405148d5f616b7010cfe4c0f0f29e0ea8b440baf0a",
+        "addshots_line": 95,
+        "addshots_literal": "addshots(\"/info/dungeons/images/hellfireramparts/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/hellfireramparts/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 32;"
+      },
+      "source_page_context": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/hc-hellfire-ramparts-gallery.html",
+        "sha256": "f9daebf04caa4cb415e887405148d5f616b7010cfe4c0f0f29e0ea8b440baf0a",
+        "addshots_line": 95,
+        "addshots_literal": "addshots(\"/info/dungeons/images/hellfireramparts/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/hellfireramparts/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 32;"
+      },
+      "query_window": {
+        "from": "20080512210045",
+        "to": "20101207235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fhellfireramparts%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "declared_slots": 32,
+      "expected_direct_entities": 64,
+      "dedupe_basis": [
+        "research/continuous-recovery-20261016/local-audit/gallery-final-v7/gallery-prefix-registry-v7.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-late-window-source-acceptance.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-retry2-source-acceptance.json",
+        "research/continuous-recovery-20261019/publication/root-gallery-late-gap01-source-acceptance.json"
+      ],
+      "why_not_already_covered": "No accepted complete late prefix covers the residual interval; any bounded 2008 overlap is recorded but does not close the window.",
+      "strict_rules": {
+        "no_filename_guess": true,
+        "no_thumbnail_alias_inference": true,
+        "no_payload_replay_in_this_draft": true,
+        "no_redirect_follow": true,
+        "no_auto_pagination": true,
+        "valid_index_and_no_resume_required_for_complete": true,
+        "scheme_and_host_identity_preserved": true
+      },
+      "target_key": "GALLERY-LATE-REST10A-08",
+      "label": "Hellfire Citadel - Hellfire Ramparts",
+      "gallery_segment_index": 1,
+      "gallery_segment_count": 1,
+      "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fhellfireramparts%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "network_result": "not_executed",
+      "payload_replay": false,
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_schemes": [
+        "http"
+      ]
+    },
+    {
+      "rank": 9,
+      "registry_rank": 12,
+      "gallery": "Hellfire Citadel - The Blood Furnace",
+      "category": "native-gallery-late-window",
+      "kind": "index_only_exact_source_prefix",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/bloodfurnace/",
+      "source_page_route": "/info/dungeons/hc-blood-furnace-gallery.html",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/hc-blood-furnace-gallery.html",
+        "sha256": "b90e841a1fda4445ac3014475cf3e8ecc1c777767a8c0fb9df5013c37b434410",
+        "addshots_line": 102,
+        "addshots_literal": "addshots(\"/info/dungeons/images/bloodfurnace/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/bloodfurnace/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 39;"
+      },
+      "source_page_context": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/hc-blood-furnace-gallery.html",
+        "sha256": "b90e841a1fda4445ac3014475cf3e8ecc1c777767a8c0fb9df5013c37b434410",
+        "addshots_line": 102,
+        "addshots_literal": "addshots(\"/info/dungeons/images/bloodfurnace/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/bloodfurnace/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 39;"
+      },
+      "query_window": {
+        "from": "20080512210045",
+        "to": "20101207235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fbloodfurnace%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "declared_slots": 39,
+      "expected_direct_entities": 78,
+      "dedupe_basis": [
+        "research/continuous-recovery-20261016/local-audit/gallery-final-v7/gallery-prefix-registry-v7.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-late-window-source-acceptance.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-retry2-source-acceptance.json",
+        "research/continuous-recovery-20261019/publication/root-gallery-late-gap01-source-acceptance.json"
+      ],
+      "why_not_already_covered": "No accepted complete late prefix covers the residual interval; any bounded 2008 overlap is recorded but does not close the window.",
+      "strict_rules": {
+        "no_filename_guess": true,
+        "no_thumbnail_alias_inference": true,
+        "no_payload_replay_in_this_draft": true,
+        "no_redirect_follow": true,
+        "no_auto_pagination": true,
+        "valid_index_and_no_resume_required_for_complete": true,
+        "scheme_and_host_identity_preserved": true
+      },
+      "target_key": "GALLERY-LATE-REST10A-09",
+      "label": "Hellfire Citadel - The Blood Furnace",
+      "gallery_segment_index": 1,
+      "gallery_segment_count": 1,
+      "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fbloodfurnace%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "network_result": "not_executed",
+      "payload_replay": false,
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_schemes": [
+        "http"
+      ]
+    },
+    {
+      "rank": 10,
+      "registry_rank": 13,
+      "gallery": "Hellfire Citadel - The Shattered Halls",
+      "category": "native-gallery-late-window",
+      "kind": "index_only_exact_source_prefix",
+      "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/shatteredhalls/",
+      "source_page_route": "/info/dungeons/hc-shatteredhalls-gallery.html",
+      "source_evidence": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/hc-shatteredhalls-gallery.html",
+        "sha256": "4a15a752cf370338dd78256f6678a1e28899157a82f28638002d1ea7282a4584",
+        "addshots_line": 113,
+        "addshots_literal": "addshots(\"/info/dungeons/images/shatteredhalls/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/shatteredhalls/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 50;"
+      },
+      "source_page_context": {
+        "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/hc-shatteredhalls-gallery.html",
+        "sha256": "4a15a752cf370338dd78256f6678a1e28899157a82f28638002d1ea7282a4584",
+        "addshots_line": 113,
+        "addshots_literal": "addshots(\"/info/dungeons/images/shatteredhalls/\",\"ss\",numShots);",
+        "source_directory": "/info/dungeons/images/shatteredhalls/",
+        "filename_literal": "ss",
+        "numShots_line": 60,
+        "numShots_literal": "numShots = 50;"
+      },
+      "query_window": {
+        "from": "20080512210045",
+        "to": "20101207235959",
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "prefix"
+      },
+      "cdx_query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fshatteredhalls%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "declared_slots": 50,
+      "expected_direct_entities": 100,
+      "dedupe_basis": [
+        "research/continuous-recovery-20261016/local-audit/gallery-final-v7/gallery-prefix-registry-v7.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-late-window-source-acceptance.json",
+        "research/continuous-recovery-20261018/publication/root-gallery-retry2-source-acceptance.json",
+        "research/continuous-recovery-20261019/publication/root-gallery-late-gap01-source-acceptance.json"
+      ],
+      "why_not_already_covered": "No accepted complete late prefix covers the residual interval; any bounded 2008 overlap is recorded but does not close the window.",
+      "strict_rules": {
+        "no_filename_guess": true,
+        "no_thumbnail_alias_inference": true,
+        "no_payload_replay_in_this_draft": true,
+        "no_redirect_follow": true,
+        "no_auto_pagination": true,
+        "valid_index_and_no_resume_required_for_complete": true,
+        "scheme_and_host_identity_preserved": true
+      },
+      "target_key": "GALLERY-LATE-REST10A-10",
+      "label": "Hellfire Citadel - The Shattered Halls",
+      "gallery_segment_index": 1,
+      "gallery_segment_count": 1,
+      "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fshatteredhalls%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+      "network_result": "not_executed",
+      "payload_replay": false,
+      "origin_host": "www.worldofwarcraft.com",
+      "origin_schemes": [
+        "http"
+      ]
+    }
+  ],
+  "network_deadline_utc": "2026-10-19T13:15:00Z"
+}

@@ -111,3 +111,27 @@ main `d258e903` 已正常推送；随后以原 v33 的 gh-pages 提交为父版�
 新派生工具仅在设置工作区总上限时遍历统计总占用；取消总上限时保留前后磁盘安全余量检查，并返回未统计的总占用。Visa 促销页及原有两个别名改为六图静态展品，只提供本地档案导航。原始页面和图片不改写。三十四个导出测试与十五个历史展品测试通过，包括有限预算和磁盘余量在导出前后的拒绝行为。首轮测试运行器目录错误的失败记录保留。
 
 v36 输入准备冻结为 Source15、既有来源闭包和五十一张新增图；待复核 GIF 与后续网络批次留下一版，不在构建中更换来源。[工具验收](../research/continuous-recovery-20261019/publication/root-export-exhibit-tools-acceptance.json)
+
+### 09:59 UTC — 工具与七十五图来源提交，GIF 本地勘误完成
+
+派生工具修复和七十五图来源检查点 `62372b14` 已正常推送至 main；Pages 仍是已验收的 v35，不将源码推送称为站点部署。保存的候选补丁含标准 unified diff 的空白上下文行，发布整理使用仅适用于该补丁的 whitespace 属性保留其原字节，第二轮内容与 Git 检查均通过。
+
+主代理对 wallpaper.gif 已保存的完整 CDX、HTTP 回放与全部图片帧独立重验：2008-04-02 捕获的来源地址、Memento 与摘要均匹配，260×200 单帧 GIF、27,829 字节有效；2005 捕获返回的相同字节不匹配其索引摘要，仍拒绝。只修正文件类型预期，旧计划、失败观察和图片原字节均保留，没有新增网络请求。已复制为独立素材，本轮累计七十六图；v36 仍固定五十一图增量，这张 GIF 放入后续版本。
+
+[GIF 来源勘误](../research/continuous-recovery-20261019/publication/root-news20e-rank99-source-acceptance.json)
+
+### 10:34 UTC — v36 文件检查通过，图库晚期目录继续补查
+
+v36 以冻结来源一次导出成功，父进程720秒、导出子进程600秒限制均未触发，实际约144秒。主代理逐个读取9092个声明文件并核对实际9093文件目录，51个新增图、874,533字节与来源相符；既有583个图片来源记录不变。浏览检查待执行，当前线上仍为v35。旧准备模板关于未重读既有图片的字段已另存勘误；当前工具实际会校验它们的原始长度和摘要，未修改冻结输入。
+
+十个此前未覆盖的图库晚期目录补查完成，20次请求取得十份完整CDX、677行。主代理重新解析所有HTTP/HTTPS与跨前缀路径，未找到原图库直接ssN.jpg或ssN-thumb.jpg记录；指南thumbs预览不混计为原图。直连均未获得HTTP响应，随后进程内代理成功，无限流，尾数零。50组中已有13组完成所列晚期窗口，余37组按新目录继续；Karazhan、Black Temple及Zul’Aman已完成的窗口不重发。
+
+[完整文件检查](../research/continuous-recovery-20261019/publication/root-v36-tree-acceptance.json) · [十组图库索引验收](../research/continuous-recovery-20261019/publication/root-gallery-late-rest10a-source-acceptance.json)
+
+### 10:43 UTC — v36 图片层验收，保留排行榜问题
+
+51个新增图片均经本地HTTP取得，原字节、MIME与自然解码通过；其中48个有真实页面元素或computed background显示，主代理查看六张截图。三张装饰图仅保留素材：PvP lion-top在原HTML注释中，Top List的next/prev宽版按钮在本次真实DOM无可见匹配，未为检查注入元素或class。Visa六幅历史图均以无链接figure展示，仅有两条档案导航。
+
+浏览总门槛仍返回失败，原因是上述三项无实际入口，以及Top List的四条脚本错误。该栏目的HTML和JS与v35字节相同；尚未复跑旧版运行对照，不能把字节一致写成旧版运行已验证。图片层单独验收，v36暂不发布；下一步定位脚本原因并在后续派生版本修复。原结果、失败门槛和截图均保留，不改写成全通过。
+
+[图片层范围验收](../research/continuous-recovery-20261019/publication/root-v36-image-layer-acceptance.json) · [真实浏览记录](../research/continuous-recovery-20261019/integration/v36/browser/results/v36-browser-r2.json)
