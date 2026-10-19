@@ -1,0 +1,51 @@
+{
+  "schema": "wow-recovery.integration.visa-exhibit-candidate.v1",
+  "status": "passed",
+  "generated_utc": "2026-10-19T09:25:40.1880666Z",
+  "files": {
+    "production_source": "tools/historical_exhibits.py",
+    "patch": "research/continuous-recovery-20261019/integration/visa-exhibit/visa-exhibit.patch",
+    "candidate": "research/continuous-recovery-20261019/integration/visa-exhibit/export_historical_exhibits_candidate.py",
+    "test": "research/continuous-recovery-20261019/integration/visa-exhibit/test_visa_exhibit_candidate.py",
+    "evidence": "research/continuous-recovery-20261019/integration/visa-exhibit/source-evidence.json",
+    "log": "research/continuous-recovery-20261019/integration/visa-exhibit/focused-test.log",
+    "readme": "research/continuous-recovery-20261019/integration/visa-exhibit/README.md"
+  },
+  "sha256": {
+    "production_source": "35aa7e5928a6be4a07f2164708e32890aaa7257d89c6db923bf1311f950fd011",
+    "patch": "b659627ed9925e4121d405ed366cbf6ae6e149ad9424a2a6b56d2de77dbb9e73",
+    "candidate": "2f26da656fe87e3e3bc06f90501f4b8bd23df20fc9d488b382364602746b4afe",
+    "test": "d14711fcd235ffa048d89dc382fa769aa0de92f945a52c74a58473c1e4d23a36",
+    "evidence": "0634f4555f7fa469205081d17b7d7b2652f929f2f33156abfb67a6c924c45128",
+    "log": "bca7e40f2e3501943115a4ec0179e2820e25045dd98f8a0581dfef03d2c83226",
+    "readme": "4c715b30fede4bed7df0f613c770551fcf5428de09179589160396c98ce8ba9f"
+  },
+  "command": "C:\\Program Files\\Python311\\python.exe -X utf8 -m unittest discover -s research/continuous-recovery-20261019/integration/visa-exhibit -p 'test_*.py' -v",
+  "tests": {
+    "total": 3,
+    "passed": 3,
+    "failed": 0,
+    "duration_seconds": 0.042
+  },
+  "patch_apply_check": "git apply --check passed",
+  "scope": {
+    "canonical": "/visa/index.html",
+    "aliases": [
+      "/visa",
+      "/visa/"
+    ],
+    "new_image_figures": 6,
+    "allowed_anchors": [
+      "/",
+      "/visa/reward/index.html"
+    ],
+    "production_source_written": false,
+    "production_tests_written": false,
+    "network_requests": 0
+  },
+  "notes": [
+    "Six static20d Visa public-copy rows are root-accepted original bytes but are not present in frozen v35 output; evidence binds their exact source/public-copy receipt rows for later integration.",
+    "Existing reward routes remain on the prior P0 renderer; ordinary news route fixture was byte-stable.",
+    "No production tools or tests were edited."
+  ]
+}

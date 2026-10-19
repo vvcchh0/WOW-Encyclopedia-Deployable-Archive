@@ -1,0 +1,268 @@
+diff --git a/tests/test_github_pages_export.py b/tests/test_github_pages_export.py
+index b21c2d73..4521b6d7 100644
+--- a/tests/test_github_pages_export.py
++++ b/tests/test_github_pages_export.py
+@@ -24,14 +24,80 @@ class GithubPagesExportTests(unittest.TestCase):
+     def test_workspace_limit_is_optional_and_disk_reserve_still_applies(self) -> None:
+         with tempfile.TemporaryDirectory() as tmp:
+             base, site, manifest = self._fixture(Path(tmp))
+-            with mock.patch.object(pages, "workspace_size", return_value=15_000_000_000):
+-                result = pages.export_pages(source_site=site, manifest_path=manifest, output=base / "uncapped", workspace_root=base, min_free_bytes=0)
+-                self.assertEqual(result["workspace_bytes"], 15_000_000_000)
++            with mock.patch.object(pages, "workspace_size", side_effect=AssertionError("workspace walk")) as walk:
++                with mock.patch.object(pages.shutil, "disk_usage", return_value=SimpleNamespace(free=10**15)) as disk:
++                    result = pages.export_pages(
++                        source_site=site,
++                        manifest_path=manifest,
++                        output=base / "uncapped",
++                        workspace_root=base,
++                        max_bytes=None,
++                        min_free_bytes=0,
++                    )
++            self.assertIsNone(result["workspace_bytes"])
++            walk.assert_not_called()
++            self.assertEqual(disk.call_count, 2)
++            with mock.patch.object(pages, "workspace_size", return_value=0) as walk:
+                 with self.assertRaisesRegex(pages.PagesExportError, "workspace budget exceeded"):
+-                    pages.export_pages(source_site=site, manifest_path=manifest, output=base / "limited", workspace_root=base, max_bytes=14_000_000_000, min_free_bytes=0)
++                    pages.export_pages(
++                        source_site=site,
++                        manifest_path=manifest,
++                        output=base / "limited",
++                        workspace_root=base,
++                        max_bytes=1,
++                        min_free_bytes=0,
++                    )
++            walk.assert_called_once()
++            with mock.patch.object(pages, "workspace_size", side_effect=AssertionError("workspace walk")):
++                with mock.patch.object(
++                    pages.shutil,
++                    "disk_usage",
++                    side_effect=[
++                        SimpleNamespace(free=10**15),
++                        SimpleNamespace(free=pages.DEFAULT_MIN_FREE_BYTES - 1),
++                    ],
++                ):
++                    with self.assertRaisesRegex(pages.PagesExportError, "budget exceeded after export"):
++                        pages.export_pages(
++                            source_site=site,
++                            manifest_path=manifest,
++                            output=base / "low-space-after",
++                            workspace_root=base,
++                            max_bytes=None,
++                            min_free_bytes=pages.DEFAULT_MIN_FREE_BYTES,
++                        )
++
++    def test_finite_workspace_limit_rejects_after_export(self) -> None:
++        with tempfile.TemporaryDirectory() as tmp:
++            base, site, manifest = self._fixture(Path(tmp))
++            records = json.loads(manifest.read_text(encoding="utf-8"))["files"]
++            max_bytes = pages.output_estimate(records) + 1
++            with mock.patch.object(pages, "workspace_size", side_effect=[0, max_bytes]) as walk:
++                with mock.patch.object(pages.shutil, "disk_usage", return_value=SimpleNamespace(free=10**15)):
++                    with self.assertRaisesRegex(pages.PagesExportError, "budget exceeded after export"):
++                        pages.export_pages(
++                            source_site=site,
++                            manifest_path=manifest,
++                            output=base / "after-cap",
++                            workspace_root=base,
++                            max_bytes=max_bytes,
++                            min_free_bytes=0,
++                        )
++            self.assertEqual(walk.call_count, 2)
++            self.assertFalse((base / "after-cap").exists())
++
++    def test_workspace_limit_disk_reserve_still_applies_before_export(self) -> None:
++        with tempfile.TemporaryDirectory() as tmp:
++            base, site, manifest = self._fixture(Path(tmp))
+             with mock.patch.object(pages.shutil, "disk_usage", return_value=SimpleNamespace(free=pages.DEFAULT_MIN_FREE_BYTES - 1)):
+                 with self.assertRaisesRegex(pages.PagesExportError, "disk reserve"):
+-                    pages.export_pages(source_site=site, manifest_path=manifest, output=base / "low-space", workspace_root=base)
++                    pages.export_pages(
++                        source_site=site,
++                        manifest_path=manifest,
++                        output=base / "low-space",
++                        workspace_root=base,
++                        max_bytes=None,
++                    )
+ 
+     def _fixture(self, base: Path) -> tuple[Path, Path, Path]:
+         site = base / "offline/site"
+diff --git a/tests/test_historical_exhibits.py b/tests/test_historical_exhibits.py
+index 68aebd36..0d7bb8be 100644
+--- a/tests/test_historical_exhibits.py
++++ b/tests/test_historical_exhibits.py
+@@ -19,10 +19,58 @@ class HistoricalExhibitTests(unittest.TestCase):
+     prefix = "/WOW-Encyclopedia-Deployable-Archive/"
+ 
+     def test_p0_routes_and_aliases_are_canonical(self) -> None:
++        self.assertTrue(exhibits.is_historical_exhibit_route("/visa/index.html"))
++        self.assertEqual(exhibits.canonical_exhibit_route("/visa"), "/visa/index.html")
++        self.assertEqual(exhibits.canonical_exhibit_route("/visa/"), "/visa/index.html")
+         self.assertTrue(exhibits.is_historical_exhibit_route("/visa/reward/index.html"))
+         self.assertEqual(exhibits.canonical_exhibit_route("visa/reward"), "/visa/reward/index.html")
+         self.assertEqual(exhibits.canonical_exhibit_route("/visa/reward/login"), "/visa/reward/login.html")
+-        self.assertIsNone(exhibits.canonical_exhibit_route("/visa/index.html"))
++
++    def test_visa_promotion_is_a_scoped_static_exhibit(self) -> None:
++        source = """<html><body>
++        <object><embed src=\"legacy.swf\"></embed></object>
++        <a id=\"SignUpLink\" href=\"https://www.visa.com/apply\" onmouseover=\"ApplyNow()\">Apply now</a>
++        <form action=\"https://www.firstnational.com/apply\"><input name=\"account\"><button>Submit</button></form>
++        </body></html>"""
++        page = exhibits.transform_derived_page(source, "/visa/index.html", base_path=self.prefix)
++        self.assertIn('class="historical-exhibit"', page)
++        self.assertIn("Images from a 2008 World of Warcraft Rewards Visa promotion", page)
++        self.assertEqual(page.count('data-visa-artwork='), 6)
++        expected_images = (
++            "/visa/images/credit_back_1.jpg",
++            "/visa/images/credit_back_2.jpg",
++            "/visa/images/credit_back_3-2.jpg",
++            "/visa/images/credit_back_3.jpg",
++            "/visa/images/title_1.png",
++            "/visa/images/title_2.png",
++        )
++        self.assertEqual(exhibits.VISA_IMAGE_ROUTES, expected_images)
++        for image_route in expected_images:
++            self.assertIn(self.prefix + image_route.lstrip("/"), page)
++        anchors = re.findall(r'<a\b[^>]*href="([^"]+)"', page, flags=re.I)
++        self.assertEqual(anchors, [self.prefix, self.prefix + "visa/reward/index.html"])
++        for forbidden in (
++            "<form", "<input", "<button", "<object", "<embed", "onmouseover",
++            "onmouseout", "SignUpLink", "Apply now", "firstnational.com", "visa.com",
++            "?source=", "<script",
++        ):
++            self.assertNotIn(forbidden.casefold(), page.casefold())
++        self.assertIn("2008 promotion — upper frame", page)
++        self.assertEqual(page, exhibits.transform_derived_page(page, "/visa/index.html", base_path=self.prefix))
++
++    def test_visa_aliases_render_the_same_canonical_exhibit(self) -> None:
++        for route in ("/visa", "/visa/", "/visa/index.html"):
++            with self.subTest(route=route):
++                page = exhibits.transform_derived_page("<html><body>legacy</body></html>", route, base_path=self.prefix)
++                self.assertEqual(page.count('data-visa-artwork='), 6)
++                self.assertIn('data-exhibit-route="/visa/index.html"', page)
++
++    def test_visa_exhibit_does_not_change_reward_or_ordinary_routes(self) -> None:
++        reward = exhibits.transform_derived_page("<html><body>legacy</body></html>", "/visa/reward/index.html", base_path=self.prefix)
++        self.assertIn("button-have3.gif", reward)
++        self.assertNotIn("credit_back_1.jpg", reward)
++        ordinary = "<html><body><a href=\"/visa/index.html\">Visa</a><p>ordinary</p></body></html>"
++        self.assertEqual(ordinary, exhibits.transform_derived_page(ordinary, "/info/story/article.html", base_path=self.prefix))
+ 
+     def test_reward_selection_is_a_static_historical_exhibit(self) -> None:
+         page = exhibits.transform_derived_page(
+diff --git a/tools/export_github_pages.py b/tools/export_github_pages.py
+index 781a90d2..70f5268e 100644
+--- a/tools/export_github_pages.py
++++ b/tools/export_github_pages.py
+@@ -2694,7 +2694,7 @@ def export_pages(
+     records = list(manifest.get("files") or [])
+     if not records:
+         raise PagesExportError("manifest has no files")
+-    before_workspace = workspace_size(workspace_root, output)
++    before_workspace = workspace_size(workspace_root, output) if max_bytes is not None else None
+     free_before = shutil.disk_usage(output.parent).free
+ 
+     route_records: dict[str, dict[str, Any]] = {}
+@@ -3262,7 +3262,7 @@ def export_pages(
+             provenance_payload["guide_image_collections"] = guide_image_collection_bundle.provenance()
+         prov_data = (json.dumps(provenance_payload, ensure_ascii=False, sort_keys=True, indent=2) + "\n").encode("utf-8")
+         (partial / "export-provenance.json").write_bytes(prov_data)
+-        after_workspace = workspace_size(workspace_root, output)
++        after_workspace = workspace_size(workspace_root, output) if max_bytes is not None else None
+         free_after = shutil.disk_usage(output.parent).free
+         if (max_bytes is not None and after_workspace >= max_bytes) or free_after < min_free_bytes:
+             raise PagesExportError(f"budget exceeded after export: workspace={after_workspace}, free={free_after}")
+diff --git a/tools/historical_exhibits.py b/tools/historical_exhibits.py
+index 6bb15a99..cb601cfb 100644
+--- a/tools/historical_exhibits.py
++++ b/tools/historical_exhibits.py
+@@ -19,8 +19,20 @@ from html.parser import HTMLParser
+ from typing import Iterable
+ 
+ 
++VISA_ROUTE = "/visa/index.html"
++VISA_IMAGE_ROUTES = (
++    "/visa/images/credit_back_1.jpg",
++    "/visa/images/credit_back_2.jpg",
++    "/visa/images/credit_back_3-2.jpg",
++    "/visa/images/credit_back_3.jpg",
++    "/visa/images/title_1.png",
++    "/visa/images/title_2.png",
++)
++
++
+ P0_ROUTES = frozenset(
+     {
++        VISA_ROUTE,
+         "/visa/reward/index.html",
+         "/visa/reward/login.html",
+         "/visa/reward/wow-login.html",
+@@ -30,6 +42,8 @@ P0_ROUTES = frozenset(
+ # These are manifest aliases, but keeping the mapping here makes direct unit
+ # tests and future exporters agree on which page is the canonical exhibit.
+ P0_ALIASES = {
++    "/visa": VISA_ROUTE,
++    "/visa/": VISA_ROUTE,
+     "/visa/reward": "/visa/reward/index.html",
+     "/visa/reward/": "/visa/reward/index.html",
+     "/visa/reward/login": "/visa/reward/login.html",
+@@ -330,6 +344,48 @@ def _render_p0_wow(base_path: str, route: str) -> str:
+     )
+ 
+ 
++def _render_visa_exhibit(base_path: str, route: str) -> str:
++    """Render the recovered Visa promotion as non-interactive exhibit art."""
++
++    home = _local(base_path, "/")
++    reward = _local(base_path, "/visa/reward/index.html")
++    captions = {
++        "credit_back_1.jpg": "2008 promotion — upper frame",
++        "credit_back_2.jpg": "2008 promotion — lower frame",
++        "credit_back_3-2.jpg": "2008 promotion — historical offer panel",
++        "credit_back_3.jpg": "2008 promotion — alternate offer panel",
++        "title_1.png": "2008 promotion — title heading",
++        "title_2.png": "2008 promotion — alternate title heading",
++    }
++    figures: list[str] = []
++    for image_route in VISA_IMAGE_ROUTES:
++        name = image_route.rsplit("/", 1)[-1]
++        image = html.escape(_local(base_path, image_route), quote=True)
++        label = html.escape(captions[name], quote=True)
++        artwork_name = html.escape(name, quote=True)
++        figures.append(
++            f'''<figure data-visa-artwork="{artwork_name}">
++  <img src="{image}" alt="{label}">
++  <figcaption>{label}</figcaption>
++</figure>'''
++        )
++    return f'''<!doctype html>
++<html lang="en"><head><meta charset="utf-8">
++<meta name="viewport" content="width=device-width, initial-scale=1">
++<title>2008 World of Warcraft Rewards Visa promotion — Historical Exhibit</title>
++<meta name="description" content="Historical exhibit of the 2008 World of Warcraft Rewards Visa promotion">
++<style>{_EXHIBIT_CSS}</style></head><body>
++<main class="historical-exhibit" data-exhibit-route="{html.escape(route, quote=True)}">
++<div class="kicker">2008 archive · Historical exhibit</div>
++<h1>2008 World of Warcraft Rewards Visa promotion</h1>
++<p class="notice">Images from a 2008 World of Warcraft Rewards Visa promotion, preserved as a historical exhibit. Applications and reward accounts are unavailable here.</p>
++<section aria-label="Recovered 2008 promotional artwork">
++{''.join(figures)}
++</section>
++<p class="return"><a href="{html.escape(home, quote=True)}">Archive home</a> · <a href="{html.escape(reward, quote=True)}">View the 2008 rewards service exhibit</a></p>
++</main></body></html>'''
++
++
+ def render_historical_exhibit(
+     text: str,
+     route: str,
+@@ -349,6 +405,8 @@ def render_historical_exhibit(
+             source_text=text,
+             source_metadata=source_metadata,
+         )
++    if canonical == VISA_ROUTE:
++        return _render_visa_exhibit(base_path, canonical)
+     if canonical.endswith("/index.html"):
+         return _render_p0_index(base_path, canonical)
+     if canonical.endswith("/login.html"):

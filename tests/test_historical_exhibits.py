@@ -19,10 +19,58 @@ class HistoricalExhibitTests(unittest.TestCase):
     prefix = "/WOW-Encyclopedia-Deployable-Archive/"
 
     def test_p0_routes_and_aliases_are_canonical(self) -> None:
+        self.assertTrue(exhibits.is_historical_exhibit_route("/visa/index.html"))
+        self.assertEqual(exhibits.canonical_exhibit_route("/visa"), "/visa/index.html")
+        self.assertEqual(exhibits.canonical_exhibit_route("/visa/"), "/visa/index.html")
         self.assertTrue(exhibits.is_historical_exhibit_route("/visa/reward/index.html"))
         self.assertEqual(exhibits.canonical_exhibit_route("visa/reward"), "/visa/reward/index.html")
         self.assertEqual(exhibits.canonical_exhibit_route("/visa/reward/login"), "/visa/reward/login.html")
-        self.assertIsNone(exhibits.canonical_exhibit_route("/visa/index.html"))
+
+    def test_visa_promotion_is_a_scoped_static_exhibit(self) -> None:
+        source = """<html><body>
+        <object><embed src=\"legacy.swf\"></embed></object>
+        <a id=\"SignUpLink\" href=\"https://www.visa.com/apply\" onmouseover=\"ApplyNow()\">Apply now</a>
+        <form action=\"https://www.firstnational.com/apply\"><input name=\"account\"><button>Submit</button></form>
+        </body></html>"""
+        page = exhibits.transform_derived_page(source, "/visa/index.html", base_path=self.prefix)
+        self.assertIn('class="historical-exhibit"', page)
+        self.assertIn("Images from a 2008 World of Warcraft Rewards Visa promotion", page)
+        self.assertEqual(page.count('data-visa-artwork='), 6)
+        expected_images = (
+            "/visa/images/credit_back_1.jpg",
+            "/visa/images/credit_back_2.jpg",
+            "/visa/images/credit_back_3-2.jpg",
+            "/visa/images/credit_back_3.jpg",
+            "/visa/images/title_1.png",
+            "/visa/images/title_2.png",
+        )
+        self.assertEqual(exhibits.VISA_IMAGE_ROUTES, expected_images)
+        for image_route in expected_images:
+            self.assertIn(self.prefix + image_route.lstrip("/"), page)
+        anchors = re.findall(r'<a\b[^>]*href="([^"]+)"', page, flags=re.I)
+        self.assertEqual(anchors, [self.prefix, self.prefix + "visa/reward/index.html"])
+        for forbidden in (
+            "<form", "<input", "<button", "<object", "<embed", "onmouseover",
+            "onmouseout", "SignUpLink", "Apply now", "firstnational.com", "visa.com",
+            "?source=", "<script",
+        ):
+            self.assertNotIn(forbidden.casefold(), page.casefold())
+        self.assertIn("2008 promotion — upper frame", page)
+        self.assertEqual(page, exhibits.transform_derived_page(page, "/visa/index.html", base_path=self.prefix))
+
+    def test_visa_aliases_render_the_same_canonical_exhibit(self) -> None:
+        for route in ("/visa", "/visa/", "/visa/index.html"):
+            with self.subTest(route=route):
+                page = exhibits.transform_derived_page("<html><body>legacy</body></html>", route, base_path=self.prefix)
+                self.assertEqual(page.count('data-visa-artwork='), 6)
+                self.assertIn('data-exhibit-route="/visa/index.html"', page)
+
+    def test_visa_exhibit_does_not_change_reward_or_ordinary_routes(self) -> None:
+        reward = exhibits.transform_derived_page("<html><body>legacy</body></html>", "/visa/reward/index.html", base_path=self.prefix)
+        self.assertIn("button-have3.gif", reward)
+        self.assertNotIn("credit_back_1.jpg", reward)
+        ordinary = "<html><body><a href=\"/visa/index.html\">Visa</a><p>ordinary</p></body></html>"
+        self.assertEqual(ordinary, exhibits.transform_derived_page(ordinary, "/info/story/article.html", base_path=self.prefix))
 
     def test_reward_selection_is_a_static_historical_exhibit(self) -> None:
         page = exhibits.transform_derived_page(

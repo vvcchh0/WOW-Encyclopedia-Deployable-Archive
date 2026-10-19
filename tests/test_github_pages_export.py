@@ -24,14 +24,80 @@ class GithubPagesExportTests(unittest.TestCase):
     def test_workspace_limit_is_optional_and_disk_reserve_still_applies(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             base, site, manifest = self._fixture(Path(tmp))
-            with mock.patch.object(pages, "workspace_size", return_value=15_000_000_000):
-                result = pages.export_pages(source_site=site, manifest_path=manifest, output=base / "uncapped", workspace_root=base, min_free_bytes=0)
-                self.assertEqual(result["workspace_bytes"], 15_000_000_000)
+            with mock.patch.object(pages, "workspace_size", side_effect=AssertionError("workspace walk")) as walk:
+                with mock.patch.object(pages.shutil, "disk_usage", return_value=SimpleNamespace(free=10**15)) as disk:
+                    result = pages.export_pages(
+                        source_site=site,
+                        manifest_path=manifest,
+                        output=base / "uncapped",
+                        workspace_root=base,
+                        max_bytes=None,
+                        min_free_bytes=0,
+                    )
+            self.assertIsNone(result["workspace_bytes"])
+            walk.assert_not_called()
+            self.assertEqual(disk.call_count, 2)
+            with mock.patch.object(pages, "workspace_size", return_value=0) as walk:
                 with self.assertRaisesRegex(pages.PagesExportError, "workspace budget exceeded"):
-                    pages.export_pages(source_site=site, manifest_path=manifest, output=base / "limited", workspace_root=base, max_bytes=14_000_000_000, min_free_bytes=0)
+                    pages.export_pages(
+                        source_site=site,
+                        manifest_path=manifest,
+                        output=base / "limited",
+                        workspace_root=base,
+                        max_bytes=1,
+                        min_free_bytes=0,
+                    )
+            walk.assert_called_once()
+            with mock.patch.object(pages, "workspace_size", side_effect=AssertionError("workspace walk")):
+                with mock.patch.object(
+                    pages.shutil,
+                    "disk_usage",
+                    side_effect=[
+                        SimpleNamespace(free=10**15),
+                        SimpleNamespace(free=pages.DEFAULT_MIN_FREE_BYTES - 1),
+                    ],
+                ):
+                    with self.assertRaisesRegex(pages.PagesExportError, "budget exceeded after export"):
+                        pages.export_pages(
+                            source_site=site,
+                            manifest_path=manifest,
+                            output=base / "low-space-after",
+                            workspace_root=base,
+                            max_bytes=None,
+                            min_free_bytes=pages.DEFAULT_MIN_FREE_BYTES,
+                        )
+
+    def test_finite_workspace_limit_rejects_after_export(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            base, site, manifest = self._fixture(Path(tmp))
+            records = json.loads(manifest.read_text(encoding="utf-8"))["files"]
+            max_bytes = pages.output_estimate(records) + 1
+            with mock.patch.object(pages, "workspace_size", side_effect=[0, max_bytes]) as walk:
+                with mock.patch.object(pages.shutil, "disk_usage", return_value=SimpleNamespace(free=10**15)):
+                    with self.assertRaisesRegex(pages.PagesExportError, "budget exceeded after export"):
+                        pages.export_pages(
+                            source_site=site,
+                            manifest_path=manifest,
+                            output=base / "after-cap",
+                            workspace_root=base,
+                            max_bytes=max_bytes,
+                            min_free_bytes=0,
+                        )
+            self.assertEqual(walk.call_count, 2)
+            self.assertFalse((base / "after-cap").exists())
+
+    def test_workspace_limit_disk_reserve_still_applies_before_export(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            base, site, manifest = self._fixture(Path(tmp))
             with mock.patch.object(pages.shutil, "disk_usage", return_value=SimpleNamespace(free=pages.DEFAULT_MIN_FREE_BYTES - 1)):
                 with self.assertRaisesRegex(pages.PagesExportError, "disk reserve"):
-                    pages.export_pages(source_site=site, manifest_path=manifest, output=base / "low-space", workspace_root=base)
+                    pages.export_pages(
+                        source_site=site,
+                        manifest_path=manifest,
+                        output=base / "low-space",
+                        workspace_root=base,
+                        max_bytes=None,
+                    )
 
     def _fixture(self, base: Path) -> tuple[Path, Path, Path]:
         site = base / "offline/site"

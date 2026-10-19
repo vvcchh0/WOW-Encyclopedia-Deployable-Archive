@@ -2694,7 +2694,7 @@ def export_pages(
     records = list(manifest.get("files") or [])
     if not records:
         raise PagesExportError("manifest has no files")
-    before_workspace = workspace_size(workspace_root, output)
+    before_workspace = workspace_size(workspace_root, output) if max_bytes is not None else None
     free_before = shutil.disk_usage(output.parent).free
 
     route_records: dict[str, dict[str, Any]] = {}
@@ -3262,7 +3262,7 @@ def export_pages(
             provenance_payload["guide_image_collections"] = guide_image_collection_bundle.provenance()
         prov_data = (json.dumps(provenance_payload, ensure_ascii=False, sort_keys=True, indent=2) + "\n").encode("utf-8")
         (partial / "export-provenance.json").write_bytes(prov_data)
-        after_workspace = workspace_size(workspace_root, output)
+        after_workspace = workspace_size(workspace_root, output) if max_bytes is not None else None
         free_after = shutil.disk_usage(output.parent).free
         if (max_bytes is not None and after_workspace >= max_bytes) or free_after < min_free_bytes:
             raise PagesExportError(f"budget exceeded after export: workspace={after_workspace}, free={free_after}")

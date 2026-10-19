@@ -103,3 +103,11 @@ main `d258e903` 已正常推送；随后以原 v33 的 gh-pages 提交为父版�
 本轮公开新增二十四个图片地址；本地另有三十二图已验收，下一版继续整合。其间找到的六张旧 Visa 促销图片先保存原文件，等待该页进一步改为静态展品后再上线。离线下载仍为 v33。
 
 [Pages 发布](../research/continuous-recovery-20261019/publication/v35-pages-publication.json) · [线上核对](../research/continuous-recovery-20261019/publication/root-v35-pages-online-acceptance.json)
+
+### 09:40 UTC — 后续素材与派生工具修复
+
+本轮累计取得七十五个图片地址、1,066,476 字节，公开 v35 含其中二十四个。最近一批二十个新闻地址取得十九图；另一个 wallpaper.gif 的旧计划错误地期待 JPEG，原始响应已经保存，正在本地复核，不把这项记作图片缺失或重复向 Wayback 请求。后续输入校验会同时核对 MIME、图片格式和 GIF 全帧设置。
+
+新派生工具仅在设置工作区总上限时遍历统计总占用；取消总上限时保留前后磁盘安全余量检查，并返回未统计的总占用。Visa 促销页及原有两个别名改为六图静态展品，只提供本地档案导航。原始页面和图片不改写。三十四个导出测试与十五个历史展品测试通过，包括有限预算和磁盘余量在导出前后的拒绝行为。首轮测试运行器目录错误的失败记录保留。
+
+v36 输入准备冻结为 Source15、既有来源闭包和五十一张新增图；待复核 GIF 与后续网络批次留下一版，不在构建中更换来源。[工具验收](../research/continuous-recovery-20261019/publication/root-export-exhibit-tools-acceptance.json)

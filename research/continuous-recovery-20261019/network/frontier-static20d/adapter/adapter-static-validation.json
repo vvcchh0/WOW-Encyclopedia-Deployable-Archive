@@ -1,0 +1,89 @@
+{
+  "schema": "wow-recovery.frontier-static20d-adapter-static-validation.v1",
+  "status": "offline_validated_no_network",
+  "packet": "frontier-static20d",
+  "plan_sha256": "e74d3a396ee7149c0ed0cf2a32a3f7151233aeb524c080ab179d36315ec32ada",
+  "bindings_sha256": "6ed386238615d07ebcc791e1fc85a752fb2cd53dc5a478c0b317d20983b291a4",
+  "adapter_sha256": "46cfcf2bd64207c7b03286eab96668db7572f79fa1f73244e1b8c89ac1c7896e",
+  "frozen_driver_sha256": "4a19422f0dd8e2f7e1ffdd088836c7ab80450afb91aeedc6cdb94fa4c6bfe955",
+  "adapter_ast": {
+    "module_attribute_assignments": [
+      "module.NETWORK"
+    ],
+    "expected": [
+      "module.NETWORK"
+    ],
+    "only_network_redirect": true
+  },
+  "fixture": {
+    "path": "research/continuous-recovery-20261019/network/frontier-static20d/adapter/fixture-results.json",
+    "sha256": "741dfb586d6cc8154dcb8f89d964b0223dc919faefd130106850693c2a9a0c53",
+    "all_passed": true,
+    "passed": 32,
+    "total": 32,
+    "network_requests": 0,
+    "failed_tests": []
+  },
+  "strict_rank_scope": {
+    "requested": [
+      58,
+      77
+    ],
+    "selected": [
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77
+    ],
+    "candidate_count": 18,
+    "excluded_identity_variants": [
+      66,
+      67
+    ]
+  },
+  "identity_variant_exclusions": [
+    {
+      "rank": 66,
+      "original": "http://www.worldofwarcraft.com/community/tournaments/images/data0.gif",
+      "reason": "Source15/v33 literal evidence is only explicit http://www.worldofwarcraft.com:80/...; strict no-port original is unproven and default-port identity is not collapsed."
+    },
+    {
+      "rank": 67,
+      "original": "http://www.worldofwarcraft.com/community/tournaments/images/data1.gif",
+      "reason": "Source15/v33 literal evidence is only explicit http://www.worldofwarcraft.com:80/...; strict no-port original is unproven and default-port identity is not collapsed."
+    }
+  ],
+  "latest_source_acceptance": {
+    "path": "research/continuous-recovery-20261019/publication/root-frontier-static20c-source-acceptance.json",
+    "sha256": "05a53e441ef38dce8b61331139d41a9e4202a9948c9b53d536a022a7974c1239",
+    "accepted": true,
+    "failure_streak_end": 0
+  },
+  "control_gate": {
+    "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+    "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b"
+  },
+  "dedupe": {
+    "path": "research/continuous-recovery-20261019/network/frontier-static20d/dedupe-audit.json",
+    "sha256": "5227b8fa4f19a7b80e7fe02a61c1639144e1fa39fc2395315f4ddc5bfa36120d",
+    "network_requests": 0,
+    "actual_execution_match_count": 0
+  },
+  "output_empty": true,
+  "network_requests_during_preparation": 0,
+  "note": "Fixture uses a synthetic in-memory www.worldofwarcraft.com HTTP seed only because the frozen identity fixture expects that host; execute candidates and frozen V3 remain unchanged. No GO receipt exists."
+}

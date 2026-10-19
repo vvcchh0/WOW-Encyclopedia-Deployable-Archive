@@ -1,0 +1,136 @@
+{
+  "schema": 1,
+  "created_utc": "2026-10-19T09:38:12.779377Z",
+  "scope": {
+    "applied": [
+      "tools/export_github_pages.py",
+      "tools/historical_exhibits.py",
+      "tests/test_github_pages_export.py",
+      "tests/test_historical_exhibits.py"
+    ],
+    "export_executed": false,
+    "network_used": false,
+    "git_commit_or_push": false
+  },
+  "baseline_production_sha256": {
+    "tools/export_github_pages.py": "e5b3a53381ddcf0b5037a726d328c7dd99fa5d2f8e24e047e474a3853305643a",
+    "tools/historical_exhibits.py": "35aa7e5928a6be4a07f2164708e32890aaa7257d89c6db923bf1311f950fd011"
+  },
+  "production_files": [
+    {
+      "path": "tools/export_github_pages.py",
+      "sha256": "60fa3cb3279bd2478de73d861fc648efaeda760ca8ee609e4ba3cf3b3030f35d",
+      "bytes": 160527
+    },
+    {
+      "path": "tools/historical_exhibits.py",
+      "sha256": "4d62d47526fe5f58abb1ed756cc4c62ffa0a11d3d495d25a3c6af7b0e74a71f0",
+      "bytes": 55828
+    },
+    {
+      "path": "tests/test_github_pages_export.py",
+      "sha256": "99bbfbdba199327a1fbcec41ff39660db245851c5845555d811619edf379c898",
+      "bytes": 81840
+    },
+    {
+      "path": "tests/test_historical_exhibits.py",
+      "sha256": "3b436f8a78161ba7a1cdfa3538738728c7fa9025c7e28765227a5162553bbaa3",
+      "bytes": 18599
+    }
+  ],
+  "formal_diff": {
+    "path": "research/continuous-recovery-20261019/integration/tool-revisions/formal-application.diff",
+    "sha256": "35b05b1a91d2a3f13acb5e5327de3732d8ba739bb020e2b22ccbf8062b2497ee",
+    "bytes": 14588
+  },
+  "focused_test_receipt": {
+    "path": "research/continuous-recovery-20261019/integration/tool-revisions/focused-tests-receipt.json",
+    "sha256": "4c4f5d3d62e1ce4e203be706ba239cf1b2c68f6b4e07a51877363f4496833156",
+    "bytes": 9802
+  },
+  "focused_test_log": {
+    "path": "research/continuous-recovery-20261019/integration/tool-revisions/focused-tests.log",
+    "sha256": "ef5b73e92a70db4e6b43f69b66182150acabdbcb5d93f55e33d45e2d1167c037",
+    "bytes": 9041
+  },
+  "focused_test_results": [
+    {
+      "command": [
+        "C:\\Program Files\\Python311\\python.exe",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_github_pages_export.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "timed_out": false,
+      "elapsed_seconds": 4.643
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Python311\\python.exe",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_historical_exhibits.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "timed_out": false,
+      "elapsed_seconds": 1.135
+    }
+  ],
+  "initial_runner_path_failure": {
+    "path": "research/continuous-recovery-20261019/integration/tool-revisions/focused-tests-initial-path-failure.json",
+    "sha256": "508b40c83134609cd033511ed366ab78c9b9bd6b73a8eb9af9c3ffabb8679e9a",
+    "bytes": 3114
+  },
+  "frozen_candidate_artifacts": {
+    "research/continuous-recovery-20261019/integration/visa-exhibit/visa-exhibit.patch": {
+      "path": "research/continuous-recovery-20261019/integration/visa-exhibit/visa-exhibit.patch",
+      "sha256": "b659627ed9925e4121d405ed366cbf6ae6e149ad9424a2a6b56d2de77dbb9e73",
+      "bytes": 3545
+    },
+    "research/continuous-recovery-20261019/integration/visa-exhibit/export_historical_exhibits_candidate.py": {
+      "path": "research/continuous-recovery-20261019/integration/visa-exhibit/export_historical_exhibits_candidate.py",
+      "sha256": "2f26da656fe87e3e3bc06f90501f4b8bd23df20fc9d488b382364602746b4afe",
+      "bytes": 5898
+    },
+    "research/continuous-recovery-20261019/integration/visa-exhibit/test_visa_exhibit_candidate.py": {
+      "path": "research/continuous-recovery-20261019/integration/visa-exhibit/test_visa_exhibit_candidate.py",
+      "sha256": "d14711fcd235ffa048d89dc382fa769aa0de92f945a52c74a58473c1e4d23a36",
+      "bytes": 4175
+    },
+    "research/continuous-recovery-20261019/integration/visa-exhibit/verification-receipt.json": {
+      "path": "research/continuous-recovery-20261019/integration/visa-exhibit/verification-receipt.json",
+      "sha256": "ba9b4bbd4f3497b47e128fff8f01424a8ad1095e11f75bf9d93ce5eadd696916",
+      "bytes": 2496
+    }
+  },
+  "behavior": {
+    "uncapped_workspace_bytes": null,
+    "finite_workspace_checks": "before and after retained",
+    "visa_canonical_route": "/visa/index.html",
+    "visa_aliases": [
+      "/visa",
+      "/visa/"
+    ],
+    "visa_images": 6,
+    "visa_navigation_targets": [
+      "/",
+      "/visa/reward/index.html"
+    ],
+    "visa_business_controls": "removed from derived exhibit"
+  }
+}

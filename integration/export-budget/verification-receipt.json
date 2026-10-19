@@ -1,0 +1,31 @@
+{
+  "schema": "wow-recovery.integration.export-budget-candidate.v1",
+  "status": "passed",
+  "generated_utc": "2026-10-19T09:16:57.3055137Z",
+  "source_tool": "tools/export_github_pages.py",
+  "source_tool_sha256": "e5b3a53381ddcf0b5037a726d328c7dd99fa5d2f8e24e047e474a3853305643a",
+  "patch": "integration/export-budget/export_github_pages.workspace-budget.patch",
+  "patch_sha256": "d63d47dd324f53c35f3bd8486ee8895caf85ed698dd649697aa2bff0a369b324",
+  "candidate_module": "integration/export-budget/export_github_pages_candidate.py",
+  "candidate_module_sha256": "c4bf20a1ee0b753d761ebd57497033f910d4e98cd25824d49d0be58b3ab536e0",
+  "focused_test": "integration/export-budget/test_export_budget_candidate.py",
+  "focused_test_sha256": "e68ee67d9d5f8458646cb5c33f69a0d115afe313fb1585235a75a4afcfe20d23",
+  "focused_log": "integration/export-budget/focused-test.log",
+  "focused_log_sha256": "91ee3d272d730cbe7d2b1c28de78bd5c1ea557325bd68b630e753dd82fc03667",
+  "command": "C:\\Program Files\\Python311\\python.exe -X utf8 -m unittest discover -s integration/export-budget -p 'test_*.py' -v",
+  "tests": {
+    "total": 3,
+    "passed": 3,
+    "failed": 0,
+    "duration_seconds": 0.156
+  },
+  "checks": {
+    "none_budget_skips_workspace_walk": true,
+    "none_budget_returns_null_workspace_bytes": true,
+    "none_budget_keeps_disk_floor": true,
+    "finite_budget_calls_workspace_walk_and_rejects": true,
+    "production_tool_written": false
+  },
+  "note": "One existing DeprecationWarning at exporter line 2327 (invalid escape sequence \\/) was emitted; no new warning or failure.",
+  "patch_apply_check": "git apply --check passed"
+}

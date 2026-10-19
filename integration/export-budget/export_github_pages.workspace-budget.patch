@@ -1,0 +1,19 @@
+diff --git a/tools/export_github_pages.py b/tools/export_github_pages.py
+--- a/tools/export_github_pages.py
++++ b/tools/export_github_pages.py
+@@ -2694,6 +2694,6 @@
+     records = list(manifest.get("files") or [])
+     if not records:
+         raise PagesExportError("manifest has no files")
+-    before_workspace = workspace_size(workspace_root, output)
++    before_workspace = workspace_size(workspace_root, output) if max_bytes is not None else None
+     free_before = shutil.disk_usage(output.parent).free
+ 
+@@ -3262,6 +3262,6 @@
+         if guide_image_collection_bundle is not None:
+             provenance_payload["guide_image_collections"] = guide_image_collection_bundle.provenance()
+         prov_data = (json.dumps(provenance_payload, ensure_ascii=False, sort_keys=True, indent=2) + "\n").encode("utf-8")
+         (partial / "export-provenance.json").write_bytes(prov_data)
+-        after_workspace = workspace_size(workspace_root, output)
++        after_workspace = workspace_size(workspace_root, output) if max_bytes is not None else None
+         free_after = shutil.disk_usage(output.parent).free

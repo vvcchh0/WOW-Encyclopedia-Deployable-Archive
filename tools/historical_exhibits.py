@@ -19,8 +19,20 @@ from html.parser import HTMLParser
 from typing import Iterable
 
 
+VISA_ROUTE = "/visa/index.html"
+VISA_IMAGE_ROUTES = (
+    "/visa/images/credit_back_1.jpg",
+    "/visa/images/credit_back_2.jpg",
+    "/visa/images/credit_back_3-2.jpg",
+    "/visa/images/credit_back_3.jpg",
+    "/visa/images/title_1.png",
+    "/visa/images/title_2.png",
+)
+
+
 P0_ROUTES = frozenset(
     {
+        VISA_ROUTE,
         "/visa/reward/index.html",
         "/visa/reward/login.html",
         "/visa/reward/wow-login.html",
@@ -30,6 +42,8 @@ P0_ROUTES = frozenset(
 # These are manifest aliases, but keeping the mapping here makes direct unit
 # tests and future exporters agree on which page is the canonical exhibit.
 P0_ALIASES = {
+    "/visa": VISA_ROUTE,
+    "/visa/": VISA_ROUTE,
     "/visa/reward": "/visa/reward/index.html",
     "/visa/reward/": "/visa/reward/index.html",
     "/visa/reward/login": "/visa/reward/login.html",
@@ -330,6 +344,48 @@ def _render_p0_wow(base_path: str, route: str) -> str:
     )
 
 
+def _render_visa_exhibit(base_path: str, route: str) -> str:
+    """Render the recovered Visa promotion as non-interactive exhibit art."""
+
+    home = _local(base_path, "/")
+    reward = _local(base_path, "/visa/reward/index.html")
+    captions = {
+        "credit_back_1.jpg": "2008 promotion — upper frame",
+        "credit_back_2.jpg": "2008 promotion — lower frame",
+        "credit_back_3-2.jpg": "2008 promotion — historical offer panel",
+        "credit_back_3.jpg": "2008 promotion — alternate offer panel",
+        "title_1.png": "2008 promotion — title heading",
+        "title_2.png": "2008 promotion — alternate title heading",
+    }
+    figures: list[str] = []
+    for image_route in VISA_IMAGE_ROUTES:
+        name = image_route.rsplit("/", 1)[-1]
+        image = html.escape(_local(base_path, image_route), quote=True)
+        label = html.escape(captions[name], quote=True)
+        artwork_name = html.escape(name, quote=True)
+        figures.append(
+            f'''<figure data-visa-artwork="{artwork_name}">
+  <img src="{image}" alt="{label}">
+  <figcaption>{label}</figcaption>
+</figure>'''
+        )
+    return f'''<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2008 World of Warcraft Rewards Visa promotion — Historical Exhibit</title>
+<meta name="description" content="Historical exhibit of the 2008 World of Warcraft Rewards Visa promotion">
+<style>{_EXHIBIT_CSS}</style></head><body>
+<main class="historical-exhibit" data-exhibit-route="{html.escape(route, quote=True)}">
+<div class="kicker">2008 archive · Historical exhibit</div>
+<h1>2008 World of Warcraft Rewards Visa promotion</h1>
+<p class="notice">Images from a 2008 World of Warcraft Rewards Visa promotion, preserved as a historical exhibit. Applications and reward accounts are unavailable here.</p>
+<section aria-label="Recovered 2008 promotional artwork">
+{''.join(figures)}
+</section>
+<p class="return"><a href="{html.escape(home, quote=True)}">Archive home</a> · <a href="{html.escape(reward, quote=True)}">View the 2008 rewards service exhibit</a></p>
+</main></body></html>'''
+
+
 def render_historical_exhibit(
     text: str,
     route: str,
@@ -349,6 +405,8 @@ def render_historical_exhibit(
             source_text=text,
             source_metadata=source_metadata,
         )
+    if canonical == VISA_ROUTE:
+        return _render_visa_exhibit(base_path, canonical)
     if canonical.endswith("/index.html"):
         return _render_p0_index(base_path, canonical)
     if canonical.endswith("/login.html"):
