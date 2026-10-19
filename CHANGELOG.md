@@ -9,7 +9,7 @@
 
 ## 2026-10-19
 
-- 完成 v33 离线包的独立解压与本地服务器验收，正在准备新版离线发布；继续复核旧页面交互，并整理玩家图库的调查结论与剩余线索。[工作记录](docs/continuous-recovery-20261019.md)
+- 发布 [v33 离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261019)（约 533 MB，解压约 598 MB），与当前在线版同步。继续复核旧页面交互，并整理玩家图库的调查结论与剩余线索。[工作记录](docs/continuous-recovery-20261019.md)
 
 ## 2026-10-18
 

@@ -39,3 +39,7 @@
 这项验收覆盖包内容和本地服务，浏览覆盖沿用明确限定范围的 v33 回执。未完成的真实 UI 检查仍由本轮单独推进，不因包检查通过而改写为整站交互通过。[独立包验收](../research/continuous-recovery-20261019/publication/root-v33-portable-acceptance.json)
 
 离线发布工具在旧版基础上只调整来源日期与发布日期分离、输出位置和本轮截止；九项离线测试及路径断言通过。拟发布的包仍为 10 月 18 日构建的 v33，发布日期和标签使用 10 月 19 日。
+
+### 06:11 UTC — v33 离线包发布
+
+main 检查点 `d45b8a89` 已正常推送；随后创建并发布 [2026-10-19 Release](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261019)。发布前后，三个 GitHub 附件的状态、大小和平台 SHA-256 均与本地一致，标签解析到同一源码提交。README 已更新下载入口。Pages 没有重复发布，仍为已验收的 v33 构建。[发布回执](../research/continuous-recovery-20261019/publication/root-v33-release-publication.json)

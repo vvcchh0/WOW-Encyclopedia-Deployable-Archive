@@ -25,7 +25,7 @@
 
 ## 本地使用
 
-安装 Python 3 后，下载 [2026-10-16 离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/download/archive-20080512-browser-20261016/WOW_Encyclopedia_20080512_browser_20261016_v24.zip)（约 510 MB，解压后约 575 MB）。Windows 用户解压后双击 `START_BROWSE.cmd`。
+安装 Python 3 后，下载 [2026-10-19 离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/download/archive-20080512-browser-20261019/WOW_Encyclopedia_20080512_browser_20261018_v33.zip)（约 533 MB，解压后约 598 MB）。Windows 用户解压后双击 `START_BROWSE.cmd`。
 
 macOS / Linux 用户在解压目录运行：
 
@@ -33,7 +33,7 @@ macOS / Linux 用户在解压目录运行：
 python3 tools/serve_pages_preview.py --site site --port 0 --open-browser
 ```
 
-启动后会打开本地浏览页面。当前离线包为 v24；在线版 v33 已补回更多指南图片、文章插画和新闻配图；部分旧页面交互仍在复核。后续进度见[更新记录](CHANGELOG.md)。
+启动后会打开本地浏览页面。离线包与在线版当前同为 v33，已补回更多指南图片、文章插画和新闻配图；部分旧页面交互仍在复核。后续进度见[更新记录](CHANGELOG.md)。
 
 ## 参与协作
 
