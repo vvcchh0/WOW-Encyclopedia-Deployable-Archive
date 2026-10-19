@@ -12,6 +12,7 @@
 - 发布 [v33 离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261019)（约 533 MB，解压约 598 MB），与当前在线版同步。继续复核旧页面交互，并整理玩家图库的调查结论与剩余线索。[工作记录](docs/continuous-recovery-20261019.md)
 - 补完 v33 剩余 76 个图片入口与展示目标的浏览检查，包括 Dragon Hunt 展开和新闻内图片；比赛结果页的旧菜单错误另行修复。
 - 完成 Karazhan、Black Temple 的晚期存档缺口调查，未发现原玩家截图的新来源，暂缓这两组图库的重复查询。有新捕获或关联页线索时继续恢复。
+- 本地补回四十张旧新闻配图，并完成比赛结果页菜单修复；正在分批合入下一版。
 
 ## 2026-10-18
 

@@ -73,3 +73,9 @@ Vintage Poster 结果页使用旧 `Contests` 页面 ID，但菜单查找同时�
 本批九次请求、45.12 秒，首次 direct 在 TCP 阶段超时，随后八次进程内代理请求成功；尾数为零，无限流响应。单独的 300 秒父进程限制没有触发。[来源验收](../research/continuous-recovery-20261019/publication/root-frontier-news04-source-acceptance.json)
 
 另复核 v33 的 `news/rss-08-2007.xml.html`：缺图占位引用为零，复用既有图片浏览验收。该结果只说明这张新闻页的缺图标记已清空，原玩家图库仍单独计数。[八月新闻复核](../research/continuous-recovery-20261019/publication/root-august-2007-news-coverage.json)
+
+### 07:49 UTC — 再取得二十张旧新闻配图
+
+第二批二十个确切地址均找到有效捕获并取回，包括同人画、早期 PvP 截图和测试公告配图。主代理独立核验完整索引、回放来源、捕获时间、原始字节和全部图片帧，随后查看二十张图的联系表。新增 150,407 字节，均为 2008 年 4 月捕获，本轮累计取得二十四个图片资源地址。四十一次请求历时 221.90 秒，尾数零，无冷却或限流响应。[来源验收](../research/continuous-recovery-20261019/publication/root-frontier-news20a-source-acceptance.json)
+
+v35 将只整合这两批二十四张图和比赛菜单修复，继续从冻结的 Source15 生成。后续网络素材进入下一派生版本，避免在构建途中更换输入。当前公开站点和离线包仍为 v33。

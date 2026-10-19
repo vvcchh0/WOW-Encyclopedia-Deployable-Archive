@@ -1,0 +1,74 @@
+{
+  "schema": "wow-recovery.integration.v34-retry1-plan.v1",
+  "status": "prepared_waiting_root_v34_input_acceptance_retry1",
+  "purpose": "One bounded retry of the zero-delta v34 compatibility export after the first runner passed an output-size value to the exporter's workspace-budget parameter.",
+  "runner": {
+    "path": "research/continuous-recovery-20261019/integration/v34/execute_v34_retry1.py",
+    "sha256": "fb1b49e9f488939331f53e8a5dedaf62d136ff1affa1149de544087263d349bc",
+    "previous_runner_path": "research/continuous-recovery-20261019/integration/v34/execute_v34.py",
+    "previous_runner_sha256": "032548dfe7949dd63d4b55713bb79c72a136919b4d277bac48465b455a7af2d0",
+    "command": "python.exe -X utf8 research/continuous-recovery-20261019/integration/v34/execute_v34_retry1.py --go --root-export-go",
+    "root_input_acceptance": "research/continuous-recovery-20261019/publication/root-v34-input-acceptance-retry1.json",
+    "build_receipt": "research/continuous-recovery-20261019/integration/v34/v34-build-receipt-retry1.json",
+    "output": ".scratch/pages-resources-20261019-v34",
+    "start_deadline_utc": "2026-10-19T13:30:00Z",
+    "parent_watchdog_seconds": 900
+  },
+  "budget_semantics": {
+    "exporter_max_bytes": null,
+    "max_bytes_meaning": "The exporter parameter is a total workspace budget, so retry1 leaves it unset.",
+    "workspace_total_budget": "cancelled_by_user_scope",
+    "disk_floor_bytes": 11005853696,
+    "estimated_additional_workspace_bytes": 853939845,
+    "postbuild_measurement": "Record the completed output tree byte sum in v34-build-receipt-retry1.json and compare it with the v33 output.",
+    "current_free_bytes_at_plan": 45173403648
+  },
+  "supersedes_failed_attempt": {
+    "receipt_path": "research/continuous-recovery-20261019/integration/v34/v34-build-receipt.json",
+    "receipt_sha256": "84bfd3b548521268b73f352fd7dd519d73cef80773404630891eac5489d9de8f",
+    "log_path": "research/continuous-recovery-20261019/integration/v34/v34-export-run.log",
+    "log_sha256": "97bdc8048bad6db847dd39bd5bb3bdd96ba2bc68f34c394ce01f1b846aebac42",
+    "error": "PagesExportError: workspace budget exceeded before export: 43779831030+853939845 >= 650000000",
+    "export_started": true,
+    "export_completed": false,
+    "output_generated": false,
+    "partial_generated": false
+  },
+  "frozen_scope": {
+    "source_records": 8357,
+    "primary_overlays": 459,
+    "supplement_overlays": 100,
+    "total_overlays": 559,
+    "guide_groups": 3,
+    "guide_images": 39,
+    "guide_previews": 22,
+    "new_images": 0,
+    "new_image_bytes": 0,
+    "builder_sha256": "96c6ccbd7011efc2c586268d583ae6ff269f122168021f9d0efa250e49be9eb7",
+    "primary_map_sha256": "23b4bc872423b01b761557176933501d73fb21c5024ad83a0deee988b3a09cd6",
+    "supplement_map_sha256": "22364ab71eaa16bb01bfe5e298a2e3fe52e25d54c1034ba827452fa18db9253b",
+    "source_closure_sha256": "8f5082865586c83c56c23fb89f6cef3f695339b9aa3eb96e4a194286d0b95739",
+    "input_preparation_sha256": "10eb371e166407eb10cfe21f8537d698ef720404b11dfdb72b15093baa5d8b94",
+    "preflight_sha256": "1f2083bb38a1c29b9736d3dc38cdd563f473e4ee343fb7f343e913bba3415843",
+    "exporter_sha256": "e5b3a53381ddcf0b5037a726d328c7dd99fa5d2f8e24e047e474a3853305643a",
+    "historical_exhibits_sha256": "35aa7e5928a6be4a07f2164708e32890aaa7257d89c6db923bf1311f950fd011",
+    "old_root_gate_sha256": "8aa6dc1b500a0c76489e3fc31946ba01cdab47f64638cf1246f7e6eb7e82922e"
+  },
+  "retry_specific_bindings": {
+    "failed_receipt": {
+      "path": "research/continuous-recovery-20261019/integration/v34/v34-build-receipt.json",
+      "sha256": "84bfd3b548521268b73f352fd7dd519d73cef80773404630891eac5489d9de8f"
+    },
+    "plan_is_bound_by_runner": true,
+    "root_gate_must_bind_runner_and_plan": true
+  },
+  "guards": {
+    "network_requests": 0,
+    "export_executed_before_go": false,
+    "maps_reprepared": false,
+    "old_failure_receipt_preserved": true,
+    "old_output_absent_at_plan": true,
+    "retry_receipt_absent_at_plan": true,
+    "no_auto_retry": true
+  }
+}
