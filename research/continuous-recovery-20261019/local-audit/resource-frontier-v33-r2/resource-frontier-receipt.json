@@ -1,0 +1,54 @@
+{
+  "schema": "wow-recovery.local-audit.resource-frontier-v33-r2-receipt.v1",
+  "status": "complete_offline_audit",
+  "network_requests": 0,
+  "output_files": {
+    "resource-frontier-candidates.json": "ee9c6240c76e14ad80c3aac2cdd655970499bb3ac8ee6592295f8f39e95c686a",
+    "resource-frontier-plan-draft.json": "604764b2cbe34a4dd63c912b6ab254478cb78539aae7697bdf59c4a3a85c4745",
+    "resource-frontier-audit.md": "e4c7ed33aa47376be985a39fed8ee928b00f42e3f647226479beaa8a769c5f87",
+    "resource-frontier-shortlist.md": "b212e3cab37092eb71f22841cacb92fe9db8b7a7f5f8e1afb276bf6cae55f03f",
+    "build_frontier.py": "4749403d1ad5151d3cfe80845e75f47b66167ebe956b768911a1f705be978350"
+  },
+  "counts": {
+    "missing_marker_unique_total": 1411,
+    "missing_marker_news_unique": 386,
+    "missing_marker_static_unique": 642,
+    "missing_marker_dynamic_unique": 383,
+    "declared_v33_scope": {
+      "static_text_files": 1104,
+      "unique_missing_images": 900,
+      "missing_occurrences": 1524,
+      "news_unique_missing_images": 386,
+      "news_missing_occurrences": 386
+    },
+    "native_dynamic_gallery_entities": 3368,
+    "state_counts": {
+      "complete_empty_or_404": 36,
+      "encoding_variant_review": 3,
+      "excluded_or_deferred": 3,
+      "executed_evidence_needs_row_review": 14,
+      "plan_or_queue_only": 10,
+      "uncovered": 1345
+    },
+    "nav_unique": 71,
+    "nav_state_counts": {
+      "saved_or_accepted": 71
+    },
+    "candidate_pool_news": 382,
+    "candidate_pool_static": 145,
+    "selected_candidates": 80,
+    "selected_news": 40,
+    "selected_static": 40
+  },
+  "validation": [
+    "JSON reload passed",
+    "all selected candidates have source context or explicit marker references",
+    "no network call in audit code",
+    "historical plan-only evidence separated from executed evidence"
+  ],
+  "uncovered": [
+    "exact historical status of rows represented only by generic source acceptance text still needs row-level review",
+    "dynamic JS pool is counted but not proposed",
+    "no payload accepted by this audit"
+  ]
+}

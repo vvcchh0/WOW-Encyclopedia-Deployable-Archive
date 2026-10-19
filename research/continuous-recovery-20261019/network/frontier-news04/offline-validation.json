@@ -1,0 +1,76 @@
+{
+  "schema": "wow-recovery.reusable-image-frontier-news04-offline-validation.v1",
+  "validated_utc": "2026-10-19T07:14:25.750106Z",
+  "checks": {
+    "schema": true,
+    "candidate_count": true,
+    "frozen_policy": true,
+    "tail_source_sha": true,
+    "control_gate_sha": true,
+    "driver_sha": true,
+    "plan_sha": true,
+    "source_evidence": true,
+    "exact_urls": true,
+    "no_known_fallback": true,
+    "no_network_preparation": true,
+    "path_boundary_diagnostic": true,
+    "full_offline_fixture": true
+  },
+  "all_offline_checks_passed": true,
+  "network_requests": 0,
+  "source_results": [
+    {
+      "target_key": "FRONTIER-NEWS04-01",
+      "path": ".scratch/pages-resources-20261018-v33/news/rss-10-2007.xml.html",
+      "line": 2258,
+      "sha256": "71057b5ac75455bed4470224e2653d2b5668c903d471ad22cfc25a124f0c6e6b",
+      "exact_literal_or_encoded": true
+    },
+    {
+      "target_key": "FRONTIER-NEWS04-02",
+      "path": ".scratch/pages-resources-20261018-v33/news/wow-news2004.html",
+      "line": 3787,
+      "sha256": "ce027634ec7041e2ee8480c78fcde0662f7e953ba49cd68593c1599976168d38",
+      "exact_literal_or_encoded": true
+    },
+    {
+      "target_key": "FRONTIER-NEWS04-03",
+      "path": ".scratch/pages-resources-20261018-v33/news/wow-news2004.html",
+      "line": 4230,
+      "sha256": "ce027634ec7041e2ee8480c78fcde0662f7e953ba49cd68593c1599976168d38",
+      "exact_literal_or_encoded": true
+    },
+    {
+      "target_key": "FRONTIER-NEWS04-04",
+      "path": ".scratch/pages-resources-20261018-v33/news/wow-news2004.html",
+      "line": 4231,
+      "sha256": "ce027634ec7041e2ee8480c78fcde0662f7e953ba49cd68593c1599976168d38",
+      "exact_literal_or_encoded": true
+    }
+  ],
+  "plan_sha256": "fc3f421191d9f88df03675c1bf7833b383ad4a5dede269e9ed988ea3833198a5",
+  "bindings_sha256": "fbc70fb22efca828e25b3f545ff1f617b801b9e69dd5c5444478819b6d3420c6",
+  "frozen_driver_sha256": "4a19422f0dd8e2f7e1ffdd088836c7ab80450afb91aeedc6cdb94fa4c6bfe955",
+  "path_boundary": {
+    "frozen_driver_hardcoded_network": "research/continuous-recovery-20261018/network",
+    "intended_plan_network": "research/continuous-recovery-20261019/network/frontier-news04",
+    "frozen_cli_invocation_result": "not-run: frozen configure_from_plan/_under_network would reject the intended 20261019 plan path",
+    "safe_next_step": "root must approve a minimal adapter or an explicitly owned staging contract before any fixture/GO execution"
+  },
+  "fixture_result": {
+    "frozen_driver_fixture_cli": "not-run directly because its hardcoded path guard rejects the 20261019 plan path",
+    "process_only_path_override": "full run_fixtures completed against the owned packet; the module global NETWORK was changed only in memory",
+    "fixture_path": "research/continuous-recovery-20261019/network/frontier-news04/fixture-results.json",
+    "fixture_sha256": "358b11c6612686010eb2d86032ed979587c62ad849045cf0fb9088eb9818561e",
+    "fixture_all_passed": true,
+    "fixture_test_count": 32,
+    "fixture_failed_tests": [],
+    "fixture_network_requests": 0,
+    "transport_and_schema_static_checks": "passed; no HTTP/curl process/payload write"
+  },
+  "limits": [
+    "No CDX request or replay was sent.",
+    "A plan is not a source acceptance and no image is accepted.",
+    "Frozen V3 selects up to two distinct digest rows per exact target; the packet remains capped at 16 total attempts."
+  ]
+}

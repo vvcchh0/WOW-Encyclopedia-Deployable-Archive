@@ -1,0 +1,734 @@
+{
+  "schema": "wow-recovery.reusable-image-plan.v1",
+  "batch_id": "WAYBACK-CONTINUOUS-20261019-FRONTIER-NEWS04-01",
+  "prepared_utc": "2026-10-19T07:14:08.721296Z",
+  "mode": "fresh_exact_cdx_then_id_replay_no_fallback",
+  "network_authorized": null,
+  "parent_go_required": true,
+  "candidate_count": 4,
+  "output_dir": "research/continuous-recovery-20261019/network/frontier-news04/output",
+  "execution_order": {
+    "batch_number": 1,
+    "batch_count": 1,
+    "predecessor_batch_required": false,
+    "predecessor_tail_rebind_required_before_execute": false,
+    "predecessor_tail_status": "bound_to_latest_actual_source_acceptance",
+    "root_control_acceptance_bound": true,
+    "root_control_acceptance_required_before_execute": true
+  },
+  "selection_scope": {
+    "name": "frontier_news04_v33_r2_batch_01",
+    "reason": "Four exact v33-r2 news image markers with concrete source-page context; parent historical execution/CDX dedup found no match.",
+    "queue_path": "research/continuous-recovery-20261019/local-audit/resource-frontier-v33-r2/resource-frontier-candidates.json",
+    "queue_sha256": "ee9c6240c76e14ad80c3aac2cdd655970499bb3ac8ee6592295f8f39e95c686a",
+    "queue_target_count": 4,
+    "queue_rank_range": [
+      1,
+      4
+    ],
+    "selected_queue_ranks": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "selected_priorities": [
+      "news-frontier-r2",
+      "news-frontier-r2",
+      "news-frontier-r2",
+      "news-frontier-r2"
+    ],
+    "no_complete_same_window_row_selected": true,
+    "network_requests_during_preparation": 0,
+    "logical_source_request_upper_bound": 12,
+    "actual_attempt_cap": 16,
+    "retry_budget_note": "Direct and process-proxy attempts both consume max_attempts; the frozen runner stops at 16 actual attempts and never overruns the cap.",
+    "split_reason": "Four exact targets yield at most four CDX plus two distinct replay candidates per target; the hard max_attempts=16 cap bounds direct/proxy attempts."
+  },
+  "candidates": [
+    {
+      "target_key": "FRONTIER-NEWS04-01",
+      "priority": 1,
+      "source_priority_band": "news-frontier-r2",
+      "date_bucket": null,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com/contests/beowulf/images/beowulf_news.jpg",
+      "literal": "http://www.worldofwarcraft.com/contests/beowulf/images/beowulf_news.jpg",
+      "expected": {
+        "archive_query_required": true,
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "all_gif_frames": false,
+        "reencode": false,
+        "script_execution": false,
+        "query_window": {
+          "from": "20000101000000",
+          "to": "20080512210044"
+        }
+      },
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "source_evidence": {
+        "path": ".scratch/pages-resources-20261018-v33/news/rss-10-2007.xml.html",
+        "line": 2258,
+        "literal": "http://www.worldofwarcraft.com/contests/beowulf/images/beowulf_news.jpg",
+        "sha256": "71057b5ac75455bed4470224e2653d2b5668c903d471ad22cfc25a124f0c6e6b",
+        "source_page_sha256": "71057b5ac75455bed4470224e2653d2b5668c903d471ad22cfc25a124f0c6e6b",
+        "bytes": 197314,
+        "match": "url_encoded",
+        "original_source_page_sha256": "a0d6edbf58a6d0d61222dc6b9d94b669af9b4c55dae9cbbfe7d0943dd6ed0c08",
+        "requested": "http://www.worldofwarcraft.com/contests/beowulf/images/beowulf_news.jpg",
+        "source_page": "http://www.worldofwarcraft.com/news/rss-10-2007.xml",
+        "reason": "external-or-uncollected-resource",
+        "source_marker": "v33_missing_image_marker",
+        "r2_candidate_rank": 1,
+        "r2_candidates_sha256": "ee9c6240c76e14ad80c3aac2cdd655970499bb3ac8ee6592295f8f39e95c686a"
+      },
+      "source_page_context": {
+        "r2_candidates_path": "research/continuous-recovery-20261019/local-audit/resource-frontier-v33-r2/resource-frontier-candidates.json",
+        "r2_candidates_sha256": "ee9c6240c76e14ad80c3aac2cdd655970499bb3ac8ee6592295f8f39e95c686a",
+        "candidate_rank": 1,
+        "source_context": [
+          {
+            "source_url": "http://www.worldofwarcraft.com/news/rss-10-2007.xml",
+            "source_file": ".scratch/offline-navigation-20261015-v15/site/news/rss-10-2007.xml",
+            "source_page_sha256": "a0d6edbf58a6d0d61222dc6b9d94b669af9b4c55dae9cbbfe7d0943dd6ed0c08",
+            "source_page_bytes": 153401,
+            "source_hits": [
+              {
+                "line": 2244,
+                "snippet": "<a href=\"http://www.worldofwarcraft.com/contests/beowulf/\"><img align=\"right\" src=\"/contests/beowulf/images/beowulf_news.jpg\"></a>We are happy to announce our latest contest, Legendary Tales, "
+              }
+            ]
+          }
+        ],
+        "v33_marker_ref": {
+          "output_file": ".scratch/pages-resources-20261018-v33/news/rss-10-2007.xml.html",
+          "line": 2258,
+          "source_url": "http://www.worldofwarcraft.com/news/rss-10-2007.xml",
+          "reason": "external-or-uncollected-resource",
+          "snippet": "<a href=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-10-2007.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fcontests%2Fbeowulf%2F&amp;reason=external-or-uncollected-resource\"><img align=\"right\" src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Frss-10-2007.xml&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fcontests%2Fbeowulf%2Fimages%2Fbeowulf_news.jpg&amp;reason=external-or-uncollected-resource\"></a>We are happy to announce our latest contest, Legendary Tales, "
+        },
+        "historical_execution_evidence": [],
+        "historical_plan_or_queue_evidence": [],
+        "identity_variant_evidence": [],
+        "dedup_statement": "Parent exact historical batch-report/request-record/CDX check found no match; this is a fresh exact-CDX candidate.",
+        "preparation_network_requests": 0
+      },
+      "selection": {
+        "max_distinct_digest_candidates": 2,
+        "contract_note": "Frozen driver selects at most two distinct digest rows; total packet cap remains 16 requests.",
+        "potential_truncation": "do_not_replay",
+        "require_complete_index": true,
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "same_digest_older_captures": "skip",
+        "sort": "timestamp_desc_then_record_index_desc",
+        "unknown_metadata": "incomplete_error"
+      },
+      "known_positive_cache_rows": [],
+      "fallback_label": null,
+      "cdx_mode": "fresh",
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com/contests/beowulf/images/beowulf_news.jpg",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fcontests%2Fbeowulf%2Fimages%2Fbeowulf_news.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com/contests/beowulf/images/beowulf_news.jpg",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "prior_local_evidence": [
+        {
+          "state": "no_new_cdx_query_yet",
+          "source": "resource-frontier-v33-r2",
+          "prior_attempt": {
+            "state": "not_in_parent_reviewed_execution_records",
+            "parent_exact_dedup_check": "no_match_in_historical_batch-report/request-record/CDX JSON",
+            "network_requests_in_this_preparation": 0,
+            "accepted_payload_in_prior_records": false
+          },
+          "exact_entity_index_complete": false,
+          "positive_row_count": 0
+        }
+      ],
+      "prior_evidence_status": "v33_r2_missing_marker; fresh_exact_cdx_required; no_bound_positive_fallback"
+    },
+    {
+      "target_key": "FRONTIER-NEWS04-02",
+      "priority": 2,
+      "source_priority_band": "news-frontier-r2",
+      "date_bucket": null,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com/news/images/04-06/european-beta/signups.jpg",
+      "literal": "http://www.worldofwarcraft.com/news/images/04-06/european-beta/signups.jpg",
+      "expected": {
+        "archive_query_required": true,
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "all_gif_frames": false,
+        "reencode": false,
+        "script_execution": false,
+        "query_window": {
+          "from": "20000101000000",
+          "to": "20080512210044"
+        }
+      },
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "source_evidence": {
+        "path": ".scratch/pages-resources-20261018-v33/news/wow-news2004.html",
+        "line": 3787,
+        "literal": "http://www.worldofwarcraft.com/news/images/04-06/european-beta/signups.jpg",
+        "sha256": "ce027634ec7041e2ee8480c78fcde0662f7e953ba49cd68593c1599976168d38",
+        "source_page_sha256": "ce027634ec7041e2ee8480c78fcde0662f7e953ba49cd68593c1599976168d38",
+        "bytes": 449208,
+        "match": "url_encoded",
+        "original_source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d",
+        "requested": "http://www.worldofwarcraft.com/news/images/04-06/european-beta/signups.jpg",
+        "source_page": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+        "reason": "external-or-uncollected-resource",
+        "source_marker": "v33_missing_image_marker",
+        "r2_candidate_rank": 2,
+        "r2_candidates_sha256": "ee9c6240c76e14ad80c3aac2cdd655970499bb3ac8ee6592295f8f39e95c686a"
+      },
+      "source_page_context": {
+        "r2_candidates_path": "research/continuous-recovery-20261019/local-audit/resource-frontier-v33-r2/resource-frontier-candidates.json",
+        "r2_candidates_sha256": "ee9c6240c76e14ad80c3aac2cdd655970499bb3ac8ee6592295f8f39e95c686a",
+        "candidate_rank": 2,
+        "source_context": [
+          {
+            "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+            "source_file": ".scratch/offline-navigation-20261015-v15/site/news/wow-news2004.html",
+            "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d",
+            "source_page_bytes": 427750,
+            "source_hits": []
+          }
+        ],
+        "v33_marker_ref": {
+          "output_file": ".scratch/pages-resources-20261018-v33/news/wow-news2004.html",
+          "line": 3787,
+          "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+          "reason": "external-or-uncollected-resource",
+          "snippet": "<a href=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Fpress%2F062804.shtml&amp;reason=external-or-uncollected-resource\"><img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Feuropean-beta%2Fsignups.jpg&amp;reason=external-or-uncollected-resource\" width=\"315\" height=\"129\" border=\"0\"></a>"
+        },
+        "historical_execution_evidence": [],
+        "historical_plan_or_queue_evidence": [],
+        "identity_variant_evidence": [],
+        "dedup_statement": "Parent exact historical batch-report/request-record/CDX check found no match; this is a fresh exact-CDX candidate.",
+        "preparation_network_requests": 0
+      },
+      "selection": {
+        "max_distinct_digest_candidates": 2,
+        "contract_note": "Frozen driver selects at most two distinct digest rows; total packet cap remains 16 requests.",
+        "potential_truncation": "do_not_replay",
+        "require_complete_index": true,
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "same_digest_older_captures": "skip",
+        "sort": "timestamp_desc_then_record_index_desc",
+        "unknown_metadata": "incomplete_error"
+      },
+      "known_positive_cache_rows": [],
+      "fallback_label": null,
+      "cdx_mode": "fresh",
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com/news/images/04-06/european-beta/signups.jpg",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Feuropean-beta%2Fsignups.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com/news/images/04-06/european-beta/signups.jpg",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "prior_local_evidence": [
+        {
+          "state": "no_new_cdx_query_yet",
+          "source": "resource-frontier-v33-r2",
+          "prior_attempt": {
+            "state": "not_in_parent_reviewed_execution_records",
+            "parent_exact_dedup_check": "no_match_in_historical_batch-report/request-record/CDX JSON",
+            "network_requests_in_this_preparation": 0,
+            "accepted_payload_in_prior_records": false
+          },
+          "exact_entity_index_complete": false,
+          "positive_row_count": 0
+        }
+      ],
+      "prior_evidence_status": "v33_r2_missing_marker; fresh_exact_cdx_required; no_bound_positive_fallback"
+    },
+    {
+      "target_key": "FRONTIER-NEWS04-03",
+      "priority": 3,
+      "source_priority_band": "news-frontier-r2",
+      "date_bucket": null,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com/news/images/04-06/fanart/fanart01.jpg",
+      "literal": "http://www.worldofwarcraft.com/news/images/04-06/fanart/fanart01.jpg",
+      "expected": {
+        "archive_query_required": true,
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "all_gif_frames": false,
+        "reencode": false,
+        "script_execution": false,
+        "query_window": {
+          "from": "20000101000000",
+          "to": "20080512210044"
+        }
+      },
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "source_evidence": {
+        "path": ".scratch/pages-resources-20261018-v33/news/wow-news2004.html",
+        "line": 4230,
+        "literal": "http://www.worldofwarcraft.com/news/images/04-06/fanart/fanart01.jpg",
+        "sha256": "ce027634ec7041e2ee8480c78fcde0662f7e953ba49cd68593c1599976168d38",
+        "source_page_sha256": "ce027634ec7041e2ee8480c78fcde0662f7e953ba49cd68593c1599976168d38",
+        "bytes": 449208,
+        "match": "url_encoded",
+        "original_source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d",
+        "requested": "http://www.worldofwarcraft.com/news/images/04-06/fanart/fanart01.jpg",
+        "source_page": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+        "reason": "external-or-uncollected-resource",
+        "source_marker": "v33_missing_image_marker",
+        "r2_candidate_rank": 3,
+        "r2_candidates_sha256": "ee9c6240c76e14ad80c3aac2cdd655970499bb3ac8ee6592295f8f39e95c686a"
+      },
+      "source_page_context": {
+        "r2_candidates_path": "research/continuous-recovery-20261019/local-audit/resource-frontier-v33-r2/resource-frontier-candidates.json",
+        "r2_candidates_sha256": "ee9c6240c76e14ad80c3aac2cdd655970499bb3ac8ee6592295f8f39e95c686a",
+        "candidate_rank": 3,
+        "source_context": [
+          {
+            "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+            "source_file": ".scratch/offline-navigation-20261015-v15/site/news/wow-news2004.html",
+            "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d",
+            "source_page_bytes": 427750,
+            "source_hits": []
+          }
+        ],
+        "v33_marker_ref": {
+          "output_file": ".scratch/pages-resources-20261018-v33/news/wow-news2004.html",
+          "line": 4230,
+          "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+          "reason": "external-or-uncollected-resource",
+          "snippet": "<a href=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Ffanart%2F&amp;reason=external-or-uncollected-resource\"><img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart01.jpg&amp;reason=external-or-uncollected-resource\" width=\"130\" height=\"100\" class=\"link\"></a>"
+        },
+        "historical_execution_evidence": [],
+        "historical_plan_or_queue_evidence": [],
+        "identity_variant_evidence": [],
+        "dedup_statement": "Parent exact historical batch-report/request-record/CDX check found no match; this is a fresh exact-CDX candidate.",
+        "preparation_network_requests": 0
+      },
+      "selection": {
+        "max_distinct_digest_candidates": 2,
+        "contract_note": "Frozen driver selects at most two distinct digest rows; total packet cap remains 16 requests.",
+        "potential_truncation": "do_not_replay",
+        "require_complete_index": true,
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "same_digest_older_captures": "skip",
+        "sort": "timestamp_desc_then_record_index_desc",
+        "unknown_metadata": "incomplete_error"
+      },
+      "known_positive_cache_rows": [],
+      "fallback_label": null,
+      "cdx_mode": "fresh",
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com/news/images/04-06/fanart/fanart01.jpg",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart01.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com/news/images/04-06/fanart/fanart01.jpg",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "prior_local_evidence": [
+        {
+          "state": "no_new_cdx_query_yet",
+          "source": "resource-frontier-v33-r2",
+          "prior_attempt": {
+            "state": "not_in_parent_reviewed_execution_records",
+            "parent_exact_dedup_check": "no_match_in_historical_batch-report/request-record/CDX JSON",
+            "network_requests_in_this_preparation": 0,
+            "accepted_payload_in_prior_records": false
+          },
+          "exact_entity_index_complete": false,
+          "positive_row_count": 0
+        }
+      ],
+      "prior_evidence_status": "v33_r2_missing_marker; fresh_exact_cdx_required; no_bound_positive_fallback"
+    },
+    {
+      "target_key": "FRONTIER-NEWS04-04",
+      "priority": 4,
+      "source_priority_band": "news-frontier-r2",
+      "date_bucket": null,
+      "kind": "image",
+      "original": "http://www.worldofwarcraft.com/news/images/04-06/fanart/fanart02.jpg",
+      "literal": "http://www.worldofwarcraft.com/news/images/04-06/fanart/fanart02.jpg",
+      "expected": {
+        "archive_query_required": true,
+        "mime_types": [
+          "image/jpeg"
+        ],
+        "pillow_formats": [
+          "JPEG"
+        ],
+        "all_gif_frames": false,
+        "reencode": false,
+        "script_execution": false,
+        "query_window": {
+          "from": "20000101000000",
+          "to": "20080512210044"
+        }
+      },
+      "expected_mime": [
+        "image/jpeg"
+      ],
+      "source_evidence": {
+        "path": ".scratch/pages-resources-20261018-v33/news/wow-news2004.html",
+        "line": 4231,
+        "literal": "http://www.worldofwarcraft.com/news/images/04-06/fanart/fanart02.jpg",
+        "sha256": "ce027634ec7041e2ee8480c78fcde0662f7e953ba49cd68593c1599976168d38",
+        "source_page_sha256": "ce027634ec7041e2ee8480c78fcde0662f7e953ba49cd68593c1599976168d38",
+        "bytes": 449208,
+        "match": "url_encoded",
+        "original_source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d",
+        "requested": "http://www.worldofwarcraft.com/news/images/04-06/fanart/fanart02.jpg",
+        "source_page": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+        "reason": "external-or-uncollected-resource",
+        "source_marker": "v33_missing_image_marker",
+        "r2_candidate_rank": 4,
+        "r2_candidates_sha256": "ee9c6240c76e14ad80c3aac2cdd655970499bb3ac8ee6592295f8f39e95c686a"
+      },
+      "source_page_context": {
+        "r2_candidates_path": "research/continuous-recovery-20261019/local-audit/resource-frontier-v33-r2/resource-frontier-candidates.json",
+        "r2_candidates_sha256": "ee9c6240c76e14ad80c3aac2cdd655970499bb3ac8ee6592295f8f39e95c686a",
+        "candidate_rank": 4,
+        "source_context": [
+          {
+            "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+            "source_file": ".scratch/offline-navigation-20261015-v15/site/news/wow-news2004.html",
+            "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d",
+            "source_page_bytes": 427750,
+            "source_hits": []
+          }
+        ],
+        "v33_marker_ref": {
+          "output_file": ".scratch/pages-resources-20261018-v33/news/wow-news2004.html",
+          "line": 4231,
+          "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+          "reason": "external-or-uncollected-resource",
+          "snippet": "<a href=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Ffanart%2F&amp;reason=external-or-uncollected-resource\"><img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart02.jpg&amp;reason=external-or-uncollected-resource\" width=\"130\" height=\"100\" class=\"link\"></a>"
+        },
+        "historical_execution_evidence": [],
+        "historical_plan_or_queue_evidence": [],
+        "identity_variant_evidence": [],
+        "dedup_statement": "Parent exact historical batch-report/request-record/CDX check found no match; this is a fresh exact-CDX candidate.",
+        "preparation_network_requests": 0
+      },
+      "selection": {
+        "max_distinct_digest_candidates": 2,
+        "contract_note": "Frozen driver selects at most two distinct digest rows; total packet cap remains 16 requests.",
+        "potential_truncation": "do_not_replay",
+        "require_complete_index": true,
+        "require_exact_original": true,
+        "require_expected_mime": true,
+        "require_nonempty_cdx_sha1_digest": true,
+        "require_statuscode": 200,
+        "same_digest_older_captures": "skip",
+        "sort": "timestamp_desc_then_record_index_desc",
+        "unknown_metadata": "incomplete_error"
+      },
+      "known_positive_cache_rows": [],
+      "fallback_label": null,
+      "cdx_mode": "fresh",
+      "query": {
+        "endpoint": "https://web.archive.org/cdx/search/cdx",
+        "url": "http://www.worldofwarcraft.com/news/images/04-06/fanart/fanart02.jpg",
+        "from": "20000101000000",
+        "to": "20080512210044",
+        "output": "json",
+        "fields": [
+          "urlkey",
+          "timestamp",
+          "original",
+          "mimetype",
+          "statuscode",
+          "digest",
+          "length"
+        ],
+        "limit": 500,
+        "showResumeKey": true,
+        "collapse": false,
+        "matchType": "exact",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart02.jpg&from=20000101000000&to=20080512210044&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=500&showResumeKey=true&matchType=exact"
+      },
+      "replay": {
+        "enabled": true,
+        "id_url_template": "https://web.archive.org/web/{timestamp}id_/http://www.worldofwarcraft.com/news/images/04-06/fanart/fanart02.jpg",
+        "max_candidates": 2,
+        "no_redirects": true,
+        "verify_tls": true,
+        "acceptance": [
+          "http_status_200",
+          "memento_datetime_present_and_exact",
+          "link_original_exact_default_port_only",
+          "expected_image_content_type",
+          "magic_and_pillow_decode",
+          "decoded_payload_sha1_matches_cdx_digest"
+        ],
+        "accepted_payloads_are_source_data_only": true
+      },
+      "prior_local_evidence": [
+        {
+          "state": "no_new_cdx_query_yet",
+          "source": "resource-frontier-v33-r2",
+          "prior_attempt": {
+            "state": "not_in_parent_reviewed_execution_records",
+            "parent_exact_dedup_check": "no_match_in_historical_batch-report/request-record/CDX JSON",
+            "network_requests_in_this_preparation": 0,
+            "accepted_payload_in_prior_records": false
+          },
+          "exact_entity_index_complete": false,
+          "positive_row_count": 0
+        }
+      ],
+      "prior_evidence_status": "v33_r2_missing_marker; fresh_exact_cdx_required; no_bound_positive_fallback"
+    }
+  ],
+  "policy": {
+    "from": "20000101000000",
+    "to": "20080512210044",
+    "limit": 500,
+    "showResumeKey": true,
+    "collapse": false,
+    "matchType": "exact",
+    "max_originals": 20,
+    "max_attempts": 16,
+    "window_seconds": 240.0,
+    "max_total_body_bytes": 16777216,
+    "max_entity_body_bytes": 8388608,
+    "min_dispatch_seconds": 5.25,
+    "min_request_start_seconds": 5.0,
+    "disk_floor_bytes": 11005853696,
+    "direct_first": true,
+    "direct_attempt_budget": 4,
+    "proxy_attempt_budget": 20,
+    "proxy": "http://127.0.0.1:7890",
+    "tls_verification": true,
+    "automatic_redirects": 0,
+    "stop_http_codes": [
+      429,
+      503
+    ],
+    "cooldown_seconds": 120,
+    "user_agent": "wow-recovery-reusable-image-v3/20261019-frontier-news04",
+    "prior_failure_tail": 0,
+    "transport_policy": "batch_after_direct_failure",
+    "network_deadline_utc": "2026-10-19T13:15:00Z",
+    "no_network_before_parent_go": true
+  },
+  "previous_batch": {
+    "name": "latest_actual_source_acceptance",
+    "prior_failure_tail": 0,
+    "acceptance_receipt_path": "research/continuous-recovery-20261019/publication/root-gallery-late-gap01-source-acceptance.json",
+    "acceptance_receipt_sha256": "edd438ed7ff84113031e6741515e4c6d96ca27e5021549f8e649886f08a8f949",
+    "tail_receipt_path": "research/continuous-recovery-20261019/publication/root-gallery-late-gap01-source-acceptance.json",
+    "tail_receipt_sha256": "edd438ed7ff84113031e6741515e4c6d96ca27e5021549f8e649886f08a8f949",
+    "latest_successful_tail_end": 0,
+    "historical_tail_is_preserved": true,
+    "ordinary_retrieval_requires_new_control_gate": true,
+    "control_gate_receipt_path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+    "control_gate_receipt_sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+    "control_gate_required": true,
+    "root_control_acceptance_bound": true,
+    "parent_go_required": true
+  },
+  "input_bindings": {
+    "r2_candidate_rows": {
+      "path": "research/continuous-recovery-20261019/local-audit/resource-frontier-v33-r2/resource-frontier-candidates.json",
+      "sha256": "ee9c6240c76e14ad80c3aac2cdd655970499bb3ac8ee6592295f8f39e95c686a",
+      "bytes": 3829214,
+      "role": "frozen v33-r2 exact candidate/source rows"
+    },
+    "latest_source_acceptance": {
+      "path": "research/continuous-recovery-20261019/publication/root-gallery-late-gap01-source-acceptance.json",
+      "sha256": "edd438ed7ff84113031e6741515e4c6d96ca27e5021549f8e649886f08a8f949",
+      "bytes": 54138,
+      "role": "latest accepted gallery-late-gap01 tail-zero source receipt"
+    },
+    "control_gate": {
+      "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+      "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+      "bytes": 1842,
+      "role": "accepted CONTROL03 tail-zero gate"
+    },
+    "frozen_v3_driver": {
+      "path": "research/continuous-recovery-20261018/network/reusable-image-driver-v3/reusable_image_driver.py",
+      "sha256": "4a19422f0dd8e2f7e1ffdd088836c7ab80450afb91aeedc6cdb94fa4c6bfe955",
+      "bytes": 103121,
+      "role": "frozen reusable-image-v3 driver; not modified"
+    }
+  },
+  "source_bindings": {
+    "r2_candidate_rows": {
+      "path": "research/continuous-recovery-20261019/local-audit/resource-frontier-v33-r2/resource-frontier-candidates.json",
+      "sha256": "ee9c6240c76e14ad80c3aac2cdd655970499bb3ac8ee6592295f8f39e95c686a",
+      "bytes": 3829214,
+      "role": "frozen v33-r2 exact candidate/source rows"
+    },
+    "latest_source_acceptance": {
+      "path": "research/continuous-recovery-20261019/publication/root-gallery-late-gap01-source-acceptance.json",
+      "sha256": "edd438ed7ff84113031e6741515e4c6d96ca27e5021549f8e649886f08a8f949",
+      "bytes": 54138,
+      "role": "latest accepted gallery-late-gap01 tail-zero source receipt"
+    },
+    "control_gate": {
+      "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+      "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b",
+      "bytes": 1842,
+      "role": "accepted CONTROL03 tail-zero gate"
+    },
+    "frozen_v3_driver": {
+      "path": "research/continuous-recovery-20261018/network/reusable-image-driver-v3/reusable_image_driver.py",
+      "sha256": "4a19422f0dd8e2f7e1ffdd088836c7ab80450afb91aeedc6cdb94fa4c6bfe955",
+      "bytes": 103121,
+      "role": "frozen reusable-image-v3 driver; not modified"
+    }
+  },
+  "excluded_rows": {
+    "selected_exact_urls": [
+      "http://www.worldofwarcraft.com/contests/beowulf/images/beowulf_news.jpg",
+      "http://www.worldofwarcraft.com/news/images/04-06/european-beta/signups.jpg",
+      "http://www.worldofwarcraft.com/news/images/04-06/fanart/fanart01.jpg",
+      "http://www.worldofwarcraft.com/news/images/04-06/fanart/fanart02.jpg"
+    ],
+    "other_frontier_rows_not_selected": "all other v33-r2 rows",
+    "known_positive_fallback_rows": [],
+    "identity_variants": "retained by CDX report only; no replay"
+  },
+  "identity_variant_policy": {
+    "retain_in_cdx_report": true,
+    "replay_identity_variants": false,
+    "strict_identity": "exact_original_default_port_only",
+    "scheme_or_host_variants_are_not_equivalent": true
+  },
+  "execution_boundary": {
+    "no_network_authorized_by_this_artifact": true,
+    "requires_parent_GO": true,
+    "network_deadline_utc": "2026-10-19T13:15:00Z",
+    "logical_source_request_upper_bound": 12,
+    "actual_attempt_cap": 16,
+    "frozen_driver_path_boundary": "20261018/network",
+    "intended_packet_path_boundary": "20261019/network/frontier-news04",
+    "driver_not_invoked_by_factory": true
+  }
+}
