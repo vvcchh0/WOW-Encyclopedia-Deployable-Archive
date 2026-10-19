@@ -1,0 +1,133 @@
+{
+  "schema": "wow-recovery.control-after429-1145-plan.v1",
+  "batch_id": "CONTROL-AFTER-429-1145-20261019",
+  "mode": "prepared",
+  "root_go_required": true,
+  "network_requests_executed_at_prepare": 0,
+  "exact_original": "http://www.worldofwarcraft.com/news/images/08-02/02-14-08-2.jpg",
+  "target_key": "CONTROL-AFTER-429-1145-known-news-image-exact-cdx",
+  "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F08-02%2F02-14-08-2.jpg&from=20000101000000&to=20080512210044&output=json&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=10&showResumeKey=true&matchType=exact",
+  "query": {
+    "endpoint": "https://web.archive.org/cdx/search/cdx",
+    "match_type": "exact",
+    "from": "20000101000000",
+    "to": "20080512210044",
+    "output": "json",
+    "fields": [
+      "timestamp",
+      "original",
+      "mimetype",
+      "statuscode",
+      "digest",
+      "length"
+    ],
+    "limit": 10,
+    "show_resume_key": true,
+    "collapse": false,
+    "pagination": false,
+    "redirects": false
+  },
+  "policy": {
+    "maximum_requests": 2,
+    "maximum_seconds": 120,
+    "outer_watchdog_seconds": 180,
+    "maximum_total_body_bytes": 1048576,
+    "maximum_entity_body_bytes": 1048576,
+    "minimum_dispatch_seconds": 5.25,
+    "minimum_request_start_seconds": 5.0,
+    "disk_floor_bytes": 11005853696,
+    "tls_verification": true,
+    "automatic_redirects": false,
+    "payload_replay": false,
+    "direct_first": true,
+    "proxy": "http://127.0.0.1:7890",
+    "stop_http_statuses": [
+      429,
+      503
+    ],
+    "stop_after_transport_failures": 5,
+    "cooldown_seconds": 120,
+    "no_automatic_retry": true,
+    "no_pagination": true,
+    "no_image_replay": true
+  },
+  "known_positive_endpoint_evidence": {
+    "prior_control_report": {
+      "path": "research/continuous-recovery-20261018/network/control-after-gallery15/control-report.json",
+      "sha256": "7145994e5663a28a4f808fb82586ab51b2da2054da087a821cc3fee4ec540cd8",
+      "known_positive": true,
+      "successful_source_status": 200,
+      "successful_body_bytes": 366,
+      "successful_capture_timestamp": "20080402035201",
+      "successful_cdx_digest": "TJ2TFHNGVSA64RRRP3UD2CQZCP4TTRND"
+    },
+    "root_control03_acceptance": {
+      "path": "research/continuous-recovery-20261018/publication/root-control03-source-acceptance.json",
+      "sha256": "caa309e2e0d4592755107814135e2288c2055a879c9b4ea012e12f0505ec185b"
+    },
+    "known_image_source_acceptance": {
+      "path": "research/continuous-recovery-20261018/publication/root-news-unplanned-batch1-source-acceptance.json",
+      "sha256": "1746b07c0359621975d81371034008045dd17f3a2548691c1b75b9a895dc9184",
+      "capture_timestamp": "20080402035201",
+      "mime": "image/jpeg",
+      "length": 9971,
+      "cdx_digest": "TJ2TFHNGVSA64RRRP3UD2CQZCP4TTRND",
+      "image_sha256": "10fea360ed507351a75a9f46f43f44d09ebabc45fd6143614fe9f5def4fc7a57"
+    }
+  },
+  "frozen_parser": {
+    "path": "research/continuous-recovery-20261016/network/control02-plan/control02_driver.py",
+    "sha256": "85457ea1baa96c474e33ffc01210b4f6d96b3d6d276dc7a2b56aff3cd8376530",
+    "pure_functions": [
+      "parse_headers",
+      "parse_cdx"
+    ]
+  },
+  "execution_requirements": {
+    "future_go_receipt": "research/continuous-recovery-20261019/publication/root-control-after429-1145-execute-go.json",
+    "future_go_fields": [
+      "accepted",
+      "root_go",
+      "plan_sha256",
+      "driver_sha256",
+      "fixture_sha256",
+      "input_bindings_sha256"
+    ],
+    "output_must_be_absent_before_execute": true,
+    "raw_must_be_absent_before_execute": true,
+    "execute_only_after_cooldown": true,
+    "latest_failure_receipt_is_authoritative": true,
+    "known_endpoint_is_control_only": true
+  },
+  "latest_429_failure_binding": {
+    "control_report": {
+      "path": "research/continuous-recovery-20261019/network/control-after-rest10b/control-report.json",
+      "sha256": "4e5b0e519b09c4717596de99fe9e12b36093e35d4259e8b2c973c72bcd3f9375",
+      "bytes": 5068
+    },
+    "root_control_source_acceptance": {
+      "path": "research/continuous-recovery-20261019/publication/root-control-after-rest10b-source-acceptance.json",
+      "sha256": "a57dc5c9635434d992fbd66f9d833b320fd7814b8d4c64ed74de3d42d52060d0",
+      "bytes": 3829
+    },
+    "stop_reason": "endpoint_status_429",
+    "endpoint_stop_status": 429,
+    "resume_gate_passed": false,
+    "last_failure_finished_utc": "2026-10-19T11:09:43.984461Z",
+    "cooldown_not_before_utc": "2026-10-19T11:45:00Z",
+    "extended_cooldown_not_before_utc": "2026-10-19T11:45:00Z",
+    "prior_failure_tail": 0,
+    "failure_streak_end": 0,
+    "failure_must_not_be_overwritten_by_historical_success": true
+  },
+  "historical_prior_503_binding": {
+    "root_gallery_source_acceptance": {
+      "path": "research/continuous-recovery-20261019/publication/root-gallery-late-rest10b-source-acceptance.json",
+      "sha256": "73cfbbe8594357128cc658571a2681262628ca561c3d62b45eb11d1406c6059d",
+      "bytes": 231650
+    },
+    "stop_reason": "endpoint_status_503",
+    "resume_gate_passed": false,
+    "role": "historical only; not the latest resume gate"
+  }
+}

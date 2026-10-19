@@ -29,8 +29,13 @@ PIXEL_LITERAL = 'src=\\"/toplist/images/pixel.gif\\"'
 
 
 class _RecordingLocalizer:
-    def __init__(self, value: str = "/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=fixture"):
+    def __init__(
+        self,
+        value: str = "/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=fixture",
+        route_to_static: dict[str, str] | None = None,
+    ):
         self.value = value
+        self.route_to_static = dict(route_to_static or {})
         self.calls: list[dict[str, str]] = []
 
     def localize(self, raw: str, *, base_url: str, context: str, recorder) -> str:
@@ -100,7 +105,11 @@ class ToplistCompatibilityTests(unittest.TestCase):
             self.assertEqual(len(set(urls)), 1)
             self.assertTrue(urls[0].startswith("/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?"))
             replacement = 'src=\\"' + urls[0] + '\\"'
-            self.assertEqual(derived_logic, source_logic.replace(PIXEL_LITERAL, replacement))
+            self.assertEqual(derived_logic.count(replacement), 5)
+            self.assertEqual(derived_logic.count("url(/toplist/images/table-left.jpg)"), 0)
+            self.assertEqual(derived_logic.count("url(/toplist/images/table-right.jpg)"), 0)
+            self.assertIn("var topListLocalDataRoutes = {};", derived_logic)
+            self.assertIn(toplist_compat._LOGIC_HISTORICAL_EMPTY_LABEL, derived_logic)
 
             node = "node"
             for path in (prototype_output, logic_output):
@@ -190,11 +199,97 @@ class ToplistCompatibilityTests(unittest.TestCase):
             None,
         )
         self.assertTrue(handled)
-        self.assertEqual(len(localizer.calls), 5)
-        self.assertTrue(all(call["raw"] == "/toplist/images/pixel.gif" for call in localizer.calls))
-        self.assertTrue(all(call["context"] == "image" for call in localizer.calls))
+        self.assertEqual(len(localizer.calls), 7)
+        self.assertEqual([call["raw"] for call in localizer.calls[:5]], ["/toplist/images/pixel.gif"] * 5)
+        self.assertEqual([call["context"] for call in localizer.calls[:5]], ["image"] * 5)
+        self.assertEqual(
+            [call["raw"] for call in localizer.calls[5:]],
+            ["/toplist/images/table-left.jpg", "/toplist/images/table-right.jpg"],
+        )
+        self.assertEqual([call["context"] for call in localizer.calls[5:]], ["css_url", "css_url"])
         self.assertEqual(rewritten.count(PIXEL_LITERAL), 0)
         self.assertEqual(rewritten.count('src=\\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=fixture\\"'), 5)
+        self.assertIn(toplist_compat._LOGIC_HISTORICAL_EMPTY_LABEL, rewritten)
+
+    def test_data_route_guard_runtime_and_historical_empty_label(self) -> None:
+        source = self._source_text(LOGIC_ROUTE)
+        local_route = "/WOW-Encyclopedia-Deployable-Archive/toplist/data/en/known_10052008.js"
+        localizer = _RecordingLocalizer(
+            route_to_static={"/toplist/data/en/known_10052008.js": local_route}
+        )
+        rewritten, handled = toplist_compat.rewrite_toplist_script(
+            source,
+            LOGIC_ROUTE,
+            toplist_compat.TOPLIST_LOGIC_SOURCE_SHA256,
+            "http://www.worldofwarcraft.com" + LOGIC_ROUTE,
+            localizer,
+            None,
+        )
+        self.assertTrue(handled)
+        self.assertIn('var topListLocalDataRoutes = {"/toplist/data/en/known_10052008.js":"' + local_route + '"};', rewritten)
+        self.assertIn(toplist_compat._LOGIC_HISTORICAL_EMPTY_LABEL, rewritten)
+
+        start = rewritten.index("var dataDir =")
+        end = rewritten.index("    document.spells =", start)
+        snippet = rewritten[start:end]
+        with tempfile.TemporaryDirectory() as tmp:
+            script = Path(tmp) / "toplist-data-guard.js"
+            script.write_text(
+                "const vm = require('vm');\n"
+                "const state = {factory: 0, open: [], send: 0, removed: [], injected: []};\n"
+                "const context = {\n"
+                "  lang: 'en',\n"
+                "  createXMLHttpRequest() { state.factory++; return {\n"
+                "    open(method, url) { state.open.push({method, url}); },\n"
+                "    send() { state.send++; }\n"
+                "  }; },\n"
+                "  removeTable(pos) { state.removed.push(pos); },\n"
+                "  injectTable(id, pos) { state.injected.push({id, pos}); }\n"
+                "};\n"
+                "vm.runInNewContext(" + json.dumps(snippet) + ", context);\n"
+                "context.createXMLHttpRequest = function() { state.factory++; return {\n"
+                "  open(method, url) { state.open.push({method, url}); },\n"
+                "  send() { state.send++; }\n"
+                "}; };\n"
+                "context.ajaxCall('killedby_10052008.js', 3);\n"
+                "const unknown = {factory: state.factory, open: state.open.length, send: state.send, "
+                "injected: state.injected.slice(), dataMissing: context.dataMissing};\n"
+                "context.ajaxCall('known_10052008.js', 4);\n"
+                "process.stdout.write(JSON.stringify({unknown, known: {factory: state.factory, open: state.open, send: state.send}}));\n",
+                encoding="utf-8",
+            )
+            result = subprocess.run(
+                ["node", str(script)],
+                capture_output=True,
+                text=True,
+                encoding="utf-8",
+                timeout=15,
+            )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        observed = json.loads(result.stdout)
+        self.assertEqual(observed["unknown"]["factory"], 0)
+        self.assertEqual(observed["unknown"]["open"], 0)
+        self.assertEqual(observed["unknown"]["send"], 0)
+        self.assertEqual(observed["unknown"]["injected"], [{"id": "10052008", "pos": 3}])
+        self.assertIn("10052008", observed["unknown"]["dataMissing"])
+        self.assertEqual(observed["known"]["factory"], 1)
+        self.assertEqual(observed["known"]["send"], 1)
+        self.assertEqual(observed["known"]["open"], [{"method": "GET", "url": local_route}])
+
+    def test_table_asset_count_guard_rejects_source_drift(self) -> None:
+        source = self._source_text(LOGIC_ROUTE)
+        mutated = source.replace("url(/toplist/images/table-left.jpg)", "url(/toplist/images/table-left-drift.jpg)", 1)
+        mutated_sha = hashlib.sha256(mutated.encode("utf-8")).hexdigest()
+        with mock.patch.object(toplist_compat, "TOPLIST_LOGIC_SOURCE_SHA256", mutated_sha):
+            with self.assertRaisesRegex(toplist_compat.ToplistCompatError, "table asset count mismatch"):
+                toplist_compat.rewrite_toplist_script(
+                    mutated,
+                    LOGIC_ROUTE,
+                    mutated_sha,
+                    "http://www.worldofwarcraft.com" + LOGIC_ROUTE,
+                    _RecordingLocalizer(),
+                    None,
+                )
 
 
 if __name__ == "__main__":

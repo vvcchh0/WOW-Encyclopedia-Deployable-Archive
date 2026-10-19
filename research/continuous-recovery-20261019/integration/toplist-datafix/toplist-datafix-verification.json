@@ -1,0 +1,100 @@
+{
+  "schema": "toplist-datafix-verification-v1",
+  "generated_utc": "2026-10-19T12:14:32.733852+00:00",
+  "scope": "source-aware Toplist logic rewrite; no export, browser, network, or accepted-output changes",
+  "source": {
+    "manifest_sha256": "d89557a445ec5c81ef2652c49fd8ce9c102016f11411b7fa2aa795f5112ae002",
+    "prototype": {
+      "url": "http://www.worldofwarcraft.com/toplist/includes-client/js/prototype.js",
+      "path": "tests/fixtures/toplist-source15/prototype.js",
+      "sha256": "4efde4e87b2db7b8cb6b81f70ab4972c3cfbcd7d329d0752ad223abe67fa9120",
+      "length": 64868
+    },
+    "logic": {
+      "url": "http://www.worldofwarcraft.com/toplist/includes-client/js/logic.js",
+      "path": "tests/fixtures/toplist-source15/logic.js",
+      "sha256": "1c0a50ff5fd1af19663b925e502c3a3b2dab0eb905874d95966e8bf35504eabe",
+      "length": 47479
+    },
+    "diagnostic_404s": [
+      "/toplist/data/en/killedby_10052008.js",
+      "/toplist/images/table-left.jpg",
+      "/toplist/images/table-right.jpg"
+    ],
+    "source15_accepted_data_routes": 0
+  },
+  "change": {
+    "prototype": "exact route/hash guard; source text unchanged",
+    "logic": [
+      "replace exactly five escaped pixel image literals through localizer context=image",
+      "replace exactly one table-left and one table-right CSS URL through localizer context=css_url",
+      "inject exact route_to_static-only local data map while preserving dataDir and feed derivation",
+      "unknown feed returns through removeTable/dataMissing/injectTable without creating or sending XHR",
+      "known accepted feed opens only its local static route",
+      "dataMissing empty table uses Historical ranking data for this date has not been recovered.; other label preserved"
+    ],
+    "no_data_alias_or_synthetic_payload": true,
+    "source_fixtures_modified": false
+  },
+  "runtime_regression": {
+    "unknown_feed": {
+      "feed": "killedby_10052008.js",
+      "xhr_factory_calls": 0,
+      "open_calls": 0,
+      "send_calls": 0,
+      "missing_id": "10052008",
+      "inject_table": true
+    },
+    "accepted_feed_fixture": {
+      "route": "/toplist/data/en/known_10052008.js",
+      "method": "GET",
+      "local_target": "/WOW-Encyclopedia-Deployable-Archive/toplist/data/en/known_10052008.js",
+      "xhr_factory_calls": 1,
+      "send_calls": 1
+    },
+    "external_requests": 0
+  },
+  "focused_test": {
+    "command": "python -X utf8 -m unittest -v tests.test_toplist_compat tests.test_github_pages_export",
+    "cwd": "D:/WOW_Encyclopedia",
+    "python": "C:\\Users\\17630\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "started_utc": "2026-10-19T12:14:26.476464+00:00",
+    "ended_utc": "2026-10-19T12:14:32.733852+00:00",
+    "elapsed_seconds": 6.257388,
+    "timeout_seconds": 120,
+    "timed_out": false,
+    "returncode": 0,
+    "tests": 39,
+    "result": "OK",
+    "output_path": "research/continuous-recovery-20261019/integration/toplist-datafix/focused-test-output.txt",
+    "output_sha256": "3cde89fa52e095688ed2d00d4b67c4c9404806b6ff1fee209d868691b0596f7b"
+  },
+  "files": [
+    {
+      "path": "tools/toplist_compat.py",
+      "length": 8829,
+      "sha256": "72e22e7730ecdb10b4e7ae1eb305ba596a9d5b18a58d07480d87908323abb0f9"
+    },
+    {
+      "path": "tests/test_toplist_compat.py",
+      "length": 13714,
+      "sha256": "0cf4cc256335e0b47f028c21b4c4072c0fc119ceab16923bcb1bdb691216bec9"
+    },
+    {
+      "path": "research/continuous-recovery-20261019/integration/toplist-datafix/toplist-datafix.diff",
+      "length": 13657,
+      "sha256": "ac4acf6d29d9afd1e9940b057ec647fac41ebff0c27b92547eb02078d24e5a5e"
+    },
+    {
+      "path": "research/continuous-recovery-20261019/integration/toplist-datafix/focused-test-output.txt",
+      "length": 7204,
+      "sha256": "3cde89fa52e095688ed2d00d4b67c4c9404806b6ff1fee209d868691b0596f7b"
+    }
+  ],
+  "not_done": [
+    "no export or v38 preparation",
+    "no browser run",
+    "no network acquisition",
+    "no commit or push"
+  ]
+}

@@ -151,3 +151,31 @@ main检查点3ff3c706正常推送，含本轮96个已验收素材、v36冻结构
 Top List窄修复通过34项导出回归和3项针对性测试；后者使用已复制的两个原始脚本夹具，可在新克隆中运行，未改变原字节。主代理完成实现与测试证据审阅；生产浏览仍须新版本验收。v37正准备在v36来源基础上加入已取得的21图与该修复，尚未执行导出。
 
 [最新429验收](../research/continuous-recovery-20261019/publication/root-control-after-rest10b-source-acceptance.json) · [脚本修复验收](../research/continuous-recovery-20261019/publication/root-toplist-tools-acceptance.json)
+
+### 11:35 UTC — v37 构建与文件变化验收
+
+Top List工具修复与网络停批证据检查点c981de81已推送。v37以独立绑定的父进程脚本单次生成，11:23:46至11:26:27完成；21图、167,403字节加入既有闭包，合计655个图片覆盖、9,114个实际文件。所有9,113个声明文件逐个读取校验通过，既有634个图片来源记录保持不变。原父脚本模板未改，执行的是只替换两个摘要常量的单独副本。
+
+主代理核对页面变化：21处新闻缺图引用改为实际图片，路由字典仅追加这21个路径；Prototype完全保留原始脚本，logic仅替换五个像素src值。其它v36页面及样式字节一致，可复用此前48项真实显示结果。新Top List运行与21图浏览尚待执行。完整文件检查的首份报告有三个从上版复制的统计字段；实际检查条件和路径集合已是21/655/634，单独r2勘误更正报告，保留首份与原检查器，没有修改站点或重复整个文件检查。
+
+[完整文件验收及统计勘误](../research/continuous-recovery-20261019/publication/root-v37-tree-acceptance-r2.json) · [派生变化验收](../research/continuous-recovery-20261019/publication/root-v37-derived-delta-acceptance.json)
+
+### 11:54 UTC — cross-reference review and final browser run
+
+Root independently checked all1,205 selected Source15 text files (51,328,725B) and all93 gallery-reference rows. The65 Hallow's End shotList entries are concrete original-image literals already covered by the65-slot registry; they are not calculated guesses. The28 other rows are nested /thumb/ or /thumbs/ previews. No new Karazhan/Black Temple URL or new target-gallery address was found. The original scanner classification is preserved with a qualified root acceptance in `publication/root-source15-crossref-acceptance.json`. Other literal aliases remain separate candidate scope.
+
+v37 browser r3 is root-gated for one300s run after correcting stylesheet/computed-background exact-target matching in the unexecuted r2 harness. A single fresh small CDX control after the extended429 cooldown is also root-gated; another429 ends Wayback acquisition for this run. Distinct v37 portable-release helpers are prepared without any upload or package execution.
+
+### 11:57 UTC — second429 control; acquisition stopped
+
+The11:53:54Z control attempted direct once (curl28/noHTTP) then the unchanged process proxy once (HTTP429/162B), with5.25s between starts. Root independently verified the raw final status, exact body and current failure chain. Wayback acquisition is stopped for this run. Remaining late prefix windows are open questions, not missing-image404 outcomes. No settings were changed and Firecrawl calls remain0.
+
+Browser r3 stopped in argument parsing before any server/browser startup because a JavaScript string was incorrectly read through a `.parent` property. Its failed1.625s receipt is preserved. A new r4 corrects that path initialization and adds a real, offline parseArgs preflight before root review; site bytes are unchanged.
+
+### 12:10 UTC — v37 real browser result and bounded v38 design
+
+v37 r5 completed actual browser execution:21/21 new news images passed exact local HTTP/MIME/length/hash/dimensions and real visible DOM/decode; all four former Toplist JavaScript errors are gone. Both CSS image assets resolve and decode locally, but no native next/prev nodes exist for the empty ranking table; visibility/navigation remain pending. The full v37 browser gate remains false because3console404 responses were observed. r3/r4 harness failures are preserved; r5 only corrects a missing page.evaluate argument and does not change the site. Root reviewed both real screenshots.
+
+A separate3.125s,90s-bounded read-only diagnostic identified `/toplist/data/en/killedby_10052008.js` and two root-relative table-border JPGs. No Toplist data record exists in the Source15/v37 catalog or output. The previously reported34 data keys are inherited Prototype methods, not ranking data. No source archive availability conclusion is drawn from these local404s.
+
+Frozen v38 design: retain Source15 hash guards and Prototype, extend the narrow logic rewrite to its2CSS image URLs through the existing localizer, and supply an exact local-route map from the accepted catalog for historical ranking data. Unknown feeds take the existing empty-table path without a network request and state that historical ranking data has not been recovered. Captured feeds, if later supplied, use only their exact local route. No dataset or ranking rows are invented; old sites and receipts remain frozen. Export uses the same655 accepted overlay assets and Source15 closure; new datafix receives behavior/guard checks and actual browser validation before publication.
