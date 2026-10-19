@@ -33,7 +33,7 @@ macOS / Linux 用户在解压目录运行：
 python3 tools/serve_pages_preview.py --site site --port 0 --open-browser
 ```
 
-启动后会打开本地浏览页面。离线包为 v33；在线版已更新至 v35，新增二十四张旧新闻配图，并修复比赛结果页的菜单跳转。后续进度见[更新记录](CHANGELOG.md)。
+启动后会打开本地浏览页面。离线包为 v33；在线版已更新至 v38，本轮新增九十六个图片资源，修复比赛结果页菜单和排行榜页面。后续进度见[更新记录](CHANGELOG.md)。
 
 ## 参与协作
 
