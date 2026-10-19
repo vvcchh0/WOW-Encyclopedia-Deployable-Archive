@@ -95,3 +95,11 @@ v34 的比赛菜单与指南图片浏览检查通过，暂不单独发布。v35 
 二十三张静态新闻图片与一张原生展开新闻图片全部通过 HTTP 原字节、图片解码、自然尺寸和页面可见性检查；Beowulf 条目用原有控件从折叠状态展开。无外部请求、页面脚本错误或失败请求，主代理查看两张页面截图。首轮截图检查自身的定位错误保留在失败记录中，修正后的独立第二轮在 4.77 秒完成。
 
 主代理核对 v35 相对线上 v33 的三十个变化对象：二十四张新图、两张新闻页、两份离线脚本或路由文件、一份比赛菜单脚本及来源清单。复用此前完整文件检查和 v34 菜单验收，未重复全站测试。当前进入 main 同步与 Pages 发布步骤，公开离线包继续保留 v33。[本地验收](../research/continuous-recovery-20261019/publication/root-v35-local-acceptance.json)
+
+### 09:27 UTC — v35 发布并核对线上文件
+
+main `d258e903` 已正常推送；随后以原 v33 的 gh-pages 提交为父版本发布 v35，Pages 提交 `1eea9aae3cbb0c29a5097e409f32461e1aec39d5` 已完成构建。三十个变化对象均通过 HTTPS 取得，全部直连成功，内容长度、摘要和 MIME 与本地一致；核对前后 Pages 提交相同。首次核对助手缺少来源清单超时分类字段，在对象请求前停止；补齐适配字段后完成独立第二轮，未修改站点或验收对象。
+
+本轮公开新增二十四个图片地址；本地另有三十二图已验收，下一版继续整合。其间找到的六张旧 Visa 促销图片先保存原文件，等待该页进一步改为静态展品后再上线。离线下载仍为 v33。
+
+[Pages 发布](../research/continuous-recovery-20261019/publication/v35-pages-publication.json) · [线上核对](../research/continuous-recovery-20261019/publication/root-v35-pages-online-acceptance.json)
