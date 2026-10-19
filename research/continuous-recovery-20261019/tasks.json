@@ -1,0 +1,62 @@
+{
+  "schema": "wow-recovery-tasks/v1",
+  "tasks": [
+    {
+      "id": "LOCAL01",
+      "owner": "local_recovery_20261018",
+      "goal": "Finish v33 actual browser coverage and isolate native control defects",
+      "state": "running",
+      "output": "local-audit/browser/",
+      "dependencies": []
+    },
+    {
+      "id": "GAL01",
+      "owner": "network_recovery_20261018",
+      "goal": "Audit existing gallery coverage and associated-page leads; propose finite network gaps and parking criteria",
+      "state": "running_offline_only",
+      "output": "gallery-audit/",
+      "dependencies": []
+    },
+    {
+      "id": "PKG01",
+      "owner": "root",
+      "goal": "Independently verify existing v33 ZIP and isolated packaged server",
+      "state": "accepted",
+      "output": "publication/",
+      "dependencies": []
+    },
+    {
+      "id": "REL01",
+      "owner": "root",
+      "goal": "Publish accepted processed portable archive with accurate current limitations",
+      "state": "preparing",
+      "output": "publication/",
+      "dependencies": [
+        "PKG01"
+      ]
+    },
+    {
+      "id": "NET01",
+      "owner": "network_recovery_20261018",
+      "goal": "Execute root-reviewed finite gallery-gap checks and source-led resource batches",
+      "state": "pending_review",
+      "output": "network/",
+      "dependencies": [
+        "GAL01"
+      ]
+    },
+    {
+      "id": "FINAL",
+      "owner": "root",
+      "goal": "Accept derived updates, normal commit/push/publication and closeout within 9h",
+      "state": "pending",
+      "output": "docs/continuous-recovery-20261019.md",
+      "dependencies": [
+        "LOCAL01",
+        "GAL01",
+        "REL01",
+        "NET01"
+      ]
+    }
+  ]
+}
