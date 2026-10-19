@@ -370,4 +370,12 @@ function printSubNav2(treeId)
 	}
 }
 
+/* offline-contest-nav-fallback-v1: exact historical winners route only */
+if (typeof result === "undefined" &&
+    typeof document !== "undefined" && document.location &&
+    document.location.pathname === "/WOW-Encyclopedia-Deployable-Archive/contests/05-05-25/winners.html" &&
+    typeof Menu1_6_4 !== "undefined" && Menu1_6_4 &&
+    typeof stripId === "function" && stripId(Menu1_6_4[0]) === "Contests") {
+    result = "1_6_4";
+}
 tree(result);
