@@ -258,7 +258,7 @@ Object.extend(String.prototype, {
     if (useDoubleQuotes)
       return '"' + escapedString.replace(/"/g, '\\"') + '"';
     else
-      return "'" + escapedString.replace(/'/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fincludes-client%2Fjs%2Fprototype.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fg%2C&reason=external-or-uncollected-resource '\\\'') + "'";
+      return "'" + escapedString.replace(/'/g, '\\\'') + "'";
   }
 });
 

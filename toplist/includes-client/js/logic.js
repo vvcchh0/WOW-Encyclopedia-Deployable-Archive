@@ -37,6 +37,7 @@ if (!Array.prototype.push) {
 }
 
 var dataDir = "/toplist/data/" + lang;
+var topListLocalDataRoutes = {};
 
 var today = new Date(2008, 4, 12, 21, 0, 44);
 var latestServerQuery = "undefined";
@@ -91,9 +92,15 @@ var questcompleteIdArray = new Array();
     }
 
     function ajaxCall (feed, pos) {
+        var id = feed.substr(feed.length-11, 8);
+        var topListDataRequest = dataDir + "/" + feed;
+        var topListDataRoute = topListLocalDataRoutes[topListDataRequest];
+        if (!topListDataRoute) {
+            removeTable(pos); dataMissing += id; injectTable(id, pos);
+            return;
+        }
         var xhr = createXMLHttpRequest();
         
-        var id = feed.substr(feed.length-11, 8);
 		xhr.onreadystatechange = function() {
             if (xhr.readyState==4) { // Request is finished
                 if (xhr.status==200) {
@@ -108,7 +115,7 @@ var questcompleteIdArray = new Array();
                 else { alert("Message returned, but with error status. (" + xhr.status +")");  }
             } 
         };
-        xhr.open("GET", dataDir + "/" + feed, true);
+        xhr.open("GET", topListDataRoute, true);
         if( xhr.overrideMimeType ) { xhr.overrideMimeType( 'text/plain' ); }
         xhr.send(null);
     }
@@ -398,7 +405,7 @@ var questcompleteIdArray = new Array();
         
         var infoSpan = document.createElement("span");
             infoSpan.className = "noData";
-            infoSpan.innerHTML = labelNoDataAvail;
+            infoSpan.innerHTML = (dataMissing.indexOf(id) != -1) ? "Historical ranking data for this date has not been recovered." : labelNoDataAvail;
 
         var tr1 = document.createElement("tr");
             tr1.className = "navi";
@@ -678,21 +685,21 @@ var questcompleteIdArray = new Array();
         output += "            <td id=\"singleTable-top\" colspan=\"3\" style=\"height: 30px;\" align=\"center\"><div id='" + actualId + "_" + position + "_tableDates' class=\"tableDate\">" + generateTableDates(actualId, position) + "</div></td>";
         output += "        </tr>";
         output += "        <tr>";
-        output += "            <td width=\"4\" style=\"background: url(/toplist/images/table-left.jpg) repeat-y 0 0;\"><img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fincludes-client%2Fjs%2Flogic.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fimages%2Fpixel.gif%5C&reason=external-or-uncollected-resource" width=\"4\" height=\"22\" border=\"0\"></td>";
+        output += "            <td width=\"4\" style=\"background: url(/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fincludes-client%2Fjs%2Flogic.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fimages%2Ftable-left.jpg&reason=external-or-uncollected-resource) repeat-y 0 0;\"><img src=\"/WOW-Encyclopedia-Deployable-Archive/toplist/images/pixel.gif\" width=\"4\" height=\"22\" border=\"0\"></td>";
         output += "            <td valign=\"top\">";
         output += "                 <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" class=\"statsTable\" id=\"" + actualId + "_" + position + "_table\">";
         output += "                     <thead>";
         output += "                         <tr>";
-        output += "                             <td class=\"position\"><img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fincludes-client%2Fjs%2Flogic.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fimages%2Fpixel.gif%5C&reason=external-or-uncollected-resource" height=\"1\" width=\"43\" border=\"0\"></td>";
-        output += "                             <td><img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fincludes-client%2Fjs%2Flogic.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fimages%2Fpixel.gif%5C&reason=external-or-uncollected-resource" height=\"1\" width=\"135\" border=\"0\"></td>";
-        output += "                             <td><img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fincludes-client%2Fjs%2Flogic.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fimages%2Fpixel.gif%5C&reason=external-or-uncollected-resource" height=\"1\" width=\"62\" border=\"0\"></td>";
+        output += "                             <td class=\"position\"><img src=\"/WOW-Encyclopedia-Deployable-Archive/toplist/images/pixel.gif\" height=\"1\" width=\"43\" border=\"0\"></td>";
+        output += "                             <td><img src=\"/WOW-Encyclopedia-Deployable-Archive/toplist/images/pixel.gif\" height=\"1\" width=\"135\" border=\"0\"></td>";
+        output += "                             <td><img src=\"/WOW-Encyclopedia-Deployable-Archive/toplist/images/pixel.gif\" height=\"1\" width=\"62\" border=\"0\"></td>";
         output += "                         </tr>";
         output += "                     </thead>";
         output += "                     <tbody>";
         output += "                     </tbody>";
         output += "                 </table>";
         output += "            </td>";
-        output += "            <td width=\"4\" style=\"background: url(/toplist/images/table-right.jpg) repeat-y 0 0;\"><img src=\"/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fincludes-client%2Fjs%2Flogic.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fimages%2Fpixel.gif%5C&reason=external-or-uncollected-resource" width=\"4\" height=\"22\" border=\"0\"></td>";
+        output += "            <td width=\"4\" style=\"background: url(/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fincludes-client%2Fjs%2Flogic.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftoplist%2Fimages%2Ftable-right.jpg&reason=external-or-uncollected-resource) repeat-y 0 0;\"><img src=\"/WOW-Encyclopedia-Deployable-Archive/toplist/images/pixel.gif\" width=\"4\" height=\"22\" border=\"0\"></td>";
         output += "        </tr>";
         output += "       <tr>";
         output += "            <td id=\"singleTable-bot\" colspan=\"3\" style=\"height: 6px; background-color: #111111;\"></td>";                            
