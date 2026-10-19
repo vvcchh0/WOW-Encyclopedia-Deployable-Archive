@@ -1,0 +1,23 @@
+{
+  "status": "failed_before_promotion",
+  "site_changed": false,
+  "old_runner_sha256": "112ed1f96a9b0b6eb3112c55eb483f7895a70680f5fa18beb01280860556b5fc",
+  "old_finalizer_sha256": "146d9b60cb186c548c5670130ebff80aa2d3238b9b8d5b5cce8a782d50894955",
+  "stderr_sha256": "aacc2b96157c2ecfa838561a58f5e4dfa67e9c20a91651881543ce982f6f59ba",
+  "reason": "Exporter dataclass module absent from sys.modules during dynamic import",
+  "correction": [
+    "--- \n",
+    "+++ \n",
+    "@@ -438,6 +438,7 @@\n",
+    "     if spec is None or spec.loader is None:",
+    "         raise ValidationError(\"unable to load frozen exporter\")",
+    "     module = importlib.util.module_from_spec(spec)",
+    "+    sys.modules[spec.name] = module",
+    "     spec.loader.exec_module(module)",
+    "     promoter = getattr(module, \"_promote_partial_output\", None)",
+    "     if not callable(promoter):"
+  ],
+  "new_finalizer_sha256": "e6289ba9b6d201cdd926a26bb72488ab0332d52233bad4ea24499fb5b8379f32",
+  "new_runner_sha256": "20c523cc9252a1216d654e5dbd9684099b3d65c9cce0944de2fb47647bedc3fa",
+  "full_file_check_reused": "eb05bfc5dd10fb8370ba8f806fa625abd6a5b43378196571e821c9c69d747122"
+}

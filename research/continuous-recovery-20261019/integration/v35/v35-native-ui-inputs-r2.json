@@ -1,0 +1,697 @@
+{
+  "schema": "wow-recovery.integration.v35-native-ui-inputs-r2.v1",
+  "status": "prepared_waiting_root_v35_input_acceptance",
+  "revision_of": {
+    "path": "research/continuous-recovery-20261019/integration/v35/v35-native-ui-inputs.json",
+    "sha256": "645f3c98a5c7dbc94bfb3d79b6da05eef697bf9d88e5a1fe7f9528dbaa5a4502"
+  },
+  "primary_map": {
+    "path": "research/continuous-recovery-20261019/integration/v35/v35-primary-source-map.json",
+    "sha256": "ceef4526a696c5685f65893c1cd8d45937615bb5aabc6f45c3c77d47163ca0d0"
+  },
+  "source_site_manifest": {
+    "path": ".scratch/offline-navigation-20261015-v15/build-manifest.json",
+    "sha256": "d89557a445ec5c81ef2652c49fd8ce9c102016f11411b7fa2aa795f5112ae002"
+  },
+  "source_pages": [
+    {
+      "path": ".scratch/offline-navigation-20261015-v15/site/news/wow-news2004.html",
+      "sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d",
+      "bytes": 427750,
+      "role": "static_2004_news_archive",
+      "literal_scan_only": true
+    },
+    {
+      "path": ".scratch/offline-navigation-20261015-v15/site/news/rss-10-2007.xml",
+      "sha256": "a0d6edbf58a6d0d61222dc6b9d94b669af9b4c55dae9cbbfe7d0943dd6ed0c08",
+      "bytes": 153401,
+      "role": "native_news_entry",
+      "literal_scan_only": true
+    }
+  ],
+  "source_page_count": 2,
+  "target_count": 24,
+  "reference_count": 24,
+  "missing_marker_reference_count": 23,
+  "direct_reference_count": 1,
+  "native_toggle_target_count": 1,
+  "static_postcontainer_target_count": 23,
+  "native_toggle_ids": [
+    "news10-15-07-904"
+  ],
+  "container_policy": "news-expand/news-collapse is a native toggle; 2004 postContainer is a static article display with no invented toggle.",
+  "network_requests": 0,
+  "export_executed": false,
+  "targets": [
+    {
+      "original": "http://www.worldofwarcraft.com/contests/beowulf/images/beowulf_news.jpg",
+      "served_output_path": "contests/beowulf/images/beowulf_news.jpg",
+      "reference_count": 1,
+      "references": [
+        {
+          "match_kind": "direct_image_uri",
+          "marker_src": null,
+          "line": 2244,
+          "column": 59,
+          "source_line": "<a href=\"http://www.worldofwarcraft.com/contests/beowulf/\"><img align=\"right\" src=\"/contests/beowulf/images/beowulf_news.jpg\"></a>We are happy to announce our latest contest, Legendary Tales,",
+          "raw_tag": "<img align=\"right\" src=\"/contests/beowulf/images/beowulf_news.jpg\">",
+          "container": {
+            "kind": "news-expand",
+            "tag": "div",
+            "id": "news10-15-07-904",
+            "class": "news-expand",
+            "title": null,
+            "toggle": true
+          },
+          "source_page": "news/rss-10-2007.xml",
+          "source_page_sha256": "a0d6edbf58a6d0d61222dc6b9d94b669af9b4c55dae9cbbfe7d0943dd6ed0c08"
+        }
+      ],
+      "native_toggle_ids": [
+        "news10-15-07-904"
+      ],
+      "display_class": "native_news_toggle"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-06/european-beta/signups.jpg",
+      "served_output_path": "news/images/04-06/european-beta/signups.jpg",
+      "reference_count": 1,
+      "references": [
+        {
+          "match_kind": "missing_image_marker_requested_uri",
+          "marker_src": "/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Feuropean-beta%2Fsignups.jpg&reason=invalid-overlay-or-uncollected-site-resource",
+          "line": 3782,
+          "column": 216,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Fpress%2F062804.shtml&amp;reason=external-or-uncollected-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Feuropean-beta%2Fsignups.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"315\" height=\"129\" border=\"0\"></a>",
+          "raw_tag": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Feuropean-beta%2Fsignups.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"315\" height=\"129\" border=\"0\">",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "title": "European Beta Sign-up Date Announced! - Indoflaven on 06/28/04",
+            "toggle": false
+          },
+          "source_page": "news/wow-news2004.html",
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "postContainer_static_no_toggle"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-06/fanart/fanart01.jpg",
+      "served_output_path": "news/images/04-06/fanart/fanart01.jpg",
+      "reference_count": 1,
+      "references": [
+        {
+          "match_kind": "missing_image_marker_requested_uri",
+          "marker_src": "/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart01.jpg&reason=invalid-overlay-or-uncollected-site-resource",
+          "line": 4225,
+          "column": 215,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Ffanart%2F&amp;reason=external-or-uncollected-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart01.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\"></a>",
+          "raw_tag": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart01.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\">",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "title": "New Fan Art Section! - Indoflaven on 06/07/04",
+            "toggle": false
+          },
+          "source_page": "news/wow-news2004.html",
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "postContainer_static_no_toggle"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-06/fanart/fanart02.jpg",
+      "served_output_path": "news/images/04-06/fanart/fanart02.jpg",
+      "reference_count": 1,
+      "references": [
+        {
+          "match_kind": "missing_image_marker_requested_uri",
+          "marker_src": "/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart02.jpg&reason=invalid-overlay-or-uncollected-site-resource",
+          "line": 4226,
+          "column": 215,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Ffanart%2F&amp;reason=external-or-uncollected-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart02.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\"></a>",
+          "raw_tag": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart02.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\">",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "title": "New Fan Art Section! - Indoflaven on 06/07/04",
+            "toggle": false
+          },
+          "source_page": "news/wow-news2004.html",
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "postContainer_static_no_toggle"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-06/fanart/fanart03.jpg",
+      "served_output_path": "news/images/04-06/fanart/fanart03.jpg",
+      "reference_count": 1,
+      "references": [
+        {
+          "match_kind": "missing_image_marker_requested_uri",
+          "marker_src": "/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart03.jpg&reason=invalid-overlay-or-uncollected-site-resource",
+          "line": 4227,
+          "column": 215,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Ffanart%2F&amp;reason=external-or-uncollected-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart03.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\"></a>",
+          "raw_tag": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart03.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\">",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "title": "New Fan Art Section! - Indoflaven on 06/07/04",
+            "toggle": false
+          },
+          "source_page": "news/wow-news2004.html",
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "postContainer_static_no_toggle"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-06/fanart/fanart04.jpg",
+      "served_output_path": "news/images/04-06/fanart/fanart04.jpg",
+      "reference_count": 1,
+      "references": [
+        {
+          "match_kind": "missing_image_marker_requested_uri",
+          "marker_src": "/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart04.jpg&reason=invalid-overlay-or-uncollected-site-resource",
+          "line": 4147,
+          "column": 215,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Ffanart%2F&amp;reason=external-or-uncollected-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart04.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\"></a>",
+          "raw_tag": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart04.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\">",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "title": "Fan Art Section Update - Indoflaven on 06/10/04",
+            "toggle": false
+          },
+          "source_page": "news/wow-news2004.html",
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "postContainer_static_no_toggle"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-06/fanart/fanart05.jpg",
+      "served_output_path": "news/images/04-06/fanart/fanart05.jpg",
+      "reference_count": 1,
+      "references": [
+        {
+          "match_kind": "missing_image_marker_requested_uri",
+          "marker_src": "/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart05.jpg&reason=invalid-overlay-or-uncollected-site-resource",
+          "line": 4148,
+          "column": 215,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Ffanart%2F&amp;reason=external-or-uncollected-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart05.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\"></a>",
+          "raw_tag": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart05.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\">",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "title": "Fan Art Section Update - Indoflaven on 06/10/04",
+            "toggle": false
+          },
+          "source_page": "news/wow-news2004.html",
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "postContainer_static_no_toggle"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-06/fanart/fanart06.jpg",
+      "served_output_path": "news/images/04-06/fanart/fanart06.jpg",
+      "reference_count": 1,
+      "references": [
+        {
+          "match_kind": "missing_image_marker_requested_uri",
+          "marker_src": "/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart06.jpg&reason=invalid-overlay-or-uncollected-site-resource",
+          "line": 4149,
+          "column": 215,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Ffanart%2F&amp;reason=external-or-uncollected-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart06.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\"></a>",
+          "raw_tag": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart06.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\">",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "title": "Fan Art Section Update - Indoflaven on 06/10/04",
+            "toggle": false
+          },
+          "source_page": "news/wow-news2004.html",
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "postContainer_static_no_toggle"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-06/fanart/fanart07.jpg",
+      "served_output_path": "news/images/04-06/fanart/fanart07.jpg",
+      "reference_count": 1,
+      "references": [
+        {
+          "match_kind": "missing_image_marker_requested_uri",
+          "marker_src": "/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart07.jpg&reason=invalid-overlay-or-uncollected-site-resource",
+          "line": 4018,
+          "column": 215,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Ffanart%2F&amp;reason=external-or-uncollected-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart07.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\"></a>",
+          "raw_tag": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart07.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\">",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "title": "Fan Art Update - Indoflaven on 06/17/04",
+            "toggle": false
+          },
+          "source_page": "news/wow-news2004.html",
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "postContainer_static_no_toggle"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-06/fanart/fanart08.jpg",
+      "served_output_path": "news/images/04-06/fanart/fanart08.jpg",
+      "reference_count": 1,
+      "references": [
+        {
+          "match_kind": "missing_image_marker_requested_uri",
+          "marker_src": "/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart08.jpg&reason=invalid-overlay-or-uncollected-site-resource",
+          "line": 4019,
+          "column": 215,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Ffanart%2F&amp;reason=external-or-uncollected-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart08.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\"></a>",
+          "raw_tag": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart08.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\">",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "title": "Fan Art Update - Indoflaven on 06/17/04",
+            "toggle": false
+          },
+          "source_page": "news/wow-news2004.html",
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "postContainer_static_no_toggle"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-06/fanart/fanart09.jpg",
+      "served_output_path": "news/images/04-06/fanart/fanart09.jpg",
+      "reference_count": 1,
+      "references": [
+        {
+          "match_kind": "missing_image_marker_requested_uri",
+          "marker_src": "/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart09.jpg&reason=invalid-overlay-or-uncollected-site-resource",
+          "line": 3820,
+          "column": 215,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Ffanart%2F&amp;reason=external-or-uncollected-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart09.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\"></a>",
+          "raw_tag": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart09.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\">",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "title": "Fan Art Update - Indoflaven on 06/24/04",
+            "toggle": false
+          },
+          "source_page": "news/wow-news2004.html",
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "postContainer_static_no_toggle"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-06/fanart/fanart10.jpg",
+      "served_output_path": "news/images/04-06/fanart/fanart10.jpg",
+      "reference_count": 1,
+      "references": [
+        {
+          "match_kind": "missing_image_marker_requested_uri",
+          "marker_src": "/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart10.jpg&reason=invalid-overlay-or-uncollected-site-resource",
+          "line": 3821,
+          "column": 215,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Ffanart%2F&amp;reason=external-or-uncollected-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart10.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\"></a>",
+          "raw_tag": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart10.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\">",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "title": "Fan Art Update - Indoflaven on 06/24/04",
+            "toggle": false
+          },
+          "source_page": "news/wow-news2004.html",
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "postContainer_static_no_toggle"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-06/fanart/fanart11.jpg",
+      "served_output_path": "news/images/04-06/fanart/fanart11.jpg",
+      "reference_count": 1,
+      "references": [
+        {
+          "match_kind": "missing_image_marker_requested_uri",
+          "marker_src": "/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart11.jpg&reason=invalid-overlay-or-uncollected-site-resource",
+          "line": 3822,
+          "column": 215,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Ffanart%2F&amp;reason=external-or-uncollected-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart11.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\"></a>",
+          "raw_tag": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart11.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\">",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "title": "Fan Art Update - Indoflaven on 06/24/04",
+            "toggle": false
+          },
+          "source_page": "news/wow-news2004.html",
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "postContainer_static_no_toggle"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-06/fanart/fanart12.jpg",
+      "served_output_path": "news/images/04-06/fanart/fanart12.jpg",
+      "reference_count": 1,
+      "references": [
+        {
+          "match_kind": "missing_image_marker_requested_uri",
+          "marker_src": "/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart12.jpg&reason=invalid-overlay-or-uncollected-site-resource",
+          "line": 3823,
+          "column": 215,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Ffanart%2F&amp;reason=external-or-uncollected-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart12.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\"></a>",
+          "raw_tag": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Ffanart%2Ffanart12.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\">",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "title": "Fan Art Update - Indoflaven on 06/24/04",
+            "toggle": false
+          },
+          "source_page": "news/wow-news2004.html",
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "postContainer_static_no_toggle"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-06/pvp/pvp1alliance.jpg",
+      "served_output_path": "news/images/04-06/pvp/pvp1alliance.jpg",
+      "reference_count": 1,
+      "references": [
+        {
+          "match_kind": "missing_image_marker_requested_uri",
+          "marker_src": "/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Fpvp%2Fpvp1alliance.jpg&reason=invalid-overlay-or-uncollected-site-resource",
+          "line": 3985,
+          "column": 242,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fblizzard.com%2Fwow%2Fscreenshot.aspx%3FImageIndex%3D10%26Set%3D60&amp;reason=external-or-uncollected-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Fpvp%2Fpvp1alliance.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\"></a>",
+          "raw_tag": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Fpvp%2Fpvp1alliance.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\">",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "title": "And So It Begins. . . - Helcon on 06/18/04",
+            "toggle": false
+          },
+          "source_page": "news/wow-news2004.html",
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "postContainer_static_no_toggle"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-06/pvp/pvp2horde.jpg",
+      "served_output_path": "news/images/04-06/pvp/pvp2horde.jpg",
+      "reference_count": 1,
+      "references": [
+        {
+          "match_kind": "missing_image_marker_requested_uri",
+          "marker_src": "/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Fpvp%2Fpvp2horde.jpg&reason=invalid-overlay-or-uncollected-site-resource",
+          "line": 3986,
+          "column": 241,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fblizzard.com%2Fwow%2Fscreenshot.aspx%3FImageIndex%3D7%26Set%3D60&amp;reason=external-or-uncollected-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Fpvp%2Fpvp2horde.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\"></a>",
+          "raw_tag": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-06%2Fpvp%2Fpvp2horde.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\">",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "title": "And So It Begins. . . - Helcon on 06/18/04",
+            "toggle": false
+          },
+          "source_page": "news/wow-news2004.html",
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "postContainer_static_no_toggle"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-07/european-beta/signups.jpg",
+      "served_output_path": "news/images/04-07/european-beta/signups.jpg",
+      "reference_count": 1,
+      "references": [
+        {
+          "match_kind": "missing_image_marker_requested_uri",
+          "marker_src": "/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-07%2Feuropean-beta%2Fsignups.jpg&reason=invalid-overlay-or-uncollected-site-resource",
+          "line": 3686,
+          "column": 198,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.wow-europe.com%2F&amp;reason=external-or-uncollected-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-07%2Feuropean-beta%2Fsignups.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"315\" height=\"129\" border=\"0\"></a>",
+          "raw_tag": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-07%2Feuropean-beta%2Fsignups.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"315\" height=\"129\" border=\"0\">",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "title": "World of Warcraft European Closed Beta Test Sign-Ups Start Today! - Nebu on 07/05/04",
+            "toggle": false
+          },
+          "source_page": "news/wow-news2004.html",
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "postContainer_static_no_toggle"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-07/fanart/fanart13.jpg",
+      "served_output_path": "news/images/04-07/fanart/fanart13.jpg",
+      "reference_count": 1,
+      "references": [
+        {
+          "match_kind": "missing_image_marker_requested_uri",
+          "marker_src": "/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-07%2Ffanart%2Ffanart13.jpg&reason=invalid-overlay-or-uncollected-site-resource",
+          "line": 3716,
+          "column": 215,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Ffanart%2F&amp;reason=external-or-uncollected-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-07%2Ffanart%2Ffanart13.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\"></a>",
+          "raw_tag": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-07%2Ffanart%2Ffanart13.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\">",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "title": "Fan Art Update - Indoflaven on 07/01/04",
+            "toggle": false
+          },
+          "source_page": "news/wow-news2004.html",
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "postContainer_static_no_toggle"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-07/fanart/fanart15.jpg",
+      "served_output_path": "news/images/04-07/fanart/fanart15.jpg",
+      "reference_count": 1,
+      "references": [
+        {
+          "match_kind": "missing_image_marker_requested_uri",
+          "marker_src": "/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-07%2Ffanart%2Ffanart15.jpg&reason=invalid-overlay-or-uncollected-site-resource",
+          "line": 3717,
+          "column": 215,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Ffanart%2F&amp;reason=external-or-uncollected-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-07%2Ffanart%2Ffanart15.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\"></a>",
+          "raw_tag": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-07%2Ffanart%2Ffanart15.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\">",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "title": "Fan Art Update - Indoflaven on 07/01/04",
+            "toggle": false
+          },
+          "source_page": "news/wow-news2004.html",
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "postContainer_static_no_toggle"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-07/fanart/fanart17.jpg",
+      "served_output_path": "news/images/04-07/fanart/fanart17.jpg",
+      "reference_count": 1,
+      "references": [
+        {
+          "match_kind": "missing_image_marker_requested_uri",
+          "marker_src": "/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-07%2Ffanart%2Ffanart17.jpg&reason=invalid-overlay-or-uncollected-site-resource",
+          "line": 3615,
+          "column": 215,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Ffanart%2F&amp;reason=external-or-uncollected-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-07%2Ffanart%2Ffanart17.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\"></a>",
+          "raw_tag": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-07%2Ffanart%2Ffanart17.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\">",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "title": "Thursday Fan Art Update - Indoflaven on 07/08/04",
+            "toggle": false
+          },
+          "source_page": "news/wow-news2004.html",
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "postContainer_static_no_toggle"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-07/fanart/fanart18.jpg",
+      "served_output_path": "news/images/04-07/fanart/fanart18.jpg",
+      "reference_count": 1,
+      "references": [
+        {
+          "match_kind": "missing_image_marker_requested_uri",
+          "marker_src": "/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-07%2Ffanart%2Ffanart18.jpg&reason=invalid-overlay-or-uncollected-site-resource",
+          "line": 3616,
+          "column": 215,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Ffanart%2F&amp;reason=external-or-uncollected-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-07%2Ffanart%2Ffanart18.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\"></a>",
+          "raw_tag": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-07%2Ffanart%2Ffanart18.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\">",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "title": "Thursday Fan Art Update - Indoflaven on 07/08/04",
+            "toggle": false
+          },
+          "source_page": "news/wow-news2004.html",
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "postContainer_static_no_toggle"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-07/fanart/fanart20.jpg",
+      "served_output_path": "news/images/04-07/fanart/fanart20.jpg",
+      "reference_count": 1,
+      "references": [
+        {
+          "match_kind": "missing_image_marker_requested_uri",
+          "marker_src": "/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-07%2Ffanart%2Ffanart20.jpg&reason=invalid-overlay-or-uncollected-site-resource",
+          "line": 3617,
+          "column": 215,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Ffanart%2F&amp;reason=external-or-uncollected-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-07%2Ffanart%2Ffanart20.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\"></a>",
+          "raw_tag": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-07%2Ffanart%2Ffanart20.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\">",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "title": "Thursday Fan Art Update - Indoflaven on 07/08/04",
+            "toggle": false
+          },
+          "source_page": "news/wow-news2004.html",
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "postContainer_static_no_toggle"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-07/fanart/fanart21.jpg",
+      "served_output_path": "news/images/04-07/fanart/fanart21.jpg",
+      "reference_count": 1,
+      "references": [
+        {
+          "match_kind": "missing_image_marker_requested_uri",
+          "marker_src": "/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-07%2Ffanart%2Ffanart21.jpg&reason=invalid-overlay-or-uncollected-site-resource",
+          "line": 3618,
+          "column": 215,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Ffanart%2F&amp;reason=external-or-uncollected-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-07%2Ffanart%2Ffanart21.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\"></a>",
+          "raw_tag": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-07%2Ffanart%2Ffanart21.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\">",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "title": "Thursday Fan Art Update - Indoflaven on 07/08/04",
+            "toggle": false
+          },
+          "source_page": "news/wow-news2004.html",
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "postContainer_static_no_toggle"
+    },
+    {
+      "original": "http://www.worldofwarcraft.com/news/images/04-07/fanart/fanart22.jpg",
+      "served_output_path": "news/images/04-07/fanart/fanart22.jpg",
+      "reference_count": 1,
+      "references": [
+        {
+          "match_kind": "missing_image_marker_requested_uri",
+          "marker_src": "/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-07%2Ffanart%2Ffanart22.jpg&reason=invalid-overlay-or-uncollected-site-resource",
+          "line": 3565,
+          "column": 215,
+          "source_line": "<a href=\"/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.blizzard.com%2Finblizz%2Ffanart%2F&amp;reason=external-or-uncollected-resource\"><img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-07%2Ffanart%2Ffanart22.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\"></a>",
+          "raw_tag": "<img src=\"/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fwow-news2004.html&amp;requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F04-07%2Ffanart%2Ffanart22.jpg&amp;reason=invalid-overlay-or-uncollected-site-resource\" width=\"130\" height=\"100\" class=\"link\">",
+          "container": {
+            "kind": "postContainer",
+            "tag": "div",
+            "id": null,
+            "class": "postContainer",
+            "title": "Thursday Fan Art Update - Helcon on 07/15/04",
+            "toggle": false
+          },
+          "source_page": "news/wow-news2004.html",
+          "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d"
+        }
+      ],
+      "native_toggle_ids": [],
+      "display_class": "postContainer_static_no_toggle"
+    }
+  ]
+}
