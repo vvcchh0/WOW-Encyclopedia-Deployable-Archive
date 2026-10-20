@@ -16,6 +16,7 @@
 - 恢复情人节、春节与 World PvP 的三十九张指南大图，提供捕获日期和原尺寸查看。
 - 补回更多 2007–2008 年新闻配图；旧账号升级公告改为静态历史展品。
 - 补回银月城、竞技场和玛瑟里顿文章配图，恢复副本进度图与旧专业配方的查看。
+- 补回 2004–2005 年两处旧新闻配图，商店促销条目以历史展品呈现。
 
 ## 当前不足
 
@@ -25,7 +26,7 @@
 
 ## 本地使用
 
-安装 Python 3 后，下载 [2026-10-19 离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/download/archive-20080512-browser-20261019-v38/WOW_Encyclopedia_20080512_browser_20261019_v38.zip)（约 534 MB，解压后约 600 MB）。Windows 用户解压后双击 `START_BROWSE.cmd`。
+安装 Python 3 后，下载 [2026-10-20 离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/download/archive-20080512-browser-20261020-v39/WOW_Encyclopedia_20080512_browser_20261020_v39.zip)（约 534 MB，解压后约 600 MB）。Windows 用户解压后双击 `START_BROWSE.cmd`。
 
 macOS / Linux 用户在解压目录运行：
 
@@ -33,7 +34,7 @@ macOS / Linux 用户在解压目录运行：
 python3 tools/serve_pages_preview.py --site site --port 0 --open-browser
 ```
 
-启动后会打开本地浏览页面。在线版与离线包均为 v38，本轮新增九十六个图片资源，修复比赛结果页菜单和排行榜页面。后续进度见[更新记录](CHANGELOG.md)。
+启动后会打开本地浏览页面。在线版与离线包均为 v39，本轮补回两处旧新闻配图，并将 2004 年商店促销条目改为静态历史展品。后续进度见[更新记录](CHANGELOG.md)。
 
 ## 参与协作
 

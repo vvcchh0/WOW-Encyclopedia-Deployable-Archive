@@ -1,0 +1,674 @@
+{
+  "schema": "wow-continuous-recovery/run-closeout/v1",
+  "status": "root_accepted_published_connection_limited",
+  "generated_utc": "2026-10-20T12:45:57Z",
+  "scope": "Oct20 accepted restoration, publication and remaining queues. Historical input audits retain their v38 baseline scope; v39 is the published result.",
+  "durable_sources": {
+    "status": "research/continuous-recovery-20261020/status.json",
+    "tasks": "research/continuous-recovery-20261020/tasks.json",
+    "follow_up_queue": "research/continuous-recovery-20261020/local-audit/recovery-queue.json",
+    "digest_source_acceptance": "research/continuous-recovery-20261020/publication/root-digest-reuse-source-acceptance.json",
+    "digest_visual_acceptance": "research/continuous-recovery-20261020/publication/root-digest-reuse-visual-acceptance.json",
+    "dns_route_tls_acceptance": "research/continuous-recovery-20261020/publication/root-dns-route-tls-diagnosis.json",
+    "dns_diagnosis_acceptance": "research/continuous-recovery-20261020/publication/root-dns-diagnosis-acceptance.json",
+    "commoncrawl_probe01_acceptance": "research/continuous-recovery-20261020/publication/root-commoncrawl-probe01-source-acceptance.json",
+    "commoncrawl_arc01_acceptance": "research/continuous-recovery-20261020/publication/root-commoncrawl-arc01-source-acceptance.json",
+    "commoncrawl_probe02_acceptance": "research/continuous-recovery-20261020/publication/root-commoncrawl-probe02-source-acceptance.json",
+    "expanded_digest_review": "research/continuous-recovery-20261020/publication/root-expanded-digest-audit-review.json",
+    "all_capture_review": "research/continuous-recovery-20261020/publication/root-all-capture-digest-audit-review.json",
+    "all_capture_cache_closure": "research/continuous-recovery-20261020/publication/root-all-capture-cache-closure.json",
+    "all_capture_cache_closure_addendum": "research/continuous-recovery-20261020/publication/root-all-capture-cache-closure-addendum.json",
+    "v39_build_receipt": "research/continuous-recovery-20261020/integration/v39/v39-build-receipt.json",
+    "v39_export_acceptance": "research/continuous-recovery-20261020/publication/root-v39-export-acceptance.json",
+    "v39_local_acceptance": "research/continuous-recovery-20261020/publication/root-v39-local-acceptance.json",
+    "v39_browser_acceptance": "research/continuous-recovery-20261020/publication/root-v39-browser-acceptance.json",
+    "checkpoint02_hygiene": "research/continuous-recovery-20261020/publication/root-checkpoint02-staged-hygiene.json",
+    "news_tail_queue": "research/continuous-recovery-20261020/local-audit/news-extension-141-160.json",
+    "main_implementation_push": "research/continuous-recovery-20261020/publication/root-checkpoint02-main-push.json",
+    "pages_push_recovery": "research/continuous-recovery-20261020/publication/root-v39-pages-push-recovery.json",
+    "pages_publication_summary": "research/continuous-recovery-20261020/publication/v39-pages-publication-summary.json",
+    "pages_online": "research/continuous-recovery-20261020/publication/root-v39-pages-online-acceptance.json",
+    "portable": "research/continuous-recovery-20261020/publication/root-v39-portable-acceptance.json",
+    "package_summary": "research/continuous-recovery-20261020/publication/v39-portable-package-summary.json",
+    "release_upload_resume": "research/continuous-recovery-20261020/publication/root-v39-release-upload-resume-go.json",
+    "release_publication": "research/continuous-recovery-20261020/publication/root-v39-release-publication.json",
+    "public_downloads": "research/continuous-recovery-20261020/publication/root-v39-public-download-acceptance.json",
+    "automation_closeout": "research/continuous-recovery-20261020/publication/root-automation-closeout.json",
+    "final_invariants": "research/continuous-recovery-20261020/publication/root-final-invariants.json"
+  },
+  "actual_oct20_work": {
+    "digest_reuse": {
+      "accepted_local_image_url_bindings": 2,
+      "new_image_downloads": 0,
+      "network_requests": 0,
+      "bindings": [
+        {
+          "target_route": "/news/images/05-10/trolldire.jpg",
+          "target_indexed_capture": "20080402080557",
+          "payload_source_route": "/downloads/images/thumbnails/trolldire.jpg",
+          "payload_source_capture": "20080512205545",
+          "local_payload": "research/continuous-recovery-20261020/local-audit/digest-reuse/r2/public-payloads/downloads/images/thumbnails/trolldire.jpg"
+        },
+        {
+          "target_route": "/news/images/04-12/ordernow.jpg",
+          "target_indexed_capture": "20080402082301",
+          "payload_source_route": "/shared/wow-com/images/advertising/04-12/ordernow.jpg",
+          "payload_source_capture": "20080512205959",
+          "local_payload": "research/continuous-recovery-20261020/local-audit/digest-reuse/r2/public-payloads/shared/wow-com/images/advertising/04-12/ordernow.jpg"
+        }
+      ],
+      "qualification": "Target index dates and payload-source capture dates remain distinct. These are byte-identical local reuse bindings, not fresh replay or downloads."
+    },
+    "wayback_and_dns": {
+      "wayback_429_stops": [
+        "research/continuous-recovery-20261020/publication/root-control01-source-acceptance.json",
+        "research/continuous-recovery-20261020/publication/root-control02-source-acceptance.json"
+      ],
+      "stop_accounting": "Each accepted control stopped after two requests at endpoint status 429; the run-level stop is second429_no_external_state_change.",
+      "dns_tls_distinction": {
+        "system_dns_answer": "108.160.163.108",
+        "public_recursive_dns_answer": "207.241.237.3",
+        "canonical_tcp_connected": true,
+        "canonical_verified_tls_completed": false,
+        "wayback_http_requests_in_diagnosis": 0,
+        "finding": "The fixed canonical-address TLS connection was reset. The DNS/TLS observation is separate from the proxy HTTP429 acquisition stop; no single intervention point was asserted."
+      }
+    },
+    "common_crawl": {
+      "collection": "CC-MAIN-2008-2009",
+      "cc01_metadata_calls": 6,
+      "cc01_accepted_images": 0,
+      "cc01_payloads_retrieved": 0,
+      "cc01_index_results": "Known-news exact and news prefix returned 502, Karazhan prefix returned 504, Black Temple prefix returned index 404, and encyclopedia exact returned one bounded HTML row.",
+      "arc01_range_requests": 1,
+      "arc01_payload": "One independently accepted 52,400-byte HTML record; no image payload or deployment claim.",
+      "cc02_exact_queries": 2,
+      "cc02_exact_query_results": [
+        {
+          "rank": 121,
+          "url": "http://www.worldofwarcraft.com/news/images/04-10/fanart/fanart44.jpg",
+          "status": 504,
+          "index_rows": 0
+        },
+        {
+          "rank": 123,
+          "url": "http://www.worldofwarcraft.com/news/images/04-10/group-screenshots/ss01.jpg",
+          "status": 504,
+          "index_rows": 0
+        }
+      ],
+      "cc02_unqueried_after_stop": [
+        {
+          "rank": 126,
+          "url": "http://www.worldofwarcraft.com/news/images/04-11/endofbeta/ss07.jpg"
+        },
+        {
+          "rank": 136,
+          "url": "http://www.worldofwarcraft.com/news/images/04-12/wowshirts.jpg"
+        },
+        {
+          "rank": 137,
+          "url": "http://www.worldofwarcraft.com/news/images/05-01/battlegrounds-part2.jpg"
+        }
+      ],
+      "cc02_stop": "Two consecutive 504 gateway responses; no repeats, payload downloads, or origin-image-404 conclusion.",
+      "total_new_image_downloads": 0
+    },
+    "local_digest_coverage": {
+      "expanded_audit": {
+        "targets": 863,
+        "cdx_files": 68,
+        "cdx_rows": 124820,
+        "image_files_read": 7135,
+        "image_bytes_read": 490376500,
+        "metadata_bytes_read": 32462296,
+        "new_visible_image_recoveries": 0,
+        "pending_nonvisible_artifact": "One CSS background URL for flashbannerbg.jpg remains unresolved; the corresponding flashbanner element is commented out."
+      },
+      "all_capture_audit": {
+        "targets": 862,
+        "eligible_capture_rows_all_versions": 10563,
+        "unique_target_digests": 446,
+        "same_byte_matches": 0,
+        "metadata_identity_records": 7755,
+        "metadata_read_bytes": 48160852,
+        "worker_payload_rereads": 0,
+        "capture_time_upper_bound": "20080512210044"
+      },
+      "cache_closure": {
+        "raster_records": 7790,
+        "covered_by_existing_cache": 7753,
+        "additional_raster_files_checked": 37,
+        "additional_payload_bytes_read": 496371,
+        "new_matches": 0,
+        "closure_scope": "Existing stored CDX rows and current v38 rasters only; not all provider holdings."
+      }
+    }
+  },
+  "coverage_and_exclusions": {
+    "dynamic_excluded_targets": 383,
+    "expression_excluded_targets": 1,
+    "accepted_digest_routes_excluded_from_audit": 2,
+    "comment_only_excluded_urls": [
+      "http://www.worldofwarcraft.com/news/images/04-09/pvp/koreapvp/ss01.jpg",
+      "http://www.worldofwarcraft.com/news/images/04-09/pvp/koreapvp/ss02.jpg",
+      "http://www.worldofwarcraft.com/news/images/04-09/pvp/koreapvp/ss04.jpg",
+      "http://www.worldofwarcraft.com/news/images/04-09/pvp/koreapvp/ss05.jpg",
+      "http://www.worldofwarcraft.com/news/images/04-09/pvp/koreapvp/ss06.jpg",
+      "http://www.worldofwarcraft.com/news/images/04-09/pvp/koreapvp/ss07.jpg"
+    ],
+    "dormant_flash_background_exclusion": "http://www.worldofwarcraft.com/contests/l70etc-musicvideo/images/flashbannerbg.jpg",
+    "dormant_flash_reason": "CSS background declaration remains associated with a commented-out flashbanner element; no visible target was added.",
+    "native_player_gallery": {
+      "v39_change": "unchanged",
+      "late_groups_total": 50,
+      "late_groups_complete": 21,
+      "late_groups_remaining": 29,
+      "karazhan": "park_pending_new_evidence",
+      "black_temple": "park_pending_new_evidence"
+    },
+    "baseline_version": "v38",
+    "baseline_static_uncovered_ledger_targets": 962
+  },
+  "follow_up_queue": {
+    "queue_path": "research/continuous-recovery-20261020/local-audit/recovery-queue.json",
+    "news_extension": {
+      "queue_section": "b_news_extension_priority.items",
+      "rank_range": [
+        121,
+        140
+      ],
+      "query_windows": {
+        "pre_anchor": {
+          "from": "20000101000000",
+          "to": "20080512210044",
+          "match_type": "exact"
+        },
+        "late_residual": {
+          "from": "20080512210045",
+          "to": "20101207235959",
+          "match_type": "exact"
+        }
+      },
+      "entries": [
+        {
+          "rank": 121,
+          "url": "http://www.worldofwarcraft.com/news/images/04-10/fanart/fanart44.jpg"
+        },
+        {
+          "rank": 122,
+          "url": "http://www.worldofwarcraft.com/news/images/04-10/fanart/fanart45.jpg"
+        },
+        {
+          "rank": 123,
+          "url": "http://www.worldofwarcraft.com/news/images/04-10/group-screenshots/ss01.jpg"
+        },
+        {
+          "rank": 124,
+          "url": "http://www.worldofwarcraft.com/news/images/04-10/group-screenshots/ss02.jpg"
+        },
+        {
+          "rank": 125,
+          "url": "http://www.worldofwarcraft.com/news/images/04-10/group-screenshots/ss03.jpg"
+        },
+        {
+          "rank": 126,
+          "url": "http://www.worldofwarcraft.com/news/images/04-11/endofbeta/ss07.jpg"
+        },
+        {
+          "rank": 127,
+          "url": "http://www.worldofwarcraft.com/news/images/04-11/endofbeta/ss11.jpg"
+        },
+        {
+          "rank": 128,
+          "url": "http://www.worldofwarcraft.com/news/images/04-11/endofbeta/ss14.jpg"
+        },
+        {
+          "rank": 129,
+          "url": "http://www.worldofwarcraft.com/news/images/04-11/endofbeta/ss21.jpg"
+        },
+        {
+          "rank": 130,
+          "url": "http://www.worldofwarcraft.com/news/images/04-12/fanart/ss01.jpg"
+        },
+        {
+          "rank": 131,
+          "url": "http://www.worldofwarcraft.com/news/images/04-12/fanart/ss02.jpg"
+        },
+        {
+          "rank": 132,
+          "url": "http://www.worldofwarcraft.com/news/images/04-12/fanart/ss03.jpg"
+        },
+        {
+          "rank": 133,
+          "url": "http://www.worldofwarcraft.com/news/images/04-12/fanart/ss04.jpg"
+        },
+        {
+          "rank": 134,
+          "url": "http://www.worldofwarcraft.com/news/images/04-12/fanart/ss05.jpg"
+        },
+        {
+          "rank": 135,
+          "url": "http://www.worldofwarcraft.com/news/images/04-12/fanart/ss06.jpg"
+        },
+        {
+          "rank": 136,
+          "url": "http://www.worldofwarcraft.com/news/images/04-12/wowshirts.jpg"
+        },
+        {
+          "rank": 137,
+          "url": "http://www.worldofwarcraft.com/news/images/05-01/battlegrounds-part2.jpg"
+        },
+        {
+          "rank": 138,
+          "url": "http://www.worldofwarcraft.com/news/images/05-01/contests/ss01.jpg"
+        },
+        {
+          "rank": 139,
+          "url": "http://www.worldofwarcraft.com/news/images/05-01/contests/ss02.jpg"
+        },
+        {
+          "rank": 140,
+          "url": "http://www.worldofwarcraft.com/news/images/05-01/contests/ss03.jpg"
+        }
+      ],
+      "bounded_execution_state": "No candidate-specific Wayback exact-CDX or replay receipt exists for these queue entries. CC02 attempted only ranks121 and123 through the independent provider and stopped before ranks126,136,137."
+    },
+    "gallery_late_priority": {
+      "queue_section": "c_gallery_late_priority.items",
+      "late_window": {
+        "from": "20080512210045",
+        "to": "20101207235959",
+        "match_type": "prefix",
+        "index_only": true,
+        "payload_replay": false
+      },
+      "next_prefixes": [
+        {
+          "queue_rank": 1,
+          "registry_rank": 22,
+          "gallery": "Tempest Keep - The Mechanar",
+          "route": "/info/dungeons/tk-mech-gallery.html",
+          "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/mech/",
+          "declared_slots": 35,
+          "expected_direct_entities": 70,
+          "prior_status": "source_503"
+        },
+        {
+          "queue_rank": 2,
+          "registry_rank": 23,
+          "gallery": "Tempest Keep - The Botanica",
+          "route": "/info/dungeons/tk-botanica-gallery.html",
+          "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/botanica/",
+          "declared_slots": 19,
+          "expected_direct_entities": 38,
+          "prior_status": "not_queried"
+        },
+        {
+          "queue_rank": 3,
+          "registry_rank": 24,
+          "gallery": "Tempest Keep - The Arcatraz",
+          "route": "/info/dungeons/tk-arcatraz-gallery.html",
+          "prefix": "http://www.worldofwarcraft.com/info/dungeons/images/arcatraz/",
+          "declared_slots": 49,
+          "expected_direct_entities": 98,
+          "prior_status": "not_queried"
+        },
+        {
+          "queue_rank": 4,
+          "registry_rank": 25,
+          "gallery": "Warsong Gulch",
+          "route": "/pvp/battlegrounds/warsong-gulch-gallery.html",
+          "prefix": "http://www.worldofwarcraft.com/pvp/battlegrounds/warsonggulch/",
+          "declared_slots": 29,
+          "expected_direct_entities": 58,
+          "prior_status": "not_queried"
+        },
+        {
+          "queue_rank": 5,
+          "registry_rank": 26,
+          "gallery": "Isle of Quel'Danas",
+          "route": "/info/regions/isle-of-queldanas-gallery.html",
+          "prefix": "http://www.worldofwarcraft.com/info/regions/isleofq/",
+          "declared_slots": 49,
+          "expected_direct_entities": 98,
+          "prior_status": "not_queried"
+        },
+        {
+          "queue_rank": 6,
+          "registry_rank": 27,
+          "gallery": "Amani War Bear",
+          "route": "/info/basics/mounts/bear-gallery.html",
+          "prefix": "http://www.worldofwarcraft.com/info/basics/images/mounts/bear/",
+          "declared_slots": 24,
+          "expected_direct_entities": 48,
+          "prior_status": "not_queried"
+        },
+        {
+          "queue_rank": 7,
+          "registry_rank": 28,
+          "gallery": "Riding Turtle",
+          "route": "/info/basics/mounts/turtle-gallery.html",
+          "prefix": "http://www.worldofwarcraft.com/info/basics/mounts/turtle/",
+          "declared_slots": 12,
+          "expected_direct_entities": 24,
+          "prior_status": "not_queried"
+        },
+        {
+          "queue_rank": 8,
+          "registry_rank": 29,
+          "gallery": "Swift White Hawkstrider",
+          "route": "/info/basics/mounts/swiftwhitehawkstrider-gallery.html",
+          "prefix": "http://www.worldofwarcraft.com/info/basics/mounts/whitehawkstrider/",
+          "declared_slots": 15,
+          "expected_direct_entities": 30,
+          "prior_status": "not_queried"
+        },
+        {
+          "queue_rank": 9,
+          "registry_rank": 30,
+          "gallery": "Qiraji battle tank",
+          "route": "/info/basics/mounts/aq-battletank-gallery.html",
+          "prefix": "http://www.worldofwarcraft.com/info/basics/mounts/aqbattletank/",
+          "declared_slots": 4,
+          "expected_direct_entities": 8,
+          "prior_status": "not_queried"
+        },
+        {
+          "queue_rank": 10,
+          "registry_rank": 31,
+          "gallery": "Raven Mount",
+          "route": "/info/basics/mounts/raven-mount-gallery.html",
+          "prefix": "http://www.worldofwarcraft.com/info/basics/mounts/ravenmount/",
+          "declared_slots": 9,
+          "expected_direct_entities": 18,
+          "prior_status": "not_queried"
+        }
+      ]
+    },
+    "parked_provider_questions": {
+      "karazhan": "The CC01 source-directory prefix returned gateway504; park pending new evidence.",
+      "black_temple": "The CC01 source-directory prefix returned index404; this is an index-query result, not an origin-image404; park pending new evidence."
+    },
+    "news_extension_tail": {
+      "queue_path": "research/continuous-recovery-20261020/local-audit/news-extension-141-160.json",
+      "rank_range": [
+        141,
+        160
+      ],
+      "entries": [
+        {
+          "rank": 141,
+          "url": "http://www.worldofwarcraft.com/news/images/05-01/contests/ss04.jpg"
+        },
+        {
+          "rank": 142,
+          "url": "http://www.worldofwarcraft.com/news/images/05-01/contests/ss05.jpg"
+        },
+        {
+          "rank": 143,
+          "url": "http://www.worldofwarcraft.com/news/images/05-01/contests/ss06.jpg"
+        },
+        {
+          "rank": 144,
+          "url": "http://www.worldofwarcraft.com/news/images/05-01/fanart/ss01.jpg"
+        },
+        {
+          "rank": 145,
+          "url": "http://www.worldofwarcraft.com/news/images/05-01/fanart/ss02.jpg"
+        },
+        {
+          "rank": 146,
+          "url": "http://www.worldofwarcraft.com/news/images/05-01/fanart/ss03.jpg"
+        },
+        {
+          "rank": 147,
+          "url": "http://www.worldofwarcraft.com/news/images/05-01/fanart/ss04.jpg"
+        },
+        {
+          "rank": 148,
+          "url": "http://www.worldofwarcraft.com/news/images/05-01/fanart/ss05.jpg"
+        },
+        {
+          "rank": 149,
+          "url": "http://www.worldofwarcraft.com/news/images/05-01/fanart/ss06.jpg"
+        },
+        {
+          "rank": 150,
+          "url": "http://www.worldofwarcraft.com/news/images/05-01/pacomic.jpg"
+        },
+        {
+          "rank": 151,
+          "url": "http://www.worldofwarcraft.com/news/images/05-02/dragon.jpg"
+        },
+        {
+          "rank": 152,
+          "url": "http://www.worldofwarcraft.com/news/images/05-02/fanart/ss01.jpg"
+        },
+        {
+          "rank": 153,
+          "url": "http://www.worldofwarcraft.com/news/images/05-02/fanart/ss02.jpg"
+        },
+        {
+          "rank": 154,
+          "url": "http://www.worldofwarcraft.com/news/images/05-02/fanart/ss04.jpg"
+        },
+        {
+          "rank": 155,
+          "url": "http://www.worldofwarcraft.com/news/images/05-02/fanart/ss06.jpg"
+        },
+        {
+          "rank": 156,
+          "url": "http://www.worldofwarcraft.com/news/images/05-02/valentines/art01.jpg"
+        },
+        {
+          "rank": 157,
+          "url": "http://www.worldofwarcraft.com/news/images/05-02/valentines/art02.jpg"
+        },
+        {
+          "rank": 158,
+          "url": "http://www.worldofwarcraft.com/news/images/05-02/valentines/ss01.jpg"
+        },
+        {
+          "rank": 159,
+          "url": "http://www.worldofwarcraft.com/news/images/05-02/valentines/ss02.jpg"
+        },
+        {
+          "rank": 160,
+          "url": "http://www.worldofwarcraft.com/news/images/05-02/wowcap.jpg"
+        }
+      ],
+      "query_windows": {
+        "pre_anchor": {
+          "from": "20000101000000",
+          "to": "20080512210044",
+          "match_type": "exact"
+        },
+        "late_residual": {
+          "from": "20080512210045",
+          "to": "20101207235959",
+          "match_type": "exact"
+        }
+      },
+      "execution_state": "Prepared from active missing image elements; no candidate-specific Wayback request executed this run."
+    },
+    "prepared_active_news_total": 40,
+    "prepared_active_news_still_unrecovered_in_v39": 40
+  },
+  "v39_and_completion": {
+    "local_v39": {
+      "status": "root_accepted",
+      "new_image_url_bindings": 2,
+      "new_downloaded_images": 0,
+      "native_player_gallery_change": "unchanged",
+      "browser_pages": 4,
+      "browser_loopback_requests": 777
+    },
+    "main": {
+      "status": "implementation_synced",
+      "commit": "000a30d0d2f3e3d2f7d70d7e76bb1efe6c73fc9c",
+      "closeout_documentation_reference": "The closing commit containing this report."
+    },
+    "pages": {
+      "status": "published_and_7_objects_verified",
+      "commit": "60104e4895972339fc1af556eb78df2912a30b29",
+      "url": "https://vvcchh0.github.io/WOW-Encyclopedia-Deployable-Archive/"
+    },
+    "package": {
+      "status": "root_accepted",
+      "archive": "artifacts/WOW_Encyclopedia_20080512_browser_20261020_v39.zip",
+      "bytes": 534242751,
+      "sha256": "be88365c93ff3fc1643e38d369b279a90e51b3677e8b1efba9bd06aaa4c04ba2",
+      "members_checked": 9122,
+      "served_paths": 56,
+      "get_head_checks": 112
+    },
+    "release": {
+      "status": "published_verified",
+      "url": "https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261020-v39",
+      "tag": "archive-20080512-browser-20261020-v39",
+      "id": 418398168,
+      "target_commit": "000a30d0d2f3e3d2f7d70d7e76bb1efe6c73fc9c",
+      "assets": 3,
+      "anonymous_download_checks": true
+    },
+    "automation": {
+      "id": "wow",
+      "deleted": true
+    },
+    "disk_free_bytes": 49722601472,
+    "disk_floor_bytes": 11005853696
+  },
+  "unknowns_and_boundaries": [
+    "Common Crawl gateway errors and the unqueried CC02 ranks do not establish origin-image availability or absence.",
+    "Local digest closure covers stored CDX files and current v38 rasters only, not all archive holdings.",
+    "The six Korea PvP URLs are comment-only historical clues and remain outside the visible missing-image queue."
+  ],
+  "root_verified_utc": "2026-10-20T13:19:11.046199+00:00",
+  "started_utc": "2026-10-20T08:33:22Z",
+  "authorized_deadline_utc": "2026-10-20T14:33:22Z",
+  "publication_transport_findings": {
+    "pages_direct": "low-speed limit reached; same accepted local commit pushed normally through the process proxy",
+    "release_zip_direct": "600-second inner upload timeout; two small assets verified before proxy resumed the single missing ZIP",
+    "release_zip_proxy": "Uploaded in the owned draft and all three asset digests verified before and after publication",
+    "public_downloads": "Direct attempts failed; proxy ZIP HEAD and SHA sidecar GET passed. Full remote ZIP was not downloaded again."
+  },
+  "root_source_bindings": [
+    {
+      "path": "research/continuous-recovery-20261020/integration/v39/v39-build-receipt.json",
+      "sha256": "6443a1f91771ebbb97f9c23eeb3c76982e6b9403e38b9c730bdf406e6d8ea682"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/local-audit/news-extension-141-160.json",
+      "sha256": "6b8d5776e13a990d395949fbfa057032bca5e6a64d1920c12079fcad7d93ce84"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/local-audit/recovery-queue.json",
+      "sha256": "a4f7a8fed2de23fa65864a5d949f9af112694074f87318706c6b8e3ce484f03e"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/publication/root-all-capture-cache-closure-addendum.json",
+      "sha256": "7d66cfa314cc6dfd450f5880cdc2980a336d1551cf0b3ef465069eed24e1aa49"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/publication/root-all-capture-cache-closure.json",
+      "sha256": "ec3f322215485cae402affc00ef799099d7e09737174fbc0a586e6b371a2435f"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/publication/root-all-capture-digest-audit-review.json",
+      "sha256": "a241d89c58c83176a681dc895c5798439220096e84b903db2dff7142d36af9a0"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/publication/root-automation-closeout.json",
+      "sha256": "76521a4511b3f78682441c90433fe73ed882e7e35917726d73c441bc2b90fd3f"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/publication/root-checkpoint02-main-push.json",
+      "sha256": "53be6afc0092f35b8ed0f078232e4837c7065bc3bd5ea3a22b833df8ce268a27"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/publication/root-checkpoint02-staged-hygiene.json",
+      "sha256": "94a2fcaf373325fdf96cec3b76893167c3f07d348edcd702b29e0564d058db2a"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/publication/root-commoncrawl-arc01-source-acceptance.json",
+      "sha256": "93ed8c5aa19fdc42cfbbd1b8f9ff1c6fe3a3c1ab2e41c82ed45b57bcb2147509"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/publication/root-commoncrawl-probe01-source-acceptance.json",
+      "sha256": "15b9934a179f7f60c6aedbc8a94c2c6f4f707af99988fb2dd133ef5104b406a7"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/publication/root-commoncrawl-probe02-source-acceptance.json",
+      "sha256": "18d09398be4a5c70115cf12e2b5139d01f51d86f525aa1e74119051f135e7de3"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/publication/root-digest-reuse-source-acceptance.json",
+      "sha256": "586b0bb373d870b135eac422ae43d77c7e6d8f82c017cdcb6328f593d2c02d15"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/publication/root-digest-reuse-visual-acceptance.json",
+      "sha256": "fe936aa230adef45784c5450c832e0f9268114b189e4bc5469521b7d93f35477"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/publication/root-dns-diagnosis-acceptance.json",
+      "sha256": "7a97e6253bc8528ff0bd6a8eceb823b0f18d9c157a489da5d1cef3283459624e"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/publication/root-dns-route-tls-diagnosis.json",
+      "sha256": "ee55c233973cf1d90a65d5e564d634300fb9f31bce05b36dbee06848dbb7eed3"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/publication/root-expanded-digest-audit-review.json",
+      "sha256": "960f264f52258aa341c44b12e116b8f26a39999ce8b5c016f75d8eee7ac57c13"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/publication/root-final-invariants.json",
+      "sha256": "d565533d734b4bc60cbc7c05a3b4bc547d8507167c0612fce303660266c73a3f"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/publication/root-v39-browser-acceptance.json",
+      "sha256": "5f2c2c9fec07d30ff1cb94ec5167ac1ad08297cdb0841d1ebd7030eea585e71a"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/publication/root-v39-export-acceptance.json",
+      "sha256": "fbab70762c20b0b81df636bf9c8539f5007eed1098c574d9f42a5653eeb5f865"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/publication/root-v39-local-acceptance.json",
+      "sha256": "4f8a80272f31cfb12dd45d33b3771eb45334b2260ed455047b285d6e92f31df1"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/publication/root-v39-pages-online-acceptance.json",
+      "sha256": "f7709981f8e4c4a34d6bf6c8157f860aa71b4bcaa20a4b0c3e6bdcf550eddb5b"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/publication/root-v39-pages-push-recovery.json",
+      "sha256": "14e74fed45dc95adf70c239237a4a8817132d27b49296cf8a1cfaec898674d1f"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/publication/root-v39-portable-acceptance.json",
+      "sha256": "59f83a28d03b0f609bbc1f29d60a499297c9ec16952d235506172c3099b36cf4"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/publication/root-v39-public-download-acceptance.json",
+      "sha256": "440cd08d559b9cccb5975044f8067f8c0bbdaf346ab6bb5a8f3a2e455507d49e"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/publication/root-v39-release-publication.json",
+      "sha256": "3ebb4cf02d81bccbf82f88236809aca5a1eb277d58c968bc98799302e68a105f"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/publication/root-v39-release-upload-resume-go.json",
+      "sha256": "b150140dee6bbb098f406a471911bd8ffdd7e8c7a50f3761a36915b0f6fae1c0"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/publication/v39-pages-publication-summary.json",
+      "sha256": "54ab6acc57d526791eefe42ff1d43b3a50d5ffc1a40e2b3a13e517ad67e74565"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/publication/v39-portable-package-summary.json",
+      "sha256": "7debae36427807a58cf9c9a48007d310b3b921a767205e13532c1e3cd07d8fb1"
+    }
+  ]
+}

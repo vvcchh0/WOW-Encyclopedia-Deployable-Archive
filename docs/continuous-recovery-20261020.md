@@ -87,3 +87,23 @@ v39 的来源准备保留 v38 全部 655 个图片覆盖项、三十九张指南
 v39 完成一次导出，主代理逐一核对 9,115 个声明文件及来源表，保留 v38 的全部既有对象。实际增加两张 JPEG、修改四个派生对象；百科首页、网站首页和两张新闻页通过浏览检查，777 次回环请求没有外部请求或页面错误。两处图片均正常解码显示，2004 年促销条目呈现为带日期说明的静态展品。[本地验收](../research/continuous-recovery-20261020/publication/root-v39-local-acceptance.json)
 
 进入 main、Pages 和处理后离线包的发布步骤。此次没有新增下载图片，玩家原图库的恢复数量未变化。
+
+### 12:53 UTC — v39 上线与便携包验收
+
+main 检查点 `000a30d0` 已正常推送。Pages 首次直连推送触发低速上限；保留失败记录，核对既有本地提交的七个变化对象后，以进程内代理推送同一提交，未重建或 force push。新构建 `60104e48` 完成，七个线上对象均通过直连核对。[发布摘要](../research/continuous-recovery-20261020/publication/v39-pages-publication-summary.json)
+
+新版便携包为 534,242,751 字节。主代理读取全部 9,122 个成员并从新解压目录启动包内服务器，56 个路径的 112 次 GET/HEAD 检查通过。此时公开离线包仍为 v38；v39 正在上传已验证的发布草稿。
+
+### 13:05 UTC — 离线包上传改用进程内代理
+
+直连 ZIP 上传达到 600 秒上限后停止。核对同一草稿及已上传的说明、校验文件，仅补传缺少的 ZIP；没有重建包或覆盖已成功附件。归档获取的 Wayback 与 Common Crawl 停批状态未改变。
+
+### 13:17 UTC — 离线包发布与本轮收尾
+
+代理补传 ZIP 成功。v39 Release 的三项附件在发布前后均与本地一致，标签指向 `000a30d0`；公开 ZIP 的 HEAD 与校验文件 GET 也通过检查，直连失败与代理成功分别保留。[Release](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261020-v39) · [公开下载检查](../research/continuous-recovery-20261020/publication/root-v39-public-download-acceptance.json)
+
+本轮补回两处新闻图片地址，未新增下载图片或玩家图库原图。已调查的二十一个图库晚期索引窗口沿用此前结论，另二十九组仍待查；这项调查数量不表示已恢复二十一个图库。准备好的四十条新闻目标仍未补齐，Common Crawl 精确查询中的三个未发送地址与十个优先图库目录一并留在后续队列。Karazhan、Black Temple 继续等待新来源线索。
+
+Wayback 两次控制均以代理 429 停止，Common Crawl 最后一批以两次 504 停止；本轮不再发出归档请求。本地已存索引与当前图片的扩大摘要检查未发现更多可见图片候选，已验收内容均完成发布，因此在授权截止前收尾并删除 `wow` 自动接续。冻结清单与 v38、v39 来源表再次核对一致，D 盘余量 49,722,601,472 字节。
+
+[累计结果与后续队列](../research/continuous-recovery-20261020/publication/root-run-closeout.json)记录来源、实际获取、浏览、发布和未完成项；本页、README、CHANGELOG 与验收资料随收尾提交正常推送。

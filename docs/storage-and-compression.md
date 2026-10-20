@@ -113,3 +113,18 @@ ZIP 为 532,938,958 字节，解压成员合计 598,153,671 字节。文本和�
 图片占ZIP成员压缩字节约97.5%，决定了包体积；文本虽然压缩明显，继续压缩图片只能节省少量空间。继续采用原图字节、分层浏览包与来源取证分开的策略，保留D盘安全余量。本轮没有批量删除历史副本或改写原图。独立检查读取全部成员，并从新解压的包启动服务器，完成137个路径的GET/HEAD。[独立包验收](../research/continuous-recovery-20261019/publication/root-v38-portable-acceptance.json)。
 
 [v38下载页](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261019-v38)已发布，旧版资产保持可用。三项Release资产在发布前后均与本地大小和SHA匹配。
+
+## 2026-10-20：v39 浏览包
+
+v39 ZIP 为 534,242,751 字节，9,122 个成员，解压成员合计 599,611,852 字节；站点本身为 595,736,319 字节。相比 v38，ZIP 增加 44,866 字节，主要来自新增的两条图片路径；图片沿用已有原始文件。
+
+| 文件类别 | 解压字节 | ZIP 成员压缩字节 |
+| --- | ---: | ---: |
+| HTML / XML / XSL | 54,478,123 | 8,661,972 |
+| JavaScript / CSS | 5,486,633 | 692,275 |
+| 图片 | 523,827,683 | 519,290,983 |
+| 其他（含来源与启动文件） | 15,819,413 | 3,829,717 |
+
+继续采用 DEFLATE-6、保留原图字节与独立浏览包。主代理读取全部成员并启动包内 Python 服务器，56 个路径的 112 次 GET/HEAD 检查通过；浏览展示复用同字节 v39 的四页验收。此次未实际双击 Windows 启动器。
+
+[打包摘要](../research/continuous-recovery-20261020/publication/v39-portable-package-summary.json) · [独立包验收](../research/continuous-recovery-20261020/publication/root-v39-portable-acceptance.json) · [v39 下载页](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261020-v39)。

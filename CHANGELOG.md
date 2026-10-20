@@ -9,7 +9,8 @@
 
 ## 2026-10-20
 
-- 复核四十条新闻缺图引用与十个待查图库目录，纠正六条注释内图片线索的统计。排查直连解析、TLS 中断和 Wayback 429，开始检查 Common Crawl 的同期抓取与本地重复素材。站点和离线包目前仍为 v38。[工作记录](docs/continuous-recovery-20261020.md)
+- 发布 v39：补回 2004 年商店公告与 2005 年祖尔格拉布影片公告的两处配图，商店促销条目改为静态历史展品。同步发布[v39 离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261020-v39)（约 534 MB，解压约 600 MB）。
+- 扩大本地索引与图片摘要调查，核对新闻缺图和待查图库目录；Common Crawl 取得一份 2008 年 7 月百科首页，未发现新增图片线索。Wayback 429 与 Common Crawl 504 限制进一步获取，玩家图库原图仍有缺口。[工作记录](docs/continuous-recovery-20261020.md)
 
 ## 2026-10-19
 
