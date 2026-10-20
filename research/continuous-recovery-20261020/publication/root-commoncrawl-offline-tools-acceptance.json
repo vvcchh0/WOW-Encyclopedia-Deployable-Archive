@@ -1,0 +1,32 @@
+{
+  "accepted": true,
+  "checked_utc": "2026-10-20T12:12:10.319344+00:00",
+  "bindings": [
+    {
+      "path": "tools/commoncrawl_arc.py",
+      "sha256": "50be2eb8c749da7aecfc58d06622eb30211e98399e17fbfdc94bedf6aefc7e6c"
+    },
+    {
+      "path": "tests/test_commoncrawl_arc.py",
+      "sha256": "d490f5092ed5f8586adf9f422576f7c56cebe904313e91290328b9eed414eee2"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/network/commoncrawl-arc01/offline-analysis/compare_refs.py",
+      "sha256": "2377051e95e885069d0184a320a333ad6d7d00417ae52f3652b9a64583cbfa06"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/network/commoncrawl-arc01/offline-analysis/reference-comparison.json",
+      "sha256": "a0054644aee58661709a5f24d3e20a5e3fef3cea00ef5ff52f098372ffdb9380"
+    }
+  ],
+  "root_test": {
+    "command": "python -B -X utf8 -m pytest tests/test_commoncrawl_arc.py -q",
+    "returncode": 0,
+    "tests_passed": 9,
+    "elapsed_seconds_reported": 0.03
+  },
+  "scope": "Bounded gzip ARC framing parser independently exercises the acquired record and rejects identity/digest/framing/cap mismatches. Private real fixture is skipped only when absent in public checkout; synthetic tests remain available.",
+  "reference_analysis": "The accepted July20 HTML and frozen Source15 encyclopedia page expose the same26 selected active resource URLs; no new source in this comparison.",
+  "network_requests": 0,
+  "published_html_payload": false
+}

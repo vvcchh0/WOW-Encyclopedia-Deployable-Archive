@@ -1,0 +1,85 @@
+{
+  "schema": "wow-recovery.commoncrawl-probe02-input-bindings.v1",
+  "batch_id": "COMMONCRAWL-PROBE02-20261020",
+  "plan": {
+    "path": "research/continuous-recovery-20261020/network/commoncrawl-probe02/plan.json",
+    "sha256": "84f162a87c8ab195c413e83ee47bb2e4d8bae3ef73c8ab40af2dae3a14eb2927",
+    "bytes": 7020,
+    "role": "Root-GO-gated exact-five Common Crawl query plan."
+  },
+  "queue": {
+    "path": "research/continuous-recovery-20261020/local-audit/recovery-queue.json",
+    "sha256": "a4f7a8fed2de23fa65864a5d949f9af112694074f87318706c6b8e3ce484f03e",
+    "bytes": 120128,
+    "role": "Frozen recovery queue providing ranks 121, 123, 126, 136, and 137."
+  },
+  "queue_acceptance": {
+    "path": "research/continuous-recovery-20261020/publication/root-prepared-queue-acceptance.json",
+    "sha256": "1ca89887118a637116b9bbf05bde050a65791b64219e200a99cdf18d75719830",
+    "bytes": 854,
+    "accepted": true,
+    "queue_sha256": "a4f7a8fed2de23fa65864a5d949f9af112694074f87318706c6b8e3ce484f03e",
+    "role": "Root acceptance of the prepared queue and its no-network scope."
+  },
+  "source_manifest": {
+    "path": "research/continuous-recovery-20261019/local-audit/news-extension/news-extension-candidates.json",
+    "sha256": "ff8b2d7aa9b94d47cdf9d67ed015c62e6bef7f7662ec15e20ff3c89105d2d708",
+    "bytes": 394645,
+    "role": "Frozen news-extension candidate/source manifest bound by queue records."
+  },
+  "cc01_metadata_acceptance": {
+    "path": "research/continuous-recovery-20261020/publication/root-commoncrawl-probe01-source-acceptance.json",
+    "sha256": "15b9934a179f7f60c6aedbc8a94c2c6f4f707af99988fb2dd133ef5104b406a7",
+    "bytes": 4189,
+    "accepted": true,
+    "collection_id": "CC-MAIN-2008-2009",
+    "index_endpoint": "https://index.commoncrawl.org/CC-MAIN-2008-2009-index",
+    "collection_from": "2008-05-09T05:37:12",
+    "collection_to": "2009-01-09T20:58:29",
+    "index_records_sha256": "b085639d12b94dbe2d5f179c6708eb386943615523115f624bf22b66d067aac2",
+    "role": "Root acceptance of CC01 collinfo/index endpoint metadata; no CC02 query result is implied."
+  },
+  "frozen_reuse": {
+    "cc01_driver": {
+      "path": "research/continuous-recovery-20261020/network/commoncrawl-probe01/commoncrawl_probe01.py",
+      "sha256": "c59493f4b14496edb0a5215e979147f3c6b57f46566baf71f2f3b11f3ca5b4e6",
+      "bytes": 32525,
+      "role": "Accepted CC01 driver/transport reference; CC02 uses its frozen direct-only review boundary."
+    },
+    "headers_parser": {
+      "path": "research/continuous-recovery-20261016/network/control02-plan/control02_driver.py",
+      "sha256": "85457ea1baa96c474e33ffc01210b4f6d96b3d6d276dc7a2b56aff3cd8376530",
+      "bytes": 22340,
+      "role": "Frozen parser reused for status and Retry-After headers."
+    }
+  },
+  "driver": {
+    "path": "research/continuous-recovery-20261020/network/commoncrawl-probe02/commoncrawl_probe02.py",
+    "sha256": "51881a2bc873f95fe6644b9d7e665ee3736c20724bf757fcfe5d1947f6e377e6",
+    "bytes": 29692,
+    "role": "Future root-GO-gated direct-only exact-five metadata driver."
+  },
+  "fixture": {
+    "path": "research/continuous-recovery-20261020/network/commoncrawl-probe02/fixture-results.json",
+    "sha256": "2360af3bca234f1ed0ab40d88e829b9fba7560e9f89c2059ad508b0a2c9f5d3c",
+    "bytes": 1113,
+    "role": "Offline parser/policy fixture; no network or raw body."
+  },
+  "parent": {
+    "path": "research/continuous-recovery-20261020/network/commoncrawl-probe02/parent-execute-once.py",
+    "sha256": "e43b614d16ac43929ac9deacae3a03e859b91c21f81ed6b24847348e292a009d",
+    "bytes": 3521,
+    "role": "Future 240-second parent watchdog and GO hash gate."
+  },
+  "execution_boundary": {
+    "network_cutoff_utc": "2026-10-20T13:15:00Z",
+    "preparation_deadline_utc": "2026-10-20T12:28:00Z",
+    "network_requests_at_prepare": 0,
+    "wayback_requests_at_prepare": 0,
+    "arc_or_image_requests_at_prepare": 0,
+    "raw_http_written_at_prepare": false,
+    "direct_only": true,
+    "no_automatic_retry_or_pagination": true,
+    "future_root_go_required": true
+  }
+}

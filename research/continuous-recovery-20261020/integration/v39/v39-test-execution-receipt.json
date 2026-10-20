@@ -1,0 +1,41 @@
+{
+  "schema": "wow-recovery.v39-test-execution-receipt.v1",
+  "status": "executed_local_only",
+  "recorded_utc": "2026-10-20T12:04:18.886589+00:00",
+  "network_requests": 0,
+  "exported": false,
+  "published": false,
+  "commands": [
+    {
+      "command": "python -X utf8 -m unittest tests.test_payload_digest_reuse_overlay",
+      "returncode": 0,
+      "result": "8 tests passed"
+    },
+    {
+      "command": "python -X utf8 -m unittest tests.test_historical_news_2004",
+      "returncode": 0,
+      "result": "2 tests passed"
+    },
+    {
+      "command": "python -X utf8 -m unittest tests.test_historical_exhibits tests.test_historical_news_upgrade tests.test_github_pages_export",
+      "returncode": 0,
+      "result": "52 tests passed"
+    },
+    {
+      "command": "python -X utf8 -m py_compile research/continuous-recovery-20261020/integration/v39/export_v39_once.py tools/export_github_pages.py tools/historical_exhibits.py tests/test_payload_digest_reuse_overlay.py tests/test_historical_news_2004.py",
+      "returncode": 0,
+      "result": "compiled successfully"
+    },
+    {
+      "command": "git diff --check -- tools/export_github_pages.py tools/historical_exhibits.py research/continuous-recovery-20261020/integration/v39/export_v39_once.py tests/test_payload_digest_reuse_overlay.py tests/test_historical_news_2004.py",
+      "returncode": 0,
+      "result": "no whitespace errors"
+    }
+  ],
+  "scoped_test_counts": {
+    "tests.test_payload_digest_reuse_overlay": 8,
+    "tests.test_historical_news_2004": 2,
+    "related_regression_modules": 52
+  },
+  "scope": "The three test commands were executed separately. Counts are retained per command; no unexecuted aggregate suite is claimed."
+}

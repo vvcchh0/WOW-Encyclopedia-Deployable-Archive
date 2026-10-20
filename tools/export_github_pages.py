@@ -408,20 +408,71 @@ def _load_image_overlay_maps(
             if not route.casefold().endswith((".gif", ".png", ".jpg", ".jpeg")):
                 raise PagesExportError(f"{label} image route has no supported extension: {route!r}")
             relative = static_rel_for_route(route)
+            recovery_method = item.get("recovery_method")
+            if recovery_method not in (None, "payload_digest_reuse"):
+                raise PagesExportError(f"{label} recovery_method is unsupported: {recovery_method!r}")
+            is_digest_reuse = recovery_method == "payload_digest_reuse"
             actual = str(item.get("actual_timestamp") or "")
             indexed = str(item.get("indexed_capture_timestamp") or "")
-            if not re.fullmatch(r"\d{14}", actual) or not re.fullmatch(r"\d{14}", indexed) or actual != indexed:
-                raise PagesExportError(f"{label} capture timestamp is invalid or differs: {actual!r}/{indexed!r}")
+            if not re.fullmatch(r"\d{14}", indexed):
+                raise PagesExportError(f"{label} indexed capture timestamp is invalid: {indexed!r}")
             try:
-                actual_dt = datetime.strptime(actual, "%Y%m%d%H%M%S")
                 indexed_dt = datetime.strptime(indexed, "%Y%m%d%H%M%S")
             except ValueError as exc:
-                raise PagesExportError(f"{label} capture timestamp is not a real date: {actual!r}/{indexed!r}") from exc
-            if indexed_dt != actual_dt:
-                raise PagesExportError(f"{label} capture timestamp is invalid or differs: {actual!r}/{indexed!r}")
+                raise PagesExportError(f"{label} indexed capture timestamp is not a real date: {indexed!r}") from exc
+            payload_source: dict[str, Any] | None = None
+            if is_digest_reuse:
+                # A reused payload has two independent dates: the target CDX
+                # index date and the accepted local payload's real capture
+                # date.  The former controls the target's temporal policy;
+                # the latter is retained only as source evidence.
+                if item.get("actual_timestamp") not in (None, ""):
+                    raise PagesExportError(f"{label} digest reuse must omit actual_timestamp")
+                raw_payload_source = item.get("payload_source")
+                if not isinstance(raw_payload_source, dict):
+                    raise PagesExportError(f"{label} payload_source evidence is missing")
+                payload_original, _ = _overlay_url(
+                    raw_payload_source.get("original_url"),
+                    label=f"{label} payload_source",
+                    allowed_hosts=allowed_hosts,
+                )
+                payload_capture = raw_payload_source.get("actual_capture_timestamp")
+                if not isinstance(payload_capture, str) or not re.fullmatch(r"\d{14}", payload_capture):
+                    raise PagesExportError(f"{label} payload_source actual timestamp is invalid: {payload_capture!r}")
+                try:
+                    payload_capture_dt = datetime.strptime(payload_capture, "%Y%m%d%H%M%S")
+                except ValueError as exc:
+                    raise PagesExportError(
+                        f"{label} payload_source actual timestamp is not a real date: {payload_capture!r}"
+                    ) from exc
+                payload_sha = str(raw_payload_source.get("sha256") or "").casefold()
+                if not re.fullmatch(r"[0-9a-f]{64}", payload_sha):
+                    raise PagesExportError(f"{label} payload_source SHA-256 evidence is missing or invalid")
+                try:
+                    payload_length = int(raw_payload_source.get("length"))
+                except (TypeError, ValueError) as exc:
+                    raise PagesExportError(f"{label} payload_source length evidence is invalid") from exc
+                if payload_length < 1:
+                    raise PagesExportError(f"{label} payload_source length evidence is invalid")
+                payload_source = {
+                    "original_url": payload_original,
+                    "actual_capture_timestamp": payload_capture,
+                    "sha256": payload_sha,
+                    "length": payload_length,
+                }
+                actual = ""
+            else:
+                if not re.fullmatch(r"\d{14}", actual) or actual != indexed:
+                    raise PagesExportError(f"{label} capture timestamp is invalid or differs: {actual!r}/{indexed!r}")
+                try:
+                    actual_dt = datetime.strptime(actual, "%Y%m%d%H%M%S")
+                except ValueError as exc:
+                    raise PagesExportError(f"{label} capture timestamp is not a real date: {actual!r}/{indexed!r}") from exc
+                if indexed_dt != actual_dt:
+                    raise PagesExportError(f"{label} capture timestamp is invalid or differs: {actual!r}/{indexed!r}")
             if supplement:
                 temporal_class = _overlay_temporal_class(
-                    actual_dt,
+                    indexed_dt,
                     anchor_dt,
                     allow_later_image_supplements=allow_later_image_supplements,
                 )
@@ -431,7 +482,7 @@ def _load_image_overlay_maps(
                         f"{label} temporal_class does not match capture date: {declared_class!r}/{temporal_class!r}"
                     )
             else:
-                if not _OVERLAY_TIMESTAMP_RE.fullmatch(actual) or actual_dt.year != 2008 or actual_dt > anchor_dt:
+                if not _OVERLAY_TIMESTAMP_RE.fullmatch(indexed) or indexed_dt.year != 2008 or indexed_dt > anchor_dt:
                     raise PagesExportError(f"{label} capture timestamp is outside the 2008 baseline: {actual!r}/{indexed!r}")
                 temporal_class = "baseline_2008"
                 declared_class = str(item.get("temporal_class") or "")
@@ -442,6 +493,8 @@ def _load_image_overlay_maps(
             digest = item.get("cdx_digest")
             if digest is not None and (not isinstance(digest, str) or not re.fullmatch(r"[A-Z2-7]+", digest.upper())):
                 raise PagesExportError(f"{label} CDX digest is invalid")
+            if is_digest_reuse and not isinstance(digest, str):
+                raise PagesExportError(f"{label} digest reuse requires cdx_digest evidence")
             source = _overlay_relative_source(map_path, item.get("local_path"), workspace_root, label=label)
             if not source.is_file():
                 raise PagesExportError(f"{label} source file is missing: {source}")
@@ -463,6 +516,11 @@ def _load_image_overlay_maps(
                 actual_cdx = base64.b32encode(hashlib.sha1(data).digest()).decode("ascii").rstrip("=")
                 if actual_cdx != digest.upper():
                     raise PagesExportError(f"{label} CDX SHA-1 digest mismatch")
+            if is_digest_reuse:
+                if payload_source["sha256"] != actual_sha:
+                    raise PagesExportError(f"{label} payload_source SHA-256 does not match copied bytes")
+                if payload_source["length"] != len(data):
+                    raise PagesExportError(f"{label} payload_source length does not match copied bytes")
             entry = {
                 "route": route,
                 "relative": relative,
@@ -483,6 +541,15 @@ def _load_image_overlay_maps(
                 "role": "image_overlay",
                 "source_map_sha256": source_map_sha256,
             }
+            if is_digest_reuse:
+                entry.update(
+                    {
+                        "actual_timestamp": None,
+                        "recovery_method": "payload_digest_reuse",
+                        "payload_source": payload_source,
+                        "capture_timestamp_basis": "target_cdx_digest",
+                    }
+                )
             previous = by_route.get(route)
             if previous is not None:
                 if previous["source_sha256"] != actual_sha:
@@ -2621,7 +2688,8 @@ def generated_related_images_index(base_path: str, overlays: list[dict[str, Any]
     for overlay in overlays:
         image_url = static_url(base_path, str(overlay["relative"]))
         original_url = str(overlay["original_url"])
-        capture_date = datetime.strptime(str(overlay["actual_timestamp"]), "%Y%m%d%H%M%S")
+        capture_timestamp = overlay.get("actual_timestamp") or overlay.get("indexed_capture_timestamp")
+        capture_date = datetime.strptime(str(capture_timestamp), "%Y%m%d%H%M%S")
         captured = capture_date.strftime("%Y-%m-%d %H:%M:%S UTC")
         temporal_label = {
             "baseline_2008": "2008 baseline",
@@ -2629,12 +2697,23 @@ def generated_related_images_index(base_path: str, overlays: list[dict[str, Any]
             "late_2008": "Later 2008 capture",
             "post_2008": "Post-2008 capture",
         }[str(overlay["temporal_class"])]
+        if overlay.get("recovery_method") == "payload_digest_reuse":
+            payload_capture = datetime.strptime(
+                str(overlay["payload_source"]["actual_capture_timestamp"]), "%Y%m%d%H%M%S"
+            ).strftime("%Y-%m-%d %H:%M:%S UTC")
+            capture_markup = (
+                f"<span>Target indexed capture: {html.escape(captured)}; "
+                f"payload source capture: {html.escape(payload_capture)}</span>"
+            )
+        else:
+            capture_markup = (
+                f"<time datetime=\"{capture_date:%Y-%m-%dT%H:%M:%SZ}\">{captured}</time>"
+            )
         cards.append(
             f"<article class=\"related-image-card\" data-temporal-class=\"{html.escape(str(overlay['temporal_class']), quote=True)}\">"
             f"<a href=\"{html.escape(image_url, quote=True)}\"><img loading=\"lazy\" src=\"{html.escape(image_url, quote=True)}\" alt=\"{html.escape(original_url, quote=True)}\"></a>"
             f"<p><code>{html.escape(str(overlay['origin_namespace']))}</code> "
-            f"<time datetime=\"{capture_date:%Y-%m-%dT%H:%M:%SZ}\">{captured}</time> "
-            f"<span>{temporal_label}</span></p>"
+            f"{capture_markup} <span>{temporal_label}</span></p>"
             f"<p class=\"source\">{html.escape(original_url)}</p>"
             "</article>"
         )
@@ -3107,7 +3186,7 @@ def export_pages(
             out.parent.mkdir(parents=True, exist_ok=True)
             data = bytes(overlay["data"])
             out.write_bytes(data)
-            provenance.append({
+            overlay_provenance = {
                 "route": route,
                 "static_url": static_url(base_path, relative),
                 "output_path": relative,
@@ -3132,7 +3211,16 @@ def export_pages(
                 "actual_capture_timestamp": overlay["actual_timestamp"],
                 "indexed_capture_timestamp": overlay["indexed_capture_timestamp"],
                 "cdx_digest": overlay["cdx_digest"],
-            })
+            }
+            if overlay.get("recovery_method") == "payload_digest_reuse":
+                overlay_provenance.update(
+                    {
+                        "recovery_method": "payload_digest_reuse",
+                        "payload_source": dict(overlay["payload_source"]),
+                        "capture_timestamp_basis": "target_cdx_digest",
+                    }
+                )
+            provenance.append(overlay_provenance)
             stats["image_overlay"] += 1
 
         # Concrete redirect files for aliases that Pages cannot infer from a

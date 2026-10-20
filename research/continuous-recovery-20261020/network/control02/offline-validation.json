@@ -1,0 +1,50 @@
+{
+  "schema": "wow-recovery.control02-offline-validation.v1",
+  "checked_utc": "2026-10-20T11:02:00.355912Z",
+  "network_requests": 0,
+  "raw_written": false,
+  "fixture": {
+    "path": "research/continuous-recovery-20261020/network/control02/fixture-results.json",
+    "sha256": "7292ff85da9a16e28911029e03b7b2cc057e17b67adcba9a9dff17fe565f0a31",
+    "bytes": 831,
+    "all_passed": true,
+    "case_count": 14
+  },
+  "checks": [
+    {
+      "command": "python -X utf8 control02_driver.py --fixture",
+      "result": "passed",
+      "evidence": "fixture-results.json",
+      "fixture_self_binding": false,
+      "network_requests": 0
+    },
+    {
+      "command": "python -X utf8 -m py_compile control02_driver.py parent-execute-once.py",
+      "result": "passed",
+      "network_requests": 0
+    },
+    {
+      "command": "validate_local_inputs(); _fixture(bindings) without write",
+      "result": "passed",
+      "network_requests": 0,
+      "all_fixture_cases_passed": true
+    },
+    {
+      "command": "pre-execution output/raw absence check",
+      "result": "passed",
+      "output_absent": true,
+      "raw_absent": true
+    }
+  ],
+  "package_sha256": {
+    "plan.json": "926ef4fb6f10c44d29ef5f88cee808ec91e4c95b87445f6dcfba61acc6f38bd0",
+    "control02_driver.py": "0105adc16cbfade33cd4f619557d9ebeb7b5df6a695edfaa0ce5480976e78274",
+    "fixture-results.json": "7292ff85da9a16e28911029e03b7b2cc057e17b67adcba9a9dff17fe565f0a31",
+    "input-bindings.json": "9ef353cba468f1350cd71c86333cdce76212c2d47f54f6326a1ac9e4bebcafb0",
+    "parent-execute-once.py": "7109d742dd07acdb744ce87ede34b6985f7548cb85d07acd0c7aa6af8031b3e3"
+  },
+  "pending": {
+    "root_go": "research/continuous-recovery-20261020/publication/root-control02-execute-go.json",
+    "network_execution": "not performed; requires separate explicit root GO and remains subject to the 13:15Z cutoff"
+  }
+}

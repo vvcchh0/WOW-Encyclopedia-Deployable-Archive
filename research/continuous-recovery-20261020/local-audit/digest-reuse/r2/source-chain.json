@@ -1,0 +1,362 @@
+{
+  "schema": "wow-recovery.local-audit.digest-reuse-r2.v1",
+  "generated_utc": "2026-10-20T11:08:38.514223+00:00",
+  "network_requests": 0,
+  "method": "payload_digest_reuse",
+  "status": "draft_local_only",
+  "initial_audit": {
+    "path": "research/continuous-recovery-20261020/local-audit/digest-reuse/audit.json",
+    "sha256": "cd02afb17c9454281dcc18e7b1c3801e675befb929a83f2376c96743bb73e46b",
+    "frozen": true
+  },
+  "source_manifest": {
+    "path": ".scratch/offline-navigation-20261015-v15/build-manifest.json",
+    "bytes": 75650378,
+    "sha256": "d89557a445ec5c81ef2652c49fd8ce9c102016f11411b7fa2aa795f5112ae002",
+    "expected_sha256": "d89557a445ec5c81ef2652c49fd8ce9c102016f11411b7fa2aa795f5112ae002",
+    "sha256_matches_receipt": true,
+    "files_records_scanned": 8357,
+    "target_records_found": 2,
+    "read_once": true,
+    "extraction_note": "Retained from the one authorized manifest read before final pairing; the finalizer does not reread the 75 MB manifest.",
+    "record_cache": "research/continuous-recovery-20261020/local-audit/digest-reuse/r2/manifest-records.json",
+    "manifest_read_during_finalizer": false
+  },
+  "metadata_budget": {
+    "prior_digest_reuse_audit_bytes": 35745250,
+    "authorized_manifest_bytes": 75650378,
+    "initial_audit_bytes_read_by_finalizer": 50594,
+    "manifest_record_cache_bytes": 3361,
+    "estimated_total_bytes": 111449583,
+    "budget_bytes": 134217728,
+    "within_budget": true
+  },
+  "execution_deviation": {
+    "source_map_hash_reads_before_stat_only_fix": 6,
+    "source_map_hash_bytes_before_stat_only_fix": 178751370,
+    "source_map_hash_read_after_fix": false,
+    "cumulative_budget_including_prior_repeated_hash_reads": false,
+    "note": "Early finalizer iterations hashed the same manifest-declared source-map once per route; final output now records only stat metadata and does not repeat that read."
+  },
+  "contract": {
+    "source_manifest_read_once": true,
+    "files_records_only_routes": [
+      "/downloads/images/thumbnails/trolldire.jpg",
+      "/shared/wow-com/images/advertising/04-12/ordernow.jpg"
+    ],
+    "zip_members_read": false,
+    "zip_extracted_or_copied": false,
+    "new_memento_or_download": false,
+    "target_cdx_date_and_payload_source_date_separate": true,
+    "public_copy_scope": "local-audit staging only; no publish/export"
+  },
+  "routes": [
+    {
+      "method": "payload_digest_reuse",
+      "status": "draft_local_only",
+      "target": {
+        "requested_original_url": "http://www.worldofwarcraft.com/news/images/05-10/trolldire.jpg",
+        "requested_route": "/news/images/05-10/trolldire.jpg",
+        "reuse_source_route": "/downloads/images/thumbnails/trolldire.jpg",
+        "v38_route_status": {
+          "relative_path": "news/images/05-10/trolldire.jpg",
+          "v38_primary_root": ".scratch/pages-resources-20261019-v38",
+          "v38_primary_exists": false,
+          "v38_primary_bytes": null,
+          "v38_alternate_exists": false,
+          "v38_alternate_bytes": null
+        },
+        "cdx_evidence": {
+          "source_file": "research/site-recovery-2008/prefix-cdx/003-08c5d92edd079b20.json",
+          "source_file_sha256": "54704b347c97dde8e50ca3bc6a26d3242b763643339005c5fd293cb970b8f229",
+          "source_line_number": 16799,
+          "timestamp": "20080402080557",
+          "original": "http://www.worldofwarcraft.com/news/images/05-10/trolldire.jpg",
+          "statuscode": "200",
+          "mimetype": "image/jpeg",
+          "digest": "DHYMXY2BZ2LA35RAG6SHCSNQ2AHFMTDX",
+          "cdx_length": "33773",
+          "same_digest_row_count": 9,
+          "same_digest_source_lines": [
+            16791,
+            16792,
+            16793,
+            16794,
+            16795,
+            16796,
+            16797,
+            16798,
+            16799
+          ]
+        }
+      },
+      "accepted_payload_source": {
+        "manifest_record": {
+          "route": "/downloads/images/thumbnails/trolldire.jpg",
+          "origin_namespace": "www.worldofwarcraft.com",
+          "output_path": ".scratch/offline-navigation-20261015-v15/site/downloads/images/thumbnails/trolldire.jpg",
+          "source_local_path": "offline/source-entities-resources-recovery/ed30c31ff041b6abd1ccd438436f0f1eace2e5a8f5bf5ac00669dc84b91eb275.bin",
+          "source_base_url": "http://www.worldofwarcraft.com/downloads/images/thumbnails/trolldire.jpg",
+          "source_map_path": "offline/approved-static-recovery-map.json",
+          "source_sha_inferred": false,
+          "source_sha256": "ed30c31ff041b6abd1ccd438436f0f1eace2e5a8f5bf5ac00669dc84b91eb275",
+          "source_length": 33478,
+          "derived_sha256": "ed30c31ff041b6abd1ccd438436f0f1eace2e5a8f5bf5ac00669dc84b91eb275",
+          "derived_length": 33478,
+          "source_mime": "image/jpeg",
+          "mime": "image/jpeg",
+          "kind": "image",
+          "role": "resource_recovery_2008_incremental",
+          "source_role": null,
+          "actual_timestamp": "20080512205545",
+          "requested_timestamp": "20080512205545",
+          "transformed": false,
+          "derivation_reason": "copied verified preserved entity bytes without transformation",
+          "supplement": false,
+          "declared_source_map": {
+            "declared_path": "offline/approved-static-recovery-map.json",
+            "resolved_path": "offline/approved-static-recovery-map.json",
+            "exists": true,
+            "bytes": 29791895,
+            "sha256": null,
+            "hash_read": false
+          }
+        },
+        "accepted_capture_map_evidence": [
+          {
+            "source_url": "http://www.worldofwarcraft.com/downloads/images/thumbnails/trolldire.jpg",
+            "source_map": "research/offline-2008/full-recovery/round-105-final-full-capture-map-validation.json",
+            "source_map_row_path": "root.maps[2].item_evidence[1238]",
+            "payload_path": [
+              "offline/source-entities-resources-recovery/ed30c31ff041b6abd1ccd438436f0f1eace2e5a8f5bf5ac00669dc84b91eb275.bin"
+            ],
+            "sha256": "ed30c31ff041b6abd1ccd438436f0f1eace2e5a8f5bf5ac00669dc84b91eb275",
+            "source_relationship": null,
+            "actual_timestamp": "20080512205545",
+            "indexed_capture_timestamp": null,
+            "mime": null,
+            "length": 33478,
+            "zip_provenance": "verified",
+            "zip_file": "backups/resource-recovery-2008/remaining-batch-3/objects-0001.zip",
+            "zip_entry": "objects/ed30c31ff041b6abd1ccd438436f0f1eace2e5a8f5bf5ac00669dc84b91eb275.bin",
+            "content": {
+              "declared_mime": "image/jpeg",
+              "mime_base": "image/jpeg",
+              "pillow_verified": true,
+              "pillow_format": "JPEG",
+              "frame_count": 1,
+              "content_status": "valid_image"
+            }
+          }
+        ],
+        "source_url_crosscheck": {
+          "manifest_source_base_url": "http://www.worldofwarcraft.com/downloads/images/thumbnails/trolldire.jpg",
+          "accepted_capture_map_urls": [
+            "http://www.worldofwarcraft.com/downloads/images/thumbnails/trolldire.jpg"
+          ],
+          "url_agrees": true
+        },
+        "payload_source_actual_timestamp": "20080512205545",
+        "payload_source_requested_timestamp": "20080512205545",
+        "source_sha_inferred": false
+      },
+      "v38_payload": {
+        "path": ".scratch/pages-resources-20261019-v38/downloads/images/thumbnails/trolldire.jpg",
+        "output_path": "downloads/images/thumbnails/trolldire.jpg",
+        "source_offline_path": ".scratch/offline-navigation-20261015-v15/site/downloads/images/thumbnails/trolldire.jpg",
+        "sha256": "ed30c31ff041b6abd1ccd438436f0f1eace2e5a8f5bf5ac00669dc84b91eb275",
+        "bytes": 33478,
+        "computed_sha1_base32": "DHYMXY2BZ2LA35RAG6SHCSNQ2AHFMTDX",
+        "mime": "image/jpeg",
+        "pillow": {
+          "format": "JPEG",
+          "frame_count": 1,
+          "all_frames_decoded": true,
+          "size": [
+            250,
+            205
+          ]
+        }
+      },
+      "same_bytes_proof": {
+        "cdx_digest": "DHYMXY2BZ2LA35RAG6SHCSNQ2AHFMTDX",
+        "computed_sha1_base32": "DHYMXY2BZ2LA35RAG6SHCSNQ2AHFMTDX",
+        "sha1_equal": true,
+        "local_payload_sha256": "ed30c31ff041b6abd1ccd438436f0f1eace2e5a8f5bf5ac00669dc84b91eb275",
+        "provenance_derived_sha256": "ed30c31ff041b6abd1ccd438436f0f1eace2e5a8f5bf5ac00669dc84b91eb275",
+        "provenance_source_sha256": "ed30c31ff041b6abd1ccd438436f0f1eace2e5a8f5bf5ac00669dc84b91eb275",
+        "local_length": 33478,
+        "cdx_length": "33773"
+      },
+      "staged_local_copy": {
+        "path": "research/continuous-recovery-20261020/local-audit/digest-reuse/r2/public-payloads/downloads/images/thumbnails/trolldire.jpg",
+        "bytes": 33478,
+        "sha256": "ed30c31ff041b6abd1ccd438436f0f1eace2e5a8f5bf5ac00669dc84b91eb275",
+        "byte_identical_to_v38": true,
+        "published": false,
+        "exported": false
+      }
+    },
+    {
+      "method": "payload_digest_reuse",
+      "status": "draft_local_only",
+      "target": {
+        "requested_original_url": "http://www.worldofwarcraft.com/news/images/04-12/ordernow.jpg",
+        "requested_route": "/news/images/04-12/ordernow.jpg",
+        "reuse_source_route": "/shared/wow-com/images/advertising/04-12/ordernow.jpg",
+        "v38_route_status": {
+          "relative_path": "news/images/04-12/ordernow.jpg",
+          "v38_primary_root": ".scratch/pages-resources-20261019-v38",
+          "v38_primary_exists": false,
+          "v38_primary_bytes": null,
+          "v38_alternate_exists": false,
+          "v38_alternate_bytes": null
+        },
+        "cdx_evidence": {
+          "source_file": "research/site-recovery-2008/prefix-cdx/003-08c5d92edd079b20.json",
+          "source_file_sha256": "54704b347c97dde8e50ca3bc6a26d3242b763643339005c5fd293cb970b8f229",
+          "source_line_number": 4985,
+          "timestamp": "20080402082301",
+          "original": "http://www.worldofwarcraft.com/news/images/04-12/ordernow.jpg",
+          "statuscode": "200",
+          "mimetype": "image/jpeg",
+          "digest": "FNPCNC3NTWEN6DMOFN5HV5MHFPEOUJHH",
+          "cdx_length": "10538",
+          "same_digest_row_count": 1,
+          "same_digest_source_lines": [
+            4985
+          ]
+        }
+      },
+      "accepted_payload_source": {
+        "manifest_record": {
+          "route": "/shared/wow-com/images/advertising/04-12/ordernow.jpg",
+          "origin_namespace": "www.worldofwarcraft.com",
+          "output_path": ".scratch/offline-navigation-20261015-v15/site/shared/wow-com/images/advertising/04-12/ordernow.jpg",
+          "source_local_path": "offline/source-entities-resources-recovery/280f31a179770063c17359c1facf9313caf1b85603846a9ccbe3e597767b525e.bin",
+          "source_base_url": "http://www.worldofwarcraft.com/shared/wow-com/images/advertising/04-12/ordernow.jpg",
+          "source_map_path": "offline/approved-static-recovery-map.json",
+          "source_sha_inferred": false,
+          "source_sha256": "280f31a179770063c17359c1facf9313caf1b85603846a9ccbe3e597767b525e",
+          "source_length": 10260,
+          "derived_sha256": "280f31a179770063c17359c1facf9313caf1b85603846a9ccbe3e597767b525e",
+          "derived_length": 10260,
+          "source_mime": "image/jpeg",
+          "mime": "image/jpeg",
+          "kind": "image",
+          "role": "global_2008_image_wave_candidate",
+          "source_role": null,
+          "actual_timestamp": "20080512205959",
+          "requested_timestamp": "20080512205959",
+          "transformed": false,
+          "derivation_reason": "copied verified preserved entity bytes without transformation",
+          "supplement": false,
+          "declared_source_map": {
+            "declared_path": "offline/approved-static-recovery-map.json",
+            "resolved_path": "offline/approved-static-recovery-map.json",
+            "exists": true,
+            "bytes": 29791895,
+            "sha256": null,
+            "hash_read": false
+          }
+        },
+        "accepted_capture_map_evidence": [
+          {
+            "source_url": "http://www.worldofwarcraft.com/shared/wow-com/images/advertising/04-12/ordernow.jpg",
+            "source_map": "research/offline-2008/full-recovery/round-105-final-full-capture-map-validation.json",
+            "source_map_row_path": "root.maps[2].item_evidence[5157]",
+            "payload_path": [
+              "offline/source-entities-resources-recovery/280f31a179770063c17359c1facf9313caf1b85603846a9ccbe3e597767b525e.bin"
+            ],
+            "sha256": "280f31a179770063c17359c1facf9313caf1b85603846a9ccbe3e597767b525e",
+            "source_relationship": null,
+            "actual_timestamp": "20080512205959",
+            "indexed_capture_timestamp": null,
+            "mime": null,
+            "length": 10260,
+            "zip_provenance": "verified",
+            "zip_file": "backups/resource-recovery-2008/agent-a-browser-wave002-tail-001/objects-0001.zip",
+            "zip_entry": "objects/280f31a179770063c17359c1facf9313caf1b85603846a9ccbe3e597767b525e.bin",
+            "content": {
+              "declared_mime": "image/jpeg",
+              "mime_base": "image/jpeg",
+              "pillow_verified": true,
+              "pillow_format": "JPEG",
+              "frame_count": 1,
+              "content_status": "valid_image"
+            }
+          }
+        ],
+        "source_url_crosscheck": {
+          "manifest_source_base_url": "http://www.worldofwarcraft.com/shared/wow-com/images/advertising/04-12/ordernow.jpg",
+          "accepted_capture_map_urls": [
+            "http://www.worldofwarcraft.com/shared/wow-com/images/advertising/04-12/ordernow.jpg"
+          ],
+          "url_agrees": true
+        },
+        "payload_source_actual_timestamp": "20080512205959",
+        "payload_source_requested_timestamp": "20080512205959",
+        "source_sha_inferred": false
+      },
+      "v38_payload": {
+        "path": ".scratch/pages-resources-20261019-v38/shared/wow-com/images/advertising/04-12/ordernow.jpg",
+        "output_path": "shared/wow-com/images/advertising/04-12/ordernow.jpg",
+        "source_offline_path": ".scratch/offline-navigation-20261015-v15/site/shared/wow-com/images/advertising/04-12/ordernow.jpg",
+        "sha256": "280f31a179770063c17359c1facf9313caf1b85603846a9ccbe3e597767b525e",
+        "bytes": 10260,
+        "computed_sha1_base32": "FNPCNC3NTWEN6DMOFN5HV5MHFPEOUJHH",
+        "mime": "image/jpeg",
+        "pillow": {
+          "format": "JPEG",
+          "frame_count": 1,
+          "all_frames_decoded": true,
+          "size": [
+            210,
+            89
+          ]
+        }
+      },
+      "same_bytes_proof": {
+        "cdx_digest": "FNPCNC3NTWEN6DMOFN5HV5MHFPEOUJHH",
+        "computed_sha1_base32": "FNPCNC3NTWEN6DMOFN5HV5MHFPEOUJHH",
+        "sha1_equal": true,
+        "local_payload_sha256": "280f31a179770063c17359c1facf9313caf1b85603846a9ccbe3e597767b525e",
+        "provenance_derived_sha256": "280f31a179770063c17359c1facf9313caf1b85603846a9ccbe3e597767b525e",
+        "provenance_source_sha256": "280f31a179770063c17359c1facf9313caf1b85603846a9ccbe3e597767b525e",
+        "local_length": 10260,
+        "cdx_length": "10538"
+      },
+      "staged_local_copy": {
+        "path": "research/continuous-recovery-20261020/local-audit/digest-reuse/r2/public-payloads/shared/wow-com/images/advertising/04-12/ordernow.jpg",
+        "bytes": 10260,
+        "sha256": "280f31a179770063c17359c1facf9313caf1b85603846a9ccbe3e597767b525e",
+        "byte_identical_to_v38": true,
+        "published": false,
+        "exported": false
+      },
+      "presentation_note": "历史广告图；后续展示/导出需由 root 决定历史展品说明与去除可操作订购暗示，原字节保持不变。"
+    }
+  ],
+  "staged_copies": [
+    {
+      "path": "research/continuous-recovery-20261020/local-audit/digest-reuse/r2/public-payloads/downloads/images/thumbnails/trolldire.jpg",
+      "bytes": 33478,
+      "sha256": "ed30c31ff041b6abd1ccd438436f0f1eace2e5a8f5bf5ac00669dc84b91eb275",
+      "byte_identical_to_v38": true,
+      "published": false,
+      "exported": false
+    },
+    {
+      "path": "research/continuous-recovery-20261020/local-audit/digest-reuse/r2/public-payloads/shared/wow-com/images/advertising/04-12/ordernow.jpg",
+      "bytes": 10260,
+      "sha256": "280f31a179770063c17359c1facf9313caf1b85603846a9ccbe3e597767b525e",
+      "byte_identical_to_v38": true,
+      "published": false,
+      "exported": false
+    }
+  ],
+  "unknowns": [
+    "The manifest-declared source_map_path is retained and checked; its standalone file is not present in this checkout, so the explicit source_base_url plus the accepted capture validation map provide the source URL chain.",
+    "No new network execution or Memento replay was performed."
+  ]
+}

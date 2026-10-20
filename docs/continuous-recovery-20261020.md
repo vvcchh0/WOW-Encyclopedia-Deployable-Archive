@@ -55,3 +55,35 @@ Google 与 Cloudflare 的公共 DoH 接口均返回 `207.241.237.3`；ARIN 将�
 09:27 后本轮被中断，10:40 恢复检查时没有下载进程，Common Crawl 仍只有准备文件，未发出请求。两名执行者从各自检查点续接；没有重跑已完成的控制或图片检查，六小时截止保持不变。
 
 主代理复核 Common Crawl 计划和请求边界后，允许执行一次集合清单及五个有限索引查询。该批仅取得独立来源的元数据，不取 ARC 或图片实体；Wayback 的失败状态没有因此被重新开启。本地摘要复用审计并行继续。
+
+### 11:01 UTC — 独立抓取的百科首页
+
+Common Crawl 元数据批次完成六次直连查询：集合和百科首页查询成功，新闻相关查询收到 502、Karazhan 目录查询收到 504、Black Temple 目录查询返回索引 404。网关错误留作未知；索引无结果也没有记成原图片的 404。[元数据验收](../research/continuous-recovery-20261020/publication/root-commoncrawl-probe01-source-acceptance.json)
+
+随后仅下载百科首页一条 ARC 范围，HTTP 206，压缩记录 6,601 字节。主代理按 ARC 首行的声明长度分离记录和行分隔符，得到 **2008-07-20 的 52,400 字节 HTML**，内容摘要与索引一致。初版解析器把 IP 字段误作日期、并多保留了记录行分隔符，原报告保留，修正及实际字节在独立验收中说明。该晚期首页仅作补充来源，不替换五月基准，也没有部署其中脚本。[原文件验收](../research/continuous-recovery-20261020/publication/root-commoncrawl-arc01-source-acceptance.json)
+
+首个整理检查点已正常提交并推送 main：`b115184`，Pages 与完整离线包保持 v38。
+
+### 11:08 UTC — Wayback 本轮停止；补回两处相同字节资源
+
+距首个 429 两个多小时后，再次执行一轮两请求控制：direct 连接超时，代理完成 TLS 后仍返回 429。没有重试其它 Wayback 地址；本轮这条路径停止，等待外部连接状态变化。[第二次控制验收](../research/continuous-recovery-20261020/publication/root-control02-source-acceptance.json)
+
+本地摘要审计找到新闻 `ordernow.jpg` 和 `trolldire.jpg` 已在其它原站路径保存。主代理分别核对目标地址的历史 CDX、实际图片字节、Source15、旧捕获验收和完整图片解码，确认可复用两个实体。目标索引日期与实际文件来源日期分别保留，不伪造新的下载或回放记录。开始准备 v39：恢复新闻页图片，并将 2004 年订购促销条目改成静态历史展品。[复用来源验收](../research/continuous-recovery-20261020/publication/root-digest-reuse-source-acceptance.json)
+
+### 12:18 UTC — 本地相同字节素材的扩大检查
+
+将调查从新闻、下载两个索引文件扩大到本地全部 68 份旧目录索引，再检查其中符合条件的所有捕获版本。排除已补回、动态地址与注释线索后，862 个静态目标中有 293 个目标带有候选捕获，共 10,563 行、446 个内容摘要。与已接受来源建立的图片身份表交叉比对，未找到更多相同字节的可用图片。主代理另检查身份表未覆盖的 37 个小型图片文件（约 496 KB），结果相同，没有重复扫描整套图片。[扩大检查](../research/continuous-recovery-20261020/publication/root-all-capture-digest-audit-review.json)
+
+另有一张音乐视频比赛的 Flash 背景与本地素材摘要一致；对应页面的 Flash 横幅元素处在原有注释中，来源链仍待整理。本轮不将它算作可见页面修复，也不重新显示已注释的元素。[范围说明](../research/continuous-recovery-20261020/publication/root-expanded-digest-audit-review.json)
+
+v39 的来源准备保留 v38 全部 655 个图片覆盖项、三十九张指南大图及二十二张预览，另加入两条复用地址。新日期字段和历史展品改写通过相关单元检查；实际导出、浏览与线上对象另行验收。
+
+### 12:26 UTC — 独立来源的精确查询停止
+
+最后一批 Common Crawl 原定检查五个已有新闻地址。实际前两个查询均收到 504，按连续网关失败的停批条件结束；后三个没有发送，未取得索引行或新图片。这里记录的是索引服务的网关失败，图片是否存档仍未知。本轮结束这条获取路径，进入两处已验收修复的导出与发布。[验收](../research/continuous-recovery-20261020/publication/root-commoncrawl-probe02-source-acceptance.json)
+
+### 12:40 UTC — 两处新闻图片的浏览验收
+
+v39 完成一次导出，主代理逐一核对 9,115 个声明文件及来源表，保留 v38 的全部既有对象。实际增加两张 JPEG、修改四个派生对象；百科首页、网站首页和两张新闻页通过浏览检查，777 次回环请求没有外部请求或页面错误。两处图片均正常解码显示，2004 年促销条目呈现为带日期说明的静态展品。[本地验收](../research/continuous-recovery-20261020/publication/root-v39-local-acceptance.json)
+
+进入 main、Pages 和处理后离线包的发布步骤。此次没有新增下载图片，玩家原图库的恢复数量未变化。

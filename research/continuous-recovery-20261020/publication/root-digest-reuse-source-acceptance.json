@@ -1,0 +1,80 @@
+{
+  "accepted": true,
+  "checked_utc": "2026-10-20T11:14:06.013607+00:00",
+  "network_requests": 0,
+  "source_chain_sha256": "4cf157ab4f9f139e5619602eba3505a7579cb7d793464a9a6706e1d7198633d7",
+  "source_manifest_sha256": "d89557a445ec5c81ef2652c49fd8ce9c102016f11411b7fa2aa795f5112ae002",
+  "target_cdx_file_sha256": "54704b347c97dde8e50ca3bc6a26d3242b763643339005c5fd293cb970b8f229",
+  "accepted_images": 2,
+  "routes": [
+    {
+      "target_original_url": "http://www.worldofwarcraft.com/news/images/05-10/trolldire.jpg",
+      "target_route": "/news/images/05-10/trolldire.jpg",
+      "recovery_method": "payload_digest_reuse",
+      "target_indexed_capture_timestamp": "20080402080557",
+      "target_new_memento_observed": false,
+      "target_cdx_digest": "DHYMXY2BZ2LA35RAG6SHCSNQ2AHFMTDX",
+      "payload_source": {
+        "original_url": "http://www.worldofwarcraft.com/downloads/images/thumbnails/trolldire.jpg",
+        "actual_capture_timestamp": "20080512205545",
+        "sha256": "ed30c31ff041b6abd1ccd438436f0f1eace2e5a8f5bf5ac00669dc84b91eb275",
+        "length": 33478,
+        "route": "/downloads/images/thumbnails/trolldire.jpg"
+      },
+      "local_payload": "research/continuous-recovery-20261020/local-audit/digest-reuse/r2/public-payloads/downloads/images/thumbnails/trolldire.jpg",
+      "decoded_frames": [
+        {
+          "frame": 0,
+          "size": [
+            250,
+            205
+          ]
+        }
+      ],
+      "source_validation": {
+        "path": "research/offline-2008/full-recovery/round-105-final-full-capture-map-validation.json",
+        "sha256": "54d032f6754e466fc8bbed4480a6b04ecae3a5adcb5143b812daa70769a138dd",
+        "accepted_capture_row": 1238
+      },
+      "presentation": "historical_trailer_thumbnail"
+    },
+    {
+      "target_original_url": "http://www.worldofwarcraft.com/news/images/04-12/ordernow.jpg",
+      "target_route": "/news/images/04-12/ordernow.jpg",
+      "recovery_method": "payload_digest_reuse",
+      "target_indexed_capture_timestamp": "20080402082301",
+      "target_new_memento_observed": false,
+      "target_cdx_digest": "FNPCNC3NTWEN6DMOFN5HV5MHFPEOUJHH",
+      "payload_source": {
+        "original_url": "http://www.worldofwarcraft.com/shared/wow-com/images/advertising/04-12/ordernow.jpg",
+        "actual_capture_timestamp": "20080512205959",
+        "sha256": "280f31a179770063c17359c1facf9313caf1b85603846a9ccbe3e597767b525e",
+        "length": 10260,
+        "route": "/shared/wow-com/images/advertising/04-12/ordernow.jpg"
+      },
+      "local_payload": "research/continuous-recovery-20261020/local-audit/digest-reuse/r2/public-payloads/shared/wow-com/images/advertising/04-12/ordernow.jpg",
+      "decoded_frames": [
+        {
+          "frame": 0,
+          "size": [
+            210,
+            89
+          ]
+        }
+      ],
+      "source_validation": {
+        "path": "research/offline-2008/full-recovery/round-105-final-full-capture-map-validation.json",
+        "sha256": "54d032f6754e466fc8bbed4480a6b04ecae3a5adcb5143b812daa70769a138dd",
+        "accepted_capture_row": 5157
+      },
+      "presentation": "static_historical_promotion"
+    }
+  ],
+  "qualifications": [
+    "This recovers two image URL bindings from already preserved identical payloads; no fresh replay or new image download.",
+    "The target CDX dates and the actual payload-source capture dates are distinct. CDX length is not entity length.",
+    "r2 unknowns wrongly says the declared source map is absent; its own stat and this checkout show it exists. Source15 and accepted capture rows independently provide the source chain.",
+    "r2 nominal metadata budget excludes 178751370 bytes of repeated earlier source-map hash reads; cumulative reads exceeded the original local audit budget. Frozen observations are retained."
+  ],
+  "published": false
+}

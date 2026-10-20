@@ -1,0 +1,38 @@
+{
+  "accepted": true,
+  "checked_utc": "2026-10-20T12:04:51.101732+00:00",
+  "bindings": [
+    {
+      "path": "tools/export_github_pages.py",
+      "sha256": "5256a3e00fc8507acd26c55bc38faebf72244faa35ce26c1320823ee422349ec"
+    },
+    {
+      "path": "tools/historical_exhibits.py",
+      "sha256": "3e81fcc3d861e48e2e0d5f5e1236223858db957c04f664fffbe419464e92c9de"
+    },
+    {
+      "path": "tests/test_payload_digest_reuse_overlay.py",
+      "sha256": "40b17dced842af0672b938713aeeaef64b9df25da1ce0bb3441c22bcba4678a8"
+    },
+    {
+      "path": "tests/test_historical_news_2004.py",
+      "sha256": "866e824396f32c7b070065500f9be6d8cc69797e98839fcec10a46946b6b3c08"
+    }
+  ],
+  "independent_root_test": {
+    "command": "python -B -X utf8 -m unittest tests.test_payload_digest_reuse_overlay tests.test_historical_news_2004",
+    "returncode": 0,
+    "tests": 10,
+    "elapsed_seconds_reported": 0.777,
+    "result": "OK"
+  },
+  "review": [
+    "Two reused target routes require matching CDX SHA1 and actual copied bytes SHA256/length, with separate real payload-source metadata.",
+    "Target indexed date controls temporal classification; actual target replay timestamp remains null. Ordinary overlay records retain prior schema and values.",
+    "Only the exact Dec16 2004 sale post with local ordernow image is rewritten as static historical artwork; headline/date and siblings retained.",
+    "Related image catalog distinguishes target index date from reused payload source date."
+  ],
+  "scope": "Accept executable derivation changes for offline export. Full source closure, actual output delta, browser display and publication require their own receipts.",
+  "network_requests": 0,
+  "published": false
+}

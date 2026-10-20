@@ -70,6 +70,9 @@ P1_ROUTES = frozenset(
 TRIAL_ROUTE = "/burningcrusade/trial/index.html"
 NEWS_UPGRADE_ROUTE = "/news/rss-02-2007.xml"
 NEWS_UPGRADE_ENTRY_ID = "news2-1-07-1212"
+NEWS_2004_ROUTE = "/news/wow-news2004.html"
+NEWS_2004_HEADLINE = "World of Warcraft Now On Sale from the Blizzard Store"
+NEWS_2004_IMAGE_PATH = "/news/images/04-12/ordernow.jpg"
 PTR_ROUTE = "/ptr/index.html"
 PTR_ALIASES = {
     "/ptr": PTR_ROUTE,
@@ -1022,6 +1025,159 @@ def _transform_news_upgrade_entry(text: str) -> str:
     return text[:start] + entry + text[end:]
 
 
+class _DivClassBoundsParser(HTMLParser):
+    """Collect balanced divs carrying one of the requested CSS classes."""
+
+    def __init__(self, text: str, classes: set[str]) -> None:
+        super().__init__(convert_charrefs=False)
+        self.text = text
+        self.classes = {value.casefold() for value in classes}
+        self._line_starts = [0]
+        self._line_starts.extend(match.end() for match in re.finditer("\n", text))
+        self._div_depth = 0
+        self._open: list[tuple[str, int, int]] = []
+        self.bounds: list[tuple[str, int, int]] = []
+
+    def _offset(self) -> int:
+        line, column = self.getpos()
+        return self._line_starts[line - 1] + column
+
+    def handle_starttag(
+        self, tag: str, attrs: list[tuple[str, str | None]]
+    ) -> None:
+        if tag.casefold() != "div":
+            return
+        values = {name.casefold(): value for name, value in attrs if value is not None}
+        classes = {value.casefold() for value in (values.get("class") or "").split()}
+        matched = next(iter(classes & self.classes), None)
+        if matched is not None:
+            self._open.append((matched, self._offset(), self._div_depth))
+        self._div_depth += 1
+
+    def handle_startendtag(
+        self, tag: str, attrs: list[tuple[str, str | None]]
+    ) -> None:
+        # A self-closing div cannot contain a target body and does not change
+        # the balanced div depth.
+        return None
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag.casefold() != "div":
+            return
+        if self._open and self._open[-1][2] == self._div_depth - 1:
+            matched, start, _depth = self._open.pop()
+            close_start = self._offset()
+            close_end = self.text.find(">", close_start)
+            if close_end >= 0:
+                self.bounds.append((matched, start, close_end + 1))
+        self._div_depth = max(0, self._div_depth - 1)
+
+
+def _news_2004_image_source(text: str) -> str | None:
+    """Return the localized order-now image URL only when it is a local route."""
+
+    matches = re.findall(
+        r"<img\b[^>]*\bsrc\s*=\s*([\"'])(?P<src>[^\"']+)\1",
+        text,
+        flags=re.I | re.S,
+    )
+    matches = [html.unescape(match[1]) for match in matches]
+    if len(matches) != 1:
+        return None
+    source = matches[0]
+    parsed = urllib.parse.urlsplit(source)
+    if parsed.scheme or parsed.netloc or parsed.query or parsed.fragment:
+        return None
+    path = parsed.path
+    if not path.startswith("/") or not path.casefold().endswith(NEWS_2004_IMAGE_PATH):
+        return None
+    return source
+
+
+def _news_2004_title_matches(text: str) -> bool:
+    """Require the exact store-notice headline and its Dec. 16, 2004 date."""
+
+    title_matches = re.finditer(
+        r"<h3\b[^>]*\bclass\s*=\s*([\"'])[^\"']*\btitle\b[^\"']*\1[^>]*>.*?</h3\s*>",
+        text,
+        flags=re.I | re.S,
+    )
+    titles = [match.group(0) for match in title_matches]
+    if len(titles) != 1:
+        return False
+    visible_parser = _VisibleTextParser(titles[0])
+    try:
+        visible_parser.feed(titles[0])
+        visible_parser.close()
+    except Exception:
+        return False
+    title = " ".join(
+        html.unescape("".join(part for _start, _end, part in visible_parser.parts)).split()
+    )
+    if not re.match(rf"^{re.escape(NEWS_2004_HEADLINE)}\s*-\s*", title, flags=re.I):
+        return False
+    return bool(re.search(r"\bon\s+12/16/04\s*$", title, flags=re.I))
+
+
+def _news_2004_target_bounds(text: str) -> tuple[int, int, str] | None:
+    parser = _DivClassBoundsParser(text, {"postcontainer", "postbody"})
+    try:
+        parser.feed(text)
+        parser.close()
+    except Exception:
+        return None
+    containers = [bounds for css_class, *bounds in parser.bounds if css_class == "postcontainer"]
+    for start, end in containers:
+        entry = text[start:end]
+        if not _news_2004_title_matches(entry):
+            continue
+        image_source = _news_2004_image_source(entry)
+        if image_source is None:
+            continue
+        bodies = [
+            (body_start, body_end)
+            for css_class, body_start, body_end in parser.bounds
+            if css_class == "postbody" and start <= body_start < body_end <= end
+        ]
+        if len(bodies) != 1:
+            continue
+        return bodies[0][0], bodies[0][1], image_source
+    return None
+
+
+def _transform_news_2004_entry(text: str) -> str:
+    """Make only the Dec. 16, 2004 store notice a static artwork exhibit."""
+
+    target = _news_2004_target_bounds(text)
+    if target is None:
+        return text
+    body_start, body_end, image_source = target
+    opening_end = text.find(">", body_start, body_end)
+    closing = re.search(r"</div\s*>$", text[body_start:body_end], flags=re.I | re.S)
+    if opening_end < 0 or closing is None:
+        return text
+    closing_start = body_start + closing.start()
+    figure = (
+        '<figure class="historical-news-artwork" '
+        'data-historical-exhibit="news-2004-ordernow" '
+        'style="box-sizing:border-box;width:100%;max-width:210px;margin:1em auto;text-align:center;">\n'
+        f'<img src="{html.escape(image_source, quote=True)}" width="210" height="89" '
+        'alt="Historical 2004 promotional artwork" '
+        'style="display:block;width:100%;max-width:210px;height:auto;margin:0 auto;">\n'
+        '<figcaption style="margin-top:.5em;line-height:1.4;">Historical 2004 promotional artwork</figcaption>\n'
+        "</figure>"
+    )
+    replacement = (
+        text[body_start : opening_end + 1]
+        + '\n<p class="historical-news-notice">On December 16, 2004, the notice reported that '
+        "World of Warcraft was available from the Blizzard Online Store.</p>\n"
+        + figure
+        + "\n"
+        + text[closing_start:body_end]
+    )
+    return text[:body_start] + replacement + text[body_end:]
+
+
 _PROMOTION_REDEMPTION_LIST = re.compile(
     r"(?:<p\s*/?>\s*)?In order to claim your in-game item,\s*"
     r"please follow these five steps:\s*<ol\b[^>]*>.*?(?=</td\s*>)",
@@ -1132,6 +1288,8 @@ def transform_derived_page(
     )
     if normalized_route == NEWS_UPGRADE_ROUTE:
         return _transform_news_upgrade_entry(rewritten)
+    if normalized_route == NEWS_2004_ROUTE:
+        return _transform_news_2004_entry(rewritten)
     if normalized_route == "/community/stories/submit.html":
         rewritten = _disable_story_submission_scripts(rewritten)
     return rewritten

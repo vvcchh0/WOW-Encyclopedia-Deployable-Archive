@@ -1,0 +1,63 @@
+{
+  "accepted": true,
+  "root_go": true,
+  "checked_utc": "2026-10-20T10:50:59.737997+00:00",
+  "source_acceptance_sha256": "15b9934a179f7f60c6aedbc8a94c2c6f4f707af99988fb2dd133ef5104b406a7",
+  "record": {
+    "urlkey": "com,worldofwarcraft)/info/encyclopedia/index.xml",
+    "timestamp": "20080720173556",
+    "status": "200",
+    "url": "http://www.worldofwarcraft.com/info/encyclopedia/index.xml",
+    "filename": "crawl-001/2008/07/24/4/1216928171805_4.arc.gz",
+    "length": "6601",
+    "mime": "text/html",
+    "offset": "426808",
+    "digest": "J5QKGA7VRIUFZPBPEDKOT6REERJJJJXS"
+  },
+  "url": "https://data.commoncrawl.org/crawl-001/2008/07/24/4/1216928171805_4.arc.gz",
+  "range": {
+    "start": 426808,
+    "end": 433408,
+    "expected_compressed_bytes": 6601
+  },
+  "curl_common_argv": [
+    "curl.exe",
+    "--silent",
+    "--show-error",
+    "--proto",
+    "=https",
+    "--connect-timeout",
+    "5",
+    "--max-time",
+    "20",
+    "--max-redirs",
+    "0",
+    "--max-filesize",
+    "16384",
+    "--header",
+    "Accept-Encoding: identity",
+    "--range",
+    "426808-433408"
+  ],
+  "maximum_attempts": 2,
+  "maximum_seconds": 90,
+  "per_attempt_subprocess_timeout_seconds": 25,
+  "maximum_body_bytes_per_attempt": 16384,
+  "maximum_total_body_bytes": 32768,
+  "maximum_decompressed_arc_bytes": 1048576,
+  "expected_http_status": 206,
+  "minimum_request_start_seconds": 5,
+  "direct_first": true,
+  "proxy_fallback": "http://127.0.0.1:7890",
+  "fallback_only_after_transport_failure": true,
+  "tls_verification": true,
+  "stop_statuses": [
+    429,
+    503
+  ],
+  "cooldown_min_seconds": 120,
+  "raw_http_private": true,
+  "disk_floor_bytes": 11005853696,
+  "output_dir": "research/continuous-recovery-20261020/network/commoncrawl-arc01",
+  "scope": "One exact Common Crawl ARC range using the root-reviewed curl command contract. No whole ARC file, no Wayback, no image acceptance. Root independently reviews returned range, bounded inflation, ARC URL/date/HTTP headers and payload digest before any use."
+}

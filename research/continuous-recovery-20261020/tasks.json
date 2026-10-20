@@ -29,7 +29,7 @@
       "id": "NET01",
       "owner": "network_recovery_20261020",
       "goal": "Serially retrieve source-led images and remaining gallery windows within accepted controls",
-      "state": "waiting_fresh_control_and_inputs",
+      "state": "blocked_endpoint429_no_new_wayback_batch",
       "dependencies": [
         "INPUT01",
         "CONTROL01"
@@ -38,11 +38,11 @@
     },
     {
       "id": "BUILD01",
-      "owner": "local_recovery_20261020",
+      "owner": "finish_v39_integration",
       "goal": "Integrate accepted resource changes into a new derived version and verify actual display",
-      "state": "waiting_accepted_delta",
+      "state": "root_accepted_frozen_tree_and4_browser_pages",
       "dependencies": [
-        "NET01"
+        "LOCAL03"
       ],
       "output": "integration/"
     },
@@ -50,7 +50,7 @@
       "id": "FINAL",
       "owner": "root",
       "goal": "Independent acceptance, normal commit/push, Pages and processed ZIP publication where justified, and deadline closeout",
-      "state": "pending",
+      "state": "publication_preparing_v39",
       "dependencies": [
         "BASE01",
         "BUILD01"
@@ -81,7 +81,7 @@
       "id": "CC01",
       "owner": "network_recovery_20261020",
       "goal": "Probe independent Common Crawl2008-2009 metadata for original site assets; no Wayback requests",
-      "state": "root_reviewed_go_running",
+      "state": "root_accepted_metadata_and_one_supplemental_arc_html_zero_images",
       "dependencies": [
         "DNS01"
       ],
@@ -91,11 +91,52 @@
       "id": "LOCAL03",
       "owner": "local_recovery_20261020",
       "goal": "Match historical target CDX payload digests to actual existing local image bytes under different URLs",
-      "state": "in_progress",
+      "state": "root_accepted_two_byte_identical_reuse_images",
       "dependencies": [
         "LOCAL02"
       ],
       "output": "local-audit/digest-reuse/"
+    },
+    {
+      "id": "CCARC01",
+      "owner": "root",
+      "goal": "Verify bounded ARC range, framing and exact indexed payload digest",
+      "state": "root_accepted52400B_html_no_deployment",
+      "dependencies": [
+        "CC01"
+      ],
+      "output": "publication/root-commoncrawl-arc01-source-acceptance.json"
+    },
+    {
+      "id": "CONTROL02",
+      "owner": "network_recovery_20261020",
+      "goal": "One root-reviewed post-cooldown exact-CDX control",
+      "state": "root_accepted429_wayback_stopped_for_run",
+      "dependencies": [
+        "CONTROL01"
+      ],
+      "output": "network/control02/"
+    },
+    {
+      "id": "LOCAL04",
+      "owner": "finish_expanded_digest",
+      "goal": "Extend digest comparison to all existing prefix-CDX files for remaining literal static target URLs",
+      "state": "root_reviewed_selected_and_all_capture_closure_zero_additional_visible_candidates",
+      "dependencies": [
+        "LOCAL03"
+      ],
+      "output": "local-audit/digest-reuse-expanded/"
+    },
+    {
+      "id": "CC02",
+      "owner": "finish_expanded_digest",
+      "goal": "Five exact independent Common Crawl queries for news121,123,126,136,137",
+      "state": "root_accepted2_gateway504_no_rows3_unqueried_provider_stopped",
+      "dependencies": [
+        "CC01",
+        "INPUT01"
+      ],
+      "output": "network/commoncrawl-probe02/"
     }
   ]
 }
