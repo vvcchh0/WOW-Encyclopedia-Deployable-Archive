@@ -1,0 +1,100 @@
+{
+  "accepted": true,
+  "checked_utc": "2026-10-20T08:54:06.576259+00:00",
+  "resume_gate_passed": false,
+  "is_network_batch": true,
+  "network_requests": 2,
+  "accepted_images": 0,
+  "endpoint_stop_status": 429,
+  "stop_reason": "endpoint_status_429",
+  "failure_streak_end": 0,
+  "cooldown_not_before_utc": "2026-10-20T08:54:46.410236Z",
+  "last_failure_finished_utc": "2026-10-20T08:52:46.410236Z",
+  "control_success_finished_utc": null,
+  "previous_failure_receipt_sha256": "6556a52a0526814c26af1aa7e78d315284dd47add637cdb9c96736cdad71c78a",
+  "private_report_sha256": "c10060a5484e4f0092660087c15d72f04f13928efde4f1181b864f31083a93f3",
+  "parent_receipt_sha256": "155f817b421446cb99af007a27e9687371cd1737d0439eb7d5c918c88b1371f9",
+  "wire_evidence_bindings": [
+    {
+      "path": "research/continuous-recovery-20261020/network/control01/raw/01-direct.body",
+      "exists": false,
+      "bytes": null,
+      "sha256": null
+    },
+    {
+      "path": "research/continuous-recovery-20261020/network/control01/raw/01-direct.headers.txt",
+      "exists": true,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/network/control01/raw/01-direct.trace.txt",
+      "exists": true,
+      "bytes": 329,
+      "sha256": "987960911b9563b0cab5d3b470c1ba4eaaead43dac8fe409cb809defb1790b12"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/network/control01/raw/01-direct.stderr.txt",
+      "exists": true,
+      "bytes": 57,
+      "sha256": "22696755220bcdeaea864857946a558239043b2b22de3afc3b5a3389de0aee55"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/network/control01/raw/01-direct.metrics.txt",
+      "exists": true,
+      "bytes": 43,
+      "sha256": "6570faf534e6f677866aa9fdd24c6899c6471ff0b80d4909d0936ae5c1ab4a7d"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/network/control01/raw/02-proxy.body",
+      "exists": true,
+      "bytes": 162,
+      "sha256": "413d294fad14524bf94e764b33ff0f327682549408545171fcf9240189c154ae"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/network/control01/raw/02-proxy.headers.txt",
+      "exists": true,
+      "bytes": 331,
+      "sha256": "19e8cd45e8ae5635e90569c5f2ad285b465cd28c417c33d84d2e0ca173a47b24"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/network/control01/raw/02-proxy.trace.txt",
+      "exists": true,
+      "bytes": 16586,
+      "sha256": "80cce04282c0e54c825215a099983ab40d181d3160ea22292141935ee3f10c69"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/network/control01/raw/02-proxy.stderr.txt",
+      "exists": true,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "research/continuous-recovery-20261020/network/control01/raw/02-proxy.metrics.txt",
+      "exists": true,
+      "bytes": 43,
+      "sha256": "546261031b3ead260397cc6272ac89eb878276fc4965cf5c3c46e90be6b887cc"
+    }
+  ],
+  "diagnostics": [
+    {
+      "transport": "direct",
+      "curl_exit": 28,
+      "http_status": null,
+      "tcp_connected": false,
+      "tls_completed": false,
+      "meaning": "TCP connection did not complete within the connect timeout; TLS/certificate validation was not reached."
+    },
+    {
+      "transport": "proxy",
+      "curl_exit": 0,
+      "http_status": 429,
+      "tcp_connected": true,
+      "tls_completed": true,
+      "meaning": "Endpoint HTTP limit/unavailable response; no resource absence conclusion."
+    }
+  ],
+  "tls_verification": true,
+  "settings_changed": false,
+  "scope": "Root checked bound executable inputs, actual parent watchdog, wire statuses/body, exact known CDX row when present, cadence, disk and immediate stop. Not an image payload or site completeness acceptance."
+}

@@ -1,0 +1,101 @@
+{
+  "schema": "wow-recovery-tasks/v1",
+  "tasks": [
+    {
+      "id": "BASE01",
+      "owner": "root",
+      "goal": "Verify current local, remote and published baseline",
+      "state": "root_accepted_local_remote_frozen_manifest_identity",
+      "dependencies": [],
+      "output": "publication/"
+    },
+    {
+      "id": "INPUT01",
+      "owner": "local_recovery_20261020",
+      "goal": "Deduplicate six corrected news originals, news121-160 and open gallery windows against actual request evidence",
+      "state": "root_accepted40_active_news_and10_gallery_prefix_inputs",
+      "dependencies": [],
+      "output": "local-audit/"
+    },
+    {
+      "id": "CONTROL01",
+      "owner": "network_recovery_20261020",
+      "goal": "Prepare and execute a root-reviewed fresh bounded exact-CDX control after latest429",
+      "state": "root_accepted_observed429_no_resume",
+      "dependencies": [],
+      "output": "network/control01/"
+    },
+    {
+      "id": "NET01",
+      "owner": "network_recovery_20261020",
+      "goal": "Serially retrieve source-led images and remaining gallery windows within accepted controls",
+      "state": "waiting_fresh_control_and_inputs",
+      "dependencies": [
+        "INPUT01",
+        "CONTROL01"
+      ],
+      "output": "network/"
+    },
+    {
+      "id": "BUILD01",
+      "owner": "local_recovery_20261020",
+      "goal": "Integrate accepted resource changes into a new derived version and verify actual display",
+      "state": "waiting_accepted_delta",
+      "dependencies": [
+        "NET01"
+      ],
+      "output": "integration/"
+    },
+    {
+      "id": "FINAL",
+      "owner": "root",
+      "goal": "Independent acceptance, normal commit/push, Pages and processed ZIP publication where justified, and deadline closeout",
+      "state": "pending",
+      "dependencies": [
+        "BASE01",
+        "BUILD01"
+      ],
+      "output": "publication/"
+    },
+    {
+      "id": "DNS01",
+      "owner": "network_recovery_20261020",
+      "goal": "Read-only diagnosis of unexpected direct DNS result and pre-TLS timeout; no Wayback HTTP",
+      "state": "root_accepted_wire_findings_with_accounting_correction",
+      "dependencies": [
+        "CONTROL01"
+      ],
+      "output": "network/dns-diagnosis01/"
+    },
+    {
+      "id": "LOCAL02",
+      "owner": "local_recovery_20261020",
+      "goal": "Find downloaded but unintegrated same-URL image payloads using bounded existing manifests",
+      "state": "complete_scoped_zero_new_payloads95_already_integrated_metadata_budget_deviation_recorded",
+      "dependencies": [
+        "INPUT01"
+      ],
+      "output": "local-audit/existing-payloads/"
+    },
+    {
+      "id": "CC01",
+      "owner": "network_recovery_20261020",
+      "goal": "Probe independent Common Crawl2008-2009 metadata for original site assets; no Wayback requests",
+      "state": "root_reviewed_go_running",
+      "dependencies": [
+        "DNS01"
+      ],
+      "output": "network/commoncrawl-probe01/"
+    },
+    {
+      "id": "LOCAL03",
+      "owner": "local_recovery_20261020",
+      "goal": "Match historical target CDX payload digests to actual existing local image bytes under different URLs",
+      "state": "in_progress",
+      "dependencies": [
+        "LOCAL02"
+      ],
+      "output": "local-audit/digest-reuse/"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "schema": "wow-recovery.dns-diagnosis01-correction.v1",
+  "batch_id": "DNS-DIAGNOSIS-01-20261020",
+  "purpose": "Correct accounting and timing fields without rewriting the frozen diagnosis report, driver, or receipt.",
+  "source_report": {
+    "path": "research/continuous-recovery-20261020/network/dns-diagnosis01/diagnosis-report.json",
+    "sha256": "de3617bfe3cd2eb19ab9e2d2ef42614920ea46221eb83f4c9cacaa4984651948",
+    "bytes": 12982,
+    "source_started_utc": "2026-10-20T08:58:20.780416Z",
+    "source_finished_utc": "2026-10-20T08:58:20.783440Z",
+    "source_started_utc_is_post_request": true
+  },
+  "frozen_artifacts": {
+    "driver": {
+      "path": "research/continuous-recovery-20261020/network/dns-diagnosis01/diagnosis_driver.py",
+      "sha256": "4b3c3fef9fbb6e24c5e1e3ba80b8a89a986e69a77dd073496efad670f537b2f0"
+    },
+    "receipt": {
+      "path": "research/continuous-recovery-20261020/network/dns-diagnosis01/diagnosis-receipt.json",
+      "sha256": "508b37680e73358447f762cee0fb86f19abed07e142d1bad3a65cb69a9b55739",
+      "bytes": 635
+    }
+  },
+  "corrected_observation": {
+    "actual_http_requests_total": 5,
+    "dns_requests": 4,
+    "rdap_requests": 1,
+    "wayback_requests": 0,
+    "actual_total_body_bytes": 7797,
+    "min_started_utc": "2026-10-20T08:58:07.408886Z",
+    "max_finished_utc": "2026-10-20T08:58:20.779905Z",
+    "network_requests_added_by_correction": 0,
+    "requests": [
+      {
+        "request_number": 1,
+        "label": "google",
+        "kind": "dns",
+        "transport": "direct",
+        "started_utc": "2026-10-20T08:58:07.408886Z",
+        "finished_utc": "2026-10-20T08:58:15.553353Z",
+        "curl_exit": 28,
+        "source_status": null,
+        "body_bytes": 0,
+        "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "request_number": 2,
+        "label": "google",
+        "kind": "dns",
+        "transport": "proxy",
+        "started_utc": "2026-10-20T08:58:15.553433Z",
+        "finished_utc": "2026-10-20T08:58:16.684166Z",
+        "curl_exit": 0,
+        "source_status": 200,
+        "body_bytes": 195,
+        "body_sha256": "8ecfa84ddf2cfe30e46b419f63a99a1b7335dc54f0e6be5c3decc33fdf1ea498"
+      },
+      {
+        "request_number": 3,
+        "label": "cloudflare",
+        "kind": "dns",
+        "transport": "direct",
+        "started_utc": "2026-10-20T08:58:16.685169Z",
+        "finished_utc": "2026-10-20T08:58:16.951607Z",
+        "curl_exit": 35,
+        "source_status": null,
+        "body_bytes": 0,
+        "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "request_number": 4,
+        "label": "cloudflare",
+        "kind": "dns",
+        "transport": "proxy",
+        "started_utc": "2026-10-20T08:58:16.952607Z",
+        "finished_utc": "2026-10-20T08:58:18.934591Z",
+        "curl_exit": 0,
+        "source_status": 200,
+        "body_bytes": 226,
+        "body_sha256": "16764971be0bd72d2f0771f54787bdadd5f4e21b3e6162a0b8acc8e5cca006c9"
+      },
+      {
+        "request_number": 5,
+        "label": "arin-rdap",
+        "kind": "rdap",
+        "transport": "direct",
+        "started_utc": "2026-10-20T08:58:18.934591Z",
+        "finished_utc": "2026-10-20T08:58:20.779905Z",
+        "curl_exit": 0,
+        "source_status": 200,
+        "body_bytes": 7376,
+        "body_sha256": "5a3a52141a8188d843fccb03637039f3539a29adeb960e7c36379093c6f0b890"
+      }
+    ]
+  },
+  "interpretation_limits": {
+    "cloudflare_comment": "EDE(18): Prohibited",
+    "doh_provider_role": "Both Google and Cloudflare observations are public recursive DoH responses, not authoritative archive DNS.",
+    "trace_ip_difference": "The difference between the historical trace IP and current DoH answers remains a discrepancy; it does not by itself prove DNS pollution.",
+    "raw_http_private": true
+  },
+  "integrity": {
+    "original_report_modified": false,
+    "original_driver_modified": false,
+    "original_receipt_modified": false,
+    "correction_network_requests": 0
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "schema": "wow-recovery.commoncrawl-probe01-input-bindings.v1",
+  "batch_id": "COMMONCRAWL-PROBE01-20261020",
+  "plan": {
+    "path": "research/continuous-recovery-20261020/network/commoncrawl-probe01/plan.json",
+    "sha256": "0ef59e7e7c3e3642cc7697ef51bf4f753f65c9702711a39318427d05976a3232",
+    "bytes": 4689,
+    "role": "Prepared Common Crawl collection/query plan; root GO remains required."
+  },
+  "latest_failure": {
+    "control_report": {
+      "path": "research/continuous-recovery-20261020/network/control01/control-report.json",
+      "sha256": "c10060a5484e4f0092660087c15d72f04f13928efde4f1181b864f31083a93f3",
+      "bytes": 5222,
+      "role": "Latest fresh Wayback control failure context; not a Common Crawl request."
+    },
+    "source_acceptance": {
+      "path": "research/continuous-recovery-20261020/publication/root-control01-source-acceptance.json",
+      "sha256": "2420341b37eff901ecbe0288a12f738cd5380067e35a5c7f32268874730fd372",
+      "bytes": 3966,
+      "role": "Root-accepted control01 endpoint-status-429 evidence."
+    },
+    "stop_reason": "endpoint_status_429",
+    "finished_utc": "2026-10-20T08:52:46.410236Z",
+    "cooldown_not_before_utc": "2026-10-20T08:54:46.410236Z",
+    "wayback_request_authorization_for_this_packet": false
+  },
+  "frozen_parser": {
+    "path": "research/continuous-recovery-20261016/network/control02-plan/control02_driver.py",
+    "sha256": "85457ea1baa96c474e33ffc01210b4f6d96b3d6d276dc7a2b56aff3cd8376530",
+    "bytes": 22340,
+    "role": "Frozen headers parser reused for status, proxy-connect, and Retry-After parsing."
+  },
+  "frozen_transport_reference": {
+    "path": "research/continuous-recovery-20261018/network/reusable-image-driver-v3/reusable_image_driver.py",
+    "sha256": "4a19422f0dd8e2f7e1ffdd088836c7ab80450afb91aeedc6cdb94fa4c6bfe955",
+    "bytes": 103121,
+    "role": "Accepted transport-policy reference; its image replay path is not invoked by this metadata-only packet."
+  },
+  "frozen_target_sources": {
+    "gallery_prefix_registry_v7": {
+      "path": "research/continuous-recovery-20261016/local-audit/gallery-final-v7/gallery-prefix-registry-v7.json",
+      "sha256": "2579f66841bf6102d90f5dbfe819902337bff03f6e3ac7191239ae041e2d97d6",
+      "bytes": 418729,
+      "role": "Frozen source registry for the literal gallery prefixes."
+    },
+    "karazhan_sourceaddshots": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/karazhan-gallery.html",
+      "sha256": "fc7f46d260cba6c434fd5e67d47008f207fbb8bd939a630089599d097755c199",
+      "bytes": 15124,
+      "source_directory": "/info/dungeons/images/karazhan/",
+      "role": "Frozen addshots sourceDirectory evidence."
+    },
+    "blacktemple_sourceaddshots": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/black-temple-gallery.html",
+      "sha256": "04c728723c639d4613f77bf449cd93ae68c494b08151b76da00899984ffff4ff",
+      "bytes": 16062,
+      "source_directory": "/info/dungeons/images/blacktemple/",
+      "role": "Frozen addshots sourceDirectory evidence."
+    },
+    "encyclopedia_index_source": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/info/encyclopedia/index.xml",
+      "sha256": "b531cbd2d6b0ef1ad37cf744d666e6559120142d230baf308baa70b53a512b1d",
+      "bytes": 59230,
+      "role": "Frozen exact encyclopedia index source."
+    },
+    "encyclopedia_navigation_source": {
+      "path": ".scratch/offline-navigation-20261015-v15/site/community/chinaicoke.html",
+      "sha256": "b9922ccd100f629f950098f0745dbce15360bc66c69e1d43ca313c573ff32daa",
+      "bytes": 46839,
+      "role": "Frozen navigation evidence linking Encyclopedia to /info/encyclopedia/index.xml."
+    }
+  },
+  "future_runtime_files": {
+    "driver": {
+      "path": "research/continuous-recovery-20261020/network/commoncrawl-probe01/commoncrawl_probe01.py",
+      "sha256": "c59493f4b14496edb0a5215e979147f3c6b57f46566baf71f2f3b11f3ca5b4e6",
+      "bytes": 32525,
+      "role": "Root-GO-gated Common Crawl metadata driver."
+    },
+    "parent_watchdog": {
+      "path": "research/continuous-recovery-20261020/network/commoncrawl-probe01/parent-execute-once.py",
+      "sha256": "f0d5fff481155b19d121eeff7cf3a48491897de64a65c7d29444899fdc11a5ae",
+      "bytes": 3524,
+      "role": "Single parent execution wrapper with a 600-second watchdog."
+    }
+  },
+  "provenance_boundary": {
+    "provider_is_independent_of_wayback": true,
+    "raw_http_private": true,
+    "arc_or_image_body_not_requested": true,
+    "preparation_http_requests": 0,
+    "fixture_not_self_bound": true,
+    "fixture_binding_is_reserved_for_root_go": true
+  }
+}

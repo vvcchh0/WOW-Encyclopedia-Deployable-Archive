@@ -1,0 +1,2493 @@
+{
+  "schema": "wow-recovery.continuous-recovery-20261020.local-audit-queue.v1",
+  "prepared_date": "2026-10-20",
+  "audit_cutoff_utc_supplied": "2026-10-20T14:33:22Z",
+  "network_performed": false,
+  "network_boundary": "All counts and rows below are local evidence or plan inputs; no network/CDX/replay request was made in this audit.",
+  "repository": {
+    "head": "f84786d4820438213f0610df147fb78c3f0b2af9",
+    "branch": "main",
+    "published_v38_root": ".scratch/pages-resources-20261019-v38"
+  },
+  "scope": {
+    "owned_output_prefix": "research/continuous-recovery-20261020/local-audit/",
+    "immutable_source15": true,
+    "immutable_accepted": true,
+    "excluded_writes": [
+      "docs/",
+      "publication/",
+      "tools/",
+      "offline/",
+      "old acceptance directories"
+    ],
+    "source15_raw_full_scan_repeated": false
+  },
+  "source_inputs": [
+    {
+      "path": "research/continuous-recovery-20261019/publication/next-media-aliases-source-corrected.json",
+      "bytes": 6698,
+      "sha256": "c5811da2cce6de37e1180147e9845323db80a54280070523333b56c8a87900e8",
+      "role": "corrected six-source manifest; candidate evidence only"
+    },
+    {
+      "path": "research/continuous-recovery-20261019/local-audit/news-extension/news-extension-candidates.json",
+      "bytes": 394645,
+      "sha256": "ff8b2d7aa9b94d47cdf9d67ed015c62e6bef7f7662ec15e20ff3c89105d2d708",
+      "role": "frozen R2 news-extension candidate/source manifest"
+    },
+    {
+      "path": "research/continuous-recovery-20261019/gallery-audit/coverage-after-rest10b/full-source15-crossrefs-r3/coverage-ledger-r3-addendum.json",
+      "bytes": 174867,
+      "sha256": "7d79a5aac49f31dd617ac0ce358fdc79c64e476ed2359b1a3dd49d0afdfd6280",
+      "role": "r3 late-gallery open/complete ledger"
+    },
+    {
+      "path": "research/continuous-recovery-20261019/gallery-audit/coverage-after-rest10b/coverage-ledger.json",
+      "bytes": 150053,
+      "sha256": "addd32f2f54fe22dabcfff75dec0fd3eba2af413434acfbc3320ccfe3dbd2cf3",
+      "role": "base late-gallery ledger"
+    },
+    {
+      "path": ".scratch/offline-navigation-20261015-v15/site/news/wow-news2004.html",
+      "bytes": 427750,
+      "sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d",
+      "role": "immutable Source15 2004 news source"
+    },
+    {
+      "path": ".scratch/offline-navigation-20261015-v15/site/news/wow-news2005.html",
+      "bytes": 190181,
+      "sha256": "988aee39ade43ff39a345e2a47c4cda5fe983c4bd42e8fa00dc7e1837334e20d",
+      "role": "immutable Source15 2005 news source"
+    },
+    {
+      "path": ".scratch/pages-resources-20261018-v33/news/wow-news2004.html",
+      "bytes": 449208,
+      "sha256": "ce027634ec7041e2ee8480c78fcde0662f7e953ba49cd68593c1599976168d38",
+      "role": "v33 active missing-marker page"
+    },
+    {
+      "path": ".scratch/pages-resources-20261018-v33/news/wow-news2005.html",
+      "bytes": 202395,
+      "sha256": "f0707387db0db1418b6e219ea992275e6718a2cad2357066c3a0fbf3a7674056",
+      "role": "v33 active missing-marker page"
+    },
+    {
+      "path": ".scratch/pages-resources-20261019-v38/news/wow-news2004.html",
+      "bytes": 433092,
+      "sha256": "70dcadc227fcb30866bf95e48b2a316b4776be58190c5679ef87a35cd12aa4c5",
+      "role": "published v38 2004 page"
+    },
+    {
+      "path": ".scratch/pages-resources-20261019-v38/news/wow-news2005.html",
+      "bytes": 202395,
+      "sha256": "f0707387db0db1418b6e219ea992275e6718a2cad2357066c3a0fbf3a7674056",
+      "role": "published v38 2005 page"
+    },
+    {
+      "path": "research/site-recovery-2008/prefix-cdx/003-08c5d92edd079b20.json",
+      "bytes": 3112498,
+      "sha256": "54704b347c97dde8e50ca3bc6a26d3242b763643339005c5fd293cb970b8f229",
+      "role": "historical prefix-CDX response"
+    },
+    {
+      "path": "research/site-recovery-2008/prefix-cdx/003-08c5d92edd079b20.meta.json",
+      "bytes": 1876,
+      "sha256": "45ba034a666170a529cf5b0e6858527522c83ef5e964c16a45a58e60af21b559",
+      "role": "historical prefix-CDX receipt metadata"
+    },
+    {
+      "path": "research/site-recovery-2008/prefix-rescan-2008/raw/005-6e1d7f70c55e4481.json",
+      "bytes": 3112135,
+      "sha256": "b15437ff6283435588d824e206a0f251eac4ac81dddbc3cc05b16f421ad8122e",
+      "role": "historical capped prefix-CDX response"
+    },
+    {
+      "path": "research/site-recovery-2008/prefix-rescan-2008/raw/005-6e1d7f70c55e4481.meta.json",
+      "bytes": 2799,
+      "sha256": "8d4e213cdd52630a4aec049e97c7ab43ec6a5920a060ab3ba3999d78abed632c",
+      "role": "historical capped prefix-CDX receipt metadata"
+    },
+    {
+      "path": "research/continuous-recovery-20261019/network/frontier-news20f/plan.json",
+      "bytes": 158463,
+      "sha256": "54c1c09686b3969308072ab7d0066d04e24d70252cf598faf7420c951e4be386",
+      "role": "frozen prior news exact-CDX plan"
+    },
+    {
+      "path": "research/continuous-recovery-20261019/network/frontier-news20f/dedupe-audit.json",
+      "bytes": 45730,
+      "sha256": "42f0fa4de9b1bf94ae9b2348b2e61680fd005c7b9db49e258c913547fe8bb7e8",
+      "role": "prior news offline dedupe audit"
+    },
+    {
+      "path": "research/continuous-recovery-20261019/network/frontier-news20f/selection-manifest.json",
+      "bytes": 156373,
+      "sha256": "0fca336b6846eee7512329e851a82922505906117973c01b4e98707f92ac4d4b",
+      "role": "prior actual news packet selection"
+    },
+    {
+      "path": "research/continuous-recovery-20261019/network/frontier-news20f/output/batch-report.json",
+      "bytes": 519185,
+      "sha256": "eef7f4bfdd5124dbbc2bf8da69ae282ce2fcaecab25e5a35e1899a8b9d43d954",
+      "role": "prior actual news execution report"
+    },
+    {
+      "path": "research/continuous-recovery-20261019/publication/root-frontier-news20f-source-acceptance.json",
+      "bytes": 15758,
+      "sha256": "5c9c965737f3ef1282a85c516663a5f216b93f8fc627a7dcddb382fd6707d165",
+      "role": "prior actual news source acceptance"
+    },
+    {
+      "path": "research/continuous-recovery-20261019/network/gallery-late-rest10b/plan.json",
+      "bytes": 50225,
+      "sha256": "d8578ff9565f45c90defba1b7a6cb9f0d259ce3f47912bda9d73dcdb81b8588b",
+      "role": "prior late-gallery query plan"
+    },
+    {
+      "path": "research/continuous-recovery-20261019/network/gallery-late-rest10b/execution-plan.json",
+      "bytes": 19015,
+      "sha256": "4c303f5ae599973d68f63b45ecf8f9e10dabcdba5dcd6b676c1c59c998bacb8c",
+      "role": "prior late-gallery execution plan"
+    },
+    {
+      "path": "research/continuous-recovery-20261019/network/gallery-late-rest10b/batch-report.json",
+      "bytes": 466637,
+      "sha256": "3a62951482e7a6ea8835fa76928aece1210745e09b5d11d46a43ed46828033d0",
+      "role": "prior late-gallery actual report"
+    },
+    {
+      "path": "research/continuous-recovery-20261019/publication/root-gallery-late-rest10b-source-acceptance.json",
+      "bytes": 231650,
+      "sha256": "73cfbbe8594357128cc658571a2681262628ca561c3d62b45eb11d1406c6059d",
+      "role": "prior late-gallery source acceptance"
+    }
+  ],
+  "counts": {
+    "a_comment_only_candidates": 6,
+    "a_actual_exact_cdx_requests": 0,
+    "a_actual_image_replay_receipts": 0,
+    "a_distinct_historical_prefix_rows": 3,
+    "b_priority_candidates": 20,
+    "b_v38_active_missing_markers": 20,
+    "b_v38_direct_assets_missing": 20,
+    "b_actual_exact_cdx_or_replay_receipts": 0,
+    "c_ledger_groups": 50,
+    "c_ledger_complete": 21,
+    "c_ledger_open": 29,
+    "c_next_late_prefix_candidates": 10,
+    "c_prior_source_503_open_groups": 1,
+    "c_prior_not_queried_open_groups": 28
+  },
+  "a_koreapvp_comment_only": {
+    "source_manifest": {
+      "path": "research/continuous-recovery-20261019/publication/next-media-aliases-source-corrected.json",
+      "bytes": 6698,
+      "sha256": "c5811da2cce6de37e1180147e9845323db80a54280070523333b56c8a87900e8",
+      "role": "corrected six-source manifest; candidate evidence only"
+    },
+    "source15_context_kind_correction": "img_src_in_html_comment",
+    "source15_comment_block": {
+      "date_line": 2009,
+      "open_line": 2010,
+      "close_line": 2051,
+      "label": "A Rumble in the Desert"
+    },
+    "v38_comment_block": {
+      "date_line": 2014,
+      "open_line": 2015,
+      "close_line": 2056,
+      "label": "A Rumble in the Desert"
+    },
+    "prefix_cdx_receipts": [
+      {
+        "raw_file": "research/site-recovery-2008/prefix-cdx/003-08c5d92edd079b20.json",
+        "raw_sha256": "54704b347c97dde8e50ca3bc6a26d3242b763643339005c5fd293cb970b8f229",
+        "meta_file": "research/site-recovery-2008/prefix-cdx/003-08c5d92edd079b20.meta.json",
+        "meta_sha256": "45ba034a666170a529cf5b0e6858527522c83ef5e964c16a45a58e60af21b559",
+        "request_kind": "prefix",
+        "request_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2F&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cdigest%2Clength%2Cmimetype&filter=statuscode%3A200&from=2006&to=20081231235959&limit=20000",
+        "status": 200,
+        "from": "2006",
+        "to": "20081231235959",
+        "truncated": false,
+        "row_count": null,
+        "capture_row_count": null
+      },
+      {
+        "raw_file": "research/site-recovery-2008/prefix-rescan-2008/raw/005-6e1d7f70c55e4481.json",
+        "raw_sha256": "b15437ff6283435588d824e206a0f251eac4ac81dddbc3cc05b16f421ad8122e",
+        "meta_file": "research/site-recovery-2008/prefix-rescan-2008/raw/005-6e1d7f70c55e4481.meta.json",
+        "meta_sha256": "8d4e213cdd52630a4aec049e97c7ab43ec6a5920a060ab3ba3999d78abed632c",
+        "request_kind": "prefix",
+        "request_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2F&matchType=prefix&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cdigest%2Clength%2Cmimetype&from=2006&to=20081231235959&limit=20000",
+        "status": 200,
+        "from": "2006",
+        "to": "20081231235959",
+        "truncated": true,
+        "row_count": 20001,
+        "capture_row_count": 20000
+      }
+    ],
+    "items": [
+      {
+        "item_id": "news-koreapvp-ss01",
+        "original_url": "http://www.worldofwarcraft.com/news/images/04-09/pvp/koreapvp/ss01.jpg",
+        "source_literal": "images/04-09/pvp/koreapvp/ss01.jpg",
+        "role": "comment_only_historical_clue",
+        "priority": "low; history only; exclude from visible-v38 missing-image execution queue",
+        "source": {
+          "path": ".scratch/offline-navigation-20261015-v15/site/news/wow-news2004.html",
+          "sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d",
+          "bytes": 427750,
+          "route": "/news/wow-news2004.html",
+          "line": 2019,
+          "attribute_kind": "img_src",
+          "context_kind_corrected": "html_comment",
+          "comment_block": {
+            "date_line": 2009,
+            "open_line": 2010,
+            "close_line": 2051,
+            "label": "A Rumble in the Desert"
+          },
+          "line_sha256": "61893069042d8b6b9b554e420f8630025e0ec55e2ea55c53fd4f82b1e2a88a0f"
+        },
+        "v38": {
+          "path": ".scratch/pages-resources-20261019-v38/news/wow-news2004.html",
+          "sha256": "70dcadc227fcb30866bf95e48b2a316b4776be58190c5679ef87a35cd12aa4c5",
+          "line": 2024,
+          "attribute_kind": "img_src",
+          "context_kind": "html_comment",
+          "comment_block": {
+            "date_line": 2014,
+            "open_line": 2015,
+            "close_line": 2056,
+            "label": "A Rumble in the Desert"
+          },
+          "line_sha256": "61893069042d8b6b9b554e420f8630025e0ec55e2ea55c53fd4f82b1e2a88a0f",
+          "active_visible_img": false,
+          "active_missing_marker": false,
+          "local_direct_path": ".scratch/pages-resources-20261019-v38/news/images/04-09/pvp/koreapvp/ss01.jpg",
+          "local_direct_exists": false
+        },
+        "original_viewer_page": {
+          "url": "http://www.blizzard.com/wow/ssotd/imageviewer.aspx?imageindex=3&set=6",
+          "image_index": 3,
+          "relationship": "enclosing href in the same commented block",
+          "use_original_page_if_expanded": true,
+          "do_not_guess_direct_image_path": true
+        },
+        "historical_prefix_cdx_rows": [],
+        "prefix_row_observed_in_receipt_count": 0,
+        "prefix_row_receipt_files": [],
+        "exact_cdx_request_receipts": [],
+        "image_replay_receipts": [],
+        "planned_exact_windows": [
+          {
+            "id": "pre_anchor",
+            "from": "20000101000000",
+            "to": "20080512210044",
+            "match_type": "exact",
+            "basis": "frozen frontier-news20f exact-CDX convention"
+          },
+          {
+            "id": "late_residual",
+            "from": "20080512210045",
+            "to": "20101207235959",
+            "match_type": "exact",
+            "basis": "late-gallery anchor split; no exact receipt found"
+          }
+        ],
+        "dedupe_status": "exact per-url CDX request remains required; prefix rows are evidence only"
+      },
+      {
+        "item_id": "news-koreapvp-ss02",
+        "original_url": "http://www.worldofwarcraft.com/news/images/04-09/pvp/koreapvp/ss02.jpg",
+        "source_literal": "images/04-09/pvp/koreapvp/ss02.jpg",
+        "role": "comment_only_historical_clue",
+        "priority": "low; history only; exclude from visible-v38 missing-image execution queue",
+        "source": {
+          "path": ".scratch/offline-navigation-20261015-v15/site/news/wow-news2004.html",
+          "sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d",
+          "bytes": 427750,
+          "route": "/news/wow-news2004.html",
+          "line": 2020,
+          "attribute_kind": "img_src",
+          "context_kind_corrected": "html_comment",
+          "comment_block": {
+            "date_line": 2009,
+            "open_line": 2010,
+            "close_line": 2051,
+            "label": "A Rumble in the Desert"
+          },
+          "line_sha256": "3c4d3f6ba3b767669acad39acd7699f57dcdd4986f35fee9f1f8c1f2f0eb44bc"
+        },
+        "v38": {
+          "path": ".scratch/pages-resources-20261019-v38/news/wow-news2004.html",
+          "sha256": "70dcadc227fcb30866bf95e48b2a316b4776be58190c5679ef87a35cd12aa4c5",
+          "line": 2025,
+          "attribute_kind": "img_src",
+          "context_kind": "html_comment",
+          "comment_block": {
+            "date_line": 2014,
+            "open_line": 2015,
+            "close_line": 2056,
+            "label": "A Rumble in the Desert"
+          },
+          "line_sha256": "3c4d3f6ba3b767669acad39acd7699f57dcdd4986f35fee9f1f8c1f2f0eb44bc",
+          "active_visible_img": false,
+          "active_missing_marker": false,
+          "local_direct_path": ".scratch/pages-resources-20261019-v38/news/images/04-09/pvp/koreapvp/ss02.jpg",
+          "local_direct_exists": false
+        },
+        "original_viewer_page": {
+          "url": "http://www.blizzard.com/wow/ssotd/imageviewer.aspx?imageindex=4&set=6",
+          "image_index": 4,
+          "relationship": "enclosing href in the same commented block",
+          "use_original_page_if_expanded": true,
+          "do_not_guess_direct_image_path": true
+        },
+        "historical_prefix_cdx_rows": [],
+        "prefix_row_observed_in_receipt_count": 0,
+        "prefix_row_receipt_files": [],
+        "exact_cdx_request_receipts": [],
+        "image_replay_receipts": [],
+        "planned_exact_windows": [
+          {
+            "id": "pre_anchor",
+            "from": "20000101000000",
+            "to": "20080512210044",
+            "match_type": "exact",
+            "basis": "frozen frontier-news20f exact-CDX convention"
+          },
+          {
+            "id": "late_residual",
+            "from": "20080512210045",
+            "to": "20101207235959",
+            "match_type": "exact",
+            "basis": "late-gallery anchor split; no exact receipt found"
+          }
+        ],
+        "dedupe_status": "exact per-url CDX request remains required; prefix rows are evidence only"
+      },
+      {
+        "item_id": "news-koreapvp-ss06",
+        "original_url": "http://www.worldofwarcraft.com/news/images/04-09/pvp/koreapvp/ss06.jpg",
+        "source_literal": "images/04-09/pvp/koreapvp/ss06.jpg",
+        "role": "comment_only_historical_clue",
+        "priority": "low; history only; exclude from visible-v38 missing-image execution queue",
+        "source": {
+          "path": ".scratch/offline-navigation-20261015-v15/site/news/wow-news2004.html",
+          "sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d",
+          "bytes": 427750,
+          "route": "/news/wow-news2004.html",
+          "line": 2031,
+          "attribute_kind": "img_src",
+          "context_kind_corrected": "html_comment",
+          "comment_block": {
+            "date_line": 2009,
+            "open_line": 2010,
+            "close_line": 2051,
+            "label": "A Rumble in the Desert"
+          },
+          "line_sha256": "995c4a7c8690d9d4096201fb124cf32ed0e08495a6b7a8cd980bf6d6dca84d31"
+        },
+        "v38": {
+          "path": ".scratch/pages-resources-20261019-v38/news/wow-news2004.html",
+          "sha256": "70dcadc227fcb30866bf95e48b2a316b4776be58190c5679ef87a35cd12aa4c5",
+          "line": 2036,
+          "attribute_kind": "img_src",
+          "context_kind": "html_comment",
+          "comment_block": {
+            "date_line": 2014,
+            "open_line": 2015,
+            "close_line": 2056,
+            "label": "A Rumble in the Desert"
+          },
+          "line_sha256": "995c4a7c8690d9d4096201fb124cf32ed0e08495a6b7a8cd980bf6d6dca84d31",
+          "active_visible_img": false,
+          "active_missing_marker": false,
+          "local_direct_path": ".scratch/pages-resources-20261019-v38/news/images/04-09/pvp/koreapvp/ss06.jpg",
+          "local_direct_exists": false
+        },
+        "original_viewer_page": {
+          "url": "http://www.blizzard.com/wow/ssotd/imageviewer.aspx?imageindex=11&set=6",
+          "image_index": 11,
+          "relationship": "enclosing href in the same commented block",
+          "use_original_page_if_expanded": true,
+          "do_not_guess_direct_image_path": true
+        },
+        "historical_prefix_cdx_rows": [
+          {
+            "timestamp": "20060418082927",
+            "original": "http://www.worldofwarcraft.com/news/images/04-09/pvp/koreapvp/ss06.jpg",
+            "statuscode": "200",
+            "digest": "KOU2HBEQA7BF3EJOO6B635WGH6DIIJWK",
+            "length": "6252",
+            "mimetype": "image/jpeg",
+            "receipt_raw_file": "research/site-recovery-2008/prefix-cdx/003-08c5d92edd079b20.json"
+          }
+        ],
+        "prefix_row_observed_in_receipt_count": 2,
+        "prefix_row_receipt_files": [
+          "research/site-recovery-2008/prefix-cdx/003-08c5d92edd079b20.json",
+          "research/site-recovery-2008/prefix-rescan-2008/raw/005-6e1d7f70c55e4481.json"
+        ],
+        "exact_cdx_request_receipts": [],
+        "image_replay_receipts": [],
+        "planned_exact_windows": [
+          {
+            "id": "pre_anchor",
+            "from": "20000101000000",
+            "to": "20080512210044",
+            "match_type": "exact",
+            "basis": "frozen frontier-news20f exact-CDX convention"
+          },
+          {
+            "id": "late_residual",
+            "from": "20080512210045",
+            "to": "20101207235959",
+            "match_type": "exact",
+            "basis": "late-gallery anchor split; no exact receipt found"
+          }
+        ],
+        "dedupe_status": "exact per-url CDX request remains required; prefix rows are evidence only"
+      },
+      {
+        "item_id": "news-koreapvp-ss05",
+        "original_url": "http://www.worldofwarcraft.com/news/images/04-09/pvp/koreapvp/ss05.jpg",
+        "source_literal": "images/04-09/pvp/koreapvp/ss05.jpg",
+        "role": "comment_only_historical_clue",
+        "priority": "low; history only; exclude from visible-v38 missing-image execution queue",
+        "source": {
+          "path": ".scratch/offline-navigation-20261015-v15/site/news/wow-news2004.html",
+          "sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d",
+          "bytes": 427750,
+          "route": "/news/wow-news2004.html",
+          "line": 2032,
+          "attribute_kind": "img_src",
+          "context_kind_corrected": "html_comment",
+          "comment_block": {
+            "date_line": 2009,
+            "open_line": 2010,
+            "close_line": 2051,
+            "label": "A Rumble in the Desert"
+          },
+          "line_sha256": "f5e9d07bfcde50ddf00b3ee5ec3a31a8199fb1002a6f055e56419a80b76ec4f6"
+        },
+        "v38": {
+          "path": ".scratch/pages-resources-20261019-v38/news/wow-news2004.html",
+          "sha256": "70dcadc227fcb30866bf95e48b2a316b4776be58190c5679ef87a35cd12aa4c5",
+          "line": 2037,
+          "attribute_kind": "img_src",
+          "context_kind": "html_comment",
+          "comment_block": {
+            "date_line": 2014,
+            "open_line": 2015,
+            "close_line": 2056,
+            "label": "A Rumble in the Desert"
+          },
+          "line_sha256": "f5e9d07bfcde50ddf00b3ee5ec3a31a8199fb1002a6f055e56419a80b76ec4f6",
+          "active_visible_img": false,
+          "active_missing_marker": false,
+          "local_direct_path": ".scratch/pages-resources-20261019-v38/news/images/04-09/pvp/koreapvp/ss05.jpg",
+          "local_direct_exists": false
+        },
+        "original_viewer_page": {
+          "url": "http://www.blizzard.com/wow/ssotd/imageviewer.aspx?imageindex=21&set=6",
+          "image_index": 21,
+          "relationship": "enclosing href in the same commented block",
+          "use_original_page_if_expanded": true,
+          "do_not_guess_direct_image_path": true
+        },
+        "historical_prefix_cdx_rows": [],
+        "prefix_row_observed_in_receipt_count": 0,
+        "prefix_row_receipt_files": [],
+        "exact_cdx_request_receipts": [],
+        "image_replay_receipts": [],
+        "planned_exact_windows": [
+          {
+            "id": "pre_anchor",
+            "from": "20000101000000",
+            "to": "20080512210044",
+            "match_type": "exact",
+            "basis": "frozen frontier-news20f exact-CDX convention"
+          },
+          {
+            "id": "late_residual",
+            "from": "20080512210045",
+            "to": "20101207235959",
+            "match_type": "exact",
+            "basis": "late-gallery anchor split; no exact receipt found"
+          }
+        ],
+        "dedupe_status": "exact per-url CDX request remains required; prefix rows are evidence only"
+      },
+      {
+        "item_id": "news-koreapvp-ss04",
+        "original_url": "http://www.worldofwarcraft.com/news/images/04-09/pvp/koreapvp/ss04.jpg",
+        "source_literal": "images/04-09/pvp/koreapvp/ss04.jpg",
+        "role": "comment_only_historical_clue",
+        "priority": "low; history only; exclude from visible-v38 missing-image execution queue",
+        "source": {
+          "path": ".scratch/offline-navigation-20261015-v15/site/news/wow-news2004.html",
+          "sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d",
+          "bytes": 427750,
+          "route": "/news/wow-news2004.html",
+          "line": 2042,
+          "attribute_kind": "img_src",
+          "context_kind_corrected": "html_comment",
+          "comment_block": {
+            "date_line": 2009,
+            "open_line": 2010,
+            "close_line": 2051,
+            "label": "A Rumble in the Desert"
+          },
+          "line_sha256": "5858f424c04e7d920102ddc92877f01b83071724096e191a202c1324a05108ff"
+        },
+        "v38": {
+          "path": ".scratch/pages-resources-20261019-v38/news/wow-news2004.html",
+          "sha256": "70dcadc227fcb30866bf95e48b2a316b4776be58190c5679ef87a35cd12aa4c5",
+          "line": 2047,
+          "attribute_kind": "img_src",
+          "context_kind": "html_comment",
+          "comment_block": {
+            "date_line": 2014,
+            "open_line": 2015,
+            "close_line": 2056,
+            "label": "A Rumble in the Desert"
+          },
+          "line_sha256": "5858f424c04e7d920102ddc92877f01b83071724096e191a202c1324a05108ff",
+          "active_visible_img": false,
+          "active_missing_marker": false,
+          "local_direct_path": ".scratch/pages-resources-20261019-v38/news/images/04-09/pvp/koreapvp/ss04.jpg",
+          "local_direct_exists": false
+        },
+        "original_viewer_page": {
+          "url": "http://www.blizzard.com/wow/ssotd/imageviewer.aspx?imageindex=27&set=6",
+          "image_index": 27,
+          "relationship": "enclosing href in the same commented block",
+          "use_original_page_if_expanded": true,
+          "do_not_guess_direct_image_path": true
+        },
+        "historical_prefix_cdx_rows": [
+          {
+            "timestamp": "20060418082851",
+            "original": "http://www.worldofwarcraft.com/news/images/04-09/pvp/koreapvp/ss04.jpg",
+            "statuscode": "200",
+            "digest": "E3YI6OBAQKKIM34YCTH2FE5FAQQ4YAZZ",
+            "length": "7179",
+            "mimetype": "image/jpeg",
+            "receipt_raw_file": "research/site-recovery-2008/prefix-cdx/003-08c5d92edd079b20.json"
+          }
+        ],
+        "prefix_row_observed_in_receipt_count": 2,
+        "prefix_row_receipt_files": [
+          "research/site-recovery-2008/prefix-cdx/003-08c5d92edd079b20.json",
+          "research/site-recovery-2008/prefix-rescan-2008/raw/005-6e1d7f70c55e4481.json"
+        ],
+        "exact_cdx_request_receipts": [],
+        "image_replay_receipts": [],
+        "planned_exact_windows": [
+          {
+            "id": "pre_anchor",
+            "from": "20000101000000",
+            "to": "20080512210044",
+            "match_type": "exact",
+            "basis": "frozen frontier-news20f exact-CDX convention"
+          },
+          {
+            "id": "late_residual",
+            "from": "20080512210045",
+            "to": "20101207235959",
+            "match_type": "exact",
+            "basis": "late-gallery anchor split; no exact receipt found"
+          }
+        ],
+        "dedupe_status": "exact per-url CDX request remains required; prefix rows are evidence only"
+      },
+      {
+        "item_id": "news-koreapvp-ss07",
+        "original_url": "http://www.worldofwarcraft.com/news/images/04-09/pvp/koreapvp/ss07.jpg",
+        "source_literal": "images/04-09/pvp/koreapvp/ss07.jpg",
+        "role": "comment_only_historical_clue",
+        "priority": "low; history only; exclude from visible-v38 missing-image execution queue",
+        "source": {
+          "path": ".scratch/offline-navigation-20261015-v15/site/news/wow-news2004.html",
+          "sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d",
+          "bytes": 427750,
+          "route": "/news/wow-news2004.html",
+          "line": 2043,
+          "attribute_kind": "img_src",
+          "context_kind_corrected": "html_comment",
+          "comment_block": {
+            "date_line": 2009,
+            "open_line": 2010,
+            "close_line": 2051,
+            "label": "A Rumble in the Desert"
+          },
+          "line_sha256": "f39f09c8f9ede156d162fabb626593708e5f52a2ca02f0a6379b4e98fb17f88a"
+        },
+        "v38": {
+          "path": ".scratch/pages-resources-20261019-v38/news/wow-news2004.html",
+          "sha256": "70dcadc227fcb30866bf95e48b2a316b4776be58190c5679ef87a35cd12aa4c5",
+          "line": 2048,
+          "attribute_kind": "img_src",
+          "context_kind": "html_comment",
+          "comment_block": {
+            "date_line": 2014,
+            "open_line": 2015,
+            "close_line": 2056,
+            "label": "A Rumble in the Desert"
+          },
+          "line_sha256": "f39f09c8f9ede156d162fabb626593708e5f52a2ca02f0a6379b4e98fb17f88a",
+          "active_visible_img": false,
+          "active_missing_marker": false,
+          "local_direct_path": ".scratch/pages-resources-20261019-v38/news/images/04-09/pvp/koreapvp/ss07.jpg",
+          "local_direct_exists": false
+        },
+        "original_viewer_page": {
+          "url": "http://www.blizzard.com/wow/ssotd/imageviewer.aspx?imageindex=28&set=6",
+          "image_index": 28,
+          "relationship": "enclosing href in the same commented block",
+          "use_original_page_if_expanded": true,
+          "do_not_guess_direct_image_path": true
+        },
+        "historical_prefix_cdx_rows": [
+          {
+            "timestamp": "20060418083007",
+            "original": "http://www.worldofwarcraft.com/news/images/04-09/pvp/koreapvp/ss07.jpg",
+            "statuscode": "200",
+            "digest": "TPOI7U4IF7HTMSMO7BGJA6Y4ERZSVUWG",
+            "length": "7015",
+            "mimetype": "image/jpeg",
+            "receipt_raw_file": "research/site-recovery-2008/prefix-cdx/003-08c5d92edd079b20.json"
+          }
+        ],
+        "prefix_row_observed_in_receipt_count": 2,
+        "prefix_row_receipt_files": [
+          "research/site-recovery-2008/prefix-cdx/003-08c5d92edd079b20.json",
+          "research/site-recovery-2008/prefix-rescan-2008/raw/005-6e1d7f70c55e4481.json"
+        ],
+        "exact_cdx_request_receipts": [],
+        "image_replay_receipts": [],
+        "planned_exact_windows": [
+          {
+            "id": "pre_anchor",
+            "from": "20000101000000",
+            "to": "20080512210044",
+            "match_type": "exact",
+            "basis": "frozen frontier-news20f exact-CDX convention"
+          },
+          {
+            "id": "late_residual",
+            "from": "20080512210045",
+            "to": "20101207235959",
+            "match_type": "exact",
+            "basis": "late-gallery anchor split; no exact receipt found"
+          }
+        ],
+        "dedupe_status": "exact per-url CDX request remains required; prefix rows are evidence only"
+      }
+    ],
+    "dedupe_rule": "prefix-CDX rows do not satisfy per-URL exact-CDX dedupe; do not replay or call these visible-v38 missing images"
+  },
+  "b_news_extension_priority": {
+    "candidate_manifest": {
+      "path": "research/continuous-recovery-20261019/local-audit/news-extension/news-extension-candidates.json",
+      "bytes": 394645,
+      "sha256": "ff8b2d7aa9b94d47cdf9d67ed015c62e6bef7f7662ec15e20ff3c89105d2d708",
+      "role": "frozen R2 news-extension candidate/source manifest"
+    },
+    "rank_range": [
+      121,
+      140
+    ],
+    "execution_order": "first network batch after parent control gate",
+    "prior_actual_batch_boundary": {
+      "selection_manifest": {
+        "path": "research/continuous-recovery-20261019/network/frontier-news20f/selection-manifest.json",
+        "bytes": 156373,
+        "sha256": "0fca336b6846eee7512329e851a82922505906117973c01b4e98707f92ac4d4b",
+        "role": "prior actual news packet selection"
+      },
+      "plan": {
+        "path": "research/continuous-recovery-20261019/network/frontier-news20f/plan.json",
+        "bytes": 158463,
+        "sha256": "54c1c09686b3969308072ab7d0066d04e24d70252cf598faf7420c951e4be386",
+        "role": "frozen prior news exact-CDX plan"
+      },
+      "dedupe_audit": {
+        "path": "research/continuous-recovery-20261019/network/frontier-news20f/dedupe-audit.json",
+        "bytes": 45730,
+        "sha256": "42f0fa4de9b1bf94ae9b2348b2e61680fd005c7b9db49e258c913547fe8bb7e8",
+        "role": "prior news offline dedupe audit"
+      },
+      "batch_report": {
+        "path": "research/continuous-recovery-20261019/network/frontier-news20f/output/batch-report.json",
+        "bytes": 519185,
+        "sha256": "eef7f4bfdd5124dbbc2bf8da69ae282ce2fcaecab25e5a35e1899a8b9d43d954",
+        "role": "prior actual news execution report"
+      },
+      "source_acceptance": {
+        "path": "research/continuous-recovery-20261019/publication/root-frontier-news20f-source-acceptance.json",
+        "bytes": 15758,
+        "sha256": "5c9c965737f3ef1282a85c516663a5f216b93f8fc627a7dcddb382fd6707d165",
+        "role": "prior actual news source acceptance"
+      },
+      "scope_statement": "Actual report covers ranks 101-120 only; it is not positive execution evidence for 121-140."
+    },
+    "items": [
+      {
+        "candidate_rank": 121,
+        "requested_url": "http://www.worldofwarcraft.com/news/images/04-10/fanart/fanart44.jpg",
+        "source_class": "visible_missing_marker",
+        "source_reference": {
+          "candidate_manifest": "research/continuous-recovery-20261019/local-audit/news-extension/news-extension-candidates.json",
+          "candidate_manifest_sha256": "ff8b2d7aa9b94d47cdf9d67ed015c62e6bef7f7662ec15e20ff3c89105d2d708",
+          "candidate_state": "uncovered",
+          "candidate_next_step": "fresh_exact_cdx_then_replay_if_eligible",
+          "v33_marker": {
+            "path": ".scratch/pages-resources-20261018-v33/news/wow-news2004.html",
+            "line": 1477,
+            "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+            "reason": "external-or-uncollected-resource",
+            "requested_url_is_exact_after_percent_decode": true,
+            "requested_url_is_percent_encoded_in_marker": true,
+            "line_sha256": "efb9469e66d3b95a2eace0ff7e2c3b6fa6d94893709af5a7aa397f58622cdc8d"
+          },
+          "source15_context": [
+            {
+              "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+              "source_file": ".scratch/offline-navigation-20261015-v15/site/news/wow-news2004.html",
+              "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d",
+              "source_page_bytes": 427750,
+              "source_hits": []
+            }
+          ]
+        },
+        "v38_local": {
+          "path": ".scratch/pages-resources-20261019-v38/news/wow-news2004.html",
+          "line": 1477,
+          "line_sha256": "efb9469e66d3b95a2eace0ff7e2c3b6fa6d94893709af5a7aa397f58622cdc8d",
+          "active_missing_marker": true,
+          "direct_asset_path": ".scratch/pages-resources-20261019-v38/news/images/04-10/fanart/fanart44.jpg",
+          "direct_asset_exists": false
+        },
+        "priority_score": 171,
+        "historical_execution_evidence_in_manifest": [],
+        "historical_plan_or_queue_evidence_in_manifest": [],
+        "actual_exact_cdx_or_replay_evidence": [],
+        "planned_query_windows": [
+          {
+            "id": "pre_anchor",
+            "from": "20000101000000",
+            "to": "20080512210044",
+            "match_type": "exact",
+            "basis": "frozen frontier-news20f exact-CDX convention"
+          },
+          {
+            "id": "late_residual",
+            "from": "20080512210045",
+            "to": "20101207235959",
+            "match_type": "exact",
+            "basis": "late-gallery anchor split; no exact receipt found"
+          }
+        ],
+        "replay_rule": "only after fresh exact-CDX row with exact original, status 200, expected image MIME, digest, and complete index"
+      },
+      {
+        "candidate_rank": 122,
+        "requested_url": "http://www.worldofwarcraft.com/news/images/04-10/fanart/fanart45.jpg",
+        "source_class": "visible_missing_marker",
+        "source_reference": {
+          "candidate_manifest": "research/continuous-recovery-20261019/local-audit/news-extension/news-extension-candidates.json",
+          "candidate_manifest_sha256": "ff8b2d7aa9b94d47cdf9d67ed015c62e6bef7f7662ec15e20ff3c89105d2d708",
+          "candidate_state": "uncovered",
+          "candidate_next_step": "fresh_exact_cdx_then_replay_if_eligible",
+          "v33_marker": {
+            "path": ".scratch/pages-resources-20261018-v33/news/wow-news2004.html",
+            "line": 1476,
+            "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+            "reason": "external-or-uncollected-resource",
+            "requested_url_is_exact_after_percent_decode": true,
+            "requested_url_is_percent_encoded_in_marker": true,
+            "line_sha256": "2c2eb5de91fd6efb66d09a8454e555715e01fbd9b01e0b18ab690da012a676b7"
+          },
+          "source15_context": [
+            {
+              "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+              "source_file": ".scratch/offline-navigation-20261015-v15/site/news/wow-news2004.html",
+              "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d",
+              "source_page_bytes": 427750,
+              "source_hits": []
+            }
+          ]
+        },
+        "v38_local": {
+          "path": ".scratch/pages-resources-20261019-v38/news/wow-news2004.html",
+          "line": 1476,
+          "line_sha256": "2c2eb5de91fd6efb66d09a8454e555715e01fbd9b01e0b18ab690da012a676b7",
+          "active_missing_marker": true,
+          "direct_asset_path": ".scratch/pages-resources-20261019-v38/news/images/04-10/fanart/fanart45.jpg",
+          "direct_asset_exists": false
+        },
+        "priority_score": 171,
+        "historical_execution_evidence_in_manifest": [],
+        "historical_plan_or_queue_evidence_in_manifest": [],
+        "actual_exact_cdx_or_replay_evidence": [],
+        "planned_query_windows": [
+          {
+            "id": "pre_anchor",
+            "from": "20000101000000",
+            "to": "20080512210044",
+            "match_type": "exact",
+            "basis": "frozen frontier-news20f exact-CDX convention"
+          },
+          {
+            "id": "late_residual",
+            "from": "20080512210045",
+            "to": "20101207235959",
+            "match_type": "exact",
+            "basis": "late-gallery anchor split; no exact receipt found"
+          }
+        ],
+        "replay_rule": "only after fresh exact-CDX row with exact original, status 200, expected image MIME, digest, and complete index"
+      },
+      {
+        "candidate_rank": 123,
+        "requested_url": "http://www.worldofwarcraft.com/news/images/04-10/group-screenshots/ss01.jpg",
+        "source_class": "visible_missing_marker",
+        "source_reference": {
+          "candidate_manifest": "research/continuous-recovery-20261019/local-audit/news-extension/news-extension-candidates.json",
+          "candidate_manifest_sha256": "ff8b2d7aa9b94d47cdf9d67ed015c62e6bef7f7662ec15e20ff3c89105d2d708",
+          "candidate_state": "uncovered",
+          "candidate_next_step": "fresh_exact_cdx_then_replay_if_eligible",
+          "v33_marker": {
+            "path": ".scratch/pages-resources-20261018-v33/news/wow-news2004.html",
+            "line": 1505,
+            "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+            "reason": "external-or-uncollected-resource",
+            "requested_url_is_exact_after_percent_decode": true,
+            "requested_url_is_percent_encoded_in_marker": true,
+            "line_sha256": "a651fe29eac5d0c75e5502eb438a4844bc1dbbd093c0ce64842352582235af2d"
+          },
+          "source15_context": [
+            {
+              "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+              "source_file": ".scratch/offline-navigation-20261015-v15/site/news/wow-news2004.html",
+              "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d",
+              "source_page_bytes": 427750,
+              "source_hits": []
+            }
+          ]
+        },
+        "v38_local": {
+          "path": ".scratch/pages-resources-20261019-v38/news/wow-news2004.html",
+          "line": 1505,
+          "line_sha256": "a651fe29eac5d0c75e5502eb438a4844bc1dbbd093c0ce64842352582235af2d",
+          "active_missing_marker": true,
+          "direct_asset_path": ".scratch/pages-resources-20261019-v38/news/images/04-10/group-screenshots/ss01.jpg",
+          "direct_asset_exists": false
+        },
+        "priority_score": 171,
+        "historical_execution_evidence_in_manifest": [],
+        "historical_plan_or_queue_evidence_in_manifest": [],
+        "actual_exact_cdx_or_replay_evidence": [],
+        "planned_query_windows": [
+          {
+            "id": "pre_anchor",
+            "from": "20000101000000",
+            "to": "20080512210044",
+            "match_type": "exact",
+            "basis": "frozen frontier-news20f exact-CDX convention"
+          },
+          {
+            "id": "late_residual",
+            "from": "20080512210045",
+            "to": "20101207235959",
+            "match_type": "exact",
+            "basis": "late-gallery anchor split; no exact receipt found"
+          }
+        ],
+        "replay_rule": "only after fresh exact-CDX row with exact original, status 200, expected image MIME, digest, and complete index"
+      },
+      {
+        "candidate_rank": 124,
+        "requested_url": "http://www.worldofwarcraft.com/news/images/04-10/group-screenshots/ss02.jpg",
+        "source_class": "visible_missing_marker",
+        "source_reference": {
+          "candidate_manifest": "research/continuous-recovery-20261019/local-audit/news-extension/news-extension-candidates.json",
+          "candidate_manifest_sha256": "ff8b2d7aa9b94d47cdf9d67ed015c62e6bef7f7662ec15e20ff3c89105d2d708",
+          "candidate_state": "uncovered",
+          "candidate_next_step": "fresh_exact_cdx_then_replay_if_eligible",
+          "v33_marker": {
+            "path": ".scratch/pages-resources-20261018-v33/news/wow-news2004.html",
+            "line": 1506,
+            "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+            "reason": "external-or-uncollected-resource",
+            "requested_url_is_exact_after_percent_decode": true,
+            "requested_url_is_percent_encoded_in_marker": true,
+            "line_sha256": "b35d1665f2a6fd739887e1244ec9da0be40b95b1fef024c6dff657effbc0c50c"
+          },
+          "source15_context": [
+            {
+              "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+              "source_file": ".scratch/offline-navigation-20261015-v15/site/news/wow-news2004.html",
+              "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d",
+              "source_page_bytes": 427750,
+              "source_hits": []
+            }
+          ]
+        },
+        "v38_local": {
+          "path": ".scratch/pages-resources-20261019-v38/news/wow-news2004.html",
+          "line": 1506,
+          "line_sha256": "b35d1665f2a6fd739887e1244ec9da0be40b95b1fef024c6dff657effbc0c50c",
+          "active_missing_marker": true,
+          "direct_asset_path": ".scratch/pages-resources-20261019-v38/news/images/04-10/group-screenshots/ss02.jpg",
+          "direct_asset_exists": false
+        },
+        "priority_score": 171,
+        "historical_execution_evidence_in_manifest": [],
+        "historical_plan_or_queue_evidence_in_manifest": [],
+        "actual_exact_cdx_or_replay_evidence": [],
+        "planned_query_windows": [
+          {
+            "id": "pre_anchor",
+            "from": "20000101000000",
+            "to": "20080512210044",
+            "match_type": "exact",
+            "basis": "frozen frontier-news20f exact-CDX convention"
+          },
+          {
+            "id": "late_residual",
+            "from": "20080512210045",
+            "to": "20101207235959",
+            "match_type": "exact",
+            "basis": "late-gallery anchor split; no exact receipt found"
+          }
+        ],
+        "replay_rule": "only after fresh exact-CDX row with exact original, status 200, expected image MIME, digest, and complete index"
+      },
+      {
+        "candidate_rank": 125,
+        "requested_url": "http://www.worldofwarcraft.com/news/images/04-10/group-screenshots/ss03.jpg",
+        "source_class": "visible_missing_marker",
+        "source_reference": {
+          "candidate_manifest": "research/continuous-recovery-20261019/local-audit/news-extension/news-extension-candidates.json",
+          "candidate_manifest_sha256": "ff8b2d7aa9b94d47cdf9d67ed015c62e6bef7f7662ec15e20ff3c89105d2d708",
+          "candidate_state": "uncovered",
+          "candidate_next_step": "fresh_exact_cdx_then_replay_if_eligible",
+          "v33_marker": {
+            "path": ".scratch/pages-resources-20261018-v33/news/wow-news2004.html",
+            "line": 1507,
+            "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+            "reason": "external-or-uncollected-resource",
+            "requested_url_is_exact_after_percent_decode": true,
+            "requested_url_is_percent_encoded_in_marker": true,
+            "line_sha256": "3fa832c29da63586f5273a6b9be96ebf3fbf7d6b23cbd505d605270cb1d9df28"
+          },
+          "source15_context": [
+            {
+              "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+              "source_file": ".scratch/offline-navigation-20261015-v15/site/news/wow-news2004.html",
+              "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d",
+              "source_page_bytes": 427750,
+              "source_hits": []
+            }
+          ]
+        },
+        "v38_local": {
+          "path": ".scratch/pages-resources-20261019-v38/news/wow-news2004.html",
+          "line": 1507,
+          "line_sha256": "3fa832c29da63586f5273a6b9be96ebf3fbf7d6b23cbd505d605270cb1d9df28",
+          "active_missing_marker": true,
+          "direct_asset_path": ".scratch/pages-resources-20261019-v38/news/images/04-10/group-screenshots/ss03.jpg",
+          "direct_asset_exists": false
+        },
+        "priority_score": 171,
+        "historical_execution_evidence_in_manifest": [],
+        "historical_plan_or_queue_evidence_in_manifest": [],
+        "actual_exact_cdx_or_replay_evidence": [],
+        "planned_query_windows": [
+          {
+            "id": "pre_anchor",
+            "from": "20000101000000",
+            "to": "20080512210044",
+            "match_type": "exact",
+            "basis": "frozen frontier-news20f exact-CDX convention"
+          },
+          {
+            "id": "late_residual",
+            "from": "20080512210045",
+            "to": "20101207235959",
+            "match_type": "exact",
+            "basis": "late-gallery anchor split; no exact receipt found"
+          }
+        ],
+        "replay_rule": "only after fresh exact-CDX row with exact original, status 200, expected image MIME, digest, and complete index"
+      },
+      {
+        "candidate_rank": 126,
+        "requested_url": "http://www.worldofwarcraft.com/news/images/04-11/endofbeta/ss07.jpg",
+        "source_class": "visible_missing_marker",
+        "source_reference": {
+          "candidate_manifest": "research/continuous-recovery-20261019/local-audit/news-extension/news-extension-candidates.json",
+          "candidate_manifest_sha256": "ff8b2d7aa9b94d47cdf9d67ed015c62e6bef7f7662ec15e20ff3c89105d2d708",
+          "candidate_state": "uncovered",
+          "candidate_next_step": "fresh_exact_cdx_then_replay_if_eligible",
+          "v33_marker": {
+            "path": ".scratch/pages-resources-20261018-v33/news/wow-news2004.html",
+            "line": 1162,
+            "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+            "reason": "external-or-uncollected-resource",
+            "requested_url_is_exact_after_percent_decode": true,
+            "requested_url_is_percent_encoded_in_marker": true,
+            "line_sha256": "d1fae0735f65879f59af172763252e879de43bfa3fb5cce81049ec79897c0868"
+          },
+          "source15_context": [
+            {
+              "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+              "source_file": ".scratch/offline-navigation-20261015-v15/site/news/wow-news2004.html",
+              "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d",
+              "source_page_bytes": 427750,
+              "source_hits": []
+            }
+          ]
+        },
+        "v38_local": {
+          "path": ".scratch/pages-resources-20261019-v38/news/wow-news2004.html",
+          "line": 1162,
+          "line_sha256": "d1fae0735f65879f59af172763252e879de43bfa3fb5cce81049ec79897c0868",
+          "active_missing_marker": true,
+          "direct_asset_path": ".scratch/pages-resources-20261019-v38/news/images/04-11/endofbeta/ss07.jpg",
+          "direct_asset_exists": false
+        },
+        "priority_score": 171,
+        "historical_execution_evidence_in_manifest": [],
+        "historical_plan_or_queue_evidence_in_manifest": [],
+        "actual_exact_cdx_or_replay_evidence": [],
+        "planned_query_windows": [
+          {
+            "id": "pre_anchor",
+            "from": "20000101000000",
+            "to": "20080512210044",
+            "match_type": "exact",
+            "basis": "frozen frontier-news20f exact-CDX convention"
+          },
+          {
+            "id": "late_residual",
+            "from": "20080512210045",
+            "to": "20101207235959",
+            "match_type": "exact",
+            "basis": "late-gallery anchor split; no exact receipt found"
+          }
+        ],
+        "replay_rule": "only after fresh exact-CDX row with exact original, status 200, expected image MIME, digest, and complete index"
+      },
+      {
+        "candidate_rank": 127,
+        "requested_url": "http://www.worldofwarcraft.com/news/images/04-11/endofbeta/ss11.jpg",
+        "source_class": "visible_missing_marker",
+        "source_reference": {
+          "candidate_manifest": "research/continuous-recovery-20261019/local-audit/news-extension/news-extension-candidates.json",
+          "candidate_manifest_sha256": "ff8b2d7aa9b94d47cdf9d67ed015c62e6bef7f7662ec15e20ff3c89105d2d708",
+          "candidate_state": "uncovered",
+          "candidate_next_step": "fresh_exact_cdx_then_replay_if_eligible",
+          "v33_marker": {
+            "path": ".scratch/pages-resources-20261018-v33/news/wow-news2004.html",
+            "line": 1163,
+            "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+            "reason": "external-or-uncollected-resource",
+            "requested_url_is_exact_after_percent_decode": true,
+            "requested_url_is_percent_encoded_in_marker": true,
+            "line_sha256": "5a183ee80beae5d39092c4e32561d07c438287146b87c548bf903ca9024c0166"
+          },
+          "source15_context": [
+            {
+              "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+              "source_file": ".scratch/offline-navigation-20261015-v15/site/news/wow-news2004.html",
+              "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d",
+              "source_page_bytes": 427750,
+              "source_hits": []
+            }
+          ]
+        },
+        "v38_local": {
+          "path": ".scratch/pages-resources-20261019-v38/news/wow-news2004.html",
+          "line": 1163,
+          "line_sha256": "5a183ee80beae5d39092c4e32561d07c438287146b87c548bf903ca9024c0166",
+          "active_missing_marker": true,
+          "direct_asset_path": ".scratch/pages-resources-20261019-v38/news/images/04-11/endofbeta/ss11.jpg",
+          "direct_asset_exists": false
+        },
+        "priority_score": 171,
+        "historical_execution_evidence_in_manifest": [],
+        "historical_plan_or_queue_evidence_in_manifest": [],
+        "actual_exact_cdx_or_replay_evidence": [],
+        "planned_query_windows": [
+          {
+            "id": "pre_anchor",
+            "from": "20000101000000",
+            "to": "20080512210044",
+            "match_type": "exact",
+            "basis": "frozen frontier-news20f exact-CDX convention"
+          },
+          {
+            "id": "late_residual",
+            "from": "20080512210045",
+            "to": "20101207235959",
+            "match_type": "exact",
+            "basis": "late-gallery anchor split; no exact receipt found"
+          }
+        ],
+        "replay_rule": "only after fresh exact-CDX row with exact original, status 200, expected image MIME, digest, and complete index"
+      },
+      {
+        "candidate_rank": 128,
+        "requested_url": "http://www.worldofwarcraft.com/news/images/04-11/endofbeta/ss14.jpg",
+        "source_class": "visible_missing_marker",
+        "source_reference": {
+          "candidate_manifest": "research/continuous-recovery-20261019/local-audit/news-extension/news-extension-candidates.json",
+          "candidate_manifest_sha256": "ff8b2d7aa9b94d47cdf9d67ed015c62e6bef7f7662ec15e20ff3c89105d2d708",
+          "candidate_state": "uncovered",
+          "candidate_next_step": "fresh_exact_cdx_then_replay_if_eligible",
+          "v33_marker": {
+            "path": ".scratch/pages-resources-20261018-v33/news/wow-news2004.html",
+            "line": 1164,
+            "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+            "reason": "external-or-uncollected-resource",
+            "requested_url_is_exact_after_percent_decode": true,
+            "requested_url_is_percent_encoded_in_marker": true,
+            "line_sha256": "0dddcf88abf173eb9258c19e90fc288a88c825ad82ea56084f5b21c7fa266ce0"
+          },
+          "source15_context": [
+            {
+              "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+              "source_file": ".scratch/offline-navigation-20261015-v15/site/news/wow-news2004.html",
+              "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d",
+              "source_page_bytes": 427750,
+              "source_hits": []
+            }
+          ]
+        },
+        "v38_local": {
+          "path": ".scratch/pages-resources-20261019-v38/news/wow-news2004.html",
+          "line": 1164,
+          "line_sha256": "0dddcf88abf173eb9258c19e90fc288a88c825ad82ea56084f5b21c7fa266ce0",
+          "active_missing_marker": true,
+          "direct_asset_path": ".scratch/pages-resources-20261019-v38/news/images/04-11/endofbeta/ss14.jpg",
+          "direct_asset_exists": false
+        },
+        "priority_score": 171,
+        "historical_execution_evidence_in_manifest": [],
+        "historical_plan_or_queue_evidence_in_manifest": [],
+        "actual_exact_cdx_or_replay_evidence": [],
+        "planned_query_windows": [
+          {
+            "id": "pre_anchor",
+            "from": "20000101000000",
+            "to": "20080512210044",
+            "match_type": "exact",
+            "basis": "frozen frontier-news20f exact-CDX convention"
+          },
+          {
+            "id": "late_residual",
+            "from": "20080512210045",
+            "to": "20101207235959",
+            "match_type": "exact",
+            "basis": "late-gallery anchor split; no exact receipt found"
+          }
+        ],
+        "replay_rule": "only after fresh exact-CDX row with exact original, status 200, expected image MIME, digest, and complete index"
+      },
+      {
+        "candidate_rank": 129,
+        "requested_url": "http://www.worldofwarcraft.com/news/images/04-11/endofbeta/ss21.jpg",
+        "source_class": "visible_missing_marker",
+        "source_reference": {
+          "candidate_manifest": "research/continuous-recovery-20261019/local-audit/news-extension/news-extension-candidates.json",
+          "candidate_manifest_sha256": "ff8b2d7aa9b94d47cdf9d67ed015c62e6bef7f7662ec15e20ff3c89105d2d708",
+          "candidate_state": "uncovered",
+          "candidate_next_step": "fresh_exact_cdx_then_replay_if_eligible",
+          "v33_marker": {
+            "path": ".scratch/pages-resources-20261018-v33/news/wow-news2004.html",
+            "line": 1165,
+            "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+            "reason": "external-or-uncollected-resource",
+            "requested_url_is_exact_after_percent_decode": true,
+            "requested_url_is_percent_encoded_in_marker": true,
+            "line_sha256": "7a726218616227a4a37593ad3f692e18204c2aecb66c72dbff7ac94d91bc0905"
+          },
+          "source15_context": [
+            {
+              "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+              "source_file": ".scratch/offline-navigation-20261015-v15/site/news/wow-news2004.html",
+              "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d",
+              "source_page_bytes": 427750,
+              "source_hits": []
+            }
+          ]
+        },
+        "v38_local": {
+          "path": ".scratch/pages-resources-20261019-v38/news/wow-news2004.html",
+          "line": 1165,
+          "line_sha256": "7a726218616227a4a37593ad3f692e18204c2aecb66c72dbff7ac94d91bc0905",
+          "active_missing_marker": true,
+          "direct_asset_path": ".scratch/pages-resources-20261019-v38/news/images/04-11/endofbeta/ss21.jpg",
+          "direct_asset_exists": false
+        },
+        "priority_score": 171,
+        "historical_execution_evidence_in_manifest": [],
+        "historical_plan_or_queue_evidence_in_manifest": [],
+        "actual_exact_cdx_or_replay_evidence": [],
+        "planned_query_windows": [
+          {
+            "id": "pre_anchor",
+            "from": "20000101000000",
+            "to": "20080512210044",
+            "match_type": "exact",
+            "basis": "frozen frontier-news20f exact-CDX convention"
+          },
+          {
+            "id": "late_residual",
+            "from": "20080512210045",
+            "to": "20101207235959",
+            "match_type": "exact",
+            "basis": "late-gallery anchor split; no exact receipt found"
+          }
+        ],
+        "replay_rule": "only after fresh exact-CDX row with exact original, status 200, expected image MIME, digest, and complete index"
+      },
+      {
+        "candidate_rank": 130,
+        "requested_url": "http://www.worldofwarcraft.com/news/images/04-12/fanart/ss01.jpg",
+        "source_class": "visible_missing_marker",
+        "source_reference": {
+          "candidate_manifest": "research/continuous-recovery-20261019/local-audit/news-extension/news-extension-candidates.json",
+          "candidate_manifest_sha256": "ff8b2d7aa9b94d47cdf9d67ed015c62e6bef7f7662ec15e20ff3c89105d2d708",
+          "candidate_state": "uncovered",
+          "candidate_next_step": "fresh_exact_cdx_then_replay_if_eligible",
+          "v33_marker": {
+            "path": ".scratch/pages-resources-20261018-v33/news/wow-news2004.html",
+            "line": 888,
+            "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+            "reason": "external-or-uncollected-resource",
+            "requested_url_is_exact_after_percent_decode": true,
+            "requested_url_is_percent_encoded_in_marker": true,
+            "line_sha256": "6371a8ce2eb3c2145de00707bb83c5483e2058a1d56fcd8c683065cc4d212261"
+          },
+          "source15_context": [
+            {
+              "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+              "source_file": ".scratch/offline-navigation-20261015-v15/site/news/wow-news2004.html",
+              "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d",
+              "source_page_bytes": 427750,
+              "source_hits": []
+            }
+          ]
+        },
+        "v38_local": {
+          "path": ".scratch/pages-resources-20261019-v38/news/wow-news2004.html",
+          "line": 888,
+          "line_sha256": "6371a8ce2eb3c2145de00707bb83c5483e2058a1d56fcd8c683065cc4d212261",
+          "active_missing_marker": true,
+          "direct_asset_path": ".scratch/pages-resources-20261019-v38/news/images/04-12/fanart/ss01.jpg",
+          "direct_asset_exists": false
+        },
+        "priority_score": 171,
+        "historical_execution_evidence_in_manifest": [],
+        "historical_plan_or_queue_evidence_in_manifest": [],
+        "actual_exact_cdx_or_replay_evidence": [],
+        "planned_query_windows": [
+          {
+            "id": "pre_anchor",
+            "from": "20000101000000",
+            "to": "20080512210044",
+            "match_type": "exact",
+            "basis": "frozen frontier-news20f exact-CDX convention"
+          },
+          {
+            "id": "late_residual",
+            "from": "20080512210045",
+            "to": "20101207235959",
+            "match_type": "exact",
+            "basis": "late-gallery anchor split; no exact receipt found"
+          }
+        ],
+        "replay_rule": "only after fresh exact-CDX row with exact original, status 200, expected image MIME, digest, and complete index"
+      },
+      {
+        "candidate_rank": 131,
+        "requested_url": "http://www.worldofwarcraft.com/news/images/04-12/fanart/ss02.jpg",
+        "source_class": "visible_missing_marker",
+        "source_reference": {
+          "candidate_manifest": "research/continuous-recovery-20261019/local-audit/news-extension/news-extension-candidates.json",
+          "candidate_manifest_sha256": "ff8b2d7aa9b94d47cdf9d67ed015c62e6bef7f7662ec15e20ff3c89105d2d708",
+          "candidate_state": "uncovered",
+          "candidate_next_step": "fresh_exact_cdx_then_replay_if_eligible",
+          "v33_marker": {
+            "path": ".scratch/pages-resources-20261018-v33/news/wow-news2004.html",
+            "line": 887,
+            "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+            "reason": "external-or-uncollected-resource",
+            "requested_url_is_exact_after_percent_decode": true,
+            "requested_url_is_percent_encoded_in_marker": true,
+            "line_sha256": "31ca9d4a2c6e099e4ac8d992db0ea8b7320d68367177639893b9701c947a886e"
+          },
+          "source15_context": [
+            {
+              "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+              "source_file": ".scratch/offline-navigation-20261015-v15/site/news/wow-news2004.html",
+              "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d",
+              "source_page_bytes": 427750,
+              "source_hits": []
+            }
+          ]
+        },
+        "v38_local": {
+          "path": ".scratch/pages-resources-20261019-v38/news/wow-news2004.html",
+          "line": 887,
+          "line_sha256": "31ca9d4a2c6e099e4ac8d992db0ea8b7320d68367177639893b9701c947a886e",
+          "active_missing_marker": true,
+          "direct_asset_path": ".scratch/pages-resources-20261019-v38/news/images/04-12/fanart/ss02.jpg",
+          "direct_asset_exists": false
+        },
+        "priority_score": 171,
+        "historical_execution_evidence_in_manifest": [],
+        "historical_plan_or_queue_evidence_in_manifest": [],
+        "actual_exact_cdx_or_replay_evidence": [],
+        "planned_query_windows": [
+          {
+            "id": "pre_anchor",
+            "from": "20000101000000",
+            "to": "20080512210044",
+            "match_type": "exact",
+            "basis": "frozen frontier-news20f exact-CDX convention"
+          },
+          {
+            "id": "late_residual",
+            "from": "20080512210045",
+            "to": "20101207235959",
+            "match_type": "exact",
+            "basis": "late-gallery anchor split; no exact receipt found"
+          }
+        ],
+        "replay_rule": "only after fresh exact-CDX row with exact original, status 200, expected image MIME, digest, and complete index"
+      },
+      {
+        "candidate_rank": 132,
+        "requested_url": "http://www.worldofwarcraft.com/news/images/04-12/fanart/ss03.jpg",
+        "source_class": "visible_missing_marker",
+        "source_reference": {
+          "candidate_manifest": "research/continuous-recovery-20261019/local-audit/news-extension/news-extension-candidates.json",
+          "candidate_manifest_sha256": "ff8b2d7aa9b94d47cdf9d67ed015c62e6bef7f7662ec15e20ff3c89105d2d708",
+          "candidate_state": "uncovered",
+          "candidate_next_step": "fresh_exact_cdx_then_replay_if_eligible",
+          "v33_marker": {
+            "path": ".scratch/pages-resources-20261018-v33/news/wow-news2004.html",
+            "line": 886,
+            "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+            "reason": "external-or-uncollected-resource",
+            "requested_url_is_exact_after_percent_decode": true,
+            "requested_url_is_percent_encoded_in_marker": true,
+            "line_sha256": "11abf728702361a0bc978538a71556a81dc0b14cadfda7e51dfb87512213d39f"
+          },
+          "source15_context": [
+            {
+              "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+              "source_file": ".scratch/offline-navigation-20261015-v15/site/news/wow-news2004.html",
+              "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d",
+              "source_page_bytes": 427750,
+              "source_hits": []
+            }
+          ]
+        },
+        "v38_local": {
+          "path": ".scratch/pages-resources-20261019-v38/news/wow-news2004.html",
+          "line": 886,
+          "line_sha256": "11abf728702361a0bc978538a71556a81dc0b14cadfda7e51dfb87512213d39f",
+          "active_missing_marker": true,
+          "direct_asset_path": ".scratch/pages-resources-20261019-v38/news/images/04-12/fanart/ss03.jpg",
+          "direct_asset_exists": false
+        },
+        "priority_score": 171,
+        "historical_execution_evidence_in_manifest": [],
+        "historical_plan_or_queue_evidence_in_manifest": [],
+        "actual_exact_cdx_or_replay_evidence": [],
+        "planned_query_windows": [
+          {
+            "id": "pre_anchor",
+            "from": "20000101000000",
+            "to": "20080512210044",
+            "match_type": "exact",
+            "basis": "frozen frontier-news20f exact-CDX convention"
+          },
+          {
+            "id": "late_residual",
+            "from": "20080512210045",
+            "to": "20101207235959",
+            "match_type": "exact",
+            "basis": "late-gallery anchor split; no exact receipt found"
+          }
+        ],
+        "replay_rule": "only after fresh exact-CDX row with exact original, status 200, expected image MIME, digest, and complete index"
+      },
+      {
+        "candidate_rank": 133,
+        "requested_url": "http://www.worldofwarcraft.com/news/images/04-12/fanart/ss04.jpg",
+        "source_class": "visible_missing_marker",
+        "source_reference": {
+          "candidate_manifest": "research/continuous-recovery-20261019/local-audit/news-extension/news-extension-candidates.json",
+          "candidate_manifest_sha256": "ff8b2d7aa9b94d47cdf9d67ed015c62e6bef7f7662ec15e20ff3c89105d2d708",
+          "candidate_state": "uncovered",
+          "candidate_next_step": "fresh_exact_cdx_then_replay_if_eligible",
+          "v33_marker": {
+            "path": ".scratch/pages-resources-20261018-v33/news/wow-news2004.html",
+            "line": 517,
+            "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+            "reason": "external-or-uncollected-resource",
+            "requested_url_is_exact_after_percent_decode": true,
+            "requested_url_is_percent_encoded_in_marker": true,
+            "line_sha256": "316bfe4016e3d1119f0b82468009a49433e88d702c6b1e122a0a01a4263c3527"
+          },
+          "source15_context": [
+            {
+              "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+              "source_file": ".scratch/offline-navigation-20261015-v15/site/news/wow-news2004.html",
+              "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d",
+              "source_page_bytes": 427750,
+              "source_hits": []
+            }
+          ]
+        },
+        "v38_local": {
+          "path": ".scratch/pages-resources-20261019-v38/news/wow-news2004.html",
+          "line": 517,
+          "line_sha256": "316bfe4016e3d1119f0b82468009a49433e88d702c6b1e122a0a01a4263c3527",
+          "active_missing_marker": true,
+          "direct_asset_path": ".scratch/pages-resources-20261019-v38/news/images/04-12/fanart/ss04.jpg",
+          "direct_asset_exists": false
+        },
+        "priority_score": 171,
+        "historical_execution_evidence_in_manifest": [],
+        "historical_plan_or_queue_evidence_in_manifest": [],
+        "actual_exact_cdx_or_replay_evidence": [],
+        "planned_query_windows": [
+          {
+            "id": "pre_anchor",
+            "from": "20000101000000",
+            "to": "20080512210044",
+            "match_type": "exact",
+            "basis": "frozen frontier-news20f exact-CDX convention"
+          },
+          {
+            "id": "late_residual",
+            "from": "20080512210045",
+            "to": "20101207235959",
+            "match_type": "exact",
+            "basis": "late-gallery anchor split; no exact receipt found"
+          }
+        ],
+        "replay_rule": "only after fresh exact-CDX row with exact original, status 200, expected image MIME, digest, and complete index"
+      },
+      {
+        "candidate_rank": 134,
+        "requested_url": "http://www.worldofwarcraft.com/news/images/04-12/fanart/ss05.jpg",
+        "source_class": "visible_missing_marker",
+        "source_reference": {
+          "candidate_manifest": "research/continuous-recovery-20261019/local-audit/news-extension/news-extension-candidates.json",
+          "candidate_manifest_sha256": "ff8b2d7aa9b94d47cdf9d67ed015c62e6bef7f7662ec15e20ff3c89105d2d708",
+          "candidate_state": "uncovered",
+          "candidate_next_step": "fresh_exact_cdx_then_replay_if_eligible",
+          "v33_marker": {
+            "path": ".scratch/pages-resources-20261018-v33/news/wow-news2004.html",
+            "line": 516,
+            "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+            "reason": "external-or-uncollected-resource",
+            "requested_url_is_exact_after_percent_decode": true,
+            "requested_url_is_percent_encoded_in_marker": true,
+            "line_sha256": "0d009a5323c4009b92319515bb66d7cecb6eb4e15e85e7e175dd294d775a7302"
+          },
+          "source15_context": [
+            {
+              "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+              "source_file": ".scratch/offline-navigation-20261015-v15/site/news/wow-news2004.html",
+              "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d",
+              "source_page_bytes": 427750,
+              "source_hits": []
+            }
+          ]
+        },
+        "v38_local": {
+          "path": ".scratch/pages-resources-20261019-v38/news/wow-news2004.html",
+          "line": 516,
+          "line_sha256": "0d009a5323c4009b92319515bb66d7cecb6eb4e15e85e7e175dd294d775a7302",
+          "active_missing_marker": true,
+          "direct_asset_path": ".scratch/pages-resources-20261019-v38/news/images/04-12/fanart/ss05.jpg",
+          "direct_asset_exists": false
+        },
+        "priority_score": 171,
+        "historical_execution_evidence_in_manifest": [],
+        "historical_plan_or_queue_evidence_in_manifest": [],
+        "actual_exact_cdx_or_replay_evidence": [],
+        "planned_query_windows": [
+          {
+            "id": "pre_anchor",
+            "from": "20000101000000",
+            "to": "20080512210044",
+            "match_type": "exact",
+            "basis": "frozen frontier-news20f exact-CDX convention"
+          },
+          {
+            "id": "late_residual",
+            "from": "20080512210045",
+            "to": "20101207235959",
+            "match_type": "exact",
+            "basis": "late-gallery anchor split; no exact receipt found"
+          }
+        ],
+        "replay_rule": "only after fresh exact-CDX row with exact original, status 200, expected image MIME, digest, and complete index"
+      },
+      {
+        "candidate_rank": 135,
+        "requested_url": "http://www.worldofwarcraft.com/news/images/04-12/fanart/ss06.jpg",
+        "source_class": "visible_missing_marker",
+        "source_reference": {
+          "candidate_manifest": "research/continuous-recovery-20261019/local-audit/news-extension/news-extension-candidates.json",
+          "candidate_manifest_sha256": "ff8b2d7aa9b94d47cdf9d67ed015c62e6bef7f7662ec15e20ff3c89105d2d708",
+          "candidate_state": "uncovered",
+          "candidate_next_step": "fresh_exact_cdx_then_replay_if_eligible",
+          "v33_marker": {
+            "path": ".scratch/pages-resources-20261018-v33/news/wow-news2004.html",
+            "line": 515,
+            "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+            "reason": "external-or-uncollected-resource",
+            "requested_url_is_exact_after_percent_decode": true,
+            "requested_url_is_percent_encoded_in_marker": true,
+            "line_sha256": "924b067fc053d6a67ddaeac0d925202ec74f416e80496243c225b33212f8f163"
+          },
+          "source15_context": [
+            {
+              "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+              "source_file": ".scratch/offline-navigation-20261015-v15/site/news/wow-news2004.html",
+              "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d",
+              "source_page_bytes": 427750,
+              "source_hits": []
+            }
+          ]
+        },
+        "v38_local": {
+          "path": ".scratch/pages-resources-20261019-v38/news/wow-news2004.html",
+          "line": 515,
+          "line_sha256": "924b067fc053d6a67ddaeac0d925202ec74f416e80496243c225b33212f8f163",
+          "active_missing_marker": true,
+          "direct_asset_path": ".scratch/pages-resources-20261019-v38/news/images/04-12/fanart/ss06.jpg",
+          "direct_asset_exists": false
+        },
+        "priority_score": 171,
+        "historical_execution_evidence_in_manifest": [],
+        "historical_plan_or_queue_evidence_in_manifest": [],
+        "actual_exact_cdx_or_replay_evidence": [],
+        "planned_query_windows": [
+          {
+            "id": "pre_anchor",
+            "from": "20000101000000",
+            "to": "20080512210044",
+            "match_type": "exact",
+            "basis": "frozen frontier-news20f exact-CDX convention"
+          },
+          {
+            "id": "late_residual",
+            "from": "20080512210045",
+            "to": "20101207235959",
+            "match_type": "exact",
+            "basis": "late-gallery anchor split; no exact receipt found"
+          }
+        ],
+        "replay_rule": "only after fresh exact-CDX row with exact original, status 200, expected image MIME, digest, and complete index"
+      },
+      {
+        "candidate_rank": 136,
+        "requested_url": "http://www.worldofwarcraft.com/news/images/04-12/wowshirts.jpg",
+        "source_class": "visible_missing_marker",
+        "source_reference": {
+          "candidate_manifest": "research/continuous-recovery-20261019/local-audit/news-extension/news-extension-candidates.json",
+          "candidate_manifest_sha256": "ff8b2d7aa9b94d47cdf9d67ed015c62e6bef7f7662ec15e20ff3c89105d2d708",
+          "candidate_state": "uncovered",
+          "candidate_next_step": "fresh_exact_cdx_then_replay_if_eligible",
+          "v33_marker": {
+            "path": ".scratch/pages-resources-20261018-v33/news/wow-news2004.html",
+            "line": 574,
+            "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+            "reason": "external-or-uncollected-resource",
+            "requested_url_is_exact_after_percent_decode": true,
+            "requested_url_is_percent_encoded_in_marker": true,
+            "line_sha256": "02075283d73ab4fdefafe2ad45cea0ab5fe0854d3b052510be76972e093782ac"
+          },
+          "source15_context": [
+            {
+              "source_url": "http://www.worldofwarcraft.com/news/wow-news2004.html",
+              "source_file": ".scratch/offline-navigation-20261015-v15/site/news/wow-news2004.html",
+              "source_page_sha256": "825a7c5b4c77d75ed10a04908c392735462b8c56135d2deb6c0450d11002c14d",
+              "source_page_bytes": 427750,
+              "source_hits": []
+            }
+          ]
+        },
+        "v38_local": {
+          "path": ".scratch/pages-resources-20261019-v38/news/wow-news2004.html",
+          "line": 574,
+          "line_sha256": "02075283d73ab4fdefafe2ad45cea0ab5fe0854d3b052510be76972e093782ac",
+          "active_missing_marker": true,
+          "direct_asset_path": ".scratch/pages-resources-20261019-v38/news/images/04-12/wowshirts.jpg",
+          "direct_asset_exists": false
+        },
+        "priority_score": 171,
+        "historical_execution_evidence_in_manifest": [],
+        "historical_plan_or_queue_evidence_in_manifest": [],
+        "actual_exact_cdx_or_replay_evidence": [],
+        "planned_query_windows": [
+          {
+            "id": "pre_anchor",
+            "from": "20000101000000",
+            "to": "20080512210044",
+            "match_type": "exact",
+            "basis": "frozen frontier-news20f exact-CDX convention"
+          },
+          {
+            "id": "late_residual",
+            "from": "20080512210045",
+            "to": "20101207235959",
+            "match_type": "exact",
+            "basis": "late-gallery anchor split; no exact receipt found"
+          }
+        ],
+        "replay_rule": "only after fresh exact-CDX row with exact original, status 200, expected image MIME, digest, and complete index"
+      },
+      {
+        "candidate_rank": 137,
+        "requested_url": "http://www.worldofwarcraft.com/news/images/05-01/battlegrounds-part2.jpg",
+        "source_class": "visible_missing_marker",
+        "source_reference": {
+          "candidate_manifest": "research/continuous-recovery-20261019/local-audit/news-extension/news-extension-candidates.json",
+          "candidate_manifest_sha256": "ff8b2d7aa9b94d47cdf9d67ed015c62e6bef7f7662ec15e20ff3c89105d2d708",
+          "candidate_state": "uncovered",
+          "candidate_next_step": "fresh_exact_cdx_then_replay_if_eligible",
+          "v33_marker": {
+            "path": ".scratch/pages-resources-20261018-v33/news/wow-news2005.html",
+            "line": 2265,
+            "source_url": "http://www.worldofwarcraft.com/news/wow-news2005.html",
+            "reason": "external-or-uncollected-resource",
+            "requested_url_is_exact_after_percent_decode": true,
+            "requested_url_is_percent_encoded_in_marker": true,
+            "line_sha256": "20efbbdace257b965ee5c0543e69d7a0d675a23eb7196b4314514ce51cb087b5"
+          },
+          "source15_context": [
+            {
+              "source_url": "http://www.worldofwarcraft.com/news/wow-news2005.html",
+              "source_file": ".scratch/offline-navigation-20261015-v15/site/news/wow-news2005.html",
+              "source_page_sha256": "988aee39ade43ff39a345e2a47c4cda5fe983c4bd42e8fa00dc7e1837334e20d",
+              "source_page_bytes": 190181,
+              "source_hits": []
+            }
+          ]
+        },
+        "v38_local": {
+          "path": ".scratch/pages-resources-20261019-v38/news/wow-news2005.html",
+          "line": 2265,
+          "line_sha256": "20efbbdace257b965ee5c0543e69d7a0d675a23eb7196b4314514ce51cb087b5",
+          "active_missing_marker": true,
+          "direct_asset_path": ".scratch/pages-resources-20261019-v38/news/images/05-01/battlegrounds-part2.jpg",
+          "direct_asset_exists": false
+        },
+        "priority_score": 171,
+        "historical_execution_evidence_in_manifest": [],
+        "historical_plan_or_queue_evidence_in_manifest": [],
+        "actual_exact_cdx_or_replay_evidence": [],
+        "planned_query_windows": [
+          {
+            "id": "pre_anchor",
+            "from": "20000101000000",
+            "to": "20080512210044",
+            "match_type": "exact",
+            "basis": "frozen frontier-news20f exact-CDX convention"
+          },
+          {
+            "id": "late_residual",
+            "from": "20080512210045",
+            "to": "20101207235959",
+            "match_type": "exact",
+            "basis": "late-gallery anchor split; no exact receipt found"
+          }
+        ],
+        "replay_rule": "only after fresh exact-CDX row with exact original, status 200, expected image MIME, digest, and complete index"
+      },
+      {
+        "candidate_rank": 138,
+        "requested_url": "http://www.worldofwarcraft.com/news/images/05-01/contests/ss01.jpg",
+        "source_class": "visible_missing_marker",
+        "source_reference": {
+          "candidate_manifest": "research/continuous-recovery-20261019/local-audit/news-extension/news-extension-candidates.json",
+          "candidate_manifest_sha256": "ff8b2d7aa9b94d47cdf9d67ed015c62e6bef7f7662ec15e20ff3c89105d2d708",
+          "candidate_state": "uncovered",
+          "candidate_next_step": "fresh_exact_cdx_then_replay_if_eligible",
+          "v33_marker": {
+            "path": ".scratch/pages-resources-20261018-v33/news/wow-news2005.html",
+            "line": 2356,
+            "source_url": "http://www.worldofwarcraft.com/news/wow-news2005.html",
+            "reason": "external-or-uncollected-resource",
+            "requested_url_is_exact_after_percent_decode": true,
+            "requested_url_is_percent_encoded_in_marker": true,
+            "line_sha256": "b571141aa2c8bf5783e79cd3f7bdc4c04af2e9f63a2e9cca8817566c4453bc19"
+          },
+          "source15_context": [
+            {
+              "source_url": "http://www.worldofwarcraft.com/news/wow-news2005.html",
+              "source_file": ".scratch/offline-navigation-20261015-v15/site/news/wow-news2005.html",
+              "source_page_sha256": "988aee39ade43ff39a345e2a47c4cda5fe983c4bd42e8fa00dc7e1837334e20d",
+              "source_page_bytes": 190181,
+              "source_hits": []
+            }
+          ]
+        },
+        "v38_local": {
+          "path": ".scratch/pages-resources-20261019-v38/news/wow-news2005.html",
+          "line": 2356,
+          "line_sha256": "b571141aa2c8bf5783e79cd3f7bdc4c04af2e9f63a2e9cca8817566c4453bc19",
+          "active_missing_marker": true,
+          "direct_asset_path": ".scratch/pages-resources-20261019-v38/news/images/05-01/contests/ss01.jpg",
+          "direct_asset_exists": false
+        },
+        "priority_score": 171,
+        "historical_execution_evidence_in_manifest": [],
+        "historical_plan_or_queue_evidence_in_manifest": [],
+        "actual_exact_cdx_or_replay_evidence": [],
+        "planned_query_windows": [
+          {
+            "id": "pre_anchor",
+            "from": "20000101000000",
+            "to": "20080512210044",
+            "match_type": "exact",
+            "basis": "frozen frontier-news20f exact-CDX convention"
+          },
+          {
+            "id": "late_residual",
+            "from": "20080512210045",
+            "to": "20101207235959",
+            "match_type": "exact",
+            "basis": "late-gallery anchor split; no exact receipt found"
+          }
+        ],
+        "replay_rule": "only after fresh exact-CDX row with exact original, status 200, expected image MIME, digest, and complete index"
+      },
+      {
+        "candidate_rank": 139,
+        "requested_url": "http://www.worldofwarcraft.com/news/images/05-01/contests/ss02.jpg",
+        "source_class": "visible_missing_marker",
+        "source_reference": {
+          "candidate_manifest": "research/continuous-recovery-20261019/local-audit/news-extension/news-extension-candidates.json",
+          "candidate_manifest_sha256": "ff8b2d7aa9b94d47cdf9d67ed015c62e6bef7f7662ec15e20ff3c89105d2d708",
+          "candidate_state": "uncovered",
+          "candidate_next_step": "fresh_exact_cdx_then_replay_if_eligible",
+          "v33_marker": {
+            "path": ".scratch/pages-resources-20261018-v33/news/wow-news2005.html",
+            "line": 2357,
+            "source_url": "http://www.worldofwarcraft.com/news/wow-news2005.html",
+            "reason": "external-or-uncollected-resource",
+            "requested_url_is_exact_after_percent_decode": true,
+            "requested_url_is_percent_encoded_in_marker": true,
+            "line_sha256": "d9ced11b88f814ce66a57189c8e7e5bb005ea28f8fd8fa992504974e0bb2b5c1"
+          },
+          "source15_context": [
+            {
+              "source_url": "http://www.worldofwarcraft.com/news/wow-news2005.html",
+              "source_file": ".scratch/offline-navigation-20261015-v15/site/news/wow-news2005.html",
+              "source_page_sha256": "988aee39ade43ff39a345e2a47c4cda5fe983c4bd42e8fa00dc7e1837334e20d",
+              "source_page_bytes": 190181,
+              "source_hits": []
+            }
+          ]
+        },
+        "v38_local": {
+          "path": ".scratch/pages-resources-20261019-v38/news/wow-news2005.html",
+          "line": 2357,
+          "line_sha256": "d9ced11b88f814ce66a57189c8e7e5bb005ea28f8fd8fa992504974e0bb2b5c1",
+          "active_missing_marker": true,
+          "direct_asset_path": ".scratch/pages-resources-20261019-v38/news/images/05-01/contests/ss02.jpg",
+          "direct_asset_exists": false
+        },
+        "priority_score": 171,
+        "historical_execution_evidence_in_manifest": [],
+        "historical_plan_or_queue_evidence_in_manifest": [],
+        "actual_exact_cdx_or_replay_evidence": [],
+        "planned_query_windows": [
+          {
+            "id": "pre_anchor",
+            "from": "20000101000000",
+            "to": "20080512210044",
+            "match_type": "exact",
+            "basis": "frozen frontier-news20f exact-CDX convention"
+          },
+          {
+            "id": "late_residual",
+            "from": "20080512210045",
+            "to": "20101207235959",
+            "match_type": "exact",
+            "basis": "late-gallery anchor split; no exact receipt found"
+          }
+        ],
+        "replay_rule": "only after fresh exact-CDX row with exact original, status 200, expected image MIME, digest, and complete index"
+      },
+      {
+        "candidate_rank": 140,
+        "requested_url": "http://www.worldofwarcraft.com/news/images/05-01/contests/ss03.jpg",
+        "source_class": "visible_missing_marker",
+        "source_reference": {
+          "candidate_manifest": "research/continuous-recovery-20261019/local-audit/news-extension/news-extension-candidates.json",
+          "candidate_manifest_sha256": "ff8b2d7aa9b94d47cdf9d67ed015c62e6bef7f7662ec15e20ff3c89105d2d708",
+          "candidate_state": "uncovered",
+          "candidate_next_step": "fresh_exact_cdx_then_replay_if_eligible",
+          "v33_marker": {
+            "path": ".scratch/pages-resources-20261018-v33/news/wow-news2005.html",
+            "line": 2358,
+            "source_url": "http://www.worldofwarcraft.com/news/wow-news2005.html",
+            "reason": "external-or-uncollected-resource",
+            "requested_url_is_exact_after_percent_decode": true,
+            "requested_url_is_percent_encoded_in_marker": true,
+            "line_sha256": "2f3744c9fcd5d98c03480f77f0dc2b675ae60f2cf00574714219a96217f3cb30"
+          },
+          "source15_context": [
+            {
+              "source_url": "http://www.worldofwarcraft.com/news/wow-news2005.html",
+              "source_file": ".scratch/offline-navigation-20261015-v15/site/news/wow-news2005.html",
+              "source_page_sha256": "988aee39ade43ff39a345e2a47c4cda5fe983c4bd42e8fa00dc7e1837334e20d",
+              "source_page_bytes": 190181,
+              "source_hits": []
+            }
+          ]
+        },
+        "v38_local": {
+          "path": ".scratch/pages-resources-20261019-v38/news/wow-news2005.html",
+          "line": 2358,
+          "line_sha256": "2f3744c9fcd5d98c03480f77f0dc2b675ae60f2cf00574714219a96217f3cb30",
+          "active_missing_marker": true,
+          "direct_asset_path": ".scratch/pages-resources-20261019-v38/news/images/05-01/contests/ss03.jpg",
+          "direct_asset_exists": false
+        },
+        "priority_score": 171,
+        "historical_execution_evidence_in_manifest": [],
+        "historical_plan_or_queue_evidence_in_manifest": [],
+        "actual_exact_cdx_or_replay_evidence": [],
+        "planned_query_windows": [
+          {
+            "id": "pre_anchor",
+            "from": "20000101000000",
+            "to": "20080512210044",
+            "match_type": "exact",
+            "basis": "frozen frontier-news20f exact-CDX convention"
+          },
+          {
+            "id": "late_residual",
+            "from": "20080512210045",
+            "to": "20101207235959",
+            "match_type": "exact",
+            "basis": "late-gallery anchor split; no exact receipt found"
+          }
+        ],
+        "replay_rule": "only after fresh exact-CDX row with exact original, status 200, expected image MIME, digest, and complete index"
+      }
+    ]
+  },
+  "c_gallery_late_priority": {
+    "ledger_addendum": {
+      "path": "research/continuous-recovery-20261019/gallery-audit/coverage-after-rest10b/full-source15-crossrefs-r3/coverage-ledger-r3-addendum.json",
+      "bytes": 174867,
+      "sha256": "7d79a5aac49f31dd617ac0ce358fdc79c64e476ed2359b1a3dd49d0afdfd6280",
+      "role": "r3 late-gallery open/complete ledger"
+    },
+    "base_ledger": {
+      "path": "research/continuous-recovery-20261019/gallery-audit/coverage-after-rest10b/coverage-ledger.json",
+      "bytes": 150053,
+      "sha256": "addd32f2f54fe22dabcfff75dec0fd3eba2af413434acfbc3320ccfe3dbd2cf3",
+      "role": "base late-gallery ledger"
+    },
+    "late_window": {
+      "from": "20080512210045",
+      "to": "20101207235959",
+      "meaning": "anchor+1 through 2010-12-07 23:59:59 inclusive"
+    },
+    "prior_receipts": [
+      {
+        "path": "research/continuous-recovery-20261019/publication/root-gallery-late-rest10b-source-acceptance.json",
+        "sha256": "73cfbbe8594357128cc658571a2681262628ca561c3d62b45eb11d1406c6059d",
+        "role": "accepted partial report: Mechanar terminal 503; Botanica not queried"
+      },
+      {
+        "path": "research/continuous-recovery-20261019/network/gallery-late-rest10b/batch-report.json",
+        "sha256": "3a62951482e7a6ea8835fa76928aece1210745e09b5d11d46a43ed46828033d0",
+        "role": "actual rest10b report; queue stopped at Mechanar 503"
+      }
+    ],
+    "park_boundary": [
+      "Karazhan",
+      "Zul'Aman",
+      "Magtheridon's Lair",
+      "Gruul's Lair",
+      "Serpentshrine Cavern",
+      "The Battle for Mount Hyjal - Caverns of Time",
+      "Tempest Keep - The Eye",
+      "Black Temple",
+      "Doom Lord Kazzak",
+      "Magister's Terrace",
+      "Hellfire Citadel - Hellfire Ramparts",
+      "Hellfire Citadel - The Blood Furnace",
+      "Hellfire Citadel - The Shattered Halls",
+      "Coilfang Reservoir - The Underbog",
+      "Caverns of Time - Escape from Durnholde",
+      "Caverns of Time - Opening of the Dark Portal",
+      "Coilfang Reservoir - The Steam Vaults",
+      "Auchindoun - Mana-Tombs",
+      "Auchindoun - Auchenai Crypts",
+      "Auchindoun - Sethekk Halls",
+      "Auchindoun - Shadow Labyrinth"
+    ],
+    "items": [
+      {
+        "queue_rank": 1,
+        "registry_rank": 22,
+        "gallery": "Tempest Keep - The Mechanar",
+        "category": "Dungeon",
+        "prefix_url": "http://www.worldofwarcraft.com/info/dungeons/images/mech/",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fmech%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+        "query": {
+          "match_type": "prefix",
+          "from": "20080512210045",
+          "to": "20101207235959",
+          "limit": 500,
+          "show_resume_key": true,
+          "collapse": false,
+          "index_only": true
+        },
+        "source_reference": {
+          "route": "/info/dungeons/tk-mech-gallery.html",
+          "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/tk-mech-gallery.html",
+          "sha256": "11ac5bcc87d393e08d03e1628cb55e6e0fb169bbc8350fff7f14dbb7feddbb61",
+          "addshots_line": 98,
+          "addshots_literal": "addshots(\"/info/dungeons/images/mech/\",\"ss\",numShots);",
+          "numshots_line": 60,
+          "numshots_literal": "numShots = 35;",
+          "declared_slots": 35,
+          "expected_direct_entities": 70
+        },
+        "prior_late_status": "source_503",
+        "decision_reason": "Exact late prefix reached terminal source 503; interval remains unverified and requires a new control decision.",
+        "not_404_claim": true,
+        "prior_receipt_refs": [
+          {
+            "path": "research/continuous-recovery-20261019/publication/root-gallery-late-rest10b-source-acceptance.json",
+            "sha256": "73cfbbe8594357128cc658571a2681262628ca561c3d62b45eb11d1406c6059d",
+            "role": "accepted partial report: Mechanar terminal 503; Botanica not queried"
+          },
+          {
+            "path": "research/continuous-recovery-20261019/network/gallery-late-rest10b/batch-report.json",
+            "sha256": "3a62951482e7a6ea8835fa76928aece1210745e09b5d11d46a43ed46828033d0",
+            "role": "actual rest10b report; queue stopped at Mechanar 503"
+          }
+        ],
+        "network_result": "not_executed_in_this_audit",
+        "payload_replay": false,
+        "no_filename_guess": true,
+        "no_auto_pagination": true,
+        "same_404_same_window_recheck": false
+      },
+      {
+        "queue_rank": 2,
+        "registry_rank": 23,
+        "gallery": "Tempest Keep - The Botanica",
+        "category": "Dungeon",
+        "prefix_url": "http://www.worldofwarcraft.com/info/dungeons/images/botanica/",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Fbotanica%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+        "query": {
+          "match_type": "prefix",
+          "from": "20080512210045",
+          "to": "20101207235959",
+          "limit": 500,
+          "show_resume_key": true,
+          "collapse": false,
+          "index_only": true
+        },
+        "source_reference": {
+          "route": "/info/dungeons/tk-botanica-gallery.html",
+          "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/tk-botanica-gallery.html",
+          "sha256": "8a253d240854520ef1e49b74ec4d571b98ebaa2dd27fd328a66ac204ce42d6d9",
+          "addshots_line": 82,
+          "addshots_literal": "addshots(\"/info/dungeons/images/botanica/\",\"ss\",numShots);",
+          "numshots_line": 60,
+          "numshots_literal": "numShots = 19;",
+          "declared_slots": 19,
+          "expected_direct_entities": 38
+        },
+        "prior_late_status": "not_queried",
+        "decision_reason": "Exact late prefix was not queried because the 10b queue stopped at Mechanar 503; interval remains unqueried, not missing or 404.",
+        "not_404_claim": true,
+        "prior_receipt_refs": [
+          {
+            "path": "research/continuous-recovery-20261019/publication/root-gallery-late-rest10b-source-acceptance.json",
+            "sha256": "73cfbbe8594357128cc658571a2681262628ca561c3d62b45eb11d1406c6059d",
+            "role": "accepted partial report: Mechanar terminal 503; Botanica not queried"
+          },
+          {
+            "path": "research/continuous-recovery-20261019/network/gallery-late-rest10b/batch-report.json",
+            "sha256": "3a62951482e7a6ea8835fa76928aece1210745e09b5d11d46a43ed46828033d0",
+            "role": "actual rest10b report; queue stopped at Mechanar 503"
+          }
+        ],
+        "network_result": "not_executed_in_this_audit",
+        "payload_replay": false,
+        "no_filename_guess": true,
+        "no_auto_pagination": true,
+        "same_404_same_window_recheck": false
+      },
+      {
+        "queue_rank": 3,
+        "registry_rank": 24,
+        "gallery": "Tempest Keep - The Arcatraz",
+        "category": "Dungeon",
+        "prefix_url": "http://www.worldofwarcraft.com/info/dungeons/images/arcatraz/",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fdungeons%2Fimages%2Farcatraz%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+        "query": {
+          "match_type": "prefix",
+          "from": "20080512210045",
+          "to": "20101207235959",
+          "limit": 500,
+          "show_resume_key": true,
+          "collapse": false,
+          "index_only": true
+        },
+        "source_reference": {
+          "route": "/info/dungeons/tk-arcatraz-gallery.html",
+          "path": ".scratch/offline-navigation-20261015-v15/site/info/dungeons/tk-arcatraz-gallery.html",
+          "sha256": "becc9b9bbe1f7fa2c8a6a6ed57f0c021074da4ad8dc4da5f6c8083e0ce39e468",
+          "addshots_line": 112,
+          "addshots_literal": "addshots(\"/info/dungeons/images/arcatraz/\",\"ss\",numShots);",
+          "numshots_line": 60,
+          "numshots_literal": "numShots = 49;",
+          "declared_slots": 49,
+          "expected_direct_entities": 98
+        },
+        "prior_late_status": "not_queried",
+        "decision_reason": "Exact late prefix was not queried because the 10b queue stopped at Mechanar 503; interval remains unqueried, not missing or 404.",
+        "not_404_claim": true,
+        "prior_receipt_refs": [
+          {
+            "path": "research/continuous-recovery-20261019/publication/root-gallery-late-rest10b-source-acceptance.json",
+            "sha256": "73cfbbe8594357128cc658571a2681262628ca561c3d62b45eb11d1406c6059d",
+            "role": "accepted partial report: Mechanar terminal 503; Botanica not queried"
+          },
+          {
+            "path": "research/continuous-recovery-20261019/network/gallery-late-rest10b/batch-report.json",
+            "sha256": "3a62951482e7a6ea8835fa76928aece1210745e09b5d11d46a43ed46828033d0",
+            "role": "actual rest10b report; queue stopped at Mechanar 503"
+          }
+        ],
+        "network_result": "not_executed_in_this_audit",
+        "payload_replay": false,
+        "no_filename_guess": true,
+        "no_auto_pagination": true,
+        "same_404_same_window_recheck": false
+      },
+      {
+        "queue_rank": 4,
+        "registry_rank": 25,
+        "gallery": "Warsong Gulch",
+        "category": "PvP",
+        "prefix_url": "http://www.worldofwarcraft.com/pvp/battlegrounds/warsonggulch/",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Fbattlegrounds%2Fwarsonggulch%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+        "query": {
+          "match_type": "prefix",
+          "from": "20080512210045",
+          "to": "20101207235959",
+          "limit": 500,
+          "show_resume_key": true,
+          "collapse": false,
+          "index_only": true
+        },
+        "source_reference": {
+          "route": "/pvp/battlegrounds/warsong-gulch-gallery.html",
+          "path": ".scratch/offline-navigation-20261015-v15/site/pvp/battlegrounds/warsong-gulch-gallery.html",
+          "sha256": "eaef0e508fc03d23e5e60a1a02b27bfdbe9e8936ea578ff5552f274b4b8a29b2",
+          "addshots_line": 96,
+          "addshots_literal": "addshots(\"/pvp/battlegrounds/warsonggulch/\",\"ss\",numShots);",
+          "numshots_line": 60,
+          "numshots_literal": "numShots = 29;",
+          "declared_slots": 29,
+          "expected_direct_entities": 58
+        },
+        "prior_late_status": "not_queried",
+        "decision_reason": "Exact late prefix was not queried because the 10b queue stopped at Mechanar 503; interval remains unqueried, not missing or 404.",
+        "not_404_claim": true,
+        "prior_receipt_refs": [
+          {
+            "path": "research/continuous-recovery-20261019/publication/root-gallery-late-rest10b-source-acceptance.json",
+            "sha256": "73cfbbe8594357128cc658571a2681262628ca561c3d62b45eb11d1406c6059d",
+            "role": "accepted partial report: Mechanar terminal 503; Botanica not queried"
+          },
+          {
+            "path": "research/continuous-recovery-20261019/network/gallery-late-rest10b/batch-report.json",
+            "sha256": "3a62951482e7a6ea8835fa76928aece1210745e09b5d11d46a43ed46828033d0",
+            "role": "actual rest10b report; queue stopped at Mechanar 503"
+          }
+        ],
+        "network_result": "not_executed_in_this_audit",
+        "payload_replay": false,
+        "no_filename_guess": true,
+        "no_auto_pagination": true,
+        "same_404_same_window_recheck": false
+      },
+      {
+        "queue_rank": 5,
+        "registry_rank": 26,
+        "gallery": "Isle of Quel'Danas",
+        "category": "Region",
+        "prefix_url": "http://www.worldofwarcraft.com/info/regions/isleofq/",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fregions%2Fisleofq%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+        "query": {
+          "match_type": "prefix",
+          "from": "20080512210045",
+          "to": "20101207235959",
+          "limit": 500,
+          "show_resume_key": true,
+          "collapse": false,
+          "index_only": true
+        },
+        "source_reference": {
+          "route": "/info/regions/isle-of-queldanas-gallery.html",
+          "path": ".scratch/offline-navigation-20261015-v15/site/info/regions/isle-of-queldanas-gallery.html",
+          "sha256": "4dfcca862bfea6575cb30eff8d974b49221a4356f161683fcefa70254c260468",
+          "addshots_line": 112,
+          "addshots_literal": "addshots(\"/info/regions/isleofq/\",\"ss\",numShots);",
+          "numshots_line": 60,
+          "numshots_literal": "numShots = 49;",
+          "declared_slots": 49,
+          "expected_direct_entities": 98
+        },
+        "prior_late_status": "not_queried",
+        "decision_reason": "Exact late prefix was not queried because the 10b queue stopped at Mechanar 503; interval remains unqueried, not missing or 404.",
+        "not_404_claim": true,
+        "prior_receipt_refs": [
+          {
+            "path": "research/continuous-recovery-20261019/publication/root-gallery-late-rest10b-source-acceptance.json",
+            "sha256": "73cfbbe8594357128cc658571a2681262628ca561c3d62b45eb11d1406c6059d",
+            "role": "accepted partial report: Mechanar terminal 503; Botanica not queried"
+          },
+          {
+            "path": "research/continuous-recovery-20261019/network/gallery-late-rest10b/batch-report.json",
+            "sha256": "3a62951482e7a6ea8835fa76928aece1210745e09b5d11d46a43ed46828033d0",
+            "role": "actual rest10b report; queue stopped at Mechanar 503"
+          }
+        ],
+        "network_result": "not_executed_in_this_audit",
+        "payload_replay": false,
+        "no_filename_guess": true,
+        "no_auto_pagination": true,
+        "same_404_same_window_recheck": false
+      },
+      {
+        "queue_rank": 6,
+        "registry_rank": 27,
+        "gallery": "Amani War Bear",
+        "category": "Mount",
+        "prefix_url": "http://www.worldofwarcraft.com/info/basics/images/mounts/bear/",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fimages%2Fmounts%2Fbear%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+        "query": {
+          "match_type": "prefix",
+          "from": "20080512210045",
+          "to": "20101207235959",
+          "limit": 500,
+          "show_resume_key": true,
+          "collapse": false,
+          "index_only": true
+        },
+        "source_reference": {
+          "route": "/info/basics/mounts/bear-gallery.html",
+          "path": ".scratch/offline-navigation-20261015-v15/site/info/basics/mounts/bear-gallery.html",
+          "sha256": "eafe02e1e861ff71b2940a29759a941adf37de196288806951fd5e60570eec88",
+          "addshots_line": 87,
+          "addshots_literal": "addshots(\"/info/basics/images/mounts/bear/\",\"ss\",numShots);",
+          "numshots_line": 60,
+          "numshots_literal": "numShots = 24;",
+          "declared_slots": 24,
+          "expected_direct_entities": 48
+        },
+        "prior_late_status": "not_queried",
+        "decision_reason": "Exact late prefix was not queried because the 10b queue stopped at Mechanar 503; interval remains unqueried, not missing or 404.",
+        "not_404_claim": true,
+        "prior_receipt_refs": [
+          {
+            "path": "research/continuous-recovery-20261019/publication/root-gallery-late-rest10b-source-acceptance.json",
+            "sha256": "73cfbbe8594357128cc658571a2681262628ca561c3d62b45eb11d1406c6059d",
+            "role": "accepted partial report: Mechanar terminal 503; Botanica not queried"
+          },
+          {
+            "path": "research/continuous-recovery-20261019/network/gallery-late-rest10b/batch-report.json",
+            "sha256": "3a62951482e7a6ea8835fa76928aece1210745e09b5d11d46a43ed46828033d0",
+            "role": "actual rest10b report; queue stopped at Mechanar 503"
+          }
+        ],
+        "network_result": "not_executed_in_this_audit",
+        "payload_replay": false,
+        "no_filename_guess": true,
+        "no_auto_pagination": true,
+        "same_404_same_window_recheck": false
+      },
+      {
+        "queue_rank": 7,
+        "registry_rank": 28,
+        "gallery": "Riding Turtle",
+        "category": "Mount",
+        "prefix_url": "http://www.worldofwarcraft.com/info/basics/mounts/turtle/",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fmounts%2Fturtle%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+        "query": {
+          "match_type": "prefix",
+          "from": "20080512210045",
+          "to": "20101207235959",
+          "limit": 500,
+          "show_resume_key": true,
+          "collapse": false,
+          "index_only": true
+        },
+        "source_reference": {
+          "route": "/info/basics/mounts/turtle-gallery.html",
+          "path": ".scratch/offline-navigation-20261015-v15/site/info/basics/mounts/turtle-gallery.html",
+          "sha256": "23fa54e85c3a1ed4c81d5d4e8b68878f9a86b546981cea6f5f29febbbf330a98",
+          "addshots_line": 75,
+          "addshots_literal": "addshots(\"/info/basics/mounts/turtle/\",\"ss\",numShots);",
+          "numshots_line": 60,
+          "numshots_literal": "numShots = 12;",
+          "declared_slots": 12,
+          "expected_direct_entities": 24
+        },
+        "prior_late_status": "not_queried",
+        "decision_reason": "Exact late prefix was not queried because the 10b queue stopped at Mechanar 503; interval remains unqueried, not missing or 404.",
+        "not_404_claim": true,
+        "prior_receipt_refs": [
+          {
+            "path": "research/continuous-recovery-20261019/publication/root-gallery-late-rest10b-source-acceptance.json",
+            "sha256": "73cfbbe8594357128cc658571a2681262628ca561c3d62b45eb11d1406c6059d",
+            "role": "accepted partial report: Mechanar terminal 503; Botanica not queried"
+          },
+          {
+            "path": "research/continuous-recovery-20261019/network/gallery-late-rest10b/batch-report.json",
+            "sha256": "3a62951482e7a6ea8835fa76928aece1210745e09b5d11d46a43ed46828033d0",
+            "role": "actual rest10b report; queue stopped at Mechanar 503"
+          }
+        ],
+        "network_result": "not_executed_in_this_audit",
+        "payload_replay": false,
+        "no_filename_guess": true,
+        "no_auto_pagination": true,
+        "same_404_same_window_recheck": false
+      },
+      {
+        "queue_rank": 8,
+        "registry_rank": 29,
+        "gallery": "Swift White Hawkstrider",
+        "category": "Mount",
+        "prefix_url": "http://www.worldofwarcraft.com/info/basics/mounts/whitehawkstrider/",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fmounts%2Fwhitehawkstrider%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+        "query": {
+          "match_type": "prefix",
+          "from": "20080512210045",
+          "to": "20101207235959",
+          "limit": 500,
+          "show_resume_key": true,
+          "collapse": false,
+          "index_only": true
+        },
+        "source_reference": {
+          "route": "/info/basics/mounts/swiftwhitehawkstrider-gallery.html",
+          "path": ".scratch/offline-navigation-20261015-v15/site/info/basics/mounts/swiftwhitehawkstrider-gallery.html",
+          "sha256": "962e9ce346027a1527f0200bf89837923f06a6cf8c1aab913761dc56aaeb3f16",
+          "addshots_line": 78,
+          "addshots_literal": "addshots(\"/info/basics/mounts/whitehawkstrider/\",\"ss\",numShots);",
+          "numshots_line": 60,
+          "numshots_literal": "numShots = 15;",
+          "declared_slots": 15,
+          "expected_direct_entities": 30
+        },
+        "prior_late_status": "not_queried",
+        "decision_reason": "Exact late prefix was not queried because the 10b queue stopped at Mechanar 503; interval remains unqueried, not missing or 404.",
+        "not_404_claim": true,
+        "prior_receipt_refs": [
+          {
+            "path": "research/continuous-recovery-20261019/publication/root-gallery-late-rest10b-source-acceptance.json",
+            "sha256": "73cfbbe8594357128cc658571a2681262628ca561c3d62b45eb11d1406c6059d",
+            "role": "accepted partial report: Mechanar terminal 503; Botanica not queried"
+          },
+          {
+            "path": "research/continuous-recovery-20261019/network/gallery-late-rest10b/batch-report.json",
+            "sha256": "3a62951482e7a6ea8835fa76928aece1210745e09b5d11d46a43ed46828033d0",
+            "role": "actual rest10b report; queue stopped at Mechanar 503"
+          }
+        ],
+        "network_result": "not_executed_in_this_audit",
+        "payload_replay": false,
+        "no_filename_guess": true,
+        "no_auto_pagination": true,
+        "same_404_same_window_recheck": false
+      },
+      {
+        "queue_rank": 9,
+        "registry_rank": 30,
+        "gallery": "Qiraji battle tank",
+        "category": "Mount",
+        "prefix_url": "http://www.worldofwarcraft.com/info/basics/mounts/aqbattletank/",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fmounts%2Faqbattletank%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+        "query": {
+          "match_type": "prefix",
+          "from": "20080512210045",
+          "to": "20101207235959",
+          "limit": 500,
+          "show_resume_key": true,
+          "collapse": false,
+          "index_only": true
+        },
+        "source_reference": {
+          "route": "/info/basics/mounts/aq-battletank-gallery.html",
+          "path": ".scratch/offline-navigation-20261015-v15/site/info/basics/mounts/aq-battletank-gallery.html",
+          "sha256": "7766afbbf743ffd5b198a0bb2362f25b9a8aaba022355b5c7f00fdc9fc10ff1b",
+          "addshots_line": 67,
+          "addshots_literal": "addshots(\"/info/basics/mounts/aqbattletank/\",\"ss\",numShots);",
+          "numshots_line": 60,
+          "numshots_literal": "numShots = 4;",
+          "declared_slots": 4,
+          "expected_direct_entities": 8
+        },
+        "prior_late_status": "not_queried",
+        "decision_reason": "Exact late prefix was not queried because the 10b queue stopped at Mechanar 503; interval remains unqueried, not missing or 404.",
+        "not_404_claim": true,
+        "prior_receipt_refs": [
+          {
+            "path": "research/continuous-recovery-20261019/publication/root-gallery-late-rest10b-source-acceptance.json",
+            "sha256": "73cfbbe8594357128cc658571a2681262628ca561c3d62b45eb11d1406c6059d",
+            "role": "accepted partial report: Mechanar terminal 503; Botanica not queried"
+          },
+          {
+            "path": "research/continuous-recovery-20261019/network/gallery-late-rest10b/batch-report.json",
+            "sha256": "3a62951482e7a6ea8835fa76928aece1210745e09b5d11d46a43ed46828033d0",
+            "role": "actual rest10b report; queue stopped at Mechanar 503"
+          }
+        ],
+        "network_result": "not_executed_in_this_audit",
+        "payload_replay": false,
+        "no_filename_guess": true,
+        "no_auto_pagination": true,
+        "same_404_same_window_recheck": false
+      },
+      {
+        "queue_rank": 10,
+        "registry_rank": 31,
+        "gallery": "Raven Mount",
+        "category": "Mount",
+        "prefix_url": "http://www.worldofwarcraft.com/info/basics/mounts/ravenmount/",
+        "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Fmounts%2Fravenmount%2F&matchType=prefix&output=json&fl=urlkey%2Ctimestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&from=20080512210045&to=20101207235959&limit=500&showResumeKey=true",
+        "query": {
+          "match_type": "prefix",
+          "from": "20080512210045",
+          "to": "20101207235959",
+          "limit": 500,
+          "show_resume_key": true,
+          "collapse": false,
+          "index_only": true
+        },
+        "source_reference": {
+          "route": "/info/basics/mounts/raven-mount-gallery.html",
+          "path": ".scratch/offline-navigation-20261015-v15/site/info/basics/mounts/raven-mount-gallery.html",
+          "sha256": "72688d10c5baf24266732863d6c248916da1129bbcee8b0239f76ea423febbbe",
+          "addshots_line": 72,
+          "addshots_literal": "addshots(\"/info/basics/mounts/ravenmount/\",\"ss\",numShots);",
+          "numshots_line": 60,
+          "numshots_literal": "numShots = 9;",
+          "declared_slots": 9,
+          "expected_direct_entities": 18
+        },
+        "prior_late_status": "not_queried",
+        "decision_reason": "Exact late prefix was not queried because the 10b queue stopped at Mechanar 503; interval remains unqueried, not missing or 404.",
+        "not_404_claim": true,
+        "prior_receipt_refs": [
+          {
+            "path": "research/continuous-recovery-20261019/publication/root-gallery-late-rest10b-source-acceptance.json",
+            "sha256": "73cfbbe8594357128cc658571a2681262628ca561c3d62b45eb11d1406c6059d",
+            "role": "accepted partial report: Mechanar terminal 503; Botanica not queried"
+          },
+          {
+            "path": "research/continuous-recovery-20261019/network/gallery-late-rest10b/batch-report.json",
+            "sha256": "3a62951482e7a6ea8835fa76928aece1210745e09b5d11d46a43ed46828033d0",
+            "role": "actual rest10b report; queue stopped at Mechanar 503"
+          }
+        ],
+        "network_result": "not_executed_in_this_audit",
+        "payload_replay": false,
+        "no_filename_guess": true,
+        "no_auto_pagination": true,
+        "same_404_same_window_recheck": false
+      }
+    ],
+    "execution_contract": "CDX prefix index only; no payload replay, no filename expansion, no automatic continuation; preserve http/origin path exactly."
+  },
+  "dedupe_evidence_policy": {
+    "candidate_or_plan_is_not_execution": true,
+    "actual_cdx_requires_request_receipt": true,
+    "actual_replay_requires_replay_receipt": true,
+    "browser_or_offline_missing_marker_is_not_archive_availability": true,
+    "same_404_same_window_not_rechecked": true
+  },
+  "unknowns": [
+    "The six Korea PvP URLs have no exact per-URL CDX request receipt or image replay receipt in local evidence; three have only duplicate rows from old prefix requests.",
+    "The 005 top-level news prefix response is marked possibly_truncated by its own metadata, so it cannot establish complete history.",
+    "The late exact window for the six news URLs is a prepared dedupe window, not an executed request.",
+    "News ranks 121-140 have local v38 active missing markers and absent direct assets, but no historical availability conclusion until fresh exact-CDX and eligible replay.",
+    "The ten gallery inputs are open late prefixes; Botanica and later rows are not queried, and Mechanar has prior source 503. None is a 404 claim.",
+    "No full raw-tree scan or new Source15 cross-reference scan was performed."
+  ],
+  "local_validation": {
+    "json_inputs_parsed": true,
+    "a_rows_checked": 6,
+    "b_ranks_checked": [
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140
+    ],
+    "c_registry_ranks_checked": [
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31
+    ],
+    "all_queue_urls_preserve_original_source_paths": true
+  }
+}

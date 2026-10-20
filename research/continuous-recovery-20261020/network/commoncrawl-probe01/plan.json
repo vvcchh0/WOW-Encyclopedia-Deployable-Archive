@@ -1,0 +1,133 @@
+{
+  "schema": "wow-recovery.commoncrawl-probe01-plan.v1",
+  "batch_id": "COMMONCRAWL-PROBE01-20261020",
+  "mode": "prepared",
+  "root_go_required": true,
+  "provider": {
+    "name": "Common Crawl",
+    "role": "Independent capture-index provider; this probe is not a Wayback proxy, mirror, or rate-limit bypass.",
+    "collection_metadata_url": "https://index.commoncrawl.org/collinfo.json",
+    "collection_metadata_must_precede_index": true,
+    "collection": {
+      "id": "CC-MAIN-2008-2009",
+      "from": "2008-05-09T05:37:12Z",
+      "to": "2009-01-09T20:58:29Z",
+      "index_endpoint": "https://index.commoncrawl.org/CC-MAIN-2008-2009-index"
+    },
+    "official_documentation": [
+      "https://www.commoncrawl.org/cdxj-index",
+      "https://commoncrawl.atlassian.net/wiki/spaces/CRWL/pages/2850886"
+    ],
+    "arc_payloads_requested": false,
+    "image_payloads_requested": false
+  },
+  "targets": [
+    {
+      "id": "known-news-image-exact",
+      "url": "http://www.worldofwarcraft.com/news/images/08-02/02-14-08-2.jpg",
+      "match_type": "exact",
+      "category": "news",
+      "purpose": "Independent-provider metadata probe for the previously known exact image identity."
+    },
+    {
+      "id": "news-images-prefix",
+      "url": "http://www.worldofwarcraft.com/news/images/",
+      "match_type": "prefix",
+      "category": "news",
+      "purpose": "Bounded news image prefix metadata probe; no pagination."
+    },
+    {
+      "id": "karazhan-source-directory-prefix",
+      "url": "http://www.worldofwarcraft.com/info/dungeons/images/karazhan/",
+      "match_type": "prefix",
+      "category": "gallery",
+      "purpose": "Prefix taken from the frozen gallery registry and addshots sourceDirectory."
+    },
+    {
+      "id": "blacktemple-source-directory-prefix",
+      "url": "http://www.worldofwarcraft.com/info/dungeons/images/blacktemple/",
+      "match_type": "prefix",
+      "category": "gallery",
+      "purpose": "Prefix taken from the frozen gallery registry and addshots sourceDirectory."
+    },
+    {
+      "id": "encyclopedia-index-exact",
+      "url": "http://www.worldofwarcraft.com/info/encyclopedia/index.xml",
+      "match_type": "exact",
+      "category": "encyclopedia",
+      "purpose": "Exact encyclopedia index source reference from the frozen offline site."
+    }
+  ],
+  "query": {
+    "endpoint": "https://index.commoncrawl.org/CC-MAIN-2008-2009-index",
+    "output": "json",
+    "limit": 100,
+    "match_type_parameter": "matchType",
+    "match_types_allowed": [
+      "exact",
+      "prefix"
+    ],
+    "pagination": false,
+    "redirects": false,
+    "query_order": [
+      "url",
+      "output",
+      "limit",
+      "matchType"
+    ],
+    "response_format": "JSON lines; each capture row remains metadata only."
+  },
+  "execution_order": [
+    "collection_metadata",
+    "known-news-image-exact",
+    "news-images-prefix",
+    "karazhan-source-directory-prefix",
+    "blacktemple-source-directory-prefix",
+    "encyclopedia-index-exact"
+  ],
+  "policy": {
+    "maximum_logical_requests": 6,
+    "maximum_index_queries": 5,
+    "maximum_http_attempts": 12,
+    "maximum_seconds": 600,
+    "subprocess_timeout_seconds": 20,
+    "maximum_total_body_bytes": 4194304,
+    "maximum_body_bytes_per_attempt": 524288,
+    "direct_first": true,
+    "proxy_only_after_transport_failure": true,
+    "process_proxy": "http://127.0.0.1:7890",
+    "tls_verification": true,
+    "automatic_redirects": false,
+    "automatic_retries": false,
+    "minimum_request_start_seconds": 5.0,
+    "disk_floor_bytes": 11005853696,
+    "stop_http_codes": [
+      429,
+      503
+    ],
+    "cooldown_seconds": 120,
+    "maximum_consecutive_transport_failures": 5,
+    "no_arc_download": true,
+    "no_image_download": true,
+    "no_wayback_requests": true,
+    "raw_http_private": true
+  },
+  "schedule": {
+    "run_start_utc": "2026-10-20T08:33:22Z",
+    "network_stop_utc": "2026-10-20T13:15:00Z",
+    "run_deadline_utc": "2026-10-20T14:33:22Z",
+    "request_start_requires_fresh_runtime_time": true
+  },
+  "acceptance_boundaries": [
+    "A Common Crawl index HTTP 404 or empty response records index/query status only; it is not an original-image HTTP 404.",
+    "A zero-row index result is bounded metadata evidence only and requires collection existence, query syntax, response status, and body state to be recorded.",
+    "A metadata row is not image recovery; no ARC body or image is accepted by this probe.",
+    "Only the parent root GO can enable execute mode; preparation performs zero HTTP requests."
+  ],
+  "network_at_prepare": {
+    "http_requests": 0,
+    "wayback_requests": 0,
+    "raw_http_written": false,
+    "actual_started_utc": null
+  }
+}

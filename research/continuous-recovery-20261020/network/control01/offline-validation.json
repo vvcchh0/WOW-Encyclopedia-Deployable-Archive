@@ -1,0 +1,42 @@
+{
+  "schema": "wow-recovery.control01-offline-validation.v1",
+  "checked_utc": "2026-10-20T08:49:56.133294Z",
+  "network_requests": 0,
+  "raw_written": false,
+  "fixture": {
+    "path": "research/continuous-recovery-20261020/network/control01/fixture-results.json",
+    "sha256": "fd7d3730308a281e48c457bf393d9cd0e9306f6b05bd878c23a286060707ee98",
+    "bytes": 831,
+    "all_passed": true,
+    "case_count": 14
+  },
+  "checks": [
+    {
+      "command": "python -X utf8 control01_driver.py --fixture",
+      "result": "passed",
+      "evidence": "fixture-results.json",
+      "fixture_self_binding": false
+    },
+    {
+      "command": "validate_local_inputs(); _fixture(bindings) without write",
+      "result": "passed",
+      "network_requests": 0,
+      "case_count": 14
+    },
+    {
+      "command": "python -X utf8 -m py_compile control01_driver.py parent-execute-once.py",
+      "result": "passed"
+    }
+  ],
+  "package_sha256": {
+    "plan.json": "e989e8b25af6d17eb60407e93e317b2b525f9731dff92250e20244a9a6ff1bdf",
+    "control01_driver.py": "ae099cd19401522a9bc59f74262ec5a644450043e49b393d4a1e371e823bdd84",
+    "fixture-results.json": "fd7d3730308a281e48c457bf393d9cd0e9306f6b05bd878c23a286060707ee98",
+    "input-bindings.json": "684574f956edb528f25dd9de6a74f06a6cb65fe3e134c5df0e147ce149666a4b",
+    "parent-execute-once.py": "e12e8dbf3a92897f22ea10903ae98e05c52b09b727b5f34a9a5bdb0b62f435be"
+  },
+  "pending": {
+    "root_go": "research/continuous-recovery-20261020/publication/root-control01-execute-go.json",
+    "network_execution": "not performed; requires explicit root GO and remains subject to 13:15Z cutoff"
+  }
+}
