@@ -18,6 +18,7 @@ Git 主树保存部署文件、工具、这些文档与关键验收；历史记�
 - [GitHub Pages部署与本地补齐](github-pages-deployment.md)：静态派生层、发布分支、验证与新批次边界。
 - [部署后的资源补齐](resource-resume-20261013.md)：实际查询、TLS 错误、传输复核及续传记录。
 - [玩家截图图库盘点](../research/github-pages-20261013/gallery-inspection-20261013.md)：50 个分区的图片需求、现有文件与目录改写问题。
+- [50个玩家图库完整缺失范围与可及性分析](player-gallery-accessibility-20261020.md)：全部原图和缩略图、本地部署对照、指南图片、存档查询覆盖及尚未覆盖的时间窗。
 
 - [浏览版脚本与表单修复](browser-security-remediation-20261014.md)：分页参数处理、历史业务表单静态展示、验收与发布记录。
 - [Search Console 复核准备](search-console-review-20261014.md)：所有权验证、报告记录、英文复核说明与 Edge 补充。

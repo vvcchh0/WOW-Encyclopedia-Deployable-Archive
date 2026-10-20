@@ -9,6 +9,7 @@
 
 ## 2026-10-20
 
+- 全面复核 50 个玩家图库：1,684 张截图的原图和缩略图均未取得；另有 22 张指南预览与 39 张指南大图。完成全部页面浏览检查，整理逐组缺失和存档时间窗，纠正“仅 Karazhan、Black Temple 缺图”的理解。[调查报告](docs/player-gallery-accessibility-20261020.md)
 - 发布 v39：补回 2004 年商店公告与 2005 年祖尔格拉布影片公告的两处配图，商店促销条目改为静态历史展品。同步发布[v39 离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261020-v39)（约 534 MB，解压约 600 MB）。
 - 扩大本地索引与图片摘要调查，核对新闻缺图和待查图库目录；Common Crawl 取得一份 2008 年 7 月百科首页，未发现新增图片线索。Wayback 429 与 Common Crawl 504 限制进一步获取，玩家图库原图仍有缺口。[工作记录](docs/continuous-recovery-20261020.md)
 
