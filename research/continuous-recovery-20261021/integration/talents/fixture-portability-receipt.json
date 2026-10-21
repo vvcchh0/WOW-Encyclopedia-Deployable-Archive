@@ -1,0 +1,63 @@
+{
+  "schema": "talent-source15-fixture-portability/v1",
+  "generatedUtc": "2026-10-21T02:52:54.092097Z",
+  "scope": "portable unit-test fixture migration only",
+  "changedFiles": [
+    "tests/test_talent_compat.py",
+    "tests/fixtures/talent_source15/localize.js",
+    "tests/fixtures/talent_source15/printOutTop.js",
+    "tests/fixtures/talent_source15/SOURCE.md"
+  ],
+  "fixtureSource": "approved local Source15 bytes copied from offline/site; no HTTP capture, cookies, or other source tree copied",
+  "fixtures": [
+    {
+      "path": "tests/fixtures/talent_source15/localize.js",
+      "length": 5467,
+      "sha256": "e13769500cc7853b7c4d835f0380cf971cbec5f8fc061c3f1f83cf3dea1e6972"
+    },
+    {
+      "path": "tests/fixtures/talent_source15/printOutTop.js",
+      "length": 22836,
+      "sha256": "618c92c0d00c960f651aad4364a05e93cfb785df38b2b63902febaeb06d26f04"
+    }
+  ],
+  "testFile": {
+    "path": "tests/test_talent_compat.py",
+    "sha256": "a28e5bd8983b7877adac9ea220a40909e54dcc7694cdf256bf7f9529a37080ae"
+  },
+  "sourceNote": {
+    "path": "tests/fixtures/talent_source15/SOURCE.md",
+    "sha256": "540b467a6150a7640fc6cfc4ff9301c3e9efa72e428be6b5ebbbdde3daada4b7"
+  },
+  "commands": [
+    {
+      "command": "python -X utf8 -m pytest -q tests/test_talent_compat.py",
+      "result": "6 passed in 0.22s"
+    },
+    {
+      "command": "node --check tests/fixtures/talent_source15/localize.js",
+      "result": "success"
+    },
+    {
+      "command": "node --check tests/fixtures/talent_source15/printOutTop.js",
+      "result": "success"
+    },
+    {
+      "command": "rg -n --fixed-strings offline/site tests/test_talent_compat.py",
+      "result": "no matches"
+    },
+    {
+      "command": "temporary checkout containing tools/talent_compat.py, tests/test_talent_compat.py, and tests/fixtures/talent_source15 only: python -X utf8 -m pytest -q tests/test_talent_compat.py",
+      "result": "6 passed in 0.25s"
+    }
+  ],
+  "portableDependencyCheck": {
+    "test_source_reads": "tests/fixtures/talent_source15",
+    "ignored_offline_site_reference_in_test": false,
+    "isolated_temporary_checkout": "passed without offline/site"
+  },
+  "productionFilesChanged": false,
+  "exporterChanged": false,
+  "siteChanged": false,
+  "gitChanged": false
+}

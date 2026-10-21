@@ -27,6 +27,7 @@ Git 主树保存部署文件、工具、这些文档与关键验收；历史记�
 - [资源连接诊断](network-recovery-20261014.md)：直连超时、代理回放 429、进程内 HTTPS DNS 与修复尝试。
 - [本地页面与便携包整理](local-maintenance-20261014.md)：本地旧地址兼容、离线引用盘点、空间盘点和最新浏览包。
 - [本地资源补充](resource-recovery-20261014.md)：独立图片补充层、图库目录修复、首批查询与本地验收。
+- [非图库内容复原](non-gallery-restoration-20261021.md)：三处Flash、九职业天赋计算器、BlizzCast来源与静态阅读页。
 - [关联站点素材与第二批恢复](related-sites-recovery-20261014.md)：已有站点覆盖、欧服图片、素材目录、旧队列去重更正和本地验收证据。
 - [截图资源可及性检查](screenshot-accessibility-20261014.md)：五个图片 URL 的实际回放、图库原图缺口与 CDX/API 连接结果。
 - [Karazhan 玩家图库限时检查](karazhan-gallery-accessibility-20261014.md)：126 个目标中的 54 项实际请求、历史重定向和 72 项未检查清单。

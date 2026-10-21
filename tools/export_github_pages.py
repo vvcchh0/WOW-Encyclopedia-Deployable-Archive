@@ -53,6 +53,8 @@ import guide_previews  # noqa: E402
 import guide_image_collections  # noqa: E402
 import non_gallery_compat  # noqa: E402
 import offline_flash  # noqa: E402
+import blizzcast_reader  # noqa: E402
+import talent_compat  # noqa: E402
 from toplist_compat import ToplistCompatError, rewrite_toplist_script  # noqa: E402
 
 
@@ -631,12 +633,14 @@ class PagesLocalizer:
         origin_index: dict[str, str],
         base_path: str,
         validated_navigation_image_routes: set[str] | frozenset[str] = frozenset(),
+        validated_related_page_routes: set[str] | frozenset[str] = frozenset(),
     ) -> None:
         self.route_to_static = route_to_static
         self.aliases = aliases
         self.origin_index = origin_index
         self.base_path = base_path
         self.validated_navigation_image_routes = frozenset(validated_navigation_image_routes)
+        self.validated_related_page_routes = frozenset(validated_related_page_routes)
         # ``offline_mirror.rewrite_css`` uses this explicit capability only
         # for frozen missing-image placeholders.  Its normal loopback
         # Localizer behavior remains unchanged.
@@ -688,6 +692,26 @@ class PagesLocalizer:
             raise PagesExportError(f"placeholder route missing from export map: {route}")
         query = mirror.encoded_missing_query(base_url, raw, reason)
         return target + "?" + query
+
+    def _validated_related_page_target(self, requested: str) -> str | None:
+        """Recover a former missing link only through an accepted exact origin."""
+
+        try:
+            parsed = urllib.parse.urlsplit(requested)
+            port = parsed.port
+        except ValueError:
+            return None
+        scheme = parsed.scheme.casefold()
+        if scheme not in {"http", "https"} or not parsed.hostname:
+            return None
+        if parsed.username is not None or parsed.password is not None or parsed.query or parsed.fragment:
+            return None
+        if port is not None and port != (80 if scheme == "http" else 443):
+            return None
+        route = self.origin_index.get(mirror.origin_key(requested))
+        if route not in self.validated_related_page_routes:
+            return None
+        return self._static_for_route(route)
 
     def localize(self, raw: str, *, base_url: str, context: str, recorder: Any) -> str:
         literal = str(raw).strip()
@@ -747,6 +771,11 @@ class PagesLocalizer:
                     )
                     return recovered
                 if context == "navigation":
+                    recovered = self._validated_related_page_target(requested)
+                    if recovered is not None:
+                        recorder.add(raw, requested, "localized", recovered, context,
+                                     "recovered accepted exact-origin historical reading page")
+                        return recovered
                     recovered = self._validated_navigation_image_target(requested)
                     if recovered is not None:
                         recorder.add(
@@ -2759,6 +2788,7 @@ def export_pages(
     guide_preview_map: Path | None = None,
     guide_image_collection_map: Path | None = None,
     flash_runtime_archive: Path | None = None,
+    blizzcast_source_map: Path | None = None,
 ) -> dict[str, Any]:
     source_site = source_site.resolve()
     manifest_path = manifest_path.resolve()
@@ -2818,7 +2848,28 @@ def export_pages(
     # allowance is separate from original image payloads and checked before any
     # output is staged.
     flash_estimate = 80 * 1024 * 1024 if flash_runtime_archive is not None else 0
-    estimate = output_estimate(records, overlay_bytes + flash_estimate)
+    blizzcast_bundle: blizzcast_reader.BlizzcastBundle | None = None
+    blizzcast_map_sha: str | None = None
+    if blizzcast_source_map is not None:
+        reader_map = Path(blizzcast_source_map)
+        if not reader_map.is_absolute():
+            reader_map = workspace_root / reader_map
+        try:
+            blizzcast_bundle = blizzcast_reader.load_blizzcast_bundle(
+                reader_map, workspace_root, base_path,
+            )
+        except blizzcast_reader.BlizzcastReaderError as exc:
+            raise PagesExportError(str(exc)) from exc
+        blizzcast_map_sha = sha256_file(reader_map)
+        for generated in blizzcast_bundle.generated_files:
+            route = safe_route(str(generated["path"]))
+            relative = route.lstrip("/")
+            if route in route_to_static or route in raw_aliases or relative in relative_paths:
+                raise PagesExportError(f"BlizzCast reading route collides with frozen input: {route}")
+            route_to_static[route] = static_url(base_path, relative)
+            relative_paths.add(relative)
+    reader_estimate = blizzcast_bundle.estimated_bytes if blizzcast_bundle else 0
+    estimate = output_estimate(records, overlay_bytes + flash_estimate + reader_estimate)
     if max_bytes is not None and before_workspace + estimate >= max_bytes:
         raise PagesExportError(f"workspace budget exceeded before export: {before_workspace}+{estimate} >= {max_bytes}")
     if free_before - estimate < min_free_bytes:
@@ -2928,6 +2979,12 @@ def export_pages(
         if existing is not None and existing != route:
             raise PagesExportError(f"image overlay origin index conflicts with frozen route: {key}")
         origin_index[key] = route
+    if blizzcast_bundle is not None:
+        for original_url, route in blizzcast_bundle.origin_routes.items():
+            key = mirror.origin_key(original_url)
+            if key in origin_index and origin_index[key] != route:
+                raise PagesExportError(f"BlizzCast origin conflicts with frozen source: {key}")
+            origin_index[key] = route
     validated_navigation_image_routes = frozenset(str(item["route"]) for item in overlays)
     localizer = PagesLocalizer(
         route_to_static=route_lookup,
@@ -2935,6 +2992,7 @@ def export_pages(
         origin_index=origin_index,
         base_path=base_path,
         validated_navigation_image_routes=validated_navigation_image_routes,
+        validated_related_page_routes=frozenset(blizzcast_bundle.origin_routes.values()) if blizzcast_bundle else frozenset(),
     )
     provenance: list[dict[str, Any]] = []
     stats: Counter[str] = Counter()
@@ -2946,6 +3004,28 @@ def export_pages(
     promotion_attempted = False
     flash_bundle: dict[str, Any] | None = None
     try:
+        if blizzcast_bundle is not None:
+            for generated in blizzcast_bundle.generated_files:
+                if shutil.disk_usage(output.parent).free < min_free_bytes + int(generated["bytes"]):
+                    raise PagesExportError("disk reserve would be breached while writing BlizzCast reader")
+                route = str(generated["path"])
+                relative = route.lstrip("/")
+                data = str(generated["data"]).encode("utf-8")
+                out = partial / relative
+                out.parent.mkdir(parents=True, exist_ok=True)
+                out.write_bytes(data)
+                is_page = relative.endswith(".html")
+                provenance.append({
+                    "route": route, "static_url": static_url(base_path, relative), "output_path": relative,
+                    "source_offline_path": None, "source_manifest_sha256": None, "source_manifest_length": None,
+                    "source_sha256": None, "source_length": None,
+                    "derived_sha256": sha256_bytes(data), "derived_length": len(data),
+                    "mime": "text/html; charset=UTF-8" if is_page else "text/css; charset=UTF-8",
+                    "kind": "related_reading_page" if is_page else "related_reading_style",
+                    "role": "historical_blizzcast_reading_view", "transformed": True,
+                    "source_map_sha256": blizzcast_map_sha, "curated_sources": generated["curated_sources"],
+                })
+                stats["blizzcast_reading_pages" if is_page else "blizzcast_reading_styles"] += 1
         if flash_runtime_archive is not None:
             # All three archived movies must already be exact frozen inputs.
             # This opt-in never introduces an arbitrary SWF or plugin loader.
@@ -3201,8 +3281,24 @@ def export_pages(
                         )
                     stats["toplist_compat_repaired"] += 1
                 else:
-                    text = mirror.rewrite_script(text, base_url=base_url, localizer=localizer, recorder=recorder)
-                    text = rewrite_root_literals(text, base_url=base_url, localizer=localizer, recorder=recorder)
+                    try:
+                        text, talent_handled, talent_stats = talent_compat.rewrite_talent_script(
+                            text, route, source_sha, base_path,
+                            lambda raw, *, context: localizer.localize(
+                                raw, base_url=base_url, context=context, recorder=recorder,
+                            ),
+                        )
+                    except talent_compat.TalentCompatError as exc:
+                        raise PagesExportError(str(exc)) from exc
+                    if talent_handled:
+                        derivation_notes.append(
+                            "exact Source15 talent script guard preserved quoted CSS/dynamic paths and "
+                            "skipped generic JavaScript rewrites; " + json.dumps(talent_stats, sort_keys=True)
+                        )
+                        stats["talent_compat_scripts"] += 1
+                    else:
+                        text = mirror.rewrite_script(text, base_url=base_url, localizer=localizer, recorder=recorder)
+                        text = rewrite_root_literals(text, base_url=base_url, localizer=localizer, recorder=recorder)
                 if route == "/shared/wow-com/includes-client/navtreefunctions.js":
                     text, changed = rewrite_contest_navtree_fallback(text, base_path=base_path)
                     if changed:
@@ -3459,6 +3555,18 @@ def export_pages(
             provenance_payload["guide_image_collections"] = guide_image_collection_bundle.provenance()
         if flash_bundle is not None:
             provenance_payload["flash_exhibits"] = flash_bundle
+        if blizzcast_bundle is not None:
+            provenance_payload["blizzcast_reading"] = {
+                "source_map_sha256": blizzcast_map_sha,
+                "sources": blizzcast_bundle.source_records,
+                "origin_routes": blizzcast_bundle.origin_routes,
+                "unrestored_resources": [
+                    {key: item[key] for key in ("source_entity_id", "kind", "requested_url")}
+                    for item in blizzcast_bundle.dependency_inventory
+                    if not item["restored"] and item["kind"] in {"image", "audio", "stylesheet", "object"}
+                ],
+                "presentation": "Five static reading pages; May 15 home/archive sources marked as later supplements",
+            }
         prov_data = (json.dumps(provenance_payload, ensure_ascii=False, sort_keys=True, indent=2) + "\n").encode("utf-8")
         (partial / "export-provenance.json").write_bytes(prov_data)
         after_workspace = workspace_size(workspace_root, output) if max_bytes is not None else None
@@ -3503,6 +3611,10 @@ def main(argv: list[str] | None = None) -> int:
         help="Optional hash-pinned Ruffle 0.7.1 self-hosted ZIP for three preserved Flash exhibits",
     )
     parser.add_argument(
+        "--blizzcast-source-map", type=Path, default=None,
+        help="Optional accepted five-source BlizzCast map for static historical reading pages",
+    )
+    parser.add_argument(
         "--allow-later-image-supplements",
         action="store_true",
         help="Accept explicit supplement images captured after 2008 when their source-map class is post_2008",
@@ -3521,7 +3633,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     args = parser.parse_args(argv)
     try:
-        result = export_pages(output=args.output, source_site=args.site, manifest_path=args.manifest, base_path=args.base_path, max_bytes=args.max_bytes, min_free_bytes=args.min_free_bytes, image_source_maps=args.image_source_maps, supplement_image_source_maps=args.supplement_image_source_maps, allow_later_image_supplements=args.allow_later_image_supplements, guide_preview_map=args.guide_preview_map, guide_image_collection_map=args.guide_image_collection_map, flash_runtime_archive=args.flash_runtime_archive)
+        result = export_pages(output=args.output, source_site=args.site, manifest_path=args.manifest, base_path=args.base_path, max_bytes=args.max_bytes, min_free_bytes=args.min_free_bytes, image_source_maps=args.image_source_maps, supplement_image_source_maps=args.supplement_image_source_maps, allow_later_image_supplements=args.allow_later_image_supplements, guide_preview_map=args.guide_preview_map, guide_image_collection_map=args.guide_image_collection_map, flash_runtime_archive=args.flash_runtime_archive, blizzcast_source_map=args.blizzcast_source_map)
     except PagesExportError as exc:
         parser.error(str(exc))
     print(json.dumps(result, ensure_ascii=False, indent=2))
