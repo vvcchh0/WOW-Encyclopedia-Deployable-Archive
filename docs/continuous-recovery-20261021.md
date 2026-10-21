@@ -135,3 +135,19 @@ v47候选的来源注记对比度不足，v48候选点击菜单后仍使用未�
 [v49本地验收](../research/continuous-recovery-20261021/publication/root-v49-local-acceptance.json) · [实际浏览](../research/continuous-recovery-20261021/publication/root-v49-browser-acceptance.json)
 
 百科扩展浏览审计完成49/52页，另三页因本地连接/加载超时未完成，不计作通过。已浏览页还观察到12个独立分类头像CSS目标缺失。离线服务器backlog对照没有证明增大队列有改善，未修改生产服务器。BC介绍Flash只显示封面；播放所需FLV和皮肤SWF在已缓存Common Crawl覆盖块中均无精确匹配，视频尚未恢复。
+
+### 11:29 UTC — v49上线与百科补查
+
+v49 Pages提交为`34916610`，74/74线上对象由direct取回并核对。另对先前未完成的Cenarius、Darnassian、Dejahna三页以60秒上限单独补查，全部正常加载、无页面错误；三份HTML与先前v48相同。合并两轮覆盖52页，分类头像仍为12个独立缺图目标，不把占位图计作恢复。
+
+[v49线上核对](../research/continuous-recovery-20261021/publication/root-v49-pages-online-acceptance.json) · [三页补查](../research/continuous-recovery-20261021/publication/root-v49-encyclopedia-completion.json)
+
+### 11:58 UTC — 派系说明文字恢复
+
+v50本地验收恢复奥尔多／占星者说明。来源是Source16已保存的2008-04-02令牌脚本，提取两段原始文字，分别850和1,104字符；不导入其奖励数据。一个3,273字节defer helper只用于主介绍页，原脚本、令牌页和全部既有图片保持。
+
+73项相关检查由10项本次检查及63项相同代码绑定的既有结果组成；不是本次重复执行73项。全部10,144个输出核对完成。实际Chrome打开两派说明弹窗并切换，主代理逐张查看两张截图。两轮失败探针分别涉及浏览器br标签序列化和未等待的宽泛文字定位，保留记录；最终探针使用原按钮锚点与可见状态检查，导出站点未改。
+
+[v50本地验收](../research/continuous-recovery-20261021/publication/root-v50-local-acceptance.json) · [原文来源](../research/continuous-recovery-20261021/publication/root-aldor-scryers-lore-source-acceptance.json)
+
+另发现Wrath字母T图片已存在，源路由为双斜线，而正文单斜线路由尚未接通；进行单独最小修复评审，不把已有素材计作新取得图片。

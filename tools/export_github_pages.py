@@ -62,6 +62,7 @@ import related_guide_images  # noqa: E402
 import rewardstable_compat  # noqa: E402
 import source16_layout_compat  # noqa: E402
 import talent_box_layout  # noqa: E402
+import aldor_scryers_lore  # noqa: E402
 from toplist_compat import ToplistCompatError, rewrite_toplist_script  # noqa: E402
 
 
@@ -1513,6 +1514,41 @@ def annotate_related_talent_icons(text: str, *, route: str, notice_html: str) ->
     return text[:body.end] + "\n" + note + text[body.end:], True
 
 
+def inject_aldor_scryers_lore(
+    text: str, *, route: str, helper_url: str,
+) -> tuple[str, bool]:
+    """Insert the accepted lore helper on the exact non-token page only.
+
+    The parser supplies the real ``</head>`` boundary, so a marker in a
+    historical script or comment cannot cause an injection.  The caller has
+    already validated the helper bytes and route before any output is staged.
+    """
+
+    if route != aldor_scryers_lore.PAGE_ROUTE:
+        return text, False
+    escaped_url = html.escape(helper_url, quote=True)
+    marker = f'<script defer src="{escaped_url}"></script>'
+    parser = _MarkupTokenParser(text)
+    try:
+        parser.feed(text)
+        parser.close()
+    except Exception as exc:
+        raise PagesExportError("Aldor/Scryers lore injection tokenization failed") from exc
+    for token in parser.tokens:
+        if token.kind != "start" or token.name != "script":
+            continue
+        src = next((value for name, value in token.attrs if name.casefold() == "src"), None)
+        if src is not None and html.unescape(src) == helper_url:
+            raise PagesExportError("Aldor/Scryers lore helper is already present")
+    head_end = next(
+        (token for token in parser.tokens if token.kind == "end" and token.name == "head"),
+        None,
+    )
+    if head_end is None:
+        raise PagesExportError("Aldor/Scryers page has no real closing head tag")
+    return text[:head_end.start] + "\n" + marker + "\n" + text[head_end.start:], True
+
+
 def inject_html_runtime(text: str, *, base_path: str, source_sha: str) -> str:
     def first_real_start_tag(value: str, name: str) -> _MarkupToken | None:
         """Return the first parsed start tag, excluding script/raw-text strings."""
@@ -2891,6 +2927,7 @@ def export_pages(
     talent_box_layout_map: Path | None = None,
     related_encyclopedia_image_map: Path | None = None,
     related_guide_image_map: Path | None = None,
+    restore_aldor_scryers_lore: bool = False,
 ) -> dict[str, Any]:
     source_site = source_site.resolve()
     manifest_path = manifest_path.resolve()
@@ -3073,7 +3110,34 @@ def export_pages(
         for target, canonical in guide_bundle.route_reuses.items():
             route_to_static[target] = route_to_static[canonical]
     guide_estimate = guide_bundle.estimated_bytes if guide_bundle else 0
-    estimate = output_estimate(records, overlay_bytes + flash_estimate + reader_estimate + talent_icon_estimate + talent_ui_estimate + encyclopedia_estimate + guide_estimate)
+    aldor_scryers_lore_bundle: aldor_scryers_lore.LoreBundle | None = None
+    if restore_aldor_scryers_lore:
+        try:
+            aldor_scryers_lore_bundle = aldor_scryers_lore.load_lore_bundle(
+                workspace_root, source_site, manifest_path, manifest,
+            )
+        except aldor_scryers_lore.AldorScryersLoreError as exc:
+            raise PagesExportError(str(exc)) from exc
+        lore_page_route = aldor_scryers_lore_bundle.expected_page_route
+        if lore_page_route not in route_records:
+            raise PagesExportError(f"Aldor/Scryers lore page is missing from the source manifest: {lore_page_route}")
+        generated_relative = aldor_scryers_lore_bundle.generated_file.relative
+        generated_route = "/" + generated_relative
+        if (
+            generated_route in route_to_static
+            or generated_route in raw_aliases
+            or generated_route in overlay_routes
+            or generated_relative in relative_paths
+            or generated_relative in overlay_static_paths
+        ):
+            raise PagesExportError(f"Aldor/Scryers lore helper collides with an existing resource: {generated_route}")
+        route_to_static[generated_route] = static_url(base_path, generated_relative)
+        relative_paths.add(generated_relative)
+    lore_estimate = (
+        aldor_scryers_lore_bundle.generated_file.length
+        if aldor_scryers_lore_bundle is not None else 0
+    )
+    estimate = output_estimate(records, overlay_bytes + flash_estimate + reader_estimate + talent_icon_estimate + talent_ui_estimate + encyclopedia_estimate + guide_estimate + lore_estimate)
     if max_bytes is not None and before_workspace + estimate >= max_bytes:
         raise PagesExportError(f"workspace budget exceeded before export: {before_workspace}+{estimate} >= {max_bytes}")
     if free_before - estimate < min_free_bytes:
@@ -3268,6 +3332,8 @@ def export_pages(
         stats["layout_compatibility_reused_target_paths"] = len(layout_bundle.route_reuses)
     if talent_box_bundle is not None:
         stats["talent_box_layout_reused_target_paths"] = len(talent_box_bundle.route_reuses)
+    if aldor_scryers_lore_bundle is not None:
+        stats["aldor_scryers_lore_assets"] = 1
     if guide_image_collection_bundle is not None:
         # Count curated source images once even though each is rendered on its
         # guide page and its related gallery page.
@@ -3276,6 +3342,32 @@ def export_pages(
     promotion_attempted = False
     flash_bundle: dict[str, Any] | None = None
     try:
+        if aldor_scryers_lore_bundle is not None:
+            generated = aldor_scryers_lore_bundle.generated_file
+            if shutil.disk_usage(output.parent).free < min_free_bytes + len(generated.data):
+                raise PagesExportError("disk reserve would be breached while writing the Aldor/Scryers lore helper")
+            out = partial / generated.relative
+            if _path_exists_including_broken_link(out):
+                raise PagesExportError(f"Aldor/Scryers lore helper output already exists: {generated.relative}")
+            out.parent.mkdir(parents=True, exist_ok=True)
+            out.write_bytes(generated.data)
+            provenance.append({
+                "route": "/" + generated.relative,
+                "static_url": static_url(base_path, generated.relative),
+                "output_path": generated.relative,
+                "source_offline_path": None,
+                "source_manifest_sha256": aldor_scryers_lore_bundle.source_metadata.get("source_manifest_sha256"),
+                "source_manifest_length": manifest_path.stat().st_size,
+                "source_sha256": None,
+                "source_length": None,
+                "derived_sha256": generated.sha256,
+                "derived_length": generated.length,
+                "mime": generated.mime,
+                "kind": "aldor_scryers_lore_helper",
+                "role": "source16_lore_reuse_helper",
+                "transformed": True,
+                "source_refs": [dict(aldor_scryers_lore_bundle.source_metadata)],
+            })
         if talent_icon_bundle is not None:
             for asset in talent_icon_bundle.assets:
                 if shutil.disk_usage(output.parent).free < min_free_bytes + len(asset.data):
@@ -3640,6 +3732,18 @@ def export_pages(
                     stats["news_toggle_anchor_repaired"] += toggle_count
                 text = normalize_html_prolog(text)
                 text = inject_html_runtime(text, base_path=base_path, source_sha=source_sha)
+                if aldor_scryers_lore_bundle is not None:
+                    text, lore_inserted = inject_aldor_scryers_lore(
+                        text,
+                        route=route,
+                        helper_url=route_to_static["/" + aldor_scryers_lore_bundle.generated_file.relative],
+                    )
+                    if lore_inserted:
+                        stats["aldor_scryers_lore_pages"] += 1
+                        derivation_notes.append(
+                            "inserted the accepted Source16 Aldor/Scryers lore helper on the exact main page; "
+                            "token data and original reward scripts remain unchanged"
+                        )
                 text = annotate_source16_main_page(text, main_page_reference)
                 if main_page_reference is not None:
                     stats["source16_main_pages"] += 1
@@ -4092,6 +4196,18 @@ def export_pages(
                 "target_original_images_recovered": 0,
                 "records": list(talent_box_bundle.public_records),
             }
+        if aldor_scryers_lore_bundle is not None:
+            generated = aldor_scryers_lore_bundle.generated_file
+            provenance_payload["source16_lore_reuse"] = {
+                "classification": str(aldor_scryers_lore_bundle.source_metadata.get("classification") or "source16_text_reuse"),
+                "source": dict(aldor_scryers_lore_bundle.source_metadata),
+                "expected_page_route": aldor_scryers_lore_bundle.expected_page_route,
+                "generated_path": generated.relative,
+                "generated_sha256": generated.sha256,
+                "generated_length": generated.length,
+                "generated_route": "/" + generated.relative,
+                "pages": int(stats.get("aldor_scryers_lore_pages", 0)),
+            }
         prov_data = (json.dumps(provenance_payload, ensure_ascii=False, sort_keys=True, indent=2) + "\n").encode("utf-8")
         (partial / "export-provenance.json").write_bytes(prov_data)
         after_workspace = workspace_size(workspace_root, output) if max_bytes is not None else None
@@ -4161,6 +4277,10 @@ def main(argv: list[str] | None = None) -> int:
         help="Optional three-image supplement attributed to the ArchiveCraft community archive",
     )
     parser.add_argument(
+        "--restore-aldor-scryers-lore", action="store_true",
+        help="Restore the accepted Source16 Aldor/Scryers lore helper on its exact main page",
+    )
+    parser.add_argument(
         "--allow-later-image-supplements",
         action="store_true",
         help="Accept explicit supplement images captured after 2008 when their source-map class is post_2008",
@@ -4179,7 +4299,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     args = parser.parse_args(argv)
     try:
-        result = export_pages(output=args.output, source_site=args.site, manifest_path=args.manifest, base_path=args.base_path, max_bytes=args.max_bytes, min_free_bytes=args.min_free_bytes, image_source_maps=args.image_source_maps, supplement_image_source_maps=args.supplement_image_source_maps, allow_later_image_supplements=args.allow_later_image_supplements, guide_preview_map=args.guide_preview_map, guide_image_collection_map=args.guide_image_collection_map, flash_runtime_archive=args.flash_runtime_archive, blizzcast_source_map=args.blizzcast_source_map, related_talent_icon_map=args.related_talent_icon_map, related_talent_ui_map=args.related_talent_ui_map, source16_layout_map=args.source16_layout_map, talent_box_layout_map=args.talent_box_layout_map, related_encyclopedia_image_map=args.related_encyclopedia_image_map, related_guide_image_map=args.related_guide_image_map)
+        result = export_pages(output=args.output, source_site=args.site, manifest_path=args.manifest, base_path=args.base_path, max_bytes=args.max_bytes, min_free_bytes=args.min_free_bytes, image_source_maps=args.image_source_maps, supplement_image_source_maps=args.supplement_image_source_maps, allow_later_image_supplements=args.allow_later_image_supplements, guide_preview_map=args.guide_preview_map, guide_image_collection_map=args.guide_image_collection_map, flash_runtime_archive=args.flash_runtime_archive, blizzcast_source_map=args.blizzcast_source_map, related_talent_icon_map=args.related_talent_icon_map, related_talent_ui_map=args.related_talent_ui_map, source16_layout_map=args.source16_layout_map, talent_box_layout_map=args.talent_box_layout_map, related_encyclopedia_image_map=args.related_encyclopedia_image_map, related_guide_image_map=args.related_guide_image_map, restore_aldor_scryers_lore=args.restore_aldor_scryers_lore)
     except PagesExportError as exc:
         parser.error(str(exc))
     print(json.dumps(result, ensure_ascii=False, indent=2))

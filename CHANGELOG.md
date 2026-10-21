@@ -9,7 +9,9 @@
 
 ## 2026-10-21
 
-- 本地完成 v49：补入三幅百科人物／组织配图及 The Broken 指南缩略图，页面注明 ArchiveCraft 来源；修复奥尔多／占星者奖励按钮的图片路径，准备部署。[复原记录](docs/non-gallery-restoration-20261021.md)
+- 本地完成 v50：用已保存的原文恢复奥尔多／占星者介绍弹窗与派系切换，准备随最终版本发布。[复原记录](docs/non-gallery-restoration-20261021.md)
+
+- 发布 v49：补入三幅百科人物／组织配图及 The Broken 指南缩略图，页面注明 ArchiveCraft 来源；修复奥尔多／占星者奖励按钮的图片路径，74个线上对象核对通过。[复原记录](docs/non-gallery-restoration-20261021.md)
 
 - 发布 v46：补齐天赋状态边框、重置与打印按钮，恢复点数框布局；九职业实际操作检查通过，剩余 259 个缺图目标。[复原记录](docs/non-gallery-restoration-20261021.md)
 - 发布 v45：新增七份早期专题正文及内容目录更新，接通旧地址；天赋页加入 986 张标明后期关联来源的图标，Tinfoil Hat 提示框和 Molten Core 返回箭头恢复显示。专题插图及部分天赋素材仍缺。[复原记录](docs/non-gallery-restoration-20261021.md)

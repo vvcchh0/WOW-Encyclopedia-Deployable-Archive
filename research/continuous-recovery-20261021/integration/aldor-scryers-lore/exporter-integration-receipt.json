@@ -1,0 +1,57 @@
+{
+  "schema": "aldor-scryers-lore-exporter-integration/v1",
+  "recorded_utc": "2026-10-21T11:35:46.1479320Z",
+  "status": "portable_tests_passed",
+  "scope": "opt-in Source16 Aldor/Scryers lore helper; no export, pack, network, stage, commit, or site mutation",
+  "exporter": {
+    "path": "tools/export_github_pages.py",
+    "sha256": "45364f6b66ab11e2a6ead95dbfc729f06072358d1ee4c9c3682ef7395cdc606e",
+    "api": "export_pages(..., restore_aldor_scryers_lore=False)",
+    "cli": "--restore-aldor-scryers-lore"
+  },
+  "test": {
+    "command": "python -m unittest tests.test_aldor_scryers_pages -v",
+    "exit_code": 0,
+    "passed": 4,
+    "failed": 0,
+    "skipped": 0,
+    "command_2": "python -m unittest tests.test_github_pages_export.GithubPagesExportTests.test_project_prefix_xml_html_and_sensitive_form tests.test_github_pages_export.GithubPagesExportTests.test_existing_output_and_traversal_are_rejected -v",
+    "exit_code_2": 0,
+    "passed_2": 2,
+    "failed_2": 0,
+    "skipped_2": 0,
+    "syntax": "python -m py_compile tools/aldor_scryers_lore.py tests/test_aldor_scryers_pages.py",
+    "syntax_exit_code": 0
+  },
+  "files": {
+    "path": "tests/test_aldor_scryers_pages.py",
+    "sha256": "9675a778466f4c80f3291b9368842f22ad7a43091a04c949333854081472fae9",
+    "bytes": 9352
+  },
+  "loader": {
+    "path": "tools/aldor_scryers_lore.py",
+    "sha256": "1153a382dbb035b7e7e21b81c40a84adac54d996bf759e369a6dd2be9fde997c",
+    "changed_by_this_task": false
+  },
+  "contract": {
+    "page_route": "/info/basics/factions/aldorscryers/aldor-scryers.xml",
+    "token_route": "/info/basics/factions/aldorscryers/scripts/rewards-aldor-scryers-tokens.js",
+    "helper_route": "/__offline/aldor-scryers-lore.js",
+    "helper_bytes": 3273,
+    "estimate_includes_helper": true,
+    "disk_floor_checked_before_helper_write": true,
+    "collision_rejected_before_output": true,
+    "source_drift_rejected_before_output": true,
+    "token_page_not_injected": true,
+    "top_provenance_key": "source16_lore_reuse",
+    "page_derivation_note": true
+  },
+  "validation": {
+    "output_created": false,
+    "network_requests": 0,
+    "git_mutation": false,
+    "old_site_modified": false,
+    "free_bytes_before_receipt": 26410266624
+  }
+}
+

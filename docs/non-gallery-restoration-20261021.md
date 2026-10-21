@@ -61,3 +61,7 @@ ArchiveCraft提供Alleria、塞纳里奥议会和玛法里奥三幅配图的新�
 v49补入Alleria、塞纳里奥议会、玛法里奥和The Broken四幅关联来源图片。页面给出ArchiveCraft来源链接；Alleria保留该站缩放JPEG。The Broken保留一张实际237×184缩略图，菜单点击使用同一素材，尚未补回标题图和大图。
 
 奖励表的两个阵营按钮已改为已有图片的正确本地地址。奥尔多／占星者页面说明框仍显示undefined，正在从已保存的同专题令牌页面脚本提取原始说明，单独修复。[本地验收](../research/continuous-recovery-20261021/publication/root-v49-local-acceptance.json)
+
+## 派系说明文字
+
+v50本地恢复奥尔多／占星者说明弹窗。两段文字来自已保存的2008-04-02同专题令牌脚本；仅补入缺失说明，按钮切换、原奖励数据和令牌页保持。实际Chrome完成两个弹窗及两次派系切换，正文与来源对应。准备与本轮最终版本一并发布。
