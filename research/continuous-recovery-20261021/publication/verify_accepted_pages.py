@@ -33,6 +33,9 @@ def mimes(path):
     if path.endswith('.json'):return {'application/json'}
     if path.endswith('.css'):return {'text/css'}
     if path.endswith('.wasm'):return {'application/wasm'}
+    if path.endswith(('.jpg','.jpeg')):return {'image/jpeg'}
+    if path.endswith('.png'):return {'image/png'}
+    if path.endswith('.gif'):return {'image/gif'}
     raise RuntimeError('No reviewed MIME for '+path)
 module.OBJECTS=[dict(r,mime=mimes(r['path']),source_list=r['path']=='export-provenance.json') for r in gate['objects']]
 assert len(module.OBJECTS)==len({r['path'] for r in module.OBJECTS})<=128

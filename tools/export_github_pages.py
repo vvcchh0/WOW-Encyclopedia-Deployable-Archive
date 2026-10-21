@@ -55,6 +55,8 @@ import non_gallery_compat  # noqa: E402
 import offline_flash  # noqa: E402
 import blizzcast_reader  # noqa: E402
 import talent_compat  # noqa: E402
+import related_talent_icons  # noqa: E402
+import source16_layout_compat  # noqa: E402
 from toplist_compat import ToplistCompatError, rewrite_toplist_script  # noqa: E402
 
 
@@ -1415,6 +1417,95 @@ def normalize_html_prolog(text: str) -> str:
     if "\ufeff" not in prolog:
         return text
     return prolog.replace("\ufeff", "") + text[document_start.start() :]
+
+
+def source16_main_page_reference(record: dict[str, Any]) -> dict[str, Any] | None:
+    """Keep accepted original-entity metadata alongside the derived page hash."""
+
+    if record.get("role") != "source16_main_page":
+        return None
+    url = str(record.get("source_base_url") or "")
+    parsed = urllib.parse.urlsplit(url)
+    try:
+        valid_origin = (
+            parsed.scheme in {"http", "https"}
+            and parsed.hostname == "www.worldofwarcraft.com"
+            and parsed.port in {None, 80 if parsed.scheme == "http" else 443}
+            and parsed.username is None and parsed.password is None
+            and not parsed.query and not parsed.fragment
+            and parsed.path.startswith("/") and ";jsessionid" not in url.casefold()
+        )
+    except ValueError:
+        valid_origin = False
+    timestamp = str(record.get("actual_timestamp") or "")
+    digest = str(record.get("source_sha256") or "")
+    length = record.get("source_length")
+    arc = record.get("source_arc")
+    if not valid_origin or not re.fullmatch(r"\d{14}", timestamp):
+        raise PagesExportError("invalid Source16 original URL or capture date")
+    try:
+        datetime.strptime(timestamp, "%Y%m%d%H%M%S")
+    except ValueError as exc:
+        raise PagesExportError("invalid Source16 capture date") from exc
+    if timestamp > "20080512210044" or not re.fullmatch(r"[0-9a-f]{64}", digest):
+        raise PagesExportError("Source16 capture or original digest outside accepted scope")
+    if type(length) is not int or length <= 0 or not isinstance(arc, dict):
+        raise PagesExportError("invalid Source16 original length or ARC metadata")
+    filename = str(arc.get("filename") or "")
+    if (
+        not filename.startswith("crawl-") or not filename.endswith(".arc.gz")
+        or "\\" in filename or ".." in filename.split("/")
+        or urllib.parse.urlsplit(filename).query
+        or type(arc.get("offset")) is not int or arc["offset"] < 0
+        or type(arc.get("length")) is not int or arc["length"] <= 0
+        or not re.fullmatch(r"[0-9a-f]{64}", str(arc.get("compressed_sha256") or ""))
+    ):
+        raise PagesExportError("invalid Source16 ARC coordinates")
+    return {
+        "source_kind": "commoncrawl_arc", "collection": "CC-MAIN-2008-2009",
+        "original_url": url, "actual_capture_timestamp": timestamp,
+        "sha256": digest, "length": length,
+        "source_arc": {key: arc[key] for key in ("filename", "offset", "length", "compressed_sha256")},
+    }
+
+
+def annotate_source16_main_page(text: str, reference: dict[str, Any] | None) -> str:
+    if reference is None:
+        return text
+    parser = _MarkupTokenParser(text)
+    parser.feed(text)
+    parser.close()
+    body = next((t for t in parser.tokens if t.kind == "start" and t.name == "body"), None)
+    captured = datetime.strptime(reference["actual_capture_timestamp"], "%Y%m%d%H%M%S")
+    note = (
+        '<aside id="__offline-source16-note" role="note" '
+        'style="background:#eee4ca;color:#302618;padding:6px 10px;font:12px Arial,sans-serif">'
+        f'Historical page · Common Crawl capture: {captured:%Y-%m-%d %H:%M:%S} UTC'
+        '</aside>'
+    )
+    if body is None:
+        raise PagesExportError("derived Source16 page has no parsed body")
+    return text[:body.end] + "\n" + note + text[body.end:]
+
+
+def annotate_related_talent_icons(text: str, *, route: str, notice_html: str) -> tuple[str, bool]:
+    """Label only the nine preserved calculators that use related-source icons."""
+
+    allowed = {f"/info/classes/{name}/talents.html" for name in related_talent_icons.ALLOWED_CLASSES}
+    if route not in allowed:
+        return text, False
+    parser = _MarkupTokenParser(text)
+    parser.feed(text)
+    parser.close()
+    body = next((token for token in parser.tokens if token.kind == "start" and token.name == "body"), None)
+    if body is None:
+        raise PagesExportError("talent calculator has no parsed body for its source notice")
+    note = (
+        '<aside id="__offline-related-talent-icons" role="note" '
+        'style="background:#eee4ca;color:#302618;padding:6px 10px;font:12px Arial,sans-serif">'
+        + notice_html + '</aside>'
+    )
+    return text[:body.end] + "\n" + note + text[body.end:], True
 
 
 def inject_html_runtime(text: str, *, base_path: str, source_sha: str) -> str:
@@ -2789,6 +2880,8 @@ def export_pages(
     guide_image_collection_map: Path | None = None,
     flash_runtime_archive: Path | None = None,
     blizzcast_source_map: Path | None = None,
+    related_talent_icon_map: Path | None = None,
+    source16_layout_map: Path | None = None,
 ) -> dict[str, Any]:
     source_site = source_site.resolve()
     manifest_path = manifest_path.resolve()
@@ -2869,7 +2962,25 @@ def export_pages(
             route_to_static[route] = static_url(base_path, relative)
             relative_paths.add(relative)
     reader_estimate = blizzcast_bundle.estimated_bytes if blizzcast_bundle else 0
-    estimate = output_estimate(records, overlay_bytes + flash_estimate + reader_estimate)
+    talent_icon_bundle: related_talent_icons.RelatedTalentBundle | None = None
+    if related_talent_icon_map is not None:
+        icon_map = Path(related_talent_icon_map)
+        if not icon_map.is_absolute():
+            icon_map = workspace_root / icon_map
+        try:
+            talent_icon_bundle = related_talent_icons.load_related_talent_bundle(icon_map, workspace_root, base_path)
+        except related_talent_icons.RelatedTalentIconError as exc:
+            raise PagesExportError(str(exc)) from exc
+        candidates = [(asset.route, asset.relative) for asset in talent_icon_bundle.assets]
+        candidates.append(("/" + talent_icon_bundle.catalog_relative, talent_icon_bundle.catalog_relative))
+        for route, relative in candidates:
+            if route in route_to_static or route in raw_aliases or route in overlay_routes or relative in relative_paths or relative in overlay_static_paths:
+                raise PagesExportError(f"related talent icon collides with an existing resource: {route}")
+        for route, relative in candidates:
+            route_to_static[route] = static_url(base_path, relative)
+            relative_paths.add(relative)
+    talent_icon_estimate = talent_icon_bundle.estimated_bytes if talent_icon_bundle else 0
+    estimate = output_estimate(records, overlay_bytes + flash_estimate + reader_estimate + talent_icon_estimate)
     if max_bytes is not None and before_workspace + estimate >= max_bytes:
         raise PagesExportError(f"workspace budget exceeded before export: {before_workspace}+{estimate} >= {max_bytes}")
     if free_before - estimate < min_free_bytes:
@@ -2886,6 +2997,23 @@ def export_pages(
     related_images_route = "/__offline/related-images/index.html"
     if related_image_overlays:
         route_to_static[related_images_route] = static_url(base_path, related_images_route.lstrip("/"))
+    layout_bundle: source16_layout_compat.LayoutCompatibilityBundle | None = None
+    if source16_layout_map is not None:
+        try:
+            layout_bundle = source16_layout_compat.load_layout_compatibility_bundle(
+                source16_layout_map, workspace_root, source_site, manifest_path, manifest,
+            )
+        except source16_layout_compat.LayoutCompatibilityError as exc:
+            raise PagesExportError(str(exc)) from exc
+        for target, source_route in layout_bundle.route_reuses.items():
+            if target in route_to_static or target in raw_aliases:
+                raise PagesExportError(f"layout reuse target collides with an existing resource: {target}")
+            if source_route not in route_to_static:
+                raise PagesExportError(f"layout reuse source has no static route: {source_route}")
+        # These routes point to existing image objects.  They are deliberately
+        # absent from aliases, so no redirect HTML or duplicate image is emitted.
+        for target, source_route in layout_bundle.route_reuses.items():
+            route_to_static[target] = route_to_static[source_route]
     guide_preview_bundle: guide_previews.GuidePreviewBundle | None = None
     if guide_preview_map is not None:
         try:
@@ -2985,6 +3113,18 @@ def export_pages(
             if key in origin_index and origin_index[key] != route:
                 raise PagesExportError(f"BlizzCast origin conflicts with frozen source: {key}")
             origin_index[key] = route
+    if talent_icon_bundle is not None:
+        for asset in talent_icon_bundle.assets:
+            key = mirror.origin_key("http://www.worldofwarcraft.com" + asset.route)
+            if key in origin_index and origin_index[key] != asset.route:
+                raise PagesExportError(f"related talent icon origin conflicts with frozen source: {key}")
+            origin_index[key] = asset.route
+    if layout_bundle is not None:
+        for target in layout_bundle.route_reuses:
+            key = mirror.origin_key("http://www.worldofwarcraft.com" + target)
+            if key in origin_index and origin_index[key] != target:
+                raise PagesExportError(f"layout reuse origin conflicts with frozen source: {key}")
+            origin_index[key] = target
     validated_navigation_image_routes = frozenset(str(item["route"]) for item in overlays)
     localizer = PagesLocalizer(
         route_to_static=route_lookup,
@@ -2996,6 +3136,8 @@ def export_pages(
     )
     provenance: list[dict[str, Any]] = []
     stats: Counter[str] = Counter()
+    if layout_bundle is not None:
+        stats["layout_compatibility_reused_target_paths"] = len(layout_bundle.route_reuses)
     if guide_image_collection_bundle is not None:
         # Count curated source images once even though each is rendered on its
         # guide page and its related gallery page.
@@ -3004,6 +3146,43 @@ def export_pages(
     promotion_attempted = False
     flash_bundle: dict[str, Any] | None = None
     try:
+        if talent_icon_bundle is not None:
+            for asset in talent_icon_bundle.assets:
+                if shutil.disk_usage(output.parent).free < min_free_bytes + len(asset.data):
+                    raise PagesExportError("disk reserve would be breached while writing related talent icons")
+                out = partial / asset.relative
+                out.parent.mkdir(parents=True, exist_ok=True)
+                out.write_bytes(asset.data)
+                source_reference = dict(talent_icon_bundle.source_metadata) | {
+                    "source_kind": "related_git_repository",
+                    "repository_path": asset.relative,
+                    "git_blob_sha1": asset.metadata["git_blob_sha1"],
+                }
+                provenance.append({
+                    "route": asset.route, "static_url": static_url(base_path, asset.relative),
+                    "output_path": asset.relative, "source_offline_path": None,
+                    "source_manifest_sha256": None, "source_manifest_length": None,
+                    "source_sha256": asset.metadata["sha256"], "source_length": len(asset.data),
+                    "derived_sha256": asset.metadata["sha256"], "derived_length": len(asset.data),
+                    "mime": asset.mime, "kind": "related_talent_icon", "role": "later_related_talent_icon",
+                    "transformed": False, "source_refs": [source_reference],
+                })
+                stats["related_talent_icons"] += 1
+            if shutil.disk_usage(output.parent).free < min_free_bytes + len(talent_icon_bundle.catalog_bytes):
+                raise PagesExportError("disk reserve would be breached while writing the related icon catalog")
+            relative = talent_icon_bundle.catalog_relative
+            out = partial / relative
+            out.parent.mkdir(parents=True, exist_ok=True)
+            out.write_bytes(talent_icon_bundle.catalog_bytes)
+            provenance.append({
+                "route": "/" + relative, "static_url": static_url(base_path, relative), "output_path": relative,
+                "source_offline_path": None, "source_manifest_sha256": None, "source_manifest_length": None,
+                "source_sha256": None, "source_length": None,
+                "derived_sha256": sha256_bytes(talent_icon_bundle.catalog_bytes),
+                "derived_length": len(talent_icon_bundle.catalog_bytes),
+                "mime": "application/json; charset=UTF-8", "kind": "related_talent_icon_catalog",
+                "role": "later_related_talent_icon_catalog", "transformed": True,
+            })
         if blizzcast_bundle is not None:
             for generated in blizzcast_bundle.generated_files:
                 if shutil.disk_usage(output.parent).free < min_free_bytes + int(generated["bytes"]):
@@ -3103,6 +3282,7 @@ def export_pages(
             base_url = str(record.get("source_base_url") or ("http://www.worldofwarcraft.com" + route))
             recorder = mirror.ReferenceRecorder(route, base_url)
             derivation_notes: list[str] = []
+            main_page_reference = source16_main_page_reference(record)
             # A few frozen support placeholders are explicitly typed as
             # generated_placeholder but still carry text/html MIME.  Emit
             # those through the same UTF-8/CSP/banner path so every static
@@ -3223,6 +3403,15 @@ def export_pages(
                     stats["news_toggle_anchor_repaired"] += toggle_count
                 text = normalize_html_prolog(text)
                 text = inject_html_runtime(text, base_path=base_path, source_sha=source_sha)
+                text = annotate_source16_main_page(text, main_page_reference)
+                if main_page_reference is not None:
+                    stats["source16_main_pages"] += 1
+                if talent_icon_bundle is not None:
+                    text, has_icon_notice = annotate_related_talent_icons(
+                        text, route=route, notice_html=talent_icon_bundle.notice_html,
+                    )
+                    if has_icon_notice:
+                        stats["related_talent_icon_notice_pages"] += 1
                 derived = text.encode("utf-8")
                 stats["html_derived"] += 1
             elif kind == "css" or (kind == "support" and source.suffix.casefold() == ".css"):
@@ -3357,6 +3546,11 @@ def export_pages(
             }
             if derivation_notes:
                 item["derivation_reason"] = "; ".join(derivation_notes)
+            if main_page_reference is not None:
+                item["source_refs"] = [main_page_reference]
+            if layout_bundle is not None and route in layout_bundle.per_page_records:
+                item["layout_reuse_refs"] = list(layout_bundle.per_page_records[route])
+                stats["layout_compatibility_pages"] += 1
             provenance.append(item)
 
         for overlay in overlays:
@@ -3567,6 +3761,26 @@ def export_pages(
                 ],
                 "presentation": "Five static reading pages; May 15 home/archive sources marked as later supplements",
             }
+        if talent_icon_bundle is not None:
+            provenance_payload["related_talent_icons"] = {
+                "source": dict(talent_icon_bundle.source_metadata),
+                "icon_count": len(talent_icon_bundle.assets),
+                "class_counts": dict(talent_icon_bundle.per_class_counts),
+                "catalog_path": talent_icon_bundle.catalog_relative,
+                "source_map_sha256": talent_icon_bundle.map_sha256,
+                "original_2008_images_recovered": 0,
+            }
+        if layout_bundle is not None:
+            provenance_payload["layout_compatibility_reuse"] = {
+                "classification": "layout_compatibility_reuse",
+                "source_map_sha256": layout_bundle.map_sha256,
+                "decision_sha256": layout_bundle.decision_sha256,
+                "source_manifest_sha256": layout_bundle.source_manifest_sha256,
+                "reused_target_paths": len(layout_bundle.route_reuses),
+                "new_image_payloads": 0,
+                "target_original_images_recovered": 0,
+                "records": list(layout_bundle.public_records),
+            }
         prov_data = (json.dumps(provenance_payload, ensure_ascii=False, sort_keys=True, indent=2) + "\n").encode("utf-8")
         (partial / "export-provenance.json").write_bytes(prov_data)
         after_workspace = workspace_size(workspace_root, output) if max_bytes is not None else None
@@ -3615,6 +3829,14 @@ def main(argv: list[str] | None = None) -> int:
         help="Optional accepted five-source BlizzCast map for static historical reading pages",
     )
     parser.add_argument(
+        "--related-talent-icon-map", type=Path, default=None,
+        help="Optional pinned same-path talent icons from a separately attributed later repository",
+    )
+    parser.add_argument(
+        "--source16-layout-map", type=Path, default=None,
+        help="Optional accepted same-site layout route reuses for two Source16 pages",
+    )
+    parser.add_argument(
         "--allow-later-image-supplements",
         action="store_true",
         help="Accept explicit supplement images captured after 2008 when their source-map class is post_2008",
@@ -3633,7 +3855,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     args = parser.parse_args(argv)
     try:
-        result = export_pages(output=args.output, source_site=args.site, manifest_path=args.manifest, base_path=args.base_path, max_bytes=args.max_bytes, min_free_bytes=args.min_free_bytes, image_source_maps=args.image_source_maps, supplement_image_source_maps=args.supplement_image_source_maps, allow_later_image_supplements=args.allow_later_image_supplements, guide_preview_map=args.guide_preview_map, guide_image_collection_map=args.guide_image_collection_map, flash_runtime_archive=args.flash_runtime_archive, blizzcast_source_map=args.blizzcast_source_map)
+        result = export_pages(output=args.output, source_site=args.site, manifest_path=args.manifest, base_path=args.base_path, max_bytes=args.max_bytes, min_free_bytes=args.min_free_bytes, image_source_maps=args.image_source_maps, supplement_image_source_maps=args.supplement_image_source_maps, allow_later_image_supplements=args.allow_later_image_supplements, guide_preview_map=args.guide_preview_map, guide_image_collection_map=args.guide_image_collection_map, flash_runtime_archive=args.flash_runtime_archive, blizzcast_source_map=args.blizzcast_source_map, related_talent_icon_map=args.related_talent_icon_map, source16_layout_map=args.source16_layout_map)
     except PagesExportError as exc:
         parser.error(str(exc))
     print(json.dumps(result, ensure_ascii=False, indent=2))

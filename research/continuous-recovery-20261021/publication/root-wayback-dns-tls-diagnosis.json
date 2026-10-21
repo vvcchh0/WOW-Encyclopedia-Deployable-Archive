@@ -1,0 +1,50 @@
+{
+  "accepted_observations": true,
+  "checked_utc": "2026-10-21T06:42:09.647022+00:00",
+  "local_dns_ipv4": "202.160.128.14",
+  "local_dns_tcp_result": "timeout_before_tls",
+  "two_doh_services_agree_ipv4": "207.241.237.3",
+  "doh_dnssec_AD": false,
+  "fresh_doh_observed_utc": "2026-10-21T06:27:01.382474+00:00",
+  "resolved_ip_tcp_success": true,
+  "resolved_ip_tls_result": "connection_reset_10054",
+  "certificate_obtained": false,
+  "wayback_application_requests": 0,
+  "summary_normalization": "Five unobserved optional TLS fields are explicit nulls in the public summary and absent in the private probe record; all recorded values match.",
+  "diagnosis": "A resolver-answer difference was observed. The public-answer IP reaches TCP but the verified TLS handshake resets; changing DNS alone is not established as a working repair.",
+  "unresolved": [
+    "Cause of the local resolver difference",
+    "Which network endpoint caused the TLS reset"
+  ],
+  "network_resume_gate_passed": false,
+  "latest_wayback_http_stop_remains": 429,
+  "global_network_changes": false,
+  "further_identical_probes": "stopped",
+  "public_summaries": [
+    "research/continuous-recovery-20261021/network/wayback-tls-diagnostic01/runtime/public/diagnostic-summary.json",
+    "research/continuous-recovery-20261021/network/wayback-dns-comparison01/public/dns-summary.json",
+    "research/continuous-recovery-20261021/network/wayback-resolved-tls01/public/resolved-tls-summary.json"
+  ],
+  "bindings": [
+    {
+      "path": "research/continuous-recovery-20261021/network/wayback-tls-diagnostic01/runtime/public/diagnostic-summary.json",
+      "sha256": "8511d5c6ad4860d7aa555d5a9b50850c32950a2f7bd22eaf30fe683d7252edff"
+    },
+    {
+      "path": "research/continuous-recovery-20261021/network/wayback-dns-comparison01/public/dns-summary.json",
+      "sha256": "c7058d774d5fcee7907214d460088e4970552242b1d3625ac0082d3d411b344d"
+    },
+    {
+      "path": "research/continuous-recovery-20261021/network/wayback-resolved-tls01/public/resolved-tls-summary.json",
+      "sha256": "c7aa47a01e56b4146ba0b3712886de3519b5803490cd78b4f9276ddf6e299f94"
+    },
+    {
+      "path": "research/continuous-recovery-20261021/network/wayback-dns-comparison01/private/dns-comparison-report.json",
+      "sha256": "c015893021bc258ca5f2ac2647cf8d0ad9e321ea05b1135d2122c56a2ea1daf5"
+    },
+    {
+      "path": "research/continuous-recovery-20261021/network/wayback-resolved-tls01/private/resolved-tls-report.json",
+      "sha256": "998c2c86d326e4efb7f7aaaa19da062afaec6bbfad2b56e078778cc61951e67b"
+    }
+  ]
+}

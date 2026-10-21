@@ -1,6 +1,6 @@
 # 非图库内容复原：2026-10-21
 
-本轮从v39继续，优先恢复已有正文和交互。三处Flash兼容展示已随v41上线；天赋计算器和BlizzCast阅读页进入v42派生导出，尚待整站浏览和发布验收。当前发布状态以[工作总账](../research/continuous-recovery-20261021/status.json)和[更新记录](../CHANGELOG.md)为准。
+本轮从v39继续，优先恢复已有正文和交互。三处Flash兼容展示随v41上线；天赋计算器和BlizzCast阅读页已随v42发布，线上24个对象核对通过。离线包暂为v39。当前发布状态以[工作总账](../research/continuous-recovery-20261021/status.json)和[更新记录](../CHANGELOG.md)为准。
 
 ## 天赋计算器
 
@@ -8,9 +8,19 @@
 
 `tools/talent_compat.py`仅接受两份精确来源摘要。前者修复职业模板链接和固定资源路径；后者保留原字节及其动态背景表达式。导出器识别后跳过这两份脚本的通用URL转换，原加点逻辑保持。公开测试携带这两份纯JavaScript来源fixture及来源说明，脱离维护者本地原始备份也能执行。
 
-九职业初始页面合计缺1,259个图片目标，包括技能图标、树背景和布局素材。其中1,232个目标已显示为静态缺图占位；动态请求另观察到61个404目标，与前者部分重叠。61项中有27张树背景和34个技能图标地址（17组普通/暗色图标）。这与脚本故障分别记录，不用其他年代或同名近似图标替代。
+九职业初始页面合计缺1,259个图片目标，包括技能图标、树背景和布局素材。其中1,232个目标已显示为静态缺图占位；动态请求另观察到61个404目标，与前者部分重叠。61项中有27张树背景和34个技能图标地址（17组普通/暗色图标）。脚本故障、原始图片恢复和关联来源补充分别记录。
 
 主代理核对了合并集合，每个目标均不在v42实际文件、路由及来源表中。[逐职业盘点](../research/continuous-recovery-20261021/integration/talents/full-image-scope/README.md)与[可协作缺图清单](../research/continuous-recovery-20261021/publication/talent-missing-image-targets.json)可供后续寻找素材。此计数描述本地缺口，不判断所有网络存档均已缺失；悬停后才生成的状态图尚未覆盖。
+
+本地v45加入986张来自[CraftedRO的WotLK离线计算器备份](https://github.com/CraftedRO/Offline-talent-calculator-for-WotLK-3.3.5a/tree/4c8013cf40d0edf84625430eaf43b86d97880ae0)的同路径36×36图标。固定提交、源路径和原字节进入独立来源目录，页面注明后期关联来源，2008年天赋数据与脚本保持。树背景、近似技能名和跨职业图片没有自动接入。
+
+九职业实际完成加点、重置、非零模板保存、重开和刷新；主代理逐张查看了截图。静态占位与真实404合并后仍缺273个目标，含27张背景；[集合核对](../research/continuous-recovery-20261021/local-audit/v44/v44-gap-union-reconciliation.json)保留与初始清单的对应关系。这部分已本地验收，尚待随v45部署。
+
+## 新增主站正文
+
+同一Common Crawl集合取得九份2008年5月9–12日的精确来源。Source16新增战场截图比赛公告、Tinfoil Hat、双头食人魔、粉丝站计划、Molten Core趣味专题、2004年9月补丁说明和吟游诗人介绍七份正文；更新内容目录，另接通六个旧地址别名。每页标出其实际捕获日期。
+
+旧比赛和招募均用历史措辞，比赛入口为“View historical contest”，不接受提交。比赛规则页未取得，保留缺口说明；没有把原公告中的计划写成已发生的评选结果。Tinfoil Hat的九片提示框背景与Molten Core返回箭头复用已保存的站内素材，来源表标为布局兼容复用；文章插图仍有缺失。[Source16验收](../research/continuous-recovery-20261021/publication/root-source16-local-acceptance.json) · [布局复用决定](../research/continuous-recovery-20261021/publication/root-source16-layout-reuse-decision.json)
 
 ## BlizzCast
 
@@ -32,6 +42,10 @@
 
 ## 验收与后续
 
-代码检查和预览结果不能代替发布验收。新版本需核对全部输出对象、原有657个图片覆盖地址和三处Flash资源，实际浏览九职业加点、重置、非零模板恢复，以及五个阅读页和原站入口。通过后分别记录main同步、Pages构建、线上对象和离线包。
+v42已核对全部输出对象、原有657个图片覆盖地址和三处Flash资源。实际Chrome逐一完成九职业加点、重置、非零模板恢复，五个阅读页和下载页、展开后新闻中的可见入口检查通过。main为`2577dcdc`，Pages为`fdc976ed`；24个线上对象与本地一致，均由direct取得。[线上核对](../research/continuous-recovery-20261021/publication/root-v42-pages-online-acceptance.json)
+
+本地v45包含上述Source16正文、986张关联图标和两页布局修复，共10,130个文件，约629MB。67项相关检查通过，全部输出逐项核对；五页新的实际浏览检查通过。v44候选因比赛说明后的多余闭合锚点未发布，该问题在v45修复。九职业HTML和天赋脚本与已完成九职业浏览的v44相同，因此复用这部分浏览证据。[本地发布验收](../research/continuous-recovery-20261021/publication/root-v45-local-acceptance.json)
 
 Wayback在本轮00:49 UTC返回429后停批；Common Crawl静态数据取得成功只说明该独立端点可用。下载继续direct优先，备用代理只作用于下载进程。完整进度见[当日记录](continuous-recovery-20261021.md)。
+
+后续诊断观察到本机解析地址与两家DoH返回地址不同；对公共解析地址能建立TCP连接，但TLS握手仍被重置，未取得证书。因此尚未证明改DNS可以修复访问，也未改系统DNS、代理或证书。[诊断记录](../research/continuous-recovery-20261021/publication/root-wayback-dns-tls-diagnosis.json)

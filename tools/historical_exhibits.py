@@ -16,7 +16,7 @@ import urllib.parse
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from html.parser import HTMLParser
-from typing import Iterable
+from typing import Callable, Iterable
 
 
 VISA_ROUTE = "/visa/index.html"
@@ -73,6 +73,8 @@ NEWS_UPGRADE_ENTRY_ID = "news2-1-07-1212"
 NEWS_2004_ROUTE = "/news/wow-news2004.html"
 NEWS_2004_HEADLINE = "World of Warcraft Now On Sale from the Blizzard Store"
 NEWS_2004_IMAGE_PATH = "/news/images/04-12/ordernow.jpg"
+BATTLEGROUNDS_CONTEST_ROUTE = "/contests/05-06-09/index.html"
+BATTLEGROUNDS_NEWS_ROUTE = "/news/wow-news-06-2005.html"
 PTR_ROUTE = "/ptr/index.html"
 PTR_ALIASES = {
     "/ptr": PTR_ROUTE,
@@ -503,10 +505,17 @@ class _HistoricalAccountAnchorParser(HTMLParser):
 
     def handle_endtag(self, tag: str) -> None:
         folded = tag.casefold()
+        end_start = self._offset()
         self._tag_depth = max(0, self._tag_depth - 1)
         if folded == "a" and self._anchors:
             anchor, start, start_end = self._anchors.pop()
-            self.completed.append((anchor, start, self._offset()))
+            # ``getpos()`` points at the beginning of ``</a>``.  Consumers
+            # that replace an entire anchor need the matching closing tag in
+            # their source slice; compute its end without consuming any
+            # adjacent markup.
+            closing = re.match(r"</\s*a\s*>", self.text[end_start:], re.IGNORECASE)
+            end = end_start + len(closing.group(0)) if closing else end_start
+            self.completed.append((anchor, start, end))
         if folded in {"script", "style"} and self._skip_depth:
             self._skip_depth -= 1
 
@@ -786,6 +795,158 @@ def _apply_text_rules(text: str, rules: Iterable[_TextRule]) -> str:
         for start, end, replacement in reversed(non_overlapping):
             text = text[:start] + replacement + text[end:]
     return text
+
+
+_BATTLEGROUNDS_CONTEST_RULES: tuple[_TextRule, ...] = (
+    _TextRule(
+        "Blizzard is giving away a rare, life-size mannequin of a Night Elf female.",
+        "Blizzard announced a giveaway of a rare, life-size Night Elf female mannequin.",
+    ),
+    _TextRule(
+        "To enter the contest, take the best screen shot you can within one of the Battlegrounds Zones and submit it using the Web page link below by June 20th, 2005.",
+        "The archived announcement invited screenshot submissions by June 20th, 2005; this historical exhibit accepts no submissions.",
+    ),
+    _TextRule(
+        "We will run them through the gauntlet of dev team scrutiny, and will announce the winners soon after.",
+        "The archived announcement described development-team judging and planned publication of the winners.",
+    ),
+    _TextRule(
+        "So train your photographer's eye on the Battlegrounds and good luck!",
+        "The archived notice closed with an invitation to photograph the Battlegrounds.",
+    ),
+)
+
+_BATTLEGROUNDS_NEWS_RULES: tuple[_TextRule, ...] = (
+    _BATTLEGROUNDS_CONTEST_RULES[0],
+    _BATTLEGROUNDS_CONTEST_RULES[1],
+    _BATTLEGROUNDS_CONTEST_RULES[2],
+    _BATTLEGROUNDS_CONTEST_RULES[3],
+)
+
+
+def _replace_anchor_visible_label(
+    text: str,
+    *,
+    href_predicate: Callable[[str], bool],
+    old_label: str,
+    new_label: str,
+) -> str:
+    """Replace one exact visible anchor label while preserving its href/tags."""
+
+    parser = _HistoricalAccountAnchorParser(text)
+    try:
+        parser.feed(text)
+        parser.close()
+    except Exception:
+        return text
+    replacements: list[tuple[int, int, str]] = []
+    for anchor, _start, _end in parser.completed:
+        if not href_predicate(html.unescape(anchor.attrs.get("href", ""))):
+            continue
+        visible = "".join(part for _part_start, _part_end, part in anchor.parts)
+        if " ".join(visible.split()) != old_label:
+            continue
+        char_ranges: list[tuple[int, int]] = []
+        for part_start, part_end, part in anchor.parts:
+            if part_end - part_start == len(part):
+                char_ranges.extend(
+                    (part_start + offset, part_start + offset + 1)
+                    for offset in range(len(part))
+                )
+            else:
+                char_ranges.extend((part_start, part_end) for _ in part)
+        if not char_ranges:
+            continue
+        first = next((index for index, value in enumerate(visible) if not value.isspace()), None)
+        last = next((index for index in range(len(visible) - 1, -1, -1) if not visible[index].isspace()), None)
+        if first is None or last is None or last >= len(char_ranges):
+            continue
+        replacements.append(
+            (
+                char_ranges[first][0],
+                char_ranges[last][1],
+                html.escape(new_label),
+            )
+        )
+        break
+    for start, end, replacement in reversed(replacements):
+        text = text[:start] + replacement + text[end:]
+    return text
+
+
+def _is_battlegrounds_index_href(href: str) -> bool:
+    try:
+        parsed = urllib.parse.urlsplit(html.unescape(href))
+    except ValueError:
+        return False
+    path = urllib.parse.unquote(parsed.path or "").casefold().rstrip("/")
+    return path.endswith("/contests/05-06-09/index.html")
+
+
+def _is_battlegrounds_rules_target(value: str, _depth: int = 0) -> bool:
+    if _depth > 2:
+        return False
+    try:
+        parsed = urllib.parse.urlsplit(html.unescape(value))
+    except ValueError:
+        return False
+    path = urllib.parse.unquote(parsed.path or "").casefold()
+    basename = path.rsplit("/", 1)[-1].split(";", 1)[0]
+    if basename == "rules.html" and (
+        path.endswith("/contests/05-06-09/rules.html") or "/" not in path
+    ):
+        return True
+    try:
+        requested_values = urllib.parse.parse_qs(parsed.query, keep_blank_values=True).get("requested", ())
+    except ValueError:
+        return False
+    return any(_is_battlegrounds_rules_target(requested, _depth + 1) for requested in requested_values)
+
+
+def _is_battlegrounds_rules_anchor(anchor: _HistoricalAccountAnchor, raw: str) -> bool:
+    if not _is_battlegrounds_rules_target(anchor.attrs.get("href", "")):
+        return False
+    block = raw
+    for match in re.finditer(
+        r"<img\b[^>]*\bsrc\s*=\s*([\"'])(?P<src>[^\"']+)\1",
+        block,
+        flags=re.I | re.S,
+    ):
+        source = html.unescape(match.group("src"))
+        try:
+            path = urllib.parse.urlsplit(source).path.casefold()
+        except ValueError:
+            continue
+        if path.endswith("/button-continue.gif") or _is_battlegrounds_rules_target(source):
+            return True
+    return False
+
+
+def _rewrite_battlegrounds_continue_anchor(text: str) -> str:
+    """Replace only the retired contest rules button with a static note."""
+
+    parser = _HistoricalAccountAnchorParser(text)
+    try:
+        parser.feed(text)
+        parser.close()
+    except Exception:
+        return text
+    for anchor, start, end in parser.completed:
+        if _is_battlegrounds_rules_anchor(anchor, text[start:end]):
+            note = (
+                '<p class="historical-rules-note">'
+                "The archived contest rules link is not included in this local historical exhibit."
+                "</p>"
+            )
+            return text[:start] + note + text[end:]
+    return text
+
+
+def transform_battlegrounds_contest_page(text: str) -> str:
+    """Historicalize the exact 2005 Battlegrounds contest page only."""
+
+    rewritten = _apply_text_rules(text, _BATTLEGROUNDS_CONTEST_RULES)
+    return _rewrite_battlegrounds_continue_anchor(rewritten)
 
 
 _NEWS_UPGRADE_RULES: tuple[_TextRule, ...] = (
@@ -1073,6 +1234,77 @@ class _DivClassBoundsParser(HTMLParser):
         self._div_depth = max(0, self._div_depth - 1)
 
 
+def _battlegrounds_news_title_matches(text: str) -> bool:
+    title_matches = re.finditer(
+        r"<h3\b[^>]*\bclass\s*=\s*([\"'])[^\"']*\btitle\b[^\"']*\1[^>]*>.*?</h3\s*>",
+        text,
+        flags=re.I | re.S,
+    )
+    titles = [match.group(0) for match in title_matches]
+    if len(titles) != 1:
+        return False
+    visible_parser = _VisibleTextParser(titles[0])
+    try:
+        visible_parser.feed(titles[0])
+        visible_parser.close()
+    except Exception:
+        return False
+    title = " ".join(
+        html.unescape("".join(part for _start, _end, part in visible_parser.parts)).split()
+    )
+    return bool(
+        re.match(
+            r"^Insider Battlegrounds Screen Shot Contest\s*-\s*",
+            title,
+            flags=re.I,
+        )
+    )
+
+
+def _battlegrounds_news_target_bounds(text: str) -> tuple[int, int] | None:
+    parser = _DivClassBoundsParser(text, {"postcontainer", "postbody"})
+    try:
+        parser.feed(text)
+        parser.close()
+    except Exception:
+        return None
+    containers = [
+        (start, end)
+        for css_class, start, end in parser.bounds
+        if css_class == "postcontainer"
+    ]
+    for start, end in containers:
+        entry = text[start:end]
+        if not _battlegrounds_news_title_matches(entry):
+            continue
+        bodies = [
+            (body_start, body_end)
+            for css_class, body_start, body_end in parser.bounds
+            if css_class == "postbody" and start <= body_start < body_end <= end
+        ]
+        if len(bodies) == 1:
+            return bodies[0]
+    return None
+
+
+def transform_battlegrounds_news_page(text: str) -> str:
+    """Historicalize only the Battlegrounds contest entry in the June 2005 news page."""
+
+    target = _battlegrounds_news_target_bounds(text)
+    if target is None:
+        return text
+    body_start, body_end = target
+    body = text[body_start:body_end]
+    body = _apply_text_rules(body, _BATTLEGROUNDS_NEWS_RULES)
+    body = _replace_anchor_visible_label(
+        body,
+        href_predicate=_is_battlegrounds_index_href,
+        old_label="Submit a Screenshot",
+        new_label="View historical contest",
+    )
+    return text[:body_start] + body + text[body_end:]
+
+
 def _news_2004_image_source(text: str) -> str | None:
     """Return the localized order-now image URL only when it is a local route."""
 
@@ -1286,6 +1518,10 @@ def transform_derived_page(
     rewritten = transform_p1_page(
         rewrite_historical_account_links(text, base_path=base_path), route
     )
+    if normalized_route == BATTLEGROUNDS_CONTEST_ROUTE:
+        return transform_battlegrounds_contest_page(rewritten)
+    if normalized_route == BATTLEGROUNDS_NEWS_ROUTE:
+        return transform_battlegrounds_news_page(rewritten)
     if normalized_route == NEWS_UPGRADE_ROUTE:
         return _transform_news_upgrade_entry(rewritten)
     if normalized_route == NEWS_2004_ROUTE:

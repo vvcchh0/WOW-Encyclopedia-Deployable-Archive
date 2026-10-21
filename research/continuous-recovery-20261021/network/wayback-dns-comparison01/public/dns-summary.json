@@ -1,0 +1,45 @@
+{
+  "schema": "wow-recovery.wayback-dns-comparison01-summary.v1",
+  "query_name": "web.archive.org",
+  "query_type": "A",
+  "local_ipv4_from_prior_diagnostic": "202.160.128.14",
+  "prior_diagnostic_sha256": "68252ed87df062013bea4bc6c93488ff0f40ead0e15c0932481f2e66956827c4",
+  "services": [
+    {
+      "service_id": "dns-google",
+      "url": "https://dns.google/resolve?name=web.archive.org&type=A",
+      "conclusion": "valid_doh_records",
+      "http_status": 200,
+      "doh_status": 0,
+      "AD": false,
+      "records": [
+        {
+          "name": "web.archive.org.",
+          "type": 1,
+          "TTL": 5,
+          "data": "207.241.237.3"
+        }
+      ],
+      "observed_at_utc": "2026-10-21T06:19:34.148933+00:00"
+    },
+    {
+      "service_id": "dns-cloudflare",
+      "url": "https://cloudflare-dns.com/dns-query?name=web.archive.org&type=A",
+      "conclusion": "valid_doh_records",
+      "http_status": 200,
+      "doh_status": 0,
+      "AD": false,
+      "records": [
+        {
+          "name": "web.archive.org",
+          "type": 1,
+          "TTL": 41,
+          "data": "207.241.237.3"
+        }
+      ],
+      "observed_at_utc": "2026-10-21T06:19:46.166123+00:00"
+    }
+  ],
+  "interpretation": "These are two independent current DoH observations compared with the prior direct DNS answer; any difference is not by itself a DNS-pollution conclusion.",
+  "wayback_application_requests": 0
+}

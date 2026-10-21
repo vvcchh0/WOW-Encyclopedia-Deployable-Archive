@@ -1,0 +1,44 @@
+{
+  "schema": "wow-recovery.wayback-resolved-tls01-summary.v1",
+  "host": "web.archive.org",
+  "doh_url": "https://dns.google/resolve?name=web.archive.org&type=A",
+  "expected_ip": "207.241.237.3",
+  "doh_http_status": 200,
+  "doh_body_sha256": "ae4d4429bf88fd96dae5a6367c75bfcf70e00aa0892aafc2e9627be87edbf582",
+  "doh_headers_sha256": "322196b6354fddd455cdf16605c97b4808fdefa4c961370c5967341cf437dd99",
+  "doh_observed_at_utc": "2026-10-21T06:27:01.382474+00:00",
+  "doh_status": 0,
+  "doh_AD": false,
+  "doh_records": [
+    {
+      "name": "web.archive.org.",
+      "type": 1,
+      "TTL": 102,
+      "data": "207.241.237.3"
+    }
+  ],
+  "tls_probe": {
+    "ip": "207.241.237.3",
+    "tcp_attempts": 1,
+    "tcp_success": true,
+    "tcp_duration_seconds": 0.31199999999807915,
+    "tls_attempts": 1,
+    "tls_success": false,
+    "tls_duration_seconds": 0.1720000000022992,
+    "protocol": null,
+    "cipher": null,
+    "certificate_hostname_match": null,
+    "certificate": null,
+    "tcp_error": null,
+    "tls_error": {
+      "type": "ConnectionResetError",
+      "message": "[WinError 10054] 远程主机强迫关闭了一个现有的连接。",
+      "errno": 10054
+    },
+    "application_bytes_sent": false
+  },
+  "stop_reason": "tls_probe_complete",
+  "prior_doh_summary_sha256": "c7058d774d5fcee7907214d460088e4970552242b1d3625ac0082d3d411b344d",
+  "prior_doh_report_sha256": "c015893021bc258ca5f2ac2647cf8d0ad9e321ea05b1135d2122c56a2ea1daf5",
+  "wayback_application_requests": 0
+}

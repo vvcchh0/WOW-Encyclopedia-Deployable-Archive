@@ -1,0 +1,56 @@
+{
+  "schema": "wow-source16-layout-compatibility-prepare-receipt/v1",
+  "status": "prepared_and_validated",
+  "loader": {
+    "path": "tools/source16_layout_compat.py",
+    "sha256": "2d72ce415528b4bc84962ca2cfd59e5925d129116e8c94cf173df4e5430c1aba",
+    "returns": "route_reuses_and_public_records_only; no image bytes or files written"
+  },
+  "test": {
+    "path": "tests/test_source16_layout_compat.py",
+    "sha256": "2d1e4f44ed59e6c0bc8dd409716f69119d9a2f83af8b0ec730ee917e6fe0a0bd",
+    "command": "python -X utf8 -m unittest -q tests.test_source16_layout_compat",
+    "result": "6 tests passed"
+  },
+  "bindings": {
+    "input_map": "research/continuous-recovery-20261021/integration/source16/layout-compatibility/input-map.json",
+    "input_map_sha256": "85056e02afbd1a87005c99fab8be6adc68d771683c324c8f274b358c03081243",
+    "decision": "research/continuous-recovery-20261021/publication/root-source16-layout-reuse-decision.json",
+    "decision_sha256": "88de11e8efe23ae05e4bf3df4a3695e642318c249dcc26f92337416041f71350",
+    "source_manifest_sha256": "e81eaefffbe994178e46fe02e2afd761d0747b1dad36455c1b4b1d2bfeec7b9a",
+    "accepted": true,
+    "classification": "layout_compatibility_reuse",
+    "target_original_images_recovered": 0,
+    "new_image_payloads": 0
+  },
+  "real_input_load": {
+    "command": "python -X utf8 <inline loader call>",
+    "routes": 10,
+    "public_records": 10,
+    "per_page_records": {
+      "/info/items/tinfoilhat.xml": 9,
+      "/moltencore/index.html": 1
+    },
+    "target_capture_timestamp_all_null": true,
+    "bytes_returned": false,
+    "files_written_by_loader": false
+  },
+  "scope": {
+    "accepted_target_count": 10,
+    "source_route_policy": "exact /wrath/images/layout/ttip* and /wrath/images/layout/backarrow.gif",
+    "checks": [
+      "exact map/decision/manifest SHA and accepted state",
+      "exact ten target/source mappings with no duplicates",
+      "workspace-contained non-symlink regular files",
+      "target routes absent and source routes present",
+      "manifest route, source/derived SHA and length, MIME, timestamp, and untransformed state",
+      "Pillow full image decode, format, dimensions, and one-frame check"
+    ]
+  },
+  "not_done": [
+    "No exporter integration",
+    "No route alias or HTML stub generation",
+    "No Source16 or site modification",
+    "No download or network access"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "schema": "wow-root-talent-original-evidence-acceptance/v1",
+  "accepted": true,
+  "reviewed_utc": "2026-10-21T04:12:17.915528+00:00",
+  "inventory": "research/continuous-recovery-20261021/integration/talents/original-evidence-inventory/inventory.json",
+  "inventory_sha256": "8779ce5580ef0102f68e7bbdf3ba4e178a27f3ee4d715f1d0724e333f7589d69",
+  "runner_sha256": "157db307277a723ac0c38be006ae9cdbc69d9e7bcd05164ac372b7a87d4a23b6",
+  "target_inventory": "research/continuous-recovery-20261021/publication/talent-missing-image-targets.json",
+  "target_inventory_sha256": "443dad252e0b7315136531473b2571cbee878b5bcb0627d7b429ff1871c47ee8",
+  "exact_target_set_equal": true,
+  "target_count": 1259,
+  "classification_counts": {
+    "not_found": 1258,
+    "error_or_index_only": 1
+  },
+  "actual_entity_candidates": 0,
+  "scope": {
+    "manifest_files": 143,
+    "manifest_bytes": 49193287,
+    "manifest_records": 7669,
+    "catalog_files": 24,
+    "catalog_bytes": 11617973,
+    "historical_zip_archives": 169,
+    "historical_zip_central_entries": 7321,
+    "small_source_zip_archives": 4,
+    "small_source_zip_central_entries": 1685,
+    "direct_exact_paths_checked": 7554
+  },
+  "independent_checks": [
+    "Compared all 1259 target paths with root-accepted public target list",
+    "Recomputed complete classification counts",
+    "Read and SHA-256 checked the only stored non-image entity; image decoder rejected it",
+    "Verified original manifest records 2013 new-site XHTML, not image; no substitution accepted"
+  ],
+  "rejected_stored_entity": {
+    "requested_path": "/shared/wow-com/images/subnav/dot.gif",
+    "bytes": 1792,
+    "sha256": "7e0376684be421a08e44051ccf687575a1af748a6914ca4eab32ceded094fd87",
+    "actual_capture": "20130718223807",
+    "mime": "application/xhtml+xml",
+    "image_decoder": "unidentified/non-image"
+  },
+  "limitations": [
+    "offline/site and v41/v42 derived trees (already audited; not raw-evidence layers)",
+    "browser/offline/runtime ZIPs and all unrelated ZIP central directories",
+    "research/acquisition-2008 raw CDX .bin bodies (index-only, not saved entities)",
+    "HTML正文 and scripts outside exact target paths",
+    "network/CDX/Wayback/browser access"
+  ],
+  "interpretation": "No usable exact-path image found in the explicitly scanned local evidence layers. This does not establish global archive absence."
+}

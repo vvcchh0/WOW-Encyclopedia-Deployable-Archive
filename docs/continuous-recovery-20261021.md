@@ -79,3 +79,31 @@ v42共9,132个文件、625,223,624字节。主代理逐项核对所有文件，�
 主代理查看截图后发现，先前61项只是动态404，遗漏了大量返回200的静态缺图占位。补做九职业DOM盘点，共1,259个独立缺失图片目标；其中1,232个在占位查询中，61个动态404与其部分重叠。主代理复核集合及实际文件、路由和来源表的本地缺省；这不是网络存档全局缺失结论。后续继续检查原始取证层是否有未进入派生站的素材。[完整缺图口径](non-gallery-restoration-20261021.md)
 
 BlizzCast原站检查三批共28次请求。八个配图/样式目标最终均404；两个音频在direct和代理均为curl60 `SEC_E_WRONG_PRINCIPAL`，代理CONNECT 200不作音频原站200。没有关闭证书校验，未取得新图片和音频，停止这条原站跳转支线。Common Crawl静态索引另外提供九个基准日前主站正文线索，尚在准备获取，未算入新增正文。
+
+### 03:42–03:49 UTC — v42上线与主站正文来源
+
+main已推送`2577dcdc`，Pages构建`fdc976ed`完成。24个线上对象均经direct取得，长度、摘要、MIME与本地一致；离线Release仍为v39。[线上核对](../research/continuous-recovery-20261021/publication/root-v42-pages-online-acceptance.json)
+
+九个精确Common Crawl ARC成员均由direct取得，主代理重新解析并核对URL、捕获时间、实体摘要和实际正文。七份可新增页面：旧战场截图比赛公告、Tinfoil Hat、双头食人魔、粉丝站计划、Molten Core宣传页、2004年9月补丁说明和吟游诗人介绍；内容目录更新一份，Wrath XML入口与已有原始正文相同，只补别名。所有捕获均早于基准。正在准备Source16派生输入，清除三个瞬态会话后缀，比赛与招募内容以历史展品呈现。[来源验收](../research/continuous-recovery-20261021/publication/root-main-pages-source-acceptance.json)
+
+### 04:39–05:16 UTC — Source16与关联图标来源
+
+固定公开仓库提交取得一个约5MB的WotLK计算器备份。主代理核对ZIP成员与Git树，并解码全部1,804个图片素材；其中986个36×36图标与缺口路径完全相同，作为后期关联素材单独接入。没有导入其天赋数据或脚本，也未把WotLK背景直接套用到2008页面。[来源与接入决定](../research/continuous-recovery-20261021/publication/root-related-talent-icon-integration-decision.json)
+
+Source16全部8,364个输入文件与新正文来源核对通过，原Source15保留。v43完成本地字节与实际浏览验收：七个新增正文、一份目录更新及六个地址别名；暂未部署，准备与图标一并发布。[Source16验收](../research/continuous-recovery-20261021/publication/root-source16-local-acceptance.json)
+
+### 05:42–06:15 UTC — v44浏览与新增页面缺口
+
+九职业均完成加点、重置和非零模板保存、重开、刷新；986张关联图标正常显示，合并缺图集合剩273个目标。v44候选随后在主代理的差异审阅中发现比赛说明后遗留多余闭合锚点，因此未发布。修正代码后进入新版本，不覆盖候选。[候选审阅](../research/continuous-recovery-20261021/publication/root-v44-candidate-review.json)
+
+新增正文59项图片、样式或Flash依赖经原始清单和历史ZIP核对，未取得精确原路径实体。Tinfoil Hat的九片提示框与Molten Core返回箭头可复用同站已保存布局，原型已实际查看；其他文章同名插图不自动替代。
+
+### 06:16–06:27 UTC — DNS与TLS阶段分离诊断
+
+本机解析为202.160.128.14，TCP超时，尚未进入TLS。两家DoH经进程内代理均返回207.241.237.3；刷新一次答案后，该地址直连TCP成功，随后TLS握手被重置（10054），没有证书或Wayback应用响应。未修改系统DNS、代理或证书，00:49的429停批仍保留。[独立核对](../research/continuous-recovery-20261021/publication/root-wayback-dns-tls-diagnosis.json)
+
+### 06:41–07:02 UTC — v45本地验收
+
+新版本保留Source16正文与986张关联图标，修复旧比赛措辞和锚点，加入10个到既有布局图片的路由映射，不产生重复布局图片。67项相关检查通过；全部10,130个文件、629,186,325字节核对通过。五页实际Chrome检查通过，主代理查看四张截图，确认提示框可读、返回箭头与历史比赛入口正常。首次探针过早离开首页跳转导致一个请求取消，修正探针的最终地址等待后通过，站点未因此改动。[本地验收](../research/continuous-recovery-20261021/publication/root-v45-local-acceptance.json)
+
+线上仍为v42、离线Release为v39；v45进入提交和部署。Common Crawl另外三份RSS/指南来源已由direct取得，正文差异仍在审阅，尚未纳入本版。

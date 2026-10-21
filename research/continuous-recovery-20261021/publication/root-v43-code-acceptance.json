@@ -1,0 +1,80 @@
+{
+  "schema": "wow-root-code-acceptance/v1",
+  "accepted": true,
+  "reviewed_utc": "2026-10-21T04:39:24.509673+00:00",
+  "scope": "source16_main_pages_code_reviewed_pending_export_browser",
+  "code_bindings": [
+    {
+      "path": "tests/fixtures/talent_source15/localize.js",
+      "sha256": "e13769500cc7853b7c4d835f0380cf971cbec5f8fc061c3f1f83cf3dea1e6972"
+    },
+    {
+      "path": "tests/fixtures/talent_source15/printOutTop.js",
+      "sha256": "618c92c0d00c960f651aad4364a05e93cfb785df38b2b63902febaeb06d26f04"
+    },
+    {
+      "path": "tests/test_blizzcast_reader.py",
+      "sha256": "dba2e5874433a4994ada4f86b1e380ffadfdb20b3c829710435cce7808966221"
+    },
+    {
+      "path": "tests/test_related_page_routing.py",
+      "sha256": "7fa3a83e7c5db9a8d1105e40eca204ffa8a7cf997bc5c037a840b8be156f7baa"
+    },
+    {
+      "path": "tests/test_source16_page_metadata.py",
+      "sha256": "ad7131fe2fdabb8715b4d56251fc235008670e44ee8a0adc0adc835e0d5e4e14"
+    },
+    {
+      "path": "tests/test_talent_compat.py",
+      "sha256": "a28e5bd8983b7877adac9ea220a40909e54dcc7694cdf256bf7f9529a37080ae"
+    },
+    {
+      "path": "tools/blizzcast_reader.py",
+      "sha256": "4704229782b016e43dc3f3f881bc4f54424197ccf84d24913ef486a8fa58cfba"
+    },
+    {
+      "path": "tools/browser_assets/offline-flash.js",
+      "sha256": "6a4377a0cd3c916a8865c9a63a98511c66e2f00389c0fdb01cc68cac05c1adab"
+    },
+    {
+      "path": "tools/export_github_pages.py",
+      "sha256": "ad4a5540a4d9c474cb6201b282f1bdf24fbd53332480aa4127719d1613a674cd"
+    },
+    {
+      "path": "tools/non_gallery_compat.py",
+      "sha256": "686a7c957e23228661f09e5cd6ebdb123393a2da7f66720b1ed45d25243a3f5f"
+    },
+    {
+      "path": "tools/offline_flash.py",
+      "sha256": "46144880d8ccbb4bf005c38cd559be458574b2eea4d95314f5d81fb26638b8d6"
+    },
+    {
+      "path": "tools/talent_compat.py",
+      "sha256": "a86d225f1b1b47263bf64a35b6ff6c90a3c2950fc02ade08e905b0f007bf6934"
+    }
+  ],
+  "prior_code_acceptance": "research/continuous-recovery-20261021/publication/root-v42-code-acceptance.json",
+  "prior_code_acceptance_sha256": "91572a88010a6f5bc87656c536d96abf8bf1445ffa1c56df0e4a01359bd264c0",
+  "changes": [
+    "Only role=source16_main_page receives the new capture notice and whitelisted original-entity/ARC source_refs",
+    "Unrelated record types retain the existing export path",
+    "Source16 original URL rejects foreign origin, credentials, transient query/session paths and invalid capture/ARC coordinates",
+    "Original source SHA/length remain distinct from input-derived and final output hashes"
+  ],
+  "tests": {
+    "new_metadata_unit_tests": {
+      "command": "python -B -X utf8 -m unittest discover -s tests -p test_source16_page_metadata.py -v",
+      "passed": 5,
+      "observed_result": "Ran 5 tests in 0.004s; OK",
+      "output_basis": "Directly observed command result in this work session"
+    },
+    "exporter_regression_tests": {
+      "passed": 34,
+      "execution_receipt": "research/continuous-recovery-20261021/publication/v43-page-metadata-test-execution.json",
+      "execution_receipt_sha256": "8c3fc064d3a8c46d2fa9f83f7545d8397b3f760c2d68a2c6fdb4672e943b1e08",
+      "log_sha256": "61718b5a80004075f2986336880bc66ae19b52942f627ba9fdddeb8bc4881f0f"
+    }
+  },
+  "browser_export_acceptance_pending": true,
+  "frozen_sites_modified": false
+}

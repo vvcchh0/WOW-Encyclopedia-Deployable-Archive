@@ -1,0 +1,69 @@
+{
+  "schema": "wow-v44-gap-union-reconciliation-20261021-01",
+  "receipt": "v44-browser-receipt.json",
+  "receipt_sha256_before_and_after": "81d6bc41fb3c1941ccd9ab80dbcb907f2ceeb182926c5c896e101fcf690b6b5c",
+  "source_observation": {
+    "pages_checked": 13,
+    "talent_pages_checked": 9,
+    "static_missing_image_unique": 242,
+    "dynamic_css_missing_unique": 4,
+    "placeholder_observation_union": 246,
+    "real_http_404_unique": 35,
+    "static_or_css_404_overlap_unique": 8,
+    "real_404_not_placeholder_unique": 27,
+    "observed_gap_union_unique": 273,
+    "old_target_scope_unique": 1259,
+    "old_target_intersection_unique": 273,
+    "new_not_old_unique": 0
+  },
+  "reconciliation": {
+    "formula": "242 image placeholders + 4 CSS placeholders = 246 placeholder targets; 246 + 35 real 404 targets - 8 overlap = 273 unique targets",
+    "related_talent_bundle_unique": 986,
+    "old_scope_minus_related_talent_bundle": "1259 - 986 = 273",
+    "interpretation": "The 273 observed union is the remaining old target scope after the 986-path related-talent bundle; this does not reclassify the 273 targets as recovered."
+  },
+  "static_css_404_overlap": [
+    "/shared/global/talents/druid/images/balance/improvednature'sgrasp-off.jpg",
+    "/shared/global/talents/druid/images/balance/improvednature'sgrasp.jpg",
+    "/shared/global/talents/druid/images/balance/nature'sgrasp-off.jpg",
+    "/shared/global/talents/druid/images/balance/nature'sgrasp.jpg",
+    "/shared/global/talents/shaman/images/elemental/earth'sgrasp-off.jpg",
+    "/shared/global/talents/shaman/images/elemental/earth'sgrasp.jpg",
+    "/shared/global/talents/shaman/images/restoration/nature'sguidance-off.jpg",
+    "/shared/global/talents/shaman/images/restoration/nature'sguidance.jpg"
+  ],
+  "real_404_background_only": [
+    "/shared/global/talents/druid/images/balance/background.jpg",
+    "/shared/global/talents/druid/images/feralcombat/background.jpg",
+    "/shared/global/talents/druid/images/restoration/background.jpg",
+    "/shared/global/talents/hunter/images/beastmastery/background.jpg",
+    "/shared/global/talents/hunter/images/marksmanship/background.jpg",
+    "/shared/global/talents/hunter/images/survival/background.jpg",
+    "/shared/global/talents/mage/images/arcane/background.jpg",
+    "/shared/global/talents/mage/images/fire/background.jpg",
+    "/shared/global/talents/mage/images/frost/background.jpg",
+    "/shared/global/talents/paladin/images/holy/background.jpg",
+    "/shared/global/talents/paladin/images/protection/background.jpg",
+    "/shared/global/talents/paladin/images/retribution/background.jpg",
+    "/shared/global/talents/priest/images/discipline/background.jpg",
+    "/shared/global/talents/priest/images/holy/background.jpg",
+    "/shared/global/talents/priest/images/shadow/background.jpg",
+    "/shared/global/talents/rogue/images/assassination/background.jpg",
+    "/shared/global/talents/rogue/images/combat/background.jpg",
+    "/shared/global/talents/rogue/images/subtlety/background.jpg",
+    "/shared/global/talents/shaman/images/elemental/background.jpg",
+    "/shared/global/talents/shaman/images/enhancement/background.jpg",
+    "/shared/global/talents/shaman/images/restoration/background.jpg",
+    "/shared/global/talents/warlock/images/affliction/background.jpg",
+    "/shared/global/talents/warlock/images/demonology/background.jpg",
+    "/shared/global/talents/warlock/images/destruction/background.jpg",
+    "/shared/global/talents/warrior/images/arms/background.jpg",
+    "/shared/global/talents/warrior/images/fury/background.jpg",
+    "/shared/global/talents/warrior/images/protection/background.jpg"
+  ],
+  "limits": [
+    "This file reconciles the saved v44 receipt; it does not rerun browser actions.",
+    "missing-image.svg and 200 placeholder responses are counted as requested targets, not recovered original media.",
+    "The original receipt is preserved byte-for-byte."
+  ]
+}
