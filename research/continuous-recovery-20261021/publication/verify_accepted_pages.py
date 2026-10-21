@@ -40,7 +40,7 @@ def mimes(path):
 module.OBJECTS=[dict(r,mime=mimes(r['path']),source_list=r['path']=='export-provenance.json') for r in gate['objects']]
 assert len(module.OBJECTS)==len({r['path'] for r in module.OBJECTS})<=128
 module.MAX_ATTEMPTS=2*len(module.OBJECTS);module.MAX_SECONDS=600;module.MAX_BODY_BYTES=64*1024*1024
-module.SOURCE_LIST_TIMEOUT=60;module.OTHER_TIMEOUT=60
+module.SOURCE_LIST_TIMEOUT=180;module.OTHER_TIMEOUT=60
 original_attempt=module.run_attempt
 def attempt(*args,**kwargs):
     result=original_attempt(*args,**kwargs)

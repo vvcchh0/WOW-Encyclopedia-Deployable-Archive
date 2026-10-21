@@ -1,0 +1,9 @@
+# v45 non-gallery JavaScript syntax pass
+
+This is a read-only audit of the actual `.scratch/pages-resources-20261021-v45` tree. The inventory recorded 169 JavaScript files with SHA256 and byte length. Eighteen explicit gallery/SSOTD files were excluded by transparent path markers (`gallery`, `screenie`, `screenshot`, `ssotd`, `artwork`, or `thumbnailslayout.js`). The remaining 151 files were each checked once with the pinned Node executable and a per-file 10-second timeout. The subprocess `TEMP`, `TMP`, and `TMPDIR` were set to `.scratch/test-temp-20261021`.
+
+Result: 150 passed, 1 failed, 0 timed out. The only failure is `/visa/reward/ajax/prototype.js`, SHA256 `3dfa21451b466a830b25b44f9f1e593a9a1c8bb473aff1d5dcced1113eca2c744`, 65,100 bytes. Node reports `SyntaxError: Invalid regular expression flags` at line 261. The corresponding frozen Source16 file is 64,868 bytes, SHA256 `4efde4e87b2db7b8cb6b81f70ab4972c3cfbcd7d329d0752ad223abe67fa9120`, and passes the same `node.exe --check` command. Export provenance records `transformed: true` and one placeholder reference for the derived file.
+
+The failure is conversion damage. The original line contains `replace(/'/g, '\\'')`; the exported line contains a project-prefixed `__offline/missing.html` placeholder between the regex slash and its flags. The generic path is `tools/export_github_pages.py` function `rewrite_root_literals`, called from the generic JavaScript branch after `mirror.rewrite_script`. A minimal repair candidate is a regex-literal-aware guard in that rewrite or a narrow exact guard for this legacy Prototype route. No production file was changed in this audit.
+
+Evidence is in [inventory.json](inventory.json), [syntax-results.json](syntax-results.json), and [failure-analysis.json](failure-analysis.json). The audit script is [audit_js_syntax.py](audit_js_syntax.py).

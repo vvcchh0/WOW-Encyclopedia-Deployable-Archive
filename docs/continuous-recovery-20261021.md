@@ -107,3 +107,19 @@ Source16全部8,364个输入文件与新正文来源核对通过，原Source15�
 新版本保留Source16正文与986张关联图标，修复旧比赛措辞和锚点，加入10个到既有布局图片的路由映射，不产生重复布局图片。67项相关检查通过；全部10,130个文件、629,186,325字节核对通过。五页实际Chrome检查通过，主代理查看四张截图，确认提示框可读、返回箭头与历史比赛入口正常。首次探针过早离开首页跳转导致一个请求取消，修正探针的最终地址等待后通过，站点未因此改动。[本地验收](../research/continuous-recovery-20261021/publication/root-v45-local-acceptance.json)
 
 线上仍为v42、离线Release为v39；v45进入提交和部署。Common Crawl另外三份RSS/指南来源已由direct取得，正文差异仍在审阅，尚未纳入本版。
+
+### 07:37–08:07 UTC — v45部署与线上补验
+
+main提交`335cb44f`、Pages提交`6b16f914`，GitHub构建完成。首轮45个对象有44个通过；约10.8MB的来源表两次HTTP200传输均在60秒超时。保留失败回执，只对这一对象放宽至180秒，direct一次完整取得并核对通过，共45个对象完成验收。[补验与合并回执](../research/continuous-recovery-20261021/publication/root-v45-pages-online-reconciliation.json)。离线Release仍为v39。
+
+下一版准备六张带独立来源说明的后期天赋界面PNG，以及八个到已有2008年同站点数框GIF的兼容映射。九职业六图原型通过；点数框在德鲁伊、战士的初始、加点和重置状态均闭合，八个目标的原捕获日期仍留空。ArchiveCraft成为非图库缺图的新来源线索，先取四份精确百科HTML，再判断是否有可用图片。
+
+### 08:44 UTC — v46本地验收与百科新图源
+
+v46增加六张后期关联来源的天赋PNG界面图，并把八个点数框边框地址映射到已有2008年4月同站GIF。55项受影响检查通过；10,137个文件、629,321,494字节逐项核对通过，既有图片、脚本、天赋数据、SWF和WASM字节保持。九职业实际执行初始、加点、加满首项、单树重置和全部重置，另点击三个打印视图；剩余259个独立缺图目标。两次探针分别因预期措辞过短、把图片角片当作CSS背景而失败；修正探针后通过，站点未改。[本地验收](../research/continuous-recovery-20261021/publication/root-v46-local-acceptance.json)
+
+只读脚本盘点：151个非图库外链JS有150个语法通过；奖励页旧Prototype脚本被通用转换损坏，但现有静态展品和全部HTML均不引用它，暂不接回。879份非图库HTML的12,051段内联脚本去重为2,322段，全部语法通过；语法检查未执行页面逻辑。
+
+ArchiveCraft的四份百科HTML和四张引用图均由direct取得。高等精灵控制图与已有实体字节相同；Alleria、塞纳里奥议会、玛法里奥三张图经实际查看，准备以注明社区来源的当前关联素材接入。原目标捕获日期留空，Alleria保留WordPress缩放名说明；原百科正文保持。[图源决定](../research/continuous-recovery-20261021/publication/root-related-encyclopedia-image-decision.json)
+
+Common Crawl补充三份来源复核完成：RSS九条标题已在五月新闻中，Cenarion指南截断于128KiB且末尾标记未结束，Implemented正文及文章图片与已有来源相同；保留来源，不覆盖现有页面。[复核](../research/continuous-recovery-20261021/publication/root-commoncrawl-pages02-content-acceptance.json)

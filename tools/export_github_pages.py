@@ -56,7 +56,9 @@ import offline_flash  # noqa: E402
 import blizzcast_reader  # noqa: E402
 import talent_compat  # noqa: E402
 import related_talent_icons  # noqa: E402
+import related_talent_ui  # noqa: E402
 import source16_layout_compat  # noqa: E402
+import talent_box_layout  # noqa: E402
 from toplist_compat import ToplistCompatError, rewrite_toplist_script  # noqa: E402
 
 
@@ -2881,7 +2883,9 @@ def export_pages(
     flash_runtime_archive: Path | None = None,
     blizzcast_source_map: Path | None = None,
     related_talent_icon_map: Path | None = None,
+    related_talent_ui_map: Path | None = None,
     source16_layout_map: Path | None = None,
+    talent_box_layout_map: Path | None = None,
 ) -> dict[str, Any]:
     source_site = source_site.resolve()
     manifest_path = manifest_path.resolve()
@@ -2980,7 +2984,35 @@ def export_pages(
             route_to_static[route] = static_url(base_path, relative)
             relative_paths.add(relative)
     talent_icon_estimate = talent_icon_bundle.estimated_bytes if talent_icon_bundle else 0
-    estimate = output_estimate(records, overlay_bytes + flash_estimate + reader_estimate + talent_icon_estimate)
+    talent_ui_bundle: related_talent_ui.RelatedTalentUIBundle | None = None
+    if related_talent_ui_map is not None:
+        if talent_icon_bundle is None:
+            raise PagesExportError("related talent UI requires the accepted related talent icon map")
+        try:
+            talent_ui_bundle = related_talent_ui.load_related_talent_ui_bundle(
+                related_talent_ui_map, workspace_root, base_path,
+            )
+        except related_talent_ui.RelatedTalentUIError as exc:
+            raise PagesExportError(str(exc)) from exc
+        ui_candidates = [(asset.route, asset.relative) for asset in talent_ui_bundle.assets]
+        ui_candidates.append(("/" + talent_ui_bundle.catalog_relative, talent_ui_bundle.catalog_relative))
+        all_overlay_routes = {str(item["route"]) for item in overlays}
+        all_overlay_paths = {str(item["relative"]) for item in overlays}
+        for route, relative in ui_candidates:
+            if route in route_to_static or route in raw_aliases or route in all_overlay_routes or relative in relative_paths or relative in all_overlay_paths:
+                raise PagesExportError(f"related talent UI collides with an existing resource: {route}")
+        for target, canonical in talent_ui_bundle.route_reuses.items():
+            if target in route_to_static or target in raw_aliases or target in all_overlay_routes:
+                raise PagesExportError(f"related talent UI target collides with an existing resource: {target}")
+            if canonical not in {route for route, _ in ui_candidates}:
+                raise PagesExportError(f"related talent UI target has no canonical resource: {target}")
+        for route, relative in ui_candidates:
+            route_to_static[route] = static_url(base_path, relative)
+            relative_paths.add(relative)
+        for target, canonical in talent_ui_bundle.route_reuses.items():
+            route_to_static[target] = route_to_static[canonical]
+    talent_ui_estimate = talent_ui_bundle.estimated_bytes if talent_ui_bundle else 0
+    estimate = output_estimate(records, overlay_bytes + flash_estimate + reader_estimate + talent_icon_estimate + talent_ui_estimate)
     if max_bytes is not None and before_workspace + estimate >= max_bytes:
         raise PagesExportError(f"workspace budget exceeded before export: {before_workspace}+{estimate} >= {max_bytes}")
     if free_before - estimate < min_free_bytes:
@@ -3013,6 +3045,21 @@ def export_pages(
         # These routes point to existing image objects.  They are deliberately
         # absent from aliases, so no redirect HTML or duplicate image is emitted.
         for target, source_route in layout_bundle.route_reuses.items():
+            route_to_static[target] = route_to_static[source_route]
+    talent_box_bundle: source16_layout_compat.LayoutCompatibilityBundle | None = None
+    if talent_box_layout_map is not None:
+        try:
+            talent_box_bundle = talent_box_layout.load_talent_box_layout_bundle(
+                talent_box_layout_map, workspace_root, source_site, manifest_path, manifest,
+            )
+        except talent_box_layout.LayoutCompatibilityError as exc:
+            raise PagesExportError(str(exc)) from exc
+        for target, source_route in talent_box_bundle.route_reuses.items():
+            if target in route_to_static or target in raw_aliases:
+                raise PagesExportError(f"talent point-box target collides with an existing resource: {target}")
+            if source_route not in route_to_static:
+                raise PagesExportError(f"talent point-box source has no static route: {source_route}")
+        for target, source_route in talent_box_bundle.route_reuses.items():
             route_to_static[target] = route_to_static[source_route]
     guide_preview_bundle: guide_previews.GuidePreviewBundle | None = None
     if guide_preview_map is not None:
@@ -3119,8 +3166,16 @@ def export_pages(
             if key in origin_index and origin_index[key] != asset.route:
                 raise PagesExportError(f"related talent icon origin conflicts with frozen source: {key}")
             origin_index[key] = asset.route
-    if layout_bundle is not None:
-        for target in layout_bundle.route_reuses:
+    if talent_ui_bundle is not None:
+        for route in set(talent_ui_bundle.route_reuses) | {asset.route for asset in talent_ui_bundle.assets}:
+            key = mirror.origin_key("http://www.worldofwarcraft.com" + route)
+            if key in origin_index and origin_index[key] != route:
+                raise PagesExportError(f"related talent UI origin conflicts with frozen source: {key}")
+            origin_index[key] = route
+    for reuse_bundle in (layout_bundle, talent_box_bundle):
+        if reuse_bundle is None:
+            continue
+        for target in reuse_bundle.route_reuses:
             key = mirror.origin_key("http://www.worldofwarcraft.com" + target)
             if key in origin_index and origin_index[key] != target:
                 raise PagesExportError(f"layout reuse origin conflicts with frozen source: {key}")
@@ -3138,6 +3193,8 @@ def export_pages(
     stats: Counter[str] = Counter()
     if layout_bundle is not None:
         stats["layout_compatibility_reused_target_paths"] = len(layout_bundle.route_reuses)
+    if talent_box_bundle is not None:
+        stats["talent_box_layout_reused_target_paths"] = len(talent_box_bundle.route_reuses)
     if guide_image_collection_bundle is not None:
         # Count curated source images once even though each is rendered on its
         # guide page and its related gallery page.
@@ -3182,6 +3239,44 @@ def export_pages(
                 "derived_length": len(talent_icon_bundle.catalog_bytes),
                 "mime": "application/json; charset=UTF-8", "kind": "related_talent_icon_catalog",
                 "role": "later_related_talent_icon_catalog", "transformed": True,
+            })
+        if talent_ui_bundle is not None:
+            for asset in talent_ui_bundle.assets:
+                if shutil.disk_usage(output.parent).free < min_free_bytes + len(asset.data):
+                    raise PagesExportError("disk reserve would be breached while writing related talent UI")
+                out = partial / asset.relative
+                out.parent.mkdir(parents=True, exist_ok=True)
+                out.write_bytes(asset.data)
+                source_reference = dict(talent_ui_bundle.source_metadata) | {
+                    "source_kind": "related_git_repository",
+                    "repository_path": asset.metadata["repository_path"],
+                    "git_blob_sha1": asset.metadata["git_blob_sha1"],
+                    "target_route": asset.target_route,
+                }
+                provenance.append({
+                    "route": asset.route, "static_url": static_url(base_path, asset.relative),
+                    "output_path": asset.relative, "source_offline_path": None,
+                    "source_manifest_sha256": None, "source_manifest_length": None,
+                    "source_sha256": asset.metadata["sha256"], "source_length": len(asset.data),
+                    "derived_sha256": asset.metadata["sha256"], "derived_length": len(asset.data),
+                    "mime": asset.mime, "kind": "related_talent_ui", "role": "later_related_talent_ui",
+                    "transformed": False, "source_refs": [source_reference],
+                })
+                stats["related_talent_ui_assets"] += 1
+            relative = talent_ui_bundle.catalog_relative
+            if shutil.disk_usage(output.parent).free < min_free_bytes + len(talent_ui_bundle.catalog_bytes):
+                raise PagesExportError("disk reserve would be breached while writing the related UI catalog")
+            out = partial / relative
+            out.parent.mkdir(parents=True, exist_ok=True)
+            out.write_bytes(talent_ui_bundle.catalog_bytes)
+            provenance.append({
+                "route": "/" + relative, "static_url": static_url(base_path, relative), "output_path": relative,
+                "source_offline_path": None, "source_manifest_sha256": None, "source_manifest_length": None,
+                "source_sha256": None, "source_length": None,
+                "derived_sha256": sha256_bytes(talent_ui_bundle.catalog_bytes),
+                "derived_length": len(talent_ui_bundle.catalog_bytes),
+                "mime": "application/json; charset=UTF-8", "kind": "related_talent_ui_catalog",
+                "role": "later_related_talent_ui_catalog", "transformed": True,
             })
         if blizzcast_bundle is not None:
             for generated in blizzcast_bundle.generated_files:
@@ -3408,10 +3503,12 @@ def export_pages(
                     stats["source16_main_pages"] += 1
                 if talent_icon_bundle is not None:
                     text, has_icon_notice = annotate_related_talent_icons(
-                        text, route=route, notice_html=talent_icon_bundle.notice_html,
+                        text, route=route, notice_html=talent_ui_bundle.notice_html if talent_ui_bundle else talent_icon_bundle.notice_html,
                     )
                     if has_icon_notice:
                         stats["related_talent_icon_notice_pages"] += 1
+                        if talent_ui_bundle is not None:
+                            stats["related_talent_ui_notice_pages"] += 1
                 derived = text.encode("utf-8")
                 stats["html_derived"] += 1
             elif kind == "css" or (kind == "support" and source.suffix.casefold() == ".css"):
@@ -3551,6 +3648,9 @@ def export_pages(
             if layout_bundle is not None and route in layout_bundle.per_page_records:
                 item["layout_reuse_refs"] = list(layout_bundle.per_page_records[route])
                 stats["layout_compatibility_pages"] += 1
+            if talent_box_bundle is not None and route in talent_box_bundle.per_page_records:
+                item.setdefault("layout_reuse_refs", []).extend(talent_box_bundle.per_page_records[route])
+                stats["talent_box_layout_pages"] += 1
             provenance.append(item)
 
         for overlay in overlays:
@@ -3770,6 +3870,15 @@ def export_pages(
                 "source_map_sha256": talent_icon_bundle.map_sha256,
                 "original_2008_images_recovered": 0,
             }
+        if talent_ui_bundle is not None:
+            provenance_payload["related_talent_ui"] = {
+                "source": dict(talent_ui_bundle.source_metadata),
+                "ui_count": len(talent_ui_bundle.assets),
+                "catalog_path": talent_ui_bundle.catalog_relative,
+                "source_map_sha256": talent_ui_bundle.map_sha256,
+                "route_reuses": dict(talent_ui_bundle.route_reuses),
+                "original_2008_images_recovered": 0,
+            }
         if layout_bundle is not None:
             provenance_payload["layout_compatibility_reuse"] = {
                 "classification": "layout_compatibility_reuse",
@@ -3780,6 +3889,17 @@ def export_pages(
                 "new_image_payloads": 0,
                 "target_original_images_recovered": 0,
                 "records": list(layout_bundle.public_records),
+            }
+        if talent_box_bundle is not None:
+            provenance_payload["talent_box_layout_compatibility"] = {
+                "classification": "layout_compatibility_reuse",
+                "source_map_sha256": talent_box_bundle.map_sha256,
+                "decision_sha256": talent_box_bundle.decision_sha256,
+                "source_manifest_sha256": talent_box_bundle.source_manifest_sha256,
+                "reused_target_paths": len(talent_box_bundle.route_reuses),
+                "new_image_payloads": 0,
+                "target_original_images_recovered": 0,
+                "records": list(talent_box_bundle.public_records),
             }
         prov_data = (json.dumps(provenance_payload, ensure_ascii=False, sort_keys=True, indent=2) + "\n").encode("utf-8")
         (partial / "export-provenance.json").write_bytes(prov_data)
@@ -3833,8 +3953,16 @@ def main(argv: list[str] | None = None) -> int:
         help="Optional pinned same-path talent icons from a separately attributed later repository",
     )
     parser.add_argument(
+        "--related-talent-ui-map", type=Path, default=None,
+        help="Optional six-image later-source talent UI supplement; requires the related icon map",
+    )
+    parser.add_argument(
         "--source16-layout-map", type=Path, default=None,
         help="Optional accepted same-site layout route reuses for two Source16 pages",
+    )
+    parser.add_argument(
+        "--talent-box-layout-map", type=Path, default=None,
+        help="Optional eight-route same-site point-box border reuse for nine talent pages",
     )
     parser.add_argument(
         "--allow-later-image-supplements",
@@ -3855,7 +3983,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     args = parser.parse_args(argv)
     try:
-        result = export_pages(output=args.output, source_site=args.site, manifest_path=args.manifest, base_path=args.base_path, max_bytes=args.max_bytes, min_free_bytes=args.min_free_bytes, image_source_maps=args.image_source_maps, supplement_image_source_maps=args.supplement_image_source_maps, allow_later_image_supplements=args.allow_later_image_supplements, guide_preview_map=args.guide_preview_map, guide_image_collection_map=args.guide_image_collection_map, flash_runtime_archive=args.flash_runtime_archive, blizzcast_source_map=args.blizzcast_source_map, related_talent_icon_map=args.related_talent_icon_map, source16_layout_map=args.source16_layout_map)
+        result = export_pages(output=args.output, source_site=args.site, manifest_path=args.manifest, base_path=args.base_path, max_bytes=args.max_bytes, min_free_bytes=args.min_free_bytes, image_source_maps=args.image_source_maps, supplement_image_source_maps=args.supplement_image_source_maps, allow_later_image_supplements=args.allow_later_image_supplements, guide_preview_map=args.guide_preview_map, guide_image_collection_map=args.guide_image_collection_map, flash_runtime_archive=args.flash_runtime_archive, blizzcast_source_map=args.blizzcast_source_map, related_talent_icon_map=args.related_talent_icon_map, related_talent_ui_map=args.related_talent_ui_map, source16_layout_map=args.source16_layout_map, talent_box_layout_map=args.talent_box_layout_map)
     except PagesExportError as exc:
         parser.error(str(exc))
     print(json.dumps(result, ensure_ascii=False, indent=2))

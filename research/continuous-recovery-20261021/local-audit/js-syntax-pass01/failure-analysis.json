@@ -1,0 +1,59 @@
+{
+  "schema": "wow-v45-js-syntax-failure-analysis/v1",
+  "scope": {
+    "site": ".scratch/pages-resources-20261021-v45",
+    "total_js": 169,
+    "included_non_gallery_js": 151,
+    "excluded_explicit_gallery_or_ssotd_js": 18,
+    "excluded_policy": "path or filename contains gallery, screenie, screenshot, ssotd, artwork, or thumbnailslayout.js"
+  },
+  "node_check": {
+    "executable": "C:\\Users\\17630\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "command": "node.exe --check <absolute-v45-js-file>",
+    "per_file_timeout_seconds": 10,
+    "checked": 151,
+    "passed": 150,
+    "failed": 1,
+    "timed_out": 0,
+    "temp": ".scratch/test-temp-20261021"
+  },
+  "failure": {
+    "route": "/visa/reward/ajax/prototype.js",
+    "v45_path": ".scratch/pages-resources-20261021-v45/visa/reward/ajax/prototype.js",
+    "v45_sha256": "3dfa21451b466a830b25b44f9f1e593a9a1c8bb473aff1d5dcced1113eca2c744",
+    "v45_length": 65100,
+    "node_returncode": 1,
+    "node_error": "SyntaxError: Invalid regular expression flags",
+    "line": 261,
+    "source_path": ".scratch/offline-non-gallery-20261021-v16/site/visa/reward/ajax/prototype.js",
+    "source_sha256": "4efde4e87b2db7b8cb6b81f70ab4972c3cfbcd7d329d0752ad223abe67fa9120",
+    "source_length": 64868,
+    "source_node_returncode": 0,
+    "source_line_261_prefix": "return \"'\" + escapedString.replace(/'\/g,",
+    "derived_line_261_prefix": "return \"'\" + escapedString.replace(/'\/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fvisa%2Freward%2Fajax%2Fprototype.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fg%2C&reason=external-or-uncollected-resource",
+    "provenance": {
+      "source_offline_path": ".scratch/offline-non-gallery-20261021-v16/site/visa/reward/ajax/prototype.js",
+      "source_manifest_length": 64868,
+      "derived_length": 65100,
+      "transformed": true,
+      "reference_counts": {
+        "placeholder": 1
+      }
+    },
+    "classification": "conversion_damage",
+    "reason": "The frozen Source16 script passes Node syntax checking. Generic export JS rewriting matched the /g, portion of a regex literal as a root-relative URL, inserted an unresolved missing.html placeholder into the regex, and produced invalid JavaScript.",
+    "code_path": [
+      "tools/export_github_pages.py:828 rewrite_root_literals",
+      "tools/export_github_pages.py:3586-3587 generic JS branch calls mirror.rewrite_script then rewrite_root_literals"
+    ],
+    "repair_candidate": "Add a regex-literal-aware guard to rewrite_root_literals or a narrow exact compatibility guard for this legacy Prototype route; do not rewrite the frozen source and do not broadly parse unrelated JavaScript here."
+  },
+  "evidence_files": [
+    "inventory.json",
+    "syntax-results.json"
+  ],
+  "network": {
+    "used": false,
+    "external_requests": false
+  }
+}

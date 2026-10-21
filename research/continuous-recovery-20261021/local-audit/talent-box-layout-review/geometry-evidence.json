@@ -1,0 +1,180 @@
+{
+  "schema": "talent-box-layout-review/geometry-evidence/v1",
+  "generated_at_utc": "2026-10-21T07:49:58.238694Z",
+  "interpretation": "Eight frozen edge GIFs are the exact table frame resources declared by the old talent scripts. The browser result measures the rendered target-node envelope; target capture remains null.",
+  "script_evidence": [
+    {
+      "path": ".scratch/offline-non-gallery-20261021-v16/site/shared/global/talents/includes/localize.js",
+      "sha256": "e13769500cc7853b7c4d835f0380cf971cbec5f8fc061c3f1f83cf3dea1e6972",
+      "snippets": [
+        {
+          "start_line": 49,
+          "end_line": 59,
+          "text": [
+            "\tw.document.write('<body marginheight = 0 marginwidth = 0 topmargin = 0 leftmargin = 0 bgcolor = \"#000000\"><center><table cellspacing = \"0\" cellpadding = \"0\" border = \"0\" width = \"100%\"><tr><td><img src = \"/info/classes/includes-new/images/bot-box/top-left.gif\"></td>');",
+            "\tw.document.write('<td width = \"100%\" background = \"/info/classes/includes-new/images/bot-box/top.gif\"></td><td><img src = \"/info/classes/includes-new/images/bot-box/top-right.gif\"></td></tr>\t<tr>');",
+            "\tw.document.write('<td background = \"/info/classes/includes-new/images/bot-box/left.gif\" valign = \"top\"><img src = \"/shared/wow-com/images/layout/pixel.gif\" width = \"10\" height = \"1\"></td><td align=\"center\" width = \"100%\"><table cellspacing = \"0\" cellpadding = \"0\" border = \"0\" width = \"100%\" style = \"background-image: url(\\'/links/images/border-right.gif\\'); background-repeat: repeat-y; background-position: right;\">');",
+            "\tw.document.write('<tr><td align = center><table cellspacing = \"0\" cellpadding = \"0\" border = \"0\"><tr><td>');",
+            "\t",
+            "\tw.document.write(\"<h3><span style = 'color: #ffffff;'>Saving the Template</span></h3>\");\t",
+            "\tw.document.write(\"<span style = 'font-family: tahoma, arial; font-size: 10pt; color: #ffffff'><b>Copy the complete URL below:</b><br>\");",
+            "\tw.document.write(\"/info/classes/index.html\"+ nlclass +\"/talents.html?\" +templateString);\t\t",
+            "\t",
+            "\tw.document.write('</td></tr></table></td></tr></table></td><td background = \"/info/classes/includes-new/images/bot-box/right.gif\" valign = \"top\"><img src = \"/shared/wow-com/images/layout/pixel.gif\" width = \"14\" height = \"145\"></td></tr>');",
+            "\tw.document.write('\t<tr><td><img src = \"/info/classes/includes-new/images/bot-box/bot-left.gif\"></td>\t<td width = \"100%\" background = \"/info/classes/includes-new/images/bot-box/bot.gif\"></td>\t\t\t<td width = \"14\"><img src = \"/info/classes/includes-new/images/bot-box/bot-right.gif\"></td>\t\t</tr>\t\t</table>\t\t\t\t\t');"
+          ]
+        }
+      ]
+    },
+    {
+      "path": ".scratch/offline-non-gallery-20261021-v16/site/shared/global/talents/includes/printOutTop.js",
+      "sha256": "618c92c0d00c960f651aad4364a05e93cfb785df38b2b63902febaeb06d26f04",
+      "snippets": [
+        {
+          "start_line": 41,
+          "end_line": 48,
+          "text": [
+            "\tmassiveReplaceString += '<td><table border = \"0\" cellpadding = \"0\" cellspacing = \"0\">';",
+            "",
+            "\tmassiveReplaceString += '<tr><td class = \"tabletopleft\"></td>';",
+            "\tmassiveReplaceString += '<td class = \"tabletop\"></td>';",
+            "\tmassiveReplaceString += '<td class = \"tabletopright\"></td></tr>';",
+            "\t",
+            "\tmassiveReplaceString += '<tr><td class = \"tableleft\"></td>';",
+            "\tmassiveReplaceString += '<td style = \"background: url(\\''+ imgPath +'/'+ nlclass +'/images/'+ imgDir + treeName +'/background.jpg\\') #000000 0 0 no-repeat; \">';\t"
+          ]
+        },
+        {
+          "start_line": 63,
+          "end_line": 72,
+          "text": [
+            "\t\t\tmassiveReplaceString += '<table border = \"0\" cellspacing = \"0\" cellpadding = \"0\"><tr><td class = \"treePadding\">';",
+            "\t\t\tmassiveReplaceString += '<table border = \"0\" cellpadding = \"10\" cellspacing = \"0\">';",
+            "\t\t\t",
+            "\t\t\tfor (verticalCounter = 1; verticalCounter <= vertical; verticalCounter++)",
+            "\t\t\t{",
+            "\t\t\t\tmassiveReplaceString += \"<tr>\";",
+            "\t\t\t\tfor (horizontalCounter = 1; horizontalCounter <= horizontal; horizontalCounter++)",
+            "\t\t\t\t{",
+            "\t\t\t\t\tmassiveReplaceString += '<td class = \"tdPaddingTen\">';",
+            "\t\t\t\t\tif (talent[i] && talent[i][3] == horizontalCounter && talent[i][4] == verticalCounter)"
+          ]
+        },
+        {
+          "start_line": 296,
+          "end_line": 297,
+          "text": [
+            "massiveReplaceString += '<table border = \"0\" width = \"100%\" cellpadding = \"0\" cellspacing = \"0\"><tr><td><img src = \"'+ imgPath +'/includes/images/bot-box/top-left.gif\"></td><td background = \"'+ imgPath +'/includes/images/bot-box/top.gif\"><img src = \"'+ pixelGif +'\" height = \"1\" width = \"325\"></td><td><img src = \"'+ imgPath +'/includes/images/bot-box/top-right.gif\"></td></tr><tr><td background = \"'+ imgPath +'/includes/images/bot-box/left.gif\"><img src = \"'+ pixelGif +'\"></td><td style = \"padding: 7;\" bgcolor = \"#000000\" width = \"350\">';",
+            "massiveReplaceString += '<table width = \"100%\"><tr><td nowrap width = \"50%\"><span class = \"mySmallWhite\"><b>'+ textPointsLeft +'</b> <span id = \"tabPointsAvailable\" class = \"mySmallWhite\">'+ rankPoints +'</span><br><b>'+ textPointsSpent +'</b> <span id = \"modifyRankPoints\" class = \"mySmallWhite\">'+ eval(theRequiredLevel - 9) +'</span><br><b>'+ textLevelRequired +'</b> <span id = \"levelRequired\" class = \"mySmallWhite\">'+ theRequiredLevel +'</span></span></td>';"
+          ]
+        },
+        {
+          "start_line": 324,
+          "end_line": 325,
+          "text": [
+            "massiveReplaceString += '</td><td background = \"'+ imgPath +'/includes/images/bot-box/right.gif\"><img src = \"'+ pixelGif +'\"></td></tr>';",
+            "massiveReplaceString += '<tr><td><img src = \"'+ imgPath +'/includes/images/bot-box/bot-left.gif\"></td><td background = \"'+ imgPath +'/includes/images/bot-box/bot.gif\"><img src = \"'+ pixelGif +'\"></td><td><img src = \"'+ imgPath +'/includes/images/bot-box/bot-right.gif\"></td></tr></table>';"
+          ]
+        }
+      ]
+    }
+  ],
+  "geometry_contract": {
+    "top_row": [
+      "top-left.gif",
+      "top.gif",
+      "top-right.gif"
+    ],
+    "middle_row": [
+      "left.gif",
+      "inner_content",
+      "right.gif"
+    ],
+    "bottom_row": [
+      "bot-left.gif",
+      "bot.gif",
+      "bot-right.gif"
+    ],
+    "outer_table": "border=0, cellpadding=0, cellspacing=0, width=100%; localize.js repeats left/right backgrounds around inner tables; printOutTop uses 350px points cell with 325px top/bottom pixel spacer."
+  },
+  "browser_receipt": {
+    "path": "research/continuous-recovery-20261021/local-audit/talent-box-layout-review/browser-receipt-r1.json",
+    "sha256": "33febe9d65eac5fa2bb9068393ca6c064e129226734b00bc1d7a5d5383a8769b",
+    "route_sample": {
+      "path": "research/continuous-recovery-20261021/local-audit/talent-box-layout-review/route-sample-receipt.json",
+      "sha256": "29de97399ffefefb6f788c269ba2a20183ac5f7c29388a411647a5f406b29866"
+    }
+  },
+  "observed_rendered_box": {
+    "druid": {
+      "initial": {
+        "x": 545,
+        "y": 901.796875,
+        "right": 895,
+        "bottom": 1017.8125,
+        "width": 350,
+        "height": 116.015625
+      },
+      "after_add": {
+        "x": 545,
+        "y": 834.796875,
+        "right": 895,
+        "bottom": 950.8125,
+        "width": 350,
+        "height": 116.015625
+      },
+      "after_reset": {
+        "x": 545,
+        "y": 834.796875,
+        "right": 895,
+        "bottom": 950.8125,
+        "width": 350,
+        "height": 116.015625
+      }
+    },
+    "warrior": {
+      "initial": {
+        "x": 545,
+        "y": 901.796875,
+        "right": 895,
+        "bottom": 1017.8125,
+        "width": 350,
+        "height": 116.015625
+      },
+      "after_add": {
+        "x": 545,
+        "y": 834.796875,
+        "right": 895,
+        "bottom": 950.8125,
+        "width": 350,
+        "height": 116.015625
+      },
+      "after_reset": {
+        "x": 545,
+        "y": 834.796875,
+        "right": 895,
+        "bottom": 950.8125,
+        "width": 350,
+        "height": 116.015625
+      }
+    }
+  },
+  "closed_border": {
+    "druid": {
+      "initial": true,
+      "after_add": true,
+      "after_reset": true
+    },
+    "warrior": {
+      "initial": true,
+      "after_add": true,
+      "after_reset": true
+    }
+  },
+  "decision": "layout_compatibility_reuse",
+  "target_capture": null,
+  "external_network": {
+    "requests": 0,
+    "external_blocked": true
+  }
+}

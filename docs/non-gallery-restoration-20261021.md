@@ -1,6 +1,6 @@
 # 非图库内容复原：2026-10-21
 
-本轮从v39继续，优先恢复已有正文和交互。三处Flash兼容展示随v41上线；天赋计算器和BlizzCast阅读页已随v42发布，线上24个对象核对通过。离线包暂为v39。当前发布状态以[工作总账](../research/continuous-recovery-20261021/status.json)和[更新记录](../CHANGELOG.md)为准。
+本轮从v39继续，优先恢复已有正文和交互。三处Flash兼容展示随v41上线；天赋计算器和BlizzCast阅读页随v42发布。v45进一步加入专题正文与关联图标，45个线上对象核对完成，离线包暂为v39。当前发布状态以[工作总账](../research/continuous-recovery-20261021/status.json)和[更新记录](../CHANGELOG.md)为准。
 
 ## 天赋计算器
 
@@ -12,9 +12,9 @@
 
 主代理核对了合并集合，每个目标均不在v42实际文件、路由及来源表中。[逐职业盘点](../research/continuous-recovery-20261021/integration/talents/full-image-scope/README.md)与[可协作缺图清单](../research/continuous-recovery-20261021/publication/talent-missing-image-targets.json)可供后续寻找素材。此计数描述本地缺口，不判断所有网络存档均已缺失；悬停后才生成的状态图尚未覆盖。
 
-本地v45加入986张来自[CraftedRO的WotLK离线计算器备份](https://github.com/CraftedRO/Offline-talent-calculator-for-WotLK-3.3.5a/tree/4c8013cf40d0edf84625430eaf43b86d97880ae0)的同路径36×36图标。固定提交、源路径和原字节进入独立来源目录，页面注明后期关联来源，2008年天赋数据与脚本保持。树背景、近似技能名和跨职业图片没有自动接入。
+v45加入986张来自[CraftedRO的WotLK离线计算器备份](https://github.com/CraftedRO/Offline-talent-calculator-for-WotLK-3.3.5a/tree/4c8013cf40d0edf84625430eaf43b86d97880ae0)的同路径36×36图标。固定提交、源路径和原字节进入独立来源目录，页面注明后期关联来源，2008年天赋数据与脚本保持。树背景、近似技能名和跨职业图片没有自动接入。
 
-九职业实际完成加点、重置、非零模板保存、重开和刷新；主代理逐张查看了截图。静态占位与真实404合并后仍缺273个目标，含27张背景；[集合核对](../research/continuous-recovery-20261021/local-audit/v44/v44-gap-union-reconciliation.json)保留与初始清单的对应关系。这部分已本地验收，尚待随v45部署。
+九职业实际完成加点、重置、非零模板保存、重开和刷新；主代理逐张查看了截图。静态占位与真实404合并后仍缺273个目标，含27张背景；[集合核对](../research/continuous-recovery-20261021/local-audit/v44/v44-gap-union-reconciliation.json)保留与初始清单的对应关系。这部分已随v45部署。
 
 ## 新增主站正文
 
@@ -49,3 +49,9 @@ v42已核对全部输出对象、原有657个图片覆盖地址和三处Flash资
 Wayback在本轮00:49 UTC返回429后停批；Common Crawl静态数据取得成功只说明该独立端点可用。下载继续direct优先，备用代理只作用于下载进程。完整进度见[当日记录](continuous-recovery-20261021.md)。
 
 后续诊断观察到本机解析地址与两家DoH返回地址不同；对公共解析地址能建立TCP连接，但TLS握手仍被重置，未取得证书。因此尚未证明改DNS可以修复访问，也未改系统DNS、代理或证书。[诊断记录](../research/continuous-recovery-20261021/publication/root-wayback-dns-tls-diagnosis.json)
+
+## 界面与关联图源补充
+
+v46本地验收补入三色天赋状态框、Reset、Reset All及Printable Version六张界面图，另复用八片已有同站点数框GIF。九职业加点和重置检查通过，天赋缺图剩259个目标；准备部署。
+
+ArchiveCraft提供Alleria、塞纳里奥议会和玛法里奥三幅配图的新线索，当前JPEG已取得并查看，作为单独标注来源的关联补充准备接入。原始目标捕获仍未找到；未导入该站正文、评论、脚本或表单。

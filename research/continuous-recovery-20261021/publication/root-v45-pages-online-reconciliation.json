@@ -1,0 +1,64 @@
+{
+  "schema": "wow-pages-online-reconciliation/v1",
+  "accepted": true,
+  "version": "v45",
+  "checked_utc": "2026-10-21T07:56:58.786995+00:00",
+  "expected_pages_commit": "6b16f9144253974dfb235da37237a6e768e618c7",
+  "local_site": ".scratch/pages-resources-20261021-v45",
+  "accepted_objects": 45,
+  "reused_previously_accepted_objects": 44,
+  "newly_completed_objects": [
+    {
+      "path": "export-provenance.json",
+      "local_bytes": 10796953,
+      "local_sha256": "9556243ffc65dfe27f332ea4d45df71869617e8353f600061279a983528e544e",
+      "expected_mime": [
+        "application/json"
+      ],
+      "source_list": true,
+      "attempts": [
+        {
+          "transport": "direct",
+          "started_utc": "2026-10-21T07:55:37.986821+00:00",
+          "finished_utc": "2026-10-21T07:56:57.332771+00:00",
+          "curl_exit": 0,
+          "http_status": 200,
+          "content_type": "application/json; charset=utf-8",
+          "mime": "application/json",
+          "bytes": 10796953,
+          "sha256": "9556243ffc65dfe27f332ea4d45df71869617e8353f600061279a983528e544e",
+          "matches_local": true,
+          "stderr": "",
+          "budget_remaining_before": 25165824,
+          "disk_free_before_bytes": 32184184832
+        }
+      ],
+      "accepted": true
+    }
+  ],
+  "build_before": {
+    "command": "gh api repos/vvcchh0/WOW-Encyclopedia-Deployable-Archive/pages/builds/latest",
+    "returncode": 0,
+    "status": "built",
+    "commit": "6b16f9144253974dfb235da37237a6e768e618c7",
+    "updated_at": "2026-10-21T07:37:28Z",
+    "error": {
+      "message": null
+    }
+  },
+  "build_after": {
+    "command": "gh api repos/vvcchh0/WOW-Encyclopedia-Deployable-Archive/pages/builds/latest",
+    "returncode": 0,
+    "status": "built",
+    "commit": "6b16f9144253974dfb235da37237a6e768e618c7",
+    "updated_at": "2026-10-21T07:37:28Z",
+    "error": {
+      "message": null
+    }
+  },
+  "prior_receipt": "research/continuous-recovery-20261021/publication/root-v45-pages-online-acceptance.json",
+  "prior_receipt_sha256": "66b7d2f75f0b8c5737e7545715f88657cadabef970eda5499f674de911f866d1",
+  "focused_receipt": "research/continuous-recovery-20261021/publication/v45-provenance-online-retry01.json",
+  "focused_receipt_sha256": "25993d929725ebaca9d47bdfb8ffc8a30f3adee400215a0b3dc3ab23e32d59e3",
+  "reason": "Previous HTTP200 transfers ended at the 60-second timeout. Only the incomplete object was retried with a 180-second bound; all prior attempts remain preserved."
+}

@@ -1,0 +1,81 @@
+{
+  "schema": "wow-root-cc-pages02-content-acceptance/v1",
+  "accepted_acquisition": true,
+  "checked_utc": "2026-10-21T08:07:59.385051+00:00",
+  "accepted_source_entities": 3,
+  "new_pages": 0,
+  "source16_modified": false,
+  "records": [
+    {
+      "entity_id": "pages02-01",
+      "source_url": "http://www.worldofwarcraft.com/rss.xml",
+      "capture_timestamp": "20080509084129",
+      "arc_filename": "crawl-001/2008/06/19/11/1213893023449_11.arc.gz",
+      "offset": 59478594,
+      "compressed_length": 3834,
+      "payload_length": 11232,
+      "payload_sha256": "e2abaac7f5c1fd3ce2b4d0909ec524ddfc5c1559ee1f2c45631c8b01776e97b8",
+      "stored_http_status": 200,
+      "arc_record_length": 11732,
+      "stored_http_content_length": [],
+      "decision": "retain_source_only_existing_news_titles",
+      "rss_items": 9,
+      "new_reading_pages": 0,
+      "all_titles_in_existing_month_page": true,
+      "descriptions_not_imported": true
+    },
+    {
+      "entity_id": "pages02-05",
+      "source_url": "http://www.worldofwarcraft.com/info/basics/factions/cenarion/index.html",
+      "capture_timestamp": "20080511155950",
+      "arc_filename": "crawl-001/2008/06/25/7/1214440675884_7.arc.gz",
+      "offset": 94294296,
+      "compressed_length": 17058,
+      "payload_length": 131072,
+      "payload_sha256": "f4f4b7116dc9cc11c871f42991dd05a34efc35444473b2af50b77b25cb635d5e",
+      "stored_http_status": 200,
+      "arc_record_length": 131681,
+      "stored_http_content_length": [],
+      "decision": "reject_truncated_html_replacement",
+      "new_reading_pages": 0,
+      "reason": "Stored payload ends mid table markup at 128KiB with no body/html closure. ARC record length includes the HTTP header and is not an HTTP Content-Length."
+    },
+    {
+      "entity_id": "pages02-07",
+      "source_url": "http://www.worldofwarcraft.com/info/underdev/implemented/",
+      "capture_timestamp": "20080509071707",
+      "arc_filename": "crawl-001/2008/06/19/7/1213895270336_7.arc.gz",
+      "offset": 27234259,
+      "compressed_length": 13100,
+      "payload_length": 87103,
+      "payload_sha256": "a44073fd63297f19d9305c03d9064fed0be90f3d8734d16a0b8b3195194ee9e8",
+      "stored_http_status": 200,
+      "arc_record_length": 87729,
+      "stored_http_content_length": [],
+      "decision": "retain_source_only_duplicate_article",
+      "new_reading_pages": 0,
+      "normalized_article_text_sha256": "f625fc00d79667bb2864c9bbf0e86c3c87aad1bf725b473952e12c3e125d02c5",
+      "article_images_identical": true,
+      "current_source_sha256": "d0bd58b2bd6a116fb9eb83fa13c008cedb7efeb842b01b44f971ddaafd8f8c43"
+    }
+  ],
+  "bindings": [
+    {
+      "path": "research/continuous-recovery-20261021/network/commoncrawl-main-pages02/runtime-r2/curated-main-pages-sources-r2.json",
+      "sha256": "0d6aeaea625a62614b9a3fd4c78e068df4a8a819c4a5a17ae83254c78f40fff1"
+    },
+    {
+      "path": "research/continuous-recovery-20261021/network/commoncrawl-main-pages02/content-review-r2/curated-content-review-r2.json",
+      "sha256": "c0cbcf0816dbc2dad51ac6a708ea9128b4eb288dc5e3df9eb7fcb808b77e0362"
+    },
+    {
+      "path": ".scratch/offline-non-gallery-20261021-v16/build-manifest.json",
+      "sha256": "e81eaefffbe994178e46fe02e2afd761d0747b1dad36455c1b4b1d2bfeec7b9a"
+    },
+    {
+      "path": "tools/commoncrawl_arc.py",
+      "sha256": "50be2eb8c749da7aecfc58d06622eb30211e98399e17fbfdc94bedf6aefc7e6c"
+    }
+  ],
+  "raw_http_and_payloads_private": true
+}
