@@ -1,0 +1,61 @@
+{
+  "schema": "wow-recovery-tasks/v2",
+  "tasks": [
+    {
+      "id": "BASE01",
+      "owner": "root",
+      "goal": "Fresh Git/Pages/Release/process/disk/frozen-input baseline",
+      "state": "root_accepted_current_main_pages_release_and_frozen_hashes",
+      "dependencies": [],
+      "output": "publication/"
+    },
+    {
+      "id": "LOCAL01",
+      "owner": "local_non_gallery_20261021",
+      "goal": "Non-gallery active missing-resource and interaction audit with priority pages",
+      "state": "in_progress",
+      "dependencies": [],
+      "output": "local-audit/"
+    },
+    {
+      "id": "CONTROL01",
+      "owner": "network_non_gallery_20261021",
+      "goal": "Fresh reviewed known-positive exact-CDX control bound after latest gallery-audit 429",
+      "state": "prepare_only_wait_root_go",
+      "dependencies": [],
+      "output": "network/control01/"
+    },
+    {
+      "id": "NET01",
+      "owner": "network_non_gallery_20261021",
+      "goal": "Serial source-led non-gallery resource acquisition in reviewed bounded batches",
+      "state": "waiting_control_and_root_review",
+      "dependencies": [
+        "LOCAL01",
+        "CONTROL01"
+      ],
+      "output": "network/"
+    },
+    {
+      "id": "BUILD01",
+      "owner": "local_non_gallery_20261021",
+      "goal": "Implement accepted local repairs and integrate newly accepted entities into a new derived version",
+      "state": "waiting_root_design",
+      "dependencies": [
+        "LOCAL01"
+      ],
+      "output": "integration/"
+    },
+    {
+      "id": "FINAL",
+      "owner": "root",
+      "goal": "Independent actual-byte/browser acceptance, main sync, Pages and processed ZIP publication, deadline closeout",
+      "state": "pending",
+      "dependencies": [
+        "BASE01",
+        "BUILD01"
+      ],
+      "output": "publication/"
+    }
+  ]
+}
