@@ -1,0 +1,900 @@
+{
+  "schema": "wow-continuous-recovery-20261021/local-audit-phase2-v1",
+  "selected_site": ".scratch/pages-resources-20261020-v39",
+  "browser_receipt": "phase2-browser-receipt.json",
+  "targeted_interaction_receipt": "targeted-interactions.json",
+  "network_policy": "127.0.0.1:8124 only; non-loopback requests aborted; service workers blocked",
+  "timing": {
+    "browser_batch_finished_at_utc": "2026-10-21T01:58:09.520Z",
+    "browser_batch_elapsed_ms": 86169,
+    "browser_batch_start_estimate_utc": "2026-10-21T01:56:43.351Z",
+    "deviation": "The 20-minute static/browser batch was followed by a bounded talent error trace, two targeted interaction checks, and report generation. The follow-on work is retained as separate receipts; no further pages were added."
+  },
+  "selected_count": 34,
+  "checked_count": 34,
+  "status_counts": {
+    "200": 34
+  },
+  "pageerror_counts": {
+    "SyntaxError: Unexpected token ':'": 4,
+    "SyntaxError: Unexpected token ')'": 4
+  },
+  "local_http_error_count": 0,
+  "failed_local_request_count": 0,
+  "blocked_non_loopback_count": 0,
+  "findings": [
+    {
+      "id": "talent-shared-js-syntax",
+      "priority": "P1",
+      "category": "guide-interaction",
+      "status": "reproduced",
+      "pages": [
+        "/info/classes/druid/talents.html",
+        "/info/classes/hunter/talents.html",
+        "/info/classes/mage/talents.html",
+        "/info/classes/warrior/talents.html"
+      ],
+      "evidence": {
+        "browser": "Each of four pages emitted SyntaxError: Unexpected token : and SyntaxError: Unexpected token ) (2 pageerrors/page).",
+        "node_check": {
+          "failures": [
+            "shared/global/talents/includes/localize.js:51",
+            "shared/global/talents/includes/printOutTop.js:48"
+          ],
+          "other_loaded_scripts": "node --check passed for the other 16 loaded local scripts in the selected pages."
+        },
+        "dom": "#replaceMeWithTalents was null/empty; window.printOutTop, drawTree and talentTree were undefined."
+      },
+      "minimal_fix": "Repair the exporter/source transformation that inserts __offline/missing.html into quoted JavaScript strings at these two lines; preserve the original JS string delimiters. Re-run the four talent pages before considering all other class calculators.",
+      "local_assets": "No clean alternate copy of either broken shared script was found in the selected v39 asset tree."
+    },
+    {
+      "id": "zangarmarsh-reward-icons",
+      "priority": "P1",
+      "category": "guide-visible-content",
+      "status": "reproduced-visible",
+      "pages": [
+        "/info/basics/factions/zangarmarsh/zangarpvp.xml.html"
+      ],
+      "evidence": {
+        "browser": "HTTP 200, no pageerror/local request failure, but the viewport screenshot shows red-X placeholders in both reward columns.",
+        "counts": "18 honorholdtoken placeholders plus 12 item-icon placeholders (six unique item icons repeated for Alliance/Horde).",
+        "source": "info/basics/factions/zangarmarsh/scripts/rewards-zangarmarsh-tokens.js:58,114,137,157,177,197,218,239,309,332,352,372,392,414,435",
+        "interaction": "The Alliance and Horde javascript links both executed: allianceRewards and hordeRewards switched visibility without errors."
+      },
+      "minimal_fix": "Only supply exact local item/token assets or a source-backed mapping; do not substitute the semantically different Zandalar token.",
+      "local_assets": {
+        "exact_missing": [],
+        "near_candidate": "info/basics/factions/images/zandalar/honortoken.gif (13x13) exists but is a different faction token; not a safe replacement.",
+        "loaded_weapon_example": "pvp/images/honorweapons/grandmarshalscleaver.gif is already present and renders Terminal Edge/Splintermark; it does not cover the missing icons."
+      },
+      "screenshot": "screenshots/info_basics_factions_zangarmarsh_zangarpvp_xml_html.png"
+    },
+    {
+      "id": "dynamic-subnav-icons",
+      "priority": "P2",
+      "category": "navigation-visible-content",
+      "status": "reproduced-visible",
+      "pages": [
+        "/info/basics/factions/zandalar/quests.html",
+        "/info/basics/factions/zangarmarsh/zangarpvp.xml.html",
+        "/info/classes/druid/talents.html",
+        "/info/classes/hunter/talents.html",
+        "/info/classes/mage/talents.html",
+        "/info/classes/warrior/talents.html"
+      ],
+      "evidence": {
+        "browser": "Viewport screenshots show 59x65 red-X navigation-icon gaps on Zandalar and Zangarmarsh; class pages also report missing dynamic icon targets.",
+        "source": [
+          "info/basics/factions/zandalar/quests.html:529-531 (generic icon_<Menu>.jpg construction)",
+          "info/basics/factions/zangarmarsh/zangarpvp.xml.html:647 plus new-hp/js/xmlnavassist.js:6-8",
+          "info/classes/druid/talents.html:90-92 (same pattern in Hunter:88-90, Mage:89-91, Warrior:148-150)"
+        ],
+        "missing_targets": "icon_reputations.jpg, icon_player vs player.jpg, icon_character_black.gif, and recurring dot.gif; no exact local file was found for these names."
+      },
+      "minimal_fix": "Route/rewrite only the resulting dynamic subnav paths to exact local assets if an exact source-backed file is found; do not substitute icon_character.jpg for black/reputation/player-vs-player artwork without visual/source confirmation.",
+      "local_assets": {
+        "near_candidate": "shared/wow-com/images/subnav/icon_character.jpg exists (59x65) but is not any observed missing target."
+      },
+      "screenshots": [
+        "screenshots/info_basics_factions_zandalar_quests_html.png",
+        "screenshots/info_basics_factions_zangarmarsh_zangarpvp_xml_html.png"
+      ]
+    },
+    {
+      "id": "zandalar-border-fillers",
+      "priority": "P3",
+      "category": "guide-layout",
+      "status": "active-but-no-visible-collapse",
+      "pages": [
+        "/info/basics/factions/zandalar/quests.html"
+      ],
+      "evidence": {
+        "browser": "39 repeated 1x1 placeholder requests for http://imgs.worldofwarcraft.co.kr/images/b.gif; screenshot shows the reward panels and borders laid out without an obvious gap.",
+        "source": "info/basics/factions/zandalar/quests.html:701,705,756,760 and the same four-cell border pattern repeated through line 5388."
+      },
+      "minimal_fix": "Do not bulk-replace from a guessed b.gif. Existing candidates differ in dimensions/appearance: new-hp/images/smallcaps/b.gif (32x32), shared/wow-com/images/smallcaps/blue/b.gif (39x38), plain/b.gif (38x36), red/b.gif (40x38).",
+      "local_assets": {
+        "candidate_paths": [
+          "new-hp/images/smallcaps/b.gif",
+          "shared/wow-com/images/smallcaps/blue/b.gif",
+          "shared/wow-com/images/smallcaps/plain/b.gif",
+          "shared/wow-com/images/smallcaps/red/b.gif"
+        ]
+      },
+      "screenshot": "screenshots/info_basics_factions_zandalar_quests_html.png"
+    },
+    {
+      "id": "old-rss-image-gaps",
+      "priority": "P3",
+      "category": "news-media",
+      "status": "reproduced-missing-local-assets",
+      "pages": [
+        "/news/rss-10-2006.xml.html",
+        "/news/rss-11-2006.xml.html"
+      ],
+      "evidence": {
+        "browser": "rss-10-2006 had 18 missing images and rss-11-2006 had 13; other selected RSS pages had zero missing images. All requests were blocked/rewritten locally with no external traffic.",
+        "source": "Each target is an active img source in the corresponding RSS HTML; no exact local path was found under v39."
+      },
+      "minimal_fix": "Keep as unknown until exact local captures are found; do not fabricate or reuse unrelated screenshot/gallery media.",
+      "local_assets": {
+        "exact_missing": []
+      }
+    },
+    {
+      "id": "commented-alterac-map",
+      "priority": "excluded",
+      "category": "commented-content",
+      "status": "excluded-by-scope",
+      "pages": [
+        "/pvp/battlegrounds/info-alteracvalley.html"
+      ],
+      "evidence": {
+        "source": "pvp/battlegrounds/info-alteracvalley.html:691-714 wraps the corpse-loot map and its area href=viewDiv(8).",
+        "targeted_browser": "The hidden area element was callable by DOM evaluation and emitted Cannot read properties of null (reading style), but it is not visible user content and is inside the commented block."
+      },
+      "minimal_fix": "No repair in this batch; retain as commented/hidden evidence per scope."
+    }
+  ],
+  "missing_targets": [
+    {
+      "requested": "http://imgs.worldofwarcraft.co.kr/images/b.gif",
+      "occurrences": 39,
+      "pages": [
+        "/info/basics/factions/zandalar/quests.html"
+      ],
+      "source_refs": [
+        "info/basics/factions/zandalar/quests.html:1014",
+        "info/basics/factions/zandalar/quests.html:1018",
+        "info/basics/factions/zandalar/quests.html:1069",
+        "info/basics/factions/zandalar/quests.html:1073",
+        "info/basics/factions/zandalar/quests.html:1096",
+        "info/basics/factions/zandalar/quests.html:1100",
+        "info/basics/factions/zandalar/quests.html:1152",
+        "info/basics/factions/zandalar/quests.html:1156",
+        "info/basics/factions/zandalar/quests.html:1240",
+        "info/basics/factions/zandalar/quests.html:1244",
+        "info/basics/factions/zandalar/quests.html:1296",
+        "info/basics/factions/zandalar/quests.html:1300",
+        "info/basics/factions/zandalar/quests.html:1323",
+        "info/basics/factions/zandalar/quests.html:1327",
+        "info/basics/factions/zandalar/quests.html:1350",
+        "info/basics/factions/zandalar/quests.html:1354",
+        "info/basics/factions/zandalar/quests.html:1381",
+        "info/basics/factions/zandalar/quests.html:1385",
+        "info/basics/factions/zandalar/quests.html:1437",
+        "info/basics/factions/zandalar/quests.html:1441",
+        "info/basics/factions/zandalar/quests.html:1464",
+        "info/basics/factions/zandalar/quests.html:1468",
+        "info/basics/factions/zandalar/quests.html:1521",
+        "info/basics/factions/zandalar/quests.html:1525",
+        "info/basics/factions/zandalar/quests.html:701",
+        "info/basics/factions/zandalar/quests.html:705",
+        "info/basics/factions/zandalar/quests.html:756",
+        "info/basics/factions/zandalar/quests.html:760",
+        "info/basics/factions/zandalar/quests.html:784",
+        "info/basics/factions/zandalar/quests.html:788",
+        "info/basics/factions/zandalar/quests.html:811",
+        "info/basics/factions/zandalar/quests.html:815",
+        "info/basics/factions/zandalar/quests.html:843",
+        "info/basics/factions/zandalar/quests.html:847",
+        "info/basics/factions/zandalar/quests.html:898",
+        "info/basics/factions/zandalar/quests.html:902",
+        "info/basics/factions/zandalar/quests.html:924",
+        "info/basics/factions/zandalar/quests.html:928",
+        "info/basics/factions/zandalar/quests.html:979",
+        "info/basics/factions/zandalar/quests.html:983"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/shared/wow-com/images/subnav/dot.gif",
+      "occurrences": 19,
+      "pages": [
+        "/community/fansites.html",
+        "/community/machinima/movies.html",
+        "/community/stories/stories.xml.html",
+        "/community/tournaments/lanwar.html",
+        "/downloads/movies.html",
+        "/downloads/sounds.html",
+        "/info/basics/factions/zangarmarsh/zangarpvp.xml.html",
+        "/info/basics/questlevels.html",
+        "/info/basics/reputation.html",
+        "/info/basics/talents.html",
+        "/info/classes/druid/talents.html",
+        "/info/classes/hunter/talents.html",
+        "/info/classes/mage/talents.html",
+        "/info/classes/warrior/talents.html",
+        "/info/professions/alchemy.html",
+        "/info/professions/fishing.html",
+        "/info/professions/herbalism.html",
+        "/info/professions/mining.html",
+        "/pvp/ranks.html"
+      ],
+      "source_refs": [
+        "shared/wow-com/includes-client/navtreefunctions.js:23"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "/info/basics/factions/images/icons/honorholdtoken.gif",
+      "occurrences": 18,
+      "pages": [
+        "/info/basics/factions/zangarmarsh/zangarpvp.xml.html"
+      ],
+      "source_refs": [
+        "info/basics/factions/zangarmarsh/scripts/rewards-zangarmarsh-tokens.js:16",
+        "info/basics/factions/zangarmarsh/scripts/rewards-zangarmarsh-tokens.js:58"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "/shared/wow-com/images/subnav/icon_community.jpg",
+      "occurrences": 6,
+      "pages": [
+        "/community/fansites.html",
+        "/community/index.html",
+        "/community/machinima/movies.html",
+        "/community/reallifeevents.html",
+        "/community/stories/stories.xml.html",
+        "/community/tournaments/lanwar.html"
+      ],
+      "source_refs": [
+        "community/fansites.html:391",
+        "community/fansites.html:393",
+        "community/index.html:371",
+        "community/index.html:373",
+        "community/machinima/movies.html:355",
+        "community/machinima/movies.html:357",
+        "community/reallifeevents.html:378",
+        "community/reallifeevents.html:380",
+        "community/tournaments/lanwar.html:473",
+        "community/tournaments/lanwar.html:475"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "/shared/wow-com/images/subnav/icon_character_black.gif",
+      "occurrences": 4,
+      "pages": [
+        "/info/classes/druid/talents.html",
+        "/info/classes/hunter/talents.html",
+        "/info/classes/mage/talents.html",
+        "/info/classes/warrior/talents.html"
+      ],
+      "source_refs": [
+        "info/classes/druid/talents.html:90",
+        "info/classes/druid/talents.html:92",
+        "info/classes/hunter/talents.html:88",
+        "info/classes/hunter/talents.html:90",
+        "info/classes/mage/talents.html:89",
+        "info/classes/mage/talents.html:91",
+        "info/classes/warrior/talents.html:148",
+        "info/classes/warrior/talents.html:150"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "/shared/wow-com/images/subnav/icon_player vs player.jpg",
+      "occurrences": 4,
+      "pages": [
+        "/info/basics/factions/zangarmarsh/zangarpvp.xml.html",
+        "/pvp/battlegrounds/info-alteracvalley.html",
+        "/pvp/index.html",
+        "/pvp/ranks.html"
+      ],
+      "source_refs": [
+        "pvp/battlegrounds/info-alteracvalley.html:508",
+        "pvp/battlegrounds/info-alteracvalley.html:510",
+        "pvp/index.html:395",
+        "pvp/index.html:397",
+        "pvp/ranks.html:378",
+        "pvp/ranks.html:380"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "/shared/wow-com/images/subnav/icon_media.jpg",
+      "occurrences": 2,
+      "pages": [
+        "/downloads/movies.html",
+        "/downloads/sounds.html"
+      ],
+      "source_refs": [
+        "downloads/movies.html:337",
+        "downloads/movies.html:339",
+        "downloads/sounds.html:396",
+        "downloads/sounds.html:398"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "/shared/wow-com/images/subnav/icon_reputations.jpg",
+      "occurrences": 2,
+      "pages": [
+        "/info/basics/factions/zandalar/quests.html",
+        "/info/basics/reputation.html"
+      ],
+      "source_refs": [
+        "info/basics/factions/zandalar/quests.html:529",
+        "info/basics/factions/zandalar/quests.html:531",
+        "info/basics/reputation.html:382",
+        "info/basics/reputation.html:384"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/info/basics/factions/images/icons/INV_Jewelry_Necklace_16.gif",
+      "occurrences": 2,
+      "pages": [
+        "/info/basics/factions/zangarmarsh/zangarpvp.xml.html"
+      ],
+      "source_refs": [
+        "info/basics/factions/zangarmarsh/scripts/rewards-zangarmarsh-tokens.js:197",
+        "info/basics/factions/zangarmarsh/scripts/rewards-zangarmarsh-tokens.js:392"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/info/basics/factions/images/icons/INV_LibramofTruth.gif",
+      "occurrences": 2,
+      "pages": [
+        "/info/basics/factions/zangarmarsh/zangarpvp.xml.html"
+      ],
+      "source_refs": [
+        "info/basics/factions/zangarmarsh/scripts/rewards-zangarmarsh-tokens.js:137",
+        "info/basics/factions/zangarmarsh/scripts/rewards-zangarmarsh-tokens.js:332"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/info/basics/factions/images/icons/INV_Misc_ArmorKit_12.gif",
+      "occurrences": 2,
+      "pages": [
+        "/info/basics/factions/zangarmarsh/zangarpvp.xml.html"
+      ],
+      "source_refs": [
+        "info/basics/factions/zangarmarsh/scripts/rewards-zangarmarsh-tokens.js:218",
+        "info/basics/factions/zangarmarsh/scripts/rewards-zangarmarsh-tokens.js:414"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/info/basics/factions/images/icons/INV_QirajiIdol_Sun.gif",
+      "occurrences": 2,
+      "pages": [
+        "/info/basics/factions/zangarmarsh/zangarpvp.xml.html"
+      ],
+      "source_refs": [
+        "info/basics/factions/zangarmarsh/scripts/rewards-zangarmarsh-tokens.js:239",
+        "info/basics/factions/zangarmarsh/scripts/rewards-zangarmarsh-tokens.js:435"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/info/basics/factions/images/icons/INV_Wand_11.gif",
+      "occurrences": 2,
+      "pages": [
+        "/info/basics/factions/zangarmarsh/zangarpvp.xml.html"
+      ],
+      "source_refs": [
+        "info/basics/factions/zangarmarsh/scripts/rewards-zangarmarsh-tokens.js:114",
+        "info/basics/factions/zangarmarsh/scripts/rewards-zangarmarsh-tokens.js:309"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/info/basics/factions/images/icons/idolofsavagery.gif",
+      "occurrences": 2,
+      "pages": [
+        "/info/basics/factions/zangarmarsh/zangarpvp.xml.html"
+      ],
+      "source_refs": [
+        "info/basics/factions/zangarmarsh/scripts/rewards-zangarmarsh-tokens.js:177",
+        "info/basics/factions/zangarmarsh/scripts/rewards-zangarmarsh-tokens.js:372"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/info/basics/factions/images/icons/totemofimpact.gif",
+      "occurrences": 2,
+      "pages": [
+        "/info/basics/factions/zangarmarsh/zangarpvp.xml.html"
+      ],
+      "source_refs": [
+        "info/basics/factions/zangarmarsh/scripts/rewards-zangarmarsh-tokens.js:157",
+        "info/basics/factions/zangarmarsh/scripts/rewards-zangarmarsh-tokens.js:352"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "/shared/wow-com/images/subnav/icon_getting started.jpg",
+      "occurrences": 1,
+      "pages": [
+        "/info/basics/questlevels.html"
+      ],
+      "source_refs": [
+        "info/basics/questlevels.html:411",
+        "info/basics/questlevels.html:413"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/news/images/06-10/10-12-06-1.jpg",
+      "occurrences": 1,
+      "pages": [
+        "/news/rss-10-2006.xml.html"
+      ],
+      "source_refs": [
+        "news/rss-10-2006.xml.html:2983"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/news/images/06-10/10-12-06-2.jpg",
+      "occurrences": 1,
+      "pages": [
+        "/news/rss-10-2006.xml.html"
+      ],
+      "source_refs": [
+        "news/rss-10-2006.xml.html:2984"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/news/images/06-10/10-12-06-3.jpg",
+      "occurrences": 1,
+      "pages": [
+        "/news/rss-10-2006.xml.html"
+      ],
+      "source_refs": [
+        "news/rss-10-2006.xml.html:2985"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/news/images/06-10/10-19-06-1.jpg",
+      "occurrences": 1,
+      "pages": [
+        "/news/rss-10-2006.xml.html"
+      ],
+      "source_refs": [
+        "news/rss-10-2006.xml.html:2384"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/news/images/06-10/10-19-06-2.jpg",
+      "occurrences": 1,
+      "pages": [
+        "/news/rss-10-2006.xml.html"
+      ],
+      "source_refs": [
+        "news/rss-10-2006.xml.html:2385"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/news/images/06-10/10-19-06-3.jpg",
+      "occurrences": 1,
+      "pages": [
+        "/news/rss-10-2006.xml.html"
+      ],
+      "source_refs": [
+        "news/rss-10-2006.xml.html:2386"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/news/images/06-10/10-24-06-1.jpg",
+      "occurrences": 1,
+      "pages": [
+        "/news/rss-10-2006.xml.html"
+      ],
+      "source_refs": [
+        "news/rss-10-2006.xml.html:2046"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/news/images/06-10/10-24-06-2.jpg",
+      "occurrences": 1,
+      "pages": [
+        "/news/rss-10-2006.xml.html"
+      ],
+      "source_refs": [
+        "news/rss-10-2006.xml.html:2047"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/news/images/06-10/10-24-06-3.jpg",
+      "occurrences": 1,
+      "pages": [
+        "/news/rss-10-2006.xml.html"
+      ],
+      "source_refs": [
+        "news/rss-10-2006.xml.html:2048"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/news/images/06-10/costume01.jpg",
+      "occurrences": 1,
+      "pages": [
+        "/news/rss-10-2006.xml.html"
+      ],
+      "source_refs": [
+        "news/rss-10-2006.xml.html:739"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/news/images/06-10/costume02.jpg",
+      "occurrences": 1,
+      "pages": [
+        "/news/rss-10-2006.xml.html"
+      ],
+      "source_refs": [
+        "news/rss-10-2006.xml.html:739"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/news/images/06-10/pumpkin01.jpg",
+      "occurrences": 1,
+      "pages": [
+        "/news/rss-10-2006.xml.html"
+      ],
+      "source_refs": [
+        "news/rss-10-2006.xml.html:752"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/news/images/06-10/pumpkin02.jpg",
+      "occurrences": 1,
+      "pages": [
+        "/news/rss-10-2006.xml.html"
+      ],
+      "source_refs": [
+        "news/rss-10-2006.xml.html:752"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/news/images/06-10/screenshot01.jpg",
+      "occurrences": 1,
+      "pages": [
+        "/news/rss-10-2006.xml.html"
+      ],
+      "source_refs": [
+        "news/rss-10-2006.xml.html:4479"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/news/images/06-10/screenshot02.jpg",
+      "occurrences": 1,
+      "pages": [
+        "/news/rss-10-2006.xml.html"
+      ],
+      "source_refs": [
+        "news/rss-10-2006.xml.html:3229"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/news/images/06-10/silvermoonthumb.jpg",
+      "occurrences": 1,
+      "pages": [
+        "/news/rss-10-2006.xml.html"
+      ],
+      "source_refs": [
+        "news/rss-10-2006.xml.html:2221"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/news/images/06-10/tcg-deathdealer.jpg",
+      "occurrences": 1,
+      "pages": [
+        "/news/rss-10-2006.xml.html"
+      ],
+      "source_refs": [
+        "news/rss-10-2006.xml.html:832"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/news/images/06-10/tcg-zormstonefury.jpg",
+      "occurrences": 1,
+      "pages": [
+        "/news/rss-10-2006.xml.html"
+      ],
+      "source_refs": [
+        "news/rss-10-2006.xml.html:1222"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/news/images/06-11/11-2-06-1.jpg",
+      "occurrences": 1,
+      "pages": [
+        "/news/rss-11-2006.xml.html"
+      ],
+      "source_refs": [
+        "news/rss-11-2006.xml.html:4233"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/news/images/06-11/11-2-06-2.jpg",
+      "occurrences": 1,
+      "pages": [
+        "/news/rss-11-2006.xml.html"
+      ],
+      "source_refs": [
+        "news/rss-11-2006.xml.html:4234"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/news/images/06-11/11-2-06-3.jpg",
+      "occurrences": 1,
+      "pages": [
+        "/news/rss-11-2006.xml.html"
+      ],
+      "source_refs": [
+        "news/rss-11-2006.xml.html:4235"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/news/images/06-11/11-30-06-1.jpg",
+      "occurrences": 1,
+      "pages": [
+        "/news/rss-11-2006.xml.html"
+      ],
+      "source_refs": [
+        "news/rss-11-2006.xml.html:662"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/news/images/06-11/11-30-06-2.jpg",
+      "occurrences": 1,
+      "pages": [
+        "/news/rss-11-2006.xml.html"
+      ],
+      "source_refs": [
+        "news/rss-11-2006.xml.html:663"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/news/images/06-11/11-30-06-3.jpg",
+      "occurrences": 1,
+      "pages": [
+        "/news/rss-11-2006.xml.html"
+      ],
+      "source_refs": [
+        "news/rss-11-2006.xml.html:664"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/news/images/06-11/11-9-06-1.jpg",
+      "occurrences": 1,
+      "pages": [
+        "/news/rss-11-2006.xml.html"
+      ],
+      "source_refs": [
+        "news/rss-11-2006.xml.html:3157"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/news/images/06-11/11-9-06-2.jpg",
+      "occurrences": 1,
+      "pages": [
+        "/news/rss-11-2006.xml.html"
+      ],
+      "source_refs": [
+        "news/rss-11-2006.xml.html:3158"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/news/images/06-11/11-9-06-3.jpg",
+      "occurrences": 1,
+      "pages": [
+        "/news/rss-11-2006.xml.html"
+      ],
+      "source_refs": [
+        "news/rss-11-2006.xml.html:3159"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/news/images/06-11/tcg-chromie.jpg",
+      "occurrences": 1,
+      "pages": [
+        "/news/rss-11-2006.xml.html"
+      ],
+      "source_refs": [
+        "news/rss-11-2006.xml.html:1729"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/news/images/06-11/tcg-facesmash.jpg",
+      "occurrences": 1,
+      "pages": [
+        "/news/rss-11-2006.xml.html"
+      ],
+      "source_refs": [
+        "news/rss-11-2006.xml.html:1113"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/news/images/06-11/tcg-retribution.jpg",
+      "occurrences": 1,
+      "pages": [
+        "/news/rss-11-2006.xml.html"
+      ],
+      "source_refs": [
+        "news/rss-11-2006.xml.html:3461"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    },
+    {
+      "requested": "http://www.worldofwarcraft.com/news/images/06-11/wowmarriage.jpg",
+      "occurrences": 1,
+      "pages": [
+        "/news/rss-11-2006.xml.html"
+      ],
+      "source_refs": [
+        "news/rss-11-2006.xml.html:1583"
+      ],
+      "active_or_commented": "active",
+      "local_exact_asset": null
+    }
+  ],
+  "priority_pages": [
+    {
+      "priority": 1,
+      "page": "/info/classes/druid/talents.html",
+      "reason": "shared talent calculator syntax failure; visible calculator never initializes"
+    },
+    {
+      "priority": 2,
+      "page": "/info/classes/hunter/talents.html",
+      "reason": "same shared syntax failure"
+    },
+    {
+      "priority": 3,
+      "page": "/info/classes/mage/talents.html",
+      "reason": "same shared syntax failure"
+    },
+    {
+      "priority": 4,
+      "page": "/info/classes/warrior/talents.html",
+      "reason": "same shared syntax failure"
+    },
+    {
+      "priority": 5,
+      "page": "/info/basics/factions/zangarmarsh/zangarpvp.xml.html",
+      "reason": "visible reward icons missing; Alliance/Horde switch itself works"
+    },
+    {
+      "priority": 6,
+      "page": "/info/basics/factions/zandalar/quests.html",
+      "reason": "visible subnav icon gap; 1x1 border fillers show no layout collapse"
+    },
+    {
+      "priority": 7,
+      "page": "/info/basics/reputation.html",
+      "reason": "same missing reputation subnav target"
+    },
+    {
+      "priority": 8,
+      "page": "/pvp/index.html",
+      "reason": "same missing Player vs Player subnav target"
+    },
+    {
+      "priority": 9,
+      "page": "/downloads/movies.html",
+      "reason": "same missing Media subnav target"
+    },
+    {
+      "priority": 10,
+      "page": "/community/index.html",
+      "reason": "same missing Community subnav target"
+    }
+  ],
+  "commented_or_excluded": [
+    {
+      "id": "commented-alterac-map",
+      "priority": "excluded",
+      "category": "commented-content",
+      "status": "excluded-by-scope",
+      "pages": [
+        "/pvp/battlegrounds/info-alteracvalley.html"
+      ],
+      "evidence": {
+        "source": "pvp/battlegrounds/info-alteracvalley.html:691-714 wraps the corpse-loot map and its area href=viewDiv(8).",
+        "targeted_browser": "The hidden area element was callable by DOM evaluation and emitted Cannot read properties of null (reading style), but it is not visible user content and is inside the commented block."
+      },
+      "minimal_fix": "No repair in this batch; retain as commented/hidden evidence per scope."
+    }
+  ]
+}

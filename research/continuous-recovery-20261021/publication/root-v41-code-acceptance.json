@@ -1,0 +1,46 @@
+{
+  "accepted": true,
+  "scope": "compatibility_code_with_overlay_fix_pending_full_browser",
+  "checked_utc": "2026-10-21T02:09:37.610282+00:00",
+  "code_bindings": [
+    {
+      "path": "tools/export_github_pages.py",
+      "sha256": "85acb3d12ce130b5e131f9278e1156573a20e7b4de175f48aae8d8a657442198"
+    },
+    {
+      "path": "tools/non_gallery_compat.py",
+      "sha256": "686a7c957e23228661f09e5cd6ebdb123393a2da7f66720b1ed45d25243a3f5f"
+    },
+    {
+      "path": "tools/offline_flash.py",
+      "sha256": "46144880d8ccbb4bf005c38cd559be458574b2eea4d95314f5d81fb26638b8d6"
+    },
+    {
+      "path": "tools/browser_assets/offline-flash.js",
+      "sha256": "6a4377a0cd3c916a8865c9a63a98511c66e2f00389c0fdb01cc68cac05c1adab"
+    },
+    {
+      "path": "tests/test_non_gallery_compat.py",
+      "sha256": "7726de664a9faca714b85e951dde712915ffe9b7a89592c6c70dca5f875471e6"
+    },
+    {
+      "path": "tests/test_offline_flash.py",
+      "sha256": "57aa802daa1a6ab8ec55609f5e495dca500f1b28f135c92791ec70eff9d21d0a"
+    },
+    {
+      "path": "tests/test_github_pages_export.py",
+      "sha256": "99bbfbdba199327a1fbcec41ff39660db245851c5845555d811619edf379c898"
+    }
+  ],
+  "prior_code_acceptance": "research/continuous-recovery-20261021/publication/root-compat-code-acceptance.json",
+  "change": "Set unmuteOverlay hidden for the three manual graphical Flash exhibits; all player security controls and sources unchanged",
+  "checks": {
+    "prior_exporter_suite_passed": 44,
+    "post_change_targeted_units_passed": 10,
+    "node_syntax_exit_code": 0
+  },
+  "primary_contract": "https://ruffle.rs/js-docs/master/interfaces/Config.BaseLoadOptions.html#unmuteOverlay",
+  "pinned_runtime_support_confirmed_locally": true,
+  "full_browser_accepted": false,
+  "v40_status": "Frozen unpublished candidate; functional checks passed but mute overlay obscures models"
+}

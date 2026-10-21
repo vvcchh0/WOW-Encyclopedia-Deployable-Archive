@@ -13,7 +13,7 @@
       "id": "LOCAL01",
       "owner": "local_non_gallery_20261021",
       "goal": "Non-gallery active missing-resource and interaction audit with priority pages",
-      "state": "in_progress",
+      "state": "root_reviewed_static_and_browser_findings",
       "dependencies": [],
       "output": "local-audit/"
     },
@@ -21,7 +21,7 @@
       "id": "CONTROL01",
       "owner": "network_non_gallery_20261021",
       "goal": "Fresh reviewed known-positive exact-CDX control bound after latest gallery-audit 429",
-      "state": "prepare_only_wait_root_go",
+      "state": "root_accepted429_no_wayback_resume",
       "dependencies": [],
       "output": "network/control01/"
     },
@@ -29,10 +29,9 @@
       "id": "NET01",
       "owner": "network_non_gallery_20261021",
       "goal": "Serial source-led non-gallery resource acquisition in reviewed bounded batches",
-      "state": "waiting_control_and_root_review",
+      "state": "commoncrawl_sources_accepted_wayback_still_stopped429",
       "dependencies": [
-        "LOCAL01",
-        "CONTROL01"
+        "LOCAL01"
       ],
       "output": "network/"
     },
@@ -40,22 +39,42 @@
       "id": "BUILD01",
       "owner": "local_non_gallery_20261021",
       "goal": "Implement accepted local repairs and integrate newly accepted entities into a new derived version",
-      "state": "waiting_root_design",
+      "state": "v41_local_accepted_pending_main_pages",
       "dependencies": [
         "LOCAL01"
       ],
-      "output": "integration/"
+      "output": "integration/compat/"
     },
     {
       "id": "FINAL",
       "owner": "root",
       "goal": "Independent actual-byte/browser acceptance, main sync, Pages and processed ZIP publication, deadline closeout",
-      "state": "pending",
+      "state": "v41_publication_preparation_with_current_scope_continuing",
       "dependencies": [
         "BASE01",
         "BUILD01"
       ],
       "output": "publication/"
+    },
+    {
+      "id": "TALENT01",
+      "owner": "local_non_gallery_20261021",
+      "goal": "Repair exact two quoted-CSS talent scripts and verify actual point allocation/reset/template behavior",
+      "state": "implementing_bounded_source_guard",
+      "dependencies": [
+        "LOCAL01"
+      ],
+      "output": "integration/talents/"
+    },
+    {
+      "id": "BLIZZ01",
+      "owner": "network_non_gallery_20261021",
+      "goal": "Render five accepted BlizzCast sources as sanitized local historical reading pages",
+      "state": "module_and_units_prepared_actual_browser_pending",
+      "dependencies": [
+        "NET01"
+      ],
+      "output": "integration/blizzcast-reader/"
     }
   ]
 }

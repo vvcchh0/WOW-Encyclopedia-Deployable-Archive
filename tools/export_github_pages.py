@@ -51,6 +51,8 @@ import offline_mirror as mirror  # noqa: E402
 import historical_exhibits  # noqa: E402
 import guide_previews  # noqa: E402
 import guide_image_collections  # noqa: E402
+import non_gallery_compat  # noqa: E402
+import offline_flash  # noqa: E402
 from toplist_compat import ToplistCompatError, rewrite_toplist_script  # noqa: E402
 
 
@@ -2756,6 +2758,7 @@ def export_pages(
     allow_later_image_supplements: bool = False,
     guide_preview_map: Path | None = None,
     guide_image_collection_map: Path | None = None,
+    flash_runtime_archive: Path | None = None,
 ) -> dict[str, Any]:
     source_site = source_site.resolve()
     manifest_path = manifest_path.resolve()
@@ -2811,7 +2814,11 @@ def export_pages(
     )
     overlays = primary_overlays + supplement_overlays
     overlay_bytes = primary_overlay_bytes + supplement_overlay_bytes
-    estimate = output_estimate(records, overlay_bytes)
+    # The optional emulator is a derived browser dependency.  Its conservative
+    # allowance is separate from original image payloads and checked before any
+    # output is staged.
+    flash_estimate = 80 * 1024 * 1024 if flash_runtime_archive is not None else 0
+    estimate = output_estimate(records, overlay_bytes + flash_estimate)
     if max_bytes is not None and before_workspace + estimate >= max_bytes:
         raise PagesExportError(f"workspace budget exceeded before export: {before_workspace}+{estimate} >= {max_bytes}")
     if free_before - estimate < min_free_bytes:
@@ -2937,7 +2944,61 @@ def export_pages(
         stats["guide_image_collection_images"] = guide_image_collection_bundle.image_count
     partial.mkdir(parents=True, exist_ok=False)
     promotion_attempted = False
+    flash_bundle: dict[str, Any] | None = None
     try:
+        if flash_runtime_archive is not None:
+            # All three archived movies must already be exact frozen inputs.
+            # This opt-in never introduces an arbitrary SWF or plugin loader.
+            for exhibit in offline_flash.SWF_EXHIBITS.values():
+                source_record = route_records.get("/" + exhibit["path"])
+                if source_record is None or source_record.get("derived_sha256") != exhibit["sha256"]:
+                    raise PagesExportError(f"validated Flash source is absent or differs: {exhibit['path']}")
+            try:
+                staged_flash = offline_flash.stage_runtime(
+                    partial,
+                    archive_path=Path(flash_runtime_archive),
+                    base_path=base_path,
+                    min_free_bytes=min_free_bytes,
+                )
+            except offline_flash.OfflineFlashError as exc:
+                raise PagesExportError(str(exc)) from exc
+            runtime_rows = []
+            for runtime_file in staged_flash["files"]:
+                relative = str(runtime_file["output_path"])
+                runtime_route = "/" + relative
+                if relative in relative_paths or runtime_route in route_lookup:
+                    raise PagesExportError(f"Flash runtime collides with a source route: {relative}")
+                relative_paths.add(relative)
+                route_lookup[runtime_route] = static_url(base_path, relative)
+                provenance.append({
+                    "route": runtime_route,
+                    "static_url": static_url(base_path, relative),
+                    "output_path": relative,
+                    "source_offline_path": None,
+                    "source_manifest_sha256": None,
+                    "source_manifest_length": None,
+                    "source_sha256": runtime_file["source_sha256"],
+                    "source_length": runtime_file["length"],
+                    "derived_sha256": runtime_file["sha256"],
+                    "derived_length": runtime_file["length"],
+                    "mime": runtime_file["mime"],
+                    "kind": runtime_file["kind"],
+                    "role": "optional_flash_exhibit_compatibility",
+                    "transformed": False,
+                    "source_member": runtime_file.get("source_member"),
+                    "runtime_version": staged_flash["runtime_version"],
+                })
+                runtime_rows.append({key: runtime_file[key] for key in ("output_path", "sha256", "length", "kind")})
+            flash_bundle = {
+                "runtime_version": staged_flash["runtime_version"],
+                "archive_sha256": staged_flash["archive_sha256"],
+                "runtime_release": "https://github.com/ruffle-rs/ruffle/releases/tag/v0.7.1",
+                "runtime_license": "MIT OR Apache-2.0",
+                "files": runtime_rows,
+                "original_swfs": offline_flash.SWF_EXHIBITS,
+                "policy": "manual players on three exact pages; no global polyfill or historical business Flash",
+            }
+            stats["flash_runtime_files"] = len(runtime_rows)
         # Copy/derive every frozen entity.  Verification is against the
         # derived bytes named by offline/build-manifest.json, not an inferred
         # source path, so ZIP-backed and generated source records are safe.
@@ -3011,6 +3072,29 @@ def export_pages(
                     base_path=base_path,
                     source_metadata={"actual_timestamp": str(record.get("actual_timestamp") or "")},
                 )
+                try:
+                    text, compat_stats = non_gallery_compat.transform_html(text, route=route)
+                except non_gallery_compat.NonGalleryCompatError as exc:
+                    raise PagesExportError(str(exc)) from exc
+                if compat_stats["changed"]:
+                    stats["non_gallery_compat_pages"] += 1
+                    stats["downloads_hover_repaired"] += compat_stats["downloads_hover_fixes"]
+                    stats["menu_header_labels_repaired"] += compat_stats["menu_label_count"]
+                    derivation_notes.append(
+                        "derived shared menu labels and exact measured downloads hover repair; historical source unchanged"
+                    )
+                if flash_bundle is not None:
+                    try:
+                        text, flash_stats = offline_flash.rewrite_page(
+                            text, route="/" + static_rel_for_route(route, record), base_path=base_path,
+                        )
+                    except offline_flash.OfflineFlashError as exc:
+                        raise PagesExportError(str(exc)) from exc
+                    if flash_stats.get("helper_injected"):
+                        stats["flash_exhibit_pages"] += 1
+                        derivation_notes.append(
+                            "manual Ruffle compatibility for byte-verified preserved Flash content on this exact page"
+                        )
                 if guide_preview_bundle is not None:
                     guide_group = guide_preview_bundle.group_for_gallery(route)
                     if guide_group is not None:
@@ -3373,6 +3457,8 @@ def export_pages(
             provenance_payload["guide_previews"] = guide_preview_bundle.provenance()
         if guide_image_collection_bundle is not None:
             provenance_payload["guide_image_collections"] = guide_image_collection_bundle.provenance()
+        if flash_bundle is not None:
+            provenance_payload["flash_exhibits"] = flash_bundle
         prov_data = (json.dumps(provenance_payload, ensure_ascii=False, sort_keys=True, indent=2) + "\n").encode("utf-8")
         (partial / "export-provenance.json").write_bytes(prov_data)
         after_workspace = workspace_size(workspace_root, output) if max_bytes is not None else None
@@ -3413,6 +3499,10 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--image-source-map", dest="image_source_maps", action="append", type=Path, default=[])
     parser.add_argument("--supplement-image-source-map", dest="supplement_image_source_maps", action="append", type=Path, default=[])
     parser.add_argument(
+        "--flash-runtime-archive", type=Path, default=None,
+        help="Optional hash-pinned Ruffle 0.7.1 self-hosted ZIP for three preserved Flash exhibits",
+    )
+    parser.add_argument(
         "--allow-later-image-supplements",
         action="store_true",
         help="Accept explicit supplement images captured after 2008 when their source-map class is post_2008",
@@ -3431,7 +3521,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     args = parser.parse_args(argv)
     try:
-        result = export_pages(output=args.output, source_site=args.site, manifest_path=args.manifest, base_path=args.base_path, max_bytes=args.max_bytes, min_free_bytes=args.min_free_bytes, image_source_maps=args.image_source_maps, supplement_image_source_maps=args.supplement_image_source_maps, allow_later_image_supplements=args.allow_later_image_supplements, guide_preview_map=args.guide_preview_map, guide_image_collection_map=args.guide_image_collection_map)
+        result = export_pages(output=args.output, source_site=args.site, manifest_path=args.manifest, base_path=args.base_path, max_bytes=args.max_bytes, min_free_bytes=args.min_free_bytes, image_source_maps=args.image_source_maps, supplement_image_source_maps=args.supplement_image_source_maps, allow_later_image_supplements=args.allow_later_image_supplements, guide_preview_map=args.guide_preview_map, guide_image_collection_map=args.guide_image_collection_map, flash_runtime_archive=args.flash_runtime_archive)
     except PagesExportError as exc:
         parser.error(str(exc))
     print(json.dumps(result, ensure_ascii=False, indent=2))
