@@ -1,0 +1,1608 @@
+{
+  "schema": "underdev-final-routing-review-v1",
+  "generated_utc": "2026-10-21T13:13:05.550587Z",
+  "scope": {
+    "target_source": "research/continuous-recovery-20261021/local-audit/non-gallery-closeout-v49-r3/remaining-targets.csv",
+    "target_count": 22,
+    "target_numbers": [
+      5,
+      6,
+      7,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30
+    ],
+    "page_route": "/pvp/battlegrounds/info-arathi.html",
+    "network": "not used",
+    "production_or_export_changes": false
+  },
+  "input_hashes": {
+    "remaining_targets_csv": {
+      "path": "research/continuous-recovery-20261021/local-audit/non-gallery-closeout-v49-r3/remaining-targets.csv",
+      "exists": true,
+      "length": 167432,
+      "sha256": "c4c83a80fe63d894fedcb1000b497c2591833ec7dc2453daf20a5cbf6418f518"
+    },
+    "filesystem_crosscheck_csv": {
+      "path": "research/continuous-recovery-20261021/local-audit/non-gallery-closeout-v49-r3/filesystem-crosscheck.csv",
+      "exists": true,
+      "length": 55072,
+      "sha256": "1a542f2576c1f16a31c6832caaa20a3c6cc7a423034fc5b198d3fca27f0d0455"
+    },
+    "summary_json": {
+      "path": "research/continuous-recovery-20261021/local-audit/non-gallery-closeout-v49-r3/summary.json",
+      "exists": true,
+      "length": 15746,
+      "sha256": "37f6c27456029c51986192593381b853f4add73f74d135efa0d16fac6f22575c"
+    },
+    "source16_manifest": {
+      "path": ".scratch/offline-non-gallery-20261021-v16/build-manifest.json",
+      "exists": true,
+      "length": 74194688,
+      "sha256": "e81eaefffbe994178e46fe02e2afd761d0747b1dad36455c1b4b1d2bfeec7b9a"
+    },
+    "source16_page": {
+      "path": ".scratch/offline-non-gallery-20261021-v16/site/pvp/battlegrounds/info-arathi.html",
+      "exists": true,
+      "length": 59296,
+      "sha256": "569c6a093f865bb34de1d517212f5d4a067f22592884a2ee39cce6799637092a"
+    },
+    "screenshot_helper": {
+      "path": "offline/site/shared/wow-com/includes-client/screenshot.js",
+      "exists": true,
+      "length": 5757,
+      "sha256": "df9d4a64bf36f211e4deca0baf19ef44cb6a19949dbd7143d003bec48b566451"
+    },
+    "v51_page": {
+      "path": ".scratch/pages-resources-20261021-v51/pvp/battlegrounds/info-arathi.html",
+      "exists": true,
+      "length": 67533,
+      "sha256": "2be81cab6f2192903694bbccc07ccd550d8f3d1cfd298115dc7c32cfed6864ad"
+    },
+    "v51_route_map": {
+      "path": ".scratch/pages-resources-20261021-v51/__offline/route-map.json",
+      "exists": true,
+      "length": 1398569,
+      "sha256": "52f0c94c014506a43c0dfc614e1c6349c0c5d448c9cf8f63081e102189ecb3d8"
+    },
+    "v51_provenance": {
+      "path": ".scratch/pages-resources-20261021-v51/export-provenance.json",
+      "exists": true,
+      "length": 10937188,
+      "sha256": "d7fbb990abaf23d6931c28341d0e459c880093990f73effe3be1dfa28a6f599f"
+    },
+    "phase4_v46_browser_receipt": {
+      "path": "research/continuous-recovery-20261021/local-audit/phase4-v46/phase4-v46-browser-receipt.json",
+      "exists": true,
+      "length": 1615071,
+      "sha256": "13a73cd781478381d92d52ea9ade71e54360a0375b320a0cc7cc0a1cd57d0502"
+    }
+  },
+  "route_map_context": {
+    "base_path": "/WOW-Encyclopedia-Deployable-Archive/",
+    "malformed_route_present": false,
+    "intended_route_present_count": 20,
+    "intended_route_absent_targets": [
+      "ss17-thumb.jpg",
+      "ss18-thumb.jpg"
+    ],
+    "underdev_alias": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/index.html",
+    "underdev_index_route": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/index.html",
+    "route_map_observation": "The trailing-slash alias /info/underdev/ resolves to the static index URL; the malformed concatenation is not a route-map key."
+  },
+  "source_and_transform_evidence": {
+    "source16_page_path": ".scratch/offline-non-gallery-20261021-v16/site/pvp/battlegrounds/info-arathi.html",
+    "source16_path_assignment": {
+      "line": 619,
+      "text_summary": "path = /info/underdev/"
+    },
+    "source16_directory_assignment": {
+      "line": 622,
+      "text_summary": "theDirectory = images/arathi/"
+    },
+    "v51_path_assignment": {
+      "line": 624,
+      "text_summary": "path = /WOW-Encyclopedia-Deployable-Archive/info/underdev/index.html"
+    },
+    "v51_directory_assignment": {
+      "line": 627,
+      "text_summary": "theDirectory = images/arathi/"
+    },
+    "helper_lines": {
+      "screenshot_js": "16, 38",
+      "behavior": "path + theDirectory + ssN-thumb.jpg"
+    },
+    "exporter_lines": {
+      "rewrite_root_literals": "833-867",
+      "directory_guard_comment": "846-849",
+      "interpretation": "generic root literal localization canonicalized the trailing directory alias to index.html before a later helper concatenation"
+    }
+  },
+  "assessment": {
+    "r3_observation_is_parser_only": false,
+    "r3_observation_basis": "phase4-v46 browser receipt reports two marker occurrences and one static placeholder-200 per target; no HTTP 404 was observed for the malformed URL itself.",
+    "malformed_runtime_observations": 22,
+    "exact_local_payloads_in_v51": 20,
+    "exact_payloads_absent_in_source16_and_v51": 2,
+    "should_count_as_22_independent_resource_gaps": false,
+    "routing_bug_observations": 22,
+    "true_exact_resource_gaps_after_route_fix": 2,
+    "conclusion": "The 22 rows are one export/runtime dynamic-path defect repeated for ss5-ss30 (with ss17 and ss18 absent as exact payloads). Twenty rows are routing-only once the directory base is preserved; two remain genuine exact-resource gaps. The existing same-basename files at other routes are not substitutes.",
+    "next_round_worth": "Yes, a narrow route fix is worthwhile because 20 exact JPEGs already exist and are in the v51 route map. Keep the fix scoped to dynamic directory-base assignments/this page; do not collapse repeated slashes or create generic aliases. Separately track ss17-thumb.jpg and ss18-thumb.jpg as unavailable exact entities."
+  },
+  "targets": [
+    {
+      "ordinal": 1,
+      "screenshot_number": 5,
+      "filename": "ss5-thumb.jpg",
+      "page_route": "/pvp/battlegrounds/info-arathi.html",
+      "observed_target": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/index.htmlimages/arathi/ss5-thumb.jpg",
+      "observed_requested_path": "info/underdev/index.htmlimages/arathi/ss5-thumb.jpg",
+      "proposed_intended_route": "/info/underdev/images/arathi/ss5-thumb.jpg",
+      "proposed_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss5-thumb.jpg",
+      "route_map_exact_exists": true,
+      "source_exact_file": {
+        "path": "offline/site/info/underdev/images/arathi/ss5-thumb.jpg",
+        "exists": true,
+        "length": 10997,
+        "sha256": "3d0eb84f3b18de47ce7f1e3be600151cf102e0f7965ccc46aae743856ae0419c"
+      },
+      "source16_exact_file": {
+        "path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss5-thumb.jpg",
+        "exists": true,
+        "length": 10997,
+        "sha256": "3d0eb84f3b18de47ce7f1e3be600151cf102e0f7965ccc46aae743856ae0419c"
+      },
+      "v51_exact_file": {
+        "path": ".scratch/pages-resources-20261021-v51/info/underdev/images/arathi/ss5-thumb.jpg",
+        "exists": true,
+        "length": 10997,
+        "sha256": "3d0eb84f3b18de47ce7f1e3be600151cf102e0f7965ccc46aae743856ae0419c"
+      },
+      "source_manifest_record": {
+        "present": true,
+        "route": "/info/underdev/images/arathi/ss5-thumb.jpg",
+        "source_sha256": "3d0eb84f3b18de47ce7f1e3be600151cf102e0f7965ccc46aae743856ae0419c",
+        "source_length": 10997,
+        "actual_timestamp": "20061111034350",
+        "role": "pre2008_static_supplement_candidate"
+      },
+      "v51_provenance_record": {
+        "present": true,
+        "derived_sha256": "3d0eb84f3b18de47ce7f1e3be600151cf102e0f7965ccc46aae743856ae0419c",
+        "derived_length": 10997,
+        "source_offline_path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss5-thumb.jpg"
+      },
+      "source_evidence": {
+        "source16_page": ".scratch/offline-non-gallery-20261021-v16/site/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 619,
+        "directory_assignment_line": 622,
+        "screenshot_call_line": 646,
+        "screenshot_helper": "offline/site/shared/wow-com/includes-client/screenshot.js lines 16 and 38 concatenate path + theDirectory + ssN-thumb.jpg"
+      },
+      "v51_evidence": {
+        "page": ".scratch/pages-resources-20261021-v51/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 624,
+        "directory_assignment_line": 627,
+        "runtime_observation_source": "phase4-v46#pages[43];phase4-v46#pages[43]",
+        "r3_marker_occurrences": 2,
+        "r3_static_marker_count": 1,
+        "r3_css_marker_count": 0,
+        "r3_http404_count": 0,
+        "r3_placeholder_200_count": 1
+      },
+      "classification": "export_dynamic_path_bug_exact_local_payload",
+      "confidence": "high",
+      "proposed_action": "Fix the dynamic directory-base rewrite; then the exact existing thumbnail route should be used. No image acquisition is needed for this target.",
+      "byte_identity_source16_to_v51": true,
+      "route_map_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss5-thumb.jpg"
+    },
+    {
+      "ordinal": 2,
+      "screenshot_number": 6,
+      "filename": "ss6-thumb.jpg",
+      "page_route": "/pvp/battlegrounds/info-arathi.html",
+      "observed_target": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/index.htmlimages/arathi/ss6-thumb.jpg",
+      "observed_requested_path": "info/underdev/index.htmlimages/arathi/ss6-thumb.jpg",
+      "proposed_intended_route": "/info/underdev/images/arathi/ss6-thumb.jpg",
+      "proposed_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss6-thumb.jpg",
+      "route_map_exact_exists": true,
+      "source_exact_file": {
+        "path": "offline/site/info/underdev/images/arathi/ss6-thumb.jpg",
+        "exists": true,
+        "length": 7328,
+        "sha256": "99f84cc858f1488fb534d486600ced3b90920b0f9114008ca640862ffd12ad56"
+      },
+      "source16_exact_file": {
+        "path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss6-thumb.jpg",
+        "exists": true,
+        "length": 7328,
+        "sha256": "99f84cc858f1488fb534d486600ced3b90920b0f9114008ca640862ffd12ad56"
+      },
+      "v51_exact_file": {
+        "path": ".scratch/pages-resources-20261021-v51/info/underdev/images/arathi/ss6-thumb.jpg",
+        "exists": true,
+        "length": 7328,
+        "sha256": "99f84cc858f1488fb534d486600ced3b90920b0f9114008ca640862ffd12ad56"
+      },
+      "source_manifest_record": {
+        "present": true,
+        "route": "/info/underdev/images/arathi/ss6-thumb.jpg",
+        "source_sha256": "99f84cc858f1488fb534d486600ced3b90920b0f9114008ca640862ffd12ad56",
+        "source_length": 7328,
+        "actual_timestamp": "20060109140133",
+        "role": "pre2008_static_supplement_candidate"
+      },
+      "v51_provenance_record": {
+        "present": true,
+        "derived_sha256": "99f84cc858f1488fb534d486600ced3b90920b0f9114008ca640862ffd12ad56",
+        "derived_length": 7328,
+        "source_offline_path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss6-thumb.jpg"
+      },
+      "source_evidence": {
+        "source16_page": ".scratch/offline-non-gallery-20261021-v16/site/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 619,
+        "directory_assignment_line": 622,
+        "screenshot_call_line": 777,
+        "screenshot_helper": "offline/site/shared/wow-com/includes-client/screenshot.js lines 16 and 38 concatenate path + theDirectory + ssN-thumb.jpg"
+      },
+      "v51_evidence": {
+        "page": ".scratch/pages-resources-20261021-v51/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 624,
+        "directory_assignment_line": 627,
+        "runtime_observation_source": "phase4-v46#pages[43];phase4-v46#pages[43]",
+        "r3_marker_occurrences": 2,
+        "r3_static_marker_count": 1,
+        "r3_css_marker_count": 0,
+        "r3_http404_count": 0,
+        "r3_placeholder_200_count": 1
+      },
+      "classification": "export_dynamic_path_bug_exact_local_payload",
+      "confidence": "high",
+      "proposed_action": "Fix the dynamic directory-base rewrite; then the exact existing thumbnail route should be used. No image acquisition is needed for this target.",
+      "byte_identity_source16_to_v51": true,
+      "route_map_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss6-thumb.jpg"
+    },
+    {
+      "ordinal": 3,
+      "screenshot_number": 7,
+      "filename": "ss7-thumb.jpg",
+      "page_route": "/pvp/battlegrounds/info-arathi.html",
+      "observed_target": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/index.htmlimages/arathi/ss7-thumb.jpg",
+      "observed_requested_path": "info/underdev/index.htmlimages/arathi/ss7-thumb.jpg",
+      "proposed_intended_route": "/info/underdev/images/arathi/ss7-thumb.jpg",
+      "proposed_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss7-thumb.jpg",
+      "route_map_exact_exists": true,
+      "source_exact_file": {
+        "path": "offline/site/info/underdev/images/arathi/ss7-thumb.jpg",
+        "exists": true,
+        "length": 6782,
+        "sha256": "c1ddb2db62526b3f3351d3ad9e37d704bd338e440b42cbf1ef8bfeb2bf90035c"
+      },
+      "source16_exact_file": {
+        "path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss7-thumb.jpg",
+        "exists": true,
+        "length": 6782,
+        "sha256": "c1ddb2db62526b3f3351d3ad9e37d704bd338e440b42cbf1ef8bfeb2bf90035c"
+      },
+      "v51_exact_file": {
+        "path": ".scratch/pages-resources-20261021-v51/info/underdev/images/arathi/ss7-thumb.jpg",
+        "exists": true,
+        "length": 6782,
+        "sha256": "c1ddb2db62526b3f3351d3ad9e37d704bd338e440b42cbf1ef8bfeb2bf90035c"
+      },
+      "source_manifest_record": {
+        "present": true,
+        "route": "/info/underdev/images/arathi/ss7-thumb.jpg",
+        "source_sha256": "c1ddb2db62526b3f3351d3ad9e37d704bd338e440b42cbf1ef8bfeb2bf90035c",
+        "source_length": 6782,
+        "actual_timestamp": "20060109131148",
+        "role": "pre2008_static_supplement_candidate"
+      },
+      "v51_provenance_record": {
+        "present": true,
+        "derived_sha256": "c1ddb2db62526b3f3351d3ad9e37d704bd338e440b42cbf1ef8bfeb2bf90035c",
+        "derived_length": 6782,
+        "source_offline_path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss7-thumb.jpg"
+      },
+      "source_evidence": {
+        "source16_page": ".scratch/offline-non-gallery-20261021-v16/site/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 619,
+        "directory_assignment_line": 622,
+        "screenshot_call_line": 778,
+        "screenshot_helper": "offline/site/shared/wow-com/includes-client/screenshot.js lines 16 and 38 concatenate path + theDirectory + ssN-thumb.jpg"
+      },
+      "v51_evidence": {
+        "page": ".scratch/pages-resources-20261021-v51/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 624,
+        "directory_assignment_line": 627,
+        "runtime_observation_source": "phase4-v46#pages[43];phase4-v46#pages[43]",
+        "r3_marker_occurrences": 2,
+        "r3_static_marker_count": 1,
+        "r3_css_marker_count": 0,
+        "r3_http404_count": 0,
+        "r3_placeholder_200_count": 1
+      },
+      "classification": "export_dynamic_path_bug_exact_local_payload",
+      "confidence": "high",
+      "proposed_action": "Fix the dynamic directory-base rewrite; then the exact existing thumbnail route should be used. No image acquisition is needed for this target.",
+      "byte_identity_source16_to_v51": true,
+      "route_map_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss7-thumb.jpg"
+    },
+    {
+      "ordinal": 4,
+      "screenshot_number": 12,
+      "filename": "ss12-thumb.jpg",
+      "page_route": "/pvp/battlegrounds/info-arathi.html",
+      "observed_target": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/index.htmlimages/arathi/ss12-thumb.jpg",
+      "observed_requested_path": "info/underdev/index.htmlimages/arathi/ss12-thumb.jpg",
+      "proposed_intended_route": "/info/underdev/images/arathi/ss12-thumb.jpg",
+      "proposed_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss12-thumb.jpg",
+      "route_map_exact_exists": true,
+      "source_exact_file": {
+        "path": "offline/site/info/underdev/images/arathi/ss12-thumb.jpg",
+        "exists": true,
+        "length": 4633,
+        "sha256": "603171dd7a63c672e70c2c1c165d85f34c9f949a25324afb6c373c40833b9ff8"
+      },
+      "source16_exact_file": {
+        "path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss12-thumb.jpg",
+        "exists": true,
+        "length": 4633,
+        "sha256": "603171dd7a63c672e70c2c1c165d85f34c9f949a25324afb6c373c40833b9ff8"
+      },
+      "v51_exact_file": {
+        "path": ".scratch/pages-resources-20261021-v51/info/underdev/images/arathi/ss12-thumb.jpg",
+        "exists": true,
+        "length": 4633,
+        "sha256": "603171dd7a63c672e70c2c1c165d85f34c9f949a25324afb6c373c40833b9ff8"
+      },
+      "source_manifest_record": {
+        "present": true,
+        "route": "/info/underdev/images/arathi/ss12-thumb.jpg",
+        "source_sha256": "603171dd7a63c672e70c2c1c165d85f34c9f949a25324afb6c373c40833b9ff8",
+        "source_length": 4633,
+        "actual_timestamp": "20060111085801",
+        "role": "pre2008_static_supplement_candidate"
+      },
+      "v51_provenance_record": {
+        "present": true,
+        "derived_sha256": "603171dd7a63c672e70c2c1c165d85f34c9f949a25324afb6c373c40833b9ff8",
+        "derived_length": 4633,
+        "source_offline_path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss12-thumb.jpg"
+      },
+      "source_evidence": {
+        "source16_page": ".scratch/offline-non-gallery-20261021-v16/site/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 619,
+        "directory_assignment_line": 622,
+        "screenshot_call_line": 805,
+        "screenshot_helper": "offline/site/shared/wow-com/includes-client/screenshot.js lines 16 and 38 concatenate path + theDirectory + ssN-thumb.jpg"
+      },
+      "v51_evidence": {
+        "page": ".scratch/pages-resources-20261021-v51/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 624,
+        "directory_assignment_line": 627,
+        "runtime_observation_source": "phase4-v46#pages[43];phase4-v46#pages[43]",
+        "r3_marker_occurrences": 2,
+        "r3_static_marker_count": 1,
+        "r3_css_marker_count": 0,
+        "r3_http404_count": 0,
+        "r3_placeholder_200_count": 1
+      },
+      "classification": "export_dynamic_path_bug_exact_local_payload",
+      "confidence": "high",
+      "proposed_action": "Fix the dynamic directory-base rewrite; then the exact existing thumbnail route should be used. No image acquisition is needed for this target.",
+      "byte_identity_source16_to_v51": true,
+      "route_map_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss12-thumb.jpg"
+    },
+    {
+      "ordinal": 5,
+      "screenshot_number": 13,
+      "filename": "ss13-thumb.jpg",
+      "page_route": "/pvp/battlegrounds/info-arathi.html",
+      "observed_target": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/index.htmlimages/arathi/ss13-thumb.jpg",
+      "observed_requested_path": "info/underdev/index.htmlimages/arathi/ss13-thumb.jpg",
+      "proposed_intended_route": "/info/underdev/images/arathi/ss13-thumb.jpg",
+      "proposed_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss13-thumb.jpg",
+      "route_map_exact_exists": true,
+      "source_exact_file": {
+        "path": "offline/site/info/underdev/images/arathi/ss13-thumb.jpg",
+        "exists": true,
+        "length": 4562,
+        "sha256": "477a1ced187721c1bdbb11dfe10fdba68e91241aa45a7f3cae648e3743cb0b3f"
+      },
+      "source16_exact_file": {
+        "path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss13-thumb.jpg",
+        "exists": true,
+        "length": 4562,
+        "sha256": "477a1ced187721c1bdbb11dfe10fdba68e91241aa45a7f3cae648e3743cb0b3f"
+      },
+      "v51_exact_file": {
+        "path": ".scratch/pages-resources-20261021-v51/info/underdev/images/arathi/ss13-thumb.jpg",
+        "exists": true,
+        "length": 4562,
+        "sha256": "477a1ced187721c1bdbb11dfe10fdba68e91241aa45a7f3cae648e3743cb0b3f"
+      },
+      "source_manifest_record": {
+        "present": true,
+        "route": "/info/underdev/images/arathi/ss13-thumb.jpg",
+        "source_sha256": "477a1ced187721c1bdbb11dfe10fdba68e91241aa45a7f3cae648e3743cb0b3f",
+        "source_length": 4562,
+        "actual_timestamp": "20060111090503",
+        "role": "pre2008_static_supplement_candidate"
+      },
+      "v51_provenance_record": {
+        "present": true,
+        "derived_sha256": "477a1ced187721c1bdbb11dfe10fdba68e91241aa45a7f3cae648e3743cb0b3f",
+        "derived_length": 4562,
+        "source_offline_path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss13-thumb.jpg"
+      },
+      "source_evidence": {
+        "source16_page": ".scratch/offline-non-gallery-20261021-v16/site/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 619,
+        "directory_assignment_line": 622,
+        "screenshot_call_line": 806,
+        "screenshot_helper": "offline/site/shared/wow-com/includes-client/screenshot.js lines 16 and 38 concatenate path + theDirectory + ssN-thumb.jpg"
+      },
+      "v51_evidence": {
+        "page": ".scratch/pages-resources-20261021-v51/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 624,
+        "directory_assignment_line": 627,
+        "runtime_observation_source": "phase4-v46#pages[43];phase4-v46#pages[43]",
+        "r3_marker_occurrences": 2,
+        "r3_static_marker_count": 1,
+        "r3_css_marker_count": 0,
+        "r3_http404_count": 0,
+        "r3_placeholder_200_count": 1
+      },
+      "classification": "export_dynamic_path_bug_exact_local_payload",
+      "confidence": "high",
+      "proposed_action": "Fix the dynamic directory-base rewrite; then the exact existing thumbnail route should be used. No image acquisition is needed for this target.",
+      "byte_identity_source16_to_v51": true,
+      "route_map_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss13-thumb.jpg"
+    },
+    {
+      "ordinal": 6,
+      "screenshot_number": 14,
+      "filename": "ss14-thumb.jpg",
+      "page_route": "/pvp/battlegrounds/info-arathi.html",
+      "observed_target": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/index.htmlimages/arathi/ss14-thumb.jpg",
+      "observed_requested_path": "info/underdev/index.htmlimages/arathi/ss14-thumb.jpg",
+      "proposed_intended_route": "/info/underdev/images/arathi/ss14-thumb.jpg",
+      "proposed_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss14-thumb.jpg",
+      "route_map_exact_exists": true,
+      "source_exact_file": {
+        "path": "offline/site/info/underdev/images/arathi/ss14-thumb.jpg",
+        "exists": true,
+        "length": 4415,
+        "sha256": "5a735b7662b0aed82295847b51188e0defbed78d9478aad4ce0a04ab16cab36c"
+      },
+      "source16_exact_file": {
+        "path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss14-thumb.jpg",
+        "exists": true,
+        "length": 4415,
+        "sha256": "5a735b7662b0aed82295847b51188e0defbed78d9478aad4ce0a04ab16cab36c"
+      },
+      "v51_exact_file": {
+        "path": ".scratch/pages-resources-20261021-v51/info/underdev/images/arathi/ss14-thumb.jpg",
+        "exists": true,
+        "length": 4415,
+        "sha256": "5a735b7662b0aed82295847b51188e0defbed78d9478aad4ce0a04ab16cab36c"
+      },
+      "source_manifest_record": {
+        "present": true,
+        "route": "/info/underdev/images/arathi/ss14-thumb.jpg",
+        "source_sha256": "5a735b7662b0aed82295847b51188e0defbed78d9478aad4ce0a04ab16cab36c",
+        "source_length": 4415,
+        "actual_timestamp": "20060111075234",
+        "role": "pre2008_static_supplement_candidate"
+      },
+      "v51_provenance_record": {
+        "present": true,
+        "derived_sha256": "5a735b7662b0aed82295847b51188e0defbed78d9478aad4ce0a04ab16cab36c",
+        "derived_length": 4415,
+        "source_offline_path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss14-thumb.jpg"
+      },
+      "source_evidence": {
+        "source16_page": ".scratch/offline-non-gallery-20261021-v16/site/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 619,
+        "directory_assignment_line": 622,
+        "screenshot_call_line": 807,
+        "screenshot_helper": "offline/site/shared/wow-com/includes-client/screenshot.js lines 16 and 38 concatenate path + theDirectory + ssN-thumb.jpg"
+      },
+      "v51_evidence": {
+        "page": ".scratch/pages-resources-20261021-v51/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 624,
+        "directory_assignment_line": 627,
+        "runtime_observation_source": "phase4-v46#pages[43];phase4-v46#pages[43]",
+        "r3_marker_occurrences": 2,
+        "r3_static_marker_count": 1,
+        "r3_css_marker_count": 0,
+        "r3_http404_count": 0,
+        "r3_placeholder_200_count": 1
+      },
+      "classification": "export_dynamic_path_bug_exact_local_payload",
+      "confidence": "high",
+      "proposed_action": "Fix the dynamic directory-base rewrite; then the exact existing thumbnail route should be used. No image acquisition is needed for this target.",
+      "byte_identity_source16_to_v51": true,
+      "route_map_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss14-thumb.jpg"
+    },
+    {
+      "ordinal": 7,
+      "screenshot_number": 15,
+      "filename": "ss15-thumb.jpg",
+      "page_route": "/pvp/battlegrounds/info-arathi.html",
+      "observed_target": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/index.htmlimages/arathi/ss15-thumb.jpg",
+      "observed_requested_path": "info/underdev/index.htmlimages/arathi/ss15-thumb.jpg",
+      "proposed_intended_route": "/info/underdev/images/arathi/ss15-thumb.jpg",
+      "proposed_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss15-thumb.jpg",
+      "route_map_exact_exists": true,
+      "source_exact_file": {
+        "path": "offline/site/info/underdev/images/arathi/ss15-thumb.jpg",
+        "exists": true,
+        "length": 4212,
+        "sha256": "06d9772264bde4e833966a17cc492aa2c0bcbb75ac3f100862bec962f260e6fd"
+      },
+      "source16_exact_file": {
+        "path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss15-thumb.jpg",
+        "exists": true,
+        "length": 4212,
+        "sha256": "06d9772264bde4e833966a17cc492aa2c0bcbb75ac3f100862bec962f260e6fd"
+      },
+      "v51_exact_file": {
+        "path": ".scratch/pages-resources-20261021-v51/info/underdev/images/arathi/ss15-thumb.jpg",
+        "exists": true,
+        "length": 4212,
+        "sha256": "06d9772264bde4e833966a17cc492aa2c0bcbb75ac3f100862bec962f260e6fd"
+      },
+      "source_manifest_record": {
+        "present": true,
+        "route": "/info/underdev/images/arathi/ss15-thumb.jpg",
+        "source_sha256": "06d9772264bde4e833966a17cc492aa2c0bcbb75ac3f100862bec962f260e6fd",
+        "source_length": 4212,
+        "actual_timestamp": "20060111074627",
+        "role": "pre2008_static_supplement_candidate"
+      },
+      "v51_provenance_record": {
+        "present": true,
+        "derived_sha256": "06d9772264bde4e833966a17cc492aa2c0bcbb75ac3f100862bec962f260e6fd",
+        "derived_length": 4212,
+        "source_offline_path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss15-thumb.jpg"
+      },
+      "source_evidence": {
+        "source16_page": ".scratch/offline-non-gallery-20261021-v16/site/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 619,
+        "directory_assignment_line": 622,
+        "screenshot_call_line": 808,
+        "screenshot_helper": "offline/site/shared/wow-com/includes-client/screenshot.js lines 16 and 38 concatenate path + theDirectory + ssN-thumb.jpg"
+      },
+      "v51_evidence": {
+        "page": ".scratch/pages-resources-20261021-v51/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 624,
+        "directory_assignment_line": 627,
+        "runtime_observation_source": "phase4-v46#pages[43];phase4-v46#pages[43]",
+        "r3_marker_occurrences": 2,
+        "r3_static_marker_count": 1,
+        "r3_css_marker_count": 0,
+        "r3_http404_count": 0,
+        "r3_placeholder_200_count": 1
+      },
+      "classification": "export_dynamic_path_bug_exact_local_payload",
+      "confidence": "high",
+      "proposed_action": "Fix the dynamic directory-base rewrite; then the exact existing thumbnail route should be used. No image acquisition is needed for this target.",
+      "byte_identity_source16_to_v51": true,
+      "route_map_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss15-thumb.jpg"
+    },
+    {
+      "ordinal": 8,
+      "screenshot_number": 16,
+      "filename": "ss16-thumb.jpg",
+      "page_route": "/pvp/battlegrounds/info-arathi.html",
+      "observed_target": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/index.htmlimages/arathi/ss16-thumb.jpg",
+      "observed_requested_path": "info/underdev/index.htmlimages/arathi/ss16-thumb.jpg",
+      "proposed_intended_route": "/info/underdev/images/arathi/ss16-thumb.jpg",
+      "proposed_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss16-thumb.jpg",
+      "route_map_exact_exists": true,
+      "source_exact_file": {
+        "path": "offline/site/info/underdev/images/arathi/ss16-thumb.jpg",
+        "exists": true,
+        "length": 4366,
+        "sha256": "f9129555f382bb4d825cb0206a0d5d419ca064ec9f58525ea7d0fb3465d2c52e"
+      },
+      "source16_exact_file": {
+        "path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss16-thumb.jpg",
+        "exists": true,
+        "length": 4366,
+        "sha256": "f9129555f382bb4d825cb0206a0d5d419ca064ec9f58525ea7d0fb3465d2c52e"
+      },
+      "v51_exact_file": {
+        "path": ".scratch/pages-resources-20261021-v51/info/underdev/images/arathi/ss16-thumb.jpg",
+        "exists": true,
+        "length": 4366,
+        "sha256": "f9129555f382bb4d825cb0206a0d5d419ca064ec9f58525ea7d0fb3465d2c52e"
+      },
+      "source_manifest_record": {
+        "present": true,
+        "route": "/info/underdev/images/arathi/ss16-thumb.jpg",
+        "source_sha256": "f9129555f382bb4d825cb0206a0d5d419ca064ec9f58525ea7d0fb3465d2c52e",
+        "source_length": 4366,
+        "actual_timestamp": "20060111084339",
+        "role": "pre2008_static_supplement_candidate"
+      },
+      "v51_provenance_record": {
+        "present": true,
+        "derived_sha256": "f9129555f382bb4d825cb0206a0d5d419ca064ec9f58525ea7d0fb3465d2c52e",
+        "derived_length": 4366,
+        "source_offline_path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss16-thumb.jpg"
+      },
+      "source_evidence": {
+        "source16_page": ".scratch/offline-non-gallery-20261021-v16/site/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 619,
+        "directory_assignment_line": 622,
+        "screenshot_call_line": 809,
+        "screenshot_helper": "offline/site/shared/wow-com/includes-client/screenshot.js lines 16 and 38 concatenate path + theDirectory + ssN-thumb.jpg"
+      },
+      "v51_evidence": {
+        "page": ".scratch/pages-resources-20261021-v51/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 624,
+        "directory_assignment_line": 627,
+        "runtime_observation_source": "phase4-v46#pages[43];phase4-v46#pages[43]",
+        "r3_marker_occurrences": 2,
+        "r3_static_marker_count": 1,
+        "r3_css_marker_count": 0,
+        "r3_http404_count": 0,
+        "r3_placeholder_200_count": 1
+      },
+      "classification": "export_dynamic_path_bug_exact_local_payload",
+      "confidence": "high",
+      "proposed_action": "Fix the dynamic directory-base rewrite; then the exact existing thumbnail route should be used. No image acquisition is needed for this target.",
+      "byte_identity_source16_to_v51": true,
+      "route_map_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss16-thumb.jpg"
+    },
+    {
+      "ordinal": 9,
+      "screenshot_number": 17,
+      "filename": "ss17-thumb.jpg",
+      "page_route": "/pvp/battlegrounds/info-arathi.html",
+      "observed_target": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/index.htmlimages/arathi/ss17-thumb.jpg",
+      "observed_requested_path": "info/underdev/index.htmlimages/arathi/ss17-thumb.jpg",
+      "proposed_intended_route": "/info/underdev/images/arathi/ss17-thumb.jpg",
+      "proposed_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss17-thumb.jpg",
+      "route_map_exact_exists": false,
+      "source_exact_file": {
+        "path": "offline/site/info/underdev/images/arathi/ss17-thumb.jpg",
+        "exists": false
+      },
+      "source16_exact_file": {
+        "path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss17-thumb.jpg",
+        "exists": false
+      },
+      "v51_exact_file": {
+        "path": ".scratch/pages-resources-20261021-v51/info/underdev/images/arathi/ss17-thumb.jpg",
+        "exists": false
+      },
+      "source_manifest_record": {
+        "present": false,
+        "route": null,
+        "source_sha256": null,
+        "source_length": null,
+        "actual_timestamp": null,
+        "role": null
+      },
+      "v51_provenance_record": {
+        "present": false,
+        "derived_sha256": null,
+        "derived_length": null,
+        "source_offline_path": null
+      },
+      "source_evidence": {
+        "source16_page": ".scratch/offline-non-gallery-20261021-v16/site/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 619,
+        "directory_assignment_line": 622,
+        "screenshot_call_line": 818,
+        "screenshot_helper": "offline/site/shared/wow-com/includes-client/screenshot.js lines 16 and 38 concatenate path + theDirectory + ssN-thumb.jpg"
+      },
+      "v51_evidence": {
+        "page": ".scratch/pages-resources-20261021-v51/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 624,
+        "directory_assignment_line": 627,
+        "runtime_observation_source": "phase4-v46#pages[43];phase4-v46#pages[43]",
+        "r3_marker_occurrences": 2,
+        "r3_static_marker_count": 1,
+        "r3_css_marker_count": 0,
+        "r3_http404_count": 0,
+        "r3_placeholder_200_count": 1
+      },
+      "classification": "export_dynamic_path_bug_and_exact_payload_unavailable",
+      "confidence": "high",
+      "proposed_action": "Fix the dynamic directory-base rewrite for the page, but this exact ssN payload still needs a separately accepted source; do not substitute another same-basename image.",
+      "byte_identity_source16_to_v51": false,
+      "route_map_static_url": null
+    },
+    {
+      "ordinal": 10,
+      "screenshot_number": 18,
+      "filename": "ss18-thumb.jpg",
+      "page_route": "/pvp/battlegrounds/info-arathi.html",
+      "observed_target": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/index.htmlimages/arathi/ss18-thumb.jpg",
+      "observed_requested_path": "info/underdev/index.htmlimages/arathi/ss18-thumb.jpg",
+      "proposed_intended_route": "/info/underdev/images/arathi/ss18-thumb.jpg",
+      "proposed_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss18-thumb.jpg",
+      "route_map_exact_exists": false,
+      "source_exact_file": {
+        "path": "offline/site/info/underdev/images/arathi/ss18-thumb.jpg",
+        "exists": false
+      },
+      "source16_exact_file": {
+        "path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss18-thumb.jpg",
+        "exists": false
+      },
+      "v51_exact_file": {
+        "path": ".scratch/pages-resources-20261021-v51/info/underdev/images/arathi/ss18-thumb.jpg",
+        "exists": false
+      },
+      "source_manifest_record": {
+        "present": false,
+        "route": null,
+        "source_sha256": null,
+        "source_length": null,
+        "actual_timestamp": null,
+        "role": null
+      },
+      "v51_provenance_record": {
+        "present": false,
+        "derived_sha256": null,
+        "derived_length": null,
+        "source_offline_path": null
+      },
+      "source_evidence": {
+        "source16_page": ".scratch/offline-non-gallery-20261021-v16/site/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 619,
+        "directory_assignment_line": 622,
+        "screenshot_call_line": 819,
+        "screenshot_helper": "offline/site/shared/wow-com/includes-client/screenshot.js lines 16 and 38 concatenate path + theDirectory + ssN-thumb.jpg"
+      },
+      "v51_evidence": {
+        "page": ".scratch/pages-resources-20261021-v51/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 624,
+        "directory_assignment_line": 627,
+        "runtime_observation_source": "phase4-v46#pages[43];phase4-v46#pages[43]",
+        "r3_marker_occurrences": 2,
+        "r3_static_marker_count": 1,
+        "r3_css_marker_count": 0,
+        "r3_http404_count": 0,
+        "r3_placeholder_200_count": 1
+      },
+      "classification": "export_dynamic_path_bug_and_exact_payload_unavailable",
+      "confidence": "high",
+      "proposed_action": "Fix the dynamic directory-base rewrite for the page, but this exact ssN payload still needs a separately accepted source; do not substitute another same-basename image.",
+      "byte_identity_source16_to_v51": false,
+      "route_map_static_url": null
+    },
+    {
+      "ordinal": 11,
+      "screenshot_number": 19,
+      "filename": "ss19-thumb.jpg",
+      "page_route": "/pvp/battlegrounds/info-arathi.html",
+      "observed_target": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/index.htmlimages/arathi/ss19-thumb.jpg",
+      "observed_requested_path": "info/underdev/index.htmlimages/arathi/ss19-thumb.jpg",
+      "proposed_intended_route": "/info/underdev/images/arathi/ss19-thumb.jpg",
+      "proposed_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss19-thumb.jpg",
+      "route_map_exact_exists": true,
+      "source_exact_file": {
+        "path": "offline/site/info/underdev/images/arathi/ss19-thumb.jpg",
+        "exists": true,
+        "length": 10718,
+        "sha256": "29efcd7c7d85135022f608317d3abfccab76d95ed259cc2f67cf6dd99a3b0b35"
+      },
+      "source16_exact_file": {
+        "path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss19-thumb.jpg",
+        "exists": true,
+        "length": 10718,
+        "sha256": "29efcd7c7d85135022f608317d3abfccab76d95ed259cc2f67cf6dd99a3b0b35"
+      },
+      "v51_exact_file": {
+        "path": ".scratch/pages-resources-20261021-v51/info/underdev/images/arathi/ss19-thumb.jpg",
+        "exists": true,
+        "length": 10718,
+        "sha256": "29efcd7c7d85135022f608317d3abfccab76d95ed259cc2f67cf6dd99a3b0b35"
+      },
+      "source_manifest_record": {
+        "present": true,
+        "route": "/info/underdev/images/arathi/ss19-thumb.jpg",
+        "source_sha256": "29efcd7c7d85135022f608317d3abfccab76d95ed259cc2f67cf6dd99a3b0b35",
+        "source_length": 10718,
+        "actual_timestamp": "20071121171403",
+        "role": "pre2008_static_supplement_legacy_lf"
+      },
+      "v51_provenance_record": {
+        "present": true,
+        "derived_sha256": "29efcd7c7d85135022f608317d3abfccab76d95ed259cc2f67cf6dd99a3b0b35",
+        "derived_length": 10718,
+        "source_offline_path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss19-thumb.jpg"
+      },
+      "source_evidence": {
+        "source16_page": ".scratch/offline-non-gallery-20261021-v16/site/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 619,
+        "directory_assignment_line": 622,
+        "screenshot_call_line": 838,
+        "screenshot_helper": "offline/site/shared/wow-com/includes-client/screenshot.js lines 16 and 38 concatenate path + theDirectory + ssN-thumb.jpg"
+      },
+      "v51_evidence": {
+        "page": ".scratch/pages-resources-20261021-v51/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 624,
+        "directory_assignment_line": 627,
+        "runtime_observation_source": "phase4-v46#pages[43];phase4-v46#pages[43]",
+        "r3_marker_occurrences": 2,
+        "r3_static_marker_count": 1,
+        "r3_css_marker_count": 0,
+        "r3_http404_count": 0,
+        "r3_placeholder_200_count": 1
+      },
+      "classification": "export_dynamic_path_bug_exact_local_payload",
+      "confidence": "high",
+      "proposed_action": "Fix the dynamic directory-base rewrite; then the exact existing thumbnail route should be used. No image acquisition is needed for this target.",
+      "byte_identity_source16_to_v51": true,
+      "route_map_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss19-thumb.jpg"
+    },
+    {
+      "ordinal": 12,
+      "screenshot_number": 20,
+      "filename": "ss20-thumb.jpg",
+      "page_route": "/pvp/battlegrounds/info-arathi.html",
+      "observed_target": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/index.htmlimages/arathi/ss20-thumb.jpg",
+      "observed_requested_path": "info/underdev/index.htmlimages/arathi/ss20-thumb.jpg",
+      "proposed_intended_route": "/info/underdev/images/arathi/ss20-thumb.jpg",
+      "proposed_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss20-thumb.jpg",
+      "route_map_exact_exists": true,
+      "source_exact_file": {
+        "path": "offline/site/info/underdev/images/arathi/ss20-thumb.jpg",
+        "exists": true,
+        "length": 11864,
+        "sha256": "7c3442c25dc4a8a918a0a9d773bd26fba7a493e9d3add2bc125a6b16647a856e"
+      },
+      "source16_exact_file": {
+        "path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss20-thumb.jpg",
+        "exists": true,
+        "length": 11864,
+        "sha256": "7c3442c25dc4a8a918a0a9d773bd26fba7a493e9d3add2bc125a6b16647a856e"
+      },
+      "v51_exact_file": {
+        "path": ".scratch/pages-resources-20261021-v51/info/underdev/images/arathi/ss20-thumb.jpg",
+        "exists": true,
+        "length": 11864,
+        "sha256": "7c3442c25dc4a8a918a0a9d773bd26fba7a493e9d3add2bc125a6b16647a856e"
+      },
+      "source_manifest_record": {
+        "present": true,
+        "route": "/info/underdev/images/arathi/ss20-thumb.jpg",
+        "source_sha256": "7c3442c25dc4a8a918a0a9d773bd26fba7a493e9d3add2bc125a6b16647a856e",
+        "source_length": 11864,
+        "actual_timestamp": "20071121171403",
+        "role": "pre2008_static_supplement_legacy_lf"
+      },
+      "v51_provenance_record": {
+        "present": true,
+        "derived_sha256": "7c3442c25dc4a8a918a0a9d773bd26fba7a493e9d3add2bc125a6b16647a856e",
+        "derived_length": 11864,
+        "source_offline_path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss20-thumb.jpg"
+      },
+      "source_evidence": {
+        "source16_page": ".scratch/offline-non-gallery-20261021-v16/site/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 619,
+        "directory_assignment_line": 622,
+        "screenshot_call_line": 839,
+        "screenshot_helper": "offline/site/shared/wow-com/includes-client/screenshot.js lines 16 and 38 concatenate path + theDirectory + ssN-thumb.jpg"
+      },
+      "v51_evidence": {
+        "page": ".scratch/pages-resources-20261021-v51/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 624,
+        "directory_assignment_line": 627,
+        "runtime_observation_source": "phase4-v46#pages[43];phase4-v46#pages[43]",
+        "r3_marker_occurrences": 2,
+        "r3_static_marker_count": 1,
+        "r3_css_marker_count": 0,
+        "r3_http404_count": 0,
+        "r3_placeholder_200_count": 1
+      },
+      "classification": "export_dynamic_path_bug_exact_local_payload",
+      "confidence": "high",
+      "proposed_action": "Fix the dynamic directory-base rewrite; then the exact existing thumbnail route should be used. No image acquisition is needed for this target.",
+      "byte_identity_source16_to_v51": true,
+      "route_map_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss20-thumb.jpg"
+    },
+    {
+      "ordinal": 13,
+      "screenshot_number": 21,
+      "filename": "ss21-thumb.jpg",
+      "page_route": "/pvp/battlegrounds/info-arathi.html",
+      "observed_target": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/index.htmlimages/arathi/ss21-thumb.jpg",
+      "observed_requested_path": "info/underdev/index.htmlimages/arathi/ss21-thumb.jpg",
+      "proposed_intended_route": "/info/underdev/images/arathi/ss21-thumb.jpg",
+      "proposed_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss21-thumb.jpg",
+      "route_map_exact_exists": true,
+      "source_exact_file": {
+        "path": "offline/site/info/underdev/images/arathi/ss21-thumb.jpg",
+        "exists": true,
+        "length": 11045,
+        "sha256": "197e92d1cbce691f689bb99c5adce5c116cb34842c2fcd63363ddb4032ff5b62"
+      },
+      "source16_exact_file": {
+        "path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss21-thumb.jpg",
+        "exists": true,
+        "length": 11045,
+        "sha256": "197e92d1cbce691f689bb99c5adce5c116cb34842c2fcd63363ddb4032ff5b62"
+      },
+      "v51_exact_file": {
+        "path": ".scratch/pages-resources-20261021-v51/info/underdev/images/arathi/ss21-thumb.jpg",
+        "exists": true,
+        "length": 11045,
+        "sha256": "197e92d1cbce691f689bb99c5adce5c116cb34842c2fcd63363ddb4032ff5b62"
+      },
+      "source_manifest_record": {
+        "present": true,
+        "route": "/info/underdev/images/arathi/ss21-thumb.jpg",
+        "source_sha256": "197e92d1cbce691f689bb99c5adce5c116cb34842c2fcd63363ddb4032ff5b62",
+        "source_length": 11045,
+        "actual_timestamp": "20071121171404",
+        "role": "pre2008_static_supplement_legacy_lf"
+      },
+      "v51_provenance_record": {
+        "present": true,
+        "derived_sha256": "197e92d1cbce691f689bb99c5adce5c116cb34842c2fcd63363ddb4032ff5b62",
+        "derived_length": 11045,
+        "source_offline_path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss21-thumb.jpg"
+      },
+      "source_evidence": {
+        "source16_page": ".scratch/offline-non-gallery-20261021-v16/site/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 619,
+        "directory_assignment_line": 622,
+        "screenshot_call_line": 840,
+        "screenshot_helper": "offline/site/shared/wow-com/includes-client/screenshot.js lines 16 and 38 concatenate path + theDirectory + ssN-thumb.jpg"
+      },
+      "v51_evidence": {
+        "page": ".scratch/pages-resources-20261021-v51/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 624,
+        "directory_assignment_line": 627,
+        "runtime_observation_source": "phase4-v46#pages[43];phase4-v46#pages[43]",
+        "r3_marker_occurrences": 2,
+        "r3_static_marker_count": 1,
+        "r3_css_marker_count": 0,
+        "r3_http404_count": 0,
+        "r3_placeholder_200_count": 1
+      },
+      "classification": "export_dynamic_path_bug_exact_local_payload",
+      "confidence": "high",
+      "proposed_action": "Fix the dynamic directory-base rewrite; then the exact existing thumbnail route should be used. No image acquisition is needed for this target.",
+      "byte_identity_source16_to_v51": true,
+      "route_map_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss21-thumb.jpg"
+    },
+    {
+      "ordinal": 14,
+      "screenshot_number": 22,
+      "filename": "ss22-thumb.jpg",
+      "page_route": "/pvp/battlegrounds/info-arathi.html",
+      "observed_target": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/index.htmlimages/arathi/ss22-thumb.jpg",
+      "observed_requested_path": "info/underdev/index.htmlimages/arathi/ss22-thumb.jpg",
+      "proposed_intended_route": "/info/underdev/images/arathi/ss22-thumb.jpg",
+      "proposed_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss22-thumb.jpg",
+      "route_map_exact_exists": true,
+      "source_exact_file": {
+        "path": "offline/site/info/underdev/images/arathi/ss22-thumb.jpg",
+        "exists": true,
+        "length": 10240,
+        "sha256": "484120d0eb4ec0aeeb756ebf5a57f58eb9cf155da43c92a8fa5342cc3ee803f3"
+      },
+      "source16_exact_file": {
+        "path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss22-thumb.jpg",
+        "exists": true,
+        "length": 10240,
+        "sha256": "484120d0eb4ec0aeeb756ebf5a57f58eb9cf155da43c92a8fa5342cc3ee803f3"
+      },
+      "v51_exact_file": {
+        "path": ".scratch/pages-resources-20261021-v51/info/underdev/images/arathi/ss22-thumb.jpg",
+        "exists": true,
+        "length": 10240,
+        "sha256": "484120d0eb4ec0aeeb756ebf5a57f58eb9cf155da43c92a8fa5342cc3ee803f3"
+      },
+      "source_manifest_record": {
+        "present": true,
+        "route": "/info/underdev/images/arathi/ss22-thumb.jpg",
+        "source_sha256": "484120d0eb4ec0aeeb756ebf5a57f58eb9cf155da43c92a8fa5342cc3ee803f3",
+        "source_length": 10240,
+        "actual_timestamp": "20071121171404",
+        "role": "pre2008_static_supplement_legacy_lf"
+      },
+      "v51_provenance_record": {
+        "present": true,
+        "derived_sha256": "484120d0eb4ec0aeeb756ebf5a57f58eb9cf155da43c92a8fa5342cc3ee803f3",
+        "derived_length": 10240,
+        "source_offline_path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss22-thumb.jpg"
+      },
+      "source_evidence": {
+        "source16_page": ".scratch/offline-non-gallery-20261021-v16/site/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 619,
+        "directory_assignment_line": 622,
+        "screenshot_call_line": 841,
+        "screenshot_helper": "offline/site/shared/wow-com/includes-client/screenshot.js lines 16 and 38 concatenate path + theDirectory + ssN-thumb.jpg"
+      },
+      "v51_evidence": {
+        "page": ".scratch/pages-resources-20261021-v51/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 624,
+        "directory_assignment_line": 627,
+        "runtime_observation_source": "phase4-v46#pages[43];phase4-v46#pages[43]",
+        "r3_marker_occurrences": 2,
+        "r3_static_marker_count": 1,
+        "r3_css_marker_count": 0,
+        "r3_http404_count": 0,
+        "r3_placeholder_200_count": 1
+      },
+      "classification": "export_dynamic_path_bug_exact_local_payload",
+      "confidence": "high",
+      "proposed_action": "Fix the dynamic directory-base rewrite; then the exact existing thumbnail route should be used. No image acquisition is needed for this target.",
+      "byte_identity_source16_to_v51": true,
+      "route_map_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss22-thumb.jpg"
+    },
+    {
+      "ordinal": 15,
+      "screenshot_number": 23,
+      "filename": "ss23-thumb.jpg",
+      "page_route": "/pvp/battlegrounds/info-arathi.html",
+      "observed_target": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/index.htmlimages/arathi/ss23-thumb.jpg",
+      "observed_requested_path": "info/underdev/index.htmlimages/arathi/ss23-thumb.jpg",
+      "proposed_intended_route": "/info/underdev/images/arathi/ss23-thumb.jpg",
+      "proposed_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss23-thumb.jpg",
+      "route_map_exact_exists": true,
+      "source_exact_file": {
+        "path": "offline/site/info/underdev/images/arathi/ss23-thumb.jpg",
+        "exists": true,
+        "length": 6636,
+        "sha256": "97cc3d1a89d5c8a63b8c21bfec35d75e6f2d32196f443d430ed81fdcb4571e27"
+      },
+      "source16_exact_file": {
+        "path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss23-thumb.jpg",
+        "exists": true,
+        "length": 6636,
+        "sha256": "97cc3d1a89d5c8a63b8c21bfec35d75e6f2d32196f443d430ed81fdcb4571e27"
+      },
+      "v51_exact_file": {
+        "path": ".scratch/pages-resources-20261021-v51/info/underdev/images/arathi/ss23-thumb.jpg",
+        "exists": true,
+        "length": 6636,
+        "sha256": "97cc3d1a89d5c8a63b8c21bfec35d75e6f2d32196f443d430ed81fdcb4571e27"
+      },
+      "source_manifest_record": {
+        "present": true,
+        "route": "/info/underdev/images/arathi/ss23-thumb.jpg",
+        "source_sha256": "97cc3d1a89d5c8a63b8c21bfec35d75e6f2d32196f443d430ed81fdcb4571e27",
+        "source_length": 6636,
+        "actual_timestamp": "20071121171404",
+        "role": "pre2008_static_supplement_legacy_lf"
+      },
+      "v51_provenance_record": {
+        "present": true,
+        "derived_sha256": "97cc3d1a89d5c8a63b8c21bfec35d75e6f2d32196f443d430ed81fdcb4571e27",
+        "derived_length": 6636,
+        "source_offline_path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss23-thumb.jpg"
+      },
+      "source_evidence": {
+        "source16_page": ".scratch/offline-non-gallery-20261021-v16/site/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 619,
+        "directory_assignment_line": 622,
+        "screenshot_call_line": 844,
+        "screenshot_helper": "offline/site/shared/wow-com/includes-client/screenshot.js lines 16 and 38 concatenate path + theDirectory + ssN-thumb.jpg"
+      },
+      "v51_evidence": {
+        "page": ".scratch/pages-resources-20261021-v51/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 624,
+        "directory_assignment_line": 627,
+        "runtime_observation_source": "phase4-v46#pages[43];phase4-v46#pages[43]",
+        "r3_marker_occurrences": 2,
+        "r3_static_marker_count": 1,
+        "r3_css_marker_count": 0,
+        "r3_http404_count": 0,
+        "r3_placeholder_200_count": 1
+      },
+      "classification": "export_dynamic_path_bug_exact_local_payload",
+      "confidence": "high",
+      "proposed_action": "Fix the dynamic directory-base rewrite; then the exact existing thumbnail route should be used. No image acquisition is needed for this target.",
+      "byte_identity_source16_to_v51": true,
+      "route_map_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss23-thumb.jpg"
+    },
+    {
+      "ordinal": 16,
+      "screenshot_number": 24,
+      "filename": "ss24-thumb.jpg",
+      "page_route": "/pvp/battlegrounds/info-arathi.html",
+      "observed_target": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/index.htmlimages/arathi/ss24-thumb.jpg",
+      "observed_requested_path": "info/underdev/index.htmlimages/arathi/ss24-thumb.jpg",
+      "proposed_intended_route": "/info/underdev/images/arathi/ss24-thumb.jpg",
+      "proposed_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss24-thumb.jpg",
+      "route_map_exact_exists": true,
+      "source_exact_file": {
+        "path": "offline/site/info/underdev/images/arathi/ss24-thumb.jpg",
+        "exists": true,
+        "length": 7173,
+        "sha256": "7766048bfbcbdfe1f532ff58ab71c7fc263d05bc872167e76da79b39669bbae7"
+      },
+      "source16_exact_file": {
+        "path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss24-thumb.jpg",
+        "exists": true,
+        "length": 7173,
+        "sha256": "7766048bfbcbdfe1f532ff58ab71c7fc263d05bc872167e76da79b39669bbae7"
+      },
+      "v51_exact_file": {
+        "path": ".scratch/pages-resources-20261021-v51/info/underdev/images/arathi/ss24-thumb.jpg",
+        "exists": true,
+        "length": 7173,
+        "sha256": "7766048bfbcbdfe1f532ff58ab71c7fc263d05bc872167e76da79b39669bbae7"
+      },
+      "source_manifest_record": {
+        "present": true,
+        "route": "/info/underdev/images/arathi/ss24-thumb.jpg",
+        "source_sha256": "7766048bfbcbdfe1f532ff58ab71c7fc263d05bc872167e76da79b39669bbae7",
+        "source_length": 7173,
+        "actual_timestamp": "20071121171405",
+        "role": "pre2008_static_supplement_legacy_lf"
+      },
+      "v51_provenance_record": {
+        "present": true,
+        "derived_sha256": "7766048bfbcbdfe1f532ff58ab71c7fc263d05bc872167e76da79b39669bbae7",
+        "derived_length": 7173,
+        "source_offline_path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss24-thumb.jpg"
+      },
+      "source_evidence": {
+        "source16_page": ".scratch/offline-non-gallery-20261021-v16/site/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 619,
+        "directory_assignment_line": 622,
+        "screenshot_call_line": 845,
+        "screenshot_helper": "offline/site/shared/wow-com/includes-client/screenshot.js lines 16 and 38 concatenate path + theDirectory + ssN-thumb.jpg"
+      },
+      "v51_evidence": {
+        "page": ".scratch/pages-resources-20261021-v51/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 624,
+        "directory_assignment_line": 627,
+        "runtime_observation_source": "phase4-v46#pages[43];phase4-v46#pages[43]",
+        "r3_marker_occurrences": 2,
+        "r3_static_marker_count": 1,
+        "r3_css_marker_count": 0,
+        "r3_http404_count": 0,
+        "r3_placeholder_200_count": 1
+      },
+      "classification": "export_dynamic_path_bug_exact_local_payload",
+      "confidence": "high",
+      "proposed_action": "Fix the dynamic directory-base rewrite; then the exact existing thumbnail route should be used. No image acquisition is needed for this target.",
+      "byte_identity_source16_to_v51": true,
+      "route_map_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss24-thumb.jpg"
+    },
+    {
+      "ordinal": 17,
+      "screenshot_number": 25,
+      "filename": "ss25-thumb.jpg",
+      "page_route": "/pvp/battlegrounds/info-arathi.html",
+      "observed_target": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/index.htmlimages/arathi/ss25-thumb.jpg",
+      "observed_requested_path": "info/underdev/index.htmlimages/arathi/ss25-thumb.jpg",
+      "proposed_intended_route": "/info/underdev/images/arathi/ss25-thumb.jpg",
+      "proposed_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss25-thumb.jpg",
+      "route_map_exact_exists": true,
+      "source_exact_file": {
+        "path": "offline/site/info/underdev/images/arathi/ss25-thumb.jpg",
+        "exists": true,
+        "length": 7387,
+        "sha256": "39752875b76b5042455e773977edf716d2c23d2be422e9bb7df82182f8af9952"
+      },
+      "source16_exact_file": {
+        "path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss25-thumb.jpg",
+        "exists": true,
+        "length": 7387,
+        "sha256": "39752875b76b5042455e773977edf716d2c23d2be422e9bb7df82182f8af9952"
+      },
+      "v51_exact_file": {
+        "path": ".scratch/pages-resources-20261021-v51/info/underdev/images/arathi/ss25-thumb.jpg",
+        "exists": true,
+        "length": 7387,
+        "sha256": "39752875b76b5042455e773977edf716d2c23d2be422e9bb7df82182f8af9952"
+      },
+      "source_manifest_record": {
+        "present": true,
+        "route": "/info/underdev/images/arathi/ss25-thumb.jpg",
+        "source_sha256": "39752875b76b5042455e773977edf716d2c23d2be422e9bb7df82182f8af9952",
+        "source_length": 7387,
+        "actual_timestamp": "20071121171405",
+        "role": "pre2008_static_supplement_legacy_lf"
+      },
+      "v51_provenance_record": {
+        "present": true,
+        "derived_sha256": "39752875b76b5042455e773977edf716d2c23d2be422e9bb7df82182f8af9952",
+        "derived_length": 7387,
+        "source_offline_path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss25-thumb.jpg"
+      },
+      "source_evidence": {
+        "source16_page": ".scratch/offline-non-gallery-20261021-v16/site/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 619,
+        "directory_assignment_line": 622,
+        "screenshot_call_line": 846,
+        "screenshot_helper": "offline/site/shared/wow-com/includes-client/screenshot.js lines 16 and 38 concatenate path + theDirectory + ssN-thumb.jpg"
+      },
+      "v51_evidence": {
+        "page": ".scratch/pages-resources-20261021-v51/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 624,
+        "directory_assignment_line": 627,
+        "runtime_observation_source": "phase4-v46#pages[43];phase4-v46#pages[43]",
+        "r3_marker_occurrences": 2,
+        "r3_static_marker_count": 1,
+        "r3_css_marker_count": 0,
+        "r3_http404_count": 0,
+        "r3_placeholder_200_count": 1
+      },
+      "classification": "export_dynamic_path_bug_exact_local_payload",
+      "confidence": "high",
+      "proposed_action": "Fix the dynamic directory-base rewrite; then the exact existing thumbnail route should be used. No image acquisition is needed for this target.",
+      "byte_identity_source16_to_v51": true,
+      "route_map_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss25-thumb.jpg"
+    },
+    {
+      "ordinal": 18,
+      "screenshot_number": 26,
+      "filename": "ss26-thumb.jpg",
+      "page_route": "/pvp/battlegrounds/info-arathi.html",
+      "observed_target": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/index.htmlimages/arathi/ss26-thumb.jpg",
+      "observed_requested_path": "info/underdev/index.htmlimages/arathi/ss26-thumb.jpg",
+      "proposed_intended_route": "/info/underdev/images/arathi/ss26-thumb.jpg",
+      "proposed_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss26-thumb.jpg",
+      "route_map_exact_exists": true,
+      "source_exact_file": {
+        "path": "offline/site/info/underdev/images/arathi/ss26-thumb.jpg",
+        "exists": true,
+        "length": 7370,
+        "sha256": "465882f05a1a56bdb88d6506cd1b05d79c93ba90491a03ec1026d5ed8c849e2f"
+      },
+      "source16_exact_file": {
+        "path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss26-thumb.jpg",
+        "exists": true,
+        "length": 7370,
+        "sha256": "465882f05a1a56bdb88d6506cd1b05d79c93ba90491a03ec1026d5ed8c849e2f"
+      },
+      "v51_exact_file": {
+        "path": ".scratch/pages-resources-20261021-v51/info/underdev/images/arathi/ss26-thumb.jpg",
+        "exists": true,
+        "length": 7370,
+        "sha256": "465882f05a1a56bdb88d6506cd1b05d79c93ba90491a03ec1026d5ed8c849e2f"
+      },
+      "source_manifest_record": {
+        "present": true,
+        "route": "/info/underdev/images/arathi/ss26-thumb.jpg",
+        "source_sha256": "465882f05a1a56bdb88d6506cd1b05d79c93ba90491a03ec1026d5ed8c849e2f",
+        "source_length": 7370,
+        "actual_timestamp": "20071121171405",
+        "role": "pre2008_static_supplement_legacy_lf"
+      },
+      "v51_provenance_record": {
+        "present": true,
+        "derived_sha256": "465882f05a1a56bdb88d6506cd1b05d79c93ba90491a03ec1026d5ed8c849e2f",
+        "derived_length": 7370,
+        "source_offline_path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss26-thumb.jpg"
+      },
+      "source_evidence": {
+        "source16_page": ".scratch/offline-non-gallery-20261021-v16/site/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 619,
+        "directory_assignment_line": 622,
+        "screenshot_call_line": 847,
+        "screenshot_helper": "offline/site/shared/wow-com/includes-client/screenshot.js lines 16 and 38 concatenate path + theDirectory + ssN-thumb.jpg"
+      },
+      "v51_evidence": {
+        "page": ".scratch/pages-resources-20261021-v51/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 624,
+        "directory_assignment_line": 627,
+        "runtime_observation_source": "phase4-v46#pages[43];phase4-v46#pages[43]",
+        "r3_marker_occurrences": 2,
+        "r3_static_marker_count": 1,
+        "r3_css_marker_count": 0,
+        "r3_http404_count": 0,
+        "r3_placeholder_200_count": 1
+      },
+      "classification": "export_dynamic_path_bug_exact_local_payload",
+      "confidence": "high",
+      "proposed_action": "Fix the dynamic directory-base rewrite; then the exact existing thumbnail route should be used. No image acquisition is needed for this target.",
+      "byte_identity_source16_to_v51": true,
+      "route_map_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss26-thumb.jpg"
+    },
+    {
+      "ordinal": 19,
+      "screenshot_number": 27,
+      "filename": "ss27-thumb.jpg",
+      "page_route": "/pvp/battlegrounds/info-arathi.html",
+      "observed_target": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/index.htmlimages/arathi/ss27-thumb.jpg",
+      "observed_requested_path": "info/underdev/index.htmlimages/arathi/ss27-thumb.jpg",
+      "proposed_intended_route": "/info/underdev/images/arathi/ss27-thumb.jpg",
+      "proposed_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss27-thumb.jpg",
+      "route_map_exact_exists": true,
+      "source_exact_file": {
+        "path": "offline/site/info/underdev/images/arathi/ss27-thumb.jpg",
+        "exists": true,
+        "length": 6331,
+        "sha256": "bfe7f6bb2f6bc1bc4038d9396939d924065d954807b61ebd078296b9d1831c9a"
+      },
+      "source16_exact_file": {
+        "path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss27-thumb.jpg",
+        "exists": true,
+        "length": 6331,
+        "sha256": "bfe7f6bb2f6bc1bc4038d9396939d924065d954807b61ebd078296b9d1831c9a"
+      },
+      "v51_exact_file": {
+        "path": ".scratch/pages-resources-20261021-v51/info/underdev/images/arathi/ss27-thumb.jpg",
+        "exists": true,
+        "length": 6331,
+        "sha256": "bfe7f6bb2f6bc1bc4038d9396939d924065d954807b61ebd078296b9d1831c9a"
+      },
+      "source_manifest_record": {
+        "present": true,
+        "route": "/info/underdev/images/arathi/ss27-thumb.jpg",
+        "source_sha256": "bfe7f6bb2f6bc1bc4038d9396939d924065d954807b61ebd078296b9d1831c9a",
+        "source_length": 6331,
+        "actual_timestamp": "20071121171405",
+        "role": "pre2008_static_supplement_legacy_lf"
+      },
+      "v51_provenance_record": {
+        "present": true,
+        "derived_sha256": "bfe7f6bb2f6bc1bc4038d9396939d924065d954807b61ebd078296b9d1831c9a",
+        "derived_length": 6331,
+        "source_offline_path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss27-thumb.jpg"
+      },
+      "source_evidence": {
+        "source16_page": ".scratch/offline-non-gallery-20261021-v16/site/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 619,
+        "directory_assignment_line": 622,
+        "screenshot_call_line": 850,
+        "screenshot_helper": "offline/site/shared/wow-com/includes-client/screenshot.js lines 16 and 38 concatenate path + theDirectory + ssN-thumb.jpg"
+      },
+      "v51_evidence": {
+        "page": ".scratch/pages-resources-20261021-v51/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 624,
+        "directory_assignment_line": 627,
+        "runtime_observation_source": "phase4-v46#pages[43];phase4-v46#pages[43]",
+        "r3_marker_occurrences": 2,
+        "r3_static_marker_count": 1,
+        "r3_css_marker_count": 0,
+        "r3_http404_count": 0,
+        "r3_placeholder_200_count": 1
+      },
+      "classification": "export_dynamic_path_bug_exact_local_payload",
+      "confidence": "high",
+      "proposed_action": "Fix the dynamic directory-base rewrite; then the exact existing thumbnail route should be used. No image acquisition is needed for this target.",
+      "byte_identity_source16_to_v51": true,
+      "route_map_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss27-thumb.jpg"
+    },
+    {
+      "ordinal": 20,
+      "screenshot_number": 28,
+      "filename": "ss28-thumb.jpg",
+      "page_route": "/pvp/battlegrounds/info-arathi.html",
+      "observed_target": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/index.htmlimages/arathi/ss28-thumb.jpg",
+      "observed_requested_path": "info/underdev/index.htmlimages/arathi/ss28-thumb.jpg",
+      "proposed_intended_route": "/info/underdev/images/arathi/ss28-thumb.jpg",
+      "proposed_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss28-thumb.jpg",
+      "route_map_exact_exists": true,
+      "source_exact_file": {
+        "path": "offline/site/info/underdev/images/arathi/ss28-thumb.jpg",
+        "exists": true,
+        "length": 6215,
+        "sha256": "8eef10b2957fa866e0f6123d2b2fe6dcaf8d236e35a696389a6e7593c9210b7a"
+      },
+      "source16_exact_file": {
+        "path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss28-thumb.jpg",
+        "exists": true,
+        "length": 6215,
+        "sha256": "8eef10b2957fa866e0f6123d2b2fe6dcaf8d236e35a696389a6e7593c9210b7a"
+      },
+      "v51_exact_file": {
+        "path": ".scratch/pages-resources-20261021-v51/info/underdev/images/arathi/ss28-thumb.jpg",
+        "exists": true,
+        "length": 6215,
+        "sha256": "8eef10b2957fa866e0f6123d2b2fe6dcaf8d236e35a696389a6e7593c9210b7a"
+      },
+      "source_manifest_record": {
+        "present": true,
+        "route": "/info/underdev/images/arathi/ss28-thumb.jpg",
+        "source_sha256": "8eef10b2957fa866e0f6123d2b2fe6dcaf8d236e35a696389a6e7593c9210b7a",
+        "source_length": 6215,
+        "actual_timestamp": "20071121171406",
+        "role": "pre2008_static_supplement_legacy_lf"
+      },
+      "v51_provenance_record": {
+        "present": true,
+        "derived_sha256": "8eef10b2957fa866e0f6123d2b2fe6dcaf8d236e35a696389a6e7593c9210b7a",
+        "derived_length": 6215,
+        "source_offline_path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss28-thumb.jpg"
+      },
+      "source_evidence": {
+        "source16_page": ".scratch/offline-non-gallery-20261021-v16/site/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 619,
+        "directory_assignment_line": 622,
+        "screenshot_call_line": 851,
+        "screenshot_helper": "offline/site/shared/wow-com/includes-client/screenshot.js lines 16 and 38 concatenate path + theDirectory + ssN-thumb.jpg"
+      },
+      "v51_evidence": {
+        "page": ".scratch/pages-resources-20261021-v51/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 624,
+        "directory_assignment_line": 627,
+        "runtime_observation_source": "phase4-v46#pages[43];phase4-v46#pages[43]",
+        "r3_marker_occurrences": 2,
+        "r3_static_marker_count": 1,
+        "r3_css_marker_count": 0,
+        "r3_http404_count": 0,
+        "r3_placeholder_200_count": 1
+      },
+      "classification": "export_dynamic_path_bug_exact_local_payload",
+      "confidence": "high",
+      "proposed_action": "Fix the dynamic directory-base rewrite; then the exact existing thumbnail route should be used. No image acquisition is needed for this target.",
+      "byte_identity_source16_to_v51": true,
+      "route_map_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss28-thumb.jpg"
+    },
+    {
+      "ordinal": 21,
+      "screenshot_number": 29,
+      "filename": "ss29-thumb.jpg",
+      "page_route": "/pvp/battlegrounds/info-arathi.html",
+      "observed_target": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/index.htmlimages/arathi/ss29-thumb.jpg",
+      "observed_requested_path": "info/underdev/index.htmlimages/arathi/ss29-thumb.jpg",
+      "proposed_intended_route": "/info/underdev/images/arathi/ss29-thumb.jpg",
+      "proposed_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss29-thumb.jpg",
+      "route_map_exact_exists": true,
+      "source_exact_file": {
+        "path": "offline/site/info/underdev/images/arathi/ss29-thumb.jpg",
+        "exists": true,
+        "length": 6844,
+        "sha256": "f1158d3021c4e0949c6435737cd390e098a25e608b1f7c160f88c9dbe3a1360a"
+      },
+      "source16_exact_file": {
+        "path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss29-thumb.jpg",
+        "exists": true,
+        "length": 6844,
+        "sha256": "f1158d3021c4e0949c6435737cd390e098a25e608b1f7c160f88c9dbe3a1360a"
+      },
+      "v51_exact_file": {
+        "path": ".scratch/pages-resources-20261021-v51/info/underdev/images/arathi/ss29-thumb.jpg",
+        "exists": true,
+        "length": 6844,
+        "sha256": "f1158d3021c4e0949c6435737cd390e098a25e608b1f7c160f88c9dbe3a1360a"
+      },
+      "source_manifest_record": {
+        "present": true,
+        "route": "/info/underdev/images/arathi/ss29-thumb.jpg",
+        "source_sha256": "f1158d3021c4e0949c6435737cd390e098a25e608b1f7c160f88c9dbe3a1360a",
+        "source_length": 6844,
+        "actual_timestamp": "20071121171406",
+        "role": "pre2008_static_supplement_legacy_lf"
+      },
+      "v51_provenance_record": {
+        "present": true,
+        "derived_sha256": "f1158d3021c4e0949c6435737cd390e098a25e608b1f7c160f88c9dbe3a1360a",
+        "derived_length": 6844,
+        "source_offline_path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss29-thumb.jpg"
+      },
+      "source_evidence": {
+        "source16_page": ".scratch/offline-non-gallery-20261021-v16/site/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 619,
+        "directory_assignment_line": 622,
+        "screenshot_call_line": 852,
+        "screenshot_helper": "offline/site/shared/wow-com/includes-client/screenshot.js lines 16 and 38 concatenate path + theDirectory + ssN-thumb.jpg"
+      },
+      "v51_evidence": {
+        "page": ".scratch/pages-resources-20261021-v51/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 624,
+        "directory_assignment_line": 627,
+        "runtime_observation_source": "phase4-v46#pages[43];phase4-v46#pages[43]",
+        "r3_marker_occurrences": 2,
+        "r3_static_marker_count": 1,
+        "r3_css_marker_count": 0,
+        "r3_http404_count": 0,
+        "r3_placeholder_200_count": 1
+      },
+      "classification": "export_dynamic_path_bug_exact_local_payload",
+      "confidence": "high",
+      "proposed_action": "Fix the dynamic directory-base rewrite; then the exact existing thumbnail route should be used. No image acquisition is needed for this target.",
+      "byte_identity_source16_to_v51": true,
+      "route_map_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss29-thumb.jpg"
+    },
+    {
+      "ordinal": 22,
+      "screenshot_number": 30,
+      "filename": "ss30-thumb.jpg",
+      "page_route": "/pvp/battlegrounds/info-arathi.html",
+      "observed_target": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/index.htmlimages/arathi/ss30-thumb.jpg",
+      "observed_requested_path": "info/underdev/index.htmlimages/arathi/ss30-thumb.jpg",
+      "proposed_intended_route": "/info/underdev/images/arathi/ss30-thumb.jpg",
+      "proposed_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss30-thumb.jpg",
+      "route_map_exact_exists": true,
+      "source_exact_file": {
+        "path": "offline/site/info/underdev/images/arathi/ss30-thumb.jpg",
+        "exists": true,
+        "length": 7250,
+        "sha256": "0e198b8cdd90fc967839f312cc0a98ad8d2a89f639d9c2dd5ab719a24997acb8"
+      },
+      "source16_exact_file": {
+        "path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss30-thumb.jpg",
+        "exists": true,
+        "length": 7250,
+        "sha256": "0e198b8cdd90fc967839f312cc0a98ad8d2a89f639d9c2dd5ab719a24997acb8"
+      },
+      "v51_exact_file": {
+        "path": ".scratch/pages-resources-20261021-v51/info/underdev/images/arathi/ss30-thumb.jpg",
+        "exists": true,
+        "length": 7250,
+        "sha256": "0e198b8cdd90fc967839f312cc0a98ad8d2a89f639d9c2dd5ab719a24997acb8"
+      },
+      "source_manifest_record": {
+        "present": true,
+        "route": "/info/underdev/images/arathi/ss30-thumb.jpg",
+        "source_sha256": "0e198b8cdd90fc967839f312cc0a98ad8d2a89f639d9c2dd5ab719a24997acb8",
+        "source_length": 7250,
+        "actual_timestamp": "20071116205957",
+        "role": "pre2008_static_supplement_legacy_lf"
+      },
+      "v51_provenance_record": {
+        "present": true,
+        "derived_sha256": "0e198b8cdd90fc967839f312cc0a98ad8d2a89f639d9c2dd5ab719a24997acb8",
+        "derived_length": 7250,
+        "source_offline_path": ".scratch/offline-non-gallery-20261021-v16/site/info/underdev/images/arathi/ss30-thumb.jpg"
+      },
+      "source_evidence": {
+        "source16_page": ".scratch/offline-non-gallery-20261021-v16/site/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 619,
+        "directory_assignment_line": 622,
+        "screenshot_call_line": 853,
+        "screenshot_helper": "offline/site/shared/wow-com/includes-client/screenshot.js lines 16 and 38 concatenate path + theDirectory + ssN-thumb.jpg"
+      },
+      "v51_evidence": {
+        "page": ".scratch/pages-resources-20261021-v51/pvp/battlegrounds/info-arathi.html",
+        "path_assignment_line": 624,
+        "directory_assignment_line": 627,
+        "runtime_observation_source": "phase4-v46#pages[43];phase4-v46#pages[43]",
+        "r3_marker_occurrences": 2,
+        "r3_static_marker_count": 1,
+        "r3_css_marker_count": 0,
+        "r3_http404_count": 0,
+        "r3_placeholder_200_count": 1
+      },
+      "classification": "export_dynamic_path_bug_exact_local_payload",
+      "confidence": "high",
+      "proposed_action": "Fix the dynamic directory-base rewrite; then the exact existing thumbnail route should be used. No image acquisition is needed for this target.",
+      "byte_identity_source16_to_v51": true,
+      "route_map_static_url": "/WOW-Encyclopedia-Deployable-Archive/info/underdev/images/arathi/ss30-thumb.jpg"
+    }
+  ],
+  "limitations": [
+    "No new browser run was started in this read-only audit; runtime evidence is the existing phase4-v46 receipt, while v51 was checked statically at source/output/route-map/provenance level.",
+    "No historical ZIP or network source was scanned; only the stated Source16/offline/v51 paths and manifests were checked.",
+    "No same-basename image from another route was treated as a recovery candidate."
+  ],
+  "browser_evidence": {
+    "receipt": "research/continuous-recovery-20261021/local-audit/phase4-v46/phase4-v46-browser-receipt.json",
+    "page_index": 43,
+    "page_route": "/pvp/battlegrounds/info-arathi.html",
+    "status": 200,
+    "matching_requested_target_images": 22,
+    "matching_current_src": "/__offline/missing-image.svg",
+    "matching_images_visible": 22,
+    "page_errors": 0,
+    "request_failures": 1,
+    "interpretation": "This makes the r3 rows runtime-observed placeholder results rather than parser-only false positives; the one failure is retained as receipt context and is not treated as an image-source 404."
+  }
+}

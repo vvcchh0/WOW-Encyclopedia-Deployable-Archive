@@ -830,7 +830,14 @@ class PagesLocalizer:
         return target
 
 
-def rewrite_root_literals(text: str, *, base_url: str, localizer: PagesLocalizer, recorder: Any) -> str:
+def rewrite_root_literals(
+    text: str,
+    *,
+    base_url: str,
+    localizer: PagesLocalizer,
+    recorder: Any,
+    route: str | None = None,
+) -> str:
     """Rewrite complete root-relative JS strings without touching expressions.
 
     offline_mirror intentionally leaves root-relative JS strings alone for a
@@ -856,6 +863,22 @@ def rewrite_root_literals(text: str, *, base_url: str, localizer: PagesLocalizer
             target = localizer.base_path + "wrath/"
             recorder.add(raw, urllib.parse.urljoin(base_url, raw), "localized", target,
                          "javascript-directory-base", "preserve verified Wrath resource directory")
+            return match.group("quote") + target + match.group("trailing") + match.group("quote")
+        if (
+            raw == "/info/underdev/"
+            and route == "/pvp/battlegrounds/info-arathi.html"
+            and re.search(r"\b(?:var\s+)?path\s*=\s*$", before)
+            and mirror.is_primary_origin(base_url)
+        ):
+            target = localizer.base_path + "info/underdev/"
+            recorder.add(
+                raw,
+                urllib.parse.urljoin(base_url, raw),
+                "localized",
+                target,
+                "javascript-directory-base",
+                "preserve verified Arathi screenshot directory",
+            )
             return match.group("quote") + target + match.group("trailing") + match.group("quote")
         after = text[match.end() :].lstrip()
         if after.startswith("+") and not raw.casefold().startswith(("/__offline/uncollected", "/search/")):
@@ -929,6 +952,7 @@ def rewrite_inline_scripts(
     base_url: str,
     localizer: PagesLocalizer,
     recorder: Any,
+    route: str | None = None,
 ) -> str:
     """Prefix complete route literals in inline script bodies.
 
@@ -958,6 +982,7 @@ def rewrite_inline_scripts(
             base_url=base_url,
             localizer=localizer,
             recorder=recorder,
+            route=route,
         )
         return match.group(1) + body + match.group(3)
 
@@ -3653,7 +3678,13 @@ def export_pages(
                         stats["ssotd_clock_repaired"] += 1
                 text = rename_flash_codebase_metadata(text, recorder=recorder)
                 text = rewrite_iframe_fallbacks(text, base_url=base_url, localizer=localizer, recorder=recorder)
-                text = rewrite_inline_scripts(text, base_url=base_url, localizer=localizer, recorder=recorder)
+                text = rewrite_inline_scripts(
+                    text,
+                    base_url=base_url,
+                    localizer=localizer,
+                    recorder=recorder,
+                    route=route,
+                )
                 text = normalize_html_charset(text)
                 text = disable_sensitive_forms(text, route=route)
                 text = historical_exhibits.transform_derived_page(
@@ -3858,7 +3889,13 @@ def export_pages(
                             stats["rewardstable_compat_scripts"] += 1
                         else:
                             text = mirror.rewrite_script(text, base_url=base_url, localizer=localizer, recorder=recorder)
-                            text = rewrite_root_literals(text, base_url=base_url, localizer=localizer, recorder=recorder)
+                            text = rewrite_root_literals(
+                                text,
+                                base_url=base_url,
+                                localizer=localizer,
+                                recorder=recorder,
+                                route=route,
+                            )
                 if route == "/shared/wow-com/includes-client/navtreefunctions.js":
                     text, changed = rewrite_contest_navtree_fallback(text, base_path=base_path)
                     if changed:
@@ -3887,7 +3924,13 @@ def export_pages(
             elif kind in {"xsl", "xml", "legacy_component"}:
                 text = data.decode(mirror.charset_for(str(record.get("mime") or ""), data), errors="replace")
                 text = mirror.rewrite_generic_markup(text, base_url=base_url, localizer=localizer, recorder=recorder)
-                text = rewrite_root_literals(text, base_url=base_url, localizer=localizer, recorder=recorder)
+                text = rewrite_root_literals(
+                    text,
+                    base_url=base_url,
+                    localizer=localizer,
+                    recorder=recorder,
+                    route=route,
+                )
                 text = escape_xml_bare_ampersands(text)
                 derived = text.encode("utf-8")
                 stats["markup_derived"] += 1

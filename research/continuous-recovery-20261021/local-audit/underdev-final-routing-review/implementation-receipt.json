@@ -1,0 +1,63 @@
+{
+  "schema": "underdev-final-routing-review/implementation-receipt-v1",
+  "generated_utc": "2026-10-21T13:24:40.4997147Z",
+  "scope": {
+    "route": "/pvp/battlegrounds/info-arathi.html",
+    "origin": "http://www.worldofwarcraft.com",
+    "change": "page-scoped JavaScript directory-base preservation",
+    "network": false,
+    "export_run": false,
+    "git_write": false,
+    "source_report": "research/continuous-recovery-20261021/local-audit/underdev-final-routing-review/underdev-final-routing-review.json"
+  },
+  "implementation": {
+    "guard": "raw == /info/underdev/ AND exact route AND primary origin AND assignment prefix path or var path",
+    "target": "base_path + info/underdev/",
+    "navigation": "normal localizer remains in effect and maps /info/underdev/ to index.html",
+    "recorder_context": "javascript-directory-base",
+    "recorder_reason": "preserve verified Arathi screenshot directory",
+    "missing_assets": "ss17/ss18 remain unmaterialized; no aliases or fabricated files",
+    "files": [
+      {
+        "path": "tools/export_github_pages.py",
+        "sha256": "92f01fd309d8cc23b71d58f34b8593423309b734489ca0cad6c16afd37c00399",
+        "changed_lines": "rewrite_root_literals guard plus route propagation through inline/direct/XML script callers"
+      },
+      {
+        "path": "tests/test_github_pages_export.py",
+        "sha256": "faad8181907aac39f5d08935cbf71122a823611cf5de12c2740a8ec8031c04ea",
+        "changed_lines": "two focused Arathi tests"
+      }
+    ]
+  },
+  "validation": [
+    {
+      "command": "python.exe -X utf8 -m unittest tests.test_github_pages_export.GithubPagesExportTests.test_arathi_directory_base_is_page_scoped_and_navigation_still_uses_index tests.test_github_pages_export.GithubPagesExportTests.test_arathi_exact_images_keep_routes_without_fabricating_missing_numbers",
+      "result": "Ran 2 tests in 0.112s; OK"
+    },
+    {
+      "command": "python.exe -X utf8 -m unittest tests.test_github_pages_export.GithubPagesExportTests.test_wrath_resource_base_remains_directory_while_navigation_uses_index tests.test_github_pages_export.GithubPagesExportTests.test_arathi_directory_base_is_page_scoped_and_navigation_still_uses_index tests.test_github_pages_export.GithubPagesExportTests.test_arathi_exact_images_keep_routes_without_fabricating_missing_numbers",
+      "result": "Ran 3 tests in 0.421s; OK"
+    },
+    {
+      "command": "python.exe -X utf8 -m py_compile tools/export_github_pages.py tests/test_github_pages_export.py",
+      "result": "exit 0; pre-existing SyntaxWarning invalid escape sequence at tools/export_github_pages.py:2852"
+    },
+    {
+      "command": "git diff --check -- tools/export_github_pages.py tests/test_github_pages_export.py",
+      "result": "exit 0"
+    }
+  ],
+  "evidence": {
+    "source16_page": ".scratch/offline-non-gallery-20261021-v16/site/pvp/battlegrounds/info-arathi.html",
+    "v51_page": ".scratch/pages-resources-20261021-v51/pvp/battlegrounds/info-arathi.html",
+    "audit_receipt": "research/continuous-recovery-20261021/local-audit/phase4-v46/phase4-v46-browser-receipt.json",
+    "route_map": "v51 exact ss5 target present; ss17/ss18 absent"
+  },
+  "uncovered": [
+    "No live v51 re-export or browser rerun in this task",
+    "No recovery of unavailable ss17/ss18",
+    "No full test suite",
+    "No generic double-slash normalization or alias/helper/site/source changes"
+  ]
+}

@@ -236,6 +236,126 @@ class GithubPagesExportTests(unittest.TestCase):
                                  entries["wrath/images/layout/frame.svg"][0])
                 self.assertNotIn("index.htmlimages", derived)
 
+    def test_arathi_directory_base_is_page_scoped_and_navigation_still_uses_index(self) -> None:
+        prefix = pages.DEFAULT_BASE_PATH
+        source = '<script>path = "/info/underdev/"; window.navigation = "/info/underdev/";</script>'
+        route_to_static = {
+            "/__offline/missing.html": prefix + "__offline/missing.html",
+            "/__offline/missing-image.svg": prefix + "__offline/missing-image.svg",
+            "/info/underdev/index.html": prefix + "info/underdev/index.html",
+        }
+        aliases = {"/info/underdev/": "/info/underdev/index.html"}
+
+        def rewrite(route: str, base_url: str) -> tuple[str, pages.mirror.ReferenceRecorder]:
+            recorder = pages.mirror.ReferenceRecorder(route, base_url)
+            localizer = pages.PagesLocalizer(
+                route_to_static=route_to_static,
+                aliases=aliases,
+                origin_index={},
+                base_path=prefix,
+            )
+            return pages.rewrite_inline_scripts(
+                source,
+                base_url=base_url,
+                localizer=localizer,
+                recorder=recorder,
+                route=route,
+            ), recorder
+
+        arathi, arathi_recorder = rewrite(
+            "/pvp/battlegrounds/info-arathi.html",
+            "http://www.worldofwarcraft.com/pvp/battlegrounds/info-arathi.html",
+        )
+        self.assertIn('path = "' + prefix + 'info/underdev/"', arathi)
+        self.assertIn('window.navigation = "' + prefix + 'info/underdev/index.html"', arathi)
+        self.assertTrue(any(
+            row["context"] == "javascript-directory-base"
+            and row["reason"] == "preserve verified Arathi screenshot directory"
+            for row in arathi_recorder.records
+        ))
+
+        other_page, other_page_recorder = rewrite(
+            "/info/other.html",
+            "http://www.worldofwarcraft.com/info/other.html",
+        )
+        self.assertIn('path = "' + prefix + 'info/underdev/index.html"', other_page)
+        self.assertNotIn("javascript-directory-base", {row["context"] for row in other_page_recorder.records})
+
+        other_origin, other_origin_recorder = rewrite(
+            "/pvp/battlegrounds/info-arathi.html",
+            "http://mirror.example.test/pvp/battlegrounds/info-arathi.html",
+        )
+        self.assertNotIn('path = "' + prefix + 'info/underdev/"', other_origin)
+        self.assertNotIn("javascript-directory-base", {row["context"] for row in other_origin_recorder.records})
+
+    def test_arathi_exact_images_keep_routes_without_fabricating_missing_numbers(self) -> None:
+        prefix = pages.DEFAULT_BASE_PATH
+        with tempfile.TemporaryDirectory() as tmp:
+            base, site, manifest = self._fixture(Path(tmp))
+            payload = json.loads(manifest.read_text(encoding="utf-8"))
+            entries = {
+                "info/underdev/index.html": (
+                    "<html><head><title>Under Development</title></head><body>index</body></html>",
+                    "html",
+                    "text/html",
+                ),
+                "pvp/battlegrounds/info-arathi.html": (
+                    '<html><head></head><body><script>path = "/info/underdev/"; '
+                    'var theDirectory = "images/arathi/"; '
+                    'window.navigation = "/info/underdev/"; '
+                    'window.image5 = path + theDirectory + "ss5-thumb.jpg"; '
+                    'window.image17 = path + theDirectory + "ss17-thumb.jpg";</script></body></html>',
+                    "html",
+                    "text/html",
+                ),
+                "info/underdev/images/arathi/ss5-thumb.jpg": (b"exact-ss5-bytes", "image", "image/jpeg"),
+            }
+            for relative, (content, kind, mime) in entries.items():
+                data = content.encode("utf-8") if isinstance(content, str) else content
+                file_path = site / relative
+                file_path.parent.mkdir(parents=True, exist_ok=True)
+                file_path.write_bytes(data)
+                route = "/" + relative
+                payload["files"].append({
+                    "route": route,
+                    "output_path": "offline/site/" + relative,
+                    "derived_sha256": hashlib.sha256(data).hexdigest(),
+                    "derived_length": len(data),
+                    "mime": mime,
+                    "kind": kind,
+                    "source_base_url": "http://www.worldofwarcraft.com" + route,
+                })
+            payload["route_aliases"]["/info/underdev/"] = "/info/underdev/index.html"
+            payload["origin_index"]["www.worldofwarcraft.com/info/underdev/"] = "/info/underdev/index.html"
+            payload["origin_index"]["www.worldofwarcraft.com/pvp/battlegrounds/info-arathi.html"] = "/pvp/battlegrounds/info-arathi.html"
+            manifest.write_text(json.dumps(payload), encoding="utf-8")
+
+            output = base / "pages"
+            pages.export_pages(
+                source_site=site,
+                manifest_path=manifest,
+                output=output,
+                workspace_root=base,
+                min_free_bytes=0,
+            )
+            page = (output / "pvp/battlegrounds/info-arathi.html").read_text(encoding="utf-8")
+            self.assertIn('path = "' + prefix + 'info/underdev/"', page)
+            self.assertIn('window.navigation = "' + prefix + 'info/underdev/index.html"', page)
+            self.assertNotIn("index.htmlimages", page)
+            route_map = json.loads((output / "__offline/route-map.json").read_text(encoding="utf-8"))
+            self.assertEqual(
+                route_map["routes"]["/info/underdev/images/arathi/ss5-thumb.jpg"],
+                prefix + "info/underdev/images/arathi/ss5-thumb.jpg",
+            )
+            self.assertNotIn("/info/underdev/images/arathi/ss17-thumb.jpg", route_map["routes"])
+            self.assertNotIn("/info/underdev/images/arathi/ss18-thumb.jpg", route_map["routes"])
+            self.assertFalse((output / "info/underdev/images/arathi/ss17-thumb.jpg").exists())
+            self.assertFalse((output / "info/underdev/images/arathi/ss18-thumb.jpg").exists())
+            self.assertEqual(
+                (output / "info/underdev/images/arathi/ss5-thumb.jpg").read_bytes(),
+                b"exact-ss5-bytes",
+            )
+
     def test_ptr_export_path_uses_manifest_capture_and_generated_home(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             base, site, manifest = self._fixture(Path(tmp))

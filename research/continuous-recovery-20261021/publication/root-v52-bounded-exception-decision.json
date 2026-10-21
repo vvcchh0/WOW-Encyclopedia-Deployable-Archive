@@ -1,0 +1,34 @@
+{
+  "accepted": true,
+  "checked_utc": "2026-10-21T13:20:34.051681+00:00",
+  "reason": "New closeout evidence identifies 20 exact already-collected Arathi guide thumbnails hidden by one page-scoped directory-base conversion. This is a bounded local repair, not renewed screenshot acquisition.",
+  "plan_revision": "One local v52 export may start before13:35 UTC despite the earlier13:05 planning cutoff. Source acquisition remains closed. Preserve v51 and all accepted historical outputs.",
+  "hard_user_deadline_utc": "2026-10-21T14:25:07+00:00",
+  "v52_export_start_cutoff_utc": "2026-10-21T13:35:00+00:00",
+  "v52_export_timeout_seconds": 540,
+  "release_cutoff_utc": "2026-10-21T14:10:00+00:00",
+  "fallback": "If time or acceptance fails, retain the published v51 and report the pending narrow repair without overwriting accepted versions.",
+  "network_source_requests": 0,
+  "source_report": "research/continuous-recovery-20261021/local-audit/underdev-final-routing-review/underdev-final-routing-review.json",
+  "source_report_sha256": "02124288f18e2271385f9b13b5c506d8ca6a5ee1c4b8da1668687d4a0883d3b4",
+  "prepared_tools": [
+    {
+      "source": "research/continuous-recovery-20261021/integration/v51/export_v51_once.py",
+      "source_sha256": "49401a74126d7a07474a76cc7756af1240d888683cba0a7f9b45aa6a4c563a8e",
+      "target": "research/continuous-recovery-20261021/integration/v52/export_v52_once.py",
+      "target_sha256": "b5b6678e214601449fefaed1b5b68a2e61a98051fe3652a866aa4210599e64a5"
+    },
+    {
+      "source": "research/continuous-recovery-20261021/publication/execute_v51_once.py",
+      "source_sha256": "0bcede1187546de595d05b21251d933cc7191eab2d030547c9a8a8be271a79b9",
+      "target": "research/continuous-recovery-20261021/publication/execute_v52_once.py",
+      "target_sha256": "6495e7824d3ba00f2d12bfc2b82daec5cbdd1fe992543f1978b9bd926f850ce7"
+    },
+    {
+      "source": "research/continuous-recovery-20261021/publication/verify_accepted_pages.py",
+      "source_sha256": "5ca9664faa5484c2d2da358c52d5e55ef1c7f2e0077f25dcb55adb2a743fd72d",
+      "target": "research/continuous-recovery-20261021/publication/verify_v52_pages.py",
+      "target_sha256": "25daaec5c125a0d9e7a935fbb33bbcd2627612827ba437393a722a1f4ff8723e"
+    }
+  ]
+}

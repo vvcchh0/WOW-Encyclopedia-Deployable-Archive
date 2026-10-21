@@ -79,3 +79,9 @@ v51接通一张已有Wrath字母图的单斜线地址，四页恢复显示。源
 最终Pages版本为v51，80个线上对象与本地一致。浏览版ZIP约546MB，解压约634MB；独立成员检查与包内服务145个对象的GET/HEAD检查完成，实际Chrome再次验证派系说明和四页Wrath字母图。离线包发布结果单独记录，避免把本地完成等同于公开可下载。
 
 [线上核对](../research/continuous-recovery-20261021/publication/root-v51-pages-online-acceptance.json) · [离线包验收](../research/continuous-recovery-20261021/publication/root-v51-portable-acceptance.json)
+
+## Arathi指南预览
+
+收尾调查确认页面的22个异常地址来自目录基址转换错误，其中20张精确JPEG已在本地。v52仅对该指南页的path赋值保留目录，同页导航继续指向首页文件。全文件核对和实际Chrome检查完成，20张预览恢复显示；ss17与ss18的缩略图仍未取得。这属于已有指南素材的显示修复，没有重启玩家图库下载。
+
+修正后分轮清单为391个真实本地资源目标，旧411条观察路径及原报告保留供追溯。[修正清单](../research/continuous-recovery-20261021/publication/v52-remaining-resource-targets.csv) · [调查](../research/continuous-recovery-20261021/local-audit/underdev-final-routing-review/README.md)

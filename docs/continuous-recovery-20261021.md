@@ -177,3 +177,13 @@ main代码检查点cdab4eed已正常push；Pages提交7494e7cc构建完成，前
 [线上核对](../research/continuous-recovery-20261021/publication/root-v51-pages-online-acceptance.json) · [离线包核对](../research/continuous-recovery-20261021/publication/root-v51-portable-acceptance.json) · [包内实际浏览](../research/continuous-recovery-20261021/publication/root-v51-portable-browser-acceptance.json)
 
 资源下载与新导出已经结束，继续发布当前已验收的处理后离线包。Wayback最后一次控制429仍保留，不启动新来源批次。
+
+### 13:36 UTC — Arathi目录转换的单次收尾例外
+
+v51离线包已发布并设为最新版本，三份附件的大小与摘要匹配；匿名检查取得NOTICE与摘要文件，ZIP最终HEAD长度正确。源码发布目标为ff7c2253。
+
+最后复核发现Arathi指南页22个index.htmlimages路径并非22个独立遗失素材。原脚本用path目录与images/arathi/拼接；导出把目录变成首页文件。20张精确JPEG早已取得，实际捕获来自2006年，另外ss17/ss18仍缺。因此对原13:05导出计划截止作一次有界例外：13:35前启动唯一v52导出，不重启资源获取，保持14:25用户截止及14:10发布截止。v51与历史版本保留。
+
+v52只修改这一页的一处目录赋值；其余10,142个声明对象、所有图片与脚本逐字节一致。实际Chrome已显示20张指南预览，另外两张仍为缺口，无外联或页面/请求错误。旧清单411个观察路径去掉22个异常拼接，加入2个真实缺失地址，修正为391个本地资源目标，仍是分轮覆盖范围而非全站总数。
+
+[目录调查](../research/continuous-recovery-20261021/local-audit/underdev-final-routing-review/README.md) · [例外决定](../research/continuous-recovery-20261021/publication/root-v52-bounded-exception-decision.json) · [v52本地验收](../research/continuous-recovery-20261021/publication/root-v52-local-acceptance.json)

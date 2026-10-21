@@ -1,0 +1,480 @@
+{
+  "accepted": true,
+  "version": "v52",
+  "checked_utc": "2026-10-21T13:28:20.770424+00:00",
+  "tests": {
+    "count": 78,
+    "skipped": 0,
+    "unique_test_ids": [
+      "tests.test_aldor_scryers_lore.AldorScryersLoreTests.test_fixture_extracts_only_lore_and_preserves_source_bytes",
+      "tests.test_aldor_scryers_lore.AldorScryersLoreTests.test_helper_only_fills_missing_values_and_empty_lore_node",
+      "tests.test_aldor_scryers_lore.AldorScryersLoreTests.test_parser_ignores_comments_and_strings_but_rejects_duplicate_assignment",
+      "tests.test_aldor_scryers_lore.AldorScryersLoreTests.test_source_drift_and_manifest_binding_are_rejected",
+      "tests.test_aldor_scryers_pages.AldorScryersPagesTests.test_default_off_does_not_load_or_emit_helper",
+      "tests.test_aldor_scryers_pages.AldorScryersPagesTests.test_enabled_writes_one_helper_injects_exact_page_and_records_budget",
+      "tests.test_aldor_scryers_pages.AldorScryersPagesTests.test_helper_collision_is_rejected_before_output",
+      "tests.test_aldor_scryers_pages.AldorScryersPagesTests.test_source_drift_error_is_rejected_before_output",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_arathi_directory_base_is_page_scoped_and_navigation_still_uses_index",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_arathi_exact_images_keep_routes_without_fabricating_missing_numbers",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_archived_news_compatibility_aliases_rewrite_only_verified_targets",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_existing_output_and_traversal_are_rejected",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_finite_workspace_limit_rejects_after_export",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_flash_codebase_export_is_token_scoped_and_traceable",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_flash_codebase_ignores_installer_text_in_other_attributes",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_form_token_pass_handles_external_controls_and_preserves_search",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_generated_404_uses_archive_missing_copy_and_keeps_runtime_marker",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_html_prolog_bom_is_removed_before_runtime_injection",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_iframe_fallback_urls_remain_local_on_raw_text_parsers",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_local_filter_forms_require_route_and_handler_evidence",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_navtree_community_fix_is_derived_and_idempotent",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_navtree_community_fix_runs_in_export_pipeline",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_news_toggle_anchor_rewrite_is_strict_idempotent_and_preserves_href",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_news_toggle_anchor_rewrite_runs_in_export_and_records_scope",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_prefixed_account_menu_labels_on_real_home_and_encyclopedia_pages",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_project_prefix_xml_html_and_sensitive_form",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_ptr_export_path_uses_manifest_capture_and_generated_home",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_pvp_mini_site_rewrite_matches_real_source_after_mirror",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_pvp_mini_site_rewrite_runs_in_pipeline_and_records_reason",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_real_audited_flash_codebase_attributes_are_renamed_by_source_page",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_runtime_maps_dynamic_document_write_image_with_spaces",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_ssotd_clock_uses_recorded_capture_and_preserves_gallery_contract",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_ssotd_thumbnail_fallback_prefers_thumb_when_verified",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_ssotd_thumbnail_fallback_runs_in_export_pipeline",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_story_exhibit_disables_only_retired_form_initializers",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_t_gif_alias_does_not_generalize_other_double_slash_images",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_t_gif_alias_is_not_added_when_double_slash_target_is_absent",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_t_gif_exact_alias_reuses_existing_payload_without_redirect",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_workspace_limit_disk_reserve_still_applies_before_export",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_workspace_limit_is_optional_and_disk_reserve_still_applies",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_wrath_card_hit_area_fallback_is_exported_only_for_gallery_routes",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_wrath_card_hit_area_fallback_is_narrow_and_idempotent",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_wrath_resource_base_remains_directory_while_navigation_uses_index",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_wrath_thumbnail_rewrite_is_strict_and_route_scoped",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_wrath_viewer_rewrite_is_strict_and_node_validated",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_wrath_viewer_rewrite_runs_only_for_exact_route",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_wrath_wallpapers_alias_requires_double_slash_target",
+      "tests.test_related_encyclopedia_images.RelatedEncyclopediaImageTests.test_rejects_non_jpeg_or_wrong_dimensions",
+      "tests.test_related_encyclopedia_images.RelatedEncyclopediaImageTests.test_rejects_nonnull_original_capture_and_bad_base_path",
+      "tests.test_related_encyclopedia_images.RelatedEncyclopediaImageTests.test_rejects_payload_traversal_and_sha_drift",
+      "tests.test_related_encyclopedia_images.RelatedEncyclopediaImageTests.test_rejects_unaccepted_or_historical_source",
+      "tests.test_related_encyclopedia_images.RelatedEncyclopediaImageTests.test_success_preserves_bytes_and_public_catalog",
+      "tests.test_related_encyclopedia_pages.RelatedEncyclopediaPagesTests.test_manifest_pin_mismatch_fails_before_output_creation",
+      "tests.test_related_encyclopedia_pages.RelatedEncyclopediaPagesTests.test_none_keeps_default_pipeline_without_loading_bundle",
+      "tests.test_related_encyclopedia_pages.RelatedEncyclopediaPagesTests.test_success_reuses_canonical_jpegs_localizes_xml_and_records_provenance",
+      "tests.test_related_encyclopedia_pages.RelatedEncyclopediaPagesTests.test_target_canonical_and_alias_collisions_fail_before_output_creation",
+      "tests.test_related_guide_images.RelatedGuideImageTests.test_rejects_bad_base_path_and_non_jpeg_payload",
+      "tests.test_related_guide_images.RelatedGuideImageTests.test_rejects_decision_or_source_acceptance_drift",
+      "tests.test_related_guide_images.RelatedGuideImageTests.test_rejects_payload_path_traversal_and_sha_drift",
+      "tests.test_related_guide_images.RelatedGuideImageTests.test_rejects_wrong_compatibility_theme_or_capture",
+      "tests.test_related_guide_images.RelatedGuideImageTests.test_success_preserves_exact_jpeg_and_public_catalog",
+      "tests.test_related_guide_pages.RelatedGuidePagesTests.test_success_reuses_canonical_jpeg_and_localizes_missing_target",
+      "tests.test_related_talent_ui_pages.RelatedTalentUIPagesTests.test_none_default_has_no_ui_side_effect",
+      "tests.test_related_talent_ui_pages.RelatedTalentUIPagesTests.test_success_maps_old_gifs_to_pngs_and_replaces_notice",
+      "tests.test_related_talent_ui_pages.RelatedTalentUIPagesTests.test_ui_requires_icons_and_rejects_collision_before_output",
+      "tests.test_rewardstable_compat.RewardstableCompatibilityTests.test_exact_route_rejects_source_drift_and_repeated_pass",
+      "tests.test_rewardstable_compat.RewardstableCompatibilityTests.test_invalid_base_path_is_rejected_before_rewrite",
+      "tests.test_rewardstable_compat.RewardstableCompatibilityTests.test_literal_count_guard_rejects_ambiguous_source",
+      "tests.test_rewardstable_compat.RewardstableCompatibilityTests.test_source16_rewrites_only_the_two_reviewed_literals",
+      "tests.test_rewardstable_compat.RewardstableCompatibilityTests.test_source16_sha_accepts_only_the_known_bomless_decoder_body",
+      "tests.test_rewardstable_compat.RewardstableCompatibilityTests.test_unrelated_route_and_query_cannot_bypass_scope",
+      "tests.test_rewardstable_compat.RewardstableCompatibilityTests.test_v46_bomless_body_is_an_explicitly_bound_variant",
+      "tests.test_rewardstable_pages.RewardstablePagesTests.test_export_preserves_everything_except_two_image_paths",
+      "tests.test_rewardstable_pages.RewardstablePagesTests.test_export_rejects_unreviewed_reward_script",
+      "tests.test_talent_box_layout_pages.TalentBoxLayoutPagesTests.test_missing_canonical_source_fails_before_output_creation",
+      "tests.test_talent_box_layout_pages.TalentBoxLayoutPagesTests.test_none_keeps_default_pipeline_without_loading_bundle",
+      "tests.test_talent_box_layout_pages.TalentBoxLayoutPagesTests.test_success_reuses_existing_gifs_and_records_all_pages",
+      "tests.test_talent_box_layout_pages.TalentBoxLayoutPagesTests.test_target_conflict_fails_before_output_creation"
+    ],
+    "executed_affected_checks": 3,
+    "unchanged_checks_reused": 75,
+    "old_test_method_bodies_preserved": true
+  },
+  "code_bindings": [
+    {
+      "path": "research/continuous-recovery-20261021/publication/verify_accepted_pages.py",
+      "sha256": "5ca9664faa5484c2d2da358c52d5e55ef1c7f2e0077f25dcb55adb2a743fd72d"
+    },
+    {
+      "path": "research/continuous-recovery-20261021/publication/verify_v52_pages.py",
+      "sha256": "25daaec5c125a0d9e7a935fbb33bbcd2627612827ba437393a722a1f4ff8723e"
+    },
+    {
+      "path": "tests/fixtures/rewardstable_source16/rewardstable-new.js",
+      "sha256": "7c73724e2c6cc60d4ee7f0efd57fc0f3a31a0818f84c23a75a1960f60ee35855"
+    },
+    {
+      "path": "tests/fixtures/talent_source15/localize.js",
+      "sha256": "e13769500cc7853b7c4d835f0380cf971cbec5f8fc061c3f1f83cf3dea1e6972"
+    },
+    {
+      "path": "tests/fixtures/talent_source15/printOutTop.js",
+      "sha256": "618c92c0d00c960f651aad4364a05e93cfb785df38b2b63902febaeb06d26f04"
+    },
+    {
+      "path": "tests/test_aldor_scryers_lore.py",
+      "sha256": "83faa550b751ed2e09e9b06336bd2fe358223e545b9cc386d092be75b900e8e0"
+    },
+    {
+      "path": "tests/test_aldor_scryers_pages.py",
+      "sha256": "9675a778466f4c80f3291b9368842f22ad7a43091a04c949333854081472fae9"
+    },
+    {
+      "path": "tests/test_battlegrounds_historical_entry.py",
+      "sha256": "b89d6f421e1bb29c83f3059fa291340c9b5fe2f41d2cdedd50b6f5940f1f1692"
+    },
+    {
+      "path": "tests/test_blizzcast_reader.py",
+      "sha256": "dba2e5874433a4994ada4f86b1e380ffadfdb20b3c829710435cce7808966221"
+    },
+    {
+      "path": "tests/test_github_pages_export.py",
+      "sha256": "faad8181907aac39f5d08935cbf71122a823611cf5de12c2740a8ec8031c04ea"
+    },
+    {
+      "path": "tests/test_historical_exhibits.py",
+      "sha256": "3b436f8a78161ba7a1cdfa3538738728c7fa9025c7e28765227a5162553bbaa3"
+    },
+    {
+      "path": "tests/test_related_encyclopedia_images.py",
+      "sha256": "269e30fb504110d9f6c3f1c1ba8b0817f52d11d63313fa025bd2ec2bc5fadafb"
+    },
+    {
+      "path": "tests/test_related_encyclopedia_pages.py",
+      "sha256": "ba9977b15fd1388cb5f7a80efa51ab6212d91ad43cdce60a04e00d5d83bddccc"
+    },
+    {
+      "path": "tests/test_related_guide_images.py",
+      "sha256": "13a155626aac99f9451244db9653d54c3d9360703e131d873f7472a086383637"
+    },
+    {
+      "path": "tests/test_related_guide_pages.py",
+      "sha256": "3f1022c5b78f2ba38ede0d0fcbbbbc00aaebc9166565bb3dc374869bf4012aee"
+    },
+    {
+      "path": "tests/test_related_page_routing.py",
+      "sha256": "7fa3a83e7c5db9a8d1105e40eca204ffa8a7cf997bc5c037a840b8be156f7baa"
+    },
+    {
+      "path": "tests/test_related_talent_icons.py",
+      "sha256": "99aeb250366ae8c22e1af803117f0e729ac892e6ad8c99d1cc1b334caec0acad"
+    },
+    {
+      "path": "tests/test_related_talent_pages.py",
+      "sha256": "accada5b4d359950c60b93e56ab147cd7ac1e3a0de67edf787e567b6c931f876"
+    },
+    {
+      "path": "tests/test_related_talent_ui.py",
+      "sha256": "3b610c24a00282881fef12a5946208f2ea054f3192e8324fee1a1f46ca26750b"
+    },
+    {
+      "path": "tests/test_related_talent_ui_pages.py",
+      "sha256": "2f1ae0e6faa7f4db857137a62aab2e2fb5257e20d68d9827bb29291a7349e5b9"
+    },
+    {
+      "path": "tests/test_rewardstable_compat.py",
+      "sha256": "b0111984742c0ebdc1665d04dc112a8c205917096114274fc9003023153a854b"
+    },
+    {
+      "path": "tests/test_rewardstable_pages.py",
+      "sha256": "62d96cb635b701cba7a7cb3ec227ff2ed8f8a16275360509ad2ea5ce5593bee3"
+    },
+    {
+      "path": "tests/test_source16_layout_compat.py",
+      "sha256": "2d1e4f44ed59e6c0bc8dd409716f69119d9a2f83af8b0ec730ee917e6fe0a0bd"
+    },
+    {
+      "path": "tests/test_source16_layout_pages.py",
+      "sha256": "711e6bdbb7fed93573f3fb1f50120bb4f8bf3e0cd3f05de57092b8a3919d5e6e"
+    },
+    {
+      "path": "tests/test_source16_page_metadata.py",
+      "sha256": "ad7131fe2fdabb8715b4d56251fc235008670e44ee8a0adc0adc835e0d5e4e14"
+    },
+    {
+      "path": "tests/test_talent_box_layout.py",
+      "sha256": "36a07c2101413855d23852faa505b7128effc7dec582ea9dcb3532b322bcccd5"
+    },
+    {
+      "path": "tests/test_talent_box_layout_pages.py",
+      "sha256": "a6eed0abaec0cb05adcc0ce3bee58ed49096f586e1d404dbbc5091124aad1f3d"
+    },
+    {
+      "path": "tests/test_talent_compat.py",
+      "sha256": "a28e5bd8983b7877adac9ea220a40909e54dcc7694cdf256bf7f9529a37080ae"
+    },
+    {
+      "path": "tools/aldor_scryers_lore.py",
+      "sha256": "1153a382dbb035b7e7e21b81c40a84adac54d996bf759e369a6dd2be9fde997c"
+    },
+    {
+      "path": "tools/blizzcast_reader.py",
+      "sha256": "4704229782b016e43dc3f3f881bc4f54424197ccf84d24913ef486a8fa58cfba"
+    },
+    {
+      "path": "tools/browser_assets/offline-flash.js",
+      "sha256": "6a4377a0cd3c916a8865c9a63a98511c66e2f00389c0fdb01cc68cac05c1adab"
+    },
+    {
+      "path": "tools/export_github_pages.py",
+      "sha256": "92f01fd309d8cc23b71d58f34b8593423309b734489ca0cad6c16afd37c00399"
+    },
+    {
+      "path": "tools/historical_exhibits.py",
+      "sha256": "c7e4772e5ff44fe8d47164a981ac878afcc79ea0e729bee71f6d9616d79c98c5"
+    },
+    {
+      "path": "tools/non_gallery_compat.py",
+      "sha256": "686a7c957e23228661f09e5cd6ebdb123393a2da7f66720b1ed45d25243a3f5f"
+    },
+    {
+      "path": "tools/offline_flash.py",
+      "sha256": "46144880d8ccbb4bf005c38cd559be458574b2eea4d95314f5d81fb26638b8d6"
+    },
+    {
+      "path": "tools/related_encyclopedia_images.py",
+      "sha256": "dda1241b5e57c8a8f42752c3b99daad258ee06ba4d30e8adc2581f2a1cebf14b"
+    },
+    {
+      "path": "tools/related_guide_images.py",
+      "sha256": "e06702ba7beaa556b5fa081209da2ba5c35e017456b917c7d0f4f011ea26a3a0"
+    },
+    {
+      "path": "tools/related_talent_icons.py",
+      "sha256": "20b3ce963822426e66ffe23fa84c7b9c692a6687415ba23804fbe2ffb2f59df8"
+    },
+    {
+      "path": "tools/related_talent_ui.py",
+      "sha256": "78c1cdadf74feac2e6b0fb04308e96eb005527ca4d296d0161196ddd621dcb73"
+    },
+    {
+      "path": "tools/rewardstable_compat.py",
+      "sha256": "caafd629559edadc22d69b8fc33f859936ddc2e2427cc612c4ac04230cb8d51d"
+    },
+    {
+      "path": "tools/source16_layout_compat.py",
+      "sha256": "2d72ce415528b4bc84962ca2cfd59e5925d129116e8c94cf173df4e5430c1aba"
+    },
+    {
+      "path": "tools/talent_box_layout.py",
+      "sha256": "1d2666fa1c7c116d9a9a8d32fd69dd5f0d753d50c6af8825428968906f69b798"
+    },
+    {
+      "path": "tools/talent_compat.py",
+      "sha256": "a86d225f1b1b47263bf64a35b6ff6c90a3c2950fc02ade08e905b0f007bf6934"
+    }
+  ],
+  "review": [
+    "Exact source page and primary origin only; raw path directory assignment is preserved.",
+    "Optional route argument is propagated while existing callers remain compatible.",
+    "Other navigation and pages retain the normal index-document mapping.",
+    "No new route aliases or images; all20 exact JPEGs independently decoded."
+  ],
+  "existing_decoded_images": [
+    {
+      "route": "/info/underdev/images/arathi/ss5-thumb.jpg",
+      "dimensions": [
+        171,
+        126
+      ],
+      "sha256": "3d0eb84f3b18de47ce7f1e3be600151cf102e0f7965ccc46aae743856ae0419c",
+      "actual_capture": "20061111034350"
+    },
+    {
+      "route": "/info/underdev/images/arathi/ss6-thumb.jpg",
+      "dimensions": [
+        97,
+        151
+      ],
+      "sha256": "99f84cc858f1488fb534d486600ced3b90920b0f9114008ca640862ffd12ad56",
+      "actual_capture": "20060109140133"
+    },
+    {
+      "route": "/info/underdev/images/arathi/ss7-thumb.jpg",
+      "dimensions": [
+        97,
+        151
+      ],
+      "sha256": "c1ddb2db62526b3f3351d3ad9e37d704bd338e440b42cbf1ef8bfeb2bf90035c",
+      "actual_capture": "20060109131148"
+    },
+    {
+      "route": "/info/underdev/images/arathi/ss12-thumb.jpg",
+      "dimensions": [
+        100,
+        81
+      ],
+      "sha256": "603171dd7a63c672e70c2c1c165d85f34c9f949a25324afb6c373c40833b9ff8",
+      "actual_capture": "20060111085801"
+    },
+    {
+      "route": "/info/underdev/images/arathi/ss13-thumb.jpg",
+      "dimensions": [
+        100,
+        81
+      ],
+      "sha256": "477a1ced187721c1bdbb11dfe10fdba68e91241aa45a7f3cae648e3743cb0b3f",
+      "actual_capture": "20060111090503"
+    },
+    {
+      "route": "/info/underdev/images/arathi/ss14-thumb.jpg",
+      "dimensions": [
+        100,
+        81
+      ],
+      "sha256": "5a735b7662b0aed82295847b51188e0defbed78d9478aad4ce0a04ab16cab36c",
+      "actual_capture": "20060111075234"
+    },
+    {
+      "route": "/info/underdev/images/arathi/ss15-thumb.jpg",
+      "dimensions": [
+        100,
+        81
+      ],
+      "sha256": "06d9772264bde4e833966a17cc492aa2c0bcbb75ac3f100862bec962f260e6fd",
+      "actual_capture": "20060111074627"
+    },
+    {
+      "route": "/info/underdev/images/arathi/ss16-thumb.jpg",
+      "dimensions": [
+        100,
+        81
+      ],
+      "sha256": "f9129555f382bb4d825cb0206a0d5d419ca064ec9f58525ea7d0fb3465d2c52e",
+      "actual_capture": "20060111084339"
+    },
+    {
+      "route": "/info/underdev/images/arathi/ss19-thumb.jpg",
+      "dimensions": [
+        128,
+        100
+      ],
+      "sha256": "29efcd7c7d85135022f608317d3abfccab76d95ed259cc2f67cf6dd99a3b0b35",
+      "actual_capture": "20071121171403"
+    },
+    {
+      "route": "/info/underdev/images/arathi/ss20-thumb.jpg",
+      "dimensions": [
+        130,
+        102
+      ],
+      "sha256": "7c3442c25dc4a8a918a0a9d773bd26fba7a493e9d3add2bc125a6b16647a856e",
+      "actual_capture": "20071121171403"
+    },
+    {
+      "route": "/info/underdev/images/arathi/ss21-thumb.jpg",
+      "dimensions": [
+        130,
+        102
+      ],
+      "sha256": "197e92d1cbce691f689bb99c5adce5c116cb34842c2fcd63363ddb4032ff5b62",
+      "actual_capture": "20071121171404"
+    },
+    {
+      "route": "/info/underdev/images/arathi/ss22-thumb.jpg",
+      "dimensions": [
+        130,
+        102
+      ],
+      "sha256": "484120d0eb4ec0aeeb756ebf5a57f58eb9cf155da43c92a8fa5342cc3ee803f3",
+      "actual_capture": "20071121171404"
+    },
+    {
+      "route": "/info/underdev/images/arathi/ss23-thumb.jpg",
+      "dimensions": [
+        130,
+        101
+      ],
+      "sha256": "97cc3d1a89d5c8a63b8c21bfec35d75e6f2d32196f443d430ed81fdcb4571e27",
+      "actual_capture": "20071121171404"
+    },
+    {
+      "route": "/info/underdev/images/arathi/ss24-thumb.jpg",
+      "dimensions": [
+        130,
+        101
+      ],
+      "sha256": "7766048bfbcbdfe1f532ff58ab71c7fc263d05bc872167e76da79b39669bbae7",
+      "actual_capture": "20071121171405"
+    },
+    {
+      "route": "/info/underdev/images/arathi/ss25-thumb.jpg",
+      "dimensions": [
+        130,
+        101
+      ],
+      "sha256": "39752875b76b5042455e773977edf716d2c23d2be422e9bb7df82182f8af9952",
+      "actual_capture": "20071121171405"
+    },
+    {
+      "route": "/info/underdev/images/arathi/ss26-thumb.jpg",
+      "dimensions": [
+        130,
+        101
+      ],
+      "sha256": "465882f05a1a56bdb88d6506cd1b05d79c93ba90491a03ec1026d5ed8c849e2f",
+      "actual_capture": "20071121171405"
+    },
+    {
+      "route": "/info/underdev/images/arathi/ss27-thumb.jpg",
+      "dimensions": [
+        130,
+        101
+      ],
+      "sha256": "bfe7f6bb2f6bc1bc4038d9396939d924065d954807b61ebd078296b9d1831c9a",
+      "actual_capture": "20071121171405"
+    },
+    {
+      "route": "/info/underdev/images/arathi/ss28-thumb.jpg",
+      "dimensions": [
+        130,
+        101
+      ],
+      "sha256": "8eef10b2957fa866e0f6123d2b2fe6dcaf8d236e35a696389a6e7593c9210b7a",
+      "actual_capture": "20071121171406"
+    },
+    {
+      "route": "/info/underdev/images/arathi/ss29-thumb.jpg",
+      "dimensions": [
+        130,
+        101
+      ],
+      "sha256": "f1158d3021c4e0949c6435737cd390e098a25e608b1f7c160f88c9dbe3a1360a",
+      "actual_capture": "20071121171406"
+    },
+    {
+      "route": "/info/underdev/images/arathi/ss30-thumb.jpg",
+      "dimensions": [
+        130,
+        101
+      ],
+      "sha256": "0e198b8cdd90fc967839f312cc0a98ad8d2a89f639d9c2dd5ab719a24997acb8",
+      "actual_capture": "20071116205957"
+    }
+  ],
+  "missing_exact_images": [
+    "/info/underdev/images/arathi/ss17-thumb.jpg",
+    "/info/underdev/images/arathi/ss18-thumb.jpg"
+  ],
+  "evidence": [
+    {
+      "path": "research/continuous-recovery-20261021/local-audit/underdev-final-routing-review/underdev-final-routing-review.json",
+      "sha256": "02124288f18e2271385f9b13b5c506d8ca6a5ee1c4b8da1668687d4a0883d3b4"
+    },
+    {
+      "path": "research/continuous-recovery-20261021/local-audit/underdev-final-routing-review/implementation-receipt.json",
+      "sha256": "1e3975223367bfa17644c706278a06f35c6bf41384a1ae2c8e32cd2694730c07"
+    },
+    {
+      "path": "research/continuous-recovery-20261021/publication/root-v52-bounded-exception-decision.json",
+      "sha256": "61fb83759fe2cb6a5595abb795e0226f02a7197a4ea11d9d1c6fe58009c7bc74"
+    },
+    {
+      "path": "research/continuous-recovery-20261021/publication/v52-focused-test-execution.log",
+      "sha256": "1e6443d3aa040b6d65bdd2f1b5eec259c2a7abb23b76a5b261e617a3189742b8"
+    },
+    {
+      "path": "research/continuous-recovery-20261021/publication/accept_v52_code.py",
+      "sha256": "6b0e01097f0f7419aab612c63697b2a30b797d791208720c2fd8d3e2585938b5"
+    }
+  ]
+}
