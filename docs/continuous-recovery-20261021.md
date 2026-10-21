@@ -187,3 +187,9 @@ v51离线包已发布并设为最新版本，三份附件的大小与摘要匹�
 v52只修改这一页的一处目录赋值；其余10,142个声明对象、所有图片与脚本逐字节一致。实际Chrome已显示20张指南预览，另外两张仍为缺口，无外联或页面/请求错误。旧清单411个观察路径去掉22个异常拼接，加入2个真实缺失地址，修正为391个本地资源目标，仍是分轮覆盖范围而非全站总数。
 
 [目录调查](../research/continuous-recovery-20261021/local-audit/underdev-final-routing-review/README.md) · [例外决定](../research/continuous-recovery-20261021/publication/root-v52-bounded-exception-decision.json) · [v52本地验收](../research/continuous-recovery-20261021/publication/root-v52-local-acceptance.json)
+
+### 13:44 UTC — v52线上与便携包
+
+代码提交617243ac已正常push，Pages提交d46c14a0构建完成，25个线上对象均由direct取得并匹配。包制作一次完成，原图与其他页面保持。独立读取全部ZIP成员，并用解压后的包内服务实际检查导出来源表选出的资源路径；浏览行为复用当前v52实际Chrome记录及字节未变的v51记录。
+
+[线上核对](../research/continuous-recovery-20261021/publication/root-v52-pages-online-acceptance.json) · [便携包核对](../research/continuous-recovery-20261021/publication/root-v52-portable-acceptance.json)。当前线上为v52，公开离线包仍为v51，继续发布已验收v52包。

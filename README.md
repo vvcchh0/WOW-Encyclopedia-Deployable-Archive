@@ -17,6 +17,7 @@
 - 补齐天赋计算器的状态边框、重置和打印按钮，并恢复点数框布局。
 - 补充百科与指南的四幅配图，页面注明 ArchiveCraft 来源。
 - 恢复奥尔多／占星者说明弹窗与派系切换，修复四页 Wrath 字母图的显示。
+- 修复 Arathi 指南的图片目录，恢复二十张已有预览的显示。
 
 ## 当前不足
 
@@ -27,7 +28,7 @@
 
 ## 本地使用
 
-安装 Python 3 后，下载 [2026-10-20 离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/download/archive-20080512-browser-20261020-v39/WOW_Encyclopedia_20080512_browser_20261020_v39.zip)（约 534 MB，解压后约 600 MB）。Windows 用户解压后双击 `START_BROWSE.cmd`。
+安装 Python 3 后，下载 [2026-10-21 离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/download/archive-20080512-browser-20261021-v51/WOW_Encyclopedia_20080512_browser_20261021_v51.zip)（约 546 MB，解压后约 634 MB）。Windows 用户解压后双击 `START_BROWSE.cmd`。
 
 macOS / Linux 用户在解压目录运行：
 
@@ -35,7 +36,7 @@ macOS / Linux 用户在解压目录运行：
 python3 tools/serve_pages_preview.py --site site --port 0 --open-browser
 ```
 
-启动后会打开本地浏览页面。在线版为 v51，离线包暂为 v39；新版离线包已完成本地验证，准备发布。后续进度见[更新记录](CHANGELOG.md)。
+启动后会打开本地浏览页面。在线版为 v52，离线包为 v51；同步新版离线包已完成本地验证，准备发布。后续进度见[更新记录](CHANGELOG.md)。
 
 ## 参与协作
 
