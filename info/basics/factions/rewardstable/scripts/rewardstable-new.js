@@ -32,8 +32,8 @@ function hideRepLevels(theseLevels)
 
 function neutralFactions()
 {
-	document.getElementById("allianceButton").style.backgroundImage = "url(images/button-alliance.jpg)";
-	document.getElementById("hordeButton").style.backgroundImage = "url(images/button-horde.jpg)";
+	document.getElementById("allianceButton").style.backgroundImage = "url(/WOW-Encyclopedia-Deployable-Archive/info/basics/factions/rewardstable/images/button-alliance.jpg)";
+	document.getElementById("hordeButton").style.backgroundImage = "url(/WOW-Encyclopedia-Deployable-Archive/info/basics/factions/rewardstable/images/button-horde.jpg)";
 }
 
 var reputationsList = new Array();
