@@ -151,3 +151,19 @@ v50本地验收恢复奥尔多／占星者说明。来源是Source16已保存的
 [v50本地验收](../research/continuous-recovery-20261021/publication/root-v50-local-acceptance.json) · [原文来源](../research/continuous-recovery-20261021/publication/root-aldor-scryers-lore-source-acceptance.json)
 
 另发现Wrath字母T图片已存在，源路由为双斜线，而正文单斜线路由尚未接通；进行单独最小修复评审，不把已有素材计作新取得图片。
+
+### 12:37 UTC — 最终本地版本v51与缺口清单
+
+v51只新增T.gif的一个精确兼容地址。原GIF捕获于2008-04-23 09:51:02，48×48、1,419字节，已在本地；源逻辑地址含双斜线，输出地址为单斜线，浏览适配器此前未识别该输出地址。修复后Howling Fjord、Grizzly Hills、Borean Tundra和Bard四页实际显示原图，未新增图片实体或HTML跳转。
+
+五页Chrome检查完成，包括两派说明弹窗与四页字母图；无外联、页面错误、失败请求或HTTP错误。全部10,144个实际文件核对；相对v50只改变路由表和嵌入路由表的浏览脚本，页面HTML及所有原图、脚本、奖励数据、SWF/WASM保持。v50作为本地检查点提交并正常push，最终以v51部署。
+
+[v51本地验收](../research/continuous-recovery-20261021/publication/root-v51-local-acceptance.json)
+
+合并分轮浏览记录得到177条独立页面路径，不表示在同一版本重新执行全站扫描。已观察状态中仍有411个本地缺资源目标，包含259个天赋图片目标；另单列已有但路由未接的T.gif（现由v51修复）及周年截图脚本拼接错误。后者保留为后续图库任务。两张名称含screenshot的新闻配图仍纳入新闻缺口，没有按文件名错误排除。原型排除只依据实际证据；未记录HTTP状态的已接受交互不补造200。
+
+[整理后的缺口清单](../research/continuous-recovery-20261021/local-audit/non-gallery-closeout-v49-r3/README.md) · [主代理复核](../research/continuous-recovery-20261021/publication/root-non-gallery-closeout-acceptance.json)
+
+12:11 UTC再次取一份已知正样本CDX控制：direct连接超时，代理返回429，2次请求后停止，无正CDX行，未开启后续Wayback批次。原始HTTP头和文本留本地，公开整理后的观察；没有重置历史失败记录。
+
+[最新控制](../research/continuous-recovery-20261021/publication/root-control02-source-acceptance.json)

@@ -1,0 +1,115 @@
+{
+  "schema": "wow-recovery-wayback-control02-source-selection.v1",
+  "prepared_utc": "2026-10-21T12:05:27.917170Z",
+  "network_requests_at_prepare": 0,
+  "selection_status": "prepared_only",
+  "control_scope": "One exact-CDX connectivity control; no image replay or recovery claim.",
+  "exact_target": {
+    "original": "http://www.worldofwarcraft.com/news/images/08-02/02-14-08-2.jpg",
+    "endpoint": "https://web.archive.org/cdx/search/cdx",
+    "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F08-02%2F02-14-08-2.jpg&from=20000101000000&to=20080512210044&output=json&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=10&showResumeKey=true&matchType=exact",
+    "from": "20000101000000",
+    "to": "20080512210044",
+    "match_type": "exact",
+    "limit": 10,
+    "show_resume_key": true,
+    "fields": [
+      "timestamp",
+      "original",
+      "mimetype",
+      "statuscode",
+      "digest",
+      "length"
+    ],
+    "pagination": false,
+    "redirects": false
+  },
+  "reuse_binding": {
+    "accepted_control01_runner": {
+      "path": "research/continuous-recovery-20261020/network/control01/control01_driver.py",
+      "sha256": "ae099cd19401522a9bc59f74262ec5a644450043e49b393d4a1e371e823bdd84",
+      "role": "implementation/reference for bounded exact-CDX getter"
+    },
+    "known_positive_report": {
+      "path": "research/continuous-recovery-20261018/network/control-after-gallery15/control-report.json",
+      "sha256": "7145994e5663a28a4f808fb82586ab51b2da2054da087a821cc3fee4ec540cd8",
+      "role": "verified exact positive row, not a new request"
+    },
+    "known_positive": {
+      "timestamp": "20080402035201",
+      "original": "http://www.worldofwarcraft.com/news/images/08-02/02-14-08-2.jpg",
+      "mimetype": "image/jpeg",
+      "statuscode": "200",
+      "digest": "TJ2TFHNGVSA64RRRP3UD2CQZCP4TTRND",
+      "length": "9971",
+      "required_for_success": true
+    }
+  },
+  "failure_chain": {
+    "required_prior_failure": {
+      "source_acceptance": {
+        "path": "research/player-gallery-accessibility-20261020/root/network-source-acceptance.json",
+        "sha256": "622c1a25d33147a86d20a0aac30ab6d824d144b158354579d4f2bca104effc96",
+        "failure_finished_utc": "2026-10-20T14:20:12.457102+00:00",
+        "proxy_http_status": 429,
+        "cooldown_not_before_utc": "2026-10-20T14:22:12.457102+00:00"
+      },
+      "private_report": {
+        "path": "research/player-gallery-accessibility-20261020/network/control02-prep/runtime/control-report.json",
+        "sha256": "fcbc4297dbbc20067dcde0bd1e8a2dee8a14376718a501d1fc2a34b56b8e2a28",
+        "network_requests": 2,
+        "last_http_status": 429
+      },
+      "role": "required historical provider-429 binding; not replaced by older 11:08 evidence"
+    },
+    "intervening_latest_failure": {
+      "source_acceptance": {
+        "path": "research/continuous-recovery-20261021/publication/root-control01-source-acceptance.json",
+        "sha256": "8f41323229e75f990b90ff4cea35723d8116444e8081047fdc6afdd93eece88d",
+        "failure_finished_utc": "2026-10-21T00:49:09.670573+00:00",
+        "proxy_http_status": 429,
+        "cooldown_not_before_utc": "2026-10-21T00:51:09.684640+00:00"
+      },
+      "private_report": {
+        "path": "research/continuous-recovery-20261021/network/runtime/control-report.json",
+        "sha256": "b340c903e8e278c2e0793d0d44b965eaa790689f1801197dc2f74e5bfdb0255e",
+        "network_requests": 2,
+        "last_http_status": 429
+      },
+      "role": "newer 00:49 control observation; provider gate remains false until this reviewed control"
+    }
+  },
+  "constraints": {
+    "direct_first": true,
+    "proxy_only_on_transport_failure": "http://127.0.0.1:7890",
+    "tls_verification": true,
+    "no_global_dns_proxy_certificate_changes": true,
+    "no_user_agent_rotation": true,
+    "no_redirects": true,
+    "no_retries": true,
+    "no_pagination": true,
+    "no_image_replay": true,
+    "max_logical_requests": 1,
+    "max_transport_attempts": 2,
+    "total_seconds": 90,
+    "body_cap_bytes": 1048576,
+    "request_start_interval_seconds": 6.2,
+    "stop_statuses": [
+      429,
+      503
+    ],
+    "cooldown_seconds": 120,
+    "disk_floor_bytes": 11005853696
+  },
+  "status_binding": {
+    "path": "research/continuous-recovery-20261021/status.json",
+    "sha256": "300b42369929b933b5b40bf26858dec0bf7c457df2e2a76654e3708bdf510dc4",
+    "network_stop_utc": "2026-10-21T12:45:07Z",
+    "resume_gate_passed": false
+  },
+  "execution_authorization": {
+    "root_go_required": true,
+    "network_allowed_at_prepare": false,
+    "raw_output_at_prepare": false
+  }
+}

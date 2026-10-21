@@ -11,7 +11,7 @@ ROOT=Path(__file__).resolve().parents[3];PUB=Path(__file__).resolve().parent
 FROZEN=ROOT/'research/continuous-recovery-20261018/publication/verify_pages_v32.py'
 sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
 parser=argparse.ArgumentParser();parser.add_argument('--version',required=True);args=parser.parse_args()
-assert args.version in {'v41','v42','v43','v44','v45','v46','v47','v48','v49','v50'}
+assert args.version in {'v41','v42','v43','v44','v45','v46','v47','v48','v49','v50','v51'}
 version=args.version;gate_path=PUB/f'root-{version}-local-acceptance.json';gate=json.loads(gate_path.read_bytes())
 assert gate['accepted']
 assert sha(FROZEN)=='82f9c2bce15c618e33d31bb583192a217a2f419d0e7cf85714f47709d5d09289'

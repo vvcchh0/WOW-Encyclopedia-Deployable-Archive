@@ -1,0 +1,151 @@
+{
+  "schema": "wow-recovery-wayback-control02-plan.v1",
+  "batch_id": "WAYBACK-CONTROL-02-EXACT-CDX-20261021",
+  "mode": "prepared_only",
+  "execution_status": "not_executed",
+  "root_go_required": true,
+  "network_requests_executed_at_prepare": 0,
+  "prepared_utc": "2026-10-21T12:05:44.928348Z",
+  "exact_original": "http://www.worldofwarcraft.com/news/images/08-02/02-14-08-2.jpg",
+  "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F08-02%2F02-14-08-2.jpg&from=20000101000000&to=20080512210044&output=json&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=10&showResumeKey=true&matchType=exact",
+  "query": {
+    "endpoint": "https://web.archive.org/cdx/search/cdx",
+    "match_type": "exact",
+    "from": "20000101000000",
+    "to": "20080512210044",
+    "output": "json",
+    "fields": [
+      "timestamp",
+      "original",
+      "mimetype",
+      "statuscode",
+      "digest",
+      "length"
+    ],
+    "limit": 10,
+    "show_resume_key": true,
+    "collapse": false,
+    "pagination": false,
+    "redirects": false
+  },
+  "known_positive": {
+    "timestamp": "20080402035201",
+    "original": "http://www.worldofwarcraft.com/news/images/08-02/02-14-08-2.jpg",
+    "mimetype": "image/jpeg",
+    "statuscode": "200",
+    "digest": "TJ2TFHNGVSA64RRRP3UD2CQZCP4TTRND",
+    "length": "9971",
+    "required_for_control_success": true,
+    "port80_normalization_allowed": true
+  },
+  "policy": {
+    "maximum_requests": 2,
+    "maximum_seconds_child": 90,
+    "maximum_seconds_parent": 180,
+    "maximum_total_body_bytes": 1048576,
+    "maximum_entity_body_bytes": 1048576,
+    "minimum_dispatch_seconds": 6.2,
+    "minimum_request_start_seconds": 6.2,
+    "disk_floor_bytes": 11005853696,
+    "tls_verification": true,
+    "automatic_redirects": false,
+    "payload_replay": false,
+    "direct_first": true,
+    "proxy": "http://127.0.0.1:7890",
+    "stop_http_statuses": [
+      429,
+      503
+    ],
+    "stop_after_transport_failures": 5,
+    "cooldown_seconds": 120,
+    "respect_retry_after": true,
+    "retry_after_formats": [
+      "delta-seconds",
+      "http-date"
+    ],
+    "no_automatic_retry": true,
+    "no_pagination": true,
+    "no_image_replay": true,
+    "curl_connect_timeout_seconds": 10,
+    "curl_max_time_seconds": 35,
+    "no_global_network_setting_changes": true
+  },
+  "schedule": {
+    "run_start_utc": "2026-10-21T12:05:44.928348Z",
+    "network_stop_utc": "2026-10-21T12:45:07Z",
+    "parent_hardstop_utc": "2026-10-21T14:25:07Z"
+  },
+  "latest_failure_authoritative": {
+    "source_acceptance": {
+      "path": "research/player-gallery-accessibility-20261020/root/network-source-acceptance.json",
+      "sha256": "622c1a25d33147a86d20a0aac30ab6d824d144b158354579d4f2bca104effc96",
+      "role": "required 2026-10-20T14:20:12.457102Z provider-429 receipt"
+    },
+    "control_report": {
+      "path": "research/player-gallery-accessibility-20261020/network/control02-prep/runtime/control-report.json",
+      "sha256": "fcbc4297dbbc20067dcde0bd1e8a2dee8a14376718a501d1fc2a34b56b8e2a28",
+      "role": "latest private raw/report receipt for that failure"
+    },
+    "failure_finished_utc": "2026-10-20T14:20:12.457102+00:00",
+    "endpoint_stop_status": 429,
+    "cooldown_not_before_utc": "2026-10-20T14:22:12.457102+00:00",
+    "resume_gate_passed": false,
+    "network_requests_in_source_run": 2
+  },
+  "intervening_failure": {
+    "source_acceptance": {
+      "path": "research/continuous-recovery-20261021/publication/root-control01-source-acceptance.json",
+      "sha256": "8f41323229e75f990b90ff4cea35723d8116444e8081047fdc6afdd93eece88d",
+      "role": "newer 00:49 provider-429 control receipt"
+    },
+    "control_report": {
+      "path": "research/continuous-recovery-20261021/network/runtime/control-report.json",
+      "sha256": "b340c903e8e278c2e0793d0d44b965eaa790689f1801197dc2f74e5bfdb0255e",
+      "role": "newer private control report"
+    },
+    "failure_finished_utc": "2026-10-21T00:49:09.670573+00:00",
+    "endpoint_stop_status": 429,
+    "cooldown_not_before_utc": "2026-10-21T00:51:09.684640+00:00",
+    "resume_gate_passed": false
+  },
+  "execution_gate": {
+    "cooldown_not_before_utc": "2026-10-21T00:51:09.684640+00:00",
+    "source": "intervening 00:49 control failure; must still be reviewed by root",
+    "resume_gate_passed": false
+  },
+  "status_binding": {
+    "path": "research/continuous-recovery-20261021/status.json",
+    "sha256": "300b42369929b933b5b40bf26858dec0bf7c457df2e2a76654e3708bdf510dc4",
+    "network_stop_utc": "2026-10-21T12:45:07Z"
+  },
+  "source_selection": {
+    "path": "research/continuous-recovery-20261021/network/control02/source-selection.json",
+    "sha256": "202f27bf143056132fd85fee9a4fb1f384b5ed75558d52f1f8d04b1722f8679e",
+    "bytes": 4805
+  },
+  "frozen_runtime": {
+    "preparation_runner": {
+      "path": "research/continuous-recovery-20261021/network/control02/control02_driver.py",
+      "sha256": "f90636f7a0d8911486800f0891ed2dec795028a852f7f0228649e5537bdad760",
+      "bytes": 22607,
+      "role": "new root-gated runner, not executed at prepare"
+    },
+    "accepted_control01_runner": {
+      "path": "research/continuous-recovery-20261020/network/control01/control01_driver.py",
+      "sha256": "ae099cd19401522a9bc59f74262ec5a644450043e49b393d4a1e371e823bdd84",
+      "role": "implementation reference only"
+    },
+    "known_positive_report": {
+      "path": "research/continuous-recovery-20261018/network/control-after-gallery15/control-report.json",
+      "sha256": "7145994e5663a28a4f808fb82586ab51b2da2054da087a821cc3fee4ec540cd8",
+      "role": "verified positive CDX row, no image replay"
+    }
+  },
+  "authorization": {
+    "network_execution": "not authorized at prepare",
+    "new_root_go_required": true,
+    "no_network_at_prepare": true,
+    "output_absent_before_execute": true,
+    "raw_absent_before_execute": true
+  }
+}

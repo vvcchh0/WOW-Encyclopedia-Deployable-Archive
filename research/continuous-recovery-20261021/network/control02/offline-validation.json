@@ -1,0 +1,66 @@
+{
+  "schema": "wow-recovery-wayback-control02-offline-validation.v1",
+  "prepared_utc": "2026-10-21T12:05:44.928348Z",
+  "network_requests": 0,
+  "raw_written": false,
+  "runtime_present": false,
+  "commands": [
+    {
+      "command": "python -B -X utf8 -m py_compile research/continuous-recovery-20261021/network/control02/control02_driver.py",
+      "result": "passed",
+      "network": "none"
+    },
+    {
+      "command": "python -B -X utf8 research/continuous-recovery-20261021/network/control02/control02_driver.py",
+      "result": "prepared_only; execute_requires_new_root_go",
+      "network": "none"
+    },
+    {
+      "command": "python -B -X utf8 research/continuous-recovery-20261021/network/control02/control02_driver.py --fixture",
+      "result": "passed",
+      "network": "none"
+    }
+  ],
+  "fixture": {
+    "path": "research/continuous-recovery-20261021/network/control02/root-offline-fixture.json",
+    "sha256": "3ef5603ff028d699d3549b2e8fa8002cc654f315be5ac92a53d64fba6a2543aa",
+    "all_passed": true,
+    "network_requests": 0,
+    "raw_written": false,
+    "cases": {
+      "exact_query_and_no_pagination": true,
+      "direct_noproxy_first": true,
+      "proxy_fallback_only": true,
+      "tls_https_only": true,
+      "no_retries_or_redirects": true,
+      "request_and_connect_caps": true,
+      "one_mib_entity_and_total_caps": true,
+      "cadence_policy": true,
+      "known_row_positive_required": true,
+      "resume_key_incomplete": true,
+      "429_503_stop_and_retry_after_integer": true,
+      "retry_after_future_http_date": true,
+      "disk_floor_before_and_after": true,
+      "runtime_absence_guard": true,
+      "new_root_go_required": true,
+      "no_network_entrypoint": true
+    }
+  },
+  "bindings": {
+    "path": "research/continuous-recovery-20261021/network/control02/input-bindings.json",
+    "sha256": "ec1e75fdcdcdec85089b5bf45f82899e40febc9df927237ec7d0ce82fac816bb"
+  },
+  "plan": {
+    "path": "research/continuous-recovery-20261021/network/control02/plan.json",
+    "sha256": "fbb15164eec02df8083deba81529b5814582384643a86fe4dc4e069aacbd7e1e"
+  },
+  "runner": {
+    "path": "research/continuous-recovery-20261021/network/control02/control02_driver.py",
+    "sha256": "f90636f7a0d8911486800f0891ed2dec795028a852f7f0228649e5537bdad760"
+  },
+  "source_selection": {
+    "path": "research/continuous-recovery-20261021/network/control02/source-selection.json",
+    "sha256": "202f27bf143056132fd85fee9a4fb1f384b5ed75558d52f1f8d04b1722f8679e"
+  },
+  "interpretation": "Offline syntax, prepared-only entrypoint, curl command policy and exact known-positive parser gate passed. This does not establish current Wayback availability; a new reviewed root GO is required before any network entrypoint."
+}

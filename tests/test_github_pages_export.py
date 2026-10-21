@@ -765,6 +765,85 @@ xmlTimeVerification.send(null);
             route_map = json.loads((base / "pages/__offline/route-map.json").read_text(encoding="utf-8"))
             self.assertNotIn("/wrath/wallpapers.xml", route_map["routes"])
 
+    def _add_double_slash_image(self, site: Path, manifest: Path, name: str) -> bytes:
+        payload = json.loads(manifest.read_text(encoding="utf-8"))
+        route = f"/wrath//images/letters/{name}.gif"
+        data = b"GIF89a" + name.encode("ascii") + b"-verified"
+        target = site / "wrath/images/letters" / f"{name}.gif"
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(data)
+        payload["files"].append({
+            "route": route,
+            "output_path": "offline/site/wrath/images/letters/" + f"{name}.gif",
+            "derived_sha256": hashlib.sha256(data).hexdigest(),
+            "derived_length": len(data),
+            "mime": "image/gif",
+            "kind": "image",
+            "source_base_url": "http://www.worldofwarcraft.com" + route,
+        })
+        payload["origin_index"]["www.worldofwarcraft.com" + route] = route
+        manifest.write_text(json.dumps(payload), encoding="utf-8")
+        return data
+
+    def test_t_gif_exact_alias_reuses_existing_payload_without_redirect(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            base, site, manifest = self._fixture(Path(tmp))
+            data = self._add_double_slash_image(site, manifest, "T")
+            pages.export_pages(
+                source_site=site,
+                manifest_path=manifest,
+                output=base / "pages",
+                workspace_root=base,
+                max_bytes=500_000_000,
+                min_free_bytes=0,
+            )
+            static = pages.DEFAULT_BASE_PATH + "wrath/images/letters/T.gif"
+            route_map = json.loads((base / "pages/__offline/route-map.json").read_text(encoding="utf-8"))
+            self.assertEqual(route_map["routes"]["/wrath//images/letters/T.gif"], static)
+            self.assertEqual(route_map["routes"]["/wrath/images/letters/T.gif"], static)
+            self.assertEqual((base / "pages/wrath/images/letters/T.gif").read_bytes(), data)
+            self.assertFalse((base / "pages/wrath/images/letters/T.gif.html").exists())
+            provenance = json.loads((base / "pages/export-provenance.json").read_text(encoding="utf-8"))
+            self.assertEqual(
+                [row for row in provenance["files"] if row.get("route") == "/wrath/images/letters/T.gif"],
+                [],
+            )
+
+    def test_t_gif_alias_is_not_added_when_double_slash_target_is_absent(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            base, site, manifest = self._fixture(Path(tmp))
+            pages.export_pages(
+                source_site=site,
+                manifest_path=manifest,
+                output=base / "pages",
+                workspace_root=base,
+                max_bytes=500_000_000,
+                min_free_bytes=0,
+            )
+            route_map = json.loads((base / "pages/__offline/route-map.json").read_text(encoding="utf-8"))
+            self.assertNotIn("/wrath/images/letters/T.gif", route_map["routes"])
+            self.assertNotIn("/wrath/images/letters/T.gif", route_map["aliases"])
+            self.assertFalse((base / "pages/wrath/images/letters/T.gif").exists())
+
+    def test_t_gif_alias_does_not_generalize_other_double_slash_images(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            base, site, manifest = self._fixture(Path(tmp))
+            self._add_double_slash_image(site, manifest, "T")
+            self._add_double_slash_image(site, manifest, "D")
+            self._add_double_slash_image(site, manifest, "F")
+            pages.export_pages(
+                source_site=site,
+                manifest_path=manifest,
+                output=base / "pages",
+                workspace_root=base,
+                max_bytes=500_000_000,
+                min_free_bytes=0,
+            )
+            route_map = json.loads((base / "pages/__offline/route-map.json").read_text(encoding="utf-8"))
+            for name in ("D", "F"):
+                self.assertIn(f"/wrath//images/letters/{name}.gif", route_map["routes"])
+                self.assertNotIn(f"/wrath/images/letters/{name}.gif", route_map["routes"])
+
     def test_prefixed_account_menu_labels_on_real_home_and_encyclopedia_pages(self) -> None:
         base_path = pages.DEFAULT_BASE_PATH
         for route in ("/index.xml", "/info/encyclopedia/index.xml"):

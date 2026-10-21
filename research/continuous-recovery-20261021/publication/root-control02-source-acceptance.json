@@ -1,0 +1,38 @@
+{
+  "accepted": true,
+  "checked_utc": "2026-10-21T12:16:15.000603+00:00",
+  "source_report": "research/continuous-recovery-20261021/network/control02/runtime/control-report.json",
+  "source_report_sha256": "5005edf9c992e15bc54bffa8f2466f8780c2dbc4d82c8138ba4421b5530125b8",
+  "network_requests": 2,
+  "records": [
+    {
+      "transport": "direct",
+      "request_started_utc": "2026-10-21T12:11:36.346389+00:00",
+      "request_finished_utc": "2026-10-21T12:11:46.447043+00:00",
+      "returncode": 28,
+      "http_status": 0,
+      "classification": "transport_failure",
+      "body_bytes": 0,
+      "positive_known_row": false
+    },
+    {
+      "transport": "proxy",
+      "request_started_utc": "2026-10-21T12:11:46.453575+00:00",
+      "request_finished_utc": "2026-10-21T12:11:48.869099+00:00",
+      "returncode": 0,
+      "http_status": 429,
+      "classification": "endpoint_stop",
+      "body_bytes": 162,
+      "positive_known_row": false
+    }
+  ],
+  "control_positive": false,
+  "resume_gate_passed": false,
+  "stop_reason": "endpoint_status_429",
+  "cooldown_not_before_utc": "2026-10-21T12:13:48.894609+00:00",
+  "prior_failure_acceptance": "research/continuous-recovery-20261021/publication/root-control01-source-acceptance.json",
+  "historical_failure_tail_reset": false,
+  "accepted_image_payloads": 0,
+  "disk_free_after_bytes": 25660129280,
+  "raw_headers_and_cookies_published": false
+}

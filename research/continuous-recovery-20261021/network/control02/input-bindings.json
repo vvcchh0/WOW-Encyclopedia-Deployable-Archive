@@ -1,0 +1,110 @@
+{
+  "schema": "wow-recovery-wayback-control02-input-bindings.v1",
+  "batch_id": "WAYBACK-CONTROL-02-EXACT-CDX-20261021",
+  "prepared_utc": "2026-10-21T12:05:44.928348Z",
+  "execution_status": "not_executed",
+  "network_requests_at_prepare": 0,
+  "plan": {
+    "path": "research/continuous-recovery-20261021/network/control02/plan.json",
+    "sha256": "fbb15164eec02df8083deba81529b5814582384643a86fe4dc4e069aacbd7e1e",
+    "bytes": 6086
+  },
+  "runner": {
+    "path": "research/continuous-recovery-20261021/network/control02/control02_driver.py",
+    "sha256": "f90636f7a0d8911486800f0891ed2dec795028a852f7f0228649e5537bdad760",
+    "bytes": 22607,
+    "syntax": "passed with py_compile; no network"
+  },
+  "fixture": {
+    "path": "research/continuous-recovery-20261021/network/control02/root-offline-fixture.json",
+    "sha256": "3ef5603ff028d699d3549b2e8fa8002cc654f315be5ac92a53d64fba6a2543aa",
+    "bytes": 2802,
+    "schema": "wow-recovery.wayback-control02-prep-fixture.v1",
+    "all_passed": true,
+    "network_requests": 0,
+    "raw_written": false
+  },
+  "source_selection": {
+    "path": "research/continuous-recovery-20261021/network/control02/source-selection.json",
+    "sha256": "202f27bf143056132fd85fee9a4fb1f384b5ed75558d52f1f8d04b1722f8679e",
+    "bytes": 4805
+  },
+  "required_prior_failure": {
+    "source_acceptance": {
+      "path": "research/player-gallery-accessibility-20261020/root/network-source-acceptance.json",
+      "sha256": "622c1a25d33147a86d20a0aac30ab6d824d144b158354579d4f2bca104effc96"
+    },
+    "private_report": {
+      "path": "research/player-gallery-accessibility-20261020/network/control02-prep/runtime/control-report.json",
+      "sha256": "fcbc4297dbbc20067dcde0bd1e8a2dee8a14376718a501d1fc2a34b56b8e2a28",
+      "network_requests": 2,
+      "last_http_status": 429
+    }
+  },
+  "intervening_latest_failure": {
+    "source_acceptance": {
+      "path": "research/continuous-recovery-20261021/publication/root-control01-source-acceptance.json",
+      "sha256": "8f41323229e75f990b90ff4cea35723d8116444e8081047fdc6afdd93eece88d"
+    },
+    "private_report": {
+      "path": "research/continuous-recovery-20261021/network/runtime/control-report.json",
+      "sha256": "b340c903e8e278c2e0793d0d44b965eaa790689f1801197dc2f74e5bfdb0255e",
+      "network_requests": 2,
+      "last_http_status": 429
+    }
+  },
+  "status_binding": {
+    "path": "research/continuous-recovery-20261021/status.json",
+    "sha256": "300b42369929b933b5b40bf26858dec0bf7c457df2e2a76654e3708bdf510dc4",
+    "resume_gate_passed": false,
+    "network_stop_utc": "2026-10-21T12:45:07Z"
+  },
+  "known_positive": {
+    "timestamp": "20080402035201",
+    "original": "http://www.worldofwarcraft.com/news/images/08-02/02-14-08-2.jpg",
+    "mimetype": "image/jpeg",
+    "statuscode": "200",
+    "digest": "TJ2TFHNGVSA64RRRP3UD2CQZCP4TTRND",
+    "length": "9971",
+    "required_for_control_success": true,
+    "port80_normalization_allowed": true
+  },
+  "policy": {
+    "maximum_requests": 2,
+    "maximum_seconds_child": 90,
+    "maximum_seconds_parent": 180,
+    "maximum_total_body_bytes": 1048576,
+    "maximum_entity_body_bytes": 1048576,
+    "minimum_dispatch_seconds": 6.2,
+    "minimum_request_start_seconds": 6.2,
+    "disk_floor_bytes": 11005853696,
+    "tls_verification": true,
+    "automatic_redirects": false,
+    "payload_replay": false,
+    "direct_first": true,
+    "proxy": "http://127.0.0.1:7890",
+    "stop_http_statuses": [
+      429,
+      503
+    ],
+    "stop_after_transport_failures": 5,
+    "cooldown_seconds": 120,
+    "respect_retry_after": true,
+    "retry_after_formats": [
+      "delta-seconds",
+      "http-date"
+    ],
+    "no_automatic_retry": true,
+    "no_pagination": true,
+    "no_image_replay": true,
+    "curl_connect_timeout_seconds": 10,
+    "curl_max_time_seconds": 35,
+    "no_global_network_setting_changes": true
+  },
+  "pre_execution_checks": {
+    "runtime_absent": true,
+    "raw_absent": true,
+    "root_go_present": false,
+    "network_execution_authorized": false
+  }
+}

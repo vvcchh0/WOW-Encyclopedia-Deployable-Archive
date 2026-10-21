@@ -1,0 +1,50 @@
+{
+  "schema": "wow-available-resource-route-implementation-receipt-v1",
+  "generated_utc": "2026-10-21T12:17:10.415263+00:00",
+  "version": "v51-proposed",
+  "status": "code_changed_tests_passed_export_not_executed",
+  "network_used": false,
+  "git_commit_or_stage": false,
+  "site_output_modified": false,
+  "disk_free_before_write": 25635942400,
+  "disk_floor": 11005853696,
+  "implementation": {
+    "file": "tools/export_github_pages.py",
+    "symbol": "COMPATIBILITY_ROUTE_ALIASES",
+    "entry": {
+      "/wrath/images/letters/T.gif": "/wrath//images/letters/T.gif"
+    },
+    "scope": "one exact existing T.gif route alias; no repeated-slash normalization and no D/F aliases",
+    "expected_payload_delta": 0,
+    "expected_redirect_html_delta": 0
+  },
+  "tests": {
+    "command": "python -X utf8 -m unittest tests.test_github_pages_export.GithubPagesExportTests.test_t_gif_exact_alias_reuses_existing_payload_without_redirect tests.test_github_pages_export.GithubPagesExportTests.test_t_gif_alias_is_not_added_when_double_slash_target_is_absent tests.test_github_pages_export.GithubPagesExportTests.test_t_gif_alias_does_not_generalize_other_double_slash_images tests.test_github_pages_export.GithubPagesExportTests.test_archived_news_compatibility_aliases_rewrite_only_verified_targets tests.test_github_pages_export.GithubPagesExportTests.test_wrath_wallpapers_alias_requires_double_slash_target",
+    "result": "5 passed, 0 failed, 0 skipped",
+    "syntax_check": "python -X utf8 -m py_compile tools/export_github_pages.py tests/test_github_pages_export.py"
+  },
+  "changed_files": [
+    {
+      "path": "tools/export_github_pages.py",
+      "sha256": "f37e5c65b2fbb7b20445d74b9c04dd2dcc7704e40bd32b51da10cadd47b462e0",
+      "bytes": 221774
+    },
+    {
+      "path": "tests/test_github_pages_export.py",
+      "sha256": "e943c12c1833d2258b8e359deb94aa19cec8e4f412b0e1cc336ca7b6f87ce26b",
+      "bytes": 85971
+    }
+  ],
+  "affected_existing_v50_html_paths": [
+    ".scratch/pages-resources-20261021-v50/wrath/features/northrend/howling-fjord.xml.html",
+    ".scratch/pages-resources-20261021-v50/wrath/features/northrend/grizzly-hills.xml.html",
+    ".scratch/pages-resources-20261021-v50/wrath/features/northrend/borean-tundra.xml.html",
+    ".scratch/pages-resources-20261021-v50/wrath/features/bard/bardclass.xml.html"
+  ],
+  "source_review_ref": "route-review.json",
+  "next_step": "Parent may run the authorized v51 export and verify route-map/provenance and unchanged T.gif bytes.",
+  "uncovered": [
+    "No v51 export or browser run was performed; the existing v50 site/output remains unchanged.",
+    "The separate anniversary dynamic-directory issue was intentionally left out of this patch."
+  ]
+}

@@ -1,0 +1,297 @@
+{
+  "accepted": true,
+  "version": "v51",
+  "checked_utc": "2026-10-21T12:20:15.716770+00:00",
+  "tests": {
+    "count": 76,
+    "skipped": 0,
+    "unique_test_ids": [
+      "tests.test_aldor_scryers_lore.AldorScryersLoreTests.test_fixture_extracts_only_lore_and_preserves_source_bytes",
+      "tests.test_aldor_scryers_lore.AldorScryersLoreTests.test_helper_only_fills_missing_values_and_empty_lore_node",
+      "tests.test_aldor_scryers_lore.AldorScryersLoreTests.test_parser_ignores_comments_and_strings_but_rejects_duplicate_assignment",
+      "tests.test_aldor_scryers_lore.AldorScryersLoreTests.test_source_drift_and_manifest_binding_are_rejected",
+      "tests.test_aldor_scryers_pages.AldorScryersPagesTests.test_default_off_does_not_load_or_emit_helper",
+      "tests.test_aldor_scryers_pages.AldorScryersPagesTests.test_enabled_writes_one_helper_injects_exact_page_and_records_budget",
+      "tests.test_aldor_scryers_pages.AldorScryersPagesTests.test_helper_collision_is_rejected_before_output",
+      "tests.test_aldor_scryers_pages.AldorScryersPagesTests.test_source_drift_error_is_rejected_before_output",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_archived_news_compatibility_aliases_rewrite_only_verified_targets",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_existing_output_and_traversal_are_rejected",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_finite_workspace_limit_rejects_after_export",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_flash_codebase_export_is_token_scoped_and_traceable",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_flash_codebase_ignores_installer_text_in_other_attributes",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_form_token_pass_handles_external_controls_and_preserves_search",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_generated_404_uses_archive_missing_copy_and_keeps_runtime_marker",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_html_prolog_bom_is_removed_before_runtime_injection",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_iframe_fallback_urls_remain_local_on_raw_text_parsers",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_local_filter_forms_require_route_and_handler_evidence",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_navtree_community_fix_is_derived_and_idempotent",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_navtree_community_fix_runs_in_export_pipeline",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_news_toggle_anchor_rewrite_is_strict_idempotent_and_preserves_href",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_news_toggle_anchor_rewrite_runs_in_export_and_records_scope",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_prefixed_account_menu_labels_on_real_home_and_encyclopedia_pages",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_project_prefix_xml_html_and_sensitive_form",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_ptr_export_path_uses_manifest_capture_and_generated_home",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_pvp_mini_site_rewrite_matches_real_source_after_mirror",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_pvp_mini_site_rewrite_runs_in_pipeline_and_records_reason",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_real_audited_flash_codebase_attributes_are_renamed_by_source_page",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_runtime_maps_dynamic_document_write_image_with_spaces",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_ssotd_clock_uses_recorded_capture_and_preserves_gallery_contract",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_ssotd_thumbnail_fallback_prefers_thumb_when_verified",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_ssotd_thumbnail_fallback_runs_in_export_pipeline",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_story_exhibit_disables_only_retired_form_initializers",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_t_gif_alias_does_not_generalize_other_double_slash_images",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_t_gif_alias_is_not_added_when_double_slash_target_is_absent",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_t_gif_exact_alias_reuses_existing_payload_without_redirect",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_workspace_limit_disk_reserve_still_applies_before_export",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_workspace_limit_is_optional_and_disk_reserve_still_applies",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_wrath_card_hit_area_fallback_is_exported_only_for_gallery_routes",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_wrath_card_hit_area_fallback_is_narrow_and_idempotent",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_wrath_resource_base_remains_directory_while_navigation_uses_index",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_wrath_thumbnail_rewrite_is_strict_and_route_scoped",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_wrath_viewer_rewrite_is_strict_and_node_validated",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_wrath_viewer_rewrite_runs_only_for_exact_route",
+      "tests.test_github_pages_export.GithubPagesExportTests.test_wrath_wallpapers_alias_requires_double_slash_target",
+      "tests.test_related_encyclopedia_images.RelatedEncyclopediaImageTests.test_rejects_non_jpeg_or_wrong_dimensions",
+      "tests.test_related_encyclopedia_images.RelatedEncyclopediaImageTests.test_rejects_nonnull_original_capture_and_bad_base_path",
+      "tests.test_related_encyclopedia_images.RelatedEncyclopediaImageTests.test_rejects_payload_traversal_and_sha_drift",
+      "tests.test_related_encyclopedia_images.RelatedEncyclopediaImageTests.test_rejects_unaccepted_or_historical_source",
+      "tests.test_related_encyclopedia_images.RelatedEncyclopediaImageTests.test_success_preserves_bytes_and_public_catalog",
+      "tests.test_related_encyclopedia_pages.RelatedEncyclopediaPagesTests.test_manifest_pin_mismatch_fails_before_output_creation",
+      "tests.test_related_encyclopedia_pages.RelatedEncyclopediaPagesTests.test_none_keeps_default_pipeline_without_loading_bundle",
+      "tests.test_related_encyclopedia_pages.RelatedEncyclopediaPagesTests.test_success_reuses_canonical_jpegs_localizes_xml_and_records_provenance",
+      "tests.test_related_encyclopedia_pages.RelatedEncyclopediaPagesTests.test_target_canonical_and_alias_collisions_fail_before_output_creation",
+      "tests.test_related_guide_images.RelatedGuideImageTests.test_rejects_bad_base_path_and_non_jpeg_payload",
+      "tests.test_related_guide_images.RelatedGuideImageTests.test_rejects_decision_or_source_acceptance_drift",
+      "tests.test_related_guide_images.RelatedGuideImageTests.test_rejects_payload_path_traversal_and_sha_drift",
+      "tests.test_related_guide_images.RelatedGuideImageTests.test_rejects_wrong_compatibility_theme_or_capture",
+      "tests.test_related_guide_images.RelatedGuideImageTests.test_success_preserves_exact_jpeg_and_public_catalog",
+      "tests.test_related_guide_pages.RelatedGuidePagesTests.test_success_reuses_canonical_jpeg_and_localizes_missing_target",
+      "tests.test_related_talent_ui_pages.RelatedTalentUIPagesTests.test_none_default_has_no_ui_side_effect",
+      "tests.test_related_talent_ui_pages.RelatedTalentUIPagesTests.test_success_maps_old_gifs_to_pngs_and_replaces_notice",
+      "tests.test_related_talent_ui_pages.RelatedTalentUIPagesTests.test_ui_requires_icons_and_rejects_collision_before_output",
+      "tests.test_rewardstable_compat.RewardstableCompatibilityTests.test_exact_route_rejects_source_drift_and_repeated_pass",
+      "tests.test_rewardstable_compat.RewardstableCompatibilityTests.test_invalid_base_path_is_rejected_before_rewrite",
+      "tests.test_rewardstable_compat.RewardstableCompatibilityTests.test_literal_count_guard_rejects_ambiguous_source",
+      "tests.test_rewardstable_compat.RewardstableCompatibilityTests.test_source16_rewrites_only_the_two_reviewed_literals",
+      "tests.test_rewardstable_compat.RewardstableCompatibilityTests.test_source16_sha_accepts_only_the_known_bomless_decoder_body",
+      "tests.test_rewardstable_compat.RewardstableCompatibilityTests.test_unrelated_route_and_query_cannot_bypass_scope",
+      "tests.test_rewardstable_compat.RewardstableCompatibilityTests.test_v46_bomless_body_is_an_explicitly_bound_variant",
+      "tests.test_rewardstable_pages.RewardstablePagesTests.test_export_preserves_everything_except_two_image_paths",
+      "tests.test_rewardstable_pages.RewardstablePagesTests.test_export_rejects_unreviewed_reward_script",
+      "tests.test_talent_box_layout_pages.TalentBoxLayoutPagesTests.test_missing_canonical_source_fails_before_output_creation",
+      "tests.test_talent_box_layout_pages.TalentBoxLayoutPagesTests.test_none_keeps_default_pipeline_without_loading_bundle",
+      "tests.test_talent_box_layout_pages.TalentBoxLayoutPagesTests.test_success_reuses_existing_gifs_and_records_all_pages",
+      "tests.test_talent_box_layout_pages.TalentBoxLayoutPagesTests.test_target_conflict_fails_before_output_creation"
+    ],
+    "executed_affected_alias_checks": 5,
+    "unchanged_tests_reused": 71,
+    "old_test_method_bodies_preserved": true
+  },
+  "code_bindings": [
+    {
+      "path": "research/continuous-recovery-20261021/publication/verify_accepted_pages.py",
+      "sha256": "5ca9664faa5484c2d2da358c52d5e55ef1c7f2e0077f25dcb55adb2a743fd72d"
+    },
+    {
+      "path": "tests/fixtures/rewardstable_source16/rewardstable-new.js",
+      "sha256": "7c73724e2c6cc60d4ee7f0efd57fc0f3a31a0818f84c23a75a1960f60ee35855"
+    },
+    {
+      "path": "tests/fixtures/talent_source15/localize.js",
+      "sha256": "e13769500cc7853b7c4d835f0380cf971cbec5f8fc061c3f1f83cf3dea1e6972"
+    },
+    {
+      "path": "tests/fixtures/talent_source15/printOutTop.js",
+      "sha256": "618c92c0d00c960f651aad4364a05e93cfb785df38b2b63902febaeb06d26f04"
+    },
+    {
+      "path": "tests/test_aldor_scryers_lore.py",
+      "sha256": "83faa550b751ed2e09e9b06336bd2fe358223e545b9cc386d092be75b900e8e0"
+    },
+    {
+      "path": "tests/test_aldor_scryers_pages.py",
+      "sha256": "9675a778466f4c80f3291b9368842f22ad7a43091a04c949333854081472fae9"
+    },
+    {
+      "path": "tests/test_battlegrounds_historical_entry.py",
+      "sha256": "b89d6f421e1bb29c83f3059fa291340c9b5fe2f41d2cdedd50b6f5940f1f1692"
+    },
+    {
+      "path": "tests/test_blizzcast_reader.py",
+      "sha256": "dba2e5874433a4994ada4f86b1e380ffadfdb20b3c829710435cce7808966221"
+    },
+    {
+      "path": "tests/test_github_pages_export.py",
+      "sha256": "e943c12c1833d2258b8e359deb94aa19cec8e4f412b0e1cc336ca7b6f87ce26b"
+    },
+    {
+      "path": "tests/test_historical_exhibits.py",
+      "sha256": "3b436f8a78161ba7a1cdfa3538738728c7fa9025c7e28765227a5162553bbaa3"
+    },
+    {
+      "path": "tests/test_related_encyclopedia_images.py",
+      "sha256": "269e30fb504110d9f6c3f1c1ba8b0817f52d11d63313fa025bd2ec2bc5fadafb"
+    },
+    {
+      "path": "tests/test_related_encyclopedia_pages.py",
+      "sha256": "ba9977b15fd1388cb5f7a80efa51ab6212d91ad43cdce60a04e00d5d83bddccc"
+    },
+    {
+      "path": "tests/test_related_guide_images.py",
+      "sha256": "13a155626aac99f9451244db9653d54c3d9360703e131d873f7472a086383637"
+    },
+    {
+      "path": "tests/test_related_guide_pages.py",
+      "sha256": "3f1022c5b78f2ba38ede0d0fcbbbbc00aaebc9166565bb3dc374869bf4012aee"
+    },
+    {
+      "path": "tests/test_related_page_routing.py",
+      "sha256": "7fa3a83e7c5db9a8d1105e40eca204ffa8a7cf997bc5c037a840b8be156f7baa"
+    },
+    {
+      "path": "tests/test_related_talent_icons.py",
+      "sha256": "99aeb250366ae8c22e1af803117f0e729ac892e6ad8c99d1cc1b334caec0acad"
+    },
+    {
+      "path": "tests/test_related_talent_pages.py",
+      "sha256": "accada5b4d359950c60b93e56ab147cd7ac1e3a0de67edf787e567b6c931f876"
+    },
+    {
+      "path": "tests/test_related_talent_ui.py",
+      "sha256": "3b610c24a00282881fef12a5946208f2ea054f3192e8324fee1a1f46ca26750b"
+    },
+    {
+      "path": "tests/test_related_talent_ui_pages.py",
+      "sha256": "2f1ae0e6faa7f4db857137a62aab2e2fb5257e20d68d9827bb29291a7349e5b9"
+    },
+    {
+      "path": "tests/test_rewardstable_compat.py",
+      "sha256": "b0111984742c0ebdc1665d04dc112a8c205917096114274fc9003023153a854b"
+    },
+    {
+      "path": "tests/test_rewardstable_pages.py",
+      "sha256": "62d96cb635b701cba7a7cb3ec227ff2ed8f8a16275360509ad2ea5ce5593bee3"
+    },
+    {
+      "path": "tests/test_source16_layout_compat.py",
+      "sha256": "2d1e4f44ed59e6c0bc8dd409716f69119d9a2f83af8b0ec730ee917e6fe0a0bd"
+    },
+    {
+      "path": "tests/test_source16_layout_pages.py",
+      "sha256": "711e6bdbb7fed93573f3fb1f50120bb4f8bf3e0cd3f05de57092b8a3919d5e6e"
+    },
+    {
+      "path": "tests/test_source16_page_metadata.py",
+      "sha256": "ad7131fe2fdabb8715b4d56251fc235008670e44ee8a0adc0adc835e0d5e4e14"
+    },
+    {
+      "path": "tests/test_talent_box_layout.py",
+      "sha256": "36a07c2101413855d23852faa505b7128effc7dec582ea9dcb3532b322bcccd5"
+    },
+    {
+      "path": "tests/test_talent_box_layout_pages.py",
+      "sha256": "a6eed0abaec0cb05adcc0ce3bee58ed49096f586e1d404dbbc5091124aad1f3d"
+    },
+    {
+      "path": "tests/test_talent_compat.py",
+      "sha256": "a28e5bd8983b7877adac9ea220a40909e54dcc7694cdf256bf7f9529a37080ae"
+    },
+    {
+      "path": "tools/aldor_scryers_lore.py",
+      "sha256": "1153a382dbb035b7e7e21b81c40a84adac54d996bf759e369a6dd2be9fde997c"
+    },
+    {
+      "path": "tools/blizzcast_reader.py",
+      "sha256": "4704229782b016e43dc3f3f881bc4f54424197ccf84d24913ef486a8fa58cfba"
+    },
+    {
+      "path": "tools/browser_assets/offline-flash.js",
+      "sha256": "6a4377a0cd3c916a8865c9a63a98511c66e2f00389c0fdb01cc68cac05c1adab"
+    },
+    {
+      "path": "tools/export_github_pages.py",
+      "sha256": "f37e5c65b2fbb7b20445d74b9c04dd2dcc7704e40bd32b51da10cadd47b462e0"
+    },
+    {
+      "path": "tools/historical_exhibits.py",
+      "sha256": "c7e4772e5ff44fe8d47164a981ac878afcc79ea0e729bee71f6d9616d79c98c5"
+    },
+    {
+      "path": "tools/non_gallery_compat.py",
+      "sha256": "686a7c957e23228661f09e5cd6ebdb123393a2da7f66720b1ed45d25243a3f5f"
+    },
+    {
+      "path": "tools/offline_flash.py",
+      "sha256": "46144880d8ccbb4bf005c38cd559be458574b2eea4d95314f5d81fb26638b8d6"
+    },
+    {
+      "path": "tools/related_encyclopedia_images.py",
+      "sha256": "dda1241b5e57c8a8f42752c3b99daad258ee06ba4d30e8adc2581f2a1cebf14b"
+    },
+    {
+      "path": "tools/related_guide_images.py",
+      "sha256": "e06702ba7beaa556b5fa081209da2ba5c35e017456b917c7d0f4f011ea26a3a0"
+    },
+    {
+      "path": "tools/related_talent_icons.py",
+      "sha256": "20b3ce963822426e66ffe23fa84c7b9c692a6687415ba23804fbe2ffb2f59df8"
+    },
+    {
+      "path": "tools/related_talent_ui.py",
+      "sha256": "78c1cdadf74feac2e6b0fb04308e96eb005527ca4d296d0161196ddd621dcb73"
+    },
+    {
+      "path": "tools/rewardstable_compat.py",
+      "sha256": "caafd629559edadc22d69b8fc33f859936ddc2e2427cc612c4ac04230cb8d51d"
+    },
+    {
+      "path": "tools/source16_layout_compat.py",
+      "sha256": "2d72ce415528b4bc84962ca2cfd59e5925d129116e8c94cf173df4e5430c1aba"
+    },
+    {
+      "path": "tools/talent_box_layout.py",
+      "sha256": "1d2666fa1c7c116d9a9a8d32fd69dd5f0d753d50c6af8825428968906f69b798"
+    },
+    {
+      "path": "tools/talent_compat.py",
+      "sha256": "a86d225f1b1b47263bf64a35b6ff6c90a3c2950fc02ade08e905b0f007bf6934"
+    }
+  ],
+  "review": [
+    "One exact compatibility alias; enabled only when the accepted double-slash target exists.",
+    "No general repeated-slash normalization, no D/F aliases, no new image or redirect payload.",
+    "Only three test methods and one fixture helper added; existing test method ASTs unchanged.",
+    "Hosted verifier change only adds the v51 label. Accepted lore module and helper unchanged."
+  ],
+  "existing_image": {
+    "bytes": 1419,
+    "sha256": "0a82046107b2f5a45b258143cd8f862030980507bad23190c54445b43b3a62ad",
+    "format": "GIF",
+    "dimensions": [
+      48,
+      48
+    ],
+    "decoded_frames": 1,
+    "actual_capture": "20080423095102",
+    "newly_downloaded": false
+  },
+  "evidence": [
+    {
+      "path": "research/continuous-recovery-20261021/integration/available-resource-route-review/implementation-receipt-v51.json",
+      "sha256": "d4b646bab7ba02bd498259d55aee1d397064f41a7f226c90737b711e4d94cc44"
+    },
+    {
+      "path": "research/continuous-recovery-20261021/integration/available-resource-route-review/route-review.json",
+      "sha256": "54fced5b3f885b9f111c426a76d2e41e6221042bdd97a306921b470f2cffd98d"
+    },
+    {
+      "path": "research/continuous-recovery-20261021/publication/root-v50-code-acceptance.json",
+      "sha256": "db6c67f3dfcbe77d31f39a5ec4e9ed5473b9f63f70a9315cccb5b20d0d55426e"
+    },
+    {
+      "path": "research/continuous-recovery-20261021/publication/accept_v51_code.py",
+      "sha256": "9f483586fe4b9bd41d688b994b9923da498feaf7f95ff789779baa1d4db425bf"
+    }
+  ],
+  "actual_v51_export_or_browser_claimed": false
+}

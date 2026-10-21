@@ -145,6 +145,7 @@ COMPATIBILITY_ROUTE_ALIASES: dict[str, str] = {
     "/info/credits.shtml": "/info/credits.html",
     "/info/info/items/armorsets/": "/info/items/armorsets/index.html",
     "/wrath/wallpapers.xml": "/wrath//wallpapers.xml",
+    "/wrath/images/letters/T.gif": "/wrath//images/letters/T.gif",
 }
 _NAVIGATION_RASTER_EXTENSIONS = frozenset({".gif", ".png", ".jpg", ".jpeg"})
 
