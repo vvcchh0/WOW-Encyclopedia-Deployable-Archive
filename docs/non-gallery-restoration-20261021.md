@@ -52,6 +52,12 @@ Wayback在本轮00:49 UTC返回429后停批；Common Crawl静态数据取得成�
 
 ## 界面与关联图源补充
 
-v46本地验收补入三色天赋状态框、Reset、Reset All及Printable Version六张界面图，另复用八片已有同站点数框GIF。九职业加点和重置检查通过，天赋缺图剩259个目标；准备部署。
+v46补入三色天赋状态框、Reset、Reset All及Printable Version六张界面图，另复用八片已有同站点数框GIF。九职业加点和重置检查通过，天赋缺图剩259个目标；已部署，60个线上对象核对通过。
 
 ArchiveCraft提供Alleria、塞纳里奥议会和玛法里奥三幅配图的新线索，当前JPEG已取得并查看，作为单独标注来源的关联补充准备接入。原始目标捕获仍未找到；未导入该站正文、评论、脚本或表单。
+
+## 百科与指南关联配图
+
+v49补入Alleria、塞纳里奥议会、玛法里奥和The Broken四幅关联来源图片。页面给出ArchiveCraft来源链接；Alleria保留该站缩放JPEG。The Broken保留一张实际237×184缩略图，菜单点击使用同一素材，尚未补回标题图和大图。
+
+奖励表的两个阵营按钮已改为已有图片的正确本地地址。奥尔多／占星者页面说明框仍显示undefined，正在从已保存的同专题令牌页面脚本提取原始说明，单独修复。[本地验收](../research/continuous-recovery-20261021/publication/root-v49-local-acceptance.json)

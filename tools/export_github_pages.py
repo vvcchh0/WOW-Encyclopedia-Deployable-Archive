@@ -57,6 +57,9 @@ import blizzcast_reader  # noqa: E402
 import talent_compat  # noqa: E402
 import related_talent_icons  # noqa: E402
 import related_talent_ui  # noqa: E402
+import related_encyclopedia_images  # noqa: E402
+import related_guide_images  # noqa: E402
+import rewardstable_compat  # noqa: E402
 import source16_layout_compat  # noqa: E402
 import talent_box_layout  # noqa: E402
 from toplist_compat import ToplistCompatError, rewrite_toplist_script  # noqa: E402
@@ -2886,6 +2889,8 @@ def export_pages(
     related_talent_ui_map: Path | None = None,
     source16_layout_map: Path | None = None,
     talent_box_layout_map: Path | None = None,
+    related_encyclopedia_image_map: Path | None = None,
+    related_guide_image_map: Path | None = None,
 ) -> dict[str, Any]:
     source_site = source_site.resolve()
     manifest_path = manifest_path.resolve()
@@ -3012,7 +3017,63 @@ def export_pages(
         for target, canonical in talent_ui_bundle.route_reuses.items():
             route_to_static[target] = route_to_static[canonical]
     talent_ui_estimate = talent_ui_bundle.estimated_bytes if talent_ui_bundle else 0
-    estimate = output_estimate(records, overlay_bytes + flash_estimate + reader_estimate + talent_icon_estimate + talent_ui_estimate)
+    encyclopedia_bundle: related_encyclopedia_images.RelatedEncyclopediaImageBundle | None = None
+    if related_encyclopedia_image_map is not None:
+        try:
+            encyclopedia_bundle = related_encyclopedia_images.load_related_encyclopedia_image_bundle(
+                related_encyclopedia_image_map, workspace_root, base_path,
+            )
+        except related_encyclopedia_images.RelatedEncyclopediaImageError as exc:
+            raise PagesExportError(str(exc)) from exc
+        if encyclopedia_bundle.source_metadata.get("source_manifest_sha256") != manifest_sha:
+            raise PagesExportError("related encyclopedia images require the accepted source manifest")
+        candidates = [(asset.route, asset.relative) for asset in encyclopedia_bundle.assets]
+        candidates.append(("/" + encyclopedia_bundle.catalog_relative, encyclopedia_bundle.catalog_relative))
+        for candidate, relative in candidates:
+            if candidate in route_to_static or candidate in raw_aliases or candidate in overlay_routes or relative in relative_paths or relative in overlay_static_paths:
+                raise PagesExportError(f"related encyclopedia image collides with an existing resource: {candidate}")
+        for target, canonical in encyclopedia_bundle.route_reuses.items():
+            if target in route_to_static or target in raw_aliases or target in overlay_routes:
+                raise PagesExportError(f"related encyclopedia target collides with an existing resource: {target}")
+            if canonical not in {r for r, _ in candidates}:
+                raise PagesExportError(f"related encyclopedia target has no canonical resource: {target}")
+        if not set(encyclopedia_bundle.notice_by_page).issubset(route_records):
+            raise PagesExportError("related encyclopedia image page is missing from the source manifest")
+        for candidate, relative in candidates:
+            route_to_static[candidate] = static_url(base_path, relative)
+            relative_paths.add(relative)
+        for target, canonical in encyclopedia_bundle.route_reuses.items():
+            route_to_static[target] = route_to_static[canonical]
+    encyclopedia_estimate = encyclopedia_bundle.estimated_bytes if encyclopedia_bundle else 0
+    guide_bundle: related_guide_images.RelatedGuideImageBundle | None = None
+    if related_guide_image_map is not None:
+        try:
+            guide_bundle = related_guide_images.load_related_guide_image_bundle(
+                related_guide_image_map, workspace_root, base_path,
+            )
+        except related_guide_images.RelatedGuideImageError as exc:
+            raise PagesExportError(str(exc)) from exc
+        if guide_bundle.source_metadata.get("source_manifest_sha256") != manifest_sha:
+            raise PagesExportError("related guide images require the accepted source manifest")
+        candidates = [(asset.route, asset.relative) for asset in guide_bundle.assets]
+        candidates.append(("/" + guide_bundle.catalog_relative, guide_bundle.catalog_relative))
+        for candidate, relative in candidates:
+            if candidate in route_to_static or candidate in raw_aliases or candidate in overlay_routes or relative in relative_paths or relative in overlay_static_paths:
+                raise PagesExportError(f"related guide image collides with an existing resource: {candidate}")
+        for target, canonical in guide_bundle.route_reuses.items():
+            if target in route_to_static or target in raw_aliases or target in overlay_routes:
+                raise PagesExportError(f"related guide target collides with an existing resource: {target}")
+            if canonical not in {r for r, _ in candidates}:
+                raise PagesExportError(f"related guide target has no canonical resource: {target}")
+        if not set(guide_bundle.notice_by_page).issubset(route_records):
+            raise PagesExportError("related guide image page is missing from the source manifest")
+        for candidate, relative in candidates:
+            route_to_static[candidate] = static_url(base_path, relative)
+            relative_paths.add(relative)
+        for target, canonical in guide_bundle.route_reuses.items():
+            route_to_static[target] = route_to_static[canonical]
+    guide_estimate = guide_bundle.estimated_bytes if guide_bundle else 0
+    estimate = output_estimate(records, overlay_bytes + flash_estimate + reader_estimate + talent_icon_estimate + talent_ui_estimate + encyclopedia_estimate + guide_estimate)
     if max_bytes is not None and before_workspace + estimate >= max_bytes:
         raise PagesExportError(f"workspace budget exceeded before export: {before_workspace}+{estimate} >= {max_bytes}")
     if free_before - estimate < min_free_bytes:
@@ -3172,6 +3233,18 @@ def export_pages(
             if key in origin_index and origin_index[key] != route:
                 raise PagesExportError(f"related talent UI origin conflicts with frozen source: {key}")
             origin_index[key] = route
+    if encyclopedia_bundle is not None:
+        for route in set(encyclopedia_bundle.route_reuses) | {asset.route for asset in encyclopedia_bundle.assets}:
+            key = mirror.origin_key("http://www.worldofwarcraft.com" + route)
+            if key in origin_index and origin_index[key] != route:
+                raise PagesExportError(f"related encyclopedia origin conflicts with frozen source: {key}")
+            origin_index[key] = route
+    if guide_bundle is not None:
+        for route in set(guide_bundle.route_reuses) | {asset.route for asset in guide_bundle.assets}:
+            key = mirror.origin_key("http://www.worldofwarcraft.com" + route)
+            if key in origin_index and origin_index[key] != route:
+                raise PagesExportError(f"related guide origin conflicts with frozen source: {key}")
+            origin_index[key] = route
     for reuse_bundle in (layout_bundle, talent_box_bundle):
         if reuse_bundle is None:
             continue
@@ -3277,6 +3350,75 @@ def export_pages(
                 "derived_length": len(talent_ui_bundle.catalog_bytes),
                 "mime": "application/json; charset=UTF-8", "kind": "related_talent_ui_catalog",
                 "role": "later_related_talent_ui_catalog", "transformed": True,
+            })
+        if encyclopedia_bundle is not None:
+            for asset in encyclopedia_bundle.assets:
+                if shutil.disk_usage(output.parent).free < min_free_bytes + len(asset.data):
+                    raise PagesExportError("disk reserve would be breached while writing related encyclopedia images")
+                out = partial / asset.relative
+                out.parent.mkdir(parents=True, exist_ok=True)
+                out.write_bytes(asset.data)
+                source_reference = dict(asset.metadata) | {
+                    "source_kind": "current_related_community_archive_image",
+                    "source_label": encyclopedia_bundle.source_metadata["source_label"],
+                }
+                provenance.append({
+                    "route": asset.route, "static_url": static_url(base_path, asset.relative),
+                    "output_path": asset.relative, "source_offline_path": None,
+                    "source_manifest_sha256": None, "source_manifest_length": None,
+                    "source_sha256": asset.metadata["sha256"], "source_length": len(asset.data),
+                    "derived_sha256": asset.metadata["sha256"], "derived_length": len(asset.data),
+                    "mime": asset.mime, "kind": "related_encyclopedia_image",
+                    "role": "current_related_encyclopedia_illustration", "transformed": False,
+                    "source_refs": [source_reference],
+                })
+                stats["related_encyclopedia_image_assets"] += 1
+            relative = encyclopedia_bundle.catalog_relative
+            if shutil.disk_usage(output.parent).free < min_free_bytes + len(encyclopedia_bundle.catalog_bytes):
+                raise PagesExportError("disk reserve would be breached while writing the encyclopedia image catalog")
+            out = partial / relative
+            out.parent.mkdir(parents=True, exist_ok=True)
+            out.write_bytes(encyclopedia_bundle.catalog_bytes)
+            provenance.append({
+                "route": "/" + relative, "static_url": static_url(base_path, relative), "output_path": relative,
+                "source_offline_path": None, "source_manifest_sha256": None, "source_manifest_length": None,
+                "source_sha256": None, "source_length": None,
+                "derived_sha256": sha256_bytes(encyclopedia_bundle.catalog_bytes),
+                "derived_length": len(encyclopedia_bundle.catalog_bytes),
+                "mime": "application/json; charset=UTF-8", "kind": "related_encyclopedia_image_catalog",
+                "role": "current_related_encyclopedia_image_catalog", "transformed": True,
+            })
+        if guide_bundle is not None:
+            for asset in guide_bundle.assets:
+                if shutil.disk_usage(output.parent).free < min_free_bytes + len(asset.data):
+                    raise PagesExportError("disk reserve would be breached while writing related guide images")
+                out = partial / asset.relative
+                out.parent.mkdir(parents=True, exist_ok=True)
+                out.write_bytes(asset.data)
+                provenance.append({
+                    "route": asset.route, "static_url": static_url(base_path, asset.relative),
+                    "output_path": asset.relative, "source_offline_path": None,
+                    "source_manifest_sha256": None, "source_manifest_length": None,
+                    "source_sha256": asset.metadata["sha256"], "source_length": len(asset.data),
+                    "derived_sha256": asset.metadata["sha256"], "derived_length": len(asset.data),
+                    "mime": asset.mime, "kind": "related_guide_image",
+                    "role": "current_related_guide_illustration", "transformed": False,
+                    "source_refs": [{**dict(asset.metadata), "source_kind": "current_related_community_archive_image", "source_label": guide_bundle.source_metadata["source_label"]}],
+                })
+                stats["related_guide_image_assets"] += 1
+            relative = guide_bundle.catalog_relative
+            if shutil.disk_usage(output.parent).free < min_free_bytes + len(guide_bundle.catalog_bytes):
+                raise PagesExportError("disk reserve would be breached while writing the guide image catalog")
+            out = partial / relative
+            out.parent.mkdir(parents=True, exist_ok=True)
+            out.write_bytes(guide_bundle.catalog_bytes)
+            provenance.append({
+                "route": "/" + relative, "static_url": static_url(base_path, relative), "output_path": relative,
+                "source_offline_path": None, "source_manifest_sha256": None, "source_manifest_length": None,
+                "source_sha256": None, "source_length": None,
+                "derived_sha256": sha256_bytes(guide_bundle.catalog_bytes), "derived_length": len(guide_bundle.catalog_bytes),
+                "mime": "application/json; charset=UTF-8", "kind": "related_guide_image_catalog",
+                "role": "current_related_guide_image_catalog", "transformed": True,
             })
         if blizzcast_bundle is not None:
             for generated in blizzcast_bundle.generated_files:
@@ -3509,6 +3651,23 @@ def export_pages(
                         stats["related_talent_icon_notice_pages"] += 1
                         if talent_ui_bundle is not None:
                             stats["related_talent_ui_notice_pages"] += 1
+                if encyclopedia_bundle is not None and route in encyclopedia_bundle.notice_by_page:
+                    notice = encyclopedia_bundle.notice_by_page[route]
+                    if 'id="__offline-related-encyclopedia-images"' in text:
+                        raise PagesExportError(f"related encyclopedia source note already exists: {route}")
+                    text, inserted = re.subn(r"(<body\b[^>]*>)", lambda match: match.group(1) + "\n" + notice, text, count=1, flags=re.I)
+                    if inserted != 1:
+                        raise PagesExportError(f"related encyclopedia source note requires an HTML body: {route}")
+                    stats["related_encyclopedia_notice_pages"] += 1
+                    derivation_notes.append("displayed a community-archive illustration with an explicit ArchiveCraft source link; original article text retained")
+                if guide_bundle is not None and route in guide_bundle.notice_by_page:
+                    if 'id="__offline-related-guide-images"' in text:
+                        raise PagesExportError(f"related guide source note already exists: {route}")
+                    text, inserted = re.subn(r"(<body\b[^>]*>)", lambda match: match.group(1) + "\n" + guide_bundle.notice_by_page[route], text, count=1, flags=re.I)
+                    if inserted != 1:
+                        raise PagesExportError(f"related guide source note requires an HTML body: {route}")
+                    stats["related_guide_notice_pages"] += 1
+                    derivation_notes.append("displayed the related ArchiveCraft guide illustration with a source link; original article text retained")
                 derived = text.encode("utf-8")
                 stats["html_derived"] += 1
             elif kind == "css" or (kind == "support" and source.suffix.casefold() == ".css"):
@@ -3583,8 +3742,18 @@ def export_pages(
                         )
                         stats["talent_compat_scripts"] += 1
                     else:
-                        text = mirror.rewrite_script(text, base_url=base_url, localizer=localizer, recorder=recorder)
-                        text = rewrite_root_literals(text, base_url=base_url, localizer=localizer, recorder=recorder)
+                        try:
+                            text, reward_handled, reward_stats = rewardstable_compat.rewrite_rewardstable_script(
+                                text, route, source_sha, base_path,
+                            )
+                        except rewardstable_compat.RewardstableCompatError as exc:
+                            raise PagesExportError(str(exc)) from exc
+                        if reward_handled:
+                            derivation_notes.append("corrected two reward-table button paths to existing shared images; " + json.dumps(reward_stats, sort_keys=True))
+                            stats["rewardstable_compat_scripts"] += 1
+                        else:
+                            text = mirror.rewrite_script(text, base_url=base_url, localizer=localizer, recorder=recorder)
+                            text = rewrite_root_literals(text, base_url=base_url, localizer=localizer, recorder=recorder)
                 if route == "/shared/wow-com/includes-client/navtreefunctions.js":
                     text, changed = rewrite_contest_navtree_fallback(text, base_path=base_path)
                     if changed:
@@ -3651,6 +3820,10 @@ def export_pages(
             if talent_box_bundle is not None and route in talent_box_bundle.per_page_records:
                 item.setdefault("layout_reuse_refs", []).extend(talent_box_bundle.per_page_records[route])
                 stats["talent_box_layout_pages"] += 1
+            if encyclopedia_bundle is not None and route in encyclopedia_bundle.notice_by_page:
+                item["related_image_refs"] = [dict(asset.metadata) for asset in encyclopedia_bundle.assets if asset.metadata["page_route"] == route]
+            if guide_bundle is not None and route in guide_bundle.notice_by_page:
+                item["related_image_refs"] = [dict(asset.metadata) for asset in guide_bundle.assets if asset.metadata["page_route"] == route]
             provenance.append(item)
 
         for overlay in overlays:
@@ -3879,6 +4052,24 @@ def export_pages(
                 "route_reuses": dict(talent_ui_bundle.route_reuses),
                 "original_2008_images_recovered": 0,
             }
+        if encyclopedia_bundle is not None:
+            provenance_payload["related_encyclopedia_images"] = {
+                "source": dict(encyclopedia_bundle.source_metadata),
+                "image_count": len(encyclopedia_bundle.assets),
+                "catalog_path": encyclopedia_bundle.catalog_relative,
+                "source_map_sha256": encyclopedia_bundle.map_sha256,
+                "route_reuses": dict(encyclopedia_bundle.route_reuses),
+                "original_2008_images_recovered": 0,
+            }
+        if guide_bundle is not None:
+            provenance_payload["related_guide_images"] = {
+                "source": dict(guide_bundle.source_metadata),
+                "image_count": len(guide_bundle.assets),
+                "catalog_path": guide_bundle.catalog_relative,
+                "source_map_sha256": guide_bundle.map_sha256,
+                "route_reuses": dict(guide_bundle.route_reuses),
+                "original_2008_images_recovered": 0,
+            }
         if layout_bundle is not None:
             provenance_payload["layout_compatibility_reuse"] = {
                 "classification": "layout_compatibility_reuse",
@@ -3964,6 +4155,11 @@ def main(argv: list[str] | None = None) -> int:
         "--talent-box-layout-map", type=Path, default=None,
         help="Optional eight-route same-site point-box border reuse for nine talent pages",
     )
+    parser.add_argument("--related-guide-image-map", type=Path, default=None, help="accepted current related guide image map")
+    parser.add_argument(
+        "--related-encyclopedia-image-map", type=Path, default=None,
+        help="Optional three-image supplement attributed to the ArchiveCraft community archive",
+    )
     parser.add_argument(
         "--allow-later-image-supplements",
         action="store_true",
@@ -3983,7 +4179,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     args = parser.parse_args(argv)
     try:
-        result = export_pages(output=args.output, source_site=args.site, manifest_path=args.manifest, base_path=args.base_path, max_bytes=args.max_bytes, min_free_bytes=args.min_free_bytes, image_source_maps=args.image_source_maps, supplement_image_source_maps=args.supplement_image_source_maps, allow_later_image_supplements=args.allow_later_image_supplements, guide_preview_map=args.guide_preview_map, guide_image_collection_map=args.guide_image_collection_map, flash_runtime_archive=args.flash_runtime_archive, blizzcast_source_map=args.blizzcast_source_map, related_talent_icon_map=args.related_talent_icon_map, related_talent_ui_map=args.related_talent_ui_map, source16_layout_map=args.source16_layout_map, talent_box_layout_map=args.talent_box_layout_map)
+        result = export_pages(output=args.output, source_site=args.site, manifest_path=args.manifest, base_path=args.base_path, max_bytes=args.max_bytes, min_free_bytes=args.min_free_bytes, image_source_maps=args.image_source_maps, supplement_image_source_maps=args.supplement_image_source_maps, allow_later_image_supplements=args.allow_later_image_supplements, guide_preview_map=args.guide_preview_map, guide_image_collection_map=args.guide_image_collection_map, flash_runtime_archive=args.flash_runtime_archive, blizzcast_source_map=args.blizzcast_source_map, related_talent_icon_map=args.related_talent_icon_map, related_talent_ui_map=args.related_talent_ui_map, source16_layout_map=args.source16_layout_map, talent_box_layout_map=args.talent_box_layout_map, related_encyclopedia_image_map=args.related_encyclopedia_image_map, related_guide_image_map=args.related_guide_image_map)
     except PagesExportError as exc:
         parser.error(str(exc))
     print(json.dumps(result, ensure_ascii=False, indent=2))

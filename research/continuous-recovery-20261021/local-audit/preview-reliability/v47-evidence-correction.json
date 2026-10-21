@@ -1,0 +1,19 @@
+{
+  "schema": "wow-preview-reliability-v47-evidence-correction/v1",
+  "corrected_utc": "2026-10-21T10:54:00.793387+00:00",
+  "scope": "Supplement only; prior bounded backlog comparison and its historical analysis.json are retained.",
+  "correction": {
+    "prior_statement": "No durable v47 browser receipt or server log was found in the bounded local search.",
+    "corrected_statement": "Durable v47 browser and server evidence is present. The first browser attempt was refused and is accepted=false; the persisted rerun receipt is accepted=true for three pages with zero page errors, request failures, external requests, and HTTP errors. Candidate review marks publication unaccepted only because of notice contrast.",
+    "cause_of_prior_mismatch": "The named v47 files were present in publication but were not included in the earlier bounded search result."
+  },
+  "evidence": [],
+  "interpretation": {
+    "initial_attempt": "accepted=false; pages=3; page_errors=1; request_failures=39; external_requests=0; HTTP errors=0.",
+    "persisted_rerun": "root-v47-browser-acceptance.json accepted=true; pages=3; page_errors=0; request_failures=0; external_requests=0; HTTP errors=0.",
+    "server_log": "v47-preview-server-r2.log is a file-backed loopback server log for the successful rerun; this does not establish process liveness at the first refusal timestamp.",
+    "publication_state": "root-v47-candidate-review.json says visual_publication_accepted=false and published=false due notice contrast; browser acceptance and publication acceptance remain separate."
+  },
+  "no_change_to_prior_probe": true,
+  "network_requests": 0
+}

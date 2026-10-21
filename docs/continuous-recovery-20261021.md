@@ -123,3 +123,15 @@ v46增加六张后期关联来源的天赋PNG界面图，并把八个点数框�
 ArchiveCraft的四份百科HTML和四张引用图均由direct取得。高等精灵控制图与已有实体字节相同；Alleria、塞纳里奥议会、玛法里奥三张图经实际查看，准备以注明社区来源的当前关联素材接入。原目标捕获日期留空，Alleria保留WordPress缩放名说明；原百科正文保持。[图源决定](../research/continuous-recovery-20261021/publication/root-related-encyclopedia-image-decision.json)
 
 Common Crawl补充三份来源复核完成：RSS九条标题已在五月新闻中，Cenarion指南截断于128KiB且末尾标记未结束，Implemented正文及文章图片与已有来源相同；保留来源，不覆盖现有页面。[复核](../research/continuous-recovery-20261021/publication/root-commoncrawl-pages02-content-acceptance.json)
+
+### 11:12 UTC — 四幅关联配图与奖励按钮
+
+v46已发布，60个线上对象由direct核对通过；保留首次main推送低速失败和随后代理正常推送的两份回执。
+
+ArchiveCraft当前页面提供Alleria、塞纳里奥议会、玛法里奥三幅百科图，以及The Broken指南缩略图。四张JPEG共176,325字节，保留原字节，页面注明并链接来源。它们属于当前关联来源补充，原始2008年目标捕获日期留空。The Broken菜单使用的动态thumb-broken.jpg与静态thumb-thebroken.jpg经原页面及脚本核对，共用同一张缩略图。
+
+v47候选的来源注记对比度不足，v48候选点击菜单后仍使用未映射的动态名称，两版均未发布。v49修正这两处，并只替换奖励表脚本中的两个图片路径。65项相关代码检查、10,143个实际输出对象及五页实际Chrome操作验收通过。第一版浏览探针还检查了既有派系说明文字缺口；失败记录保留，最终探针将其作为后续修复项记录。
+
+[v49本地验收](../research/continuous-recovery-20261021/publication/root-v49-local-acceptance.json) · [实际浏览](../research/continuous-recovery-20261021/publication/root-v49-browser-acceptance.json)
+
+百科扩展浏览审计完成49/52页，另三页因本地连接/加载超时未完成，不计作通过。已浏览页还观察到12个独立分类头像CSS目标缺失。离线服务器backlog对照没有证明增大队列有改善，未修改生产服务器。BC介绍Flash只显示封面；播放所需FLV和皮肤SWF在已缓存Common Crawl覆盖块中均无精确匹配，视频尚未恢复。
