@@ -167,3 +167,13 @@ v51只新增T.gif的一个精确兼容地址。原GIF捕获于2008-04-23 09:51:0
 12:11 UTC再次取一份已知正样本CDX控制：direct连接超时，代理返回429，2次请求后停止，无正CDX行，未开启后续Wayback批次。原始HTTP头和文本留本地，公开整理后的观察；没有重置历史失败记录。
 
 [最新控制](../research/continuous-recovery-20261021/publication/root-control02-source-acceptance.json)
+
+### 12:58 UTC — v51线上与离线包验收
+
+main代码检查点cdab4eed已正常push；Pages提交7494e7cc构建完成，前后构建标识一致。80个指定线上对象均由direct取得，与本地长度和摘要一致。主代理绑定代码、完整导出、Chrome实际行为和线上对象，完成最终站点验收。
+
+处理后的浏览ZIP为546,302,950字节，10,150个成员，解压约634MB。独立检查全部成员，并从含空格路径解压，使用包内Python隔离服务实际请求145个对象的GET/HEAD，共290次本地请求；五页实际Chrome检查再次通过，包括两个派系弹窗和四页字母图。原制作报告的大型成员清单留在本地，包内提供FILE_SHA256SUMS.txt，公开整理后的包摘要和独立验收。
+
+[线上核对](../research/continuous-recovery-20261021/publication/root-v51-pages-online-acceptance.json) · [离线包核对](../research/continuous-recovery-20261021/publication/root-v51-portable-acceptance.json) · [包内实际浏览](../research/continuous-recovery-20261021/publication/root-v51-portable-browser-acceptance.json)
+
+资源下载与新导出已经结束，继续发布当前已验收的处理后离线包。Wayback最后一次控制429仍保留，不启动新来源批次。
