@@ -193,3 +193,11 @@ v52只修改这一页的一处目录赋值；其余10,142个声明对象、所�
 代码提交617243ac已正常push，Pages提交d46c14a0构建完成，25个线上对象均由direct取得并匹配。包制作一次完成，原图与其他页面保持。独立读取全部ZIP成员，并用解压后的包内服务实际检查导出来源表选出的资源路径；浏览行为复用当前v52实际Chrome记录及字节未变的v51记录。
 
 [线上核对](../research/continuous-recovery-20261021/publication/root-v52-pages-online-acceptance.json) · [便携包核对](../research/continuous-recovery-20261021/publication/root-v52-portable-acceptance.json)。当前线上为v52，公开离线包仍为v51，继续发布已验收v52包。
+
+### 13:56 UTC — 本轮收尾
+
+v52处理后离线包已公开并设为最新Release，标签指向a4cdfb82。三份附件发布前后均与本地对象匹配，匿名取得两份小附件，ZIP最终HEAD长度为546,302,959字节；未重复下载整个ZIP。Pages仍为d46c14a0。Wayback停批状态保留，未开启新来源。
+
+自动接续wow-14已删除，两名执行者均已完成。旧候选的10个预览进程已按标识停止，v52预览保留；来源、历史版本与ZIP未清理。D盘余量约21.63GB，高于10GiB阈值。当前时间仍在14小时授权范围内，完成文档提交与正常push后结束本轮。
+
+[累计回顾](recovery-summary-20261021.md) · [公开发布核对](../research/continuous-recovery-20261021/publication/root-v52-release-publication.json) · [匿名入口核对](../research/continuous-recovery-20261021/publication/root-v52-release-public-download-acceptance.json) · [最终控制](../research/continuous-recovery-20261021/publication/root-v52-closeout-control.json)

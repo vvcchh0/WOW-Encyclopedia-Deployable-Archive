@@ -9,6 +9,8 @@
 
 ## 2026-10-21
 
+- 同步发布[v52 离线浏览包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261021-v52)（约 546 MB，解压约 634 MB），完成本轮非图库复原。内容、来源方法和剩余缺口见[本轮回顾](docs/recovery-summary-20261021.md)。
+
 - 发布 v52：修复 Arathi 指南的动态目录，恢复 20 张已有预览的显示，25 个线上对象核对通过；两张缩略图仍缺。修正分轮清单为 391 个本地资源目标。[复原记录](docs/non-gallery-restoration-20261021.md)
 
 - 发布 v51：恢复奥尔多／占星者说明弹窗与派系切换，接通四页 Wrath 字母图；80 个线上对象核对通过，离线包完成本地启动检查。整理 177 个页面路径的分轮浏览记录与剩余素材清单。[复原记录](docs/non-gallery-restoration-20261021.md)

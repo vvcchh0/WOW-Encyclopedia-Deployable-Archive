@@ -1,6 +1,6 @@
 # 非图库内容复原：2026-10-21
 
-本轮从v39继续，优先恢复已有正文和交互。三处Flash兼容展示随v41上线；天赋计算器和BlizzCast阅读页随v42发布。v45进一步加入专题正文与关联图标，45个线上对象核对完成，离线包暂为v39。当前发布状态以[工作总账](../research/continuous-recovery-20261021/status.json)和[更新记录](../CHANGELOG.md)为准。
+本轮从v39推进至v52，在线版与处理后的离线浏览包已同步发布。恢复九职业天赋计算器、三处Flash展示、BlizzCast文字页与早期专题正文，并修复派系说明、Wrath字母图和Arathi指南预览。结果与剩余素材见[本轮回顾](recovery-summary-20261021.md)，分阶段来源和实现细节保留在下文。
 
 ## 天赋计算器
 
@@ -84,4 +84,8 @@ v51接通一张已有Wrath字母图的单斜线地址，四页恢复显示。源
 
 收尾调查确认页面的22个异常地址来自目录基址转换错误，其中20张精确JPEG已在本地。v52仅对该指南页的path赋值保留目录，同页导航继续指向首页文件。全文件核对和实际Chrome检查完成，20张预览恢复显示；ss17与ss18的缩略图仍未取得。这属于已有指南素材的显示修复，没有重启玩家图库下载。
 
-修正后分轮清单为391个真实本地资源目标，旧411条观察路径及原报告保留供追溯。[修正清单](../research/continuous-recovery-20261021/publication/v52-remaining-resource-targets.csv) · [调查](../research/continuous-recovery-20261021/local-audit/underdev-final-routing-review/README.md)
+修正后分轮清单为391个本地缺资源目标，旧411条观察路径及原报告保留供追溯。[修正清单](../research/continuous-recovery-20261021/publication/v52-remaining-resource-targets.csv) · [调查](../research/continuous-recovery-20261021/local-audit/underdev-final-routing-review/README.md)
+
+## 本轮发布结果
+
+v52在线版与[离线浏览包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261021-v52)已同步。包内资源与本地导出一致，匿名下载入口检查完成。后续以修正后的391个本地资源目标为线索继续调查；它不涵盖所有动态状态，也不判断整个网络上的存档缺失。
