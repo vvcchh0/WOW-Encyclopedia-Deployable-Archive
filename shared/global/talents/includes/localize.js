@@ -1,6 +1,6 @@
 var lg = ""; // Example: /en
 
-var imgPath = "/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fshared%2Fglobal%2Ftalents%2Fincludes%2Flocalize.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fshared%2Fglobal%2Ftalents&reason=external-or-uncollected-resource";
+var imgPath = "/WOW-Encyclopedia-Deployable-Archive/shared/global/talents";
 var pixelGif = "/WOW-Encyclopedia-Deployable-Archive/shared/wow-com/images/layout/pixel.gif";
 
 var textLevelRequired = "Level Required:";
@@ -13,7 +13,7 @@ var textLeftClick = "Left Click to Learn"
 var textRightClick = "Right Click to Unlearn"
 var textRankColon = "Rank:"
 var textToSave = "To save the template for future reference, copy the URL below:";
-var theURLtoCopy = "/info/classes/index.html"+ nlclass +"/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fshared%2Fglobal%2Ftalents%2Fincludes%2Flocalize.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Ftalents.html&reason=external-or-uncollected-resource";
+var theURLtoCopy = "/WOW-Encyclopedia-Deployable-Archive/info/classes/"+ nlclass +"/talents.html";
 var textNextRank = "Next Rank:";
 var requiresRequires = "Requires";
 var requiresPointsIn = "points in";
@@ -48,12 +48,12 @@ function saveTheTemplate() {
 
 	w.document.write('<body marginheight = 0 marginwidth = 0 topmargin = 0 leftmargin = 0 bgcolor = "#000000"><center><table cellspacing = "0" cellpadding = "0" border = "0" width = "100%"><tr><td><img src = "/WOW-Encyclopedia-Deployable-Archive/info/classes/includes-new/images/bot-box/top-left.gif"></td>');
 	w.document.write('<td width = "100%" background = "/WOW-Encyclopedia-Deployable-Archive/info/classes/includes-new/images/bot-box/top.gif"></td><td><img src = "/WOW-Encyclopedia-Deployable-Archive/info/classes/includes-new/images/bot-box/top-right.gif"></td></tr>	<tr>');
-	w.document.write('<td background = "/WOW-Encyclopedia-Deployable-Archive/info/classes/includes-new/images/bot-box/left.gif" valign = "top"><img src = "/WOW-Encyclopedia-Deployable-Archive/shared/wow-com/images/layout/pixel.gif" width = "10" height = "1"></td><td align="center" width = "100%"><table cellspacing = "0" cellpadding = "0" border = "0" width = "100%" style = "background-image: url(\'/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fshared%2Fglobal%2Ftalents%2Fincludes%2Flocalize.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Flinks%2Fimages%2Fborder-right.gif%5C&reason=external-or-uncollected-resource'); background-repeat: repeat-y; background-position: right;">');
+	w.document.write('<td background = "/WOW-Encyclopedia-Deployable-Archive/info/classes/includes-new/images/bot-box/left.gif" valign = "top"><img src = "/WOW-Encyclopedia-Deployable-Archive/shared/wow-com/images/layout/pixel.gif" width = "10" height = "1"></td><td align="center" width = "100%"><table cellspacing = "0" cellpadding = "0" border = "0" width = "100%" style = "background-image: url(\'/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fshared%2Fglobal%2Ftalents%2Fincludes%2Flocalize.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Flinks%2Fimages%2Fborder-right.gif&reason=external-or-uncollected-resource\'); background-repeat: repeat-y; background-position: right;">');
 	w.document.write('<tr><td align = center><table cellspacing = "0" cellpadding = "0" border = "0"><tr><td>');
 	
 	w.document.write("<h3><span style = 'color: #ffffff;'>Saving the Template</span></h3>");	
 	w.document.write("<span style = 'font-family: tahoma, arial; font-size: 10pt; color: #ffffff'><b>Copy the complete URL below:</b><br>");
-	w.document.write("/info/classes/index.html"+ nlclass +"/talents.html?" +templateString);		
+	w.document.write("/WOW-Encyclopedia-Deployable-Archive/info/classes/"+ nlclass +"/talents.html?" +templateString);		
 	
 	w.document.write('</td></tr></table></td></tr></table></td><td background = "/WOW-Encyclopedia-Deployable-Archive/info/classes/includes-new/images/bot-box/right.gif" valign = "top"><img src = "/WOW-Encyclopedia-Deployable-Archive/shared/wow-com/images/layout/pixel.gif" width = "14" height = "145"></td></tr>');
 	w.document.write('	<tr><td><img src = "/WOW-Encyclopedia-Deployable-Archive/info/classes/includes-new/images/bot-box/bot-left.gif"></td>	<td width = "100%" background = "/WOW-Encyclopedia-Deployable-Archive/info/classes/includes-new/images/bot-box/bot.gif"></td>			<td width = "14"><img src = "/WOW-Encyclopedia-Deployable-Archive/info/classes/includes-new/images/bot-box/bot-right.gif"></td>		</tr>		</table>					');

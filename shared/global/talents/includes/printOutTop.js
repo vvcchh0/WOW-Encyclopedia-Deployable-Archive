@@ -45,7 +45,7 @@ for (var printTreeID = 0; printTreeID < numberOfTrees; printTreeID++) {
 	massiveReplaceString += '<td class = "tabletopright"></td></tr>';
 	
 	massiveReplaceString += '<tr><td class = "tableleft"></td>';
-	massiveReplaceString += '<td style = "background: url(\''+ imgPath +'/'+ nlclass +'/images/'+ imgDir + treeName +'/WOW-Encyclopedia-Deployable-Archive/__offline/missing.html?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fshared%2Fglobal%2Ftalents%2Fincludes%2FprintOutTop.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Fbackground.jpg%5C&reason=external-or-uncollected-resource') #000000 0 0 no-repeat; ">';	
+	massiveReplaceString += '<td style = "background: url(\''+ imgPath +'/'+ nlclass +'/images/'+ imgDir + treeName +'/background.jpg\') #000000 0 0 no-repeat; ">';	
 	
 	massiveReplaceString += '<div id = "'+ treeID +'Tree">';
 
