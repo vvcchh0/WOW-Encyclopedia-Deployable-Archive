@@ -21,7 +21,7 @@
       "id": "SOURCE",
       "owner": "network_dungeon_trace_20261022",
       "goal": "Reuse the accepted cached Dungeons page and prepare four uncached ArchiveCraft pages; acquire image candidates only after a separate parent GO",
-      "state": "first_batch_accepted_next_plan_pending",
+      "state": "accepted_bounded_source_batches_finished",
       "dependencies": [],
       "evidence": "root-archivecraft-dungeons01-source-acceptance.json"
     },
@@ -29,7 +29,7 @@
       "id": "TRACE",
       "owner": "root",
       "goal": "Trace original official pages/captures and classify each candidate image source",
-      "state": "in_progress",
+      "state": "accepted_deadmines_and_related_source_mappings",
       "dependencies": [
         "LOCAL",
         "SOURCE"
@@ -39,7 +39,7 @@
       "id": "RESTORE",
       "owner": "root",
       "goal": "Integrate accepted source-supported assets and compatibility repairs in a new derived version",
-      "state": "v53_export_running",
+      "state": "v55_local_export_and_browser_accepted",
       "dependencies": [
         "TRACE"
       ]
@@ -48,7 +48,7 @@
       "id": "PUBLISH",
       "owner": "root",
       "goal": "Independent source/byte/browser acceptance and permitted normal Git/Pages/processed-package publication",
-      "state": "pending",
+      "state": "v55_package_and_pages_preparing",
       "dependencies": [
         "RESTORE"
       ]
@@ -105,7 +105,7 @@
       "id": "ARROWS-LOCAL",
       "owner": "local_dungeon_trace_20261022",
       "goal": "Review 21 cached later-source arrow geometries and prerequisite states before integration",
-      "state": "in_progress",
+      "state": "accepted_18_arrows_three_down3_held",
       "dependencies": [
         "LOCAL"
       ]
@@ -114,8 +114,18 @@
       "id": "COOLWOW-SOURCE",
       "owner": "network_dungeon_trace_20261022",
       "goal": "Prepare three exact GitHub item-icon sources with no automatic site mapping",
-      "state": "preparing_no_go",
+      "state": "accepted_three_related_icons_in_11_pages",
       "dependencies": []
+    },
+    {
+      "id": "TALENT-MAPPINGS-V55",
+      "owner": "root",
+      "goal": "Twenty explicit same-class artwork mappings with original 2008 data and save/reload behavior retained",
+      "state": "accepted",
+      "dependencies": [
+        "ARROWS-LOCAL"
+      ],
+      "evidence": "root-v55-browser-acceptance.json"
     }
   ]
 }

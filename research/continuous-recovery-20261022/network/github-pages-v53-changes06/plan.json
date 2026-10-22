@@ -1,0 +1,42 @@
+{
+  "schema": "wow-recovery.github-pages-v53-changes06.plan.v1",
+  "batch_id": "github-pages-v53-changes06",
+  "mode": "prepared",
+  "root_go_required": true,
+  "network_requests_at_prepare": 0,
+  "pages_commit": "f068318efedc86b6e7572213482f702b308ae362",
+  "actions_run": "39758597461",
+  "target_base_url": "https://vvcchh0.github.io/WOW-Encyclopedia-Deployable-Archive/",
+  "object_manifest_sha256": "ef02290ab2b1a155d3c25b23057931bc80e622fe7762eb39581d3a3023f0faf4",
+  "object_set_sha256": "08497bec6495bc56fc4b62985ef2936380250e9bacd3a85b09ddc33a35908893",
+  "transport_runner_path": "research/continuous-recovery-20261022/network/archivecraft-dungeons01/archivecraft_dungeons01.py",
+  "transport_runner_sha256": "7b95fa17bff6aa5245dc9fe45331652f02db5419c0e7ac14ff454af9d0fcad00",
+  "source_build_receipt_path": "research/continuous-recovery-20261022/integration/v53-build-receipt.json",
+  "source_build_receipt_sha256": "c8f52998832fcb4add9a98496f67dae66b4fe80df3243fa04bec63d624a8ffb6",
+  "policy": {
+    "maximum_logical_objects": 6,
+    "maximum_http_attempts": 12,
+    "maximum_batch_seconds": 400,
+    "maximum_request_seconds": 30,
+    "connect_timeout_seconds": 10,
+    "minimum_request_start_seconds": 6.2,
+    "maximum_total_body_bytes": 33554432,
+    "maximum_object_body_bytes": 16777216,
+    "maximum_response_bytes": 16777216,
+    "maximum_attempts_per_object": 2,
+    "minimum_transport_failure_cooldown_seconds": 120,
+    "stop_http_statuses": [
+      429,
+      503
+    ],
+    "disk_floor_bytes": 11005853696,
+    "process_proxy": "http://127.0.0.1:7890",
+    "direct_first": true,
+    "proxy_fallback_only_after_transfer_failure": true,
+    "tls_verification": true,
+    "follow_redirects": false,
+    "automatic_retries": 0
+  },
+  "execution_boundary": "one explicitly GO-authorized six-object batch; no follow redirects, automatic retries, sitemap, or other objects",
+  "raw_handling": "raw HTTP headers, bodies, and cookie jars remain under runtime/private/raw; only curated match metadata is public"
+}

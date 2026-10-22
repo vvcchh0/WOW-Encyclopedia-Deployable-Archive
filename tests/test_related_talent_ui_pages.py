@@ -1,4 +1,4 @@
-"""Portable exporter checks for the six-image related talent UI bundle."""
+"""Portable exporter checks for v1 and v2 related talent UI bundles."""
 
 from __future__ import annotations
 
@@ -9,6 +9,7 @@ import json
 import sys
 import tempfile
 import unittest
+import shutil
 from pathlib import Path
 from types import SimpleNamespace
 from unittest import mock
@@ -26,11 +27,17 @@ _UI_EXPORT_AVAILABLE = (
     hasattr(pages, "related_talent_ui")
     and "related_talent_ui_map" in inspect.signature(pages.export_pages).parameters
 )
+_V2_RELATIVE = Path(
+    "research/continuous-recovery-20261022/integration/related-talent-ui-v54"
+)
+_V2_ACCEPTANCE_RELATIVE = Path(
+    "research/continuous-recovery-20261021/publication/root-talent-related-source-acceptance.json"
+)
 
 
 @unittest.skipUnless(_UI_EXPORT_AVAILABLE, "root exporter UI bundle interface is not installed yet")
 class RelatedTalentUIPagesTests(unittest.TestCase):
-    """Exercise the exporter boundary with a small mocked accepted bundle."""
+    """Exercise mocked v1 bundles and a real pinned v2 bundle at the exporter boundary."""
 
     targets = (
         "/shared/global/talents/images/talents/icon-over-grey.gif",
@@ -41,13 +48,15 @@ class RelatedTalentUIPagesTests(unittest.TestCase):
         "/shared/global/talents/includes/images/printableversion.gif",
     )
 
-    def _fixture(self, root: Path) -> tuple[Path, Path, Path]:
+    def _fixture(
+        self, root: Path, targets: tuple[str, ...] | None = None
+    ) -> tuple[Path, Path, Path]:
         from test_github_pages_export import GithubPagesExportTests
 
         base, site, manifest = GithubPagesExportTests()._fixture(root)
         records = json.loads(manifest.read_text(encoding="utf-8"))
         body_images = []
-        for target in self.targets:
+        for target in (targets or self.targets):
             marker = "/__offline/missing-image.svg?requested=" + quote(
                 "http://www.worldofwarcraft.com" + target, safe=""
             )
@@ -77,6 +86,16 @@ class RelatedTalentUIPagesTests(unittest.TestCase):
         )
         manifest.write_text(json.dumps(records), encoding="utf-8")
         return base, site, manifest
+
+    def _stage_v2_inputs(self, root: Path) -> Path:
+        source_dir = ROOT / _V2_RELATIVE
+        target_dir = root / _V2_RELATIVE
+        target_dir.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copytree(source_dir, target_dir)
+        acceptance = root / _V2_ACCEPTANCE_RELATIVE
+        acceptance.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(ROOT / _V2_ACCEPTANCE_RELATIVE, acceptance)
+        return target_dir / "input-map.json"
 
     def _png(self, colour: bytes) -> bytes:
         # Valid 1x1 RGBA PNG bytes; no exporter behavior depends on dimensions.
@@ -154,7 +173,8 @@ class RelatedTalentUIPagesTests(unittest.TestCase):
             '<p id="related-talent-ui-notice" role="note">Talent data: 2008 archive. '
             'Some icons and interface images come from a later WotLK 3.3.5a calculator backup. '
             '<a href="/WOW-Encyclopedia-Deployable-Archive/__offline/related-talent-icons.json">Icon sources.</a> '
-            '<a href="/WOW-Encyclopedia-Deployable-Archive/__offline/related-talent-ui.json">Interface sources.</a></p>'
+            '<a href="/WOW-Encyclopedia-Deployable-Archive/__offline/related-talent-ui.json">'
+            'Interface sources.</a></p>'
         )
         return SimpleNamespace(
             assets=tuple(assets),
@@ -199,7 +219,9 @@ class RelatedTalentUIPagesTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root, site, manifest = self._fixture(Path(tmp))
             with mock.patch.object(
-                pages.related_talent_ui, "load_related_talent_ui_bundle", side_effect=AssertionError("unexpected UI load")
+                pages.related_talent_ui,
+                "load_related_talent_ui_bundle",
+                side_effect=AssertionError("unexpected UI load"),
             ) as loader:
                 result = pages.export_pages(
                     source_site=site,
@@ -279,6 +301,60 @@ class RelatedTalentUIPagesTests(unittest.TestCase):
             self.assertFalse((root / "out").exists())
             self.assertFalse((root / "out.partial").exists())
 
+    def test_v2_loader_bundle_is_consumed_for_all_24_routes(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            targets = tuple(pages.related_talent_ui.V2_UI_TARGETS)
+            _base, site, manifest = self._fixture(root, targets=targets)
+            map_path = self._stage_v2_inputs(root)
+            ui_bundle = pages.related_talent_ui.load_related_talent_ui_bundle(
+                map_path, root, pages.DEFAULT_BASE_PATH
+            )
+            icon_bundle = self._icon_bundle()
+            with mock.patch.object(
+                pages.related_talent_icons,
+                "load_related_talent_bundle",
+                return_value=icon_bundle,
+            ) as icon_loader:
+                result = pages.export_pages(
+                    source_site=site,
+                    manifest_path=manifest,
+                    output=root / "out",
+                    workspace_root=root,
+                    min_free_bytes=0,
+                    related_talent_icon_map=Path("accepted-icons.json"),
+                    related_talent_ui_map=Path(_V2_RELATIVE / "input-map.json"),
+                )
+            icon_loader.assert_called_once()
+            output = root / "out"
+            for asset in ui_bundle.assets:
+                self.assertEqual((output / asset.relative).read_bytes(), asset.data)
+                self.assertFalse((output / asset.target_route.lstrip("/")).exists())
+            route_map = json.loads((output / "__offline/route-map.json").read_text(encoding="utf-8"))
+            for asset in ui_bundle.assets:
+                expected = pages.DEFAULT_BASE_PATH + asset.relative
+                self.assertEqual(route_map["routes"][asset.target_route], expected)
+                self.assertEqual(route_map["routes"][asset.route], expected)
+            catalog = json.loads(
+                (output / ui_bundle.catalog_relative).read_text(encoding="utf-8")
+            )
+            self.assertEqual(catalog["ui_count"], 24)
+            provenance = json.loads((output / "export-provenance.json").read_text(encoding="utf-8"))
+            ui_rows = [row for row in provenance["files"] if row.get("kind") == "related_talent_ui"]
+            self.assertEqual(len(ui_rows), 24)
+            self.assertEqual(sum(row["mime"] == "image/png" for row in ui_rows), 6)
+            self.assertEqual(sum(row["mime"] == "image/gif" for row in ui_rows), 18)
+            for row in ui_rows:
+                self.assertEqual(row["role"], "later_related_talent_ui")
+                source = row["source_refs"][0]
+                self.assertEqual(source["classification"], "later_related_source")
+                self.assertEqual(source["commit_sha"], "4c8013cf40d0edf84625430eaf43b86d97880ae0")
+                self.assertIsNone(source["original_capture_timestamp"])
+                self.assertEqual(source["original_2008_images_recovered"], 0)
+                self.assertNotIn("payload_path", json.dumps(row))
+            self.assertEqual(provenance["related_talent_ui"]["ui_count"], 24)
+            self.assertEqual(result["stats"]["related_talent_ui_assets"], 24)
+            self.assertEqual(result["stats"]["related_talent_ui_notice_pages"], 1)
 
 if __name__ == "__main__":
     unittest.main()

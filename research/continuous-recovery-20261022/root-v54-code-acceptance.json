@@ -1,0 +1,54 @@
+{
+  "schema": "wow-root-v54-code-acceptance/v1",
+  "accepted": true,
+  "checked_utc": "2026-10-22T10:39:12.076968+00:00",
+  "new_arrow_assets": 18,
+  "new_faction_icons": 3,
+  "new_downloads_during_integration": 0,
+  "source_manifest_sha256": "e81eaefffbe994178e46fe02e2afd761d0747b1dad36455c1b4b1d2bfeec7b9a",
+  "tests": {
+    "run": 11,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "log_sha256": "bb54efbcab3049f6ca664513449e2a7a344299573dbb188af45cb40bc0127c44"
+  },
+  "prior_worker_regression": {
+    "run": 46,
+    "passed": true,
+    "includes_imported_general_exporter_tests": 39,
+    "evidence": "integration/related-faction-icons-v54/implementation/validation-report.json",
+    "note": "Those 39 passed after the new exporter hook; the root focused run covers the later metadata naming change and real bundle boundaries."
+  },
+  "bindings": [
+    {
+      "path": "tools/export_github_pages.py",
+      "sha256": "9842db5ac8173c3f3bc3e2f95481f56114a858ff8b6c55d6be63835873f6eab0"
+    },
+    {
+      "path": "tools/related_talent_ui.py",
+      "sha256": "93d67119492dd7a760bb0671338a1d741372ca07bab10a678216267280c2960b"
+    },
+    {
+      "path": "tools/related_faction_icons.py",
+      "sha256": "e30a4945a141d0206523408bf6611ce45ce5eec65a7f5c158c50263e701d5bf2"
+    },
+    {
+      "path": "tests/test_related_talent_ui.py",
+      "sha256": "d49f9f0dec41cb0caba8a8e4766a35d8e97e2c35e2fd97d408db9ce15900c77d"
+    },
+    {
+      "path": "tests/test_related_talent_ui_pages.py",
+      "sha256": "900cbdefe8e6a051d71bbabce1c5790806456c5ba2ad3ea5455b2879dc6ff70f"
+    },
+    {
+      "path": "tests/test_related_faction_icons.py",
+      "sha256": "ca625244b3744445049dc2a7b9883fff8352937e2ffd066d796b9f1f5c1e129b"
+    },
+    {
+      "path": "tests/test_related_faction_icons_pages.py",
+      "sha256": "bd8789da9dec87840bd08c1c8753826399aeaf137e6c4b9ab4a24710bddfa8be"
+    }
+  ],
+  "production_browser_pending": true
+}

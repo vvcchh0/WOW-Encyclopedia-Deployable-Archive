@@ -59,6 +59,7 @@ import related_talent_icons  # noqa: E402
 import related_talent_ui  # noqa: E402
 import related_encyclopedia_images  # noqa: E402
 import related_guide_images  # noqa: E402
+import related_faction_icons  # noqa: E402
 import rewardstable_compat  # noqa: E402
 import source16_layout_compat  # noqa: E402
 import talent_box_layout  # noqa: E402
@@ -2953,6 +2954,7 @@ def export_pages(
     talent_box_layout_map: Path | None = None,
     related_encyclopedia_image_map: Path | None = None,
     related_guide_image_map: Path | None = None,
+    related_faction_icon_map: Path | None = None,
     restore_aldor_scryers_lore: bool = False,
 ) -> dict[str, Any]:
     source_site = source_site.resolve()
@@ -3136,6 +3138,34 @@ def export_pages(
         for target, canonical in guide_bundle.route_reuses.items():
             route_to_static[target] = route_to_static[canonical]
     guide_estimate = guide_bundle.estimated_bytes if guide_bundle else 0
+    faction_bundle: related_faction_icons.RelatedFactionIconBundle | None = None
+    if related_faction_icon_map is not None:
+        try:
+            faction_bundle = related_faction_icons.load_related_faction_icon_bundle(
+                related_faction_icon_map, workspace_root, base_path,
+            )
+        except related_faction_icons.RelatedFactionIconError as exc:
+            raise PagesExportError(str(exc)) from exc
+        if faction_bundle.source_metadata.get("source_manifest_sha256") != manifest_sha:
+            raise PagesExportError("related faction icons require the accepted source manifest")
+        candidates = [(asset.route, asset.relative) for asset in faction_bundle.assets]
+        candidates.append(("/" + faction_bundle.catalog_relative, faction_bundle.catalog_relative))
+        for candidate, relative in candidates:
+            if candidate in route_to_static or candidate in raw_aliases or candidate in overlay_routes or relative in relative_paths or relative in overlay_static_paths:
+                raise PagesExportError(f"related faction icon collides with an existing resource: {candidate}")
+        for target, canonical in faction_bundle.route_reuses.items():
+            if target in route_to_static or target in raw_aliases or target in overlay_routes:
+                raise PagesExportError(f"related faction target collides with an existing resource: {target}")
+            if canonical not in {r for r, _ in candidates}:
+                raise PagesExportError(f"related faction target has no canonical resource: {target}")
+        if not set(faction_bundle.notice_by_page).issubset(route_records):
+            raise PagesExportError("related faction icon page is missing from the source manifest")
+        for candidate, relative in candidates:
+            route_to_static[candidate] = static_url(base_path, relative)
+            relative_paths.add(relative)
+        for target, canonical in faction_bundle.route_reuses.items():
+            route_to_static[target] = route_to_static[canonical]
+    faction_estimate = faction_bundle.estimated_bytes if faction_bundle else 0
     aldor_scryers_lore_bundle: aldor_scryers_lore.LoreBundle | None = None
     if restore_aldor_scryers_lore:
         try:
@@ -3163,7 +3193,7 @@ def export_pages(
         aldor_scryers_lore_bundle.generated_file.length
         if aldor_scryers_lore_bundle is not None else 0
     )
-    estimate = output_estimate(records, overlay_bytes + flash_estimate + reader_estimate + talent_icon_estimate + talent_ui_estimate + encyclopedia_estimate + guide_estimate + lore_estimate)
+    estimate = output_estimate(records, overlay_bytes + flash_estimate + reader_estimate + talent_icon_estimate + talent_ui_estimate + encyclopedia_estimate + guide_estimate + faction_estimate + lore_estimate)
     if max_bytes is not None and before_workspace + estimate >= max_bytes:
         raise PagesExportError(f"workspace budget exceeded before export: {before_workspace}+{estimate} >= {max_bytes}")
     if free_before - estimate < min_free_bytes:
@@ -3538,6 +3568,38 @@ def export_pages(
                 "mime": "application/json; charset=UTF-8", "kind": "related_guide_image_catalog",
                 "role": "current_related_guide_image_catalog", "transformed": True,
             })
+        if faction_bundle is not None:
+            for asset in faction_bundle.assets:
+                if shutil.disk_usage(output.parent).free < min_free_bytes + len(asset.data):
+                    raise PagesExportError("disk reserve would be breached while writing related faction icons")
+                out = partial / asset.relative
+                out.parent.mkdir(parents=True, exist_ok=True)
+                out.write_bytes(asset.data)
+                provenance.append({
+                    "route": asset.route, "static_url": static_url(base_path, asset.relative),
+                    "output_path": asset.relative, "source_offline_path": None,
+                    "source_manifest_sha256": None, "source_manifest_length": None,
+                    "source_sha256": asset.metadata["sha256"], "source_length": len(asset.data),
+                    "derived_sha256": asset.metadata["sha256"], "derived_length": len(asset.data),
+                    "mime": asset.mime, "kind": "related_faction_icon",
+                    "role": "later_related_faction_reward_icon", "transformed": False,
+                    "source_refs": [{**dict(asset.metadata), "source_kind": "later_related_game_database_icon", "source_label": faction_bundle.source_metadata["source_label"]}],
+                })
+                stats["related_faction_icon_assets"] += 1
+            relative = faction_bundle.catalog_relative
+            if shutil.disk_usage(output.parent).free < min_free_bytes + len(faction_bundle.catalog_bytes):
+                raise PagesExportError("disk reserve would be breached while writing the faction icon catalog")
+            out = partial / relative
+            out.parent.mkdir(parents=True, exist_ok=True)
+            out.write_bytes(faction_bundle.catalog_bytes)
+            provenance.append({
+                "route": "/" + relative, "static_url": static_url(base_path, relative), "output_path": relative,
+                "source_offline_path": None, "source_manifest_sha256": None, "source_manifest_length": None,
+                "source_sha256": None, "source_length": None,
+                "derived_sha256": sha256_bytes(faction_bundle.catalog_bytes), "derived_length": len(faction_bundle.catalog_bytes),
+                "mime": "application/json; charset=UTF-8", "kind": "related_faction_icon_catalog",
+                "role": "later_related_faction_icon_catalog", "transformed": True,
+            })
         if blizzcast_bundle is not None:
             for generated in blizzcast_bundle.generated_files:
                 if shutil.disk_usage(output.parent).free < min_free_bytes + int(generated["bytes"]):
@@ -3804,6 +3866,14 @@ def export_pages(
                         raise PagesExportError(f"related guide source note requires an HTML body: {route}")
                     stats["related_guide_notice_pages"] += 1
                     derivation_notes.append("displayed the related ArchiveCraft guide illustration with a source link; original article text retained")
+                if faction_bundle is not None and route in faction_bundle.notice_by_page:
+                    if 'id="__offline-related-faction-icons"' in text:
+                        raise PagesExportError(f"related faction source note already exists: {route}")
+                    text, inserted = re.subn(r"(<body\b[^>]*>)", lambda match: match.group(1) + "\n" + faction_bundle.notice_by_page[route], text, count=1, flags=re.I)
+                    if inserted != 1:
+                        raise PagesExportError(f"related faction source note requires an HTML body: {route}")
+                    stats["related_faction_icon_notice_pages"] += 1
+                    derivation_notes.append("displayed three later-source reward icons with a source catalog; original reward data retained")
                 derived = text.encode("utf-8")
                 stats["html_derived"] += 1
             elif kind == "css" or (kind == "support" and source.suffix.casefold() == ".css"):
@@ -4218,6 +4288,15 @@ def export_pages(
                 "route_reuses": dict(guide_bundle.route_reuses),
                 "original_2008_images_recovered": 0,
             }
+        if faction_bundle is not None:
+            provenance_payload["related_faction_icons"] = {
+                "source": dict(faction_bundle.source_metadata),
+                "image_count": len(faction_bundle.assets),
+                "catalog_path": faction_bundle.catalog_relative,
+                "source_map_sha256": faction_bundle.map_sha256,
+                "route_reuses": dict(faction_bundle.route_reuses),
+                "original_2008_images_recovered": 0,
+            }
         if layout_bundle is not None:
             provenance_payload["layout_compatibility_reuse"] = {
                 "classification": "layout_compatibility_reuse",
@@ -4305,7 +4384,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     parser.add_argument(
         "--related-talent-ui-map", type=Path, default=None,
-        help="Optional six-image later-source talent UI supplement; requires the related icon map",
+        help="Optional pinned later-source talent UI supplement; requires the related icon map",
     )
     parser.add_argument(
         "--source16-layout-map", type=Path, default=None,
@@ -4316,6 +4395,7 @@ def main(argv: list[str] | None = None) -> int:
         help="Optional eight-route same-site point-box border reuse for nine talent pages",
     )
     parser.add_argument("--related-guide-image-map", type=Path, default=None, help="accepted current related guide image map")
+    parser.add_argument("--related-faction-icon-map", type=Path, default=None, help="Optional three-icon reward supplement from a separately attributed later repository")
     parser.add_argument(
         "--related-encyclopedia-image-map", type=Path, default=None,
         help="Optional three-image supplement attributed to the ArchiveCraft community archive",
@@ -4343,7 +4423,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     args = parser.parse_args(argv)
     try:
-        result = export_pages(output=args.output, source_site=args.site, manifest_path=args.manifest, base_path=args.base_path, max_bytes=args.max_bytes, min_free_bytes=args.min_free_bytes, image_source_maps=args.image_source_maps, supplement_image_source_maps=args.supplement_image_source_maps, allow_later_image_supplements=args.allow_later_image_supplements, guide_preview_map=args.guide_preview_map, guide_image_collection_map=args.guide_image_collection_map, flash_runtime_archive=args.flash_runtime_archive, blizzcast_source_map=args.blizzcast_source_map, related_talent_icon_map=args.related_talent_icon_map, related_talent_ui_map=args.related_talent_ui_map, source16_layout_map=args.source16_layout_map, talent_box_layout_map=args.talent_box_layout_map, related_encyclopedia_image_map=args.related_encyclopedia_image_map, related_guide_image_map=args.related_guide_image_map, restore_aldor_scryers_lore=args.restore_aldor_scryers_lore)
+        result = export_pages(output=args.output, source_site=args.site, manifest_path=args.manifest, base_path=args.base_path, max_bytes=args.max_bytes, min_free_bytes=args.min_free_bytes, image_source_maps=args.image_source_maps, supplement_image_source_maps=args.supplement_image_source_maps, allow_later_image_supplements=args.allow_later_image_supplements, guide_preview_map=args.guide_preview_map, guide_image_collection_map=args.guide_image_collection_map, flash_runtime_archive=args.flash_runtime_archive, blizzcast_source_map=args.blizzcast_source_map, related_talent_icon_map=args.related_talent_icon_map, related_talent_ui_map=args.related_talent_ui_map, source16_layout_map=args.source16_layout_map, talent_box_layout_map=args.talent_box_layout_map, related_encyclopedia_image_map=args.related_encyclopedia_image_map, related_guide_image_map=args.related_guide_image_map, related_faction_icon_map=args.related_faction_icon_map, restore_aldor_scryers_lore=args.restore_aldor_scryers_lore)
     except PagesExportError as exc:
         parser.error(str(exc))
     print(json.dumps(result, ensure_ascii=False, indent=2))

@@ -1,0 +1,67 @@
+{
+  "schema": "wow-related-faction-icons-implementation-validation/v1",
+  "checked_utc": "2026-10-22T10:37:11Z",
+  "network_requests": 0,
+  "scope": {
+    "loader": "tools/related_faction_icons.py",
+    "tests": "tests/test_related_faction_icons.py",
+    "implementation_notes": "research/continuous-recovery-20261022/integration/related-faction-icons-v54/implementation/README.md",
+    "validation_report": "research/continuous-recovery-20261022/integration/related-faction-icons-v54/implementation/validation-report.json"
+  },
+  "sha256": {
+    "tools/related_faction_icons.py": "E30A4945A141D0206523408BF6611CE45CE5EEC65A7F5C158C50263E701D5BF2",
+    "tests/test_related_faction_icons.py": "CA625244B3744445049DC2A7B9883FFF8352937E2FFD066D796B9F1F5C1E129B",
+    "research/continuous-recovery-20261022/integration/related-faction-icons-v54/implementation/README.md": "4A65A09C2A08AD1315F8AE24BCDD8910AD94314799CBA376FDFAA4D79E077705"
+  },
+  "validation": [
+    {
+      "command": "python -X utf8 -m unittest tests.test_related_faction_icons.RelatedFactionIconTests tests.test_related_faction_icons_pages.RelatedFactionPagesTests -v",
+      "result": "passed",
+      "tests": 7
+    }
+  ],
+  "previous_validation": [
+    {
+      "checked_utc": "2026-10-22T10:33:35Z",
+      "command": "python -X utf8 -m py_compile tools/related_faction_icons.py tests/test_related_faction_icons.py",
+      "result": "passed"
+    },
+    {
+      "checked_utc": "2026-10-22T10:33:35Z",
+      "command": "python -X utf8 -m unittest tests.test_related_faction_icons tests.test_related_faction_icons_pages -q",
+      "result": "passed",
+      "tests": 46,
+      "note": "Prior broad run included 39 imported exporter baseline cases; retained as historical validation.",
+      "sha256": {
+        "tools/related_faction_icons.py": "382FCB6E47970E4ED8DBFE89A1294073DF126C808686632F8F86F11E39BD2794",
+        "tests/test_related_faction_icons.py": "E5AF7DA1BFDD517DEA3DA57B3EE75D2D05421F9979375D1B90049DD926BDE105",
+        "implementation_readme": "A85C8D8AD2B4BCCFA938E8D5FF7E35FFEB5CF1D6F749271BB3E577C9555F94F3"
+      }
+    }
+  ],
+  "observed_bundle": {
+    "images": 3,
+    "source_bytes": 3587,
+    "format": "JPEG",
+    "dimensions": "36x36",
+    "frames_each": 1,
+    "notice_pages": 11,
+    "catalog_relative": "__offline/related-faction-icons.json",
+    "initial_source_record_browser_acceptance": false,
+    "source_acceptance_sha256": "5d7dfa177f25fe324fbd215363782de2b4b5a6a6f7f0149ec2b794e40a6ed4c2",
+    "decision_accepted_for_derived_trial": true,
+    "original_2008_images_recovered": 0,
+    "original_gif_pixel_identity": "unknown"
+  },
+  "coverage": [
+    "Exact pinned map, decision, root pins, source acceptance, semantic audit, Source16 manifest, repository paths and payload bytes",
+    "JPEG decode, MIME, dimensions, frame count, SHA256 and Git blob SHA1",
+    "Eleven fixed page notices and local catalog link",
+    "Map and payload path boundaries, payload drift, wrong format and dimensions",
+    "Exporter route aliases, notices, catalog/provenance, manifest binding and collision checks"
+  ],
+  "limitations": [
+    "The original Source16 GIF payload bytes and pixel identity remain unknown.",
+    "No browser acceptance was performed by this loader task."
+  ]
+}

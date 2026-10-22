@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "wow-portable-check-config/v1",
+  "title": "WOW portable archive independent check config",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "version",
+    "accepted_site",
+    "archive",
+    "package_report",
+    "export",
+    "root_browser_acceptance",
+    "output_receipt",
+    "smoke_paths"
+  ],
+  "properties": {
+    "schema": {"const": "wow-portable-check-config/v1"},
+    "version": {"type": "string", "pattern": "^v(5[4-9]|[6-9][0-9]|[1-9][0-9]{2,})$"},
+    "accepted_site": {"$ref": "#/$defs/path"},
+    "archive": {"$ref": "#/$defs/path"},
+    "package_report": {"$ref": "#/$defs/path"},
+    "export": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path"],
+      "properties": {"path": {"$ref": "#/$defs/path"}}
+    },
+    "root_browser_acceptance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path"],
+      "properties": {"path": {"$ref": "#/$defs/path"}}
+    },
+    "output_receipt": {"$ref": "#/$defs/path"},
+    "smoke_paths": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["url_path", "site_relative", "expected_mime", "methods"],
+        "properties": {
+          "url_path": {"type": "string", "minLength": 1},
+          "site_relative": {"$ref": "#/$defs/path"},
+          "expected_mime": {"type": "string", "minLength": 1},
+          "methods": {"const": ["GET", "HEAD"]}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "path": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Repository-relative path; absolute paths are rejected by the checker."
+    }
+  }
+}

@@ -51,6 +51,65 @@ EXPECTED_MAP_SCHEMA = "wow-related-talent-icon-map/v1"
 EXPECTED_DECISION_SCHEMA = "wow-root-related-talent-icon-integration-decision/v1"
 EXPECTED_ACCEPTANCE_SCHEMA = "wow-root-related-talent-source-acceptance/v1"
 
+# Keep the original v1 contract above unchanged.  v2 layers twenty explicit
+# same-class artwork mappings over that accepted 986-image bundle.
+EXPECTED_V2_MAP_SHA256 = "dbf7e69a081d6769e243c7c8688b46181204102c58a9c933b6388c5197b67d9b"
+EXPECTED_V2_DECISION_SHA256 = "eeb4706b46d4c5e71015e993bb7b79220d70d44d0201351f2dceb199861d7d24"
+EXPECTED_V2_AUDIT_SHA256 = "fe8b6dfb6229e6c63eefafef778cffaa205b40fca9e8652389f823f64f98b520"
+EXPECTED_V2_BASE_MAP_SHA256 = EXPECTED_MAP_SHA256
+EXPECTED_V2_MAP_SCHEMA = "wow-related-talent-icon-map/v2"
+EXPECTED_V2_DECISION_SCHEMA = "wow-related-talent-icon-decision/v2"
+EXPECTED_V2_AUDIT_SCHEMA = "wow-talent-icon-reuse-audit/v1"
+EXPECTED_V2_MAP_RELATIVE = (
+    "research/continuous-recovery-20261022/integration/related-talent-icons-v55/input-map.json"
+)
+EXPECTED_V2_DECISION_RELATIVE = (
+    "research/continuous-recovery-20261022/integration/related-talent-icons-v55/decision.json"
+)
+EXPECTED_V2_PINS_RELATIVE = (
+    "research/continuous-recovery-20261022/integration/related-talent-icons-v55/root-input-pins.json"
+)
+EXPECTED_V2_ACCEPTANCE_RELATIVE = (
+    "research/continuous-recovery-20261021/publication/root-talent-related-source-acceptance.json"
+)
+EXPECTED_V2_AUDIT_RELATIVE = (
+    "research/continuous-recovery-20261022/talent-icon-reuse-audit/audit.json"
+)
+EXPECTED_V2_BASE_MAP_RELATIVE = (
+    "research/continuous-recovery-20261021/integration/related-talent-icons/input-map.json"
+)
+EXPECTED_V2_BASE_ICON_COUNT = 986
+EXPECTED_V2_MAPPED_ICON_COUNT = 20
+EXPECTED_V2_ICON_COUNT = 1006
+EXPECTED_V2_MAPPED_SOURCE_BYTES = 21820
+EXPECTED_V2_TOTAL_SOURCE_BYTES = EXPECTED_TOTAL_BYTES + EXPECTED_V2_MAPPED_SOURCE_BYTES
+EXPECTED_V2_SOURCE = {
+    "repository_url": EXPECTED_REPOSITORY_URL,
+    "commit_sha": EXPECTED_COMMIT_SHA,
+    "tree_sha": EXPECTED_TREE_SHA,
+    "zip_url": (
+        "https://codeload.github.com/CraftedRO/Offline-talent-calculator-for-WotLK-3.3.5a/zip/"
+        "4c8013cf40d0edf84625430eaf43b86d97880ae0"
+    ),
+    "zip_sha256": "52cd20ed7509943d5a386c95888686f8ea043c051cb367d8efe779b2a191095f",
+    "downloaded_utc": "2026-10-21T04:39:55.289652+00:00",
+    "original_capture_timestamp": None,
+    "classification": EXPECTED_CLASSIFICATION,
+}
+EXPECTED_V2_ROOT_PINS = {
+    "map_sha256": EXPECTED_V2_MAP_SHA256,
+    "decision_sha256": EXPECTED_V2_DECISION_SHA256,
+    "base_map_sha256": EXPECTED_V2_BASE_MAP_SHA256,
+    "semantic_audit_sha256": EXPECTED_V2_AUDIT_SHA256,
+    "source_acceptance_sha256": EXPECTED_SOURCE_ACCEPTANCE_SHA256,
+    "base_icon_count": EXPECTED_V2_BASE_ICON_COUNT,
+    "mapped_icon_count": EXPECTED_V2_MAPPED_ICON_COUNT,
+    "icon_count": EXPECTED_V2_ICON_COUNT,
+    "mapped_source_bytes": EXPECTED_V2_MAPPED_SOURCE_BYTES,
+    "new_network_requests": 0,
+    "images_reencoded": False,
+}
+
 ALLOWED_CLASSES = (
     "druid",
     "hunter",
@@ -405,12 +464,12 @@ def _make_catalog(
     )
 
 
-def load_related_talent_bundle(
+def _load_v1_related_talent_bundle(
     map_path: str | os.PathLike[str],
     workspace_root: str | os.PathLike[str],
     base_path: str,
 ) -> RelatedTalentBundle:
-    """Validate and load the accepted 986-image related talent icon bundle.
+    """Validate and load the accepted v1 986-image talent icon bundle.
 
     ``map_path`` and all payload paths are resolved beneath ``workspace_root``.
     The returned ``relative`` values are site-relative paths without a leading
@@ -546,6 +605,548 @@ def load_related_talent_bundle(
         decision_sha256=decision_sha,
         source_acceptance_sha256=acceptance_sha,
     )
+
+
+def _read_v2_bound_json(path: Path, expected_sha: str, label: str) -> tuple[dict[str, Any], str]:
+    raw, actual = _read_hash_checked(path, expected_sha, label)
+    try:
+        value = json.loads(raw.decode("utf-8"))
+    except (UnicodeError, json.JSONDecodeError) as exc:
+        raise _fail(f"{label} is not valid UTF-8 JSON: {path}: {exc}") from exc
+    if not isinstance(value, dict):
+        raise _fail(f"{label} must be a JSON object: {path}")
+    return value, actual
+
+
+def _validate_v2_entry_semantics(
+    entry: Mapping[str, Any],
+    recommendation: Mapping[str, Any],
+    state: str,
+) -> tuple[str, str, str]:
+    route = entry.get("route")
+    repo_path = entry.get("repository_path")
+    class_name = entry.get("class")
+    if not isinstance(route, str) or any(token in route for token in ("?", "#", "\\", "\x00")):
+        raise _fail(f"unsafe v2 target route: {route!r}")
+    match = _ROUTE_RE.fullmatch(route)
+    if match is None:
+        raise _fail(f"v2 target route is outside the exact talent icon scope: {route!r}")
+    if class_name != match.group("class"):
+        raise _fail(f"v2 target route crosses talent classes: {route!r}")
+    expected_target = recommendation["old_target"]
+    if class_name != expected_target.get("class") or entry.get("talent") != expected_target.get("talent"):
+        raise _fail(f"v2 semantic mapping does not match its old same-class talent: {route}")
+    target_routes = expected_target.get("routes")
+    if not isinstance(target_routes, list) or route not in target_routes:
+        raise _fail(f"v2 route is not listed in its same-class audit target: {route}")
+    if not isinstance(repo_path, str):
+        raise _fail(f"v2 source repository path is missing: {route}")
+    repo_path = _normal_relative(repo_path, f"v2 source repository path for {route}")
+    expected_prefix = f"shared/global/talents/{class_name}/images/"
+    if not repo_path.startswith(expected_prefix) or not repo_path.lower().endswith(".jpg"):
+        raise _fail(f"v2 source path does not remain within the target class: {repo_path!r}")
+    later_images = recommendation.get("later_images")
+    if not isinstance(later_images, list):
+        raise _fail(f"semantic audit lacks later image evidence for {route}")
+    evidence_by_state = {
+        str(image.get("state")): image.get("evidence_id")
+        for image in later_images
+        if isinstance(image, dict)
+    }
+    if evidence_by_state.get(state) != repo_path:
+        raise _fail(f"v2 source path is not the exact same-class audit image for {route}")
+    if entry.get("mapping_id") != recommendation.get("id"):
+        raise _fail(f"v2 mapping_id does not match its semantic audit record: {route}")
+    if entry.get("mapping_reason") != recommendation.get("reason"):
+        raise _fail(f"v2 mapping reason differs from the accepted semantic audit: {route}")
+
+    old_data = expected_target.get("old_data_evidence")
+    later_talent = recommendation.get("later_talent")
+    later_data = later_talent.get("data_evidence") if isinstance(later_talent, dict) else None
+    if not isinstance(old_data, dict) or not isinstance(later_data, dict):
+        raise _fail(f"v2 mapping lacks old/new talent data evidence: {route}")
+    expected_old_route = f"/shared/global/talents/{class_name}/data.js"
+    old_lines = old_data.get("talent_assignment_lines")
+    new_lines = later_data.get("talent_assignment_lines")
+    zip_member = later_data.get("zip_member")
+    if not isinstance(zip_member, str) or "/talents/" not in zip_member:
+        raise _fail(f"semantic audit later data member is malformed for {route}")
+    later_data_path = "talents/" + zip_member.rsplit("/talents/", 1)[1]
+    if (
+        entry.get("old_data_route") != expected_old_route
+        or entry.get("old_data_sha256") != old_data.get("v52_sha256")
+        or entry.get("old_data_talent_lines") != old_lines
+        or entry.get("later_data_repository_path") != later_data_path
+        or entry.get("later_data_sha256") != later_data.get("sha256")
+        or entry.get("later_data_talent_lines") != new_lines
+    ):
+        raise _fail(f"v2 old/new data references differ from the accepted audit: {route}")
+    for label, lines in (("old", old_lines), ("later", new_lines)):
+        if not isinstance(lines, list) or not lines or any(
+            isinstance(line, bool) or not isinstance(line, int) or line <= 0 for line in lines
+        ):
+            raise _fail(f"v2 {label} talent data line references are malformed: {route}")
+    if entry.get("classification") != EXPECTED_CLASSIFICATION:
+        raise _fail(f"v2 entry classification is not a later related source: {route}")
+    if entry.get("original_capture_timestamp") is not None:
+        raise _fail(f"v2 entry claims an original capture timestamp: {route}")
+    if entry.get("original_2008_pixel_identity") != "unknown":
+        raise _fail(f"v2 entry overstates original 2008 pixel identity: {route}")
+    return route, repo_path, class_name
+
+
+def _validate_v2_bindings(
+    map_file: Path,
+    workspace_root: Path,
+) -> tuple[dict[str, Any], dict[str, Any], dict[str, Any], dict[str, Any], str, str, str, str]:
+    root = workspace_root.resolve()
+    try:
+        map_relative = map_file.relative_to(root).as_posix()
+    except ValueError as exc:
+        raise _fail("v2 input map escapes workspace_root") from exc
+    if map_relative != EXPECTED_V2_MAP_RELATIVE:
+        raise _fail("v2 input map is not the pinned v55 input-map.json")
+    map_data, map_sha = _read_v2_bound_json(map_file, EXPECTED_V2_MAP_SHA256, "v2 input map")
+    if map_data.get("schema") != EXPECTED_V2_MAP_SCHEMA:
+        raise _fail("v2 input map schema is not the accepted related-talent map")
+
+    expected_paths = {
+        "decision": EXPECTED_V2_DECISION_RELATIVE,
+        "source_acceptance": EXPECTED_V2_ACCEPTANCE_RELATIVE,
+        "semantic_audit": EXPECTED_V2_AUDIT_RELATIVE,
+        "base_map": EXPECTED_V2_BASE_MAP_RELATIVE,
+    }
+    bound_paths: dict[str, Path] = {}
+    for key, expected in expected_paths.items():
+        relative = _normal_relative(map_data.get(key), f"v2 {key} path")
+        if relative != expected:
+            raise _fail(f"v2 input map points at a different {key} path")
+        bound_paths[key] = _resolve_workspace_file(root, relative, f"v2 {key} path")
+    pins_path = _resolve_workspace_file(root, EXPECTED_V2_PINS_RELATIVE, "v2 root input pins")
+
+    decision, decision_sha = _read_v2_bound_json(
+        bound_paths["decision"], EXPECTED_V2_DECISION_SHA256, "v2 decision record"
+    )
+    acceptance, acceptance_sha = _read_v2_bound_json(
+        bound_paths["source_acceptance"], EXPECTED_SOURCE_ACCEPTANCE_SHA256,
+        "v2 source acceptance record",
+    )
+    audit, audit_sha = _read_v2_bound_json(
+        bound_paths["semantic_audit"], EXPECTED_V2_AUDIT_SHA256, "v2 semantic audit"
+    )
+    pins = _read_json(pins_path, "v2 root input pins")
+    base_map, base_map_sha = _read_v2_bound_json(
+        bound_paths["base_map"], EXPECTED_V2_BASE_MAP_SHA256, "v2 base map"
+    )
+    expected_pins = dict(EXPECTED_V2_ROOT_PINS)
+    if pins != expected_pins:
+        raise _fail("v2 root input pins do not bind the accepted map and aggregate")
+
+    for key, actual in (
+        ("decision_sha256", decision_sha),
+        ("source_acceptance_sha256", acceptance_sha),
+        ("semantic_audit_sha256", audit_sha),
+        ("base_map_sha256", base_map_sha),
+    ):
+        if map_data.get(key) != actual:
+            raise _fail(f"v2 input map {key} does not match its bound record")
+    if decision.get("schema") != EXPECTED_V2_DECISION_SCHEMA:
+        raise _fail("v2 decision schema is not the accepted derived-trial decision")
+    if decision.get("accepted_for_derived_trial") is not True:
+        raise _fail("v2 decision is not accepted for derived trial")
+    if decision.get("source_acceptance") != expected_paths["source_acceptance"]:
+        raise _fail("v2 decision points at a different source acceptance record")
+    if decision.get("source_acceptance_sha256") != acceptance_sha:
+        raise _fail("v2 decision source acceptance binding differs")
+    if decision.get("semantic_audit") != expected_paths["semantic_audit"]:
+        raise _fail("v2 decision points at a different semantic audit")
+    if decision.get("semantic_audit_sha256") != audit_sha:
+        raise _fail("v2 decision semantic audit binding differs")
+    if decision.get("base_map") != expected_paths["base_map"] or decision.get("base_map_sha256") != base_map_sha:
+        raise _fail("v2 decision base map binding differs")
+
+    if base_map.get("schema") != EXPECTED_MAP_SCHEMA:
+        raise _fail("v2 base map is not the accepted v1 icon map")
+    if base_map.get("icon_count") != EXPECTED_V2_BASE_ICON_COUNT:
+        raise _fail("v2 base map does not contain the accepted 986 icons")
+    base_entries = base_map.get("entries")
+    if not isinstance(base_entries, list) or len(base_entries) != EXPECTED_V2_BASE_ICON_COUNT:
+        raise _fail("v2 base map entries do not contain the accepted 986 icons")
+
+    if acceptance.get("schema") != EXPECTED_ACCEPTANCE_SCHEMA or acceptance.get("accepted_source") is not True:
+        raise _fail("v2 source acceptance is not the accepted CraftedRO record")
+    for key in ("repository_url", "commit_sha", "tree_sha", "zip_url", "zip_sha256"):
+        if acceptance.get(key) != EXPECTED_V2_SOURCE[key]:
+            raise _fail(f"v2 source acceptance {key} differs from the pinned source")
+    if (
+        acceptance.get("strict_36px_same_path_icon_candidates") != EXPECTED_V2_BASE_ICON_COUNT
+        or acceptance.get("original_2008_images_recovered") != 0
+        or acceptance.get("published_images") != 0
+        or acceptance.get("raw_images_reencoded") is not False
+    ):
+        raise _fail("v2 source acceptance does not preserve the accepted source boundary")
+
+    source = map_data.get("source")
+    if source != EXPECTED_V2_SOURCE or decision.get("source") != EXPECTED_V2_SOURCE:
+        raise _fail("v2 source metadata differs from the pinned later-source record")
+    _validated_retrieved_utc(source.get("downloaded_utc"))
+    if decision.get("classification") != EXPECTED_CLASSIFICATION:
+        raise _fail("v2 decision classification is not later_related_source")
+    if decision.get("original_capture_timestamp") is not None or source.get("original_capture_timestamp") is not None:
+        raise _fail("v2 source claims an original capture timestamp")
+    if decision.get("original_2008_images_recovered") != 0 or decision.get("images_reencoded") is not False:
+        raise _fail("v2 decision overstates original recovery or re-encodes source images")
+
+    if audit.get("schema") != EXPECTED_V2_AUDIT_SCHEMA:
+        raise _fail("v2 semantic audit schema is unexpected")
+    conclusion = audit.get("conclusion")
+    recommendations = audit.get("recommendations")
+    if (
+        not isinstance(conclusion, dict)
+        or conclusion.get("strong_same_class_candidates") != 10
+        or conclusion.get("confirmed_2008_image_recoveries") != 0
+        or conclusion.get("automatic_aliases_created") != 0
+        or not isinstance(recommendations, list)
+        or len(recommendations) != 10
+    ):
+        raise _fail("v2 semantic audit does not bind the ten accepted same-class candidates")
+    recommendation_by_id: dict[str, Mapping[str, Any]] = {}
+    for recommendation in recommendations:
+        if not isinstance(recommendation, dict):
+            raise _fail("v2 semantic audit recommendation is malformed")
+        mapping_id = recommendation.get("id")
+        if not isinstance(mapping_id, str) or mapping_id in recommendation_by_id:
+            raise _fail("v2 semantic audit has a duplicate/invalid mapping id")
+        recommendation_by_id[mapping_id] = recommendation
+
+    if map_data.get("base_icon_count") != EXPECTED_V2_BASE_ICON_COUNT:
+        raise _fail("v2 input map base_icon_count is not 986")
+    if map_data.get("mapped_icon_count") != EXPECTED_V2_MAPPED_ICON_COUNT:
+        raise _fail("v2 input map mapped_icon_count is not 20")
+    if map_data.get("icon_count") != EXPECTED_V2_ICON_COUNT:
+        raise _fail("v2 input map icon_count is not 1006")
+    if map_data.get("mapped_source_bytes") != EXPECTED_V2_MAPPED_SOURCE_BYTES:
+        raise _fail("v2 input map mapped_source_bytes is not 21820")
+    for field, expected in (
+        ("base_icon_count", EXPECTED_V2_BASE_ICON_COUNT),
+        ("mapped_icon_count", EXPECTED_V2_MAPPED_ICON_COUNT),
+        ("icon_count", EXPECTED_V2_ICON_COUNT),
+        ("mapped_source_bytes", EXPECTED_V2_MAPPED_SOURCE_BYTES),
+    ):
+        if decision.get(field) != expected:
+            raise _fail(f"v2 decision {field} differs from the accepted aggregate")
+
+    entries = map_data.get("entries")
+    decision_entries = decision.get("entries")
+    if not isinstance(entries, list) or len(entries) != EXPECTED_V2_MAPPED_ICON_COUNT:
+        raise _fail("v2 input map entries do not match the exact 20-image scope")
+    if entries != decision_entries:
+        raise _fail("v2 decision image entries differ from the input map")
+    base_routes = {entry.get("route") for entry in base_entries if isinstance(entry, dict)}
+    base_relatives = {entry.get("repository_path") for entry in base_entries if isinstance(entry, dict)}
+    seen_routes: set[str] = set()
+    seen_source_paths: set[str] = set()
+    seen_payload_paths: set[str] = set()
+    seen_states: dict[str, set[str]] = {}
+    total_bytes = 0
+    asset_dir = EXPECTED_V2_MAP_RELATIVE.rsplit("/", 1)[0] + "/assets/"
+    for index, entry in enumerate(entries):
+        if not isinstance(entry, dict):
+            raise _fail(f"v2 image entry {index} is not an object")
+        mapping_id = entry.get("mapping_id")
+        recommendation = recommendation_by_id.get(mapping_id)
+        if recommendation is None:
+            raise _fail(f"v2 image entry has no accepted semantic mapping: {mapping_id!r}")
+        state = entry.get("state")
+        if state not in ("on", "off"):
+            raise _fail(f"v2 image entry has an invalid state: {state!r}")
+        route, repository_path, class_name = _validate_v2_entry_semantics(
+            entry, recommendation, state
+        )
+        if route in seen_routes or route in base_routes:
+            raise _fail(f"duplicate v2 target route or collision with v1 bundle: {route}")
+        if repository_path in seen_source_paths or repository_path in base_relatives:
+            raise _fail(f"duplicate v2 source repository path: {repository_path}")
+        seen_routes.add(route)
+        seen_source_paths.add(repository_path)
+        seen_states.setdefault(str(mapping_id), set()).add(state)
+        payload_path = _normal_relative(entry.get("payload_path"), f"v2 payload path for {route}")
+        if not payload_path.startswith(asset_dir):
+            raise _fail(f"v2 payload is outside the pinned public asset directory: {route}")
+        if payload_path in seen_payload_paths:
+            raise _fail(f"duplicate v2 payload path: {payload_path}")
+        seen_payload_paths.add(payload_path)
+        if entry.get("format") != "JPEG" or entry.get("width") != 36 or entry.get("height") != 36 or entry.get("frames") != 1:
+            raise _fail(f"v2 map image metadata is not single-frame 36x36 JPEG: {route}")
+        length = entry.get("length")
+        if isinstance(length, bool) or not isinstance(length, int) or length <= 0:
+            raise _fail(f"v2 payload length is malformed: {route}")
+        if not isinstance(entry.get("sha256"), str) or not _SHA256_RE.fullmatch(entry["sha256"]):
+            raise _fail(f"v2 payload SHA-256 is malformed: {route}")
+        if not isinstance(entry.get("git_blob_sha1"), str) or not _SHA1_RE.fullmatch(entry["git_blob_sha1"]):
+            raise _fail(f"v2 payload Git blob SHA-1 is malformed: {route}")
+        total_bytes += length
+        del class_name
+    if any(states != {"on", "off"} for states in seen_states.values()) or len(seen_states) != 10:
+        raise _fail("v2 entries do not contain exactly on/off assets for ten mappings")
+    if total_bytes != EXPECTED_V2_MAPPED_SOURCE_BYTES:
+        raise _fail(f"v2 image payload total is {total_bytes}, expected {EXPECTED_V2_MAPPED_SOURCE_BYTES}")
+    if set(recommendation_by_id) != set(seen_states):
+        raise _fail("v2 image mappings do not cover exactly the ten accepted semantic candidates")
+    return map_data, decision, acceptance, audit, map_sha, decision_sha, acceptance_sha, audit_sha
+
+
+def _make_v2_catalog(
+    *,
+    base_path: str,
+    assets: list[RelatedTalentAsset],
+    source_metadata: Mapping[str, Any],
+    per_class_counts: Mapping[str, int],
+    notice_html: str,
+) -> bytes:
+    public_assets: list[dict[str, Any]] = []
+    mappings: list[dict[str, Any]] = []
+    for asset in assets:
+        item: dict[str, Any] = {
+            "route": asset.route,
+            "relative": asset.relative,
+            "url": _public_asset_url(base_path, asset.route),
+            "mime": asset.mime,
+            "sha256": asset.metadata["sha256"],
+            "length": asset.metadata["length"],
+            "width": asset.metadata["width"],
+            "height": asset.metadata["height"],
+            "frames": asset.metadata["frames"],
+        }
+        mapping_id = asset.metadata.get("mapping_id")
+        if mapping_id is not None:
+            item.update(
+                {
+                    "mapping_id": mapping_id,
+                    "source_repository_path": asset.metadata["source_repository_path"],
+                    "mapping_reason": asset.metadata["mapping_reason"],
+                    "classification": asset.metadata["classification"],
+                    "original_capture_timestamp": None,
+                    "original_2008_pixel_identity": "unknown",
+                }
+            )
+            mappings.append(
+                {
+                    "target_route": asset.route,
+                    "target_url": _public_asset_url(base_path, asset.route),
+                    "source_repository_path": asset.metadata["source_repository_path"],
+                    "source_image_url": asset.metadata["source_image_url"],
+                    "mapping_id": mapping_id,
+                    "class": asset.metadata["class"],
+                    "talent": asset.metadata["talent"],
+                    "state": asset.metadata["state"],
+                    "mapping_reason": asset.metadata["mapping_reason"],
+                    "sha256": asset.metadata["sha256"],
+                    "git_blob_sha1": asset.metadata["git_blob_sha1"],
+                    "length": asset.metadata["length"],
+                    "format": asset.metadata["format"],
+                    "width": asset.metadata["width"],
+                    "height": asset.metadata["height"],
+                    "frames": asset.metadata["frames"],
+                    "old_data_route": asset.metadata["old_data_route"],
+                    "old_data_sha256": asset.metadata["old_data_sha256"],
+                    "old_data_talent_lines": asset.metadata["old_data_talent_lines"],
+                    "later_data_repository_path": asset.metadata["later_data_repository_path"],
+                    "later_data_sha256": asset.metadata["later_data_sha256"],
+                    "later_data_talent_lines": asset.metadata["later_data_talent_lines"],
+                    "classification": asset.metadata["classification"],
+                    "original_capture_timestamp": None,
+                    "original_2008_pixel_identity": "unknown",
+                }
+            )
+        public_assets.append(item)
+    payload = {
+        "schema": "wow-related-talent-icon-catalog/v2",
+        "catalog_relative": EXPECTED_CATALOG_RELATIVE,
+        "base_path": base_path,
+        "notice_html": notice_html,
+        "source": dict(source_metadata),
+        "icon_count": len(assets),
+        "class_counts": dict(per_class_counts),
+        "assets": public_assets,
+        "mappings": mappings,
+    }
+    return (json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n").encode(
+        "utf-8"
+    )
+
+
+def _load_v2_related_talent_bundle(
+    map_file: Path,
+    workspace_root: Path,
+    normalized_base: str,
+) -> RelatedTalentBundle:
+    map_data, _decision, _acceptance, _audit, map_sha, decision_sha, acceptance_sha, audit_sha = (
+        _validate_v2_bindings(map_file, workspace_root)
+    )
+    root = workspace_root.resolve()
+    base_map_path = _resolve_workspace_file(
+        root, map_data["base_map"], "v2 base map path"
+    )
+    base_bundle = _load_v1_related_talent_bundle(base_map_path, root, normalized_base)
+    if base_bundle.map_sha256 != EXPECTED_V2_BASE_MAP_SHA256:
+        raise _fail("loaded v2 base icon bundle is not the accepted v1 map")
+    routes = {asset.route for asset in base_bundle.assets}
+    relatives = {asset.relative for asset in base_bundle.assets}
+    per_class_counts = dict(base_bundle.per_class_counts)
+    mapped_assets: list[RelatedTalentAsset] = []
+    source_bytes = 0
+    source = map_data["source"]
+    source_refs_base = (
+        str(source["repository_url"]),
+        f"commit:{source['commit_sha']}",
+        f"tree:{source['tree_sha']}",
+    )
+    for entry in map_data["entries"]:
+        route = str(entry["route"])
+        relative = route[1:]
+        if route in routes or relative in relatives:
+            raise _fail(f"v2 target route collides with an existing icon: {route}")
+        payload_file = _resolve_workspace_file(
+            root, entry["payload_path"], f"v2 payload {route}"
+        )
+        try:
+            data = payload_file.read_bytes()
+        except OSError as exc:
+            raise _fail(f"cannot read v2 payload for {route}: {exc}") from exc
+        if len(data) != entry["length"]:
+            raise _fail(f"{route} length mismatch: expected {entry['length']}, got {len(data)}")
+        actual_sha = _sha256(data)
+        if actual_sha != entry["sha256"]:
+            raise _fail(f"{route} SHA mismatch: expected {entry['sha256']}, got {actual_sha}")
+        actual_blob = _sha1_git_blob(data)
+        if actual_blob != entry["git_blob_sha1"]:
+            raise _fail(f"{route} Git blob SHA mismatch: expected {entry['git_blob_sha1']}, got {actual_blob}")
+        width, height, frames = _validate_image(data, entry, route)
+        source_repository_path = entry["repository_path"]
+        source_image_url = (
+            f"https://raw.githubusercontent.com/CraftedRO/Offline-talent-calculator-for-WotLK-3.3.5a/"
+            f"{EXPECTED_COMMIT_SHA}/{source_repository_path}"
+        )
+        metadata = {
+            "sha256": actual_sha,
+            "length": len(data),
+            "git_blob_sha1": actual_blob,
+            "width": width,
+            "height": height,
+            "frames": frames,
+            "format": "JPEG",
+            "classification": EXPECTED_CLASSIFICATION,
+            "original_capture_timestamp": None,
+            "original_2008_pixel_identity": "unknown",
+            "mapping_id": entry["mapping_id"],
+            "source_repository_path": source_repository_path,
+            "source_image_url": source_image_url,
+            "mapping_reason": entry["mapping_reason"],
+            "class": entry["class"],
+            "talent": entry["talent"],
+            "state": entry["state"],
+            "old_data_route": entry["old_data_route"],
+            "old_data_sha256": entry["old_data_sha256"],
+            "old_data_talent_lines": entry["old_data_talent_lines"],
+            "later_data_repository_path": entry["later_data_repository_path"],
+            "later_data_sha256": entry["later_data_sha256"],
+            "later_data_talent_lines": entry["later_data_talent_lines"],
+        }
+        mapped_assets.append(
+            RelatedTalentAsset(
+                route=route,
+                relative=relative,
+                data=data,
+                mime="image/jpeg",
+                source_refs=source_refs_base
+                + (
+                    f"path:{source_repository_path}",
+                    f"mapping:{entry['mapping_id']}",
+                    f"reason:{entry['mapping_reason']}",
+                ),
+                metadata=metadata,
+            )
+        )
+        routes.add(route)
+        relatives.add(relative)
+        per_class_counts[entry["class"]] += 1
+        source_bytes += len(data)
+    if len(mapped_assets) != EXPECTED_V2_MAPPED_ICON_COUNT or source_bytes != EXPECTED_V2_MAPPED_SOURCE_BYTES:
+        raise _fail("loaded v2 assets do not match the accepted count/byte aggregate")
+    assets = list(base_bundle.assets) + mapped_assets
+    if len(assets) != EXPECTED_V2_ICON_COUNT:
+        raise _fail("combined v2 bundle does not contain exactly 1006 assets")
+
+    source_metadata = dict(base_bundle.source_metadata)
+    source_metadata.update(
+        {
+            "icon_count": len(assets),
+            "base_icon_count": EXPECTED_V2_BASE_ICON_COUNT,
+            "mapped_icon_count": len(mapped_assets),
+            "source_bytes": EXPECTED_V2_TOTAL_SOURCE_BYTES,
+            "mapped_source_bytes": source_bytes,
+            "map_sha256": map_sha,
+            "decision_sha256": decision_sha,
+            "source_acceptance_sha256": acceptance_sha,
+            "base_map_sha256": EXPECTED_V2_BASE_MAP_SHA256,
+            "semantic_audit_sha256": audit_sha,
+        }
+    )
+    notice_html = base_bundle.notice_html
+    catalog_bytes = _make_v2_catalog(
+        base_path=normalized_base,
+        assets=assets,
+        source_metadata=source_metadata,
+        per_class_counts=per_class_counts,
+        notice_html=notice_html,
+    )
+    return RelatedTalentBundle(
+        assets=tuple(assets),
+        catalog_relative=base_bundle.catalog_relative,
+        catalog_bytes=catalog_bytes,
+        estimated_bytes=EXPECTED_V2_TOTAL_SOURCE_BYTES + len(catalog_bytes),
+        source_metadata=source_metadata,
+        per_class_counts=per_class_counts,
+        notice_html=notice_html,
+        map_sha256=map_sha,
+        decision_sha256=decision_sha,
+        source_acceptance_sha256=acceptance_sha,
+    )
+
+
+def load_related_talent_bundle(
+    map_path: str | os.PathLike[str],
+    workspace_root: str | os.PathLike[str],
+    base_path: str,
+) -> RelatedTalentBundle:
+    """Load the pinned v1 bundle or the explicit v2 same-class extension."""
+
+    root = Path(workspace_root).resolve()
+    if not root.is_dir():
+        raise _fail(f"workspace_root is not a directory: {workspace_root}")
+    requested_map = Path(map_path)
+    if requested_map.is_absolute():
+        if requested_map.is_symlink():
+            raise _fail("input map is a symlink")
+        map_file = requested_map.resolve()
+    else:
+        map_file = _resolve_workspace_file(root, requested_map.as_posix(), "input map")
+    try:
+        map_file.relative_to(root)
+    except ValueError as exc:
+        raise _fail("input map escapes workspace_root") from exc
+    if not map_file.is_file() or map_file.is_symlink():
+        raise _fail("input map is not a regular non-symlink file")
+    try:
+        map_header = json.loads(map_file.read_text(encoding="utf-8"))
+    except (OSError, UnicodeError, json.JSONDecodeError):
+        # Preserve v1's established diagnostics for malformed/unreadable maps.
+        return _load_v1_related_talent_bundle(map_file, root, base_path)
+    if isinstance(map_header, dict) and map_header.get("schema") == EXPECTED_V2_MAP_SCHEMA:
+        normalized_base = _normalize_base_path(base_path)
+        return _load_v2_related_talent_bundle(map_file, root, normalized_base)
+    return _load_v1_related_talent_bundle(map_file, root, base_path)
 
 
 __all__ = [

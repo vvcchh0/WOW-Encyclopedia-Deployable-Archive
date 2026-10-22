@@ -1,0 +1,56 @@
+{
+  "schema": "wow-github-release-create-upload-offline-validation/v1",
+  "validated_utc": "2026-10-22T11:20:54Z",
+  "command": "python -B -m unittest discover -s research/continuous-recovery-20261022/publication/release-tools -p 'test_*.py' -v",
+  "result": {
+    "tests_run": 11,
+    "failures": 0,
+    "errors": 0,
+    "status": "passed"
+  },
+  "additional_checks": {
+    "python_import_and_test_compilation": "passed through unittest import",
+    "config_schema_json_parse": "passed",
+    "external_network_calls": 0,
+    "real_gh_processes": 0,
+    "real_git_processes": 0,
+    "archive_created": false,
+    "release_created": false,
+    "assets_uploaded": false,
+    "published": false
+  },
+  "coverage": [
+    "package receipt schema/status/version, archive and sidecar byte binding, sidecar drift rejection, and archive integrity attestations",
+    "direct create and upload success through stubbed commands",
+    "ambiguous draft-create transport failure recovered by readback without duplicate create or proxy retry",
+    "direct transport failure permits one process-scoped proxy read and satisfies gh-process start spacing",
+    "HTTP 429 does not trigger proxy fallback",
+    "ambient proxy, GH_HOST, GH_INSECURE, and GIT_SSL_NO_VERIFY overrides are removed or explicitly controlled",
+    "three expected assets match read-back state, size, and SHA-256; --clobber is never passed",
+    "saved receipt recovery rechecks the owned draft and does not repeat create or upload",
+    "pre-existing unowned draft is not adopted",
+    "per-gh-process timeout is capped before cutoff; startup is refused within one second of cutoff",
+    "success receipt contains UTC gh-invocation start, operation kind, proxy mode, timeout, and exit status for each process",
+    "helper receipt stays draft and explicitly records that publishing is outside the helper"
+  ],
+  "network_spacing_boundary": "gh CLI process starts are scheduled at least 5.2 seconds apart; the helper cannot schedule internal REST subrequests issued within one gh process",
+  "files": {
+    "create_upload_release.py": {
+      "sha256": "a1c2c1d4f00996e5bab24098a8789a23c377855469e6a235a78340a45d60189d",
+      "bytes": 33563
+    },
+    "test_release_tools.py": {
+      "sha256": "fad49da7140ba468ecd3729407d738486426b1ed7468c0f6ad38c1d92b222c01",
+      "bytes": 16789
+    },
+    "config.schema.json": {
+      "sha256": "f0c6b37b7bccb9c9496a8e1b2ad9eae55a723bf275f0fdb8da3c6486b90186b5",
+      "bytes": 1095
+    },
+    "README.md": {
+      "sha256": "de6584cdd8fa0f4c9f2076d114d8333cf671bb7fe3c2017e602c95bb191bdad8",
+      "bytes": 3626
+    }
+  },
+  "review_note": "An initial test iteration exposed sub-nanosecond rounding in the fake monotonic clock at the 5.2-second boundary; the scheduler comparison was adjusted by 1 ns. A final review also added a subprocess timeout cap and refusal close to the operation cutoff. The final 11-test suite passed."
+}

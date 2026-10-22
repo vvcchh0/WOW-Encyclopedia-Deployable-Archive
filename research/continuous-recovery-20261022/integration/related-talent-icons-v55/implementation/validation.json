@@ -1,0 +1,49 @@
+{
+  "schema": "wow-related-talent-icons-v55-implementation-validation/v1",
+  "scope": "loader and focused regression validation only",
+  "inputs": {
+    "map_sha256": "dbf7e69a081d6769e243c7c8688b46181204102c58a9c933b6388c5197b67d9b",
+    "decision_sha256": "eeb4706b46d4c5e71015e993bb7b79220d70d44d0201351f2dceb199861d7d24",
+    "root_input_pins_sha256": "b60806d4e4af534f4f7f36362a5375de058c5d54cfcf15a0444d6790892f567d",
+    "base_map_sha256": "db2295c57b336be03b1fcccdb5a86373e4e95047b4be8e56647a1c2c95970092",
+    "semantic_audit_sha256": "fe8b6dfb6229e6c63eefafef778cffaa205b40fca9e8652389f823f64f98b520",
+    "source_acceptance_sha256": "4f05d6ab9ee61691cd6440ccd549fc756cd99424b3840ff92b0955c5bad53465"
+  },
+  "bundle_smoke": {
+    "v1_assets": 986,
+    "v2_assets": 1006,
+    "added_assets": 20,
+    "added_source_bytes": 21820,
+    "v1_asset_records_preserved": true,
+    "v1_catalog_asset_rows_preserved": true,
+    "v1_notice_preserved": true,
+    "v2_catalog_mappings": 20,
+    "v2_catalog_sha256": "b02aba2014b766dab346a88172ed8198204998e2f2d19df63cf81633945dad6a",
+    "original_2008_pixel_identity": "unknown",
+    "source_classification": "later_related_source"
+  },
+  "checks": [
+    {
+      "command": "python -X utf8 -m unittest tests.test_related_talent_icons tests.test_related_talent_icons_v2 tests.test_related_talent_pages",
+      "result": "passed",
+      "tests_run": 16
+    },
+    {
+      "command": "python -m py_compile tools/related_talent_icons.py tests/test_related_talent_icons_v2.py",
+      "result": "passed"
+    },
+    {
+      "command": "git diff --check -- tools/related_talent_icons.py",
+      "result": "passed"
+    }
+  ],
+  "owned_file_sha256": {
+    "tools/related_talent_icons.py": "74a269f6fa08e2579b304cf8f3f20467599b31318f3cfb646a396cc455961f7d",
+    "tests/test_related_talent_icons_v2.py": "1af52104f90ba6967156cc0e8a0eb20ede7f5bddc8f0cd07aeb5db105b39ef4c"
+  },
+  "not_run": [
+    "full Pages export",
+    "real Chrome/browser acceptance"
+  ],
+  "note": "The parent agent owns export and browser acceptance; no production recovery claim is made here."
+}

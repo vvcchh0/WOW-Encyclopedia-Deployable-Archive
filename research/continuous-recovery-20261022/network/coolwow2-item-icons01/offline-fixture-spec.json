@@ -1,0 +1,55 @@
+{
+  "schema": "wow-coolwow2-item-icons01-offline-fixture-spec.v1",
+  "batch_id": "coolwow2-item-icons01",
+  "network_requests": 0,
+  "synthetic_http_scenarios": [
+    {
+      "name": "direct_success_blob_and_all_jpeg_frames",
+      "expected_transport_sequence": ["direct"],
+      "expected_result": "accepted"
+    },
+    {
+      "name": "direct_transport_failure_then_local_proxy",
+      "expected_transport_sequence": ["direct", "proxy"],
+      "expected_result": "accepted"
+    },
+    {
+      "name": "429_immediate_stop_and_cooldown",
+      "expected_transport_sequence": ["direct"],
+      "expected_result": "stop_with_at_least_120_second_cooldown"
+    },
+    {
+      "name": "five_transport_failures_across_three_logical_targets",
+      "expected_transport_sequence": ["direct", "proxy", "direct", "proxy", "direct"],
+      "expected_result": "stop_before_sixth_http_attempt_with_at_least_120_second_cooldown"
+    },
+    {
+      "name": "wrong_git_blob_rejected",
+      "expected_transport_sequence": ["direct"],
+      "expected_result": "reject_payload"
+    },
+    {
+      "name": "wrong_length_rejected",
+      "expected_transport_sequence": ["direct"],
+      "expected_result": "reject_payload"
+    },
+    {
+      "name": "existing_runtime_refused_without_mutation",
+      "expected_transport_sequence": [],
+      "expected_result": "refuse_preflight"
+    },
+    {
+      "name": "actual_watchdog_timeout_and_process_kill",
+      "expected_transport_sequence": [],
+      "expected_result": "process_tree_stopped_and_timeout_recorded"
+    }
+  ],
+  "required_transport_assertions": {
+    "tls": true,
+    "automatic_retries": 0,
+    "redirects_followed": false,
+    "direct_noproxy": true,
+    "proxy_url": "http://127.0.0.1:7890"
+  },
+  "boundary": "Fixtures exercise local synthetic responses and a locally spawned sleeper only; they make no request and are not evidence of remote availability or image contents."
+}

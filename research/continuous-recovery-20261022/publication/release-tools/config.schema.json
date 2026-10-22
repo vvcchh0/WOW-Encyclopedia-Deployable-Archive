@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "wow-github-release-create-upload-config/v1",
+  "title": "GitHub draft create/upload input",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "version",
+    "repo",
+    "tag",
+    "source_head",
+    "archive",
+    "sidecar",
+    "notice",
+    "package_acceptance_receipt",
+    "output_dir"
+  ],
+  "properties": {
+    "schema": { "const": "wow-github-release-create-upload-config/v1" },
+    "version": { "type": "string", "pattern": "^v(?:0|[1-9][0-9]*)$" },
+    "repo": { "type": "string", "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$" },
+    "tag": { "type": "string", "minLength": 1, "maxLength": 128 },
+    "source_head": { "type": "string", "pattern": "^(?:[0-9a-f]{40}|[0-9a-f]{64})$" },
+    "archive": { "type": "string", "minLength": 1 },
+    "sidecar": { "type": "string", "minLength": 1 },
+    "notice": { "type": "string", "minLength": 1 },
+    "package_acceptance_receipt": { "type": "string", "minLength": 1 },
+    "output_dir": { "type": "string", "minLength": 1 }
+  }
+}

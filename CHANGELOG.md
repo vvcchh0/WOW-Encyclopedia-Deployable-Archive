@@ -9,7 +9,7 @@
 
 ## 2026-10-22
 
-- 本地v53补入职业专题的Profession Updates标题图，注明ArchiveCraft来源；正文与所有既有图片保持。继续核对天赋连线箭头和声望奖励图标。[工作记录](docs/continuous-recovery-20261022.md)
+- 发布v53：补入职业专题的Profession Updates标题图，注明ArchiveCraft来源；六个线上变更文件核对通过。继续核对天赋连线箭头和声望奖励图标。[工作记录](docs/continuous-recovery-20261022.md)
 - 完成地下城来源对照：Deadmines九张早期截图及预览已在v52保存并可线上浏览；19个经典副本主题和五个Outland区域组均有本地正文。整理[入口、图注对应与来源追溯](docs/dungeon-source-tracing-20261022.md)，继续调查Four Dragons等实际缺图。
 
 ## 2026-10-21

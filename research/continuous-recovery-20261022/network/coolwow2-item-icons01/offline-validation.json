@@ -1,0 +1,60 @@
+{
+  "all_passed": true,
+  "checks": [
+    {
+      "fixture_http_calls": 1,
+      "name": "direct_success_blob_and_all_jpeg_frames",
+      "passed": true
+    },
+    {
+      "fixture_http_calls": 2,
+      "name": "direct_transport_failure_then_local_proxy",
+      "passed": true
+    },
+    {
+      "fixture_http_calls": 1,
+      "name": "429_immediate_stop_and_120_second_cooldown",
+      "passed": true
+    },
+    {
+      "fixture_http_calls": 5,
+      "name": "five_transport_failures_across_three_logical_targets_stop_before_sixth_with_cooldown",
+      "passed": true
+    },
+    {
+      "fixture_http_calls": 1,
+      "name": "wrong_git_blob_rejected",
+      "passed": true
+    },
+    {
+      "fixture_http_calls": 1,
+      "name": "wrong_length_rejected",
+      "passed": true
+    },
+    {
+      "fixture_http_calls": 0,
+      "name": "existing_runtime_refused_without_mutation",
+      "passed": true
+    },
+    {
+      "elapsed_seconds": 0.641,
+      "fixture_http_calls": 0,
+      "kill_method": "taskkill_tree",
+      "name": "actual_watchdog_timeout_and_process_kill",
+      "passed": true
+    }
+  ],
+  "created_utc": "2026-10-22T09:26:14.295425Z",
+  "evidence_boundary": "Synthetic local fixtures only; they validate wrapper paths and do not establish remote availability or image contents.",
+  "fixture_sha256": "468315f58335162c31ec259b28652f802655473d15651b0643bfe50bbb11e259",
+  "mocked_http_calls": 11,
+  "network_requests": 0,
+  "no_batch_runtime_created": true,
+  "plan_sha256": "8975c89cb76881574d2fd206f41980c2f4be366b62c538360576281e64386ee5",
+  "schema": "wow-recovery.coolwow2-item-icons01.offline-validation.v1",
+  "selected_source_tree_sha256": "d3d2d916a36b145fbe8415c3fcce583b722c788641c58c33602bfca22f2ab082",
+  "source_selection_sha256": "b563c0bf94bc2834379867072dd3f78bc8d73b553fb808b5394ce08b925fa611",
+  "target_dimensions_hardcoded": false,
+  "transport_runner_sha256": "7b95fa17bff6aa5245dc9fe45331652f02db5419c0e7ac14ff454af9d0fcad00",
+  "wrapper_sha256": "a6dab2ba352941f5fd7e07b5182538d866c2b8a96941d1d472a16fded9a5f15a"
+}

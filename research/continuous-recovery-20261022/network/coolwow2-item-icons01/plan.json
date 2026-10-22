@@ -1,0 +1,142 @@
+{
+  "schema": "wow-coolwow2-item-icons01-plan.v1",
+  "batch_id": "coolwow2-item-icons01",
+  "mode": "prepared_only",
+  "execution_status": "not_executed",
+  "network_requests_at_prepare": 0,
+  "prepared_utc": "2026-10-22T09:14:01Z",
+  "root_go_required": true,
+  "root_go_path": "research/continuous-recovery-20261022/root-coolwow2-item-icons01-go.json",
+  "source_selection_path": "research/continuous-recovery-20261022/network/coolwow2-item-icons01/source-selection.json",
+  "source_selection_sha256": "b563c0bf94bc2834379867072dd3f78bc8d73b553fb808b5394ce08b925fa611",
+  "selected_source_tree_path": "research/continuous-recovery-20261022/coolwow2-selected-source-tree.json",
+  "selected_source_tree_sha256": "d3d2d916a36b145fbe8415c3fcce583b722c788641c58c33602bfca22f2ab082",
+  "selected_source_git_tree_sha": "5b3f74d7522aee7d57f8f9b554570a272836e869",
+  "repository_commit_date_utc": "2015-12-16T16:29:03Z",
+  "source_lead_path": "research/continuous-recovery-20261022/coolwow2-source-lead.json",
+  "source_lead_sha256": "d31cecdc7cf1cda7880691c6c170c1d0ad9265d7bca0370c631f1e269ec78cc6",
+  "source_lead_role": "preliminary screening only; the selected tree is primary for all three exact blobs",
+  "accepted_transport_reference": {
+    "path": "research/continuous-recovery-20261022/network/archivecraft-dungeons01/archivecraft_dungeons01.py",
+    "sha256": "7b95fa17bff6aa5245dc9fe45331652f02db5419c0e7ac14ff454af9d0fcad00",
+    "reused_entrypoint": "run_attempt",
+    "reason": "Reuse the previously reviewed bounded curl/TLS/direct-first attempt implementation; no HTML parser or CDX logic."
+  },
+  "targets": [
+    {
+      "target_id": "coolwow2-item-icon-scroll-03",
+      "repository_path": "images/item_icons/INV_Scroll_03.jpg",
+      "url": "https://raw.githubusercontent.com/boom8866/coolwow2/09c52b7673871b8048da92e5a13ed753fc08162f/images/item_icons/INV_Scroll_03.jpg",
+      "expected_git_blob_sha1": "937b4f2d28526b5ab7ff8828af54095d204a970c",
+      "expected_bytes": 1090,
+      "mime": "image/jpeg"
+    },
+    {
+      "target_id": "coolwow2-item-icon-scroll-06",
+      "repository_path": "images/item_icons/INV_Scroll_06.jpg",
+      "url": "https://raw.githubusercontent.com/boom8866/coolwow2/09c52b7673871b8048da92e5a13ed753fc08162f/images/item_icons/INV_Scroll_06.jpg",
+      "expected_git_blob_sha1": "ffa4f6e3dcb75d3ae0a0cb0f06380f29aaba4458",
+      "expected_bytes": 1262,
+      "mime": "image/jpeg"
+    },
+    {
+      "target_id": "coolwow2-item-icon-wand-11",
+      "repository_path": "images/item_icons/INV_Wand_11.jpg",
+      "url": "https://raw.githubusercontent.com/boom8866/coolwow2/09c52b7673871b8048da92e5a13ed753fc08162f/images/item_icons/INV_Wand_11.jpg",
+      "expected_git_blob_sha1": "660cbee0f7d36d9bdc8d2c67640c16e4e21f7fd2",
+      "expected_bytes": 1235,
+      "mime": "image/jpeg"
+    }
+  ],
+  "maximum_per_target_attempts": 2,
+  "policy": {
+    "maximum_logical_requests": 3,
+    "maximum_http_attempts": 6,
+    "maximum_seconds_hard_parent": 240,
+    "maximum_seconds_worker_target": 220,
+    "per_request_timeout_seconds": 30,
+    "connect_timeout_seconds": 10,
+    "minimum_actual_request_start_interval_seconds": 6.2,
+    "dispatch_spacing_seconds": 6.2,
+    "maximum_entity_bytes_per_target": 1048576,
+    "maximum_total_response_body_bytes": 6291456,
+    "disk_floor_bytes": 11005853696,
+    "proxy": "http://127.0.0.1:7890",
+    "transport_order": [
+      "direct",
+      "process-local proxy only after direct transport failure"
+    ],
+    "tls_verification": true,
+    "curl_retry_count": 0,
+    "redirects_followed": false,
+    "pagination": false,
+    "429_503_immediate_stop": true,
+    "cooldown_minimum_seconds": 120,
+    "retry_after_respected": true,
+    "stop_after_consecutive_transport_failures": 5,
+    "failure_tail_preserved": true,
+    "raw_headers_cookies_stderr_private": true,
+    "public_summary_excludes_raw_headers_cookies_and_commands": true
+  },
+  "validation": {
+    "http_status_required": 200,
+    "content_type_required": "image/jpeg",
+    "exact_byte_length_required": true,
+    "git_blob_verification": "sha1(b\"blob \" + ascii(len(data)) + b\"\\0\" + data)",
+    "jpeg_validation": "Pillow verify plus full load of every frame; record actual format, dimensions, and frame count; do not assume 36x36",
+    "no_semantic_icon_mapping": true
+  },
+  "runtime_outputs": {
+    "private_raw": "research/continuous-recovery-20261022/network/coolwow2-item-icons01/runtime/private/raw/",
+    "safe_image_summary": "research/continuous-recovery-20261022/network/coolwow2-item-icons01/runtime/public-inventory.json",
+    "execution_report": "research/continuous-recovery-20261022/network/coolwow2-item-icons01/runtime/private/report.json",
+    "watchdog_receipt": "research/continuous-recovery-20261022/network/coolwow2-item-icons01/parent-watchdog-attempt01/watchdog-receipt.json",
+    "hard_watchdog_writes_outside_runtime": true
+  },
+  "go_contract": {
+    "required_true_fields": [
+      "accepted",
+      "root_go",
+      "network_authorized",
+      "direct_first",
+      "tls_verification",
+      "no_redirects",
+      "no_automatic_retries",
+      "raw_private",
+      "exact_targets_only"
+    ],
+    "required_hash_fields": [
+      "plan_sha256",
+      "wrapper_sha256",
+      "accepted_transport_runner_sha256",
+      "source_selection_sha256",
+      "selected_source_tree_sha256",
+      "input_bindings_sha256",
+      "fixture_sha256",
+      "offline_validation_sha256",
+      "source_lead_sha256"
+    ],
+    "required_numeric_fields": [
+      "maximum_logical_requests",
+      "maximum_http_attempts",
+      "maximum_seconds_hard_parent",
+      "maximum_body_bytes",
+      "free_bytes_before"
+    ],
+    "expected": {
+      "maximum_logical_requests": 3,
+      "maximum_http_attempts": 6,
+      "maximum_seconds_hard_parent": 240,
+      "maximum_body_bytes": 6291456,
+      "disk_floor_bytes": 11005853696
+    },
+    "runner_policy_binding": "All exact source paths, Git blob SHA-1 values, lengths, and raw URLs must equal primary selected-tree records and the immutable pin in this plan.",
+    "go_is_single_use": true
+  },
+  "nonclaims": [
+    "No 2008 or other historical capture date is established.",
+    "No display/page association is established.",
+    "No in-game identity is established from filename alone.",
+    "Current repository blob identity, if later fetched and verified, is distinct from historical provenance."
+  ]
+}

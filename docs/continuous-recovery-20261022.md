@@ -60,3 +60,23 @@ v53补入上述职业专题标题图，保留原页正文、原脚本及所有�
 39项导出器回归检查和12项图片加载／消费检查通过；原v2图片包与先前代码的输出完全相同。实际Chrome验证职业标题图、The Broken指南图与Deadmines预览，三页无脚本错误或外部请求。本地已验收，Pages发布和线上核对另行记录，离线Release仍为v52。
 
 另在已缓存的CraftedRO后期计算器备份中审查21张连接箭头，不替换天赋数据或背景。正在用旧页实际灰／绿／黄状态验证几何；原先的解析器漏掉圣骑士使用相对数组索引声明的一条反向连线，新原型将单列修正。三个声望图标已取得原字节，尚未决定页面接入；这些候选与已部署素材分别统计。
+
+## 10:24 UTC — v53发布完成，准备界面补充
+
+main提交6e9acf13已同步；Pages提交f068318e的构建成功。主代理重读六个线上实际响应体，与v53本地文件逐个比对：全部为200、direct取得、长度／摘要与MIME相符。见[线上验收](../research/continuous-recovery-20261022/root-v53-online-acceptance.json)。离线Release仍为v52。
+
+箭头原型使用原计算器的合法加点，审查七种几何的灰／绿／黄状态。选取六种几何共18张现有GIF，保留原尺寸；down-3的13像素断口影响连线，三张暂不接入。新加载器保留旧六PNG包的完整输出，新增24项包的生产导出与实际浏览另行验收。原型的响应替换只用于前期判断，不能替代正式浏览验证。
+
+三个声望奖励图标的用途已与11页旧奖励脚本、85条引用对应：两个卷轴类图标用于多种配方／设计图，魔杖图标对应Incendic Rod。决定在新派生版中试用2015年coolwow2仓库的36×36 JPEG，页面附来源目录；原GIF实体及其像素仍未知。见[接入决定](../research/continuous-recovery-20261022/integration/related-faction-icons-v54/decision.json)与[语义审查](../research/continuous-recovery-20261022/faction-related-candidates/semantic-usage-audit.md)。
+
+另检查三份TBC计算器仓库的目录元数据。它们是独立桌面、React或Android应用，前两份所选纹理有12个相同Git对象；尚未建立与旧官网图片的对应，不重复下载。保留为[后续线索](../research/continuous-recovery-20261022/tbc-related-repository-leads.json)。
+
+## 11:27 UTC — v54、v55本地通过
+
+v54实际导出增加18张箭头和3张奖励图标，Chrome核对六种箭头的灰、绿、黄状态及原有合法加点、模板保存和重载。三个奖励图标在11页的51个可见奖励状态中检查通过，图标保持36×36并能显示原物品提示。原Nagrand页面初始化声望等级与下拉框记录不一致，检查时通过原有菜单先选其他等级再返回Friendly；原历史脚本没有改写。[浏览验收](../research/continuous-recovery-20261022/root-v54-browser-acceptance.json)
+
+v55从已保存的同一后期计算器素材中，补上十个同职业天赋因改名或移动天赋树位置而漏配的20张明暗图标。原986张图标、原说明和2008年职业数据保持不变，来源目录增加逐项映射理由。实际Chrome完成十个天赋的合法加点、原说明和下一级说明核对，以及保存链接重载。该版共有10,187个实际文件，相对v54仅新增20张JPEG并更新四个资源目录／路由记录。[导出验收](../research/continuous-recovery-20261022/root-v55-export-acceptance.json) · [浏览验收](../research/continuous-recovery-20261022/root-v55-browser-acceptance.json)
+
+本轮累计新接入42个关联来源图片对象：新下载4张、从既有素材包复用38张；没有新增确认属于2008年捕获的图片。此前选定的390个非图库缺图目标中，41个在v54／v55接通，仍有349个；这个分轮清单不包含另行调查的玩家图库原图和缩略图。[剩余目标](../research/continuous-recovery-20261022/v55-remaining-resource-targets.json)
+
+Pages目前仍为已核对的v53，离线Release为v52；v55发布与包内本地启动单独验收后更新。Wayback控制保持09:04的429结论，没有新开资源批次。
