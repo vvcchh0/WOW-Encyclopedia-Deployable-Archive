@@ -65,7 +65,7 @@ function generateCostString(thisObject,thisBracket)
 i = 0;
 var RewardItems = new Array();
 
-var fDesignGleamingGoldenDraenite = new RewardItem("alliance","Design: Gleaming Golden Draenite","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_06.gif&reason=external-or-uncollected-resource");
+var fDesignGleamingGoldenDraenite = new RewardItem("alliance","Design: Gleaming Golden Draenite","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_06.jpg");
 fDesignGleamingGoldenDraenite.itemMoneyPrice = new Array();
 fDesignGleamingGoldenDraenite.itemMoneyPrice[0] = 50000
 fDesignGleamingGoldenDraenite.itemStats = new Array();
@@ -88,7 +88,7 @@ fDesignGleamingGoldenDraenite.itemStats[0] = "\
 ";
 RewardItems[i] = fDesignGleamingGoldenDraenite; ++i;
 
-var fPatternFlameheartBracers = new RewardItem("alliance","Pattern: Flameheart Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPatternFlameheartBracers = new RewardItem("alliance","Pattern: Flameheart Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPatternFlameheartBracers.itemMoneyPrice = new Array();
 fPatternFlameheartBracers.itemMoneyPrice[0] = 60000
 fPatternFlameheartBracers.itemStats = new Array();
@@ -108,7 +108,7 @@ fPatternFlameheartBracers.itemStats[0] = "\
 ";
 RewardItems[i] = fPatternFlameheartBracers; ++i;
 
-var fPatternBlastguardBelt = new RewardItem("alliance","Pattern: Blastguard Belt","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPatternBlastguardBelt = new RewardItem("alliance","Pattern: Blastguard Belt","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPatternBlastguardBelt.itemMoneyPrice = new Array();
 fPatternBlastguardBelt.itemMoneyPrice[1] = 80000
 fPatternBlastguardBelt.itemStats = new Array();
@@ -129,7 +129,7 @@ fPatternBlastguardBelt.itemStats[1] = "\
 ";
 RewardItems[i] = fPatternBlastguardBelt; ++i;
 
-var fPatternFlamescaleBelt = new RewardItem("alliance","Pattern: Flamescale Belt","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPatternFlamescaleBelt = new RewardItem("alliance","Pattern: Flamescale Belt","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPatternFlamescaleBelt.itemMoneyPrice = new Array();
 fPatternFlamescaleBelt.itemMoneyPrice[1] = 80000
 fPatternFlamescaleBelt.itemStats = new Array();
@@ -151,7 +151,7 @@ fPatternFlamescaleBelt.itemStats[1] = "\
 RewardItems[i] = fPatternFlamescaleBelt; ++i;
 
 
-var fPlansFlamebaneBracers = new RewardItem("alliance","Plans: Flamebane Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPlansFlamebaneBracers = new RewardItem("alliance","Plans: Flamebane Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPlansFlamebaneBracers.itemMoneyPrice = new Array();
 fPlansFlamebaneBracers.itemMoneyPrice[0] = 60000
 fPlansFlamebaneBracers.itemStats = new Array();
@@ -176,7 +176,7 @@ fPlansFlamebaneBracers.itemStats[0] = "\
 ";
 RewardItems[i] = fPlansFlamebaneBracers; ++i;
 
-var fDesignRoyalShadowDraenite = new RewardItem("alliance","Design: Royal Shadow Draenite","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_06.gif&reason=external-or-uncollected-resource");
+var fDesignRoyalShadowDraenite = new RewardItem("alliance","Design: Royal Shadow Draenite","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_06.jpg");
 fDesignRoyalShadowDraenite.itemMoneyPrice = new Array();
 fDesignRoyalShadowDraenite.itemMoneyPrice[1] = 50000
 fDesignRoyalShadowDraenite.itemStats = new Array();
@@ -199,7 +199,7 @@ fDesignRoyalShadowDraenite.itemStats[1] = "\
 ";
 RewardItems[i] = fDesignRoyalShadowDraenite; ++i;
 
-var fPlansFlamebaneGloves = new RewardItem("alliance","Plans: Flamebane Gloves","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPlansFlamebaneGloves = new RewardItem("alliance","Plans: Flamebane Gloves","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPlansFlamebaneGloves.itemMoneyPrice = new Array();
 fPlansFlamebaneGloves.itemMoneyPrice[1] = 60000
 fPlansFlamebaneGloves.itemStats = new Array();
@@ -224,7 +224,7 @@ fPlansFlamebaneGloves.itemStats[1] = "\
 ";
 RewardItems[i] = fPlansFlamebaneGloves; ++i;
 
-var fPatternFlameheartGloves = new RewardItem("alliance","Pattern: Flameheart Gloves","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPatternFlameheartGloves = new RewardItem("alliance","Pattern: Flameheart Gloves","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPatternFlameheartGloves.itemMoneyPrice = new Array();
 fPatternFlameheartGloves.itemMoneyPrice[1] = 80000
 fPatternFlameheartGloves.itemStats = new Array();
@@ -244,7 +244,7 @@ fPatternFlameheartGloves.itemStats[1] = "\
 ";
 RewardItems[i] = fPatternFlameheartGloves; ++i;
 
-var fPatternSilverSpellthread = new RewardItem("alliance","Pattern: Silver Spellthread","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPatternSilverSpellthread = new RewardItem("alliance","Pattern: Silver Spellthread","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPatternSilverSpellthread.itemMoneyPrice = new Array();
 fPatternSilverSpellthread.itemMoneyPrice[1] = 60000
 fPatternSilverSpellthread.itemStats = new Array();
@@ -265,7 +265,7 @@ fPatternSilverSpellthread.itemStats[1] = "\
 ";
 RewardItems[i] = fPatternSilverSpellthread; ++i;
 
-var fPatternFlamescaleBoots = new RewardItem("alliance","Pattern: Flamescale Boots","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPatternFlamescaleBoots = new RewardItem("alliance","Pattern: Flamescale Boots","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPatternFlamescaleBoots.itemMoneyPrice = new Array();
 fPatternFlamescaleBoots.itemMoneyPrice[2] = 80000
 fPatternFlamescaleBoots.itemStats = new Array();
@@ -286,7 +286,7 @@ fPatternFlamescaleBoots.itemStats[2] = "\
 ";
 RewardItems[i] = fPatternFlamescaleBoots; ++i;
 
-var fPatternBlastguardBoots = new RewardItem("alliance","Pattern: Blastguard Boots","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPatternBlastguardBoots = new RewardItem("alliance","Pattern: Blastguard Boots","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPatternBlastguardBoots.itemMoneyPrice = new Array();
 fPatternBlastguardBoots.itemMoneyPrice[2] = 80000
 fPatternBlastguardBoots.itemStats = new Array();
@@ -307,7 +307,7 @@ fPatternBlastguardBoots.itemStats[2] = "\
 ";
 RewardItems[i] = fPatternBlastguardBoots; ++i;
 
-var fPlansFlamebaneBreastplate = new RewardItem("alliance","Plans: Flamebane Breastplate","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPlansFlamebaneBreastplate = new RewardItem("alliance","Plans: Flamebane Breastplate","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPlansFlamebaneBreastplate.itemMoneyPrice = new Array();
 fPlansFlamebaneBreastplate.itemMoneyPrice[2] = 80000
 fPlansFlamebaneBreastplate.itemStats = new Array();
@@ -332,7 +332,7 @@ fPlansFlamebaneBreastplate.itemStats[2] = "\
 ";
 RewardItems[i] = fPlansFlamebaneBreastplate; ++i;
 
-var fPatternVindicatorsArmorKit = new RewardItem("alliance","Pattern: Vindicator's Armor Kit","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPatternVindicatorsArmorKit = new RewardItem("alliance","Pattern: Vindicator's Armor Kit","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPatternVindicatorsArmorKit.itemMoneyPrice = new Array();
 fPatternVindicatorsArmorKit.itemMoneyPrice[2] = 50000
 fPatternVindicatorsArmorKit.itemStats = new Array();
@@ -443,7 +443,7 @@ fDesignPendantOfShadowsEnd.itemStats[2] = "\
 ";
 RewardItems[i] = fDesignPendantOfShadowsEnd; ++i;
 
-var fPatternFlameheartVest = new RewardItem("alliance","Pattern: Flameheart Vest","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPatternFlameheartVest = new RewardItem("alliance","Pattern: Flameheart Vest","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPatternFlameheartVest.itemMoneyPrice = new Array();
 fPatternFlameheartVest.itemMoneyPrice[3] = 100000
 fPatternFlameheartVest.itemStats = new Array();
@@ -463,7 +463,7 @@ fPatternFlameheartVest.itemStats[3] = "\
 ";
 RewardItems[i] = fPatternFlameheartVest; ++i;
 
-var fPatternFlamescaleLeggings = new RewardItem("alliance","Pattern: Flamescale Leggings","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPatternFlamescaleLeggings = new RewardItem("alliance","Pattern: Flamescale Leggings","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPatternFlamescaleLeggings.itemMoneyPrice = new Array();
 fPatternFlamescaleLeggings.itemMoneyPrice[3] = 80000
 fPatternFlamescaleLeggings.itemStats = new Array();
@@ -484,7 +484,7 @@ fPatternFlamescaleLeggings.itemStats[3] = "\
 ";
 RewardItems[i] = fPatternFlamescaleLeggings; ++i;
 
-var fPatternBlastguardPants = new RewardItem("alliance","Pattern: Blastguard Pants","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPatternBlastguardPants = new RewardItem("alliance","Pattern: Blastguard Pants","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPatternBlastguardPants.itemMoneyPrice = new Array();
 fPatternBlastguardPants.itemMoneyPrice[3] = 80000
 fPatternBlastguardPants.itemStats = new Array();
@@ -507,7 +507,7 @@ RewardItems[i] = fPatternBlastguardPants; ++i;
 
 
 
-var fPlansFlamebaneHelm = new RewardItem("alliance","Plans: Flamebane Helm","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPlansFlamebaneHelm = new RewardItem("alliance","Plans: Flamebane Helm","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPlansFlamebaneHelm.itemMoneyPrice = new Array();
 fPlansFlamebaneHelm.itemMoneyPrice[3] = 60000
 fPlansFlamebaneHelm.itemStats = new Array();
@@ -532,7 +532,7 @@ fPlansFlamebaneHelm.itemStats[3] = "\
 ";
 RewardItems[i] = fPlansFlamebaneHelm; ++i;
 
-var fPatternGoldenSpellthread = new RewardItem("alliance","Pattern: Golden Spellthread","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPatternGoldenSpellthread = new RewardItem("alliance","Pattern: Golden Spellthread","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPatternGoldenSpellthread.itemMoneyPrice = new Array();
 fPatternGoldenSpellthread.itemMoneyPrice[3] = 360000
 fPatternGoldenSpellthread.itemStats = new Array();
@@ -635,7 +635,7 @@ RewardItems[i] = fAldorTabard; ++i;
 //-------------------------------------------------------------------
 //---Horde below
 
-var fDesignRunedBloodGarnet = new RewardItem("horde","Design: Runed Blood Garnet","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_06.gif&reason=external-or-uncollected-resource");
+var fDesignRunedBloodGarnet = new RewardItem("horde","Design: Runed Blood Garnet","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_06.jpg");
 fDesignRunedBloodGarnet.itemMoneyPrice = new Array();
 fDesignRunedBloodGarnet.itemMoneyPrice[0] = 60000
 fDesignRunedBloodGarnet.itemStats = new Array();
@@ -681,7 +681,7 @@ fDesignDazzlingDeepPeridot.itemStats[1] = "\
 ";
 RewardItems[i] = fDesignDazzlingDeepPeridot; ++i;
 
-var fPlansEnchantedAdamantiteBelt = new RewardItem("horde","Plans: Enchanted Adamantite Belt","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPlansEnchantedAdamantiteBelt = new RewardItem("horde","Plans: Enchanted Adamantite Belt","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPlansEnchantedAdamantiteBelt.itemMoneyPrice = new Array();
 fPlansEnchantedAdamantiteBelt.itemMoneyPrice[0] = 60000
 fPlansEnchantedAdamantiteBelt.itemStats = new Array();
@@ -706,7 +706,7 @@ fPlansEnchantedAdamantiteBelt.itemStats[0] = "\
 ";
 RewardItems[i] = fPlansEnchantedAdamantiteBelt; ++i;
 
-var fPatternEnchantedFelscaleGloves = new RewardItem("horde","Pattern: Enchanted Felscale Gloves","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPatternEnchantedFelscaleGloves = new RewardItem("horde","Pattern: Enchanted Felscale Gloves","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPatternEnchantedFelscaleGloves.itemMoneyPrice = new Array();
 fPatternEnchantedFelscaleGloves.itemMoneyPrice[1] = 80000
 fPatternEnchantedFelscaleGloves.itemStats = new Array();
@@ -727,7 +727,7 @@ fPatternEnchantedFelscaleGloves.itemStats[1] = "\
 ";
 RewardItems[i] = fPatternEnchantedFelscaleGloves; ++i;
 
-var fPatternEnchantedClefthoofBoots = new RewardItem("horde","Pattern: Enchanted Clefthoof Boots","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPatternEnchantedClefthoofBoots = new RewardItem("horde","Pattern: Enchanted Clefthoof Boots","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPatternEnchantedClefthoofBoots.itemMoneyPrice = new Array();
 fPatternEnchantedClefthoofBoots.itemMoneyPrice[1] = 80000
 fPatternEnchantedClefthoofBoots.itemStats = new Array();
@@ -748,7 +748,7 @@ fPatternEnchantedClefthoofBoots.itemStats[1] = "\
 ";
 RewardItems[i] = fPatternEnchantedClefthoofBoots; ++i;
 
-var fPatternMysticSpellthread = new RewardItem("horde","Pattern: Mystic Spellthread","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPatternMysticSpellthread = new RewardItem("horde","Pattern: Mystic Spellthread","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPatternMysticSpellthread.itemMoneyPrice = new Array();
 fPatternMysticSpellthread.itemMoneyPrice[1] = 60000
 fPatternMysticSpellthread.itemStats = new Array();
@@ -792,7 +792,7 @@ fDesignPendantOfWithering.itemStats[2] = "\
 ";
 RewardItems[i] = fDesignPendantOfWithering; ++i;
 
-var fRecipeElixirOfMajorFirepower = new RewardItem("horde","Recipe: Elixir of Major Firepower","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_06.gif&reason=external-or-uncollected-resource");
+var fRecipeElixirOfMajorFirepower = new RewardItem("horde","Recipe: Elixir of Major Firepower","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_06.jpg");
 fRecipeElixirOfMajorFirepower.itemMoneyPrice = new Array();
 fRecipeElixirOfMajorFirepower.itemMoneyPrice[2] = 60000
 fRecipeElixirOfMajorFirepower.itemStats = new Array();
@@ -815,7 +815,7 @@ RewardItems[i] = fRecipeElixirOfMajorFirepower; ++i;
 
 
 
-var fPlansEnchantedAdamantiteBoots = new RewardItem("horde","Plans: Enchanted Adamantite Boots","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPlansEnchantedAdamantiteBoots = new RewardItem("horde","Plans: Enchanted Adamantite Boots","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPlansEnchantedAdamantiteBoots.itemMoneyPrice = new Array();
 fPlansEnchantedAdamantiteBoots.itemMoneyPrice[1] = 60000
 fPlansEnchantedAdamantiteBoots.itemStats = new Array();
@@ -842,7 +842,7 @@ fPlansEnchantedAdamantiteBoots.itemStats[1] = "\
 ";
 RewardItems[i] = fPlansEnchantedAdamantiteBoots; ++i;
 
-var fPatternEnchantedFelscaleBoots = new RewardItem("horde","Pattern: Enchanted Felscale Boots","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPatternEnchantedFelscaleBoots = new RewardItem("horde","Pattern: Enchanted Felscale Boots","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPatternEnchantedFelscaleBoots.itemMoneyPrice = new Array();
 fPatternEnchantedFelscaleBoots.itemMoneyPrice[2] = 80000
 fPatternEnchantedFelscaleBoots.itemStats = new Array();
@@ -863,7 +863,7 @@ fPatternEnchantedFelscaleBoots.itemStats[2] = "\
 ";
 RewardItems[i] = fPatternEnchantedFelscaleBoots; ++i;
 
-var fPatternEnchantedClefthoofGloves = new RewardItem("horde","Pattern: Enchanted Clefthoof Gloves","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPatternEnchantedClefthoofGloves = new RewardItem("horde","Pattern: Enchanted Clefthoof Gloves","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPatternEnchantedClefthoofGloves.itemMoneyPrice = new Array();
 fPatternEnchantedClefthoofGloves.itemMoneyPrice[2] = 80000
 fPatternEnchantedClefthoofGloves.itemStats = new Array();
@@ -884,7 +884,7 @@ fPatternEnchantedClefthoofGloves.itemStats[2] = "\
 ";
 RewardItems[i] = fPatternEnchantedClefthoofGloves; ++i;
 
-var fPlansEnchantedAdamantiteBreastplate = new RewardItem("horde","Plans: Enchanted Adamantite Breastplate","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPlansEnchantedAdamantiteBreastplate = new RewardItem("horde","Plans: Enchanted Adamantite Breastplate","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPlansEnchantedAdamantiteBreastplate.itemMoneyPrice = new Array();
 fPlansEnchantedAdamantiteBreastplate.itemMoneyPrice[2] = 60000
 fPlansEnchantedAdamantiteBreastplate.itemStats = new Array();
@@ -997,7 +997,7 @@ fScryersBloodgem.itemStats[2] = "\
 ";
 RewardItems[i] = fScryersBloodgem; ++i;
 
-var fPatternMagistersArmorKit = new RewardItem("horde","Pattern: Magister's Armor Kit","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPatternMagistersArmorKit = new RewardItem("horde","Pattern: Magister's Armor Kit","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPatternMagistersArmorKit.itemMoneyPrice = new Array();
 fPatternMagistersArmorKit.itemMoneyPrice[2] = 50000
 fPatternMagistersArmorKit.itemStats = new Array();
@@ -1016,7 +1016,7 @@ fPatternMagistersArmorKit.itemStats[2] = "\
 ";
 RewardItems[i] = fPatternMagistersArmorKit; ++i;
 
-var fPatternEnchantedFelscaleLeggings = new RewardItem("horde","Enchanted Felscale Leggings","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPatternEnchantedFelscaleLeggings = new RewardItem("horde","Enchanted Felscale Leggings","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPatternEnchantedFelscaleLeggings.itemMoneyPrice = new Array();
 fPatternEnchantedFelscaleLeggings.itemMoneyPrice[3] = 80000
 fPatternEnchantedFelscaleLeggings.itemStats = new Array();
@@ -1037,7 +1037,7 @@ fPatternEnchantedFelscaleLeggings.itemStats[3] = "\
 ";
 RewardItems[i] = fPatternEnchantedFelscaleLeggings; ++i;
 
-var fPlansEnchantedAdamantiteLeggings = new RewardItem("horde","Plans: Enchanted Adamantite Leggings","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPlansEnchantedAdamantiteLeggings = new RewardItem("horde","Plans: Enchanted Adamantite Leggings","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPlansEnchantedAdamantiteLeggings.itemMoneyPrice = new Array();
 fPlansEnchantedAdamantiteLeggings.itemMoneyPrice[3] = 80000
 fPlansEnchantedAdamantiteLeggings.itemStats = new Array();
@@ -1064,7 +1064,7 @@ fPlansEnchantedAdamantiteLeggings.itemStats[3] = "\
 ";
 RewardItems[i] = fPlansEnchantedAdamantiteLeggings; ++i;
 
-var fPatternEnchantedClefthoofLeggings = new RewardItem("horde","Pattern: Enchanted Clefthoof Leggings","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPatternEnchantedClefthoofLeggings = new RewardItem("horde","Pattern: Enchanted Clefthoof Leggings","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPatternEnchantedClefthoofLeggings.itemMoneyPrice = new Array();
 fPatternEnchantedClefthoofLeggings.itemMoneyPrice[3] = 80000
 fPatternEnchantedClefthoofLeggings.itemStats = new Array();
@@ -1085,7 +1085,7 @@ fPatternEnchantedClefthoofLeggings.itemStats[3] = "\
 ";
 RewardItems[i] = fPatternEnchantedClefthoofLeggings; ++i;
 
-var fPatternRunicSpellthread = new RewardItem("horde","Pattern: Runic Spellthread","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPatternRunicSpellthread = new RewardItem("horde","Pattern: Runic Spellthread","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPatternRunicSpellthread.itemMoneyPrice = new Array();
 fPatternRunicSpellthread.itemMoneyPrice[3] = 360000
 fPatternRunicSpellthread.itemStats = new Array();

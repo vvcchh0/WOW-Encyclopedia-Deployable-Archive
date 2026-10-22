@@ -65,7 +65,7 @@ function generateCostString(thisObject,thisBracket)
 i = 0;
 var RewardItems = new Array();
 
-var fDesignPotentFlameSpessarite = new RewardItem("alliance","Design: Potent Flame Spessarite","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Flowercity%2Fscripts%2Frewards-lowercity.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_06.gif&reason=external-or-uncollected-resource");
+var fDesignPotentFlameSpessarite = new RewardItem("alliance","Design: Potent Flame Spessarite","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_06.jpg");
 fDesignPotentFlameSpessarite.itemMoneyPrice = new Array();
 fDesignPotentFlameSpessarite.itemMoneyPrice[0] = 60000
 fDesignPotentFlameSpessarite.itemStats = new Array();
@@ -87,7 +87,7 @@ fDesignPotentFlameSpessarite.itemStats[0] = "\
 ";
 RewardItems[i] = fDesignPotentFlameSpessarite; ++i;
 
-var fPatternCloakOfArcaneEvasion = new RewardItem("alliance","Pattern: Cloak of Arcane Evasion","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Flowercity%2Fscripts%2Frewards-lowercity.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPatternCloakOfArcaneEvasion = new RewardItem("alliance","Pattern: Cloak of Arcane Evasion","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPatternCloakOfArcaneEvasion.itemMoneyPrice = new Array();
 fPatternCloakOfArcaneEvasion.itemMoneyPrice[1] = 60000
 fPatternCloakOfArcaneEvasion.itemStats = new Array();
@@ -170,7 +170,7 @@ fDesignPendantOfThawing.itemStats[2] = "\
 ";
 RewardItems[i] = fDesignPendantOfThawing; ++i;
 
-var fRecipeElixirOfMajorShadowPower = new RewardItem("alliance","Recipe: Elixir of Major Shadow Power","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Flowercity%2Fscripts%2Frewards-lowercity.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_06.gif&reason=external-or-uncollected-resource");
+var fRecipeElixirOfMajorShadowPower = new RewardItem("alliance","Recipe: Elixir of Major Shadow Power","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_06.jpg");
 fRecipeElixirOfMajorShadowPower.itemMoneyPrice = new Array();
 fRecipeElixirOfMajorShadowPower.itemMoneyPrice[2] = 80000
 fRecipeElixirOfMajorShadowPower.itemStats = new Array();
@@ -291,7 +291,7 @@ fLowerCityPrayerbook.itemStats[2] = "\
 ";
 RewardItems[i] = fLowerCityPrayerbook; ++i;
 
-var fRecipeFlaskOfChromaticResistance = new RewardItem("alliance","Recipe: Flask of Chromatic Resistance","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Flowercity%2Fscripts%2Frewards-lowercity.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_06.gif&reason=external-or-uncollected-resource");
+var fRecipeFlaskOfChromaticResistance = new RewardItem("alliance","Recipe: Flask of Chromatic Resistance","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_06.jpg");
 fRecipeFlaskOfChromaticResistance.itemMoneyPrice = new Array();
 fRecipeFlaskOfChromaticResistance.itemMoneyPrice[3] = 40000
 fRecipeFlaskOfChromaticResistance.itemStats = new Array();

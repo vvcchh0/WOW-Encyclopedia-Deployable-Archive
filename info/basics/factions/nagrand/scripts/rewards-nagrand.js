@@ -139,7 +139,7 @@ fPatternNetherfuryLeggings.itemStats[1] = "\
 ";
 RewardItems[i] = fPatternNetherfuryLeggings; ++i;
 
-var fPatternReinforcedMiningBag = new RewardItem("alliance","Pattern: Reinforced Mining Bag","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fnagrand%2Fscripts%2Frewards-nagrand.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPatternReinforcedMiningBag = new RewardItem("alliance","Pattern: Reinforced Mining Bag","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPatternReinforcedMiningBag.itemMoneyPrice = new Array();
 fPatternReinforcedMiningBag.itemMoneyPrice[1] = 50000
 fPatternReinforcedMiningBag.itemStats = new Array();
@@ -187,7 +187,7 @@ fPatternNetherfuryBoots.itemStats[2] = "\
 ";
 RewardItems[i] = fPatternNetherfuryBoots; ++i;
 
-var fRecipeTransmutePrimalFireToEarth = new RewardItem("alliance","Recipe: Transmute Primal Fire to Earth","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fnagrand%2Fscripts%2Frewards-nagrand.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_06.gif&reason=external-or-uncollected-resource");
+var fRecipeTransmutePrimalFireToEarth = new RewardItem("alliance","Recipe: Transmute Primal Fire to Earth","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_06.jpg");
 fRecipeTransmutePrimalFireToEarth.itemMoneyPrice = new Array();
 fRecipeTransmutePrimalFireToEarth.itemMoneyPrice[2] = 80000
 fRecipeTransmutePrimalFireToEarth.itemStats = new Array();
@@ -572,7 +572,7 @@ fPatternNetherfuryBoots.itemStats[2] = "\
 ";
 RewardItems[i] = fPatternNetherfuryBoots; ++i;
 
-var fPatternReinforcedMiningBag = new RewardItem("horde","Pattern: Reinforced Mining Bag","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fnagrand%2Fscripts%2Frewards-nagrand.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPatternReinforcedMiningBag = new RewardItem("horde","Pattern: Reinforced Mining Bag","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPatternReinforcedMiningBag.itemMoneyPrice = new Array();
 fPatternReinforcedMiningBag.itemMoneyPrice[1] = 50000
 fPatternReinforcedMiningBag.itemStats = new Array();
@@ -592,7 +592,7 @@ RewardItems[i] = fPatternReinforcedMiningBag; ++i;
 
 
 
-var fRecipeTransmutePrimalFireToEarth = new RewardItem("horde","Recipe: Transmute Primal Fire to Earth","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fnagrand%2Fscripts%2Frewards-nagrand.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_06.gif&reason=external-or-uncollected-resource");
+var fRecipeTransmutePrimalFireToEarth = new RewardItem("horde","Recipe: Transmute Primal Fire to Earth","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_06.jpg");
 fRecipeTransmutePrimalFireToEarth.itemMoneyPrice = new Array();
 fRecipeTransmutePrimalFireToEarth.itemMoneyPrice[2] = 80000
 fRecipeTransmutePrimalFireToEarth.itemStats = new Array();

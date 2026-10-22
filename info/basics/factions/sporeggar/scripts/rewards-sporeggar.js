@@ -70,7 +70,7 @@ function generateCostString(thisObject,thisBracket)
 i = 0;
 var RewardItems = new Array();
 
-var fRecipeSporelingSnack = new RewardItem("alliance","Recipe: Sporeling Snack","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fsporeggar%2Fscripts%2Frewards-sporeggar.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fRecipeSporelingSnack = new RewardItem("alliance","Recipe: Sporeling Snack","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fRecipeSporelingSnack.itemMoneyPrice = new Array();
 fRecipeSporelingSnack.itemMoneyPrice[0] = 20000
 fRecipeSporelingSnack.itemStats = new Array();
@@ -91,7 +91,7 @@ fRecipeSporelingSnack.itemStats[0] = "\
 ";
 RewardItems[i] = fRecipeSporelingSnack; ++i;
 
-var fRecipeClamBar = new RewardItem("alliance","Recipe: Clam Bar","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fsporeggar%2Fscripts%2Frewards-sporeggar.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fRecipeClamBar = new RewardItem("alliance","Recipe: Clam Bar","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fRecipeClamBar.itemTokenPrice = new Array();
 fRecipeClamBar.itemTokenPrice[0] = new Array(1,0,0,0);
 fRecipeClamBar.itemStats = new Array();
@@ -229,7 +229,7 @@ fHardenedStoneShard.itemStats[2] = "\
 ";
 RewardItems[i] = fHardenedStoneShard; ++i;
 
-var fRecipeTransmutePrimalEarthToWater = new RewardItem("alliance","Recipe: Transmute Primal Earth to Water","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fsporeggar%2Fscripts%2Frewards-sporeggar.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_06.gif&reason=external-or-uncollected-resource");
+var fRecipeTransmutePrimalEarthToWater = new RewardItem("alliance","Recipe: Transmute Primal Earth to Water","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_06.jpg");
 fRecipeTransmutePrimalEarthToWater.itemTokenPrice = new Array();
 fRecipeTransmutePrimalEarthToWater.itemTokenPrice[2] = new Array(25,0,0,0);
 fRecipeTransmutePrimalEarthToWater.itemStats = new Array();
@@ -269,7 +269,7 @@ fMuckCoveredDrape.itemStats[1] = "\
 ";
 RewardItems[i] = fMuckCoveredDrape; ++i;
 
-var fRecipeShroudingPotion = new RewardItem("alliance","Recipe: Shrouding Potion","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fsporeggar%2Fscripts%2Frewards-sporeggar.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_06.gif&reason=external-or-uncollected-resource");
+var fRecipeShroudingPotion = new RewardItem("alliance","Recipe: Shrouding Potion","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_06.jpg");
 fRecipeShroudingPotion.itemTokenPrice = new Array();
 fRecipeShroudingPotion.itemTokenPrice[3] = new Array(30,0,0,0);
 fRecipeShroudingPotion.itemStats = new Array();

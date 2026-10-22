@@ -111,7 +111,7 @@ fSplintermark.itemStats[0] = "\
 ";
 RewardItems[i] = fSplintermark; ++i;
 
-var fIncendicRod = new RewardItem("alliance","Incendic Rod","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fzangarmarsh%2Fscripts%2Frewards-zangarmarsh-tokens.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Wand_11.gif&reason=external-or-uncollected-resource");
+var fIncendicRod = new RewardItem("alliance","Incendic Rod","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Wand_11.jpg");
 fIncendicRod.itemTokenPrice = new Array();
 fIncendicRod.itemTokenPrice[0] = new Array(15,0,0,0);
 fIncendicRod.itemStats = new Array();
@@ -306,7 +306,7 @@ fSplintermark.itemStats[0] = "\
 ";
 RewardItems[i] = fSplintermark; ++i;
 
-var fIncendicRod = new RewardItem("horde","Incendic Rod","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fzangarmarsh%2Fscripts%2Frewards-zangarmarsh-tokens.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Wand_11.gif&reason=external-or-uncollected-resource");
+var fIncendicRod = new RewardItem("horde","Incendic Rod","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Wand_11.jpg");
 fIncendicRod.itemTokenPrice = new Array();
 fIncendicRod.itemTokenPrice[0] = new Array(15,0,0,0);
 fIncendicRod.itemStats = new Array();

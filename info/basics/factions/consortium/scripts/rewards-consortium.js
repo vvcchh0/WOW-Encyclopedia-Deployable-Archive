@@ -84,7 +84,7 @@ fFormulaEnchantCloakSpellPenetration.itemStats[0] = "\
 ";
 RewardItems[i] = fFormulaEnchantCloakSpellPenetration; ++i;
 
-var fDesignShiftingShadowDraenite = new RewardItem("alliance","Design: Shifting Shadow Draenite","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fconsortium%2Fscripts%2Frewards-consortium.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_06.gif&reason=external-or-uncollected-resource");
+var fDesignShiftingShadowDraenite = new RewardItem("alliance","Design: Shifting Shadow Draenite","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_06.jpg");
 fDesignShiftingShadowDraenite.itemMoneyPrice = new Array();
 fDesignShiftingShadowDraenite.itemMoneyPrice[0] = 60000
 fDesignShiftingShadowDraenite.itemStats = new Array();
@@ -106,7 +106,7 @@ fDesignShiftingShadowDraenite.itemStats[0] = "\
 ";
 RewardItems[i] = fDesignShiftingShadowDraenite; ++i;
 
-var fDesignLuminousFlameSpessarite = new RewardItem("alliance","Design: Luminous Flame Spessarite","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fconsortium%2Fscripts%2Frewards-consortium.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_06.gif&reason=external-or-uncollected-resource");
+var fDesignLuminousFlameSpessarite = new RewardItem("alliance","Design: Luminous Flame Spessarite","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_06.jpg");
 fDesignLuminousFlameSpessarite.itemMoneyPrice = new Array();
 fDesignLuminousFlameSpessarite.itemMoneyPrice[0] = 50000
 fDesignLuminousFlameSpessarite.itemStats = new Array();
@@ -165,7 +165,7 @@ fPatternFelLeatherGloves.itemStats[0] = "\
 RewardItems[i] = fPatternFelLeatherGloves; ++i;
 
 
-var fDesignThickGoldenDraenite = new RewardItem("alliance","Design: Thick Golden Draenite","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fconsortium%2Fscripts%2Frewards-consortium.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_06.gif&reason=external-or-uncollected-resource");
+var fDesignThickGoldenDraenite = new RewardItem("alliance","Design: Thick Golden Draenite","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_06.jpg");
 fDesignThickGoldenDraenite.itemMoneyPrice = new Array();
 fDesignThickGoldenDraenite.itemMoneyPrice[1] = 60000
 fDesignThickGoldenDraenite.itemStats = new Array();
@@ -187,7 +187,7 @@ fDesignThickGoldenDraenite.itemStats[1] = "\
 ";
 RewardItems[i] = fDesignThickGoldenDraenite; ++i;
 
-var fDesignDelicateBloodGarnet = new RewardItem("alliance","Design: Delicate Blood Garnet","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fconsortium%2Fscripts%2Frewards-consortium.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_06.gif&reason=external-or-uncollected-resource");
+var fDesignDelicateBloodGarnet = new RewardItem("alliance","Design: Delicate Blood Garnet","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_06.jpg");
 fDesignDelicateBloodGarnet.itemMoneyPrice = new Array();
 fDesignDelicateBloodGarnet.itemMoneyPrice[1] = 60000
 fDesignDelicateBloodGarnet.itemStats = new Array();
@@ -209,7 +209,7 @@ fDesignDelicateBloodGarnet.itemStats[1] = "\
 ";
 RewardItems[i] = fDesignDelicateBloodGarnet; ++i;
 
-var fDesignLustrousAzureMoonstone = new RewardItem("alliance","Design: Lustrous Azure Moonstone","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fconsortium%2Fscripts%2Frewards-consortium.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_06.gif&reason=external-or-uncollected-resource");
+var fDesignLustrousAzureMoonstone = new RewardItem("alliance","Design: Lustrous Azure Moonstone","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_06.jpg");
 fDesignLustrousAzureMoonstone.itemMoneyPrice = new Array();
 fDesignLustrousAzureMoonstone.itemMoneyPrice[1] = 60000
 fDesignLustrousAzureMoonstone.itemStats = new Array();
@@ -231,7 +231,7 @@ fDesignLustrousAzureMoonstone.itemStats[1] = "\
 ";
 RewardItems[i] = fDesignLustrousAzureMoonstone; ++i;
 
-var fDesignSwiftSkyfireDiamond = new RewardItem("alliance","Design: Swift Skyfire Diamond","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fconsortium%2Fscripts%2Frewards-consortium.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fDesignSwiftSkyfireDiamond = new RewardItem("alliance","Design: Swift Skyfire Diamond","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fDesignSwiftSkyfireDiamond.itemMoneyPrice = new Array();
 fDesignSwiftSkyfireDiamond.itemMoneyPrice[1] = 120000
 fDesignSwiftSkyfireDiamond.itemStats = new Array();
@@ -338,7 +338,7 @@ fDesignPendantOfTheNullRune.itemStats[2] = "\
 ";
 RewardItems[i] = fDesignPendantOfTheNullRune; ++i;
 
-var fPatternBagOfJewels = new RewardItem("alliance","Pattern: Bag of Jewels","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fconsortium%2Fscripts%2Frewards-consortium.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPatternBagOfJewels = new RewardItem("alliance","Pattern: Bag of Jewels","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPatternBagOfJewels.itemMoneyPrice = new Array();
 fPatternBagOfJewels.itemMoneyPrice[1] = 40000
 fPatternBagOfJewels.itemStats = new Array();

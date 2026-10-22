@@ -97,7 +97,7 @@ fPatternHeavyClefthoofBoots.itemStats[0] = "\
 ";
 RewardItems[i] = fPatternHeavyClefthoofBoots; ++i;
 
-var fSchematicGreenSmokeFlare = new RewardItem("alliance","Schematic: Green Smoke Flare","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fcenarionxp%2Fscripts%2Frewards-cenarion-expedition.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fSchematicGreenSmokeFlare = new RewardItem("alliance","Schematic: Green Smoke Flare","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fSchematicGreenSmokeFlare.itemMoneyPrice = new Array();
 fSchematicGreenSmokeFlare.itemMoneyPrice[0] = 60000
 fSchematicGreenSmokeFlare.itemStats = new Array();
@@ -184,7 +184,7 @@ Durability 75 / 75<br>Requires Level 70<br>\
 ";
 RewardItems[i] = fPatternHeavyClefthoofLeggings; ++i;
 
-var fPlansAdamantiteSharpeningStone = new RewardItem("alliance","Plans: Adamantite Sharpening Stone","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fcenarionxp%2Fscripts%2Frewards-cenarion-expedition.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPlansAdamantiteSharpeningStone = new RewardItem("alliance","Plans: Adamantite Sharpening Stone","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPlansAdamantiteSharpeningStone.itemMoneyPrice = new Array();
 fPlansAdamantiteSharpeningStone.itemMoneyPrice[1] = 60000
 fPlansAdamantiteSharpeningStone.itemStats = new Array();
@@ -204,7 +204,7 @@ fPlansAdamantiteSharpeningStone.itemStats[1] = "\
 ";
 RewardItems[i] = fPlansAdamantiteSharpeningStone; ++i;
 
-var fPlansAdamantiteWeightstone = new RewardItem("alliance","Plans: Adamantite Weightstone","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fcenarionxp%2Fscripts%2Frewards-cenarion-expedition.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPlansAdamantiteWeightstone = new RewardItem("alliance","Plans: Adamantite Weightstone","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPlansAdamantiteWeightstone.itemMoneyPrice = new Array();
 fPlansAdamantiteWeightstone.itemMoneyPrice[1] = 60000
 fPlansAdamantiteWeightstone.itemStats = new Array();
@@ -224,7 +224,7 @@ fPlansAdamantiteWeightstone.itemStats[1] = "\
 ";
 RewardItems[i] = fPlansAdamantiteWeightstone; ++i;
 
-var fRecipeTransmuteEarthstormDiamond = new RewardItem("alliance","Recipe: Transmute Earthstorm Diamond","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fcenarionxp%2Fscripts%2Frewards-cenarion-expedition.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fRecipeTransmuteEarthstormDiamond = new RewardItem("alliance","Recipe: Transmute Earthstorm Diamond","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fRecipeTransmuteEarthstormDiamond.itemMoneyPrice = new Array();
 fRecipeTransmuteEarthstormDiamond.itemMoneyPrice[1] = 80000
 fRecipeTransmuteEarthstormDiamond.itemStats = new Array();
@@ -255,7 +255,7 @@ fRecipeTransmuteEarthstormDiamond.itemStats[1] = "\
 RewardItems[i] = fRecipeTransmuteEarthstormDiamond; ++i;
 
 
-var fPatternClefthideLegArmor = new RewardItem("alliance","Pattern: Clefthide Leg Armor","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fcenarionxp%2Fscripts%2Frewards-cenarion-expedition.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPatternClefthideLegArmor = new RewardItem("alliance","Pattern: Clefthide Leg Armor","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPatternClefthideLegArmor.itemMoneyPrice = new Array();
 fPatternClefthideLegArmor.itemMoneyPrice[1] = 60000
 fPatternClefthideLegArmor.itemStats = new Array();
@@ -275,7 +275,7 @@ fPatternClefthideLegArmor.itemStats[1] = "\
 ";
 RewardItems[i] = fPatternClefthideLegArmor; ++i;
 
-var fPlansGreaterRuneOfWarding = new RewardItem("alliance","Plans: Greater Rune of Warding","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fcenarionxp%2Fscripts%2Frewards-cenarion-expedition.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPlansGreaterRuneOfWarding = new RewardItem("alliance","Plans: Greater Rune of Warding","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPlansGreaterRuneOfWarding.itemMoneyPrice = new Array();
 fPlansGreaterRuneOfWarding.itemMoneyPrice[1] = 60000
 fPlansGreaterRuneOfWarding.itemStats = new Array();
@@ -317,7 +317,7 @@ fPreserversCudgel.itemStats[1] = "\
 ";
 RewardItems[i] = fPreserversCudgel; ++i;
 
-var fRecipeEarthenElixir = new RewardItem("alliance","Recipe: Earthen Elixir","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fcenarionxp%2Fscripts%2Frewards-cenarion-expedition.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fRecipeEarthenElixir = new RewardItem("alliance","Recipe: Earthen Elixir","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fRecipeEarthenElixir.itemMoneyPrice = new Array();
 fRecipeEarthenElixir.itemMoneyPrice[1] = 40000
 fRecipeEarthenElixir.itemStats = new Array();
@@ -483,7 +483,7 @@ fFormulaEnchantGlovesSpellStrike.itemStats[2] = "\
 RewardItems[i] = fFormulaEnchantGlovesSpellStrike; ++i;
 
 
-var fRecipeTransmutePrimalWaterToAir = new RewardItem("alliance","Recipe: Transmute Primal Water to Air","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fcenarionxp%2Fscripts%2Frewards-cenarion-expedition.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_06.gif&reason=external-or-uncollected-resource");
+var fRecipeTransmutePrimalWaterToAir = new RewardItem("alliance","Recipe: Transmute Primal Water to Air","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_06.jpg");
 fRecipeTransmutePrimalWaterToAir.itemMoneyPrice = new Array();
 fRecipeTransmutePrimalWaterToAir.itemMoneyPrice[2] = 80000
 fRecipeTransmutePrimalWaterToAir.itemStats = new Array();
@@ -644,7 +644,7 @@ fStrengthOfTheUntamed.itemStats[2] = "\
 ";
 RewardItems[i] = fStrengthOfTheUntamed; ++i;
 
-var fRecipeMajorNatureProtectionPotion = new RewardItem("alliance","Recipe: Major Nature Protection Potion","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fcenarionxp%2Fscripts%2Frewards-cenarion-expedition.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_06.gif&reason=external-or-uncollected-resource");
+var fRecipeMajorNatureProtectionPotion = new RewardItem("alliance","Recipe: Major Nature Protection Potion","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_06.jpg");
 fRecipeMajorNatureProtectionPotion.itemMoneyPrice = new Array();
 fRecipeMajorNatureProtectionPotion.itemMoneyPrice[3] = 100000
 fRecipeMajorNatureProtectionPotion.itemStats = new Array();
@@ -664,7 +664,7 @@ fRecipeMajorNatureProtectionPotion.itemStats[3] = "\
 RewardItems[i] = fRecipeMajorNatureProtectionPotion; ++i;
 
 
-var fRecipeFlaskOfDistilledWisdom = new RewardItem("alliance","Recipe: Flask of Distilled Wisdom","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fcenarionxp%2Fscripts%2Frewards-cenarion-expedition.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_06.gif&reason=external-or-uncollected-resource");
+var fRecipeFlaskOfDistilledWisdom = new RewardItem("alliance","Recipe: Flask of Distilled Wisdom","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_06.jpg");
 fRecipeFlaskOfDistilledWisdom.itemMoneyPrice = new Array();
 fRecipeFlaskOfDistilledWisdom.itemMoneyPrice[3] = 40000
 fRecipeFlaskOfDistilledWisdom.itemStats = new Array();
@@ -708,7 +708,7 @@ fPlansWildguardBreastplate.itemStats[3] = "\
 ";
 RewardItems[i] = fPlansWildguardBreastplate; ++i;
 
-var fPatternNethercleftLegArmor = new RewardItem("alliance","Pattern: Nethercleft Leg Armor","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fcenarionxp%2Fscripts%2Frewards-cenarion-expedition.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPatternNethercleftLegArmor = new RewardItem("alliance","Pattern: Nethercleft Leg Armor","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPatternNethercleftLegArmor.itemMoneyPrice = new Array();
 fPatternNethercleftLegArmor.itemMoneyPrice[3] = 120000
 fPatternNethercleftLegArmor.itemStats = new Array();

@@ -65,7 +65,7 @@ function generateCostString(thisObject,thisBracket)
 i = 0;
 var RewardItems = new Array();
 
-var fDesignEnduringDeepPeridot = new RewardItem("alliance","Design: Enduring Deep Peridot","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_06.gif&reason=external-or-uncollected-resource");
+var fDesignEnduringDeepPeridot = new RewardItem("alliance","Design: Enduring Deep Peridot","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_06.jpg");
 fDesignEnduringDeepPeridot.itemMoneyPrice = new Array();
 fDesignEnduringDeepPeridot.itemMoneyPrice[0] = 60000
 fDesignEnduringDeepPeridot.itemStats = new Array();
@@ -175,7 +175,7 @@ fFormulaEnchantBracerSuperiorHealing.itemStats[0] = "\
 ";
 RewardItems[i] = fFormulaEnchantBracerSuperiorHealing; ++i;
 
-var fRecipeElixirOfMajorAgility = new RewardItem("alliance","Recipe: Elixir of Agility","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fRecipeElixirOfMajorAgility = new RewardItem("alliance","Recipe: Elixir of Agility","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fRecipeElixirOfMajorAgility.itemMoneyPrice = new Array();
 fRecipeElixirOfMajorAgility.itemMoneyPrice[1] = 50000
 fRecipeElixirOfMajorAgility.itemStats = new Array();
@@ -215,7 +215,7 @@ fFormulaEnchantChestExceptionalStats.itemStats[2] = "\
 ";
 RewardItems[i] = fFormulaEnchantChestExceptionalStats; ++i;
 
-var fPlansFelsteelShieldSpike = new RewardItem("alliance","Plans: Felsteel Shield Spike","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPlansFelsteelShieldSpike = new RewardItem("alliance","Plans: Felsteel Shield Spike","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPlansFelsteelShieldSpike.itemMoneyPrice = new Array();
 fPlansFelsteelShieldSpike.itemMoneyPrice[3] = 60000
 fPlansFelsteelShieldSpike.itemStats = new Array();
@@ -278,7 +278,7 @@ fPatternFelstalkerBracers.itemStats[1] = "\
 ";
 RewardItems[i] = fPatternFelstalkerBracers; ++i;
 
-var fPatternCobrahideLegArmor = new RewardItem("alliance","Pattern: Cobrahide Leg Armor","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPatternCobrahideLegArmor = new RewardItem("alliance","Pattern: Cobrahide Leg Armor","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPatternCobrahideLegArmor.itemMoneyPrice = new Array();
 fPatternCobrahideLegArmor.itemMoneyPrice[1] = 60000
 fPatternCobrahideLegArmor.itemStats = new Array();
@@ -409,7 +409,7 @@ fFlamewroughtKey.itemStats[1] = "\
 ";
 RewardItems[i] = fFlamewroughtKey; ++i;
 
-var fRecipeTransmuteSkyfireDiamond = new RewardItem("alliance","Recipe: Transmute Skyfire Diamond","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fRecipeTransmuteSkyfireDiamond = new RewardItem("alliance","Recipe: Transmute Skyfire Diamond","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fRecipeTransmuteSkyfireDiamond.itemMoneyPrice = new Array();
 fRecipeTransmuteSkyfireDiamond.itemMoneyPrice[1] = 80000
 fRecipeTransmuteSkyfireDiamond.itemStats = new Array();
@@ -546,7 +546,7 @@ fFelbaneSlugs.itemStats[2] = "\
 ";
 RewardItems[i] = fFelbaneSlugs; ++i;
 
-var fPatternNethercobraLegArmor = new RewardItem("alliance","Pattern: Nethercobra Leg Armor","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPatternNethercobraLegArmor = new RewardItem("alliance","Pattern: Nethercobra Leg Armor","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPatternNethercobraLegArmor.itemMoneyPrice = new Array();
 fPatternNethercobraLegArmor.itemMoneyPrice[3] = 120000
 fPatternNethercobraLegArmor.itemStats = new Array();
@@ -676,7 +676,7 @@ RewardItems[i] = fHonorHoldTabard; ++i;
 //-------------------------------------------------------------------
 //---Horde below
 
-var fDesignEnduringDeepPeridot = new RewardItem("horde","Design: Enduring Deep Peridot","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_06.gif&reason=external-or-uncollected-resource");
+var fDesignEnduringDeepPeridot = new RewardItem("horde","Design: Enduring Deep Peridot","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_06.jpg");
 fDesignEnduringDeepPeridot.itemMoneyPrice = new Array();
 fDesignEnduringDeepPeridot.itemMoneyPrice[0] = 60000
 fDesignEnduringDeepPeridot.itemStats = new Array();
@@ -785,7 +785,7 @@ fFormulaEnchantBracerSuperiorHealing.itemStats[0] = "\
 ";
 RewardItems[i] = fFormulaEnchantBracerSuperiorHealing; ++i;
 
-var fRecipeElixirOfMajorAgility = new RewardItem("horde","Recipe: Elixir of Agility","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fRecipeElixirOfMajorAgility = new RewardItem("horde","Recipe: Elixir of Agility","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fRecipeElixirOfMajorAgility.itemMoneyPrice = new Array();
 fRecipeElixirOfMajorAgility.itemMoneyPrice[1] = 50000
 fRecipeElixirOfMajorAgility.itemStats = new Array();
@@ -863,7 +863,7 @@ fPatternFelstalkerBracers.itemStats[1] = "\
 ";
 RewardItems[i] = fPatternFelstalkerBracers; ++i;
 
-var fPatternCobrahideLegArmor = new RewardItem("horde","Pattern: Cobrahide Leg Armor","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPatternCobrahideLegArmor = new RewardItem("horde","Pattern: Cobrahide Leg Armor","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPatternCobrahideLegArmor.itemMoneyPrice = new Array();
 fPatternCobrahideLegArmor.itemMoneyPrice[1] = 60000
 fPatternCobrahideLegArmor.itemStats = new Array();
@@ -1007,7 +1007,7 @@ fFlamewroughtKey.itemStats[1] = "\
 ";
 RewardItems[i] = fFlamewroughtKey; ++i;
 
-var fRecipeTransmuteSkyfireDiamond = new RewardItem("horde","Recipe: Transmute Skyfire Diamond","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fRecipeTransmuteSkyfireDiamond = new RewardItem("horde","Recipe: Transmute Skyfire Diamond","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fRecipeTransmuteSkyfireDiamond.itemMoneyPrice = new Array();
 fRecipeTransmuteSkyfireDiamond.itemMoneyPrice[1] = 80000
 fRecipeTransmuteSkyfireDiamond.itemStats = new Array();
@@ -1146,7 +1146,7 @@ fHellfireShot.itemStats[2] = "\
 ";
 RewardItems[i] = fHellfireShot; ++i;
 
-var fPlansFelsteelShieldSpike = new RewardItem("horde","Plans: Felsteel Shield Spike","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPlansFelsteelShieldSpike = new RewardItem("horde","Plans: Felsteel Shield Spike","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPlansFelsteelShieldSpike.itemMoneyPrice = new Array();
 fPlansFelsteelShieldSpike.itemMoneyPrice[3] = 60000
 fPlansFelsteelShieldSpike.itemStats = new Array();
@@ -1168,7 +1168,7 @@ fPlansFelsteelShieldSpike.itemStats[3] = "\
 ";
 RewardItems[i] = fPlansFelsteelShieldSpike; ++i;
 
-var fPatternNethercobraLegArmor = new RewardItem("horde","Pattern: Nethercobra Leg Armor","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPatternNethercobraLegArmor = new RewardItem("horde","Pattern: Nethercobra Leg Armor","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPatternNethercobraLegArmor.itemMoneyPrice = new Array();
 fPatternNethercobraLegArmor.itemMoneyPrice[3] = 120000
 fPatternNethercobraLegArmor.itemStats = new Array();

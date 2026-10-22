@@ -65,7 +65,7 @@ function generateCostString(thisObject,thisBracket)
 i = 0;
 var RewardItems = new Array();
 
-var fRecipeDesignInsightfulEarthstormDiamond = new RewardItem("alliance","Design: Insightful Earthstorm Diamond","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fshatar%2Fscripts%2Frewards-shatar.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fRecipeDesignInsightfulEarthstormDiamond = new RewardItem("alliance","Design: Insightful Earthstorm Diamond","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fRecipeDesignInsightfulEarthstormDiamond.itemMoneyPrice = new Array();
 fRecipeDesignInsightfulEarthstormDiamond.itemMoneyPrice[0] = 120000
 fRecipeDesignInsightfulEarthstormDiamond.itemStats = new Array();
@@ -145,7 +145,7 @@ fWarpforgedKey.itemStats[1] = "\
 ";
 RewardItems[i] = fWarpforgedKey; ++i;
 
-var fRecipeTransmutePrimalAirToFire = new RewardItem("alliance","Recipe: Transmute Primal Air to Fire","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fshatar%2Fscripts%2Frewards-shatar.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_06.gif&reason=external-or-uncollected-resource");
+var fRecipeTransmutePrimalAirToFire = new RewardItem("alliance","Recipe: Transmute Primal Air to Fire","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_06.jpg");
 fRecipeTransmutePrimalAirToFire.itemMoneyPrice = new Array();
 fRecipeTransmutePrimalAirToFire.itemMoneyPrice[2] = 80000
 fRecipeTransmutePrimalAirToFire.itemStats = new Array();
@@ -288,7 +288,7 @@ fFormulaEnchantWeaponMajorHealing.itemStats[2] = "\
 ";
 RewardItems[i] = fFormulaEnchantWeaponMajorHealing; ++i;
 
-var fRecipeAlchemistsStone = new RewardItem("alliance","Recipe: Alchemist's Stone","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fshatar%2Fscripts%2Frewards-shatar.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fRecipeAlchemistsStone = new RewardItem("alliance","Recipe: Alchemist's Stone","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fRecipeAlchemistsStone.itemMoneyPrice = new Array();
 fRecipeAlchemistsStone.itemMoneyPrice[2] = 80000
 fRecipeAlchemistsStone.itemStats = new Array();
@@ -350,7 +350,7 @@ fPatternDrumsOfBattle.itemStats[3] = "\
 ";
 RewardItems[i] = fPatternDrumsOfBattle; ++i;
 
-var fRecipeFlaskOfTheTitans = new RewardItem("alliance","Recipe: Flask of the Titans","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fshatar%2Fscripts%2Frewards-shatar.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_06.gif&reason=external-or-uncollected-resource");
+var fRecipeFlaskOfTheTitans = new RewardItem("alliance","Recipe: Flask of the Titans","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_06.jpg");
 fRecipeFlaskOfTheTitans.itemMoneyPrice = new Array();
 fRecipeFlaskOfTheTitans.itemMoneyPrice[3] = 40000
 fRecipeFlaskOfTheTitans.itemStats = new Array();

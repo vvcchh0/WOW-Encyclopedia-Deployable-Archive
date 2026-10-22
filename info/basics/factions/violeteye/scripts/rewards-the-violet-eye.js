@@ -92,7 +92,7 @@ fInscriptionOfEndurance.itemStats[1] = "\
 ";
 RewardItems[i] = fInscriptionOfEndurance; ++i;
 
-var fRecipeFlaskofChromaticWonder = new RewardItem("alliance","Recipe: Flask of Chromatic Wonder","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fvioleteye%2Fscripts%2Frewards-the-violet-eye.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_06.gif&reason=external-or-uncollected-resource");
+var fRecipeFlaskofChromaticWonder = new RewardItem("alliance","Recipe: Flask of Chromatic Wonder","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_06.jpg");
 fRecipeFlaskofChromaticWonder.itemMoneyPrice = new Array();
 fRecipeFlaskofChromaticWonder.itemMoneyPrice[1] = 40000
 fRecipeFlaskofChromaticWonder.itemStats = new Array();
@@ -245,7 +245,7 @@ fEnchantWeaponGreaterAgility.itemStats[3] = "\
 ";
 RewardItems[i] = fEnchantWeaponGreaterAgility; ++i;
 
-var fPatternCloakofDarkness = new RewardItem("alliance","Pattern: Cloak of Darkness","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fvioleteye%2Fscripts%2Frewards-the-violet-eye.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fPatternCloakofDarkness = new RewardItem("alliance","Pattern: Cloak of Darkness","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fPatternCloakofDarkness.itemMoneyPrice = new Array();
 fPatternCloakofDarkness.itemMoneyPrice[3] = 50000
 fPatternCloakofDarkness.itemStats = new Array();

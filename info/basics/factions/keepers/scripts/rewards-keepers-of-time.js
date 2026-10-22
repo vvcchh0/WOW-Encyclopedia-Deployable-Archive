@@ -65,7 +65,7 @@ function generateCostString(thisObject,thisBracket)
 i = 0;
 var RewardItems = new Array();
 
-var fDesignEnigmaticSkyfireDiamond = new RewardItem("alliance","Design: Enigmatic Skyfire Diamond","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fkeepers%2Fscripts%2Frewards-keepers-of-time.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_03.gif&reason=external-or-uncollected-resource");
+var fDesignEnigmaticSkyfireDiamond = new RewardItem("alliance","Design: Enigmatic Skyfire Diamond","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_03.jpg");
 fDesignEnigmaticSkyfireDiamond.itemMoneyPrice = new Array();
 fDesignEnigmaticSkyfireDiamond.itemMoneyPrice[1] = 120000
 fDesignEnigmaticSkyfireDiamond.itemStats = new Array();
@@ -293,7 +293,7 @@ fPatternDrumsOfPanic.itemStats[3] = "\
 ";
 RewardItems[i] = fPatternDrumsOfPanic; ++i;
 
-var fRecipeFlaskOfSupremePower = new RewardItem("alliance","Recipe: Flask of Supreme Power","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fkeepers%2Fscripts%2Frewards-keepers-of-time.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_06.gif&reason=external-or-uncollected-resource");
+var fRecipeFlaskOfSupremePower = new RewardItem("alliance","Recipe: Flask of Supreme Power","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/INV_Scroll_06.jpg");
 fRecipeFlaskOfSupremePower.itemMoneyPrice = new Array();
 fRecipeFlaskOfSupremePower.itemMoneyPrice[3] = 40000
 fRecipeFlaskOfSupremePower.itemStats = new Array();
