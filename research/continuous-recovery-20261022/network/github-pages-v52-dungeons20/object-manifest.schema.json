@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GitHub Pages v52 Dungeons 20-object manifest",
+  "type": "object",
+  "required": [
+    "schema",
+    "batch_id",
+    "source_bindings",
+    "objects"
+  ],
+  "properties": {
+    "schema": {
+      "const": "wow-recovery.github-pages-v52-dungeons20.object-manifest.v1"
+    },
+    "batch_id": {
+      "const": "github-pages-v52-dungeons20"
+    },
+    "source_bindings": {
+      "type": "object"
+    },
+    "objects": {
+      "type": "array",
+      "minItems": 20,
+      "maxItems": 20,
+      "items": {
+        "type": "object"
+      }
+    }
+  },
+  "additionalProperties": false
+}

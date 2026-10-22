@@ -1,0 +1,105 @@
+{
+  "schema": "wow-recovery-tasks/v3",
+  "tasks": [
+    {
+      "id": "BASE",
+      "owner": "root",
+      "goal": "Fresh Git/Pages/Release/frozen-input/disk/process baseline",
+      "state": "accepted",
+      "dependencies": [],
+      "evidence": "baseline-acceptance.json"
+    },
+    {
+      "id": "LOCAL",
+      "owner": "local_dungeon_trace_20261022",
+      "goal": "Map actual local dungeon text, Deadmines image references, payloads and dynamic paths",
+      "state": "accepted",
+      "dependencies": [],
+      "evidence": "root-dungeon-topic-coverage-acceptance.json"
+    },
+    {
+      "id": "SOURCE",
+      "owner": "network_dungeon_trace_20261022",
+      "goal": "Reuse the accepted cached Dungeons page and prepare four uncached ArchiveCraft pages; acquire image candidates only after a separate parent GO",
+      "state": "first_batch_accepted_next_plan_pending",
+      "dependencies": [],
+      "evidence": "root-archivecraft-dungeons01-source-acceptance.json"
+    },
+    {
+      "id": "TRACE",
+      "owner": "root",
+      "goal": "Trace original official pages/captures and classify each candidate image source",
+      "state": "in_progress",
+      "dependencies": [
+        "LOCAL",
+        "SOURCE"
+      ]
+    },
+    {
+      "id": "RESTORE",
+      "owner": "root",
+      "goal": "Integrate accepted source-supported assets and compatibility repairs in a new derived version",
+      "state": "pending_source_decision",
+      "dependencies": [
+        "TRACE"
+      ]
+    },
+    {
+      "id": "PUBLISH",
+      "owner": "root",
+      "goal": "Independent source/byte/browser acceptance and permitted normal Git/Pages/processed-package publication",
+      "state": "pending",
+      "dependencies": [
+        "RESTORE"
+      ]
+    },
+    {
+      "id": "CLOSE",
+      "owner": "root",
+      "goal": "Budgeted closeout, cumulative report and delete continuation schedule",
+      "state": "pending",
+      "dependencies": [
+        "PUBLISH"
+      ]
+    },
+    {
+      "id": "ONLINE-DM",
+      "owner": "network_dungeon_trace_20261022",
+      "goal": "Compare the current Pages Deadmines HTML, nine originals and ten previews with accepted v52 bytes",
+      "state": "accepted",
+      "dependencies": [
+        "LOCAL"
+      ],
+      "evidence": "root-deadmines-online-acceptance.json"
+    },
+    {
+      "id": "DRAGONS-SOURCE",
+      "owner": "root",
+      "goal": "Inspect the observed ArchiveCraft Dragons of Nightmare link for the thirteen missing original guide preview targets",
+      "state": "inspected_no_matching_screenshot_links",
+      "dependencies": [
+        "LOCAL"
+      ],
+      "evidence": "root-dragons-page-source-acceptance.json"
+    },
+    {
+      "id": "CACHED-CANDIDATES",
+      "owner": "local_dungeon_trace_20261022",
+      "goal": "Join real non-gallery missing targets to already cached related pages; verify semantic links before proposing downloads",
+      "state": "in_progress",
+      "dependencies": [
+        "LOCAL",
+        "SOURCE"
+      ]
+    },
+    {
+      "id": "WAYBACK-CONTROL03",
+      "owner": "network_dungeon_trace_20261022",
+      "goal": "Prepare one fresh known-positive CDX control with separate index-record and JPEG-payload lengths",
+      "state": "preparing_no_go",
+      "dependencies": [
+        "ONLINE-DM"
+      ]
+    }
+  ]
+}

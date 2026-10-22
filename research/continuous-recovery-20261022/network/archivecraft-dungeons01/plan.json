@@ -1,0 +1,124 @@
+{
+  "schema": "wow-recovery.archivecraft-dungeons01.plan.v1",
+  "batch_id": "archivecraft-dungeons01",
+  "mode": "prepared",
+  "root_go_required": true,
+  "prepared_at_utc": "2026-10-22T07:39:20Z",
+  "network_requests_at_prepare": 0,
+  "source_basis": {
+    "kind": "parent_supplied_exact_urls",
+    "observation": "Root supplied five exact ArchiveCraft page URLs and their intended roles. No page discovery, sitemap request, or network request is part of preparation.",
+    "historical_claim": "none",
+    "source_statement_boundary": "Page statements about Wayback, Reddit, Imgur, GitHub, image provenance, or site scope will be reported as statements observed on the current ArchiveCraft page; they do not independently establish original ownership or historical capture identity.",
+    "historical_lead_from_parent": {
+      "reported_claim": "A parent-supplied 2003-12-10 third-party report says Blizzard added nine official dungeon screenshots and names the original page URL; a Warcraft Wiki transcript reportedly points to Wayback.",
+      "reported_article_url": "https://wow.jeuxonline.info/actualite/7010/blizzard-devoile-donjons",
+      "reported_original_url": "http://www.blizzard.com/wow/townhall/dungeons.shtml",
+      "verification_status": "Parent-reported lead only; this preparation has not retrieved either URL or verified the claim."
+    },
+    "existing_full_size_entities_reported_by_parent": {
+      "reported_files": ["ss0001.jpg", "ss0005.jpg", "ss0007.jpg", "ss0008.jpg", "ss0010.jpg", "ss0009.jpg", "ss0012.jpg", "ss0013.jpg", "ss0014.jpg"],
+      "reported_date": "2008-04-02",
+      "reported_source": "Source16/v52 entity records",
+      "verification_status": "Parent-reported; local image decode, thumbnail, and display checks are being handled separately. This page batch makes no image request."
+    }
+  },
+  "target_roster": [
+    {"target_id": "archivecraft-dungeons", "url": "https://archivecraft.com/townhall/dungeons/", "role": "Dungeon landing page; inspect dungeon image links and visible source/caption context."},
+    {"target_id": "archivecraft-dungeons-instances", "url": "https://archivecraft.com/townhall/dungeons/instances/", "role": "Instance index; inspect dungeon links and image/source context."},
+    {"target_id": "archivecraft-dungeons-outland", "url": "https://archivecraft.com/townhall/dungeons/instances/outland/", "role": "Outland instances page; inspect dungeon assets and captions."},
+    {"target_id": "archivecraft-about", "url": "https://archivecraft.com/about/", "role": "Record the page's own statements about site and asset sources."},
+    {"target_id": "archivecraft-disclaimer", "url": "https://archivecraft.com/disclaimer/", "role": "Record the page's own scope and disclaimer statements."}
+  ],
+  "targets": [
+    {"target_id": "archivecraft-dungeons-instances", "url": "https://archivecraft.com/townhall/dungeons/instances/"},
+    {"target_id": "archivecraft-dungeons-outland", "url": "https://archivecraft.com/townhall/dungeons/instances/outland/"},
+    {"target_id": "archivecraft-about", "url": "https://archivecraft.com/about/"},
+    {"target_id": "archivecraft-disclaimer", "url": "https://archivecraft.com/disclaimer/"}
+  ],
+  "reused_sources": [
+    {
+      "target_id": "archivecraft-dungeons",
+      "url": "https://archivecraft.com/townhall/dungeons/",
+      "source_path": "research/continuous-recovery-20261021/network/archivecraft-guides01/runtime/private/raw/attempt-04-archivecraft-dungeons-direct.body",
+      "body_bytes": 142718,
+      "body_sha256": "b9138b5d681553bb7c78cefcc65c77398a618696745daad8e0a312081fb3abe9",
+      "observed_utc": "2026-10-21T08:43:26.261766Z",
+      "response_finished_utc": "2026-10-21T08:43:29.015641Z",
+      "http_status": 200,
+      "title": "Dungeons – ArchiveCraft",
+      "execution_receipt_path": "research/continuous-recovery-20261021/network/archivecraft-guides01/parent-execution-receipt.json",
+      "private_report_path": "research/continuous-recovery-20261021/network/archivecraft-guides01/runtime/private/report.json",
+      "public_record_path": "research/continuous-recovery-20261021/network/archivecraft-guides01/runtime/public-inventory.json",
+      "preservation": "Reference in place; do not copy, overwrite, rename, or re-date the original cache."
+    }
+  ],
+  "reuse_review": {
+    "complete": true,
+    "status": "verified_offline",
+    "verification": "The supplied cache path exists; its raw body is 142718 bytes with SHA-256 b9138b5d681553bb7c78cefcc65c77398a618696745daad8e0a312081fb3abe9. The source report/public inventory bind it to the exact roster URL with HTTP 200 and the 2026-10-21 observation. The exact original request interval is 2026-10-21T08:43:26.261766Z–2026-10-21T08:43:29.015641Z. The parent-side local cache review found no existing downloads for the other four roster URLs.",
+    "rule": "Verified cached URLs are removed from targets and recorded under reused_sources. Preserve the original cache in place and do not request it again."
+  },
+  "scope": {
+    "include": "Only the five exact roster pages, either reused from verified local cache or requested in the root-approved HTTP batch. Extract title, source/provenance statements, image-tag links, enclosing image links, and figure captions locally from HTML.",
+    "exclude": [
+      "sitemap or arbitrary page discovery",
+      "image downloads",
+      "CSS, JavaScript, and other dependency downloads",
+      "script or form execution",
+      "Wayback/CDX requests",
+      "automatic redirects",
+      "Firecrawl or paid acquisition services",
+      "editing source15/source16, accepted versions, or historical ZIPs"
+    ],
+    "image_classification": "Only img src/srcset and CSS url() references are image-resource observations. Ordinary navigation/XML links are not images and are not emitted in image_links.",
+    "redirect_handling": "Record the observed redirect response and safely filtered Location as an un-followed edge. A redirect chain is marked incomplete because no additional request is made.",
+    "current_origin_boundary": "A successful HTTPS response is a current observation, not a historical capture, original-byte identity, or 2008-source claim."
+  },
+  "policy": {
+    "maximum_roster_pages": 5,
+    "maximum_logical_requests": 5,
+    "maximum_http_attempts": 10,
+    "maximum_batch_seconds": 600,
+    "parent_watchdog_seconds": 660,
+    "maximum_request_seconds": 30,
+    "curl_connect_timeout_seconds": 10,
+    "minimum_request_start_seconds": 6.2,
+    "maximum_total_body_bytes": 16777216,
+    "maximum_response_bytes": 4194304,
+    "maximum_page_body_bytes": 4194304,
+    "remaining_body_budget_rule": "Before every curl GET, the body cap is min(4 MiB, remaining batch bytes, remaining bytes for that page). A direct failure and process-local proxy fallback share the same per-page and batch budgets.",
+    "direct_first": true,
+    "process_proxy": "http://127.0.0.1:7890",
+    "proxy_fallback_only_after_transport_failure": true,
+    "tls_verification": true,
+    "follow_redirects": false,
+    "automatic_retries": 0,
+    "stop_http_statuses": [429, 503],
+    "cooldown_seconds_minimum": 120,
+    "retry_after": "Accept integer seconds or HTTP-date; cooldown is measured from the response end and is max(120 seconds, Retry-After).",
+    "consecutive_transport_failure_stop": 5,
+    "disk_floor_bytes": 11005853696,
+    "accepted_content_types": ["text/html", "application/xhtml+xml"]
+  },
+  "outputs": {
+    "raw_http": "runtime/private/raw/ (response headers, complete HTML response bodies, stderr, and curl cookie jars; private)",
+    "journal": "runtime/private/attempt-journal.jsonl (private request start/end, effective URL, redirect, transport, disk, and raw-file evidence)",
+    "private_report": "runtime/private/report.json",
+    "public_inventory": "runtime/public-inventory.json",
+    "public_projection": [
+      "safe source URL and observed UTC time",
+      "request start/end UTC, HTTP status, effective URL, safely filtered redirect edge",
+      "payload byte length and SHA-256",
+      "HTML title and classification",
+      "page source statements and their safely filtered links",
+      "img/srcset/CSS image links, image attributes, enclosing image link, and figure caption"
+    ],
+    "public_url_filter": "Keep only HTTP(S) scheme/host/path. Drop credentials, query strings, fragments, and control characters."
+  },
+  "preservation_constraints": {
+    "freeze_existing_sources": true,
+    "frozen_inputs": ["Source15", "Source16", "all already accepted versions", "historical ZIPs", "existing ArchiveCraft cache files"],
+    "write_boundary": "Only research/continuous-recovery-20261022/network/archivecraft-dungeons01/ is owned by this preparation."
+  }
+}

@@ -1,0 +1,20 @@
+# Preparation and offline execution log
+
+## 2026-10-22, initial preparation
+
+- Scope: prepare a root-GO-gated, bounded ArchiveCraft dungeon-page source batch. No network request, image download, Git operation, publication, or export was performed.
+- Existing-tool basis: copied the accepted `research/continuous-recovery-20261021/network/archivecraft-pages01/archivecraft_pages01.py` into this separately owned batch directory, then adapted limits, target allowlist, private/public projections, and offline fixtures. The accepted source batch remains unchanged.
+- Local cache reuse: verified the parent-supplied Dungeons page body at `research/continuous-recovery-20261021/network/archivecraft-guides01/runtime/private/raw/attempt-04-archivecraft-dungeons-direct.body`: 142,718 bytes; SHA-256 `b9138b5d681553bb7c78cefcc65c77398a618696745daad8e0a312081fb3abe9`; HTTP 200; exact URL `https://archivecraft.com/townhall/dungeons/`; request started `2026-10-21T08:43:26.261766Z`, finished `2026-10-21T08:43:29.015641Z`. The source cache was not copied, renamed, overwritten, or re-dated.
+- Final requested targets after cache reconciliation: `https://archivecraft.com/townhall/dungeons/instances/`, `https://archivecraft.com/townhall/dungeons/instances/outland/`, `https://archivecraft.com/about/`, and `https://archivecraft.com/disclaimer/`.
+- Execution gate: all curl calls remain disabled unless `--execute --go PATH` passes plan, binding, cache, runtime-absence, and GO checks. The plan still needs root GO, so no external request is authorized by this preparation.
+- Environment: default sandbox process helper failed before command startup (`helper_unknown_error: setup refresh had errors`). Continued through the parent-confirmed `require_escalated` command path for local, bounded read/write operations. No global environment setting changed.
+- Offline validation at 2026-10-22 07:40 UTC: `--offline-fixtures` passed 12 checks with `network_requests: 0`; no-flag plan validation returned `prepared: true` and `network_requests_at_prepare: 0`. Input hashes were bound in `input-bindings.json`; this file does not grant execution approval.
+
+## 2026-10-22, root-approved execution
+
+- GO: `research/continuous-recovery-20261022/root-archivecraft-dungeons01-go.json`; accepted and hash-bound; valid until 2026-10-22T08:20:00Z. The approved runner was invoked exactly once and exited 0.
+- Execution interval: 2026-10-22T07:48:16.497403Z–07:48:37.363005Z; 4 logical requests and 4 direct HTTPS attempts, all status 200, 575,568 total response bytes, `stop_reason=completed`. No proxy fallback, redirect, dependency, image, Wayback, or paid-service request occurred.
+- Per-page response size/SHA, title, and actual request start/end are recorded in `runtime/public-inventory.json`; raw bodies, response headers, cookie jars, stderr, full attempt journal, and private report are under `runtime/private/`. Disk remained above the 11,005,853,696-byte floor; the minimum post-attempt observation was 21,581,893,632 bytes.
+- Public execution receipt: `parent-execution-receipt.json`. Offline content review: `local-content-review.json`. The separate review extracted four Deadmines gallery captions by associating local `dl.gallery-item` images with adjacent `dd.wp-caption-text` blocks; the approved downloader, plan, and public inventory were not changed.
+- Site statements remain page claims: About describes Wayback/Reddit/Imgur/GitHub as broad sources for lost material, without attributing the particular Deadmines screenshots to them; Disclaimer states the site’s fan-made/non-commercial/fair-use position. The Instances page links Deadmines promo screenshots 270–273 with scene captions; the Outland page has loading-screen/map references and no static `/screenshots/` image path.
+- The parent independently accepted the four-page raw source records in `research/continuous-recovery-20261022/root-archivecraft-dungeons01-source-acceptance.json` (SHA-256 `5614f331ff444a72d486faf383ed935ed357ad77e5cf54934076dc5ad2a268ba`).

@@ -1,0 +1,76 @@
+{
+  "schema": "wow-recovery.github-pages-v52-dungeons20.plan.v1",
+  "batch_id": "github-pages-v52-dungeons20",
+  "mode": "prepared",
+  "root_go_required": true,
+  "prepared_at_utc": "2026-10-22T08:00:37.748129Z",
+  "network_requests_at_prepare": 0,
+  "purpose": "Compare current GitHub Pages responses for the Dungeons page and its 19 screenshot objects against exact local v52 bytes.",
+  "source_basis": "Parent-requested fixed set after local browser inspection reported ten decoded thumbnails and nine original HTTP 200 responses. No current hosted object was fetched during preparation.",
+  "object_manifest_path": "object-manifest.json",
+  "object_manifest_sha256": "40afa0a548b39367c0ea1cb1b18dbd7e063422c589176aaa8a3418b02ab26809",
+  "targets_sha256": "fa69a79ca976d650f941553087100fd5bc50d18dcfc0495b5816d14fb17e2052",
+  "source_bindings": {
+    "local_v52_gate": {
+      "path": "research/continuous-recovery-20261021/publication/root-v52-local-acceptance.json",
+      "sha256": "4af16809bd1a8e610de0ae633d62fd97a582c6d59ee3d1ad9c0b876cf802f31f",
+      "accepted": true,
+      "version": "v52",
+      "local_site": ".scratch/pages-resources-20261021-v52"
+    },
+    "browser_inspection": {
+      "path": "research/continuous-recovery-20261022/dungeons-v52-browser-inspection.json",
+      "sha256": "ccfb7ef609dcb31b1b10acfe9ea3efec6f95dc80267e87c18cfc2ecc4b547b86",
+      "checked_utc": "2026-10-22T07:43:11.880Z",
+      "finished_utc": "2026-10-22T07:43:14.826Z",
+      "route": "/info/basics/dungeons.html",
+      "reported_thumbnail_count": 10,
+      "reported_original_http200_count": 9
+    },
+    "verifier_wrapper": {
+      "path": "research/continuous-recovery-20261021/publication/verify_v52_pages.py",
+      "sha256": "25daaec5c125a0d9e7a935fbb33bbcd2627612827ba437393a722a1f4ff8723e"
+    },
+    "frozen_verifier": {
+      "path": "research/continuous-recovery-20261018/publication/verify_pages_v32.py",
+      "sha256": "82f9c2bce15c618e33d31bb583192a217a2f419d0e7cf85714f47709d5d09289",
+      "base_url": "https://vvcchh0.github.io/WOW-Encyclopedia-Deployable-Archive/"
+    },
+    "publication_report": {
+      "path": "research/continuous-recovery-20261021/publication/v52-pages-publication.json",
+      "sha256": "02c3efb931e9625edfb865a84f722b1931003b8350a0e616f8ae783150886b86"
+    }
+  },
+  "policy": {
+    "maximum_objects": 20,
+    "maximum_logical_requests": 20,
+    "maximum_http_attempts": 40,
+    "maximum_batch_seconds": 600,
+    "maximum_request_seconds": 30,
+    "curl_connect_timeout_seconds": 10,
+    "minimum_request_start_seconds": 6.2,
+    "maximum_total_body_bytes": 16777216,
+    "maximum_object_body_bytes": 4194304,
+    "remaining_body_budget_rule": "Each attempt cap is min(4 MiB, remaining per-object bytes, remaining batch bytes); direct and transport-failure proxy attempts share budgets.",
+    "direct_first": true,
+    "proxy_fallback": "Process-local http://127.0.0.1:7890 only after a direct transport failure; no retry for HTTP status, MIME, or hash mismatch.",
+    "tls_verification": true,
+    "follow_redirects": false,
+    "automatic_retries": 0,
+    "stop_http_statuses": [
+      429,
+      503
+    ],
+    "cooldown_seconds_minimum": 120,
+    "retry_after": "Record Retry-After and set cooldown to max(120 seconds, parsed Retry-After); no retry inside this batch.",
+    "consecutive_transfer_failure_stop": 5,
+    "consecutive_transfer_failure_cooldown_seconds_minimum": 120,
+    "disk_floor_bytes": 11005853696,
+    "exact_targets_only": true,
+    "control_plane_api_requests": 0,
+    "raw_response_storage": "runtime/private/raw/ (body, headers, cookie jar, stderr per attempt)",
+    "public_projection": "Only object URL, expected local byte count/hash, observed status/content type/byte count/hash/effective URL, timing, attempt count, and match result."
+  },
+  "interpretation_boundary": "A remote hash match proves the current response matches the selected local v52 object, not historical originality. A mismatch identifies a deployment/content difference only; it does not by itself explain the earlier user-visible issue.",
+  "go_path_expected": "research/continuous-recovery-20261022/root-pages-v52-dungeons20-go.json"
+}

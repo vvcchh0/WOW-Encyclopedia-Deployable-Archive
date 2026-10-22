@@ -7,6 +7,10 @@
 - 按分区寻找并恢复玩家截图图库的原图与缩略图。
 - 继续补齐其他缺图与静态资源。
 
+## 2026-10-22
+
+- 完成地下城来源对照：Deadmines九张早期截图及预览已在v52保存并可线上浏览；19个经典副本主题和五个Outland区域组均有本地正文。整理[入口、图注对应与来源追溯](docs/dungeon-source-tracing-20261022.md)，继续调查Four Dragons等实际缺图。
+
 ## 2026-10-21
 
 - 同步发布[v52 离线浏览包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261021-v52)（约 546 MB，解压约 634 MB），完成本轮非图库复原。内容、来源方法和剩余缺口见[本轮回顾](docs/recovery-summary-20261021.md)。

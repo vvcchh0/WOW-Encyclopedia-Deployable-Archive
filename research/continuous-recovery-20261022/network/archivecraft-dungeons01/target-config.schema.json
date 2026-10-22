@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "wow-recovery/archivecraft-dungeons01-target-config.schema.json",
+  "title": "ArchiveCraft Dungeon page batch target entries",
+  "type": "object",
+  "required": ["targets", "reused_sources"],
+  "properties": {
+    "targets": {
+      "type": "array",
+      "maxItems": 5,
+      "items": {"$ref": "#/$defs/target"}
+    },
+    "reused_sources": {
+      "type": "array",
+      "maxItems": 5,
+      "items": {"$ref": "#/$defs/reusedSource"}
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "target": {
+      "type": "object",
+      "required": ["target_id", "url"],
+      "properties": {
+        "target_id": {
+          "enum": [
+            "archivecraft-dungeons",
+            "archivecraft-dungeons-instances",
+            "archivecraft-dungeons-outland",
+            "archivecraft-about",
+            "archivecraft-disclaimer"
+          ]
+        },
+        "url": {
+          "enum": [
+            "https://archivecraft.com/townhall/dungeons/",
+            "https://archivecraft.com/townhall/dungeons/instances/",
+            "https://archivecraft.com/townhall/dungeons/instances/outland/",
+            "https://archivecraft.com/about/",
+            "https://archivecraft.com/disclaimer/"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "reusedSource": {
+      "type": "object",
+      "required": ["target_id", "url", "source_path", "body_bytes", "body_sha256", "observed_utc", "response_finished_utc", "http_status"],
+      "properties": {
+        "target_id": {"$ref": "#/$defs/target/properties/target_id"},
+        "url": {"$ref": "#/$defs/target/properties/url"},
+        "source_path": {"type": "string", "pattern": "^research/"},
+        "body_bytes": {"type": "integer", "minimum": 1, "maximum": 4194304},
+        "body_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "observed_utc": {"type": "string", "format": "date-time"},
+        "response_finished_utc": {"type": "string", "format": "date-time"},
+        "http_status": {"const": 200},
+        "execution_receipt_path": {"type": "string", "pattern": "^research/"},
+        "private_report_path": {"type": "string", "pattern": "^research/"},
+        "public_record_path": {"type": "string", "pattern": "^research/"},
+        "preservation": {"type": "string"}
+      },
+      "additionalProperties": false
+    }
+  }
+}
