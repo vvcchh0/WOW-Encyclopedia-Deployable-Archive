@@ -1,0 +1,107 @@
+{
+  "schema": "wow-recovery-wayback-positive-control03-offline-validation.v1",
+  "batch_id": "WAYBACK-POSITIVE-CONTROL-03-EXACT-CDX-20261022",
+  "checked_utc": "2026-10-22T08:45:47.207302Z",
+  "network_requests": 0,
+  "raw_written": false,
+  "temporary_stub_raw_written": true,
+  "temporary_stub_raw_retained": false,
+  "network_sockets_opened": 0,
+  "all_passed": true,
+  "test_count": 25,
+  "cases": {
+    "exact_query_matches_frozen_source_selection": true,
+    "historical_positive_row_requires_cdx_length_10259": true,
+    "9971_payload_length_is_rejected_as_cdx_length": true,
+    "wrong_digest_is_rejected": true,
+    "wrong_original_and_https_neighbor_are_rejected": true,
+    "resume_key_makes_response_incomplete": true,
+    "direct_failure_then_proxy_positive_is_two_attempts": true,
+    "429_stops_without_proxy": true,
+    "other_http_response_stops_without_proxy": true,
+    "transport_failures_stop_at_two_attempt_cap": true,
+    "inherited_failure_tail_can_trigger_five_failure_stop": true,
+    "429_503_cooldown_uses_minimum_or_retry_after": true,
+    "five_transport_failure_cooldown_is_at_least_120_seconds": true,
+    "default_tls_context_verifies_certificates": true,
+    "limits_and_cadence_are_bounded": true,
+    "only_transport_failure_allows_proxy": true,
+    "raw_http_and_cookie_material_is_private": true,
+    "historical_failure_tail_is_not_reset": true,
+    "no_redirect_retry_pagination_or_image_replay": true,
+    "D_disk_floor_and_empty_runtime": true,
+    "fixture_is_offline_only": true,
+    "actual_attempt_429_stops_body_read_and_keeps_set_cookie_private": true,
+    "actual_attempt_parser_accepts_exact_positive_row": true,
+    "actual_attempt_uses_frozen_target_and_never_sends_cookie": true,
+    "actual_attempt_connection_error_is_transport_failure": true
+  },
+  "simulated_sequences": {
+    "direct_transport_failure_then_proxy_positive": {
+      "attempts": 2,
+      "stop": "known_exact_cdx_row",
+      "transport_failure_streak_end": 0,
+      "expected_attempts": 2,
+      "expected_stop": "known_exact_cdx_row"
+    },
+    "direct_429_stops_without_proxy": {
+      "attempts": 1,
+      "stop": "endpoint_status_429",
+      "transport_failure_streak_end": 0,
+      "expected_attempts": 1,
+      "expected_stop": "endpoint_status_429"
+    },
+    "direct_http_500_stops_without_proxy": {
+      "attempts": 1,
+      "stop": "http_500_without_positive",
+      "transport_failure_streak_end": 0,
+      "expected_attempts": 1,
+      "expected_stop": "http_500_without_positive"
+    },
+    "two_transport_failures_stop_at_attempt_cap": {
+      "attempts": 2,
+      "stop": "transport_failure_attempt_cap",
+      "transport_failure_streak_end": 2,
+      "expected_attempts": 2,
+      "expected_stop": "transport_failure_attempt_cap"
+    },
+    "inherited_streak_reaches_five_on_first_attempt": {
+      "attempts": 1,
+      "stop": "five_consecutive_transport_failures",
+      "transport_failure_streak_end": 5,
+      "expected_attempts": 1,
+      "expected_stop": "five_consecutive_transport_failures"
+    }
+  },
+  "stub_transport_cases": {
+    "actual_attempt_429_stops_body_read_and_keeps_set_cookie_private": true,
+    "actual_attempt_parser_accepts_exact_positive_row": true,
+    "actual_attempt_uses_frozen_target_and_never_sends_cookie": true,
+    "actual_attempt_connection_error_is_transport_failure": true
+  },
+  "cooldown_cases": [
+    {
+      "status": 429,
+      "passed": true,
+      "not_before_utc": "2026-10-22T00:02:00Z"
+    },
+    {
+      "status": 503,
+      "passed": true,
+      "not_before_utc": "2026-10-22T00:05:00Z"
+    }
+  ],
+  "disk_free_bytes": 17336958976,
+  "disk_floor_bytes": 11005853696,
+  "scope": "Offline validation only; no Wayback request was made.",
+  "fixed_hashes": {
+    "plan_sha256": "5fe5c29bf4a0795396fd7fcdf5184a147a357c68ee2257611f3fd80aaf5b3b87",
+    "runner_sha256": "448c8a6662e67927a0adbee738e89c068086f6357a68dca025dd1df0e35c78f9",
+    "fixture_sha256": "43e3b8543d37e0a8c313f2094f5201f213dcb825817e4c2d4c2182fbc7176e65",
+    "input_bindings_sha256": "e96154692d00c8bfaf29f42884e8b99178c3cd980bf8658439b16d9646d88a61",
+    "source_selection_sha256": "e406d443d1f6d308f169d58d931b07637f9f3ef9386875b20289894bbff84094"
+  },
+  "input_evidence_binding_count": 11,
+  "expected_go_path": "research/continuous-recovery-20261022/root-wayback-control03-go.json",
+  "validation_command": "python -X utf8 research/continuous-recovery-20261022/network/wayback-positive-control03/wayback_positive_control03.py --fixture"
+}

@@ -1,0 +1,122 @@
+{
+  "schema": "wow-recovery-wayback-positive-control03-plan.v1",
+  "batch_id": "WAYBACK-POSITIVE-CONTROL-03-EXACT-CDX-20261022",
+  "mode": "prepared_only",
+  "execution_status": "not_executed",
+  "prepared_utc": "2026-10-22T08:29:00Z",
+  "network_requests_executed_at_prepare": 0,
+  "root_go_required": true,
+  "root_go_path": "research/continuous-recovery-20261022/root-wayback-control03-go.json",
+  "source_selection": {
+    "path": "research/continuous-recovery-20261022/network/wayback-positive-control03/source-selection.json",
+    "sha256": "e406d443d1f6d308f169d58d931b07637f9f3ef9386875b20289894bbff84094"
+  },
+  "input_bindings": {
+    "path": "research/continuous-recovery-20261022/network/wayback-positive-control03/input-bindings.json",
+    "sha256": "e96154692d00c8bfaf29f42884e8b99178c3cd980bf8658439b16d9646d88a61"
+  },
+  "exact_target": {
+    "original": "http://www.worldofwarcraft.com/news/images/08-02/02-14-08-2.jpg",
+    "endpoint": "https://web.archive.org/cdx/search/cdx",
+    "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F08-02%2F02-14-08-2.jpg&from=20000101000000&to=20080512210044&output=json&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=10&showResumeKey=true&matchType=exact",
+    "fields": ["timestamp", "original", "mimetype", "statuscode", "digest", "length"],
+    "match_type": "exact",
+    "limit": 10,
+    "show_resume_key": true,
+    "pagination": false,
+    "redirects": false
+  },
+  "positive_control_identity": {
+    "timestamp": "20080402035201",
+    "original": "http://www.worldofwarcraft.com/news/images/08-02/02-14-08-2.jpg",
+    "mimetype": "image/jpeg",
+    "statuscode": "200",
+    "digest": "TJ2TFHNGVSA64RRRP3UD2CQZCP4TTRND",
+    "cdx_record_length": "10259",
+    "required_for_positive": true,
+    "identity_basis": "timestamp + exact original + MIME + HTTP status + digest + CDX record length",
+    "payload_identity_reference_only": {
+      "bytes": 9971,
+      "sha256": "10fea360ed507351a75a9f46f43f44d09ebabc45fd6143614fe9f5def4fc7a57",
+      "mime": "image/jpeg",
+      "meaning": "Accepted decoded JPEG payload length; never compare this byte count to CDX row length."
+    }
+  },
+  "policy": {
+    "maximum_logical_requests": 1,
+    "maximum_http_attempts": 2,
+    "transport_order": ["direct", "proxy_only_if_direct_transport_fails"],
+    "proxy": "http://127.0.0.1:7890",
+    "tls_verification": true,
+    "minimum_actual_request_start_interval_seconds": 5.0,
+    "dispatch_spacing_seconds": 8.0,
+    "maximum_seconds_child": 90,
+    "maximum_seconds_parent_watchdog": 180,
+    "connect_timeout_seconds": 10,
+    "request_timeout_seconds": 35,
+    "maximum_entity_body_bytes": 1048576,
+    "maximum_total_body_bytes": 1048576,
+    "disk_floor_bytes": 11005853696,
+    "stop_http_statuses": [429, 503],
+    "stop_immediately_on_http_response_without_positive_row": true,
+    "stop_after_consecutive_transport_failures": 5,
+    "cooldown_seconds_minimum": 120,
+    "respect_retry_after_seconds_or_http_date": true,
+    "cooldown_from_response_finish_utc": true,
+    "no_automatic_retries": true,
+    "no_redirects": true,
+    "no_pagination": true,
+    "no_image_replay": true,
+    "raw_body_headers_cookies_stderr_private": true,
+    "public_report_contains_only_sanitized_attempt_metadata": true,
+    "failure_tail_reset_by_runner": false,
+    "global_dns_proxy_certificate_changes": false
+  },
+  "runtime_paths": {
+    "report": "research/continuous-recovery-20261022/network/wayback-positive-control03/runtime/control-report.json",
+    "private_raw_directory": "research/continuous-recovery-20261022/network/wayback-positive-control03/runtime/private/raw",
+    "no_runtime_artifacts_at_prepare": true
+  },
+  "history": {
+    "latest_failure_acceptance_path": "research/continuous-recovery-20261021/publication/root-control02-source-acceptance.json",
+    "latest_failure_acceptance_sha256": "6e49f3a90add13cc9db92fffde35932c45ef6aa7608edafd347cec566e1b502a",
+    "latest_failure_private_report_path": "research/continuous-recovery-20261021/network/control02/runtime/control-report.json",
+    "latest_failure_private_report_sha256": "5005edf9c992e15bc54bffa8f2466f8780c2dbc4d82c8138ba4421b5530125b8",
+    "latest_failure_finished_utc": "2026-10-21T12:11:48.869099+00:00",
+    "latest_http_status": 429,
+    "inherited_consecutive_transport_failure_streak_requires_root_confirmation": true,
+    "latest_terminal_response_derived_streak_candidate": 0,
+    "full_attempt_history_preserved_even_when_consecutive_streak_is_zero": true,
+    "previous_failure_tail_preserved": true,
+    "new_run_appends_attempts_without_rewriting_historical_acceptances": true,
+    "root_review_required_before_any_failure_streak_reset": true
+  },
+  "execution_gate": {
+    "separate_fresh_root_go": true,
+    "go_must_bind_plan_runner_fixture_input_bindings_source_selection_offline_validation_and_failure_tail": true,
+    "go_must_define_not_before_and_expiry_utc": true,
+    "go_must_confirm_historical_failure_tail_retained": true,
+    "old_control02_go_is_expired_and_rejected": true,
+    "prepare_and_offline_fixture_do_not_contact_network": true
+  },
+  "go_contract": {
+    "required_true_fields": ["accepted", "root_go", "network_authorized", "historical_failure_tail_retained", "no_image_replay", "direct_first", "tls_verification", "no_automatic_retries", "no_redirects", "no_pagination"],
+    "required_hash_fields": ["plan_sha256", "runner_sha256", "fixture_sha256", "input_bindings_sha256", "source_selection_sha256", "offline_validation_sha256", "latest_failure_acceptance_sha256", "latest_failure_report_sha256", "prior_failure_acceptance_sha256", "prior_failure_report_sha256"],
+    "required_time_fields": ["authorized_at_utc", "not_before_utc", "expires_utc"],
+    "required_numeric_fields": ["maximum_logical_requests", "maximum_http_attempts", "parent_watchdog_seconds", "maximum_seconds_child", "maximum_body_bytes", "free_bytes_before", "inherited_transport_failure_streak"],
+    "required_identity_fields": {"cdx_record_length": "10259", "mime": "image/jpeg", "digest": "TJ2TFHNGVSA64RRRP3UD2CQZCP4TTRND"},
+    "expected_maximum_logical_requests": 1,
+    "expected_maximum_http_attempts": 2,
+    "expected_parent_watchdog_seconds": 180,
+    "expected_maximum_seconds_child": 90,
+    "expected_maximum_body_bytes": 1048576,
+    "minimum_free_bytes_before": 11005853696,
+    "go_is_single_use": true,
+    "go_path_is_fixed": true
+  },
+  "deviations_from_2026_10_21_control02": [
+    "This is a new one-control plan with no inherited schedule or old GO; only a fresh root GO can authorize execution.",
+    "The positive row CDX length is corrected to 10259 based on the prior successful raw CDX body. The separately accepted decoded JPEG payload is 9971 bytes with SHA-256 10fea360ed507351a75a9f46f43f44d09ebabc45fd6143614fe9f5def4fc7a57; the lengths describe different data and must not be substituted.",
+    "Request dispatch spacing is 8 seconds, while the minimum acceptance threshold is 5 seconds, adding margin after the 6.2-second runner showed a recorded interval 0.013001 seconds below its configured spacing in the separate Pages20 batch."
+  ]
+}

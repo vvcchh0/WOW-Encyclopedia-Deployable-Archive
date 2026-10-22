@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
-"""Load the accepted current ArchiveCraft guide-image supplement.
+"""Load pinned current ArchiveCraft guide-image supplements (v2 and v3).
 
-This adapter intentionally handles one pinned The Broken JPEG plus its one
-same-topic dynamic thumbnail route.  It reuses the encyclopedia adapter's
-path, JSON, timestamp, and JPEG checks while keeping guide-specific
-dataclasses, routes, catalog, and source notice names.  The payload is a
-current related source; no historical 2008 capture is asserted.
+The v2 bundle contains The Broken JPEG and its same-topic compatibility
+thumbnail route. The v3 bundle retains that entry and adds the Profession
+Updates PNG banner with its own static route. Both are current related
+sources; neither asserts a historical 2008 capture.
 """
 
 from __future__ import annotations
@@ -14,6 +13,7 @@ from dataclasses import dataclass
 from datetime import datetime
 import hashlib
 import html
+import io
 import json
 import os
 from pathlib import Path
@@ -45,6 +45,53 @@ EXPECTED_CLASSIFICATION = "current_related_archive_source"
 EXPECTED_COMPATIBILITY_CLASSIFICATION = "current_related_display_mapping"
 EXPECTED_ENTRY_COUNT = 1
 EXPECTED_CATALOG_RELATIVE = "__offline/related-guide-images.json"
+
+EXPECTED_V3_MAP_SHA256 = "7558451ac2f2a97f558587dfb7eb9a5e21da4acea7dc239044df88cca4ebd8e5"
+EXPECTED_V3_DECISION_SHA256 = "02f9cef4f70cf85959eddc90b6b935b8d9773eb539fe050f9059675282557e1c"
+EXPECTED_V3_SOURCE_ACCEPTANCE_SHA256 = "51e1a415c50d21006cec532749b653b689bae7dd391e5884f14c6274836f6976"
+EXPECTED_V3_ROOT_INPUT_PINS_SHA256 = "945416af325d4b5657e1dd05866068433b1c2b41b9a05fc7d509536e2177a954"
+EXPECTED_V3_MAP_SCHEMA = "wow-related-guide-image-map/v3"
+EXPECTED_V3_DECISION_SCHEMA = "wow-related-guide-image-decision/v3"
+EXPECTED_V3_ACCEPTANCE_SCHEMA = "wow-related-guide-image-source-acceptance/v3"
+EXPECTED_V3_INPUT_MAP = "research/continuous-recovery-20261022/integration/related-guide-images-v53/input-map.json"
+EXPECTED_V3_PINS_RELATIVE = "research/continuous-recovery-20261022/integration/related-guide-images-v53/root-input-pins.json"
+EXPECTED_V3_ENTRY_COUNT = 2
+EXPECTED_V3_NEW_PAYLOAD_BYTES = 18846
+EXPECTED_V3_PUBLIC_ASSET_PATH = "research/continuous-recovery-20261022/integration/related-guide-images-v53/assets/professions-page-title.png"
+
+EXPECTED_V3_ENTRY: Mapping[str, Any] = {
+    "title": "Profession Updates",
+    "page_route": "/burningcrusade/townhall/professions.html",
+    "target_route": "/burningcrusade/townhall/images/professions/page-title.png",
+    "route": "/__offline/related-guide-images/professions-page-title.png",
+    "source_image_url": "https://archivecraft.com/wp-content/uploads/images/index/townhall/burning-crusade/professions/page-title.png",
+    "source_page_url": "https://archivecraft.com/burningcrusade/townhall/professions/",
+    "current_observed_utc": "2026-10-22T08:36:27.337365Z",
+    "sha256": "33caa0898bfce8e5d6e92e3bfca2cd5505c3784316b36e800ed0a3069e8e2a8b",
+    "length": 18846,
+    "format": "PNG",
+    "width": 324,
+    "height": 72,
+    "frames": 1,
+    "classification": EXPECTED_CLASSIFICATION,
+    "original_capture_timestamp": None,
+    "source_processing_note": "Processing before retrieval is unknown.",
+}
+
+EXPECTED_V3_SOURCE_ACCEPTANCE_INPUTS = (
+    {
+        "path": "research/continuous-recovery-20261021/publication/root-archivecraft-broken-image-source-acceptance.json",
+        "sha256": "97a0e8005573a77ee38d2bb1c758f48386067e6fe4b20c0d02c14ac9782bb64e",
+        "schema": "wow-root-archivecraft-guide-image-source-acceptance/v1",
+        "entry_title": "The Broken",
+    },
+    {
+        "path": "research/continuous-recovery-20261022/root-professions-banner-source-acceptance.json",
+        "sha256": "0c9d29f9896fbb3813835bedc218ab01238f9f5c16d07e4ab82291e89d634d01",
+        "schema": "wow-root-professions-banner-source-acceptance/v1",
+        "entry_title": "Profession Updates",
+    },
+)
 
 EXPECTED_ENTRY: Mapping[str, Any] = {
     "title": "The Broken",
@@ -174,6 +221,35 @@ def _validate_jpeg(data: bytes, entry: Mapping[str, Any], route: str) -> tuple[i
         raise _fail(str(exc)) from exc
 
 
+def _validate_png(data: bytes, entry: Mapping[str, Any], route: str) -> tuple[int, int, int]:
+    if Image is None:  # pragma: no cover
+        raise _fail(f"Pillow is required to validate {route}: {_PIL_IMPORT_ERROR}")
+    if entry.get("format") != "PNG":
+        raise _fail(f"{route} map format is not PNG")
+    try:
+        with Image.open(io.BytesIO(data)) as image:
+            actual_format = image.format
+            width, height = image.size
+            frame_count = int(getattr(image, "n_frames", 1))
+            if actual_format != "PNG":
+                raise _fail(f"{route} payload decodes as {actual_format}, not PNG")
+            if frame_count != 1:
+                raise _fail(f"{route} has {frame_count} frames, expected one")
+            for frame_index in range(frame_count):
+                image.seek(frame_index)
+                image.load()
+                image.convert("RGBA").tobytes()
+    except RelatedGuideImageError:
+        raise
+    except Exception as exc:
+        raise _fail(f"{route} is not a fully decodable PNG: {exc}") from exc
+    if (width, height) != (324, 72):
+        raise _fail(f"{route} dimensions are {width}x{height}, expected 324x72")
+    if entry.get("width") != width or entry.get("height") != height or entry.get("frames") != frame_count:
+        raise _fail(f"{route} map dimensions/frames do not match the PNG payload")
+    return width, height, frame_count
+
+
 def _public_entry(entry: Mapping[str, Any]) -> dict[str, Any]:
     return {key: value for key, value in entry.items() if key != "payload_path"}
 
@@ -211,7 +287,7 @@ def _assert_exact_compatibility(value: Any, label: str) -> None:
         raise _fail(f"{label} compatibility mapping must not claim an original capture")
 
 
-def _validate_bindings(
+def _validate_v2_bindings(
     map_file: Path,
     root: Path,
 ) -> tuple[dict[str, Any], dict[str, Any], dict[str, Any], str, str, str]:
@@ -276,6 +352,162 @@ def _validate_bindings(
     return map_data, decision, acceptance, map_sha, decision_sha, acceptance_sha
 
 
+def _expected_v3_entries() -> tuple[dict[str, Any], ...]:
+    broken = {**dict(EXPECTED_ENTRY), "payload_path": "research/continuous-recovery-20261021/network/archivecraft-broken-image01/review/thebroken.jpg"}
+    professions = {
+        **dict(EXPECTED_V3_ENTRY),
+        "payload_path": EXPECTED_V3_PUBLIC_ASSET_PATH,
+    }
+    return broken, professions
+
+
+def _validate_v3_source_inputs(root: Path, acceptance: Mapping[str, Any]) -> None:
+    expected_refs = [
+        {"path": item["path"], "sha256": item["sha256"]}
+        for item in EXPECTED_V3_SOURCE_ACCEPTANCE_INPUTS
+    ]
+    refs = acceptance.get("source_acceptance_inputs")
+    if refs != expected_refs:
+        raise _fail("v3 source_acceptance_inputs do not match the accepted source roles")
+
+    expected_by_title = {entry["title"]: entry for entry in _expected_v3_entries()}
+    for source_input in EXPECTED_V3_SOURCE_ACCEPTANCE_INPUTS:
+        source_path = _resolve_file(root, source_input["path"], "source acceptance input")
+        source_record, _ = _read_pinned(
+            source_path, source_input["sha256"], f"{source_input['entry_title']} source acceptance input"
+        )
+        if source_record.get("schema") != source_input["schema"]:
+            raise _fail(f"{source_input['entry_title']} source acceptance input has the wrong role schema")
+        if source_record.get("accepted_sources") is not True:
+            raise _fail(f"{source_input['entry_title']} source acceptance input is not accepted")
+        if source_record.get("images_reencoded") is not False:
+            raise _fail(f"{source_input['entry_title']} source acceptance input does not bind original bytes")
+        if source_record.get("historical_original_images_recovered") != 0:
+            raise _fail(f"{source_input['entry_title']} source acceptance input claims historical recovery")
+        if source_input["entry_title"] == "Profession Updates" and source_record.get("accepted_for_browser_supplement") is not True:
+            raise _fail("Profession Updates source acceptance input is not accepted for browser supplement")
+        expected_entry = _public_entry(expected_by_title[source_input["entry_title"]])
+        if source_record.get("records") != [expected_entry]:
+            raise _fail(f"{source_input['entry_title']} source acceptance input has a different image binding")
+
+
+def _validate_v3_bindings(
+    map_file: Path,
+    root: Path,
+) -> tuple[dict[str, Any], dict[str, Any], dict[str, Any], str, str, str]:
+    map_data, map_sha = _read_pinned(map_file, EXPECTED_V3_MAP_SHA256, "v3 input map")
+    if map_data.get("schema") != EXPECTED_V3_MAP_SCHEMA:
+        raise _fail("input map schema is not the accepted guide-image map v3")
+    try:
+        map_relative = map_file.resolve().relative_to(root.resolve()).as_posix()
+    except ValueError as exc:
+        raise _fail("v3 input map is outside the workspace") from exc
+    if map_relative != EXPECTED_V3_INPUT_MAP:
+        raise _fail("v3 input map path is not the accepted pinned path")
+
+    pins_path = _resolve_file(root, EXPECTED_V3_PINS_RELATIVE, "root input pins")
+    pins, _ = _read_pinned(pins_path, EXPECTED_V3_ROOT_INPUT_PINS_SHA256, "root input pins")
+    expected_pins = {
+        "map_sha256": EXPECTED_V3_MAP_SHA256,
+        "decision_sha256": EXPECTED_V3_DECISION_SHA256,
+        "source_acceptance_sha256": EXPECTED_V3_SOURCE_ACCEPTANCE_SHA256,
+        "source_manifest_sha256": EXPECTED_SOURCE_MANIFEST_SHA256,
+        "input_map": EXPECTED_V3_INPUT_MAP,
+        "entry_count": EXPECTED_V3_ENTRY_COUNT,
+        "new_payload_bytes": EXPECTED_V3_NEW_PAYLOAD_BYTES,
+        "public_asset_path": EXPECTED_V3_PUBLIC_ASSET_PATH,
+    }
+    if pins != expected_pins:
+        raise _fail("root input pins do not match the accepted v3 aggregate")
+    if map_data.get("source_label") != "ArchiveCraft community archive":
+        raise _fail("v3 input map source label is not accepted")
+    if map_data.get("source_manifest_sha256") != EXPECTED_SOURCE_MANIFEST_SHA256:
+        raise _fail("v3 input map source manifest is not the accepted Source16 manifest")
+
+    decision_rel = _safe_relative(map_data.get("decision"), "decision path")
+    acceptance_rel = _safe_relative(map_data.get("source_acceptance"), "source acceptance path")
+    expected_decision_rel = "research/continuous-recovery-20261022/integration/related-guide-images-v53/decision.json"
+    expected_acceptance_rel = "research/continuous-recovery-20261022/integration/related-guide-images-v53/source-acceptance.json"
+    if decision_rel != expected_decision_rel or acceptance_rel != expected_acceptance_rel:
+        raise _fail("v3 decision or source acceptance path is outside the accepted roles")
+    decision_path = _resolve_file(root, decision_rel, "decision path")
+    acceptance_path = _resolve_file(root, acceptance_rel, "source acceptance path")
+    decision, decision_sha = _read_pinned(decision_path, EXPECTED_V3_DECISION_SHA256, "v3 decision record")
+    acceptance, acceptance_sha = _read_pinned(
+        acceptance_path, EXPECTED_V3_SOURCE_ACCEPTANCE_SHA256, "v3 source acceptance record"
+    )
+    if map_data.get("decision_sha256") != decision_sha:
+        raise _fail("v3 input map decision_sha256 does not match decision record")
+    if map_data.get("source_acceptance_sha256") != acceptance_sha:
+        raise _fail("v3 input map source_acceptance_sha256 does not match source acceptance")
+    if decision.get("schema") != EXPECTED_V3_DECISION_SCHEMA:
+        raise _fail("v3 decision schema is not accepted")
+    if acceptance.get("schema") != EXPECTED_V3_ACCEPTANCE_SCHEMA:
+        raise _fail("v3 source acceptance schema is not accepted")
+    if decision.get("source_manifest_sha256") != EXPECTED_SOURCE_MANIFEST_SHA256:
+        raise _fail("v3 decision source manifest is not the accepted Source16 manifest")
+    if decision.get("source_acceptance") != acceptance_rel or decision.get("source_acceptance_sha256") != acceptance_sha:
+        raise _fail("v3 decision source acceptance binding does not match")
+    if decision.get("accepted_for_browser_supplement") is not True:
+        raise _fail("v3 decision is not accepted for browser supplement")
+    if decision.get("classification") != EXPECTED_CLASSIFICATION:
+        raise _fail("v3 decision classification is not current_related_archive_source")
+    if decision.get("original_2008_images_recovered") != 0:
+        raise _fail("v3 decision claims recovered 2008 images")
+    if acceptance.get("accepted_sources") is not True:
+        raise _fail("v3 source acceptance is not accepted")
+    if acceptance.get("images_reencoded") is not False:
+        raise _fail("v3 source acceptance does not bind original bytes")
+    if acceptance.get("historical_original_images_recovered") != 0:
+        raise _fail("v3 source acceptance claims recovered historical images")
+    if acceptance.get("new_current_related_images") != 1 or acceptance.get("retained_current_related_images") != 1:
+        raise _fail("v3 source acceptance role counts do not match the two-entry aggregate")
+
+    entries = map_data.get("entries")
+    expected_entries = _expected_v3_entries()
+    if not isinstance(entries, list) or len(entries) != EXPECTED_V3_ENTRY_COUNT:
+        raise _fail("v3 input map does not contain the exact two-image scope")
+    if entries != list(expected_entries):
+        raise _fail("v3 input map entries do not match the accepted routes and source roles")
+    if decision.get("targets") != [_public_entry(entry) for entry in expected_entries]:
+        raise _fail("v3 decision targets do not exactly match the accepted map entries")
+    if acceptance.get("records") != [_public_entry(entry) for entry in expected_entries]:
+        raise _fail("v3 source acceptance records do not exactly match the accepted map entries")
+    _assert_exact_compatibility(map_data.get("compatibility_reuses"), "v3 input map")
+    _assert_exact_compatibility(decision.get("compatibility_reuses"), "v3 decision")
+    if decision.get("compatibility_reuses") != map_data.get("compatibility_reuses"):
+        raise _fail("v3 decision compatibility_reuses do not exactly match input map")
+    _validate_v3_source_inputs(root, acceptance)
+    _validated_utc(acceptance.get("checked_utc"), "v3 source acceptance checked_utc")
+    for entry in expected_entries:
+        _validated_utc(entry["current_observed_utc"], f"{entry['route']} current_observed_utc")
+    return map_data, decision, acceptance, map_sha, decision_sha, acceptance_sha
+
+
+def _validate_bindings(
+    map_file: Path,
+    root: Path,
+) -> tuple[dict[str, Any], dict[str, Any], dict[str, Any], str, str, str, str]:
+    try:
+        raw = map_file.read_bytes()
+        probe = json.loads(raw.decode("utf-8"))
+    except (OSError, UnicodeError, json.JSONDecodeError) as exc:
+        raise _fail(f"cannot inspect input map version: {map_file}: {exc}") from exc
+    if not isinstance(probe, dict):
+        raise _fail("input map must be a JSON object")
+    schema = probe.get("schema")
+    map_sha = _sha256(raw)
+    if schema == EXPECTED_MAP_SCHEMA:
+        if map_sha != EXPECTED_MAP_SHA256:
+            raise _fail(f"input map SHA mismatch: expected {EXPECTED_MAP_SHA256}, got {map_sha}")
+        return (*_validate_v2_bindings(map_file, root), "v2")
+    if schema == EXPECTED_V3_MAP_SCHEMA:
+        if map_sha != EXPECTED_V3_MAP_SHA256:
+            raise _fail(f"v3 input map SHA mismatch: expected {EXPECTED_V3_MAP_SHA256}, got {map_sha}")
+        return (*_validate_v3_bindings(map_file, root), "v3")
+    raise _fail("input map schema is not an accepted guide-image map version")
+
+
 def _make_notice(source_page_url: str) -> str:
     source_url = html.escape(source_page_url, quote=True)
     return (
@@ -333,54 +565,82 @@ def load_related_guide_image_bundle(
     workspace_root: str | os.PathLike[str],
     base_path: str,
 ) -> RelatedGuideImageBundle:
-    """Validate and load the exact current related guide JPEG."""
+    """Validate and load an accepted v2 one-image or v3 two-image bundle."""
 
     root = Path(workspace_root).resolve()
     if not root.is_dir():
         raise _fail(f"workspace_root is not a directory: {workspace_root}")
     map_file = _resolve_map(root, map_path)
     normalized_base = _normalize_base_path(base_path)
-    map_data, decision, acceptance, map_sha, decision_sha, acceptance_sha = _validate_bindings(map_file, root)
-    entry = map_data["entries"][0]
-    route = str(entry["route"])
-    relative = _safe_relative(route[1:] if route.startswith("/") else route, f"canonical route {route}")
-    payload_file = _resolve_file(root, entry["payload_path"], f"payload {route}")
-    try:
-        data = payload_file.read_bytes()
-    except OSError as exc:
-        raise _fail(f"cannot read payload for {route}: {exc}") from exc
-    if len(data) != entry["length"]:
-        raise _fail(f"{route} length mismatch")
-    actual_sha = _sha256(data)
-    if actual_sha != entry["sha256"]:
-        raise _fail(f"{route} SHA mismatch: expected {entry['sha256']}, got {actual_sha}")
-    width, height, frames = _validate_jpeg(data, entry, route)
-    _validated_utc(entry["current_observed_utc"], f"{route} current_observed_utc")
-    metadata = {
-        "title": entry["title"],
-        "page_route": entry["page_route"],
-        "target_route": entry["target_route"],
-        "source_image_url": entry["source_image_url"],
-        "source_page_url": entry["source_page_url"],
-        "current_observed_utc": entry["current_observed_utc"],
-        "sha256": actual_sha,
-        "length": len(data),
-        "format": "JPEG",
-        "width": width,
-        "height": height,
-        "frames": frames,
-        "classification": EXPECTED_CLASSIFICATION,
-        "original_capture_timestamp": None,
-        "source_processing_note": entry["source_processing_note"],
-    }
-    asset = RelatedGuideImageAsset(
-        route=route,
-        relative=relative,
-        target_route=entry["target_route"],
-        data=data,
-        mime="image/jpeg",
-        metadata=metadata,
-    )
+    map_data, decision, acceptance, map_sha, decision_sha, acceptance_sha, version = _validate_bindings(map_file, root)
+    assets: list[RelatedGuideImageAsset] = []
+    route_reuses: dict[str, str] = {}
+    seen_routes: set[str] = set()
+    source_bytes = 0
+    for entry in map_data["entries"]:
+        route = str(entry["route"])
+        relative = _safe_relative(route[1:] if route.startswith("/") else route, f"canonical route {route}")
+        if route in seen_routes or relative in seen_routes:
+            raise _fail(f"duplicate canonical route: {route}")
+        seen_routes.add(route)
+        payload_file = _resolve_file(root, entry["payload_path"], f"payload {route}")
+        try:
+            data = payload_file.read_bytes()
+        except OSError as exc:
+            raise _fail(f"cannot read payload for {route}: {exc}") from exc
+        if not isinstance(entry.get("length"), int) or isinstance(entry.get("length"), bool) or len(data) != entry["length"]:
+            raise _fail(f"{route} length mismatch")
+        actual_sha = _sha256(data)
+        if actual_sha != entry.get("sha256"):
+            raise _fail(f"{route} SHA mismatch: expected {entry.get('sha256')}, got {actual_sha}")
+        image_format = entry.get("format")
+        if image_format == "JPEG":
+            width, height, frames = _validate_jpeg(data, entry, route)
+            mime = "image/jpeg"
+        elif image_format == "PNG":
+            width, height, frames = _validate_png(data, entry, route)
+            mime = "image/png"
+        else:
+            raise _fail(f"{route} has an unsupported accepted image format: {image_format!r}")
+        _validated_utc(entry["current_observed_utc"], f"{route} current_observed_utc")
+        metadata = {
+            "title": entry["title"],
+            "page_route": entry["page_route"],
+            "target_route": entry["target_route"],
+            "source_image_url": entry["source_image_url"],
+            "source_page_url": entry["source_page_url"],
+            "current_observed_utc": entry["current_observed_utc"],
+            "sha256": actual_sha,
+            "length": len(data),
+            "format": image_format,
+            "width": width,
+            "height": height,
+            "frames": frames,
+            "classification": EXPECTED_CLASSIFICATION,
+            "original_capture_timestamp": None,
+            "source_processing_note": entry["source_processing_note"],
+        }
+        asset = RelatedGuideImageAsset(
+            route=route,
+            relative=relative,
+            target_route=entry["target_route"],
+            data=data,
+            mime=mime,
+            metadata=metadata,
+        )
+        assets.append(asset)
+        if asset.target_route in route_reuses:
+            raise _fail(f"duplicate target route: {asset.target_route}")
+        route_reuses[asset.target_route] = asset.route
+        source_bytes += len(data)
+
+    compatibility_reuses = [dict(item) for item in map_data.get("compatibility_reuses", [])]
+    for reuse in compatibility_reuses:
+        target_route = str(reuse["target_route"])
+        if target_route in route_reuses:
+            raise _fail(f"compatibility target duplicates a static target: {target_route}")
+        route_reuses[target_route] = str(reuse["route"])
+
     source_metadata = {
         "source_label": map_data["source_label"],
         "classification": EXPECTED_CLASSIFICATION,
@@ -389,22 +649,25 @@ def load_related_guide_image_bundle(
         "source_acceptance_sha256": acceptance_sha,
         "original_capture_timestamp": None,
         "original_2008_images_recovered": 0,
-        "image_count": 1,
-        "source_bytes": len(data),
+        "image_count": len(assets),
+        "source_bytes": source_bytes,
         "source_checked_utc": acceptance.get("checked_utc"),
-        "compatibility_reuses": [dict(EXPECTED_COMPATIBILITY_REUSE)],
+        "compatibility_reuses": compatibility_reuses,
     }
-    notice_by_page = {entry["page_route"]: _make_notice(entry["source_page_url"])}
-    catalog_bytes = _make_catalog(base_path=normalized_base, assets=[asset], source_metadata=source_metadata)
-    compatibility_route = str(EXPECTED_COMPATIBILITY_REUSE["target_route"])
-    if compatibility_route == str(entry["target_route"]):
-        raise _fail("compatibility target must be distinct from the static target")
+    if version == "v3":
+        source_metadata["new_current_related_images"] = 1
+        source_metadata["retained_current_related_images"] = 1
+    notice_by_page = {
+        str(entry["page_route"]): _make_notice(str(entry["source_page_url"]))
+        for entry in map_data["entries"]
+    }
+    catalog_bytes = _make_catalog(base_path=normalized_base, assets=assets, source_metadata=source_metadata)
     return RelatedGuideImageBundle(
-        assets=(asset,),
-        route_reuses={asset.target_route: asset.route, compatibility_route: asset.route},
+        assets=tuple(assets),
+        route_reuses=route_reuses,
         catalog_relative=EXPECTED_CATALOG_RELATIVE,
         catalog_bytes=catalog_bytes,
-        estimated_bytes=len(data) + len(catalog_bytes),
+        estimated_bytes=source_bytes + len(catalog_bytes),
         source_metadata=source_metadata,
         notice_by_page=notice_by_page,
         map_sha256=map_sha,
@@ -427,6 +690,13 @@ __all__ = [
     "EXPECTED_MAP_SHA256",
     "EXPECTED_SOURCE_ACCEPTANCE_SHA256",
     "EXPECTED_SOURCE_MANIFEST_SHA256",
+    "EXPECTED_V3_ACCEPTANCE_SCHEMA",
+    "EXPECTED_V3_DECISION_SCHEMA",
+    "EXPECTED_V3_DECISION_SHA256",
+    "EXPECTED_V3_ENTRY",
+    "EXPECTED_V3_MAP_SCHEMA",
+    "EXPECTED_V3_MAP_SHA256",
+    "EXPECTED_V3_SOURCE_ACCEPTANCE_SHA256",
     "RelatedGuideImageAsset",
     "RelatedGuideImageBundle",
     "RelatedGuideImageError",

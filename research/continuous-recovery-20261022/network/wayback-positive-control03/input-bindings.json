@@ -1,0 +1,77 @@
+{
+  "schema": "wow-recovery-wayback-positive-control03-input-bindings.v1",
+  "prepared_utc": "2026-10-22T08:29:00Z",
+  "network_requests": 0,
+  "bindings": [
+    {
+      "path": "research/continuous-recovery-20261018/network/control-after-gallery15/proxy.body",
+      "sha256": "818c64db7bc9a0640d1be4cdcad5153de68250636a776e2fe09056b794f9f6be",
+      "bytes": 366,
+      "role": "prior successful exact CDX response; parsed offline to confirm the 10259 row length"
+    },
+    {
+      "path": "research/continuous-recovery-20261018/network/control-after-gallery15/control-report.json",
+      "sha256": "7145994e5663a28a4f808fb82586ab51b2da2054da087a821cc3fee4ec540cd8",
+      "bytes": 3075,
+      "role": "prior successful CDX request report; confirms TLS, direct then proxy, zero payload replays, and positive row"
+    },
+    {
+      "path": "research/continuous-recovery-20261018/network/control-after-gallery15/proxy.headers.txt",
+      "sha256": "34b374b8e5ee01129d7ac927af7e43867846fa75d36f1920c2b1762b0012f076",
+      "bytes": 653,
+      "role": "historical response headers, local evidence only"
+    },
+    {
+      "path": "research/continuous-recovery-20261018/publication/accepted-images/news-unplanned-batch1/01-image.jpg",
+      "sha256": "10fea360ed507351a75a9f46f43f44d09ebabc45fd6143614fe9f5def4fc7a57",
+      "bytes": 9971,
+      "role": "previously accepted JPEG payload identity; referenced for provenance only and never replayed by this control"
+    },
+    {
+      "path": "research/continuous-recovery-20261018/publication/root-news-unplanned-batch1-source-acceptance.json",
+      "sha256": "1746b07c0359621975d81371034008045dd17f3a2548691c1b75b9a895dc9184",
+      "bytes": 8380,
+      "role": "root acceptance record for the separately measured 9971-byte JPEG payload"
+    },
+    {
+      "path": "research/continuous-recovery-20261021/publication/root-control02-source-acceptance.json",
+      "sha256": "6e49f3a90add13cc9db92fffde35932c45ef6aa7608edafd347cec566e1b502a",
+      "bytes": 1410,
+      "role": "latest accepted Wayback control failure and authoritative historical failure tail"
+    },
+    {
+      "path": "research/continuous-recovery-20261021/network/control02/runtime/control-report.json",
+      "sha256": "5005edf9c992e15bc54bffa8f2466f8780c2dbc4d82c8138ba4421b5530125b8",
+      "bytes": 2732,
+      "role": "latest private attempt report: direct timeout followed by proxy 429"
+    },
+    {
+      "path": "research/continuous-recovery-20261021/publication/root-control01-source-acceptance.json",
+      "sha256": "8f41323229e75f990b90ff4cea35723d8116444e8081047fdc6afdd93eece88d",
+      "role": "preceding 2026-10-21 provider-429 acceptance retained in the historical failure tail"
+    },
+    {
+      "path": "research/continuous-recovery-20261021/network/runtime/control-report.json",
+      "sha256": "b340c903e8e278c2e0793d0d44b965eaa790689f1801197dc2f74e5bfdb0255e",
+      "role": "preceding private attempt report retained in the historical failure tail"
+    },
+    {
+      "path": "research/continuous-recovery-20261021/network/control02/plan.json",
+      "sha256": "fbb15164eec02df8083deba81529b5814582384643a86fe4dc4e069aacbd7e1e",
+      "bytes": 6086,
+      "role": "frozen historical plan; retained unchanged to document the 9971-byte length conflation"
+    },
+    {
+      "path": "research/continuous-recovery-20261021/network/control02/source-selection.json",
+      "sha256": "202f27bf143056132fd85fee9a4fb1f384b5ed75558d52f1f8d04b1722f8679e",
+      "bytes": 4805,
+      "role": "frozen historical source selection; retained unchanged to document the correction"
+    }
+  ],
+  "requirements": {
+    "verify_all_bindings_before_any_request": true,
+    "fail_closed_on_hash_or_size_mismatch": true,
+    "never_modify_bound_historical_files": true,
+    "payload_sha_is_not_cdx_length": true
+  }
+}

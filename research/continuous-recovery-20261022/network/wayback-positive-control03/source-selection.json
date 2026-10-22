@@ -1,0 +1,90 @@
+{
+  "schema": "wow-recovery-wayback-positive-control03-source-selection.v1",
+  "prepared_utc": "2026-10-22T08:29:00Z",
+  "network_requests_at_prepare": 0,
+  "selection_status": "prepared_only",
+  "scope": "One exact Wayback CDX known-positive control. It does not request or replay any archived image payload.",
+  "exact_target": {
+    "original": "http://www.worldofwarcraft.com/news/images/08-02/02-14-08-2.jpg",
+    "endpoint": "https://web.archive.org/cdx/search/cdx",
+    "query_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.worldofwarcraft.com%2Fnews%2Fimages%2F08-02%2F02-14-08-2.jpg&from=20000101000000&to=20080512210044&output=json&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength&limit=10&showResumeKey=true&matchType=exact",
+    "from": "20000101000000",
+    "to": "20080512210044",
+    "match_type": "exact",
+    "fields": ["timestamp", "original", "mimetype", "statuscode", "digest", "length"],
+    "limit": 10,
+    "show_resume_key": true,
+    "pagination": false,
+    "redirects": false
+  },
+  "expected_cdx_row": {
+    "timestamp": "20080402035201",
+    "original": "http://www.worldofwarcraft.com/news/images/08-02/02-14-08-2.jpg",
+    "mimetype": "image/jpeg",
+    "statuscode": "200",
+    "digest": "TJ2TFHNGVSA64RRRP3UD2CQZCP4TTRND",
+    "cdx_record_length": "10259",
+    "identity_rule": "Require timestamp + exact original + MIME + status + digest + CDX-row length 10259 in a valid complete response; do not normalize the original URL."
+  },
+  "separate_payload_evidence": {
+    "role": "Previously accepted decoded image payload identity only; not a CDX length and not requested by this control.",
+    "path": "research/continuous-recovery-20261018/publication/accepted-images/news-unplanned-batch1/01-image.jpg",
+    "bytes": 9971,
+    "sha256": "10fea360ed507351a75a9f46f43f44d09ebabc45fd6143614fe9f5def4fc7a57",
+    "mime": "image/jpeg",
+    "capture_timestamp": "20080402035201",
+    "cdx_digest": "TJ2TFHNGVSA64RRRP3UD2CQZCP4TTRND"
+  },
+  "prior_positive_cdx_evidence": {
+    "report_path": "research/continuous-recovery-20261018/network/control-after-gallery15/control-report.json",
+    "report_sha256": "7145994e5663a28a4f808fb82586ab51b2da2054da087a821cc3fee4ec540cd8",
+    "response_path": "research/continuous-recovery-20261018/network/control-after-gallery15/proxy.body",
+    "response_bytes": 366,
+    "response_sha256": "818c64db7bc9a0640d1be4cdcad5153de68250636a776e2fe09056b794f9f6be",
+    "response_headers_path": "research/continuous-recovery-20261018/network/control-after-gallery15/proxy.headers.txt",
+    "response_headers_sha256": "34b374b8e5ee01129d7ac927af7e43867846fa75d36f1920c2b1762b0012f076",
+    "observed_rows": [
+      {"timestamp": "20080402035201", "original": "http://www.worldofwarcraft.com/news/images/08-02/02-14-08-2.jpg", "mimetype": "image/jpeg", "statuscode": "200", "digest": "TJ2TFHNGVSA64RRRP3UD2CQZCP4TTRND", "length": "10259"},
+      {"timestamp": "20080402052450", "original": "https://www.worldofwarcraft.com/news/images/08-02/02-14-08-2.jpg", "mimetype": "image/jpeg", "statuscode": "200", "digest": "TJ2TFHNGVSA64RRRP3UD2CQZCP4TTRND", "length": "10257"}
+    ],
+    "previous_observation_is_evidence_only": true
+  },
+  "correction_to_prior_plan": {
+    "historical_plan_path": "research/continuous-recovery-20261021/network/control02/plan.json",
+    "historical_plan_sha256": "fbb15164eec02df8083deba81529b5814582384643a86fe4dc4e069aacbd7e1e",
+    "historical_source_selection_path": "research/continuous-recovery-20261021/network/control02/source-selection.json",
+    "historical_source_selection_sha256": "202f27bf143056132fd85fee9a4fb1f384b5ed75558d52f1f8d04b1722f8679e",
+    "historical_value_used_for_cdx_length": "9971",
+    "reason": "The historical plan carried the already accepted JPEG payload byte count into the CDX row length field. The independently observed CDX row reports length 10259 for the HTTP original; 9971 is the decoded JPEG payload size. These are different measurements. The old plan and source-selection files remain unchanged and are bound as historical evidence only.",
+    "new_plan_value": "10259",
+    "jpeg_payload_replay_authorized": false
+  },
+  "latest_failure_tail": {
+    "latest_acceptance_path": "research/continuous-recovery-20261021/publication/root-control02-source-acceptance.json",
+    "latest_acceptance_sha256": "6e49f3a90add13cc9db92fffde35932c45ef6aa7608edafd347cec566e1b502a",
+    "latest_private_report_path": "research/continuous-recovery-20261021/network/control02/runtime/control-report.json",
+    "latest_private_report_sha256": "5005edf9c992e15bc54bffa8f2466f8780c2dbc4d82c8138ba4421b5530125b8",
+    "latest_run_finished_utc": "2026-10-21T12:11:48.894609+00:00",
+    "last_request_finished_utc": "2026-10-21T12:11:48.869099+00:00",
+    "last_http_status": 429,
+    "cooldown_not_before_utc": "2026-10-21T12:13:48.894609+00:00",
+    "latest_attempts": [
+      {"transport": "direct", "classification": "transport_failure", "returncode": 28, "http_status": 0, "request_started_utc": "2026-10-21T12:11:36.346389+00:00", "request_finished_utc": "2026-10-21T12:11:46.447043+00:00", "body_bytes": 0},
+      {"transport": "proxy", "classification": "endpoint_stop", "returncode": 0, "http_status": 429, "request_started_utc": "2026-10-21T12:11:46.453575+00:00", "request_finished_utc": "2026-10-21T12:11:48.869099+00:00", "body_bytes": 162}
+    ],
+    "prior_control01_acceptance_path": "research/continuous-recovery-20261021/publication/root-control01-source-acceptance.json",
+    "prior_control01_acceptance_sha256": "8f41323229e75f990b90ff4cea35723d8116444e8081047fdc6afdd93eece88d",
+    "prior_control01_report_path": "research/continuous-recovery-20261021/network/runtime/control-report.json",
+    "prior_control01_report_sha256": "b340c903e8e278c2e0793d0d44b965eaa790689f1801197dc2f74e5bfdb0255e",
+    "transport_failure_streak_after_latest_terminal_response": 0,
+    "transport_failure_streak_basis": "The latest attempt returned an HTTP 429 response, so the most recent terminal outcome was an HTTP response rather than a transport failure. The earlier direct timeout remains in the full preserved attempt history.",
+    "history_rule": "Retain both accepted failure observations and every attempt. A new positive control does not rewrite or delete this tail. The fresh root GO must explicitly confirm the inherited consecutive-transport-failure count before any request."
+  },
+  "authorization": {
+    "network_allowed_at_prepare": false,
+    "separate_fresh_root_go_required": true,
+    "old_control02_go_reusable": false,
+    "raw_output_at_prepare": false,
+    "no_global_dns_proxy_certificate_changes": true
+  }
+}

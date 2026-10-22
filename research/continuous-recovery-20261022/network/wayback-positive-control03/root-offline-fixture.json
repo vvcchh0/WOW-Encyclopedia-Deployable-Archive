@@ -1,0 +1,81 @@
+{
+  "schema": "wow-recovery-wayback-positive-control03-offline-fixture.v1",
+  "network_requests": 0,
+  "raw_written": false,
+  "positive_response": [
+    ["timestamp", "original", "mimetype", "statuscode", "digest", "length"],
+    ["20080402035201", "http://www.worldofwarcraft.com/news/images/08-02/02-14-08-2.jpg", "image/jpeg", "200", "TJ2TFHNGVSA64RRRP3UD2CQZCP4TTRND", "10259"]
+  ],
+  "payload_length_misused_as_cdx_length_response": [
+    ["timestamp", "original", "mimetype", "statuscode", "digest", "length"],
+    ["20080402035201", "http://www.worldofwarcraft.com/news/images/08-02/02-14-08-2.jpg", "image/jpeg", "200", "TJ2TFHNGVSA64RRRP3UD2CQZCP4TTRND", "9971"]
+  ],
+  "wrong_digest_response": [
+    ["timestamp", "original", "mimetype", "statuscode", "digest", "length"],
+    ["20080402035201", "http://www.worldofwarcraft.com/news/images/08-02/02-14-08-2.jpg", "image/jpeg", "200", "WRONG", "10259"]
+  ],
+  "wrong_original_response": [
+    ["timestamp", "original", "mimetype", "statuscode", "digest", "length"],
+    ["20080402035201", "https://www.worldofwarcraft.com/news/images/08-02/02-14-08-2.jpg", "image/jpeg", "200", "TJ2TFHNGVSA64RRRP3UD2CQZCP4TTRND", "10257"]
+  ],
+  "incomplete_response_with_resume_key": [
+    ["timestamp", "original", "mimetype", "statuscode", "digest", "length"],
+    ["20080402035201", "http://www.worldofwarcraft.com/news/images/08-02/02-14-08-2.jpg", "image/jpeg", "200", "TJ2TFHNGVSA64RRRP3UD2CQZCP4TTRND", "10259"],
+    ["resume-key-test"]
+  ],
+  "attempt_sequences": [
+    {
+      "id": "direct_transport_failure_then_proxy_positive",
+      "outcomes": [
+        {"transport": "direct", "classification": "transport_failure", "status": null},
+        {"transport": "proxy", "classification": "positive", "status": 200}
+      ],
+      "expected_attempts": 2,
+      "expected_stop": "known_exact_cdx_row"
+    },
+    {
+      "id": "direct_429_stops_without_proxy",
+      "outcomes": [{"transport": "direct", "classification": "endpoint_stop", "status": 429}],
+      "expected_attempts": 1,
+      "expected_stop": "endpoint_status_429"
+    },
+    {
+      "id": "direct_http_500_stops_without_proxy",
+      "outcomes": [{"transport": "direct", "classification": "http_response_no_positive", "status": 500}],
+      "expected_attempts": 1,
+      "expected_stop": "http_500_without_positive"
+    },
+    {
+      "id": "two_transport_failures_stop_at_attempt_cap",
+      "outcomes": [
+        {"transport": "direct", "classification": "transport_failure", "status": null},
+        {"transport": "proxy", "classification": "transport_failure", "status": null}
+      ],
+      "expected_attempts": 2,
+      "expected_stop": "transport_failure_attempt_cap"
+    },
+    {
+      "id": "inherited_streak_reaches_five_on_first_attempt",
+      "inherited_transport_failure_streak": 4,
+      "outcomes": [{"transport": "direct", "classification": "transport_failure", "status": null}],
+      "expected_attempts": 1,
+      "expected_stop": "five_consecutive_transport_failures"
+    }
+  ],
+  "cooldown_cases": [
+    {"status": 429, "retry_after": null, "finished_utc": "2026-10-22T00:00:00Z", "minimum_not_before_utc": "2026-10-22T00:02:00Z"},
+    {"status": 503, "retry_after": "300", "finished_utc": "2026-10-22T00:00:00Z", "minimum_not_before_utc": "2026-10-22T00:05:00Z"}
+  ],
+  "required_properties": {
+    "positive_identity_uses_timestamp_original_digest_and_separate_cdx_length": true,
+    "9971_payload_length_is_never_used_for_cdx_matching": true,
+    "direct_first": true,
+    "proxy_only_after_transport_failure": true,
+    "429_503_stop_immediately": true,
+    "no_redirect_no_retry_no_pagination_no_image_replay": true,
+    "tls_verification_enabled": true,
+    "private_raw_http_cookie_material": true,
+    "historical_failure_tail_reset": false,
+    "all_attempts_stay_within_two_request_cap": true
+  }
+}

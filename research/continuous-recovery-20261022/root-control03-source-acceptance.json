@@ -1,0 +1,46 @@
+{
+  "schema": "wow-root-control03-source-acceptance/v1",
+  "accepted": true,
+  "checked_utc": "2026-10-22T09:09:00.345938+00:00",
+  "control_positive": false,
+  "wayback_resume_gate_passed": false,
+  "network_requests": 2,
+  "logical_requests": 1,
+  "attempts": [
+    {
+      "transport": "direct",
+      "request_started_utc": "2026-10-22T09:04:23.890079Z",
+      "request_finished_utc": "2026-10-22T09:04:33.994362Z",
+      "http_status": null,
+      "transport_error_class": "TimeoutError",
+      "body_bytes": 0
+    },
+    {
+      "transport": "proxy",
+      "request_started_utc": "2026-10-22T09:04:34.010728Z",
+      "request_finished_utc": "2026-10-22T09:04:35.499487Z",
+      "http_status": 429,
+      "transport_error_class": null,
+      "body_bytes": 0
+    }
+  ],
+  "request_start_interval_seconds": 10.120649,
+  "latest_failure_utc": "2026-10-22T09:04:35.499487Z",
+  "latest_status": 429,
+  "cooldown_not_before_utc": "2026-10-22T09:06:35.499487Z",
+  "historical_failure_tail_retained": true,
+  "image_payload_replays": 0,
+  "raw_http_and_cookies_public": false,
+  "report_sha256": "aa1602c68ee9359f3edc3403db68146ea1c867890dd8df30b10192f832338935",
+  "watchdog_receipt_sha256": "bf36292f1ee06a6e2ee4fe13e60f5553c7998c4e48454a3496c6103e6cc5838d",
+  "go_sha256": "567111015312a2c54de16891022298a365d91efae4a559c528964b87e353af90",
+  "prior_failure_acceptance_sha256": "6e49f3a90add13cc9db92fffde35932c45ef6aa7608edafd347cec566e1b502a",
+  "preflight_failure": {
+    "network_requests": 0,
+    "summary_sha256": "ba923d5db369e5cf565db4003665a81648fb6de9275862e743c3ab093806fe77",
+    "preserved_runtime": "network/wayback-positive-control03/preflight-failure-01",
+    "old_go": "root-wayback-control03-go-preflight-failure-01.json",
+    "reason": "Watchdog log directories were created before a runner that requires runtime to be absent. Corrected wrapper keeps logs outside runtime."
+  },
+  "interpretation": "Wayback returned no usable CDX control. Continue local/independent related-source work; no Wayback resource batch is authorized by this result."
+}
