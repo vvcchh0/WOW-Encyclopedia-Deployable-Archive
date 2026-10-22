@@ -320,7 +320,9 @@ class ReleaseCreator:
         self.process_events: list[dict[str, Any]] = []
 
     def _local_command(self, args: Sequence[str]) -> str:
-        result = self.runner(args, os.environ.copy(), 30)
+        # Keep the full untracked-file guard for the large archive checkout.
+        timeout = 120 if list(args[:2]) == ["git", "status"] else 30
+        result = self.runner(args, os.environ.copy(), timeout)
         if result.returncode != 0:
             raise _fail(f"local command failed ({args[0]}, exit {result.returncode})")
         return result.stdout.strip()

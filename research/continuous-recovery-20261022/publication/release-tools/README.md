@@ -18,6 +18,8 @@ The helper writes a new `create-upload-intent.json` and, after all three remote 
 
 Offline validation:
 
+The first production invocation stopped during its local Git guard, before creating an intent or making a GitHub request. A full `git status --untracked-files=all` walk measured 41.8 seconds in this archive checkout, exceeding the initial 30-second allowance. The root increased only that command's timeout to 120 seconds and retained the complete cleanliness check.
+
 ```powershell
 python -B -m unittest discover -s research/continuous-recovery-20261022/publication/release-tools -p 'test_*.py' -v
 ```
