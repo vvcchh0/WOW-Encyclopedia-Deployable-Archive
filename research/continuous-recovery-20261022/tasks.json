@@ -49,20 +49,25 @@
       "id": "PUBLISH",
       "owner": "root",
       "goal": "Independent source/byte/browser acceptance and permitted normal Git/Pages/processed-package publication",
-      "state": "v55_public_v56_package_checking",
+      "state": "accepted_v56_pages_release_and_portable",
       "dependencies": [
         "RESTORE"
       ],
-      "evidence": "root-v55-online-acceptance.json"
+      "evidence": "root-v56-online-acceptance.json",
+      "additional_evidence": [
+        "publication/v56-portable-acceptance.json",
+        "publication/v56-public-assets-acceptance.json"
+      ]
     },
     {
       "id": "CLOSE",
       "owner": "root",
       "goal": "Budgeted closeout, cumulative report and delete continuation schedule",
-      "state": "pending",
+      "state": "accepted_local_closeout_and_closing_checkpoint",
       "dependencies": [
         "PUBLISH"
-      ]
+      ],
+      "evidence": "publication/final-local-closeout.json"
     },
     {
       "id": "ONLINE-DM",

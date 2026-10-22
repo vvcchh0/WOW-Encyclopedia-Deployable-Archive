@@ -108,3 +108,13 @@ v56增加18张明暗天赋图标，合计1,024张关联天赋图像。10,205个�
 本轮累计接入60个关联来源图片文件，其中4个新下载、56个从现有来源包复用；没有新增确认的2008年原图。此前选定的390个非图库目标现接通59个，剩331个，玩家图库缺口另计。映射与取舍整理为[天赋图像来源说明](talent-image-sources-20261022.md)，包括19组显式映射与未选候选。
 
 v56离线ZIP已构建，546,446,950字节、10,211个成员；包内实际启动核对仍在进行。当前公开网页和离线Release仍为v55，v56的main同步、Pages构建、线上22对象和Release分别验收后更新。
+
+## v56最终发布与收尾
+
+main的7dff875e已正常推送，Pages的ada74291部署构建39789068533于13:43 UTC成功。唯一线上核验批次在13:55–13:57 UTC完成，22个对象全部direct 200、实际响应体与本地一致，实收15,959,895字节；最小实际请求间隔6.390554秒。主代理随后逐个重读私有响应体并独立验收，原始HTTP与cookie未公开。[线上验收](../research/continuous-recovery-20261022/root-v56-online-acceptance.json)
+
+v56离线包从新的带空格目录启动，122个路径的GET／HEAD与根跳转共245项检查通过。包为546,446,950字节，解压635,822,442字节，10,211个成员。13:55 UTC已公开[Release](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261022-v56)，13:57 UTC完成三个公开附件的匿名读取／HEAD与GitHub摘要核对；未再下载整个ZIP。[包内验收](../research/continuous-recovery-20261022/publication/v56-portable-acceptance.json) · [公开附件验收](../research/continuous-recovery-20261022/publication/v56-public-assets-acceptance.json)
+
+本轮来源获取和导出已结束。五个逐一核对命令行身份的预览服务已停止，两名执行者均完成，自动接续wow-7-5已由原生工具删除。再次核对四个冻结清单／来源摘要未变；未重复遍历历史ZIP。收尾检查D盘余量为11,475,263,488字节，高于11,005,853,696字节安全线。未启动新的Wayback批次或付费Firecrawl获取。[收尾验收](../research/continuous-recovery-20261022/publication/final-local-closeout.json)
+
+README与本轮回顾同步为v56；本段及其验收作为独立文档检查点正常commit/push。后续从[剩余331个非图库目标](../research/continuous-recovery-20261022/v56-remaining-resource-targets.json)与[图库调查](player-gallery-accessibility-20261020.md)接续，有新来源证据后再开启相应获取窗口。[累计回顾](recovery-summary-20261022.md)
