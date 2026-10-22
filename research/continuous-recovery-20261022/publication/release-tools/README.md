@@ -20,6 +20,8 @@ Offline validation:
 
 The first production invocation stopped during its local Git guard, before creating an intent or making a GitHub request. A full `git status --untracked-files=all` walk measured 41.8 seconds in this archive checkout, exceeding the initial 30-second allowance. The root increased only that command's timeout to 120 seconds and retained the complete cleanliness check.
 
+A subsequent invocation stopped before draft creation when Windows returned slightly early from a spacing sleep. The root read the tag endpoint and confirmed that no v55 release existed, retained the unused intent, and added a bounded recheck/sleep loop plus an early-wakeup regression test. The minimum process-start interval remains 5.2 seconds.
+
 ```powershell
 python -B -m unittest discover -s research/continuous-recovery-20261022/publication/release-tools -p 'test_*.py' -v
 ```

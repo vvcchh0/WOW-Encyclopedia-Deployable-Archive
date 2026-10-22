@@ -350,15 +350,16 @@ class ReleaseCreator:
     def _wait_for_network_slot(self) -> float:
         now = self.monotonic()
         if self.last_network_start is not None:
-            delay = MIN_PROCESS_START_INTERVAL - (now - self.last_network_start)
-            if delay > 0:
-                self.sleeper(delay)
+            for _ in range(5):
+                delay = MIN_PROCESS_START_INTERVAL - (now - self.last_network_start)
+                if delay <= 1e-9:
+                    break
+                # Windows clocks can observe a slightly early sleep return.
+                # Recheck without starting any request; retain the hard gap.
+                self.sleeper(delay + 0.01)
                 now = self.monotonic()
-                # The fake clock used in offline checks and some monotonic
-                # clock implementations can represent the exact sleep with a
-                # sub-nanosecond rounding error.
-                if now - self.last_network_start + 1e-9 < MIN_PROCESS_START_INTERVAL:
-                    raise _fail("network process start spacing could not be satisfied")
+            if now - self.last_network_start + 1e-9 < MIN_PROCESS_START_INTERVAL:
+                raise _fail("network process start spacing could not be satisfied")
         remaining = (DEADLINE_UTC - self.utcnow()).total_seconds()
         if remaining <= 1.0:
             raise _fail("release operation cutoff is too near; refusing to start another gh process")

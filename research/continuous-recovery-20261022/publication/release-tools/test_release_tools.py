@@ -174,6 +174,19 @@ class ConfigTests(InputsFixture):
 
 
 class EnvironmentTests(unittest.TestCase):
+    def test_early_sleep_return_waits_again_before_next_process(self):
+        clock=FakeClock();clock.now=1.0;calls=[]
+        def early_sleep(seconds):
+            calls.append(seconds)
+            clock.now+=seconds-(0.02 if len(calls)==1 else 0)
+        from datetime import datetime,timezone
+        creator=release.ReleaseCreator(None,monotonic=clock.monotonic,sleeper=early_sleep,
+            utcnow=lambda:datetime(2026,10,22,12,0,tzinfo=timezone.utc))
+        creator.last_network_start=0.0
+        creator._wait_for_network_slot()
+        self.assertEqual(len(calls),2)
+        self.assertGreaterEqual(clock.now,release.MIN_PROCESS_START_INTERVAL)
+
     def test_child_environment_clears_ambient_proxies_and_tls_bypass(self) -> None:
         names = ("HTTP_PROXY", "HTTPS_PROXY", "ALL_PROXY", "http_proxy", "https_proxy", "all_proxy",
                  "GH_INSECURE", "GIT_SSL_NO_VERIFY", "GH_HOST")
