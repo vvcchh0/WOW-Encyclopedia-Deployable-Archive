@@ -1,0 +1,48 @@
+{
+  "schema": "wow-related-talent-icons-v56-documentation-validation/v1",
+  "checked_utc": "2026-10-22T12:50:17Z",
+  "scope": "Documentation support checks only; no loader, exporter, map, site, or Git changes.",
+  "browser_acceptance": {
+    "status": "not_run_by_this_record",
+    "note": "The checks below do not launch Chrome or inspect browser responses. The linked preflight receipt is explicitly preflight-only and is not browser or production acceptance."
+  },
+  "harness": {
+    "path": "research/continuous-recovery-20261022/integration/related-talent-icons-v56/implementation/browser-check.cjs",
+    "sha256": "2ba048ab8b31168c7a884a2af418700dc0081386cc9c3f2ada88a8487e5fa14f"
+  },
+  "checks": [
+    {
+      "command": "node --check research/continuous-recovery-20261022/integration/related-talent-icons-v56/implementation/browser-check.cjs",
+      "exit_code": 0,
+      "result": "passed: JavaScript syntax check"
+    },
+    {
+      "command": "node research/continuous-recovery-20261022/integration/related-talent-icons-v56/implementation/browser-check.cjs --help",
+      "exit_code": 0,
+      "result": "passed: usage/help output"
+    },
+    {
+      "command": "node research/continuous-recovery-20261022/integration/related-talent-icons-v56/implementation/browser-check.cjs 24786 .scratch/pages-resources-20261022-v56 --preflight-only",
+      "exit_code": 0,
+      "result": "preflight_passed_only",
+      "receipt": "research/continuous-recovery-20261022/integration/related-talent-icons-v56/implementation/runs/v56-2026-10-22T12-41-13-622Z/browser-check.json",
+      "receipt_sha256": "783ae9320155dae5d882a85df0354299b0963e8647ffa4e7bf5036b2aa419594",
+      "observed": {
+        "map_count": 18,
+        "catalog_count": 1024,
+        "explicit_mappings": 38,
+        "local_payloads_match": true,
+        "original_data_files_unchanged": true,
+        "known_missing_baseline_count": 390,
+        "preserved_v55_prefix_verified": true,
+        "production_export_verified": false,
+        "browser_launched": false
+      }
+    }
+  ],
+  "limitations": [
+    "No Chrome/browser test was run for this validation record.",
+    "The preflight checks pinned inputs and local payloads only; it does not prove production HTTP responses, rendered image appearance, tooltip behavior, valid talent-point allocation, or save/reload behavior.",
+    "No claim about final v56 publication status is made here."
+  ]
+}

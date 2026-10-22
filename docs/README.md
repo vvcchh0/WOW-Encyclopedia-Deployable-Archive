@@ -50,3 +50,5 @@ Git 主树保存部署文件、工具、这些文档与关键验收；历史记�
 
 - [地下城来源与早期截图](dungeon-source-tracing-20261022.md)：Deadmines九图、经典副本与Outland正文对照、线上核对及Four Dragons缺口。
 - [2026-10-22 持续恢复](continuous-recovery-20261022.md)：关联源追溯、素材补齐和本轮检查点。
+
+- [天赋图像补充来源](talent-image-sources-20261022.md)：同路径素材、十九组显式映射、保留的旧数据与未选候选。

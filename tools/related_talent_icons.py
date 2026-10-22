@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Load the accepted, same-path talent-icon supplement.
+"""Load the accepted same-class talent-icon supplements.
 
 This module is intentionally a loader, rather than an exporter.  It validates
 the pinned input map and its two acceptance records, reads only the private
@@ -109,6 +109,92 @@ EXPECTED_V2_ROOT_PINS = {
     "new_network_requests": 0,
     "images_reencoded": False,
 }
+
+# v3 adds eighteen reviewed exact-title, same-class images on top of v2's
+# 1,006 assets.  The raw Source16 data digest and the already-derived v55
+# response digest are intentionally separate: the latter contains the
+# pre-existing talentPath rewrite and is the expected browser response.
+EXPECTED_V3_MAP_SHA256 = "ea6d4656a6bc35329fb400bf38c645172d43db0f34b11963787311341db2faa7"
+EXPECTED_V3_DECISION_SHA256 = "0e22840852a79d52979f78535b00ae223547705a7ecec7f24bea299c0ce0b0d9"
+EXPECTED_V3_ROOT_ACCEPTANCE_SHA256 = "b707e455f96da67a1426ecd2f6a12bbae93187f9bbfc8e0e9a67b93d38ab2e4d"
+EXPECTED_V3_PREPARATION_SHA256 = "b5ebf6066d084f6dcda06cc78e4bc4e39114e1e0cfd3e29fb4c8ab38ad38826d"
+EXPECTED_V3_AUDIT_SHA256 = "16629cb29bfc945a2843b9ee5dbbaf5765c28bfc2ce4afb0715992d922a571f3"
+EXPECTED_V3_BASE_MAP_SHA256 = EXPECTED_V2_MAP_SHA256
+EXPECTED_V3_SOURCE_ACCEPTANCE_SHA256 = EXPECTED_SOURCE_ACCEPTANCE_SHA256
+EXPECTED_V3_MAP_SCHEMA = "wow-related-talent-icon-map/v3"
+EXPECTED_V3_DECISION_SCHEMA = "wow-root-related-talent-icons-v56-decision/v1"
+EXPECTED_V3_ROOT_ACCEPTANCE_SCHEMA = "wow-root-talent-v56-source-acceptance/v1"
+EXPECTED_V3_PREPARATION_SCHEMA = "wow-related-talent-icon-source-preparation/v1"
+EXPECTED_V3_AUDIT_SCHEMA = "wow-talent-icon-remaining-audit/v1"
+EXPECTED_V3_MAP_RELATIVE = (
+    "research/continuous-recovery-20261022/integration/related-talent-icons-v56/input-map.json"
+)
+EXPECTED_V3_DECISION_RELATIVE = (
+    "research/continuous-recovery-20261022/integration/related-talent-icons-v56/decision.json"
+)
+EXPECTED_V3_PINS_RELATIVE = (
+    "research/continuous-recovery-20261022/integration/related-talent-icons-v56/root-input-pins.json"
+)
+EXPECTED_V3_ROOT_ACCEPTANCE_RELATIVE = (
+    "research/continuous-recovery-20261022/integration/related-talent-icons-v56/root-source-acceptance.json"
+)
+EXPECTED_V3_PREPARATION_RELATIVE = (
+    "research/continuous-recovery-20261022/integration/related-talent-icons-v56/source-preparation.json"
+)
+EXPECTED_V3_AUDIT_RELATIVE = (
+    "research/continuous-recovery-20261022/talent-icon-remaining-audit/audit.json"
+)
+EXPECTED_V3_SOURCE_ACCEPTANCE_RELATIVE = EXPECTED_V2_ACCEPTANCE_RELATIVE
+EXPECTED_V3_BASE_MAP_RELATIVE = EXPECTED_V2_MAP_RELATIVE
+EXPECTED_V3_BASE_ICON_COUNT = 1006
+EXPECTED_V3_BASE_MAPPED_ICON_COUNT = 20
+EXPECTED_V3_MAPPED_ICON_COUNT = 18
+EXPECTED_V3_ICON_COUNT = 1024
+EXPECTED_V3_MAPPED_SOURCE_BYTES = 19439
+EXPECTED_V3_BASE_SOURCE_BYTES = EXPECTED_V2_TOTAL_SOURCE_BYTES
+EXPECTED_V3_TOTAL_SOURCE_BYTES = EXPECTED_V3_BASE_SOURCE_BYTES + EXPECTED_V3_MAPPED_SOURCE_BYTES
+EXPECTED_V3_SELECTED_IDS = (
+    "mage-molten-shields",
+    "paladin-guardian-s-favor",
+    "rogue-dirty-tricks",
+    "rogue-puncturing-wounds",
+    "shaman-earth-s-grasp",
+    "warrior-death-wish",
+    "warrior-improved-disciplines",
+    "warrior-improved-slam",
+    "warrior-improved-thunder-clap",
+)
+EXPECTED_V3_CLASS_DELTAS = {
+    "druid": 0,
+    "hunter": 0,
+    "mage": 2,
+    "paladin": 2,
+    "priest": 0,
+    "rogue": 4,
+    "shaman": 2,
+    "warlock": 0,
+    "warrior": 8,
+}
+EXPECTED_V3_ROOT_PINS = {
+    "schema": "wow-related-talent-icons-v56-root-pins/v1",
+    "map_sha256": EXPECTED_V3_MAP_SHA256,
+    "decision_sha256": EXPECTED_V3_DECISION_SHA256,
+    "root_source_acceptance_sha256": EXPECTED_V3_ROOT_ACCEPTANCE_SHA256,
+    "source_preparation_sha256": EXPECTED_V3_PREPARATION_SHA256,
+    "semantic_audit_sha256": EXPECTED_V3_AUDIT_SHA256,
+    "source_acceptance_sha256": EXPECTED_V3_SOURCE_ACCEPTANCE_SHA256,
+    "base_map_sha256": EXPECTED_V3_BASE_MAP_SHA256,
+    "base_icon_count": EXPECTED_V3_BASE_ICON_COUNT,
+    "mapped_icon_count": EXPECTED_V3_MAPPED_ICON_COUNT,
+    "icon_count": EXPECTED_V3_ICON_COUNT,
+    "mapped_source_bytes": EXPECTED_V3_MAPPED_SOURCE_BYTES,
+    "new_network_requests": 0,
+    "images_reencoded": False,
+}
+EXPECTED_V3_SOURCE = EXPECTED_V2_SOURCE
+EXPECTED_V3_V55_EXPORT_RELATIVE = (
+    ".scratch/pages-resources-20261022-v55"
+)
 
 ALLOWED_CLASSES = (
     "druid",
@@ -959,6 +1045,9 @@ def _make_v2_catalog(
                     "original_2008_pixel_identity": "unknown",
                 }
             )
+            old_source_data_sha = asset.metadata.get("old_source_data_sha256")
+            if old_source_data_sha is not None:
+                mappings[-1]["old_source_data_sha256"] = old_source_data_sha
         public_assets.append(item)
     payload = {
         "schema": "wow-related-talent-icon-catalog/v2",
@@ -1115,12 +1204,537 @@ def _load_v2_related_talent_bundle(
     )
 
 
+def _validate_v3_entry_semantics(
+    entry: Mapping[str, Any],
+    candidate: Mapping[str, Any],
+    preparation_candidate: Mapping[str, Any],
+    accepted_object: Mapping[str, Any],
+) -> tuple[str, str, str]:
+    route = entry.get("route")
+    if not isinstance(route, str) or any(token in route for token in ("?", "#", "\\", "\x00")):
+        raise _fail(f"unsafe v3 target route: {route!r}")
+    match = _ROUTE_RE.fullmatch(route)
+    if match is None:
+        raise _fail(f"v3 target route is outside the exact talent icon scope: {route!r}")
+    class_name = match.group("class")
+    mapping_id = entry.get("mapping_id")
+    if mapping_id not in EXPECTED_V3_SELECTED_IDS or mapping_id != candidate.get("candidate_id"):
+        raise _fail(f"v3 entry is outside the nine selected canonical mappings: {mapping_id!r}")
+
+    old = candidate.get("old_2008_target")
+    later = candidate.get("later_same_class_candidate")
+    if not isinstance(old, dict) or not isinstance(later, dict):
+        raise _fail(f"v3 semantic audit lacks old/later data for {route}")
+    title = old.get("canonical_talent_title")
+    if (
+        candidate.get("class") != class_name
+        or old.get("canonical_talent_title") != later.get("canonical_talent_title")
+        or entry.get("class") != class_name
+        or entry.get("talent") != title
+    ):
+        raise _fail(f"v3 mapping is not an exact same-class canonical title match: {route}")
+    if not str(candidate.get("finding_type", "")).startswith("exact_same_class_title"):
+        raise _fail(f"v3 semantic audit does not classify {mapping_id} as an exact canonical title match")
+    if entry.get("mapping_reason") != candidate.get("reason"):
+        raise _fail(f"v3 mapping reason differs from semantic audit: {route}")
+
+    state = entry.get("state")
+    if state not in ("on", "off") or (route.lower().endswith("-off.jpg") != (state == "off")):
+        raise _fail(f"v3 route state does not match its on/off designation: {route}")
+    old_routes = old.get("routes")
+    if not isinstance(old_routes, list) or route not in old_routes:
+        raise _fail(f"v3 target route is absent from the exact old Source16 target: {route}")
+    repo_path = entry.get("repository_path")
+    repo_path = _normal_relative(repo_path, f"v3 source repository path for {route}")
+    if not repo_path.startswith(f"shared/global/talents/{class_name}/images/") or not repo_path.lower().endswith(".jpg"):
+        raise _fail(f"v3 source path leaves the same talent class: {repo_path!r}")
+    image_by_state = {
+        image.get("state"): image
+        for image in later.get("images", [])
+        if isinstance(image, dict)
+    }
+    source_image = image_by_state.get(state)
+    if not isinstance(source_image, dict) or source_image.get("repository_path") != repo_path:
+        raise _fail(f"v3 source path is not the exact accepted later image for {route}")
+    if (
+        entry.get("sha256") != source_image.get("sha256")
+        or entry.get("git_blob_sha1") != source_image.get("git_blob_sha1")
+        or entry.get("length") != source_image.get("length")
+        or entry.get("format") != source_image.get("format")
+        or [entry.get("width"), entry.get("height")] != source_image.get("dimensions")
+        or entry.get("frames") != source_image.get("frames")
+    ):
+        raise _fail(f"v3 image metadata differs from the accepted ZIP inventory for {route}")
+
+    old_raw_sha = old.get("source16_data_sha256")
+    old_data_route = old.get("data_route")
+    later_zip_member = later.get("data_zip_member")
+    later_data_sha = later.get("data_sha256")
+    if not isinstance(later_zip_member, str) or "/talents/" not in later_zip_member:
+        raise _fail(f"v3 later data member is malformed for {route}")
+    later_data_path = "talents/" + later_zip_member.rsplit("/talents/", 1)[1]
+    old_lines = [old.get("talent_assignment_line")]
+    later_lines = [later.get("talent_assignment_line")]
+    old_derived_sha = entry.get("old_data_sha256")
+    if (
+        entry.get("old_data_route") != old_data_route
+        or entry.get("old_source_data_sha256") != old_raw_sha
+        or not isinstance(old_derived_sha, str)
+        or not _SHA256_RE.fullmatch(old_derived_sha)
+        or old_derived_sha == old_raw_sha
+        or entry.get("old_data_talent_lines") != old_lines
+        or entry.get("later_data_repository_path") != later_data_path
+        or entry.get("later_data_sha256") != later_data_sha
+        or entry.get("later_data_talent_lines") != later_lines
+    ):
+        raise _fail(f"v3 old raw/derived or later data binding differs from accepted evidence: {route}")
+    for label, lines in (("old", old_lines), ("later", later_lines)):
+        if any(isinstance(line, bool) or not isinstance(line, int) or line <= 0 for line in lines):
+            raise _fail(f"v3 {label} talent line reference is malformed: {route}")
+
+    prep_old = preparation_candidate.get("old_data")
+    prep_dnl = preparation_candidate.get("old_donotlocalize")
+    prep_later = preparation_candidate.get("later_data")
+    if not all(isinstance(value, dict) for value in (prep_old, prep_dnl, prep_later)):
+        raise _fail(f"v3 source preparation is missing old/new data evidence for {route}")
+    if (
+        prep_old.get("sha256") != old_raw_sha
+        or prep_old.get("talent_assignment_line") != old.get("talent_assignment_line")
+        or prep_old.get("image_label_assignment_line") != old.get("image_label_assignment_line")
+        or prep_old.get("rank_array_line") != old.get("rank_array_line")
+        or prep_dnl.get("sha256") != old.get("donotlocalize_source_sha256")
+        or prep_dnl.get("assignment_index") != old.get("talent_assignment_index")
+        or prep_dnl.get("assigned_label") != old.get("image_label")
+        or prep_later.get("repository_path") != later_data_path
+        or prep_later.get("sha256") != later_data_sha
+        or prep_later.get("talent_assignment_line") != later.get("talent_assignment_line")
+    ):
+        raise _fail(f"v3 data references differ from the independently reviewed source preparation: {route}")
+    if (
+        entry.get("page_route") != f"/info/classes/{class_name}/talents.html"
+        or entry.get("classification") != EXPECTED_CLASSIFICATION
+        or entry.get("original_capture_timestamp") is not None
+        or entry.get("original_2008_pixel_identity") != "unknown"
+    ):
+        raise _fail(f"v3 entry overstates original capture or pixel identity: {route}")
+    if (
+        accepted_object.get("route") != route
+        or accepted_object.get("repository_path") != repo_path
+        or accepted_object.get("sha256") != entry.get("sha256")
+        or accepted_object.get("bytes") != entry.get("length")
+        or accepted_object.get("class") != class_name
+        or accepted_object.get("talent") != title
+        or accepted_object.get("state") != state
+    ):
+        raise _fail(f"v3 source review does not approve this exact image object: {route}")
+    return route, repo_path, class_name
+
+
+def _validate_v3_bindings(
+    map_file: Path,
+    workspace_root: Path,
+) -> tuple[
+    dict[str, Any], dict[str, Any], dict[str, Any], dict[str, Any], dict[str, Any],
+    dict[str, Any], str, str, str, str, str,
+]:
+    root = workspace_root.resolve()
+    try:
+        map_relative = map_file.relative_to(root).as_posix()
+    except ValueError as exc:
+        raise _fail("v3 input map escapes workspace_root") from exc
+    if map_relative != EXPECTED_V3_MAP_RELATIVE:
+        raise _fail("v3 input map is not the pinned v56 input-map.json")
+    map_data, map_sha = _read_v2_bound_json(map_file, EXPECTED_V3_MAP_SHA256, "v3 input map")
+    if map_data.get("schema") != EXPECTED_V3_MAP_SCHEMA:
+        raise _fail("v3 input map schema is not wow-related-talent-icon-map/v3")
+
+    expected_paths = {
+        "decision": EXPECTED_V3_DECISION_RELATIVE,
+        "root_source_acceptance": EXPECTED_V3_ROOT_ACCEPTANCE_RELATIVE,
+        "source_preparation": EXPECTED_V3_PREPARATION_RELATIVE,
+        "semantic_audit": EXPECTED_V3_AUDIT_RELATIVE,
+        "source_acceptance": EXPECTED_V3_SOURCE_ACCEPTANCE_RELATIVE,
+        "base_map": EXPECTED_V3_BASE_MAP_RELATIVE,
+    }
+    paths: dict[str, Path] = {}
+    for key, expected in expected_paths.items():
+        relative = _normal_relative(map_data.get(key), f"v3 {key} path")
+        if relative != expected:
+            raise _fail(f"v3 input map points at a different {key} path")
+        paths[key] = _resolve_workspace_file(root, relative, f"v3 {key} path")
+    pins_path = _resolve_workspace_file(root, EXPECTED_V3_PINS_RELATIVE, "v3 root input pins")
+
+    decision, decision_sha = _read_v2_bound_json(paths["decision"], EXPECTED_V3_DECISION_SHA256, "v3 decision")
+    root_acceptance, root_acceptance_sha = _read_v2_bound_json(
+        paths["root_source_acceptance"], EXPECTED_V3_ROOT_ACCEPTANCE_SHA256, "v3 root source acceptance"
+    )
+    source_preparation, preparation_sha = _read_v2_bound_json(
+        paths["source_preparation"], EXPECTED_V3_PREPARATION_SHA256, "v3 source preparation"
+    )
+    audit, audit_sha = _read_v2_bound_json(paths["semantic_audit"], EXPECTED_V3_AUDIT_SHA256, "v3 semantic audit")
+    acceptance, acceptance_sha = _read_v2_bound_json(
+        paths["source_acceptance"], EXPECTED_V3_SOURCE_ACCEPTANCE_SHA256, "v3 source acceptance"
+    )
+    base_map, base_map_sha = _read_v2_bound_json(paths["base_map"], EXPECTED_V3_BASE_MAP_SHA256, "v3 v55 base map")
+    pins = _read_json(pins_path, "v3 root input pins")
+    if pins != EXPECTED_V3_ROOT_PINS:
+        raise _fail("v3 root input pins do not bind the accepted map and source review")
+
+    for key, actual in (
+        ("decision_sha256", decision_sha),
+        ("root_source_acceptance_sha256", root_acceptance_sha),
+        ("source_preparation_sha256", preparation_sha),
+        ("semantic_audit_sha256", audit_sha),
+        ("source_acceptance_sha256", acceptance_sha),
+        ("base_map_sha256", base_map_sha),
+    ):
+        if map_data.get(key) != actual:
+            raise _fail(f"v3 input map {key} does not match its bound record")
+
+    if decision.get("schema") != EXPECTED_V3_DECISION_SCHEMA or decision.get("accepted_for_derived_trial") is not True:
+        raise _fail("v3 decision is not accepted for a derived trial")
+    if decision.get("base_map") != expected_paths["base_map"] or decision.get("base_map_sha256") != base_map_sha:
+        raise _fail("v3 decision base-map binding differs")
+    for field, path_key, hash_key in (
+        ("semantic_audit", "semantic_audit", "semantic_audit_sha256"),
+        ("source_acceptance", "source_acceptance", "source_acceptance_sha256"),
+        ("root_source_acceptance", "root_source_acceptance", "root_source_acceptance_sha256"),
+    ):
+        if decision.get(field) != expected_paths[path_key] or decision.get(hash_key) != map_data.get(hash_key):
+            raise _fail(f"v3 decision {field} binding differs")
+    if decision.get("source") != EXPECTED_V3_SOURCE or map_data.get("source") != EXPECTED_V3_SOURCE:
+        raise _fail("v3 source metadata differs from the pinned later-source record")
+    _validated_retrieved_utc(map_data["source"].get("downloaded_utc"))
+    if decision.get("original_2008_images_recovered") != 0 or decision.get("images_reencoded") is not False:
+        raise _fail("v3 decision overstates original recovery or re-encodes source images")
+
+    if base_map.get("schema") != EXPECTED_V2_MAP_SCHEMA:
+        raise _fail("v3 base map is not the accepted v2 map")
+    if (
+        base_map.get("icon_count") != EXPECTED_V3_BASE_ICON_COUNT
+        or base_map.get("base_icon_count") != EXPECTED_V2_BASE_ICON_COUNT
+        or base_map.get("mapped_icon_count") != EXPECTED_V2_MAPPED_ICON_COUNT
+        or len(base_map.get("entries", [])) != EXPECTED_V2_MAPPED_ICON_COUNT
+    ):
+        raise _fail("v3 base map does not describe the accepted 1,006-icon v55 bundle")
+    if acceptance.get("schema") != EXPECTED_ACCEPTANCE_SCHEMA or acceptance.get("accepted_source") is not True:
+        raise _fail("v3 original source acceptance is not accepted")
+    for key in ("repository_url", "commit_sha", "tree_sha", "zip_url", "zip_sha256"):
+        if acceptance.get(key) != EXPECTED_V3_SOURCE[key]:
+            raise _fail(f"v3 original source acceptance {key} differs")
+    if (
+        acceptance.get("original_2008_images_recovered") != 0
+        or acceptance.get("raw_images_reencoded") is not False
+    ):
+        raise _fail("v3 original source acceptance overstates recovery or changes image bytes")
+
+    if root_acceptance.get("schema") != EXPECTED_V3_ROOT_ACCEPTANCE_SCHEMA:
+        raise _fail("v3 root source review schema is unexpected")
+    if (
+        root_acceptance.get("accepted_sources") is not True
+        or root_acceptance.get("source_preparation_sha256") != preparation_sha
+        or root_acceptance.get("semantic_audit_sha256") != audit_sha
+        or root_acceptance.get("source_zip_sha256") != EXPECTED_V3_SOURCE["zip_sha256"]
+        or root_acceptance.get("images") != EXPECTED_V3_MAPPED_ICON_COUNT
+        or root_acceptance.get("bytes") != EXPECTED_V3_MAPPED_SOURCE_BYTES
+        or root_acceptance.get("original_2008_image_recoveries") != 0
+        or root_acceptance.get("classification") != EXPECTED_CLASSIFICATION
+        or root_acceptance.get("original_capture_timestamp") is not None
+        or root_acceptance.get("pixel_identity_with_2008") != "unknown"
+        or root_acceptance.get("all_zip_bytes_rehashed_and_frames_decoded") is not True
+        or root_acceptance.get("old_and_new_data_rows_independently_checked") is not True
+        or root_acceptance.get("old_image_label_rows_independently_checked") is not True
+        or root_acceptance.get("old_2008_talent_rows_unchanged") is not True
+        or root_acceptance.get("old_derived_data_unchanged") is not True
+    ):
+        raise _fail("v3 root source review does not accept the pinned 18 later-source images")
+
+    if source_preparation.get("schema") != EXPECTED_V3_PREPARATION_SCHEMA:
+        raise _fail("v3 source preparation schema is unexpected")
+    preparation_ids = source_preparation.get("candidate_ids")
+    if (
+        source_preparation.get("preparation_status") != "prepared_for_independent_parent_review"
+        or not isinstance(preparation_ids, list)
+        or set(preparation_ids) != set(EXPECTED_V3_SELECTED_IDS)
+        or len(preparation_ids) != len(EXPECTED_V3_SELECTED_IDS)
+        or source_preparation.get("network_requests") != 0
+        or source_preparation.get("not_an_acceptance_or_decision") is not True
+    ):
+        raise _fail("v3 source preparation is outside the pinned inputs-only preparation")
+
+    if audit.get("schema") != EXPECTED_V3_AUDIT_SCHEMA:
+        raise _fail("v3 semantic audit schema is unexpected")
+    candidate_list = audit.get("new_same_class_candidates")
+    if not isinstance(candidate_list, list):
+        raise _fail("v3 semantic audit lacks the candidate list")
+    candidate_by_id = {
+        row.get("candidate_id"): row
+        for row in candidate_list
+        if isinstance(row, dict) and isinstance(row.get("candidate_id"), str)
+    }
+    preparation_list = source_preparation.get("selected_candidates")
+    if not isinstance(preparation_list, list):
+        raise _fail("v3 source preparation lacks candidate-level bindings")
+    preparation_by_id = {
+        row.get("candidate_id"): row
+        for row in preparation_list
+        if isinstance(row, dict) and isinstance(row.get("candidate_id"), str)
+    }
+    accepted_objects = root_acceptance.get("objects")
+    if not isinstance(accepted_objects, list) or len(accepted_objects) != EXPECTED_V3_MAPPED_ICON_COUNT:
+        raise _fail("v3 root source review object list is malformed")
+    accepted_by_route = {row.get("route"): row for row in accepted_objects if isinstance(row, dict)}
+    if len(accepted_by_route) != EXPECTED_V3_MAPPED_ICON_COUNT:
+        raise _fail("v3 root source review has duplicate image targets")
+    if set(decision.get("selected_canonical_ids", [])) != set(EXPECTED_V3_SELECTED_IDS):
+        raise _fail("v3 decision selected canonical IDs differ from the nine reviewed IDs")
+
+    for field, expected in (
+        ("base_icon_count", EXPECTED_V3_BASE_ICON_COUNT),
+        ("mapped_icon_count", EXPECTED_V3_MAPPED_ICON_COUNT),
+        ("icon_count", EXPECTED_V3_ICON_COUNT),
+        ("mapped_source_bytes", EXPECTED_V3_MAPPED_SOURCE_BYTES),
+    ):
+        if map_data.get(field) != expected or decision.get(field) != expected:
+            raise _fail(f"v3 map/decision {field} differs from the pinned aggregate")
+    entries = map_data.get("entries")
+    if not isinstance(entries, list) or len(entries) != EXPECTED_V3_MAPPED_ICON_COUNT:
+        raise _fail("v3 map must contain exactly eighteen entries")
+    if entries != decision.get("entries"):
+        raise _fail("v3 decision entries differ from the pinned map")
+    if set(preparation_by_id) != set(EXPECTED_V3_SELECTED_IDS):
+        raise _fail("v3 source preparation does not bind exactly the nine selected IDs")
+
+    base_routes = {row.get("route") for row in base_map["entries"] if isinstance(row, dict)}
+    base_source_paths = {row.get("repository_path") for row in base_map["entries"] if isinstance(row, dict)}
+    seen_routes: set[str] = set()
+    seen_sources: set[str] = set()
+    seen_payloads: set[str] = set()
+    seen_states: dict[str, set[str]] = {}
+    data_by_class: dict[str, tuple[str, Path]] = {}
+    total_bytes = 0
+    asset_dir = EXPECTED_V3_MAP_RELATIVE.rsplit("/", 1)[0] + "/assets/"
+    source_files_by_class = {
+        row.get("class"): row for row in audit.get("source16_old_data_files", []) if isinstance(row, dict)
+    }
+    for index, entry in enumerate(entries):
+        if not isinstance(entry, dict):
+            raise _fail(f"v3 image entry {index} is not an object")
+        mapping_id = entry.get("mapping_id")
+        candidate = candidate_by_id.get(mapping_id)
+        prep_candidate = preparation_by_id.get(mapping_id)
+        if candidate is None or prep_candidate is None:
+            raise _fail(f"v3 entry lacks its exact semantic or preparation binding: {mapping_id!r}")
+        route, repo_path, class_name = _validate_v3_entry_semantics(
+            entry, candidate, prep_candidate, accepted_by_route.get(entry.get("route"), {})
+        )
+        if route in seen_routes or route in base_routes:
+            raise _fail(f"duplicate v3 target route or collision with v2 bundle: {route}")
+        if repo_path in seen_sources or repo_path in base_source_paths:
+            raise _fail(f"duplicate v3 source path or collision with v2 bundle: {repo_path}")
+        seen_routes.add(route)
+        seen_sources.add(repo_path)
+        seen_states.setdefault(str(mapping_id), set()).add(str(entry["state"]))
+        payload_path = _normal_relative(entry.get("payload_path"), f"v3 payload for {route}")
+        if not payload_path.startswith(asset_dir) or payload_path in seen_payloads:
+            raise _fail(f"v3 payload is outside the pinned asset directory or is duplicated: {route}")
+        seen_payloads.add(payload_path)
+        payload_file = _resolve_workspace_file(root, payload_path, f"v3 payload for {route}")
+        data, _ = _read_hash_checked(payload_file, entry.get("sha256"), f"v3 payload for {route}")
+        length = entry.get("length")
+        if isinstance(length, bool) or not isinstance(length, int) or length <= 0 or len(data) != length:
+            raise _fail(f"v3 payload length mismatch: {route}")
+        if _sha1_git_blob(data) != entry.get("git_blob_sha1"):
+            raise _fail(f"v3 payload Git blob SHA mismatch: {route}")
+        _validate_image(data, entry, route)
+        total_bytes += len(data)
+
+        old_target = candidate["old_2008_target"]
+        source_file = source_files_by_class.get(class_name)
+        if not isinstance(source_file, dict) or source_file.get("source_sha256") != entry.get("old_source_data_sha256"):
+            raise _fail(f"v3 raw Source16 data digest is not bound to audit for {class_name}")
+        v55_data_file = root / EXPECTED_V3_V55_EXPORT_RELATIVE / old_target["data_route"].lstrip("/")
+        derived_data, _ = _read_hash_checked(
+            _resolve_workspace_file(root, v55_data_file.relative_to(root).as_posix(), f"v3 v55 derived data for {class_name}"),
+            entry.get("old_data_sha256"),
+            f"v3 derived v55 data for {class_name}",
+        )
+        if class_name not in data_by_class:
+            source16_path = source_file.get("derived_site_path")
+            source16_file = _resolve_workspace_file(root, source16_path, f"v3 Source16 data for {class_name}")
+            source16_data, _ = _read_hash_checked(source16_file, entry.get("old_source_data_sha256"), f"v3 raw Source16 data for {class_name}")
+            source_lines = source16_data.splitlines()
+            derived_lines = derived_data.splitlines()
+            if len(source_lines) != len(derived_lines):
+                raise _fail(f"v3 Source16/v55 data line count changed for {class_name}")
+            changed_lines = [i for i, (before, after) in enumerate(zip(source_lines, derived_lines), 1) if before != after]
+            if changed_lines != [5]:
+                raise _fail(f"v3 v55 derived data changed lines other than the pinned talentPath line for {class_name}")
+            data_by_class[class_name] = (entry["old_data_sha256"], v55_data_file)
+        elif data_by_class[class_name][0] != entry.get("old_data_sha256"):
+            raise _fail(f"v3 entries disagree on derived v55 data digest for {class_name}")
+        del derived_data
+
+    if set(seen_states) != set(EXPECTED_V3_SELECTED_IDS) or any(states != {"on", "off"} for states in seen_states.values()):
+        raise _fail("v3 entries do not provide exactly on/off state images for all nine selected talents")
+    if total_bytes != EXPECTED_V3_MAPPED_SOURCE_BYTES:
+        raise _fail(f"v3 image payload total is {total_bytes}, expected {EXPECTED_V3_MAPPED_SOURCE_BYTES}")
+    return (
+        map_data, decision, root_acceptance, acceptance, audit, source_preparation,
+        map_sha, decision_sha, acceptance_sha, audit_sha, root_acceptance_sha,
+    )
+
+
+def _load_v3_related_talent_bundle(
+    map_file: Path,
+    workspace_root: Path,
+    normalized_base: str,
+) -> RelatedTalentBundle:
+    (
+        map_data, decision, root_acceptance, _acceptance, _audit, _preparation,
+        map_sha, decision_sha, acceptance_sha, audit_sha, root_acceptance_sha,
+    ) = _validate_v3_bindings(map_file, workspace_root)
+    root = workspace_root.resolve()
+    base_map_path = _resolve_workspace_file(root, map_data["base_map"], "v3 base v55 map")
+    base_bundle = _load_v2_related_talent_bundle(base_map_path, root, normalized_base)
+    if base_bundle.map_sha256 != EXPECTED_V2_MAP_SHA256 or len(base_bundle.assets) != EXPECTED_V3_BASE_ICON_COUNT:
+        raise _fail("loaded v3 base bundle is not the accepted 1,006-icon v55 bundle")
+
+    routes = {asset.route for asset in base_bundle.assets}
+    relatives = {asset.relative for asset in base_bundle.assets}
+    per_class_counts = dict(base_bundle.per_class_counts)
+    mapped_assets: list[RelatedTalentAsset] = []
+    source_bytes = 0
+    source = map_data["source"]
+    source_refs_base = (
+        str(source["repository_url"]),
+        f"commit:{source['commit_sha']}",
+        f"tree:{source['tree_sha']}",
+    )
+    for entry in map_data["entries"]:
+        route = str(entry["route"])
+        relative = route[1:]
+        if route in routes or relative in relatives:
+            raise _fail(f"v3 target route collides with existing v2 icon: {route}")
+        payload_file = _resolve_workspace_file(root, entry["payload_path"], f"v3 payload {route}")
+        data = payload_file.read_bytes()
+        if len(data) != entry["length"]:
+            raise _fail(f"{route} length mismatch: expected {entry['length']}, got {len(data)}")
+        actual_sha = _sha256(data)
+        if actual_sha != entry["sha256"]:
+            raise _fail(f"{route} SHA mismatch: expected {entry['sha256']}, got {actual_sha}")
+        actual_blob = _sha1_git_blob(data)
+        if actual_blob != entry["git_blob_sha1"]:
+            raise _fail(f"{route} Git blob SHA mismatch: expected {entry['git_blob_sha1']}, got {actual_blob}")
+        width, height, frames = _validate_image(data, entry, route)
+        source_repository_path = entry["repository_path"]
+        source_image_url = (
+            f"https://raw.githubusercontent.com/CraftedRO/Offline-talent-calculator-for-WotLK-3.3.5a/"
+            f"{EXPECTED_COMMIT_SHA}/{source_repository_path}"
+        )
+        metadata = {
+            "sha256": actual_sha,
+            "length": len(data),
+            "git_blob_sha1": actual_blob,
+            "width": width,
+            "height": height,
+            "frames": frames,
+            "format": "JPEG",
+            "classification": EXPECTED_CLASSIFICATION,
+            "original_capture_timestamp": None,
+            "original_2008_pixel_identity": "unknown",
+            "mapping_id": entry["mapping_id"],
+            "source_repository_path": source_repository_path,
+            "source_image_url": source_image_url,
+            "mapping_reason": entry["mapping_reason"],
+            "class": entry["class"],
+            "talent": entry["talent"],
+            "state": entry["state"],
+            "old_data_route": entry["old_data_route"],
+            "old_data_sha256": entry["old_data_sha256"],
+            "old_source_data_sha256": entry["old_source_data_sha256"],
+            "old_data_talent_lines": entry["old_data_talent_lines"],
+            "later_data_repository_path": entry["later_data_repository_path"],
+            "later_data_sha256": entry["later_data_sha256"],
+            "later_data_talent_lines": entry["later_data_talent_lines"],
+        }
+        mapped_assets.append(
+            RelatedTalentAsset(
+                route=route,
+                relative=relative,
+                data=data,
+                mime="image/jpeg",
+                source_refs=source_refs_base + (
+                    f"path:{source_repository_path}",
+                    f"mapping:{entry['mapping_id']}",
+                    f"reason:{entry['mapping_reason']}",
+                    f"old-source-data-sha256:{entry['old_source_data_sha256']}",
+                    f"old-derived-data-sha256:{entry['old_data_sha256']}",
+                ),
+                metadata=metadata,
+            )
+        )
+        routes.add(route)
+        relatives.add(relative)
+        per_class_counts[entry["class"]] += 1
+        source_bytes += len(data)
+    assets = list(base_bundle.assets) + mapped_assets
+    if len(mapped_assets) != EXPECTED_V3_MAPPED_ICON_COUNT or source_bytes != EXPECTED_V3_MAPPED_SOURCE_BYTES:
+        raise _fail("loaded v3 assets do not match the accepted count/byte aggregate")
+    if len(assets) != EXPECTED_V3_ICON_COUNT:
+        raise _fail("combined v3 bundle does not contain exactly 1,024 assets")
+
+    source_metadata = dict(base_bundle.source_metadata)
+    source_metadata.update(
+        {
+            "icon_count": len(assets),
+            "ordinary_icon_count": EXPECTED_ICON_COUNT,
+            "base_icon_count": EXPECTED_ICON_COUNT,
+            "mapped_icon_count": EXPECTED_V2_MAPPED_ICON_COUNT + EXPECTED_V3_MAPPED_ICON_COUNT,
+            "v2_mapped_icon_count": EXPECTED_V2_MAPPED_ICON_COUNT,
+            "v3_mapped_icon_count": EXPECTED_V3_MAPPED_ICON_COUNT,
+            "source_bytes": EXPECTED_V3_TOTAL_SOURCE_BYTES,
+            "mapped_source_bytes": EXPECTED_V2_MAPPED_SOURCE_BYTES + source_bytes,
+            "v2_mapped_source_bytes": EXPECTED_V2_MAPPED_SOURCE_BYTES,
+            "v3_mapped_source_bytes": source_bytes,
+            "class_mapping_deltas": dict(EXPECTED_V3_CLASS_DELTAS),
+            "map_sha256": map_sha,
+            "decision_sha256": decision_sha,
+            "base_map_sha256": EXPECTED_V3_BASE_MAP_SHA256,
+            "v55_map_sha256": EXPECTED_V2_MAP_SHA256,
+            "semantic_audit_sha256": audit_sha,
+            "source_preparation_sha256": EXPECTED_V3_PREPARATION_SHA256,
+            "root_source_acceptance_sha256": root_acceptance_sha,
+            "v56_selected_canonical_ids": list(EXPECTED_V3_SELECTED_IDS),
+        }
+    )
+    catalog_bytes = _make_v2_catalog(
+        base_path=normalized_base,
+        assets=assets,
+        source_metadata=source_metadata,
+        per_class_counts=per_class_counts,
+        notice_html=base_bundle.notice_html,
+    )
+    return RelatedTalentBundle(
+        assets=tuple(assets),
+        catalog_relative=base_bundle.catalog_relative,
+        catalog_bytes=catalog_bytes,
+        estimated_bytes=EXPECTED_V3_TOTAL_SOURCE_BYTES + len(catalog_bytes),
+        source_metadata=source_metadata,
+        per_class_counts=per_class_counts,
+        notice_html=base_bundle.notice_html,
+        map_sha256=map_sha,
+        decision_sha256=decision_sha,
+        source_acceptance_sha256=acceptance_sha,
+    )
+
+
 def load_related_talent_bundle(
     map_path: str | os.PathLike[str],
     workspace_root: str | os.PathLike[str],
     base_path: str,
 ) -> RelatedTalentBundle:
-    """Load the pinned v1 bundle or the explicit v2 same-class extension."""
+    """Load a pinned v1 bundle or one of its explicit same-class extensions."""
 
     root = Path(workspace_root).resolve()
     if not root.is_dir():
@@ -1143,9 +1757,12 @@ def load_related_talent_bundle(
     except (OSError, UnicodeError, json.JSONDecodeError):
         # Preserve v1's established diagnostics for malformed/unreadable maps.
         return _load_v1_related_talent_bundle(map_file, root, base_path)
-    if isinstance(map_header, dict) and map_header.get("schema") == EXPECTED_V2_MAP_SCHEMA:
+    if isinstance(map_header, dict):
         normalized_base = _normalize_base_path(base_path)
-        return _load_v2_related_talent_bundle(map_file, root, normalized_base)
+        if map_header.get("schema") == EXPECTED_V3_MAP_SCHEMA:
+            return _load_v3_related_talent_bundle(map_file, root, normalized_base)
+        if map_header.get("schema") == EXPECTED_V2_MAP_SCHEMA:
+            return _load_v2_related_talent_bundle(map_file, root, normalized_base)
     return _load_v1_related_talent_bundle(map_file, root, base_path)
 
 

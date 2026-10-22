@@ -1,0 +1,2044 @@
+{
+  "schema": "wow-v56-local-paint-attribution/v1",
+  "evidence": {
+    "capture_record": "comparison.json",
+    "capture_record_sha256": "d55bc927fb552318852ad550f81259e9f1f57e7b721773e5ca86641de24a2e34",
+    "capture_script": "capture.cjs",
+    "capture_script_sha256": "433d4c418ecc89918f376271eaf2ddb28a1e5f938d61f89facb1ad1280ede305",
+    "chrome": "C:/Program Files/Google/Chrome/Application/chrome.exe",
+    "launch_mode": "headless Chrome, one fresh process per page, default GPU settings",
+    "viewport": [
+      1480,
+      1250
+    ],
+    "wait": "networkidle + document.fonts.ready + 2 RAF + 1500ms",
+    "routing": "same-origin loopback only; all off-origin HTTP(S) aborted; no fulfill/substitution",
+    "documents_all_200": true,
+    "page_errors": [],
+    "external_requests_aborted": [],
+    "capture_count": 4
+  },
+  "corrected_target_match": {
+    "method": "For actual image URLs strip /WOW-Encyclopedia-Deployable-Archive from pathname; for missing-image.svg use and normalize the requested query path.",
+    "reason": "The original comparison targetImages filter did not strip the project prefix, so its empty target list and passed=false are a local matcher/reporting defect, not a website failure. comparison.json is preserved unchanged."
+  },
+  "visual_findings": [
+    "On the same saved Thunder Clap URL, the default-GPU v56 capture shows broad black/blank areas within the talent-tree panels that are not comparably present in the v55 capture. v55 has red-X placeholders for its uncollected dynamic target asset; this is an expected v55 coverage difference, not a paint regression.",
+    "For the saved Slam URL, the black areas between talent cells are also visible in v55 and v56; the side-by-side captures do not isolate a new large black region in v56 beyond expected v55 missing-image placeholders and v56 added assets.",
+    "Across the four fixed hit-test points, the top stacks are ordinary image elements/wrappers or talent labels and TD/TABLE containers. Their computed visibility is visible and opacity is 1; no full-size overlay or high-z-index masking layer appears in the sampled stacks. This is limited to the sampled points and does not exclude an unsampled overlay.",
+    "The v56 target talent artwork loads as complete 36x36 images at the saved routes. In v55 those same newly covered routes resolve to the dynamic-image-uncollected missing-image fallback (intrinsic 16x16) as expected from v55 asset coverage.",
+    "Parent-provided context: a separate local --disable-gpu recheck partially improves the black-area symptom but does not remove all blank areas. This four-page comparison did not change GPU settings."
+  ],
+  "checks": [
+    {
+      "version": "v55",
+      "mapping_id": "warrior-improved-thunder-clap",
+      "page_url": "http://127.0.0.1:24785/WOW-Encyclopedia-Deployable-Archive/info/classes/warrior/talents.html?320001000000000000000000000000000000000000000000000000000000000000",
+      "saved_query": "320001000000000000000000000000000000000000000000000000000000000000",
+      "target_route": "/shared/global/talents/warrior/images/arms/improvedthunderclap.jpg",
+      "document_status": 200,
+      "captured_utc": "2026-10-22T12:54:08.094Z",
+      "screenshot": "research/continuous-recovery-20261022/integration/v56-local-paint-comparison/v55-warrior-improved-thunder-clap.png",
+      "screenshot_sha256": "3efcb575ee07c874a83f8664ae03fa5333235cd9c389ededf1c1308cf5fffc0a",
+      "image_summary": {
+        "count": 472,
+        "visible": 261,
+        "hidden": 211,
+        "complete_with_zero_natural_width": 0
+      },
+      "target_images": [
+        {
+          "requested_route": "/shared/global/talents/warrior/images/arms/improvedthunderclap.jpg",
+          "served_path": "/__offline/missing-image.svg",
+          "source_kind": "missing_image_fallback",
+          "fallback_reason": "dynamic-image-uncollected",
+          "complete": true,
+          "natural_size": [
+            16,
+            16
+          ],
+          "visible": true,
+          "computed_style": {
+            "display": "inline",
+            "visibility": "visible",
+            "opacity": "1",
+            "position": "static",
+            "zIndex": "auto",
+            "width": "43px",
+            "height": "45px",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "border": "0px solid rgb(0, 0, 0)",
+            "filter": "none",
+            "transform": "none",
+            "mixBlendMode": "normal"
+          },
+          "rect": {
+            "x": 442.5,
+            "y": 320.796875,
+            "width": 43,
+            "height": 45,
+            "right": 485.5,
+            "bottom": 365.796875
+          }
+        },
+        {
+          "requested_route": "/shared/global/talents/warrior/images/arms/improvedthunderclap-off.jpg",
+          "served_path": "/__offline/missing-image.svg",
+          "source_kind": "missing_image_fallback",
+          "fallback_reason": "dynamic-image-uncollected",
+          "complete": true,
+          "natural_size": [
+            16,
+            16
+          ],
+          "visible": true,
+          "computed_style": {
+            "display": "inline",
+            "visibility": "visible",
+            "opacity": "1",
+            "position": "static",
+            "zIndex": "auto",
+            "width": "43px",
+            "height": "45px",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "border": "0px solid rgb(0, 0, 0)",
+            "filter": "none",
+            "transform": "none",
+            "mixBlendMode": "normal"
+          },
+          "rect": {
+            "x": 442.5,
+            "y": 320.796875,
+            "width": 43,
+            "height": 45,
+            "right": 485.5,
+            "bottom": 365.796875
+          }
+        }
+      ],
+      "fixed_point_hit_tests": [
+        {
+          "point": [
+            1100,
+            600
+          ],
+          "stack_top_to_bottom": [
+            {
+              "tag": "IMG",
+              "className": "",
+              "src_path": "/shared/wow-com/images/layout/pixel.gif",
+              "computed": {
+                "display": "inline",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "50px",
+                "height": "50px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px solid rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "DIV",
+              "className": "",
+              "src_path": null,
+              "computed": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "absolute",
+                "zIndex": "auto",
+                "width": "50px",
+                "height": "50px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "IMG",
+              "className": "",
+              "src_path": "/__offline/related-talent-ui/icon-over-grey.png",
+              "computed": {
+                "display": "inline",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "52px",
+                "height": "48px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px solid rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "DIV",
+              "className": "",
+              "src_path": null,
+              "computed": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "absolute",
+                "zIndex": "auto",
+                "width": "52px",
+                "height": "48px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "TD",
+              "className": "tdPaddingTen",
+              "src_path": null,
+              "computed": {
+                "display": "table-cell",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "43px",
+                "height": "45px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            }
+          ]
+        },
+        {
+          "point": [
+            700,
+            650
+          ],
+          "stack_top_to_bottom": [
+            {
+              "tag": "IMG",
+              "className": "",
+              "src_path": "/shared/wow-com/images/layout/pixel.gif",
+              "computed": {
+                "display": "inline",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "50px",
+                "height": "50px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px solid rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "DIV",
+              "className": "",
+              "src_path": null,
+              "computed": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "absolute",
+                "zIndex": "auto",
+                "width": "50px",
+                "height": "50px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "IMG",
+              "className": "",
+              "src_path": "/__offline/related-talent-ui/icon-over-grey.png",
+              "computed": {
+                "display": "inline",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "52px",
+                "height": "48px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px solid rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "DIV",
+              "className": "",
+              "src_path": null,
+              "computed": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "absolute",
+                "zIndex": "auto",
+                "width": "52px",
+                "height": "48px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "IMG",
+              "className": "",
+              "src_path": "/shared/global/talents/warrior/images/fury/bloodthirst-off.jpg",
+              "computed": {
+                "display": "inline",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "43px",
+                "height": "45px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px solid rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            }
+          ]
+        },
+        {
+          "point": [
+            400,
+            780
+          ],
+          "stack_top_to_bottom": [
+            {
+              "tag": "IMG",
+              "className": "",
+              "src_path": "/shared/wow-com/images/layout/pixel.gif",
+              "computed": {
+                "display": "inline",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "50px",
+                "height": "50px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px solid rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "DIV",
+              "className": "",
+              "src_path": null,
+              "computed": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "absolute",
+                "zIndex": "auto",
+                "width": "50px",
+                "height": "50px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "IMG",
+              "className": "",
+              "src_path": "/__offline/related-talent-ui/icon-over-grey.png",
+              "computed": {
+                "display": "inline",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "52px",
+                "height": "48px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px solid rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "DIV",
+              "className": "",
+              "src_path": null,
+              "computed": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "absolute",
+                "zIndex": "auto",
+                "width": "52px",
+                "height": "48px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "IMG",
+              "className": "",
+              "src_path": "/shared/global/talents/warrior/images/arms/endlessrage-off.jpg",
+              "computed": {
+                "display": "inline",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "43px",
+                "height": "45px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px solid rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            }
+          ]
+        },
+        {
+          "point": [
+            1100,
+            850
+          ],
+          "stack_top_to_bottom": [
+            {
+              "tag": "DIV",
+              "className": "talenttreename",
+              "src_path": null,
+              "computed": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "relative",
+                "zIndex": "auto",
+                "width": "212px",
+                "height": "27px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "TD",
+              "className": "tablebotbot",
+              "src_path": null,
+              "computed": {
+                "display": "table-cell",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "212px",
+                "height": "40px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "TABLE",
+              "className": "",
+              "src_path": null,
+              "computed": {
+                "display": "table",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "272px",
+                "height": "40px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "TD",
+              "className": "tablebot",
+              "src_path": null,
+              "computed": {
+                "display": "table-cell",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "272px",
+                "height": "40px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "TABLE",
+              "className": "",
+              "src_path": null,
+              "computed": {
+                "display": "table",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "305px",
+                "height": "638px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "version": "v56",
+      "mapping_id": "warrior-improved-thunder-clap",
+      "page_url": "http://127.0.0.1:24786/WOW-Encyclopedia-Deployable-Archive/info/classes/warrior/talents.html?320001000000000000000000000000000000000000000000000000000000000000",
+      "saved_query": "320001000000000000000000000000000000000000000000000000000000000000",
+      "target_route": "/shared/global/talents/warrior/images/arms/improvedthunderclap.jpg",
+      "document_status": 200,
+      "captured_utc": "2026-10-22T12:54:12.544Z",
+      "screenshot": "research/continuous-recovery-20261022/integration/v56-local-paint-comparison/v56-warrior-improved-thunder-clap.png",
+      "screenshot_sha256": "574802288fea707cc7daa91183a61883d0aac20bab076b9a9a56fccd5bae5177",
+      "image_summary": {
+        "count": 472,
+        "visible": 261,
+        "hidden": 211,
+        "complete_with_zero_natural_width": 0
+      },
+      "target_images": [
+        {
+          "requested_route": "/shared/global/talents/warrior/images/arms/improvedthunderclap.jpg",
+          "served_path": "/shared/global/talents/warrior/images/arms/improvedthunderclap.jpg",
+          "source_kind": "requested_asset",
+          "fallback_reason": null,
+          "complete": true,
+          "natural_size": [
+            36,
+            36
+          ],
+          "visible": true,
+          "computed_style": {
+            "display": "inline",
+            "visibility": "visible",
+            "opacity": "1",
+            "position": "static",
+            "zIndex": "auto",
+            "width": "43px",
+            "height": "45px",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "border": "0px solid rgb(0, 0, 0)",
+            "filter": "none",
+            "transform": "none",
+            "mixBlendMode": "normal"
+          },
+          "rect": {
+            "x": 442.5,
+            "y": 320.796875,
+            "width": 43,
+            "height": 45,
+            "right": 485.5,
+            "bottom": 365.796875
+          }
+        },
+        {
+          "requested_route": "/shared/global/talents/warrior/images/arms/improvedthunderclap-off.jpg",
+          "served_path": "/shared/global/talents/warrior/images/arms/improvedthunderclap-off.jpg",
+          "source_kind": "requested_asset",
+          "fallback_reason": null,
+          "complete": true,
+          "natural_size": [
+            36,
+            36
+          ],
+          "visible": true,
+          "computed_style": {
+            "display": "inline",
+            "visibility": "visible",
+            "opacity": "1",
+            "position": "static",
+            "zIndex": "auto",
+            "width": "43px",
+            "height": "45px",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "border": "0px solid rgb(0, 0, 0)",
+            "filter": "none",
+            "transform": "none",
+            "mixBlendMode": "normal"
+          },
+          "rect": {
+            "x": 442.5,
+            "y": 320.796875,
+            "width": 43,
+            "height": 45,
+            "right": 485.5,
+            "bottom": 365.796875
+          }
+        }
+      ],
+      "fixed_point_hit_tests": [
+        {
+          "point": [
+            1100,
+            600
+          ],
+          "stack_top_to_bottom": [
+            {
+              "tag": "IMG",
+              "className": "",
+              "src_path": "/shared/wow-com/images/layout/pixel.gif",
+              "computed": {
+                "display": "inline",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "50px",
+                "height": "50px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px solid rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "DIV",
+              "className": "",
+              "src_path": null,
+              "computed": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "absolute",
+                "zIndex": "auto",
+                "width": "50px",
+                "height": "50px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "IMG",
+              "className": "",
+              "src_path": "/__offline/related-talent-ui/icon-over-grey.png",
+              "computed": {
+                "display": "inline",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "52px",
+                "height": "48px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px solid rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "DIV",
+              "className": "",
+              "src_path": null,
+              "computed": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "absolute",
+                "zIndex": "auto",
+                "width": "52px",
+                "height": "48px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "TD",
+              "className": "tdPaddingTen",
+              "src_path": null,
+              "computed": {
+                "display": "table-cell",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "43px",
+                "height": "45px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            }
+          ]
+        },
+        {
+          "point": [
+            700,
+            650
+          ],
+          "stack_top_to_bottom": [
+            {
+              "tag": "IMG",
+              "className": "",
+              "src_path": "/shared/wow-com/images/layout/pixel.gif",
+              "computed": {
+                "display": "inline",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "50px",
+                "height": "50px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px solid rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "DIV",
+              "className": "",
+              "src_path": null,
+              "computed": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "absolute",
+                "zIndex": "auto",
+                "width": "50px",
+                "height": "50px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "IMG",
+              "className": "",
+              "src_path": "/__offline/related-talent-ui/icon-over-grey.png",
+              "computed": {
+                "display": "inline",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "52px",
+                "height": "48px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px solid rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "DIV",
+              "className": "",
+              "src_path": null,
+              "computed": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "absolute",
+                "zIndex": "auto",
+                "width": "52px",
+                "height": "48px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "IMG",
+              "className": "",
+              "src_path": "/shared/global/talents/warrior/images/fury/bloodthirst-off.jpg",
+              "computed": {
+                "display": "inline",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "43px",
+                "height": "45px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px solid rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            }
+          ]
+        },
+        {
+          "point": [
+            400,
+            780
+          ],
+          "stack_top_to_bottom": [
+            {
+              "tag": "IMG",
+              "className": "",
+              "src_path": "/shared/wow-com/images/layout/pixel.gif",
+              "computed": {
+                "display": "inline",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "50px",
+                "height": "50px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px solid rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "DIV",
+              "className": "",
+              "src_path": null,
+              "computed": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "absolute",
+                "zIndex": "auto",
+                "width": "50px",
+                "height": "50px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "IMG",
+              "className": "",
+              "src_path": "/__offline/related-talent-ui/icon-over-grey.png",
+              "computed": {
+                "display": "inline",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "52px",
+                "height": "48px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px solid rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "DIV",
+              "className": "",
+              "src_path": null,
+              "computed": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "absolute",
+                "zIndex": "auto",
+                "width": "52px",
+                "height": "48px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "IMG",
+              "className": "",
+              "src_path": "/shared/global/talents/warrior/images/arms/endlessrage-off.jpg",
+              "computed": {
+                "display": "inline",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "43px",
+                "height": "45px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px solid rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            }
+          ]
+        },
+        {
+          "point": [
+            1100,
+            850
+          ],
+          "stack_top_to_bottom": [
+            {
+              "tag": "DIV",
+              "className": "talenttreename",
+              "src_path": null,
+              "computed": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "relative",
+                "zIndex": "auto",
+                "width": "212px",
+                "height": "27px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "TD",
+              "className": "tablebotbot",
+              "src_path": null,
+              "computed": {
+                "display": "table-cell",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "212px",
+                "height": "40px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "TABLE",
+              "className": "",
+              "src_path": null,
+              "computed": {
+                "display": "table",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "272px",
+                "height": "40px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "TD",
+              "className": "tablebot",
+              "src_path": null,
+              "computed": {
+                "display": "table-cell",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "272px",
+                "height": "40px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "TABLE",
+              "className": "",
+              "src_path": null,
+              "computed": {
+                "display": "table",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "305px",
+                "height": "638px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "version": "v55",
+      "mapping_id": "warrior-improved-slam",
+      "page_url": "http://127.0.0.1:24785/WOW-Encyclopedia-Deployable-Archive/info/classes/warrior/talents.html?000000000000000000000005555000000010000000000000000000000000000000",
+      "saved_query": "000000000000000000000005555000000010000000000000000000000000000000",
+      "target_route": "/shared/global/talents/warrior/images/fury/improvedslam.jpg",
+      "document_status": 200,
+      "captured_utc": "2026-10-22T12:54:16.998Z",
+      "screenshot": "research/continuous-recovery-20261022/integration/v56-local-paint-comparison/v55-warrior-improved-slam.png",
+      "screenshot_sha256": "90b15c06fcf5e32986477ef042a4277498cd14b6777f59a13fae2015c4644432",
+      "image_summary": {
+        "count": 472,
+        "visible": 268,
+        "hidden": 204,
+        "complete_with_zero_natural_width": 0
+      },
+      "target_images": [
+        {
+          "requested_route": "/shared/global/talents/warrior/images/fury/improvedslam.jpg",
+          "served_path": "/__offline/missing-image.svg",
+          "source_kind": "missing_image_fallback",
+          "fallback_reason": "dynamic-image-uncollected",
+          "complete": true,
+          "natural_size": [
+            16,
+            16
+          ],
+          "visible": true,
+          "computed_style": {
+            "display": "inline",
+            "visibility": "visible",
+            "opacity": "1",
+            "position": "static",
+            "zIndex": "auto",
+            "width": "43px",
+            "height": "45px",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "border": "0px solid rgb(0, 0, 0)",
+            "filter": "none",
+            "transform": "none",
+            "mixBlendMode": "normal"
+          },
+          "rect": {
+            "x": 621.5,
+            "y": 515.796875,
+            "width": 43,
+            "height": 45,
+            "right": 664.5,
+            "bottom": 560.796875
+          }
+        },
+        {
+          "requested_route": "/shared/global/talents/warrior/images/fury/improvedslam-off.jpg",
+          "served_path": "/__offline/missing-image.svg",
+          "source_kind": "missing_image_fallback",
+          "fallback_reason": "dynamic-image-uncollected",
+          "complete": true,
+          "natural_size": [
+            16,
+            16
+          ],
+          "visible": true,
+          "computed_style": {
+            "display": "inline",
+            "visibility": "visible",
+            "opacity": "1",
+            "position": "static",
+            "zIndex": "auto",
+            "width": "43px",
+            "height": "45px",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "border": "0px solid rgb(0, 0, 0)",
+            "filter": "none",
+            "transform": "none",
+            "mixBlendMode": "normal"
+          },
+          "rect": {
+            "x": 621.5,
+            "y": 515.796875,
+            "width": 43,
+            "height": 45,
+            "right": 664.5,
+            "bottom": 560.796875
+          }
+        }
+      ],
+      "fixed_point_hit_tests": [
+        {
+          "point": [
+            1100,
+            600
+          ],
+          "stack_top_to_bottom": [
+            {
+              "tag": "IMG",
+              "className": "",
+              "src_path": "/shared/wow-com/images/layout/pixel.gif",
+              "computed": {
+                "display": "inline",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "50px",
+                "height": "50px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px solid rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "DIV",
+              "className": "",
+              "src_path": null,
+              "computed": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "absolute",
+                "zIndex": "auto",
+                "width": "50px",
+                "height": "50px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "IMG",
+              "className": "",
+              "src_path": "/__offline/related-talent-ui/icon-over-grey.png",
+              "computed": {
+                "display": "inline",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "52px",
+                "height": "48px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px solid rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "DIV",
+              "className": "",
+              "src_path": null,
+              "computed": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "absolute",
+                "zIndex": "auto",
+                "width": "52px",
+                "height": "48px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "TD",
+              "className": "tdPaddingTen",
+              "src_path": null,
+              "computed": {
+                "display": "table-cell",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "43px",
+                "height": "45px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            }
+          ]
+        },
+        {
+          "point": [
+            700,
+            650
+          ],
+          "stack_top_to_bottom": [
+            {
+              "tag": "IMG",
+              "className": "",
+              "src_path": "/shared/wow-com/images/layout/pixel.gif",
+              "computed": {
+                "display": "inline",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "50px",
+                "height": "50px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px solid rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "DIV",
+              "className": "",
+              "src_path": null,
+              "computed": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "absolute",
+                "zIndex": "auto",
+                "width": "50px",
+                "height": "50px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "IMG",
+              "className": "",
+              "src_path": "/__offline/related-talent-ui/icon-over-grey.png",
+              "computed": {
+                "display": "inline",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "52px",
+                "height": "48px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px solid rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "DIV",
+              "className": "",
+              "src_path": null,
+              "computed": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "absolute",
+                "zIndex": "auto",
+                "width": "52px",
+                "height": "48px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "IMG",
+              "className": "",
+              "src_path": "/shared/global/talents/warrior/images/fury/bloodthirst-off.jpg",
+              "computed": {
+                "display": "inline",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "43px",
+                "height": "45px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px solid rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            }
+          ]
+        },
+        {
+          "point": [
+            400,
+            780
+          ],
+          "stack_top_to_bottom": [
+            {
+              "tag": "IMG",
+              "className": "",
+              "src_path": "/shared/wow-com/images/layout/pixel.gif",
+              "computed": {
+                "display": "inline",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "50px",
+                "height": "50px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px solid rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "DIV",
+              "className": "",
+              "src_path": null,
+              "computed": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "absolute",
+                "zIndex": "auto",
+                "width": "50px",
+                "height": "50px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "IMG",
+              "className": "",
+              "src_path": "/__offline/related-talent-ui/icon-over-grey.png",
+              "computed": {
+                "display": "inline",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "52px",
+                "height": "48px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px solid rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "DIV",
+              "className": "",
+              "src_path": null,
+              "computed": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "absolute",
+                "zIndex": "auto",
+                "width": "52px",
+                "height": "48px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "IMG",
+              "className": "",
+              "src_path": "/shared/global/talents/warrior/images/arms/endlessrage-off.jpg",
+              "computed": {
+                "display": "inline",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "43px",
+                "height": "45px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px solid rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            }
+          ]
+        },
+        {
+          "point": [
+            1100,
+            850
+          ],
+          "stack_top_to_bottom": [
+            {
+              "tag": "DIV",
+              "className": "talenttreename",
+              "src_path": null,
+              "computed": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "relative",
+                "zIndex": "auto",
+                "width": "212px",
+                "height": "27px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "TD",
+              "className": "tablebotbot",
+              "src_path": null,
+              "computed": {
+                "display": "table-cell",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "212px",
+                "height": "40px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "TABLE",
+              "className": "",
+              "src_path": null,
+              "computed": {
+                "display": "table",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "272px",
+                "height": "40px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "TD",
+              "className": "tablebot",
+              "src_path": null,
+              "computed": {
+                "display": "table-cell",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "272px",
+                "height": "40px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "TABLE",
+              "className": "",
+              "src_path": null,
+              "computed": {
+                "display": "table",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "305px",
+                "height": "638px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "version": "v56",
+      "mapping_id": "warrior-improved-slam",
+      "page_url": "http://127.0.0.1:24786/WOW-Encyclopedia-Deployable-Archive/info/classes/warrior/talents.html?000000000000000000000005555000000010000000000000000000000000000000",
+      "saved_query": "000000000000000000000005555000000010000000000000000000000000000000",
+      "target_route": "/shared/global/talents/warrior/images/fury/improvedslam.jpg",
+      "document_status": 200,
+      "captured_utc": "2026-10-22T12:54:21.516Z",
+      "screenshot": "research/continuous-recovery-20261022/integration/v56-local-paint-comparison/v56-warrior-improved-slam.png",
+      "screenshot_sha256": "069e36bb5c81fbdeb0f5757c0d2d67439867761367691b9a03c22857aede45a9",
+      "image_summary": {
+        "count": 472,
+        "visible": 268,
+        "hidden": 204,
+        "complete_with_zero_natural_width": 0
+      },
+      "target_images": [
+        {
+          "requested_route": "/shared/global/talents/warrior/images/fury/improvedslam.jpg",
+          "served_path": "/shared/global/talents/warrior/images/fury/improvedslam.jpg",
+          "source_kind": "requested_asset",
+          "fallback_reason": null,
+          "complete": true,
+          "natural_size": [
+            36,
+            36
+          ],
+          "visible": true,
+          "computed_style": {
+            "display": "inline",
+            "visibility": "visible",
+            "opacity": "1",
+            "position": "static",
+            "zIndex": "auto",
+            "width": "43px",
+            "height": "45px",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "border": "0px solid rgb(0, 0, 0)",
+            "filter": "none",
+            "transform": "none",
+            "mixBlendMode": "normal"
+          },
+          "rect": {
+            "x": 621.5,
+            "y": 515.796875,
+            "width": 43,
+            "height": 45,
+            "right": 664.5,
+            "bottom": 560.796875
+          }
+        },
+        {
+          "requested_route": "/shared/global/talents/warrior/images/fury/improvedslam-off.jpg",
+          "served_path": "/shared/global/talents/warrior/images/fury/improvedslam-off.jpg",
+          "source_kind": "requested_asset",
+          "fallback_reason": null,
+          "complete": true,
+          "natural_size": [
+            36,
+            36
+          ],
+          "visible": true,
+          "computed_style": {
+            "display": "inline",
+            "visibility": "visible",
+            "opacity": "1",
+            "position": "static",
+            "zIndex": "auto",
+            "width": "43px",
+            "height": "45px",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "border": "0px solid rgb(0, 0, 0)",
+            "filter": "none",
+            "transform": "none",
+            "mixBlendMode": "normal"
+          },
+          "rect": {
+            "x": 621.5,
+            "y": 515.796875,
+            "width": 43,
+            "height": 45,
+            "right": 664.5,
+            "bottom": 560.796875
+          }
+        }
+      ],
+      "fixed_point_hit_tests": [
+        {
+          "point": [
+            1100,
+            600
+          ],
+          "stack_top_to_bottom": [
+            {
+              "tag": "IMG",
+              "className": "",
+              "src_path": "/shared/wow-com/images/layout/pixel.gif",
+              "computed": {
+                "display": "inline",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "50px",
+                "height": "50px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px solid rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "DIV",
+              "className": "",
+              "src_path": null,
+              "computed": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "absolute",
+                "zIndex": "auto",
+                "width": "50px",
+                "height": "50px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "IMG",
+              "className": "",
+              "src_path": "/__offline/related-talent-ui/icon-over-grey.png",
+              "computed": {
+                "display": "inline",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "52px",
+                "height": "48px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px solid rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "DIV",
+              "className": "",
+              "src_path": null,
+              "computed": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "absolute",
+                "zIndex": "auto",
+                "width": "52px",
+                "height": "48px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "TD",
+              "className": "tdPaddingTen",
+              "src_path": null,
+              "computed": {
+                "display": "table-cell",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "43px",
+                "height": "45px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            }
+          ]
+        },
+        {
+          "point": [
+            700,
+            650
+          ],
+          "stack_top_to_bottom": [
+            {
+              "tag": "IMG",
+              "className": "",
+              "src_path": "/shared/wow-com/images/layout/pixel.gif",
+              "computed": {
+                "display": "inline",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "50px",
+                "height": "50px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px solid rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "DIV",
+              "className": "",
+              "src_path": null,
+              "computed": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "absolute",
+                "zIndex": "auto",
+                "width": "50px",
+                "height": "50px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "IMG",
+              "className": "",
+              "src_path": "/__offline/related-talent-ui/icon-over-grey.png",
+              "computed": {
+                "display": "inline",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "52px",
+                "height": "48px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px solid rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "DIV",
+              "className": "",
+              "src_path": null,
+              "computed": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "absolute",
+                "zIndex": "auto",
+                "width": "52px",
+                "height": "48px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "IMG",
+              "className": "",
+              "src_path": "/shared/global/talents/warrior/images/fury/bloodthirst-off.jpg",
+              "computed": {
+                "display": "inline",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "43px",
+                "height": "45px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px solid rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            }
+          ]
+        },
+        {
+          "point": [
+            400,
+            780
+          ],
+          "stack_top_to_bottom": [
+            {
+              "tag": "IMG",
+              "className": "",
+              "src_path": "/shared/wow-com/images/layout/pixel.gif",
+              "computed": {
+                "display": "inline",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "50px",
+                "height": "50px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px solid rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "DIV",
+              "className": "",
+              "src_path": null,
+              "computed": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "absolute",
+                "zIndex": "auto",
+                "width": "50px",
+                "height": "50px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "IMG",
+              "className": "",
+              "src_path": "/__offline/related-talent-ui/icon-over-grey.png",
+              "computed": {
+                "display": "inline",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "52px",
+                "height": "48px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px solid rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "DIV",
+              "className": "",
+              "src_path": null,
+              "computed": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "absolute",
+                "zIndex": "auto",
+                "width": "52px",
+                "height": "48px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "IMG",
+              "className": "",
+              "src_path": "/shared/global/talents/warrior/images/arms/endlessrage-off.jpg",
+              "computed": {
+                "display": "inline",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "43px",
+                "height": "45px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px solid rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            }
+          ]
+        },
+        {
+          "point": [
+            1100,
+            850
+          ],
+          "stack_top_to_bottom": [
+            {
+              "tag": "DIV",
+              "className": "talenttreename",
+              "src_path": null,
+              "computed": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "relative",
+                "zIndex": "auto",
+                "width": "212px",
+                "height": "27px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "TD",
+              "className": "tablebotbot",
+              "src_path": null,
+              "computed": {
+                "display": "table-cell",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "212px",
+                "height": "40px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "TABLE",
+              "className": "",
+              "src_path": null,
+              "computed": {
+                "display": "table",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "272px",
+                "height": "40px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "TD",
+              "className": "tablebot",
+              "src_path": null,
+              "computed": {
+                "display": "table-cell",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "272px",
+                "height": "40px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            },
+            {
+              "tag": "TABLE",
+              "className": "",
+              "src_path": null,
+              "computed": {
+                "display": "table",
+                "visibility": "visible",
+                "opacity": "1",
+                "position": "static",
+                "zIndex": "auto",
+                "width": "305px",
+                "height": "638px",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "border": "0px none rgb(0, 0, 0)",
+                "filter": "none",
+                "transform": "none",
+                "mixBlendMode": "normal"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "This is a visual attribution comparison, not a fix.",
+    "Direct saved-URL cold loads only; no click/activation sequence was added.",
+    "The cause of the v56 Thunder Clap paint difference remains unresolved; the evidence does not establish a pure GPU raster bug or a site-level DOM bug.",
+    "No site, global GPU/network settings, or prior harness files were changed."
+  ]
+}

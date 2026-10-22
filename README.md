@@ -13,9 +13,9 @@
 - 将旧登录、奖励、报名和促销入口改为历史展品。
 - 恢复宝石插槽火花、男性矮人舞蹈与海象人模型三处 Flash 展示，修复下载页悬停。
 - 修复九职业天赋计算器的加点、重置和模板保存；提供 BlizzCast 前两期访谈及节目目录的本地阅读页。
-- 补入七份早期专题正文，为天赋页加入 986 张注明后期关联来源的图标。
-- 补齐天赋计算器的状态边框、重置和打印按钮，并恢复点数框布局。
-- 补充百科与指南的四幅配图，页面注明 ArchiveCraft 来源。
+- 补入七份早期专题正文，为天赋页加入 1,006 张注明后期关联来源的图标。
+- 补齐天赋计算器的状态边框、重置和打印按钮、18张连线箭头，并恢复点数框布局；补充部分声望奖励图标。
+- 补充百科、指南与职业专题的五幅配图，页面注明 ArchiveCraft 来源。
 - 恢复奥尔多／占星者说明弹窗与派系切换，修复四页 Wrath 字母图的显示。
 - 修复 Arathi 指南的图片目录，恢复二十张已有预览的显示。
 
@@ -28,7 +28,7 @@
 
 ## 本地使用
 
-安装 Python 3 后，下载 [2026-10-21 离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/download/archive-20080512-browser-20261021-v52/WOW_Encyclopedia_20080512_browser_20261021_v52.zip)（约 546 MB，解压后约 634 MB）。Windows 用户解压后双击 `START_BROWSE.cmd`。
+安装 Python 3 后，下载 [2026-10-22 离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/download/archive-20080512-browser-20261022-v55/WOW_Encyclopedia_20080512_browser_20261022_v55.zip)（约 546 MB，解压后约 634 MB）。Windows 用户解压后双击 `START_BROWSE.cmd`。
 
 macOS / Linux 用户在解压目录运行：
 
@@ -36,7 +36,7 @@ macOS / Linux 用户在解压目录运行：
 python3 tools/serve_pages_preview.py --site site --port 0 --open-browser
 ```
 
-启动后会打开本地浏览页面。在线版为 v53，离线包为 v52。后续进度见[更新记录](CHANGELOG.md)。
+启动后会打开本地浏览页面。在线版与离线包均为 v55。后续进度见[更新记录](CHANGELOG.md)。
 
 ## 参与协作
 

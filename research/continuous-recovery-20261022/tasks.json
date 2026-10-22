@@ -39,19 +39,21 @@
       "id": "RESTORE",
       "owner": "root",
       "goal": "Integrate accepted source-supported assets and compatibility repairs in a new derived version",
-      "state": "v55_local_export_and_browser_accepted",
+      "state": "v56_export_functional_and_visual_accepted",
       "dependencies": [
         "TRACE"
-      ]
+      ],
+      "evidence": "root-v56-browser-acceptance.json"
     },
     {
       "id": "PUBLISH",
       "owner": "root",
       "goal": "Independent source/byte/browser acceptance and permitted normal Git/Pages/processed-package publication",
-      "state": "v55_package_and_pages_preparing",
+      "state": "v55_public_v56_package_checking",
       "dependencies": [
         "RESTORE"
-      ]
+      ],
+      "evidence": "root-v55-online-acceptance.json"
     },
     {
       "id": "CLOSE",
@@ -126,6 +128,16 @@
         "ARROWS-LOCAL"
       ],
       "evidence": "root-v55-browser-acceptance.json"
+    },
+    {
+      "id": "TALENT-MAPPINGS-V56",
+      "owner": "root",
+      "goal": "18 exact canonical same-class later-source on/off images with all existing talent text and rules retained",
+      "state": "accepted",
+      "dependencies": [
+        "TALENT-MAPPINGS-V55"
+      ],
+      "evidence": "root-v56-browser-acceptance.json"
     }
   ]
 }

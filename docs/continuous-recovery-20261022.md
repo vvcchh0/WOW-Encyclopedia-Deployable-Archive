@@ -88,3 +88,23 @@ main的fec1ac13已正常推送；v55的Pages提交365a8eb5也已推送，构建�
 v55离线ZIP为546,401,734字节，解压634,494,251字节，10,193个成员。独立检查后从带空格的新解压目录启动包内服务器，102个页面／资源的GET和HEAD及根路径跳转共205项检查通过；离线包原图未重新编码。包摘要为`a4e6ffcb046f7ca6d5fb822e3dd3246aebeacc3aa761af56dfb4718a81930476`。[包内启动与逐项核对](../research/continuous-recovery-20261022/publication/v55-portable-acceptance.json)
 
 首次包检查在解压入口发现成员列表／索引的接口错误，修正检查助手并增加小ZIP的真实解压与摘要漂移拒绝检查，七项本地检查通过后重新完成生产包验收。归档和站点字节均未变。首次Release准备在本地Git检查超时退出，未创建草稿或触发上传；完整工作区状态检查实测41.8秒，保留完整检查并增加其等待上限后重试。
+
+## 12:31 UTC — v55网页与离线包已发布
+
+Pages构建39773019678成功，69个线上变化文件均已逐体与本地导出核对。第一次核对在九项后误把6.2秒调度余量作为硬限而停止，实际最小间隔仍大于用户要求的5秒；保留该失败批次，独立验收九项后只请求余下60项。后者全部direct 200，未重复先前对象。[线上验收](../research/continuous-recovery-20261022/root-v55-online-acceptance.json)
+
+v55处理后离线包已经[公开发布](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261022-v55)。上传后的三个附件由GitHub摘要与长度核对，并匿名读取NOTICE及校验文件、核对ZIP下载响应长度；完整ZIP的本地解压和包内服务验收沿用上述记录。没有再次匿名下载整个ZIP。[附件核对](../research/continuous-recovery-20261022/publication/v55-public-assets-acceptance.json)
+
+GitHub草稿需要从有权限的Release列表或ID读取；按标签读取只适用于已发布项。上传助手据此增加只恢复本轮所属草稿的薄适配层，没有重建草稿或重复上传。发布已成功后的第一次正文核对还因末尾换行处理不一致退出，随后只读恢复回执，未重复发布。[GitHub接口说明](https://docs.github.com/en/rest/releases/releases#list-releases)
+
+继续对剩余天赋缺图做逐项审查：仅选九个相同职业、相同正式天赋名称的对应，共18张明暗图标；其余效果合并、名称或机制不同的候选暂不接入。原Source16数据与浏览派生数据的摘要分别保存，二者只有既有talentPath路径改写的第五行不同；天赋数值和说明没有变化。v56输入已接受，生产导出与浏览验收尚未完成。[来源审查](../research/continuous-recovery-20261022/integration/related-talent-icons-v56/root-source-acceptance.json)
+
+## 13:23 UTC — v56验收，准备发布
+
+v56增加18张明暗天赋图标，合计1,024张关联天赋图像。10,205个实际文件已逐个核对摘要，较v55只新增18张JPEG并更新四个目录／路由记录；原有数据、脚本逻辑及此前图片均保留。九个天赋的合法加点、原说明与Next Rank、保存链接重载、18张实际图片响应及五职业数据响应检查通过；新增四项真实素材／摘要漂移检查通过。[导出](../research/continuous-recovery-20261022/root-v56-export-acceptance.json) · [浏览](../research/continuous-recovery-20261022/root-v56-browser-acceptance.json)
+
+最后两张无头Chrome截图出现局部绘制缺失，不能只凭网络检查当作视觉通过。对照默认无头、软件渲染和普通Chrome窗口后，普通窗口中不加CSS的Thunder Clap与Slam控制页完整显示，原有保存点数与新增图标可见。两种CSS原型并非原因证据，也没有写入产品。保存这一浏览模式差异，原因尚未确定；本轮没有改全局GPU设置或页面样式。Slam控制报告事后文字误称rank 0/隐藏wrapper，原始DOM记录、截图和保存数字实际为rank 1且wrapper可见，主代理已在浏览验收中明确更正。
+
+本轮累计接入60个关联来源图片文件，其中4个新下载、56个从现有来源包复用；没有新增确认的2008年原图。此前选定的390个非图库目标现接通59个，剩331个，玩家图库缺口另计。映射与取舍整理为[天赋图像来源说明](talent-image-sources-20261022.md)，包括19组显式映射与未选候选。
+
+v56离线ZIP已构建，546,446,950字节、10,211个成员；包内实际启动核对仍在进行。当前公开网页和离线Release仍为v55，v56的main同步、Pages构建、线上22对象和Release分别验收后更新。
