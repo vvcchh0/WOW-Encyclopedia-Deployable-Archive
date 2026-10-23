@@ -15,7 +15,7 @@ Git 主树保存部署文件、工具、这些文档与关键验收；历史记�
 
 - [空间与压缩策略](storage-and-compression.md)：文件测量、压缩分析与离线包。
 - [历史导出去重归档](historical-export-deduplication.md)：57版共享归档、净节省口径、保留范围及核验／恢复命令；含[整理后的验收摘要](evidence/historical-export-deduplication-20261023.json)。
-- [情人节指南截图显示修复](love-guide-preview-repair-20261023.md)：12处已有原图复用、点击路径与独立图库缺口。
+- [情人节指南截图显示修复](love-guide-preview-repair-20261023.md)：12处已有原图复用、点击路径与独立图库缺口；附[v57网页与离线包发布验收](evidence/v57-publication-20261023.json)。
 - [2026-10-22 空间清理](storage-cleanup-20261022.md)：C、D盘占用盘点与当时的历史导出去重估算；已完成的去重结果见上文。
 
 - [GitHub Pages部署与本地补齐](github-pages-deployment.md)：静态派生层、发布分支、验证与新批次边界。

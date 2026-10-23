@@ -1,6 +1,6 @@
 # 情人节指南截图显示修复
 
-2026-10-23，本地 v57 修复了 Love is in the Air 指南页面的12处截图显示及原图链接。在线版和离线包的发布进度见[当天记录](continuous-recovery-20261023.md)。
+2026-10-23，v57 修复了 Love is in the Air 指南页面的12处截图显示及原图链接，已同步发布网页和离线包。[当天记录](continuous-recovery-20261023.md) · [发布验收](evidence/v57-publication-20261023.json)
 
 旧脚本请求 `images/ssN-thumb.jpg`，点击后进入未保存的 `imageviewer.html`。对应的12张 `images/ssN.jpg` 原图此前已经取得，并且已用于页面的 Guide images 区域；缺口在旧截图位置的显示和点击路径。
 
