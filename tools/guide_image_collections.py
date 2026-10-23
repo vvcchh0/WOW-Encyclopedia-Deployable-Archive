@@ -524,3 +524,147 @@ def insert_guide_image_section(text: str, group: GuideImageCollectionGroup, page
         raise GuideImageCollectionError(f"guide image section insertion count is not one: {section_id}")
     return derived
 
+
+LOVE_STORY_SCRIPT_ROUTE = "/shared/wow-com/includes-client/screenshot.js"
+_LOVE_STORY_SCRIPT_MARKER = "__WOW_LOVE_STORY_PREVIEW_FALLBACKS"
+_LOVE_THIN_BORDER_IMAGE = (
+    "document.write('<td><a href = \"/imageviewer.html?'+ path +','+ theDirectory +','+ number +','+ screenshotsTotal +','+ theURL +'\">"
+    "<img src = \"'+ path + theDirectory + 'ss'+ number +'-thumb.jpg\" border = \"0\"></a></td>');"
+)
+_LOVE_THIN_BORDER_CAPTION = (
+    "if (text)\n\t\tdocument.write('<tr><td colspan = 3 align = center><span><a href = \"/imageviewer.html?'+ path +','+ theDirectory +','+ number +','+ screenshotsTotal +','+ theURL +'\">'+ text +'</a></span></td></tr>');"
+)
+
+
+def love_story_preview_fallbacks(
+    bundle: GuideImageCollectionBundle,
+    *,
+    route_to_static: dict[str, str],
+) -> tuple[GuideImageCollectionGroup | None, dict[int, GuideImage]]:
+    """Select accepted Love index originals whose exact thumbnail route is absent."""
+
+    group = next((item for item in bundle.groups if item.group_id == "love-is-in-the-air"), None)
+    if group is None:
+        return None, {}
+    fallbacks: dict[int, GuideImage] = {}
+    for image in group.images:
+        match = re.fullmatch(r"/info/events/loveisintheair/images/ss([1-9]|1[0-2])\.jpg", image.route)
+        if match is None:
+            raise GuideImageCollectionError(f"Love story fallback has an unexpected full-image route: {image.route}")
+        number = int(match.group(1))
+        static_url = route_to_static.get(image.route)
+        if not static_url:
+            continue
+        if static_url != image.static_url:
+            raise GuideImageCollectionError(f"Love full-image static URL differs from accepted bundle: {image.route}")
+        thumbnail_route = image.route[:-4] + "-thumb.jpg"
+        if thumbnail_route not in route_to_static:
+            fallbacks[number] = image
+    return group, fallbacks
+
+
+def rewrite_love_story_preview_script(
+    text: str,
+    *,
+    group: GuideImageCollectionGroup | None,
+    fallbacks: dict[int, GuideImage],
+    base_path: str,
+    page_routes: tuple[str, ...] | list[str] = (),
+) -> tuple[str, bool]:
+    """Adapt only Love index screenshotThinBorder calls with a missing thumb."""
+
+    if not fallbacks or group is None or group.group_id != "love-is-in-the-air":
+        return text, False
+    if _LOVE_STORY_SCRIPT_MARKER in text:
+        return text, False
+
+    allowed_routes = {group.guide_route}
+    allowed_routes.update(_route(route, label="Love screenshot page alias") for route in page_routes)
+    newline = "\r\n" if "\r\n" in text else "\n"
+    routes_json = json.dumps(sorted(allowed_routes), ensure_ascii=True, separators=(",", ":"))
+    fallbacks_json = json.dumps(
+        {str(number): image.static_url for number, image in sorted(fallbacks.items())},
+        ensure_ascii=True,
+        separators=(",", ":"),
+    )
+    base_json = json.dumps(base_path, ensure_ascii=True)
+    helper = (
+        f"var {_LOVE_STORY_SCRIPT_MARKER} = {fallbacks_json};\n"
+        f"var __WOW_LOVE_STORY_PAGE_ROUTES = {routes_json};\n"
+        f"var __WOW_LOVE_STORY_BASE_PATH = {base_json};\n"
+        "function __wowLoveStoryPreview(number) {\n"
+        "  var pathname = String((document.location && document.location.pathname) || '/');\n"
+        "  var prefix = __WOW_LOVE_STORY_BASE_PATH;\n"
+        "  if (prefix !== '/' && pathname.indexOf(prefix) === 0) pathname = pathname.substring(prefix.length - 1);\n"
+        "  if (__WOW_LOVE_STORY_PAGE_ROUTES.indexOf(pathname) < 0) return '';\n"
+        "  if (typeof theDirectory !== 'string' || theDirectory !== 'images/' || typeof screenshotsTotal === 'undefined' || Number(screenshotsTotal) !== 12) return '';\n"
+        "  var n = Number(number);\n"
+        "  if (n < 1 || n > 12 || Math.floor(n) !== n || String(number) !== String(n)) return '';\n"
+        f"  return {_LOVE_STORY_SCRIPT_MARKER}[String(n)] || '';\n"
+        "}\n"
+    ).replace("\n", newline)
+    if text.count("function screenshotThinBorder(number, align, text) {") != 1:
+        raise GuideImageCollectionError("shared screenshot.js has no unique screenshotThinBorder function")
+    function_start = text.index("function screenshotThinBorder(number, align, text) {")
+    function_end = text.find("\nfunction ", function_start + 1)
+    if function_end < 0:
+        function_end = len(text)
+    function_text = text[function_start:function_end]
+    if function_text.count(_LOVE_THIN_BORDER_IMAGE) != 1:
+        raise GuideImageCollectionError("screenshotThinBorder image write is missing or ambiguous")
+    image_replacement = (
+        "var __loveStoryPreview = __wowLoveStoryPreview(number);\n"
+        "\tif (__loveStoryPreview)\n"
+        "\t\tdocument.write('<td><a href = \"'+ __loveStoryPreview +'\"><img src = \"'+ __loveStoryPreview +'\" border = \"0\" style = \"max-width:200px;height:auto;\"></a></td>');\n"
+        "\telse\n\t\t" + _LOVE_THIN_BORDER_IMAGE
+    ).replace("\n", newline)
+    function_text = function_text.replace(_LOVE_THIN_BORDER_IMAGE, image_replacement, 1)
+    caption_source = _LOVE_THIN_BORDER_CAPTION.replace("\n", newline)
+    if function_text.count(caption_source) != 1:
+        raise GuideImageCollectionError("screenshotThinBorder caption write is missing or ambiguous")
+    caption_replacement = (
+        "if (text) {\n"
+        "\t\tif (__loveStoryPreview)\n"
+        "\t\t\tdocument.write('<tr><td colspan = 3 align = center><span><a href = \"'+ __loveStoryPreview +'\">'+ text +'</a></span></td></tr>');\n"
+        "\t\telse\n"
+        "\t\t\tdocument.write('<tr><td colspan = 3 align = center><span><a href = \"/imageviewer.html?'+ path +','+ theDirectory +','+ number +','+ screenshotsTotal +','+ theURL +'\">'+ text +'</a></span></td></tr>');\n"
+        "\t}"
+    ).replace("\n", newline)
+    function_text = function_text.replace(caption_source, caption_replacement, 1)
+    rewritten = text[:function_start] + helper + function_text + text[function_end:]
+    return rewritten, True
+
+
+def love_story_preview_provenance(
+    bundle: GuideImageCollectionBundle,
+    group: GuideImageCollectionGroup,
+    fallbacks: dict[int, GuideImage],
+) -> dict[str, Any]:
+    """Describe display reuse separately from recovered original payloads."""
+
+    return {
+        "schema": "github-pages-love-story-preview-fallbacks/v1",
+        "page_route": group.guide_route,
+        "shared_script_route": LOVE_STORY_SCRIPT_ROUTE,
+        "source_guide_image_map": bundle.map_path.as_posix(),
+        "source_guide_image_map_sha256": bundle.map_sha256,
+        "source_acceptances": [dict(item) for item in bundle.source_acceptances],
+        "display_fallback_count": len(fallbacks),
+        "original_payloads_added": 0,
+        "original_payloads_reused": len(fallbacks),
+        "presentation": "accepted full originals displayed at max-width 200px with height:auto and linked directly to the original route",
+        "items": [
+            {
+                "number": number,
+                "full_route": image.route,
+                "thumbnail_route": image.route[:-4] + "-thumb.jpg",
+                "full_static_url": image.static_url,
+                "sha256": image.sha256,
+                "length": image.length,
+                "actual_capture_timestamp": image.capture_timestamp,
+                "display_fallback": True,
+            }
+            for number, image in sorted(fallbacks.items())
+        ],
+    }
+

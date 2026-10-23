@@ -3327,6 +3327,23 @@ def export_pages(
     for generated_route in generated_routes:
         route_lookup.setdefault(generated_route, static_url(base_path, generated_route.lstrip("/")))
 
+    love_story_preview_group: guide_image_collections.GuideImageCollectionGroup | None = None
+    love_story_preview_assets: dict[int, guide_image_collections.GuideImage] = {}
+    love_story_preview_page_routes: tuple[str, ...] = ()
+    if guide_image_collection_bundle is not None:
+        try:
+            love_story_preview_group, love_story_preview_assets = guide_image_collections.love_story_preview_fallbacks(
+                guide_image_collection_bundle,
+                route_to_static=route_to_static,
+            )
+        except guide_image_collections.GuideImageCollectionError as exc:
+            raise PagesExportError(str(exc)) from exc
+        if love_story_preview_group is not None:
+            love_story_preview_page_routes = tuple(sorted(
+                alias for alias, target in alias_routes.items()
+                if target == love_story_preview_group.guide_route
+            ))
+
     origin_index = {str(k): str(v) for k, v in (manifest.get("origin_index") or {}).items()}
     for overlay in overlays:
         key = mirror.origin_key(str(overlay["logical_url"]))
@@ -3384,6 +3401,7 @@ def export_pages(
     )
     provenance: list[dict[str, Any]] = []
     stats: Counter[str] = Counter()
+    love_story_preview_provenance: dict[str, Any] | None = None
     if layout_bundle is not None:
         stats["layout_compatibility_reused_target_paths"] = len(layout_bundle.route_reuses)
     if talent_box_bundle is not None:
@@ -3989,6 +4007,27 @@ def export_pages(
                     text = rewrite_cascade_script(text)
                 if route == "/wrath/js/thumbnailslayout.js":
                     text = rewrite_wrath_thumbnails_script(text)
+                if route == guide_image_collections.LOVE_STORY_SCRIPT_ROUTE and love_story_preview_assets:
+                    text, changed = guide_image_collections.rewrite_love_story_preview_script(
+                        text,
+                        group=love_story_preview_group,
+                        fallbacks=love_story_preview_assets,
+                        base_path=base_path,
+                        page_routes=love_story_preview_page_routes,
+                    )
+                    if changed and love_story_preview_group is not None and guide_image_collection_bundle is not None:
+                        love_story_preview_provenance = guide_image_collections.love_story_preview_provenance(
+                            guide_image_collection_bundle,
+                            love_story_preview_group,
+                            love_story_preview_assets,
+                        )
+                        derivation_notes.append(
+                            f"Love is in the Air index screenshotThinBorder uses {len(love_story_preview_assets)} accepted full originals "
+                            "for absent thumbnail routes only on the exact guide page, its route aliases, images/ and indices 1-12; "
+                            "displayed at max-width 200px with height:auto and linked directly to the original; no original payload added"
+                        )
+                        stats["love_story_preview_display_fallbacks"] += len(love_story_preview_assets)
+                        stats["love_story_preview_originals_added"] = 0
                 derived = text.encode("utf-8")
                 stats["js_derived"] += 1
             elif kind in {"xsl", "xml", "legacy_component"}:
@@ -4238,6 +4277,8 @@ def export_pages(
             provenance_payload["guide_previews"] = guide_preview_bundle.provenance()
         if guide_image_collection_bundle is not None:
             provenance_payload["guide_image_collections"] = guide_image_collection_bundle.provenance()
+        if love_story_preview_provenance is not None:
+            provenance_payload["love_story_preview_fallbacks"] = love_story_preview_provenance
         if flash_bundle is not None:
             provenance_payload["flash_exhibits"] = flash_bundle
         if blizzcast_bundle is not None:
