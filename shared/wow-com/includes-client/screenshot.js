@@ -42,6 +42,19 @@ function screenshotNoBorder(number, align, text) {
 	document.write('</table>');
 }
 
+var __WOW_LOVE_STORY_PREVIEW_FALLBACKS = {"1":"/WOW-Encyclopedia-Deployable-Archive/info/events/loveisintheair/images/ss1.jpg","2":"/WOW-Encyclopedia-Deployable-Archive/info/events/loveisintheair/images/ss2.jpg","3":"/WOW-Encyclopedia-Deployable-Archive/info/events/loveisintheair/images/ss3.jpg","4":"/WOW-Encyclopedia-Deployable-Archive/info/events/loveisintheair/images/ss4.jpg","5":"/WOW-Encyclopedia-Deployable-Archive/info/events/loveisintheair/images/ss5.jpg","6":"/WOW-Encyclopedia-Deployable-Archive/info/events/loveisintheair/images/ss6.jpg","7":"/WOW-Encyclopedia-Deployable-Archive/info/events/loveisintheair/images/ss7.jpg","8":"/WOW-Encyclopedia-Deployable-Archive/info/events/loveisintheair/images/ss8.jpg","9":"/WOW-Encyclopedia-Deployable-Archive/info/events/loveisintheair/images/ss9.jpg","10":"/WOW-Encyclopedia-Deployable-Archive/info/events/loveisintheair/images/ss10.jpg","11":"/WOW-Encyclopedia-Deployable-Archive/info/events/loveisintheair/images/ss11.jpg","12":"/WOW-Encyclopedia-Deployable-Archive/info/events/loveisintheair/images/ss12.jpg"};
+var __WOW_LOVE_STORY_PAGE_ROUTES = ["/info/events/loveisintheair","/info/events/loveisintheair/","/info/events/loveisintheair/index.html"];
+var __WOW_LOVE_STORY_BASE_PATH = "/WOW-Encyclopedia-Deployable-Archive/";
+function __wowLoveStoryPreview(number) {
+  var pathname = String((document.location && document.location.pathname) || '/');
+  var prefix = __WOW_LOVE_STORY_BASE_PATH;
+  if (prefix !== '/' && pathname.indexOf(prefix) === 0) pathname = pathname.substring(prefix.length - 1);
+  if (__WOW_LOVE_STORY_PAGE_ROUTES.indexOf(pathname) < 0) return '';
+  if (typeof theDirectory !== 'string' || theDirectory !== 'images/' || typeof screenshotsTotal === 'undefined' || Number(screenshotsTotal) !== 12) return '';
+  var n = Number(number);
+  if (n < 1 || n > 12 || Math.floor(n) !== n || String(number) !== String(n)) return '';
+  return __WOW_LOVE_STORY_PREVIEW_FALLBACKS[String(n)] || '';
+}
 function screenshotThinBorder(number, align, text) {	
 
 	if (align == "right")
@@ -59,7 +72,11 @@ function screenshotThinBorder(number, align, text) {
 	document.write('  </tr>');
 	document.write('  <tr>');
 	document.write('    <td background = "/WOW-Encyclopedia-Deployable-Archive/shared/wow-com/images/borders/gold-thin/left.gif"></td>');
-	document.write('<td><a href = "/imageviewer.html?'+ path +','+ theDirectory +','+ number +','+ screenshotsTotal +','+ theURL +'"><img src = "'+ path + theDirectory + 'ss'+ number +'-thumb.jpg" border = "0"></a></td>');
+	var __loveStoryPreview = __wowLoveStoryPreview(number);
+	if (__loveStoryPreview)
+		document.write('<td><a href = "'+ __loveStoryPreview +'"><img src = "'+ __loveStoryPreview +'" border = "0" style = "max-width:200px;height:auto;"></a></td>');
+	else
+		document.write('<td><a href = "/imageviewer.html?'+ path +','+ theDirectory +','+ number +','+ screenshotsTotal +','+ theURL +'"><img src = "'+ path + theDirectory + 'ss'+ number +'-thumb.jpg" border = "0"></a></td>');
 	document.write('    <td background = "/WOW-Encyclopedia-Deployable-Archive/shared/wow-com/images/borders/gold-thin/right.gif"></td>');
 	document.write('  </tr>');
 	document.write('    <td><img src = "/WOW-Encyclopedia-Deployable-Archive/shared/wow-com/images/borders/gold-thin/bot-left.gif" width = "3" height = "7"></td>');
@@ -67,8 +84,12 @@ function screenshotThinBorder(number, align, text) {
 	document.write('    <td><img src = "/WOW-Encyclopedia-Deployable-Archive/shared/wow-com/images/borders/gold-thin/bot-right.gif" width = "6" height = "7"></td>');
 	document.write('  </tr>');
 
-	if (text)
-		document.write('<tr><td colspan = 3 align = center><span><a href = "/imageviewer.html?'+ path +','+ theDirectory +','+ number +','+ screenshotsTotal +','+ theURL +'">'+ text +'</a></span></td></tr>');
+	if (text) {
+		if (__loveStoryPreview)
+			document.write('<tr><td colspan = 3 align = center><span><a href = "'+ __loveStoryPreview +'">'+ text +'</a></span></td></tr>');
+		else
+			document.write('<tr><td colspan = 3 align = center><span><a href = "/imageviewer.html?'+ path +','+ theDirectory +','+ number +','+ screenshotsTotal +','+ theURL +'">'+ text +'</a></span></td></tr>');
+	}
 	document.write('</table>');
 }
 
