@@ -14,6 +14,8 @@
 Git 主树保存部署文件、工具、这些文档与关键验收；历史记录中的其他相对路径可能指向维护者本地完整包内的研究树或对应历史来源包。这些原始包本次尚未公开，维护者可按文件路径到完整包中查找，不能把主树中的文件缺省理解为研究时未取得。[发布前工作区 README](workspace-readme-pre-github-20261012.md)按原字节保留，其链接相对于当时的工作区根目录解释。
 
 - [空间与压缩策略](storage-and-compression.md)：文件测量、压缩分析与离线包。
+- [历史导出去重归档](historical-export-deduplication.md)：57版共享归档、净节省口径、保留范围及核验／恢复命令；含[整理后的验收摘要](evidence/historical-export-deduplication-20261023.json)。
+- [2026-10-22 空间清理](storage-cleanup-20261022.md)：C、D盘占用盘点与当时的历史导出去重估算；已完成的去重结果见上文。
 
 - [GitHub Pages部署与本地补齐](github-pages-deployment.md)：静态派生层、发布分支、验证与新批次边界。
 - [部署后的资源补齐](resource-resume-20261013.md)：实际查询、TLS 错误、传输复核及续传记录。
@@ -50,6 +52,7 @@ Git 主树保存部署文件、工具、这些文档与关键验收；历史记�
 
 - [地下城来源与早期截图](dungeon-source-tracing-20261022.md)：Deadmines九图、经典副本与Outland正文对照、线上核对及Four Dragons缺口。
 - [2026-10-22 持续恢复](continuous-recovery-20261022.md)：关联源追溯、素材补齐和本轮检查点。
+- [2026-10-23 持续恢复与历史导出去重](continuous-recovery-20261023.md)：共享归档、文件级节省核算及Wayback连接边界。
 
 - [天赋图像补充来源](talent-image-sources-20261022.md)：同路径素材、十九组显式映射、保留的旧数据与未选候选。
 - [2026-10-22 恢复回顾](recovery-summary-20261022.md)：地下城核对、60个关联图片文件、v56网页和离线包及后续缺口。

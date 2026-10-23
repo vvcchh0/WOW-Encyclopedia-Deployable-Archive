@@ -128,3 +128,15 @@ v39 ZIP 为 534,242,751 字节，9,122 个成员，解压成员合计 599,611,85
 继续采用 DEFLATE-6、保留原图字节与独立浏览包。主代理读取全部成员并启动包内 Python 服务器，56 个路径的 112 次 GET/HEAD 检查通过；浏览展示复用同字节 v39 的四页验收。此次未实际双击 Windows 启动器。
 
 [打包摘要](../research/continuous-recovery-20261020/publication/v39-portable-package-summary.json) · [独立包验收](../research/continuous-recovery-20261020/publication/root-v39-portable-acceptance.json) · [v39 下载页](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261020-v39)。
+
+## 2026-10-23：历史 Pages 导出去重
+
+57 个历史版本共 513,856 个文件、33,445,408,630 字节逻辑内容，整理为 60 个文件的共享归档，归档目录逻辑长度 665,351,745 字节。13,234 个唯一对象（未压缩共 1,456,362,754 字节）全部实读核验，三个代表版本恢复并独立验收；清理55棵旧展开目录，保留v55、v56、原始来源及完整历史ZIP。
+
+文件级 NTFS AllocationSize 核账为净节省 32,049,445,528 字节（约32.05 GB）：删除的旧文件分配 32,714,919,104 字节，减去新归档文件分配 665,473,576 字节。此数不含目录元数据和少量审计文件，也不是D盘余量差；三份临时恢复副本的1,784,109,860字节未重复计入。浏览版和Release仍为v56，本次没有发布新网页或离线包。
+
+[去重方法、核验与恢复命令](historical-export-deduplication.md) · [整理后的验收摘要](evidence/historical-export-deduplication-20261023.json)。
+
+## 2026-10-22：本地空间清理
+
+完成C、D盘的项目占用清点；通过大文本及旧会话的NTFS透明压缩、清理可重建发布分片和v55／v56验收解压副本，净节省约7.40GB。原始资料、完整历史ZIP和已验收Pages导出继续保留。后续最大机会是历史导出的集中去重归档，详见[清理报告与保留清单](storage-cleanup-20261022.md)。个人会话路径及逐文件审计材料保存在本地。

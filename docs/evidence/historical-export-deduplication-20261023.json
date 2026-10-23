@@ -1,0 +1,55 @@
+{
+  "schema": "wow-public-historical-export-deduplication-summary/v1",
+  "completed_utc": "2026-10-23T09:03:32.241154Z",
+  "source": {
+    "versions": 57,
+    "files_independently_rehashed": 513856,
+    "logical_bytes": 33445408630
+  },
+  "store": {
+    "path": "artifacts/historical-exports-20261023/",
+    "files": 60,
+    "logical_bytes": 665351745,
+    "file_allocation_bytes": 665473576,
+    "unique_objects_fully_read": 13234,
+    "unique_object_uncompressed_bytes": 1456362754,
+    "catalog": {
+      "path": "catalog.json",
+      "bytes": 2334372,
+      "sha256": "d04e6ce0ef05800d78facac61e9cc5d1a8eb97c69671f7af32ca767c2e0905d8"
+    },
+    "objects_archive": {
+      "path": "objects.zip",
+      "bytes": 633160757,
+      "sha256": "d906c3d1dec340f55446954b412da2ff670e0f184274d4438bdce59b27740ef4"
+    }
+  },
+  "cleanup": {
+    "older_expanded_directories_removed": 55,
+    "accepted_restore_trials": 3,
+    "temporary_restore_copies_removed": 3,
+    "temporary_copy_bytes_excluded_from_net_savings": 1784109860,
+    "expanded_versions_retained": [
+      ".scratch/pages-resources-20261022-v55",
+      ".scratch/pages-resources-20261022-v56"
+    ],
+    "original_sources_and_full_historical_zip_preserved": true
+  },
+  "space_accounting": {
+    "removed_historical_file_allocation_bytes": 32714919104,
+    "new_store_file_allocation_bytes": 665473576,
+    "net_file_allocation_saved_bytes": 32049445528,
+    "basis": "Pre-build source NTFS file allocation minus measured shared-store file allocation; excludes directory metadata and small audit/code files, and is not inferred from D volume free-space delta."
+  },
+  "publication": {
+    "pages_version": "v56",
+    "release_version": "v56",
+    "pages_or_release_changed_by_deduplication": false
+  },
+  "acceptance": {
+    "accepted": true,
+    "original_files_and_unique_objects_independently_read": true,
+    "three_actual_restore_trials_passed": true,
+    "final_prune_acceptance_sha256": "e138eca37733387d76695949907c2036ba1ab501f989c4018442529fd5ceec3c"
+  }
+}
