@@ -7,6 +7,7 @@
 - 发布v57网页及[离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261023-v57)，修复情人节指南页面12处截图显示与原图链接，复用已保存原图；独立图库的34张投稿截图仍待补齐。浏览、线上文件及包内启动检查通过。[修复说明](docs/love-guide-preview-repair-20261023.md)
 - 将57份历史Pages导出（513,856个文件、33.45 GB逻辑内容）整理为60文件共享归档；13,234个唯一对象实读核验通过，三个版本实际恢复并独立验收。删除55棵旧展开目录和三份临时恢复副本，保留v55/v56、原始来源及完整历史ZIP；按文件AllocationSize核账净节省约32.05 GB。去重保持历史版本内容不变。[去重记录与整理后验收摘要](docs/historical-export-deduplication.md)
 - 09:00 UTC的Wayback控制请求直连超时，进程内代理返回429，没有取得新图片；该次连接结果不作为资源缺失结论。[本轮持续恢复记录](docs/continuous-recovery-20261023.md)
+- 核对四份关联地下城源页，记录八个欧服缩略图路径及其图库链接；图片尚未获取，既有50组图库的缺失计数保持不变。12:30 UTC再次检查Wayback，代理仍返回429，本轮停止后续获取。[来源调查](docs/related-source-leads-20261023.md)
 
 ## 待完成
 
