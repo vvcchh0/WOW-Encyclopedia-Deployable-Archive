@@ -51,6 +51,7 @@ import offline_mirror as mirror  # noqa: E402
 import historical_exhibits  # noqa: E402
 import guide_previews  # noqa: E402
 import guide_image_collections  # noqa: E402
+import news_wallpaper_previews  # noqa: E402
 import non_gallery_compat  # noqa: E402
 import offline_flash  # noqa: E402
 import blizzcast_reader  # noqa: E402
@@ -59,6 +60,7 @@ import related_talent_icons  # noqa: E402
 import related_talent_ui  # noqa: E402
 import related_encyclopedia_images  # noqa: E402
 import related_guide_images  # noqa: E402
+import related_player_gallery_previews  # noqa: E402
 import related_faction_icons  # noqa: E402
 import rewardstable_compat  # noqa: E402
 import source16_layout_compat  # noqa: E402
@@ -2955,6 +2957,7 @@ def export_pages(
     related_encyclopedia_image_map: Path | None = None,
     related_guide_image_map: Path | None = None,
     related_faction_icon_map: Path | None = None,
+    related_player_gallery_preview_map: Path | None = None,
     restore_aldor_scryers_lore: bool = False,
 ) -> dict[str, Any]:
     source_site = source_site.resolve()
@@ -3138,6 +3141,30 @@ def export_pages(
         for target, canonical in guide_bundle.route_reuses.items():
             route_to_static[target] = route_to_static[canonical]
     guide_estimate = guide_bundle.estimated_bytes if guide_bundle else 0
+    related_player_gallery_preview_bundle: related_player_gallery_previews.RelatedPlayerGalleryPreviewBundle | None = None
+    if related_player_gallery_preview_map is not None:
+        try:
+            related_player_gallery_preview_bundle = related_player_gallery_previews.load_related_player_gallery_preview_bundle(
+                related_player_gallery_preview_map, workspace_root, base_path,
+            )
+        except related_player_gallery_previews.RelatedPlayerGalleryPreviewError as exc:
+            raise PagesExportError(str(exc)) from exc
+        for page_route in related_player_gallery_preview_bundle.assets_by_page:
+            page_record = route_records.get(page_route)
+            if page_record is None or not is_html_record(page_record):
+                raise PagesExportError(f"related player-gallery preview page is absent or not HTML: {page_route}")
+        preview_candidates = [(asset.route, asset.relative) for asset in related_player_gallery_preview_bundle.assets]
+        preview_candidates.append(("/" + related_player_gallery_preview_bundle.catalog_relative, related_player_gallery_preview_bundle.catalog_relative))
+        for route, relative in preview_candidates:
+            if route in route_to_static or route in raw_aliases or route in overlay_routes or relative in relative_paths or relative in overlay_static_paths:
+                raise PagesExportError(f"related player-gallery preview resource collides with an existing resource: {route}")
+        for route, relative in preview_candidates:
+            route_to_static[route] = static_url(base_path, relative)
+            relative_paths.add(relative)
+    related_player_gallery_preview_estimate = (
+        related_player_gallery_preview_bundle.estimated_bytes
+        if related_player_gallery_preview_bundle is not None else 0
+    )
     faction_bundle: related_faction_icons.RelatedFactionIconBundle | None = None
     if related_faction_icon_map is not None:
         try:
@@ -3193,7 +3220,7 @@ def export_pages(
         aldor_scryers_lore_bundle.generated_file.length
         if aldor_scryers_lore_bundle is not None else 0
     )
-    estimate = output_estimate(records, overlay_bytes + flash_estimate + reader_estimate + talent_icon_estimate + talent_ui_estimate + encyclopedia_estimate + guide_estimate + faction_estimate + lore_estimate)
+    estimate = output_estimate(records, overlay_bytes + flash_estimate + reader_estimate + talent_icon_estimate + talent_ui_estimate + encyclopedia_estimate + guide_estimate + related_player_gallery_preview_estimate + faction_estimate + lore_estimate)
     if max_bytes is not None and before_workspace + estimate >= max_bytes:
         raise PagesExportError(f"workspace budget exceeded before export: {before_workspace}+{estimate} >= {max_bytes}")
     if free_before - estimate < min_free_bytes:
@@ -3343,6 +3370,18 @@ def export_pages(
                 alias for alias, target in alias_routes.items()
                 if target == love_story_preview_group.guide_route
             ))
+    news_wallpaper_preview_sources: dict[str, dict[str, Any]] = {}
+    if manifest_sha == news_wallpaper_previews.SOURCE_MANIFEST_SHA256:
+        try:
+            news_wallpaper_preview_sources = news_wallpaper_previews.validate_preview_sources(
+                route_records=route_records,
+                route_to_static=route_to_static,
+                source_site=source_site,
+                workspace_root=workspace_root,
+                source_manifest_sha256=manifest_sha,
+            )
+        except news_wallpaper_previews.NewsWallpaperPreviewError as exc:
+            raise PagesExportError(str(exc)) from exc
 
     origin_index = {str(k): str(v) for k, v in (manifest.get("origin_index") or {}).items()}
     for overlay in overlays:
@@ -3402,6 +3441,7 @@ def export_pages(
     provenance: list[dict[str, Any]] = []
     stats: Counter[str] = Counter()
     love_story_preview_provenance: dict[str, Any] | None = None
+    news_wallpaper_preview_items: list[dict[str, Any]] = []
     if layout_bundle is not None:
         stats["layout_compatibility_reused_target_paths"] = len(layout_bundle.route_reuses)
     if talent_box_bundle is not None:
@@ -3586,6 +3626,59 @@ def export_pages(
                 "mime": "application/json; charset=UTF-8", "kind": "related_guide_image_catalog",
                 "role": "current_related_guide_image_catalog", "transformed": True,
             })
+        if related_player_gallery_preview_bundle is not None:
+            for asset in related_player_gallery_preview_bundle.assets:
+                if shutil.disk_usage(output.parent).free < min_free_bytes + len(asset.data):
+                    raise PagesExportError("disk reserve would be breached while writing related player-gallery previews")
+                out = partial / asset.relative
+                out.parent.mkdir(parents=True, exist_ok=True)
+                out.write_bytes(asset.data)
+                source_reference = dict(asset.metadata) | {
+                    "source_kind": "later_related_git_repository_thumbnail",
+                    "source_map_sha256": related_player_gallery_preview_bundle.map_sha256,
+                    "source_archive_sha256": related_player_gallery_preview_bundle.archive_sha256,
+                }
+                provenance.append({
+                    "route": asset.route,
+                    "static_url": static_url(base_path, asset.relative),
+                    "output_path": asset.relative,
+                    "source_offline_path": None,
+                    "source_manifest_sha256": None,
+                    "source_manifest_length": None,
+                    "source_sha256": asset.metadata["sha256"],
+                    "source_length": len(asset.data),
+                    "derived_sha256": asset.metadata["sha256"],
+                    "derived_length": len(asset.data),
+                    "mime": asset.mime,
+                    "kind": "related_player_gallery_preview",
+                    "role": "later_related_source_2015_french_guide_thumbnail",
+                    "transformed": False,
+                    "source_refs": [source_reference],
+                })
+                stats["related_player_gallery_preview_assets"] += 1
+            relative = related_player_gallery_preview_bundle.catalog_relative
+            catalog_data = related_player_gallery_preview_bundle.catalog_bytes
+            if shutil.disk_usage(output.parent).free < min_free_bytes + len(catalog_data):
+                raise PagesExportError("disk reserve would be breached while writing the related player-gallery preview catalog")
+            out = partial / relative
+            out.parent.mkdir(parents=True, exist_ok=True)
+            out.write_bytes(catalog_data)
+            provenance.append({
+                "route": "/" + relative,
+                "static_url": static_url(base_path, relative),
+                "output_path": relative,
+                "source_offline_path": None,
+                "source_manifest_sha256": None,
+                "source_manifest_length": None,
+                "source_sha256": None,
+                "source_length": None,
+                "derived_sha256": sha256_bytes(catalog_data),
+                "derived_length": len(catalog_data),
+                "mime": "application/json; charset=UTF-8",
+                "kind": "related_player_gallery_preview_catalog",
+                "role": "later_related_source_2015_gallery_preview_catalog",
+                "transformed": True,
+            })
         if faction_bundle is not None:
             for asset in faction_bundle.assets:
                 if shutil.disk_usage(output.parent).free < min_free_bytes + len(asset.data):
@@ -3724,6 +3817,24 @@ def export_pages(
             # HTML response remains self-describing on Pages.
             if kind in HTML_KINDS or is_html_record(record):
                 text = data.decode(mirror.charset_for(str(record.get("mime") or ""), data), errors="replace")
+                if news_wallpaper_preview_sources:
+                    try:
+                        text, preview_items = news_wallpaper_previews.apply_news_wallpaper_previews(
+                            text,
+                            page_route=route,
+                            route_to_static=route_to_static,
+                            validated_sources=news_wallpaper_preview_sources,
+                        )
+                    except news_wallpaper_previews.NewsWallpaperPreviewError as exc:
+                        raise PagesExportError(str(exc)) from exc
+                    if preview_items:
+                        news_wallpaper_preview_items.extend(preview_items)
+                        stats["news_wallpaper_preview_display_fallbacks"] += len(preview_items)
+                        stats["news_wallpaper_preview_originals_added"] = 0
+                        derivation_notes.append(
+                            f"displayed {len(preview_items)} accepted linked wallpaper image preview(s) for exact missing TCG news thumbnails; "
+                            "visible caption identifies the reuse; original news links remain unchanged and no original image payload was added"
+                        )
                 text = mirror.rewrite_html(text, base_url=base_url, localizer=localizer, recorder=recorder, source_sha=source_sha, compat_assets=[])
                 if route == _ATTUNEMENT_MASK_ROUTE:
                     text, changed = rewrite_attunement_mask_pixel(text, route=route, base_path=base_path)
@@ -3826,6 +3937,24 @@ def export_pages(
                             f"from {guide_image_collection_bundle.map_path.as_posix()}; no native gallery aliases changed"
                         )
                         stats["guide_image_collection_pages"] += 1
+                if related_player_gallery_preview_bundle is not None:
+                    try:
+                        text, related_preview_inserted, related_preview_count = related_player_gallery_previews.insert_preview_section(
+                            text,
+                            page_route=route,
+                            bundle=related_player_gallery_preview_bundle,
+                            route_to_static=route_to_static,
+                        )
+                    except related_player_gallery_previews.RelatedPlayerGalleryPreviewError as exc:
+                        raise PagesExportError(str(exc)) from exc
+                    if related_preview_inserted:
+                        derivation_notes.append(
+                            f"inserted {related_preview_count} separately labelled French guide preview(s) before </body>; "
+                            "native player-gallery slots and numbering remain unchanged; no original US gallery image was added"
+                        )
+                        stats["related_player_gallery_preview_pages"] += 1
+                        stats["related_player_gallery_preview_displayed"] += related_preview_count
+                        stats["related_player_gallery_preview_original_us_images_added"] = 0
                 text, changed = rewrite_wrath_card_hit_area(text, route=route)
                 if changed:
                     derivation_notes.append(
@@ -4279,6 +4408,11 @@ def export_pages(
             provenance_payload["guide_image_collections"] = guide_image_collection_bundle.provenance()
         if love_story_preview_provenance is not None:
             provenance_payload["love_story_preview_fallbacks"] = love_story_preview_provenance
+        if news_wallpaper_preview_items:
+            provenance_payload["news_wallpaper_preview_fallbacks"] = news_wallpaper_previews.provenance(
+                news_wallpaper_preview_items,
+                source_manifest_sha256=manifest_sha,
+            )
         if flash_bundle is not None:
             provenance_payload["flash_exhibits"] = flash_bundle
         if blizzcast_bundle is not None:
@@ -4328,6 +4462,18 @@ def export_pages(
                 "source_map_sha256": guide_bundle.map_sha256,
                 "route_reuses": dict(guide_bundle.route_reuses),
                 "original_2008_images_recovered": 0,
+            }
+        if related_player_gallery_preview_bundle is not None:
+            provenance_payload["related_player_gallery_previews"] = {
+                "source": dict(related_player_gallery_preview_bundle.source_metadata),
+                "image_count": len(related_player_gallery_preview_bundle.assets),
+                "page_counts": dict(related_player_gallery_previews.EXPECTED_PAGE_COUNTS),
+                "catalog_path": related_player_gallery_preview_bundle.catalog_relative,
+                "map_sha256": related_player_gallery_preview_bundle.map_sha256,
+                "source_archive_sha256": related_player_gallery_preview_bundle.archive_sha256,
+                "source_archive_length": related_player_gallery_preview_bundle.archive_length,
+                "route_reuses": {},
+                "original_us_gallery_images_added": 0,
             }
         if faction_bundle is not None:
             provenance_payload["related_faction_icons"] = {
@@ -4462,9 +4608,15 @@ def main(argv: list[str] | None = None) -> int:
         default=None,
         help="Optional strict map of validated guide-image supplement collections for guide and gallery pages",
     )
+    parser.add_argument(
+        "--related-player-gallery-preview-map",
+        type=Path,
+        default=None,
+        help="Optional map and sibling ZIP for separately labelled related French player-gallery previews",
+    )
     args = parser.parse_args(argv)
     try:
-        result = export_pages(output=args.output, source_site=args.site, manifest_path=args.manifest, base_path=args.base_path, max_bytes=args.max_bytes, min_free_bytes=args.min_free_bytes, image_source_maps=args.image_source_maps, supplement_image_source_maps=args.supplement_image_source_maps, allow_later_image_supplements=args.allow_later_image_supplements, guide_preview_map=args.guide_preview_map, guide_image_collection_map=args.guide_image_collection_map, flash_runtime_archive=args.flash_runtime_archive, blizzcast_source_map=args.blizzcast_source_map, related_talent_icon_map=args.related_talent_icon_map, related_talent_ui_map=args.related_talent_ui_map, source16_layout_map=args.source16_layout_map, talent_box_layout_map=args.talent_box_layout_map, related_encyclopedia_image_map=args.related_encyclopedia_image_map, related_guide_image_map=args.related_guide_image_map, related_faction_icon_map=args.related_faction_icon_map, restore_aldor_scryers_lore=args.restore_aldor_scryers_lore)
+        result = export_pages(output=args.output, source_site=args.site, manifest_path=args.manifest, base_path=args.base_path, max_bytes=args.max_bytes, min_free_bytes=args.min_free_bytes, image_source_maps=args.image_source_maps, supplement_image_source_maps=args.supplement_image_source_maps, allow_later_image_supplements=args.allow_later_image_supplements, guide_preview_map=args.guide_preview_map, guide_image_collection_map=args.guide_image_collection_map, related_player_gallery_preview_map=args.related_player_gallery_preview_map, flash_runtime_archive=args.flash_runtime_archive, blizzcast_source_map=args.blizzcast_source_map, related_talent_icon_map=args.related_talent_icon_map, related_talent_ui_map=args.related_talent_ui_map, source16_layout_map=args.source16_layout_map, talent_box_layout_map=args.talent_box_layout_map, related_encyclopedia_image_map=args.related_encyclopedia_image_map, related_guide_image_map=args.related_guide_image_map, related_faction_icon_map=args.related_faction_icon_map, restore_aldor_scryers_lore=args.restore_aldor_scryers_lore)
     except PagesExportError as exc:
         parser.error(str(exc))
     print(json.dumps(result, ensure_ascii=False, indent=2))
