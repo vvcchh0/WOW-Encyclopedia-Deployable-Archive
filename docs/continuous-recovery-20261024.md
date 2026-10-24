@@ -79,3 +79,15 @@ BlizzCast此前的音频探测使用HTTPS变体，本轮重新核对旧RSS，发
 4. 50个玩家图库仍涉及1,684张截图的原图与缩略图缺口；本轮八张法语指南缩略图独立展示。暂缓项目只在有新来源或捕获线索时重启。
 
 本轮新增资源获取于13:01 UTC停止，后续仅完成发布验收、文档和收尾。工作记录与公开交付摘要分别保存在research总账及[整理后的证据](evidence/v61-delivery-20261024.json)。
+
+## v61离线包发布与本轮收尾
+
+用户随后明确授权上传v61离线ZIP、SHA-256文件和NOTICE这三个附件。上传于13:44 UTC开始，13:50完成；只创建一次草稿、三个附件各上传一次，全部direct，原自动审批拒绝记录保留。13:51 UTC发布Release 422756951，目标源码提交290a7a8f5bc479980c15a55db4d5fc9b353ef060。三个附件的GitHub长度及SHA-256与本地一致。13:52完成匿名公开检查：ZIP核对HEAD长度及GitHub上传摘要，两个小附件GET实读核对；未再次下载630MB ZIP。在线版与公开离线包均为v61。
+
+公开检查第一次准备因旧脚本读取嵌套archive字段而停止，未建立GO或发出请求；R2读取当前回执的archive_sha256字段，保留原失败并维持全部网络边界。公开检查实际只执行一个六请求批次。
+
+### GitHub空间与发布频率
+
+本次上传前有12个Release、39个附件，共6,395,059,392字节；v61的三个附件新增629,994,471字节，合计7,025,053,863字节。当前Pages是10,334个文件、717,469,401字节；本地Git对象包约825.64MiB，该数值不是GitHub服务器计费统计。部署记录数与当前站点大小分别计算，删除记录不缩小Git历史。
+
+GitHub官方[Release说明](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases)规定单文件小于2GiB、每个Release最多1,000个附件，并说明Release总大小和带宽不设限；未列跨Release累计配额。[Pages限制](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits)为当前站点不超过1GB、每月100GB流量软限制、每小时10次构建软限制（自定义Actions发布除外），单次部署超过10分钟超时。当前更应关注Pages增长。建议小修复更新网页，阶段成果再发布完整包；未删除任何旧Release、部署记录或Git历史。
