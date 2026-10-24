@@ -4,7 +4,7 @@
 
 ## 2026-10-24
 
-- 本地v59验收通过：恢复五条2006年TCG壁纸公告的预览，接入三组时光之穴图库的八张法语指南缩略图，注明Coolwow2来源；原玩家图库缺图继续保留。正在同步网页与离线包。[修复与来源说明](docs/news-and-related-gallery-previews-20261024.md)
+- 发布v59网页与[离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261024-v59)：恢复五条2006年TCG壁纸公告的预览，接入三组时光之穴图库的八张法语指南缩略图，注明Coolwow2来源；原玩家图库缺图继续保留。线上17个变更文件与离线启动检查通过。[修复与来源说明](docs/news-and-related-gallery-previews-20261024.md)
 - 逐项核对331个已选非图库原文件缺口，另核对十二张百科分类头像对45个子页的引用关系。直连TCP连接失败，代理Wayback仍返回429，继续查找其他来源。[本轮记录](docs/continuous-recovery-20261024.md)
 
 ## 2026-10-23

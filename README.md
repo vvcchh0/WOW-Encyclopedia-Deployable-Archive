@@ -20,6 +20,7 @@
 - 修复 Arathi 指南的图片目录，恢复二十张已有预览的显示。
 - 核对地下城正文与 Deadmines 的九张早期原图、十张预览，可从[地下城指南](https://vvcchh0.github.io/WOW-Encyclopedia-Deployable-Archive/info/basics/dungeons.html)浏览。
 - 修复情人节指南中十二处已有截图的显示与原图链接。
+- 恢复五条TCG壁纸公告的预览；在三组时光之穴图库中加入八张注明Coolwow2来源的法语指南缩略图。
 
 ## 当前不足
 
@@ -30,7 +31,7 @@
 
 ## 本地使用
 
-安装 Python 3 后，下载 [2026-10-23 离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/download/archive-20080512-browser-20261023-v57/WOW_Encyclopedia_20080512_browser_20261023_v57.zip)（约 546 MB，解压后约 636 MB）。Windows 用户解压后双击 `START_BROWSE.cmd`。
+安装 Python 3 后，下载 [2026-10-24 离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/download/archive-20080512-browser-20261024-v59/WOW_Encyclopedia_20080512_browser_20261024_v59.zip)（约 547 MB，解压后约 636 MB）。Windows 用户解压后双击 `START_BROWSE.cmd`。
 
 macOS / Linux 用户在解压目录运行：
 
@@ -38,7 +39,7 @@ macOS / Linux 用户在解压目录运行：
 python3 tools/serve_pages_preview.py --site site --port 0 --open-browser
 ```
 
-启动后会打开本地浏览页面。在线版与离线包均为 v57。后续进度见[更新记录](CHANGELOG.md)。
+启动后会打开本地浏览页面。在线版与离线包均为 v59。后续进度见[更新记录](CHANGELOG.md)。
 
 ## 参与协作
 
