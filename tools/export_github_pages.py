@@ -55,8 +55,10 @@ import news_wallpaper_previews  # noqa: E402
 import non_gallery_compat  # noqa: E402
 import offline_flash  # noqa: E402
 import blizzcast_reader  # noqa: E402
+import blizzcast_audio  # noqa: E402
 import talent_compat  # noqa: E402
 import related_talent_icons  # noqa: E402
+import related_tbc_talent_art  # noqa: E402
 import related_talent_ui  # noqa: E402
 import related_encyclopedia_images  # noqa: E402
 import related_guide_images  # noqa: E402
@@ -2950,7 +2952,9 @@ def export_pages(
     guide_image_collection_map: Path | None = None,
     flash_runtime_archive: Path | None = None,
     blizzcast_source_map: Path | None = None,
+    blizzcast_audio_map: Path | None = None,
     related_talent_icon_map: Path | None = None,
+    related_tbc_talent_art_map: Path | None = None,
     related_talent_ui_map: Path | None = None,
     source16_layout_map: Path | None = None,
     talent_box_layout_map: Path | None = None,
@@ -2960,6 +2964,8 @@ def export_pages(
     related_player_gallery_preview_map: Path | None = None,
     restore_aldor_scryers_lore: bool = False,
 ) -> dict[str, Any]:
+    if blizzcast_audio_map is not None and blizzcast_source_map is None:
+        raise PagesExportError("BlizzCast current-origin audio requires the accepted BlizzCast source map")
     source_site = source_site.resolve()
     manifest_path = manifest_path.resolve()
     output = output.resolve()
@@ -3034,11 +3040,44 @@ def export_pages(
         for generated in blizzcast_bundle.generated_files:
             route = safe_route(str(generated["path"]))
             relative = route.lstrip("/")
-            if route in route_to_static or route in raw_aliases or relative in relative_paths:
+            if (
+                route in route_to_static or route in raw_aliases or route in overlay_routes
+                or relative in relative_paths or relative in overlay_static_paths
+            ):
                 raise PagesExportError(f"BlizzCast reading route collides with frozen input: {route}")
             route_to_static[route] = static_url(base_path, relative)
             relative_paths.add(relative)
+    blizzcast_audio_bundle: blizzcast_audio.BlizzcastAudioBundle | None = None
+    blizzcast_audio_map_sha: str | None = None
+    if blizzcast_audio_map is not None:
+        if blizzcast_bundle is None or blizzcast_source_map is None:
+            raise PagesExportError("BlizzCast current-origin audio requires the accepted BlizzCast source map")
+        audio_map_path = Path(blizzcast_audio_map)
+        if not audio_map_path.is_absolute():
+            audio_map_path = workspace_root / audio_map_path
+        try:
+            blizzcast_audio_bundle = blizzcast_audio.load_blizzcast_audio_bundle(
+                audio_map_path, workspace_root, reader_map,
+            )
+            blizzcast_audio.augment_reader_bundle(blizzcast_bundle, blizzcast_audio_bundle)
+        except blizzcast_audio.BlizzcastAudioError as exc:
+            raise PagesExportError(str(exc)) from exc
+        blizzcast_audio_map_sha = blizzcast_audio_bundle.map_sha256
+        audio_candidates = [(asset["path"], asset["path"].lstrip("/")) for asset in blizzcast_audio_bundle.assets]
+        audio_candidates.append((blizzcast_audio_bundle.catalog_path, blizzcast_audio_bundle.catalog_path.lstrip("/")))
+        for route, relative in audio_candidates:
+            route = safe_route(route)
+            if (
+                route in route_to_static or route in raw_aliases or route in overlay_routes
+                or relative in relative_paths or relative in overlay_static_paths
+            ):
+                raise PagesExportError(f"BlizzCast audio collides with an existing resource: {route}")
+        for route, relative in audio_candidates:
+            route = safe_route(route)
+            route_to_static[route] = static_url(base_path, relative)
+            relative_paths.add(relative)
     reader_estimate = blizzcast_bundle.estimated_bytes if blizzcast_bundle else 0
+    blizzcast_audio_estimate = blizzcast_audio_bundle.estimated_bytes if blizzcast_audio_bundle else 0
     talent_icon_bundle: related_talent_icons.RelatedTalentBundle | None = None
     if related_talent_icon_map is not None:
         icon_map = Path(related_talent_icon_map)
@@ -3057,6 +3096,38 @@ def export_pages(
             route_to_static[route] = static_url(base_path, relative)
             relative_paths.add(relative)
     talent_icon_estimate = talent_icon_bundle.estimated_bytes if talent_icon_bundle else 0
+    related_tbc_talent_art_bundle: related_tbc_talent_art.RelatedTbcTalentArtBundle | None = None
+    if related_tbc_talent_art_map is not None:
+        if talent_icon_bundle is None:
+            raise PagesExportError("related TBC talent art requires the accepted related talent icon map")
+        try:
+            related_tbc_talent_art_bundle = related_tbc_talent_art.load_related_tbc_talent_art_bundle(
+                related_tbc_talent_art_map,
+                workspace_root,
+                base_path,
+                source_manifest_sha256=manifest_sha,
+            )
+        except related_tbc_talent_art.RelatedTbcTalentArtError as exc:
+            raise PagesExportError(str(exc)) from exc
+        tbc_candidates = [(asset.route, asset.relative) for asset in related_tbc_talent_art_bundle.assets]
+        tbc_candidates.append(("/" + related_tbc_talent_art_bundle.catalog_relative, related_tbc_talent_art_bundle.catalog_relative))
+        tbc_asset_routes = {route for route, _relative in tbc_candidates}
+        for route, relative in tbc_candidates:
+            if route in route_to_static or route in raw_aliases or route in overlay_routes or relative in relative_paths or relative in overlay_static_paths:
+                raise PagesExportError(f"related TBC talent art collides with an existing resource: {route}")
+        for target, canonical in related_tbc_talent_art_bundle.route_reuses.items():
+            if target in route_to_static or target in raw_aliases or target in overlay_routes:
+                raise PagesExportError(f"related TBC talent target collides with an existing resource: {target}")
+            if canonical not in tbc_asset_routes:
+                raise PagesExportError(f"related TBC talent target has no canonical asset: {target}")
+        for route, relative in tbc_candidates:
+            route_to_static[route] = static_url(base_path, relative)
+            relative_paths.add(relative)
+        for target, canonical in related_tbc_talent_art_bundle.route_reuses.items():
+            route_to_static[target] = route_to_static[canonical]
+    related_tbc_talent_art_estimate = (
+        related_tbc_talent_art_bundle.estimated_bytes if related_tbc_talent_art_bundle else 0
+    )
     talent_ui_bundle: related_talent_ui.RelatedTalentUIBundle | None = None
     if related_talent_ui_map is not None:
         if talent_icon_bundle is None:
@@ -3220,7 +3291,7 @@ def export_pages(
         aldor_scryers_lore_bundle.generated_file.length
         if aldor_scryers_lore_bundle is not None else 0
     )
-    estimate = output_estimate(records, overlay_bytes + flash_estimate + reader_estimate + talent_icon_estimate + talent_ui_estimate + encyclopedia_estimate + guide_estimate + related_player_gallery_preview_estimate + faction_estimate + lore_estimate)
+    estimate = output_estimate(records, overlay_bytes + flash_estimate + reader_estimate + blizzcast_audio_estimate + talent_icon_estimate + related_tbc_talent_art_estimate + talent_ui_estimate + encyclopedia_estimate + guide_estimate + related_player_gallery_preview_estimate + faction_estimate + lore_estimate)
     if max_bytes is not None and before_workspace + estimate >= max_bytes:
         raise PagesExportError(f"workspace budget exceeded before export: {before_workspace}+{estimate} >= {max_bytes}")
     if free_before - estimate < min_free_bytes:
@@ -3403,6 +3474,12 @@ def export_pages(
             if key in origin_index and origin_index[key] != asset.route:
                 raise PagesExportError(f"related talent icon origin conflicts with frozen source: {key}")
             origin_index[key] = asset.route
+    if related_tbc_talent_art_bundle is not None:
+        for target, canonical in related_tbc_talent_art_bundle.route_reuses.items():
+            key = mirror.origin_key("http://www.worldofwarcraft.com" + target)
+            if key in origin_index and origin_index[key] != canonical:
+                raise PagesExportError(f"related TBC talent art origin conflicts with frozen source: {key}")
+            origin_index[key] = canonical
     if talent_ui_bundle is not None:
         for route in set(talent_ui_bundle.route_reuses) | {asset.route for asset in talent_ui_bundle.assets}:
             key = mirror.origin_key("http://www.worldofwarcraft.com" + route)
@@ -3519,6 +3596,66 @@ def export_pages(
                 "mime": "application/json; charset=UTF-8", "kind": "related_talent_icon_catalog",
                 "role": "later_related_talent_icon_catalog", "transformed": True,
             })
+        if related_tbc_talent_art_bundle is not None:
+            for asset in related_tbc_talent_art_bundle.assets:
+                if shutil.disk_usage(output.parent).free < min_free_bytes + len(asset.data):
+                    raise PagesExportError("disk reserve would be breached while writing related TBC talent art")
+                out = partial / asset.relative
+                out.parent.mkdir(parents=True, exist_ok=True)
+                out.write_bytes(asset.data)
+                metadata = asset.metadata
+                source_reference = dict(related_tbc_talent_art_bundle.source_metadata) | {
+                    "source_kind": "related_git_repository",
+                    "repository_path": metadata["repository_path"],
+                    "git_blob_sha1": metadata["git_blob_sha1"],
+                    "source_sha256": metadata["source_sha256"],
+                    "source_length": metadata["source_length"],
+                }
+                is_png = asset.mime == "image/png"
+                provenance.append({
+                    "route": asset.route,
+                    "static_url": static_url(base_path, asset.relative),
+                    "output_path": asset.relative,
+                    "source_offline_path": None,
+                    "source_manifest_sha256": None,
+                    "source_manifest_length": None,
+                    "source_sha256": metadata["source_sha256"],
+                    "source_length": metadata["source_length"],
+                    "derived_sha256": sha256_bytes(asset.data),
+                    "derived_length": len(asset.data),
+                    "mime": asset.mime,
+                    "kind": "related_tbc_talent_art_png" if is_png else "related_tbc_talent_art_off_svg",
+                    "role": "later_related_tbc_talent_art_source_png" if is_png else "derived_grayscale_off_state",
+                    "transformed": not is_png,
+                    "source_refs": [source_reference],
+                    "state": metadata["state"],
+                    "png_dimensions": [metadata["png_width"], metadata["png_height"]],
+                })
+                stats["related_tbc_talent_art_pngs" if is_png else "related_tbc_talent_art_off_svgs"] += 1
+            if shutil.disk_usage(output.parent).free < min_free_bytes + len(related_tbc_talent_art_bundle.catalog_bytes):
+                raise PagesExportError("disk reserve would be breached while writing the related TBC talent-art catalog")
+            relative = related_tbc_talent_art_bundle.catalog_relative
+            out = partial / relative
+            out.parent.mkdir(parents=True, exist_ok=True)
+            out.write_bytes(related_tbc_talent_art_bundle.catalog_bytes)
+            provenance.append({
+                "route": "/" + relative,
+                "static_url": static_url(base_path, relative),
+                "output_path": relative,
+                "source_offline_path": None,
+                "source_manifest_sha256": None,
+                "source_manifest_length": None,
+                "source_sha256": None,
+                "source_length": None,
+                "derived_sha256": sha256_bytes(related_tbc_talent_art_bundle.catalog_bytes),
+                "derived_length": len(related_tbc_talent_art_bundle.catalog_bytes),
+                "mime": "application/json; charset=UTF-8",
+                "kind": "related_tbc_talent_art_catalog",
+                "role": "later_related_tbc_talent_art_catalog",
+                "transformed": True,
+                "source_refs": [dict(related_tbc_talent_art_bundle.source_metadata)],
+            })
+            stats["related_tbc_talent_art_catalogs"] += 1
         if talent_ui_bundle is not None:
             for asset in talent_ui_bundle.assets:
                 if shutil.disk_usage(output.parent).free < min_free_bytes + len(asset.data):
@@ -3733,6 +3870,64 @@ def export_pages(
                     "source_map_sha256": blizzcast_map_sha, "curated_sources": generated["curated_sources"],
                 })
                 stats["blizzcast_reading_pages" if is_page else "blizzcast_reading_styles"] += 1
+        if blizzcast_audio_bundle is not None:
+            for asset in blizzcast_audio_bundle.assets:
+                data = bytes(asset["data"])
+                route = safe_route(str(asset["path"]))
+                relative = route.lstrip("/")
+                if shutil.disk_usage(output.parent).free < min_free_bytes + len(data):
+                    raise PagesExportError("disk reserve would be breached while writing BlizzCast audio")
+                out = partial / relative
+                out.parent.mkdir(parents=True, exist_ok=True)
+                out.write_bytes(data)
+                source_record = dict(asset["record"])
+                provenance.append({
+                    "route": route,
+                    "static_url": static_url(base_path, relative),
+                    "output_path": relative,
+                    "source_offline_path": None,
+                    "source_manifest_sha256": None,
+                    "source_manifest_length": None,
+                    "source_sha256": source_record["sha256"],
+                    "source_length": source_record["bytes"],
+                    "derived_sha256": sha256_bytes(data),
+                    "derived_length": len(data),
+                    "mime": "audio/mpeg",
+                    "kind": "blizzcast_current_origin_audio",
+                    "role": "current_origin_audio_copy",
+                    "transformed": False,
+                    "source_refs": [{key: source_record[key] for key in (
+                        "original_url", "source_acquired_date", "classification", "rss_enclosure_length",
+                        "current_origin_length_delta_bytes", "historical_byte_identity",
+                    )}],
+                })
+                stats["blizzcast_audio_files"] += 1
+                stats["blizzcast_audio_bytes"] += len(data)
+            catalog_data = blizzcast_audio_bundle.catalog_bytes
+            catalog_route = safe_route(blizzcast_audio_bundle.catalog_path)
+            catalog_relative = catalog_route.lstrip("/")
+            if shutil.disk_usage(output.parent).free < min_free_bytes + len(catalog_data):
+                raise PagesExportError("disk reserve would be breached while writing the BlizzCast audio catalog")
+            catalog_out = partial / catalog_relative
+            catalog_out.parent.mkdir(parents=True, exist_ok=True)
+            catalog_out.write_bytes(catalog_data)
+            provenance.append({
+                "route": catalog_route,
+                "static_url": static_url(base_path, catalog_relative),
+                "output_path": catalog_relative,
+                "source_offline_path": None,
+                "source_manifest_sha256": None,
+                "source_manifest_length": None,
+                "source_sha256": None,
+                "source_length": None,
+                "derived_sha256": sha256_bytes(catalog_data),
+                "derived_length": len(catalog_data),
+                "mime": "application/json; charset=UTF-8",
+                "kind": "blizzcast_current_origin_audio_catalog",
+                "role": "current_origin_audio_inventory",
+                "transformed": True,
+            })
+            stats["blizzcast_audio_catalogs"] += 1
         if flash_runtime_archive is not None:
             # All three archived movies must already be exact frozen inputs.
             # This opt-in never introduces an arbitrary SWF or plugin loader.
@@ -3989,13 +4184,21 @@ def export_pages(
                 if main_page_reference is not None:
                     stats["source16_main_pages"] += 1
                 if talent_icon_bundle is not None:
+                    notice_html = talent_ui_bundle.notice_html if talent_ui_bundle else talent_icon_bundle.notice_html
+                    if related_tbc_talent_art_bundle is not None:
+                        notice_html = related_tbc_talent_art.merge_talent_source_notice(
+                            notice_html,
+                            related_tbc_talent_art_bundle.notice_html,
+                        )
                     text, has_icon_notice = annotate_related_talent_icons(
-                        text, route=route, notice_html=talent_ui_bundle.notice_html if talent_ui_bundle else talent_icon_bundle.notice_html,
+                        text, route=route, notice_html=notice_html,
                     )
                     if has_icon_notice:
                         stats["related_talent_icon_notice_pages"] += 1
                         if talent_ui_bundle is not None:
                             stats["related_talent_ui_notice_pages"] += 1
+                        if related_tbc_talent_art_bundle is not None:
+                            stats["related_tbc_talent_art_notice_pages"] += 1
                 if encyclopedia_bundle is not None and route in encyclopedia_bundle.notice_by_page:
                     notice = encyclopedia_bundle.notice_by_page[route]
                     if 'id="__offline-related-encyclopedia-images"' in text:
@@ -4427,6 +4630,20 @@ def export_pages(
                 ],
                 "presentation": "Five static reading pages; May 15 home/archive sources marked as later supplements",
             }
+        if blizzcast_audio_bundle is not None:
+            provenance_payload["blizzcast_current_origin_audio"] = {
+                "classification": "current_origin_audio_copy",
+                "source_acquired_date": blizzcast_audio_bundle.source_date,
+                "audio_restored": True,
+                "reader_source_map_sha256": blizzcast_map_sha,
+                "reader_source_acceptance_sha256": blizzcast_audio_bundle.source_acceptance_sha256,
+                "audio_map_sha256": blizzcast_audio_map_sha,
+                "current_origin_acceptance_sha256": blizzcast_audio_bundle.current_origin_acceptance_sha256,
+                "payload_zip_sha256": blizzcast_audio_bundle.payload_zip_sha256,
+                "historical_byte_identity": "unknown; the 2008 RSS contains no MP3 digest",
+                "records": [dict(asset["record"]) for asset in blizzcast_audio_bundle.assets],
+                "catalog_path": blizzcast_audio_bundle.catalog_path,
+            }
         if talent_icon_bundle is not None:
             provenance_payload["related_talent_icons"] = {
                 "source": dict(talent_icon_bundle.source_metadata),
@@ -4435,6 +4652,21 @@ def export_pages(
                 "catalog_path": talent_icon_bundle.catalog_relative,
                 "source_map_sha256": talent_icon_bundle.map_sha256,
                 "original_2008_images_recovered": 0,
+            }
+        if related_tbc_talent_art_bundle is not None:
+            provenance_payload["related_tbc_talent_art"] = {
+                "source": dict(related_tbc_talent_art_bundle.source_metadata),
+                "icon_count": related_tbc_talent_art_bundle.icon_count,
+                "png_count": related_tbc_talent_art_bundle.icon_count,
+                "derived_off_svg_count": related_tbc_talent_art_bundle.icon_count,
+                "talent_count": related_tbc_talent_art_bundle.talent_count,
+                "state_route_count": len(related_tbc_talent_art_bundle.route_reuses),
+                "catalog_path": related_tbc_talent_art_bundle.catalog_relative,
+                "map_sha256": related_tbc_talent_art_bundle.map_sha256,
+                "source_zip_sha256": related_tbc_talent_art_bundle.payload_zip_sha256,
+                "source_zip_length": related_tbc_talent_art_bundle.payload_zip_length,
+                "route_reuses": dict(related_tbc_talent_art_bundle.route_reuses),
+                "original_2008_talent_jpegs_recovered": 0,
             }
         if talent_ui_bundle is not None:
             provenance_payload["related_talent_ui"] = {
@@ -4566,8 +4798,16 @@ def main(argv: list[str] | None = None) -> int:
         help="Optional accepted five-source BlizzCast map for static historical reading pages",
     )
     parser.add_argument(
+        "--blizzcast-audio-map", type=Path, default=None,
+        help="Optional accepted current-origin MP3 copies; requires --blizzcast-source-map",
+    )
+    parser.add_argument(
         "--related-talent-icon-map", type=Path, default=None,
         help="Optional pinned same-path talent icons from a separately attributed later repository",
+    )
+    parser.add_argument(
+        "--related-tbc-talent-art-map", type=Path, default=None,
+        help="Optional validated later-TBC talent art map and sibling PNG ZIP; requires the related talent icon map",
     )
     parser.add_argument(
         "--related-talent-ui-map", type=Path, default=None,
@@ -4616,7 +4856,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     args = parser.parse_args(argv)
     try:
-        result = export_pages(output=args.output, source_site=args.site, manifest_path=args.manifest, base_path=args.base_path, max_bytes=args.max_bytes, min_free_bytes=args.min_free_bytes, image_source_maps=args.image_source_maps, supplement_image_source_maps=args.supplement_image_source_maps, allow_later_image_supplements=args.allow_later_image_supplements, guide_preview_map=args.guide_preview_map, guide_image_collection_map=args.guide_image_collection_map, related_player_gallery_preview_map=args.related_player_gallery_preview_map, flash_runtime_archive=args.flash_runtime_archive, blizzcast_source_map=args.blizzcast_source_map, related_talent_icon_map=args.related_talent_icon_map, related_talent_ui_map=args.related_talent_ui_map, source16_layout_map=args.source16_layout_map, talent_box_layout_map=args.talent_box_layout_map, related_encyclopedia_image_map=args.related_encyclopedia_image_map, related_guide_image_map=args.related_guide_image_map, related_faction_icon_map=args.related_faction_icon_map, restore_aldor_scryers_lore=args.restore_aldor_scryers_lore)
+        result = export_pages(output=args.output, source_site=args.site, manifest_path=args.manifest, base_path=args.base_path, max_bytes=args.max_bytes, min_free_bytes=args.min_free_bytes, image_source_maps=args.image_source_maps, supplement_image_source_maps=args.supplement_image_source_maps, allow_later_image_supplements=args.allow_later_image_supplements, guide_preview_map=args.guide_preview_map, guide_image_collection_map=args.guide_image_collection_map, related_player_gallery_preview_map=args.related_player_gallery_preview_map, flash_runtime_archive=args.flash_runtime_archive, blizzcast_source_map=args.blizzcast_source_map, blizzcast_audio_map=args.blizzcast_audio_map, related_talent_icon_map=args.related_talent_icon_map, related_tbc_talent_art_map=args.related_tbc_talent_art_map, related_talent_ui_map=args.related_talent_ui_map, source16_layout_map=args.source16_layout_map, talent_box_layout_map=args.talent_box_layout_map, related_encyclopedia_image_map=args.related_encyclopedia_image_map, related_guide_image_map=args.related_guide_image_map, related_faction_icon_map=args.related_faction_icon_map, restore_aldor_scryers_lore=args.restore_aldor_scryers_lore)
     except PagesExportError as exc:
         parser.error(str(exc))
     print(json.dumps(result, ensure_ascii=False, indent=2))

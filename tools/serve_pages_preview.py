@@ -6,10 +6,29 @@ from __future__ import annotations
 import argparse
 import json
 import mimetypes
+import re
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 import webbrowser
+
+
+def _audio_range(value: str, size: int) -> tuple[int, int] | None:
+    """Parse one satisfiable byte range for a local media response."""
+
+    match = re.fullmatch(r"bytes=(\d*)-(\d*)", value.strip())
+    if match is None or size <= 0:
+        return None
+    first, last = match.groups()
+    if len(first) > 20 or len(last) > 20:
+        return None
+    if not first:
+        if not last or int(last) == 0:
+            return None
+        return max(0, size - int(last)), size - 1
+    start = int(first)
+    end = min(int(last), size - 1) if last else size - 1
+    return (start, end) if start <= end and start < size else None
 
 
 def _safe_route_path(value: object, prefix: str) -> str | None:
@@ -120,21 +139,51 @@ def main() -> None:
 
         def _serve_file(self, target: Path, *, status: int, send_body: bool) -> None:
             try:
-                body = target.read_bytes()
+                size = target.stat().st_size
             except (OSError, ValueError):
                 self.send_error(404)
                 return
             mime = mimetypes.guess_type(target.name)[0] or "application/octet-stream"
+            is_audio = target.suffix.lower() == ".mp3" and status == 200
+            if is_audio:
+                mime = "audio/mpeg"
             if mime.startswith("text/") or target.suffix in {".js", ".json"}:
                 mime += "; charset=utf-8"
+            start, end = 0, size - 1
+            range_header = self.headers.get("Range") if is_audio and send_body else None
+            if range_header:
+                selected = _audio_range(range_header, size)
+                if selected is None:
+                    self.send_response(416)
+                    self.send_header("Content-Range", f"bytes */{size}")
+                    self.send_header("Content-Length", "0")
+                    self.end_headers()
+                    return
+                start, end = selected
+                status = 206
             self.send_response(status)
             self.send_header("Content-Type", mime)
-            self.send_header("Content-Length", str(len(body)))
+            self.send_header("Content-Length", str(end - start + 1))
+            if is_audio:
+                self.send_header("Accept-Ranges", "bytes")
+            if status == 206:
+                self.send_header("Content-Range", f"bytes {start}-{end}/{size}")
             self.send_header("X-Content-Type-Options", "nosniff")
             self.send_header("Cache-Control", "no-store")
             self.end_headers()
             if send_body:
-                self.wfile.write(body)
+                try:
+                    with target.open("rb") as source:
+                        source.seek(start)
+                        remaining = end - start + 1
+                        while remaining:
+                            chunk = source.read(min(256 * 1024, remaining))
+                            if not chunk:
+                                break
+                            self.wfile.write(chunk)
+                            remaining -= len(chunk)
+                except (BrokenPipeError, ConnectionResetError):
+                    pass  # Browsers cancel earlier media ranges when seeking.
 
         def do_GET(self) -> None:
             self.respond(send_body=True)
