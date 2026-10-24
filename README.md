@@ -12,8 +12,8 @@
 - 恢复副本进度图、旧专业配方与部分原画查看；保存二十二张指南预览及三十九张指南大图。
 - 将旧登录、奖励、报名和促销入口改为历史展品。
 - 恢复宝石插槽火花、男性矮人舞蹈与海象人模型三处 Flash 展示，修复下载页悬停。
-- 修复九职业天赋计算器的加点、重置和模板保存；提供 BlizzCast 前两期访谈及节目目录的本地阅读页。
-- 补入七份早期专题正文，为天赋页加入 1,024 张注明后期关联来源的图标。
+- 修复九职业天赋计算器的加点、重置和模板保存；提供 BlizzCast 前两期访谈、节目目录和音频播放。音频取自现存媒体链接。
+- 补入七份早期专题正文，并为天赋页补充注明来源的图标；本轮新增58张TBC关联图标，覆盖65项天赋。
 - 补齐天赋计算器的状态边框、重置和打印按钮、18张连线箭头，并恢复点数框布局；补充部分声望奖励图标。
 - 补充百科、指南与职业专题的五幅配图，页面注明 ArchiveCraft 来源。
 - 恢复奥尔多／占星者说明弹窗与派系切换，修复四页 Wrath 字母图的显示。
@@ -26,12 +26,12 @@
 
 - 50 个玩家截图图库的原图与缩略图均未恢复，共涉及 1,684 张截图；9 组页面另有已保存的指南图片。[缺失范围与存档调查](docs/player-gallery-accessibility-20261020.md)列出逐组情况，欢迎提供新线索。
 - 其他 Flash 内容仍有缺口；账号和依赖原站服务的功能不提供。
-- 天赋计算器仍缺部分图标、背景和界面素材；BlizzCast 的图片与音频待恢复。
+- 天赋计算器仍缺部分图标、背景和界面素材；BlizzCast 的图片待恢复。
 - 部分新闻配图和历史排行榜数据仍待补齐。
 
 ## 本地使用
 
-安装 Python 3 后，下载 [2026-10-24 离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/download/archive-20080512-browser-20261024-v59/WOW_Encyclopedia_20080512_browser_20261024_v59.zip)（约 547 MB，解压后约 636 MB）。Windows 用户解压后双击 `START_BROWSE.cmd`。
+安装 Python 3 后，下载 [2026-10-24 v59 离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/download/archive-20080512-browser-20261024-v59/WOW_Encyclopedia_20080512_browser_20261024_v59.zip)（约 547 MB，解压后约 636 MB）。Windows 用户解压后双击 `START_BROWSE.cmd`。
 
 macOS / Linux 用户在解压目录运行：
 
@@ -39,7 +39,7 @@ macOS / Linux 用户在解压目录运行：
 python3 tools/serve_pages_preview.py --site site --port 0 --open-browser
 ```
 
-启动后会打开本地浏览页面。在线版与离线包均为 v59。后续进度见[更新记录](CHANGELOG.md)。
+启动后会打开本地浏览页面。在线版为 v61，公开离线包为 v59；新版离线包已完成验收，待发布。后续进度见[更新记录](CHANGELOG.md)。
 
 ## 参与协作
 
