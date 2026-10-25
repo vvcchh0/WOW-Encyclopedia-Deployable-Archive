@@ -136,6 +136,39 @@ def _minimal_export_fixture(root: Path):
 
 
 class RelatedTbcTalentArtTests(unittest.TestCase):
+    def test_pinned_extension_preserves_all_baseline_assets_and_routes(self) -> None:
+        def load(date: str):
+            return art.load_related_tbc_talent_art_bundle(
+                ROOT / f"artifacts/related-tbc-talent-art-{date}/input-map.json",
+                ROOT, "/WOW-Encyclopedia-Deployable-Archive/",
+                source_manifest_sha256=art.EXPECTED_SOURCE_MANIFEST_SHA256,
+            )
+
+        baseline, extended = load("20261024"), load("20261025")
+        self.assertEqual((baseline.icon_count, baseline.talent_count), (58, 65))
+        self.assertEqual((extended.icon_count, extended.talent_count), (59, 66))
+        old_assets = {asset.route: asset.data for asset in baseline.assets}
+        new_assets = {asset.route: asset.data for asset in extended.assets}
+        self.assertEqual(len(new_assets.keys() - old_assets.keys()), 2)
+        for route, data in old_assets.items():
+            self.assertEqual(new_assets[route], data, route)
+        for route, target in baseline.route_reuses.items():
+            self.assertEqual(extended.route_reuses[route], target, route)
+        stem = "/shared/global/talents/shaman/images/elemental/improvedfirenovatotem"
+        self.assertEqual(extended.route_reuses[stem + ".jpg"], "/__offline/related-tbc-talent-art/Spell_Fire_SealOfFire.png")
+        self.assertEqual(extended.route_reuses[stem + "-off.jpg"], "/__offline/related-tbc-talent-art/Spell_Fire_SealOfFire-off.svg")
+        self.assertEqual(extended.source_metadata["state_routes"], 132)
+        self.assertEqual(json.loads(extended.catalog_bytes)["state_route_count"], 132)
+
+    def test_production_loader_rejects_unreviewed_profile(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            map_path, expected, _png, _map_data = _fixture(root)
+            with self.assertRaisesRegex(art.RelatedTbcTalentArtError, "not an accepted talent-art profile"):
+                art.load_related_tbc_talent_art_bundle(
+                    map_path, root, "/", source_manifest_sha256=expected.source_manifest_sha256,
+                )
+
     def test_loader_preserves_png_and_builds_embedded_srgb_grayscale_svg(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

@@ -1,7 +1,7 @@
 """Validated later-TBC talent art and derived inactive-state SVGs.
 
-The production loader accepts only the 58 PNG blobs and 65 exact talent
-associations reviewed in the local audit. PNGs are preserved byte-for-byte;
+The production loader accepts the pinned 58-icon baseline and its reviewed
+59-icon Shaman extension. PNGs are preserved byte-for-byte;
 inactive-state SVGs embed those exact bytes and apply the source app's fixed
 sRGB grayscale matrix. No original 2008 JPEG is claimed or synthesized.
 """
@@ -17,7 +17,7 @@ import struct
 import zipfile
 import zlib
 from collections import Counter
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from pathlib import Path, PurePosixPath
 from typing import Any, Mapping
 
@@ -127,6 +127,24 @@ _PRODUCTION_EXPECTATIONS = _Expectations(
     talent_count=EXPECTED_TALENT_COUNT,
     route_reuse_count=EXPECTED_ROUTE_REUSE_COUNT,
 )
+
+# Keep the original profile and asset namespace intact. Only this additional
+# immutable map is accepted; its renamed talent was checked rank by rank.
+_SHAMAN_EXTENSION_EXPECTATIONS = replace(
+    _PRODUCTION_EXPECTATIONS,
+    candidate_acceptance_sha256="b88230b3665a1053841ccf98ce1bbf885850ac74c3e4859735cac9fce344bdf6",
+    candidate_audit_sha256="1275bd1180718c952ed4fc3a85ffc191e7880de9133586c47a142a01a9527162",
+    source_pinset_sha256="2b2e996a4a1246d0a16a76943525277ff4c11f76dff00dc2b564d6da82459299",
+    talent_mapping_sha256="97d629d2af73c1491059dd84f57e60f022db16c7641c6d5724bbed279924b2f5",
+    map_sha256="9a3f24a0ba4bae5ec91bbc5876d7c3282a74edfa2b81b4d1828daa603e06cc6e",
+    icon_count=59,
+    talent_count=66,
+    route_reuse_count=132,
+)
+_ACCEPTED_PROFILES = {
+    item.map_sha256: item
+    for item in (_PRODUCTION_EXPECTATIONS, _SHAMAN_EXTENSION_EXPECTATIONS)
+}
 
 
 def _fail(message: str) -> RelatedTbcTalentArtError:
@@ -491,9 +509,9 @@ def _load_bundle_with_expectations(
             infos = archive.infolist()
             names = [info.filename for info in infos]
             if len(names) != expectations.icon_count or len(set(names)) != len(names):
-                raise _fail("source ZIP must contain exactly 58 unique non-directory members")
+                raise _fail(f"source ZIP must contain exactly {expectations.icon_count} unique non-directory members")
             if set(names) != set(raw_member_names):
-                raise _fail("source ZIP member set differs from the accepted 58-file whitelist")
+                raise _fail(f"source ZIP member set differs from the accepted {expectations.icon_count}-file whitelist")
             if sum(info.file_size for info in infos) > MAX_SOURCE_ZIP_BYTES:
                 raise _fail("source ZIP uncompressed size exceeds its bound")
             info_by_name = {info.filename: info for info in infos}
@@ -522,7 +540,7 @@ def _load_bundle_with_expectations(
         "raw_png_count": expectations.icon_count,
         "derived_off_svg_count": expectations.icon_count,
         "directly_named_talents": expectations.talent_count,
-        "state_routes": EXPECTED_ROUTE_REUSE_COUNT,
+        "state_routes": expectations.route_reuse_count,
         "original_2008_talent_jpegs_recovered": 0,
     }
 
@@ -628,14 +646,24 @@ def load_related_tbc_talent_art_bundle(
     *,
     source_manifest_sha256: str,
 ) -> RelatedTbcTalentArtBundle:
-    """Load the root-accepted map/ZIP for the exact v59 Source16 manifest."""
+    """Load one immutable root-accepted profile for the Source16 manifest."""
+
+    root = Path(workspace_root).resolve()
+    map_file = _resolve_workspace_file(root, map_path, "input map")
+    try:
+        map_sha256 = _sha256(map_file.read_bytes())
+    except OSError as exc:
+        raise _fail(f"input map is unreadable: {exc}") from exc
+    expectations = _ACCEPTED_PROFILES.get(map_sha256)
+    if expectations is None:
+        raise _fail("input map SHA-256 is not an accepted talent-art profile")
 
     return _load_bundle_with_expectations(
-        map_path,
-        workspace_root,
+        map_file,
+        root,
         base_path,
         source_manifest_sha256,
-        _PRODUCTION_EXPECTATIONS,
+        expectations,
     )
 
 

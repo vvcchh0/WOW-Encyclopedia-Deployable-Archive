@@ -4,6 +4,8 @@
 
 ## 2026-10-25
 
+- 完成本地v62验收：为萨满“Improved Fire Nova Totem”补入一张关联图标及灰度状态，累计覆盖66项天赋。13项测试、24项Chrome检查和10,336个文件回读通过；线上与最新完整包暂为v61。[对应依据](docs/shaman-talent-art-20261025.md)、[本地验收](docs/evidence/v62-local-acceptance-20261025.json)
+- 从Common Crawl保存官方万圣节服装赛获奖页的2008-08-29记录，取得五张赢家截图的路径；该集合现存索引未包含图片，尚未恢复新闻配图。[本轮恢复总账](docs/continuous-recovery-20261025.md)
 - 整理 GitHub 发布：保留 v24、v38、v52、v61 四个阶段包，中间版本转为[历史说明](docs/release-history.md)，原附件已核验并留存本地，Git 标签保留。
 - 部署记录保留当前版与最近两个检查点，历史工作流与 Git 提交继续可查；在线版及最新离线包保持 v61。
 - 更新[发布策略](docs/publication-policy.md)：网页随修复更新，完整离线包在取得阶段成果后发布。[本次整理记录](docs/github-publication-cleanup-20261025.md)
