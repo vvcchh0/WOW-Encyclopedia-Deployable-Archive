@@ -65,7 +65,7 @@ function generateCostString(thisObject,thisBracket)
 i = 0;
 var RewardItems = new Array();
 
-var fPatternHeavyClefthoofBoots = new RewardItem("alliance","Pattern: Heavy Clefthoof Boots","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fcenarionxp%2Fscripts%2Frewards-cenarion-expedition.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_05.gif&reason=external-or-uncollected-resource");
+var fPatternHeavyClefthoofBoots = new RewardItem("alliance","Pattern: Heavy Clefthoof Boots","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_05.jpg");
 fPatternHeavyClefthoofBoots.itemMoneyPrice = new Array();
 fPatternHeavyClefthoofBoots.itemMoneyPrice[0] = 140000
 fPatternHeavyClefthoofBoots.itemStats = new Array();
@@ -152,7 +152,7 @@ Adds 26.0 damage per second<br>Requires Level 61<br>Requires Cenarion Expedition
 ";
 RewardItems[i] = fScoutsArrow; ++i;
 
-var fPatternHeavyClefthoofLeggings = new RewardItem("alliance","Pattern: Heavy Clefthoof Leggings","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fcenarionxp%2Fscripts%2Frewards-cenarion-expedition.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_05.gif&reason=external-or-uncollected-resource");
+var fPatternHeavyClefthoofLeggings = new RewardItem("alliance","Pattern: Heavy Clefthoof Leggings","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_05.jpg");
 fPatternHeavyClefthoofLeggings.itemMoneyPrice = new Array();
 fPatternHeavyClefthoofLeggings.itemMoneyPrice[1] = 140000
 fPatternHeavyClefthoofLeggings.itemStats = new Array();
@@ -337,7 +337,7 @@ fRecipeEarthenElixir.itemStats[1] = "\
 RewardItems[i] = fRecipeEarthenElixir; ++i;
 
 
-var fWardensHauberk = new RewardItem("alliance","Warden's Hauberk","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fcenarionxp%2Fscripts%2Frewards-cenarion-expedition.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Chest_Leather_08.gif&reason=external-or-uncollected-resource");
+var fWardensHauberk = new RewardItem("alliance","Warden's Hauberk","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_chest_leather_08.jpg");
 fWardensHauberk.itemMoneyPrice = new Array();
 fWardensHauberk.itemMoneyPrice[1] = 181153
 fWardensHauberk.itemStats = new Array();
@@ -403,7 +403,7 @@ fGlyphOfNatureWarding.itemStats[1] = "\
 ";
 RewardItems[i] = fGlyphOfNatureWarding; ++i;
 
-var fDesignNightseyePanther = new RewardItem("alliance","Design: Nightseye Panther","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fcenarionxp%2Fscripts%2Frewards-cenarion-expedition.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_05.gif&reason=external-or-uncollected-resource");
+var fDesignNightseyePanther = new RewardItem("alliance","Design: Nightseye Panther","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_05.jpg");
 fDesignNightseyePanther.itemMoneyPrice = new Array();
 fDesignNightseyePanther.itemMoneyPrice[2] = 120000
 fDesignNightseyePanther.itemStats = new Array();
@@ -430,7 +430,7 @@ fDesignNightseyePanther.itemStats[2] = "\
 RewardItems[i] = fDesignNightseyePanther; ++i;
 
 
-var fPatternHeavyClefthoofVest = new RewardItem("alliance","Pattern: Heavy Clefthoof Vest","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fcenarionxp%2Fscripts%2Frewards-cenarion-expedition.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_05.gif&reason=external-or-uncollected-resource");
+var fPatternHeavyClefthoofVest = new RewardItem("alliance","Pattern: Heavy Clefthoof Vest","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_05.jpg");
 fPatternHeavyClefthoofVest.itemMoneyPrice = new Array();
 fPatternHeavyClefthoofVest.itemMoneyPrice[1] = 160000
 fPatternHeavyClefthoofVest.itemStats = new Array();
@@ -503,7 +503,7 @@ fRecipeTransmutePrimalWaterToAir.itemStats[2] = "\
 ";
 RewardItems[i] = fRecipeTransmutePrimalWaterToAir; ++i;
 
-var fPlansWildguardHelm = new RewardItem("alliance","Plans: Wildguard Helm","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fcenarionxp%2Fscripts%2Frewards-cenarion-expedition.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_04.gif&reason=external-or-uncollected-resource");
+var fPlansWildguardHelm = new RewardItem("alliance","Plans: Wildguard Helm","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_04.jpg");
 fPlansWildguardHelm.itemMoneyPrice = new Array();
 fPlansWildguardHelm.itemMoneyPrice[2] = 240000
 fPlansWildguardHelm.itemStats = new Array();
@@ -526,7 +526,7 @@ fPlansWildguardHelm.itemStats[2] = "\
 ";
 RewardItems[i] = fPlansWildguardHelm; ++i;
 
-var fPlansWildguardLeggings = new RewardItem("alliance","Plans: Wildguard Leggings","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fcenarionxp%2Fscripts%2Frewards-cenarion-expedition.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_04.gif&reason=external-or-uncollected-resource");
+var fPlansWildguardLeggings = new RewardItem("alliance","Plans: Wildguard Leggings","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_04.jpg");
 fPlansWildguardLeggings.itemMoneyPrice = new Array();
 fPlansWildguardLeggings.itemMoneyPrice[2] = 240000
 fPlansWildguardLeggings.itemStats = new Array();
@@ -586,7 +586,7 @@ fGlyphOfFerocity.itemStats[2] = "\
 RewardItems[i] = fGlyphOfFerocity; ++i;
 
 
-var fReservoirKey = new RewardItem("alliance","Reservoir Key","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fcenarionxp%2Fscripts%2Frewards-cenarion-expedition.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Misc_Key_13.gif&reason=external-or-uncollected-resource");
+var fReservoirKey = new RewardItem("alliance","Reservoir Key","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_misc_key_13.jpg");
 fReservoirKey.itemMoneyPrice = new Array();
 fReservoirKey.itemMoneyPrice[1] = 100000
 fReservoirKey.itemStats = new Array();
@@ -603,7 +603,7 @@ fReservoirKey.itemStats[1] = "\
 ";
 RewardItems[i] = fReservoirKey; ++i;
 
-var fWatchersCowl = new RewardItem("alliance","Watcher's Cowl","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fcenarionxp%2Fscripts%2Frewards-cenarion-expedition.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Helmet_34.gif&reason=external-or-uncollected-resource");
+var fWatchersCowl = new RewardItem("alliance","Watcher's Cowl","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_helmet_34.jpg");
 fWatchersCowl.itemMoneyPrice = new Array();
 fWatchersCowl.itemMoneyPrice[2] = 127371
 fWatchersCowl.itemStats = new Array();
@@ -623,7 +623,7 @@ fWatchersCowl.itemStats[2] = "\
 ";
 RewardItems[i] = fWatchersCowl; ++i;
 
-var fStrengthOfTheUntamed = new RewardItem("alliance","Strength of the Untamed","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fcenarionxp%2Fscripts%2Frewards-cenarion-expedition.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Necklace_06.gif&reason=external-or-uncollected-resource");
+var fStrengthOfTheUntamed = new RewardItem("alliance","Strength of the Untamed","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_necklace_06.jpg");
 fStrengthOfTheUntamed.itemMoneyPrice = new Array();
 fStrengthOfTheUntamed.itemMoneyPrice[2] = 175952
 fStrengthOfTheUntamed.itemStats = new Array();
@@ -685,7 +685,7 @@ fRecipeFlaskOfDistilledWisdom.itemStats[3] = "\
 ";
 RewardItems[i] = fRecipeFlaskOfDistilledWisdom; ++i;
 
-var fPlansWildguardBreastplate = new RewardItem("alliance","Plans: Wildguard Breastplate","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fcenarionxp%2Fscripts%2Frewards-cenarion-expedition.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_04.gif&reason=external-or-uncollected-resource");
+var fPlansWildguardBreastplate = new RewardItem("alliance","Plans: Wildguard Breastplate","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_04.jpg");
 fPlansWildguardBreastplate.itemMoneyPrice = new Array();
 fPlansWildguardBreastplate.itemMoneyPrice[3] = 240000
 fPlansWildguardBreastplate.itemStats = new Array();
@@ -728,7 +728,7 @@ fPatternNethercleftLegArmor.itemStats[3] = "\
 ";
 RewardItems[i] = fPatternNethercleftLegArmor; ++i;
 
-var fDesignTheNaturalWard = new RewardItem("alliance","Design: The Natural Ward","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fcenarionxp%2Fscripts%2Frewards-cenarion-expedition.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_04.gif&reason=external-or-uncollected-resource");
+var fDesignTheNaturalWard = new RewardItem("alliance","Design: The Natural Ward","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_04.jpg");
 fDesignTheNaturalWard.itemMoneyPrice = new Array();
 fDesignTheNaturalWard.itemMoneyPrice[3] = 120000
 fDesignTheNaturalWard.itemStats = new Array();

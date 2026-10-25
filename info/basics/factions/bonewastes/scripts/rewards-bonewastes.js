@@ -410,7 +410,7 @@ Requires Level 66<br>\
 RewardItems[i] = fExorcistsDreadweaveHood; ++i;
 
 
-var fSwiftWindfireDiamond = new RewardItem("alliance","Swift Windfire Diamond","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbonewastes%2Fscripts%2Frewards-bonewastes.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Misc_Gem_Diamond_07.gif&reason=external-or-uncollected-resource");
+var fSwiftWindfireDiamond = new RewardItem("alliance","Swift Windfire Diamond","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_misc_gem_diamond_07.jpg");
 fSwiftWindfireDiamond.itemTokenPrice = new Array();
 fSwiftWindfireDiamond.itemTokenPrice[0] = new Array(8,0,0,0);
 fSwiftWindfireDiamond.itemStats = new Array();
@@ -432,7 +432,7 @@ Requires at least 1 Red gem<br>\
 RewardItems[i] = fSwiftWindfireDiamond; ++i;
 
 
-var fSwiftStarfireDiamond = new RewardItem("alliance","Swift Starfire Diamond","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbonewastes%2Fscripts%2Frewards-bonewastes.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Misc_Gem_Diamond_07.gif&reason=external-or-uncollected-resource");
+var fSwiftStarfireDiamond = new RewardItem("alliance","Swift Starfire Diamond","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_misc_gem_diamond_07.jpg");
 fSwiftStarfireDiamond.itemTokenPrice = new Array();
 fSwiftStarfireDiamond.itemTokenPrice[0] = new Array(8,0,0,0);
 fSwiftStarfireDiamond.itemStats = new Array();

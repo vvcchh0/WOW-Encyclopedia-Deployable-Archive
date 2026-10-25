@@ -73,7 +73,7 @@ function generateCostString(thisObject,thisBracket)
 i = 0;
 var RewardItems = new Array();
 
-var fVioletSignet = new RewardItem("alliance","Violet Signet (Mage)","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fvioleteye%2Fscripts%2Frewards-the-violet-eye-rings.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_62.gif&reason=external-or-uncollected-resource");
+var fVioletSignet = new RewardItem("alliance","Violet Signet (Mage)","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_62.jpg");
 fVioletSignet.itemStats = new Array();
 fVioletSignet.itemStats[0] = "\
 <table width=\"275\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\
@@ -92,7 +92,7 @@ fVioletSignet.itemStats[0] = "\
 ";
 RewardItems[i] = fVioletSignet; ++i;
 
-var fVioletSignet = new RewardItem("alliance","Violet Signet (Mage)","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fvioleteye%2Fscripts%2Frewards-the-violet-eye-rings.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_62.gif&reason=external-or-uncollected-resource");
+var fVioletSignet = new RewardItem("alliance","Violet Signet (Mage)","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_62.jpg");
 fVioletSignet.itemStats = new Array();
 fVioletSignet.itemStats[1] = "\
 <table width=\"275\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\
@@ -111,7 +111,7 @@ fVioletSignet.itemStats[1] = "\
 ";
 RewardItems[i] = fVioletSignet; ++i;
 
-var fVioletSignet = new RewardItem("alliance","Violet Signet (Mage)","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fvioleteye%2Fscripts%2Frewards-the-violet-eye-rings.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_62.gif&reason=external-or-uncollected-resource");
+var fVioletSignet = new RewardItem("alliance","Violet Signet (Mage)","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_62.jpg");
 fVioletSignet.itemStats = new Array();
 fVioletSignet.itemStats[2] = "\
 <table width=\"275\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\
@@ -130,7 +130,7 @@ fVioletSignet.itemStats[2] = "\
 ";
 RewardItems[i] = fVioletSignet; ++i;
 
-var fVioletSignetOfTheArchmage = new RewardItem("alliance","Violet Signet of the Archmage","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fvioleteye%2Fscripts%2Frewards-the-violet-eye-rings.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_62.gif&reason=external-or-uncollected-resource");
+var fVioletSignetOfTheArchmage = new RewardItem("alliance","Violet Signet of the Archmage","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_62.jpg");
 fVioletSignetOfTheArchmage.itemStats = new Array();
 fVioletSignetOfTheArchmage.itemStats[3] = "\
 <table width=\"275\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\
@@ -149,7 +149,7 @@ fVioletSignetOfTheArchmage.itemStats[3] = "\
 ";
 RewardItems[i] = fVioletSignetOfTheArchmage; ++i;
 
-var fVioletSignet = new RewardItem("alliance","Violet Signet (Restorer)","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fvioleteye%2Fscripts%2Frewards-the-violet-eye-rings.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_62.gif&reason=external-or-uncollected-resource");
+var fVioletSignet = new RewardItem("alliance","Violet Signet (Restorer)","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_62.jpg");
 fVioletSignet.itemStats = new Array();
 fVioletSignet.itemStats[0] = "\
 <table width=\"275\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\
@@ -166,7 +166,7 @@ fVioletSignet.itemStats[0] = "\
 ";
 RewardItems[i] = fVioletSignet; ++i;
 
-var fVioletSignet = new RewardItem("alliance","Violet Signet (Restorer)","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fvioleteye%2Fscripts%2Frewards-the-violet-eye-rings.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_62.gif&reason=external-or-uncollected-resource");
+var fVioletSignet = new RewardItem("alliance","Violet Signet (Restorer)","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_62.jpg");
 fVioletSignet.itemStats = new Array();
 fVioletSignet.itemStats[1] = "\
 <table width=\"275\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\
@@ -183,7 +183,7 @@ fVioletSignet.itemStats[1] = "\
 ";
 RewardItems[i] = fVioletSignet; ++i;
 
-var fVioletSignet = new RewardItem("alliance","Violet Signet (Restorer)","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fvioleteye%2Fscripts%2Frewards-the-violet-eye-rings.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_62.gif&reason=external-or-uncollected-resource");
+var fVioletSignet = new RewardItem("alliance","Violet Signet (Restorer)","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_62.jpg");
 fVioletSignet.itemStats = new Array();
 fVioletSignet.itemStats[2] = "\
 <table width=\"275\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\
@@ -200,7 +200,7 @@ fVioletSignet.itemStats[2] = "\
 ";
 RewardItems[i] = fVioletSignet; ++i;
 
-var fVioletSignetOfTheGrandRestorer = new RewardItem("alliance","Violet Signet of the Grand Restorer","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fvioleteye%2Fscripts%2Frewards-the-violet-eye-rings.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_62.gif&reason=external-or-uncollected-resource");
+var fVioletSignetOfTheGrandRestorer = new RewardItem("alliance","Violet Signet of the Grand Restorer","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_62.jpg");
 fVioletSignetOfTheGrandRestorer.itemStats = new Array();
 fVioletSignetOfTheGrandRestorer.itemStats[3] = "\
 <table width=\"275\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\
@@ -217,7 +217,7 @@ fVioletSignetOfTheGrandRestorer.itemStats[3] = "\
 ";
 RewardItems[i] = fVioletSignetOfTheGrandRestorer; ++i;
 
-var fVioletSignet = new RewardItem("alliance","Violet Signet (Assassin)","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fvioleteye%2Fscripts%2Frewards-the-violet-eye-rings.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_62.gif&reason=external-or-uncollected-resource");
+var fVioletSignet = new RewardItem("alliance","Violet Signet (Assassin)","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_62.jpg");
 fVioletSignet.itemStats = new Array();
 fVioletSignet.itemStats[0] = "\
 <table width=\"275\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\
@@ -236,7 +236,7 @@ fVioletSignet.itemStats[0] = "\
 ";
 RewardItems[i] = fVioletSignet; ++i;
 
-var fVioletSignet = new RewardItem("alliance","Violet Signet (Assassin)","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fvioleteye%2Fscripts%2Frewards-the-violet-eye-rings.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_62.gif&reason=external-or-uncollected-resource");
+var fVioletSignet = new RewardItem("alliance","Violet Signet (Assassin)","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_62.jpg");
 fVioletSignet.itemStats = new Array();
 fVioletSignet.itemStats[1] = "\
 <table width=\"275\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\
@@ -255,7 +255,7 @@ fVioletSignet.itemStats[1] = "\
 ";
 RewardItems[i] = fVioletSignet; ++i;
 
-var fVioletSignet = new RewardItem("alliance","Violet Signet (Assassin)","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fvioleteye%2Fscripts%2Frewards-the-violet-eye-rings.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_62.gif&reason=external-or-uncollected-resource");
+var fVioletSignet = new RewardItem("alliance","Violet Signet (Assassin)","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_62.jpg");
 fVioletSignet.itemStats = new Array();
 fVioletSignet.itemStats[2] = "\
 <table width=\"275\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\
@@ -274,7 +274,7 @@ fVioletSignet.itemStats[2] = "\
 ";
 RewardItems[i] = fVioletSignet; ++i;
 
-var fVioletSignetOfTheMasterAssassin = new RewardItem("alliance","Violet Signet of the Master Assassin","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fvioleteye%2Fscripts%2Frewards-the-violet-eye-rings.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_62.gif&reason=external-or-uncollected-resource");
+var fVioletSignetOfTheMasterAssassin = new RewardItem("alliance","Violet Signet of the Master Assassin","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_62.jpg");
 fVioletSignetOfTheMasterAssassin.itemStats = new Array();
 fVioletSignetOfTheMasterAssassin.itemStats[3] = "\
 <table width=\"275\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\
@@ -293,7 +293,7 @@ fVioletSignetOfTheMasterAssassin.itemStats[3] = "\
 ";
 RewardItems[i] = fVioletSignetOfTheMasterAssassin; ++i;
 
-var fVioletSignet = new RewardItem("alliance","Violet Signet (Protector)","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fvioleteye%2Fscripts%2Frewards-the-violet-eye-rings.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_62.gif&reason=external-or-uncollected-resource");
+var fVioletSignet = new RewardItem("alliance","Violet Signet (Protector)","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_62.jpg");
 fVioletSignet.itemStats = new Array();
 fVioletSignet.itemStats[0] = "\
 <table width=\"275\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\
@@ -310,7 +310,7 @@ fVioletSignet.itemStats[0] = "\
 ";
 RewardItems[i] = fVioletSignet; ++i;
 
-var fVioletSignet = new RewardItem("alliance","Violet Signet (Protector)","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fvioleteye%2Fscripts%2Frewards-the-violet-eye-rings.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_62.gif&reason=external-or-uncollected-resource");
+var fVioletSignet = new RewardItem("alliance","Violet Signet (Protector)","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_62.jpg");
 fVioletSignet.itemStats = new Array();
 fVioletSignet.itemStats[1] = "\
 <table width=\"275\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\
@@ -327,7 +327,7 @@ fVioletSignet.itemStats[1] = "\
 ";
 RewardItems[i] = fVioletSignet; ++i;
 
-var fVioletSignet = new RewardItem("alliance","Violet Signet (Protector)","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fvioleteye%2Fscripts%2Frewards-the-violet-eye-rings.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_62.gif&reason=external-or-uncollected-resource");
+var fVioletSignet = new RewardItem("alliance","Violet Signet (Protector)","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_62.jpg");
 fVioletSignet.itemStats = new Array();
 fVioletSignet.itemStats[2] = "\
 <table width=\"275\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\
@@ -344,7 +344,7 @@ fVioletSignet.itemStats[2] = "\
 ";
 RewardItems[i] = fVioletSignet; ++i;
 
-var fVioletSignetOfTheGreatProtector = new RewardItem("alliance","Violet Signet of the Great Protector","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fvioleteye%2Fscripts%2Frewards-the-violet-eye-rings.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_62.gif&reason=external-or-uncollected-resource");
+var fVioletSignetOfTheGreatProtector = new RewardItem("alliance","Violet Signet of the Great Protector","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_62.jpg");
 fVioletSignetOfTheGreatProtector.itemStats = new Array();
 fVioletSignetOfTheGreatProtector.itemStats[3] = "\
 <table width=\"275\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\

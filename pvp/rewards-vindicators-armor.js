@@ -197,7 +197,7 @@ fVindicatorsDragonhideBoots.itemStats[5] = "\
 ";
 RewardItems[i] = fVindicatorsDragonhideBoots; ++i;
 
-var fVindicatorsDragonhideBracers = new RewardItem("alliance","Vindicator's Dragonhide Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Frewards-vindicators-armor.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_07.gif&reason=external-or-uncollected-resource");
+var fVindicatorsDragonhideBracers = new RewardItem("alliance","Vindicator's Dragonhide Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_07.jpg");
 fVindicatorsDragonhideBracers.itemHonorPrice = new Array();
 fVindicatorsDragonhideBracers.itemHonorPrice[5] = 11794
 fVindicatorsDragonhideBracers.itemTokenPrice = new Array();
@@ -246,7 +246,7 @@ fVindicatorsDreadweaveBelt.itemStats[2] = "\
 ";
 RewardItems[i] = fVindicatorsDreadweaveBelt; ++i;
 
-var fVindicatorsDreadweaveCuffs = new RewardItem("alliance","Vindicator's Dreadweave Cuffs","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Frewards-vindicators-armor.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_07.gif&reason=external-or-uncollected-resource");
+var fVindicatorsDreadweaveCuffs = new RewardItem("alliance","Vindicator's Dreadweave Cuffs","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_07.jpg");
 fVindicatorsDreadweaveCuffs.itemHonorPrice = new Array();
 fVindicatorsDreadweaveCuffs.itemHonorPrice[2] = 11794
 fVindicatorsDreadweaveCuffs.itemTokenPrice = new Array();
@@ -346,7 +346,7 @@ fVindicatorsKodohideBoots.itemStats[5] = "\
 RewardItems[i] = fVindicatorsKodohideBoots; ++i;
 
 
-var fVindicatorsKodohideBracers = new RewardItem("alliance","Vindicator's Kodohide Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Frewards-vindicators-armor.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_07.gif&reason=external-or-uncollected-resource");
+var fVindicatorsKodohideBracers = new RewardItem("alliance","Vindicator's Kodohide Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_07.jpg");
 fVindicatorsKodohideBracers.itemHonorPrice = new Array();
 fVindicatorsKodohideBracers.itemHonorPrice[5] = 11794
 fVindicatorsKodohideBracers.itemTokenPrice = new Array();
@@ -511,7 +511,7 @@ fVindicatorsLeatherBoots.itemStats[5] = "\
 RewardItems[i] = fVindicatorsLeatherBoots; ++i;
 
 
-var fVindicatorsLeatherBracers = new RewardItem("alliance","Vindicator's Leather Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Frewards-vindicators-armor.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_07.gif&reason=external-or-uncollected-resource");
+var fVindicatorsLeatherBracers = new RewardItem("alliance","Vindicator's Leather Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_07.jpg");
 fVindicatorsLeatherBracers.itemHonorPrice = new Array();
 fVindicatorsLeatherBracers.itemHonorPrice[5] = 11794
 fVindicatorsLeatherBracers.itemTokenPrice = new Array();
@@ -886,7 +886,7 @@ fVindicatorsSilkBelt.itemStats[2] = "\
 RewardItems[i] = fVindicatorsSilkBelt; ++i;
 
 
-var fVindicatorsSilkCuffs = new RewardItem("alliance","Vindicator's Silk Cuffs","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Frewards-vindicators-armor.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_07.gif&reason=external-or-uncollected-resource");
+var fVindicatorsSilkCuffs = new RewardItem("alliance","Vindicator's Silk Cuffs","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_07.jpg");
 fVindicatorsSilkCuffs.itemHonorPrice = new Array();
 fVindicatorsSilkCuffs.itemHonorPrice[2] = 11794
 fVindicatorsSilkCuffs.itemTokenPrice = new Array();
@@ -964,7 +964,7 @@ fVindicatorsMoonclothBelt.itemStats[2] = "\
 ";
 RewardItems[i] = fVindicatorsMoonclothBelt; ++i;
 
-var fVindicatorsMoonclothCuffs = new RewardItem("alliance","Vindicator's Mooncloth Cuffs","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Frewards-vindicators-armor.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_07.gif&reason=external-or-uncollected-resource");
+var fVindicatorsMoonclothCuffs = new RewardItem("alliance","Vindicator's Mooncloth Cuffs","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_07.jpg");
 fVindicatorsMoonclothCuffs.itemHonorPrice = new Array();
 fVindicatorsMoonclothCuffs.itemHonorPrice[2] = 11794
 fVindicatorsMoonclothCuffs.itemTokenPrice = new Array();
@@ -1065,7 +1065,7 @@ fVindicatorsKodohideBoots.itemStats[5] = "\
 ";
 RewardItems[i] = fVindicatorsKodohideBoots; ++i;
 
-var fVindicatorsKodohideBracers = new RewardItem("alliance","Vindicator's Wyrmhide Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Frewards-vindicators-armor.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_07.gif&reason=external-or-uncollected-resource");
+var fVindicatorsKodohideBracers = new RewardItem("alliance","Vindicator's Wyrmhide Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_07.jpg");
 fVindicatorsKodohideBracers.itemHonorPrice = new Array();
 fVindicatorsKodohideBracers.itemHonorPrice[5] = 11794
 fVindicatorsKodohideBracers.itemTokenPrice = new Array();
@@ -1586,7 +1586,7 @@ fVindicatorsDragonhideBoots.itemStats[5] = "\
 ";
 RewardItems[i] = fVindicatorsDragonhideBoots; ++i;
 
-var fVindicatorsDragonhideBracers = new RewardItem("horde","Vindicator's Dragonhide Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Frewards-vindicators-armor.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_07.gif&reason=external-or-uncollected-resource");
+var fVindicatorsDragonhideBracers = new RewardItem("horde","Vindicator's Dragonhide Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_07.jpg");
 fVindicatorsDragonhideBracers.itemHonorPrice = new Array();
 fVindicatorsDragonhideBracers.itemHonorPrice[5] = 11794
 fVindicatorsDragonhideBracers.itemTokenPrice = new Array();
@@ -1635,7 +1635,7 @@ fVindicatorsDreadweaveBelt.itemStats[2] = "\
 ";
 RewardItems[i] = fVindicatorsDreadweaveBelt; ++i;
 
-var fVindicatorsDreadweaveCuffs = new RewardItem("horde","Vindicator's Dreadweave Cuffs","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Frewards-vindicators-armor.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_07.gif&reason=external-or-uncollected-resource");
+var fVindicatorsDreadweaveCuffs = new RewardItem("horde","Vindicator's Dreadweave Cuffs","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_07.jpg");
 fVindicatorsDreadweaveCuffs.itemHonorPrice = new Array();
 fVindicatorsDreadweaveCuffs.itemHonorPrice[2] = 11794
 fVindicatorsDreadweaveCuffs.itemTokenPrice = new Array();
@@ -1735,7 +1735,7 @@ fVindicatorsKodohideBoots.itemStats[5] = "\
 RewardItems[i] = fVindicatorsKodohideBoots; ++i;
 
 
-var fVindicatorsKodohideBracers = new RewardItem("horde","Vindicator's Kodohide Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Frewards-vindicators-armor.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_07.gif&reason=external-or-uncollected-resource");
+var fVindicatorsKodohideBracers = new RewardItem("horde","Vindicator's Kodohide Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_07.jpg");
 fVindicatorsKodohideBracers.itemHonorPrice = new Array();
 fVindicatorsKodohideBracers.itemHonorPrice[5] = 11794
 fVindicatorsKodohideBracers.itemTokenPrice = new Array();
@@ -1900,7 +1900,7 @@ fVindicatorsLeatherBoots.itemStats[5] = "\
 RewardItems[i] = fVindicatorsLeatherBoots; ++i;
 
 
-var fVindicatorsLeatherBracers = new RewardItem("horde","Vindicator's Leather Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Frewards-vindicators-armor.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_07.gif&reason=external-or-uncollected-resource");
+var fVindicatorsLeatherBracers = new RewardItem("horde","Vindicator's Leather Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_07.jpg");
 fVindicatorsLeatherBracers.itemHonorPrice = new Array();
 fVindicatorsLeatherBracers.itemHonorPrice[5] = 11794
 fVindicatorsLeatherBracers.itemTokenPrice = new Array();
@@ -2275,7 +2275,7 @@ fVindicatorsSilkBelt.itemStats[2] = "\
 RewardItems[i] = fVindicatorsSilkBelt; ++i;
 
 
-var fVindicatorsSilkCuffs = new RewardItem("horde","Vindicator's Silk Cuffs","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Frewards-vindicators-armor.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_07.gif&reason=external-or-uncollected-resource");
+var fVindicatorsSilkCuffs = new RewardItem("horde","Vindicator's Silk Cuffs","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_07.jpg");
 fVindicatorsSilkCuffs.itemHonorPrice = new Array();
 fVindicatorsSilkCuffs.itemHonorPrice[2] = 11794
 fVindicatorsSilkCuffs.itemTokenPrice = new Array();
@@ -2353,7 +2353,7 @@ fVindicatorsMoonclothBelt.itemStats[2] = "\
 ";
 RewardItems[i] = fVindicatorsMoonclothBelt; ++i;
 
-var fVindicatorsMoonclothCuffs = new RewardItem("horde","Vindicator's Mooncloth Cuffs","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Frewards-vindicators-armor.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_07.gif&reason=external-or-uncollected-resource");
+var fVindicatorsMoonclothCuffs = new RewardItem("horde","Vindicator's Mooncloth Cuffs","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_07.jpg");
 fVindicatorsMoonclothCuffs.itemHonorPrice = new Array();
 fVindicatorsMoonclothCuffs.itemHonorPrice[2] = 11794
 fVindicatorsMoonclothCuffs.itemTokenPrice = new Array();
@@ -2454,7 +2454,7 @@ fVindicatorsKodohideBoots.itemStats[5] = "\
 ";
 RewardItems[i] = fVindicatorsKodohideBoots; ++i;
 
-var fVindicatorsKodohideBracers = new RewardItem("horde","Vindicator's Wyrmhide Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Frewards-vindicators-armor.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_07.gif&reason=external-or-uncollected-resource");
+var fVindicatorsKodohideBracers = new RewardItem("horde","Vindicator's Wyrmhide Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_07.jpg");
 fVindicatorsKodohideBracers.itemHonorPrice = new Array();
 fVindicatorsKodohideBracers.itemHonorPrice[5] = 11794
 fVindicatorsKodohideBracers.itemTokenPrice = new Array();

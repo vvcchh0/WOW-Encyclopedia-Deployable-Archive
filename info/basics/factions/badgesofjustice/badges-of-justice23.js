@@ -146,7 +146,7 @@ fLibramOfDivineJudgement.itemStats[6] = "\
 ";
 RewardItems[i] = fLibramOfDivineJudgement; ++i;
 
-var fLibramOfDivinePurpose = new RewardItem("alliance","Libram of Divine Purpose","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Relics_LibramofHope.jpg&reason=external-or-uncollected-resource");
+var fLibramOfDivinePurpose = new RewardItem("alliance","Libram of Divine Purpose","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_relics_libramofhope.jpg");
 fLibramOfDivinePurpose.itemHonorPrice = new Array();
 fLibramOfDivinePurpose.itemHonorPrice[6] = 20
 fLibramOfDivinePurpose.itemStats = new Array();
@@ -247,7 +247,7 @@ fTotemOfLivingWater.itemStats[7] = "\
 ";
 RewardItems[i] = fTotemOfLivingWater; ++i;
 
-var fAmaniMaskOfDeath = new RewardItem("alliance","Amani Mask of Death","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Helmet_114.gif&reason=external-or-uncollected-resource");
+var fAmaniMaskOfDeath = new RewardItem("alliance","Amani Mask of Death","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_helmet_114.jpg");
 fAmaniMaskOfDeath.itemHonorPrice = new Array();
 fAmaniMaskOfDeath.itemHonorPrice[4] = 75
 fAmaniMaskOfDeath.itemStats = new Array();
@@ -268,7 +268,7 @@ fAmaniMaskOfDeath.itemStats[4] = "\
 ";
 RewardItems[i] = fAmaniMaskOfDeath; ++i;
 
-var fBloodthirstersWargreaves = new RewardItem("alliance","Bloodthirster's Wargreaves","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Pants_Plate_28.gif&reason=external-or-uncollected-resource");
+var fBloodthirstersWargreaves = new RewardItem("alliance","Bloodthirster's Wargreaves","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_pants_plate_28.jpg");
 fBloodthirstersWargreaves.itemHonorPrice = new Array();
 fBloodthirstersWargreaves.itemHonorPrice[4] = 75
 fBloodthirstersWargreaves.itemStats = new Array();
@@ -291,7 +291,7 @@ fBloodthirstersWargreaves.itemStats[4] = "\
 RewardItems[i] = fBloodthirstersWargreaves; ++i;
 
 
-var fBonefistGauntlets = new RewardItem("alliance","Bonefist Gauntlets","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Gauntlets_67.gif&reason=external-or-uncollected-resource");
+var fBonefistGauntlets = new RewardItem("alliance","Bonefist Gauntlets","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_gauntlets_67.jpg");
 fBonefistGauntlets.itemHonorPrice = new Array();
 fBonefistGauntlets.itemHonorPrice[4] = 60
 fBonefistGauntlets.itemStats = new Array();
@@ -314,7 +314,7 @@ fBonefistGauntlets.itemStats[4] = "\
 ";
 RewardItems[i] = fBonefistGauntlets; ++i;
 
-var fIrontuskGirdle = new RewardItem("alliance","Iron-tusk Girdle","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Belt_27.gif&reason=external-or-uncollected-resource");
+var fIrontuskGirdle = new RewardItem("alliance","Iron-tusk Girdle","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_belt_27.jpg");
 fIrontuskGirdle.itemHonorPrice = new Array();
 fIrontuskGirdle.itemHonorPrice[4] = 60
 fIrontuskGirdle.itemStats = new Array();
@@ -358,7 +358,7 @@ fBracersOfTheAncientPhalanx.itemStats[4] = "\
 ";
 RewardItems[i] = fBracersOfTheAncientPhalanx; ++i;
 
-var fEterniumRageshackles = new RewardItem("alliance","Eternium Rage-shackles","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_15.gif&reason=external-or-uncollected-resource");
+var fEterniumRageshackles = new RewardItem("alliance","Eternium Rage-shackles","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_15.jpg");
 fEterniumRageshackles.itemHonorPrice = new Array();
 fEterniumRageshackles.itemHonorPrice[4] = 35
 fEterniumRageshackles.itemStats = new Array();
@@ -378,7 +378,7 @@ fEterniumRageshackles.itemStats[4] = "\
 ";
 RewardItems[i] = fEterniumRageshackles; ++i;
 
-var fChainOfUnleashedRage = new RewardItem("alliance","Chain of Unleashed Rage","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Belt_18.gif&reason=external-or-uncollected-resource");
+var fChainOfUnleashedRage = new RewardItem("alliance","Chain of Unleashed Rage","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_belt_18.jpg");
 fChainOfUnleashedRage.itemHonorPrice = new Array();
 fChainOfUnleashedRage.itemHonorPrice[4] = 60
 fChainOfUnleashedRage.itemStats = new Array();
@@ -401,7 +401,7 @@ fChainOfUnleashedRage.itemStats[4] = "\
 ";
 RewardItems[i] = fChainOfUnleashedRage; ++i;
 
-var fFuriousDeathgrips = new RewardItem("alliance","Furious Deathgrips","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Gauntlets_67.gif&reason=external-or-uncollected-resource");
+var fFuriousDeathgrips = new RewardItem("alliance","Furious Deathgrips","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_gauntlets_67.jpg");
 fFuriousDeathgrips.itemHonorPrice = new Array();
 fFuriousDeathgrips.itemHonorPrice[4] = 60
 fFuriousDeathgrips.itemStats = new Array();
@@ -444,7 +444,7 @@ fPauldronsOfGruesomeFate.itemStats[4] = "\
 ";
 RewardItems[i] = fPauldronsOfGruesomeFate; ++i;
 
-var fUnwaveringLegguards = new RewardItem("alliance","Unwavering Legguards","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Pants_Plate_28.gif&reason=external-or-uncollected-resource");
+var fUnwaveringLegguards = new RewardItem("alliance","Unwavering Legguards","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_pants_plate_28.jpg");
 fUnwaveringLegguards.itemHonorPrice = new Array();
 fUnwaveringLegguards.itemHonorPrice[4] = 75
 fUnwaveringLegguards.itemStats = new Array();
@@ -469,7 +469,7 @@ fUnwaveringLegguards.itemStats[4] = "\
 ";
 RewardItems[i] = fUnwaveringLegguards; ++i;
 
-var fChestguardOfTheStoicGuardian = new RewardItem("alliance","Chestguard of the Stoic Guardian","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Chest_Plate_22.gif&reason=external-or-uncollected-resource");
+var fChestguardOfTheStoicGuardian = new RewardItem("alliance","Chestguard of the Stoic Guardian","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_chest_plate_22.jpg");
 fChestguardOfTheStoicGuardian.itemHonorPrice = new Array();
 fChestguardOfTheStoicGuardian.itemHonorPrice[4] = 75
 fChestguardOfTheStoicGuardian.itemStats = new Array();
@@ -494,7 +494,7 @@ fChestguardOfTheStoicGuardian.itemStats[4] = "\
 ";
 RewardItems[i] = fChestguardOfTheStoicGuardian; ++i;
 
-var fGirdleOfTheProtector = new RewardItem("alliance","Girdle of the Protector","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Belt_27.gif&reason=external-or-uncollected-resource");
+var fGirdleOfTheProtector = new RewardItem("alliance","Girdle of the Protector","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_belt_27.jpg");
 fGirdleOfTheProtector.itemHonorPrice = new Array();
 fGirdleOfTheProtector.itemHonorPrice[4] = 60
 fGirdleOfTheProtector.itemStats = new Array();
@@ -521,7 +521,7 @@ fGirdleOfTheProtector.itemStats[4] = "\
 ";
 RewardItems[i] = fGirdleOfTheProtector; ++i;
 
-var fHandguardsOfTheTemplar = new RewardItem("alliance","Handguards of the Templar","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Gauntlets_67.gif&reason=external-or-uncollected-resource");
+var fHandguardsOfTheTemplar = new RewardItem("alliance","Handguards of the Templar","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_gauntlets_67.jpg");
 fHandguardsOfTheTemplar.itemHonorPrice = new Array();
 fHandguardsOfTheTemplar.itemHonorPrice[4] = 60
 fHandguardsOfTheTemplar.itemStats = new Array();
@@ -545,7 +545,7 @@ fHandguardsOfTheTemplar.itemStats[4] = "\
 ";
 RewardItems[i] = fHandguardsOfTheTemplar; ++i;
 
-var fHighJusticarsLegplates = new RewardItem("alliance","High Justicar's Legplates","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Pants_Plate_28.gif&reason=external-or-uncollected-resource");
+var fHighJusticarsLegplates = new RewardItem("alliance","High Justicar's Legplates","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_pants_plate_28.jpg");
 fHighJusticarsLegplates.itemHonorPrice = new Array();
 fHighJusticarsLegplates.itemHonorPrice[4] = 75
 fHighJusticarsLegplates.itemStats = new Array();
@@ -568,7 +568,7 @@ fHighJusticarsLegplates.itemStats[4] = "\
 ";
 RewardItems[i] = fHighJusticarsLegplates; ++i;
 
-var fImplacableGuardianSabatons = new RewardItem("alliance","Implacable Guardian Sabatons","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Boots_Plate_10.gif&reason=external-or-uncollected-resource");
+var fImplacableGuardianSabatons = new RewardItem("alliance","Implacable Guardian Sabatons","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_boots_plate_10.jpg");
 fImplacableGuardianSabatons.itemHonorPrice = new Array();
 fImplacableGuardianSabatons.itemHonorPrice[4] = 60
 fImplacableGuardianSabatons.itemStats = new Array();
@@ -591,7 +591,7 @@ fImplacableGuardianSabatons.itemStats[4] = "\
 ";
 RewardItems[i] = fImplacableGuardianSabatons; ++i;
 
-var fSabatonsOfTheRighteousDefender = new RewardItem("alliance","Sabatons of the Righteous Defender","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Boots_Plate_10.gif&reason=external-or-uncollected-resource");
+var fSabatonsOfTheRighteousDefender = new RewardItem("alliance","Sabatons of the Righteous Defender","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_boots_plate_10.jpg");
 fSabatonsOfTheRighteousDefender.itemHonorPrice = new Array();
 fSabatonsOfTheRighteousDefender.itemHonorPrice[4] = 60
 fSabatonsOfTheRighteousDefender.itemStats = new Array();
@@ -618,7 +618,7 @@ fSabatonsOfTheRighteousDefender.itemStats[4] = "\
 ";
 RewardItems[i] = fSabatonsOfTheRighteousDefender; ++i;
 
-var fVambracesOfTheNaaru = new RewardItem("alliance","Vambraces of the Naaru","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_02.gif&reason=external-or-uncollected-resource");
+var fVambracesOfTheNaaru = new RewardItem("alliance","Vambraces of the Naaru","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_02.jpg");
 fVambracesOfTheNaaru.itemHonorPrice = new Array();
 fVambracesOfTheNaaru.itemHonorPrice[4] = 35
 fVambracesOfTheNaaru.itemStats = new Array();
@@ -641,7 +641,7 @@ fVambracesOfTheNaaru.itemStats[4] = "\
 ";
 RewardItems[i] = fVambracesOfTheNaaru; ++i;
 
-var fGauntletsOfSniping = new RewardItem("alliance","Gauntlets of Sniping","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Gauntlets_25.gif&reason=external-or-uncollected-resource");
+var fGauntletsOfSniping = new RewardItem("alliance","Gauntlets of Sniping","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_gauntlets_25.jpg");
 fGauntletsOfSniping.itemHonorPrice = new Array();
 fGauntletsOfSniping.itemHonorPrice[3] = 60
 fGauntletsOfSniping.itemStats = new Array();
@@ -664,7 +664,7 @@ fGauntletsOfSniping.itemStats[3] = "\
 ";
 RewardItems[i] = fGauntletsOfSniping; ++i;
 
-var fShiftingCamouflagePants = new RewardItem("alliance","Shifting Camouflage Pants","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Pants_Leather_23.gif&reason=external-or-uncollected-resource");
+var fShiftingCamouflagePants = new RewardItem("alliance","Shifting Camouflage Pants","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_pants_leather_23.jpg");
 fShiftingCamouflagePants.itemHonorPrice = new Array();
 fShiftingCamouflagePants.itemHonorPrice[3] = 75
 fShiftingCamouflagePants.itemStats = new Array();
@@ -708,7 +708,7 @@ fWarFeatheredLoop.itemStats[3] = "\
 ";
 RewardItems[i] = fWarFeatheredLoop; ++i;
 
-var fSteadyingBracers = new RewardItem("alliance","Steadying Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_02.gif&reason=external-or-uncollected-resource");
+var fSteadyingBracers = new RewardItem("alliance","Steadying Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_02.jpg");
 fSteadyingBracers.itemHonorPrice = new Array();
 fSteadyingBracers.itemHonorPrice[3] = 35
 fSteadyingBracers.itemStats = new Array();
@@ -730,7 +730,7 @@ fSteadyingBracers.itemStats[3] = "\
 ";
 RewardItems[i] = fSteadyingBracers; ++i;
 
-var fEarthquakeBracers = new RewardItem("alliance","Earthquake Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_02.gif&reason=external-or-uncollected-resource");
+var fEarthquakeBracers = new RewardItem("alliance","Earthquake Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_02.jpg");
 fEarthquakeBracers.itemHonorPrice = new Array();
 fEarthquakeBracers.itemHonorPrice[3] = 35
 fEarthquakeBracers.itemStats = new Array();
@@ -754,7 +754,7 @@ fEarthquakeBracers.itemStats[3] = "\
 RewardItems[i] = fEarthquakeBracers; ++i;
 
 
-var fHauberkOfTheFuriousElements = new RewardItem("alliance","Hauberk of the Furious Elements","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Chest_Mail_05.gif&reason=external-or-uncollected-resource");
+var fHauberkOfTheFuriousElements = new RewardItem("alliance","Hauberk of the Furious Elements","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_chest_mail_05.jpg");
 fHauberkOfTheFuriousElements.itemHonorPrice = new Array();
 fHauberkOfTheFuriousElements.itemHonorPrice[3] = 75
 fHauberkOfTheFuriousElements.itemStats = new Array();
@@ -800,7 +800,7 @@ fPauldronsOfTheFuriousElements.itemStats[3] = "\
 ";
 RewardItems[i] = fPauldronsOfTheFuriousElements; ++i;
 
-var fGleamingEarthenBracers = new RewardItem("alliance","Gleaming Earthen Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_02.gif&reason=external-or-uncollected-resource");
+var fGleamingEarthenBracers = new RewardItem("alliance","Gleaming Earthen Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_02.jpg");
 fGleamingEarthenBracers.itemHonorPrice = new Array();
 fGleamingEarthenBracers.itemHonorPrice[3] = 35
 fGleamingEarthenBracers.itemStats = new Array();
@@ -824,7 +824,7 @@ RewardItems[i] = fGleamingEarthenBracers; ++i;
 
 
 
-var fGripsOfNaturesWrath = new RewardItem("alliance","Grips of Nature's Wrath","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Gauntlets_68.gif&reason=external-or-uncollected-resource");
+var fGripsOfNaturesWrath = new RewardItem("alliance","Grips of Nature's Wrath","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_gauntlets_68.jpg");
 fGripsOfNaturesWrath.itemHonorPrice = new Array();
 fGripsOfNaturesWrath.itemHonorPrice[3] = 60
 fGripsOfNaturesWrath.itemStats = new Array();
@@ -898,7 +898,7 @@ fNaturalLifeLeggings.itemStats[3] = "\
 RewardItems[i] = fNaturalLifeLeggings; ++i;
 
 
-var fTreadsOfTheLifePath = new RewardItem("alliance","Treads of the Life Path","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Boots_Chain_13.gif&reason=external-or-uncollected-resource");
+var fTreadsOfTheLifePath = new RewardItem("alliance","Treads of the Life Path","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_boots_chain_13.jpg");
 fTreadsOfTheLifePath.itemHonorPrice = new Array();
 fTreadsOfTheLifePath.itemHonorPrice[3] = 60
 fTreadsOfTheLifePath.itemStats = new Array();
@@ -921,7 +921,7 @@ fTreadsOfTheLifePath.itemStats[3] = "\
 ";
 RewardItems[i] = fTreadsOfTheLifePath; ++i;
 
-var fPolishedWaterscaleGloves = new RewardItem("alliance","Polished Waterscale Gloves","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Gauntlets_68.gif&reason=external-or-uncollected-resource");
+var fPolishedWaterscaleGloves = new RewardItem("alliance","Polished Waterscale Gloves","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_gauntlets_68.jpg");
 fPolishedWaterscaleGloves.itemHonorPrice = new Array();
 fPolishedWaterscaleGloves.itemHonorPrice[3] = 60
 fPolishedWaterscaleGloves.itemTokenPrice = new Array();
@@ -971,7 +971,7 @@ fStormwrap.itemStats[3] = "\
 ";
 RewardItems[i] = fStormwrap; ++i;
 
-var fTreadsOfBoomingThunder = new RewardItem("alliance","Treads of Booming Thunder","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Boots_Chain_05.gif&reason=external-or-uncollected-resource");
+var fTreadsOfBoomingThunder = new RewardItem("alliance","Treads of Booming Thunder","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_boots_chain_05.jpg");
 fTreadsOfBoomingThunder.itemHonorPrice = new Array();
 fTreadsOfBoomingThunder.itemHonorPrice[3] = 60
 fTreadsOfBoomingThunder.itemStats = new Array();
@@ -995,7 +995,7 @@ fTreadsOfBoomingThunder.itemStats[3] = "\
 RewardItems[i] = fTreadsOfBoomingThunder; ++i;
 
 
-var fMasterAssassinWristwraps = new RewardItem("alliance","Master Assassin Wristwraps","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_07.gif&reason=external-or-uncollected-resource");
+var fMasterAssassinWristwraps = new RewardItem("alliance","Master Assassin Wristwraps","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_07.jpg");
 fMasterAssassinWristwraps.itemHonorPrice = new Array();
 fMasterAssassinWristwraps.itemHonorPrice[2] = 35
 fMasterAssassinWristwraps.itemStats = new Array();
@@ -1042,7 +1042,7 @@ fShallowgraveTrousers.itemStats[2] = "\
 ";
 RewardItems[i] = fShallowgraveTrousers; ++i;
 
-var fNynjahsTabiBoots = new RewardItem("alliance","Nyn'jah's Tabi Boots","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Boots_07.gif&reason=external-or-uncollected-resource");
+var fNynjahsTabiBoots = new RewardItem("alliance","Nyn'jah's Tabi Boots","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_boots_07.jpg");
 fNynjahsTabiBoots.itemHonorPrice = new Array();
 fNynjahsTabiBoots.itemHonorPrice[2] = 60
 fNynjahsTabiBoots.itemStats = new Array();
@@ -1065,7 +1065,7 @@ fNynjahsTabiBoots.itemStats[2] = "\
 ";
 RewardItems[i] = fNynjahsTabiBoots; ++i;
 
-var fTrickstersStickyfingers = new RewardItem("alliance","Trickster's Stickyfingers","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Gauntlets_50.gif&reason=external-or-uncollected-resource");
+var fTrickstersStickyfingers = new RewardItem("alliance","Trickster's Stickyfingers","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_gauntlets_50.jpg");
 fTrickstersStickyfingers.itemHonorPrice = new Array();
 fTrickstersStickyfingers.itemHonorPrice[2] = 60
 fTrickstersStickyfingers.itemTokenPrice = new Array();
@@ -1089,7 +1089,7 @@ fTrickstersStickyfingers.itemStats[2] = "\
 ";
 RewardItems[i] = fTrickstersStickyfingers; ++i;
 
-var fArmwrapsOfTheKaldoreiProtector = new RewardItem("alliance","Armwraps of the Kaldorei Protector","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_02.gif&reason=external-or-uncollected-resource");
+var fArmwrapsOfTheKaldoreiProtector = new RewardItem("alliance","Armwraps of the Kaldorei Protector","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_02.jpg");
 fArmwrapsOfTheKaldoreiProtector.itemHonorPrice = new Array();
 fArmwrapsOfTheKaldoreiProtector.itemHonorPrice[2] = 35
 fArmwrapsOfTheKaldoreiProtector.itemTokenPrice = new Array();
@@ -1115,7 +1115,7 @@ fArmwrapsOfTheKaldoreiProtector.itemStats[2] = "\
 RewardItems[i] = fArmwrapsOfTheKaldoreiProtector; ++i;
 
 
-var fLifestepBelt = new RewardItem("alliance","Life-step Belt","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Belt_11.gif&reason=external-or-uncollected-resource");
+var fLifestepBelt = new RewardItem("alliance","Life-step Belt","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_belt_11.jpg");
 fLifestepBelt.itemHonorPrice = new Array();
 fLifestepBelt.itemHonorPrice[2] = 60
 fLifestepBelt.itemStats = new Array();
@@ -1139,7 +1139,7 @@ fLifestepBelt.itemStats[2] = "\
 RewardItems[i] = fLifestepBelt; ++i;
 
 
-var fBandOfTheSwiftPaw = new RewardItem("alliance","Band of the Swift Paw","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_12.gif&reason=external-or-uncollected-resource");
+var fBandOfTheSwiftPaw = new RewardItem("alliance","Band of the Swift Paw","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_12.jpg");
 fBandOfTheSwiftPaw.itemHonorPrice = new Array();
 fBandOfTheSwiftPaw.itemHonorPrice[2] = 35
 fBandOfTheSwiftPaw.itemStats = new Array();
@@ -1158,7 +1158,7 @@ fBandOfTheSwiftPaw.itemStats[2] = "\
 ";
 RewardItems[i] = fBandOfTheSwiftPaw; ++i;
 
-var fBlessedEluniteCoverings = new RewardItem("alliance","Blessed Elunite Coverings","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Chest_Cloth_06.gif&reason=external-or-uncollected-resource");
+var fBlessedEluniteCoverings = new RewardItem("alliance","Blessed Elunite Coverings","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_chest_cloth_06.jpg");
 fBlessedEluniteCoverings.itemHonorPrice = new Array();
 fBlessedEluniteCoverings.itemHonorPrice[2] = 75
 fBlessedEluniteCoverings.itemTokenPrice = new Array();
@@ -1185,7 +1185,7 @@ fBlessedEluniteCoverings.itemStats[2] = "\
 ";
 RewardItems[i] = fBlessedEluniteCoverings; ++i;
 
-var fFootwrapsOfWildEncroachment = new RewardItem("alliance","Footwraps of Wild Encroachment","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Boots_Wolf.gif&reason=external-or-uncollected-resource");
+var fFootwrapsOfWildEncroachment = new RewardItem("alliance","Footwraps of Wild Encroachment","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_boots_wolf.jpg");
 fFootwrapsOfWildEncroachment.itemHonorPrice = new Array();
 fFootwrapsOfWildEncroachment.itemHonorPrice[2] = 60
 fFootwrapsOfWildEncroachment.itemStats = new Array();
@@ -1227,7 +1227,7 @@ fMoonwalkers.itemStats[2] = "\
 ";
 RewardItems[i] = fMoonwalkers; ++i;
 
-var fGnarledIronwoodPauldrons = new RewardItem("alliance","Gnarled Ironwood Pauldrons","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Shoulder_83.gif&reason=external-or-uncollected-resource");
+var fGnarledIronwoodPauldrons = new RewardItem("alliance","Gnarled Ironwood Pauldrons","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_shoulder_83.jpg");
 fGnarledIronwoodPauldrons.itemHonorPrice = new Array();
 fGnarledIronwoodPauldrons.itemHonorPrice[2] = 60
 fGnarledIronwoodPauldrons.itemTokenPrice = new Array();
@@ -1250,7 +1250,7 @@ fGnarledIronwoodPauldrons.itemStats[2] = "\
 ";
 RewardItems[i] = fGnarledIronwoodPauldrons; ++i;
 
-var fPantsOfSplendidRecovery = new RewardItem("alliance","Pants of Splendid Recovery","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Pants_Leather_23.gif&reason=external-or-uncollected-resource");
+var fPantsOfSplendidRecovery = new RewardItem("alliance","Pants of Splendid Recovery","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_pants_leather_23.jpg");
 fPantsOfSplendidRecovery.itemHonorPrice = new Array();
 fPantsOfSplendidRecovery.itemHonorPrice[2] = 75
 fPantsOfSplendidRecovery.itemStats = new Array();
@@ -1271,7 +1271,7 @@ fPantsOfSplendidRecovery.itemStats[2] = "\
 ";
 RewardItems[i] = fPantsOfSplendidRecovery; ++i;
 
-var fGargonsBracersPeacefulSlumber = new RewardItem("alliance","Gargon's Bracers of Peaceful Slumber","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_08.gif&reason=external-or-uncollected-resource");
+var fGargonsBracersPeacefulSlumber = new RewardItem("alliance","Gargon's Bracers of Peaceful Slumber","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_08.jpg");
 fGargonsBracersPeacefulSlumber.itemHonorPrice = new Array();
 fGargonsBracersPeacefulSlumber.itemHonorPrice[2] = 35
 fGargonsBracersPeacefulSlumber.itemStats = new Array();
@@ -1292,7 +1292,7 @@ fGargonsBracersPeacefulSlumber.itemStats[2] = "\
 ";
 RewardItems[i] = fGargonsBracersPeacefulSlumber; ++i;
 
-var fGraspOfTheMoonkin = new RewardItem("alliance","Grasp of the Moonkin","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Gauntlets_50.gif&reason=external-or-uncollected-resource");
+var fGraspOfTheMoonkin = new RewardItem("alliance","Grasp of the Moonkin","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_gauntlets_50.jpg");
 fGraspOfTheMoonkin.itemHonorPrice = new Array();
 fGraspOfTheMoonkin.itemHonorPrice[2] = 60
 fGraspOfTheMoonkin.itemTokenPrice = new Array();
@@ -1317,7 +1317,7 @@ fGraspOfTheMoonkin.itemStats[2] = "\
 RewardItems[i] = fGraspOfTheMoonkin; ++i;
 
 
-var fPauldronsOfTribalFury = new RewardItem("alliance","Pauldrons of Tribal Fury","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Shoulder_83.gif&reason=external-or-uncollected-resource");
+var fPauldronsOfTribalFury = new RewardItem("alliance","Pauldrons of Tribal Fury","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_shoulder_83.jpg");
 fPauldronsOfTribalFury.itemHonorPrice = new Array();
 fPauldronsOfTribalFury.itemHonorPrice[2] = 60
 fPauldronsOfTribalFury.itemStats = new Array();
@@ -1340,7 +1340,7 @@ fPauldronsOfTribalFury.itemStats[2] = "\
 ";
 RewardItems[i] = fPauldronsOfTribalFury; ++i;
 
-var fStarfireWaistband = new RewardItem("alliance","Starfire Waistband","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Belt_08.gif&reason=external-or-uncollected-resource");
+var fStarfireWaistband = new RewardItem("alliance","Starfire Waistband","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_belt_08.jpg");
 fStarfireWaistband.itemHonorPrice = new Array();
 fStarfireWaistband.itemHonorPrice[2] = 60
 fStarfireWaistband.itemTokenPrice = new Array();
@@ -1367,7 +1367,7 @@ fStarfireWaistband.itemStats[2] = "\
 ";
 RewardItems[i] = fStarfireWaistband; ++i;
 
-var fMaskOfPrimalPower = new RewardItem("alliance","Mask of Primal Power","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Helmet_112.gif&reason=external-or-uncollected-resource");
+var fMaskOfPrimalPower = new RewardItem("alliance","Mask of Primal Power","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_helmet_112.jpg");
 fMaskOfPrimalPower.itemHonorPrice = new Array();
 fMaskOfPrimalPower.itemHonorPrice[2] = 75
 fMaskOfPrimalPower.itemTokenPrice = new Array();
@@ -1392,7 +1392,7 @@ fMaskOfPrimalPower.itemStats[2] = "\
 ";
 RewardItems[i] = fMaskOfPrimalPower; ++i;
 
-var fVestmentsOfHibernation = new RewardItem("alliance","Vestments of Hibernation","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Chest_Leather_08.gif&reason=external-or-uncollected-resource");
+var fVestmentsOfHibernation = new RewardItem("alliance","Vestments of Hibernation","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_chest_leather_08.jpg");
 fVestmentsOfHibernation.itemHonorPrice = new Array();
 fVestmentsOfHibernation.itemHonorPrice[2] = 75
 fVestmentsOfHibernation.itemStats = new Array();
@@ -1436,7 +1436,7 @@ fWaistguardOfTheGreatBeast.itemStats[2] = "\
 RewardItems[i] = fWaistguardOfTheGreatBeast; ++i;
 
 
-var fRunedSpellcuffs = new RewardItem("alliance","Runed Spell-cuffs","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_09.gif&reason=external-or-uncollected-resource");
+var fRunedSpellcuffs = new RewardItem("alliance","Runed Spell-cuffs","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_09.jpg");
 fRunedSpellcuffs.itemHonorPrice = new Array();
 fRunedSpellcuffs.itemHonorPrice[1] = 35
 fRunedSpellcuffs.itemTokenPrice = new Array();
@@ -1484,7 +1484,7 @@ fPantaloonsOfArcaneAnnihilation.itemStats[1] = "\
 ";
 RewardItems[i] = fPantaloonsOfArcaneAnnihilation; ++i;
 
-var fStudiousWraps = new RewardItem("alliance","Studious Wraps","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Gauntlets_14.gif&reason=external-or-uncollected-resource");
+var fStudiousWraps = new RewardItem("alliance","Studious Wraps","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_gauntlets_14.jpg");
 fStudiousWraps.itemHonorPrice = new Array();
 fStudiousWraps.itemHonorPrice[1] = 60
 fStudiousWraps.itemStats = new Array();
@@ -1508,7 +1508,7 @@ fStudiousWraps.itemStats[1] = "\
 RewardItems[i] = fStudiousWraps; ++i;
 
 
-var fVoodoowovenBelt = new RewardItem("alliance","Voodoo-woven Belt","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Belt_03.gif&reason=external-or-uncollected-resource");
+var fVoodoowovenBelt = new RewardItem("alliance","Voodoo-woven Belt","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_belt_03.jpg");
 fVoodoowovenBelt.itemHonorPrice = new Array();
 fVoodoowovenBelt.itemHonorPrice[1] = 60
 fVoodoowovenBelt.itemTokenPrice = new Array();
@@ -1559,7 +1559,7 @@ fAchromicTrousersOfTheNaaru.itemStats[1] = "\
 RewardItems[i] = fAchromicTrousersOfTheNaaru; ++i;
 
 
-var fLightBlessedBonds = new RewardItem("alliance","Light-Blessed Bonds","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Gauntlets_06.gif&reason=external-or-uncollected-resource");
+var fLightBlessedBonds = new RewardItem("alliance","Light-Blessed Bonds","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_gauntlets_06.jpg");
 fLightBlessedBonds.itemHonorPrice = new Array();
 fLightBlessedBonds.itemHonorPrice[1] = 60
 fLightBlessedBonds.itemTokenPrice = new Array();
@@ -1583,7 +1583,7 @@ fLightBlessedBonds.itemStats[1] = "\
 RewardItems[i] = fLightBlessedBonds; ++i;
 
 
-var fWristguardsOfTranquilThought = new RewardItem("alliance","Wristguards of Tranquil Thought","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_07.gif&reason=external-or-uncollected-resource");
+var fWristguardsOfTranquilThought = new RewardItem("alliance","Wristguards of Tranquil Thought","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_07.jpg");
 fWristguardsOfTranquilThought.itemHonorPrice = new Array();
 fWristguardsOfTranquilThought.itemHonorPrice[1] = 35
 fWristguardsOfTranquilThought.itemStats = new Array();
@@ -1607,7 +1607,7 @@ fWristguardsOfTranquilThought.itemStats[1] = "\
 RewardItems[i] = fWristguardsOfTranquilThought; ++i;
 
 
-var fSlikksCloakOfPlacation = new RewardItem("alliance","Slikk's Cloak of Placation","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Misc_Cape_18.gif&reason=external-or-uncollected-resource");
+var fSlikksCloakOfPlacation = new RewardItem("alliance","Slikk's Cloak of Placation","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_misc_cape_18.jpg");
 fSlikksCloakOfPlacation.itemHonorPrice = new Array();
 fSlikksCloakOfPlacation.itemHonorPrice[0] = 35
 fSlikksCloakOfPlacation.itemTokenPrice = new Array();
@@ -1630,7 +1630,7 @@ fSlikksCloakOfPlacation.itemStats[0] = "\
 ";
 RewardItems[i] = fSlikksCloakOfPlacation; ++i;
 
-var fKharmaasShroudOfHope = new RewardItem("alliance","Kharmaa's Shroud of Hope","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Misc_Cape_06.gif&reason=external-or-uncollected-resource");
+var fKharmaasShroudOfHope = new RewardItem("alliance","Kharmaa's Shroud of Hope","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_misc_cape_06.jpg");
 fKharmaasShroudOfHope.itemHonorPrice = new Array();
 fKharmaasShroudOfHope.itemHonorPrice[0] = 60
 fKharmaasShroudOfHope.itemStats = new Array();
@@ -1655,7 +1655,7 @@ fKharmaasShroudOfHope.itemStats[0] = "\
 ";
 RewardItems[i] = fKharmaasShroudOfHope; ++i;
 
-var fCloakOfSubjugatedPower = new RewardItem("alliance","Cloak of Subjugated Power","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Misc_Cape_20.gif&reason=external-or-uncollected-resource");
+var fCloakOfSubjugatedPower = new RewardItem("alliance","Cloak of Subjugated Power","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_misc_cape_20.jpg");
 fCloakOfSubjugatedPower.itemHonorPrice = new Array();
 fCloakOfSubjugatedPower.itemHonorPrice[0] = 60
 fCloakOfSubjugatedPower.itemStats = new Array();
@@ -1678,7 +1678,7 @@ fCloakOfSubjugatedPower.itemStats[0] = "\
 ";
 RewardItems[i] = fCloakOfSubjugatedPower; ++i;
 
-var fDorysEmbrace = new RewardItem("alliance","Dory's Embrace","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Misc_Cape_20.gif&reason=external-or-uncollected-resource");
+var fDorysEmbrace = new RewardItem("alliance","Dory's Embrace","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_misc_cape_20.jpg");
 fDorysEmbrace.itemHonorPrice = new Array();
 fDorysEmbrace.itemHonorPrice[0] = 60
 fDorysEmbrace.itemStats = new Array();

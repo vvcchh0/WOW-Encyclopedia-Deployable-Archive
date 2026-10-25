@@ -114,7 +114,7 @@ fSergeantsHeavyCape.itemStats[0] = "\
 RewardItems[i] = fSergeantsHeavyCape; ++i;
 
 
-var fMarshalsSilkCuffs = new RewardItem("alliance","Marshal's Silk Cuffs","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Frewards-general-armor.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_07.gif&reason=external-or-uncollected-resource");
+var fMarshalsSilkCuffs = new RewardItem("alliance","Marshal's Silk Cuffs","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_07.jpg");
 fMarshalsSilkCuffs.itemHonorPrice = new Array();
 fMarshalsSilkCuffs.itemHonorPrice[0] = 9435
 fMarshalsSilkCuffs.itemTokenPrice = new Array();
@@ -142,7 +142,7 @@ fMarshalsSilkCuffs.itemStats[0] = "\
 RewardItems[i] = fMarshalsSilkCuffs; ++i;
 
 
-var fMarshalsDreadweaveCuffs = new RewardItem("alliance","Marshal's Dreadweave Cuffs","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Frewards-general-armor.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_07.gif&reason=external-or-uncollected-resource");
+var fMarshalsDreadweaveCuffs = new RewardItem("alliance","Marshal's Dreadweave Cuffs","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_07.jpg");
 fMarshalsDreadweaveCuffs.itemHonorPrice = new Array();
 fMarshalsDreadweaveCuffs.itemHonorPrice[0] = 9435
 fMarshalsDreadweaveCuffs.itemTokenPrice = new Array();
@@ -267,7 +267,7 @@ fMarshalsDreadweaveStalkers.itemStats[0] = "\
 ";
 RewardItems[i] = fMarshalsDreadweaveStalkers; ++i;
 
-var fMarshalsLeatherBracers = new RewardItem("alliance","Marshal's Leather Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Frewards-general-armor.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_07.gif&reason=external-or-uncollected-resource");
+var fMarshalsLeatherBracers = new RewardItem("alliance","Marshal's Leather Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_07.jpg");
 fMarshalsLeatherBracers.itemHonorPrice = new Array();
 fMarshalsLeatherBracers.itemHonorPrice[0] = 9435
 fMarshalsLeatherBracers.itemTokenPrice = new Array();
@@ -294,7 +294,7 @@ fMarshalsLeatherBracers.itemStats[0] = "\
 ";
 RewardItems[i] = fMarshalsLeatherBracers; ++i;
 
-var fMarshalsDragonhideBracers = new RewardItem("alliance","Marshal's Dragonhide Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Frewards-general-armor.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_07.gif&reason=external-or-uncollected-resource");
+var fMarshalsDragonhideBracers = new RewardItem("alliance","Marshal's Dragonhide Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_07.jpg");
 fMarshalsDragonhideBracers.itemHonorPrice = new Array();
 fMarshalsDragonhideBracers.itemHonorPrice[0] = 9435
 fMarshalsDragonhideBracers.itemTokenPrice = new Array();
@@ -319,7 +319,7 @@ fMarshalsDragonhideBracers.itemStats[0] = "\
 ";
 RewardItems[i] = fMarshalsDragonhideBracers; ++i;
 
-var fMarshalsWyrmhideBracers = new RewardItem("alliance","Marshal's Wyrmhide Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Frewards-general-armor.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_07.gif&reason=external-or-uncollected-resource");
+var fMarshalsWyrmhideBracers = new RewardItem("alliance","Marshal's Wyrmhide Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_07.jpg");
 fMarshalsWyrmhideBracers.itemHonorPrice = new Array();
 fMarshalsWyrmhideBracers.itemHonorPrice[0] = 9435
 fMarshalsWyrmhideBracers.itemTokenPrice = new Array();
@@ -346,7 +346,7 @@ fMarshalsWyrmhideBracers.itemStats[0] = "\
 ";
 RewardItems[i] = fMarshalsWyrmhideBracers; ++i;
 
-var fMarshalsKodohideBracers = new RewardItem("alliance","Marshal's Kodohide Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Frewards-general-armor.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_07.gif&reason=external-or-uncollected-resource");
+var fMarshalsKodohideBracers = new RewardItem("alliance","Marshal's Kodohide Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_07.jpg");
 fMarshalsKodohideBracers.itemHonorPrice = new Array();
 fMarshalsKodohideBracers.itemHonorPrice[0] = 9435
 fMarshalsKodohideBracers.itemTokenPrice = new Array();
@@ -1088,7 +1088,7 @@ fSergeantsHeavyCape.itemStats[0] = "\
 RewardItems[i] = fSergeantsHeavyCape; ++i;
 
 
-var fMarshalsSilkCuffs = new RewardItem("horde","General's Silk Cuffs","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Frewards-general-armor.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_07.gif&reason=external-or-uncollected-resource");
+var fMarshalsSilkCuffs = new RewardItem("horde","General's Silk Cuffs","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_07.jpg");
 fMarshalsSilkCuffs.itemHonorPrice = new Array();
 fMarshalsSilkCuffs.itemHonorPrice[0] = 9435
 fMarshalsSilkCuffs.itemTokenPrice = new Array();
@@ -1116,7 +1116,7 @@ fMarshalsSilkCuffs.itemStats[0] = "\
 RewardItems[i] = fMarshalsSilkCuffs; ++i;
 
 
-var fMarshalsDreadweaveCuffs = new RewardItem("horde","General's Dreadweave Cuffs","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Frewards-general-armor.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_07.gif&reason=external-or-uncollected-resource");
+var fMarshalsDreadweaveCuffs = new RewardItem("horde","General's Dreadweave Cuffs","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_07.jpg");
 fMarshalsDreadweaveCuffs.itemHonorPrice = new Array();
 fMarshalsDreadweaveCuffs.itemHonorPrice[0] = 9435
 fMarshalsDreadweaveCuffs.itemTokenPrice = new Array();
@@ -1241,7 +1241,7 @@ fMarshalsDreadweaveStalkers.itemStats[0] = "\
 ";
 RewardItems[i] = fMarshalsDreadweaveStalkers; ++i;
 
-var fMarshalsLeatherBracers = new RewardItem("horde","General's Leather Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Frewards-general-armor.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_07.gif&reason=external-or-uncollected-resource");
+var fMarshalsLeatherBracers = new RewardItem("horde","General's Leather Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_07.jpg");
 fMarshalsLeatherBracers.itemHonorPrice = new Array();
 fMarshalsLeatherBracers.itemHonorPrice[0] = 9435
 fMarshalsLeatherBracers.itemTokenPrice = new Array();
@@ -1268,7 +1268,7 @@ fMarshalsLeatherBracers.itemStats[0] = "\
 ";
 RewardItems[i] = fMarshalsLeatherBracers; ++i;
 
-var fMarshalsDragonhideBracers = new RewardItem("horde","General's Dragonhide Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Frewards-general-armor.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_07.gif&reason=external-or-uncollected-resource");
+var fMarshalsDragonhideBracers = new RewardItem("horde","General's Dragonhide Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_07.jpg");
 fMarshalsDragonhideBracers.itemHonorPrice = new Array();
 fMarshalsDragonhideBracers.itemHonorPrice[0] = 9435
 fMarshalsDragonhideBracers.itemTokenPrice = new Array();
@@ -1293,7 +1293,7 @@ fMarshalsDragonhideBracers.itemStats[0] = "\
 ";
 RewardItems[i] = fMarshalsDragonhideBracers; ++i;
 
-var fMarshalsWyrmhideBracers = new RewardItem("horde","General's Wyrmhide Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Frewards-general-armor.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_07.gif&reason=external-or-uncollected-resource");
+var fMarshalsWyrmhideBracers = new RewardItem("horde","General's Wyrmhide Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_07.jpg");
 fMarshalsWyrmhideBracers.itemHonorPrice = new Array();
 fMarshalsWyrmhideBracers.itemHonorPrice[0] = 9435
 fMarshalsWyrmhideBracers.itemTokenPrice = new Array();
@@ -1320,7 +1320,7 @@ fMarshalsWyrmhideBracers.itemStats[0] = "\
 ";
 RewardItems[i] = fMarshalsWyrmhideBracers; ++i;
 
-var fMarshalsKodohideBracers = new RewardItem("horde","General's Kodohide Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Fpvp%2Frewards-general-armor.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_07.gif&reason=external-or-uncollected-resource");
+var fMarshalsKodohideBracers = new RewardItem("horde","General's Kodohide Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_07.jpg");
 fMarshalsKodohideBracers.itemHonorPrice = new Array();
 fMarshalsKodohideBracers.itemHonorPrice[0] = 9435
 fMarshalsKodohideBracers.itemTokenPrice = new Array();

@@ -142,7 +142,7 @@ fFormulaEnchantGlovesMajorSpellpower.itemStats[1] = "\
 ";
 RewardItems[i] = fFormulaEnchantGlovesMajorSpellpower; ++i;
 
-var fDesignLivingRubySerpent = new RewardItem("alliance","Design: Living Ruby Serpent","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fkeepers%2Fscripts%2Frewards-keepers-of-time.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_05.gif&reason=external-or-uncollected-resource");
+var fDesignLivingRubySerpent = new RewardItem("alliance","Design: Living Ruby Serpent","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_05.jpg");
 fDesignLivingRubySerpent.itemMoneyPrice = new Array();
 fDesignLivingRubySerpent.itemMoneyPrice[2] = 120000
 fDesignLivingRubySerpent.itemStats = new Array();
@@ -165,7 +165,7 @@ fDesignLivingRubySerpent.itemStats[2] = "\
 ";
 RewardItems[i] = fDesignLivingRubySerpent; ++i;
 
-var fDesignPendantOfFrozenFlame = new RewardItem("alliance","Design: Pendant of Frozen Flame","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fkeepers%2Fscripts%2Frewards-keepers-of-time.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_05.gif&reason=external-or-uncollected-resource");
+var fDesignPendantOfFrozenFlame = new RewardItem("alliance","Design: Pendant of Frozen Flame","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_05.jpg");
 fDesignPendantOfFrozenFlame.itemMoneyPrice = new Array();
 fDesignPendantOfFrozenFlame.itemMoneyPrice[2] = 120000
 fDesignPendantOfFrozenFlame.itemStats = new Array();
@@ -270,7 +270,7 @@ fContinuumBlade.itemStats[2] = "\
 ";
 RewardItems[i] = fContinuumBlade; ++i;
 
-var fPatternDrumsOfPanic = new RewardItem("alliance","Pattern: Drums of Panic","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fkeepers%2Fscripts%2Frewards-keepers-of-time.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_05.gif&reason=external-or-uncollected-resource");
+var fPatternDrumsOfPanic = new RewardItem("alliance","Pattern: Drums of Panic","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_05.jpg");
 fPatternDrumsOfPanic.itemMoneyPrice = new Array();
 fPatternDrumsOfPanic.itemMoneyPrice[3] = 120000
 fPatternDrumsOfPanic.itemStats = new Array();
@@ -356,7 +356,7 @@ fRiftmaker.itemStats[3] = "\
 ";
 RewardItems[i] = fRiftmaker; ++i;
 
-var fTimelapseShard = new RewardItem("alliance","Timelapse Shard","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fkeepers%2Fscripts%2Frewards-keepers-of-time.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_DataCrystal02.gif&reason=external-or-uncollected-resource");
+var fTimelapseShard = new RewardItem("alliance","Timelapse Shard","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_datacrystal02.jpg");
 fTimelapseShard.itemMoneyPrice = new Array();
 fTimelapseShard.itemMoneyPrice[3] = 790112
 fTimelapseShard.itemStats = new Array();
@@ -377,7 +377,7 @@ fTimelapseShard.itemStats[3] = "\
 ";
 RewardItems[i] = fTimelapseShard; ++i;
 
-var fBindingsOfTheTimewalker = new RewardItem("alliance","Bindings of the Timewalker","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fkeepers%2Fscripts%2Frewards-keepers-of-time.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Bracer_10.gif&reason=external-or-uncollected-resource");
+var fBindingsOfTheTimewalker = new RewardItem("alliance","Bindings of the Timewalker","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_bracer_10.jpg");
 fBindingsOfTheTimewalker.itemMoneyPrice = new Array();
 fBindingsOfTheTimewalker.itemMoneyPrice[3] = 394383
 fBindingsOfTheTimewalker.itemStats = new Array();

@@ -114,7 +114,7 @@ fRecipeFlaskofChromaticWonder.itemStats[1] = "\
 ";
 RewardItems[i] = fRecipeFlaskofChromaticWonder; ++i;
 
-var fDesignTheFrozenEye = new RewardItem("alliance","Design: The Frozen Eye","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fvioleteye%2Fscripts%2Frewards-the-violet-eye.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_05.gif&reason=external-or-uncollected-resource");
+var fDesignTheFrozenEye = new RewardItem("alliance","Design: The Frozen Eye","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_05.jpg");
 fDesignTheFrozenEye.itemMoneyPrice = new Array();
 fDesignTheFrozenEye.itemMoneyPrice[1] = 120000
 fDesignTheFrozenEye.itemStats = new Array();
@@ -135,7 +135,7 @@ fDesignTheFrozenEye.itemStats[1] = "\
 ";
 RewardItems[i] = fDesignTheFrozenEye; ++i;
 
-var fPlansIceguardBreastplate = new RewardItem("alliance","Plans: Iceguard Breastplate","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fvioleteye%2Fscripts%2Frewards-the-violet-eye.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_04.gif&reason=external-or-uncollected-resource");
+var fPlansIceguardBreastplate = new RewardItem("alliance","Plans: Iceguard Breastplate","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_04.jpg");
 fPlansIceguardBreastplate.itemMoneyPrice = new Array();
 fPlansIceguardBreastplate.itemMoneyPrice[1] = 240000
 fPlansIceguardBreastplate.itemStats = new Array();
@@ -159,7 +159,7 @@ fPlansIceguardBreastplate.itemStats[1] = "\
 ";
 RewardItems[i] = fPlansIceguardBreastplate; ++i;
 
-var fPlansIceguardHelm = new RewardItem("alliance","Plans: Iceguard Helm","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fvioleteye%2Fscripts%2Frewards-the-violet-eye.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_04.gif&reason=external-or-uncollected-resource");
+var fPlansIceguardHelm = new RewardItem("alliance","Plans: Iceguard Helm","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_04.jpg");
 fPlansIceguardHelm.itemMoneyPrice = new Array();
 fPlansIceguardHelm.itemMoneyPrice[1] = 240000
 fPlansIceguardHelm.itemStats = new Array();
@@ -184,7 +184,7 @@ fPlansIceguardHelm.itemStats[1] = "\
 RewardItems[i] = fPlansIceguardHelm; ++i;
 
 
-var fPlansIceguardLeggings = new RewardItem("alliance","Plans: Iceguard Leggings","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fvioleteye%2Fscripts%2Frewards-the-violet-eye.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_04.gif&reason=external-or-uncollected-resource");
+var fPlansIceguardLeggings = new RewardItem("alliance","Plans: Iceguard Leggings","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_04.jpg");
 fPlansIceguardLeggings.itemMoneyPrice = new Array();
 fPlansIceguardLeggings.itemMoneyPrice[2] = 240000
 fPlansIceguardLeggings.itemStats = new Array();
@@ -206,7 +206,7 @@ fPlansIceguardLeggings.itemStats[2] = "\
 ";
 RewardItems[i] = fPlansIceguardLeggings; ++i;
 
-var fPatternShadowprowlersChestguard = new RewardItem("alliance","Pattern: Shadowprowler's Chestguard","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fvioleteye%2Fscripts%2Frewards-the-violet-eye.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_04.gif&reason=external-or-uncollected-resource");
+var fPatternShadowprowlersChestguard = new RewardItem("alliance","Pattern: Shadowprowler's Chestguard","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_04.jpg");
 fPatternShadowprowlersChestguard.itemMoneyPrice = new Array();
 fPatternShadowprowlersChestguard.itemMoneyPrice[2] = 240000
 fPatternShadowprowlersChestguard.itemStats = new Array();

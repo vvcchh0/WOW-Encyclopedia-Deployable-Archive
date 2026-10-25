@@ -129,7 +129,7 @@ fDesignLuminousFlameSpessarite.itemStats[0] = "\
 RewardItems[i] = fDesignLuminousFlameSpessarite; ++i;
 
 
-var fPatternFelLeatherGloves = new RewardItem("alliance","Pattern: Fel Leather Gloves","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fconsortium%2Fscripts%2Frewards-consortium.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_05.gif&reason=external-or-uncollected-resource");
+var fPatternFelLeatherGloves = new RewardItem("alliance","Pattern: Fel Leather Gloves","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_05.jpg");
 fPatternFelLeatherGloves.itemMoneyPrice = new Array();
 fPatternFelLeatherGloves.itemMoneyPrice[0] = 120000
 fPatternFelLeatherGloves.itemStats = new Array();
@@ -295,7 +295,7 @@ fNethershard.itemStats[1] = "\
 ";
 RewardItems[i] = fNethershard; ++i;
 
-var fGiftOfTheEthereal = new RewardItem("alliance","Gift of the Ethereal","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fconsortium%2Fscripts%2Frewards-consortium.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Sword_Draenei_01.gif&reason=external-or-uncollected-resource");
+var fGiftOfTheEthereal = new RewardItem("alliance","Gift of the Ethereal","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_sword_draenei_01.jpg");
 fGiftOfTheEthereal.itemMoneyPrice = new Array();
 fGiftOfTheEthereal.itemMoneyPrice[1] = 348580
 fGiftOfTheEthereal.itemStats = new Array();
@@ -316,7 +316,7 @@ fGiftOfTheEthereal.itemStats[1] = "\
 ";
 RewardItems[i] = fGiftOfTheEthereal; ++i;
 
-var fDesignPendantOfTheNullRune = new RewardItem("alliance","Design: Pendant of the Null Rune","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fconsortium%2Fscripts%2Frewards-consortium.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_05.gif&reason=external-or-uncollected-resource");
+var fDesignPendantOfTheNullRune = new RewardItem("alliance","Design: Pendant of the Null Rune","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_05.jpg");
 fDesignPendantOfTheNullRune.itemMoneyPrice = new Array();
 fDesignPendantOfTheNullRune.itemMoneyPrice[2] = 120000
 fDesignPendantOfTheNullRune.itemStats = new Array();
@@ -357,7 +357,7 @@ fPatternBagOfJewels.itemStats[1] = "\
 ";
 RewardItems[i] = fPatternBagOfJewels; ++i;
 
-var fPatternFelLeatherBoots = new RewardItem("alliance","Pattern: Fel Leather Boots","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fconsortium%2Fscripts%2Frewards-consortium.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_05.gif&reason=external-or-uncollected-resource");
+var fPatternFelLeatherBoots = new RewardItem("alliance","Pattern: Fel Leather Boots","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_05.jpg");
 fPatternFelLeatherBoots.itemMoneyPrice = new Array();
 fPatternFelLeatherBoots.itemMoneyPrice[1] = 140000
 fPatternFelLeatherBoots.itemStats = new Array();
@@ -393,7 +393,7 @@ fPatternFelLeatherBoots.itemStats[1] = "\
 ";
 RewardItems[i] = fPatternFelLeatherBoots; ++i;
 
-var fPatternFelLeatherLeggings = new RewardItem("alliance","Pattern: Fel Leather Leggings","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fconsortium%2Fscripts%2Frewards-consortium.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_05.gif&reason=external-or-uncollected-resource");
+var fPatternFelLeatherLeggings = new RewardItem("alliance","Pattern: Fel Leather Leggings","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_05.jpg");
 fPatternFelLeatherLeggings.itemMoneyPrice = new Array();
 fPatternFelLeatherLeggings.itemMoneyPrice[2] = 140000
 fPatternFelLeatherLeggings.itemStats = new Array();
@@ -473,7 +473,7 @@ fNomadsLeggings.itemStats[2] = "\
 ";
 RewardItems[i] = fNomadsLeggings; ++i;
 
-var fStormspireVest = new RewardItem("alliance","Stormspire Vest","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fconsortium%2Fscripts%2Frewards-consortium.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Chest_Cloth_08.gif&reason=external-or-uncollected-resource");
+var fStormspireVest = new RewardItem("alliance","Stormspire Vest","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_chest_cloth_08.jpg");
 fStormspireVest.itemMoneyPrice = new Array();
 fStormspireVest.itemMoneyPrice[2] = 167172
 fStormspireVest.itemStats = new Array();

@@ -134,7 +134,7 @@ fIncendicRod.itemStats[0] = "\
 ";
 RewardItems[i] = fIncendicRod; ++i;
 
-var fLibramOfZeal = new RewardItem("alliance","Libram of Zeal","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fzangarmarsh%2Fscripts%2Frewards-zangarmarsh-tokens.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_LibramofTruth.gif&reason=external-or-uncollected-resource");
+var fLibramOfZeal = new RewardItem("alliance","Libram of Zeal","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/inv_relics_libramoftruth.jpg");
 fLibramOfZeal.itemTokenPrice = new Array();
 fLibramOfZeal.itemTokenPrice[0] = new Array(15,0,0,0);
 fLibramOfZeal.itemStats = new Array();
@@ -154,7 +154,7 @@ fLibramOfZeal.itemStats[0] = "\
 ";
 RewardItems[i] = fLibramOfZeal; ++i;
 
-var fTotemOfImpact = new RewardItem("alliance","Totem of Impact","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fzangarmarsh%2Fscripts%2Frewards-zangarmarsh-tokens.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2Ftotemofimpact.gif&reason=external-or-uncollected-resource");
+var fTotemOfImpact = new RewardItem("alliance","Totem of Impact","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/spell_nature_slowingtotem.png");
 fTotemOfImpact.itemTokenPrice = new Array();
 fTotemOfImpact.itemTokenPrice[0] = new Array(15,0,0,0);
 fTotemOfImpact.itemStats = new Array();
@@ -174,7 +174,7 @@ fTotemOfImpact.itemStats[0] = "\
 ";
 RewardItems[i] = fTotemOfImpact; ++i;
 
-var fIdolOfSavagery = new RewardItem("alliance","Idol of Savagery","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fzangarmarsh%2Fscripts%2Frewards-zangarmarsh-tokens.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2Fidolofsavagery.gif&reason=external-or-uncollected-resource");
+var fIdolOfSavagery = new RewardItem("alliance","Idol of Savagery","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/inv_relics_idolofferocity.jpg");
 fIdolOfSavagery.itemTokenPrice = new Array();
 fIdolOfSavagery.itemTokenPrice[0] = new Array(15,0,0,0);
 fIdolOfSavagery.itemStats = new Array();
@@ -194,7 +194,7 @@ fIdolOfSavagery.itemStats[0] = "\
 ";
 RewardItems[i] = fIdolOfSavagery; ++i;
 
-var fMarkOfDefiance = new RewardItem("alliance","Mark of Defiance","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fzangarmarsh%2Fscripts%2Frewards-zangarmarsh-tokens.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Necklace_16.gif&reason=external-or-uncollected-resource");
+var fMarkOfDefiance = new RewardItem("alliance","Mark of Defiance","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/inv_jewelry_necklace_16.jpg");
 fMarkOfDefiance.itemTokenPrice = new Array();
 fMarkOfDefiance.itemTokenPrice[0] = new Array(30,0,0,0);
 fMarkOfDefiance.itemStats = new Array();
@@ -215,7 +215,7 @@ fMarkOfDefiance.itemStats[0] = "\
 ";
 RewardItems[i] = fMarkOfDefiance; ++i;
 
-var fMarkOfConquest = new RewardItem("alliance","Mark of Conquest","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fzangarmarsh%2Fscripts%2Frewards-zangarmarsh-tokens.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Misc_ArmorKit_12.gif&reason=external-or-uncollected-resource");
+var fMarkOfConquest = new RewardItem("alliance","Mark of Conquest","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/inv_misc_armorkit_12.jpg");
 fMarkOfConquest.itemTokenPrice = new Array();
 fMarkOfConquest.itemTokenPrice[0] = new Array(30,0,0,0);
 fMarkOfConquest.itemStats = new Array();
@@ -236,7 +236,7 @@ fMarkOfConquest.itemStats[0] = "\
 ";
 RewardItems[i] = fMarkOfConquest; ++i;
 
-var fMarkOfVindication = new RewardItem("alliance","Mark of Vindication","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fzangarmarsh%2Fscripts%2Frewards-zangarmarsh-tokens.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_QirajiIdol_Sun.gif&reason=external-or-uncollected-resource");
+var fMarkOfVindication = new RewardItem("alliance","Mark of Vindication","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/inv_qirajidol_sun.jpg");
 fMarkOfVindication.itemTokenPrice = new Array();
 fMarkOfVindication.itemTokenPrice[0] = new Array(30,0,0,0);
 fMarkOfVindication.itemStats = new Array();
@@ -329,7 +329,7 @@ fIncendicRod.itemStats[0] = "\
 ";
 RewardItems[i] = fIncendicRod; ++i;
 
-var fLibramOfZeal = new RewardItem("horde","Libram of Zeal","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fzangarmarsh%2Fscripts%2Frewards-zangarmarsh-tokens.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_LibramofTruth.gif&reason=external-or-uncollected-resource");
+var fLibramOfZeal = new RewardItem("horde","Libram of Zeal","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/inv_relics_libramoftruth.jpg");
 fLibramOfZeal.itemTokenPrice = new Array();
 fLibramOfZeal.itemTokenPrice[0] = new Array(15,0,0,0);
 fLibramOfZeal.itemStats = new Array();
@@ -349,7 +349,7 @@ fLibramOfZeal.itemStats[0] = "\
 ";
 RewardItems[i] = fLibramOfZeal; ++i;
 
-var fTotemOfImpact = new RewardItem("horde","Totem of Impact","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fzangarmarsh%2Fscripts%2Frewards-zangarmarsh-tokens.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2Ftotemofimpact.gif&reason=external-or-uncollected-resource");
+var fTotemOfImpact = new RewardItem("horde","Totem of Impact","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/spell_nature_slowingtotem.png");
 fTotemOfImpact.itemTokenPrice = new Array();
 fTotemOfImpact.itemTokenPrice[0] = new Array(15,0,0,0);
 fTotemOfImpact.itemStats = new Array();
@@ -369,7 +369,7 @@ fTotemOfImpact.itemStats[0] = "\
 ";
 RewardItems[i] = fTotemOfImpact; ++i;
 
-var fIdolOfSavagery = new RewardItem("horde","Idol of Savagery","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fzangarmarsh%2Fscripts%2Frewards-zangarmarsh-tokens.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2Fidolofsavagery.gif&reason=external-or-uncollected-resource");
+var fIdolOfSavagery = new RewardItem("horde","Idol of Savagery","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/inv_relics_idolofferocity.jpg");
 fIdolOfSavagery.itemTokenPrice = new Array();
 fIdolOfSavagery.itemTokenPrice[0] = new Array(15,0,0,0);
 fIdolOfSavagery.itemStats = new Array();
@@ -389,7 +389,7 @@ fIdolOfSavagery.itemStats[0] = "\
 ";
 RewardItems[i] = fIdolOfSavagery; ++i;
 
-var fMarkOfDefiance = new RewardItem("horde","Mark of Defiance","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fzangarmarsh%2Fscripts%2Frewards-zangarmarsh-tokens.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Necklace_16.gif&reason=external-or-uncollected-resource");
+var fMarkOfDefiance = new RewardItem("horde","Mark of Defiance","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/inv_jewelry_necklace_16.jpg");
 fMarkOfDefiance.itemTokenPrice = new Array();
 fMarkOfDefiance.itemTokenPrice[0] = new Array(30,0,0,0);
 fMarkOfDefiance.itemStats = new Array();
@@ -411,7 +411,7 @@ fMarkOfDefiance.itemStats[0] = "\
 RewardItems[i] = fMarkOfDefiance; ++i;
 
 
-var fMarkOfConquest = new RewardItem("horde","Mark of Conquest","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fzangarmarsh%2Fscripts%2Frewards-zangarmarsh-tokens.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Misc_ArmorKit_12.gif&reason=external-or-uncollected-resource");
+var fMarkOfConquest = new RewardItem("horde","Mark of Conquest","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/inv_misc_armorkit_12.jpg");
 fMarkOfConquest.itemTokenPrice = new Array();
 fMarkOfConquest.itemTokenPrice[0] = new Array(30,0,0,0);
 fMarkOfConquest.itemStats = new Array();
@@ -432,7 +432,7 @@ fMarkOfConquest.itemStats[0] = "\
 ";
 RewardItems[i] = fMarkOfConquest; ++i;
 
-var fMarkOfVindication = new RewardItem("horde","Mark of Vindication","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fzangarmarsh%2Fscripts%2Frewards-zangarmarsh-tokens.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_QirajiIdol_Sun.gif&reason=external-or-uncollected-resource");
+var fMarkOfVindication = new RewardItem("horde","Mark of Vindication","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/inv_qirajidol_sun.jpg");
 fMarkOfVindication.itemTokenPrice = new Array();
 fMarkOfVindication.itemTokenPrice[0] = new Array(30,0,0,0);
 fMarkOfVindication.itemStats = new Array();

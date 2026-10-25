@@ -124,7 +124,7 @@ fGlyphOfShadowWarding.itemStats[1] = "\
 ";
 RewardItems[i] = fGlyphOfShadowWarding; ++i;
 
-var fDesignFelsteelBoar = new RewardItem("alliance","Design: Felsteel Boar","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Flowercity%2Fscripts%2Frewards-lowercity.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_05.gif&reason=external-or-uncollected-resource");
+var fDesignFelsteelBoar = new RewardItem("alliance","Design: Felsteel Boar","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_05.jpg");
 fDesignFelsteelBoar.itemMoneyPrice = new Array();
 fDesignFelsteelBoar.itemMoneyPrice[2] = 120000
 fDesignFelsteelBoar.itemStats = new Array();
@@ -148,7 +148,7 @@ fDesignFelsteelBoar.itemStats[2] = "\
 ";
 RewardItems[i] = fDesignFelsteelBoar; ++i;
 
-var fDesignPendantOfThawing = new RewardItem("alliance","Design: Pendant of Thawing","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Flowercity%2Fscripts%2Frewards-lowercity.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_05.gif&reason=external-or-uncollected-resource");
+var fDesignPendantOfThawing = new RewardItem("alliance","Design: Pendant of Thawing","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_05.jpg");
 fDesignPendantOfThawing.itemMoneyPrice = new Array();
 fDesignPendantOfThawing.itemMoneyPrice[2] = 120000
 fDesignPendantOfThawing.itemStats = new Array();
@@ -246,7 +246,7 @@ fLeggingsOfTheSkettisExile.itemStats[2] = "\
 ";
 RewardItems[i] = fLeggingsOfTheSkettisExile; ++i;
 
-var fSalvagersHauberk = new RewardItem("alliance","Salvager's Hauberk","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Flowercity%2Fscripts%2Frewards-lowercity.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Chest_Plate09.gif&reason=external-or-uncollected-resource");
+var fSalvagersHauberk = new RewardItem("alliance","Salvager's Hauberk","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_chest_plate09.jpg");
 fSalvagersHauberk.itemMoneyPrice = new Array();
 fSalvagersHauberk.itemMoneyPrice[2] = 260629
 fSalvagersHauberk.itemStats = new Array();
@@ -312,7 +312,7 @@ fRecipeFlaskOfChromaticResistance.itemStats[3] = "\
 ";
 RewardItems[i] = fRecipeFlaskOfChromaticResistance; ++i;
 
-var fGavelOfUnearthedSecrets = new RewardItem("alliance","Gavel of Unearthed Secrets","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Flowercity%2Fscripts%2Frewards-lowercity.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Hammer_08.gif&reason=external-or-uncollected-resource");
+var fGavelOfUnearthedSecrets = new RewardItem("alliance","Gavel of Unearthed Secrets","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_hammer_08.jpg");
 fGavelOfUnearthedSecrets.itemMoneyPrice = new Array();
 fGavelOfUnearthedSecrets.itemMoneyPrice[3] = 482214
 fGavelOfUnearthedSecrets.itemStats = new Array();

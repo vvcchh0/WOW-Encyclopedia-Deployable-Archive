@@ -378,4 +378,9 @@ if (typeof result === "undefined" &&
     typeof stripId === "function" && stripId(Menu1_6_4[0]) === "Contests") {
     result = "1_6_4";
 }
+/* __offline-legacy-reward-nav-fallback: two historical armor pages absent from the later menu */
+if (typeof result === 'undefined' && ["/WOW-Encyclopedia-Deployable-Archive/pvp/rewards-general-armor.html", "/WOW-Encyclopedia-Deployable-Archive/pvp/rewards-veterans-armor.html"].indexOf(document.location.pathname) !== -1 &&
+    typeof Menu1_9_11 !== 'undefined' && typeof Menu1_9_11_3 !== 'undefined' &&
+    typeof stripId === 'function' && stripId(Menu1_9_11[0]) === 'Rewards' &&
+    Menu1_9_11_3[1] === "/WOW-Encyclopedia-Deployable-Archive/pvp/rewards-vindicators-armor.html") { result = '1_9_11'; }
 tree(result);

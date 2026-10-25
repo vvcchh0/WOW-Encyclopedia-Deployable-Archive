@@ -85,7 +85,7 @@ fMightyBloodGarnet.itemStats[0] = "\
 ";
 RewardItems[i] = fMightyBloodGarnet; ++i;
 
-var fStarkBloodGarnet = new RewardItem("alliance","Stark Blood Garnet","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire-tokens.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Misc_Gem_Ruby_01.gif&reason=external-or-uncollected-resource");
+var fStarkBloodGarnet = new RewardItem("alliance","Stark Blood Garnet","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_misc_gem_ruby_01.jpg");
 fStarkBloodGarnet.itemTokenPrice = new Array();
 fStarkBloodGarnet.itemTokenPrice[0] = new Array(10,0,0,0);
 fStarkBloodGarnet.itemStats = new Array();
@@ -188,7 +188,7 @@ Socket Bonus: +2 Spell Damage<br>\
 ";
 RewardItems[i] = fCircletOfTheVictor; ++i;
 
-var fHonorHoldFavor = new RewardItem("alliance","Honor Hold Favor","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire-tokens.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Banner_02.gif&reason=external-or-uncollected-resource");
+var fHonorHoldFavor = new RewardItem("alliance","Honor Hold Favor","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_banner_02.jpg");
 fHonorHoldFavor.itemTokenPrice = new Array();
 fHonorHoldFavor.itemTokenPrice[0] = new Array(5,0,0,0);
 fHonorHoldFavor.itemStats = new Array();
@@ -231,7 +231,7 @@ fMightyBloodGarnet.itemStats[0] = "\
 ";
 RewardItems[i] = fMightyBloodGarnet; ++i;
 
-var fStarkBloodGarnet = new RewardItem("horde","Stark Blood Garnet","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire-tokens.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Misc_Gem_Ruby_01.gif&reason=external-or-uncollected-resource");
+var fStarkBloodGarnet = new RewardItem("horde","Stark Blood Garnet","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_misc_gem_ruby_01.jpg");
 fStarkBloodGarnet.itemTokenPrice = new Array();
 fStarkBloodGarnet.itemTokenPrice[0] = new Array(0,10,0,0);
 fStarkBloodGarnet.itemStats = new Array();

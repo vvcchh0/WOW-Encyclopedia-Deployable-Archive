@@ -108,7 +108,7 @@ fAvengersWaistguard.itemStats[0] = "\
 RewardItems[i] = fAvengersWaistguard; ++i;
 
 
-var fAvengersLegguards = new RewardItem("alliance","Avenger's Legguards","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhalaa%2Fscripts%2Frewards-halaa-tokens.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Pants_Plate_15.gif&reason=external-or-uncollected-resource");
+var fAvengersLegguards = new RewardItem("alliance","Avenger's Legguards","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_pants_plate_15.jpg");
 fAvengersLegguards.itemTokenPrice = new Array();
 fAvengersLegguards.itemTokenPrice[0] = new Array(40,2,0,0);
 fAvengersLegguards.itemStats = new Array();
@@ -227,7 +227,7 @@ fHierophantsLeggings.itemStats[0] = "\
 ";
 RewardItems[i] = fHierophantsLeggings; ++i;
 
-var fShadowstalkersSash = new RewardItem("alliance","Shadowstalker's Sash","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhalaa%2Fscripts%2Frewards-halaa-tokens.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Belt_15.gif&reason=external-or-uncollected-resource");
+var fShadowstalkersSash = new RewardItem("alliance","Shadowstalker's Sash","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_belt_15.jpg");
 fShadowstalkersSash.itemTokenPrice = new Array();
 fShadowstalkersSash.itemTokenPrice[0] = new Array(20,1,0,0);
 fShadowstalkersSash.itemStats = new Array();
@@ -298,7 +298,7 @@ fSlayersWaistguard.itemStats[0] = "\
 ";
 RewardItems[i] = fSlayersWaistguard; ++i;
 
-var fSlayersLegguards = new RewardItem("alliance","Slayer's Legguards","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhalaa%2Fscripts%2Frewards-halaa-tokens.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Pants_Plate_15.gif&reason=external-or-uncollected-resource");
+var fSlayersLegguards = new RewardItem("alliance","Slayer's Legguards","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_pants_plate_15.jpg");
 fSlayersLegguards.itemTokenPrice = new Array();
 fSlayersLegguards.itemTokenPrice[0] = new Array(40,2,0,0);
 fSlayersLegguards.itemStats = new Array();

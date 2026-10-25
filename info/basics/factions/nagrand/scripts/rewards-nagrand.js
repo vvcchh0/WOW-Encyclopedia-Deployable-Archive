@@ -79,7 +79,7 @@ function generateCostString(thisObject,thisBracket)
 i = 0;
 var RewardItems = new Array();
 
-var fPatternNetherfuryBelt = new RewardItem("alliance","Pattern: Netherfury Belt","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fnagrand%2Fscripts%2Frewards-nagrand.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_05.gif&reason=external-or-uncollected-resource");
+var fPatternNetherfuryBelt = new RewardItem("alliance","Pattern: Netherfury Belt","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_05.jpg");
 fPatternNetherfuryBelt.itemMoneyPrice = new Array();
 fPatternNetherfuryBelt.itemMoneyPrice[0] = 120000
 fPatternNetherfuryBelt.itemStats = new Array();
@@ -109,7 +109,7 @@ fPatternNetherfuryBelt.itemStats[0] = "\
 ";
 RewardItems[i] = fPatternNetherfuryBelt; ++i;
 
-var fPatternNetherfuryLeggings = new RewardItem("alliance","Pattern: Netherfury Leggings","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fnagrand%2Fscripts%2Frewards-nagrand.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_05.gif&reason=external-or-uncollected-resource");
+var fPatternNetherfuryLeggings = new RewardItem("alliance","Pattern: Netherfury Leggings","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_05.jpg");
 fPatternNetherfuryLeggings.itemMoneyPrice = new Array();
 fPatternNetherfuryLeggings.itemMoneyPrice[1] = 120000
 fPatternNetherfuryLeggings.itemStats = new Array();
@@ -157,7 +157,7 @@ fPatternReinforcedMiningBag.itemStats[1] = "\
 ";
 RewardItems[i] = fPatternReinforcedMiningBag; ++i;
 
-var fPatternNetherfuryBoots = new RewardItem("alliance","Pattern: Netherfury Boots","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fnagrand%2Fscripts%2Frewards-nagrand.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_05.gif&reason=external-or-uncollected-resource");
+var fPatternNetherfuryBoots = new RewardItem("alliance","Pattern: Netherfury Boots","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_05.jpg");
 fPatternNetherfuryBoots.itemMoneyPrice = new Array();
 fPatternNetherfuryBoots.itemMoneyPrice[2] = 120000
 fPatternNetherfuryBoots.itemStats = new Array();
@@ -207,7 +207,7 @@ fRecipeTransmutePrimalFireToEarth.itemStats[2] = "\
 ";
 RewardItems[i] = fRecipeTransmutePrimalFireToEarth; ++i;
 
-var fKurenaiKilt = new RewardItem("alliance","Kurenai Kilt","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fnagrand%2Fscripts%2Frewards-nagrand.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Pants_Leather_14.gif&reason=external-or-uncollected-resource");
+var fKurenaiKilt = new RewardItem("alliance","Kurenai Kilt","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_pants_leather_14.jpg");
 fKurenaiKilt.itemMoneyPrice = new Array();
 fKurenaiKilt.itemMoneyPrice[2] = 218818
 fKurenaiKilt.itemStats = new Array();
@@ -247,7 +247,7 @@ fBandOfElementalSpirits.itemStats[2] = "\
 ";
 RewardItems[i] = fBandOfElementalSpirits; ++i;
 
-var fFarSeersHelm = new RewardItem("alliance","Far Seer's Helm","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fnagrand%2Fscripts%2Frewards-nagrand.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Helmet_04.gif&reason=external-or-uncollected-resource");
+var fFarSeersHelm = new RewardItem("alliance","Far Seer's Helm","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_helmet_04.jpg");
 fFarSeersHelm.itemMoneyPrice = new Array();
 fFarSeersHelm.itemMoneyPrice[3] = 207131
 fFarSeersHelm.itemStats = new Array();
@@ -310,7 +310,7 @@ fCloakOfTheAncientSpirits.itemStats[3] = "\
 ";
 RewardItems[i] = fCloakOfTheAncientSpirits; ++i;
 
-var fReinsOfTheCobaltRidingTalbuk = new RewardItem("alliance","Reins of the Cobalt Riding Talbuk","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fnagrand%2Fscripts%2Frewards-nagrand.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Misc_Foot_Centaur.gif&reason=external-or-uncollected-resource");
+var fReinsOfTheCobaltRidingTalbuk = new RewardItem("alliance","Reins of the Cobalt Riding Talbuk","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_misc_foot_centaur.jpg");
 fReinsOfTheCobaltRidingTalbuk.itemMoneyPrice = new Array();
 fReinsOfTheCobaltRidingTalbuk.itemMoneyPrice[3] = 700000
 fReinsOfTheCobaltRidingTalbuk.itemStats = new Array();
@@ -329,7 +329,7 @@ fReinsOfTheCobaltRidingTalbuk.itemStats[3] = "\
 ";
 RewardItems[i] = fReinsOfTheCobaltRidingTalbuk; ++i;
 
-var fReinsOfTheSilverRidingTalbuk = new RewardItem("alliance","Reins of the Silver Riding Talbuk","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fnagrand%2Fscripts%2Frewards-nagrand.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Misc_Foot_Centaur.gif&reason=external-or-uncollected-resource");
+var fReinsOfTheSilverRidingTalbuk = new RewardItem("alliance","Reins of the Silver Riding Talbuk","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_misc_foot_centaur.jpg");
 fReinsOfTheSilverRidingTalbuk.itemMoneyPrice = new Array();
 fReinsOfTheSilverRidingTalbuk.itemMoneyPrice[3] = 700000
 fReinsOfTheSilverRidingTalbuk.itemStats = new Array();
@@ -348,7 +348,7 @@ fReinsOfTheSilverRidingTalbuk.itemStats[3] = "\
 ";
 RewardItems[i] = fReinsOfTheSilverRidingTalbuk; ++i;
 
-var fReinsOfTheTanRidingTalbuk = new RewardItem("alliance","Reins of the Tan Riding Talbuk","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fnagrand%2Fscripts%2Frewards-nagrand.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Misc_Foot_Centaur.gif&reason=external-or-uncollected-resource");
+var fReinsOfTheTanRidingTalbuk = new RewardItem("alliance","Reins of the Tan Riding Talbuk","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_misc_foot_centaur.jpg");
 fReinsOfTheTanRidingTalbuk.itemMoneyPrice = new Array();
 fReinsOfTheTanRidingTalbuk.itemMoneyPrice[3] = 700000
 fReinsOfTheTanRidingTalbuk.itemStats = new Array();
@@ -367,7 +367,7 @@ fReinsOfTheTanRidingTalbuk.itemStats[3] = "\
 ";
 RewardItems[i] = fReinsOfTheTanRidingTalbuk; ++i;
 
-var fReinsOfTheWhiteRidingTalbuk = new RewardItem("alliance","Reins of the White Riding Talbuk","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fnagrand%2Fscripts%2Frewards-nagrand.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Misc_Foot_Centaur.gif&reason=external-or-uncollected-resource");
+var fReinsOfTheWhiteRidingTalbuk = new RewardItem("alliance","Reins of the White Riding Talbuk","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_misc_foot_centaur.jpg");
 fReinsOfTheWhiteRidingTalbuk.itemMoneyPrice = new Array();
 fReinsOfTheWhiteRidingTalbuk.itemMoneyPrice[3] = 700000
 fReinsOfTheWhiteRidingTalbuk.itemStats = new Array();
@@ -386,7 +386,7 @@ fReinsOfTheWhiteRidingTalbuk.itemStats[3] = "\
 ";
 RewardItems[i] = fReinsOfTheWhiteRidingTalbuk; ++i;
 
-var fReinsOfTheCobaltWarTalbuk = new RewardItem("alliance","Reins of the Cobalt War Talbuk","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fnagrand%2Fscripts%2Frewards-nagrand.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Misc_Foot_Centaur.gif&reason=external-or-uncollected-resource");
+var fReinsOfTheCobaltWarTalbuk = new RewardItem("alliance","Reins of the Cobalt War Talbuk","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_misc_foot_centaur.jpg");
 fReinsOfTheCobaltWarTalbuk.itemMoneyPrice = new Array();
 fReinsOfTheCobaltWarTalbuk.itemMoneyPrice[3] = 1000000
 fReinsOfTheCobaltWarTalbuk.itemStats = new Array();
@@ -405,7 +405,7 @@ fReinsOfTheCobaltWarTalbuk.itemStats[3] = "\
 ";
 RewardItems[i] = fReinsOfTheCobaltWarTalbuk; ++i;
 
-var fReinsOfTheSilverWarTalbuk = new RewardItem("alliance","Reins of the Silver War Talbuk","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fnagrand%2Fscripts%2Frewards-nagrand.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Misc_Foot_Centaur.gif&reason=external-or-uncollected-resource");
+var fReinsOfTheSilverWarTalbuk = new RewardItem("alliance","Reins of the Silver War Talbuk","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_misc_foot_centaur.jpg");
 fReinsOfTheSilverWarTalbuk.itemMoneyPrice = new Array();
 fReinsOfTheSilverWarTalbuk.itemMoneyPrice[3] = 1000000
 fReinsOfTheSilverWarTalbuk.itemStats = new Array();
@@ -424,7 +424,7 @@ fReinsOfTheSilverWarTalbuk.itemStats[3] = "\
 ";
 RewardItems[i] = fReinsOfTheSilverWarTalbuk; ++i;
 
-var fReinsOfTheTanWarTalbuk = new RewardItem("alliance","Reins of the Tan War Talbuk","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fnagrand%2Fscripts%2Frewards-nagrand.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Misc_Foot_Centaur.gif&reason=external-or-uncollected-resource");
+var fReinsOfTheTanWarTalbuk = new RewardItem("alliance","Reins of the Tan War Talbuk","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_misc_foot_centaur.jpg");
 fReinsOfTheTanWarTalbuk.itemMoneyPrice = new Array();
 fReinsOfTheTanWarTalbuk.itemMoneyPrice[3] = 1000000
 fReinsOfTheTanWarTalbuk.itemStats = new Array();
@@ -443,7 +443,7 @@ fReinsOfTheTanWarTalbuk.itemStats[3] = "\
 ";
 RewardItems[i] = fReinsOfTheTanWarTalbuk; ++i;
 
-var fReinsOfTheWhiteWarTalbuk = new RewardItem("alliance","Reins of the White War Talbuk","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fnagrand%2Fscripts%2Frewards-nagrand.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Misc_Foot_Centaur.gif&reason=external-or-uncollected-resource");
+var fReinsOfTheWhiteWarTalbuk = new RewardItem("alliance","Reins of the White War Talbuk","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_misc_foot_centaur.jpg");
 fReinsOfTheWhiteWarTalbuk.itemMoneyPrice = new Array();
 fReinsOfTheWhiteWarTalbuk.itemMoneyPrice[3] = 1000000
 fReinsOfTheWhiteWarTalbuk.itemStats = new Array();
@@ -482,7 +482,7 @@ RewardItems[i] = fKurenaiTabard; ++i;
 //-------------------------------------------------------------------
 //---Horde below
 
-var fPatternNetherfuryBelt = new RewardItem("horde","Pattern: Netherfury Belt","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fnagrand%2Fscripts%2Frewards-nagrand.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_05.gif&reason=external-or-uncollected-resource");
+var fPatternNetherfuryBelt = new RewardItem("horde","Pattern: Netherfury Belt","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_05.jpg");
 fPatternNetherfuryBelt.itemMoneyPrice = new Array();
 fPatternNetherfuryBelt.itemMoneyPrice[0] = 120000
 fPatternNetherfuryBelt.itemStats = new Array();
@@ -512,7 +512,7 @@ fPatternNetherfuryBelt.itemStats[0] = "\
 ";
 RewardItems[i] = fPatternNetherfuryBelt; ++i;
 
-var fPatternNetherfuryLeggings = new RewardItem("horde","Pattern: Netherfury Leggings","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fnagrand%2Fscripts%2Frewards-nagrand.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_05.gif&reason=external-or-uncollected-resource");
+var fPatternNetherfuryLeggings = new RewardItem("horde","Pattern: Netherfury Leggings","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_05.jpg");
 fPatternNetherfuryLeggings.itemMoneyPrice = new Array();
 fPatternNetherfuryLeggings.itemMoneyPrice[1] = 120000
 fPatternNetherfuryLeggings.itemStats = new Array();
@@ -542,7 +542,7 @@ fPatternNetherfuryLeggings.itemStats[1] = "\
 ";
 RewardItems[i] = fPatternNetherfuryLeggings; ++i;
 
-var fPatternNetherfuryBoots = new RewardItem("horde","Pattern: Netherfury Boots","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fnagrand%2Fscripts%2Frewards-nagrand.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_05.gif&reason=external-or-uncollected-resource");
+var fPatternNetherfuryBoots = new RewardItem("horde","Pattern: Netherfury Boots","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_05.jpg");
 fPatternNetherfuryBoots.itemMoneyPrice = new Array();
 fPatternNetherfuryBoots.itemMoneyPrice[2] = 120000
 fPatternNetherfuryBoots.itemStats = new Array();
@@ -612,7 +612,7 @@ fRecipeTransmutePrimalFireToEarth.itemStats[2] = "\
 ";
 RewardItems[i] = fRecipeTransmutePrimalFireToEarth; ++i;
 
-var fTempestLeggings = new RewardItem("horde","Tempest Leggings","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fnagrand%2Fscripts%2Frewards-nagrand.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Pants_Leather_14.gif&reason=external-or-uncollected-resource");
+var fTempestLeggings = new RewardItem("horde","Tempest Leggings","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_pants_leather_14.jpg");
 fTempestLeggings.itemMoneyPrice = new Array();
 fTempestLeggings.itemMoneyPrice[2] = 218004
 fTempestLeggings.itemStats = new Array();
@@ -674,7 +674,7 @@ fTalbukHideSpaulders.itemStats[2] = "\
 ";
 RewardItems[i] = fTalbukHideSpaulders; ++i;
 
-var fEarthcallersHeaddress = new RewardItem("horde","Earthcaller's Headdress","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fnagrand%2Fscripts%2Frewards-nagrand.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Helmet_17.gif&reason=external-or-uncollected-resource");
+var fEarthcallersHeaddress = new RewardItem("horde","Earthcaller's Headdress","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_helmet_17.jpg");
 fEarthcallersHeaddress.itemMoneyPrice = new Array();
 fEarthcallersHeaddress.itemMoneyPrice[3] = 206398
 fEarthcallersHeaddress.itemStats = new Array();
@@ -695,7 +695,7 @@ fEarthcallersHeaddress.itemStats[3] = "\
 ";
 RewardItems[i] = fEarthcallersHeaddress; ++i;
 
-var fHellscreamsWill = new RewardItem("horde","Hellscream's Will","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fnagrand%2Fscripts%2Frewards-nagrand.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Axe_44.gif&reason=external-or-uncollected-resource");
+var fHellscreamsWill = new RewardItem("horde","Hellscream's Will","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_axe_44.jpg");
 fHellscreamsWill.itemMoneyPrice = new Array();
 fHellscreamsWill.itemMoneyPrice[3] = 522358
 fHellscreamsWill.itemStats = new Array();
@@ -718,7 +718,7 @@ fHellscreamsWill.itemStats[3] = "\
 ";
 RewardItems[i] = fHellscreamsWill; ++i;
 
-var fCeremonialCover = new RewardItem("horde","Ceremonial Cover","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fnagrand%2Fscripts%2Frewards-nagrand.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Misc_Cape_06.gif&reason=external-or-uncollected-resource");
+var fCeremonialCover = new RewardItem("horde","Ceremonial Cover","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_misc_cape_06.jpg");
 fCeremonialCover.itemMoneyPrice = new Array();
 fCeremonialCover.itemMoneyPrice[3] = 126329
 fCeremonialCover.itemStats = new Array();
@@ -737,7 +737,7 @@ fCeremonialCover.itemStats[3] = "\
 ";
 RewardItems[i] = fCeremonialCover; ++i;
 
-var fReinsOfTheCobaltRidingTalbuk = new RewardItem("horde","Reins of the Cobalt Riding Talbuk","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fnagrand%2Fscripts%2Frewards-nagrand.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Misc_Foot_Centaur.gif&reason=external-or-uncollected-resource");
+var fReinsOfTheCobaltRidingTalbuk = new RewardItem("horde","Reins of the Cobalt Riding Talbuk","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_misc_foot_centaur.jpg");
 fReinsOfTheCobaltRidingTalbuk.itemMoneyPrice = new Array();
 fReinsOfTheCobaltRidingTalbuk.itemMoneyPrice[3] = 700000
 fReinsOfTheCobaltRidingTalbuk.itemStats = new Array();
@@ -756,7 +756,7 @@ fReinsOfTheCobaltRidingTalbuk.itemStats[3] = "\
 ";
 RewardItems[i] = fReinsOfTheCobaltRidingTalbuk; ++i;
 
-var fReinsOfTheSilverRidingTalbuk = new RewardItem("horde","Reins of the Silver Riding Talbuk","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fnagrand%2Fscripts%2Frewards-nagrand.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Misc_Foot_Centaur.gif&reason=external-or-uncollected-resource");
+var fReinsOfTheSilverRidingTalbuk = new RewardItem("horde","Reins of the Silver Riding Talbuk","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_misc_foot_centaur.jpg");
 fReinsOfTheSilverRidingTalbuk.itemMoneyPrice = new Array();
 fReinsOfTheSilverRidingTalbuk.itemMoneyPrice[3] = 700000
 fReinsOfTheSilverRidingTalbuk.itemStats = new Array();
@@ -775,7 +775,7 @@ fReinsOfTheSilverRidingTalbuk.itemStats[3] = "\
 ";
 RewardItems[i] = fReinsOfTheSilverRidingTalbuk; ++i;
 
-var fReinsOfTheTanRidingTalbuk = new RewardItem("horde","Reins of the Tan Riding Talbuk","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fnagrand%2Fscripts%2Frewards-nagrand.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Misc_Foot_Centaur.gif&reason=external-or-uncollected-resource");
+var fReinsOfTheTanRidingTalbuk = new RewardItem("horde","Reins of the Tan Riding Talbuk","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_misc_foot_centaur.jpg");
 fReinsOfTheTanRidingTalbuk.itemMoneyPrice = new Array();
 fReinsOfTheTanRidingTalbuk.itemMoneyPrice[3] = 700000
 fReinsOfTheTanRidingTalbuk.itemStats = new Array();
@@ -794,7 +794,7 @@ fReinsOfTheTanRidingTalbuk.itemStats[3] = "\
 ";
 RewardItems[i] = fReinsOfTheTanRidingTalbuk; ++i;
 
-var fReinsOfTheWhiteRidingTalbuk = new RewardItem("horde","Reins of the White Riding Talbuk","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fnagrand%2Fscripts%2Frewards-nagrand.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Misc_Foot_Centaur.gif&reason=external-or-uncollected-resource");
+var fReinsOfTheWhiteRidingTalbuk = new RewardItem("horde","Reins of the White Riding Talbuk","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_misc_foot_centaur.jpg");
 fReinsOfTheWhiteRidingTalbuk.itemMoneyPrice = new Array();
 fReinsOfTheWhiteRidingTalbuk.itemMoneyPrice[3] = 700000
 fReinsOfTheWhiteRidingTalbuk.itemStats = new Array();
@@ -813,7 +813,7 @@ fReinsOfTheWhiteRidingTalbuk.itemStats[3] = "\
 ";
 RewardItems[i] = fReinsOfTheWhiteRidingTalbuk; ++i;
 
-var fReinsOfTheCobaltWarTalbuk = new RewardItem("horde","Reins of the Cobalt War Talbuk","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fnagrand%2Fscripts%2Frewards-nagrand.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Misc_Foot_Centaur.gif&reason=external-or-uncollected-resource");
+var fReinsOfTheCobaltWarTalbuk = new RewardItem("horde","Reins of the Cobalt War Talbuk","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_misc_foot_centaur.jpg");
 fReinsOfTheCobaltWarTalbuk.itemMoneyPrice = new Array();
 fReinsOfTheCobaltWarTalbuk.itemMoneyPrice[3] = 1000000
 fReinsOfTheCobaltWarTalbuk.itemStats = new Array();
@@ -832,7 +832,7 @@ fReinsOfTheCobaltWarTalbuk.itemStats[3] = "\
 ";
 RewardItems[i] = fReinsOfTheCobaltWarTalbuk; ++i;
 
-var fReinsOfTheSilverWarTalbuk = new RewardItem("horde","Reins of the Silver War Talbuk","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fnagrand%2Fscripts%2Frewards-nagrand.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Misc_Foot_Centaur.gif&reason=external-or-uncollected-resource");
+var fReinsOfTheSilverWarTalbuk = new RewardItem("horde","Reins of the Silver War Talbuk","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_misc_foot_centaur.jpg");
 fReinsOfTheSilverWarTalbuk.itemMoneyPrice = new Array();
 fReinsOfTheSilverWarTalbuk.itemMoneyPrice[3] = 1000000
 fReinsOfTheSilverWarTalbuk.itemStats = new Array();
@@ -851,7 +851,7 @@ fReinsOfTheSilverWarTalbuk.itemStats[3] = "\
 ";
 RewardItems[i] = fReinsOfTheSilverWarTalbuk; ++i;
 
-var fReinsOfTheTanWarTalbuk = new RewardItem("horde","Reins of the Tan War Talbuk","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fnagrand%2Fscripts%2Frewards-nagrand.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Misc_Foot_Centaur.gif&reason=external-or-uncollected-resource");
+var fReinsOfTheTanWarTalbuk = new RewardItem("horde","Reins of the Tan War Talbuk","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_misc_foot_centaur.jpg");
 fReinsOfTheTanWarTalbuk.itemMoneyPrice = new Array();
 fReinsOfTheTanWarTalbuk.itemMoneyPrice[3] = 1000000
 fReinsOfTheTanWarTalbuk.itemStats = new Array();
@@ -870,7 +870,7 @@ fReinsOfTheTanWarTalbuk.itemStats[3] = "\
 ";
 RewardItems[i] = fReinsOfTheTanWarTalbuk; ++i;
 
-var fReinsOfTheWhiteWarTalbuk = new RewardItem("horde","Reins of the White War Talbuk","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fnagrand%2Fscripts%2Frewards-nagrand.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Misc_Foot_Centaur.gif&reason=external-or-uncollected-resource");
+var fReinsOfTheWhiteWarTalbuk = new RewardItem("horde","Reins of the White War Talbuk","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_misc_foot_centaur.jpg");
 fReinsOfTheWhiteWarTalbuk.itemMoneyPrice = new Array();
 fReinsOfTheWhiteWarTalbuk.itemMoneyPrice[3] = 1000000
 fReinsOfTheWhiteWarTalbuk.itemStats = new Array();

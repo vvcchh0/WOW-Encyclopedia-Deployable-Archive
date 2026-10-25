@@ -88,7 +88,7 @@ fDesignEnduringDeepPeridot.itemStats[0] = "\
 ";
 RewardItems[i] = fDesignEnduringDeepPeridot; ++i;
 
-var fPatternFelstalkerBelt = new RewardItem("alliance","Pattern: Felstalker Belt","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_05.gif&reason=external-or-uncollected-resource");
+var fPatternFelstalkerBelt = new RewardItem("alliance","Pattern: Felstalker Belt","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_05.jpg");
 fPatternFelstalkerBelt.itemMoneyPrice = new Array();
 fPatternFelstalkerBelt.itemMoneyPrice[0] = 120000
 fPatternFelstalkerBelt.itemStats = new Array();
@@ -121,7 +121,7 @@ Durability 40 / 40<br>Requires Level 69<br>\
 RewardItems[i] = fPatternFelstalkerBelt; ++i;
 
 
-var fFootmansWaterskin = new RewardItem("alliance","Footman's Waterskin","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Drink_Waterskin_05.gif&reason=external-or-uncollected-resource");
+var fFootmansWaterskin = new RewardItem("alliance","Footman's Waterskin","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_drink_waterskin_05.jpg");
 fFootmansWaterskin.itemMoneyPrice = new Array();
 fFootmansWaterskin.itemMoneyPrice[0] = 2000
 fFootmansWaterskin.itemStats = new Array();
@@ -139,7 +139,7 @@ fFootmansWaterskin.itemStats[0] = "\
 ";
 RewardItems[i] = fFootmansWaterskin; ++i;
 
-var fDriedMushroomRations = new RewardItem("alliance","Dried Mushroom Rations","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Mushroom_01.gif&reason=external-or-uncollected-resource");
+var fDriedMushroomRations = new RewardItem("alliance","Dried Mushroom Rations","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_mushroom_01.jpg");
 fDriedMushroomRations.itemMoneyPrice = new Array();
 fDriedMushroomRations.itemMoneyPrice[0] = 4500
 fDriedMushroomRations.itemStats = new Array();
@@ -239,7 +239,7 @@ RewardItems[i] = fPlansFelsteelShieldSpike; ++i;
 
 
 
-var fPatternFelstalkerBracers = new RewardItem("alliance","Pattern: Felstalker Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_05.gif&reason=external-or-uncollected-resource");
+var fPatternFelstalkerBracers = new RewardItem("alliance","Pattern: Felstalker Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_05.jpg");
 fPatternFelstalkerBracers.itemMoneyPrice = new Array();
 fPatternFelstalkerBracers.itemMoneyPrice[1] = 160000
 fPatternFelstalkerBracers.itemStats = new Array();
@@ -300,7 +300,7 @@ fPatternCobrahideLegArmor.itemStats[1] = "\
 ";
 RewardItems[i] = fPatternCobrahideLegArmor; ++i;
 
-var fFootmansLongsword = new RewardItem("alliance","Footman's Longsword","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Sword_20.gif&reason=external-or-uncollected-resource");
+var fFootmansLongsword = new RewardItem("alliance","Footman's Longsword","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_sword_20.jpg");
 fFootmansLongsword.itemMoneyPrice = new Array();
 fFootmansLongsword.itemMoneyPrice[1] = 349801
 fFootmansLongsword.itemStats = new Array();
@@ -323,7 +323,7 @@ fFootmansLongsword.itemStats[1] = "\
 ";
 RewardItems[i] = fFootmansLongsword; ++i;
 
-var fSagesBand = new RewardItem("alliance","Sage's Band","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_11.gif&reason=external-or-uncollected-resource");
+var fSagesBand = new RewardItem("alliance","Sage's Band","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_11.jpg");
 fSagesBand.itemMoneyPrice = new Array();
 fSagesBand.itemMoneyPrice[1] = 114780
 fSagesBand.itemStats = new Array();
@@ -347,7 +347,7 @@ RewardItems[i] = fSagesBand; ++i;
 
 
 
-var fGlyphOfFireWarding = new RewardItem("alliance","Glyph of Fire Warding","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FSpell_Fire_SealOfFire.gif&reason=external-or-uncollected-resource");
+var fGlyphOfFireWarding = new RewardItem("alliance","Glyph of Fire Warding","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_spell_fire_sealoffire.png");
 fGlyphOfFireWarding.itemMoneyPrice = new Array();
 fGlyphOfFireWarding.itemMoneyPrice[1] = 1000000
 fGlyphOfFireWarding.itemStats = new Array();
@@ -367,7 +367,7 @@ fGlyphOfFireWarding.itemStats[1] = "\
 RewardItems[i] = fGlyphOfFireWarding; ++i;
 
 
-var fDesignDawnstoneCrab = new RewardItem("alliance","Design: Dawnstone Crab","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_05.gif&reason=external-or-uncollected-resource");
+var fDesignDawnstoneCrab = new RewardItem("alliance","Design: Dawnstone Crab","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_05.jpg");
 fDesignDawnstoneCrab.itemMoneyPrice = new Array();
 fDesignDawnstoneCrab.itemMoneyPrice[2] = 120000
 fDesignDawnstoneCrab.itemStats = new Array();
@@ -391,7 +391,7 @@ fDesignDawnstoneCrab.itemStats[2] = "\
 ";
 RewardItems[i] = fDesignDawnstoneCrab; ++i;
 
-var fFlamewroughtKey = new RewardItem("alliance","Flamewrought Key","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Misc_Key_13.gif&reason=external-or-uncollected-resource");
+var fFlamewroughtKey = new RewardItem("alliance","Flamewrought Key","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_misc_key_13.jpg");
 fFlamewroughtKey.itemMoneyPrice = new Array();
 fFlamewroughtKey.itemMoneyPrice[1] = 100000
 fFlamewroughtKey.itemStats = new Array();
@@ -430,7 +430,7 @@ Recipe: Transmute Skyfire Diamond<br>Binds when picked up<br>Requires Alchemy (3
 RewardItems[i] = fRecipeTransmuteSkyfireDiamond; ++i;
 
 
-var fPatternFelstalkerBreastplate = new RewardItem("alliance","Pattern: Felstalker Breastplate","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_05.gif&reason=external-or-uncollected-resource");
+var fPatternFelstalkerBreastplate = new RewardItem("alliance","Pattern: Felstalker Breastplate","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_05.jpg");
 fPatternFelstalkerBreastplate.itemMoneyPrice = new Array();
 fPatternFelstalkerBreastplate.itemMoneyPrice[1] = 160000
 fPatternFelstalkerBreastplate.itemStats = new Array();
@@ -483,7 +483,7 @@ fGlyphOfRenewal.itemStats[2] = "\
 ";
 RewardItems[i] = fGlyphOfRenewal; ++i;
 
-var fRingOfConvalescence = new RewardItem("alliance","Ring of Convalescence","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_43.gif&reason=external-or-uncollected-resource");
+var fRingOfConvalescence = new RewardItem("alliance","Ring of Convalescence","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_43.jpg");
 fRingOfConvalescence.itemMoneyPrice = new Array();
 fRingOfConvalescence.itemMoneyPrice[2] = 175952
 fRingOfConvalescence.itemStats = new Array();
@@ -504,7 +504,7 @@ fRingOfConvalescence.itemStats[2] = "\
 ";
 RewardItems[i] = fRingOfConvalescence; ++i;
 
-var fHellforgedHalberd = new RewardItem("alliance","Hellforged Halberd","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Weapon_Halberd_12.gif&reason=external-or-uncollected-resource");
+var fHellforgedHalberd = new RewardItem("alliance","Hellforged Halberd","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_weapon_halberd_12.jpg");
 fHellforgedHalberd.itemMoneyPrice = new Array();
 fHellforgedHalberd.itemMoneyPrice[2] = 555019
 fHellforgedHalberd.itemStats = new Array();
@@ -527,7 +527,7 @@ fHellforgedHalberd.itemStats[2] = "\
 ";
 RewardItems[i] = fHellforgedHalberd; ++i;
 
-var fFelbaneSlugs = new RewardItem("alliance","Felbane Slugs","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Misc_Ammo_Bullet_02.gif&reason=external-or-uncollected-resource");
+var fFelbaneSlugs = new RewardItem("alliance","Felbane Slugs","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_misc_ammo_bullet_02.jpg");
 fFelbaneSlugs.itemMoneyPrice = new Array();
 fFelbaneSlugs.itemMoneyPrice[2] = 5000
 fFelbaneSlugs.itemStats = new Array();
@@ -587,7 +587,7 @@ fFormulaEnchantCloakSubtlety.itemStats[3] = "\
 ";
 RewardItems[i] = fFormulaEnchantCloakSubtlety; ++i;
 
-var fVeteransMusket = new RewardItem("alliance","Veteran's Musket","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Weapon_Rifle_02.gif&reason=external-or-uncollected-resource");
+var fVeteransMusket = new RewardItem("alliance","Veteran's Musket","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_weapon_rifle_02.jpg");
 fVeteransMusket.itemMoneyPrice = new Array();
 fVeteransMusket.itemMoneyPrice[3] = 1522789
 fVeteransMusket.itemStats = new Array();
@@ -699,7 +699,7 @@ fDesignEnduringDeepPeridot.itemStats[0] = "\
 ";
 RewardItems[i] = fDesignEnduringDeepPeridot; ++i;
 
-var fPatternFelstalkerBelt = new RewardItem("horde","Pattern: Felstalker Belt ","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_05.gif&reason=external-or-uncollected-resource");
+var fPatternFelstalkerBelt = new RewardItem("horde","Pattern: Felstalker Belt ","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_05.jpg");
 fPatternFelstalkerBelt.itemMoneyPrice = new Array();
 fPatternFelstalkerBelt.itemMoneyPrice[0] = 120000
 fPatternFelstalkerBelt.itemStats = new Array();
@@ -731,7 +731,7 @@ Durability 40 / 40<br>Requires Level 69<br>\
 ";
 RewardItems[i] = fPatternFelstalkerBelt; ++i;
 
-var fFootmansWaterskin = new RewardItem("horde","Grunt's Waterskin","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Drink_Waterskin_05.gif&reason=external-or-uncollected-resource");
+var fFootmansWaterskin = new RewardItem("horde","Grunt's Waterskin","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_drink_waterskin_05.jpg");
 fFootmansWaterskin.itemMoneyPrice = new Array();
 fFootmansWaterskin.itemMoneyPrice[0] = 2000
 fFootmansWaterskin.itemStats = new Array();
@@ -749,7 +749,7 @@ fFootmansWaterskin.itemStats[0] = "\
 ";
 RewardItems[i] = fFootmansWaterskin; ++i;
 
-var fDriedFruitRations = new RewardItem("horde","Dried Fruit Rations","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Misc_Food_42.gif&reason=external-or-uncollected-resource");
+var fDriedFruitRations = new RewardItem("horde","Dried Fruit Rations","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_misc_food_42.jpg");
 fDriedFruitRations.itemMoneyPrice = new Array();
 fDriedFruitRations.itemMoneyPrice[0] = 4500
 fDriedFruitRations.itemStats = new Array();
@@ -824,7 +824,7 @@ fFormulaEnchantChestExceptionalStats.itemStats[2] = "\
 ";
 RewardItems[i] = fFormulaEnchantChestExceptionalStats; ++i;
 
-var fPatternFelstalkerBracers = new RewardItem("horde","Pattern: Felstalker Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_05.gif&reason=external-or-uncollected-resource");
+var fPatternFelstalkerBracers = new RewardItem("horde","Pattern: Felstalker Bracers","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_05.jpg");
 fPatternFelstalkerBracers.itemMoneyPrice = new Array();
 fPatternFelstalkerBracers.itemMoneyPrice[1] = 160000
 fPatternFelstalkerBracers.itemStats = new Array();
@@ -896,7 +896,7 @@ RewardItems[i] = fPatternCobrahideLegArmor; ++i;
 
 
 
-var fGruntsWaraxe = new RewardItem("horde","Grunt's Waraxe","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Axe_11.gif&reason=external-or-uncollected-resource");
+var fGruntsWaraxe = new RewardItem("horde","Grunt's Waraxe","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_axe_11.jpg");
 fGruntsWaraxe.itemMoneyPrice = new Array();
 fGruntsWaraxe.itemMoneyPrice[1] = 347318
 fGruntsWaraxe.itemStats = new Array();
@@ -919,7 +919,7 @@ fGruntsWaraxe.itemStats[1] = "\
 ";
 RewardItems[i] = fGruntsWaraxe; ++i;
 
-var fFarseersBand = new RewardItem("horde","Farseer's Band","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_17.gif&reason=external-or-uncollected-resource");
+var fFarseersBand = new RewardItem("horde","Farseer's Band","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_17.jpg");
 fFarseersBand.itemMoneyPrice = new Array();
 fFarseersBand.itemMoneyPrice[1] = 114780
 fFarseersBand.itemStats = new Array();
@@ -945,7 +945,7 @@ RewardItems[i] = fFarseersBand; ++i;
 
 
 
-var fGlyphOfFireWarding = new RewardItem("horde","Glyph of Fire Warding","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FSpell_Fire_SealOfFire.gif&reason=external-or-uncollected-resource");
+var fGlyphOfFireWarding = new RewardItem("horde","Glyph of Fire Warding","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_spell_fire_sealoffire.png");
 fGlyphOfFireWarding.itemMoneyPrice = new Array();
 fGlyphOfFireWarding.itemMoneyPrice[1] = 1000000
 fGlyphOfFireWarding.itemStats = new Array();
@@ -965,7 +965,7 @@ fGlyphOfFireWarding.itemStats[1] = "\
 RewardItems[i] = fGlyphOfFireWarding; ++i;
 
 
-var fDesignDawnstoneCrab = new RewardItem("horde","Design: Dawnstone Crab","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_05.gif&reason=external-or-uncollected-resource");
+var fDesignDawnstoneCrab = new RewardItem("horde","Design: Dawnstone Crab","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_05.jpg");
 fDesignDawnstoneCrab.itemMoneyPrice = new Array();
 fDesignDawnstoneCrab.itemMoneyPrice[2] = 120000
 fDesignDawnstoneCrab.itemStats = new Array();
@@ -989,7 +989,7 @@ fDesignDawnstoneCrab.itemStats[2] = "\
 ";
 RewardItems[i] = fDesignDawnstoneCrab; ++i;
 
-var fFlamewroughtKey = new RewardItem("horde","Flamewrought Key","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Misc_Key_13.gif&reason=external-or-uncollected-resource");
+var fFlamewroughtKey = new RewardItem("horde","Flamewrought Key","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_misc_key_13.jpg");
 fFlamewroughtKey.itemMoneyPrice = new Array();
 fFlamewroughtKey.itemMoneyPrice[1] = 100000
 fFlamewroughtKey.itemStats = new Array();
@@ -1027,7 +1027,7 @@ Recipe: Transmute Skyfire Diamond<br>Binds when picked up<br>Requires Alchemy (3
 ";
 RewardItems[i] = fRecipeTransmuteSkyfireDiamond; ++i;
 
-var fPatternFelstalkerBreastplate = new RewardItem("horde","Pattern: Felstalker Breastplate","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_05.gif&reason=external-or-uncollected-resource");
+var fPatternFelstalkerBreastplate = new RewardItem("horde","Pattern: Felstalker Breastplate","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_05.jpg");
 fPatternFelstalkerBreastplate.itemMoneyPrice = new Array();
 fPatternFelstalkerBreastplate.itemMoneyPrice[1] = 160000
 fPatternFelstalkerBreastplate.itemStats = new Array();
@@ -1083,7 +1083,7 @@ fGlyphOfRenewal.itemStats[2] = "\
 ";
 RewardItems[i] = fGlyphOfRenewal; ++i;
 
-var fAncestralBand = new RewardItem("horde","Ancestral Band","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_22.gif&reason=external-or-uncollected-resource");
+var fAncestralBand = new RewardItem("horde","Ancestral Band","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_22.jpg");
 fAncestralBand.itemMoneyPrice = new Array();
 fAncestralBand.itemMoneyPrice[2] = 175952
 fAncestralBand.itemStats = new Array();
@@ -1104,7 +1104,7 @@ fAncestralBand.itemStats[2] = "\
 ";
 RewardItems[i] = fAncestralBand; ++i;
 
-var fBlackenedSpear = new RewardItem("horde","Blackened Spear","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Spear_03.gif&reason=external-or-uncollected-resource");
+var fBlackenedSpear = new RewardItem("horde","Blackened Spear","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_spear_03.jpg");
 fBlackenedSpear.itemMoneyPrice = new Array();
 fBlackenedSpear.itemMoneyPrice[2] = 557054
 fBlackenedSpear.itemStats = new Array();
@@ -1127,7 +1127,7 @@ fBlackenedSpear.itemStats[2] = "\
 ";
 RewardItems[i] = fBlackenedSpear; ++i;
 
-var fHellfireShot = new RewardItem("horde","Hellfire Shot","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Misc_Ammo_Bullet_02.gif&reason=external-or-uncollected-resource");
+var fHellfireShot = new RewardItem("horde","Hellfire Shot","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_misc_ammo_bullet_02.jpg");
 fHellfireShot.itemMoneyPrice = new Array();
 fHellfireShot.itemMoneyPrice[2] = 5000
 fHellfireShot.itemStats = new Array();
@@ -1212,7 +1212,7 @@ RewardItems[i] = fFormulaEnchantCloakSubtlety; ++i;
 
 
 
-var fMarksmansBow = new RewardItem("horde","Marksman's Bow","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fhellfire%2Fscripts%2Frewards-hellfire.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Weapon_Bow_08.gif&reason=external-or-uncollected-resource");
+var fMarksmansBow = new RewardItem("horde","Marksman's Bow","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_weapon_bow_08.jpg");
 fMarksmansBow.itemMoneyPrice = new Array();
 fMarksmansBow.itemMoneyPrice[3] = 1599984
 fMarksmansBow.itemStats = new Array();

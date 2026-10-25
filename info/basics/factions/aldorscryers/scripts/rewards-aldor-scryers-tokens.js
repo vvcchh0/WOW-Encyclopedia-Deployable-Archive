@@ -284,7 +284,7 @@ fInscriptionOfTheOracle.itemStats[1] = "\
 ";
 RewardItems[i] = fInscriptionOfTheOracle; ++i;
 
-var fInscriptionOfTheOrb = new RewardItem("horde","Inscription of the Orb","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers-tokens.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Misc_Orb_04.gif&reason=external-or-uncollected-resource");
+var fInscriptionOfTheOrb = new RewardItem("horde","Inscription of the Orb","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_misc_orb_04.jpg");
 fInscriptionOfTheOrb.itemTokenPrice = new Array();
 fInscriptionOfTheOrb.itemTokenPrice[1] = new Array(0,2,0,0);
 fInscriptionOfTheOrb.itemStats = new Array();

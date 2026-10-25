@@ -351,7 +351,7 @@ fPatternVindicatorsArmorKit.itemStats[2] = "\
 ";
 RewardItems[i] = fPatternVindicatorsArmorKit; ++i;
 
-var fAnchoritesRobes = new RewardItem("alliance","Anchorite's Robes","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Chest_Cloth_19.gif&reason=external-or-uncollected-resource");
+var fAnchoritesRobes = new RewardItem("alliance","Anchorite's Robes","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_chest_cloth_19.jpg");
 fAnchoritesRobes.itemMoneyPrice = new Array();
 fAnchoritesRobes.itemMoneyPrice[1] = 179594
 fAnchoritesRobes.itemStats = new Array();
@@ -398,7 +398,7 @@ fAuchenaiStaff.itemStats[2] = "\
 ";
 RewardItems[i] = fAuchenaiStaff; ++i;
 
-var fVindicatorsHauberk = new RewardItem("alliance","Vindicator's Hauberk","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Chest_Plate03.gif&reason=external-or-uncollected-resource");
+var fVindicatorsHauberk = new RewardItem("alliance","Vindicator's Hauberk","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_chest_plate03.jpg");
 fVindicatorsHauberk.itemMoneyPrice = new Array();
 fVindicatorsHauberk.itemMoneyPrice[2] = 312042
 fVindicatorsHauberk.itemStats = new Array();
@@ -420,7 +420,7 @@ fVindicatorsHauberk.itemStats[2] = "\
 ";
 RewardItems[i] = fVindicatorsHauberk; ++i;
 
-var fDesignPendantOfShadowsEnd = new RewardItem("alliance","Design: Pendant of Shadow's End","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_05.gif&reason=external-or-uncollected-resource");
+var fDesignPendantOfShadowsEnd = new RewardItem("alliance","Design: Pendant of Shadow's End","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_05.jpg");
 fDesignPendantOfShadowsEnd.itemMoneyPrice = new Array();
 fDesignPendantOfShadowsEnd.itemMoneyPrice[2] = 120000
 fDesignPendantOfShadowsEnd.itemStats = new Array();
@@ -572,7 +572,7 @@ fLightwardensBand.itemStats[2] = "\
 ";
 RewardItems[i] = fLightwardensBand; ++i;
 
-var fMedallionOfTheLightbearer = new RewardItem("alliance","Medallion of the Lightbearer","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Amulet_04.gif&reason=external-or-uncollected-resource");
+var fMedallionOfTheLightbearer = new RewardItem("alliance","Medallion of the Lightbearer","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_amulet_04.jpg");
 fMedallionOfTheLightbearer.itemMoneyPrice = new Array();
 fMedallionOfTheLightbearer.itemMoneyPrice[3] = 790112
 fMedallionOfTheLightbearer.itemStats = new Array();
@@ -591,7 +591,7 @@ fMedallionOfTheLightbearer.itemStats[3] = "\
 ";
 RewardItems[i] = fMedallionOfTheLightbearer; ++i;
 
-var fVindicatorsBrand = new RewardItem("alliance","Vindicator's Brand","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Sword_Draenei_01.gif&reason=external-or-uncollected-resource");
+var fVindicatorsBrand = new RewardItem("alliance","Vindicator's Brand","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_sword_draenei_01.jpg");
 fVindicatorsBrand.itemMoneyPrice = new Array();
 fVindicatorsBrand.itemMoneyPrice[3] = 1979818
 fVindicatorsBrand.itemStats = new Array();
@@ -658,7 +658,7 @@ fDesignRunedBloodGarnet.itemStats[0] = "\
 ";
 RewardItems[i] = fDesignRunedBloodGarnet; ++i;
 
-var fDesignDazzlingDeepPeridot = new RewardItem("horde","Design: Dazzling Deep Peridot","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_05.gif&reason=external-or-uncollected-resource");
+var fDesignDazzlingDeepPeridot = new RewardItem("horde","Design: Dazzling Deep Peridot","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_05.jpg");
 fDesignDazzlingDeepPeridot.itemMoneyPrice = new Array();
 fDesignDazzlingDeepPeridot.itemMoneyPrice[1] = 60000
 fDesignDazzlingDeepPeridot.itemStats = new Array();
@@ -769,7 +769,7 @@ fPatternMysticSpellthread.itemStats[1] = "\
 ";
 RewardItems[i] = fPatternMysticSpellthread; ++i;
 
-var fDesignPendantOfWithering = new RewardItem("horde","Design: Pendant of Withering","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_05.gif&reason=external-or-uncollected-resource");
+var fDesignPendantOfWithering = new RewardItem("horde","Design: Pendant of Withering","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_05.jpg");
 fDesignPendantOfWithering.itemMoneyPrice = new Array();
 fDesignPendantOfWithering.itemMoneyPrice[2] = 120000
 fDesignPendantOfWithering.itemStats = new Array();
@@ -911,7 +911,7 @@ fPlansEnchantedAdamantiteBreastplate.itemStats[2] = "\
 ";
 RewardItems[i] = fPlansEnchantedAdamantiteBreastplate; ++i;
 
-var fGauntletsOfTheChosen = new RewardItem("horde","Gauntlets of the Chosen","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Gauntlets_26.gif&reason=external-or-uncollected-resource");
+var fGauntletsOfTheChosen = new RewardItem("horde","Gauntlets of the Chosen","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_gauntlets_26.jpg");
 fGauntletsOfTheChosen.itemMoneyPrice = new Array();
 fGauntletsOfTheChosen.itemMoneyPrice[2] = 160892
 fGauntletsOfTheChosen.itemStats = new Array();
@@ -931,7 +931,7 @@ fGauntletsOfTheChosen.itemStats[2] = "\
 ";
 RewardItems[i] = fGauntletsOfTheChosen; ++i;
 
-var fRetainersLeggings = new RewardItem("horde","Retainer's Leggings","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Faldorscryers%2Fscripts%2Frewards-aldor-scryers.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Pants_Leather_18.gif&reason=external-or-uncollected-resource");
+var fRetainersLeggings = new RewardItem("horde","Retainer's Leggings","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_pants_leather_18.jpg");
 fRetainersLeggings.itemMoneyPrice = new Array();
 fRetainersLeggings.itemMoneyPrice[2] = 226120
 fRetainersLeggings.itemStats = new Array();

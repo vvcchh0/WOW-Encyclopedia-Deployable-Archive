@@ -65,7 +65,7 @@ function generateCostString(thisObject,thisBracket)
 i = 0;
 var RewardItems = new Array();
 
-var fBandOfEternity = new RewardItem("alliance","Band of Eternity (Sage)","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fkeepers%2Fscripts%2Frewards-the-scale-of-sands-rings.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_54.gif&reason=external-or-uncollected-resource");
+var fBandOfEternity = new RewardItem("alliance","Band of Eternity (Sage)","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_54.jpg");
 fBandOfEternity.itemStats = new Array();
 fBandOfEternity.itemStats[0] = "\
 <table width=\"275\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\
@@ -84,7 +84,7 @@ fBandOfEternity.itemStats[0] = "\
 ";
 RewardItems[i] = fBandOfEternity; ++i;
 
-var fBandOfEternity = new RewardItem("alliance","Band of Eternity (Sage)","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fkeepers%2Fscripts%2Frewards-the-scale-of-sands-rings.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_54.gif&reason=external-or-uncollected-resource");
+var fBandOfEternity = new RewardItem("alliance","Band of Eternity (Sage)","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_54.jpg");
 fBandOfEternity.itemStats = new Array();
 fBandOfEternity.itemStats[1] = "\
 <table width=\"275\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\
@@ -103,7 +103,7 @@ fBandOfEternity.itemStats[1] = "\
 ";
 RewardItems[i] = fBandOfEternity; ++i;
 
-var fBandOfEternity = new RewardItem("alliance","Band of Eternity (Sage)","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fkeepers%2Fscripts%2Frewards-the-scale-of-sands-rings.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_54.gif&reason=external-or-uncollected-resource");
+var fBandOfEternity = new RewardItem("alliance","Band of Eternity (Sage)","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_54.jpg");
 fBandOfEternity.itemStats = new Array();
 fBandOfEternity.itemStats[2] = "\
 <table width=\"275\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\
@@ -124,7 +124,7 @@ RewardItems[i] = fBandOfEternity; ++i;
 
 
 
-var fBandOfTheEternalSage = new RewardItem("alliance","Band of the Eternal Sage","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fkeepers%2Fscripts%2Frewards-the-scale-of-sands-rings.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_55.gif&reason=external-or-uncollected-resource");
+var fBandOfTheEternalSage = new RewardItem("alliance","Band of the Eternal Sage","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_55.jpg");
 fBandOfTheEternalSage.itemStats = new Array();
 fBandOfTheEternalSage.itemStats[3] = "\
 <table width=\"275\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\
@@ -145,7 +145,7 @@ fBandOfTheEternalSage.itemStats[3] = "\
 ";
 RewardItems[i] = fBandOfTheEternalSage; ++i;
 
-var fBandOfEternity = new RewardItem("alliance","Band of Eternity (Restorer)","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fkeepers%2Fscripts%2Frewards-the-scale-of-sands-rings.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_54.gif&reason=external-or-uncollected-resource");
+var fBandOfEternity = new RewardItem("alliance","Band of Eternity (Restorer)","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_54.jpg");
 fBandOfEternity.itemStats = new Array();
 fBandOfEternity.itemStats[0] = "\
 <table width=\"275\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\
@@ -164,7 +164,7 @@ fBandOfEternity.itemStats[0] = "\
 ";
 RewardItems[i] = fBandOfEternity; ++i;
 
-var fBandOfEternity = new RewardItem("alliance","Band of Eternity (Restorer)","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fkeepers%2Fscripts%2Frewards-the-scale-of-sands-rings.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_54.gif&reason=external-or-uncollected-resource");
+var fBandOfEternity = new RewardItem("alliance","Band of Eternity (Restorer)","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_54.jpg");
 fBandOfEternity.itemStats = new Array();
 fBandOfEternity.itemStats[1] = "\
 <table width=\"275\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\
@@ -183,7 +183,7 @@ fBandOfEternity.itemStats[1] = "\
 ";
 RewardItems[i] = fBandOfEternity; ++i;
 
-var fBandOfEternity = new RewardItem("alliance","Band of Eternity (Restorer)","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fkeepers%2Fscripts%2Frewards-the-scale-of-sands-rings.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_54.gif&reason=external-or-uncollected-resource");
+var fBandOfEternity = new RewardItem("alliance","Band of Eternity (Restorer)","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_54.jpg");
 fBandOfEternity.itemStats = new Array();
 fBandOfEternity.itemStats[2] = "\
 <table width=\"275\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\
@@ -203,7 +203,7 @@ fBandOfEternity.itemStats[2] = "\
 RewardItems[i] = fBandOfEternity; ++i;
 
 
-var fBandOfTheEternalRestorer = new RewardItem("alliance","Band of the Eternal Restorer","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fkeepers%2Fscripts%2Frewards-the-scale-of-sands-rings.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_55.gif&reason=external-or-uncollected-resource");
+var fBandOfTheEternalRestorer = new RewardItem("alliance","Band of the Eternal Restorer","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_55.jpg");
 fBandOfTheEternalRestorer.itemStats = new Array();
 fBandOfTheEternalRestorer.itemStats[3] = "\
 <table width=\"275\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\
@@ -224,7 +224,7 @@ fBandOfTheEternalRestorer.itemStats[3] = "\
 ";
 RewardItems[i] = fBandOfTheEternalRestorer; ++i;
 
-var fBandOfEternity = new RewardItem("alliance","Band of Eternity (Champion)","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fkeepers%2Fscripts%2Frewards-the-scale-of-sands-rings.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_54.gif&reason=external-or-uncollected-resource");
+var fBandOfEternity = new RewardItem("alliance","Band of Eternity (Champion)","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_54.jpg");
 fBandOfEternity.itemStats = new Array();
 fBandOfEternity.itemStats[0] = "\
 <table width=\"275\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\
@@ -241,7 +241,7 @@ fBandOfEternity.itemStats[0] = "\
 ";
 RewardItems[i] = fBandOfEternity; ++i;
 
-var fBandOfEternity = new RewardItem("alliance","Band of Eternity (Champion)","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fkeepers%2Fscripts%2Frewards-the-scale-of-sands-rings.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_54.gif&reason=external-or-uncollected-resource");
+var fBandOfEternity = new RewardItem("alliance","Band of Eternity (Champion)","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_54.jpg");
 fBandOfEternity.itemStats = new Array();
 fBandOfEternity.itemStats[1] = "\
 <table width=\"275\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\
@@ -258,7 +258,7 @@ fBandOfEternity.itemStats[1] = "\
 ";
 RewardItems[i] = fBandOfEternity; ++i;
 
-var fBandOfEternity = new RewardItem("alliance","Band of Eternity (Champion)","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fkeepers%2Fscripts%2Frewards-the-scale-of-sands-rings.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_54.gif&reason=external-or-uncollected-resource");
+var fBandOfEternity = new RewardItem("alliance","Band of Eternity (Champion)","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_54.jpg");
 fBandOfEternity.itemStats = new Array();
 fBandOfEternity.itemStats[2] = "\
 <table width=\"275\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\
@@ -275,7 +275,7 @@ fBandOfEternity.itemStats[2] = "\
 ";
 RewardItems[i] = fBandOfEternity; ++i;
 
-var fBandOfTheEternalChampion = new RewardItem("alliance","Band of the Eternal Champion","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fkeepers%2Fscripts%2Frewards-the-scale-of-sands-rings.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_55.gif&reason=external-or-uncollected-resource");
+var fBandOfTheEternalChampion = new RewardItem("alliance","Band of the Eternal Champion","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_55.jpg");
 fBandOfTheEternalChampion.itemStats = new Array();
 fBandOfTheEternalChampion.itemStats[3] = "\
 <table width=\"275\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\
@@ -294,7 +294,7 @@ fBandOfTheEternalChampion.itemStats[3] = "\
 ";
 RewardItems[i] = fBandOfTheEternalChampion; ++i;
 
-var fBandOfEternity = new RewardItem("alliance","Band of Eternity (Defender)","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fkeepers%2Fscripts%2Frewards-the-scale-of-sands-rings.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_54.gif&reason=external-or-uncollected-resource");
+var fBandOfEternity = new RewardItem("alliance","Band of Eternity (Defender)","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_54.jpg");
 fBandOfEternity.itemStats = new Array();
 fBandOfEternity.itemStats[0] = "\
 <table width=\"275\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\
@@ -313,7 +313,7 @@ fBandOfEternity.itemStats[0] = "\
 ";
 RewardItems[i] = fBandOfEternity; ++i;
 
-var fBandOfEternity = new RewardItem("alliance","Band of Eternity (Defender)","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fkeepers%2Fscripts%2Frewards-the-scale-of-sands-rings.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_54.gif&reason=external-or-uncollected-resource");
+var fBandOfEternity = new RewardItem("alliance","Band of Eternity (Defender)","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_54.jpg");
 fBandOfEternity.itemStats = new Array();
 fBandOfEternity.itemStats[1] = "\
 <table width=\"275\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\
@@ -332,7 +332,7 @@ fBandOfEternity.itemStats[1] = "\
 ";
 RewardItems[i] = fBandOfEternity; ++i;
 
-var fBandOfEternity = new RewardItem("alliance","Band of Eternity (Defender)","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fkeepers%2Fscripts%2Frewards-the-scale-of-sands-rings.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_54.gif&reason=external-or-uncollected-resource");
+var fBandOfEternity = new RewardItem("alliance","Band of Eternity (Defender)","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_54.jpg");
 fBandOfEternity.itemStats = new Array();
 fBandOfEternity.itemStats[2] = "\
 <table width=\"275\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\
@@ -351,7 +351,7 @@ fBandOfEternity.itemStats[2] = "\
 ";
 RewardItems[i] = fBandOfEternity; ++i;
 
-var fBandOfTheEternalDefender = new RewardItem("alliance","Band of the Eternal Defender","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fkeepers%2Fscripts%2Frewards-the-scale-of-sands-rings.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_55.gif&reason=external-or-uncollected-resource");
+var fBandOfTheEternalDefender = new RewardItem("alliance","Band of the Eternal Defender","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_55.jpg");
 fBandOfTheEternalDefender.itemStats = new Array();
 fBandOfTheEternalDefender.itemStats[3] = "\
 <table width=\"275\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\

@@ -114,7 +114,7 @@ fRecipeClamBar.itemStats[0] = "\
 ";
 RewardItems[i] = fRecipeClamBar; ++i;
 
-var fMarshLichen = new RewardItem("alliance","Marsh Lichen","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fsporeggar%2Fscripts%2Frewards-sporeggar.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Mushroom_01.gif&reason=external-or-uncollected-resource");
+var fMarshLichen = new RewardItem("alliance","Marsh Lichen","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_mushroom_01.jpg");
 fMarshLichen.itemTokenPrice = new Array();
 fMarshLichen.itemTokenPrice[0] = new Array(2,0,0,0);
 fMarshLichen.itemStats = new Array();

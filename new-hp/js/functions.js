@@ -700,7 +700,12 @@ isShowing = false;
 
 function showTip(toolTipContent)
 {
-	isShowing = true;
+	/* __offline-reward-tooltip-first-hover */
+  var hoverEvent = window.event;
+  window.mouseX = hoverEvent && typeof hoverEvent.clientX === 'number' ? hoverEvent.clientX : (typeof window.mouseX === 'number' ? window.mouseX : 0);
+  window.mouseY = hoverEvent && typeof hoverEvent.clientY === 'number' ? hoverEvent.clientY - 1 : (typeof window.mouseY === 'number' ? window.mouseY : 0);
+  window.ttipWindowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+  isShowing = true;
 	if(!document.getElementById("toolTipBox"))
 	{
 		ttipEmbryo = document.createElement("div");

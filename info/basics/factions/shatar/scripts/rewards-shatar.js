@@ -182,7 +182,7 @@ fFormulaEnchantRingHealingPower.itemStats[2] = "\
 ";
 RewardItems[i] = fFormulaEnchantRingHealingPower; ++i;
 
-var fDesignRingOfArcaneShielding = new RewardItem("alliance","Design: Ring of Arcane Shielding","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fshatar%2Fscripts%2Frewards-shatar.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_05.gif&reason=external-or-uncollected-resource");
+var fDesignRingOfArcaneShielding = new RewardItem("alliance","Design: Ring of Arcane Shielding","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_05.jpg");
 fDesignRingOfArcaneShielding.itemMoneyPrice = new Array();
 fDesignRingOfArcaneShielding.itemMoneyPrice[1] = 120000
 fDesignRingOfArcaneShielding.itemStats = new Array();
@@ -204,7 +204,7 @@ fDesignRingOfArcaneShielding.itemStats[1] = "\
 ";
 RewardItems[i] = fDesignRingOfArcaneShielding; ++i;
 
-var fDesignTalasiteOwl = new RewardItem("alliance","Design: Talasite Owl","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fshatar%2Fscripts%2Frewards-shatar.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_05.gif&reason=external-or-uncollected-resource");
+var fDesignTalasiteOwl = new RewardItem("alliance","Design: Talasite Owl","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_05.jpg");
 fDesignTalasiteOwl.itemMoneyPrice = new Array();
 fDesignTalasiteOwl.itemMoneyPrice[2] = 120000
 fDesignTalasiteOwl.itemStats = new Array();
@@ -228,7 +228,7 @@ fDesignTalasiteOwl.itemStats[2] = "\
 ";
 RewardItems[i] = fDesignTalasiteOwl; ++i;
 
-var fBlessedScaleGirdle = new RewardItem("alliance","Blessed Scale Girdle","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fshatar%2Fscripts%2Frewards-shatar.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Belt_08.gif&reason=external-or-uncollected-resource");
+var fBlessedScaleGirdle = new RewardItem("alliance","Blessed Scale Girdle","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_belt_08.jpg");
 fBlessedScaleGirdle.itemMoneyPrice = new Array();
 fBlessedScaleGirdle.itemMoneyPrice[2] = 130288
 fBlessedScaleGirdle.itemStats = new Array();
@@ -328,7 +328,7 @@ enchantments for the selected equipment slot.</span>\
 ";
 RewardItems[i] = fGlyphOfPower; ++i;
 
-var fPatternDrumsOfBattle = new RewardItem("alliance","Pattern: Drums of Battle","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fshatar%2Fscripts%2Frewards-shatar.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Scroll_05.gif&reason=external-or-uncollected-resource");
+var fPatternDrumsOfBattle = new RewardItem("alliance","Pattern: Drums of Battle","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_scroll_05.jpg");
 fPatternDrumsOfBattle.itemMoneyPrice = new Array();
 fPatternDrumsOfBattle.itemMoneyPrice[3] = 120000
 fPatternDrumsOfBattle.itemStats = new Array();
