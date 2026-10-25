@@ -1771,7 +1771,7 @@ fCarvedWitchDoctorsStick.itemStats[0] = "\
 ";
 RewardItems[i] = fCarvedWitchDoctorsStick; ++i;
 
-var fBroochOfDeftness = new RewardItem("alliance","Brooch of Deftness","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice23.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Necklace_28.gif&reason=external-or-uncollected-resource");
+var fBroochOfDeftness = new RewardItem("alliance","Brooch of Deftness","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_necklace_28.jpg");
 fBroochOfDeftness.itemHonorPrice = new Array();
 fBroochOfDeftness.itemHonorPrice[0] = 35
 fBroochOfDeftness.itemTokenPrice = new Array();

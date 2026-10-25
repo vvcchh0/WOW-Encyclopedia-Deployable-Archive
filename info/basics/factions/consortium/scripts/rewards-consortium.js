@@ -496,7 +496,7 @@ fStormspireVest.itemStats[2] = "\
 RewardItems[i] = fStormspireVest; ++i;
 
 
-var fHaramadsBargain = new RewardItem("alliance","Haramad's Bargain","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fconsortium%2Fscripts%2Frewards-consortium.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Necklace_29.gif&reason=external-or-uncollected-resource");
+var fHaramadsBargain = new RewardItem("alliance","Haramad's Bargain","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_necklace_29.jpg");
 fHaramadsBargain.itemMoneyPrice = new Array();
 fHaramadsBargain.itemMoneyPrice[3] = 790112
 fHaramadsBargain.itemStats = new Array();

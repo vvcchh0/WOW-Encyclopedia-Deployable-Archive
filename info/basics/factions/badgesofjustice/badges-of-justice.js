@@ -334,7 +334,7 @@ fRingOfArathiWarlords.itemStats[0] = "\
 RewardItems[i] = fRingOfArathiWarlords; ++i;
 
 
-var fRingOfUnyieldingForce = new RewardItem("alliance","Ring of Unyielding Force","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_46.gif&reason=external-or-uncollected-resource");
+var fRingOfUnyieldingForce = new RewardItem("alliance","Ring of Unyielding Force","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_46.jpg");
 fRingOfUnyieldingForce.itemHonorPrice = new Array();
 fRingOfUnyieldingForce.itemHonorPrice[0] = 25
 fRingOfUnyieldingForce.itemStats = new Array();
@@ -353,7 +353,7 @@ fRingOfUnyieldingForce.itemStats[0] = "\
 ";
 RewardItems[i] = fRingOfUnyieldingForce; ++i;
 
-var fManasurgePendant = new RewardItem("alliance","Manasurge Pendant","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Necklace_30.gif&reason=external-or-uncollected-resource");
+var fManasurgePendant = new RewardItem("alliance","Manasurge Pendant","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_necklace_30.jpg");
 fManasurgePendant.itemHonorPrice = new Array();
 fManasurgePendant.itemHonorPrice[0] = 25
 fManasurgePendant.itemStats = new Array();
@@ -373,7 +373,7 @@ fManasurgePendant.itemStats[0] = "\
 RewardItems[i] = fManasurgePendant; ++i;
 
 
-var fNecklaceOfEternalHope = new RewardItem("alliance","Necklace of Eternal Hope","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fbadgesofjustice%2Fbadges-of-justice.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Necklace_31.gif&reason=external-or-uncollected-resource");
+var fNecklaceOfEternalHope = new RewardItem("alliance","Necklace of Eternal Hope","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_necklace_31.jpg");
 fNecklaceOfEternalHope.itemHonorPrice = new Array();
 fNecklaceOfEternalHope.itemHonorPrice[0] = 25
 fNecklaceOfEternalHope.itemStats = new Array();

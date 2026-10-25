@@ -230,7 +230,7 @@ fKurenaiKilt.itemStats[2] = "\
 ";
 RewardItems[i] = fKurenaiKilt; ++i;
 
-var fBandOfElementalSpirits = new RewardItem("alliance","Band of Elemental Spirits","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fnagrand%2Fscripts%2Frewards-nagrand.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_35.gif&reason=external-or-uncollected-resource");
+var fBandOfElementalSpirits = new RewardItem("alliance","Band of Elemental Spirits","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_35.jpg");
 fBandOfElementalSpirits.itemMoneyPrice = new Array();
 fBandOfElementalSpirits.itemMoneyPrice[2] = 175952
 fBandOfElementalSpirits.itemStats = new Array();
@@ -635,7 +635,7 @@ fTempestLeggings.itemStats[2] = "\
 ";
 RewardItems[i] = fTempestLeggings; ++i;
 
-var fBandOfAncestralSpirits = new RewardItem("horde","Band of Ancestral Spirits","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fnagrand%2Fscripts%2Frewards-nagrand.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_15.gif&reason=external-or-uncollected-resource");
+var fBandOfAncestralSpirits = new RewardItem("horde","Band of Ancestral Spirits","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_15.jpg");
 fBandOfAncestralSpirits.itemMoneyPrice = new Array();
 fBandOfAncestralSpirits.itemMoneyPrice[2] = 175952
 fBandOfAncestralSpirits.itemStats = new Array();

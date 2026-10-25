@@ -335,7 +335,7 @@ fGavelOfUnearthedSecrets.itemStats[3] = "\
 ";
 RewardItems[i] = fGavelOfUnearthedSecrets; ++i;
 
-var fShapeshiftersSignet = new RewardItem("alliance","Shapeshifter's Signet","/WOW-Encyclopedia-Deployable-Archive/__offline/missing-image.svg?source=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Flowercity%2Fscripts%2Frewards-lowercity.js&requested=http%3A%2F%2Fwww.worldofwarcraft.com%2Finfo%2Fbasics%2Ffactions%2Fimages%2Ficons%2FINV_Jewelry_Ring_41.gif&reason=external-or-uncollected-resource");
+var fShapeshiftersSignet = new RewardItem("alliance","Shapeshifter's Signet","/WOW-Encyclopedia-Deployable-Archive/__offline/related-faction-icons/canonical_inv_jewelry_ring_41.jpg");
 fShapeshiftersSignet.itemMoneyPrice = new Array();
 fShapeshiftersSignet.itemMoneyPrice[3] = 197528
 fShapeshiftersSignet.itemStats = new Array();
