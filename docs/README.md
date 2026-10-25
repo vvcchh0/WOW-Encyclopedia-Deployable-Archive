@@ -67,3 +67,5 @@ Git 主树保存部署文件、工具、这些文档与关键验收；历史记�
 - [2026-10-24 八小时资源恢复](continuous-recovery-20261024.md)：331项缺口核账、父分类头像引用及网络诊断。
 - [TBC天赋图标补充](tbc-talent-art-20261024.md)：58张后期关联图标、65项同名对应及灰度显示。
 - [BlizzCast现存音频副本](blizzcast-audio-20261024.md)：前两期MP3、旧RSS长度比较与本地播放接入。
+- [声望与奖励图标补齐](faction-reward-art-20261025.md)：103个补充图标、动态奖励表盘点、悬浮说明和旧PvP导航修复。
+- [ArchiveCraft百科图片对照](archivecraft-encyclopedia-crosscheck-20261025.md)：五张官方图片原字节对应及分类头像的剩余缺口。

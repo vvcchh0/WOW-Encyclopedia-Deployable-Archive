@@ -55,6 +55,7 @@ import news_wallpaper_previews  # noqa: E402
 import non_gallery_compat  # noqa: E402
 import offline_flash  # noqa: E402
 import blizzcast_reader  # noqa: E402
+import official_contest_reader  # noqa: E402
 import blizzcast_audio  # noqa: E402
 import talent_compat  # noqa: E402
 import related_talent_icons  # noqa: E402
@@ -65,6 +66,7 @@ import related_guide_images  # noqa: E402
 import related_player_gallery_previews  # noqa: E402
 import related_faction_icons  # noqa: E402
 import rewardstable_compat  # noqa: E402
+import legacy_reward_tooltip  # noqa: E402
 import source16_layout_compat  # noqa: E402
 import talent_box_layout  # noqa: E402
 import aldor_scryers_lore  # noqa: E402
@@ -2952,6 +2954,7 @@ def export_pages(
     guide_image_collection_map: Path | None = None,
     flash_runtime_archive: Path | None = None,
     blizzcast_source_map: Path | None = None,
+    official_contest_map: Path | None = None,
     blizzcast_audio_map: Path | None = None,
     related_talent_icon_map: Path | None = None,
     related_tbc_talent_art_map: Path | None = None,
@@ -3047,6 +3050,29 @@ def export_pages(
                 raise PagesExportError(f"BlizzCast reading route collides with frozen input: {route}")
             route_to_static[route] = static_url(base_path, relative)
             relative_paths.add(relative)
+    contest_bundle: official_contest_reader.OfficialContestBundle | None = None
+    if official_contest_map is not None:
+        try:
+            contest_bundle = official_contest_reader.load_official_contest_bundle(
+                official_contest_map, workspace_root, base_path, manifest_sha,
+            )
+        except (official_contest_reader.OfficialContestError, OSError) as exc:
+            raise PagesExportError(str(exc)) from exc
+        for generated in contest_bundle.generated_files:
+            route = safe_route(str(generated["path"]))
+            relative = route.lstrip("/")
+            if (route in route_to_static or route in raw_aliases or route in overlay_routes
+                    or relative in relative_paths or relative in overlay_static_paths):
+                raise PagesExportError(f"official contest route collides with frozen input: {route}")
+            route_to_static[route] = static_url(base_path, relative)
+            relative_paths.add(relative)
+        for original_url, canonical in contest_bundle.origin_routes.items():
+            logical = urllib.parse.urlsplit(original_url).path
+            if logical == canonical:
+                continue
+            if logical in route_to_static or logical in raw_aliases or logical in overlay_routes:
+                raise PagesExportError(f"official contest legacy route collides with frozen input: {logical}")
+            route_to_static[logical] = route_to_static[canonical]
     blizzcast_audio_bundle: blizzcast_audio.BlizzcastAudioBundle | None = None
     blizzcast_audio_map_sha: str | None = None
     if blizzcast_audio_map is not None:
@@ -3077,6 +3103,7 @@ def export_pages(
             route_to_static[route] = static_url(base_path, relative)
             relative_paths.add(relative)
     reader_estimate = blizzcast_bundle.estimated_bytes if blizzcast_bundle else 0
+    reader_estimate += contest_bundle.estimated_bytes if contest_bundle else 0
     blizzcast_audio_estimate = blizzcast_audio_bundle.estimated_bytes if blizzcast_audio_bundle else 0
     talent_icon_bundle: related_talent_icons.RelatedTalentBundle | None = None
     if related_talent_icon_map is not None:
@@ -3468,6 +3495,12 @@ def export_pages(
             if key in origin_index and origin_index[key] != route:
                 raise PagesExportError(f"BlizzCast origin conflicts with frozen source: {key}")
             origin_index[key] = route
+    if contest_bundle is not None:
+        for original_url, route in contest_bundle.origin_routes.items():
+            key = mirror.origin_key(original_url)
+            if key in origin_index and origin_index[key] != route:
+                raise PagesExportError(f"official contest origin conflicts with frozen source: {key}")
+            origin_index[key] = route
     if talent_icon_bundle is not None:
         for asset in talent_icon_bundle.assets:
             key = mirror.origin_key("http://www.worldofwarcraft.com" + asset.route)
@@ -3513,7 +3546,10 @@ def export_pages(
         origin_index=origin_index,
         base_path=base_path,
         validated_navigation_image_routes=validated_navigation_image_routes,
-        validated_related_page_routes=frozenset(blizzcast_bundle.origin_routes.values()) if blizzcast_bundle else frozenset(),
+        validated_related_page_routes=(
+            (frozenset(blizzcast_bundle.origin_routes.values()) if blizzcast_bundle else frozenset())
+            | (frozenset(contest_bundle.origin_routes.values()) if contest_bundle else frozenset())
+        ),
     )
     provenance: list[dict[str, Any]] = []
     stats: Counter[str] = Counter()
@@ -3870,6 +3906,29 @@ def export_pages(
                     "source_map_sha256": blizzcast_map_sha, "curated_sources": generated["curated_sources"],
                 })
                 stats["blizzcast_reading_pages" if is_page else "blizzcast_reading_styles"] += 1
+        if contest_bundle is not None:
+            for generated in contest_bundle.generated_files:
+                data = bytes(generated["data"])
+                route = safe_route(str(generated["path"]))
+                relative = route.lstrip("/")
+                if shutil.disk_usage(output.parent).free < min_free_bytes + len(data):
+                    raise PagesExportError("disk reserve would be breached while writing the official contest exhibit")
+                out = partial / relative
+                out.parent.mkdir(parents=True, exist_ok=True)
+                out.write_bytes(data)
+                is_page = relative.endswith(".html")
+                provenance.append({
+                    "route": route, "static_url": static_url(base_path, relative), "output_path": relative,
+                    "source_offline_path": None, "source_manifest_sha256": None, "source_manifest_length": None,
+                    "source_sha256": contest_bundle.source_record["payload_sha256"],
+                    "source_length": contest_bundle.source_record["payload_length"],
+                    "derived_sha256": generated["sha256"], "derived_length": len(data),
+                    "mime": generated["mime"], "kind": "official_contest_reading_page" if is_page else "official_contest_source_record",
+                    "role": "historical_official_contest_exhibit", "transformed": True,
+                    "source_map_sha256": contest_bundle.map_sha256,
+                    "source_refs": [dict(contest_bundle.source_record)],
+                })
+                stats["official_contest_reading_pages" if is_page else "official_contest_source_records"] += 1
         if blizzcast_audio_bundle is not None:
             for asset in blizzcast_audio_bundle.assets:
                 data = bytes(asset["data"])
@@ -4335,6 +4394,16 @@ def export_pages(
                         stats["retired_armory_tooltip_repaired"] += 1
                 if route == "/__offline/compat.js":
                     text = rewrite_compat_script(text)
+                if route == legacy_reward_tooltip.ROUTE and manifest_sha == legacy_reward_tooltip.SOURCE16_SHA256:
+                    text, changed = legacy_reward_tooltip.rewrite_first_reward_hover(text)
+                    if changed:
+                        derivation_notes.append("derived first-hover reward tooltip repair: initialize pointer coordinates and viewport height before showing the preserved itemHTML")
+                        stats["reward_tooltip_first_hover_repaired"] += 1
+                if route == "/shared/wow-com/includes-client/navtreefunctions.js" and manifest_sha == legacy_reward_tooltip.SOURCE16_SHA256:
+                    text, changed = legacy_reward_tooltip.rewrite_rewards_nav_fallback(text, base_path)
+                    if changed:
+                        derivation_notes.append("derived reward subnav fallback: two old armor pages use the verified Rewards parent only when the original menu lookup has no result")
+                        stats["legacy_reward_nav_fallback_repaired"] += 1
                 if route == "/info/encyclopedia/scripts/cascade.js":
                     text = rewrite_cascade_script(text)
                 if route == "/wrath/js/thumbnailslayout.js":
@@ -4630,6 +4699,14 @@ def export_pages(
                 ],
                 "presentation": "Five static reading pages; May 15 home/archive sources marked as later supplements",
             }
+        if contest_bundle is not None:
+            provenance_payload["official_contest_reading"] = {
+                "source_map_sha256": contest_bundle.map_sha256,
+                "source_record": contest_bundle.source_record,
+                "origin_routes": contest_bundle.origin_routes,
+                "image_bytes_recovered": 0,
+                "presentation": "Static reading exhibit for the 2006 costume contest results",
+            }
         if blizzcast_audio_bundle is not None:
             provenance_payload["blizzcast_current_origin_audio"] = {
                 "classification": "current_origin_audio_copy",
@@ -4802,6 +4879,10 @@ def main(argv: list[str] | None = None) -> int:
         help="Optional accepted current-origin MP3 copies; requires --blizzcast-source-map",
     )
     parser.add_argument(
+        "--official-contest-map", type=Path, default=None,
+        help="Optional fixed-source static official contest reading exhibit",
+    )
+    parser.add_argument(
         "--related-talent-icon-map", type=Path, default=None,
         help="Optional pinned same-path talent icons from a separately attributed later repository",
     )
@@ -4856,7 +4937,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     args = parser.parse_args(argv)
     try:
-        result = export_pages(output=args.output, source_site=args.site, manifest_path=args.manifest, base_path=args.base_path, max_bytes=args.max_bytes, min_free_bytes=args.min_free_bytes, image_source_maps=args.image_source_maps, supplement_image_source_maps=args.supplement_image_source_maps, allow_later_image_supplements=args.allow_later_image_supplements, guide_preview_map=args.guide_preview_map, guide_image_collection_map=args.guide_image_collection_map, related_player_gallery_preview_map=args.related_player_gallery_preview_map, flash_runtime_archive=args.flash_runtime_archive, blizzcast_source_map=args.blizzcast_source_map, blizzcast_audio_map=args.blizzcast_audio_map, related_talent_icon_map=args.related_talent_icon_map, related_tbc_talent_art_map=args.related_tbc_talent_art_map, related_talent_ui_map=args.related_talent_ui_map, source16_layout_map=args.source16_layout_map, talent_box_layout_map=args.talent_box_layout_map, related_encyclopedia_image_map=args.related_encyclopedia_image_map, related_guide_image_map=args.related_guide_image_map, related_faction_icon_map=args.related_faction_icon_map, restore_aldor_scryers_lore=args.restore_aldor_scryers_lore)
+        result = export_pages(output=args.output, source_site=args.site, manifest_path=args.manifest, base_path=args.base_path, max_bytes=args.max_bytes, min_free_bytes=args.min_free_bytes, image_source_maps=args.image_source_maps, supplement_image_source_maps=args.supplement_image_source_maps, allow_later_image_supplements=args.allow_later_image_supplements, guide_preview_map=args.guide_preview_map, guide_image_collection_map=args.guide_image_collection_map, related_player_gallery_preview_map=args.related_player_gallery_preview_map, flash_runtime_archive=args.flash_runtime_archive, blizzcast_source_map=args.blizzcast_source_map, official_contest_map=args.official_contest_map, blizzcast_audio_map=args.blizzcast_audio_map, related_talent_icon_map=args.related_talent_icon_map, related_tbc_talent_art_map=args.related_tbc_talent_art_map, related_talent_ui_map=args.related_talent_ui_map, source16_layout_map=args.source16_layout_map, talent_box_layout_map=args.talent_box_layout_map, related_encyclopedia_image_map=args.related_encyclopedia_image_map, related_guide_image_map=args.related_guide_image_map, related_faction_icon_map=args.related_faction_icon_map, restore_aldor_scryers_lore=args.restore_aldor_scryers_lore)
     except PagesExportError as exc:
         parser.error(str(exc))
     print(json.dumps(result, ensure_ascii=False, indent=2))

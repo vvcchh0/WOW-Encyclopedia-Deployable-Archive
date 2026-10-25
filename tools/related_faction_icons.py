@@ -476,7 +476,7 @@ def _make_catalog(base_path: str, assets: list[RelatedFactionIconAsset], source_
     return (json.dumps(document, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n").encode("utf-8")
 
 
-def load_related_faction_icon_bundle(
+def _load_legacy_bundle(
     map_path: str | os.PathLike[str],
     workspace_root: str | os.PathLike[str],
     base_path: str,
@@ -588,6 +588,34 @@ def load_related_faction_icon_bundle(
         decision_sha256=decision_sha,
         source_acceptance_sha256=acceptance_sha,
     )
+
+
+def load_related_faction_icon_bundle(
+    map_path: str | os.PathLike[str],
+    workspace_root: str | os.PathLike[str],
+    base_path: str,
+) -> RelatedFactionIconBundle:
+    """Select an immutable faction supplement profile."""
+    root = Path(workspace_root).resolve()
+    candidate = Path(map_path)
+    if not candidate.is_absolute():
+        candidate = root / candidate
+    extended_relative = "artifacts/related-faction-item-icons-20261025/input-map.json"
+    canonical_relative = "artifacts/related-faction-canonical-art-20261025/input-map.json"
+    more_relative = "artifacts/related-faction-canonical-more-20261025/input-map.json"
+    if candidate.resolve() == (root / more_relative).resolve():
+        import related_faction_canonical_extension
+        baseline = load_related_faction_icon_bundle(canonical_relative, root, base_path)
+        return related_faction_canonical_extension.extend_bundle(candidate, root, base_path, baseline)
+    if candidate.resolve() == (root / canonical_relative).resolve():
+        import related_faction_canonical_extension
+        baseline = load_related_faction_icon_bundle(extended_relative, root, base_path)
+        return related_faction_canonical_extension.extend_bundle(candidate, root, base_path, baseline)
+    if candidate.resolve() == (root / extended_relative).resolve():
+        import related_faction_item_extension
+        baseline = _load_legacy_bundle(EXPECTED_MAP_RELATIVE, root, base_path)
+        return related_faction_item_extension.extend_bundle(candidate, root, base_path, baseline)
+    return _load_legacy_bundle(map_path, workspace_root, base_path)
 
 
 __all__ = [

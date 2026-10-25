@@ -4,6 +4,9 @@
 
 ## 2026-10-25
 
+- 完成v67本地验收：补入103个奖励图标显示，累计106个素材；恢复2006年服装赛获奖正文的静态阅读页，照片仍待补。修复首次悬浮说明和两张旧PvP奖励页的导航，22个奖励页面与手机阅读布局检查通过。[来源与范围](docs/faction-reward-art-20261025.md)
+- 核对ArchiveCraft百科的十个页面和五张图片，五图均与已有官方素材原字节一致；十二张数字分类头像仍未取得新来源。[对照记录](docs/archivecraft-encyclopedia-crosscheck-20261025.md)
+
 - 完成本地v62验收：为萨满“Improved Fire Nova Totem”补入一张关联图标及灰度状态，累计覆盖66项天赋。13项测试、24项Chrome检查和10,336个文件回读通过；线上与最新完整包暂为v61。[对应依据](docs/shaman-talent-art-20261025.md)、[本地验收](docs/evidence/v62-local-acceptance-20261025.json)
 - 从Common Crawl保存官方万圣节服装赛获奖页的2008-08-29记录，取得五张赢家截图的路径；该集合现存索引未包含图片，尚未恢复新闻配图。[本轮恢复总账](docs/continuous-recovery-20261025.md)
 - 整理 GitHub 发布：保留 v24、v38、v52、v61 四个阶段包，中间版本转为[历史说明](docs/release-history.md)，原附件已核验并留存本地，Git 标签保留。
