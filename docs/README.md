@@ -69,3 +69,5 @@ Git 主树保存部署文件、工具、这些文档与关键验收；历史记�
 - [BlizzCast现存音频副本](blizzcast-audio-20261024.md)：前两期MP3、旧RSS长度比较与本地播放接入。
 - [声望与奖励图标补齐](faction-reward-art-20261025.md)：103个补充图标、动态奖励表盘点、悬浮说明和旧PvP导航修复。
 - [ArchiveCraft百科图片对照](archivecraft-encyclopedia-crosscheck-20261025.md)：五张官方图片原字节对应及分类头像的剩余缺口。
+
+- [2026-10-25 恢复回顾与后续计划](recovery-summary-20261025.md)：v68.1线上版、111个奖励图标、服装赛正文及剩余队列。

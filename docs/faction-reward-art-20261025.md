@@ -27,3 +27,9 @@ v67的22页奖励检查879项、阅读页检查24项通过。v68再加入八张�
 来源核对：[七项奖励](evidence/faction-item-art-20261025.json)、[第一组标准标识](evidence/faction-canonical-art-20261025.json)、[第二组标准标识](evidence/faction-canonical-more-art-20261025.json)、[八项饰品](evidence/faction-canonical-third-art-20261025.json)、[服装赛正文](evidence/costume-contest-source-20261025.json)。
 
 最后一组在第三个请求返回404后停止：九次请求取得八图，计划中39项未请求，留待后续批次。
+
+## 线上发布
+
+v68的168个变更对象与本地逐项一致。线上浏览发现旧`.shtml`直达地址缺少静态文件，随后以独立的跳转目录及更新后的来源清单发布v68.1，保留已验收的v68目录。该入口现经301转向目录，再进入获奖正文；手机布局和五条获奖记录复核通过。最终网站10,450文件、718,562,930字节。[线上验收](evidence/v68-1-online-acceptance-20261025.json)
+
+部分原历史声望下拉菜单的初始化档位不一致，浏览检查通过原生点击另一档后再返回第一档来覆盖这些条目；该既有行为留待后续兼容修复。

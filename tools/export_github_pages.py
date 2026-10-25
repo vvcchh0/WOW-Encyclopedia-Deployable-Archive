@@ -3923,7 +3923,10 @@ def export_pages(
                     "source_sha256": contest_bundle.source_record["payload_sha256"],
                     "source_length": contest_bundle.source_record["payload_length"],
                     "derived_sha256": generated["sha256"], "derived_length": len(data),
-                    "mime": generated["mime"], "kind": "official_contest_reading_page" if is_page else "official_contest_source_record",
+                    "mime": generated["mime"], "kind": (
+                        "official_contest_legacy_redirect" if generated["path"] == official_contest_reader.LEGACY_REDIRECT_ROUTE
+                        else "official_contest_reading_page" if is_page else "official_contest_source_record"
+                    ),
                     "role": "historical_official_contest_exhibit", "transformed": True,
                     "source_map_sha256": contest_bundle.map_sha256,
                     "source_refs": [dict(contest_bundle.source_record)],

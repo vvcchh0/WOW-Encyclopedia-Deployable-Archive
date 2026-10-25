@@ -4,6 +4,8 @@
 
 推荐下载：[最新阶段包 v61](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/latest)。
 
+当前在线版为v68.1，包含后续奖励图标和服装赛正文修复。本轮没有新增完整包；改动见[更新记录](../CHANGELOG.md)。
+
 ## 保留的阶段包
 
 | 版本 | 日期 | 阶段内容 |
