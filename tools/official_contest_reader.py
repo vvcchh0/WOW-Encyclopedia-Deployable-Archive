@@ -14,6 +14,16 @@ MAP_SHA256 = "450d4e839c794222af6bdd94b7cc2b4dd23416339bd15c28f864d3bf3cff7a76"
 MANIFEST_SHA256 = "e81eaefffbe994178e46fe02e2afd761d0747b1dad36455c1b4b1d2bfeec7b9a"
 READER_ROUTE = "/contests/06-10-costume/winners.html"
 SOURCE_ROUTE = "/__offline/official-features/costume-2006-source.json"
+LEGACY_REDIRECT_ROUTE = "/contests/06-10-costume/winners.shtml/index.html"
+
+def render_legacy_redirect(base: str) -> bytes:
+    target = html.escape(base.rstrip('/') + READER_ROUTE, quote=True)
+    return (f'<!doctype html><html lang="en"><head><meta charset="utf-8">'
+            f'<meta name="viewport" content="width=device-width,initial-scale=1">'
+            f'<meta http-equiv="Content-Security-Policy" content="default-src \'none\'; base-uri \'none\'; form-action \'none\'">'
+            f'<meta http-equiv="refresh" content="0;url={target}">'
+            f'<link rel="canonical" href="{target}"><title>2006 contest results</title></head>'
+            f'<body><p>Historical 2006 contest results: <a href="{target}">Open the preserved page</a>.</p></body></html>').encode()
 
 class OfficialContestError(ValueError):
     pass
@@ -82,6 +92,7 @@ def load_official_contest_bundle(map_path: str | Path, workspace_root: str | Pat
     for route, payload, mime in (
         (READER_ROUTE, _render(data, base), "text/html; charset=UTF-8"),
         (SOURCE_ROUTE, raw, "application/json; charset=UTF-8"),
+        (LEGACY_REDIRECT_ROUTE, render_legacy_redirect(base), "text/html; charset=UTF-8"),
     ):
         files.append({"path": route, "data": payload, "bytes": len(payload),
                       "sha256": hashlib.sha256(payload).hexdigest(), "mime": mime})

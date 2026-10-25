@@ -21,7 +21,7 @@ class OfficialContestReaderTests(unittest.TestCase):
     def test_preserves_five_captions_without_loading_missing_photographs_or_scripts(self):
         bundle = self.bundle()
         document = bundle.generated_files[0]["data"].decode()
-        self.assertEqual(len(bundle.generated_files), 2)
+        self.assertEqual(len(bundle.generated_files), 3)
         self.assertEqual(document.count("Photograph not yet recovered."), 5)
         self.assertIn("wondeful costumes", document)
         self.assertIn("2008-08-29", document)
@@ -32,6 +32,10 @@ class OfficialContestReaderTests(unittest.TestCase):
         data = json.loads(bundle.generated_files[1]["data"])
         self.assertEqual(data["article"]["stated_honorable_costumes"], 28)
         self.assertEqual(data["article"]["honorable_viewer_parameter"], 29)
+        redirect = bundle.generated_files[2]
+        self.assertEqual(redirect["path"], reader.LEGACY_REDIRECT_ROUTE)
+        self.assertIn('content="0;url=/archive/contests/06-10-costume/winners.html"', redirect["data"].decode())
+        self.assertNotIn('<script', redirect["data"].decode())
 
     def test_rejects_wrong_context_source_drift_and_network_base(self):
         with self.assertRaisesRegex(reader.OfficialContestError, "manifest guard"):

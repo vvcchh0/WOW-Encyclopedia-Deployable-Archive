@@ -3928,7 +3928,10 @@ def export_pages(
                     "source_map_sha256": contest_bundle.map_sha256,
                     "source_refs": [dict(contest_bundle.source_record)],
                 })
-                stats["official_contest_reading_pages" if is_page else "official_contest_source_records"] += 1
+                if generated["path"] == official_contest_reader.LEGACY_REDIRECT_ROUTE:
+                    stats["official_contest_legacy_redirects"] += 1
+                else:
+                    stats["official_contest_reading_pages" if is_page else "official_contest_source_records"] += 1
         if blizzcast_audio_bundle is not None:
             for asset in blizzcast_audio_bundle.assets:
                 data = bytes(asset["data"])
