@@ -603,6 +603,11 @@ def load_related_faction_icon_bundle(
     extended_relative = "artifacts/related-faction-item-icons-20261025/input-map.json"
     canonical_relative = "artifacts/related-faction-canonical-art-20261025/input-map.json"
     more_relative = "artifacts/related-faction-canonical-more-20261025/input-map.json"
+    third_relative = "artifacts/related-faction-canonical-third-20261025/input-map.json"
+    if candidate.resolve() == (root / third_relative).resolve():
+        import related_faction_canonical_extension
+        baseline = load_related_faction_icon_bundle(more_relative, root, base_path)
+        return related_faction_canonical_extension.extend_bundle(candidate, root, base_path, baseline)
     if candidate.resolve() == (root / more_relative).resolve():
         import related_faction_canonical_extension
         baseline = load_related_faction_icon_bundle(canonical_relative, root, base_path)

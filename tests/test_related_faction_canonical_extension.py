@@ -73,5 +73,14 @@ class CanonicalFactionArtTests(unittest.TestCase):
                 with self.assertRaisesRegex(legacy.RelatedFactionIconError, "SHA-256"):
                     canonical.load_additional_assets(path, root)
 
+    def test_final_eight_profile_preserves_all_106_prior_assets(self):
+        old = legacy.load_related_faction_icon_bundle(canonical.MORE_MAP_RELATIVE, ROOT, "/archive/")
+        new = legacy.load_related_faction_icon_bundle(canonical.THIRD_MAP_RELATIVE, ROOT, "/archive/")
+        self.assertEqual(new.assets[:106], old.assets)
+        self.assertEqual(len(new.assets), 114)
+        self.assertEqual(len(new.route_reuses), 115)
+        self.assertTrue(all(new.route_reuses[k] == v for k, v in old.route_reuses.items()))
+        self.assertEqual(sum(len(a.data) for a in new.assets[106:]), 13620)
+
 if __name__ == "__main__":
     unittest.main()

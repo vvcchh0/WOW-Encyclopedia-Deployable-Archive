@@ -24,6 +24,7 @@ ZIP_LENGTH = 83448
 SOURCE_BYTES = 83743
 PREFIX = "/info/basics/factions/images/icons/"
 MORE_MAP_RELATIVE = "artifacts/related-faction-canonical-more-20261025/input-map.json"
+THIRD_MAP_RELATIVE = "artifacts/related-faction-canonical-third-20261025/input-map.json"
 
 @dataclass(frozen=True)
 class _Profile:
@@ -40,6 +41,7 @@ class _Profile:
     base_aliases: int
     downloads: int
     local_pngs: int
+    images: int = 48
 
 _PROFILES = (
     _Profile(MAP_RELATIVE, MAP_SHA256, ACCEPTANCE_RELATIVE, ACCEPTANCE_SHA256,
@@ -49,6 +51,11 @@ _PROFILES = (
              "adeb07b20d82af0aad6fa2053f6e48bbecd836748dd802a28dc921cd7032de0b",
              "ee52dd53488fb9174d25e57935706b8a20785c03f429c6480794192d2edda16c",
              78061, 78665, 48, MAP_RELATIVE, 58, 59, 48, 0),
+    _Profile(THIRD_MAP_RELATIVE, "25020410e64e998480c55cb9d55c4855995cf2b16cc868c7e11e93bfac5d9059",
+             "docs/evidence/faction-canonical-third-art-20261025.json",
+             "d124f3fc57e66f15370a8208c3e17930275678f7149d8b92173d6527db0e8441",
+             "dfc1a85dbbfb408a4948357e4dd7242033f26b863bcd32446a73f2441b0712cb",
+             13649, 13620, 8, MORE_MAP_RELATIVE, 106, 107, 8, 0, 8),
 )
 
 def _profile(map_file, root):
@@ -61,7 +68,7 @@ def _fail(message):
     return legacy.RelatedFactionIconError("canonical faction art: " + message)
 
 def load_additional_assets(map_path: str | Path, workspace_root: str | Path):
-    """Read one of two fixed 48-image profiles; never extract to disk."""
+    """Read a fixed, accepted artwork profile; never extract to disk."""
     root = Path(workspace_root).resolve()
     map_file = items._file(root, map_path)
     profile = _profile(map_file, root)
@@ -85,7 +92,7 @@ def load_additional_assets(map_path: str | Path, workspace_root: str | Path):
     if items._sha(zipped) != profile.zip_sha:
         raise _fail("ZIP SHA-256 mismatch")
     entries = data["entries"]
-    if len(entries) != 48 or data["source_bytes"] != profile.source_bytes:
+    if len(entries) != profile.images or data["source_bytes"] != profile.source_bytes:
         raise _fail("entry count or source byte count mismatch")
     names = {e["zip_member"] for e in entries}
     assets = []
@@ -94,7 +101,7 @@ def load_additional_assets(map_path: str | Path, workspace_root: str | Path):
     try:
         with zipfile.ZipFile(io.BytesIO(zipped)) as archive:
             infos = archive.infolist()
-            if len(infos) != 48 or len(names) != 48 or {i.filename for i in infos} != names:
+            if len(infos) != profile.images or len(names) != profile.images or {i.filename for i in infos} != names:
                 raise _fail("ZIP differs from its member whitelist")
             for info in infos:
                 mode = stat.S_IFMT(info.external_attr >> 16)
@@ -197,7 +204,7 @@ def extend_bundle(map_path, workspace_root, base_path, base_bundle):
         "additional_notice_pages_for_shared_reward_scripts": sorted(shared_reward_pages),
         "base_profile": dict(base_bundle.source_metadata),
         "additional_profile": {"map_sha256": profile.map_sha, "zip_sha256": profile.zip_sha,
-                               "acceptance_sha256": profile.receipt_sha, "image_count": 48,
+                               "acceptance_sha256": profile.receipt_sha, "image_count": profile.images,
                                "new_downloaded_images": profile.downloads, "existing_png_reuses": profile.local_pngs},
     }
     catalog = legacy._make_catalog(base, list(assets), metadata)
