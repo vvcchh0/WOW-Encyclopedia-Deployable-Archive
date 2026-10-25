@@ -305,7 +305,7 @@ Source14从此冻结，B idle，无任何新网络/版本授权；root fresh最�
 
 ### 2026-10-15T14:44:32.252232+00:00 — 最终便携Release公开并核验
 
-[最终便携浏览包Release](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261015) 已公开，root-release-publication.json接受：Release413917488，ZIP asset644144570为502662461B，服务端SHA256 7d13b98943180e52cc024d43f73148e8450dd5f81379b95083b9ce1f57df0c9e与已独立验收本地包一致；NOTICE644144569和sidecar644144578也已核验。tag解析main108c9287e910dbd1a0872f16a7078b89cd1f5911。此前待上传状态现已完成；root只同步README/storage/CHANGELOG并提交最终文档，恢复工作结束，两执行者idle等待用户。
+[最终便携浏览包Release](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/blob/main/docs/release-history/archive-20080512-browser-20261015.md) 已公开，root-release-publication.json接受：Release413917488，ZIP asset644144570为502662461B，服务端SHA256 7d13b98943180e52cc024d43f73148e8450dd5f81379b95083b9ce1f57df0c9e与已独立验收本地包一致；NOTICE644144569和sidecar644144578也已核验。tag解析main108c9287e910dbd1a0872f16a7078b89cd1f5911。此前待上传状态现已完成；root只同步README/storage/CHANGELOG并提交最终文档，恢复工作结束，两执行者idle等待用户。
 
 
 ### 后续 40 分钟专项（23:03–23:43）

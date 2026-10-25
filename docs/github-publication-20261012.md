@@ -39,7 +39,7 @@ GitHub 自动 Source code 包仅代表 Git 主树。历史文档可能引用完�
 
 - 公开仓库：[WOW Encyclopedia Deployable Archive](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive)。
 - 内容提交：`731328931bf74d391b196ad24127df167a052899`；Release tag 指向同一提交。
-- [已公开 Release](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-processed-20261012)，GitHub published_at：`2026-10-13T10:23:32Z`。
+- [已公开 Release](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/blob/main/docs/release-history/archive-20080512-processed-20261012.md)，GitHub published_at：`2026-10-13T10:23:32Z`。
 - 6/6 资产名称、大小、GitHub服务器 SHA-256 全部匹配；runtime ZIP 为502,151,286字节。
 - 本地原始取证包未上传且保持不变。发布后工作区约12.00 GB，D盘可用约27.41 GB，满足14GB工作区与10GB余量要求。
 

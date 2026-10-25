@@ -8,6 +8,9 @@
 - [离线重建](offline-reconstruction-2008.md)与[资源恢复](resource-recovery-2008.md)：URL 路由、兼容修改、栏目扩展和浏览反馈。
 - [Sol 回放研究](sol-wayback-methods.md)与[官网组织结构研究](sol-wow-structure.md)。
 - [GitHub 发布说明](github-publication-20261012.md)：Git 主树、完整包、历史包、验证和实际发布记录。
+- [阶段包与历史版本](release-history.md)：保留的完整包、撤下版本的说明和标签。
+- [发布与保留策略](publication-policy.md)：网页持续更新，阶段成果发布完整包；部署和附件的保留方式。
+- [2026-10-25 GitHub 整理](github-publication-cleanup-20261025.md)：Release 与部署记录的整理范围、备份和实际占用。
 
 阶段记录按其当时结果保留，较新的回顾与验收解释后来更正。尤其[最初 2010 获取报告](acquisition-report.md)中的可用性结论已由 2008 复核更正。
 

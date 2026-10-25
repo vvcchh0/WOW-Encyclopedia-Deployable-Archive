@@ -1,6 +1,6 @@
 # 2026-10-22 恢复回顾
 
-本轮从 v52 继续，已发布 [v56 在线版](https://vvcchh0.github.io/WOW-Encyclopedia-Deployable-Archive/)与[离线浏览包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261022-v56)。以2008年5月12日官网为重建基准，新增关联图片在页面来源目录中注明出处。
+本轮从 v52 继续，已发布 [v56 在线版](https://vvcchh0.github.io/WOW-Encyclopedia-Deployable-Archive/)与[离线浏览包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/blob/main/docs/release-history/archive-20080512-browser-20261022-v56.md)。以2008年5月12日官网为重建基准，新增关联图片在页面来源目录中注明出处。
 
 ## 地下城与 Deadmines
 

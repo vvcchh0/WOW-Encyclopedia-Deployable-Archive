@@ -93,7 +93,7 @@ v55离线ZIP为546,401,734字节，解压634,494,251字节，10,193个成员。�
 
 Pages构建39773019678成功，69个线上变化文件均已逐体与本地导出核对。第一次核对在九项后误把6.2秒调度余量作为硬限而停止，实际最小间隔仍大于用户要求的5秒；保留该失败批次，独立验收九项后只请求余下60项。后者全部direct 200，未重复先前对象。[线上验收](../research/continuous-recovery-20261022/root-v55-online-acceptance.json)
 
-v55处理后离线包已经[公开发布](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261022-v55)。上传后的三个附件由GitHub摘要与长度核对，并匿名读取NOTICE及校验文件、核对ZIP下载响应长度；完整ZIP的本地解压和包内服务验收沿用上述记录。没有再次匿名下载整个ZIP。[附件核对](../research/continuous-recovery-20261022/publication/v55-public-assets-acceptance.json)
+v55处理后离线包已经[公开发布](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/blob/main/docs/release-history/archive-20080512-browser-20261022-v55.md)。上传后的三个附件由GitHub摘要与长度核对，并匿名读取NOTICE及校验文件、核对ZIP下载响应长度；完整ZIP的本地解压和包内服务验收沿用上述记录。没有再次匿名下载整个ZIP。[附件核对](../research/continuous-recovery-20261022/publication/v55-public-assets-acceptance.json)
 
 GitHub草稿需要从有权限的Release列表或ID读取；按标签读取只适用于已发布项。上传助手据此增加只恢复本轮所属草稿的薄适配层，没有重建草稿或重复上传。发布已成功后的第一次正文核对还因末尾换行处理不一致退出，随后只读恢复回执，未重复发布。[GitHub接口说明](https://docs.github.com/en/rest/releases/releases#list-releases)
 
@@ -113,7 +113,7 @@ v56离线ZIP已构建，546,446,950字节、10,211个成员；包内实际启动
 
 main的7dff875e已正常推送，Pages的ada74291部署构建39789068533于13:43 UTC成功。唯一线上核验批次在13:55–13:57 UTC完成，22个对象全部direct 200、实际响应体与本地一致，实收15,959,895字节；最小实际请求间隔6.390554秒。主代理随后逐个重读私有响应体并独立验收，原始HTTP与cookie未公开。[线上验收](../research/continuous-recovery-20261022/root-v56-online-acceptance.json)
 
-v56离线包从新的带空格目录启动，122个路径的GET／HEAD与根跳转共245项检查通过。包为546,446,950字节，解压635,822,442字节，10,211个成员。13:55 UTC已公开[Release](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261022-v56)，13:57 UTC完成三个公开附件的匿名读取／HEAD与GitHub摘要核对；未再下载整个ZIP。[包内验收](../research/continuous-recovery-20261022/publication/v56-portable-acceptance.json) · [公开附件验收](../research/continuous-recovery-20261022/publication/v56-public-assets-acceptance.json)
+v56离线包从新的带空格目录启动，122个路径的GET／HEAD与根跳转共245项检查通过。包为546,446,950字节，解压635,822,442字节，10,211个成员。13:55 UTC已公开[Release](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/blob/main/docs/release-history/archive-20080512-browser-20261022-v56.md)，13:57 UTC完成三个公开附件的匿名读取／HEAD与GitHub摘要核对；未再下载整个ZIP。[包内验收](../research/continuous-recovery-20261022/publication/v56-portable-acceptance.json) · [公开附件验收](../research/continuous-recovery-20261022/publication/v56-public-assets-acceptance.json)
 
 本轮来源获取和导出已结束。五个逐一核对命令行身份的预览服务已停止，两名执行者均完成，自动接续wow-7-5已由原生工具删除。再次核对四个冻结清单／来源摘要未变；未重复遍历历史ZIP。收尾检查D盘余量为11,475,263,488字节，高于11,005,853,696字节安全线。未启动新的Wayback批次或付费Firecrawl获取。[收尾验收](../research/continuous-recovery-20261022/publication/final-local-closeout.json)
 

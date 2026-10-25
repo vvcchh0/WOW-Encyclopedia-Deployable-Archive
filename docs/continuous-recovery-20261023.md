@@ -10,7 +10,7 @@
 
 归档工具、去重报告与验收摘要已于09:20 UTC推送main（`da7fa3b`）。随后从固定的2019年第三方TBC天赋模拟器提交取得11张PNG候选，合计183,980字节，主代理逐张回读并解码通过；实际像素与页面用途复核后，箭头没有对应的三种状态，Balance背景仅保留为候选，本轮未映射历史资源路径。
 
-v57已同步发布网页与[离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261023-v57)，修复情人节指南页面12处截图显示和原图链接，复用此前保存的12张原图；独立投稿图库的34张原图和34张缩略图继续缺失。代码、完整文件回读与Chrome浏览验收通过；Pages构建成功，六个线上文件与本地一致，离线包37项GET／HEAD启动检查通过。公开下载入口也已匿名核对；ZIP核对公开HEAD长度和GitHub上传摘要，两个小附件完整下载校验，未重复下载整包。[修复说明](love-guide-preview-repair-20261023.md) · [发布验收](evidence/v57-publication-20261023.json)
+v57已同步发布网页与[离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/blob/main/docs/release-history/archive-20080512-browser-20261023-v57.md)，修复情人节指南页面12处截图显示和原图链接，复用此前保存的12张原图；独立投稿图库的34张原图和34张缩略图继续缺失。代码、完整文件回读与Chrome浏览验收通过；Pages构建成功，六个线上文件与本地一致，离线包37项GET／HEAD启动检查通过。公开下载入口也已匿名核对；ZIP核对公开HEAD长度和GitHub上传摘要，两个小附件完整下载校验，未重复下载整包。[修复说明](love-guide-preview-repair-20261023.md) · [发布验收](evidence/v57-publication-20261023.json)
 
 从固定的2015年Coolwow2提交取得完整3,006项目录元数据，并重构核验73个Git目录对象；七个待补声望图标的精确名称均未命中。取得四份关联地下城指南HTML，共40,189字节，确认八个欧服缩略图路径链接到既有50组中的三组时光之穴图库。图片字节尚未获取；三组共112个原图槽位早已包含在1,684项总数中，不重复新增缺口。通用截图文件名没有据此补到Four Dragons等页面。[来源、用途与后续线索](related-source-leads-20261023.md)
 

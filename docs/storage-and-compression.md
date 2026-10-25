@@ -1,5 +1,7 @@
 # 空间与压缩策略（2026-10-13）
 
+2026-10-25 更新：GitHub Release 已整理为四个阶段包，附件由约7.03GB减至2.22GB；本地历史ZIP保留。后续完整包按阶段成果发布，见[发布策略](publication-policy.md)和[整理记录](github-publication-cleanup-20261025.md)。下文中的旧Release链接现指向对应历史说明。
+
 2026-10-14 更新：用户取消了工作区固定 14GB 上限，改为 D 盘保留至少 10GB 安全空间。当前 Pages 导出与 direct 优先下载工具默认不限制工作区总量，仍预检预计新增量及磁盘余量；可按需显式设置总量上限。下文测量和早期预算按当时记录保留。
 
 基准、原始响应和派生文件的 SHA 保持不变。采用无损压缩与分层交付，不重新编码历史图片，不把压缩率当成资源完整性的证明。
@@ -52,7 +54,7 @@ Git 主树继续提供可审阅、直接启动的文件；完整恢复 ZIP、原
 
 ## 2026-10-15：发布浏览包（v14）
 
-[新版离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261015)收录当前派生站点和独立启动器，解压后不需要 Git 仓库或研究目录。旧 Release 和本地历史 ZIP 继续保留。
+[新版离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/blob/main/docs/release-history/archive-20080512-browser-20261015.md)收录当前派生站点和独立启动器，解压后不需要 Git 仓库或研究目录。旧 Release 和本地历史 ZIP 继续保留。
 
 | 文件类别 | 解压字节 | ZIP 成员压缩字节 |
 | --- | ---: | ---: |
@@ -86,7 +88,7 @@ SHA-256：`2507f0fe744af971854048c711f3cba24a4e43b4bd2a78b20e93deb4ef3ba4e7`。�
 
 ## 2026-10-19：v33 浏览包
 
-[v33 离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261019)沿用 10 月 18 日构建的原包，533 MB 下载、约 598 MB 解压，不收录研究目录和原始 HTTP 响应。独立验收重新读取全部 9,024 个成员，并从含空格的隔离目录启动包内服务器，检查 201 个路径的 GET/HEAD。
+[v33 离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/blob/main/docs/release-history/archive-20080512-browser-20261019.md)沿用 10 月 18 日构建的原包，533 MB 下载、约 598 MB 解压，不收录研究目录和原始 HTTP 响应。独立验收重新读取全部 9,024 个成员，并从含空格的隔离目录启动包内服务器，检查 201 个路径的 GET/HEAD。
 
 | 文件类别 | 解压字节 | ZIP 成员压缩字节 |
 | --- | ---: | ---: |
@@ -127,7 +129,7 @@ v39 ZIP 为 534,242,751 字节，9,122 个成员，解压成员合计 599,611,85
 
 继续采用 DEFLATE-6、保留原图字节与独立浏览包。主代理读取全部成员并启动包内 Python 服务器，56 个路径的 112 次 GET/HEAD 检查通过；浏览展示复用同字节 v39 的四页验收。此次未实际双击 Windows 启动器。
 
-[打包摘要](../research/continuous-recovery-20261020/publication/v39-portable-package-summary.json) · [独立包验收](../research/continuous-recovery-20261020/publication/root-v39-portable-acceptance.json) · [v39 下载页](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261020-v39)。
+[打包摘要](../research/continuous-recovery-20261020/publication/v39-portable-package-summary.json) · [独立包验收](../research/continuous-recovery-20261020/publication/root-v39-portable-acceptance.json) · [v39 下载页](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/blob/main/docs/release-history/archive-20080512-browser-20261020-v39.md)。
 
 ## 2026-10-23：历史 Pages 导出去重
 

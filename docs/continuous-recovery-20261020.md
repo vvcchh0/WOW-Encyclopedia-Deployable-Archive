@@ -100,7 +100,7 @@ main 检查点 `000a30d0` 已正常推送。Pages 首次直连推送触发低速
 
 ### 13:17 UTC — 离线包发布与本轮收尾
 
-代理补传 ZIP 成功。v39 Release 的三项附件在发布前后均与本地一致，标签指向 `000a30d0`；公开 ZIP 的 HEAD 与校验文件 GET 也通过检查，直连失败与代理成功分别保留。[Release](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261020-v39) · [公开下载检查](../research/continuous-recovery-20261020/publication/root-v39-public-download-acceptance.json)
+代理补传 ZIP 成功。v39 Release 的三项附件在发布前后均与本地一致，标签指向 `000a30d0`；公开 ZIP 的 HEAD 与校验文件 GET 也通过检查，直连失败与代理成功分别保留。[Release](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/blob/main/docs/release-history/archive-20080512-browser-20261020-v39.md) · [公开下载检查](../research/continuous-recovery-20261020/publication/root-v39-public-download-acceptance.json)
 
 本轮补回两处新闻图片地址，未新增下载图片或玩家图库原图。已调查的二十一个图库晚期索引窗口沿用此前结论，另二十九组仍待查；这项调查数量不表示已恢复二十一个图库。准备好的四十条新闻目标仍未补齐，Common Crawl 精确查询中的三个未发送地址与十个优先图库目录一并留在后续队列。Karazhan、Black Temple 继续等待新来源线索。
 

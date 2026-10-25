@@ -2,15 +2,21 @@
 
 按工作日期记录已完成的改动与已发现的问题。获取和校验细节见[工程文档](docs/README.md)。
 
+## 2026-10-25
+
+- 整理 GitHub 发布：保留 v24、v38、v52、v61 四个阶段包，中间版本转为[历史说明](docs/release-history.md)，原附件已核验并留存本地，Git 标签保留。
+- 部署记录保留当前版与最近两个检查点，历史工作流与 Git 提交继续可查；在线版及最新离线包保持 v61。
+- 更新[发布策略](docs/publication-policy.md)：网页随修复更新，完整离线包在取得阶段成果后发布。[本次整理记录](docs/github-publication-cleanup-20261025.md)
+
 ## 2026-10-24
 
 - 发布v61网页：补入58张TBC关联图标，覆盖65项天赋；接入BlizzCast前两期现存媒体副本与本地播放器，保留访谈和时间码。138个线上文件与两个线上播放器检查通过；同步发布[v61离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261024-v61)（约630MB）。[图标来源](docs/tbc-talent-art-20261024.md)、[音频说明](docs/blizzcast-audio-20261024.md)
-- 发布v59网页与[离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261024-v59)：恢复五条2006年TCG壁纸公告的预览，接入三组时光之穴图库的八张法语指南缩略图，注明Coolwow2来源；原玩家图库缺图继续保留。线上17个变更文件与离线启动检查通过。[修复与来源说明](docs/news-and-related-gallery-previews-20261024.md)
+- 发布v59网页与[离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/blob/main/docs/release-history/archive-20080512-browser-20261024-v59.md)：恢复五条2006年TCG壁纸公告的预览，接入三组时光之穴图库的八张法语指南缩略图，注明Coolwow2来源；原玩家图库缺图继续保留。线上17个变更文件与离线启动检查通过。[修复与来源说明](docs/news-and-related-gallery-previews-20261024.md)
 - 逐项核对331个已选非图库原文件缺口，另核对十二张百科分类头像对45个子页的引用关系。直连TCP连接失败，代理Wayback仍返回429，继续查找其他来源。[本轮记录](docs/continuous-recovery-20261024.md)
 
 ## 2026-10-23
 
-- 发布v57网页及[离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261023-v57)，修复情人节指南页面12处截图显示与原图链接，复用已保存原图；独立图库的34张投稿截图仍待补齐。浏览、线上文件及包内启动检查通过。[修复说明](docs/love-guide-preview-repair-20261023.md)
+- 发布v57网页及[离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/blob/main/docs/release-history/archive-20080512-browser-20261023-v57.md)，修复情人节指南页面12处截图显示与原图链接，复用已保存原图；独立图库的34张投稿截图仍待补齐。浏览、线上文件及包内启动检查通过。[修复说明](docs/love-guide-preview-repair-20261023.md)
 - 将57份历史Pages导出（513,856个文件、33.45 GB逻辑内容）整理为60文件共享归档；13,234个唯一对象实读核验通过，三个版本实际恢复并独立验收。删除55棵旧展开目录和三份临时恢复副本，保留v55/v56、原始来源及完整历史ZIP；按文件AllocationSize核账净节省约32.05 GB。去重保持历史版本内容不变。[去重记录与整理后验收摘要](docs/historical-export-deduplication.md)
 - 09:00 UTC的Wayback控制请求直连超时，进程内代理返回429，没有取得新图片；该次连接结果不作为资源缺失结论。[本轮持续恢复记录](docs/continuous-recovery-20261023.md)
 - 核对四份关联地下城源页，记录八个欧服缩略图路径及其图库链接；图片尚未获取，既有50组图库的缺失计数保持不变。12:30 UTC再次检查Wayback，代理仍返回429，本轮停止后续获取。[来源调查](docs/related-source-leads-20261023.md)
@@ -50,13 +56,13 @@
 ## 2026-10-20
 
 - 全面复核 50 个玩家图库：1,684 张截图的原图和缩略图均未取得；另有 22 张指南预览与 39 张指南大图。完成全部页面浏览检查，整理逐组缺失和存档时间窗，纠正“仅 Karazhan、Black Temple 缺图”的理解。[调查报告](docs/player-gallery-accessibility-20261020.md)
-- 发布 v39：补回 2004 年商店公告与 2005 年祖尔格拉布影片公告的两处配图，商店促销条目改为静态历史展品。同步发布[v39 离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261020-v39)（约 534 MB，解压约 600 MB）。
+- 发布 v39：补回 2004 年商店公告与 2005 年祖尔格拉布影片公告的两处配图，商店促销条目改为静态历史展品。同步发布[v39 离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/blob/main/docs/release-history/archive-20080512-browser-20261020-v39.md)（约 534 MB，解压约 600 MB）。
 - 扩大本地索引与图片摘要调查，核对新闻缺图和待查图库目录；Common Crawl 取得一份 2008 年 7 月百科首页，未发现新增图片线索。Wayback 429 与 Common Crawl 504 限制进一步获取，玩家图库原图仍有缺口。[工作记录](docs/continuous-recovery-20261020.md)
 
 ## 2026-10-19
 
 - 发布 v38：本轮累计补回九十六个图片资源，修复排行榜脚本和日期切换，旧信用卡宣传页改为历史展品。历史排行榜数据仍未取得，页面已明确说明；同步发布[v38 离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261019-v38)（约 534 MB，解压约 600 MB）。
-- 发布 [v33 离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261019)（约 533 MB，解压约 598 MB），保留对应版本供本地浏览。继续复核旧页面交互，并整理玩家图库的调查结论与剩余线索。[工作记录](docs/continuous-recovery-20261019.md)
+- 发布 [v33 离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/blob/main/docs/release-history/archive-20080512-browser-20261019.md)（约 533 MB，解压约 598 MB），保留对应版本供本地浏览。继续复核旧页面交互，并整理玩家图库的调查结论与剩余线索。[工作记录](docs/continuous-recovery-20261019.md)
 - 补完 v33 剩余 76 个图片入口与展示目标的浏览检查，包括 Dragon Hunt 展开和新闻内图片；比赛结果页的旧菜单错误另行修复。
 - 完成 Karazhan、Black Temple 的晚期存档缺口调查，未发现原玩家截图的新来源，暂缓这两组图库的重复查询。有新捕获或关联页线索时继续恢复。
 - 发布 v35：补回二十四张旧新闻配图，修复比赛结果页的菜单跳转。新增图片的浏览检查和三十个线上变化文件核对通过；该阶段离线包为 v33，后续素材现已整合至上方 v38。
@@ -94,7 +100,7 @@
 
 - 夜间专项取回 2007 年 8 月的 50 条新闻并完成本地 v15 浏览验收，另保存两张欧服每日截图原图；Karazhan 六项图片检查仍未取得素材。线上及离线包暂保持 v14。[专项记录](docs/focused-recovery-20261015-2303.md)
 
-- 发布 [2026-10-15 浏览版离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261015)（约 503 MB，解压约 566 MB），包含当前页面与素材；更新 README 的使用入口，并保留旧版供历史对照。
+- 发布 [2026-10-15 浏览版离线包](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/blob/main/docs/release-history/archive-20080512-browser-20261015.md)（约 503 MB，解压约 566 MB），包含当前页面与素材；更新 README 的使用入口，并保留旧版供历史对照。
 
 - 发布 v14，新增九页、350 条历史新闻；侧栏仅余 2007 年 8 月新闻待取得，图片缺口继续保留。[线上验收](research/v14-integration/root-pages-online-acceptance.json)
 

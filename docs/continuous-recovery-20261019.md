@@ -42,7 +42,7 @@
 
 ### 06:11 UTC — v33 离线包发布
 
-main 检查点 `d45b8a89` 已正常推送；随后创建并发布 [2026-10-19 Release](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/releases/tag/archive-20080512-browser-20261019)。发布前后，三个 GitHub 附件的状态、大小和平台 SHA-256 均与本地一致，标签解析到同一源码提交。README 已更新下载入口。Pages 没有重复发布，仍为已验收的 v33 构建。[发布回执](../research/continuous-recovery-20261019/publication/root-v33-release-publication.json)
+main 检查点 `d45b8a89` 已正常推送；随后创建并发布 [2026-10-19 Release](https://github.com/vvcchh0/WOW-Encyclopedia-Deployable-Archive/blob/main/docs/release-history/archive-20080512-browser-20261019.md)。发布前后，三个 GitHub 附件的状态、大小和平台 SHA-256 均与本地一致，标签解析到同一源码提交。README 已更新下载入口。Pages 没有重复发布，仍为已验收的 v33 构建。[发布回执](../research/continuous-recovery-20261019/publication/root-v33-release-publication.json)
 
 ### 06:31 UTC — 两个图库晚期缺口关闭，原编号图片暂缓
 
